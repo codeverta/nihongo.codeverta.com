@@ -1,0 +1,452 @@
+openapi: 3.1.0
+info:
+  title: Nihongo Master API
+  version: 1.0.0
+  description: Contract for the Nihongo Master mobile application.
+servers:
+  - url: http://localhost:8080/v1
+    description: Local development
+paths:
+  /auth/login:
+    post:
+      tags: [Authentication]
+      summary: Login with email and password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: {type: string, format: email}
+                password: {type: string, format: password}
+      responses:
+        '200': {$ref: '#/components/responses/AuthSession'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /auth/google:
+    post:
+      tags: [Authentication]
+      summary: Exchange a Google ID token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [idToken]
+              properties:
+                idToken: {type: string}
+      responses:
+        '200': {$ref: '#/components/responses/AuthSession'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /auth/logout:
+    post:
+      tags: [Authentication]
+      security: [{bearerAuth: []}]
+      responses:
+        '204': {description: Session revoked}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /auth/me:
+    get:
+      tags: [Authentication]
+      security: [{bearerAuth: []}]
+      responses:
+        '200': {$ref: '#/components/responses/Profile'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /home:
+    get:
+      tags: [Home]
+      summary: Get the complete home dashboard
+      description: A valid optional bearer token adds personal profile, daily goal, and achievements.
+      security: [{}, {bearerAuth: []}]
+      responses:
+        '200':
+          description: Guest or authenticated dashboard
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data: {$ref: '#/components/schemas/Dashboard'}
+  /learning/categories:
+    get:
+      tags: [Learning]
+      responses:
+        '200': {$ref: '#/components/responses/Categories'}
+  /learning/tracks:
+    get:
+      tags: [Learning]
+      parameters:
+        - {$ref: '#/components/parameters/System'}
+      responses:
+        '200': {$ref: '#/components/responses/Tracks'}
+  /exams:
+    get:
+      tags: [Exams]
+      parameters:
+        - {$ref: '#/components/parameters/System'}
+      responses:
+        '200': {$ref: '#/components/responses/Exams'}
+  /exam-attempts:
+    post:
+      tags: [Exams]
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [examId]
+              properties:
+                examId: {type: string}
+      responses:
+        '201': {description: Exam attempt created}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '402': {$ref: '#/components/responses/PremiumRequired'}
+  /plans:
+    get:
+      tags: [Subscription]
+      responses:
+        '200': {$ref: '#/components/responses/Plans'}
+  /me/profile:
+    get:
+      tags: [Profile]
+      security: [{bearerAuth: []}]
+      responses:
+        '200': {$ref: '#/components/responses/Profile'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+    patch:
+      tags: [Profile]
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [displayName, target]
+              properties:
+                displayName: {type: string}
+                target: {type: string, example: JLPT N3}
+      responses:
+        '200': {$ref: '#/components/responses/Profile'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /me/progress:
+    get:
+      tags: [Profile]
+      security: [{bearerAuth: []}]
+      responses:
+        '200': {description: Lesson progress list}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /me/progress/{lessonId}:
+    put:
+      tags: [Profile]
+      security: [{bearerAuth: []}]
+      parameters:
+        - in: path
+          name: lessonId
+          required: true
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [completion, lastPosition]
+              properties:
+                completion: {type: integer, minimum: 0, maximum: 100}
+                lastPosition: {type: integer, minimum: 0}
+      responses:
+        '200': {description: Progress saved}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /me/achievements:
+    get:
+      tags: [Profile]
+      security: [{bearerAuth: []}]
+      responses:
+        '200': {description: Achievement list}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /vocabulary/levels:
+    get:
+      tags: [Vocabulary]
+      summary: List JLPT N5-N1 vocabulary levels, lessons, and user progress
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Vocabulary course catalog
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items: {$ref: '#/components/schemas/VocabularyLevel'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /vocabulary/lessons/{lessonId}:
+    get:
+      tags: [Vocabulary]
+      summary: Get teaching content for a vocabulary lesson
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '200':
+          description: Lesson and vocabulary words
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /vocabulary/lessons/{lessonId}/attempts:
+    post:
+      tags: [Vocabulary]
+      summary: Start or retry a server-evaluated lesson quiz
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '201':
+          description: New attempt with questions; correct answers are withheld
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /vocabulary/attempts/{attemptId}/answers:
+    post:
+      tags: [Vocabulary]
+      summary: Submit one answer and receive educational feedback
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, optionId]
+              properties:
+                questionId: {type: string}
+                optionId: {type: string}
+      responses:
+        '200':
+          description: Correctness, correct option, and explanation
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or not owned by user}
+        '422': {description: Invalid question or option}
+  /vocabulary/attempts/{attemptId}/complete:
+    post:
+      tags: [Vocabulary]
+      summary: Complete an attempt and persist best score/progress
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      responses:
+        '200':
+          description: Score, pass status, best score, and total progress
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or not owned by user}
+        '422': {description: Not all questions have been answered}
+components:
+  securitySchemes:
+    bearerAuth: {type: http, scheme: bearer, bearerFormat: opaque-session-token}
+  parameters:
+    System:
+      in: query
+      name: system
+      schema: {type: string, enum: [JLPT, NAT, JFT]}
+    LessonId:
+      in: path
+      name: lessonId
+      required: true
+      schema: {type: string}
+    AttemptId:
+      in: path
+      name: attemptId
+      required: true
+      schema: {type: string}
+  responses:
+    AuthSession:
+      description: Authenticated session
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  token: {type: string}
+                  user: {$ref: '#/components/schemas/Profile'}
+    Profile:
+      description: User profile
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data: {$ref: '#/components/schemas/Profile'}
+    Categories:
+      description: Learning categories
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/CategoriesResponse'}
+    Tracks:
+      description: Learning tracks
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/TracksResponse'}
+    Exams:
+      description: Exams
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ExamsResponse'}
+    Plans:
+      description: Subscription plans
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/PlansResponse'}
+    Unauthorized:
+      description: Missing, invalid, or revoked token
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    PremiumRequired:
+      description: Premium entitlement required
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+  schemas:
+    VocabularyLevel:
+      type: object
+      required: [level, title, description, requiredTier, progress, lessons]
+      properties:
+        level: {type: string, enum: [N5, N4, N3, N2, N1]}
+        title: {type: string}
+        description: {type: string}
+        requiredTier: {type: string, enum: [free, premium]}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        lessons:
+          type: array
+          items: {$ref: '#/components/schemas/VocabularyLessonSummary'}
+    VocabularyLessonSummary:
+      type: object
+      required: [id, order, title, description, wordCount, bestScore, completed]
+      properties:
+        id: {type: string}
+        order: {type: integer, minimum: 1}
+        title: {type: string}
+        description: {type: string}
+        wordCount: {type: integer, minimum: 1}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        completed: {type: boolean}
+    Dashboard:
+      type: object
+      required: [isAuthenticated, dailyGoal, categories, tracks, exams, plans, achievements]
+      properties:
+        isAuthenticated: {type: boolean}
+        profile: {$ref: '#/components/schemas/Profile'}
+        dailyGoal: {$ref: '#/components/schemas/DailyGoal'}
+        categories: {type: array, items: {$ref: '#/components/schemas/LearningCategory'}}
+        tracks: {type: array, items: {$ref: '#/components/schemas/LearningTrack'}}
+        exams: {type: array, items: {$ref: '#/components/schemas/Exam'}}
+        plans: {type: array, items: {$ref: '#/components/schemas/Plan'}}
+        achievements: {type: array, items: {$ref: '#/components/schemas/Achievement'}}
+    Profile:
+      type: object
+      required: [id, displayName, email, target, level, xp, streakDays, entitlement]
+      properties:
+        id: {type: string}
+        displayName: {type: string}
+        email: {type: string, format: email}
+        photoUrl: {type: string, format: uri}
+        target: {type: string}
+        level: {type: integer}
+        xp: {type: integer}
+        streakDays: {type: integer}
+        entitlement:
+          type: object
+          properties:
+            tier: {type: string, enum: [free, premium]}
+            isLifetime: {type: boolean}
+            expiresAt: {type: string, format: date-time}
+    DailyGoal:
+      type: object
+      required: [minutesLearned, targetMinutes, streakDays]
+      properties:
+        minutesLearned: {type: integer, minimum: 0}
+        targetMinutes: {type: integer, minimum: 0}
+        streakDays: {type: integer, minimum: 0}
+    LearningCategory:
+      type: object
+      required: [id, name, description, lessonCount, requiredTier]
+      properties:
+        id: {type: string}
+        name: {type: string}
+        description: {type: string}
+        lessonCount: {type: integer}
+        requiredTier: {type: string, enum: [free, premium]}
+    LearningTrack:
+      type: object
+      required: [id, system, level, title, description, progress, requiredTier]
+      properties:
+        id: {type: string}
+        system: {type: string}
+        level: {type: string}
+        title: {type: string}
+        description: {type: string}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        requiredTier: {type: string, enum: [free, premium]}
+    Exam:
+      type: object
+      properties:
+        id: {type: string}
+        system: {type: string}
+        level: {type: string}
+        title: {type: string}
+        questionCount: {type: integer}
+        durationMinutes: {type: integer}
+        requiredTier: {type: string, enum: [free, premium]}
+    Plan:
+      type: object
+      properties:
+        id: {type: string}
+        name: {type: string}
+        billingType: {type: string, enum: [free, monthly, yearly, lifetime]}
+        priceIdr: {type: integer}
+        features: {type: array, items: {type: string}}
+        recommended: {type: boolean}
+    Achievement:
+      type: object
+      properties:
+        id: {type: string}
+        name: {type: string}
+        description: {type: string}
+        icon: {type: string}
+        progress: {type: integer}
+        target: {type: integer}
+        unlockedAt: {type: string, format: date-time}
+    CategoriesResponse:
+      type: object
+      properties:
+        data: {type: array, items: {$ref: '#/components/schemas/LearningCategory'}}
+    TracksResponse:
+      type: object
+      properties:
+        data: {type: array, items: {$ref: '#/components/schemas/LearningTrack'}}
+    ExamsResponse:
+      type: object
+      properties:
+        data: {type: array, items: {$ref: '#/components/schemas/Exam'}}
+    PlansResponse:
+      type: object
+      properties:
+        data: {type: array, items: {$ref: '#/components/schemas/Plan'}}
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code: {type: string}
+            message: {type: string}
