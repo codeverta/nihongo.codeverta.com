@@ -18,6 +18,7 @@ import (
 type Server struct {
 	store          *store.MemoryStore
 	googleVerifier backendAuth.GoogleVerifier
+	branding       *BrandingStore
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
@@ -28,6 +29,11 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerBranding(mux)
+	mux.HandleFunc("GET /v1/simulation/n5", s.requireAuth(s.simulationOverview))
+	mux.HandleFunc("GET /v1/simulation/attempts/{attemptID}", s.requireAuth(s.simulationSession))
+	mux.HandleFunc("PUT /v1/simulation/attempts/{attemptID}/answers", s.requireAuth(s.simulationAnswer))
+	mux.HandleFunc("POST /v1/simulation/attempts/{attemptID}/submit-section", s.requireAuth(s.simulationSubmit))
 	mux.HandleFunc("GET /healthz", s.health)
 	mux.HandleFunc("POST /v1/auth/login", s.login)
 	mux.HandleFunc("POST /v1/auth/google", s.googleLogin)
@@ -38,6 +44,10 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("GET /v1/learning/tracks", s.tracks)
 	mux.HandleFunc("GET /v1/exams", s.exams)
 	mux.HandleFunc("POST /v1/exam-attempts", s.requireAuth(s.startExam))
+	mux.HandleFunc("GET /v1/diagnostic/n5", s.requireAuth(s.diagnosticOverview))
+	mux.HandleFunc("GET /v1/exam-attempts/{attemptID}", s.requireAuth(s.diagnosticSession))
+	mux.HandleFunc("PUT /v1/exam-attempts/{attemptID}/answers", s.requireAuth(s.diagnosticAnswer))
+	mux.HandleFunc("POST /v1/exam-attempts/{attemptID}/complete", s.requireAuth(s.diagnosticComplete))
 	mux.HandleFunc("GET /v1/plans", s.plans)
 	mux.HandleFunc("GET /v1/me/profile", s.requireAuth(s.profile))
 	mux.HandleFunc("PATCH /v1/me/profile", s.requireAuth(s.updateProfile))
@@ -49,6 +59,21 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /v1/vocabulary/lessons/{lessonID}/attempts", s.requireAuth(s.startVocabularyAttempt))
 	mux.HandleFunc("POST /v1/vocabulary/attempts/{attemptID}/answers", s.requireAuth(s.answerVocabularyQuestion))
 	mux.HandleFunc("POST /v1/vocabulary/attempts/{attemptID}/complete", s.requireAuth(s.completeVocabularyAttempt))
+	mux.HandleFunc("GET /v1/grammar/course", s.requireAuth(s.grammarCourse))
+	mux.HandleFunc("GET /v1/grammar/lessons/{lessonID}", s.requireAuth(s.grammarLesson))
+	mux.HandleFunc("POST /v1/grammar/lessons/{lessonID}/attempts", s.requireAuth(s.startGrammarAttempt))
+	mux.HandleFunc("POST /v1/grammar/attempts/{attemptID}/answers", s.requireAuth(s.answerGrammarQuestion))
+	mux.HandleFunc("POST /v1/grammar/attempts/{attemptID}/complete", s.requireAuth(s.completeGrammarAttempt))
+	mux.HandleFunc("GET /v1/kanji/course", s.requireAuth(s.kanjiCourse))
+	mux.HandleFunc("GET /v1/kanji/lessons/{lessonID}", s.requireAuth(s.kanjiLesson))
+	mux.HandleFunc("POST /v1/kanji/lessons/{lessonID}/attempts", s.requireAuth(s.startKanjiAttempt))
+	mux.HandleFunc("POST /v1/kanji/attempts/{attemptID}/answers", s.requireAuth(s.answerKanjiQuestion))
+	mux.HandleFunc("POST /v1/kanji/attempts/{attemptID}/complete", s.requireAuth(s.completeKanjiAttempt))
+	mux.HandleFunc("GET /v1/reading/course", s.requireAuth(s.readingCourse))
+	mux.HandleFunc("GET /v1/reading/lessons/{lessonID}", s.requireAuth(s.readingLesson))
+	mux.HandleFunc("POST /v1/reading/lessons/{lessonID}/attempts", s.requireAuth(s.startReadingAttempt))
+	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/answers", s.requireAuth(s.answerReadingQuestion))
+	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/complete", s.requireAuth(s.completeReadingAttempt))
 	return s.middleware(mux)
 }
 

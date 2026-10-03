@@ -1,0 +1,1610 @@
+[
+  {
+    "ID": "reading-n5-01",
+    "Title": "Pagi bersama Hana",
+    "JapaneseTitle": "はなさんの朝",
+    "Chapter": "Keseharian",
+    "Description": "Ikuti Hana dari bangun tidur hingga berangkat sekolah.",
+    "Minutes": 6,
+    "ImageAsset": "assets/images/reading/story-01.png",
+    "Pages": [
+      {
+        "title": "Selamat pagi",
+        "japanese": "はなさんは毎朝七時に起きます。部屋には青いカーテンがあります。今日はいい天気です。",
+        "reading": "はなさんはまいあさしちじにおきます。へやにはあおいカーテンがあります。きょうはいいてんきです。",
+        "meaning": "Hana bangun pukul tujuh setiap pagi. Di kamarnya ada tirai biru. Cuaca hari ini bagus.",
+        "imageDescription": "Hana bangun di kamar dengan tirai biru pada pagi yang cerah.",
+        "vocabulary": [
+          {
+            "japanese": "毎朝",
+            "reading": "まいあさ",
+            "meaning": "setiap pagi"
+          },
+          {
+            "japanese": "起きます",
+            "reading": "おきます",
+            "meaning": "bangun"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-01.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Sarapan di rumah",
+        "japanese": "七時半に母と朝ご飯を食べます。はなさんはパンと卵を食べます。牛乳も飲みます。",
+        "reading": "しちじはんにははとあさごはんをたべます。はなさんはパンとたまごをたべます。ぎゅうにゅうものみます。",
+        "meaning": "Pukul setengah delapan, Hana sarapan bersama ibunya. Hana makan roti dan telur. Ia juga minum susu.",
+        "imageDescription": "Hana dan ibunya sarapan; di meja ada roti, telur, dan susu.",
+        "vocabulary": [
+          {
+            "japanese": "朝ご飯",
+            "reading": "あさごはん",
+            "meaning": "sarapan"
+          },
+          {
+            "japanese": "牛乳",
+            "reading": "ぎゅうにゅう",
+            "meaning": "susu"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-01.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Berangkat sekolah",
+        "japanese": "八時に友達のゆいさんと学校へ行きます。学校まで歩いて十分です。はなさんのかばんは青いです。",
+        "reading": "はちじにともだちのゆいさんとがっこうへいきます。がっこうまであるいてじゅっぷんです。はなさんのかばんはあおいです。",
+        "meaning": "Pukul delapan, Hana pergi ke sekolah bersama temannya, Yui. Perjalanan berjalan kaki ke sekolah memakan waktu sepuluh menit. Tas Hana berwarna biru.",
+        "imageDescription": "Hana berjalan menuju sekolah bersama Yui sambil membawa tas biru.",
+        "vocabulary": [
+          {
+            "japanese": "学校",
+            "reading": "がっこう",
+            "meaning": "sekolah"
+          },
+          {
+            "japanese": "歩いて",
+            "reading": "あるいて",
+            "meaning": "dengan berjalan kaki"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-01.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなさんは何時に起きますか。\nHana bangun pukul berapa?",
+        "Choices": [
+          "七時",
+          "六時",
+          "八時",
+          "九時"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat 毎朝七時に起きます menyebut Hana bangun pukul tujuh."
+      },
+      {
+        "Prompt": "朝ご飯はだれと食べますか。\nDengan siapa Hana sarapan?",
+        "Choices": [
+          "母",
+          "父",
+          "ゆいさん",
+          "先生"
+        ],
+        "Correct": 0,
+        "Explanation": "母と朝ご飯を食べます berarti sarapan bersama ibu."
+      },
+      {
+        "Prompt": "はなさんは何を飲みますか。\nApa yang diminum Hana?",
+        "Choices": [
+          "牛乳",
+          "お茶",
+          "コーヒー",
+          "ジュース"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks menyebut 牛乳も飲みます: Hana juga minum susu."
+      },
+      {
+        "Prompt": "学校までどうやって行きますか。\nBagaimana Hana pergi ke sekolah?",
+        "Choices": [
+          "歩いて",
+          "バスで",
+          "電車で",
+          "車で"
+        ],
+        "Correct": 0,
+        "Explanation": "学校まで歩いて十分です menunjukkan perjalanan dengan berjalan kaki."
+      },
+      {
+        "Prompt": "はなさんのかばんは何色ですか。\nApa warna tas Hana?",
+        "Choices": [
+          "青いです",
+          "赤いです",
+          "白いです",
+          "黒いです"
+        ],
+        "Correct": 0,
+        "Explanation": "Pada adegan terakhir, かばんは青いです berarti tasnya biru."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-02",
+    "Title": "Sehari di sekolah",
+    "JapaneseTitle": "学校の一日",
+    "Chapter": "Sekolah",
+    "Description": "Kenali pelajaran, guru, dan makan siang Hana bersama Yui.",
+    "Minutes": 6,
+    "ImageAsset": "assets/images/reading/story-02.png",
+    "Pages": [
+      {
+        "title": "Bertemu teman",
+        "japanese": "はなさんの学校は九時に始まります。教室でゆいさんに会います。二人は同じクラスです。",
+        "reading": "はなさんのがっこうはくじにはじまります。きょうしつでゆいさんにあいます。ふたりはおなじクラスです。",
+        "meaning": "Sekolah Hana dimulai pukul sembilan. Ia bertemu Yui di kelas. Mereka berdua berada di kelas yang sama.",
+        "imageDescription": "Hana dan Yui saling menyapa di pintu kelas.",
+        "vocabulary": [
+          {
+            "japanese": "教室",
+            "reading": "きょうしつ",
+            "meaning": "ruang kelas"
+          },
+          {
+            "japanese": "同じ",
+            "reading": "おなじ",
+            "meaning": "sama"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-02.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Belajar bahasa Jepang",
+        "japanese": "午前中は日本語を勉強します。先生は田中先生です。はなさんはノートに新しい言葉を書きます。",
+        "reading": "ごぜんちゅうはにほんごをべんきょうします。せんせいはたなかせんせいです。はなさんはノートにあたらしいことばをかきます。",
+        "meaning": "Pada pagi hari mereka belajar bahasa Jepang. Gurunya adalah Bu Tanaka. Hana menulis kata-kata baru di buku catatan.",
+        "imageDescription": "Bu Tanaka membantu Hana dan Yui belajar dari buku catatan.",
+        "vocabulary": [
+          {
+            "japanese": "勉強します",
+            "reading": "べんきょうします",
+            "meaning": "belajar"
+          },
+          {
+            "japanese": "言葉",
+            "reading": "ことば",
+            "meaning": "kata"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-02.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Waktu makan siang",
+        "japanese": "十二時に昼ご飯を食べます。はなさんはご飯と野菜を食べます。ゆいさんはパンを食べます。",
+        "reading": "じゅうにじにひるごはんをたべます。はなさんはごはんとやさいをたべます。ゆいさんはパンをたべます。",
+        "meaning": "Pukul dua belas mereka makan siang. Hana makan nasi dan sayuran. Yui makan roti.",
+        "imageDescription": "Hana makan nasi dan sayuran, sementara Yui makan roti di sebelahnya.",
+        "vocabulary": [
+          {
+            "japanese": "昼ご飯",
+            "reading": "ひるごはん",
+            "meaning": "makan siang"
+          },
+          {
+            "japanese": "野菜",
+            "reading": "やさい",
+            "meaning": "sayuran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-02.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "学校は何時に始まりますか。\nSekolah dimulai pukul berapa?",
+        "Choices": [
+          "九時",
+          "七時",
+          "八時",
+          "十時"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks menyatakan 学校は九時に始まります: sekolah dimulai pukul sembilan."
+      },
+      {
+        "Prompt": "はなさんとゆいさんはどんなクラスですか。\nBagaimana kelas Hana dan Yui?",
+        "Choices": [
+          "同じクラスです",
+          "違うクラスです",
+          "小さいクラスです",
+          "新しいクラスです"
+        ],
+        "Correct": 0,
+        "Explanation": "二人は同じクラスです menyebut mereka berada di kelas yang sama."
+      },
+      {
+        "Prompt": "午前中は何を勉強しますか。\nApa yang mereka pelajari pada pagi hari?",
+        "Choices": [
+          "日本語",
+          "英語",
+          "音楽",
+          "数学"
+        ],
+        "Correct": 0,
+        "Explanation": "午前中は日本語を勉強します menyebut pelajaran bahasa Jepang."
+      },
+      {
+        "Prompt": "先生の名前は何ですか。\nSiapa nama gurunya?",
+        "Choices": [
+          "田中先生",
+          "山田先生",
+          "佐藤先生",
+          "鈴木先生"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat 先生は田中先生です menyebut Bu Tanaka."
+      },
+      {
+        "Prompt": "ゆいさんは昼ご飯に何を食べますか。\nApa makan siang Yui?",
+        "Choices": [
+          "パン",
+          "ご飯と野菜",
+          "卵",
+          "魚"
+        ],
+        "Correct": 0,
+        "Explanation": "Bedakan dua tokoh: Hana makan nasi dan sayuran, Yui makan パン atau roti."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-03",
+    "Title": "Belanja bersama ibu",
+    "JapaneseTitle": "母と買い物",
+    "Chapter": "Keseharian",
+    "Description": "Pilih buah, singgah di toko roti, lalu pulang bersama ibu.",
+    "Minutes": 6,
+    "ImageAsset": "assets/images/reading/story-03.png",
+    "Pages": [
+      {
+        "title": "Di pasar buah",
+        "japanese": "土曜日にはなさんは母と買い物に行きます。店には赤いりんごと黄色いバナナがあります。母はりんごを三つ買います。",
+        "reading": "どようびにはなさんはははとかいものにいきます。みせにはあかいりんごときいろいバナナがあります。はははりんごをみっつかいます。",
+        "meaning": "Pada hari Sabtu, Hana pergi berbelanja bersama ibunya. Di toko ada apel merah dan pisang kuning. Ibu membeli tiga buah apel.",
+        "imageDescription": "Hana dan ibunya memilih apel di antara keranjang buah.",
+        "vocabulary": [
+          {
+            "japanese": "買い物",
+            "reading": "かいもの",
+            "meaning": "belanja"
+          },
+          {
+            "japanese": "三つ",
+            "reading": "みっつ",
+            "meaning": "tiga benda"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-03.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Di toko roti",
+        "japanese": "次にパン屋へ行きます。母はパンを買います。はなさんは袋を持ちます。",
+        "reading": "つぎにパンやへいきます。はははパンをかいます。はなさんはふくろをもちます。",
+        "meaning": "Selanjutnya mereka pergi ke toko roti. Ibu membeli roti. Hana membawa kantong belanja.",
+        "imageDescription": "Ibu membeli roti dari penjual, dan Hana membantu membawa belanjaan.",
+        "vocabulary": [
+          {
+            "japanese": "次に",
+            "reading": "つぎに",
+            "meaning": "selanjutnya"
+          },
+          {
+            "japanese": "袋",
+            "reading": "ふくろ",
+            "meaning": "kantong"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-03.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Kembali ke rumah",
+        "japanese": "家に帰って、りんごを食べます。りんごは甘いです。バナナは明日食べます。",
+        "reading": "いえにかえって、りんごをたべます。りんごはあまいです。バナナはあしたたべます。",
+        "meaning": "Setelah pulang ke rumah, mereka makan apel. Apelnya manis. Pisang akan dimakan besok.",
+        "imageDescription": "Hana dan ibunya menikmati apel di rumah, dengan pisang dan roti di meja.",
+        "vocabulary": [
+          {
+            "japanese": "甘い",
+            "reading": "あまい",
+            "meaning": "manis"
+          },
+          {
+            "japanese": "明日",
+            "reading": "あした",
+            "meaning": "besok"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-03.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "買い物は何曜日ですか。\nMereka berbelanja pada hari apa?",
+        "Choices": [
+          "土曜日",
+          "月曜日",
+          "水曜日",
+          "日曜日"
+        ],
+        "Correct": 0,
+        "Explanation": "Adegan pertama diawali 土曜日に, yaitu pada hari Sabtu."
+      },
+      {
+        "Prompt": "母はりんごをいくつ買いますか。\nBerapa apel yang dibeli ibu?",
+        "Choices": [
+          "三つ",
+          "一つ",
+          "二つ",
+          "五つ"
+        ],
+        "Correct": 0,
+        "Explanation": "母はりんごを三つ買います menyebut tiga buah apel."
+      },
+      {
+        "Prompt": "果物の店の次に、どこへ行きますか。\nKe mana mereka pergi setelah toko buah?",
+        "Choices": [
+          "パン屋",
+          "学校",
+          "駅",
+          "図書館"
+        ],
+        "Correct": 0,
+        "Explanation": "次にパン屋へ行きます berarti selanjutnya pergi ke toko roti."
+      },
+      {
+        "Prompt": "家で食べたりんごはどうですか。\nBagaimana rasa apel yang dimakan di rumah?",
+        "Choices": [
+          "甘いです",
+          "辛いです",
+          "冷たいです",
+          "苦いです"
+        ],
+        "Correct": 0,
+        "Explanation": "りんごは甘いです menyebut apelnya manis."
+      },
+      {
+        "Prompt": "バナナはいつ食べますか。\nKapan pisang akan dimakan?",
+        "Choices": [
+          "明日",
+          "今日の朝",
+          "昨日",
+          "来週"
+        ],
+        "Correct": 0,
+        "Explanation": "バナナは明日食べます berarti pisang akan dimakan besok."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-04",
+    "Title": "Janji di kafe",
+    "JapaneseTitle": "日曜日のカフェ",
+    "Chapter": "Teman dan keluarga",
+    "Description": "Nikmati sore santai bersama teman di kafe dekat stasiun.",
+    "Minutes": 7,
+    "ImageAsset": "assets/images/reading/story-04.png",
+    "Pages": [
+      {
+        "title": "Bertemu Yui",
+        "japanese": "日曜日の午後二時にはなさんはゆいさんと会います。二人は駅の近くのカフェへ行きます。カフェは小さいですが、きれいです。",
+        "reading": "にちようびのごごにじにはなさんはゆいさんとあいます。ふたりはえきのちかくのカフェへいきます。カフェはちいさいですが、きれいです。",
+        "meaning": "Hari Minggu pukul dua siang, Hana bertemu Yui. Mereka pergi ke kafe dekat stasiun. Kafenya kecil, tetapi bersih dan indah.",
+        "imageDescription": "Hana dan Yui bertemu di depan kafe kecil yang nyaman.",
+        "vocabulary": [
+          {
+            "japanese": "午後",
+            "reading": "ごご",
+            "meaning": "sesudah tengah hari"
+          },
+          {
+            "japanese": "近く",
+            "reading": "ちかく",
+            "meaning": "dekat"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-04.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Teh dan kue",
+        "japanese": "はなさんはお茶とケーキを注文します。ケーキにはいちごがあります。はなさんはいちごが好きです。",
+        "reading": "はなさんはおちゃとケーキをちゅうもんします。ケーキにはいちごがあります。はなさんはいちごがすきです。",
+        "meaning": "Hana memesan teh dan kue. Di atas kuenya ada stroberi. Hana menyukai stroberi.",
+        "imageDescription": "Hana menikmati secangkir teh dan sepotong kue stroberi.",
+        "vocabulary": [
+          {
+            "japanese": "お茶",
+            "reading": "おちゃ",
+            "meaning": "teh"
+          },
+          {
+            "japanese": "好き",
+            "reading": "すき",
+            "meaning": "suka"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-04.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Mengobrol bersama",
+        "japanese": "ゆいさんはオレンジジュースを飲みます。二人は学校の話をします。三時にカフェを出ます。",
+        "reading": "ゆいさんはオレンジジュースをのみます。ふたりはがっこうのはなしをします。さんじにカフェをでます。",
+        "meaning": "Yui minum jus jeruk. Mereka membicarakan sekolah. Pukul tiga mereka meninggalkan kafe.",
+        "imageDescription": "Yui minum jus jeruk sambil berbincang dengan Hana.",
+        "vocabulary": [
+          {
+            "japanese": "話",
+            "reading": "はなし",
+            "meaning": "cerita; pembicaraan"
+          },
+          {
+            "japanese": "出ます",
+            "reading": "でます",
+            "meaning": "keluar"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-04.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "二人はいつ会いますか。\nKapan Hana dan Yui bertemu?",
+        "Choices": [
+          "日曜日の午後二時",
+          "土曜日の午前二時",
+          "日曜日の午前九時",
+          "月曜日の午後三時"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks menyebut 日曜日の午後二時: hari Minggu pukul dua siang."
+      },
+      {
+        "Prompt": "カフェはどこにありますか。\nDi mana letak kafe?",
+        "Choices": [
+          "駅の近く",
+          "学校の中",
+          "家の前",
+          "公園の中"
+        ],
+        "Correct": 0,
+        "Explanation": "駅の近くのカフェ berarti kafe dekat stasiun."
+      },
+      {
+        "Prompt": "はなさんは何が好きですか。\nApa yang disukai Hana?",
+        "Choices": [
+          "いちご",
+          "バナナ",
+          "りんご",
+          "オレンジ"
+        ],
+        "Correct": 0,
+        "Explanation": "はなさんはいちごが好きです menyebut Hana menyukai stroberi."
+      },
+      {
+        "Prompt": "ゆいさんは何を飲みますか。\nApa yang diminum Yui?",
+        "Choices": [
+          "オレンジジュース",
+          "お茶",
+          "牛乳",
+          "コーヒー"
+        ],
+        "Correct": 0,
+        "Explanation": "Yui minum オレンジジュース; teh adalah pesanan Hana."
+      },
+      {
+        "Prompt": "二人は何時にカフェを出ますか。\nPukul berapa mereka meninggalkan kafe?",
+        "Choices": [
+          "三時",
+          "二時",
+          "四時",
+          "五時"
+        ],
+        "Correct": 0,
+        "Explanation": "三時にカフェを出ます menyatakan mereka keluar pukul tiga."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-05",
+    "Title": "Piknik di taman",
+    "JapaneseTitle": "公園でピクニック",
+    "Chapter": "Teman dan keluarga",
+    "Description": "Baca tentang piknik keluarga dan anjing putih yang ceria.",
+    "Minutes": 7,
+    "ImageAsset": "assets/images/reading/story-05.png",
+    "Pages": [
+      {
+        "title": "Hari Minggu cerah",
+        "japanese": "日曜日はいい天気です。はなさんは父と母と公園へ行きます。公園には大きい木がたくさんあります。",
+        "reading": "にちようびはいいてんきです。はなさんはちちとははとこうえんへいきます。こうえんにはおおきいきがたくさんあります。",
+        "meaning": "Cuaca hari Minggu bagus. Hana pergi ke taman bersama ayah dan ibunya. Di taman ada banyak pohon besar.",
+        "imageDescription": "Hana dan kedua orang tuanya memasuki taman yang hijau.",
+        "vocabulary": [
+          {
+            "japanese": "公園",
+            "reading": "こうえん",
+            "meaning": "taman"
+          },
+          {
+            "japanese": "たくさん",
+            "reading": "たくさん",
+            "meaning": "banyak"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-05.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Makan di bawah pohon",
+        "japanese": "十二時に木の下で昼ご飯を食べます。母はサンドイッチを作りました。はなさんは水を飲みます。",
+        "reading": "じゅうにじにきのしたでひるごはんをたべます。はははサンドイッチをつくりました。はなさんはみずをのみます。",
+        "meaning": "Pukul dua belas, mereka makan siang di bawah pohon. Ibu telah membuat sandwich. Hana minum air.",
+        "imageDescription": "Keluarga Hana menikmati sandwich di atas alas piknik di bawah pohon.",
+        "vocabulary": [
+          {
+            "japanese": "下",
+            "reading": "した",
+            "meaning": "bawah"
+          },
+          {
+            "japanese": "作りました",
+            "reading": "つくりました",
+            "meaning": "telah membuat"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-05.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Bermain dengan anjing",
+        "japanese": "家の犬も公園に来ました。犬は小さくて白いです。はなさんは犬と遊びます。",
+        "reading": "いえのいぬもこうえんにきました。いぬはちいさくてしろいです。はなさんはいぬとあそびます。",
+        "meaning": "Anjing keluarga juga ikut datang ke taman. Anjingnya kecil dan putih. Hana bermain bersama anjing itu.",
+        "imageDescription": "Hana bermain dengan anjing putih kecil sementara orang tuanya beristirahat.",
+        "vocabulary": [
+          {
+            "japanese": "白い",
+            "reading": "しろい",
+            "meaning": "putih"
+          },
+          {
+            "japanese": "遊びます",
+            "reading": "あそびます",
+            "meaning": "bermain"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-05.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなさんはだれと公園へ行きますか。\nDengan siapa Hana pergi ke taman?",
+        "Choices": [
+          "父と母",
+          "ゆいさん",
+          "先生",
+          "弟"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks menyebut 父と母と公園へ行きます: pergi bersama ayah dan ibu."
+      },
+      {
+        "Prompt": "昼ご飯はどこで食べますか。\nDi mana mereka makan siang?",
+        "Choices": [
+          "木の下",
+          "カフェの中",
+          "駅の前",
+          "家の中"
+        ],
+        "Correct": 0,
+        "Explanation": "木の下で昼ご飯を食べます berarti makan siang di bawah pohon."
+      },
+      {
+        "Prompt": "母は何を作りましたか。\nApa yang dibuat ibu?",
+        "Choices": [
+          "サンドイッチ",
+          "ケーキ",
+          "カレー",
+          "卵"
+        ],
+        "Correct": 0,
+        "Explanation": "母はサンドイッチを作りました menyebut ibu membuat sandwich."
+      },
+      {
+        "Prompt": "犬はどんな犬ですか。\nSeperti apa anjing keluarga Hana?",
+        "Choices": [
+          "小さくて白い",
+          "大きくて黒い",
+          "小さくて黒い",
+          "大きくて白い"
+        ],
+        "Correct": 0,
+        "Explanation": "犬は小さくて白いです menjelaskan anjingnya kecil dan putih."
+      },
+      {
+        "Prompt": "はなさんは最後に何をしますか。\nApa yang dilakukan Hana di akhir cerita?",
+        "Choices": [
+          "犬と遊びます",
+          "本を読みます",
+          "学校へ行きます",
+          "パンを買います"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat terakhir adalah はなさんは犬と遊びます: Hana bermain dengan anjing."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-06",
+    "Title": "Naik kereta bersama Kenta",
+    "JapaneseTitle": "弟と電車に乗ります",
+    "Chapter": "Perjalanan",
+    "Description": "Ikuti perjalanan Hana dan adiknya dari stasiun ke perpustakaan.",
+    "Minutes": 7,
+    "ImageAsset": "assets/images/reading/story-06.png",
+    "Pages": [
+      {
+        "title": "Membeli tiket",
+        "japanese": "はなさんは弟のけんたさんと駅へ行きます。二人は図書館へ行きたいです。駅で切符を買います。",
+        "reading": "はなさんはおとうとのけんたさんとえきへいきます。ふたりはとしょかんへいきたいです。えきできっぷをかいます。",
+        "meaning": "Hana pergi ke stasiun bersama adik laki-lakinya, Kenta. Mereka ingin pergi ke perpustakaan. Mereka membeli tiket di stasiun.",
+        "imageDescription": "Hana dan Kenta membeli tiket di mesin tiket stasiun.",
+        "vocabulary": [
+          {
+            "japanese": "弟",
+            "reading": "おとうと",
+            "meaning": "adik laki-laki"
+          },
+          {
+            "japanese": "切符",
+            "reading": "きっぷ",
+            "meaning": "tiket"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-06.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Di dalam kereta",
+        "japanese": "十時の電車に乗ります。電車はあまり混んでいません。はなさんは窓の外を見ます。",
+        "reading": "じゅうじのでんしゃにのります。でんしゃはあまりこんでいません。はなさんはまどのそとをみます。",
+        "meaning": "Mereka naik kereta pukul sepuluh. Keretanya tidak terlalu penuh. Hana melihat ke luar jendela.",
+        "imageDescription": "Hana dan Kenta duduk di kereta sambil melihat pemandangan melalui jendela.",
+        "vocabulary": [
+          {
+            "japanese": "乗ります",
+            "reading": "のります",
+            "meaning": "naik kendaraan"
+          },
+          {
+            "japanese": "窓",
+            "reading": "まど",
+            "meaning": "jendela"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-06.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Sampai di perpustakaan",
+        "japanese": "電車で二十分かかります。駅から図書館まで五分歩きます。図書館は大きくて新しいです。",
+        "reading": "でんしゃでにじゅっぷんかかります。えきからとしょかんまでごふんあるきます。としょかんはおおきくてあたらしいです。",
+        "meaning": "Perjalanan dengan kereta memakan waktu dua puluh menit. Dari stasiun mereka berjalan lima menit ke perpustakaan. Perpustakaannya besar dan baru.",
+        "imageDescription": "Hana dan Kenta tiba di depan perpustakaan dengan jendela besar.",
+        "vocabulary": [
+          {
+            "japanese": "かかります",
+            "reading": "かかります",
+            "meaning": "memakan waktu"
+          },
+          {
+            "japanese": "新しい",
+            "reading": "あたらしい",
+            "meaning": "baru"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-06.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "けんたさんははなさんのだれですか。\nApa hubungan Kenta dengan Hana?",
+        "Choices": [
+          "弟",
+          "兄",
+          "父",
+          "先生"
+        ],
+        "Correct": 0,
+        "Explanation": "弟のけんたさん menunjukkan Kenta adalah adik laki-laki Hana."
+      },
+      {
+        "Prompt": "二人はどこへ行きたいですか。\nKe mana mereka ingin pergi?",
+        "Choices": [
+          "図書館",
+          "学校",
+          "公園",
+          "パン屋"
+        ],
+        "Correct": 0,
+        "Explanation": "二人は図書館へ行きたいです berarti mereka ingin pergi ke perpustakaan."
+      },
+      {
+        "Prompt": "何時の電車に乗りますか。\nMereka naik kereta pukul berapa?",
+        "Choices": [
+          "十時",
+          "九時",
+          "十一時",
+          "十二時"
+        ],
+        "Correct": 0,
+        "Explanation": "十時の電車に乗ります menyebut kereta pukul sepuluh."
+      },
+      {
+        "Prompt": "電車で何分かかりますか。\nBerapa lama perjalanan dengan kereta?",
+        "Choices": [
+          "二十分",
+          "五分",
+          "十分",
+          "三十分"
+        ],
+        "Correct": 0,
+        "Explanation": "電車で二十分かかります menyebut dua puluh menit. Lima menit adalah perjalanan kaki dari stasiun."
+      },
+      {
+        "Prompt": "図書館はどんな建物ですか。\nSeperti apa perpustakaannya?",
+        "Choices": [
+          "大きくて新しい",
+          "小さくて古い",
+          "大きくて古い",
+          "小さくて新しい"
+        ],
+        "Correct": 0,
+        "Explanation": "図書館は大きくて新しいです berarti perpustakaannya besar dan baru."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-07",
+    "Title": "Hari hujan dan payung merah",
+    "JapaneseTitle": "雨の日",
+    "Chapter": "Keseharian",
+    "Description": "Temani Hana saat hujan mengubah cara berangkat ke sekolah.",
+    "Minutes": 7,
+    "ImageAsset": "assets/images/reading/story-07.png",
+    "Pages": [
+      {
+        "title": "Hujan sejak pagi",
+        "japanese": "今日は朝から雨です。はなさんは窓の外を見ます。学校へ行く前に赤い傘を持ちます。",
+        "reading": "きょうはあさからあめです。はなさんはまどのそとをみます。がっこうへいくまえにあかいかさをもちます。",
+        "meaning": "Hari ini hujan sejak pagi. Hana melihat ke luar jendela. Sebelum pergi ke sekolah, ia membawa payung merah.",
+        "imageDescription": "Hana melihat hujan dari jendela kamar sambil menyiapkan payung merah.",
+        "vocabulary": [
+          {
+            "japanese": "雨",
+            "reading": "あめ",
+            "meaning": "hujan"
+          },
+          {
+            "japanese": "傘",
+            "reading": "かさ",
+            "meaning": "payung"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-07.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Menunggu bus",
+        "japanese": "雨が強いですから、今日はバスで学校へ行きます。バス停でゆいさんに会います。二人は同じ傘の下でバスを待ちます。",
+        "reading": "あめがつよいですから、きょうはバスでがっこうへいきます。バスていでゆいさんにあいます。ふたりはおなじかさのしたでバスをまちます。",
+        "meaning": "Karena hujannya deras, hari ini Hana pergi ke sekolah dengan bus. Ia bertemu Yui di halte. Mereka menunggu bus di bawah payung yang sama.",
+        "imageDescription": "Hana dan Yui berlindung di bawah satu payung merah saat bus mendekat.",
+        "vocabulary": [
+          {
+            "japanese": "バス停",
+            "reading": "バスてい",
+            "meaning": "halte bus"
+          },
+          {
+            "japanese": "待ちます",
+            "reading": "まちます",
+            "meaning": "menunggu"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-07.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Sore yang tenang",
+        "japanese": "学校から帰って、本を読みます。温かいお茶も飲みます。外はまだ雨ですが、家の中は暖かいです。",
+        "reading": "がっこうからかえって、ほんをよみます。あたたかいおちゃものみます。そとはまだあめですが、いえのなかはあたたかいです。",
+        "meaning": "Setelah pulang dari sekolah, Hana membaca buku. Ia juga minum teh hangat. Di luar masih hujan, tetapi di dalam rumah terasa hangat.",
+        "imageDescription": "Hana membaca buku dan minum teh hangat di rumah saat hujan masih turun.",
+        "vocabulary": [
+          {
+            "japanese": "温かい",
+            "reading": "あたたかい",
+            "meaning": "hangat; untuk benda/minuman"
+          },
+          {
+            "japanese": "まだ",
+            "reading": "まだ",
+            "meaning": "masih"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-07.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなさんの傘は何色ですか。\nApa warna payung Hana?",
+        "Choices": [
+          "赤い",
+          "青い",
+          "白い",
+          "黒い"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks menyebut 赤い傘, yaitu payung merah."
+      },
+      {
+        "Prompt": "どうしてバスで学校へ行きますか。\nMengapa Hana pergi dengan bus?",
+        "Choices": [
+          "雨が強いから",
+          "学校が遠いから",
+          "遅く起きたから",
+          "かばんが重いから"
+        ],
+        "Correct": 0,
+        "Explanation": "雨が強いですから secara langsung menjelaskan alasan: hujannya deras."
+      },
+      {
+        "Prompt": "ゆいさんにどこで会いますか。\nDi mana Hana bertemu Yui?",
+        "Choices": [
+          "バス停",
+          "教室",
+          "図書館",
+          "カフェ"
+        ],
+        "Correct": 0,
+        "Explanation": "バス停でゆいさんに会います berarti bertemu Yui di halte bus."
+      },
+      {
+        "Prompt": "家に帰って何をしますか。\nApa yang dilakukan Hana setelah pulang?",
+        "Choices": [
+          "本を読みます",
+          "犬と遊びます",
+          "買い物をします",
+          "ケーキを作ります"
+        ],
+        "Correct": 0,
+        "Explanation": "学校から帰って、本を読みます menyebut membaca buku setelah pulang."
+      },
+      {
+        "Prompt": "最後に、外の天気はどうですか。\nBagaimana cuaca di luar pada akhir cerita?",
+        "Choices": [
+          "まだ雨です",
+          "晴れです",
+          "雪です",
+          "雨がやみました"
+        ],
+        "Correct": 0,
+        "Explanation": "外はまだ雨です menyatakan di luar masih hujan; tidak disebut hujan sudah berhenti."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-08",
+    "Title": "Buku untuk dibaca",
+    "JapaneseTitle": "図書館で",
+    "Chapter": "Sekolah",
+    "Description": "Cari buku, membaca dengan tenang, dan meminjamnya untuk rumah.",
+    "Minutes": 8,
+    "ImageAsset": "assets/images/reading/story-08.png",
+    "Pages": [
+      {
+        "title": "Memilih buku",
+        "japanese": "はなさんとゆいさんは図書館へ行きます。図書館には本がたくさんあります。はなさんは日本語の本と動物の本を選びます。",
+        "reading": "はなさんとゆいさんはとしょかんへいきます。としょかんにはほんがたくさんあります。はなさんはにほんごのほんとどうぶつのほんをえらびます。",
+        "meaning": "Hana dan Yui pergi ke perpustakaan. Di sana ada banyak buku. Hana memilih buku bahasa Jepang dan buku tentang hewan.",
+        "imageDescription": "Hana dan Yui mencari buku di rak perpustakaan.",
+        "vocabulary": [
+          {
+            "japanese": "図書館",
+            "reading": "としょかん",
+            "meaning": "perpustakaan"
+          },
+          {
+            "japanese": "動物",
+            "reading": "どうぶつ",
+            "meaning": "hewan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-08.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Membaca dengan tenang",
+        "japanese": "二人は窓の近くに座ります。図書館の中は静かです。はなさんは一時間本を読みます。",
+        "reading": "ふたりはまどのちかくにすわります。としょかんのなかはしずかです。はなさんはいちじかんほんをよみます。",
+        "meaning": "Mereka duduk di dekat jendela. Di dalam perpustakaan suasananya tenang. Hana membaca buku selama satu jam.",
+        "imageDescription": "Hana dan Yui membaca di meja dekat jendela perpustakaan.",
+        "vocabulary": [
+          {
+            "japanese": "座ります",
+            "reading": "すわります",
+            "meaning": "duduk"
+          },
+          {
+            "japanese": "静か",
+            "reading": "しずか",
+            "meaning": "tenang"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-08.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Meminjam dua buku",
+        "japanese": "はなさんは本を二冊借ります。家でも読みたいです。四時にゆいさんと図書館を出ます。",
+        "reading": "はなさんはほんをにさつかります。いえでもよみたいです。よじにゆいさんととしょかんをでます。",
+        "meaning": "Hana meminjam dua buku. Ia ingin membacanya juga di rumah. Pukul empat, ia dan Yui meninggalkan perpustakaan.",
+        "imageDescription": "Hana meminjam dua buku di meja layanan sebelum pulang bersama Yui.",
+        "vocabulary": [
+          {
+            "japanese": "二冊",
+            "reading": "にさつ",
+            "meaning": "dua buku"
+          },
+          {
+            "japanese": "借ります",
+            "reading": "かります",
+            "meaning": "meminjam"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-08.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなさんはどんな本を選びますか。\nBuku apa yang dipilih Hana?",
+        "Choices": [
+          "日本語の本と動物の本",
+          "料理の本と車の本",
+          "英語の本と料理の本",
+          "音楽の本と日本語の本"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks secara langsung menyebut 日本語の本と動物の本: buku bahasa Jepang dan hewan."
+      },
+      {
+        "Prompt": "二人はどこに座りますか。\nDi mana mereka duduk?",
+        "Choices": [
+          "窓の近く",
+          "入口の外",
+          "駅の前",
+          "木の下"
+        ],
+        "Correct": 0,
+        "Explanation": "窓の近くに座ります berarti duduk dekat jendela."
+      },
+      {
+        "Prompt": "はなさんはどのくらい本を読みますか。\nBerapa lama Hana membaca?",
+        "Choices": [
+          "一時間",
+          "十分",
+          "二時間",
+          "三十分"
+        ],
+        "Correct": 0,
+        "Explanation": "一時間本を読みます menyebut membaca selama satu jam."
+      },
+      {
+        "Prompt": "はなさんは本を何冊借りますか。\nBerapa buku yang dipinjam Hana?",
+        "Choices": [
+          "二冊",
+          "一冊",
+          "三冊",
+          "四冊"
+        ],
+        "Correct": 0,
+        "Explanation": "本を二冊借ります menyebut dua buku; 冊 adalah penghitung buku."
+      },
+      {
+        "Prompt": "どうして本を借りますか。\nMengapa Hana meminjam buku?",
+        "Choices": [
+          "家でも読みたいから",
+          "友達にあげたいから",
+          "本を買いたいから",
+          "先生に見せたいから"
+        ],
+        "Correct": 0,
+        "Explanation": "家でも読みたいです menjelaskan ia ingin membaca buku itu juga di rumah."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-09",
+    "Title": "Ulang tahun Yui",
+    "JapaneseTitle": "ゆいさんの誕生日",
+    "Chapter": "Teman dan keluarga",
+    "Description": "Siapkan hadiah kecil dan rayakan ulang tahun bersama teman.",
+    "Minutes": 8,
+    "ImageAsset": "assets/images/reading/story-09.png",
+    "Pages": [
+      {
+        "title": "Menyiapkan hadiah",
+        "japanese": "土曜日はゆいさんの誕生日です。ゆいさんは十七歳になります。はなさんは本とカードを買います。",
+        "reading": "どようびはゆいさんのたんじょうびです。ゆいさんはじゅうななさいになります。はなさんはほんとカードをかいます。",
+        "meaning": "Hari Sabtu adalah ulang tahun Yui. Yui akan berusia tujuh belas tahun. Hana membeli buku dan kartu ucapan.",
+        "imageDescription": "Hana menyiapkan buku dan kartu sebagai hadiah untuk Yui.",
+        "vocabulary": [
+          {
+            "japanese": "誕生日",
+            "reading": "たんじょうび",
+            "meaning": "ulang tahun"
+          },
+          {
+            "japanese": "歳",
+            "reading": "さい",
+            "meaning": "tahun; untuk usia"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-09.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Pesta di rumah Yui",
+        "japanese": "午後六時にゆいさんの家へ行きます。ゆいさんの家族もいます。みんなでケーキを食べます。",
+        "reading": "ごごろくじにゆいさんのいえへいきます。ゆいさんのかぞくもいます。みんなでケーキをたべます。",
+        "meaning": "Pukul enam sore, Hana pergi ke rumah Yui. Keluarga Yui juga ada di sana. Mereka semua makan kue bersama.",
+        "imageDescription": "Hana, Yui, dan keluarga berkumpul di sekitar kue ulang tahun.",
+        "vocabulary": [
+          {
+            "japanese": "家族",
+            "reading": "かぞく",
+            "meaning": "keluarga"
+          },
+          {
+            "japanese": "みんな",
+            "reading": "みんな",
+            "meaning": "semua orang"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-09.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Hadiah dan senyum",
+        "japanese": "はなさんはゆいさんにプレゼントをあげます。ゆいさんは「ありがとう」と言います。はなさんは八時に家に帰ります。",
+        "reading": "はなさんはゆいさんにプレゼントをあげます。ゆいさんは「ありがとう」といいます。はなさんははちじにいえにかえります。",
+        "meaning": "Hana memberikan hadiah kepada Yui. Yui mengucapkan terima kasih. Hana pulang ke rumah pukul delapan malam.",
+        "imageDescription": "Hana menyerahkan hadiah kepada Yui yang tersenyum senang.",
+        "vocabulary": [
+          {
+            "japanese": "あげます",
+            "reading": "あげます",
+            "meaning": "memberikan"
+          },
+          {
+            "japanese": "帰ります",
+            "reading": "かえります",
+            "meaning": "pulang"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-09.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "ゆいさんの誕生日は何曜日ですか。\nUlang tahun Yui pada hari apa?",
+        "Choices": [
+          "土曜日",
+          "金曜日",
+          "日曜日",
+          "月曜日"
+        ],
+        "Correct": 0,
+        "Explanation": "土曜日はゆいさんの誕生日です menyebut hari Sabtu."
+      },
+      {
+        "Prompt": "ゆいさんは何歳になりますか。\nYui akan berusia berapa?",
+        "Choices": [
+          "十七歳",
+          "十六歳",
+          "十八歳",
+          "二十歳"
+        ],
+        "Correct": 0,
+        "Explanation": "ゆいさんは十七歳になります berarti Yui akan berusia tujuh belas tahun."
+      },
+      {
+        "Prompt": "はなさんは何を買いますか。\nApa yang dibeli Hana?",
+        "Choices": [
+          "本とカード",
+          "花とりんご",
+          "パンと卵",
+          "かばんと傘"
+        ],
+        "Correct": 0,
+        "Explanation": "Teks menyebut 本とカードを買います: membeli buku dan kartu."
+      },
+      {
+        "Prompt": "パーティーで何を食べますか。\nApa yang dimakan bersama di pesta?",
+        "Choices": [
+          "ケーキ",
+          "サンドイッチ",
+          "カレー",
+          "魚"
+        ],
+        "Correct": 0,
+        "Explanation": "みんなでケーキを食べます berarti semua makan kue bersama."
+      },
+      {
+        "Prompt": "はなさんは何時に家に帰りますか。\nPukul berapa Hana pulang?",
+        "Choices": [
+          "八時",
+          "六時",
+          "七時",
+          "九時"
+        ],
+        "Correct": 0,
+        "Explanation": "Hana datang pukul enam dan pulang pukul delapan, sesuai 八時に家に帰ります."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-10",
+    "Title": "Kucing kecil bernama Momo",
+    "JapaneseTitle": "小さいねこ",
+    "Chapter": "Teman dan keluarga",
+    "Description": "Kenali Momo, kucing putih yang menjadi teman baru Hana.",
+    "Minutes": 8,
+    "ImageAsset": "assets/images/reading/story-10.png",
+    "Pages": [
+      {
+        "title": "Momo di taman",
+        "japanese": "日曜日にはなさんは父と公園へ行きます。友達が小さいねこを連れて来ます。ねこの名前はももです。",
+        "reading": "にちようびにはなさんはちちとこうえんへいきます。ともだちがちいさいねこをつれてきます。ねこのなまえはももです。",
+        "meaning": "Pada hari Minggu, Hana pergi ke taman bersama ayahnya. Seorang teman membawa kucing kecil. Nama kucing itu Momo.",
+        "imageDescription": "Hana dan ayahnya bertemu teman yang membawa kucing putih kecil di taman.",
+        "vocabulary": [
+          {
+            "japanese": "連れて来ます",
+            "reading": "つれてきます",
+            "meaning": "membawa seseorang/hewan ke sini"
+          },
+          {
+            "japanese": "名前",
+            "reading": "なまえ",
+            "meaning": "nama"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-10.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Teman baru di rumah",
+        "japanese": "ももは白いねこです。友達はももをはなさんにあげます。はなさんは父とももを家に連れて帰ります。",
+        "reading": "ももはしろいねこです。ともだちはももをはなさんにあげます。はなさんはちちとももをいえにつれてかえります。",
+        "meaning": "Momo adalah kucing putih. Teman Hana memberikan Momo kepadanya. Hana dan ayahnya membawa Momo pulang.",
+        "imageDescription": "Hana dan ayahnya membawa Momo pulang ke rumah dengan aman.",
+        "vocabulary": [
+          {
+            "japanese": "白い",
+            "reading": "しろい",
+            "meaning": "putih"
+          },
+          {
+            "japanese": "連れて帰ります",
+            "reading": "つれてかえります",
+            "meaning": "membawa pulang"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-10.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Momo makan dan beristirahat",
+        "japanese": "母はももに食べ物と水をあげます。ももは食べてから、いすの下で寝ます。はなさんはとてもうれしいです。",
+        "reading": "はははももにたべものとみずをあげます。ももはたべてから、いすのしたでねます。はなさんはとてもうれしいです。",
+        "meaning": "Ibu memberi Momo makanan dan air. Setelah makan, Momo tidur di bawah kursi. Hana sangat senang.",
+        "imageDescription": "Momo beristirahat di dekat kursi, dengan mangkuk makanan dan air di rumah Hana.",
+        "vocabulary": [
+          {
+            "japanese": "食べ物",
+            "reading": "たべもの",
+            "meaning": "makanan"
+          },
+          {
+            "japanese": "寝ます",
+            "reading": "ねます",
+            "meaning": "tidur"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-10.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "ねこの名前は何ですか。\nSiapa nama kucingnya?",
+        "Choices": [
+          "もも",
+          "はな",
+          "ゆい",
+          "けんた"
+        ],
+        "Correct": 0,
+        "Explanation": "ねこの名前はももです menyebut kucing itu bernama Momo."
+      },
+      {
+        "Prompt": "ももは何色ですか。\nApa warna Momo?",
+        "Choices": [
+          "白い",
+          "黒い",
+          "茶色い",
+          "灰色"
+        ],
+        "Correct": 0,
+        "Explanation": "ももは白いねこです menyatakan Momo adalah kucing putih."
+      },
+      {
+        "Prompt": "だれがももをはなさんにあげますか。\nSiapa yang memberikan Momo kepada Hana?",
+        "Choices": [
+          "友達",
+          "母",
+          "先生",
+          "弟"
+        ],
+        "Correct": 0,
+        "Explanation": "友達はももをはなさんにあげます berarti seorang teman memberikan Momo kepada Hana."
+      },
+      {
+        "Prompt": "ももは食べてから何をしますか。\nApa yang dilakukan Momo setelah makan?",
+        "Choices": [
+          "いすの下で寝ます",
+          "公園へ行きます",
+          "水を買います",
+          "窓の外を見ます"
+        ],
+        "Correct": 0,
+        "Explanation": "食べてから、いすの下で寝ます menunjukkan urutan: makan, lalu tidur di bawah kursi."
+      },
+      {
+        "Prompt": "最後にはなさんはどんな気持ちですか。\nBagaimana perasaan Hana di akhir cerita?",
+        "Choices": [
+          "とてもうれしい",
+          "とても悲しい",
+          "少し怖い",
+          "とても眠い"
+        ],
+        "Correct": 0,
+        "Explanation": "はなさんはとてもうれしいです berarti Hana sangat senang."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-11",
+    "Title": "Perjalanan ke pantai",
+    "JapaneseTitle": "家族と海へ",
+    "Chapter": "Perjalanan",
+    "Description": "Habiskan hari musim panas dengan bermain dan makan di pantai.",
+    "Minutes": 8,
+    "ImageAsset": "assets/images/reading/story-11.png",
+    "Pages": [
+      {
+        "title": "Berangkat bersama keluarga",
+        "japanese": "夏休みにはなさんは家族と海へ行きます。朝九時に電車に乗ります。父は大きいかばんを持っています。",
+        "reading": "なつやすみにはなさんはかぞくとうみへいきます。あさくじにでんしゃにのります。ちちはおおきいかばんをもっています。",
+        "meaning": "Saat liburan musim panas, Hana pergi ke pantai bersama keluarganya. Mereka naik kereta pukul sembilan pagi. Ayah membawa tas besar.",
+        "imageDescription": "Hana dan keluarganya berada di kereta pada hari musim panas.",
+        "vocabulary": [
+          {
+            "japanese": "夏休み",
+            "reading": "なつやすみ",
+            "meaning": "liburan musim panas"
+          },
+          {
+            "japanese": "海",
+            "reading": "うみ",
+            "meaning": "laut; pantai"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-11.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Bermain di pantai",
+        "japanese": "海は青くて、とてもきれいです。はなさんと弟は海の近くで遊びます。母は写真を撮ります。",
+        "reading": "うみはあおくて、とてもきれいです。はなさんとおとうとはうみのちかくであそびます。はははしゃしんをとります。",
+        "meaning": "Lautnya biru dan sangat indah. Hana dan adiknya bermain di dekat laut. Ibu mengambil foto.",
+        "imageDescription": "Hana dan Kenta bermain di pasir dekat laut, sementara ibu memotret.",
+        "vocabulary": [
+          {
+            "japanese": "写真",
+            "reading": "しゃしん",
+            "meaning": "foto"
+          },
+          {
+            "japanese": "撮ります",
+            "reading": "とります",
+            "meaning": "mengambil foto"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-11.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Makan siang dan pulang",
+        "japanese": "昼におにぎりを食べます。今日は暑いですから、水をたくさん飲みます。午後五時に家へ帰ります。",
+        "reading": "ひるにおにぎりをたべます。きょうはあついですから、みずをたくさんのみます。ごごごじにいえへかえります。",
+        "meaning": "Pada siang hari mereka makan onigiri. Karena hari ini panas, mereka minum banyak air. Pukul lima sore mereka pulang ke rumah.",
+        "imageDescription": "Keluarga Hana makan onigiri di pantai dengan botol air di dekat mereka.",
+        "vocabulary": [
+          {
+            "japanese": "暑い",
+            "reading": "あつい",
+            "meaning": "panas; untuk cuaca"
+          },
+          {
+            "japanese": "おにぎり",
+            "reading": "おにぎり",
+            "meaning": "nasi kepal"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-11.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "家族はいつ海へ行きますか。\nKapan keluarga Hana pergi ke pantai?",
+        "Choices": [
+          "夏休み",
+          "冬休み",
+          "毎朝",
+          "昨日の夜"
+        ],
+        "Correct": 0,
+        "Explanation": "Cerita dimulai 夏休みに: saat liburan musim panas."
+      },
+      {
+        "Prompt": "海へどうやって行きますか。\nBagaimana mereka pergi ke pantai?",
+        "Choices": [
+          "電車で",
+          "バスで",
+          "車で",
+          "歩いて"
+        ],
+        "Correct": 0,
+        "Explanation": "朝九時に電車に乗ります menunjukkan mereka naik kereta."
+      },
+      {
+        "Prompt": "だれが写真を撮りますか。\nSiapa yang mengambil foto?",
+        "Choices": [
+          "母",
+          "父",
+          "弟",
+          "はなさん"
+        ],
+        "Correct": 0,
+        "Explanation": "母は写真を撮ります menyebut ibu yang mengambil foto."
+      },
+      {
+        "Prompt": "どうして水をたくさん飲みますか。\nMengapa mereka minum banyak air?",
+        "Choices": [
+          "暑いから",
+          "寒いから",
+          "雨だから",
+          "お金がないから"
+        ],
+        "Correct": 0,
+        "Explanation": "今日は暑いですから menjelaskan alasannya: hari itu panas."
+      },
+      {
+        "Prompt": "何時に家へ帰りますか。\nPukul berapa mereka pulang?",
+        "Choices": [
+          "午後五時",
+          "午前九時",
+          "午後三時",
+          "午後六時"
+        ],
+        "Correct": 0,
+        "Explanation": "午後五時に家へ帰ります menyatakan pulang pukul lima sore."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n5-12",
+    "Title": "Akhir pekan yang menyenangkan",
+    "JapaneseTitle": "楽しい週末",
+    "Chapter": "Keseharian",
+    "Description": "Susun urutan kegiatan Hana selama Sabtu dan Minggu.",
+    "Minutes": 9,
+    "ImageAsset": "assets/images/reading/story-12.png",
+    "Pages": [
+      {
+        "title": "Sabtu pagi",
+        "japanese": "土曜日の朝、はなさんは部屋を掃除します。机の上の本を片付けます。それから、母と昼ご飯を作ります。",
+        "reading": "どようびのあさ、はなさんはへやをそうじします。つくえのうえのほんをかたづけます。それから、ははとひるごはんをつくります。",
+        "meaning": "Sabtu pagi, Hana membersihkan kamar. Ia merapikan buku di atas meja. Setelah itu ia membuat makan siang bersama ibu.",
+        "imageDescription": "Hana merapikan buku dan membersihkan kamarnya yang cerah.",
+        "vocabulary": [
+          {
+            "japanese": "掃除します",
+            "reading": "そうじします",
+            "meaning": "membersihkan"
+          },
+          {
+            "japanese": "片付けます",
+            "reading": "かたづけます",
+            "meaning": "merapikan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-12.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Memasak bersama ibu",
+        "japanese": "今日の昼ご飯はカレーです。母は野菜を切ります。はなさんはお皿をテーブルに置きます。",
+        "reading": "きょうのひるごはんはカレーです。はははやさいをきります。はなさんはおさらをテーブルにおきます。",
+        "meaning": "Makan siang hari ini adalah kari. Ibu memotong sayuran. Hana meletakkan piring di meja.",
+        "imageDescription": "Hana membantu ibu menyiapkan kari dan menata piring di dapur.",
+        "vocabulary": [
+          {
+            "japanese": "切ります",
+            "reading": "きります",
+            "meaning": "memotong"
+          },
+          {
+            "japanese": "置きます",
+            "reading": "おきます",
+            "meaning": "meletakkan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-12.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Rencana hari Minggu",
+        "japanese": "日曜日の午後一時にゆいさんと図書館へ行きます。日本語の本を読みたいです。はなさんは週末が好きです。",
+        "reading": "にちようびのごごいちじにゆいさんととしょかんへいきます。にほんごのほんをよみたいです。はなさんはしゅうまつがすきです。",
+        "meaning": "Hari Minggu pukul satu siang, Hana akan pergi ke perpustakaan bersama Yui. Ia ingin membaca buku bahasa Jepang. Hana menyukai akhir pekan.",
+        "imageDescription": "Hana dan Yui datang ke perpustakaan pada hari Minggu untuk membaca buku.",
+        "vocabulary": [
+          {
+            "japanese": "週末",
+            "reading": "しゅうまつ",
+            "meaning": "akhir pekan"
+          },
+          {
+            "japanese": "読みたい",
+            "reading": "よみたい",
+            "meaning": "ingin membaca"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-12.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "土曜日の朝、最初に何をしますか。\nApa yang pertama dilakukan pada Sabtu pagi?",
+        "Choices": [
+          "部屋を掃除します",
+          "カレーを食べます",
+          "図書館へ行きます",
+          "ゆいさんに会います"
+        ],
+        "Correct": 0,
+        "Explanation": "Urutannya dimulai 部屋を掃除します, kemudian merapikan buku dan memasak."
+      },
+      {
+        "Prompt": "土曜日の昼ご飯は何ですか。\nApa makan siang pada hari Sabtu?",
+        "Choices": [
+          "カレー",
+          "パン",
+          "ケーキ",
+          "おにぎり"
+        ],
+        "Correct": 0,
+        "Explanation": "今日の昼ご飯はカレーです menjelaskan makan siangnya kari."
+      },
+      {
+        "Prompt": "はなさんはお皿をどこに置きますか。\nDi mana Hana meletakkan piring?",
+        "Choices": [
+          "テーブルに",
+          "いすの下に",
+          "本の中に",
+          "窓の外に"
+        ],
+        "Correct": 0,
+        "Explanation": "お皿をテーブルに置きます berarti meletakkan piring di meja."
+      },
+      {
+        "Prompt": "日曜日はだれと図書館へ行きますか。\nDengan siapa Hana ke perpustakaan hari Minggu?",
+        "Choices": [
+          "ゆいさん",
+          "母",
+          "父",
+          "けんたさん"
+        ],
+        "Correct": 0,
+        "Explanation": "日曜日の午後一時にゆいさんと図書館へ行きます menyebut Yui sebagai teman pergi."
+      },
+      {
+        "Prompt": "図書館で何をしたいですか。\nApa yang ingin dilakukan di perpustakaan?",
+        "Choices": [
+          "日本語の本を読みたい",
+          "カレーを作りたい",
+          "部屋を掃除したい",
+          "写真を撮りたい"
+        ],
+        "Correct": 0,
+        "Explanation": "日本語の本を読みたいです berarti ingin membaca buku bahasa Jepang."
+      }
+    ]
+  }
+]

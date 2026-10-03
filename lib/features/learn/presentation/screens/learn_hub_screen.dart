@@ -19,11 +19,17 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
       'Kosakata, contoh, kuis & progress',
       Icons.translate_rounded
     ),
-    ('Grammar', 'Pola dan contoh kalimat', Icons.menu_book_rounded),
-    ('Kanji', 'Menulis dan mengingat', Icons.brush_rounded),
-    ('Listening', 'Dialog native speaker', Icons.headphones_rounded),
-    ('Reading', 'Teks sesuai level', Icons.article_rounded),
-    ('Speaking AI', 'Latihan pelafalan', Icons.mic_rounded),
+    (
+      'Grammar',
+      'Pola, contoh kalimat, kuis & progress',
+      Icons.menu_book_rounded
+    ),
+    ('Kanji', 'Arti, bacaan, contoh kata & kuis', Icons.brush_rounded),
+    (
+      'Reading',
+      'Cerita bergambar, kosakata & kuis',
+      Icons.auto_stories_rounded
+    ),
   ];
 
   @override
@@ -84,7 +90,9 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
               const SizedBox(height: 24),
               _VocabularyCallout(
                 level: _levels[_selectedLevel],
-                onPressed: () => context.push(AppRoutes.vocabularyPath),
+                onPressed: () => context.push(
+                  '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
+                ),
               ),
               const SizedBox(height: 28),
               Text(
@@ -103,8 +111,22 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
                     subtitle: subject.$2,
                     icon: subject.$3,
                     onTap: index == 0
-                        ? () => context.push(AppRoutes.vocabularyPath)
-                        : null,
+                        ? () => context.push(
+                              '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
+                            )
+                        : index == 1 && _selectedLevel <= 1
+                            ? () => context.push(
+                                  '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
+                                )
+                            : index == 2 && _selectedLevel == 0
+                                ? () => context.push(AppRoutes.kanjiPath)
+                                : index == 3 && _selectedLevel <= 1
+                                    ? () => context.push(
+                                          AppRoutes.readingCoursePath(
+                                            _levels[_selectedLevel],
+                                          ),
+                                        )
+                                    : null,
                   ),
                 ),
             ],

@@ -7,6 +7,128 @@ servers:
   - url: http://localhost:8080/v1
     description: Local development
 paths:
+  /simulation/n5:
+    get:
+      tags: [Simulation]
+      summary: N5 language simulation overview, active attempt and latest ten results
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Original paper, 21 vocabulary items plus 17 grammar items, no dokkai/listening
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      paperId: {type: string}
+                      title: {type: string}
+                      questionCount: {type: integer, const: 38}
+                      durationMinutes: {type: integer, const: 40}
+                      sections: {type: array, items: {$ref: '#/components/schemas/SimulationSection'}}
+                      activeAttemptId: {type: string}
+                      omittedSections: {type: array, items: {type: string}}
+                      history: {type: array, items: {type: object}}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /simulation/attempts/{attemptID}:
+    parameters:
+      - {name: attemptID, in: path, required: true, schema: {type: string}}
+    get:
+      tags: [Simulation]
+      summary: Resume owned simulation; expired sections advance at their original deadline
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Only active-section questions and answers until final completion; no answer key while active
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/SimulationSession'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Unknown or not owned}
+  /simulation/attempts/{attemptID}/answers:
+    parameters:
+      - {name: attemptID, in: path, required: true, schema: {type: string}}
+    put:
+      tags: [Simulation]
+      summary: Save active-section answer and review flag; empty optionId clears the answer
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, optionId, marked]
+              properties:
+                questionId: {type: string}
+                optionId: {type: string}
+                marked: {type: boolean}
+      responses:
+        '200': {description: Saved, without correctness feedback}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Unknown or not owned}
+        '422': {description: Closed section, expired session or invalid option}
+  /simulation/attempts/{attemptID}/submit-section:
+    parameters:
+      - {name: attemptID, in: path, required: true, schema: {type: string}}
+    post:
+      tags: [Simulation]
+      summary: Lock expected section; vocabulary starts grammar immediately; retries are idempotent
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [section]
+              properties:
+                section: {type: string, enum: [vocabulary, grammar]}
+      responses:
+        '200':
+          description: Updated session; result and reviews only after grammar finishes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/SimulationSession'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Unknown or not owned}
+        '422': {description: Invalid section or trying to skip vocabulary}
+  /branding:
+    get:
+      tags: [Branding]
+      summary: Public application branding (empty image URLs use bundled defaults)
+      responses:
+        '200':
+          description: Branding settings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/Branding'}
+  /admin/branding:
+    put:
+      tags: [Branding]
+      summary: Replace durable branding using BRANDING_ADMIN_TOKEN (not a user session)
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/Branding'}
+      responses:
+        '200': {description: Settings saved}
+        '401': {description: Missing or incorrect admin token}
+        '422': {description: Invalid name, image URL or color}
+        '500': {description: Settings could not be persisted}
   /auth/login:
     post:
       tags: [Authentication]
@@ -106,6 +228,85 @@ paths:
         '201': {description: Exam attempt created}
         '401': {$ref: '#/components/responses/Unauthorized'}
         '402': {$ref: '#/components/responses/PremiumRequired'}
+  /diagnostic/n5:
+    get:
+      tags: [Exams]
+      summary: N5 diagnostic metadata, active attempt and up to ten completed results
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Diagnostic overview
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      exam: {$ref: '#/components/schemas/Exam'}
+                      sectionCounts: {type: object, additionalProperties: {type: integer}}
+                      activeAttemptId: {type: string}
+                      history: {type: array, items: {$ref: '#/components/schemas/DiagnosticResult'}}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /exam-attempts/{attemptID}:
+    get:
+      tags: [Exams]
+      summary: Restore an owned N5 diagnostic session without exposing answer keys
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: attemptID, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Session with questions, saved answers, serverTime, expiresAt and optional completed result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/DiagnosticSession'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or belongs to another account}
+  /exam-attempts/{attemptID}/answers:
+    put:
+      tags: [Exams]
+      summary: Save or replace a selected answer before the server deadline
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: attemptID, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, optionId]
+              properties:
+                questionId: {type: string}
+                optionId: {type: string}
+      responses:
+        '200': {description: Answer saved without revealing correctness}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or belongs to another account}
+        '422': {description: Invalid question or option, expired deadline, or already completed session}
+  /exam-attempts/{attemptID}/complete:
+    post:
+      tags: [Exams]
+      summary: Grade saved answers, count blanks as incorrect and return an idempotent result
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: attemptID, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Percentage, section scores and answer reviews; not official JLPT scoring
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/DiagnosticResult'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or belongs to another account}
   /plans:
     get:
       tags: [Subscription]
@@ -197,6 +398,12 @@ paths:
       responses:
         '200':
           description: Lesson and vocabulary words
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/VocabularyLesson'}
         '401': {$ref: '#/components/responses/Unauthorized'}
         '404': {description: Lesson not found}
   /vocabulary/lessons/{lessonId}/attempts:
@@ -209,6 +416,19 @@ paths:
       responses:
         '201':
           description: New attempt with questions; correct answers are withheld
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    required: [id, lessonId, questions, startedAt]
+                    properties:
+                      id: {type: string}
+                      lessonId: {type: string}
+                      startedAt: {type: string, format: date-time}
+                      questions: {type: array, items: {$ref: '#/components/schemas/VocabularyQuestion'}}
         '401': {$ref: '#/components/responses/Unauthorized'}
         '404': {description: Lesson not found}
   /vocabulary/attempts/{attemptId}/answers:
@@ -246,6 +466,318 @@ paths:
           description: Score, pass status, best score, and total progress
         '401': {$ref: '#/components/responses/Unauthorized'}
         '404': {description: Attempt not found or not owned by user}
+        '422': {description: Not all questions have been answered}
+  /grammar/course:
+    get:
+      tags: [Grammar]
+      summary: Get an N5 or N4 grammar curriculum and signed-in user's completion progress
+      security: [{bearerAuth: []}]
+      parameters:
+        - in: query
+          name: level
+          schema: {type: string, enum: [N5, N4], default: N5}
+      responses:
+        '200':
+          description: Grammar course
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/GrammarCourse'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '422': {description: Unsupported grammar level; supported levels are N5 and N4}
+  /grammar/lessons/{lessonId}:
+    get:
+      tags: [Grammar]
+      summary: Get grammar explanations and examples without quiz answers
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '200':
+          description: Grammar lesson
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/GrammarLesson'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /grammar/lessons/{lessonId}/attempts:
+    post:
+      tags: [Grammar]
+      summary: Start a new five-question quiz; correct answers withheld
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '201':
+          description: Quiz attempt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/GrammarAttempt'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /grammar/attempts/{attemptId}/answers:
+    post:
+      tags: [Grammar]
+      summary: Evaluate an answer; repeat requests return the original feedback
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, optionId]
+              properties:
+                questionId: {type: string}
+                optionId: {type: string}
+      responses:
+        '200':
+          description: Answer feedback
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/GrammarFeedback'}
+        '400': {description: Invalid JSON}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or owned by another user}
+        '422': {description: Invalid question or option ID}
+  /grammar/attempts/{attemptId}/complete:
+    post:
+      tags: [Grammar]
+      summary: Grade all answers, preserve best score, award XP once; idempotent
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      responses:
+        '200':
+          description: Result with completion progress (passed lessons / total lessons)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/GrammarResult'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or owned by another user}
+        '422': {description: Not all questions have been answered}
+  /kanji/course:
+    get:
+      tags: [Kanji]
+      summary: Get the N5 kanji curriculum and signed-in user's completion progress
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Kanji course
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/KanjiCourse'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /kanji/lessons/{lessonId}:
+    get:
+      tags: [Kanji]
+      summary: Get kanji explanations and examples without quiz answers
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '200':
+          description: Kanji lesson
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/KanjiLesson'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /kanji/lessons/{lessonId}/attempts:
+    post:
+      tags: [Kanji]
+      summary: Start a new five-question quiz; correct answers withheld
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '201':
+          description: Quiz attempt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/KanjiAttempt'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /kanji/attempts/{attemptId}/answers:
+    post:
+      tags: [Kanji]
+      summary: Evaluate an answer; repeat requests return the original feedback
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, optionId]
+              properties:
+                questionId: {type: string}
+                optionId: {type: string}
+      responses:
+        '200':
+          description: Answer feedback
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/KanjiFeedback'}
+        '400': {description: Invalid JSON}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or owned by another user}
+        '422': {description: Invalid question or option ID}
+  /kanji/attempts/{attemptId}/complete:
+    post:
+      tags: [Kanji]
+      summary: Grade all answers, preserve best score, award XP once; idempotent
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      responses:
+        '200':
+          description: Result with completion progress (passed lessons / total lessons)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/KanjiResult'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or owned by another user}
+        '422': {description: Not all questions have been answered}
+  /reading/course:
+    get:
+      tags: [Reading]
+      summary: Get the selected reading curriculum and signed-in user's completion progress
+      security: [{bearerAuth: []}]
+      parameters:
+        - name: level
+          in: query
+          description: Defaults to N5 for existing clients. Progress is independent per level.
+          schema: {type: string, enum: [N5, N4], default: N5}
+      responses:
+        '200':
+          description: Reading course
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/ReadingCourse'}
+        '400':
+          description: Unsupported reading level; only N5 and N4 are available
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /reading/lessons/{lessonId}:
+    get:
+      tags: [Reading]
+      summary: Get reading explanations and examples without quiz answers
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '200':
+          description: Reading lesson
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/ReadingLesson'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /reading/lessons/{lessonId}/attempts:
+    post:
+      tags: [Reading]
+      summary: Start a new five-question quiz; correct answers withheld
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LessonId'}
+      responses:
+        '201':
+          description: Quiz attempt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/ReadingAttempt'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Lesson not found}
+  /reading/attempts/{attemptId}/answers:
+    post:
+      tags: [Reading]
+      summary: Evaluate an answer; repeat requests return the original feedback
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, optionId]
+              properties:
+                questionId: {type: string}
+                optionId: {type: string}
+      responses:
+        '200':
+          description: Answer feedback
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/ReadingFeedback'}
+        '400': {description: Invalid JSON}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or owned by another user}
+        '422': {description: Invalid question or option ID}
+  /reading/attempts/{attemptId}/complete:
+    post:
+      tags: [Reading]
+      summary: Grade all answers, preserve best score, award XP once; idempotent
+      security: [{bearerAuth: []}]
+      parameters:
+        - {$ref: '#/components/parameters/AttemptId'}
+      responses:
+        '200':
+          description: Result with completion progress (passed lessons / total lessons)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/ReadingResult'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {description: Attempt not found or owned by another user}
         '422': {description: Not all questions have been answered}
 components:
   securitySchemes:
@@ -317,6 +849,457 @@ components:
         application/json:
           schema: {$ref: '#/components/schemas/ErrorResponse'}
   schemas:
+    SimulationSection:
+      type: object
+      required: [id, name, durationSeconds, questionCount]
+      properties:
+        id: {type: string, enum: [vocabulary, grammar]}
+        name: {type: string}
+        durationSeconds: {type: integer, const: 1200}
+        questionCount: {type: integer}
+    SimulationQuestion:
+      type: object
+      required: [id, number, section, group, instructions, prompt, options]
+      properties:
+        id: {type: string}
+        number: {type: integer, minimum: 1, maximum: 38}
+        section: {type: string, enum: [vocabulary, grammar]}
+        group: {type: string}
+        instructions: {type: string}
+        passage: {type: string}
+        prompt: {type: string, description: 'Tested words wrapped in [[...]] are displayed underlined'}
+        options:
+          type: array
+          minItems: 4
+          maxItems: 4
+          items:
+            type: object
+            properties:
+              id: {type: string, description: Opaque random ID with no correct-answer pattern}
+              text: {type: string}
+    SimulationSession:
+      type: object
+      required: [attempt, paperId, activeSection, sectionStartedAt, expiresAt, serverTime, sections, questions, answers, marked]
+      properties:
+        attempt:
+          type: object
+          properties:
+            id: {type: string}
+            examId: {type: string}
+            userId: {type: string}
+            status: {type: string, enum: [in_progress, completed]}
+            startedAt: {type: string, format: date-time}
+        paperId: {type: string}
+        activeSection: {type: string, enum: [vocabulary, grammar, completed]}
+        sectionStartedAt: {type: string, format: date-time}
+        expiresAt: {type: string, format: date-time}
+        serverTime: {type: string, format: date-time}
+        sections: {type: array, items: {$ref: '#/components/schemas/SimulationSection'}}
+        questions: {type: array, items: {$ref: '#/components/schemas/SimulationQuestion'}}
+        answers: {type: object, additionalProperties: {type: string}}
+        marked: {type: array, items: {type: string}}
+        result: {$ref: '#/components/schemas/SimulationResult'}
+    SimulationResult:
+      type: object
+      required: [attemptId, paperId, score, correct, total, answered, durationSeconds, completedAt, sections, reviews, scoringNote]
+      properties:
+        attemptId: {type: string}
+        paperId: {type: string}
+        score: {type: integer, minimum: 0, maximum: 100, description: Raw accuracy percentage rounded down; not an official scaled score}
+        correct: {type: integer}
+        total: {type: integer, const: 38}
+        answered: {type: integer}
+        durationSeconds: {type: integer}
+        completedAt: {type: string, format: date-time}
+        scoringNote: {type: string}
+        sections:
+          type: array
+          items:
+            type: object
+            properties:
+              name: {type: string}
+              correct: {type: integer}
+              total: {type: integer}
+              score: {type: integer}
+        reviews:
+          type: array
+          items:
+            type: object
+            properties:
+              question: {$ref: '#/components/schemas/SimulationQuestion'}
+              selectedOptionId: {type: string}
+              correctOptionId: {type: string}
+              correct: {type: boolean}
+              explanation: {type: string}
+    Branding:
+      type: object
+      required: [appName, tagline, iconUrl, splashUrl, backgroundColor]
+      properties:
+        appName: {type: string, minLength: 1, maxLength: 50}
+        tagline: {type: string, maxLength: 120}
+        iconUrl: {type: string, description: Public HTTPS PNG/JPG URL or empty for default}
+        splashUrl: {type: string, description: Public HTTPS portrait PNG/JPG URL or empty for default}
+        backgroundColor: {type: string, pattern: '^#[0-9a-fA-F]{6}$', example: '#FAFAFA'}
+    DiagnosticQuestion:
+      type: object
+      required: [id, section, prompt, options]
+      properties:
+        id: {type: string}
+        section: {type: string, enum: [Kosakata, Kanji, Grammar, Reading]}
+        passage: {type: string}
+        prompt: {type: string}
+        options:
+          type: array
+          minItems: 4
+          maxItems: 4
+          items:
+            type: object
+            required: [id, text]
+            properties:
+              id: {type: string}
+              text: {type: string}
+    DiagnosticSession:
+      type: object
+      required: [attempt, expiresAt, serverTime, questions, answers]
+      properties:
+        attempt:
+          type: object
+          properties:
+            id: {type: string}
+            examId: {type: string}
+            userId: {type: string}
+            status: {type: string, enum: [in_progress, completed]}
+            startedAt: {type: string, format: date-time}
+        expiresAt: {type: string, format: date-time}
+        serverTime: {type: string, format: date-time}
+        questions: {type: array, items: {$ref: '#/components/schemas/DiagnosticQuestion'}}
+        answers: {type: object, additionalProperties: {type: string}}
+        result: {$ref: '#/components/schemas/DiagnosticResult'}
+    DiagnosticResult:
+      type: object
+      required: [attemptId, score, correct, total, answered, completedAt, durationSeconds, sections, reviews]
+      properties:
+        attemptId: {type: string}
+        score: {type: integer, minimum: 0, maximum: 100}
+        correct: {type: integer}
+        total: {type: integer}
+        answered: {type: integer}
+        completedAt: {type: string, format: date-time}
+        durationSeconds: {type: integer, minimum: 0, maximum: 1800}
+        sections:
+          type: array
+          items:
+            type: object
+            properties:
+              name: {type: string}
+              correct: {type: integer}
+              total: {type: integer}
+              score: {type: integer, minimum: 0, maximum: 100}
+        reviews:
+          type: array
+          items:
+            type: object
+            properties:
+              question: {$ref: '#/components/schemas/DiagnosticQuestion'}
+              selectedOptionId: {type: string}
+              correctOptionId: {type: string}
+              correct: {type: boolean}
+              explanation: {type: string}
+    GrammarLessonSummary:
+      type: object
+      required: [id, order, chapter, title, pointCount, questionCount, bestScore, completed]
+      properties:
+        id: {type: string, example: grammar-n5-01}
+        level: {type: string, enum: [N5, N4]}
+        patterns: {type: array, items: {type: string}}
+        order: {type: integer, minimum: 1}
+        chapter: {type: string}
+        title: {type: string}
+        pointCount: {type: integer, minimum: 1}
+        questionCount: {type: integer, minimum: 1}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        completed: {type: boolean}
+    GrammarCourse:
+      type: object
+      required: [level, title, progress, completedLessons, lessons]
+      properties:
+        level: {type: string, enum: [N5, N4]}
+        title: {type: string}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        completedLessons: {type: integer, minimum: 0}
+        lessons:
+          type: array
+          items: {$ref: '#/components/schemas/GrammarLessonSummary'}
+    GrammarLesson:
+      allOf:
+        - {$ref: '#/components/schemas/GrammarLessonSummary'}
+        - type: object
+          required: [points]
+          properties:
+            points:
+              type: array
+              items: {$ref: '#/components/schemas/GrammarPoint'}
+    GrammarPoint:
+      type: object
+      required: [pattern, meaning, formation, explanation, commonMistake, examples]
+      properties:
+        pattern: {type: string}
+        meaning: {type: string}
+        formation: {type: string}
+        explanation: {type: string}
+        commonMistake: {type: string}
+        examples:
+          type: array
+          items:
+            type: object
+            required: [japanese, reading, meaning]
+            properties:
+              japanese: {type: string}
+              reading: {type: string}
+              meaning: {type: string}
+    GrammarAttempt:
+      type: object
+      required: [id, lessonId, startedAt, questions]
+      properties:
+        id: {type: string}
+        lessonId: {type: string}
+        startedAt: {type: string, format: date-time}
+        questions:
+          type: array
+          items:
+            type: object
+            required: [id, prompt, options]
+            properties:
+              id: {type: string}
+              prompt: {type: string}
+              options:
+                type: array
+                items:
+                  type: object
+                  required: [id, text]
+                  properties:
+                    id: {type: string}
+                    text: {type: string}
+    GrammarFeedback:
+      type: object
+      required: [questionId, correct, correctOptionId, explanation]
+      properties:
+        questionId: {type: string}
+        correct: {type: boolean}
+        correctOptionId: {type: string}
+        explanation: {type: string}
+    GrammarResult:
+      type: object
+      required: [attemptId, lessonId, score, correctAnswers, totalQuestions, passed, bestScore, progress, canRetry]
+      properties:
+        attemptId: {type: string}
+        lessonId: {type: string}
+        score: {type: integer, minimum: 0, maximum: 100}
+        correctAnswers: {type: integer, minimum: 0}
+        totalQuestions: {type: integer, minimum: 1}
+        passed: {type: boolean}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        canRetry: {type: boolean}
+    KanjiLessonSummary:
+      type: object
+      required: [id, order, chapter, title, characterCount, questionCount, bestScore, completed]
+      properties:
+        id: {type: string, example: kanji-n5-01}
+        order: {type: integer, minimum: 1}
+        chapter: {type: string}
+        title: {type: string}
+        characterCount: {type: integer, minimum: 1}
+        questionCount: {type: integer, minimum: 1}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        completed: {type: boolean}
+    KanjiCourse:
+      type: object
+      required: [level, title, progress, completedLessons, lessons]
+      properties:
+        level: {type: string, enum: [N5]}
+        title: {type: string}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        completedLessons: {type: integer, minimum: 0}
+        lessons:
+          type: array
+          items: {$ref: '#/components/schemas/KanjiLessonSummary'}
+    KanjiLesson:
+      allOf:
+        - {$ref: '#/components/schemas/KanjiLessonSummary'}
+        - type: object
+          required: [characters]
+          properties:
+            characters:
+              type: array
+              items: {$ref: '#/components/schemas/KanjiCharacter'}
+    KanjiCharacter:
+      type: object
+      required: [character, meaning, onReading, kunReading, strokes, mnemonic, note, examples]
+      properties:
+        character: {type: string, minLength: 1, maxLength: 1}
+        meaning: {type: string}
+        onReading: {type: string}
+        kunReading: {type: string}
+        strokes: {type: integer, minimum: 1}
+        mnemonic: {type: string}
+        note: {type: string}
+        examples:
+          type: array
+          items:
+            type: object
+            required: [japanese, reading, meaning]
+            properties:
+              japanese: {type: string}
+              reading: {type: string}
+              meaning: {type: string}
+    KanjiAttempt:
+      type: object
+      required: [id, lessonId, startedAt, questions]
+      properties:
+        id: {type: string}
+        lessonId: {type: string}
+        startedAt: {type: string, format: date-time}
+        questions:
+          type: array
+          items:
+            type: object
+            required: [id, prompt, options]
+            properties:
+              id: {type: string}
+              prompt: {type: string}
+              options:
+                type: array
+                items:
+                  type: object
+                  required: [id, text]
+                  properties:
+                    id: {type: string}
+                    text: {type: string}
+    KanjiFeedback:
+      type: object
+      required: [questionId, correct, correctOptionId, explanation]
+      properties:
+        questionId: {type: string}
+        correct: {type: boolean}
+        correctOptionId: {type: string}
+        explanation: {type: string}
+    KanjiResult:
+      type: object
+      required: [attemptId, lessonId, score, correctAnswers, totalQuestions, passed, bestScore, progress, canRetry]
+      properties:
+        attemptId: {type: string}
+        lessonId: {type: string}
+        score: {type: integer, minimum: 0, maximum: 100}
+        correctAnswers: {type: integer, minimum: 0}
+        totalQuestions: {type: integer, minimum: 1}
+        passed: {type: boolean}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        canRetry: {type: boolean}
+    ReadingLessonSummary:
+      type: object
+      required: [id, order, chapter, title, japaneseTitle, description, minutes, imageAsset, imageUrl, pageCount, questionCount, bestScore, completed]
+      properties:
+        id: {type: string, example: reading-n5-01}
+        japaneseTitle: {type: string}
+        description: {type: string}
+        minutes: {type: integer, minimum: 1}
+        imageAsset: {type: string}
+        imageUrl: {type: string}
+        order: {type: integer, minimum: 1}
+        chapter: {type: string}
+        title: {type: string}
+        pageCount: {type: integer, minimum: 1}
+        questionCount: {type: integer, minimum: 1}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        completed: {type: boolean}
+    ReadingCourse:
+      type: object
+      required: [level, title, progress, completedLessons, lessons]
+      properties:
+        level: {type: string, enum: [N5, N4]}
+        title: {type: string}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        completedLessons: {type: integer, minimum: 0}
+        lessons:
+          type: array
+          items: {$ref: '#/components/schemas/ReadingLessonSummary'}
+    ReadingLesson:
+      allOf:
+        - {$ref: '#/components/schemas/ReadingLessonSummary'}
+        - type: object
+          required: [pages]
+          properties:
+            pages:
+              type: array
+              items: {$ref: '#/components/schemas/ReadingPage'}
+    ReadingWord:
+      type: object
+      required: [japanese, reading, meaning]
+      properties:
+        japanese: {type: string}
+        reading: {type: string}
+        meaning: {type: string}
+    ReadingPage:
+      type: object
+      required: [title, japanese, reading, meaning, imageAsset, imageUrl, imagePanel, imageDescription, vocabulary]
+      properties:
+        title: {type: string}
+        japanese: {type: string}
+        reading: {type: string}
+        meaning: {type: string}
+        imageAsset: {type: string}
+        imageUrl: {type: string}
+        imagePanel: {type: integer, minimum: 0, maximum: 2}
+        imageDescription: {type: string}
+        vocabulary:
+          type: array
+          items: {$ref: '#/components/schemas/ReadingWord'}
+    ReadingAttempt:
+      type: object
+      required: [id, lessonId, startedAt, questions]
+      properties:
+        id: {type: string}
+        lessonId: {type: string}
+        startedAt: {type: string, format: date-time}
+        questions:
+          type: array
+          items:
+            type: object
+            required: [id, prompt, options]
+            properties:
+              id: {type: string}
+              prompt: {type: string}
+              options:
+                type: array
+                items:
+                  type: object
+                  required: [id, text]
+                  properties:
+                    id: {type: string}
+                    text: {type: string}
+    ReadingFeedback:
+      type: object
+      required: [questionId, correct, correctOptionId, explanation]
+      properties:
+        questionId: {type: string}
+        correct: {type: boolean}
+        correctOptionId: {type: string}
+        explanation: {type: string}
+    ReadingResult:
+      type: object
+      required: [attemptId, lessonId, score, correctAnswers, totalQuestions, passed, bestScore, progress, canRetry]
+      properties:
+        attemptId: {type: string}
+        lessonId: {type: string}
+        score: {type: integer, minimum: 0, maximum: 100}
+        correctAnswers: {type: integer, minimum: 0}
+        totalQuestions: {type: integer, minimum: 1}
+        passed: {type: boolean}
+        bestScore: {type: integer, minimum: 0, maximum: 100}
+        progress: {type: integer, minimum: 0, maximum: 100}
+        canRetry: {type: boolean}
     VocabularyLevel:
       type: object
       required: [level, title, description, requiredTier, progress, lessons]
@@ -338,8 +1321,64 @@ components:
         title: {type: string}
         description: {type: string}
         wordCount: {type: integer, minimum: 1}
+        questionCount: {type: integer, minimum: 1}
+        imageAsset: {type: string}
         bestScore: {type: integer, minimum: 0, maximum: 100}
         completed: {type: boolean}
+    VocabularyExample:
+      type: object
+      required: [japanese, reading, meaning]
+      properties:
+        japanese: {type: string}
+        reading: {type: string, description: Full kana reading of the sentence}
+        meaning: {type: string}
+    VocabularyWord:
+      type: object
+      required: [id, term, reading, meaning, example, exampleMeaning, note]
+      properties:
+        id: {type: string}
+        term: {type: string}
+        reading: {type: string}
+        meaning: {type: string}
+        example: {type: string, description: Legacy first example}
+        exampleMeaning: {type: string}
+        examples: {type: array, items: {$ref: '#/components/schemas/VocabularyExample'}}
+        note: {type: string}
+        imageAsset: {type: string}
+        imageUrl: {type: string}
+        imagePanel: {type: integer, minimum: 0, maximum: 7, description: Row-major panel in a 4-column by 2-row sheet}
+        imageDescription: {type: string}
+    VocabularyLesson:
+      type: object
+      required: [id, level, title, description, bestScore, completed, words]
+      properties:
+        id: {type: string}
+        level: {type: string}
+        title: {type: string}
+        description: {type: string}
+        bestScore: {type: integer}
+        completed: {type: boolean}
+        imageUrl: {type: string}
+        words: {type: array, items: {$ref: '#/components/schemas/VocabularyWord'}}
+    VocabularyQuestion:
+      type: object
+      required: [id, prompt, options]
+      properties:
+        id: {type: string}
+        prompt: {type: string}
+        kind: {type: string}
+        imageAsset: {type: string}
+        imageUrl: {type: string}
+        imagePanel: {type: integer, minimum: 0, maximum: 7}
+        imageDescription: {type: string}
+        options:
+          type: array
+          items:
+            type: object
+            required: [id, text]
+            properties:
+              id: {type: string}
+              text: {type: string}
     Dashboard:
       type: object
       required: [isAuthenticated, dailyGoal, categories, tracks, exams, plans, achievements]

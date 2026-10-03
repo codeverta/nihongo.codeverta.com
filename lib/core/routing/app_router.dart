@@ -3,6 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/screens/login_screen.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_attempt_screen.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_intro_screen.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/simulation_intro_screen.dart';
+import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_course_screen.dart';
+import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_lesson_screen.dart';
+import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_course_screen.dart';
+import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_lesson_screen.dart';
+import 'package:nihongo_master/features/learn/reading/presentation/screens/reading_course_screen.dart';
+import 'package:nihongo_master/features/learn/reading/presentation/screens/reading_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_course_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
@@ -24,6 +34,20 @@ abstract final class AppRoutes {
   static const homePath = '/home';
 
   static const vocabularyName = 'vocabulary';
+  static const readingPath = '/learn/reading';
+  static String readingCoursePath(String level) =>
+      '$readingPath?level=${Uri.encodeQueryComponent(level)}';
+  static const readingLessonRoute = '/learn/reading/lessons/:lessonId';
+  static String readingLessonPath(String id) =>
+      '/learn/reading/lessons/${Uri.encodeComponent(id)}';
+  static const kanjiPath = '/learn/kanji';
+  static const kanjiLessonRoute = '/learn/kanji/lessons/:lessonId';
+  static String kanjiLessonPath(String id) =>
+      '/learn/kanji/lessons/${Uri.encodeComponent(id)}';
+  static const grammarPath = '/learn/grammar';
+  static const grammarLessonRoute = '/learn/grammar/lessons/:lessonId';
+  static String grammarLessonPath(String id) =>
+      '/learn/grammar/lessons/${Uri.encodeComponent(id)}';
   static const vocabularyPath = '/learn/vocabulary';
 
   static const vocabularyLessonName = 'vocabulary-lesson';
@@ -89,7 +113,61 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.vocabularyPath,
         name: AppRoutes.vocabularyName,
-        builder: (context, state) => const VocabularyCourseScreen(),
+        builder: (context, state) => VocabularyCourseScreen(
+          initialLevel: state.uri.queryParameters['level'] ?? 'N5',
+        ),
+      ),
+      GoRoute(
+        path: '/exams/n5',
+        builder: (context, state) => const DiagnosticIntroScreen(),
+      ),
+      GoRoute(
+        path: '/exams/n5/simulation',
+        builder: (context, state) => const SimulationIntroScreen(),
+      ),
+      GoRoute(
+        path: '/exams/n5/simulation/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/exams/n5/attempt/:attemptId',
+        builder: (context, state) => DiagnosticAttemptScreen(
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.readingPath,
+        builder: (context, state) => ReadingCourseScreen(
+          level: state.uri.queryParameters['level'] ?? 'N5',
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.readingLessonRoute,
+        builder: (context, state) =>
+            ReadingLessonScreen(lessonId: state.pathParameters['lessonId']!),
+      ),
+      GoRoute(
+        path: AppRoutes.kanjiPath,
+        builder: (context, state) => const KanjiCourseScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.kanjiLessonRoute,
+        builder: (context, state) =>
+            KanjiLessonScreen(lessonId: state.pathParameters['lessonId']!),
+      ),
+      GoRoute(
+        path: AppRoutes.grammarPath,
+        builder: (context, state) => GrammarCourseScreen(
+          initialLevel: state.uri.queryParameters['level'] ?? 'N5',
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.grammarLessonRoute,
+        builder: (context, state) => GrammarLessonScreen(
+          lessonId: state.pathParameters['lessonId']!,
+        ),
       ),
       GoRoute(
         path: AppRoutes.vocabularyLessonRoute,

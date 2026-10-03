@@ -22,10 +22,20 @@ func main() {
 		port = "8080"
 	}
 
-	handler := api.NewServer(
-		store.NewMemoryStore(),
+	memoryStore := store.NewMemoryStore()
+	memoryStore.SetAssetBaseURL(os.Getenv("COS_BUCKET_URL"))
+	apiServer := api.NewServer(
+		memoryStore,
 		auth.NewGoogleVerifier(os.Getenv("GOOGLE_CLIENT_ID")),
-	).Handler()
+	)
+	brandingPath := os.Getenv("BRANDING_CONFIG_PATH")
+	if brandingPath == "" {
+		brandingPath = "data/branding.json"
+	}
+	if err := apiServer.ConfigureBranding(brandingPath, os.Getenv("BRANDING_ADMIN_TOKEN")); err != nil {
+		log.Fatal(err)
+	}
+	handler := apiServer.Handler()
 	server := &http.Server{
 		Addr:              ":" + port,
 		Handler:           handler,

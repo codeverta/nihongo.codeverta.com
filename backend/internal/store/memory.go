@@ -29,36 +29,74 @@ type account struct {
 }
 
 type MemoryStore struct {
-	mu            sync.RWMutex
-	profiles      map[string]domain.Profile
-	progress      map[string]map[string]domain.LessonProgress
-	achievements  map[string][]domain.Achievement
-	categories    []domain.LearningCategory
-	tracks        []domain.LearningTrack
-	exams         []domain.Exam
-	plans         []domain.Plan
-	attemptID     atomic.Uint64
-	accounts      map[string]account
-	sessions      map[string]string
-	vocabulary    []domain.VocabularyLevelContent
-	vocabAttempts map[string]*vocabularyAttemptState
+	mu                 sync.RWMutex
+	profiles           map[string]domain.Profile
+	progress           map[string]map[string]domain.LessonProgress
+	achievements       map[string][]domain.Achievement
+	categories         []domain.LearningCategory
+	tracks             []domain.LearningTrack
+	exams              []domain.Exam
+	plans              []domain.Plan
+	attemptID          atomic.Uint64
+	accounts           map[string]account
+	sessions           map[string]string
+	vocabulary         []domain.VocabularyLevelContent
+	vocabAttempts      map[string]*vocabularyAttemptState
+	assetBaseURL       string
+	grammar            []grammarLessonContent
+	grammarAttempts    map[string]*grammarAttemptState
+	kanji              []kanjiLessonContent
+	kanjiAttempts      map[string]*kanjiAttemptState
+	reading            []readingLessonContent
+	readingAttempts    map[string]*readingAttemptState
+	diagnosticAttempts map[string]*diagnosticAttemptState
+	diagnosticOrder    []string
+	simulationAttempts map[string]*simulationAttemptState
+	simulationOrder    []string
+	simulationNow      func() time.Time
+}
+
+func (s *MemoryStore) SetAssetBaseURL(value string) {
+	s.mu.Lock()
+	s.assetBaseURL = strings.TrimRight(strings.TrimSpace(value), "/")
+	s.mu.Unlock()
 }
 
 func NewMemoryStore() *MemoryStore {
 	result := &MemoryStore{
-		profiles:      map[string]domain.Profile{},
-		progress:      map[string]map[string]domain.LessonProgress{},
-		achievements:  map[string][]domain.Achievement{},
-		categories:    seedCategories(),
-		tracks:        seedTracks(),
-		exams:         seedExams(),
-		plans:         seedPlans(),
-		accounts:      map[string]account{},
-		sessions:      map[string]string{},
-		vocabulary:    seedVocabulary(),
-		vocabAttempts: map[string]*vocabularyAttemptState{},
+		profiles:           map[string]domain.Profile{},
+		progress:           map[string]map[string]domain.LessonProgress{},
+		achievements:       map[string][]domain.Achievement{},
+		categories:         seedCategories(),
+		tracks:             seedTracks(),
+		exams:              seedExams(),
+		plans:              seedPlans(),
+		accounts:           map[string]account{},
+		sessions:           map[string]string{},
+		vocabulary:         seedVocabulary(),
+		vocabAttempts:      map[string]*vocabularyAttemptState{},
+		grammar:            append(seedGrammar(), seedGrammarN4()...),
+		grammarAttempts:    map[string]*grammarAttemptState{},
+		kanji:              seedKanji(),
+		kanjiAttempts:      map[string]*kanjiAttemptState{},
+		reading:            seedReading(),
+		readingAttempts:    map[string]*readingAttemptState{},
+		diagnosticAttempts: map[string]*diagnosticAttemptState{},
+		simulationAttempts: map[string]*simulationAttemptState{},
+		simulationNow:      time.Now,
 	}
 	result.seedDemoAccount()
+	for i := range result.categories {
+		if result.categories[i].ID == "grammar" {
+			result.categories[i].LessonCount = len(result.grammar)
+		}
+		if result.categories[i].ID == "vocabulary" {
+			result.categories[i].LessonCount = 0
+			for _, level := range result.vocabulary {
+				result.categories[i].LessonCount += len(level.Lessons)
+			}
+		}
+	}
 	return result
 }
 
@@ -158,7 +196,7 @@ func (s *MemoryStore) Progress(userID string) []domain.LessonProgress {
 }
 
 func (s *MemoryStore) SaveProgress(userID string, input domain.LessonProgress) (domain.LessonProgress, error) {
-	if input.LessonID == "" || input.Completion < 0 || input.Completion > 100 || input.LastPosition < 0 {
+	if input.LessonID == "" || (strings.HasPrefix(input.LessonID, "grammar-") || strings.HasPrefix(input.LessonID, "kanji-") || strings.HasPrefix(input.LessonID, "reading-")) || input.Completion < 0 || input.Completion > 100 || input.LastPosition < 0 {
 		return domain.LessonProgress{}, ErrInvalid
 	}
 	input.Completed = input.Completion == 100
@@ -192,6 +230,19 @@ func (s *MemoryStore) Achievements(userID string) []domain.Achievement {
 }
 
 func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, error) {
+	// Older clients used this ID for the premium N5 catalog placeholder.
+	if examID == "jlpt-n5-full-1" {
+		if s.Profile(userID).Entitlement.Tier != domain.TierPremium {
+			return domain.ExamAttempt{}, ErrPremium
+		}
+		return s.StartSimulation(userID)
+	}
+	if examID == "jlpt-n5-simulation-1" {
+		return s.StartSimulation(userID)
+	}
+	if examID == "jlpt-n5-diagnostic" {
+		return s.startDiagnostic(userID), nil
+	}
 	s.mu.RLock()
 	var selected *domain.Exam
 	for i := range s.exams {
@@ -253,11 +304,9 @@ func filterTracks(tracks []domain.LearningTrack, system string) []domain.Learnin
 func seedCategories() []domain.LearningCategory {
 	return []domain.LearningCategory{
 		{ID: "vocabulary", Name: "Vocabulary", Description: "Kosakata tematik dengan spaced repetition", LessonCount: 240, RequiredTier: domain.TierFree},
-		{ID: "grammar", Name: "Grammar", Description: "Pola tata bahasa dan contoh kalimat", LessonCount: 186, RequiredTier: domain.TierFree},
-		{ID: "kanji", Name: "Kanji", Description: "Makna, onyomi, kunyomi, dan latihan tulis", LessonCount: 650, RequiredTier: domain.TierFree},
-		{ID: "listening", Name: "Listening", Description: "Dialog native speaker dan latihan soal", LessonCount: 92, RequiredTier: domain.TierPremium},
-		{ID: "reading", Name: "Reading", Description: "Bacaan bertingkat sesuai kemampuan", LessonCount: 68, RequiredTier: domain.TierPremium},
-		{ID: "speaking", Name: "Speaking AI", Description: "Latihan pelafalan dan percakapan", LessonCount: 80, RequiredTier: domain.TierPremium},
+		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5 dan N4: pola, contoh kalimat, dan kuis", LessonCount: 84, RequiredTier: domain.TierFree},
+		{ID: "kanji", Name: "Kanji", Description: "Kanji N5: bacaan, contoh kata, dan kuis", LessonCount: 20, RequiredTier: domain.TierFree},
+		{ID: "reading", Name: "Reading", Description: "Reading N5 dan N4: cerita bergambar, kosakata, dan kuis", LessonCount: 24, RequiredTier: domain.TierFree},
 	}
 }
 
@@ -276,7 +325,7 @@ func seedTracks() []domain.LearningTrack {
 func seedExams() []domain.Exam {
 	return []domain.Exam{
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
-		{ID: "jlpt-n5-full-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Full Simulation", QuestionCount: 80, DurationMin: 105, RequiredTier: domain.TierPremium},
+		{ID: "jlpt-n5-simulation-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
 		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Simulation", QuestionCount: 70, DurationMin: 90, RequiredTier: domain.TierPremium},
 		{ID: "jft-a2-full-1", System: "JFT", Level: "A2", Title: "JFT-Basic A2 Simulation", QuestionCount: 60, DurationMin: 60, RequiredTier: domain.TierPremium},
 	}

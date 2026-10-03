@@ -171,7 +171,9 @@ Flutter membaca base URL dari compile-time variable `API_BASE_URL` di
 ### Android Emulator
 
 Android Emulator memakai `10.0.2.2` untuk mengakses localhost komputer host.
-Nilai ini sudah menjadi default aplikasi:
+Nilai ini sudah menjadi default aplikasi. Jika `API_BASE_URL` diisi dengan
+`localhost` atau `127.0.0.1` pada Android, aplikasi juga menormalkannya otomatis
+menjadi `10.0.2.2`:
 
 ```text
 http://10.0.2.2:8080/v1
@@ -396,8 +398,8 @@ flutter run --dart-define=API_BASE_URL=http://10.0.2.2:9090/v1
 
 ### Android Emulator tidak dapat terhubung
 
-- Jangan gunakan `localhost` dari Android Emulator.
-- Gunakan `10.0.2.2`.
+- Utamakan `10.0.2.2`; aplikasi akan menormalkan `localhost` untuk Android
+  Emulator, tetapi URL eksplisit lebih mudah diverifikasi dari log.
 - Pastikan backend masih berjalan.
 - Coba health check dari komputer terlebih dahulu.
 - Periksa firewall dan Android network security apabila memakai HTTP lokal.

@@ -39,10 +39,14 @@ class VocabularyLessonSummary {
     required this.wordCount,
     required this.bestScore,
     required this.completed,
+    this.imageAsset = '',
+    this.questionCount = 0,
   });
 
   factory VocabularyLessonSummary.fromJson(Map<String, dynamic> json) =>
       VocabularyLessonSummary(
+        imageAsset: json['imageAsset'] as String? ?? '',
+        questionCount: json['questionCount'] as int? ?? 0,
         id: json['id'] as String? ?? '',
         order: json['order'] as int? ?? 0,
         title: json['title'] as String? ?? '',
@@ -53,6 +57,8 @@ class VocabularyLessonSummary {
       );
 
   final String id;
+  final String imageAsset;
+  final int questionCount;
   final int order;
   final String title;
   final String description;
@@ -70,6 +76,7 @@ class VocabularyLesson {
     required this.description,
     required this.bestScore,
     required this.completed,
+    required this.imageUrl,
     required this.words,
   });
 
@@ -81,6 +88,7 @@ class VocabularyLesson {
         description: json['description'] as String? ?? '',
         bestScore: json['bestScore'] as int? ?? 0,
         completed: json['completed'] as bool? ?? false,
+        imageUrl: json['imageUrl'] as String? ?? '',
         words: _list(json['words'], VocabularyWord.fromJson),
       );
 
@@ -90,6 +98,7 @@ class VocabularyLesson {
   final String description;
   final int bestScore;
   final bool completed;
+  final String imageUrl;
   final List<VocabularyWord> words;
 }
 
@@ -103,9 +112,19 @@ class VocabularyWord {
     required this.example,
     required this.exampleMeaning,
     required this.note,
+    this.examples = const [],
+    this.imageAsset = '',
+    this.imageUrl = '',
+    this.imagePanel = 0,
+    this.imageDescription = '',
   });
 
   factory VocabularyWord.fromJson(Map<String, dynamic> json) => VocabularyWord(
+        examples: _list(json['examples'], VocabularyExample.fromJson),
+        imageAsset: json['imageAsset'] as String? ?? '',
+        imageUrl: json['imageUrl'] as String? ?? '',
+        imagePanel: json['imagePanel'] as int? ?? 0,
+        imageDescription: json['imageDescription'] as String? ?? '',
         id: json['id'] as String? ?? '',
         term: json['term'] as String? ?? '',
         reading: json['reading'] as String? ?? '',
@@ -122,6 +141,29 @@ class VocabularyWord {
   final String example;
   final String exampleMeaning;
   final String note;
+  final List<VocabularyExample> examples;
+  final String imageAsset;
+  final String imageUrl;
+  final int imagePanel;
+  final String imageDescription;
+}
+
+@immutable
+class VocabularyExample {
+  const VocabularyExample({
+    required this.japanese,
+    required this.reading,
+    required this.meaning,
+  });
+  factory VocabularyExample.fromJson(Map<String, dynamic> json) =>
+      VocabularyExample(
+        japanese: json['japanese'] as String? ?? '',
+        reading: json['reading'] as String? ?? '',
+        meaning: json['meaning'] as String? ?? '',
+      );
+  final String japanese;
+  final String reading;
+  final String meaning;
 }
 
 @immutable
@@ -130,6 +172,7 @@ class VocabularyAttempt {
     required this.id,
     required this.lessonId,
     required this.questions,
+    required this.imageUrl,
   });
 
   factory VocabularyAttempt.fromJson(Map<String, dynamic> json) =>
@@ -137,11 +180,13 @@ class VocabularyAttempt {
         id: json['id'] as String? ?? '',
         lessonId: json['lessonId'] as String? ?? '',
         questions: _list(json['questions'], VocabularyQuestion.fromJson),
+        imageUrl: json['imageUrl'] as String? ?? '',
       );
 
   final String id;
   final String lessonId;
   final List<VocabularyQuestion> questions;
+  final String imageUrl;
 }
 
 @immutable
@@ -150,10 +195,20 @@ class VocabularyQuestion {
     required this.id,
     required this.prompt,
     required this.options,
+    this.kind = 'Arti kata',
+    this.imageAsset = '',
+    this.imageUrl = '',
+    this.imagePanel = 0,
+    this.imageDescription = '',
   });
 
   factory VocabularyQuestion.fromJson(Map<String, dynamic> json) =>
       VocabularyQuestion(
+        kind: json['kind'] as String? ?? 'Arti kata',
+        imageAsset: json['imageAsset'] as String? ?? '',
+        imageUrl: json['imageUrl'] as String? ?? '',
+        imagePanel: json['imagePanel'] as int? ?? 0,
+        imageDescription: json['imageDescription'] as String? ?? '',
         id: json['id'] as String? ?? '',
         prompt: json['prompt'] as String? ?? '',
         options: _list(json['options'], QuizOption.fromJson),
@@ -162,6 +217,11 @@ class VocabularyQuestion {
   final String id;
   final String prompt;
   final List<QuizOption> options;
+  final String kind;
+  final String imageAsset;
+  final String imageUrl;
+  final int imagePanel;
+  final String imageDescription;
 }
 
 @immutable

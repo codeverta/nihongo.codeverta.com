@@ -1,0 +1,4162 @@
+[
+  {
+    "id": "n5-daily",
+    "order": 1,
+    "title": "Perkenalan diri",
+    "description": "Belajar perkenalan diri melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-01-01",
+        "term": "私",
+        "reading": "わたし",
+        "meaning": "saya",
+        "example": "私は学生です。",
+        "exampleMeaning": "Saya adalah pelajar.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "私は学生です。",
+            "reading": "わたしはがくせいです。",
+            "meaning": "Saya adalah pelajar."
+          },
+          {
+            "japanese": "私は日本語を勉強します。",
+            "reading": "わたしはにほんごをべんきょうします。",
+            "meaning": "Saya belajar bahasa Jepang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 私: saya"
+      },
+      {
+        "id": "n5-visual-01-02",
+        "term": "学生",
+        "reading": "がくせい",
+        "meaning": "pelajar",
+        "example": "田中さんは学生です。",
+        "exampleMeaning": "Tanaka adalah pelajar.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "田中さんは学生です。",
+            "reading": "たなかさんはがくせいです。",
+            "meaning": "Tanaka adalah pelajar."
+          },
+          {
+            "japanese": "学生は図書館で勉強します。",
+            "reading": "がくせいはとしょかんでべんきょうします。",
+            "meaning": "Pelajar belajar di perpustakaan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 学生: pelajar"
+      },
+      {
+        "id": "n5-visual-01-03",
+        "term": "先生",
+        "reading": "せんせい",
+        "meaning": "guru",
+        "example": "先生は教室にいます。",
+        "exampleMeaning": "Guru ada di kelas.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "先生は教室にいます。",
+            "reading": "せんせいはきょうしつにいます。",
+            "meaning": "Guru ada di kelas."
+          },
+          {
+            "japanese": "先生に名前を言います。",
+            "reading": "せんせいになまえをいいます。",
+            "meaning": "Saya menyebutkan nama kepada guru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 先生: guru"
+      },
+      {
+        "id": "n5-visual-01-04",
+        "term": "友達",
+        "reading": "ともだち",
+        "meaning": "teman",
+        "example": "友達と学校へ行きます。",
+        "exampleMeaning": "Saya pergi ke sekolah bersama teman.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "友達と学校へ行きます。",
+            "reading": "ともだちとがっこうへいきます。",
+            "meaning": "Saya pergi ke sekolah bersama teman."
+          },
+          {
+            "japanese": "友達は公園にいます。",
+            "reading": "ともだちはこうえんにいます。",
+            "meaning": "Teman saya ada di taman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 友達: teman"
+      },
+      {
+        "id": "n5-visual-01-05",
+        "term": "子供",
+        "reading": "こども",
+        "meaning": "anak",
+        "example": "子供が二人います。",
+        "exampleMeaning": "Ada dua anak.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "子供が二人います。",
+            "reading": "こどもがふたりいます。",
+            "meaning": "Ada dua anak."
+          },
+          {
+            "japanese": "子供はパンを食べます。",
+            "reading": "こどもはパンをたべます。",
+            "meaning": "Anak makan roti."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 子供: anak"
+      },
+      {
+        "id": "n5-visual-01-06",
+        "term": "名前",
+        "reading": "なまえ",
+        "meaning": "nama",
+        "example": "名前を書いてください。",
+        "exampleMeaning": "Tolong tulis nama Anda.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "名前を書いてください。",
+            "reading": "なまえをかいてください。",
+            "meaning": "Tolong tulis nama Anda."
+          },
+          {
+            "japanese": "先生の名前は田中です。",
+            "reading": "せんせいのなまえはたなかです。",
+            "meaning": "Nama gurunya Tanaka."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 名前: nama"
+      },
+      {
+        "id": "n5-visual-01-07",
+        "term": "日本",
+        "reading": "にほん",
+        "meaning": "Jepang",
+        "example": "日本へ行きたいです。",
+        "exampleMeaning": "Saya ingin pergi ke Jepang.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "日本へ行きたいです。",
+            "reading": "にほんへいきたいです。",
+            "meaning": "Saya ingin pergi ke Jepang."
+          },
+          {
+            "japanese": "日本の食べ物が好きです。",
+            "reading": "にほんのたべものがすきです。",
+            "meaning": "Saya suka makanan Jepang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 日本: Jepang"
+      },
+      {
+        "id": "n5-visual-01-08",
+        "term": "外国",
+        "reading": "がいこく",
+        "meaning": "luar negeri",
+        "example": "外国へ旅行します。",
+        "exampleMeaning": "Saya bepergian ke luar negeri.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "外国へ旅行します。",
+            "reading": "がいこくへりょこうします。",
+            "meaning": "Saya bepergian ke luar negeri."
+          },
+          {
+            "japanese": "外国の友達がいます。",
+            "reading": "がいこくのともだちがいます。",
+            "meaning": "Saya punya teman dari luar negeri."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 外国: luar negeri"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-02",
+    "order": 2,
+    "title": "Keluarga",
+    "description": "Belajar keluarga melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-02-01",
+        "term": "父",
+        "reading": "ちち",
+        "meaning": "ayah saya",
+        "example": "父は会社で働きます。",
+        "exampleMeaning": "Ayah saya bekerja di perusahaan.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "父は会社で働きます。",
+            "reading": "ちちはかいしゃではたらきます。",
+            "meaning": "Ayah saya bekerja di perusahaan."
+          },
+          {
+            "japanese": "父と映画を見ます。",
+            "reading": "ちちとえいがをみます。",
+            "meaning": "Saya menonton film bersama ayah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 父: ayah saya"
+      },
+      {
+        "id": "n5-visual-02-02",
+        "term": "母",
+        "reading": "はは",
+        "meaning": "ibu saya",
+        "example": "母は料理を作ります。",
+        "exampleMeaning": "Ibu saya memasak.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "母は料理を作ります。",
+            "reading": "はははりょうりをつくります。",
+            "meaning": "Ibu saya memasak."
+          },
+          {
+            "japanese": "母に電話します。",
+            "reading": "ははにでんわします。",
+            "meaning": "Saya menelepon ibu."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 母: ibu saya"
+      },
+      {
+        "id": "n5-visual-02-03",
+        "term": "兄",
+        "reading": "あに",
+        "meaning": "kakak laki-laki saya",
+        "example": "兄は大学生です。",
+        "exampleMeaning": "Kakak laki-laki saya mahasiswa.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "兄は大学生です。",
+            "reading": "あにはだいがくせいです。",
+            "meaning": "Kakak laki-laki saya mahasiswa."
+          },
+          {
+            "japanese": "兄と音楽を聞きます。",
+            "reading": "あにとおんがくをききます。",
+            "meaning": "Saya mendengarkan musik bersama kakak laki-laki."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 兄: kakak laki-laki saya"
+      },
+      {
+        "id": "n5-visual-02-04",
+        "term": "弟",
+        "reading": "おとうと",
+        "meaning": "adik laki-laki saya",
+        "example": "弟は六歳です。",
+        "exampleMeaning": "Adik laki-laki saya berumur enam tahun.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "弟は六歳です。",
+            "reading": "おとうとはろくさいです。",
+            "meaning": "Adik laki-laki saya berumur enam tahun."
+          },
+          {
+            "japanese": "弟と公園へ行きます。",
+            "reading": "おとうととこうえんへいきます。",
+            "meaning": "Saya pergi ke taman bersama adik laki-laki."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 弟: adik laki-laki saya"
+      },
+      {
+        "id": "n5-visual-02-05",
+        "term": "姉",
+        "reading": "あね",
+        "meaning": "kakak perempuan saya",
+        "example": "姉は本を読みます。",
+        "exampleMeaning": "Kakak perempuan saya membaca buku.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "姉は本を読みます。",
+            "reading": "あねはほんをよみます。",
+            "meaning": "Kakak perempuan saya membaca buku."
+          },
+          {
+            "japanese": "姉と買い物に行きます。",
+            "reading": "あねとかいものにいきます。",
+            "meaning": "Saya pergi berbelanja bersama kakak perempuan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 姉: kakak perempuan saya"
+      },
+      {
+        "id": "n5-visual-02-06",
+        "term": "妹",
+        "reading": "いもうと",
+        "meaning": "adik perempuan saya",
+        "example": "妹は学生です。",
+        "exampleMeaning": "Adik perempuan saya pelajar.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "妹は学生です。",
+            "reading": "いもうとはがくせいです。",
+            "meaning": "Adik perempuan saya pelajar."
+          },
+          {
+            "japanese": "妹は猫が好きです。",
+            "reading": "いもうとはねこがすきです。",
+            "meaning": "Adik perempuan saya suka kucing."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 妹: adik perempuan saya"
+      },
+      {
+        "id": "n5-visual-02-07",
+        "term": "祖父",
+        "reading": "そふ",
+        "meaning": "kakek saya",
+        "example": "祖父は新聞を読みます。",
+        "exampleMeaning": "Kakek saya membaca koran.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "祖父は新聞を読みます。",
+            "reading": "そふはしんぶんをよみます。",
+            "meaning": "Kakek saya membaca koran."
+          },
+          {
+            "japanese": "祖父とお茶を飲みます。",
+            "reading": "そふとおちゃをのみます。",
+            "meaning": "Saya minum teh bersama kakek."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 祖父: kakek saya"
+      },
+      {
+        "id": "n5-visual-02-08",
+        "term": "祖母",
+        "reading": "そぼ",
+        "meaning": "nenek saya",
+        "example": "祖母は元気です。",
+        "exampleMeaning": "Nenek saya sehat.",
+        "note": "Untuk anggota keluarga sendiri saat berbicara kepada orang lain. Sapaan untuk keluarga orang lain biasanya berbeda.",
+        "examples": [
+          {
+            "japanese": "祖母は元気です。",
+            "reading": "そぼはげんきです。",
+            "meaning": "Nenek saya sehat."
+          },
+          {
+            "japanese": "祖母の家へ行きます。",
+            "reading": "そぼのいえへいきます。",
+            "meaning": "Saya pergi ke rumah nenek."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 祖母: nenek saya"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-03",
+    "order": 3,
+    "title": "Benda di sekolah",
+    "description": "Belajar benda di sekolah melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-03-01",
+        "term": "本",
+        "reading": "ほん",
+        "meaning": "buku",
+        "example": "本を読みます。",
+        "exampleMeaning": "Saya membaca buku.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "本を読みます。",
+            "reading": "ほんをよみます。",
+            "meaning": "Saya membaca buku."
+          },
+          {
+            "japanese": "机の上に本があります。",
+            "reading": "つくえのうえにほんがあります。",
+            "meaning": "Ada buku di atas meja."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 本: buku"
+      },
+      {
+        "id": "n5-visual-03-02",
+        "term": "ノート",
+        "reading": "ノート",
+        "meaning": "buku catatan",
+        "example": "ノートに名前を書きます。",
+        "exampleMeaning": "Saya menulis nama di buku catatan.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "ノートに名前を書きます。",
+            "reading": "ノートになまえをかきます。",
+            "meaning": "Saya menulis nama di buku catatan."
+          },
+          {
+            "japanese": "新しいノートを買います。",
+            "reading": "あたらしいノートをかいます。",
+            "meaning": "Saya membeli buku catatan baru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata ノート: buku catatan"
+      },
+      {
+        "id": "n5-visual-03-03",
+        "term": "鉛筆",
+        "reading": "えんぴつ",
+        "meaning": "pensil",
+        "example": "鉛筆で書きます。",
+        "exampleMeaning": "Saya menulis dengan pensil.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "鉛筆で書きます。",
+            "reading": "えんぴつでかきます。",
+            "meaning": "Saya menulis dengan pensil."
+          },
+          {
+            "japanese": "この鉛筆は長いです。",
+            "reading": "このえんぴつはながいです。",
+            "meaning": "Pensil ini panjang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 鉛筆: pensil"
+      },
+      {
+        "id": "n5-visual-03-04",
+        "term": "消しゴム",
+        "reading": "けしゴム",
+        "meaning": "penghapus",
+        "example": "消しゴムを貸してください。",
+        "exampleMeaning": "Tolong pinjamkan penghapus.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "消しゴムを貸してください。",
+            "reading": "けしゴムをかしてください。",
+            "meaning": "Tolong pinjamkan penghapus."
+          },
+          {
+            "japanese": "かばんに消しゴムがあります。",
+            "reading": "かばんにけしゴムがあります。",
+            "meaning": "Ada penghapus di dalam tas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 消しゴム: penghapus"
+      },
+      {
+        "id": "n5-visual-03-05",
+        "term": "かばん",
+        "reading": "かばん",
+        "meaning": "tas",
+        "example": "かばんに本を入れます。",
+        "exampleMeaning": "Saya memasukkan buku ke tas.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "かばんに本を入れます。",
+            "reading": "かばんにほんをいれます。",
+            "meaning": "Saya memasukkan buku ke tas."
+          },
+          {
+            "japanese": "このかばんは青いです。",
+            "reading": "このかばんはあおいです。",
+            "meaning": "Tas ini biru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata かばん: tas"
+      },
+      {
+        "id": "n5-visual-03-06",
+        "term": "机",
+        "reading": "つくえ",
+        "meaning": "meja",
+        "example": "机の上にノートがあります。",
+        "exampleMeaning": "Ada buku catatan di atas meja.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "机の上にノートがあります。",
+            "reading": "つくえのうえにノートがあります。",
+            "meaning": "Ada buku catatan di atas meja."
+          },
+          {
+            "japanese": "机は部屋にあります。",
+            "reading": "つくえはへやにあります。",
+            "meaning": "Meja ada di kamar."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 机: meja"
+      },
+      {
+        "id": "n5-visual-03-07",
+        "term": "椅子",
+        "reading": "いす",
+        "meaning": "kursi",
+        "example": "椅子に座ります。",
+        "exampleMeaning": "Saya duduk di kursi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "椅子に座ります。",
+            "reading": "いすにすわります。",
+            "meaning": "Saya duduk di kursi."
+          },
+          {
+            "japanese": "この椅子は小さいです。",
+            "reading": "このいすはちいさいです。",
+            "meaning": "Kursi ini kecil."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 椅子: kursi"
+      },
+      {
+        "id": "n5-visual-03-08",
+        "term": "時計",
+        "reading": "とけい",
+        "meaning": "jam",
+        "example": "時計を見ます。",
+        "exampleMeaning": "Saya melihat jam.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "時計を見ます。",
+            "reading": "とけいをみます。",
+            "meaning": "Saya melihat jam."
+          },
+          {
+            "japanese": "壁に時計があります。",
+            "reading": "かべにとけいがあります。",
+            "meaning": "Ada jam di dinding."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 時計: jam"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-04",
+    "order": 4,
+    "title": "Rumah dan ruangan",
+    "description": "Belajar rumah dan ruangan melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-04-01",
+        "term": "家",
+        "reading": "いえ",
+        "meaning": "rumah",
+        "example": "家へ帰ります。",
+        "exampleMeaning": "Saya pulang ke rumah.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "家へ帰ります。",
+            "reading": "いえへかえります。",
+            "meaning": "Saya pulang ke rumah."
+          },
+          {
+            "japanese": "私の家は駅の近くです。",
+            "reading": "わたしのいえはえきのちかくです。",
+            "meaning": "Rumah saya dekat stasiun."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 家: rumah"
+      },
+      {
+        "id": "n5-visual-04-02",
+        "term": "部屋",
+        "reading": "へや",
+        "meaning": "kamar",
+        "example": "部屋を掃除します。",
+        "exampleMeaning": "Saya membersihkan kamar.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "部屋を掃除します。",
+            "reading": "へやをそうじします。",
+            "meaning": "Saya membersihkan kamar."
+          },
+          {
+            "japanese": "この部屋は広いです。",
+            "reading": "このへやはひろいです。",
+            "meaning": "Kamar ini luas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 部屋: kamar"
+      },
+      {
+        "id": "n5-visual-04-03",
+        "term": "窓",
+        "reading": "まど",
+        "meaning": "jendela",
+        "example": "窓を開けます。",
+        "exampleMeaning": "Saya membuka jendela.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "窓を開けます。",
+            "reading": "まどをあけます。",
+            "meaning": "Saya membuka jendela."
+          },
+          {
+            "japanese": "窓から山が見えます。",
+            "reading": "まどからやまがみえます。",
+            "meaning": "Gunung terlihat dari jendela."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 窓: jendela"
+      },
+      {
+        "id": "n5-visual-04-04",
+        "term": "ドア",
+        "reading": "ドア",
+        "meaning": "pintu",
+        "example": "ドアを閉めてください。",
+        "exampleMeaning": "Tolong tutup pintunya.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "ドアを閉めてください。",
+            "reading": "ドアをしめてください。",
+            "meaning": "Tolong tutup pintunya."
+          },
+          {
+            "japanese": "ドアの前に猫がいます。",
+            "reading": "ドアのまえにねこがいます。",
+            "meaning": "Ada kucing di depan pintu."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata ドア: pintu"
+      },
+      {
+        "id": "n5-visual-04-05",
+        "term": "台所",
+        "reading": "だいどころ",
+        "meaning": "dapur",
+        "example": "母は台所にいます。",
+        "exampleMeaning": "Ibu ada di dapur.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "母は台所にいます。",
+            "reading": "はははだいどころにいます。",
+            "meaning": "Ibu ada di dapur."
+          },
+          {
+            "japanese": "台所で料理を作ります。",
+            "reading": "だいどころでりょうりをつくります。",
+            "meaning": "Saya memasak di dapur."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 台所: dapur"
+      },
+      {
+        "id": "n5-visual-04-06",
+        "term": "お風呂",
+        "reading": "おふろ",
+        "meaning": "bak mandi; mandi",
+        "example": "お風呂に入ります。",
+        "exampleMeaning": "Saya mandi berendam.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "お風呂に入ります。",
+            "reading": "おふろにいります。",
+            "meaning": "Saya mandi berendam."
+          },
+          {
+            "japanese": "お風呂のお湯は温かいです。",
+            "reading": "おふろのおゆはあたたかいです。",
+            "meaning": "Air di bak mandi hangat."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata お風呂: bak mandi; mandi"
+      },
+      {
+        "id": "n5-visual-04-07",
+        "term": "庭",
+        "reading": "にわ",
+        "meaning": "halaman; taman rumah",
+        "example": "庭に花があります。",
+        "exampleMeaning": "Ada bunga di halaman.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "庭に花があります。",
+            "reading": "にわにはながあります。",
+            "meaning": "Ada bunga di halaman."
+          },
+          {
+            "japanese": "庭で犬と遊びます。",
+            "reading": "にわでいぬとあそびます。",
+            "meaning": "Saya bermain dengan anjing di halaman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 庭: halaman; taman rumah"
+      },
+      {
+        "id": "n5-visual-04-08",
+        "term": "ベッド",
+        "reading": "ベッド",
+        "meaning": "tempat tidur",
+        "example": "ベッドで寝ます。",
+        "exampleMeaning": "Saya tidur di tempat tidur.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "ベッドで寝ます。",
+            "reading": "ベッドでねます。",
+            "meaning": "Saya tidur di tempat tidur."
+          },
+          {
+            "japanese": "ベッドの下にかばんがあります。",
+            "reading": "ベッドのしたにかばんがあります。",
+            "meaning": "Ada tas di bawah tempat tidur."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata ベッド: tempat tidur"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-05",
+    "order": 5,
+    "title": "Makanan sehari-hari",
+    "description": "Belajar makanan sehari-hari melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-05-01",
+        "term": "ご飯",
+        "reading": "ごはん",
+        "meaning": "nasi; makanan",
+        "example": "ご飯を食べます。",
+        "exampleMeaning": "Saya makan nasi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "ご飯を食べます。",
+            "reading": "ごはんをたべます。",
+            "meaning": "Saya makan nasi."
+          },
+          {
+            "japanese": "毎朝、ご飯を作ります。",
+            "reading": "まいあさ、ごはんをつくります。",
+            "meaning": "Saya menyiapkan makanan setiap pagi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata ご飯: nasi; makanan"
+      },
+      {
+        "id": "n5-visual-05-02",
+        "term": "パン",
+        "reading": "パン",
+        "meaning": "roti",
+        "example": "パンを買います。",
+        "exampleMeaning": "Saya membeli roti.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "パンを買います。",
+            "reading": "パンをかいます。",
+            "meaning": "Saya membeli roti."
+          },
+          {
+            "japanese": "朝ご飯にパンを食べます。",
+            "reading": "あさごはんにパンをたべます。",
+            "meaning": "Saya makan roti untuk sarapan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata パン: roti"
+      },
+      {
+        "id": "n5-visual-05-03",
+        "term": "卵",
+        "reading": "たまご",
+        "meaning": "telur",
+        "example": "卵を二つ買います。",
+        "exampleMeaning": "Saya membeli dua telur.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "卵を二つ買います。",
+            "reading": "たまごをふたつかいます。",
+            "meaning": "Saya membeli dua telur."
+          },
+          {
+            "japanese": "冷蔵庫に卵があります。",
+            "reading": "れいぞうこにたまごがあります。",
+            "meaning": "Ada telur di kulkas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 卵: telur"
+      },
+      {
+        "id": "n5-visual-05-04",
+        "term": "魚",
+        "reading": "さかな",
+        "meaning": "ikan",
+        "example": "魚を食べます。",
+        "exampleMeaning": "Saya makan ikan.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "魚を食べます。",
+            "reading": "さかなをたべます。",
+            "meaning": "Saya makan ikan."
+          },
+          {
+            "japanese": "この魚はおいしいです。",
+            "reading": "このさかなはおいしいです。",
+            "meaning": "Ikan ini enak."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 魚: ikan"
+      },
+      {
+        "id": "n5-visual-05-05",
+        "term": "肉",
+        "reading": "にく",
+        "meaning": "daging",
+        "example": "肉を買います。",
+        "exampleMeaning": "Saya membeli daging.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "肉を買います。",
+            "reading": "にくをかいます。",
+            "meaning": "Saya membeli daging."
+          },
+          {
+            "japanese": "母は肉を料理します。",
+            "reading": "はははにくをりょうりします。",
+            "meaning": "Ibu memasak daging."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 肉: daging"
+      },
+      {
+        "id": "n5-visual-05-06",
+        "term": "野菜",
+        "reading": "やさい",
+        "meaning": "sayuran",
+        "example": "毎日、野菜を食べます。",
+        "exampleMeaning": "Saya makan sayur setiap hari.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "毎日、野菜を食べます。",
+            "reading": "まいにち、やさいをたべます。",
+            "meaning": "Saya makan sayur setiap hari."
+          },
+          {
+            "japanese": "スーパーで野菜を買います。",
+            "reading": "スーパーでやさいをかいます。",
+            "meaning": "Saya membeli sayur di supermarket."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 野菜: sayuran"
+      },
+      {
+        "id": "n5-visual-05-07",
+        "term": "スープ",
+        "reading": "スープ",
+        "meaning": "sup",
+        "example": "温かいスープを飲みます。",
+        "exampleMeaning": "Saya menyantap sup hangat.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "温かいスープを飲みます。",
+            "reading": "あたたかいスープをのみます。",
+            "meaning": "Saya menyantap sup hangat."
+          },
+          {
+            "japanese": "このスープはおいしいです。",
+            "reading": "このスープはおいしいです。",
+            "meaning": "Sup ini enak."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata スープ: sup"
+      },
+      {
+        "id": "n5-visual-05-08",
+        "term": "お弁当",
+        "reading": "おべんとう",
+        "meaning": "bekal makan",
+        "example": "お弁当を持って行きます。",
+        "exampleMeaning": "Saya membawa bekal.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "お弁当を持って行きます。",
+            "reading": "おべんとうをもっていきます。",
+            "meaning": "Saya membawa bekal."
+          },
+          {
+            "japanese": "公園でお弁当を食べます。",
+            "reading": "こうえんでおべんとうをたべます。",
+            "meaning": "Saya makan bekal di taman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata お弁当: bekal makan"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-06",
+    "order": 6,
+    "title": "Minuman dan buah",
+    "description": "Belajar minuman dan buah melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-06-01",
+        "term": "水",
+        "reading": "みず",
+        "meaning": "air",
+        "example": "水を飲みます。",
+        "exampleMeaning": "Saya minum air.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "水を飲みます。",
+            "reading": "みずをのみます。",
+            "meaning": "Saya minum air."
+          },
+          {
+            "japanese": "水をください。",
+            "reading": "みずをください。",
+            "meaning": "Tolong beri saya air."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 水: air"
+      },
+      {
+        "id": "n5-visual-06-02",
+        "term": "お茶",
+        "reading": "おちゃ",
+        "meaning": "teh",
+        "example": "お茶を飲みます。",
+        "exampleMeaning": "Saya minum teh.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "お茶を飲みます。",
+            "reading": "おちゃをのみます。",
+            "meaning": "Saya minum teh."
+          },
+          {
+            "japanese": "お茶は温かいです。",
+            "reading": "おちゃはあたたかいです。",
+            "meaning": "Tehnya hangat."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata お茶: teh"
+      },
+      {
+        "id": "n5-visual-06-03",
+        "term": "コーヒー",
+        "reading": "コーヒー",
+        "meaning": "kopi",
+        "example": "朝、コーヒーを飲みます。",
+        "exampleMeaning": "Saya minum kopi pada pagi hari.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "朝、コーヒーを飲みます。",
+            "reading": "あさ、コーヒーをのみます。",
+            "meaning": "Saya minum kopi pada pagi hari."
+          },
+          {
+            "japanese": "コーヒーは好きですか。",
+            "reading": "コーヒーはすきですか。",
+            "meaning": "Apakah Anda suka kopi?"
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata コーヒー: kopi"
+      },
+      {
+        "id": "n5-visual-06-04",
+        "term": "牛乳",
+        "reading": "ぎゅうにゅう",
+        "meaning": "susu",
+        "example": "毎朝、牛乳を飲みます。",
+        "exampleMeaning": "Saya minum susu setiap pagi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "毎朝、牛乳を飲みます。",
+            "reading": "まいあさ、ぎゅうにゅうをのみます。",
+            "meaning": "Saya minum susu setiap pagi."
+          },
+          {
+            "japanese": "冷蔵庫に牛乳があります。",
+            "reading": "れいぞうこにぎゅうにゅうがあります。",
+            "meaning": "Ada susu di kulkas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 牛乳: susu"
+      },
+      {
+        "id": "n5-visual-06-05",
+        "term": "ジュース",
+        "reading": "ジュース",
+        "meaning": "minuman sari buah",
+        "example": "ジュースを買います。",
+        "exampleMeaning": "Saya membeli jus.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "ジュースを買います。",
+            "reading": "ジュースをかいます。",
+            "meaning": "Saya membeli jus."
+          },
+          {
+            "japanese": "冷たいジュースを飲みます。",
+            "reading": "つめたいジュースをのみます。",
+            "meaning": "Saya minum jus dingin."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata ジュース: minuman sari buah"
+      },
+      {
+        "id": "n5-visual-06-06",
+        "term": "りんご",
+        "reading": "りんご",
+        "meaning": "apel",
+        "example": "りんごを食べます。",
+        "exampleMeaning": "Saya makan apel.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "りんごを食べます。",
+            "reading": "りんごをたべます。",
+            "meaning": "Saya makan apel."
+          },
+          {
+            "japanese": "赤いりんごを買います。",
+            "reading": "あかいりんごをかいます。",
+            "meaning": "Saya membeli apel merah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata りんご: apel"
+      },
+      {
+        "id": "n5-visual-06-07",
+        "term": "みかん",
+        "reading": "みかん",
+        "meaning": "jeruk mandarin",
+        "example": "みかんを三つ買います。",
+        "exampleMeaning": "Saya membeli tiga jeruk mandarin.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "みかんを三つ買います。",
+            "reading": "みかんをみっつかいます。",
+            "meaning": "Saya membeli tiga jeruk mandarin."
+          },
+          {
+            "japanese": "このみかんは甘いです。",
+            "reading": "このみかんはあまいです。",
+            "meaning": "Jeruk mandarin ini manis."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata みかん: jeruk mandarin"
+      },
+      {
+        "id": "n5-visual-06-08",
+        "term": "バナナ",
+        "reading": "バナナ",
+        "meaning": "pisang",
+        "example": "バナナを食べます。",
+        "exampleMeaning": "Saya makan pisang.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "バナナを食べます。",
+            "reading": "バナナをたべます。",
+            "meaning": "Saya makan pisang."
+          },
+          {
+            "japanese": "バナナは黄色いです。",
+            "reading": "バナナはきいろいです。",
+            "meaning": "Pisang berwarna kuning."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata バナナ: pisang"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-07",
+    "order": 7,
+    "title": "Aktivitas sehari-hari",
+    "description": "Belajar aktivitas sehari-hari melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-07-01",
+        "term": "起きる",
+        "reading": "おきる",
+        "meaning": "bangun tidur",
+        "example": "毎朝、七時に起きます。",
+        "exampleMeaning": "Saya bangun pukul tujuh setiap pagi.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "毎朝、七時に起きます。",
+            "reading": "まいあさ、しちじにおきます。",
+            "meaning": "Saya bangun pukul tujuh setiap pagi."
+          },
+          {
+            "japanese": "明日は早く起きます。",
+            "reading": "あしたははやくおきます。",
+            "meaning": "Besok saya bangun pagi-pagi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 起きる: bangun tidur"
+      },
+      {
+        "id": "n5-visual-07-02",
+        "term": "寝る",
+        "reading": "ねる",
+        "meaning": "tidur",
+        "example": "夜、十時に寝ます。",
+        "exampleMeaning": "Saya tidur pukul sepuluh malam.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "夜、十時に寝ます。",
+            "reading": "よる、じゅうじにねます。",
+            "meaning": "Saya tidur pukul sepuluh malam."
+          },
+          {
+            "japanese": "早く寝てください。",
+            "reading": "はやくねてください。",
+            "meaning": "Tolong tidur lebih awal."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 寝る: tidur"
+      },
+      {
+        "id": "n5-visual-07-03",
+        "term": "食べる",
+        "reading": "たべる",
+        "meaning": "makan",
+        "example": "パンを食べます。",
+        "exampleMeaning": "Saya makan roti.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "パンを食べます。",
+            "reading": "パンをたべます。",
+            "meaning": "Saya makan roti."
+          },
+          {
+            "japanese": "友達と昼ご飯を食べます。",
+            "reading": "ともだちとひるごはんをたべます。",
+            "meaning": "Saya makan siang bersama teman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 食べる: makan"
+      },
+      {
+        "id": "n5-visual-07-04",
+        "term": "飲む",
+        "reading": "のむ",
+        "meaning": "minum",
+        "example": "水を飲みます。",
+        "exampleMeaning": "Saya minum air.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "水を飲みます。",
+            "reading": "みずをのみます。",
+            "meaning": "Saya minum air."
+          },
+          {
+            "japanese": "お茶を飲みませんか。",
+            "reading": "おちゃをのみませんか。",
+            "meaning": "Maukah Anda minum teh?"
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 飲む: minum"
+      },
+      {
+        "id": "n5-visual-07-05",
+        "term": "行く",
+        "reading": "いく",
+        "meaning": "pergi",
+        "example": "学校へ行きます。",
+        "exampleMeaning": "Saya pergi ke sekolah.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "学校へ行きます。",
+            "reading": "がっこうへいきます。",
+            "meaning": "Saya pergi ke sekolah."
+          },
+          {
+            "japanese": "明日、日本へ行きます。",
+            "reading": "あした、にほんへいきます。",
+            "meaning": "Besok saya pergi ke Jepang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 行く: pergi"
+      },
+      {
+        "id": "n5-visual-07-06",
+        "term": "来る",
+        "reading": "くる",
+        "meaning": "datang",
+        "example": "友達が家に来ます。",
+        "exampleMeaning": "Teman datang ke rumah.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "友達が家に来ます。",
+            "reading": "ともだちがいえにきます。",
+            "meaning": "Teman datang ke rumah."
+          },
+          {
+            "japanese": "ここへ来てください。",
+            "reading": "ここへきてください。",
+            "meaning": "Tolong datang ke sini."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 来る: datang"
+      },
+      {
+        "id": "n5-visual-07-07",
+        "term": "帰る",
+        "reading": "かえる",
+        "meaning": "pulang",
+        "example": "家へ帰ります。",
+        "exampleMeaning": "Saya pulang ke rumah.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "家へ帰ります。",
+            "reading": "いえへかえります。",
+            "meaning": "Saya pulang ke rumah."
+          },
+          {
+            "japanese": "父は六時に帰ります。",
+            "reading": "ちちはろくじにかえります。",
+            "meaning": "Ayah pulang pukul enam."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 帰る: pulang"
+      },
+      {
+        "id": "n5-visual-07-08",
+        "term": "見る",
+        "reading": "みる",
+        "meaning": "melihat; menonton",
+        "example": "映画を見ます。",
+        "exampleMeaning": "Saya menonton film.",
+        "note": "Kata kerja ditampilkan dalam bentuk kamus; perhatikan bentuk sopan ～ます pada contoh.",
+        "examples": [
+          {
+            "japanese": "映画を見ます。",
+            "reading": "えいがをみます。",
+            "meaning": "Saya menonton film."
+          },
+          {
+            "japanese": "窓から山を見ます。",
+            "reading": "まどからやまをみます。",
+            "meaning": "Saya melihat gunung dari jendela."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 見る: melihat; menonton"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-08",
+    "order": 8,
+    "title": "Belajar dan bekerja",
+    "description": "Belajar belajar dan bekerja melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-08-01",
+        "term": "読む",
+        "reading": "よむ",
+        "meaning": "membaca",
+        "example": "本を読みます。",
+        "exampleMeaning": "Saya membaca buku.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "本を読みます。",
+            "reading": "ほんをよみます。",
+            "meaning": "Saya membaca buku."
+          },
+          {
+            "japanese": "毎朝、新聞を読みます。",
+            "reading": "まいあさ、しんぶんをよみます。",
+            "meaning": "Saya membaca koran setiap pagi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 読む: membaca"
+      },
+      {
+        "id": "n5-visual-08-02",
+        "term": "書く",
+        "reading": "かく",
+        "meaning": "menulis",
+        "example": "名前を書きます。",
+        "exampleMeaning": "Saya menulis nama.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "名前を書きます。",
+            "reading": "なまえをかきます。",
+            "meaning": "Saya menulis nama."
+          },
+          {
+            "japanese": "鉛筆で手紙を書きます。",
+            "reading": "えんぴつでてがみをかきます。",
+            "meaning": "Saya menulis surat dengan pensil."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 書く: menulis"
+      },
+      {
+        "id": "n5-visual-08-03",
+        "term": "聞く",
+        "reading": "きく",
+        "meaning": "mendengar; bertanya",
+        "example": "音楽を聞きます。",
+        "exampleMeaning": "Saya mendengarkan musik.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "音楽を聞きます。",
+            "reading": "おんがくをききます。",
+            "meaning": "Saya mendengarkan musik."
+          },
+          {
+            "japanese": "先生に聞きます。",
+            "reading": "せんせいにききます。",
+            "meaning": "Saya bertanya kepada guru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 聞く: mendengar; bertanya"
+      },
+      {
+        "id": "n5-visual-08-04",
+        "term": "話す",
+        "reading": "はなす",
+        "meaning": "berbicara",
+        "example": "友達と話します。",
+        "exampleMeaning": "Saya berbicara dengan teman.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "友達と話します。",
+            "reading": "ともだちとはなします。",
+            "meaning": "Saya berbicara dengan teman."
+          },
+          {
+            "japanese": "日本語で話します。",
+            "reading": "にほんごではなします。",
+            "meaning": "Saya berbicara dalam bahasa Jepang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 話す: berbicara"
+      },
+      {
+        "id": "n5-visual-08-05",
+        "term": "勉強する",
+        "reading": "べんきょうする",
+        "meaning": "belajar",
+        "example": "日本語を勉強します。",
+        "exampleMeaning": "Saya belajar bahasa Jepang.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "日本語を勉強します。",
+            "reading": "にほんごをべんきょうします。",
+            "meaning": "Saya belajar bahasa Jepang."
+          },
+          {
+            "japanese": "図書館で勉強します。",
+            "reading": "としょかんでべんきょうします。",
+            "meaning": "Saya belajar di perpustakaan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 勉強する: belajar"
+      },
+      {
+        "id": "n5-visual-08-06",
+        "term": "働く",
+        "reading": "はたらく",
+        "meaning": "bekerja",
+        "example": "会社で働きます。",
+        "exampleMeaning": "Saya bekerja di perusahaan.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "会社で働きます。",
+            "reading": "かいしゃではたらきます。",
+            "meaning": "Saya bekerja di perusahaan."
+          },
+          {
+            "japanese": "父は毎日働きます。",
+            "reading": "ちちはまいにちはたらきます。",
+            "meaning": "Ayah bekerja setiap hari."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 働く: bekerja"
+      },
+      {
+        "id": "n5-visual-08-07",
+        "term": "買う",
+        "reading": "かう",
+        "meaning": "membeli",
+        "example": "パンを買います。",
+        "exampleMeaning": "Saya membeli roti.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "パンを買います。",
+            "reading": "パンをかいます。",
+            "meaning": "Saya membeli roti."
+          },
+          {
+            "japanese": "新しい本を買います。",
+            "reading": "あたらしいほんをかいます。",
+            "meaning": "Saya membeli buku baru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 買う: membeli"
+      },
+      {
+        "id": "n5-visual-08-08",
+        "term": "作る",
+        "reading": "つくる",
+        "meaning": "membuat",
+        "example": "母はご飯を作ります。",
+        "exampleMeaning": "Ibu membuat makanan.",
+        "note": "Perhatikan perubahan kata kerja ke bentuk ～ます dan partikel yang dipakai pada contoh.",
+        "examples": [
+          {
+            "japanese": "母はご飯を作ります。",
+            "reading": "はははごはんをつくります。",
+            "meaning": "Ibu membuat makanan."
+          },
+          {
+            "japanese": "お弁当を作ります。",
+            "reading": "おべんとうをつくります。",
+            "meaning": "Saya membuat bekal."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 作る: membuat"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-09",
+    "order": 9,
+    "title": "Tempat di kota",
+    "description": "Belajar tempat di kota melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-09-01",
+        "term": "学校",
+        "reading": "がっこう",
+        "meaning": "sekolah",
+        "example": "学校へ行きます。",
+        "exampleMeaning": "Saya pergi ke sekolah.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "学校へ行きます。",
+            "reading": "がっこうへいきます。",
+            "meaning": "Saya pergi ke sekolah."
+          },
+          {
+            "japanese": "学校で友達に会います。",
+            "reading": "がっこうでともだちにあいます。",
+            "meaning": "Saya bertemu teman di sekolah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 学校: sekolah"
+      },
+      {
+        "id": "n5-visual-09-02",
+        "term": "図書館",
+        "reading": "としょかん",
+        "meaning": "perpustakaan",
+        "example": "図書館で本を読みます。",
+        "exampleMeaning": "Saya membaca buku di perpustakaan.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "図書館で本を読みます。",
+            "reading": "としょかんでほんをよみます。",
+            "meaning": "Saya membaca buku di perpustakaan."
+          },
+          {
+            "japanese": "図書館は静かです。",
+            "reading": "としょかんはしずかです。",
+            "meaning": "Perpustakaannya tenang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 図書館: perpustakaan"
+      },
+      {
+        "id": "n5-visual-09-03",
+        "term": "病院",
+        "reading": "びょういん",
+        "meaning": "rumah sakit",
+        "example": "病院へ行きます。",
+        "exampleMeaning": "Saya pergi ke rumah sakit.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "病院へ行きます。",
+            "reading": "びょういんへいきます。",
+            "meaning": "Saya pergi ke rumah sakit."
+          },
+          {
+            "japanese": "病院は駅の近くです。",
+            "reading": "びょういんはえきのちかくです。",
+            "meaning": "Rumah sakitnya dekat stasiun."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 病院: rumah sakit"
+      },
+      {
+        "id": "n5-visual-09-04",
+        "term": "銀行",
+        "reading": "ぎんこう",
+        "meaning": "bank",
+        "example": "銀行へ行きます。",
+        "exampleMeaning": "Saya pergi ke bank.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "銀行へ行きます。",
+            "reading": "ぎんこうへいきます。",
+            "meaning": "Saya pergi ke bank."
+          },
+          {
+            "japanese": "銀行は九時に開きます。",
+            "reading": "ぎんこうはくじにあきます。",
+            "meaning": "Bank buka pukul sembilan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 銀行: bank"
+      },
+      {
+        "id": "n5-visual-09-05",
+        "term": "郵便局",
+        "reading": "ゆうびんきょく",
+        "meaning": "kantor pos",
+        "example": "郵便局で切手を買います。",
+        "exampleMeaning": "Saya membeli perangko di kantor pos.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "郵便局で切手を買います。",
+            "reading": "ゆうびんきょくできってをかいます。",
+            "meaning": "Saya membeli perangko di kantor pos."
+          },
+          {
+            "japanese": "郵便局は銀行の隣です。",
+            "reading": "ゆうびんきょくはぎんこうのとなりです。",
+            "meaning": "Kantor pos ada di sebelah bank."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 郵便局: kantor pos"
+      },
+      {
+        "id": "n5-visual-09-06",
+        "term": "駅",
+        "reading": "えき",
+        "meaning": "stasiun",
+        "example": "駅で友達を待ちます。",
+        "exampleMeaning": "Saya menunggu teman di stasiun.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "駅で友達を待ちます。",
+            "reading": "えきでともだちをまちます。",
+            "meaning": "Saya menunggu teman di stasiun."
+          },
+          {
+            "japanese": "駅まで歩きます。",
+            "reading": "えきまであるきます。",
+            "meaning": "Saya berjalan ke stasiun."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 駅: stasiun"
+      },
+      {
+        "id": "n5-visual-09-07",
+        "term": "スーパー",
+        "reading": "スーパー",
+        "meaning": "supermarket",
+        "example": "スーパーで野菜を買います。",
+        "exampleMeaning": "Saya membeli sayur di supermarket.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "スーパーで野菜を買います。",
+            "reading": "スーパーでやさいをかいます。",
+            "meaning": "Saya membeli sayur di supermarket."
+          },
+          {
+            "japanese": "スーパーは近いです。",
+            "reading": "スーパーはちかいです。",
+            "meaning": "Supermarketnya dekat."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata スーパー: supermarket"
+      },
+      {
+        "id": "n5-visual-09-08",
+        "term": "公園",
+        "reading": "こうえん",
+        "meaning": "taman umum",
+        "example": "公園で遊びます。",
+        "exampleMeaning": "Saya bermain di taman.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "公園で遊びます。",
+            "reading": "こうえんであそびます。",
+            "meaning": "Saya bermain di taman."
+          },
+          {
+            "japanese": "公園に木があります。",
+            "reading": "こうえんにきがあります。",
+            "meaning": "Ada pohon di taman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 公園: taman umum"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-10",
+    "order": 10,
+    "title": "Transportasi",
+    "description": "Belajar transportasi melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-10-01",
+        "term": "電車",
+        "reading": "でんしゃ",
+        "meaning": "kereta",
+        "example": "電車に乗ります。",
+        "exampleMeaning": "Saya naik kereta.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "電車に乗ります。",
+            "reading": "でんしゃにのります。",
+            "meaning": "Saya naik kereta."
+          },
+          {
+            "japanese": "電車で学校へ行きます。",
+            "reading": "でんしゃでがっこうへいきます。",
+            "meaning": "Saya pergi ke sekolah dengan kereta."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 電車: kereta"
+      },
+      {
+        "id": "n5-visual-10-02",
+        "term": "バス",
+        "reading": "バス",
+        "meaning": "bus",
+        "example": "バスに乗ります。",
+        "exampleMeaning": "Saya naik bus.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "バスに乗ります。",
+            "reading": "バスにのります。",
+            "meaning": "Saya naik bus."
+          },
+          {
+            "japanese": "バスで家へ帰ります。",
+            "reading": "バスでいえへかえります。",
+            "meaning": "Saya pulang dengan bus."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata バス: bus"
+      },
+      {
+        "id": "n5-visual-10-03",
+        "term": "車",
+        "reading": "くるま",
+        "meaning": "mobil",
+        "example": "父は車を運転します。",
+        "exampleMeaning": "Ayah mengemudikan mobil.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "父は車を運転します。",
+            "reading": "ちちはくるまをうんてんします。",
+            "meaning": "Ayah mengemudikan mobil."
+          },
+          {
+            "japanese": "車で病院へ行きます。",
+            "reading": "くるまでびょういんへいきます。",
+            "meaning": "Saya pergi ke rumah sakit dengan mobil."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 車: mobil"
+      },
+      {
+        "id": "n5-visual-10-04",
+        "term": "自転車",
+        "reading": "じてんしゃ",
+        "meaning": "sepeda",
+        "example": "自転車に乗ります。",
+        "exampleMeaning": "Saya naik sepeda.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "自転車に乗ります。",
+            "reading": "じてんしゃにのります。",
+            "meaning": "Saya naik sepeda."
+          },
+          {
+            "japanese": "この自転車は新しいです。",
+            "reading": "このじてんしゃはあたらしいです。",
+            "meaning": "Sepeda ini baru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 自転車: sepeda"
+      },
+      {
+        "id": "n5-visual-10-05",
+        "term": "飛行機",
+        "reading": "ひこうき",
+        "meaning": "pesawat",
+        "example": "飛行機で日本へ行きます。",
+        "exampleMeaning": "Saya pergi ke Jepang dengan pesawat.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "飛行機で日本へ行きます。",
+            "reading": "ひこうきでにほんへいきます。",
+            "meaning": "Saya pergi ke Jepang dengan pesawat."
+          },
+          {
+            "japanese": "飛行機は大きいです。",
+            "reading": "ひこうきはおおきいです。",
+            "meaning": "Pesawatnya besar."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 飛行機: pesawat"
+      },
+      {
+        "id": "n5-visual-10-06",
+        "term": "タクシー",
+        "reading": "タクシー",
+        "meaning": "taksi",
+        "example": "タクシーに乗ります。",
+        "exampleMeaning": "Saya naik taksi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "タクシーに乗ります。",
+            "reading": "タクシーにのります。",
+            "meaning": "Saya naik taksi."
+          },
+          {
+            "japanese": "タクシーで駅へ行きます。",
+            "reading": "タクシーでえきへいきます。",
+            "meaning": "Saya pergi ke stasiun dengan taksi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata タクシー: taksi"
+      },
+      {
+        "id": "n5-visual-10-07",
+        "term": "切符",
+        "reading": "きっぷ",
+        "meaning": "tiket",
+        "example": "切符を買います。",
+        "exampleMeaning": "Saya membeli tiket.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "切符を買います。",
+            "reading": "きっぷをかいます。",
+            "meaning": "Saya membeli tiket."
+          },
+          {
+            "japanese": "切符を見せてください。",
+            "reading": "きっぷをみせてください。",
+            "meaning": "Tolong tunjukkan tiket Anda."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 切符: tiket"
+      },
+      {
+        "id": "n5-visual-10-08",
+        "term": "歩く",
+        "reading": "あるく",
+        "meaning": "berjalan",
+        "example": "学校まで歩きます。",
+        "exampleMeaning": "Saya berjalan sampai sekolah.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "学校まで歩きます。",
+            "reading": "がっこうまであるきます。",
+            "meaning": "Saya berjalan sampai sekolah."
+          },
+          {
+            "japanese": "毎朝、公園を歩きます。",
+            "reading": "まいあさ、こうえんをあるきます。",
+            "meaning": "Saya berjalan di taman setiap pagi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 歩く: berjalan"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-11",
+    "order": 11,
+    "title": "Waktu sehari-hari",
+    "description": "Belajar waktu sehari-hari melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-11-01",
+        "term": "朝",
+        "reading": "あさ",
+        "meaning": "pagi",
+        "example": "朝、ご飯を食べます。",
+        "exampleMeaning": "Saya makan pada pagi hari.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "朝、ご飯を食べます。",
+            "reading": "あさ、ごはんをたべます。",
+            "meaning": "Saya makan pada pagi hari."
+          },
+          {
+            "japanese": "朝は涼しいです。",
+            "reading": "あさはすずしいです。",
+            "meaning": "Pagi hari sejuk."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 朝: pagi"
+      },
+      {
+        "id": "n5-visual-11-02",
+        "term": "昼",
+        "reading": "ひる",
+        "meaning": "siang",
+        "example": "昼に友達と会います。",
+        "exampleMeaning": "Saya bertemu teman pada siang hari.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "昼に友達と会います。",
+            "reading": "ひるにともだちとあいます。",
+            "meaning": "Saya bertemu teman pada siang hari."
+          },
+          {
+            "japanese": "昼は暑いです。",
+            "reading": "ひるはあついです。",
+            "meaning": "Siang hari panas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 昼: siang"
+      },
+      {
+        "id": "n5-visual-11-03",
+        "term": "夕方",
+        "reading": "ゆうがた",
+        "meaning": "sore",
+        "example": "夕方、家へ帰ります。",
+        "exampleMeaning": "Saya pulang pada sore hari.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "夕方、家へ帰ります。",
+            "reading": "ゆうがた、いえへかえります。",
+            "meaning": "Saya pulang pada sore hari."
+          },
+          {
+            "japanese": "夕方に買い物をします。",
+            "reading": "ゆうがたにかいものをします。",
+            "meaning": "Saya berbelanja pada sore hari."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 夕方: sore"
+      },
+      {
+        "id": "n5-visual-11-04",
+        "term": "夜",
+        "reading": "よる",
+        "meaning": "malam",
+        "example": "夜、本を読みます。",
+        "exampleMeaning": "Saya membaca buku pada malam hari.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "夜、本を読みます。",
+            "reading": "よる、ほんをよみます。",
+            "meaning": "Saya membaca buku pada malam hari."
+          },
+          {
+            "japanese": "夜は静かです。",
+            "reading": "よるはしずかです。",
+            "meaning": "Malam hari tenang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 夜: malam"
+      },
+      {
+        "id": "n5-visual-11-05",
+        "term": "今日",
+        "reading": "きょう",
+        "meaning": "hari ini",
+        "example": "今日は学校へ行きます。",
+        "exampleMeaning": "Hari ini saya pergi ke sekolah.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "今日は学校へ行きます。",
+            "reading": "きょうはがっこうへいきます。",
+            "meaning": "Hari ini saya pergi ke sekolah."
+          },
+          {
+            "japanese": "今日はいい天気です。",
+            "reading": "きょうはいいてんきです。",
+            "meaning": "Cuaca hari ini bagus."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 今日: hari ini"
+      },
+      {
+        "id": "n5-visual-11-06",
+        "term": "昨日",
+        "reading": "きのう",
+        "meaning": "kemarin",
+        "example": "昨日、映画を見ました。",
+        "exampleMeaning": "Kemarin saya menonton film.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "昨日、映画を見ました。",
+            "reading": "きのう、えいがをみました。",
+            "meaning": "Kemarin saya menonton film."
+          },
+          {
+            "japanese": "昨日は雨でした。",
+            "reading": "きのうはあめでした。",
+            "meaning": "Kemarin hujan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 昨日: kemarin"
+      },
+      {
+        "id": "n5-visual-11-07",
+        "term": "明日",
+        "reading": "あした",
+        "meaning": "besok",
+        "example": "明日、友達が来ます。",
+        "exampleMeaning": "Besok teman saya datang.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "明日、友達が来ます。",
+            "reading": "あした、ともだちがきます。",
+            "meaning": "Besok teman saya datang."
+          },
+          {
+            "japanese": "明日は日曜日です。",
+            "reading": "あしたはにちようびです。",
+            "meaning": "Besok hari Minggu."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 明日: besok"
+      },
+      {
+        "id": "n5-visual-11-08",
+        "term": "何時",
+        "reading": "なんじ",
+        "meaning": "pukul berapa",
+        "example": "今、何時ですか。",
+        "exampleMeaning": "Sekarang pukul berapa?",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "今、何時ですか。",
+            "reading": "いま、なんじですか。",
+            "meaning": "Sekarang pukul berapa?"
+          },
+          {
+            "japanese": "何時に起きますか。",
+            "reading": "なんじにおきますか。",
+            "meaning": "Anda bangun pukul berapa?"
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 何時: pukul berapa"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-12",
+    "order": 12,
+    "title": "Hari dan libur",
+    "description": "Belajar hari dan libur melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-12-01",
+        "term": "月曜日",
+        "reading": "げつようび",
+        "meaning": "Senin",
+        "example": "月曜日に学校へ行きます。",
+        "exampleMeaning": "Saya pergi ke sekolah pada hari Senin.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "月曜日に学校へ行きます。",
+            "reading": "げつようびにがっこうへいきます。",
+            "meaning": "Saya pergi ke sekolah pada hari Senin."
+          },
+          {
+            "japanese": "月曜日は忙しいです。",
+            "reading": "げつようびはいそがしいです。",
+            "meaning": "Hari Senin sibuk."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 月曜日: Senin"
+      },
+      {
+        "id": "n5-visual-12-02",
+        "term": "火曜日",
+        "reading": "かようび",
+        "meaning": "Selasa",
+        "example": "火曜日に勉強します。",
+        "exampleMeaning": "Saya belajar pada hari Selasa.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "火曜日に勉強します。",
+            "reading": "かようびにべんきょうします。",
+            "meaning": "Saya belajar pada hari Selasa."
+          },
+          {
+            "japanese": "火曜日に友達が来ます。",
+            "reading": "かようびにともだちがきます。",
+            "meaning": "Teman saya datang pada hari Selasa."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 火曜日: Selasa"
+      },
+      {
+        "id": "n5-visual-12-03",
+        "term": "水曜日",
+        "reading": "すいようび",
+        "meaning": "Rabu",
+        "example": "水曜日に本を読みます。",
+        "exampleMeaning": "Saya membaca buku pada hari Rabu.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "水曜日に本を読みます。",
+            "reading": "すいようびにほんをよみます。",
+            "meaning": "Saya membaca buku pada hari Rabu."
+          },
+          {
+            "japanese": "水曜日は休みです。",
+            "reading": "すいようびはやすみです。",
+            "meaning": "Hari Rabu adalah hari libur."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 水曜日: Rabu"
+      },
+      {
+        "id": "n5-visual-12-04",
+        "term": "木曜日",
+        "reading": "もくようび",
+        "meaning": "Kamis",
+        "example": "木曜日に図書館へ行きます。",
+        "exampleMeaning": "Saya pergi ke perpustakaan pada hari Kamis.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "木曜日に図書館へ行きます。",
+            "reading": "もくようびにとしょかんへいきます。",
+            "meaning": "Saya pergi ke perpustakaan pada hari Kamis."
+          },
+          {
+            "japanese": "木曜日に先生と話します。",
+            "reading": "もくようびにせんせいとはなします。",
+            "meaning": "Saya berbicara dengan guru pada hari Kamis."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 木曜日: Kamis"
+      },
+      {
+        "id": "n5-visual-12-05",
+        "term": "金曜日",
+        "reading": "きんようび",
+        "meaning": "Jumat",
+        "example": "金曜日に家へ帰ります。",
+        "exampleMeaning": "Saya pulang ke rumah pada hari Jumat.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "金曜日に家へ帰ります。",
+            "reading": "きんようびにいえへかえります。",
+            "meaning": "Saya pulang ke rumah pada hari Jumat."
+          },
+          {
+            "japanese": "金曜日に映画を見ます。",
+            "reading": "きんようびにえいがをみます。",
+            "meaning": "Saya menonton film pada hari Jumat."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 金曜日: Jumat"
+      },
+      {
+        "id": "n5-visual-12-06",
+        "term": "土曜日",
+        "reading": "どようび",
+        "meaning": "Sabtu",
+        "example": "土曜日に公園へ行きます。",
+        "exampleMeaning": "Saya pergi ke taman pada hari Sabtu.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "土曜日に公園へ行きます。",
+            "reading": "どようびにこうえんへいきます。",
+            "meaning": "Saya pergi ke taman pada hari Sabtu."
+          },
+          {
+            "japanese": "土曜日は学校へ行きません。",
+            "reading": "どようびはがっこうへいきません。",
+            "meaning": "Saya tidak pergi ke sekolah pada hari Sabtu."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 土曜日: Sabtu"
+      },
+      {
+        "id": "n5-visual-12-07",
+        "term": "日曜日",
+        "reading": "にちようび",
+        "meaning": "Minggu",
+        "example": "日曜日に家で休みます。",
+        "exampleMeaning": "Saya beristirahat di rumah pada hari Minggu.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "日曜日に家で休みます。",
+            "reading": "にちようびにいえでやすみます。",
+            "meaning": "Saya beristirahat di rumah pada hari Minggu."
+          },
+          {
+            "japanese": "日曜日に家族と会います。",
+            "reading": "にちようびにかぞくとあいます。",
+            "meaning": "Saya bertemu keluarga pada hari Minggu."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 日曜日: Minggu"
+      },
+      {
+        "id": "n5-visual-12-08",
+        "term": "休み",
+        "reading": "やすみ",
+        "meaning": "libur; istirahat",
+        "example": "今日は休みです。",
+        "exampleMeaning": "Hari ini libur.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "今日は休みです。",
+            "reading": "きょうはやすみです。",
+            "meaning": "Hari ini libur."
+          },
+          {
+            "japanese": "休みに旅行します。",
+            "reading": "やすみにりょこうします。",
+            "meaning": "Saya bepergian saat libur."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 休み: libur; istirahat"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-13",
+    "order": 13,
+    "title": "Cuaca dan alam",
+    "description": "Belajar cuaca dan alam melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-13-01",
+        "term": "雨",
+        "reading": "あめ",
+        "meaning": "hujan",
+        "example": "今日は雨です。",
+        "exampleMeaning": "Hari ini hujan.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "今日は雨です。",
+            "reading": "きょうはあめです。",
+            "meaning": "Hari ini hujan."
+          },
+          {
+            "japanese": "雨の日は傘を持ちます。",
+            "reading": "あめのひはかさをもちます。",
+            "meaning": "Saya membawa payung pada hari hujan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 雨: hujan"
+      },
+      {
+        "id": "n5-visual-13-02",
+        "term": "雪",
+        "reading": "ゆき",
+        "meaning": "salju",
+        "example": "雪が降ります。",
+        "exampleMeaning": "Salju turun.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "雪が降ります。",
+            "reading": "ゆきがふります。",
+            "meaning": "Salju turun."
+          },
+          {
+            "japanese": "雪は白いです。",
+            "reading": "ゆきはしろいです。",
+            "meaning": "Salju berwarna putih."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 雪: salju"
+      },
+      {
+        "id": "n5-visual-13-03",
+        "term": "晴れ",
+        "reading": "はれ",
+        "meaning": "cerah",
+        "example": "明日は晴れです。",
+        "exampleMeaning": "Besok cerah.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "明日は晴れです。",
+            "reading": "あしたははれです。",
+            "meaning": "Besok cerah."
+          },
+          {
+            "japanese": "晴れの日に公園へ行きます。",
+            "reading": "はれのひにこうえんへいきます。",
+            "meaning": "Saya pergi ke taman pada hari cerah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 晴れ: cerah"
+      },
+      {
+        "id": "n5-visual-13-04",
+        "term": "曇り",
+        "reading": "くもり",
+        "meaning": "berawan",
+        "example": "今日は曇りです。",
+        "exampleMeaning": "Hari ini berawan.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "今日は曇りです。",
+            "reading": "きょうはくもりです。",
+            "meaning": "Hari ini berawan."
+          },
+          {
+            "japanese": "明日も曇りです。",
+            "reading": "あしたもくもりです。",
+            "meaning": "Besok juga berawan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 曇り: berawan"
+      },
+      {
+        "id": "n5-visual-13-05",
+        "term": "山",
+        "reading": "やま",
+        "meaning": "gunung",
+        "example": "山が見えます。",
+        "exampleMeaning": "Gunung terlihat.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "山が見えます。",
+            "reading": "やまがみえます。",
+            "meaning": "Gunung terlihat."
+          },
+          {
+            "japanese": "友達と山へ行きます。",
+            "reading": "ともだちとやまへいきます。",
+            "meaning": "Saya pergi ke gunung bersama teman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 山: gunung"
+      },
+      {
+        "id": "n5-visual-13-06",
+        "term": "川",
+        "reading": "かわ",
+        "meaning": "sungai",
+        "example": "川の近くに家があります。",
+        "exampleMeaning": "Ada rumah di dekat sungai.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "川の近くに家があります。",
+            "reading": "かわのちかくにいえがあります。",
+            "meaning": "Ada rumah di dekat sungai."
+          },
+          {
+            "japanese": "川の水は冷たいです。",
+            "reading": "かわのみずはつめたいです。",
+            "meaning": "Air sungai dingin."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 川: sungai"
+      },
+      {
+        "id": "n5-visual-13-07",
+        "term": "海",
+        "reading": "うみ",
+        "meaning": "laut",
+        "example": "夏に海へ行きます。",
+        "exampleMeaning": "Saya pergi ke laut pada musim panas.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "夏に海へ行きます。",
+            "reading": "なつにうみへいきます。",
+            "meaning": "Saya pergi ke laut pada musim panas."
+          },
+          {
+            "japanese": "海は青いです。",
+            "reading": "うみはあおいです。",
+            "meaning": "Laut berwarna biru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 海: laut"
+      },
+      {
+        "id": "n5-visual-13-08",
+        "term": "花",
+        "reading": "はな",
+        "meaning": "bunga",
+        "example": "庭に花があります。",
+        "exampleMeaning": "Ada bunga di halaman.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "庭に花があります。",
+            "reading": "にわにはながあります。",
+            "meaning": "Ada bunga di halaman."
+          },
+          {
+            "japanese": "母に花をあげます。",
+            "reading": "ははにはなをあげます。",
+            "meaning": "Saya memberikan bunga kepada ibu."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 花: bunga"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-14",
+    "order": 14,
+    "title": "Hewan",
+    "description": "Belajar hewan melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-14-01",
+        "term": "犬",
+        "reading": "いぬ",
+        "meaning": "anjing",
+        "example": "犬が庭にいます。",
+        "exampleMeaning": "Anjing ada di halaman.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "犬が庭にいます。",
+            "reading": "いぬがにわにいます。",
+            "meaning": "Anjing ada di halaman."
+          },
+          {
+            "japanese": "犬と遊びます。",
+            "reading": "いぬとあそびます。",
+            "meaning": "Saya bermain dengan anjing."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 犬: anjing"
+      },
+      {
+        "id": "n5-visual-14-02",
+        "term": "猫",
+        "reading": "ねこ",
+        "meaning": "kucing",
+        "example": "猫が椅子の下にいます。",
+        "exampleMeaning": "Kucing ada di bawah kursi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "猫が椅子の下にいます。",
+            "reading": "ねこがいすのしたにいます。",
+            "meaning": "Kucing ada di bawah kursi."
+          },
+          {
+            "japanese": "猫は小さいです。",
+            "reading": "ねこはちいさいです。",
+            "meaning": "Kucingnya kecil."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 猫: kucing"
+      },
+      {
+        "id": "n5-visual-14-03",
+        "term": "鳥",
+        "reading": "とり",
+        "meaning": "burung",
+        "example": "木に鳥がいます。",
+        "exampleMeaning": "Ada burung di pohon.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "木に鳥がいます。",
+            "reading": "きにとりがいます。",
+            "meaning": "Ada burung di pohon."
+          },
+          {
+            "japanese": "鳥の声を聞きます。",
+            "reading": "とりのこえをききます。",
+            "meaning": "Saya mendengar suara burung."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 鳥: burung"
+      },
+      {
+        "id": "n5-visual-14-04",
+        "term": "魚",
+        "reading": "さかな",
+        "meaning": "ikan hidup",
+        "example": "魚が水の中にいます。",
+        "exampleMeaning": "Ikan ada di dalam air.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "魚が水の中にいます。",
+            "reading": "さかながみずのなかにいます。",
+            "meaning": "Ikan ada di dalam air."
+          },
+          {
+            "japanese": "魚を見ます。",
+            "reading": "さかなをみます。",
+            "meaning": "Saya melihat ikan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 魚: ikan hidup"
+      },
+      {
+        "id": "n5-visual-14-05",
+        "term": "うさぎ",
+        "reading": "うさぎ",
+        "meaning": "kelinci",
+        "example": "うさぎは白いです。",
+        "exampleMeaning": "Kelinci itu putih.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "うさぎは白いです。",
+            "reading": "うさぎはしろいです。",
+            "meaning": "Kelinci itu putih."
+          },
+          {
+            "japanese": "うさぎが二匹います。",
+            "reading": "うさぎがにひきいます。",
+            "meaning": "Ada dua kelinci."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata うさぎ: kelinci"
+      },
+      {
+        "id": "n5-visual-14-06",
+        "term": "馬",
+        "reading": "うま",
+        "meaning": "kuda",
+        "example": "馬は大きいです。",
+        "exampleMeaning": "Kuda itu besar.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "馬は大きいです。",
+            "reading": "うまはおおきいです。",
+            "meaning": "Kuda itu besar."
+          },
+          {
+            "japanese": "馬を見ます。",
+            "reading": "うまをみます。",
+            "meaning": "Saya melihat kuda."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 馬: kuda"
+      },
+      {
+        "id": "n5-visual-14-07",
+        "term": "牛",
+        "reading": "うし",
+        "meaning": "sapi",
+        "example": "牛がいます。",
+        "exampleMeaning": "Ada sapi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "牛がいます。",
+            "reading": "うしがいます。",
+            "meaning": "Ada sapi."
+          },
+          {
+            "japanese": "牛は草を食べます。",
+            "reading": "うしはくさをたべます。",
+            "meaning": "Sapi makan rumput."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 牛: sapi"
+      },
+      {
+        "id": "n5-visual-14-08",
+        "term": "パンダ",
+        "reading": "パンダ",
+        "meaning": "panda",
+        "example": "パンダを見ます。",
+        "exampleMeaning": "Saya melihat panda.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "パンダを見ます。",
+            "reading": "パンダをみます。",
+            "meaning": "Saya melihat panda."
+          },
+          {
+            "japanese": "子供はパンダが好きです。",
+            "reading": "こどもはパンダがすきです。",
+            "meaning": "Anak-anak suka panda."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata パンダ: panda"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-15",
+    "order": 15,
+    "title": "Tubuh",
+    "description": "Belajar tubuh melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-15-01",
+        "term": "頭",
+        "reading": "あたま",
+        "meaning": "kepala",
+        "example": "頭が痛いです。",
+        "exampleMeaning": "Kepala saya sakit.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "頭が痛いです。",
+            "reading": "あたまがいたいです。",
+            "meaning": "Kepala saya sakit."
+          },
+          {
+            "japanese": "帽子を頭にかぶります。",
+            "reading": "ぼうしをあたまにかぶります。",
+            "meaning": "Saya mengenakan topi di kepala."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 頭: kepala"
+      },
+      {
+        "id": "n5-visual-15-02",
+        "term": "目",
+        "reading": "め",
+        "meaning": "mata",
+        "example": "目を閉じます。",
+        "exampleMeaning": "Saya menutup mata.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "目を閉じます。",
+            "reading": "めをとじます。",
+            "meaning": "Saya menutup mata."
+          },
+          {
+            "japanese": "私の目は黒いです。",
+            "reading": "わたしのめはくろいです。",
+            "meaning": "Mata saya hitam."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 目: mata"
+      },
+      {
+        "id": "n5-visual-15-03",
+        "term": "耳",
+        "reading": "みみ",
+        "meaning": "telinga",
+        "example": "耳が痛いです。",
+        "exampleMeaning": "Telinga saya sakit.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "耳が痛いです。",
+            "reading": "みみがいたいです。",
+            "meaning": "Telinga saya sakit."
+          },
+          {
+            "japanese": "耳で音を聞きます。",
+            "reading": "みみでおとをききます。",
+            "meaning": "Saya mendengar bunyi dengan telinga."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 耳: telinga"
+      },
+      {
+        "id": "n5-visual-15-04",
+        "term": "鼻",
+        "reading": "はな",
+        "meaning": "hidung",
+        "example": "鼻が赤いです。",
+        "exampleMeaning": "Hidungnya merah.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "鼻が赤いです。",
+            "reading": "はながあかいです。",
+            "meaning": "Hidungnya merah."
+          },
+          {
+            "japanese": "花の匂いを鼻で感じます。",
+            "reading": "はなのにおいをはなでかんじます。",
+            "meaning": "Saya mencium aroma bunga dengan hidung."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 鼻: hidung"
+      },
+      {
+        "id": "n5-visual-15-05",
+        "term": "口",
+        "reading": "くち",
+        "meaning": "mulut",
+        "example": "口を開けてください。",
+        "exampleMeaning": "Tolong buka mulut Anda.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "口を開けてください。",
+            "reading": "くちをあけてください。",
+            "meaning": "Tolong buka mulut Anda."
+          },
+          {
+            "japanese": "口を閉じます。",
+            "reading": "くちをとじます。",
+            "meaning": "Saya menutup mulut."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 口: mulut"
+      },
+      {
+        "id": "n5-visual-15-06",
+        "term": "手",
+        "reading": "て",
+        "meaning": "tangan",
+        "example": "手を洗います。",
+        "exampleMeaning": "Saya mencuci tangan.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "手を洗います。",
+            "reading": "てをあらいます。",
+            "meaning": "Saya mencuci tangan."
+          },
+          {
+            "japanese": "右の手を上げます。",
+            "reading": "みぎのてをあげます。",
+            "meaning": "Saya mengangkat tangan kanan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 手: tangan"
+      },
+      {
+        "id": "n5-visual-15-07",
+        "term": "足",
+        "reading": "あし",
+        "meaning": "kaki",
+        "example": "足が痛いです。",
+        "exampleMeaning": "Kaki saya sakit.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "足が痛いです。",
+            "reading": "あしがいたいです。",
+            "meaning": "Kaki saya sakit."
+          },
+          {
+            "japanese": "足を洗います。",
+            "reading": "あしをあらいます。",
+            "meaning": "Saya mencuci kaki."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 足: kaki"
+      },
+      {
+        "id": "n5-visual-15-08",
+        "term": "お腹",
+        "reading": "おなか",
+        "meaning": "perut",
+        "example": "お腹がすきました。",
+        "exampleMeaning": "Saya lapar.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "お腹がすきました。",
+            "reading": "おなかがすきました。",
+            "meaning": "Saya lapar."
+          },
+          {
+            "japanese": "お腹が痛いです。",
+            "reading": "おなかがいたいです。",
+            "meaning": "Perut saya sakit."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata お腹: perut"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-16",
+    "order": 16,
+    "title": "Pakaian",
+    "description": "Belajar pakaian melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-16-01",
+        "term": "服",
+        "reading": "ふく",
+        "meaning": "pakaian",
+        "example": "服を買います。",
+        "exampleMeaning": "Saya membeli pakaian.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "服を買います。",
+            "reading": "ふくをかいます。",
+            "meaning": "Saya membeli pakaian."
+          },
+          {
+            "japanese": "新しい服を着ます。",
+            "reading": "あたらしいふくをきます。",
+            "meaning": "Saya memakai pakaian baru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 服: pakaian"
+      },
+      {
+        "id": "n5-visual-16-02",
+        "term": "シャツ",
+        "reading": "シャツ",
+        "meaning": "kemeja",
+        "example": "白いシャツを着ます。",
+        "exampleMeaning": "Saya mengenakan kemeja putih.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "白いシャツを着ます。",
+            "reading": "しろいシャツをきます。",
+            "meaning": "Saya mengenakan kemeja putih."
+          },
+          {
+            "japanese": "シャツを洗います。",
+            "reading": "シャツをあらいます。",
+            "meaning": "Saya mencuci kemeja."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata シャツ: kemeja"
+      },
+      {
+        "id": "n5-visual-16-03",
+        "term": "上着",
+        "reading": "うわぎ",
+        "meaning": "jaket; pakaian luar",
+        "example": "寒いので上着を着ます。",
+        "exampleMeaning": "Saya memakai jaket karena dingin.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "寒いので上着を着ます。",
+            "reading": "さむいのでうわぎをきます。",
+            "meaning": "Saya memakai jaket karena dingin."
+          },
+          {
+            "japanese": "上着を脱ぎます。",
+            "reading": "うわぎをぬぎます。",
+            "meaning": "Saya melepas jaket."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 上着: jaket; pakaian luar"
+      },
+      {
+        "id": "n5-visual-16-04",
+        "term": "ズボン",
+        "reading": "ズボン",
+        "meaning": "celana panjang",
+        "example": "黒いズボンを買います。",
+        "exampleMeaning": "Saya membeli celana panjang hitam.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "黒いズボンを買います。",
+            "reading": "くろいズボンをかいます。",
+            "meaning": "Saya membeli celana panjang hitam."
+          },
+          {
+            "japanese": "このズボンは長いです。",
+            "reading": "このズボンはながいです。",
+            "meaning": "Celana ini panjang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata ズボン: celana panjang"
+      },
+      {
+        "id": "n5-visual-16-05",
+        "term": "スカート",
+        "reading": "スカート",
+        "meaning": "rok",
+        "example": "姉はスカートを着ています。",
+        "exampleMeaning": "Kakak perempuan saya sedang mengenakan rok.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "姉はスカートを着ています。",
+            "reading": "あねはスカートをきています。",
+            "meaning": "Kakak perempuan saya sedang mengenakan rok."
+          },
+          {
+            "japanese": "青いスカートを買います。",
+            "reading": "あおいスカートをかいます。",
+            "meaning": "Saya membeli rok biru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata スカート: rok"
+      },
+      {
+        "id": "n5-visual-16-06",
+        "term": "靴",
+        "reading": "くつ",
+        "meaning": "sepatu",
+        "example": "靴を履きます。",
+        "exampleMeaning": "Saya memakai sepatu.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "靴を履きます。",
+            "reading": "くつをはきます。",
+            "meaning": "Saya memakai sepatu."
+          },
+          {
+            "japanese": "新しい靴を買います。",
+            "reading": "あたらしいくつをかいます。",
+            "meaning": "Saya membeli sepatu baru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 靴: sepatu"
+      },
+      {
+        "id": "n5-visual-16-07",
+        "term": "靴下",
+        "reading": "くつした",
+        "meaning": "kaus kaki",
+        "example": "靴下を履きます。",
+        "exampleMeaning": "Saya memakai kaus kaki.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "靴下を履きます。",
+            "reading": "くつしたをはきます。",
+            "meaning": "Saya memakai kaus kaki."
+          },
+          {
+            "japanese": "白い靴下を洗います。",
+            "reading": "しろいくつしたをあらいます。",
+            "meaning": "Saya mencuci kaus kaki putih."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 靴下: kaus kaki"
+      },
+      {
+        "id": "n5-visual-16-08",
+        "term": "帽子",
+        "reading": "ぼうし",
+        "meaning": "topi",
+        "example": "帽子をかぶります。",
+        "exampleMeaning": "Saya mengenakan topi.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "帽子をかぶります。",
+            "reading": "ぼうしをかぶります。",
+            "meaning": "Saya mengenakan topi."
+          },
+          {
+            "japanese": "この帽子は赤いです。",
+            "reading": "このぼうしはあかいです。",
+            "meaning": "Topi ini merah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 帽子: topi"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-17",
+    "order": 17,
+    "title": "Warna",
+    "description": "Belajar warna melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-17-01",
+        "term": "赤い",
+        "reading": "あかい",
+        "meaning": "merah",
+        "example": "赤いりんごを食べます。",
+        "exampleMeaning": "Saya makan apel merah.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "赤いりんごを食べます。",
+            "reading": "あかいりんごをたべます。",
+            "meaning": "Saya makan apel merah."
+          },
+          {
+            "japanese": "この花は赤いです。",
+            "reading": "このはなはあかいです。",
+            "meaning": "Bunga ini merah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 赤い: merah"
+      },
+      {
+        "id": "n5-visual-17-02",
+        "term": "青い",
+        "reading": "あおい",
+        "meaning": "biru",
+        "example": "青いかばんを買います。",
+        "exampleMeaning": "Saya membeli tas biru.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "青いかばんを買います。",
+            "reading": "あおいかばんをかいます。",
+            "meaning": "Saya membeli tas biru."
+          },
+          {
+            "japanese": "海は青いです。",
+            "reading": "うみはあおいです。",
+            "meaning": "Laut berwarna biru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 青い: biru"
+      },
+      {
+        "id": "n5-visual-17-03",
+        "term": "白い",
+        "reading": "しろい",
+        "meaning": "putih",
+        "example": "白いシャツを着ます。",
+        "exampleMeaning": "Saya memakai kemeja putih.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "白いシャツを着ます。",
+            "reading": "しろいシャツをきます。",
+            "meaning": "Saya memakai kemeja putih."
+          },
+          {
+            "japanese": "雪は白いです。",
+            "reading": "ゆきはしろいです。",
+            "meaning": "Salju berwarna putih."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 白い: putih"
+      },
+      {
+        "id": "n5-visual-17-04",
+        "term": "黒い",
+        "reading": "くろい",
+        "meaning": "hitam",
+        "example": "黒い猫がいます。",
+        "exampleMeaning": "Ada kucing hitam.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "黒い猫がいます。",
+            "reading": "くろいねこがいます。",
+            "meaning": "Ada kucing hitam."
+          },
+          {
+            "japanese": "この靴は黒いです。",
+            "reading": "このくつはくろいです。",
+            "meaning": "Sepatu ini hitam."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 黒い: hitam"
+      },
+      {
+        "id": "n5-visual-17-05",
+        "term": "黄色い",
+        "reading": "きいろい",
+        "meaning": "kuning",
+        "example": "黄色い花があります。",
+        "exampleMeaning": "Ada bunga kuning.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "黄色い花があります。",
+            "reading": "きいろいはながあります。",
+            "meaning": "Ada bunga kuning."
+          },
+          {
+            "japanese": "バナナは黄色いです。",
+            "reading": "バナナはきいろいです。",
+            "meaning": "Pisang berwarna kuning."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 黄色い: kuning"
+      },
+      {
+        "id": "n5-visual-17-06",
+        "term": "緑",
+        "reading": "みどり",
+        "meaning": "hijau",
+        "example": "緑のかばんを買います。",
+        "exampleMeaning": "Saya membeli tas hijau.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "緑のかばんを買います。",
+            "reading": "みどりのかばんをかいます。",
+            "meaning": "Saya membeli tas hijau."
+          },
+          {
+            "japanese": "この葉は緑です。",
+            "reading": "このははみどりです。",
+            "meaning": "Daun ini hijau."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 緑: hijau"
+      },
+      {
+        "id": "n5-visual-17-07",
+        "term": "茶色",
+        "reading": "ちゃいろ",
+        "meaning": "cokelat",
+        "example": "茶色の靴を履きます。",
+        "exampleMeaning": "Saya memakai sepatu cokelat.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "茶色の靴を履きます。",
+            "reading": "ちゃいろのくつをはきます。",
+            "meaning": "Saya memakai sepatu cokelat."
+          },
+          {
+            "japanese": "この机は茶色です。",
+            "reading": "このつくえはちゃいろです。",
+            "meaning": "Meja ini cokelat."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 茶色: cokelat"
+      },
+      {
+        "id": "n5-visual-17-08",
+        "term": "ピンク",
+        "reading": "ピンク",
+        "meaning": "merah muda",
+        "example": "ピンクの花があります。",
+        "exampleMeaning": "Ada bunga merah muda.",
+        "note": "赤い・青い・白い・黒い・黄色い adalah kata sifat い. 緑・茶色・ピンク memakai の ketika menerangkan benda.",
+        "examples": [
+          {
+            "japanese": "ピンクの花があります。",
+            "reading": "ピンクのはながあります。",
+            "meaning": "Ada bunga merah muda."
+          },
+          {
+            "japanese": "妹はピンクが好きです。",
+            "reading": "いもうとはピンクがすきです。",
+            "meaning": "Adik perempuan saya suka warna merah muda."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata ピンク: merah muda"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-18",
+    "order": 18,
+    "title": "Ukuran dan sifat",
+    "description": "Belajar ukuran dan sifat melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-18-01",
+        "term": "大きい",
+        "reading": "おおきい",
+        "meaning": "besar",
+        "example": "このかばんは大きいです。",
+        "exampleMeaning": "Tas ini besar.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "このかばんは大きいです。",
+            "reading": "このかばんはおおきいです。",
+            "meaning": "Tas ini besar."
+          },
+          {
+            "japanese": "大きい犬がいます。",
+            "reading": "おおきいいぬがいます。",
+            "meaning": "Ada anjing besar."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 大きい: besar"
+      },
+      {
+        "id": "n5-visual-18-02",
+        "term": "小さい",
+        "reading": "ちいさい",
+        "meaning": "kecil",
+        "example": "小さい猫がいます。",
+        "exampleMeaning": "Ada kucing kecil.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "小さい猫がいます。",
+            "reading": "ちいさいねこがいます。",
+            "meaning": "Ada kucing kecil."
+          },
+          {
+            "japanese": "この部屋は小さいです。",
+            "reading": "このへやはちいさいです。",
+            "meaning": "Kamar ini kecil."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 小さい: kecil"
+      },
+      {
+        "id": "n5-visual-18-03",
+        "term": "新しい",
+        "reading": "あたらしい",
+        "meaning": "baru",
+        "example": "新しい自転車を買います。",
+        "exampleMeaning": "Saya membeli sepeda baru.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "新しい自転車を買います。",
+            "reading": "あたらしいじてんしゃをかいます。",
+            "meaning": "Saya membeli sepeda baru."
+          },
+          {
+            "japanese": "この本は新しいです。",
+            "reading": "このほんはあたらしいです。",
+            "meaning": "Buku ini baru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 新しい: baru"
+      },
+      {
+        "id": "n5-visual-18-04",
+        "term": "古い",
+        "reading": "ふるい",
+        "meaning": "lama; tua, untuk benda",
+        "example": "古い自転車があります。",
+        "exampleMeaning": "Ada sepeda lama.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "古い自転車があります。",
+            "reading": "ふるいじてんしゃがあります。",
+            "meaning": "Ada sepeda lama."
+          },
+          {
+            "japanese": "この家は古いです。",
+            "reading": "このいえはふるいです。",
+            "meaning": "Rumah ini sudah tua."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 古い: lama; tua, untuk benda"
+      },
+      {
+        "id": "n5-visual-18-05",
+        "term": "高い",
+        "reading": "たかい",
+        "meaning": "mahal; tinggi",
+        "example": "このかばんは高いです。",
+        "exampleMeaning": "Tas ini mahal.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "このかばんは高いです。",
+            "reading": "このかばんはたかいです。",
+            "meaning": "Tas ini mahal."
+          },
+          {
+            "japanese": "あの山は高いです。",
+            "reading": "あのやまはたかいです。",
+            "meaning": "Gunung itu tinggi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 高い: mahal; tinggi"
+      },
+      {
+        "id": "n5-visual-18-06",
+        "term": "安い",
+        "reading": "やすい",
+        "meaning": "murah",
+        "example": "このかばんは安いです。",
+        "exampleMeaning": "Tas ini murah.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "このかばんは安いです。",
+            "reading": "このかばんはやすいです。",
+            "meaning": "Tas ini murah."
+          },
+          {
+            "japanese": "安い靴を買います。",
+            "reading": "やすいくつをかいます。",
+            "meaning": "Saya membeli sepatu murah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 安い: murah"
+      },
+      {
+        "id": "n5-visual-18-07",
+        "term": "暑い",
+        "reading": "あつい",
+        "meaning": "panas, untuk cuaca",
+        "example": "今日は暑いです。",
+        "exampleMeaning": "Hari ini panas.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "今日は暑いです。",
+            "reading": "きょうはあついです。",
+            "meaning": "Hari ini panas."
+          },
+          {
+            "japanese": "夏は暑いです。",
+            "reading": "なつはあついです。",
+            "meaning": "Musim panas panas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 暑い: panas, untuk cuaca"
+      },
+      {
+        "id": "n5-visual-18-08",
+        "term": "寒い",
+        "reading": "さむい",
+        "meaning": "dingin, untuk cuaca",
+        "example": "今日は寒いです。",
+        "exampleMeaning": "Hari ini dingin.",
+        "note": "Kata sifat い dapat langsung menerangkan benda atau diikuti です. Perhatikan konteks untuk arti yang memiliki lebih dari satu makna.",
+        "examples": [
+          {
+            "japanese": "今日は寒いです。",
+            "reading": "きょうはさむいです。",
+            "meaning": "Hari ini dingin."
+          },
+          {
+            "japanese": "寒い日に上着を着ます。",
+            "reading": "さむいひにうわぎをきます。",
+            "meaning": "Saya memakai jaket pada hari dingin."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 寒い: dingin, untuk cuaca"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-19",
+    "order": 19,
+    "title": "Posisi dan arah",
+    "description": "Belajar posisi dan arah melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-19-01",
+        "term": "上",
+        "reading": "うえ",
+        "meaning": "atas",
+        "example": "机の上に本があります。",
+        "exampleMeaning": "Ada buku di atas meja.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "机の上に本があります。",
+            "reading": "つくえのうえにほんがあります。",
+            "meaning": "Ada buku di atas meja."
+          },
+          {
+            "japanese": "椅子の上に猫がいます。",
+            "reading": "いすのうえにねこがいます。",
+            "meaning": "Ada kucing di atas kursi."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 上: atas"
+      },
+      {
+        "id": "n5-visual-19-02",
+        "term": "下",
+        "reading": "した",
+        "meaning": "bawah",
+        "example": "机の下に猫がいます。",
+        "exampleMeaning": "Ada kucing di bawah meja.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "机の下に猫がいます。",
+            "reading": "つくえのしたにねこがいます。",
+            "meaning": "Ada kucing di bawah meja."
+          },
+          {
+            "japanese": "ベッドの下に靴があります。",
+            "reading": "ベッドのしたにくつがあります。",
+            "meaning": "Ada sepatu di bawah tempat tidur."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 下: bawah"
+      },
+      {
+        "id": "n5-visual-19-03",
+        "term": "中",
+        "reading": "なか",
+        "meaning": "dalam",
+        "example": "箱の中に猫がいます。",
+        "exampleMeaning": "Ada kucing di dalam kotak.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "箱の中に猫がいます。",
+            "reading": "はこのなかにねこがいます。",
+            "meaning": "Ada kucing di dalam kotak."
+          },
+          {
+            "japanese": "かばんの中に本があります。",
+            "reading": "かばんのなかにほんがあります。",
+            "meaning": "Ada buku di dalam tas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 中: dalam"
+      },
+      {
+        "id": "n5-visual-19-04",
+        "term": "外",
+        "reading": "そと",
+        "meaning": "luar",
+        "example": "猫は外にいます。",
+        "exampleMeaning": "Kucing ada di luar.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "猫は外にいます。",
+            "reading": "ねこはそとにいます。",
+            "meaning": "Kucing ada di luar."
+          },
+          {
+            "japanese": "外は寒いです。",
+            "reading": "そとはさむいです。",
+            "meaning": "Di luar dingin."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 外: luar"
+      },
+      {
+        "id": "n5-visual-19-05",
+        "term": "前",
+        "reading": "まえ",
+        "meaning": "depan; sebelum",
+        "example": "家の前にいます。",
+        "exampleMeaning": "Saya ada di depan rumah.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "家の前にいます。",
+            "reading": "いえのまえにいます。",
+            "meaning": "Saya ada di depan rumah."
+          },
+          {
+            "japanese": "学校の前で会います。",
+            "reading": "がっこうのまえであいます。",
+            "meaning": "Saya bertemu di depan sekolah."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata 前: depan; sebelum"
+      },
+      {
+        "id": "n5-visual-19-06",
+        "term": "後ろ",
+        "reading": "うしろ",
+        "meaning": "belakang",
+        "example": "家の後ろに木があります。",
+        "exampleMeaning": "Ada pohon di belakang rumah.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "家の後ろに木があります。",
+            "reading": "いえのうしろにきがあります。",
+            "meaning": "Ada pohon di belakang rumah."
+          },
+          {
+            "japanese": "先生の後ろに学生がいます。",
+            "reading": "せんせいのうしろにがくせいがいます。",
+            "meaning": "Ada pelajar di belakang guru."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 後ろ: belakang"
+      },
+      {
+        "id": "n5-visual-19-07",
+        "term": "右",
+        "reading": "みぎ",
+        "meaning": "kanan",
+        "example": "右へ行きます。",
+        "exampleMeaning": "Saya pergi ke kanan.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "右へ行きます。",
+            "reading": "みぎへいきます。",
+            "meaning": "Saya pergi ke kanan."
+          },
+          {
+            "japanese": "右に銀行があります。",
+            "reading": "みぎにぎんこうがあります。",
+            "meaning": "Ada bank di sebelah kanan."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 右: kanan"
+      },
+      {
+        "id": "n5-visual-19-08",
+        "term": "左",
+        "reading": "ひだり",
+        "meaning": "kiri",
+        "example": "左へ行きます。",
+        "exampleMeaning": "Saya pergi ke kiri.",
+        "note": "Posisi benda biasanya memakai pola ～の上／下／中などにあります; makhluk hidup memakai います.",
+        "examples": [
+          {
+            "japanese": "左へ行きます。",
+            "reading": "ひだりへいきます。",
+            "meaning": "Saya pergi ke kiri."
+          },
+          {
+            "japanese": "左に公園があります。",
+            "reading": "ひだりにこうえんがあります。",
+            "meaning": "Ada taman di sebelah kiri."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 左: kiri"
+      }
+    ]
+  },
+  {
+    "id": "n5-visual-20",
+    "order": 20,
+    "title": "Hobi dan waktu luang",
+    "description": "Belajar hobi dan waktu luang melalui gambar, dua contoh per kata, dan latihan arti, cara baca serta kalimat.",
+    "words": [
+      {
+        "id": "n5-visual-20-01",
+        "term": "音楽",
+        "reading": "おんがく",
+        "meaning": "musik",
+        "example": "音楽を聞きます。",
+        "exampleMeaning": "Saya mendengarkan musik.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "音楽を聞きます。",
+            "reading": "おんがくをききます。",
+            "meaning": "Saya mendengarkan musik."
+          },
+          {
+            "japanese": "日本の音楽が好きです。",
+            "reading": "にほんのおんがくがすきです。",
+            "meaning": "Saya suka musik Jepang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi kosakata 音楽: musik"
+      },
+      {
+        "id": "n5-visual-20-02",
+        "term": "映画",
+        "reading": "えいが",
+        "meaning": "film",
+        "example": "映画を見ます。",
+        "exampleMeaning": "Saya menonton film.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "映画を見ます。",
+            "reading": "えいがをみます。",
+            "meaning": "Saya menonton film."
+          },
+          {
+            "japanese": "友達と映画を見ます。",
+            "reading": "ともだちとえいがをみます。",
+            "meaning": "Saya menonton film bersama teman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi kosakata 映画: film"
+      },
+      {
+        "id": "n5-visual-20-03",
+        "term": "写真",
+        "reading": "しゃしん",
+        "meaning": "foto",
+        "example": "写真を撮ります。",
+        "exampleMeaning": "Saya mengambil foto.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "写真を撮ります。",
+            "reading": "しゃしんをとります。",
+            "meaning": "Saya mengambil foto."
+          },
+          {
+            "japanese": "この写真を見てください。",
+            "reading": "このしゃしんをみてください。",
+            "meaning": "Tolong lihat foto ini."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi kosakata 写真: foto"
+      },
+      {
+        "id": "n5-visual-20-04",
+        "term": "旅行",
+        "reading": "りょこう",
+        "meaning": "perjalanan wisata",
+        "example": "日本へ旅行します。",
+        "exampleMeaning": "Saya berwisata ke Jepang.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "日本へ旅行します。",
+            "reading": "にほんへりょこうします。",
+            "meaning": "Saya berwisata ke Jepang."
+          },
+          {
+            "japanese": "家族と旅行したいです。",
+            "reading": "かぞくとりょこうしたいです。",
+            "meaning": "Saya ingin berwisata bersama keluarga."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 3,
+        "imageDescription": "Ilustrasi kosakata 旅行: perjalanan wisata"
+      },
+      {
+        "id": "n5-visual-20-05",
+        "term": "テニス",
+        "reading": "テニス",
+        "meaning": "tenis",
+        "example": "日曜日にテニスをします。",
+        "exampleMeaning": "Saya bermain tenis pada hari Minggu.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "日曜日にテニスをします。",
+            "reading": "にちようびにテニスをします。",
+            "meaning": "Saya bermain tenis pada hari Minggu."
+          },
+          {
+            "japanese": "友達とテニスをします。",
+            "reading": "ともだちとテニスをします。",
+            "meaning": "Saya bermain tenis bersama teman."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 4,
+        "imageDescription": "Ilustrasi kosakata テニス: tenis"
+      },
+      {
+        "id": "n5-visual-20-06",
+        "term": "泳ぐ",
+        "reading": "およぐ",
+        "meaning": "berenang",
+        "example": "海で泳ぎます。",
+        "exampleMeaning": "Saya berenang di laut.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "海で泳ぎます。",
+            "reading": "うみでおよぎます。",
+            "meaning": "Saya berenang di laut."
+          },
+          {
+            "japanese": "夏に泳ぎます。",
+            "reading": "なつにおよぎます。",
+            "meaning": "Saya berenang pada musim panas."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 5,
+        "imageDescription": "Ilustrasi kosakata 泳ぐ: berenang"
+      },
+      {
+        "id": "n5-visual-20-07",
+        "term": "料理",
+        "reading": "りょうり",
+        "meaning": "masakan; memasak",
+        "example": "母は料理が好きです。",
+        "exampleMeaning": "Ibu suka memasak.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "母は料理が好きです。",
+            "reading": "はははりょうりがすきです。",
+            "meaning": "Ibu suka memasak."
+          },
+          {
+            "japanese": "日本の料理を食べます。",
+            "reading": "にほんのりょうりをたべます。",
+            "meaning": "Saya makan masakan Jepang."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 6,
+        "imageDescription": "Ilustrasi kosakata 料理: masakan; memasak"
+      },
+      {
+        "id": "n5-visual-20-08",
+        "term": "歌",
+        "reading": "うた",
+        "meaning": "lagu",
+        "example": "歌を歌います。",
+        "exampleMeaning": "Saya menyanyikan lagu.",
+        "note": "Perhatikan partikel dan pasangan kata pada dua contoh. Gunakan cara baca yang tertera ketika mengucapkan kata.",
+        "examples": [
+          {
+            "japanese": "歌を歌います。",
+            "reading": "うたをうたいます。",
+            "meaning": "Saya menyanyikan lagu."
+          },
+          {
+            "japanese": "この歌が好きです。",
+            "reading": "このうたがすきです。",
+            "meaning": "Saya suka lagu ini."
+          }
+        ],
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageUrl": "",
+        "imagePanel": 7,
+        "imageDescription": "Ilustrasi kosakata 歌: lagu"
+      }
+    ]
+  }
+]

@@ -1,15 +1,18 @@
 package store
 
 import (
+	"encoding/json"
 	"fmt"
 	"sort"
 	"strings"
 	"time"
 
+	vocabularyData "nihongo-master-backend/data/vocabulary"
 	"nihongo-master-backend/internal/domain"
 )
 
 type vocabularyAttemptState struct {
+	result       *domain.VocabularyAttemptResult
 	attempt      domain.VocabularyAttempt
 	userID       string
 	correct      map[string]string
@@ -25,9 +28,17 @@ func (s *MemoryStore) VocabularyLevels(userID string) []domain.VocabularyLevel {
 		lessons := make([]domain.VocabularyLessonSummary, 0, len(level.Lessons))
 		total := 0
 		for _, lesson := range level.Lessons {
+			asset, questionCount := "", len(lesson.Words)
+			if len(lesson.Words) > 0 {
+				asset = lesson.Words[0].ImageAsset
+			}
+			if level.Level == "N5" {
+				questionCount *= 3
+			}
 			progress := s.progress[userID][lesson.ID]
 			total += progress.Completion
 			lessons = append(lessons, domain.VocabularyLessonSummary{
+				ImageAsset: asset, QuestionCount: questionCount,
 				ID: lesson.ID, Order: lesson.Order, Title: lesson.Title,
 				Description: lesson.Description, WordCount: len(lesson.Words),
 				BestScore: progress.Completion, Completed: progress.Completed,
@@ -53,18 +64,25 @@ func (s *MemoryStore) VocabularyLesson(userID, lessonID string) (domain.Vocabula
 		return domain.VocabularyLesson{}, ErrNotFound
 	}
 	progress := s.progress[userID][lessonID]
+	words := append([]domain.VocabularyWord(nil), lesson.Words...)
+	for i := range words {
+		if words[i].ImageAsset != "" {
+			words[i].ImageURL = s.assetURLLocked(words[i].ImageAsset)
+		}
+	}
 	return domain.VocabularyLesson{
 		ID: lesson.ID, Level: level.Level, Title: lesson.Title,
 		Description: lesson.Description, BestScore: progress.Completion,
 		Completed: progress.Completed,
-		Words:     append([]domain.VocabularyWord(nil), lesson.Words...),
+		ImageURL:  s.assetURLLocked("assets/images/vocabulary/study-journey.png"),
+		Words:     words,
 	}, nil
 }
 
 func (s *MemoryStore) StartVocabularyAttempt(userID, lessonID string) (domain.VocabularyAttempt, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	_, lesson := s.findVocabularyLessonLocked(lessonID)
+	level, lesson := s.findVocabularyLessonLocked(lessonID)
 	if lesson == nil {
 		return domain.VocabularyAttempt{}, ErrNotFound
 	}
@@ -85,13 +103,27 @@ func (s *MemoryStore) StartVocabularyAttempt(userID, lessonID string) (domain.Vo
 		correct[questionID] = word.ID
 		explanations[questionID] = fmt.Sprintf("%s berarti %s. %s Contoh: %s — %s", word.Term, word.Meaning, word.Note, word.Example, word.ExampleMeaning)
 	}
+	if level.Level == "N5" {
+		questions, correct, explanations = s.n5VocabularyQuestionsLocked(lesson)
+	}
 	id := fmt.Sprintf("vocab-attempt-%d", s.attemptID.Add(1))
-	attempt := domain.VocabularyAttempt{ID: id, LessonID: lessonID, Questions: questions, StartedAt: time.Now().UTC()}
+	attempt := domain.VocabularyAttempt{
+		ID: id, LessonID: lessonID, Questions: questions,
+		ImageURL:  s.assetURLLocked("assets/images/vocabulary/quiz-mastery.png"),
+		StartedAt: time.Now().UTC(),
+	}
 	s.vocabAttempts[id] = &vocabularyAttemptState{
 		attempt: attempt, userID: userID, correct: correct,
 		explanations: explanations, answers: map[string]domain.VocabularyAnswerFeedback{},
 	}
 	return attempt, nil
+}
+
+func (s *MemoryStore) assetURLLocked(key string) string {
+	if s.assetBaseURL == "" {
+		return ""
+	}
+	return s.assetBaseURL + "/" + strings.TrimLeft(key, "/")
 }
 
 func (s *MemoryStore) AnswerVocabularyQuestion(userID, attemptID, questionID, optionID string) (domain.VocabularyAnswerFeedback, error) {
@@ -138,6 +170,9 @@ func (s *MemoryStore) CompleteVocabularyAttempt(userID, attemptID string) (domai
 	if !ok || state.userID != userID {
 		return domain.VocabularyAttemptResult{}, ErrNotFound
 	}
+	if state.result != nil {
+		return *state.result, nil
+	}
 	if len(state.answers) != len(state.attempt.Questions) {
 		return domain.VocabularyAttemptResult{}, ErrInvalid
 	}
@@ -168,12 +203,13 @@ func (s *MemoryStore) CompleteVocabularyAttempt(userID, attemptID string) (domai
 		profile.Level = 1 + profile.XP/500
 		s.profiles[userID] = profile
 	}
-	delete(s.vocabAttempts, attemptID)
-	return domain.VocabularyAttemptResult{
+	result := domain.VocabularyAttemptResult{
 		AttemptID: attemptID, LessonID: state.attempt.LessonID, Score: score,
 		Correct: correct, Total: len(state.attempt.Questions), Passed: passed,
 		BestScore: best, Progress: s.vocabularyProgressLocked(userID), CanRetry: true,
-	}, nil
+	}
+	state.result = &result
+	return result, nil
 }
 
 func (s *MemoryStore) vocabularyProgressLocked(userID string) int {
@@ -213,7 +249,7 @@ func shiftOptions(options []domain.QuizOption, shift int) {
 }
 
 func seedVocabulary() []domain.VocabularyLevelContent {
-	return []domain.VocabularyLevelContent{
+	levels := []domain.VocabularyLevelContent{
 		vocabularyLevel("N5", "Fondasi sehari-hari", "Kosakata paling dasar untuk memperkenalkan diri, makan, dan kebutuhan harian.", "n5-daily", "Kata dasar sehari-hari", "Mulai dari kata yang paling sering ditemui.", []domain.VocabularyWord{
 			word("n5-watashi", "私", "わたし", "saya", "私は学生です。", "Saya adalah pelajar.", "Gunakan わたし sebagai kata ganti netral dan sopan."),
 			word("n5-gakusei", "学生", "がくせい", "pelajar", "田中さんは学生です。", "Tanaka adalah pelajar.", "学生 dipakai untuk siswa atau mahasiswa."),
@@ -245,6 +281,93 @@ func seedVocabulary() []domain.VocabularyLevelContent {
 			word("n1-ichijirushii", "著しい", "いちじるしい", "mencolok atau signifikan", "技術は著しく進歩しました。", "Teknologi berkembang secara signifikan.", "Digunakan untuk perubahan besar yang jelas terlihat."),
 		}),
 	}
+	var n5 []domain.VocabularyLessonContent
+	if err := json.Unmarshal(vocabularyData.N5, &n5); err != nil {
+		panic("invalid vocabulary N5: " + err.Error())
+	}
+	if len(n5) != 20 {
+		panic("incomplete vocabulary N5")
+	}
+	for _, lesson := range n5 {
+		if len(lesson.Words) != 8 {
+			panic("invalid vocabulary lesson: " + lesson.ID)
+		}
+		for i, w := range lesson.Words {
+			if len(w.Examples) != 2 || w.ImagePanel != i || w.Term == "" || w.Reading == "" || w.Meaning == "" || w.ImageAsset == "" {
+				panic("invalid vocabulary word: " + w.ID)
+			}
+			for _, e := range w.Examples {
+				if e.Japanese == "" || e.Reading == "" || e.Meaning == "" {
+					panic("invalid vocabulary example: " + w.ID)
+				}
+			}
+		}
+	}
+	levels[0].Lessons = n5
+	levels[0].Description = "20 tema bergambar, 160 entri kosakata, dua contoh per kata, dan tiga jenis latihan."
+	return levels
+}
+
+func (s *MemoryStore) n5VocabularyQuestionsLocked(lesson *domain.VocabularyLessonContent) ([]domain.VocabularyQuestion, map[string]string, map[string]string) {
+	questions := make([]domain.VocabularyQuestion, 0, len(lesson.Words)*3)
+	correct, explanations := map[string]string{}, map[string]string{}
+	for kind := 0; kind < 3; kind++ {
+		for i, w := range lesson.Words {
+			id := fmt.Sprintf("%s-q%d", lesson.ID, len(questions)+1)
+			texts := []string{}
+			for _, other := range lesson.Words {
+				switch kind {
+				case 0:
+					texts = append(texts, other.Meaning)
+				case 1:
+					if w.Term == w.Reading {
+						texts = append(texts, other.Term)
+					} else {
+						texts = append(texts, other.Reading)
+					}
+				case 2:
+					texts = append(texts, other.Example)
+				}
+			}
+			options := []domain.QuizOption{{ID: id + "-o1", Text: texts[i]}}
+			seen := map[string]bool{texts[i]: true}
+			for offset := 1; len(options) < 4 && offset < len(texts); offset++ {
+				text := texts[(i+offset)%len(texts)]
+				if !seen[text] {
+					seen[text] = true
+					options = append(options, domain.QuizOption{ID: fmt.Sprintf("%s-o%d", id, len(options)+1), Text: text})
+				}
+			}
+			if len(options) != 4 {
+				panic("insufficient vocabulary choices")
+			}
+			correct[id] = options[0].ID
+			shiftOptions(options, (i+kind)%4)
+			prompt, label := fmt.Sprintf("Apa arti %s?", w.Term), "Arti kata"
+			switch kind {
+			case 1:
+				prompt = fmt.Sprintf("Bagaimana cara membaca %s?", w.Term)
+				label = "Cara baca"
+				if w.Term == w.Reading {
+					prompt = fmt.Sprintf("Mana penulisan bahasa Jepang untuk “%s”?", w.Meaning)
+					label = "Penulisan kata"
+				}
+			case 2:
+				prompt = fmt.Sprintf("Kalimat mana yang berarti:\n“%s”", w.ExampleMeaning)
+				label = "Pemakaian kalimat"
+			}
+			q := domain.VocabularyQuestion{ID: id, Prompt: prompt, Options: options, Kind: label}
+			if kind == 0 {
+				q.ImageAsset = w.ImageAsset
+				q.ImageURL = s.assetURLLocked(w.ImageAsset)
+				q.ImagePanel = w.ImagePanel
+				q.ImageDescription = "Ilustrasi petunjuk konteks kosakata"
+			}
+			questions = append(questions, q)
+			explanations[id] = fmt.Sprintf("%s（%s）berarti %s.\n%s\n%s\n%s", w.Term, w.Reading, w.Meaning, w.Example, w.Examples[0].Reading, w.ExampleMeaning)
+		}
+	}
+	return questions, correct, explanations
 }
 
 func vocabularyLevel(level, title, description, lessonID, lessonTitle, lessonDescription string, words []domain.VocabularyWord) domain.VocabularyLevelContent {

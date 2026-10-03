@@ -6,9 +6,26 @@ learning progress, exam entitlement, plans, profile, dan achievement.
 Kontrak seluruh endpoint tersedia di [`openapi.yaml`](./openapi.yaml) dan dapat
 dibuka dengan Swagger Editor atau dipakai untuk menghasilkan API client.
 
+Sinkronkan seluruh asset lokal ke Tencent COS dari folder `backend`:
+
+```powershell
+go run ./cmd/assetsync -source ../assets -prefix assets
+```
+
+Credential dibaca dari `.env`; secret tidak pernah dikirim ke aplikasi.
+Secara default object asset diberi ACL `public-read` agar dapat ditampilkan oleh
+mobile app. Gunakan `-public-read=false` untuk bucket yang dilayani melalui URL
+bertanda tangan atau CDN private.
+
 Dokumentasi lengkap:
 
 - [Backend Developer Guide](../docs/backend-development.md)
+- [Grammar JLPT N5: kurikulum dan API](../docs/grammar-n5.md)
+- [Grammar JLPT N4: 44 lesson, 88 unit pola, dan 220 soal](../docs/grammar-n4.md)
+- [Kanji N5: 100 kanji, latihan tulis, dan kuis](../docs/kanji-n5.md)
+- [Reading N5: 12 cerita dan 36 adegan bergambar](../docs/reading-n5.md)
+- [Reading N4: 12 cerita baru dan 36 adegan bergambar](../docs/reading-n4.md)
+- [JLPT N5 Diagnostic: 25 soal, timer, hasil dan pembahasan](../docs/jlpt-n5-diagnostic.md)
 - [Authentication and Google OAuth Setup](../docs/authentication.md)
 
 ## Requirements
@@ -88,6 +105,8 @@ Lihat [panduan OAuth](../docs/authentication.md).
 | Auth | POST | `/v1/vocabulary/attempts/{attemptID}/complete` | Nilai dan simpan progress |
 
 ## Quality checks
+
+Materi Vocabulary N5 bergambar: [panduan konten dan UI](../docs/vocabulary-n5.md).
 
 ```powershell
 go fmt ./...

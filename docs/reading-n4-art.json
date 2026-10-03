@@ -1,0 +1,66 @@
+{
+  "mode": "built-in imagegen",
+  "layout": "One 3:1 sheet per lesson, three square panels corresponding to page indices 0, 1 and 2.",
+  "assets": [
+    {
+      "lessonId": "reading-n4-01",
+      "asset": "assets/images/reading/story-n4-01.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and mother unpack cardboard boxes in a sunny small new apartment. Center: Hana with an umbrella asks a kind elderly neighbor directions in an apartment hallway. Right: Hana and Yui drink tea on cushions beside the window overlooking a small leafy park."
+    },
+    {
+      "lessonId": "reading-n4-02",
+      "asset": "assets/images/reading/story-n4-02.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana in coral shirt and beige apron learns to work in a cozy cafe beside a patient woman manager. Center: Hana carefully carries a tray with two coffees to an elderly couple while a second worker washes cups. Right: a smiling manager praises Hana as she wipes the counter after closing, warm sunset."
+    },
+    {
+      "lessonId": "reading-n4-03",
+      "asset": "assets/images/reading/story-n4-03.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui arrive at a railway platform as a train departs, worried faces, no text on station. Center: the two friends ask a station worker for help beside a ticket machine without writing. Right: Hana and Yui enjoy a lakeside lunch on a wooden bench on a sunny day, small sightseeing boat in background."
+    },
+    {
+      "lessonId": "reading-n4-04",
+      "asset": "assets/images/reading/story-n4-04.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui in colorful yukata walk beneath blank lanterns at an evening Japanese summer festival. Center: Yui watches a cheerful older woman cook takoyaki at a stall while Hana buys one portion. Right: Hana and Yui sit beside a river watching beautiful fireworks, relaxed smiles."
+    },
+    {
+      "lessonId": "reading-n4-05",
+      "asset": "assets/images/reading/story-n4-05.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui arrive at a quiet art museum with umbrellas on a rainy day. Center: the friends contemplate a painting of a Japanese mountain village inside the museum. Right: Hana sketches a mountain village in an open sketchbook at a museum cafe, Yui smiling beside her; no writing."
+    },
+    {
+      "lessonId": "reading-n4-06",
+      "asset": "assets/images/reading/story-n4-06.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui buy carrots, potatoes and onions at a market. Center: Yui cuts carrots while Hana stirs curry in a saucepan in a bright home kitchen. Right: Hana and Yui serve steaming curry and rice to Hana's mother at a dining table."
+    },
+    {
+      "lessonId": "reading-n4-07",
+      "asset": "assets/images/reading/story-n4-07.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana, wearing coral sportswear, hesitates at a badminton club entrance while Yui welcomes her in navy sportswear. Center: Yui gently teaches Hana to hold a racket on an indoor badminton court. Right: Hana and Yui enjoy a friendly doubles match with two other women in a bright gym."
+    },
+    {
+      "lessonId": "reading-n4-08",
+      "asset": "assets/images/reading/story-n4-08.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui prepare backpacks, raincoats and bottled water on a table near window with cloudy sky. Center: friends walking a forest trail stop under a wooden shelter when rain begins. Right: Hana and Yui look happily at clear mountains and a rainbow from the shelter after the rain."
+    },
+    {
+      "lessonId": "reading-n4-09",
+      "asset": "assets/images/reading/story-n4-09.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui join a small volunteer group receiving gloves and trash bags beside a river. Center: Hana collects bottles with a litter picker while Yui separates cans into another bag on a leafy riverbank. Right: Hana and Yui with elderly neighbors admire the clean riverbank and drink tea at a picnic table."
+    },
+    {
+      "lessonId": "reading-n4-10",
+      "asset": "assets/images/reading/story-n4-10.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: worried Yui checks her open handbag while Hana helps search beside a library desk. Center: Hana and Yui speak to a helpful male librarian holding a small blue wallet at the desk. Right: relieved Yui holds the blue wallet and thanks Hana outside the library, autumn leaves."
+    },
+    {
+      "lessonId": "reading-n4-11",
+      "asset": "assets/images/reading/story-n4-11.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui arrive carrying weekend bags at a traditional Japanese inn greeted by a smiling woman host. Center: Hana and Yui wearing casual yukata sit in a tatami room beside a low table with fish and vegetables dinner. Right: Hana and Yui enjoy a garden view and hot green tea by the inn window the following bright morning."
+    },
+    {
+      "lessonId": "reading-n4-12",
+      "asset": "assets/images/reading/story-n4-12.png",
+      "prompt": "Create ONE wide 3:1 landscape illustration sheet, EXACTLY THREE equally sized square scenes horizontally, edge to edge, no borders, gutters or text. Each scene independently framed within its own square. Warm watercolor and gouache Japanese everyday-life storybook, delicate paper, rich soft colors, clear expressive faces, beautiful detailed environments, natural proportions. Hana is a young Japanese woman with short dark bob, cream blouse and coral cardigan. Yui is her friend with long dark hair and navy dress over cream blouse. No lettering, numerals, written signs, logos or speech bubbles. Left: Hana and Yui decorate a classroom cafe with blank colorful paper shapes and prepare cups for a school cultural festival. Center: busy Hana brings drinks to smiling visitors while Yui handles cakes at the classroom counter. Right: Hana and Yui clean up the classroom with classmates at sunset, smiling with satisfaction."
+    }
+  ]
+}

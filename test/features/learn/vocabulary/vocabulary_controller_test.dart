@@ -82,6 +82,7 @@ const _lesson = VocabularyLesson(
   description: 'Lesson pemula',
   bestScore: 0,
   completed: false,
+  imageUrl: '',
   words: [
     VocabularyWord(
       id: 'word-1',
@@ -108,6 +109,7 @@ const _attempt = VocabularyAttempt(
       ],
     ),
   ],
+  imageUrl: 'https://cdn.example/quiz.png',
 );
 
 const _result = VocabularyResult(

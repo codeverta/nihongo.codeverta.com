@@ -1,0 +1,970 @@
+{
+  "mode": "built-in imagegen",
+  "layout": {
+    "columns": 4,
+    "rows": 2,
+    "panelOrder": "row-major"
+  },
+  "assets": [
+    {
+      "lessonId": "n5-daily",
+      "title": "Self introduction",
+      "asset": "assets/images/vocabulary/n5-theme-01.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a young woman introducing herself pointing gently to her chest; a student with schoolbag and textbooks; a kind teacher explaining a lesson; a smiling friend greeting another friend; a smiling child holding a toy; a person named Tanaka receiving a blank name badge; a young Japanese woman in a traditional Japanese neighborhood; a visitor from overseas carrying travel bags.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "私",
+          "meaning": "saya"
+        },
+        {
+          "index": 1,
+          "term": "学生",
+          "meaning": "pelajar"
+        },
+        {
+          "index": 2,
+          "term": "先生",
+          "meaning": "guru"
+        },
+        {
+          "index": 3,
+          "term": "友達",
+          "meaning": "teman"
+        },
+        {
+          "index": 4,
+          "term": "子供",
+          "meaning": "anak"
+        },
+        {
+          "index": 5,
+          "term": "名前",
+          "meaning": "nama"
+        },
+        {
+          "index": 6,
+          "term": "日本",
+          "meaning": "Jepang"
+        },
+        {
+          "index": 7,
+          "term": "外国",
+          "meaning": "luar negeri"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-02",
+      "title": "Family",
+      "asset": "assets/images/vocabulary/n5-theme-02.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a gentle father making breakfast; a mother caring for her family; an older brother helping a younger sibling; a little younger brother playing; an older sister helping a younger sibling; a little younger sister playing; a grandfather reading; a grandmother serving tea.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "父",
+          "meaning": "ayah saya"
+        },
+        {
+          "index": 1,
+          "term": "母",
+          "meaning": "ibu saya"
+        },
+        {
+          "index": 2,
+          "term": "兄",
+          "meaning": "kakak laki-laki saya"
+        },
+        {
+          "index": 3,
+          "term": "弟",
+          "meaning": "adik laki-laki saya"
+        },
+        {
+          "index": 4,
+          "term": "姉",
+          "meaning": "kakak perempuan saya"
+        },
+        {
+          "index": 5,
+          "term": "妹",
+          "meaning": "adik perempuan saya"
+        },
+        {
+          "index": 6,
+          "term": "祖父",
+          "meaning": "kakek saya"
+        },
+        {
+          "index": 7,
+          "term": "祖母",
+          "meaning": "nenek saya"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-03",
+      "title": "School supplies",
+      "asset": "assets/images/vocabulary/n5-theme-03.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: an open book; a neat notebook; a pencil; a white eraser beside erased pencil marks; a school backpack; a desk; a chair; a wall clock without numerals.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "本",
+          "meaning": "buku"
+        },
+        {
+          "index": 1,
+          "term": "ノート",
+          "meaning": "buku catatan"
+        },
+        {
+          "index": 2,
+          "term": "鉛筆",
+          "meaning": "pensil"
+        },
+        {
+          "index": 3,
+          "term": "消しゴム",
+          "meaning": "penghapus"
+        },
+        {
+          "index": 4,
+          "term": "かばん",
+          "meaning": "tas"
+        },
+        {
+          "index": 5,
+          "term": "机",
+          "meaning": "meja"
+        },
+        {
+          "index": 6,
+          "term": "椅子",
+          "meaning": "kursi"
+        },
+        {
+          "index": 7,
+          "term": "時計",
+          "meaning": "jam"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-04",
+      "title": "Home",
+      "asset": "assets/images/vocabulary/n5-theme-04.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a cozy Japanese house; a bright room; a window overlooking a garden; a wooden door; a sunny kitchen; a clean bathroom bathtub; a garden; a comfortable bed.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "家",
+          "meaning": "rumah"
+        },
+        {
+          "index": 1,
+          "term": "部屋",
+          "meaning": "kamar"
+        },
+        {
+          "index": 2,
+          "term": "窓",
+          "meaning": "jendela"
+        },
+        {
+          "index": 3,
+          "term": "ドア",
+          "meaning": "pintu"
+        },
+        {
+          "index": 4,
+          "term": "台所",
+          "meaning": "dapur"
+        },
+        {
+          "index": 5,
+          "term": "お風呂",
+          "meaning": "bak mandi; mandi"
+        },
+        {
+          "index": 6,
+          "term": "庭",
+          "meaning": "halaman; taman rumah"
+        },
+        {
+          "index": 7,
+          "term": "ベッド",
+          "meaning": "tempat tidur"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-05",
+      "title": "Food",
+      "asset": "assets/images/vocabulary/n5-theme-05.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a bowl of rice; slices of bread; a fresh egg; grilled fish on a plate; sliced meat on a board; fresh vegetables in a basket; steaming soup; a packed Japanese lunchbox.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "ご飯",
+          "meaning": "nasi; makanan"
+        },
+        {
+          "index": 1,
+          "term": "パン",
+          "meaning": "roti"
+        },
+        {
+          "index": 2,
+          "term": "卵",
+          "meaning": "telur"
+        },
+        {
+          "index": 3,
+          "term": "魚",
+          "meaning": "ikan"
+        },
+        {
+          "index": 4,
+          "term": "肉",
+          "meaning": "daging"
+        },
+        {
+          "index": 5,
+          "term": "野菜",
+          "meaning": "sayuran"
+        },
+        {
+          "index": 6,
+          "term": "スープ",
+          "meaning": "sup"
+        },
+        {
+          "index": 7,
+          "term": "お弁当",
+          "meaning": "bekal makan"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-06",
+      "title": "Drinks and fruit",
+      "asset": "assets/images/vocabulary/n5-theme-06.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a clear glass of water; a cup of green tea; a coffee cup; a glass of milk; a juice glass with fruit; a red apple; a mandarin orange; a bunch of bananas.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "水",
+          "meaning": "air"
+        },
+        {
+          "index": 1,
+          "term": "お茶",
+          "meaning": "teh"
+        },
+        {
+          "index": 2,
+          "term": "コーヒー",
+          "meaning": "kopi"
+        },
+        {
+          "index": 3,
+          "term": "牛乳",
+          "meaning": "susu"
+        },
+        {
+          "index": 4,
+          "term": "ジュース",
+          "meaning": "minuman sari buah"
+        },
+        {
+          "index": 5,
+          "term": "りんご",
+          "meaning": "apel"
+        },
+        {
+          "index": 6,
+          "term": "みかん",
+          "meaning": "jeruk mandarin"
+        },
+        {
+          "index": 7,
+          "term": "バナナ",
+          "meaning": "pisang"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-07",
+      "title": "Daily verbs",
+      "asset": "assets/images/vocabulary/n5-theme-07.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a young woman waking up in bed; a young woman sleeping in bed; a young woman eating rice; a young woman drinking water; a young woman walking to school; a young woman arriving at a friend's house; a young woman returning home; a young woman watching a movie on a screen without letters.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "起きる",
+          "meaning": "bangun tidur"
+        },
+        {
+          "index": 1,
+          "term": "寝る",
+          "meaning": "tidur"
+        },
+        {
+          "index": 2,
+          "term": "食べる",
+          "meaning": "makan"
+        },
+        {
+          "index": 3,
+          "term": "飲む",
+          "meaning": "minum"
+        },
+        {
+          "index": 4,
+          "term": "行く",
+          "meaning": "pergi"
+        },
+        {
+          "index": 5,
+          "term": "来る",
+          "meaning": "datang"
+        },
+        {
+          "index": 6,
+          "term": "帰る",
+          "meaning": "pulang"
+        },
+        {
+          "index": 7,
+          "term": "見る",
+          "meaning": "melihat; menonton"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-08",
+      "title": "Learning verbs",
+      "asset": "assets/images/vocabulary/n5-theme-08.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a student reading a book; a student writing with a pencil; a student listening attentively to a teacher; two students talking; a student studying at a desk; a shop worker working; a customer buying a bag; a mother making dinner.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "読む",
+          "meaning": "membaca"
+        },
+        {
+          "index": 1,
+          "term": "書く",
+          "meaning": "menulis"
+        },
+        {
+          "index": 2,
+          "term": "聞く",
+          "meaning": "mendengar; bertanya"
+        },
+        {
+          "index": 3,
+          "term": "話す",
+          "meaning": "berbicara"
+        },
+        {
+          "index": 4,
+          "term": "勉強する",
+          "meaning": "belajar"
+        },
+        {
+          "index": 5,
+          "term": "働く",
+          "meaning": "bekerja"
+        },
+        {
+          "index": 6,
+          "term": "買う",
+          "meaning": "membeli"
+        },
+        {
+          "index": 7,
+          "term": "作る",
+          "meaning": "membuat"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-09",
+      "title": "Town",
+      "asset": "assets/images/vocabulary/n5-theme-09.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a school entrance; a library with shelves; a hospital exterior; a bank building with no text; a post office with blank sign; a railway station platform; a supermarket produce aisle; a small leafy park.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "学校",
+          "meaning": "sekolah"
+        },
+        {
+          "index": 1,
+          "term": "図書館",
+          "meaning": "perpustakaan"
+        },
+        {
+          "index": 2,
+          "term": "病院",
+          "meaning": "rumah sakit"
+        },
+        {
+          "index": 3,
+          "term": "銀行",
+          "meaning": "bank"
+        },
+        {
+          "index": 4,
+          "term": "郵便局",
+          "meaning": "kantor pos"
+        },
+        {
+          "index": 5,
+          "term": "駅",
+          "meaning": "stasiun"
+        },
+        {
+          "index": 6,
+          "term": "スーパー",
+          "meaning": "supermarket"
+        },
+        {
+          "index": 7,
+          "term": "公園",
+          "meaning": "taman umum"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-10",
+      "title": "Transport",
+      "asset": "assets/images/vocabulary/n5-theme-10.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a train; a bus; a car; a bicycle; an airplane; a taxi car without lettering; a paper ticket with no writing; a pair of travelers walking.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "電車",
+          "meaning": "kereta"
+        },
+        {
+          "index": 1,
+          "term": "バス",
+          "meaning": "bus"
+        },
+        {
+          "index": 2,
+          "term": "車",
+          "meaning": "mobil"
+        },
+        {
+          "index": 3,
+          "term": "自転車",
+          "meaning": "sepeda"
+        },
+        {
+          "index": 4,
+          "term": "飛行機",
+          "meaning": "pesawat"
+        },
+        {
+          "index": 5,
+          "term": "タクシー",
+          "meaning": "taksi"
+        },
+        {
+          "index": 6,
+          "term": "切符",
+          "meaning": "tiket"
+        },
+        {
+          "index": 7,
+          "term": "歩く",
+          "meaning": "berjalan"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-11",
+      "title": "Time",
+      "asset": "assets/images/vocabulary/n5-theme-11.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: early morning sunrise over houses; daytime sun over neighborhood; evening sunset over houses; night moon above houses; a calendar sheet for today indicated by a hand no numerals; yesterday suggested by a person remembering a previous sunrise; tomorrow suggested by a person planning for upcoming sunrise; a wall clock without text next to a person asking the time.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "朝",
+          "meaning": "pagi"
+        },
+        {
+          "index": 1,
+          "term": "昼",
+          "meaning": "siang"
+        },
+        {
+          "index": 2,
+          "term": "夕方",
+          "meaning": "sore"
+        },
+        {
+          "index": 3,
+          "term": "夜",
+          "meaning": "malam"
+        },
+        {
+          "index": 4,
+          "term": "今日",
+          "meaning": "hari ini"
+        },
+        {
+          "index": 5,
+          "term": "昨日",
+          "meaning": "kemarin"
+        },
+        {
+          "index": 6,
+          "term": "明日",
+          "meaning": "besok"
+        },
+        {
+          "index": 7,
+          "term": "何時",
+          "meaning": "pukul berapa"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-12",
+      "title": "Week and calendar",
+      "asset": "assets/images/vocabulary/n5-theme-12.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a bright Monday morning student preparing schoolbag; a Tuesday student studying; a Wednesday student writing; a Thursday student at library; a Friday student closing schoolbag; a Saturday picnic; a Sunday family relaxing; a person enjoying a restful holiday at home.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "月曜日",
+          "meaning": "Senin"
+        },
+        {
+          "index": 1,
+          "term": "火曜日",
+          "meaning": "Selasa"
+        },
+        {
+          "index": 2,
+          "term": "水曜日",
+          "meaning": "Rabu"
+        },
+        {
+          "index": 3,
+          "term": "木曜日",
+          "meaning": "Kamis"
+        },
+        {
+          "index": 4,
+          "term": "金曜日",
+          "meaning": "Jumat"
+        },
+        {
+          "index": 5,
+          "term": "土曜日",
+          "meaning": "Sabtu"
+        },
+        {
+          "index": 6,
+          "term": "日曜日",
+          "meaning": "Minggu"
+        },
+        {
+          "index": 7,
+          "term": "休み",
+          "meaning": "libur; istirahat"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-13",
+      "title": "Weather and nature",
+      "asset": "assets/images/vocabulary/n5-theme-13.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: rain falling with umbrella; snowy houses; a sunny clear sky over park; a cloudy sky over town; a mountain; a river; a blue sea and shore; a flowering tree.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "雨",
+          "meaning": "hujan"
+        },
+        {
+          "index": 1,
+          "term": "雪",
+          "meaning": "salju"
+        },
+        {
+          "index": 2,
+          "term": "晴れ",
+          "meaning": "cerah"
+        },
+        {
+          "index": 3,
+          "term": "曇り",
+          "meaning": "berawan"
+        },
+        {
+          "index": 4,
+          "term": "山",
+          "meaning": "gunung"
+        },
+        {
+          "index": 5,
+          "term": "川",
+          "meaning": "sungai"
+        },
+        {
+          "index": 6,
+          "term": "海",
+          "meaning": "laut"
+        },
+        {
+          "index": 7,
+          "term": "花",
+          "meaning": "bunga"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-14",
+      "title": "Animals",
+      "asset": "assets/images/vocabulary/n5-theme-14.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a friendly dog; a cat; a little bird; a fish swimming in a bowl; a rabbit; a horse; a cow; a panda.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "犬",
+          "meaning": "anjing"
+        },
+        {
+          "index": 1,
+          "term": "猫",
+          "meaning": "kucing"
+        },
+        {
+          "index": 2,
+          "term": "鳥",
+          "meaning": "burung"
+        },
+        {
+          "index": 3,
+          "term": "魚",
+          "meaning": "ikan hidup"
+        },
+        {
+          "index": 4,
+          "term": "うさぎ",
+          "meaning": "kelinci"
+        },
+        {
+          "index": 5,
+          "term": "馬",
+          "meaning": "kuda"
+        },
+        {
+          "index": 6,
+          "term": "牛",
+          "meaning": "sapi"
+        },
+        {
+          "index": 7,
+          "term": "パンダ",
+          "meaning": "panda"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-15",
+      "title": "Body",
+      "asset": "assets/images/vocabulary/n5-theme-15.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a person's head and hair shown thoughtfully; a close-up pair of eyes; a close-up ears; a person's nose; a smiling mouth; a hand with clearly five fingers; a person's bare foot; a young woman with gently highlighted stomach area while hungry.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "頭",
+          "meaning": "kepala"
+        },
+        {
+          "index": 1,
+          "term": "目",
+          "meaning": "mata"
+        },
+        {
+          "index": 2,
+          "term": "耳",
+          "meaning": "telinga"
+        },
+        {
+          "index": 3,
+          "term": "鼻",
+          "meaning": "hidung"
+        },
+        {
+          "index": 4,
+          "term": "口",
+          "meaning": "mulut"
+        },
+        {
+          "index": 5,
+          "term": "手",
+          "meaning": "tangan"
+        },
+        {
+          "index": 6,
+          "term": "足",
+          "meaning": "kaki"
+        },
+        {
+          "index": 7,
+          "term": "お腹",
+          "meaning": "perut"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-16",
+      "title": "Clothes",
+      "asset": "assets/images/vocabulary/n5-theme-16.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a neatly hung outfit of clothing; a white collared shirt; a jacket; trousers; a skirt; shoes; socks; a hat.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "服",
+          "meaning": "pakaian"
+        },
+        {
+          "index": 1,
+          "term": "シャツ",
+          "meaning": "kemeja"
+        },
+        {
+          "index": 2,
+          "term": "上着",
+          "meaning": "jaket; pakaian luar"
+        },
+        {
+          "index": 3,
+          "term": "ズボン",
+          "meaning": "celana panjang"
+        },
+        {
+          "index": 4,
+          "term": "スカート",
+          "meaning": "rok"
+        },
+        {
+          "index": 5,
+          "term": "靴",
+          "meaning": "sepatu"
+        },
+        {
+          "index": 6,
+          "term": "靴下",
+          "meaning": "kaus kaki"
+        },
+        {
+          "index": 7,
+          "term": "帽子",
+          "meaning": "topi"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-17",
+      "title": "Colors",
+      "asset": "assets/images/vocabulary/n5-theme-17.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a red apple and red cloth; a blue bag and blue cloth; a white snowflake and white cloth; a black cat and black cloth; a yellow flower and yellow cloth; a green leaf and green cloth; a brown wooden cup and brown cloth; a pink flower and pink cloth.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "赤い",
+          "meaning": "merah"
+        },
+        {
+          "index": 1,
+          "term": "青い",
+          "meaning": "biru"
+        },
+        {
+          "index": 2,
+          "term": "白い",
+          "meaning": "putih"
+        },
+        {
+          "index": 3,
+          "term": "黒い",
+          "meaning": "hitam"
+        },
+        {
+          "index": 4,
+          "term": "黄色い",
+          "meaning": "kuning"
+        },
+        {
+          "index": 5,
+          "term": "緑",
+          "meaning": "hijau"
+        },
+        {
+          "index": 6,
+          "term": "茶色",
+          "meaning": "cokelat"
+        },
+        {
+          "index": 7,
+          "term": "ピンク",
+          "meaning": "merah muda"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-18",
+      "title": "Descriptions",
+      "asset": "assets/images/vocabulary/n5-theme-18.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a very big bag next to a small cup; a very small bag next to a large cup; a brand-new shiny bicycle; an old worn bicycle; an expensive elegant leather bag with no price label; a simple inexpensive cloth bag with no price label; a person fanning themself on a hot sunny day; a person wrapped in a scarf on a cold snowy day.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "大きい",
+          "meaning": "besar"
+        },
+        {
+          "index": 1,
+          "term": "小さい",
+          "meaning": "kecil"
+        },
+        {
+          "index": 2,
+          "term": "新しい",
+          "meaning": "baru"
+        },
+        {
+          "index": 3,
+          "term": "古い",
+          "meaning": "lama; tua, untuk benda"
+        },
+        {
+          "index": 4,
+          "term": "高い",
+          "meaning": "mahal; tinggi"
+        },
+        {
+          "index": 5,
+          "term": "安い",
+          "meaning": "murah"
+        },
+        {
+          "index": 6,
+          "term": "暑い",
+          "meaning": "panas, untuk cuaca"
+        },
+        {
+          "index": 7,
+          "term": "寒い",
+          "meaning": "dingin, untuk cuaca"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-19",
+      "title": "Places and directions",
+      "asset": "assets/images/vocabulary/n5-theme-19.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a cat above a table; a cat below a table; a cat inside a cardboard box; a cat outside beside a cardboard box; a person standing in front of a house; a person behind a house; a person pointing to the right; a person pointing to the left.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "上",
+          "meaning": "atas"
+        },
+        {
+          "index": 1,
+          "term": "下",
+          "meaning": "bawah"
+        },
+        {
+          "index": 2,
+          "term": "中",
+          "meaning": "dalam"
+        },
+        {
+          "index": 3,
+          "term": "外",
+          "meaning": "luar"
+        },
+        {
+          "index": 4,
+          "term": "前",
+          "meaning": "depan; sebelum"
+        },
+        {
+          "index": 5,
+          "term": "後ろ",
+          "meaning": "belakang"
+        },
+        {
+          "index": 6,
+          "term": "右",
+          "meaning": "kanan"
+        },
+        {
+          "index": 7,
+          "term": "左",
+          "meaning": "kiri"
+        }
+      ]
+    },
+    {
+      "lessonId": "n5-visual-20",
+      "title": "Free time",
+      "asset": "assets/images/vocabulary/n5-theme-20.png",
+      "prompt": "Use case: illustration-story. Generate a polished educational vocabulary illustration sheet. EXACT 2:1 wide landscape composition, EIGHT equally sized SQUARE cells arranged as EXACTLY FOUR COLUMNS and TWO ROWS. Clean aligned grid, no gaps, no frames, absolutely no text or lettering, numbers, labels, logos or speech bubbles. Each cell independently centered with all essential objects safely inside its square. Warm watercolor and gouache with Japanese everyday storybook feeling, cream paper texture, soft coral and indigo accents, expressive friendly characters, clear unmistakable subject, quiet uncluttered backgrounds, beautiful professional visual learning assets. Young woman has short dark bob and coral cardigan with cream shirt; recurring friend has long dark hair and navy dress. Cell order left to right across TOP row then BOTTOM row. The eight separate cell subjects are: a young woman listening to music with headphones; young women watching a movie on a blank screen; a person holding a camera and taking a photo; a person on a trip with luggage; a person playing tennis; a person swimming; a person cooking dinner; a woman singing with a microphone.",
+      "panels": [
+        {
+          "index": 0,
+          "term": "音楽",
+          "meaning": "musik"
+        },
+        {
+          "index": 1,
+          "term": "映画",
+          "meaning": "film"
+        },
+        {
+          "index": 2,
+          "term": "写真",
+          "meaning": "foto"
+        },
+        {
+          "index": 3,
+          "term": "旅行",
+          "meaning": "perjalanan wisata"
+        },
+        {
+          "index": 4,
+          "term": "テニス",
+          "meaning": "tenis"
+        },
+        {
+          "index": 5,
+          "term": "泳ぐ",
+          "meaning": "berenang"
+        },
+        {
+          "index": 6,
+          "term": "料理",
+          "meaning": "masakan; memasak"
+        },
+        {
+          "index": 7,
+          "term": "歌",
+          "meaning": "lagu"
+        }
+      ]
+    }
+  ]
+}

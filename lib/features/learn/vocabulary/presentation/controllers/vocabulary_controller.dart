@@ -32,6 +32,8 @@ class VocabularyLessonState {
     this.feedback,
     this.result,
     this.submitting = false,
+    this.meaningRevealed = false,
+    this.error,
   });
 
   final VocabularyLesson lesson;
@@ -43,6 +45,8 @@ class VocabularyLessonState {
   final AnswerFeedback? feedback;
   final VocabularyResult? result;
   final bool submitting;
+  final bool meaningRevealed;
+  final String? error;
 
   VocabularyLessonState copyWith({
     VocabularyStage? stage,
@@ -56,8 +60,11 @@ class VocabularyLessonState {
     VocabularyResult? result,
     bool clearResult = false,
     bool? submitting,
+    bool? meaningRevealed,
+    String? error,
   }) {
     return VocabularyLessonState(
+      error: error,
       lesson: lesson,
       stage: stage ?? this.stage,
       wordIndex: wordIndex ?? this.wordIndex,
@@ -68,6 +75,7 @@ class VocabularyLessonState {
       feedback: clearFeedback ? null : feedback ?? this.feedback,
       result: clearResult ? null : result ?? this.result,
       submitting: submitting ?? this.submitting,
+      meaningRevealed: meaningRevealed ?? this.meaningRevealed,
     );
   }
 }
@@ -75,6 +83,7 @@ class VocabularyLessonState {
 final vocabularyLessonControllerProvider = StateNotifierProvider.autoDispose
     .family<VocabularyLessonController, AsyncValue<VocabularyLessonState>,
         String>((ref, lessonId) {
+  ref.watch(authControllerProvider.select((s) => s.user?.id));
   final controller = VocabularyLessonController(
     ref.watch(vocabularyRepositoryProvider),
     lessonId,
@@ -101,19 +110,25 @@ class VocabularyLessonController
   final VoidCallback onProgressChanged;
 
   Future<void> load() async {
-    state = await AsyncValue.guard(() async {
+    final loaded = await AsyncValue.guard(() async {
       final lesson = await _repository.getLesson(_lessonId);
       if (lesson.words.isEmpty) {
         throw const VocabularyException('Lesson ini belum memiliki kosakata.');
       }
       return VocabularyLessonState(lesson: lesson);
     });
+    if (mounted) state = loaded;
   }
 
   void previousWord() {
     final current = state.valueOrNull;
     if (current == null || current.wordIndex == 0) return;
-    state = AsyncValue.data(current.copyWith(wordIndex: current.wordIndex - 1));
+    state = AsyncValue.data(
+      current.copyWith(
+        wordIndex: current.wordIndex - 1,
+        meaningRevealed: false,
+      ),
+    );
   }
 
   void nextWord() {
@@ -122,7 +137,18 @@ class VocabularyLessonController
         current.wordIndex >= current.lesson.words.length - 1) {
       return;
     }
-    state = AsyncValue.data(current.copyWith(wordIndex: current.wordIndex + 1));
+    state = AsyncValue.data(
+      current.copyWith(
+        wordIndex: current.wordIndex + 1,
+        meaningRevealed: false,
+      ),
+    );
+  }
+
+  void revealMeaning() {
+    final current = state.valueOrNull;
+    if (current == null || current.meaningRevealed) return;
+    state = AsyncValue.data(current.copyWith(meaningRevealed: true));
   }
 
   Future<void> startQuiz() async {
@@ -131,6 +157,7 @@ class VocabularyLessonController
     state = AsyncValue.data(current.copyWith(submitting: true));
     try {
       final attempt = await _repository.startAttempt(_lessonId);
+      if (!mounted) return;
       state = AsyncValue.data(
         current.copyWith(
           stage: VocabularyStage.quiz,
@@ -142,8 +169,12 @@ class VocabularyLessonController
           submitting: false,
         ),
       );
-    } on Object catch (error, stackTrace) {
-      state = AsyncValue.error(error, stackTrace);
+    } on Object catch (error) {
+      if (mounted) {
+        state = AsyncValue.data(
+          current.copyWith(submitting: false, error: error.toString()),
+        );
+      }
     }
   }
 
@@ -173,18 +204,28 @@ class VocabularyLessonController
         questionId: question.id,
         optionId: option,
       );
+      if (!mounted) return;
       state = AsyncValue.data(
         current.copyWith(feedback: feedback, submitting: false),
       );
-    } on Object catch (error, stackTrace) {
-      state = AsyncValue.error(error, stackTrace);
+    } on Object catch (error) {
+      if (mounted) {
+        state = AsyncValue.data(
+          current.copyWith(submitting: false, error: error.toString()),
+        );
+      }
     }
   }
 
   Future<void> continueQuiz() async {
     final current = state.valueOrNull;
     final attempt = current?.attempt;
-    if (current == null || attempt == null || current.feedback == null) return;
+    if (current == null ||
+        attempt == null ||
+        current.feedback == null ||
+        current.submitting) {
+      return;
+    }
     if (current.questionIndex < attempt.questions.length - 1) {
       state = AsyncValue.data(
         current.copyWith(
@@ -198,6 +239,7 @@ class VocabularyLessonController
     state = AsyncValue.data(current.copyWith(submitting: true));
     try {
       final result = await _repository.complete(attempt.id);
+      if (!mounted) return;
       onProgressChanged();
       state = AsyncValue.data(
         current.copyWith(
@@ -206,8 +248,12 @@ class VocabularyLessonController
           submitting: false,
         ),
       );
-    } on Object catch (error, stackTrace) {
-      state = AsyncValue.error(error, stackTrace);
+    } on Object catch (error) {
+      if (mounted) {
+        state = AsyncValue.data(
+          current.copyWith(submitting: false, error: error.toString()),
+        );
+      }
     }
   }
 

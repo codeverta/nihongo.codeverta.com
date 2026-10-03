@@ -1,0 +1,4482 @@
+[
+  {
+    "ID": "kanji-n5-01",
+    "Chapter": "Angka",
+    "Title": "Angka satu sampai lima",
+    "Characters": [
+      {
+        "character": "一",
+        "meaning": "satu",
+        "strokes": 1,
+        "onReading": "イチ、イツ",
+        "kunReading": "ひと、ひと.つ",
+        "mnemonic": "Satu garis mewakili satu.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "一つ",
+            "reading": "ひとつ",
+            "meaning": "satu benda"
+          },
+          {
+            "japanese": "一月",
+            "reading": "いちがつ",
+            "meaning": "Januari"
+          }
+        ]
+      },
+      {
+        "character": "二",
+        "meaning": "dua",
+        "strokes": 2,
+        "onReading": "ニ",
+        "kunReading": "ふた、ふた.つ",
+        "mnemonic": "Dua garis mewakili dua.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "二つ",
+            "reading": "ふたつ",
+            "meaning": "dua benda"
+          },
+          {
+            "japanese": "二月",
+            "reading": "にがつ",
+            "meaning": "Februari"
+          }
+        ]
+      },
+      {
+        "character": "三",
+        "meaning": "tiga",
+        "strokes": 3,
+        "onReading": "サン",
+        "kunReading": "み、み.つ、みっ.つ",
+        "mnemonic": "Tiga garis mewakili tiga.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "三つ",
+            "reading": "みっつ",
+            "meaning": "tiga benda"
+          },
+          {
+            "japanese": "三月",
+            "reading": "さんがつ",
+            "meaning": "Maret"
+          }
+        ]
+      },
+      {
+        "character": "四",
+        "meaning": "empat",
+        "strokes": 5,
+        "onReading": "シ",
+        "kunReading": "よ、よ.つ、よっ.つ、よん",
+        "mnemonic": "Ingat kotak dengan bagian di dalamnya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "四つ",
+            "reading": "よっつ",
+            "meaning": "empat benda"
+          },
+          {
+            "japanese": "四月",
+            "reading": "しがつ",
+            "meaning": "April"
+          }
+        ]
+      },
+      {
+        "character": "五",
+        "meaning": "lima",
+        "strokes": 4,
+        "onReading": "ゴ",
+        "kunReading": "いつ、いつ.つ",
+        "mnemonic": "Bayangkan lima benda di rak bersilang.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "五つ",
+            "reading": "いつつ",
+            "meaning": "lima benda"
+          },
+          {
+            "japanese": "五月",
+            "reading": "ごがつ",
+            "meaning": "Mei"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 一?",
+        "Choices": [
+          "satu",
+          "dua",
+          "tiga",
+          "empat"
+        ],
+        "Correct": 0,
+        "Explanation": "一 berarti satu. Contoh: 一つ（ひとつ）: satu benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「一つ」?",
+        "Choices": [
+          "ひとつ",
+          "ふたつ",
+          "みっつ",
+          "よっつ"
+        ],
+        "Correct": 0,
+        "Explanation": "一つ dibaca ひとつ, artinya satu benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 二?",
+        "Choices": [
+          "dua",
+          "tiga",
+          "empat",
+          "lima"
+        ],
+        "Correct": 0,
+        "Explanation": "二 berarti dua. Contoh: 二つ（ふたつ）: dua benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「二つ」?",
+        "Choices": [
+          "ふたつ",
+          "みっつ",
+          "よっつ",
+          "いつつ"
+        ],
+        "Correct": 0,
+        "Explanation": "二つ dibaca ふたつ, artinya dua benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 三?",
+        "Choices": [
+          "tiga",
+          "empat",
+          "lima",
+          "satu"
+        ],
+        "Correct": 0,
+        "Explanation": "三 berarti tiga. Contoh: 三つ（みっつ）: tiga benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「三つ」?",
+        "Choices": [
+          "みっつ",
+          "よっつ",
+          "いつつ",
+          "ひとつ"
+        ],
+        "Correct": 0,
+        "Explanation": "三つ dibaca みっつ, artinya tiga benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 四?",
+        "Choices": [
+          "empat",
+          "lima",
+          "satu",
+          "dua"
+        ],
+        "Correct": 0,
+        "Explanation": "四 berarti empat. Contoh: 四つ（よっつ）: empat benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「四つ」?",
+        "Choices": [
+          "よっつ",
+          "いつつ",
+          "ひとつ",
+          "ふたつ"
+        ],
+        "Correct": 0,
+        "Explanation": "四つ dibaca よっつ, artinya empat benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 五?",
+        "Choices": [
+          "lima",
+          "satu",
+          "dua",
+          "tiga"
+        ],
+        "Correct": 0,
+        "Explanation": "五 berarti lima. Contoh: 五つ（いつつ）: lima benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「五つ」?",
+        "Choices": [
+          "いつつ",
+          "ひとつ",
+          "ふたつ",
+          "みっつ"
+        ],
+        "Correct": 0,
+        "Explanation": "五つ dibaca いつつ, artinya lima benda."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-02",
+    "Chapter": "Angka",
+    "Title": "Angka enam sampai sepuluh",
+    "Characters": [
+      {
+        "character": "六",
+        "meaning": "enam",
+        "strokes": 4,
+        "onReading": "ロク",
+        "kunReading": "む、む.つ、むっ.つ",
+        "mnemonic": "Bayangkan dua kaki di bawah sebuah atap.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "六つ",
+            "reading": "むっつ",
+            "meaning": "enam benda"
+          },
+          {
+            "japanese": "六月",
+            "reading": "ろくがつ",
+            "meaning": "Juni"
+          }
+        ]
+      },
+      {
+        "character": "七",
+        "meaning": "tujuh",
+        "strokes": 2,
+        "onReading": "シチ",
+        "kunReading": "なな、なな.つ、なの",
+        "mnemonic": "Bentuk kait membantu mengingat tujuh.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "七つ",
+            "reading": "ななつ",
+            "meaning": "tujuh benda"
+          },
+          {
+            "japanese": "七月",
+            "reading": "しちがつ",
+            "meaning": "Juli"
+          }
+        ]
+      },
+      {
+        "character": "八",
+        "meaning": "delapan",
+        "strokes": 2,
+        "onReading": "ハチ",
+        "kunReading": "や、や.つ、やっ.つ、よう",
+        "mnemonic": "Dua garis terbuka seperti membagi benda.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "八つ",
+            "reading": "やっつ",
+            "meaning": "delapan benda"
+          },
+          {
+            "japanese": "八月",
+            "reading": "はちがつ",
+            "meaning": "Agustus"
+          }
+        ]
+      },
+      {
+        "character": "九",
+        "meaning": "sembilan",
+        "strokes": 2,
+        "onReading": "キュウ、ク",
+        "kunReading": "ここの、ここの.つ",
+        "mnemonic": "Bayangkan kait untuk mengambil benda kesembilan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "九つ",
+            "reading": "ここのつ",
+            "meaning": "sembilan benda"
+          },
+          {
+            "japanese": "九月",
+            "reading": "くがつ",
+            "meaning": "September"
+          }
+        ]
+      },
+      {
+        "character": "十",
+        "meaning": "sepuluh",
+        "strokes": 2,
+        "onReading": "ジュウ、ジッ",
+        "kunReading": "とお、と",
+        "mnemonic": "Dua garis bersilang menandai sepuluh.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "十",
+            "reading": "じゅう",
+            "meaning": "sepuluh"
+          },
+          {
+            "japanese": "十月",
+            "reading": "じゅうがつ",
+            "meaning": "Oktober"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 六?",
+        "Choices": [
+          "enam",
+          "tujuh",
+          "delapan",
+          "sembilan"
+        ],
+        "Correct": 0,
+        "Explanation": "六 berarti enam. Contoh: 六つ（むっつ）: enam benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「六つ」?",
+        "Choices": [
+          "むっつ",
+          "ななつ",
+          "やっつ",
+          "ここのつ"
+        ],
+        "Correct": 0,
+        "Explanation": "六つ dibaca むっつ, artinya enam benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 七?",
+        "Choices": [
+          "tujuh",
+          "delapan",
+          "sembilan",
+          "sepuluh"
+        ],
+        "Correct": 0,
+        "Explanation": "七 berarti tujuh. Contoh: 七つ（ななつ）: tujuh benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「七つ」?",
+        "Choices": [
+          "ななつ",
+          "やっつ",
+          "ここのつ",
+          "じゅう"
+        ],
+        "Correct": 0,
+        "Explanation": "七つ dibaca ななつ, artinya tujuh benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 八?",
+        "Choices": [
+          "delapan",
+          "sembilan",
+          "sepuluh",
+          "enam"
+        ],
+        "Correct": 0,
+        "Explanation": "八 berarti delapan. Contoh: 八つ（やっつ）: delapan benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「八つ」?",
+        "Choices": [
+          "やっつ",
+          "ここのつ",
+          "じゅう",
+          "むっつ"
+        ],
+        "Correct": 0,
+        "Explanation": "八つ dibaca やっつ, artinya delapan benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 九?",
+        "Choices": [
+          "sembilan",
+          "sepuluh",
+          "enam",
+          "tujuh"
+        ],
+        "Correct": 0,
+        "Explanation": "九 berarti sembilan. Contoh: 九つ（ここのつ）: sembilan benda."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「九つ」?",
+        "Choices": [
+          "ここのつ",
+          "じゅう",
+          "むっつ",
+          "ななつ"
+        ],
+        "Correct": 0,
+        "Explanation": "九つ dibaca ここのつ, artinya sembilan benda."
+      },
+      {
+        "Prompt": "Apa arti kanji 十?",
+        "Choices": [
+          "sepuluh",
+          "enam",
+          "tujuh",
+          "delapan"
+        ],
+        "Correct": 0,
+        "Explanation": "十 berarti sepuluh. Contoh: 十（じゅう）: sepuluh."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「十」?",
+        "Choices": [
+          "じゅう",
+          "むっつ",
+          "ななつ",
+          "やっつ"
+        ],
+        "Correct": 0,
+        "Explanation": "十 dibaca じゅう, artinya sepuluh."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-03",
+    "Chapter": "Waktu dan alam",
+    "Title": "Hari, bulan, dan unsur alam",
+    "Characters": [
+      {
+        "character": "日",
+        "meaning": "hari; matahari",
+        "strokes": 4,
+        "onReading": "ニチ、ジツ",
+        "kunReading": "ひ、か",
+        "mnemonic": "Kotak dengan garis di dalam seperti matahari dalam bingkai.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "日本",
+            "reading": "にほん",
+            "meaning": "Jepang"
+          },
+          {
+            "japanese": "毎日",
+            "reading": "まいにち",
+            "meaning": "setiap hari"
+          }
+        ]
+      },
+      {
+        "character": "月",
+        "meaning": "bulan",
+        "strokes": 4,
+        "onReading": "ゲツ、ガツ",
+        "kunReading": "つき",
+        "mnemonic": "Bentuk memanjang mengingatkan bulan sabit.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "月",
+            "reading": "つき",
+            "meaning": "bulan"
+          },
+          {
+            "japanese": "月曜日",
+            "reading": "げつようび",
+            "meaning": "Senin"
+          }
+        ]
+      },
+      {
+        "character": "火",
+        "meaning": "api",
+        "strokes": 4,
+        "onReading": "カ",
+        "kunReading": "ひ、ほ",
+        "mnemonic": "Bayangkan nyala api bercabang.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "火",
+            "reading": "ひ",
+            "meaning": "api"
+          },
+          {
+            "japanese": "火曜日",
+            "reading": "かようび",
+            "meaning": "Selasa"
+          }
+        ]
+      },
+      {
+        "character": "水",
+        "meaning": "air",
+        "strokes": 4,
+        "onReading": "スイ",
+        "kunReading": "みず",
+        "mnemonic": "Garis tengah dengan cabang seperti aliran air.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "水",
+            "reading": "みず",
+            "meaning": "air"
+          },
+          {
+            "japanese": "水曜日",
+            "reading": "すいようび",
+            "meaning": "Rabu"
+          }
+        ]
+      },
+      {
+        "character": "木",
+        "meaning": "pohon; kayu",
+        "strokes": 4,
+        "onReading": "モク、ボク",
+        "kunReading": "き、こ",
+        "mnemonic": "Batang, dahan, dan akar terlihat pada bentuknya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "木",
+            "reading": "き",
+            "meaning": "pohon"
+          },
+          {
+            "japanese": "木曜日",
+            "reading": "もくようび",
+            "meaning": "Kamis"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 日?",
+        "Choices": [
+          "hari; matahari",
+          "bulan",
+          "api",
+          "air"
+        ],
+        "Correct": 0,
+        "Explanation": "日 berarti hari; matahari. Contoh: 日本（にほん）: Jepang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「日本」?",
+        "Choices": [
+          "にほん",
+          "つき",
+          "ひ",
+          "みず"
+        ],
+        "Correct": 0,
+        "Explanation": "日本 dibaca にほん, artinya Jepang."
+      },
+      {
+        "Prompt": "Apa arti kanji 月?",
+        "Choices": [
+          "bulan",
+          "api",
+          "air",
+          "pohon; kayu"
+        ],
+        "Correct": 0,
+        "Explanation": "月 berarti bulan. Contoh: 月（つき）: bulan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「月」?",
+        "Choices": [
+          "つき",
+          "ひ",
+          "みず",
+          "き"
+        ],
+        "Correct": 0,
+        "Explanation": "月 dibaca つき, artinya bulan."
+      },
+      {
+        "Prompt": "Apa arti kanji 火?",
+        "Choices": [
+          "api",
+          "air",
+          "pohon; kayu",
+          "hari; matahari"
+        ],
+        "Correct": 0,
+        "Explanation": "火 berarti api. Contoh: 火（ひ）: api."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「火」?",
+        "Choices": [
+          "ひ",
+          "みず",
+          "き",
+          "にほん"
+        ],
+        "Correct": 0,
+        "Explanation": "火 dibaca ひ, artinya api."
+      },
+      {
+        "Prompt": "Apa arti kanji 水?",
+        "Choices": [
+          "air",
+          "pohon; kayu",
+          "hari; matahari",
+          "bulan"
+        ],
+        "Correct": 0,
+        "Explanation": "水 berarti air. Contoh: 水（みず）: air."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「水」?",
+        "Choices": [
+          "みず",
+          "き",
+          "にほん",
+          "つき"
+        ],
+        "Correct": 0,
+        "Explanation": "水 dibaca みず, artinya air."
+      },
+      {
+        "Prompt": "Apa arti kanji 木?",
+        "Choices": [
+          "pohon; kayu",
+          "hari; matahari",
+          "bulan",
+          "api"
+        ],
+        "Correct": 0,
+        "Explanation": "木 berarti pohon; kayu. Contoh: 木（き）: pohon."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「木」?",
+        "Choices": [
+          "き",
+          "にほん",
+          "つき",
+          "ひ"
+        ],
+        "Correct": 0,
+        "Explanation": "木 dibaca き, artinya pohon."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-04",
+    "Chapter": "Waktu dan alam",
+    "Title": "Pekan, tahun, dan sekarang",
+    "Characters": [
+      {
+        "character": "金",
+        "meaning": "emas; uang",
+        "strokes": 8,
+        "onReading": "キン、コン",
+        "kunReading": "かね、かな",
+        "mnemonic": "Bayangkan logam berharga di bawah atap.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "お金",
+            "reading": "おかね",
+            "meaning": "uang"
+          },
+          {
+            "japanese": "金曜日",
+            "reading": "きんようび",
+            "meaning": "Jumat"
+          }
+        ]
+      },
+      {
+        "character": "土",
+        "meaning": "tanah",
+        "strokes": 3,
+        "onReading": "ド、ト",
+        "kunReading": "つち",
+        "mnemonic": "Garis bawah sebagai tanah dan garis tegak di atasnya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "土",
+            "reading": "つち",
+            "meaning": "tanah"
+          },
+          {
+            "japanese": "土曜日",
+            "reading": "どようび",
+            "meaning": "Sabtu"
+          }
+        ]
+      },
+      {
+        "character": "曜",
+        "meaning": "hari dalam pekan",
+        "strokes": 18,
+        "onReading": "ヨウ",
+        "kunReading": "—",
+        "mnemonic": "Bagian 日 mengingatkan bahwa kata ini berkaitan dengan hari.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "日曜日",
+            "reading": "にちようび",
+            "meaning": "Minggu"
+          },
+          {
+            "japanese": "何曜日",
+            "reading": "なんようび",
+            "meaning": "hari apa"
+          }
+        ]
+      },
+      {
+        "character": "年",
+        "meaning": "tahun",
+        "strokes": 6,
+        "onReading": "ネン",
+        "kunReading": "とし",
+        "mnemonic": "Bayangkan tanda untuk menghitung tahun yang lewat.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "今年",
+            "reading": "ことし",
+            "meaning": "tahun ini"
+          },
+          {
+            "japanese": "来年",
+            "reading": "らいねん",
+            "meaning": "tahun depan"
+          }
+        ]
+      },
+      {
+        "character": "今",
+        "meaning": "sekarang",
+        "strokes": 4,
+        "onReading": "コン、キン",
+        "kunReading": "いま",
+        "mnemonic": "Bayangkan sesuatu yang sedang terjadi di bawah atap.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "今",
+            "reading": "いま",
+            "meaning": "sekarang"
+          },
+          {
+            "japanese": "今月",
+            "reading": "こんげつ",
+            "meaning": "bulan ini"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 金?",
+        "Choices": [
+          "emas; uang",
+          "tanah",
+          "hari dalam pekan",
+          "tahun"
+        ],
+        "Correct": 0,
+        "Explanation": "金 berarti emas; uang. Contoh: お金（おかね）: uang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「お金」?",
+        "Choices": [
+          "おかね",
+          "つち",
+          "にちようび",
+          "ことし"
+        ],
+        "Correct": 0,
+        "Explanation": "お金 dibaca おかね, artinya uang."
+      },
+      {
+        "Prompt": "Apa arti kanji 土?",
+        "Choices": [
+          "tanah",
+          "hari dalam pekan",
+          "tahun",
+          "sekarang"
+        ],
+        "Correct": 0,
+        "Explanation": "土 berarti tanah. Contoh: 土（つち）: tanah."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「土」?",
+        "Choices": [
+          "つち",
+          "にちようび",
+          "ことし",
+          "いま"
+        ],
+        "Correct": 0,
+        "Explanation": "土 dibaca つち, artinya tanah."
+      },
+      {
+        "Prompt": "Apa arti kanji 曜?",
+        "Choices": [
+          "hari dalam pekan",
+          "tahun",
+          "sekarang",
+          "emas; uang"
+        ],
+        "Correct": 0,
+        "Explanation": "曜 berarti hari dalam pekan. Contoh: 日曜日（にちようび）: Minggu."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「日曜日」?",
+        "Choices": [
+          "にちようび",
+          "ことし",
+          "いま",
+          "おかね"
+        ],
+        "Correct": 0,
+        "Explanation": "日曜日 dibaca にちようび, artinya Minggu."
+      },
+      {
+        "Prompt": "Apa arti kanji 年?",
+        "Choices": [
+          "tahun",
+          "sekarang",
+          "emas; uang",
+          "tanah"
+        ],
+        "Correct": 0,
+        "Explanation": "年 berarti tahun. Contoh: 今年（ことし）: tahun ini."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「今年」?",
+        "Choices": [
+          "ことし",
+          "いま",
+          "おかね",
+          "つち"
+        ],
+        "Correct": 0,
+        "Explanation": "今年 dibaca ことし, artinya tahun ini."
+      },
+      {
+        "Prompt": "Apa arti kanji 今?",
+        "Choices": [
+          "sekarang",
+          "emas; uang",
+          "tanah",
+          "hari dalam pekan"
+        ],
+        "Correct": 0,
+        "Explanation": "今 berarti sekarang. Contoh: 今（いま）: sekarang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「今」?",
+        "Choices": [
+          "いま",
+          "おかね",
+          "つち",
+          "にちようび"
+        ],
+        "Correct": 0,
+        "Explanation": "今 dibaca いま, artinya sekarang."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-05",
+    "Chapter": "Waktu",
+    "Title": "Jam dan bagian waktu",
+    "Characters": [
+      {
+        "character": "時",
+        "meaning": "waktu; jam",
+        "strokes": 10,
+        "onReading": "ジ",
+        "kunReading": "とき",
+        "mnemonic": "Bagian 日 menghubungkan kanji ini dengan waktu.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "時間",
+            "reading": "じかん",
+            "meaning": "waktu; durasi"
+          },
+          {
+            "japanese": "一時",
+            "reading": "いちじ",
+            "meaning": "pukul satu"
+          }
+        ]
+      },
+      {
+        "character": "分",
+        "meaning": "bagian; menit",
+        "strokes": 4,
+        "onReading": "ブン、フン、ブ",
+        "kunReading": "わ.ける、わ.かる",
+        "mnemonic": "Bayangkan sesuatu dipotong menjadi bagian.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "五分",
+            "reading": "ごふん",
+            "meaning": "lima menit"
+          },
+          {
+            "japanese": "十分",
+            "reading": "じゅっぷん",
+            "meaning": "sepuluh menit"
+          }
+        ]
+      },
+      {
+        "character": "半",
+        "meaning": "setengah",
+        "strokes": 5,
+        "onReading": "ハン",
+        "kunReading": "なか.ば",
+        "mnemonic": "Garis tengah membagi bentuk menjadi dua.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "半分",
+            "reading": "はんぶん",
+            "meaning": "setengah bagian"
+          },
+          {
+            "japanese": "三時半",
+            "reading": "さんじはん",
+            "meaning": "pukul setengah empat"
+          }
+        ]
+      },
+      {
+        "character": "午",
+        "meaning": "siang",
+        "strokes": 4,
+        "onReading": "ゴ",
+        "kunReading": "—",
+        "mnemonic": "Gunakan 午前 dan 午後 untuk mengingat posisi terhadap tengah hari.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "午前",
+            "reading": "ごぜん",
+            "meaning": "sebelum tengah hari; AM"
+          },
+          {
+            "japanese": "午後",
+            "reading": "ごご",
+            "meaning": "sesudah tengah hari; PM"
+          }
+        ]
+      },
+      {
+        "character": "前",
+        "meaning": "depan; sebelum",
+        "strokes": 9,
+        "onReading": "ゼン",
+        "kunReading": "まえ",
+        "mnemonic": "Bayangkan berdiri di bagian depan suatu barisan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "前",
+            "reading": "まえ",
+            "meaning": "depan; sebelum"
+          },
+          {
+            "japanese": "名前",
+            "reading": "なまえ",
+            "meaning": "nama"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 時?",
+        "Choices": [
+          "waktu; jam",
+          "bagian; menit",
+          "setengah",
+          "siang"
+        ],
+        "Correct": 0,
+        "Explanation": "時 berarti waktu; jam. Contoh: 時間（じかん）: waktu; durasi."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「時間」?",
+        "Choices": [
+          "じかん",
+          "ごふん",
+          "はんぶん",
+          "ごぜん"
+        ],
+        "Correct": 0,
+        "Explanation": "時間 dibaca じかん, artinya waktu; durasi."
+      },
+      {
+        "Prompt": "Apa arti kanji 分?",
+        "Choices": [
+          "bagian; menit",
+          "setengah",
+          "siang",
+          "depan; sebelum"
+        ],
+        "Correct": 0,
+        "Explanation": "分 berarti bagian; menit. Contoh: 五分（ごふん）: lima menit."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「五分」?",
+        "Choices": [
+          "ごふん",
+          "はんぶん",
+          "ごぜん",
+          "まえ"
+        ],
+        "Correct": 0,
+        "Explanation": "五分 dibaca ごふん, artinya lima menit."
+      },
+      {
+        "Prompt": "Apa arti kanji 半?",
+        "Choices": [
+          "setengah",
+          "siang",
+          "depan; sebelum",
+          "waktu; jam"
+        ],
+        "Correct": 0,
+        "Explanation": "半 berarti setengah. Contoh: 半分（はんぶん）: setengah bagian."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「半分」?",
+        "Choices": [
+          "はんぶん",
+          "ごぜん",
+          "まえ",
+          "じかん"
+        ],
+        "Correct": 0,
+        "Explanation": "半分 dibaca はんぶん, artinya setengah bagian."
+      },
+      {
+        "Prompt": "Apa arti kanji 午?",
+        "Choices": [
+          "siang",
+          "depan; sebelum",
+          "waktu; jam",
+          "bagian; menit"
+        ],
+        "Correct": 0,
+        "Explanation": "午 berarti siang. Contoh: 午前（ごぜん）: sebelum tengah hari; AM."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「午前」?",
+        "Choices": [
+          "ごぜん",
+          "まえ",
+          "じかん",
+          "ごふん"
+        ],
+        "Correct": 0,
+        "Explanation": "午前 dibaca ごぜん, artinya sebelum tengah hari; AM."
+      },
+      {
+        "Prompt": "Apa arti kanji 前?",
+        "Choices": [
+          "depan; sebelum",
+          "waktu; jam",
+          "bagian; menit",
+          "setengah"
+        ],
+        "Correct": 0,
+        "Explanation": "前 berarti depan; sebelum. Contoh: 前（まえ）: depan; sebelum."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「前」?",
+        "Choices": [
+          "まえ",
+          "じかん",
+          "ごふん",
+          "はんぶん"
+        ],
+        "Correct": 0,
+        "Explanation": "前 dibaca まえ, artinya depan; sebelum."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-06",
+    "Chapter": "Orang dan keluarga",
+    "Title": "Waktu, orang, dan nama",
+    "Characters": [
+      {
+        "character": "後",
+        "meaning": "belakang; sesudah",
+        "strokes": 9,
+        "onReading": "ゴ、コウ",
+        "kunReading": "あと、うし.ろ",
+        "mnemonic": "Bayangkan orang berjalan menyusul dari belakang.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "後ろ",
+            "reading": "うしろ",
+            "meaning": "belakang"
+          },
+          {
+            "japanese": "午後",
+            "reading": "ごご",
+            "meaning": "sesudah tengah hari; PM"
+          }
+        ]
+      },
+      {
+        "character": "毎",
+        "meaning": "setiap",
+        "strokes": 6,
+        "onReading": "マイ",
+        "kunReading": "—",
+        "mnemonic": "Bayangkan tanda yang diulang setiap hari.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "毎日",
+            "reading": "まいにち",
+            "meaning": "setiap hari"
+          },
+          {
+            "japanese": "毎年",
+            "reading": "まいとし",
+            "meaning": "setiap tahun"
+          }
+        ]
+      },
+      {
+        "character": "何",
+        "meaning": "apa",
+        "strokes": 7,
+        "onReading": "カ",
+        "kunReading": "なに、なん",
+        "mnemonic": "Bagian orang di kiri seperti seseorang sedang bertanya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "何",
+            "reading": "なに",
+            "meaning": "apa"
+          },
+          {
+            "japanese": "何時",
+            "reading": "なんじ",
+            "meaning": "pukul berapa"
+          }
+        ]
+      },
+      {
+        "character": "人",
+        "meaning": "orang",
+        "strokes": 2,
+        "onReading": "ジン、ニン",
+        "kunReading": "ひと",
+        "mnemonic": "Dua garis seperti seseorang berdiri dengan dua kaki.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "人",
+            "reading": "ひと",
+            "meaning": "orang"
+          },
+          {
+            "japanese": "日本人",
+            "reading": "にほんじん",
+            "meaning": "orang Jepang"
+          }
+        ]
+      },
+      {
+        "character": "名",
+        "meaning": "nama",
+        "strokes": 6,
+        "onReading": "メイ、ミョウ",
+        "kunReading": "な",
+        "mnemonic": "Bagian 口 mengingatkan nama yang dipanggil.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "名前",
+            "reading": "なまえ",
+            "meaning": "nama"
+          },
+          {
+            "japanese": "有名",
+            "reading": "ゆうめい",
+            "meaning": "terkenal"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 後?",
+        "Choices": [
+          "belakang; sesudah",
+          "setiap",
+          "apa",
+          "orang"
+        ],
+        "Correct": 0,
+        "Explanation": "後 berarti belakang; sesudah. Contoh: 後ろ（うしろ）: belakang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「後ろ」?",
+        "Choices": [
+          "うしろ",
+          "まいにち",
+          "なに",
+          "ひと"
+        ],
+        "Correct": 0,
+        "Explanation": "後ろ dibaca うしろ, artinya belakang."
+      },
+      {
+        "Prompt": "Apa arti kanji 毎?",
+        "Choices": [
+          "setiap",
+          "apa",
+          "orang",
+          "nama"
+        ],
+        "Correct": 0,
+        "Explanation": "毎 berarti setiap. Contoh: 毎日（まいにち）: setiap hari."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「毎日」?",
+        "Choices": [
+          "まいにち",
+          "なに",
+          "ひと",
+          "なまえ"
+        ],
+        "Correct": 0,
+        "Explanation": "毎日 dibaca まいにち, artinya setiap hari."
+      },
+      {
+        "Prompt": "Apa arti kanji 何?",
+        "Choices": [
+          "apa",
+          "orang",
+          "nama",
+          "belakang; sesudah"
+        ],
+        "Correct": 0,
+        "Explanation": "何 berarti apa. Contoh: 何（なに）: apa."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「何」?",
+        "Choices": [
+          "なに",
+          "ひと",
+          "なまえ",
+          "うしろ"
+        ],
+        "Correct": 0,
+        "Explanation": "何 dibaca なに, artinya apa."
+      },
+      {
+        "Prompt": "Apa arti kanji 人?",
+        "Choices": [
+          "orang",
+          "nama",
+          "belakang; sesudah",
+          "setiap"
+        ],
+        "Correct": 0,
+        "Explanation": "人 berarti orang. Contoh: 人（ひと）: orang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「人」?",
+        "Choices": [
+          "ひと",
+          "なまえ",
+          "うしろ",
+          "まいにち"
+        ],
+        "Correct": 0,
+        "Explanation": "人 dibaca ひと, artinya orang."
+      },
+      {
+        "Prompt": "Apa arti kanji 名?",
+        "Choices": [
+          "nama",
+          "belakang; sesudah",
+          "setiap",
+          "apa"
+        ],
+        "Correct": 0,
+        "Explanation": "名 berarti nama. Contoh: 名前（なまえ）: nama."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「名前」?",
+        "Choices": [
+          "なまえ",
+          "うしろ",
+          "まいにち",
+          "なに"
+        ],
+        "Correct": 0,
+        "Explanation": "名前 dibaca なまえ, artinya nama."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-07",
+    "Chapter": "Orang dan keluarga",
+    "Title": "Anggota keluarga",
+    "Characters": [
+      {
+        "character": "父",
+        "meaning": "ayah",
+        "strokes": 4,
+        "onReading": "フ",
+        "kunReading": "ちち、とう",
+        "mnemonic": "Bayangkan ayah membawa alat dengan kedua tangan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "父",
+            "reading": "ちち",
+            "meaning": "ayah saya"
+          },
+          {
+            "japanese": "お父さん",
+            "reading": "おとうさん",
+            "meaning": "ayah; sapaan hormat"
+          }
+        ]
+      },
+      {
+        "character": "母",
+        "meaning": "ibu",
+        "strokes": 5,
+        "onReading": "ボ",
+        "kunReading": "はは、かあ",
+        "mnemonic": "Ingat dua titik khas di dalam bentuknya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "母",
+            "reading": "はは",
+            "meaning": "ibu saya"
+          },
+          {
+            "japanese": "お母さん",
+            "reading": "おかあさん",
+            "meaning": "ibu; sapaan hormat"
+          }
+        ]
+      },
+      {
+        "character": "子",
+        "meaning": "anak",
+        "strokes": 3,
+        "onReading": "シ、ス",
+        "kunReading": "こ",
+        "mnemonic": "Bayangkan anak kecil dengan tangan terbuka.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "子供",
+            "reading": "こども",
+            "meaning": "anak"
+          },
+          {
+            "japanese": "女の子",
+            "reading": "おんなのこ",
+            "meaning": "anak perempuan"
+          }
+        ]
+      },
+      {
+        "character": "男",
+        "meaning": "laki-laki",
+        "strokes": 7,
+        "onReading": "ダン、ナン",
+        "kunReading": "おとこ",
+        "mnemonic": "Bagian 田 dan 力 dapat menjadi petunjuk mengingat.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "男",
+            "reading": "おとこ",
+            "meaning": "laki-laki"
+          },
+          {
+            "japanese": "男の子",
+            "reading": "おとこのこ",
+            "meaning": "anak laki-laki"
+          }
+        ]
+      },
+      {
+        "character": "女",
+        "meaning": "perempuan",
+        "strokes": 3,
+        "onReading": "ジョ、ニョ",
+        "kunReading": "おんな",
+        "mnemonic": "Perhatikan tiga garis yang saling bersilang.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "女",
+            "reading": "おんな",
+            "meaning": "perempuan"
+          },
+          {
+            "japanese": "女の人",
+            "reading": "おんなのひと",
+            "meaning": "seorang perempuan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 父?",
+        "Choices": [
+          "ayah",
+          "ibu",
+          "anak",
+          "laki-laki"
+        ],
+        "Correct": 0,
+        "Explanation": "父 berarti ayah. Contoh: 父（ちち）: ayah saya."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「父」?",
+        "Choices": [
+          "ちち",
+          "はは",
+          "こども",
+          "おとこ"
+        ],
+        "Correct": 0,
+        "Explanation": "父 dibaca ちち, artinya ayah saya."
+      },
+      {
+        "Prompt": "Apa arti kanji 母?",
+        "Choices": [
+          "ibu",
+          "anak",
+          "laki-laki",
+          "perempuan"
+        ],
+        "Correct": 0,
+        "Explanation": "母 berarti ibu. Contoh: 母（はは）: ibu saya."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「母」?",
+        "Choices": [
+          "はは",
+          "こども",
+          "おとこ",
+          "おんな"
+        ],
+        "Correct": 0,
+        "Explanation": "母 dibaca はは, artinya ibu saya."
+      },
+      {
+        "Prompt": "Apa arti kanji 子?",
+        "Choices": [
+          "anak",
+          "laki-laki",
+          "perempuan",
+          "ayah"
+        ],
+        "Correct": 0,
+        "Explanation": "子 berarti anak. Contoh: 子供（こども）: anak."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「子供」?",
+        "Choices": [
+          "こども",
+          "おとこ",
+          "おんな",
+          "ちち"
+        ],
+        "Correct": 0,
+        "Explanation": "子供 dibaca こども, artinya anak."
+      },
+      {
+        "Prompt": "Apa arti kanji 男?",
+        "Choices": [
+          "laki-laki",
+          "perempuan",
+          "ayah",
+          "ibu"
+        ],
+        "Correct": 0,
+        "Explanation": "男 berarti laki-laki. Contoh: 男（おとこ）: laki-laki."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「男」?",
+        "Choices": [
+          "おとこ",
+          "おんな",
+          "ちち",
+          "はは"
+        ],
+        "Correct": 0,
+        "Explanation": "男 dibaca おとこ, artinya laki-laki."
+      },
+      {
+        "Prompt": "Apa arti kanji 女?",
+        "Choices": [
+          "perempuan",
+          "ayah",
+          "ibu",
+          "anak"
+        ],
+        "Correct": 0,
+        "Explanation": "女 berarti perempuan. Contoh: 女（おんな）: perempuan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「女」?",
+        "Choices": [
+          "おんな",
+          "ちち",
+          "はは",
+          "こども"
+        ],
+        "Correct": 0,
+        "Explanation": "女 dibaca おんな, artinya perempuan."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-08",
+    "Chapter": "Sekolah",
+    "Title": "Belajar dan pertemanan",
+    "Characters": [
+      {
+        "character": "学",
+        "meaning": "belajar",
+        "strokes": 8,
+        "onReading": "ガク",
+        "kunReading": "まな.ぶ",
+        "mnemonic": "Bagian 子 di bawah mengingatkan anak sedang belajar.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "学生",
+            "reading": "がくせい",
+            "meaning": "pelajar; mahasiswa"
+          },
+          {
+            "japanese": "大学",
+            "reading": "だいがく",
+            "meaning": "universitas"
+          }
+        ]
+      },
+      {
+        "character": "校",
+        "meaning": "sekolah",
+        "strokes": 10,
+        "onReading": "コウ",
+        "kunReading": "—",
+        "mnemonic": "Bagian 木 membantu membedakan bentuk 校 dari 学.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "学校",
+            "reading": "がっこう",
+            "meaning": "sekolah"
+          },
+          {
+            "japanese": "小学校",
+            "reading": "しょうがっこう",
+            "meaning": "sekolah dasar"
+          }
+        ]
+      },
+      {
+        "character": "先",
+        "meaning": "lebih dahulu; sebelumnya",
+        "strokes": 6,
+        "onReading": "セン",
+        "kunReading": "さき",
+        "mnemonic": "Bayangkan seseorang berdiri lebih dahulu di depan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "先生",
+            "reading": "せんせい",
+            "meaning": "guru"
+          },
+          {
+            "japanese": "先月",
+            "reading": "せんげつ",
+            "meaning": "bulan lalu"
+          }
+        ]
+      },
+      {
+        "character": "生",
+        "meaning": "hidup; lahir",
+        "strokes": 5,
+        "onReading": "セイ、ショウ",
+        "kunReading": "い.きる、う.まれる、なま",
+        "mnemonic": "Bayangkan tanaman tumbuh dari tanah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "学生",
+            "reading": "がくせい",
+            "meaning": "pelajar; mahasiswa"
+          },
+          {
+            "japanese": "生まれる",
+            "reading": "うまれる",
+            "meaning": "lahir"
+          }
+        ]
+      },
+      {
+        "character": "友",
+        "meaning": "teman",
+        "strokes": 4,
+        "onReading": "ユウ",
+        "kunReading": "とも",
+        "mnemonic": "Bayangkan dua tangan saling membantu.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "友達",
+            "reading": "ともだち",
+            "meaning": "teman"
+          },
+          {
+            "japanese": "友人",
+            "reading": "ゆうじん",
+            "meaning": "teman"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 学?",
+        "Choices": [
+          "belajar",
+          "sekolah",
+          "lebih dahulu; sebelumnya",
+          "hidup; lahir"
+        ],
+        "Correct": 0,
+        "Explanation": "学 berarti belajar. Contoh: 学生（がくせい）: pelajar; mahasiswa."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「学生」?",
+        "Choices": [
+          "がくせい",
+          "がっこう",
+          "せんせい",
+          "ともだち"
+        ],
+        "Correct": 0,
+        "Explanation": "学生 dibaca がくせい, artinya pelajar; mahasiswa."
+      },
+      {
+        "Prompt": "Apa arti kanji 校?",
+        "Choices": [
+          "sekolah",
+          "lebih dahulu; sebelumnya",
+          "hidup; lahir",
+          "teman"
+        ],
+        "Correct": 0,
+        "Explanation": "校 berarti sekolah. Contoh: 学校（がっこう）: sekolah."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「学校」?",
+        "Choices": [
+          "がっこう",
+          "せんせい",
+          "がくせい",
+          "ともだち"
+        ],
+        "Correct": 0,
+        "Explanation": "学校 dibaca がっこう, artinya sekolah."
+      },
+      {
+        "Prompt": "Apa arti kanji 先?",
+        "Choices": [
+          "lebih dahulu; sebelumnya",
+          "hidup; lahir",
+          "teman",
+          "belajar"
+        ],
+        "Correct": 0,
+        "Explanation": "先 berarti lebih dahulu; sebelumnya. Contoh: 先生（せんせい）: guru."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「先生」?",
+        "Choices": [
+          "せんせい",
+          "がくせい",
+          "ともだち",
+          "がっこう"
+        ],
+        "Correct": 0,
+        "Explanation": "先生 dibaca せんせい, artinya guru."
+      },
+      {
+        "Prompt": "Apa arti kanji 生?",
+        "Choices": [
+          "hidup; lahir",
+          "teman",
+          "belajar",
+          "sekolah"
+        ],
+        "Correct": 0,
+        "Explanation": "生 berarti hidup; lahir. Contoh: 学生（がくせい）: pelajar; mahasiswa."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「学生」?",
+        "Choices": [
+          "がくせい",
+          "ともだち",
+          "がっこう",
+          "せんせい"
+        ],
+        "Correct": 0,
+        "Explanation": "学生 dibaca がくせい, artinya pelajar; mahasiswa."
+      },
+      {
+        "Prompt": "Apa arti kanji 友?",
+        "Choices": [
+          "teman",
+          "belajar",
+          "sekolah",
+          "lebih dahulu; sebelumnya"
+        ],
+        "Correct": 0,
+        "Explanation": "友 berarti teman. Contoh: 友達（ともだち）: teman."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「友達」?",
+        "Choices": [
+          "ともだち",
+          "がくせい",
+          "がっこう",
+          "せんせい"
+        ],
+        "Correct": 0,
+        "Explanation": "友達 dibaca ともだち, artinya teman."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-09",
+    "Chapter": "Tubuh",
+    "Title": "Bagian tubuh",
+    "Characters": [
+      {
+        "character": "口",
+        "meaning": "mulut",
+        "strokes": 3,
+        "onReading": "コウ、ク",
+        "kunReading": "くち",
+        "mnemonic": "Kotak sederhana seperti mulut terbuka.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "口",
+            "reading": "くち",
+            "meaning": "mulut"
+          },
+          {
+            "japanese": "入口",
+            "reading": "いりぐち",
+            "meaning": "pintu masuk"
+          }
+        ]
+      },
+      {
+        "character": "目",
+        "meaning": "mata",
+        "strokes": 5,
+        "onReading": "モク、ボク",
+        "kunReading": "め",
+        "mnemonic": "Kotak dengan dua garis dalam seperti mata bergaris.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "目",
+            "reading": "め",
+            "meaning": "mata"
+          },
+          {
+            "japanese": "一日目",
+            "reading": "いちにちめ",
+            "meaning": "hari pertama"
+          }
+        ]
+      },
+      {
+        "character": "耳",
+        "meaning": "telinga",
+        "strokes": 6,
+        "onReading": "ジ",
+        "kunReading": "みみ",
+        "mnemonic": "Bayangkan garis-garis lipatan telinga.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "耳",
+            "reading": "みみ",
+            "meaning": "telinga"
+          },
+          {
+            "japanese": "耳が痛い",
+            "reading": "みみがいたい",
+            "meaning": "telinga terasa sakit"
+          }
+        ]
+      },
+      {
+        "character": "手",
+        "meaning": "tangan",
+        "strokes": 4,
+        "onReading": "シュ",
+        "kunReading": "て",
+        "mnemonic": "Bayangkan jari-jari di atas pergelangan tangan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "手",
+            "reading": "て",
+            "meaning": "tangan"
+          },
+          {
+            "japanese": "上手",
+            "reading": "じょうず",
+            "meaning": "mahir"
+          }
+        ]
+      },
+      {
+        "character": "足",
+        "meaning": "kaki; cukup",
+        "strokes": 7,
+        "onReading": "ソク",
+        "kunReading": "あし、た.りる",
+        "mnemonic": "Bagian bawah seolah kaki sedang melangkah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "足",
+            "reading": "あし",
+            "meaning": "kaki"
+          },
+          {
+            "japanese": "足りる",
+            "reading": "たりる",
+            "meaning": "cukup"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 口?",
+        "Choices": [
+          "mulut",
+          "mata",
+          "telinga",
+          "tangan"
+        ],
+        "Correct": 0,
+        "Explanation": "口 berarti mulut. Contoh: 口（くち）: mulut."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「口」?",
+        "Choices": [
+          "くち",
+          "め",
+          "みみ",
+          "て"
+        ],
+        "Correct": 0,
+        "Explanation": "口 dibaca くち, artinya mulut."
+      },
+      {
+        "Prompt": "Apa arti kanji 目?",
+        "Choices": [
+          "mata",
+          "telinga",
+          "tangan",
+          "kaki; cukup"
+        ],
+        "Correct": 0,
+        "Explanation": "目 berarti mata. Contoh: 目（め）: mata."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「目」?",
+        "Choices": [
+          "め",
+          "みみ",
+          "て",
+          "あし"
+        ],
+        "Correct": 0,
+        "Explanation": "目 dibaca め, artinya mata."
+      },
+      {
+        "Prompt": "Apa arti kanji 耳?",
+        "Choices": [
+          "telinga",
+          "tangan",
+          "kaki; cukup",
+          "mulut"
+        ],
+        "Correct": 0,
+        "Explanation": "耳 berarti telinga. Contoh: 耳（みみ）: telinga."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「耳」?",
+        "Choices": [
+          "みみ",
+          "て",
+          "あし",
+          "くち"
+        ],
+        "Correct": 0,
+        "Explanation": "耳 dibaca みみ, artinya telinga."
+      },
+      {
+        "Prompt": "Apa arti kanji 手?",
+        "Choices": [
+          "tangan",
+          "kaki; cukup",
+          "mulut",
+          "mata"
+        ],
+        "Correct": 0,
+        "Explanation": "手 berarti tangan. Contoh: 手（て）: tangan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「手」?",
+        "Choices": [
+          "て",
+          "あし",
+          "くち",
+          "め"
+        ],
+        "Correct": 0,
+        "Explanation": "手 dibaca て, artinya tangan."
+      },
+      {
+        "Prompt": "Apa arti kanji 足?",
+        "Choices": [
+          "kaki; cukup",
+          "mulut",
+          "mata",
+          "telinga"
+        ],
+        "Correct": 0,
+        "Explanation": "足 berarti kaki; cukup. Contoh: 足（あし）: kaki."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「足」?",
+        "Choices": [
+          "あし",
+          "くち",
+          "め",
+          "みみ"
+        ],
+        "Correct": 0,
+        "Explanation": "足 dibaca あし, artinya kaki."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-10",
+    "Chapter": "Posisi dan arah",
+    "Title": "Posisi benda",
+    "Characters": [
+      {
+        "character": "上",
+        "meaning": "atas",
+        "strokes": 3,
+        "onReading": "ジョウ",
+        "kunReading": "うえ、あ.がる、あ.げる",
+        "mnemonic": "Garis pendek berada di atas garis dasar.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "上",
+            "reading": "うえ",
+            "meaning": "atas"
+          },
+          {
+            "japanese": "上手",
+            "reading": "じょうず",
+            "meaning": "mahir"
+          }
+        ]
+      },
+      {
+        "character": "下",
+        "meaning": "bawah",
+        "strokes": 3,
+        "onReading": "カ、ゲ",
+        "kunReading": "した、さ.がる、さ.げる",
+        "mnemonic": "Garis pendek berada di bawah garis dasar.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "下",
+            "reading": "した",
+            "meaning": "bawah"
+          },
+          {
+            "japanese": "下手",
+            "reading": "へた",
+            "meaning": "kurang mahir"
+          }
+        ]
+      },
+      {
+        "character": "中",
+        "meaning": "tengah; dalam",
+        "strokes": 4,
+        "onReading": "チュウ",
+        "kunReading": "なか",
+        "mnemonic": "Garis menembus tepat di tengah kotak.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "中",
+            "reading": "なか",
+            "meaning": "dalam; tengah"
+          },
+          {
+            "japanese": "中国",
+            "reading": "ちゅうごく",
+            "meaning": "Tiongkok"
+          }
+        ]
+      },
+      {
+        "character": "外",
+        "meaning": "luar",
+        "strokes": 5,
+        "onReading": "ガイ、ゲ",
+        "kunReading": "そと、はず.す",
+        "mnemonic": "Bayangkan tanda kecil di luar bagian utama.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "外",
+            "reading": "そと",
+            "meaning": "luar"
+          },
+          {
+            "japanese": "外国",
+            "reading": "がいこく",
+            "meaning": "negara asing"
+          }
+        ]
+      },
+      {
+        "character": "右",
+        "meaning": "kanan",
+        "strokes": 5,
+        "onReading": "ウ、ユウ",
+        "kunReading": "みぎ",
+        "mnemonic": "Ingat bagian 口 pada 右 untuk membedakannya dari 左.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "右",
+            "reading": "みぎ",
+            "meaning": "kanan"
+          },
+          {
+            "japanese": "右手",
+            "reading": "みぎて",
+            "meaning": "tangan kanan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 上?",
+        "Choices": [
+          "atas",
+          "bawah",
+          "tengah; dalam",
+          "luar"
+        ],
+        "Correct": 0,
+        "Explanation": "上 berarti atas. Contoh: 上（うえ）: atas."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「上」?",
+        "Choices": [
+          "うえ",
+          "した",
+          "なか",
+          "そと"
+        ],
+        "Correct": 0,
+        "Explanation": "上 dibaca うえ, artinya atas."
+      },
+      {
+        "Prompt": "Apa arti kanji 下?",
+        "Choices": [
+          "bawah",
+          "tengah; dalam",
+          "luar",
+          "kanan"
+        ],
+        "Correct": 0,
+        "Explanation": "下 berarti bawah. Contoh: 下（した）: bawah."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「下」?",
+        "Choices": [
+          "した",
+          "なか",
+          "そと",
+          "みぎ"
+        ],
+        "Correct": 0,
+        "Explanation": "下 dibaca した, artinya bawah."
+      },
+      {
+        "Prompt": "Apa arti kanji 中?",
+        "Choices": [
+          "tengah; dalam",
+          "luar",
+          "kanan",
+          "atas"
+        ],
+        "Correct": 0,
+        "Explanation": "中 berarti tengah; dalam. Contoh: 中（なか）: dalam; tengah."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「中」?",
+        "Choices": [
+          "なか",
+          "そと",
+          "みぎ",
+          "うえ"
+        ],
+        "Correct": 0,
+        "Explanation": "中 dibaca なか, artinya dalam; tengah."
+      },
+      {
+        "Prompt": "Apa arti kanji 外?",
+        "Choices": [
+          "luar",
+          "kanan",
+          "atas",
+          "bawah"
+        ],
+        "Correct": 0,
+        "Explanation": "外 berarti luar. Contoh: 外（そと）: luar."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「外」?",
+        "Choices": [
+          "そと",
+          "みぎ",
+          "うえ",
+          "した"
+        ],
+        "Correct": 0,
+        "Explanation": "外 dibaca そと, artinya luar."
+      },
+      {
+        "Prompt": "Apa arti kanji 右?",
+        "Choices": [
+          "kanan",
+          "atas",
+          "bawah",
+          "tengah; dalam"
+        ],
+        "Correct": 0,
+        "Explanation": "右 berarti kanan. Contoh: 右（みぎ）: kanan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「右」?",
+        "Choices": [
+          "みぎ",
+          "うえ",
+          "した",
+          "なか"
+        ],
+        "Correct": 0,
+        "Explanation": "右 dibaca みぎ, artinya kanan."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-11",
+    "Chapter": "Posisi dan arah",
+    "Title": "Kiri dan arah mata angin",
+    "Characters": [
+      {
+        "character": "左",
+        "meaning": "kiri",
+        "strokes": 5,
+        "onReading": "サ",
+        "kunReading": "ひだり",
+        "mnemonic": "Ingat bagian 工 pada 左 untuk membedakannya dari 右.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "左",
+            "reading": "ひだり",
+            "meaning": "kiri"
+          },
+          {
+            "japanese": "左手",
+            "reading": "ひだりて",
+            "meaning": "tangan kiri"
+          }
+        ]
+      },
+      {
+        "character": "東",
+        "meaning": "timur",
+        "strokes": 8,
+        "onReading": "トウ",
+        "kunReading": "ひがし",
+        "mnemonic": "Bayangkan matahari muncul di antara cabang pohon.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "東",
+            "reading": "ひがし",
+            "meaning": "timur"
+          },
+          {
+            "japanese": "東京",
+            "reading": "とうきょう",
+            "meaning": "Tokyo"
+          }
+        ]
+      },
+      {
+        "character": "西",
+        "meaning": "barat",
+        "strokes": 6,
+        "onReading": "セイ、サイ",
+        "kunReading": "にし",
+        "mnemonic": "Bayangkan matahari masuk ke kotak saat terbenam di barat.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "西",
+            "reading": "にし",
+            "meaning": "barat"
+          },
+          {
+            "japanese": "西口",
+            "reading": "にしぐち",
+            "meaning": "pintu keluar barat"
+          }
+        ]
+      },
+      {
+        "character": "南",
+        "meaning": "selatan",
+        "strokes": 9,
+        "onReading": "ナン",
+        "kunReading": "みなみ",
+        "mnemonic": "Bayangkan papan penunjuk arah selatan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "南",
+            "reading": "みなみ",
+            "meaning": "selatan"
+          },
+          {
+            "japanese": "南口",
+            "reading": "みなみぐち",
+            "meaning": "pintu keluar selatan"
+          }
+        ]
+      },
+      {
+        "character": "北",
+        "meaning": "utara",
+        "strokes": 5,
+        "onReading": "ホク",
+        "kunReading": "きた",
+        "mnemonic": "Dua sisi menghadap berlawanan; kaitkan dengan arah utara.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "北",
+            "reading": "きた",
+            "meaning": "utara"
+          },
+          {
+            "japanese": "北口",
+            "reading": "きたぐち",
+            "meaning": "pintu keluar utara"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 左?",
+        "Choices": [
+          "kiri",
+          "timur",
+          "barat",
+          "selatan"
+        ],
+        "Correct": 0,
+        "Explanation": "左 berarti kiri. Contoh: 左（ひだり）: kiri."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「左」?",
+        "Choices": [
+          "ひだり",
+          "ひがし",
+          "にし",
+          "みなみ"
+        ],
+        "Correct": 0,
+        "Explanation": "左 dibaca ひだり, artinya kiri."
+      },
+      {
+        "Prompt": "Apa arti kanji 東?",
+        "Choices": [
+          "timur",
+          "barat",
+          "selatan",
+          "utara"
+        ],
+        "Correct": 0,
+        "Explanation": "東 berarti timur. Contoh: 東（ひがし）: timur."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「東」?",
+        "Choices": [
+          "ひがし",
+          "にし",
+          "みなみ",
+          "きた"
+        ],
+        "Correct": 0,
+        "Explanation": "東 dibaca ひがし, artinya timur."
+      },
+      {
+        "Prompt": "Apa arti kanji 西?",
+        "Choices": [
+          "barat",
+          "selatan",
+          "utara",
+          "kiri"
+        ],
+        "Correct": 0,
+        "Explanation": "西 berarti barat. Contoh: 西（にし）: barat."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「西」?",
+        "Choices": [
+          "にし",
+          "みなみ",
+          "きた",
+          "ひだり"
+        ],
+        "Correct": 0,
+        "Explanation": "西 dibaca にし, artinya barat."
+      },
+      {
+        "Prompt": "Apa arti kanji 南?",
+        "Choices": [
+          "selatan",
+          "utara",
+          "kiri",
+          "timur"
+        ],
+        "Correct": 0,
+        "Explanation": "南 berarti selatan. Contoh: 南（みなみ）: selatan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「南」?",
+        "Choices": [
+          "みなみ",
+          "きた",
+          "ひだり",
+          "ひがし"
+        ],
+        "Correct": 0,
+        "Explanation": "南 dibaca みなみ, artinya selatan."
+      },
+      {
+        "Prompt": "Apa arti kanji 北?",
+        "Choices": [
+          "utara",
+          "kiri",
+          "timur",
+          "barat"
+        ],
+        "Correct": 0,
+        "Explanation": "北 berarti utara. Contoh: 北（きた）: utara."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「北」?",
+        "Choices": [
+          "きた",
+          "ひだり",
+          "ひがし",
+          "にし"
+        ],
+        "Correct": 0,
+        "Explanation": "北 dibaca きた, artinya utara."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-12",
+    "Chapter": "Ukuran",
+    "Title": "Ukuran dan jumlah",
+    "Characters": [
+      {
+        "character": "大",
+        "meaning": "besar",
+        "strokes": 3,
+        "onReading": "ダイ、タイ",
+        "kunReading": "おお、おお.きい",
+        "mnemonic": "Seperti orang merentangkan tangan lebar.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "大きい",
+            "reading": "おおきい",
+            "meaning": "besar"
+          },
+          {
+            "japanese": "大学",
+            "reading": "だいがく",
+            "meaning": "universitas"
+          }
+        ]
+      },
+      {
+        "character": "小",
+        "meaning": "kecil",
+        "strokes": 3,
+        "onReading": "ショウ",
+        "kunReading": "ちい.さい、こ、お",
+        "mnemonic": "Garis kecil di kedua sisi mengingatkan ukuran kecil.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "小さい",
+            "reading": "ちいさい",
+            "meaning": "kecil"
+          },
+          {
+            "japanese": "小学校",
+            "reading": "しょうがっこう",
+            "meaning": "sekolah dasar"
+          }
+        ]
+      },
+      {
+        "character": "多",
+        "meaning": "banyak",
+        "strokes": 6,
+        "onReading": "タ",
+        "kunReading": "おお.い",
+        "mnemonic": "Dua bagian yang berulang membantu mengingat banyak.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "多い",
+            "reading": "おおい",
+            "meaning": "banyak"
+          },
+          {
+            "japanese": "人が多い",
+            "reading": "ひとがおおい",
+            "meaning": "banyak orang"
+          }
+        ]
+      },
+      {
+        "character": "少",
+        "meaning": "sedikit",
+        "strokes": 4,
+        "onReading": "ショウ",
+        "kunReading": "すく.ない、すこ.し",
+        "mnemonic": "Bandingkan dengan 小 dan perhatikan garis miring tambahannya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "少ない",
+            "reading": "すくない",
+            "meaning": "sedikit"
+          },
+          {
+            "japanese": "少し",
+            "reading": "すこし",
+            "meaning": "sedikit; sebentar"
+          }
+        ]
+      },
+      {
+        "character": "長",
+        "meaning": "panjang; pemimpin",
+        "strokes": 8,
+        "onReading": "チョウ",
+        "kunReading": "なが.い",
+        "mnemonic": "Bayangkan bentuk yang memanjang ke bawah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "長い",
+            "reading": "ながい",
+            "meaning": "panjang"
+          },
+          {
+            "japanese": "社長",
+            "reading": "しゃちょう",
+            "meaning": "direktur perusahaan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 大?",
+        "Choices": [
+          "besar",
+          "kecil",
+          "banyak",
+          "sedikit"
+        ],
+        "Correct": 0,
+        "Explanation": "大 berarti besar. Contoh: 大きい（おおきい）: besar."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「大きい」?",
+        "Choices": [
+          "おおきい",
+          "ちいさい",
+          "おおい",
+          "すくない"
+        ],
+        "Correct": 0,
+        "Explanation": "大きい dibaca おおきい, artinya besar."
+      },
+      {
+        "Prompt": "Apa arti kanji 小?",
+        "Choices": [
+          "kecil",
+          "banyak",
+          "sedikit",
+          "panjang; pemimpin"
+        ],
+        "Correct": 0,
+        "Explanation": "小 berarti kecil. Contoh: 小さい（ちいさい）: kecil."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「小さい」?",
+        "Choices": [
+          "ちいさい",
+          "おおい",
+          "すくない",
+          "ながい"
+        ],
+        "Correct": 0,
+        "Explanation": "小さい dibaca ちいさい, artinya kecil."
+      },
+      {
+        "Prompt": "Apa arti kanji 多?",
+        "Choices": [
+          "banyak",
+          "sedikit",
+          "panjang; pemimpin",
+          "besar"
+        ],
+        "Correct": 0,
+        "Explanation": "多 berarti banyak. Contoh: 多い（おおい）: banyak."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「多い」?",
+        "Choices": [
+          "おおい",
+          "すくない",
+          "ながい",
+          "おおきい"
+        ],
+        "Correct": 0,
+        "Explanation": "多い dibaca おおい, artinya banyak."
+      },
+      {
+        "Prompt": "Apa arti kanji 少?",
+        "Choices": [
+          "sedikit",
+          "panjang; pemimpin",
+          "besar",
+          "kecil"
+        ],
+        "Correct": 0,
+        "Explanation": "少 berarti sedikit. Contoh: 少ない（すくない）: sedikit."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「少ない」?",
+        "Choices": [
+          "すくない",
+          "ながい",
+          "おおきい",
+          "ちいさい"
+        ],
+        "Correct": 0,
+        "Explanation": "少ない dibaca すくない, artinya sedikit."
+      },
+      {
+        "Prompt": "Apa arti kanji 長?",
+        "Choices": [
+          "panjang; pemimpin",
+          "besar",
+          "kecil",
+          "banyak"
+        ],
+        "Correct": 0,
+        "Explanation": "長 berarti panjang; pemimpin. Contoh: 長い（ながい）: panjang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「長い」?",
+        "Choices": [
+          "ながい",
+          "おおきい",
+          "ちいさい",
+          "おおい"
+        ],
+        "Correct": 0,
+        "Explanation": "長い dibaca ながい, artinya panjang."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-13",
+    "Chapter": "Alam",
+    "Title": "Bentang alam dan cuaca",
+    "Characters": [
+      {
+        "character": "山",
+        "meaning": "gunung",
+        "strokes": 3,
+        "onReading": "サン",
+        "kunReading": "やま",
+        "mnemonic": "Tiga puncak gunung terlihat pada bentuknya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "山",
+            "reading": "やま",
+            "meaning": "gunung"
+          },
+          {
+            "japanese": "富士山",
+            "reading": "ふじさん",
+            "meaning": "Gunung Fuji"
+          }
+        ]
+      },
+      {
+        "character": "川",
+        "meaning": "sungai",
+        "strokes": 3,
+        "onReading": "セン",
+        "kunReading": "かわ",
+        "mnemonic": "Tiga garis mengalir seperti sungai.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "川",
+            "reading": "かわ",
+            "meaning": "sungai"
+          },
+          {
+            "japanese": "小川",
+            "reading": "おがわ",
+            "meaning": "sungai kecil"
+          }
+        ]
+      },
+      {
+        "character": "田",
+        "meaning": "sawah",
+        "strokes": 5,
+        "onReading": "デン",
+        "kunReading": "た",
+        "mnemonic": "Kotak terbagi empat seperti petak sawah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "田んぼ",
+            "reading": "たんぼ",
+            "meaning": "sawah"
+          },
+          {
+            "japanese": "田中",
+            "reading": "たなか",
+            "meaning": "Tanaka; nama keluarga"
+          }
+        ]
+      },
+      {
+        "character": "天",
+        "meaning": "langit",
+        "strokes": 4,
+        "onReading": "テン",
+        "kunReading": "あま、あめ",
+        "mnemonic": "Garis di atas 大 seperti langit di atas manusia.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "天気",
+            "reading": "てんき",
+            "meaning": "cuaca"
+          },
+          {
+            "japanese": "天気がいい",
+            "reading": "てんきがいい",
+            "meaning": "cuacanya bagus"
+          }
+        ]
+      },
+      {
+        "character": "雨",
+        "meaning": "hujan",
+        "strokes": 8,
+        "onReading": "ウ",
+        "kunReading": "あめ、あま",
+        "mnemonic": "Titik-titik di bawah atap seperti tetes hujan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "雨",
+            "reading": "あめ",
+            "meaning": "hujan"
+          },
+          {
+            "japanese": "雨の日",
+            "reading": "あめのひ",
+            "meaning": "hari hujan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 山?",
+        "Choices": [
+          "gunung",
+          "sungai",
+          "sawah",
+          "langit"
+        ],
+        "Correct": 0,
+        "Explanation": "山 berarti gunung. Contoh: 山（やま）: gunung."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「山」?",
+        "Choices": [
+          "やま",
+          "かわ",
+          "たんぼ",
+          "てんき"
+        ],
+        "Correct": 0,
+        "Explanation": "山 dibaca やま, artinya gunung."
+      },
+      {
+        "Prompt": "Apa arti kanji 川?",
+        "Choices": [
+          "sungai",
+          "sawah",
+          "langit",
+          "hujan"
+        ],
+        "Correct": 0,
+        "Explanation": "川 berarti sungai. Contoh: 川（かわ）: sungai."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「川」?",
+        "Choices": [
+          "かわ",
+          "たんぼ",
+          "てんき",
+          "あめ"
+        ],
+        "Correct": 0,
+        "Explanation": "川 dibaca かわ, artinya sungai."
+      },
+      {
+        "Prompt": "Apa arti kanji 田?",
+        "Choices": [
+          "sawah",
+          "langit",
+          "hujan",
+          "gunung"
+        ],
+        "Correct": 0,
+        "Explanation": "田 berarti sawah. Contoh: 田んぼ（たんぼ）: sawah."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「田んぼ」?",
+        "Choices": [
+          "たんぼ",
+          "てんき",
+          "あめ",
+          "やま"
+        ],
+        "Correct": 0,
+        "Explanation": "田んぼ dibaca たんぼ, artinya sawah."
+      },
+      {
+        "Prompt": "Apa arti kanji 天?",
+        "Choices": [
+          "langit",
+          "hujan",
+          "gunung",
+          "sungai"
+        ],
+        "Correct": 0,
+        "Explanation": "天 berarti langit. Contoh: 天気（てんき）: cuaca."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「天気」?",
+        "Choices": [
+          "てんき",
+          "あめ",
+          "やま",
+          "かわ"
+        ],
+        "Correct": 0,
+        "Explanation": "天気 dibaca てんき, artinya cuaca."
+      },
+      {
+        "Prompt": "Apa arti kanji 雨?",
+        "Choices": [
+          "hujan",
+          "gunung",
+          "sungai",
+          "sawah"
+        ],
+        "Correct": 0,
+        "Explanation": "雨 berarti hujan. Contoh: 雨（あめ）: hujan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「雨」?",
+        "Choices": [
+          "あめ",
+          "やま",
+          "かわ",
+          "たんぼ"
+        ],
+        "Correct": 0,
+        "Explanation": "雨 dibaca あめ, artinya hujan."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-14",
+    "Chapter": "Kehidupan sehari-hari",
+    "Title": "Toko, perusahaan, dan kehidupan",
+    "Characters": [
+      {
+        "character": "店",
+        "meaning": "toko",
+        "strokes": 8,
+        "onReading": "テン",
+        "kunReading": "みせ",
+        "mnemonic": "Bayangkan tempat beratap dengan papan toko.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "店",
+            "reading": "みせ",
+            "meaning": "toko"
+          },
+          {
+            "japanese": "店員",
+            "reading": "てんいん",
+            "meaning": "pegawai toko"
+          }
+        ]
+      },
+      {
+        "character": "社",
+        "meaning": "perusahaan; kuil Shinto",
+        "strokes": 7,
+        "onReading": "シャ",
+        "kunReading": "やしろ",
+        "mnemonic": "Bayangkan papan sebuah perusahaan di samping tanah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "会社",
+            "reading": "かいしゃ",
+            "meaning": "perusahaan"
+          },
+          {
+            "japanese": "社長",
+            "reading": "しゃちょう",
+            "meaning": "direktur perusahaan"
+          }
+        ]
+      },
+      {
+        "character": "魚",
+        "meaning": "ikan",
+        "strokes": 11,
+        "onReading": "ギョ",
+        "kunReading": "さかな、うお",
+        "mnemonic": "Bayangkan tubuh ikan dengan ekor di bagian bawah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "魚",
+            "reading": "さかな",
+            "meaning": "ikan"
+          },
+          {
+            "japanese": "魚を食べる",
+            "reading": "さかなをたべる",
+            "meaning": "makan ikan"
+          }
+        ]
+      },
+      {
+        "character": "犬",
+        "meaning": "anjing",
+        "strokes": 4,
+        "onReading": "ケン",
+        "kunReading": "いぬ",
+        "mnemonic": "Bandingkan 大 dengan satu titik tambahan pada 犬.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "犬",
+            "reading": "いぬ",
+            "meaning": "anjing"
+          },
+          {
+            "japanese": "子犬",
+            "reading": "こいぬ",
+            "meaning": "anak anjing"
+          }
+        ]
+      },
+      {
+        "character": "気",
+        "meaning": "udara; semangat",
+        "strokes": 6,
+        "onReading": "キ、ケ",
+        "kunReading": "—",
+        "mnemonic": "Bayangkan udara bergerak di bawah garis atas.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "元気",
+            "reading": "げんき",
+            "meaning": "sehat; bersemangat"
+          },
+          {
+            "japanese": "天気",
+            "reading": "てんき",
+            "meaning": "cuaca"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 店?",
+        "Choices": [
+          "toko",
+          "perusahaan; kuil Shinto",
+          "ikan",
+          "anjing"
+        ],
+        "Correct": 0,
+        "Explanation": "店 berarti toko. Contoh: 店（みせ）: toko."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「店」?",
+        "Choices": [
+          "みせ",
+          "かいしゃ",
+          "さかな",
+          "いぬ"
+        ],
+        "Correct": 0,
+        "Explanation": "店 dibaca みせ, artinya toko."
+      },
+      {
+        "Prompt": "Apa arti kanji 社?",
+        "Choices": [
+          "perusahaan; kuil Shinto",
+          "ikan",
+          "anjing",
+          "udara; semangat"
+        ],
+        "Correct": 0,
+        "Explanation": "社 berarti perusahaan; kuil Shinto. Contoh: 会社（かいしゃ）: perusahaan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「会社」?",
+        "Choices": [
+          "かいしゃ",
+          "さかな",
+          "いぬ",
+          "げんき"
+        ],
+        "Correct": 0,
+        "Explanation": "会社 dibaca かいしゃ, artinya perusahaan."
+      },
+      {
+        "Prompt": "Apa arti kanji 魚?",
+        "Choices": [
+          "ikan",
+          "anjing",
+          "udara; semangat",
+          "toko"
+        ],
+        "Correct": 0,
+        "Explanation": "魚 berarti ikan. Contoh: 魚（さかな）: ikan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「魚」?",
+        "Choices": [
+          "さかな",
+          "いぬ",
+          "げんき",
+          "みせ"
+        ],
+        "Correct": 0,
+        "Explanation": "魚 dibaca さかな, artinya ikan."
+      },
+      {
+        "Prompt": "Apa arti kanji 犬?",
+        "Choices": [
+          "anjing",
+          "udara; semangat",
+          "toko",
+          "perusahaan; kuil Shinto"
+        ],
+        "Correct": 0,
+        "Explanation": "犬 berarti anjing. Contoh: 犬（いぬ）: anjing."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「犬」?",
+        "Choices": [
+          "いぬ",
+          "げんき",
+          "みせ",
+          "かいしゃ"
+        ],
+        "Correct": 0,
+        "Explanation": "犬 dibaca いぬ, artinya anjing."
+      },
+      {
+        "Prompt": "Apa arti kanji 気?",
+        "Choices": [
+          "udara; semangat",
+          "toko",
+          "perusahaan; kuil Shinto",
+          "ikan"
+        ],
+        "Correct": 0,
+        "Explanation": "気 berarti udara; semangat. Contoh: 元気（げんき）: sehat; bersemangat."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「元気」?",
+        "Choices": [
+          "げんき",
+          "みせ",
+          "かいしゃ",
+          "さかな"
+        ],
+        "Correct": 0,
+        "Explanation": "元気 dibaca げんき, artinya sehat; bersemangat."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-15",
+    "Chapter": "Kegiatan",
+    "Title": "Pergi, datang, dan keluar",
+    "Characters": [
+      {
+        "character": "行",
+        "meaning": "pergi; melakukan",
+        "strokes": 6,
+        "onReading": "コウ、ギョウ",
+        "kunReading": "い.く、ゆ.く、おこな.う",
+        "mnemonic": "Dua sisi seperti persimpangan jalan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "行く",
+            "reading": "いく",
+            "meaning": "pergi"
+          },
+          {
+            "japanese": "銀行",
+            "reading": "ぎんこう",
+            "meaning": "bank"
+          }
+        ]
+      },
+      {
+        "character": "来",
+        "meaning": "datang",
+        "strokes": 7,
+        "onReading": "ライ",
+        "kunReading": "く.る、きた.る",
+        "mnemonic": "Bayangkan seseorang datang mendekati pohon.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "来る",
+            "reading": "くる",
+            "meaning": "datang"
+          },
+          {
+            "japanese": "来月",
+            "reading": "らいげつ",
+            "meaning": "bulan depan"
+          }
+        ]
+      },
+      {
+        "character": "帰",
+        "meaning": "pulang",
+        "strokes": 10,
+        "onReading": "キ",
+        "kunReading": "かえ.る、かえ.す",
+        "mnemonic": "Bayangkan kembali ke rumah setelah kegiatan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "帰る",
+            "reading": "かえる",
+            "meaning": "pulang"
+          },
+          {
+            "japanese": "帰り",
+            "reading": "かえり",
+            "meaning": "perjalanan pulang"
+          }
+        ]
+      },
+      {
+        "character": "入",
+        "meaning": "masuk",
+        "strokes": 2,
+        "onReading": "ニュウ",
+        "kunReading": "はい.る、い.れる",
+        "mnemonic": "Dua garis seperti pintu yang terbuka untuk masuk.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "入る",
+            "reading": "はいる",
+            "meaning": "masuk"
+          },
+          {
+            "japanese": "入口",
+            "reading": "いりぐち",
+            "meaning": "pintu masuk"
+          }
+        ]
+      },
+      {
+        "character": "出",
+        "meaning": "keluar",
+        "strokes": 5,
+        "onReading": "シュツ",
+        "kunReading": "で.る、だ.す",
+        "mnemonic": "Bayangkan sesuatu muncul keluar dari dua kotak.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "出る",
+            "reading": "でる",
+            "meaning": "keluar"
+          },
+          {
+            "japanese": "出口",
+            "reading": "でぐち",
+            "meaning": "pintu keluar"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 行?",
+        "Choices": [
+          "pergi; melakukan",
+          "datang",
+          "pulang",
+          "masuk"
+        ],
+        "Correct": 0,
+        "Explanation": "行 berarti pergi; melakukan. Contoh: 行く（いく）: pergi."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「行く」?",
+        "Choices": [
+          "いく",
+          "くる",
+          "かえる",
+          "はいる"
+        ],
+        "Correct": 0,
+        "Explanation": "行く dibaca いく, artinya pergi."
+      },
+      {
+        "Prompt": "Apa arti kanji 来?",
+        "Choices": [
+          "datang",
+          "pulang",
+          "masuk",
+          "keluar"
+        ],
+        "Correct": 0,
+        "Explanation": "来 berarti datang. Contoh: 来る（くる）: datang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「来る」?",
+        "Choices": [
+          "くる",
+          "かえる",
+          "はいる",
+          "でる"
+        ],
+        "Correct": 0,
+        "Explanation": "来る dibaca くる, artinya datang."
+      },
+      {
+        "Prompt": "Apa arti kanji 帰?",
+        "Choices": [
+          "pulang",
+          "masuk",
+          "keluar",
+          "pergi; melakukan"
+        ],
+        "Correct": 0,
+        "Explanation": "帰 berarti pulang. Contoh: 帰る（かえる）: pulang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「帰る」?",
+        "Choices": [
+          "かえる",
+          "はいる",
+          "でる",
+          "いく"
+        ],
+        "Correct": 0,
+        "Explanation": "帰る dibaca かえる, artinya pulang."
+      },
+      {
+        "Prompt": "Apa arti kanji 入?",
+        "Choices": [
+          "masuk",
+          "keluar",
+          "pergi; melakukan",
+          "datang"
+        ],
+        "Correct": 0,
+        "Explanation": "入 berarti masuk. Contoh: 入る（はいる）: masuk."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「入る」?",
+        "Choices": [
+          "はいる",
+          "でる",
+          "いく",
+          "くる"
+        ],
+        "Correct": 0,
+        "Explanation": "入る dibaca はいる, artinya masuk."
+      },
+      {
+        "Prompt": "Apa arti kanji 出?",
+        "Choices": [
+          "keluar",
+          "pergi; melakukan",
+          "datang",
+          "pulang"
+        ],
+        "Correct": 0,
+        "Explanation": "出 berarti keluar. Contoh: 出る（でる）: keluar."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「出る」?",
+        "Choices": [
+          "でる",
+          "いく",
+          "くる",
+          "かえる"
+        ],
+        "Correct": 0,
+        "Explanation": "出る dibaca でる, artinya keluar."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-16",
+    "Chapter": "Kegiatan",
+    "Title": "Melihat dan berbahasa",
+    "Characters": [
+      {
+        "character": "見",
+        "meaning": "melihat",
+        "strokes": 7,
+        "onReading": "ケン",
+        "kunReading": "み.る、み.える、み.せる",
+        "mnemonic": "Bagian 目 berada di atas kaki: mata untuk melihat.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "見る",
+            "reading": "みる",
+            "meaning": "melihat"
+          },
+          {
+            "japanese": "見せる",
+            "reading": "みせる",
+            "meaning": "memperlihatkan"
+          }
+        ]
+      },
+      {
+        "character": "聞",
+        "meaning": "mendengar; bertanya",
+        "strokes": 14,
+        "onReading": "ブン、モン",
+        "kunReading": "き.く、き.こえる",
+        "mnemonic": "Ada 耳 di dalam 門: telinga mendengar melalui pintu.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "聞く",
+            "reading": "きく",
+            "meaning": "mendengar; bertanya"
+          },
+          {
+            "japanese": "聞こえる",
+            "reading": "きこえる",
+            "meaning": "terdengar"
+          }
+        ]
+      },
+      {
+        "character": "読",
+        "meaning": "membaca",
+        "strokes": 14,
+        "onReading": "ドク、トク",
+        "kunReading": "よ.む",
+        "mnemonic": "Bagian 言 menghubungkan bentuk ini dengan bahasa.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "読む",
+            "reading": "よむ",
+            "meaning": "membaca"
+          },
+          {
+            "japanese": "読み方",
+            "reading": "よみかた",
+            "meaning": "cara membaca"
+          }
+        ]
+      },
+      {
+        "character": "書",
+        "meaning": "menulis",
+        "strokes": 10,
+        "onReading": "ショ",
+        "kunReading": "か.く",
+        "mnemonic": "Bayangkan tangan memegang kuas untuk menulis.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "書く",
+            "reading": "かく",
+            "meaning": "menulis"
+          },
+          {
+            "japanese": "辞書",
+            "reading": "じしょ",
+            "meaning": "kamus"
+          }
+        ]
+      },
+      {
+        "character": "話",
+        "meaning": "berbicara; cerita",
+        "strokes": 13,
+        "onReading": "ワ",
+        "kunReading": "はな.す、はなし",
+        "mnemonic": "Bagian 言 menunjukkan kata-kata yang diucapkan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "話す",
+            "reading": "はなす",
+            "meaning": "berbicara"
+          },
+          {
+            "japanese": "電話",
+            "reading": "でんわ",
+            "meaning": "telepon"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 見?",
+        "Choices": [
+          "melihat",
+          "mendengar; bertanya",
+          "membaca",
+          "menulis"
+        ],
+        "Correct": 0,
+        "Explanation": "見 berarti melihat. Contoh: 見る（みる）: melihat."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「見る」?",
+        "Choices": [
+          "みる",
+          "きく",
+          "よむ",
+          "かく"
+        ],
+        "Correct": 0,
+        "Explanation": "見る dibaca みる, artinya melihat."
+      },
+      {
+        "Prompt": "Apa arti kanji 聞?",
+        "Choices": [
+          "mendengar; bertanya",
+          "membaca",
+          "menulis",
+          "berbicara; cerita"
+        ],
+        "Correct": 0,
+        "Explanation": "聞 berarti mendengar; bertanya. Contoh: 聞く（きく）: mendengar; bertanya."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「聞く」?",
+        "Choices": [
+          "きく",
+          "よむ",
+          "かく",
+          "はなす"
+        ],
+        "Correct": 0,
+        "Explanation": "聞く dibaca きく, artinya mendengar; bertanya."
+      },
+      {
+        "Prompt": "Apa arti kanji 読?",
+        "Choices": [
+          "membaca",
+          "menulis",
+          "berbicara; cerita",
+          "melihat"
+        ],
+        "Correct": 0,
+        "Explanation": "読 berarti membaca. Contoh: 読む（よむ）: membaca."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「読む」?",
+        "Choices": [
+          "よむ",
+          "かく",
+          "はなす",
+          "みる"
+        ],
+        "Correct": 0,
+        "Explanation": "読む dibaca よむ, artinya membaca."
+      },
+      {
+        "Prompt": "Apa arti kanji 書?",
+        "Choices": [
+          "menulis",
+          "berbicara; cerita",
+          "melihat",
+          "mendengar; bertanya"
+        ],
+        "Correct": 0,
+        "Explanation": "書 berarti menulis. Contoh: 書く（かく）: menulis."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「書く」?",
+        "Choices": [
+          "かく",
+          "はなす",
+          "みる",
+          "きく"
+        ],
+        "Correct": 0,
+        "Explanation": "書く dibaca かく, artinya menulis."
+      },
+      {
+        "Prompt": "Apa arti kanji 話?",
+        "Choices": [
+          "berbicara; cerita",
+          "melihat",
+          "mendengar; bertanya",
+          "membaca"
+        ],
+        "Correct": 0,
+        "Explanation": "話 berarti berbicara; cerita. Contoh: 話す（はなす）: berbicara."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「話す」?",
+        "Choices": [
+          "はなす",
+          "みる",
+          "きく",
+          "よむ"
+        ],
+        "Correct": 0,
+        "Explanation": "話す dibaca はなす, artinya berbicara."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-17",
+    "Chapter": "Kegiatan",
+    "Title": "Makan, belanja, dan istirahat",
+    "Characters": [
+      {
+        "character": "食",
+        "meaning": "makan; makanan",
+        "strokes": 9,
+        "onReading": "ショク",
+        "kunReading": "た.べる、く.う",
+        "mnemonic": "Bayangkan makanan disimpan di bawah penutup.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "食べる",
+            "reading": "たべる",
+            "meaning": "makan"
+          },
+          {
+            "japanese": "食べ物",
+            "reading": "たべもの",
+            "meaning": "makanan"
+          }
+        ]
+      },
+      {
+        "character": "飲",
+        "meaning": "minum",
+        "strokes": 12,
+        "onReading": "イン",
+        "kunReading": "の.む",
+        "mnemonic": "Bagian makanan di kiri membantu mengingat minum.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "飲む",
+            "reading": "のむ",
+            "meaning": "minum"
+          },
+          {
+            "japanese": "飲み物",
+            "reading": "のみもの",
+            "meaning": "minuman"
+          }
+        ]
+      },
+      {
+        "character": "買",
+        "meaning": "membeli",
+        "strokes": 12,
+        "onReading": "バイ",
+        "kunReading": "か.う",
+        "mnemonic": "Bayangkan barang di atas uang yang digunakan membeli.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "買う",
+            "reading": "かう",
+            "meaning": "membeli"
+          },
+          {
+            "japanese": "買い物",
+            "reading": "かいもの",
+            "meaning": "belanja"
+          }
+        ]
+      },
+      {
+        "character": "休",
+        "meaning": "istirahat",
+        "strokes": 6,
+        "onReading": "キュウ",
+        "kunReading": "やす.む",
+        "mnemonic": "Orang 亻 bersandar pada pohon 木.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "休む",
+            "reading": "やすむ",
+            "meaning": "beristirahat; libur"
+          },
+          {
+            "japanese": "休み",
+            "reading": "やすみ",
+            "meaning": "istirahat; hari libur"
+          }
+        ]
+      },
+      {
+        "character": "会",
+        "meaning": "bertemu; perkumpulan",
+        "strokes": 6,
+        "onReading": "カイ、エ",
+        "kunReading": "あ.う",
+        "mnemonic": "Bayangkan orang berkumpul di bawah satu atap.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "会う",
+            "reading": "あう",
+            "meaning": "bertemu"
+          },
+          {
+            "japanese": "会社",
+            "reading": "かいしゃ",
+            "meaning": "perusahaan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 食?",
+        "Choices": [
+          "makan; makanan",
+          "minum",
+          "membeli",
+          "istirahat"
+        ],
+        "Correct": 0,
+        "Explanation": "食 berarti makan; makanan. Contoh: 食べる（たべる）: makan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「食べる」?",
+        "Choices": [
+          "たべる",
+          "のむ",
+          "かう",
+          "やすむ"
+        ],
+        "Correct": 0,
+        "Explanation": "食べる dibaca たべる, artinya makan."
+      },
+      {
+        "Prompt": "Apa arti kanji 飲?",
+        "Choices": [
+          "minum",
+          "membeli",
+          "istirahat",
+          "bertemu; perkumpulan"
+        ],
+        "Correct": 0,
+        "Explanation": "飲 berarti minum. Contoh: 飲む（のむ）: minum."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「飲む」?",
+        "Choices": [
+          "のむ",
+          "かう",
+          "やすむ",
+          "あう"
+        ],
+        "Correct": 0,
+        "Explanation": "飲む dibaca のむ, artinya minum."
+      },
+      {
+        "Prompt": "Apa arti kanji 買?",
+        "Choices": [
+          "membeli",
+          "istirahat",
+          "bertemu; perkumpulan",
+          "makan; makanan"
+        ],
+        "Correct": 0,
+        "Explanation": "買 berarti membeli. Contoh: 買う（かう）: membeli."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「買う」?",
+        "Choices": [
+          "かう",
+          "やすむ",
+          "あう",
+          "たべる"
+        ],
+        "Correct": 0,
+        "Explanation": "買う dibaca かう, artinya membeli."
+      },
+      {
+        "Prompt": "Apa arti kanji 休?",
+        "Choices": [
+          "istirahat",
+          "bertemu; perkumpulan",
+          "makan; makanan",
+          "minum"
+        ],
+        "Correct": 0,
+        "Explanation": "休 berarti istirahat. Contoh: 休む（やすむ）: beristirahat; libur."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「休む」?",
+        "Choices": [
+          "やすむ",
+          "あう",
+          "たべる",
+          "のむ"
+        ],
+        "Correct": 0,
+        "Explanation": "休む dibaca やすむ, artinya beristirahat; libur."
+      },
+      {
+        "Prompt": "Apa arti kanji 会?",
+        "Choices": [
+          "bertemu; perkumpulan",
+          "makan; makanan",
+          "minum",
+          "membeli"
+        ],
+        "Correct": 0,
+        "Explanation": "会 berarti bertemu; perkumpulan. Contoh: 会う（あう）: bertemu."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「会う」?",
+        "Choices": [
+          "あう",
+          "たべる",
+          "のむ",
+          "かう"
+        ],
+        "Correct": 0,
+        "Explanation": "会う dibaca あう, artinya bertemu."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-18",
+    "Chapter": "Tempat dan perjalanan",
+    "Title": "Negara dan transportasi",
+    "Characters": [
+      {
+        "character": "国",
+        "meaning": "negara",
+        "strokes": 8,
+        "onReading": "コク",
+        "kunReading": "くに",
+        "mnemonic": "Bingkai luar seperti batas sebuah negara.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "国",
+            "reading": "くに",
+            "meaning": "negara"
+          },
+          {
+            "japanese": "外国",
+            "reading": "がいこく",
+            "meaning": "negara asing"
+          }
+        ]
+      },
+      {
+        "character": "車",
+        "meaning": "kendaraan; mobil",
+        "strokes": 7,
+        "onReading": "シャ",
+        "kunReading": "くるま",
+        "mnemonic": "Bayangkan roda dan poros kendaraan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "車",
+            "reading": "くるま",
+            "meaning": "mobil"
+          },
+          {
+            "japanese": "電車",
+            "reading": "でんしゃ",
+            "meaning": "kereta listrik"
+          }
+        ]
+      },
+      {
+        "character": "電",
+        "meaning": "listrik",
+        "strokes": 13,
+        "onReading": "デン",
+        "kunReading": "—",
+        "mnemonic": "Bagian 雨 di atas dapat mengingatkan petir.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "電車",
+            "reading": "でんしゃ",
+            "meaning": "kereta listrik"
+          },
+          {
+            "japanese": "電話",
+            "reading": "でんわ",
+            "meaning": "telepon"
+          }
+        ]
+      },
+      {
+        "character": "駅",
+        "meaning": "stasiun",
+        "strokes": 14,
+        "onReading": "エキ",
+        "kunReading": "—",
+        "mnemonic": "Bayangkan tempat berhenti sebelum melanjutkan perjalanan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "駅",
+            "reading": "えき",
+            "meaning": "stasiun"
+          },
+          {
+            "japanese": "駅前",
+            "reading": "えきまえ",
+            "meaning": "depan stasiun"
+          }
+        ]
+      },
+      {
+        "character": "道",
+        "meaning": "jalan; cara",
+        "strokes": 12,
+        "onReading": "ドウ",
+        "kunReading": "みち",
+        "mnemonic": "Bagian 辶 mengingatkan gerakan di sepanjang jalan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "道",
+            "reading": "みち",
+            "meaning": "jalan"
+          },
+          {
+            "japanese": "道を歩く",
+            "reading": "みちをあるく",
+            "meaning": "berjalan di jalan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 国?",
+        "Choices": [
+          "negara",
+          "kendaraan; mobil",
+          "listrik",
+          "stasiun"
+        ],
+        "Correct": 0,
+        "Explanation": "国 berarti negara. Contoh: 国（くに）: negara."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「国」?",
+        "Choices": [
+          "くに",
+          "くるま",
+          "でんしゃ",
+          "えき"
+        ],
+        "Correct": 0,
+        "Explanation": "国 dibaca くに, artinya negara."
+      },
+      {
+        "Prompt": "Apa arti kanji 車?",
+        "Choices": [
+          "kendaraan; mobil",
+          "listrik",
+          "stasiun",
+          "jalan; cara"
+        ],
+        "Correct": 0,
+        "Explanation": "車 berarti kendaraan; mobil. Contoh: 車（くるま）: mobil."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「車」?",
+        "Choices": [
+          "くるま",
+          "でんしゃ",
+          "えき",
+          "みち"
+        ],
+        "Correct": 0,
+        "Explanation": "車 dibaca くるま, artinya mobil."
+      },
+      {
+        "Prompt": "Apa arti kanji 電?",
+        "Choices": [
+          "listrik",
+          "stasiun",
+          "jalan; cara",
+          "negara"
+        ],
+        "Correct": 0,
+        "Explanation": "電 berarti listrik. Contoh: 電車（でんしゃ）: kereta listrik."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「電車」?",
+        "Choices": [
+          "でんしゃ",
+          "えき",
+          "みち",
+          "くに"
+        ],
+        "Correct": 0,
+        "Explanation": "電車 dibaca でんしゃ, artinya kereta listrik."
+      },
+      {
+        "Prompt": "Apa arti kanji 駅?",
+        "Choices": [
+          "stasiun",
+          "jalan; cara",
+          "negara",
+          "kendaraan; mobil"
+        ],
+        "Correct": 0,
+        "Explanation": "駅 berarti stasiun. Contoh: 駅（えき）: stasiun."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「駅」?",
+        "Choices": [
+          "えき",
+          "みち",
+          "くに",
+          "くるま"
+        ],
+        "Correct": 0,
+        "Explanation": "駅 dibaca えき, artinya stasiun."
+      },
+      {
+        "Prompt": "Apa arti kanji 道?",
+        "Choices": [
+          "jalan; cara",
+          "negara",
+          "kendaraan; mobil",
+          "listrik"
+        ],
+        "Correct": 0,
+        "Explanation": "道 berarti jalan; cara. Contoh: 道（みち）: jalan."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「道」?",
+        "Choices": [
+          "みち",
+          "くに",
+          "くるま",
+          "でんしゃ"
+        ],
+        "Correct": 0,
+        "Explanation": "道 dibaca みち, artinya jalan."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-19",
+    "Chapter": "Bahasa dan angka",
+    "Title": "Buku, bahasa, dan bilangan",
+    "Characters": [
+      {
+        "character": "本",
+        "meaning": "buku; asal",
+        "strokes": 5,
+        "onReading": "ホン",
+        "kunReading": "もと",
+        "mnemonic": "Bandingkan dengan 木: garis tambahan menandai bagian pangkal.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "本",
+            "reading": "ほん",
+            "meaning": "buku"
+          },
+          {
+            "japanese": "日本",
+            "reading": "にほん",
+            "meaning": "Jepang"
+          }
+        ]
+      },
+      {
+        "character": "語",
+        "meaning": "bahasa; kata",
+        "strokes": 14,
+        "onReading": "ゴ",
+        "kunReading": "かた.る",
+        "mnemonic": "Bagian 言 membantu mengingat bahasa.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "日本語",
+            "reading": "にほんご",
+            "meaning": "bahasa Jepang"
+          },
+          {
+            "japanese": "英語",
+            "reading": "えいご",
+            "meaning": "bahasa Inggris"
+          }
+        ]
+      },
+      {
+        "character": "字",
+        "meaning": "huruf",
+        "strokes": 6,
+        "onReading": "ジ",
+        "kunReading": "あざ",
+        "mnemonic": "Bayangkan anak 子 belajar huruf di bawah atap.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "漢字",
+            "reading": "かんじ",
+            "meaning": "kanji"
+          },
+          {
+            "japanese": "文字",
+            "reading": "もじ",
+            "meaning": "huruf; karakter"
+          }
+        ]
+      },
+      {
+        "character": "百",
+        "meaning": "seratus",
+        "strokes": 6,
+        "onReading": "ヒャク",
+        "kunReading": "—",
+        "mnemonic": "Bedakan 百 dari 白 dengan garis atas tambahannya.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "百",
+            "reading": "ひゃく",
+            "meaning": "seratus"
+          },
+          {
+            "japanese": "三百",
+            "reading": "さんびゃく",
+            "meaning": "tiga ratus"
+          }
+        ]
+      },
+      {
+        "character": "千",
+        "meaning": "seribu",
+        "strokes": 3,
+        "onReading": "セン",
+        "kunReading": "ち",
+        "mnemonic": "Bandingkan 千 dengan 十 yang memiliki garis miring tambahan.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "千",
+            "reading": "せん",
+            "meaning": "seribu"
+          },
+          {
+            "japanese": "三千",
+            "reading": "さんぜん",
+            "meaning": "tiga ribu"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 本?",
+        "Choices": [
+          "buku; asal",
+          "bahasa; kata",
+          "huruf",
+          "seratus"
+        ],
+        "Correct": 0,
+        "Explanation": "本 berarti buku; asal. Contoh: 本（ほん）: buku."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「本」?",
+        "Choices": [
+          "ほん",
+          "にほんご",
+          "かんじ",
+          "ひゃく"
+        ],
+        "Correct": 0,
+        "Explanation": "本 dibaca ほん, artinya buku."
+      },
+      {
+        "Prompt": "Apa arti kanji 語?",
+        "Choices": [
+          "bahasa; kata",
+          "huruf",
+          "seratus",
+          "seribu"
+        ],
+        "Correct": 0,
+        "Explanation": "語 berarti bahasa; kata. Contoh: 日本語（にほんご）: bahasa Jepang."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「日本語」?",
+        "Choices": [
+          "にほんご",
+          "かんじ",
+          "ひゃく",
+          "せん"
+        ],
+        "Correct": 0,
+        "Explanation": "日本語 dibaca にほんご, artinya bahasa Jepang."
+      },
+      {
+        "Prompt": "Apa arti kanji 字?",
+        "Choices": [
+          "huruf",
+          "seratus",
+          "seribu",
+          "buku; asal"
+        ],
+        "Correct": 0,
+        "Explanation": "字 berarti huruf. Contoh: 漢字（かんじ）: kanji."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「漢字」?",
+        "Choices": [
+          "かんじ",
+          "ひゃく",
+          "せん",
+          "ほん"
+        ],
+        "Correct": 0,
+        "Explanation": "漢字 dibaca かんじ, artinya kanji."
+      },
+      {
+        "Prompt": "Apa arti kanji 百?",
+        "Choices": [
+          "seratus",
+          "seribu",
+          "buku; asal",
+          "bahasa; kata"
+        ],
+        "Correct": 0,
+        "Explanation": "百 berarti seratus. Contoh: 百（ひゃく）: seratus."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「百」?",
+        "Choices": [
+          "ひゃく",
+          "せん",
+          "ほん",
+          "にほんご"
+        ],
+        "Correct": 0,
+        "Explanation": "百 dibaca ひゃく, artinya seratus."
+      },
+      {
+        "Prompt": "Apa arti kanji 千?",
+        "Choices": [
+          "seribu",
+          "buku; asal",
+          "bahasa; kata",
+          "huruf"
+        ],
+        "Correct": 0,
+        "Explanation": "千 berarti seribu. Contoh: 千（せん）: seribu."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「千」?",
+        "Choices": [
+          "せん",
+          "ほん",
+          "にほんご",
+          "かんじ"
+        ],
+        "Correct": 0,
+        "Explanation": "千 dibaca せん, artinya seribu."
+      }
+    ]
+  },
+  {
+    "ID": "kanji-n5-20",
+    "Chapter": "Uang dan warna",
+    "Title": "Uang, warna, dan langit",
+    "Characters": [
+      {
+        "character": "万",
+        "meaning": "sepuluh ribu",
+        "strokes": 3,
+        "onReading": "マン、バン",
+        "kunReading": "—",
+        "mnemonic": "Gunakan 一万 untuk mengingat satu kelompok sepuluh ribu.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "一万",
+            "reading": "いちまん",
+            "meaning": "sepuluh ribu"
+          },
+          {
+            "japanese": "一万円",
+            "reading": "いちまんえん",
+            "meaning": "sepuluh ribu yen"
+          }
+        ]
+      },
+      {
+        "character": "円",
+        "meaning": "yen; lingkaran",
+        "strokes": 4,
+        "onReading": "エン",
+        "kunReading": "まる.い",
+        "mnemonic": "Bayangkan koin yen yang berbentuk lingkaran.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "円",
+            "reading": "えん",
+            "meaning": "yen"
+          },
+          {
+            "japanese": "百円",
+            "reading": "ひゃくえん",
+            "meaning": "seratus yen"
+          }
+        ]
+      },
+      {
+        "character": "白",
+        "meaning": "putih",
+        "strokes": 5,
+        "onReading": "ハク、ビャク",
+        "kunReading": "しろ、しろ.い",
+        "mnemonic": "Bayangkan bidang terang berwarna putih.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "白い",
+            "reading": "しろい",
+            "meaning": "putih"
+          },
+          {
+            "japanese": "白いシャツ",
+            "reading": "しろいシャツ",
+            "meaning": "kemeja putih"
+          }
+        ]
+      },
+      {
+        "character": "赤",
+        "meaning": "merah",
+        "strokes": 7,
+        "onReading": "セキ、シャク",
+        "kunReading": "あか、あか.い",
+        "mnemonic": "Bayangkan warna merah api di bawah tanah.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "赤い",
+            "reading": "あかい",
+            "meaning": "merah"
+          },
+          {
+            "japanese": "赤い花",
+            "reading": "あかいはな",
+            "meaning": "bunga merah"
+          }
+        ]
+      },
+      {
+        "character": "空",
+        "meaning": "langit; kosong",
+        "strokes": 8,
+        "onReading": "クウ",
+        "kunReading": "そら、あ.く、から",
+        "mnemonic": "Bayangkan ruang kosong di bawah atap.",
+        "note": "Bacaan berubah sesuai kata; pelajari contoh sebagai satu kesatuan. Titik pada kun’yomi memisahkan bagian kanji dari okurigana (hiragana sesudah kanji). Tanda — berarti tidak ada bacaan umum yang diajarkan di modul ini.",
+        "examples": [
+          {
+            "japanese": "空",
+            "reading": "そら",
+            "meaning": "langit"
+          },
+          {
+            "japanese": "空気",
+            "reading": "くうき",
+            "meaning": "udara"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Apa arti kanji 万?",
+        "Choices": [
+          "sepuluh ribu",
+          "yen; lingkaran",
+          "putih",
+          "merah"
+        ],
+        "Correct": 0,
+        "Explanation": "万 berarti sepuluh ribu. Contoh: 一万（いちまん）: sepuluh ribu."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「一万」?",
+        "Choices": [
+          "いちまん",
+          "えん",
+          "しろい",
+          "あかい"
+        ],
+        "Correct": 0,
+        "Explanation": "一万 dibaca いちまん, artinya sepuluh ribu."
+      },
+      {
+        "Prompt": "Apa arti kanji 円?",
+        "Choices": [
+          "yen; lingkaran",
+          "putih",
+          "merah",
+          "langit; kosong"
+        ],
+        "Correct": 0,
+        "Explanation": "円 berarti yen; lingkaran. Contoh: 円（えん）: yen."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「円」?",
+        "Choices": [
+          "えん",
+          "しろい",
+          "あかい",
+          "そら"
+        ],
+        "Correct": 0,
+        "Explanation": "円 dibaca えん, artinya yen."
+      },
+      {
+        "Prompt": "Apa arti kanji 白?",
+        "Choices": [
+          "putih",
+          "merah",
+          "langit; kosong",
+          "sepuluh ribu"
+        ],
+        "Correct": 0,
+        "Explanation": "白 berarti putih. Contoh: 白い（しろい）: putih."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「白い」?",
+        "Choices": [
+          "しろい",
+          "あかい",
+          "そら",
+          "いちまん"
+        ],
+        "Correct": 0,
+        "Explanation": "白い dibaca しろい, artinya putih."
+      },
+      {
+        "Prompt": "Apa arti kanji 赤?",
+        "Choices": [
+          "merah",
+          "langit; kosong",
+          "sepuluh ribu",
+          "yen; lingkaran"
+        ],
+        "Correct": 0,
+        "Explanation": "赤 berarti merah. Contoh: 赤い（あかい）: merah."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「赤い」?",
+        "Choices": [
+          "あかい",
+          "そら",
+          "いちまん",
+          "えん"
+        ],
+        "Correct": 0,
+        "Explanation": "赤い dibaca あかい, artinya merah."
+      },
+      {
+        "Prompt": "Apa arti kanji 空?",
+        "Choices": [
+          "langit; kosong",
+          "sepuluh ribu",
+          "yen; lingkaran",
+          "putih"
+        ],
+        "Correct": 0,
+        "Explanation": "空 berarti langit; kosong. Contoh: 空（そら）: langit."
+      },
+      {
+        "Prompt": "Bagaimana membaca 「空」?",
+        "Choices": [
+          "そら",
+          "いちまん",
+          "えん",
+          "しろい"
+        ],
+        "Correct": 0,
+        "Explanation": "空 dibaca そら, artinya langit."
+      }
+    ]
+  }
+]

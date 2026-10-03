@@ -1,0 +1,1610 @@
+[
+  {
+    "ID": "reading-n4-01",
+    "Title": "Rumah baru, tetangga baru",
+    "JapaneseTitle": "新しい町での生活",
+    "Chapter": "Keseharian",
+    "Description": "Hana pindah rumah dan mulai mengenal lingkungan baru. Latih ～たばかり, ～てくれる, dan ～ようになる.",
+    "Minutes": 10,
+    "ImageAsset": "assets/images/reading/story-n4-01.png",
+    "Pages": [
+      {
+        "title": "Hari pertama",
+        "japanese": "はなさんは昨日、新しい町に引っ越したばかりです。母と一緒に箱から本や服を出しました。前の家より部屋は小さいですが、窓から公園が見えます。荷物を片付けてから、近くの店へ行くつもりです。",
+        "reading": "はなさんはきのう、あたらしいまちにひっこしたばかりです。ははといっしょにはこからほんやふくをだしました。まえのいえよりへやはちいさいですが、まどからこうえんがみえます。にもつをかたづけてから、ちかくのみせへいくつもりです。",
+        "meaning": "Hana baru saja pindah ke kota baru kemarin. Bersama ibunya, ia mengeluarkan buku dan pakaian dari kotak. Kamarnya lebih kecil daripada di rumah sebelumnya, tetapi taman terlihat dari jendela. Setelah membereskan barang, ia berniat pergi ke toko terdekat.",
+        "imageDescription": "Hana dan ibunya membongkar kotak di apartemen baru yang menghadap taman.",
+        "vocabulary": [
+          {
+            "japanese": "引っ越す",
+            "reading": "ひっこす",
+            "meaning": "pindah rumah"
+          },
+          {
+            "japanese": "片付ける",
+            "reading": "かたづける",
+            "meaning": "membereskan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-01.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Bertanya kepada tetangga",
+        "japanese": "外へ出ようとした時、雨が降り始めました。はなさんは傘を持って、隣の人にスーパーまでの道を聞きました。隣の人は地図を見せながら、道を教えてくれました。スーパーは橋を渡った所にあるそうです。",
+        "reading": "そとへでようとしたとき、あめがふりはじめました。はなさんはかさをもって、となりのひとにスーパーまでのみちをききました。となりのひとはちずをみせながら、みちをおしえてくれました。スーパーははしをわたったところにあるそうです。",
+        "meaning": "Saat hendak keluar, hujan mulai turun. Hana membawa payung dan bertanya kepada tetangga tentang jalan menuju supermarket. Tetangganya menunjukkan peta sambil menjelaskan arah. Menurut tetangganya, supermarket berada di seberang jembatan.",
+        "imageDescription": "Hana membawa payung dan bertanya arah kepada tetangga di lorong apartemen.",
+        "vocabulary": [
+          {
+            "japanese": "隣",
+            "reading": "となり",
+            "meaning": "sebelah; tetangga"
+          },
+          {
+            "japanese": "渡る",
+            "reading": "わたる",
+            "meaning": "menyeberang"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-01.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Tamu pertama",
+        "japanese": "日曜日にゆいさんが遊びに来ました。二人はお茶を飲みながら、公園を見ました。「駅も近いし、便利な町だね」とゆいさんが言いました。はなさんは、この町での生活を少しずつ楽しめるようになりました。",
+        "reading": "にちようびにゆいさんがあそびにきました。ふたりはおちゃをのみながら、こうえんをみました。「えきもちかいし、べんりなまちだね」とゆいさんがいいました。はなさんは、このまちでのせいかつをすこしずつたのしめるようになりました。",
+        "meaning": "Pada hari Minggu, Yui datang berkunjung. Mereka memandang taman sambil minum teh. Yui berkata, “Stasiunnya juga dekat, kota ini praktis ya.” Hana perlahan mulai bisa menikmati kehidupan di kota ini.",
+        "imageDescription": "Hana dan Yui minum teh di dekat jendela yang menghadap taman.",
+        "vocabulary": [
+          {
+            "japanese": "便利",
+            "reading": "べんり",
+            "meaning": "praktis; mudah"
+          },
+          {
+            "japanese": "生活",
+            "reading": "せいかつ",
+            "meaning": "kehidupan sehari-hari"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-01.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなさんはいつ引っ越しましたか。\nKapan Hana pindah?",
+        "Choices": [
+          "昨日",
+          "日曜日",
+          "一か月前",
+          "来週"
+        ],
+        "Correct": 0,
+        "Explanation": "昨日、引っ越したばかりです menyatakan ia baru pindah kemarin."
+      },
+      {
+        "Prompt": "窓から何が見えますか。\nApa yang terlihat dari jendela?",
+        "Choices": [
+          "公園",
+          "海",
+          "スーパー",
+          "学校"
+        ],
+        "Correct": 0,
+        "Explanation": "窓から公園が見えます berarti taman terlihat dari jendela."
+      },
+      {
+        "Prompt": "隣の人はどうやって道を教えましたか。\nBagaimana tetangga menjelaskan arah?",
+        "Choices": [
+          "地図を見せながら",
+          "車で送って",
+          "手紙を書いて",
+          "電話をかけて"
+        ],
+        "Correct": 0,
+        "Explanation": "地図を見せながら berarti sambil memperlihatkan peta."
+      },
+      {
+        "Prompt": "スーパーはどこにありますか。\nDi mana supermarket?",
+        "Choices": [
+          "橋を渡った所",
+          "公園の中",
+          "家の二階",
+          "駅の中"
+        ],
+        "Correct": 0,
+        "Explanation": "スーパーは橋を渡った所にあるそうです: menurut informasi tetangga, berada di seberang jembatan."
+      },
+      {
+        "Prompt": "最後に、はなさんの気持ちはどう変わりましたか。\nBagaimana perasaan Hana berubah?",
+        "Choices": [
+          "新しい生活が楽しくなりました",
+          "すぐ引っ越したくなりました",
+          "公園が嫌いになりました",
+          "友達に会いたくなくなりました"
+        ],
+        "Correct": 0,
+        "Explanation": "楽しめるようになりました menunjukkan ia mulai dapat menikmati kehidupan baru."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-02",
+    "Title": "Kerja pertama di kafe",
+    "JapaneseTitle": "初めてのアルバイト",
+    "Chapter": "Kerja dan belajar",
+    "Description": "Belajar aturan kerja, menerima bantuan, dan berkembang. Latih ～なければならない dan ～ようになる.",
+    "Minutes": 10,
+    "ImageAsset": "assets/images/reading/story-n4-02.png",
+    "Pages": [
+      {
+        "title": "Belajar aturan",
+        "japanese": "はなさんは駅の近くの喫茶店でアルバイトを始めました。仕事の前に、手を洗わなければなりません。店長は注文の聞き方をゆっくり教えてくれました。はなさんは忘れないように、ノートに書きました。",
+        "reading": "はなさんはえきのちかくのきっさてんでアルバイトをはじめました。しごとのまえに、てをあらわなければなりません。てんちょうはちゅうもんのききかたをゆっくりおしえてくれました。はなさんはわすれないように、ノートにかきました。",
+        "meaning": "Hana mulai bekerja paruh waktu di kafe dekat stasiun. Sebelum bekerja, ia harus mencuci tangan. Manajer mengajarkan cara menerima pesanan dengan perlahan. Hana mencatatnya agar tidak lupa.",
+        "imageDescription": "Manajer kafe mengajari Hana yang memakai celemek.",
+        "vocabulary": [
+          {
+            "japanese": "店長",
+            "reading": "てんちょう",
+            "meaning": "manajer toko"
+          },
+          {
+            "japanese": "注文",
+            "reading": "ちゅうもん",
+            "meaning": "pesanan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-02.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Saat kafe ramai",
+        "japanese": "昼になると、お客さんがたくさん来ました。はなさんはコーヒーを運びながら、少し緊張していました。お皿を洗う時間がなかったので、先輩が手伝ってくれました。二人で仕事をしたら、思ったより早く終わりました。",
+        "reading": "ひるになると、おきゃくさんがたくさんきました。はなさんはコーヒーをはこびながら、すこしきんちょうしていました。おさらをあらうじかんがなかったので、せんぱいがてつだってくれました。ふたりでしごとをしたら、おもったよりはやくおわりました。",
+        "meaning": "Ketika siang tiba, banyak pelanggan datang. Hana sedikit gugup saat mengantarkan kopi. Karena tidak sempat mencuci piring, rekan senior membantunya. Setelah dikerjakan berdua, pekerjaan selesai lebih cepat daripada yang diperkirakan.",
+        "imageDescription": "Hana membawa dua kopi kepada pelanggan sementara rekan kerja mencuci cangkir.",
+        "vocabulary": [
+          {
+            "japanese": "運ぶ",
+            "reading": "はこぶ",
+            "meaning": "membawa; mengangkut"
+          },
+          {
+            "japanese": "手伝う",
+            "reading": "てつだう",
+            "meaning": "membantu"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-02.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Sedikit lebih percaya diri",
+        "japanese": "店を閉めてから、はなさんはテーブルを拭きました。店長に「今日はよく頑張りましたね」と言われて、うれしくなりました。まだ分からないこともありますが、一人で注文を聞けるようになりました。次の仕事の前に、メニューをもう一度読んでおくつもりです。",
+        "reading": "みせをしめてから、はなさんはテーブルをふきました。てんちょうに「きょうはよくがんばりましたね」といわれて、うれしくなりました。まだわからないこともありますが、ひとりでちゅうもんをきけるようになりました。つぎのしごとのまえに、メニューをもういちどよんでおくつもりです。",
+        "meaning": "Setelah kafe ditutup, Hana mengelap meja. Ia senang ketika manajer berkata, “Kamu sudah bekerja dengan baik hari ini.” Masih ada hal yang belum dipahami, tetapi ia sudah bisa menerima pesanan sendiri. Sebelum jadwal kerja berikutnya, ia berniat membaca menu sekali lagi sebagai persiapan.",
+        "imageDescription": "Manajer memuji Hana yang sedang mengelap meja setelah kafe tutup.",
+        "vocabulary": [
+          {
+            "japanese": "拭く",
+            "reading": "ふく",
+            "meaning": "mengelap"
+          },
+          {
+            "japanese": "頑張る",
+            "reading": "がんばる",
+            "meaning": "berusaha keras"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-02.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "仕事の前に何をしなければなりませんか。\nApa yang wajib dilakukan sebelum bekerja?",
+        "Choices": [
+          "手を洗うこと",
+          "コーヒーを飲むこと",
+          "駅へ行くこと",
+          "店を閉めること"
+        ],
+        "Correct": 0,
+        "Explanation": "手を洗わなければなりません menunjukkan kewajiban mencuci tangan."
+      },
+      {
+        "Prompt": "なぜノートに書きましたか。\nMengapa Hana mencatat?",
+        "Choices": [
+          "忘れないため",
+          "先輩に売るため",
+          "注文を減らすため",
+          "時間が余ったため"
+        ],
+        "Correct": 0,
+        "Explanation": "忘れないように berarti agar tidak lupa."
+      },
+      {
+        "Prompt": "先輩は何を手伝いましたか。\nApa yang dibantu rekan senior?",
+        "Choices": [
+          "お皿を洗うこと",
+          "家を掃除すること",
+          "駅の案内",
+          "服を買うこと"
+        ],
+        "Correct": 0,
+        "Explanation": "Hana tidak sempat mencuci piring; rekan senior membantu pekerjaan itu."
+      },
+      {
+        "Prompt": "はなさんは何ができるようになりましたか。\nKemampuan apa yang berkembang?",
+        "Choices": [
+          "一人で注文を聞くこと",
+          "一人で店を開くこと",
+          "ケーキを作ること",
+          "車を運転すること"
+        ],
+        "Correct": 0,
+        "Explanation": "一人で注文を聞けるようになりました berarti sudah bisa menerima pesanan sendiri."
+      },
+      {
+        "Prompt": "次の仕事の前に何をするつもりですか。\nApa persiapan Hana berikutnya?",
+        "Choices": [
+          "メニューをもう一度読むこと",
+          "新しい店を探すこと",
+          "アルバイトをやめること",
+          "旅行に行くこと"
+        ],
+        "Correct": 0,
+        "Explanation": "読んでおくつもりです menyatakan niat membaca menu dahulu sebagai persiapan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-03",
+    "Title": "Kereta terlewat, rencana berubah",
+    "JapaneseTitle": "電車に間に合わなかった日",
+    "Chapter": "Perjalanan",
+    "Description": "Cari solusi ketika rencana perjalanan berubah. Latih ～てしまう, ～たら, dan ～ことにする.",
+    "Minutes": 10,
+    "ImageAsset": "assets/images/reading/story-n4-03.png",
+    "Pages": [
+      {
+        "title": "Terlambat tiba",
+        "japanese": "土曜日、はなさんとゆいさんは湖へ行く予定でした。駅へ急ぎましたが、電車はもう出てしまいました。次の電車は一時間後なので、ゆいさんは困っていました。はなさんは、別の行き方がないか駅員に聞くことにしました。",
+        "reading": "どようび、はなさんとゆいさんはみずうみへいくよていでした。えきへいそぎましたが、でんしゃはもうでてしまいました。つぎのでんしゃはいちじかんごなので、ゆいさんはこまっていました。はなさんは、べつのいきかたがないかえきいんにきくことにしました。",
+        "meaning": "Pada hari Sabtu, Hana dan Yui berencana pergi ke danau. Mereka bergegas ke stasiun, tetapi keretanya sudah berangkat. Kereta berikutnya baru satu jam lagi sehingga Yui kebingungan. Hana memutuskan bertanya kepada petugas apakah ada cara lain untuk pergi.",
+        "imageDescription": "Hana dan Yui tiba di peron ketika kereta baru saja berangkat.",
+        "vocabulary": [
+          {
+            "japanese": "予定",
+            "reading": "よてい",
+            "meaning": "rencana; jadwal"
+          },
+          {
+            "japanese": "間に合う",
+            "reading": "まにあう",
+            "meaning": "sempat; tepat waktu"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-03.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Mencari jalan lain",
+        "japanese": "駅員は「十五分後にバスが出ます」と教えてくれました。バスなら、湖まで四十分ぐらいかかるそうです。電車より少し高いですが、早く着けます。二人は切符を買って、バスに乗ることにしました。",
+        "reading": "えきいんは「じゅうごふんごにバスがでます」とおしえてくれました。バスなら、みずうみまでよんじゅっぷんぐらいかかるそうです。でんしゃよりすこしたかいですが、はやくつけます。ふたりはきっぷをかって、バスにのることにしました。",
+        "meaning": "Petugas memberi tahu bahwa bus berangkat lima belas menit lagi. Menurut petugas, perjalanan dengan bus ke danau sekitar empat puluh menit. Harganya sedikit lebih mahal daripada kereta, tetapi mereka bisa tiba lebih cepat. Mereka membeli tiket dan memutuskan naik bus.",
+        "imageDescription": "Kedua teman meminta bantuan petugas stasiun di dekat mesin tiket.",
+        "vocabulary": [
+          {
+            "japanese": "駅員",
+            "reading": "えきいん",
+            "meaning": "petugas stasiun"
+          },
+          {
+            "japanese": "切符",
+            "reading": "きっぷ",
+            "meaning": "tiket"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-03.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Akhir yang menyenangkan",
+        "japanese": "湖に着いたら、空が晴れていました。二人はベンチに座って、持って来たお弁当を食べました。午後は船に乗ったり、写真を撮ったりしました。「今度はもっと早く家を出ようね」と言って、二人は笑いました。",
+        "reading": "みずうみについたら、そらがはれていました。ふたりはベンチにすわって、もってきたおべんとうをたべました。ごごはふねにのったり、しゃしんをとったりしました。「こんどはもっとはやくいえをでようね」といって、ふたりはわらいました。",
+        "meaning": "Ketika tiba di danau, langit cerah. Mereka duduk di bangku dan makan bekal yang dibawa. Pada sore hari, mereka melakukan beberapa kegiatan seperti naik perahu dan mengambil foto. Mereka tertawa sambil berkata, “Lain kali berangkat dari rumah lebih awal ya.”",
+        "imageDescription": "Hana dan Yui makan bekal di bangku tepi danau dengan perahu di kejauhan.",
+        "vocabulary": [
+          {
+            "japanese": "湖",
+            "reading": "みずうみ",
+            "meaning": "danau"
+          },
+          {
+            "japanese": "晴れる",
+            "reading": "はれる",
+            "meaning": "menjadi cerah"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-03.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "二人はどこへ行く予定でしたか。\nKe mana mereka berencana pergi?",
+        "Choices": [
+          "湖",
+          "山",
+          "美術館",
+          "喫茶店"
+        ],
+        "Correct": 0,
+        "Explanation": "湖へ行く予定でした menyebut tujuan awal mereka adalah danau."
+      },
+      {
+        "Prompt": "次の電車はいつですか。\nKapan kereta berikutnya?",
+        "Choices": [
+          "一時間後",
+          "十五分後",
+          "四十分後",
+          "明日"
+        ],
+        "Correct": 0,
+        "Explanation": "次の電車は一時間後; lima belas menit adalah jadwal bus, bukan kereta."
+      },
+      {
+        "Prompt": "なぜバスに乗ることにしましたか。\nMengapa memilih bus?",
+        "Choices": [
+          "早く着けるから",
+          "電車より安いから",
+          "駅員も一緒に行くから",
+          "船に乗れないから"
+        ],
+        "Correct": 0,
+        "Explanation": "Bus sedikit lebih mahal tetapi mereka bisa tiba lebih cepat daripada menunggu kereta."
+      },
+      {
+        "Prompt": "湖までバスでどのくらいかかりますか。\nBerapa lama perjalanan bus ke danau?",
+        "Choices": [
+          "四十分ぐらい",
+          "十五分ぐらい",
+          "一時間半ぐらい",
+          "十分ぐらい"
+        ],
+        "Correct": 0,
+        "Explanation": "湖まで四十分ぐらいかかるそうです berarti sekitar empat puluh menit menurut petugas."
+      },
+      {
+        "Prompt": "次の旅行ではどうするつもりですか。\nApa yang ingin mereka lakukan pada perjalanan berikutnya?",
+        "Choices": [
+          "もっと早く家を出る",
+          "お弁当を持って行かない",
+          "写真を撮らない",
+          "必ず車で行く"
+        ],
+        "Correct": 0,
+        "Explanation": "今度はもっと早く家を出ようね merupakan ajakan untuk berangkat lebih awal lain kali."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-04",
+    "Title": "Malam festival musim panas",
+    "JapaneseTitle": "夏祭りの夜",
+    "Chapter": "Budaya dan hobi",
+    "Description": "Nikmati festival sambil memahami urutan kegiatan. Latih ～てみる, ～そう, dan ～前に.",
+    "Minutes": 11,
+    "ImageAsset": "assets/images/reading/story-n4-04.png",
+    "Pages": [
+      {
+        "title": "Mencoba yukata",
+        "japanese": "ゆいさんは、夏祭りへ行く前に浴衣を着てみたいと言いました。はなさんの母が、二人の着方を手伝ってくれました。浴衣で歩くのは少し難しいので、二人はゆっくり歩きました。祭りの会場には、明るい灯りがたくさんありました。",
+        "reading": "ゆいさんは、なつまつりへいくまえにゆかたをきてみたいといいました。はなさんのははが、ふたりのきかたをてつだってくれました。ゆかたであるくのはすこしむずかしいので、ふたりはゆっくりあるきました。まつりのかいじょうには、あかるいあかりがたくさんありました。",
+        "meaning": "Sebelum pergi ke festival musim panas, Yui berkata ingin mencoba mengenakan yukata. Ibu Hana membantu mereka mengenakannya. Karena berjalan memakai yukata agak sulit, mereka berjalan perlahan. Banyak lampu terang menghiasi lokasi festival.",
+        "imageDescription": "Hana dan Yui mengenakan yukata di bawah lentera festival malam.",
+        "vocabulary": [
+          {
+            "japanese": "浴衣",
+            "reading": "ゆかた",
+            "meaning": "yukata"
+          },
+          {
+            "japanese": "会場",
+            "reading": "かいじょう",
+            "meaning": "lokasi acara"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-04.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Jajanan hangat",
+        "japanese": "おいしそうな匂いがしたので、二人はたこ焼きの店に寄りました。店の人が作っているところを、ゆいさんは楽しそうに見ていました。はなさんは一つ買って、ゆいさんと半分ずつ食べました。熱かったので、少し待ってから食べました。",
+        "reading": "おいしそうなにおいがしたので、ふたりはたこやきのみせによりました。みせのひとがつくっているところを、ゆいさんはたのしそうにみていました。はなさんはひとつかって、ゆいさんとはんぶんずつたべました。あつかったので、すこしまってからたべました。",
+        "meaning": "Karena tercium aroma yang menggugah selera, mereka mampir ke kedai takoyaki. Yui tampak senang melihat penjual memasaknya. Hana membeli satu porsi dan membaginya sama rata dengan Yui. Karena panas, mereka menunggu sebentar sebelum memakannya.",
+        "imageDescription": "Yui menyaksikan takoyaki dimasak sementara Hana membeli satu porsi.",
+        "vocabulary": [
+          {
+            "japanese": "匂い",
+            "reading": "におい",
+            "meaning": "aroma; bau"
+          },
+          {
+            "japanese": "半分",
+            "reading": "はんぶん",
+            "meaning": "setengah"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-04.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Kembang api di sungai",
+        "japanese": "花火が始まる前に、二人は川の近くへ移動しました。人が多かったですが、座れる場所を見つけました。大きな花火が上がるたびに、周りの人が声を出しました。ゆいさんは「来年も一緒に来たいね」と言いました。",
+        "reading": "はなびがはじまるまえに、ふたりはかわのちかくへいどうしました。ひとがおおかったですが、すわれるばしょをみつけました。おおきなはなびがあがるたびに、まわりのひとがこえをだしました。ゆいさんは「らいねんもいっしょにきたいね」といいました。",
+        "meaning": "Sebelum kembang api dimulai, mereka pindah ke dekat sungai. Meskipun ramai, mereka menemukan tempat untuk duduk. Setiap kali kembang api besar meluncur, orang-orang di sekitar berseru. Yui berkata, “Tahun depan aku ingin datang bersama lagi.”",
+        "imageDescription": "Hana dan Yui duduk di tepi sungai menyaksikan kembang api.",
+        "vocabulary": [
+          {
+            "japanese": "花火",
+            "reading": "はなび",
+            "meaning": "kembang api"
+          },
+          {
+            "japanese": "周り",
+            "reading": "まわり",
+            "meaning": "sekitar"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-04.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "浴衣を着る時、だれが手伝いましたか。\nSiapa membantu mereka mengenakan yukata?",
+        "Choices": [
+          "はなさんの母",
+          "店の人",
+          "駅員",
+          "ゆいさんの先生"
+        ],
+        "Correct": 0,
+        "Explanation": "はなさんの母が着方を手伝ってくれました menyebut ibu Hana membantu."
+      },
+      {
+        "Prompt": "なぜゆっくり歩きましたか。\nMengapa berjalan perlahan?",
+        "Choices": [
+          "浴衣で歩くのが難しいから",
+          "雨が降っていたから",
+          "道を知らないから",
+          "花火が終わったから"
+        ],
+        "Correct": 0,
+        "Explanation": "浴衣で歩くのは少し難しいので menjelaskan alasannya."
+      },
+      {
+        "Prompt": "たこ焼きはどう食べましたか。\nBagaimana mereka membagi takoyaki?",
+        "Choices": [
+          "半分ずつ",
+          "はなさんが全部",
+          "ゆいさんが全部",
+          "母と三人で"
+        ],
+        "Correct": 0,
+        "Explanation": "半分ずつ berarti masing-masing mendapat setengah."
+      },
+      {
+        "Prompt": "なぜすぐに食べませんでしたか。\nMengapa tidak langsung dimakan?",
+        "Choices": [
+          "熱かったから",
+          "冷たかったから",
+          "お金がなかったから",
+          "花火を待っていたから"
+        ],
+        "Correct": 0,
+        "Explanation": "熱かったので、少し待ってから食べました: menunggu karena takoyaki panas."
+      },
+      {
+        "Prompt": "花火を見るためにどこへ行きましたか。\nKe mana mereka pergi untuk melihat kembang api?",
+        "Choices": [
+          "川の近く",
+          "山の上",
+          "駅の中",
+          "学校の前"
+        ],
+        "Correct": 0,
+        "Explanation": "花火が始まる前に川の近くへ移動しました menyebut perpindahan ke dekat sungai."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-05",
+    "Title": "Hari hujan di museum",
+    "JapaneseTitle": "雨の日の美術館",
+    "Chapter": "Budaya dan hobi",
+    "Description": "Temukan inspirasi saat rencana piknik berubah. Latih ～ので, ～ことがある, dan ～かもしれない.",
+    "Minutes": 11,
+    "ImageAsset": "assets/images/reading/story-n4-05.png",
+    "Pages": [
+      {
+        "title": "Rencana baru",
+        "japanese": "日曜日は公園でピクニックをするつもりでしたが、朝から雨が降っていました。ゆいさんが「美術館なら、雨でも楽しめるよ」と言いました。はなさんはその美術館へ行ったことがなかったので、行ってみることにしました。二人は傘を持って出かけました。",
+        "reading": "にちようびはこうえんでピクニックをするつもりでしたが、あさからあめがふっていました。ゆいさんが「びじゅつかんなら、あめでもたのしめるよ」といいました。はなさんはそのびじゅつかんへいったことがなかったので、いってみることにしました。ふたりはかさをもってでかけました。",
+        "meaning": "Mereka berniat piknik di taman pada hari Minggu, tetapi hujan turun sejak pagi. Yui berkata, “Kalau ke museum seni, kita tetap bisa menikmatinya walaupun hujan.” Karena Hana belum pernah ke museum itu, ia memutuskan mencobanya. Mereka berangkat membawa payung.",
+        "imageDescription": "Hana dan Yui datang ke museum seni dengan payung saat hujan.",
+        "vocabulary": [
+          {
+            "japanese": "美術館",
+            "reading": "びじゅつかん",
+            "meaning": "museum seni"
+          },
+          {
+            "japanese": "出かける",
+            "reading": "でかける",
+            "meaning": "pergi keluar"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-05.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Lukisan yang menarik",
+        "japanese": "美術館では、大きな声で話してはいけません。はなさんは山の中の村の絵が気に入りました。小さい家や木が細かく描いてありました。「この村へ行ったら、静かに休めるかもしれないね」と二人は話しました。",
+        "reading": "びじゅつかんでは、おおきなこえではなしてはいけません。はなさんはやまのなかのむらのえがきにいりました。ちいさいいえやきがこまかくかいてありました。「このむらへいったら、しずかにやすめるかもしれないね」とふたりははなしました。",
+        "meaning": "Di museum, pengunjung tidak boleh berbicara keras. Hana menyukai lukisan desa di pegunungan. Rumah-rumah kecil dan pepohonan dilukis secara rinci. Mereka berbicara, “Kalau pergi ke desa ini, mungkin kita bisa beristirahat dengan tenang.”",
+        "imageDescription": "Kedua teman mengamati lukisan desa pegunungan di ruang museum.",
+        "vocabulary": [
+          {
+            "japanese": "気に入る",
+            "reading": "きにいる",
+            "meaning": "menyukai"
+          },
+          {
+            "japanese": "村",
+            "reading": "むら",
+            "meaning": "desa"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-05.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Ingin mencoba menggambar",
+        "japanese": "見終わってから、美術館の喫茶店で休みました。はなさんはノートを出して、さっき見た村を描き始めました。ゆいさんは「絵を描くのが好きだったんだね」と驚きました。はなさんは、家でももっと練習しようと思いました。",
+        "reading": "みおわってから、びじゅつかんのきっさてんでやすみました。はなさんはノートをだして、さっきみたむらをかきはじめました。ゆいさんは「えをかくのがすきだったんだね」とおどろきました。はなさんは、いえでももっとれんしゅうしようとおもいました。",
+        "meaning": "Setelah selesai melihat pameran, mereka beristirahat di kafe museum. Hana mengeluarkan buku catatan dan mulai menggambar desa yang tadi dilihatnya. Yui terkejut dan berkata, “Ternyata kamu suka menggambar ya.” Hana ingin lebih banyak berlatih di rumah juga.",
+        "imageDescription": "Hana menggambar desa pegunungan di buku sketsa di kafe, ditemani Yui.",
+        "vocabulary": [
+          {
+            "japanese": "描く",
+            "reading": "かく",
+            "meaning": "menggambar; melukis"
+          },
+          {
+            "japanese": "驚く",
+            "reading": "おどろく",
+            "meaning": "terkejut"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-05.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "なぜ予定を変えましたか。\nMengapa rencana mereka berubah?",
+        "Choices": [
+          "朝から雨が降っていたから",
+          "公園が遠いから",
+          "ゆいさんが病気だから",
+          "美術館が閉まるから"
+        ],
+        "Correct": 0,
+        "Explanation": "Piknik diganti karena hujan turun sejak pagi."
+      },
+      {
+        "Prompt": "はなさんはその美術館へ行ったことがありますか。\nApakah Hana pernah ke museum itu?",
+        "Choices": [
+          "いいえ、初めてです",
+          "はい、毎週行きます",
+          "はい、昨日も行きました",
+          "はい、働いていました"
+        ],
+        "Correct": 0,
+        "Explanation": "行ったことがなかった berarti belum pernah pergi ke sana."
+      },
+      {
+        "Prompt": "美術館でしてはいけないことは何ですか。\nApa yang dilarang di museum?",
+        "Choices": [
+          "大きな声で話すこと",
+          "絵を見ること",
+          "喫茶店で休むこと",
+          "ノートを持つこと"
+        ],
+        "Correct": 0,
+        "Explanation": "大きな声で話してはいけません adalah larangan berbicara keras."
+      },
+      {
+        "Prompt": "はなさんはどんな絵が気に入りましたか。\nLukisan apa yang disukai Hana?",
+        "Choices": [
+          "山の中の村の絵",
+          "海の船の絵",
+          "動物の絵",
+          "駅の絵"
+        ],
+        "Correct": 0,
+        "Explanation": "山の中の村の絵が気に入りました menyebut lukisan desa pegunungan."
+      },
+      {
+        "Prompt": "喫茶店で何をしましたか。\nApa yang dilakukan Hana di kafe?",
+        "Choices": [
+          "見た村を描きました",
+          "写真を売りました",
+          "仕事を探しました",
+          "傘を直しました"
+        ],
+        "Correct": 0,
+        "Explanation": "さっき見た村を描き始めました: ia mulai menggambar desa yang baru dilihat."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-06",
+    "Title": "Memasak kari bersama",
+    "JapaneseTitle": "二人で作るカレー",
+    "Chapter": "Keseharian",
+    "Description": "Ikuti resep dan persiapan makan malam. Latih ～ておく, ～すぎる, dan ～ながら.",
+    "Minutes": 11,
+    "ImageAsset": "assets/images/reading/story-n4-06.png",
+    "Pages": [
+      {
+        "title": "Belanja lebih dahulu",
+        "japanese": "はなさんとゆいさんは、母のために夕食を作ることにしました。母は仕事で遅く帰るので、先に材料を買っておきます。スーパーで、にんじん、じゃがいも、玉ねぎを買いました。家に米があるかどうか、はなさんは電話で確認しました。",
+        "reading": "はなさんとゆいさんは、ははのためにゆうしょくをつくることにしました。はははしごとでおそくかえるので、さきにざいりょうをかっておきます。スーパーで、にんじん、じゃがいも、たまねぎをかいました。いえにこめがあるかどうか、はなさんはでんわでかくにんしました。",
+        "meaning": "Hana dan Yui memutuskan memasak makan malam untuk ibu Hana. Karena ibunya pulang terlambat dari kerja, mereka membeli bahan terlebih dahulu. Mereka membeli wortel, kentang, dan bawang bombai di supermarket. Hana menelepon untuk memastikan apakah masih ada beras di rumah.",
+        "imageDescription": "Hana dan Yui membeli wortel, kentang, dan bawang bombai di pasar.",
+        "vocabulary": [
+          {
+            "japanese": "材料",
+            "reading": "ざいりょう",
+            "meaning": "bahan"
+          },
+          {
+            "japanese": "米",
+            "reading": "こめ",
+            "meaning": "beras"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-06.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Membagi pekerjaan",
+        "japanese": "ゆいさんが野菜を切っている間に、はなさんはご飯を炊きました。野菜を鍋に入れて、水を加えます。水を入れすぎないように、レシピをよく読みました。カレーを煮ながら、二人は学校の話をしました。",
+        "reading": "ゆいさんがやさいをきっているあいだに、はなさんはごはんをたきました。やさいをなべにいれて、みずをくわえます。みずをいれすぎないように、レシピをよくよみました。カレーをにながら、ふたりはがっこうのはなしをしました。",
+        "meaning": "Selagi Yui memotong sayuran, Hana memasak nasi. Mereka memasukkan sayuran ke panci dan menambahkan air. Mereka membaca resep dengan teliti agar tidak menambahkan terlalu banyak air. Sambil merebus kari, mereka mengobrol tentang sekolah.",
+        "imageDescription": "Yui memotong wortel sementara Hana mengaduk kari di dapur.",
+        "vocabulary": [
+          {
+            "japanese": "鍋",
+            "reading": "なべ",
+            "meaning": "panci"
+          },
+          {
+            "japanese": "炊く",
+            "reading": "たく",
+            "meaning": "memasak nasi"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-06.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Kejutan untuk ibu",
+        "japanese": "母が帰った時、夕食はもうできていました。母は「いい匂いだね。二人で作ったの？」と聞きました。少し辛かったですが、みんなおいしく食べました。食べ終わった後で、母に作り方を説明しました。",
+        "reading": "ははがかえったとき、ゆうしょくはもうできていました。ははは「いいにおいだね。ふたりでつくったの？」とききました。すこしからかったですが、みんなおいしくたべました。たべおわったあとで、ははにつくりかたをせつめいしました。",
+        "meaning": "Ketika ibu pulang, makan malam sudah siap. Ia bertanya, “Harum sekali. Kalian membuatnya berdua?” Karinya agak pedas, tetapi semua menikmatinya. Setelah selesai makan, mereka menjelaskan cara memasaknya kepada ibu.",
+        "imageDescription": "Hana dan Yui menyajikan kari dengan nasi kepada ibu Hana.",
+        "vocabulary": [
+          {
+            "japanese": "辛い",
+            "reading": "からい",
+            "meaning": "pedas"
+          },
+          {
+            "japanese": "説明する",
+            "reading": "せつめいする",
+            "meaning": "menjelaskan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-06.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "だれのために夕食を作りましたか。\nUntuk siapa mereka memasak?",
+        "Choices": [
+          "はなさんの母",
+          "店長",
+          "先生",
+          "隣の人"
+        ],
+        "Correct": 0,
+        "Explanation": "母のために夕食を作ることにしました berarti untuk ibu Hana."
+      },
+      {
+        "Prompt": "電話で何を確認しましたか。\nApa yang dipastikan melalui telepon?",
+        "Choices": [
+          "家に米があるかどうか",
+          "母が駅にいるかどうか",
+          "店が開いているかどうか",
+          "ゆいさんが来るかどうか"
+        ],
+        "Correct": 0,
+        "Explanation": "家に米があるかどうか berarti apakah ada beras di rumah."
+      },
+      {
+        "Prompt": "ゆいさんが野菜を切っている間、はなさんは何をしましたか。\nApa yang dilakukan Hana selagi Yui memotong sayuran?",
+        "Choices": [
+          "ご飯を炊きました",
+          "買い物に行きました",
+          "仕事をしました",
+          "皿を買いました"
+        ],
+        "Correct": 0,
+        "Explanation": "はなさんはご飯を炊きました menyebut Hana memasak nasi."
+      },
+      {
+        "Prompt": "レシピをよく読んだ理由は何ですか。\nMengapa membaca resep dengan teliti?",
+        "Choices": [
+          "水を入れすぎないため",
+          "米を買いすぎないため",
+          "母に電話するため",
+          "店を探すため"
+        ],
+        "Correct": 0,
+        "Explanation": "水を入れすぎないように menunjukkan tujuan menghindari terlalu banyak air."
+      },
+      {
+        "Prompt": "カレーはどんな味でしたか。\nBagaimana rasa karinya?",
+        "Choices": [
+          "少し辛かったです",
+          "とても甘かったです",
+          "味がありませんでした",
+          "冷たすぎました"
+        ],
+        "Correct": 0,
+        "Explanation": "少し辛かったですが、みんなおいしく食べました: agak pedas tetapi dinikmati semua orang."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-07",
+    "Title": "Berani mencoba badminton",
+    "JapaneseTitle": "新しいクラブ",
+    "Chapter": "Budaya dan hobi",
+    "Description": "Mulai hobi baru dan belajar bersama teman. Latih bentuk potensial, ～ても, dan ～ようになる.",
+    "Minutes": 11,
+    "ImageAsset": "assets/images/reading/story-n4-07.png",
+    "Pages": [
+      {
+        "title": "Ragu untuk masuk",
+        "japanese": "ゆいさんは毎週水曜日にバドミントンのクラブへ行っています。はなさんも誘われましたが、一度もやったことがありません。「上手にできなくても大丈夫だよ」とゆいさんが言いました。はなさんは運動靴を持って、一緒に行ってみました。",
+        "reading": "ゆいさんはまいしゅうすいようびにバドミントンのクラブへいっています。はなさんもさそわれましたが、いちどもやったことがありません。「じょうずにできなくてもだいじょうぶだよ」とゆいさんがいいました。はなさんはうんどうぐつをもって、いっしょにいってみました。",
+        "meaning": "Yui pergi ke klub badminton setiap hari Rabu. Hana juga diajak, tetapi belum pernah memainkannya sama sekali. Yui berkata, “Tidak apa-apa walaupun belum bisa bermain dengan baik.” Hana membawa sepatu olahraga dan mencoba pergi bersamanya.",
+        "imageDescription": "Hana ragu di pintu klub badminton sementara Yui mengajaknya masuk.",
+        "vocabulary": [
+          {
+            "japanese": "誘う",
+            "reading": "さそう",
+            "meaning": "mengajak"
+          },
+          {
+            "japanese": "運動靴",
+            "reading": "うんどうぐつ",
+            "meaning": "sepatu olahraga"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-07.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Latihan dasar",
+        "japanese": "最初に、ゆいさんがラケットの持ち方を教えてくれました。はなさんは何度も失敗しましたが、やめませんでした。休みながら三十分練習したら、少し打てるようになりました。ゆいさんは「少しずつ上手になっているよ」と笑いました。",
+        "reading": "さいしょに、ゆいさんがラケットのもちかたをおしえてくれました。はなさんはなんどもしっぱいしましたが、やめませんでした。やすみながらさんじゅっぷんれんしゅうしたら、すこしうてるようになりました。ゆいさんは「すこしずつじょうずになっているよ」とわらいました。",
+        "meaning": "Pertama, Yui mengajari cara memegang raket. Hana berkali-kali gagal, tetapi tidak berhenti. Setelah berlatih tiga puluh menit sambil mengambil jeda, ia mulai bisa memukul sedikit. Yui tertawa dan berkata, “Kamu menjadi lebih baik sedikit demi sedikit.”",
+        "imageDescription": "Yui mengajari Hana memegang raket di lapangan badminton.",
+        "vocabulary": [
+          {
+            "japanese": "持ち方",
+            "reading": "もちかた",
+            "meaning": "cara memegang"
+          },
+          {
+            "japanese": "失敗",
+            "reading": "しっぱい",
+            "meaning": "kegagalan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-07.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Pertandingan pertama",
+        "japanese": "最後に、ほかの二人と一緒に試合をしました。はなさんたちは負けましたが、楽しかったです。帰り道で、はなさんは来週も来ると言いました。家で少しずつ練習すれば、もっと上手になれると思いました。",
+        "reading": "さいごに、ほかのふたりといっしょにしあいをしました。はなさんたちはまけましたが、たのしかったです。かえりみちで、はなさんはらいしゅうもくるといいました。いえですこしずつれんしゅうすれば、もっとじょうずになれるとおもいました。",
+        "meaning": "Terakhir, mereka bermain pertandingan bersama dua orang lainnya. Tim Hana kalah, tetapi mereka senang. Dalam perjalanan pulang, Hana berkata akan datang lagi minggu depan. Ia merasa bisa menjadi lebih baik jika berlatih sedikit demi sedikit di rumah.",
+        "imageDescription": "Hana dan Yui bermain badminton ganda dengan dua anggota klub lainnya.",
+        "vocabulary": [
+          {
+            "japanese": "試合",
+            "reading": "しあい",
+            "meaning": "pertandingan"
+          },
+          {
+            "japanese": "負ける",
+            "reading": "まける",
+            "meaning": "kalah"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-07.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "ゆいさんはいつクラブへ行きますか。\nKapan Yui pergi ke klub?",
+        "Choices": [
+          "毎週水曜日",
+          "毎週日曜日",
+          "毎朝",
+          "毎月一日"
+        ],
+        "Correct": 0,
+        "Explanation": "毎週水曜日にクラブへ行っています menyebut setiap Rabu."
+      },
+      {
+        "Prompt": "はなさんは前にバドミントンをしたことがありますか。\nApakah Hana pernah bermain sebelumnya?",
+        "Choices": [
+          "いいえ、一度もありません",
+          "はい、一度あります",
+          "はい、毎週しています",
+          "はい、先生でした"
+        ],
+        "Correct": 0,
+        "Explanation": "一度もやったことがありません berarti belum pernah sama sekali."
+      },
+      {
+        "Prompt": "最初に何を習いましたか。\nApa yang dipelajari pertama kali?",
+        "Choices": [
+          "ラケットの持ち方",
+          "試合の予約の仕方",
+          "靴の買い方",
+          "料理の作り方"
+        ],
+        "Correct": 0,
+        "Explanation": "最初にラケットの持ち方を教えてくれました: cara memegang raket."
+      },
+      {
+        "Prompt": "練習した後、何ができるようになりましたか。\nApa yang mulai bisa dilakukan setelah latihan?",
+        "Choices": [
+          "少し打つこと",
+          "必ず試合に勝つこと",
+          "一時間走ること",
+          "人に教えること"
+        ],
+        "Correct": 0,
+        "Explanation": "少し打てるようになりました menyatakan perkembangan kemampuan memukul."
+      },
+      {
+        "Prompt": "負けた後、はなさんはどう思いましたか。\nBagaimana perasaan Hana setelah kalah?",
+        "Choices": [
+          "楽しかったので、また来たい",
+          "もう来たくない",
+          "ゆいさんと話したくない",
+          "練習しなくても上手だ"
+        ],
+        "Correct": 0,
+        "Explanation": "Meskipun kalah, ia senang dan berkata akan datang lagi minggu depan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-08",
+    "Title": "Hujan di jalur pendakian",
+    "JapaneseTitle": "山で雨が降ったら",
+    "Chapter": "Perjalanan",
+    "Description": "Persiapkan perjalanan dan ubah rencana sesuai cuaca. Latih ～かもしれない, ～ておく, dan ～まで.",
+    "Minutes": 12,
+    "ImageAsset": "assets/images/reading/story-n4-08.png",
+    "Pages": [
+      {
+        "title": "Menyiapkan tas",
+        "japanese": "日曜日、二人は低い山へ登る予定です。天気予報では、午後に雨が降るかもしれません。はなさんは水とお弁当を用意しておきました。ゆいさんも、雨が降っても困らないように雨具を持って行きます。",
+        "reading": "にちようび、ふたりはひくいやまへのぼるよていです。てんきよほうでは、ごごにあめがふるかもしれません。はなさんはみずとおべんとうをよういしておきました。ゆいさんも、あめがふってもこまらないようにあまぐをもっていきます。",
+        "meaning": "Pada hari Minggu, mereka berencana mendaki gunung yang tidak tinggi. Menurut prakiraan cuaca, hujan mungkin turun pada sore hari. Hana sudah menyiapkan air dan bekal. Yui juga membawa perlengkapan hujan agar tidak kesulitan jika hujan turun.",
+        "imageDescription": "Hana dan Yui menyiapkan ransel, air, dan jas hujan di bawah langit mendung.",
+        "vocabulary": [
+          {
+            "japanese": "天気予報",
+            "reading": "てんきよほう",
+            "meaning": "prakiraan cuaca"
+          },
+          {
+            "japanese": "雨具",
+            "reading": "あまぐ",
+            "meaning": "perlengkapan hujan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-08.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Berteduh dahulu",
+        "japanese": "朝は涼しくて、歩きやすい天気でした。ところが、昼ご飯を食べた後、雨が降り始めました。近くに小さい屋根のある休憩所を見つけたので、そこへ入りました。雨がやむまで、二人はそこで待つことにしました。",
+        "reading": "あさはすずしくて、あるきやすいてんきでした。ところが、ひるごはんをたべたあと、あめがふりはじめました。ちかくにちいさいやねのあるきゅうけいじょをみつけたので、そこへはいりました。あめがやむまで、ふたりはそこでまつことにしました。",
+        "meaning": "Pada pagi hari, cuacanya sejuk dan nyaman untuk berjalan. Namun setelah makan siang, hujan mulai turun. Mereka menemukan tempat istirahat kecil beratap di dekat situ dan masuk ke sana. Mereka memutuskan menunggu hingga hujan berhenti.",
+        "imageDescription": "Hana dan Yui berteduh di tempat istirahat beratap di jalur hutan.",
+        "vocabulary": [
+          {
+            "japanese": "休憩所",
+            "reading": "きゅうけいじょ",
+            "meaning": "tempat istirahat"
+          },
+          {
+            "japanese": "やむ",
+            "reading": "やむ",
+            "meaning": "berhenti, untuk hujan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-08.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Pemandangan setelah hujan",
+        "japanese": "三十分ぐらい待ったら、雨がやんで空が明るくなりました。遠くに虹が見えて、ゆいさんは写真を撮りました。道はぬれているので、頂上までは行かないことにしました。二人はゆっくり山を下りて、無事に家へ帰りました。",
+        "reading": "さんじゅっぷんぐらいまったら、あめがやんでそらがあかるくなりました。とおくににじがみえて、ゆいさんはしゃしんをとりました。みちはぬれているので、ちょうじょうまではいかないことにしました。ふたりはゆっくりやまをおりて、ぶじにいえへかえりました。",
+        "meaning": "Setelah menunggu sekitar tiga puluh menit, hujan berhenti dan langit menjadi terang. Pelangi terlihat di kejauhan dan Yui memotretnya. Karena jalannya basah, mereka memutuskan tidak melanjutkan sampai puncak. Mereka turun perlahan dan pulang dengan selamat.",
+        "imageDescription": "Hana dan Yui melihat pelangi dan pegunungan dari tempat berteduh.",
+        "vocabulary": [
+          {
+            "japanese": "虹",
+            "reading": "にじ",
+            "meaning": "pelangi"
+          },
+          {
+            "japanese": "下りる",
+            "reading": "おりる",
+            "meaning": "turun"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-08.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "天気予報では午後はどうなるかもしれませんか。\nApa yang mungkin terjadi pada sore hari?",
+        "Choices": [
+          "雨が降る",
+          "雪が降る",
+          "とても暑くなる",
+          "風が止まる"
+        ],
+        "Correct": 0,
+        "Explanation": "午後に雨が降るかもしれません berarti kemungkinan hujan, bukan kepastian."
+      },
+      {
+        "Prompt": "ゆいさんはなぜ雨具を持って行きますか。\nMengapa Yui membawa perlengkapan hujan?",
+        "Choices": [
+          "雨が降っても困らないため",
+          "山で売るため",
+          "家に水がないため",
+          "写真を撮るため"
+        ],
+        "Correct": 0,
+        "Explanation": "雨が降っても困らないように menunjukkan tujuan berjaga-jaga terhadap hujan."
+      },
+      {
+        "Prompt": "雨はいつ降り始めましたか。\nKapan hujan mulai turun?",
+        "Choices": [
+          "昼ご飯を食べた後",
+          "家を出る前",
+          "山を下りた後",
+          "朝ご飯の前"
+        ],
+        "Correct": 0,
+        "Explanation": "昼ご飯を食べた後、雨が降り始めました menyebut setelah makan siang."
+      },
+      {
+        "Prompt": "二人はどこで待ちましたか。\nDi mana mereka menunggu?",
+        "Choices": [
+          "屋根のある休憩所",
+          "駅のホーム",
+          "頂上の店",
+          "車の中"
+        ],
+        "Correct": 0,
+        "Explanation": "Mereka masuk dan menunggu di tempat istirahat yang memiliki atap."
+      },
+      {
+        "Prompt": "なぜ頂上まで行きませんでしたか。\nMengapa tidak sampai puncak?",
+        "Choices": [
+          "道がぬれていたから",
+          "虹が見えなかったから",
+          "お弁当がなかったから",
+          "山が閉まっていたから"
+        ],
+        "Correct": 0,
+        "Explanation": "道はぬれているので menjelaskan keputusan berhenti melanjutkan karena jalur basah."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-09",
+    "Title": "Membantu membersihkan sungai",
+    "JapaneseTitle": "川をきれいにする日",
+    "Chapter": "Masyarakat",
+    "Description": "Bekerja sama dengan tetangga dan melihat hasilnya. Latih ～ために, ～ずつ, dan ～ようになる.",
+    "Minutes": 12,
+    "ImageAsset": "assets/images/reading/story-n4-09.png",
+    "Pages": [
+      {
+        "title": "Bergabung dengan warga",
+        "japanese": "町では月に一度、川の周りを掃除しています。はなさんは町の人と話すために、ゆいさんと参加しました。始める前に、みんなで手袋と袋をもらいました。係の人は、危ない物を見つけたら知らせてくださいと言いました。",
+        "reading": "まちではつきにいちど、かわのまわりをそうじしています。はなさんはまちのひととはなすために、ゆいさんとさんかしました。はじめるまえに、みんなでてぶくろとふくろをもらいました。かかりのひとは、あぶないものをみつけたらしらせてくださいといいました。",
+        "meaning": "Warga kota membersihkan sekitar sungai sebulan sekali. Hana ikut bersama Yui agar bisa berbicara dengan warga. Sebelum mulai, semua menerima sarung tangan dan kantong. Penanggung jawab meminta mereka memberi tahu jika menemukan benda berbahaya.",
+        "imageDescription": "Hana dan Yui menerima sarung tangan dan kantong dari kelompok relawan di sungai.",
+        "vocabulary": [
+          {
+            "japanese": "参加する",
+            "reading": "さんかする",
+            "meaning": "berpartisipasi"
+          },
+          {
+            "japanese": "手袋",
+            "reading": "てぶくろ",
+            "meaning": "sarung tangan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-09.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Memilah sampah",
+        "japanese": "はなさんは草の間からペットボトルを拾いました。ゆいさんは缶を別の袋に入れていました。少しずつ進むと、道の横がきれいになっていきました。近くのお年寄りが、二人に「ありがとう」と言ってくれました。",
+        "reading": "はなさんはくさのあいだからペットボトルをひろいました。ゆいさんはかんをべつのふくろにいれていました。すこしずつすすむと、みちのよこがきれいになっていきました。ちかくのおとしよりが、ふたりに「ありがとう」といってくれました。",
+        "meaning": "Hana memungut botol plastik dari sela-sela rumput. Yui memasukkan kaleng ke kantong yang berbeda. Saat mereka maju sedikit demi sedikit, sisi jalan menjadi semakin bersih. Seorang warga lanjut usia di dekat situ mengucapkan terima kasih kepada mereka.",
+        "imageDescription": "Hana memungut botol sementara Yui memisahkan kaleng di tepi sungai.",
+        "vocabulary": [
+          {
+            "japanese": "拾う",
+            "reading": "ひろう",
+            "meaning": "memungut"
+          },
+          {
+            "japanese": "缶",
+            "reading": "かん",
+            "meaning": "kaleng"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-09.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Lebih dekat dengan tetangga",
+        "japanese": "一時間掃除した後で、みんなでお茶を飲みました。はなさんは、町の人から昔の川の話を聞きました。初めは緊張していましたが、今は自然に話せるようになりました。来月も時間があれば、参加したいと思っています。",
+        "reading": "いちじかんそうじしたあとで、みんなでおちゃをのみました。はなさんは、まちのひとからむかしのかわのはなしをききました。はじめはきんちょうしていましたが、いまはしぜんにはなせるようになりました。らいげつもじかんがあれば、さんかしたいとおもっています。",
+        "meaning": "Setelah membersihkan selama satu jam, semua minum teh bersama. Hana mendengar cerita warga tentang sungai pada masa lalu. Awalnya ia gugup, tetapi sekarang ia bisa berbicara dengan lebih alami. Ia ingin ikut lagi bulan depan jika ada waktu.",
+        "imageDescription": "Hana dan Yui minum teh bersama warga sambil melihat tepi sungai yang bersih.",
+        "vocabulary": [
+          {
+            "japanese": "昔",
+            "reading": "むかし",
+            "meaning": "dahulu"
+          },
+          {
+            "japanese": "自然に",
+            "reading": "しぜんに",
+            "meaning": "secara alami"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-09.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "掃除はどのくらいの回数で行われていますか。\nSeberapa sering kegiatan ini dilakukan?",
+        "Choices": [
+          "月に一度",
+          "毎日",
+          "週に三回",
+          "年に一度"
+        ],
+        "Correct": 0,
+        "Explanation": "月に一度 berarti sebulan sekali."
+      },
+      {
+        "Prompt": "はなさんはなぜ参加しましたか。\nMengapa Hana ikut?",
+        "Choices": [
+          "町の人と話すため",
+          "お金をもらうため",
+          "船に乗るため",
+          "店を開くため"
+        ],
+        "Correct": 0,
+        "Explanation": "町の人と話すために menyebut tujuan berbicara dengan warga."
+      },
+      {
+        "Prompt": "危ない物を見つけたら、どうしますか。\nApa yang harus dilakukan jika menemukan benda berbahaya?",
+        "Choices": [
+          "係の人に知らせます",
+          "川に捨てます",
+          "家に持って帰ります",
+          "何もしません"
+        ],
+        "Correct": 0,
+        "Explanation": "係の人 meminta agar mereka memberi tahu jika menemukan benda berbahaya."
+      },
+      {
+        "Prompt": "ゆいさんは何を別の袋に入れましたか。\nApa yang dipisahkan Yui?",
+        "Choices": [
+          "缶",
+          "花",
+          "手袋",
+          "お弁当"
+        ],
+        "Correct": 0,
+        "Explanation": "缶を別の袋に入れていました berarti memasukkan kaleng ke kantong berbeda."
+      },
+      {
+        "Prompt": "最後に、はなさんはどうなりましたか。\nPerubahan apa yang dialami Hana?",
+        "Choices": [
+          "町の人と自然に話せるようになりました",
+          "人と話せなくなりました",
+          "掃除が嫌いになりました",
+          "すぐ別の町へ引っ越しました"
+        ],
+        "Correct": 0,
+        "Explanation": "自然に話せるようになりました menunjukkan kemampuan berbincang dengan lebih alami."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-10",
+    "Title": "Dompet yang tertinggal",
+    "JapaneseTitle": "なくした財布",
+    "Chapter": "Masyarakat",
+    "Description": "Telusuri petunjuk dan bantu teman menemukan barang. Latih ～かどうか, ～てしまう, dan ～てあげる.",
+    "Minutes": 12,
+    "ImageAsset": "assets/images/reading/story-n4-10.png",
+    "Pages": [
+      {
+        "title": "Dompet tidak ada",
+        "japanese": "図書館を出ようとした時、ゆいさんは財布がないことに気づきました。かばんの中を何度も探しましたが、見つかりません。最後に使ったのは、飲み物を買った時でした。はなさんは、ゆいさんと一緒に探してあげることにしました。",
+        "reading": "としょかんをでようとしたとき、ゆいさんはさいふがないことにきづきました。かばんのなかをなんどもさがしましたが、みつかりません。さいごにつかったのは、のみものをかったときでした。はなさんは、ゆいさんといっしょにさがしてあげることにしました。",
+        "meaning": "Saat hendak keluar dari perpustakaan, Yui menyadari dompetnya tidak ada. Ia mencari berulang kali di dalam tas, tetapi tidak menemukannya. Ia terakhir menggunakannya ketika membeli minuman. Hana memutuskan membantu Yui mencarinya.",
+        "imageDescription": "Yui cemas memeriksa tas terbukanya sementara Hana membantu di meja perpustakaan.",
+        "vocabulary": [
+          {
+            "japanese": "財布",
+            "reading": "さいふ",
+            "meaning": "dompet"
+          },
+          {
+            "japanese": "気づく",
+            "reading": "きづく",
+            "meaning": "menyadari"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-10.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Bertanya di meja petugas",
+        "japanese": "二人は、さっき座っていた机に戻りましたが、財布はありませんでした。受付で、青い財布が届いているかどうか聞きました。係の人は、引き出しから青い財布を出しました。別のお客さんが見つけて、届けてくれたそうです。",
+        "reading": "ふたりは、さっきすわっていたつくえにもどりましたが、さいふはありませんでした。うけつけで、あおいさいふがとどいているかどうかききました。かかりのひとは、ひきだしからあおいさいふをだしました。べつのおきゃくさんがみつけて、とどけてくれたそうです。",
+        "meaning": "Mereka kembali ke meja tempat tadi duduk, tetapi dompet tidak ada di sana. Di resepsionis, mereka bertanya apakah sebuah dompet biru sudah diserahkan. Petugas mengeluarkan dompet biru dari laci. Menurut petugas, pengunjung lain menemukannya dan menyerahkannya.",
+        "imageDescription": "Petugas perpustakaan memperlihatkan dompet biru kepada Hana dan Yui.",
+        "vocabulary": [
+          {
+            "japanese": "受付",
+            "reading": "うけつけ",
+            "meaning": "resepsionis; loket"
+          },
+          {
+            "japanese": "届ける",
+            "reading": "とどける",
+            "meaning": "mengantarkan; menyerahkan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-10.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Lega dan lebih hati-hati",
+        "japanese": "ゆいさんは中を確認して、自分の財布だと言いました。お金もカードも全部入っていたので、安心しました。「手伝ってくれてありがとう」とはなさんに言いました。今度から、出かける前に持ち物を確認するつもりです。",
+        "reading": "ゆいさんはなかをかくにんして、じぶんのさいふだといいました。おかねもカードもぜんぶはいっていたので、あんしんしました。「てつだってくれてありがとう」とはなさんにいいました。こんどから、でかけるまえにもちものをかくにんするつもりです。",
+        "meaning": "Yui memeriksa isinya dan mengatakan bahwa itu dompetnya. Ia lega karena semua uang dan kartu masih ada. Ia berterima kasih kepada Hana atas bantuannya. Mulai sekarang, ia berniat memeriksa barang bawaan sebelum pergi.",
+        "imageDescription": "Yui memegang dompet biru dengan lega dan berterima kasih kepada Hana di luar perpustakaan.",
+        "vocabulary": [
+          {
+            "japanese": "安心する",
+            "reading": "あんしんする",
+            "meaning": "merasa lega"
+          },
+          {
+            "japanese": "持ち物",
+            "reading": "もちもの",
+            "meaning": "barang bawaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-10.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "ゆいさんはどこで財布がないことに気づきましたか。\nDi mana Yui menyadari dompetnya tidak ada?",
+        "Choices": [
+          "図書館",
+          "駅",
+          "喫茶店",
+          "家"
+        ],
+        "Correct": 0,
+        "Explanation": "図書館を出ようとした時 menyebut ketika hendak keluar dari perpustakaan."
+      },
+      {
+        "Prompt": "最後に財布を使ったのはいつですか。\nKapan dompet terakhir digunakan?",
+        "Choices": [
+          "飲み物を買った時",
+          "電車に乗った時",
+          "本を借りた時",
+          "服を買った時"
+        ],
+        "Correct": 0,
+        "Explanation": "最後に使ったのは、飲み物を買った時でした menyebut saat membeli minuman."
+      },
+      {
+        "Prompt": "財布は何色ですか。\nApa warna dompetnya?",
+        "Choices": [
+          "青",
+          "赤",
+          "黒",
+          "白"
+        ],
+        "Correct": 0,
+        "Explanation": "Mereka menanyakan 青い財布, yaitu dompet biru."
+      },
+      {
+        "Prompt": "だれが財布を受付に届けましたか。\nSiapa menyerahkan dompet ke petugas?",
+        "Choices": [
+          "別のお客さん",
+          "はなさん",
+          "ゆいさんの母",
+          "駅員"
+        ],
+        "Correct": 0,
+        "Explanation": "別のお客さんが見つけて届けてくれたそうです menyebut pengunjung lain."
+      },
+      {
+        "Prompt": "ゆいさんは今度から何をするつもりですか。\nApa yang akan dilakukan Yui mulai sekarang?",
+        "Choices": [
+          "出かける前に持ち物を確認する",
+          "財布を持たない",
+          "図書館に行かない",
+          "カードを全部捨てる"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat terakhir menyatakan niat memeriksa barang bawaan sebelum pergi."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-11",
+    "Title": "Menginap di ryokan",
+    "JapaneseTitle": "旅館で過ごす週末",
+    "Chapter": "Perjalanan",
+    "Description": "Nikmati pengalaman penginapan Jepang. Latih ～てある, ～前に, dan ～ことにする.",
+    "Minutes": 12,
+    "ImageAsset": "assets/images/reading/story-n4-11.png",
+    "Pages": [
+      {
+        "title": "Tiba di penginapan",
+        "japanese": "二人は週末、小さい旅館に泊まることにしました。部屋を予約しておいたので、すぐ案内してもらえました。玄関で靴を脱いで、畳の部屋に入りました。窓の近くには、お茶とお菓子が置いてありました。",
+        "reading": "ふたりはしゅうまつ、ちいさいりょかんにとまることにしました。へやをよやくしておいたので、すぐあんないしてもらえました。げんかんでくつをぬいで、たたみのへやにはいりました。まどのちかくには、おちゃとおかしがおいてありました。",
+        "meaning": "Mereka memutuskan menginap di ryokan kecil pada akhir pekan. Karena kamar sudah dipesan sebelumnya, mereka langsung diantar. Mereka melepas sepatu di pintu masuk dan memasuki kamar bertatami. Teh dan kudapan sudah disiapkan di dekat jendela.",
+        "imageDescription": "Hana dan Yui membawa tas akhir pekan dan disambut pemilik ryokan.",
+        "vocabulary": [
+          {
+            "japanese": "旅館",
+            "reading": "りょかん",
+            "meaning": "penginapan tradisional Jepang"
+          },
+          {
+            "japanese": "予約",
+            "reading": "よやく",
+            "meaning": "reservasi"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-11.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Makan malam di tatami",
+        "japanese": "夕食の前に、二人は浴衣に着替えました。魚や野菜の料理が、低いテーブルに並んでいました。ゆいさんは、初めて食べる料理の名前を聞きました。旅館の人が説明してくれたので、安心して食べられました。",
+        "reading": "ゆうしょくのまえに、ふたりはゆかたにきがえました。さかなややさいのりょうりが、ひくいテーブルにならんでいました。ゆいさんは、はじめてたべるりょうりのなまえをききました。りょかんのひとがせつめいしてくれたので、あんしんしてたべられました。",
+        "meaning": "Sebelum makan malam, mereka berganti pakaian menjadi yukata. Hidangan ikan dan sayuran berjajar di meja rendah. Yui bertanya nama masakan yang baru pertama kali dicobanya. Karena staf menjelaskan, ia dapat memakannya dengan tenang.",
+        "imageDescription": "Hana dan Yui memakai yukata dan makan ikan serta sayuran di kamar tatami.",
+        "vocabulary": [
+          {
+            "japanese": "着替える",
+            "reading": "きがえる",
+            "meaning": "berganti pakaian"
+          },
+          {
+            "japanese": "並ぶ",
+            "reading": "ならぶ",
+            "meaning": "berjajar"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-11.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Pagi yang tenang",
+        "japanese": "次の朝、はなさんはいつもより早く目が覚めました。庭を見ながらお茶を飲むと、気持ちが落ち着きました。帰る前に、二人は旅館の人にお礼を言いました。「また休みが取れたら来よう」と約束しました。",
+        "reading": "つぎのあさ、はなさんはいつもよりはやくめがさめました。にわをみながらおちゃをのむと、きもちがおちつきました。かえるまえに、ふたりはりょかんのひとにおれいをいいました。「またやすみがとれたらこよう」とやくそくしました。",
+        "meaning": "Keesokan paginya, Hana terbangun lebih awal daripada biasanya. Perasaannya menjadi tenang saat minum teh sambil melihat taman. Sebelum pulang, mereka mengucapkan terima kasih kepada staf ryokan. Mereka berjanji akan datang lagi jika bisa mendapat waktu libur.",
+        "imageDescription": "Hana dan Yui minum teh sambil menikmati taman ryokan pada pagi hari.",
+        "vocabulary": [
+          {
+            "japanese": "目が覚める",
+            "reading": "めがさめる",
+            "meaning": "terbangun"
+          },
+          {
+            "japanese": "約束",
+            "reading": "やくそく",
+            "meaning": "janji"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-11.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "なぜすぐ部屋に案内してもらえましたか。\nMengapa mereka langsung diantar ke kamar?",
+        "Choices": [
+          "予約しておいたから",
+          "毎日泊まっているから",
+          "料理を作ったから",
+          "靴を買ったから"
+        ],
+        "Correct": 0,
+        "Explanation": "予約しておいたので menunjukkan kamar sudah dipesan terlebih dahulu."
+      },
+      {
+        "Prompt": "玄関で何をしましたか。\nApa yang dilakukan di pintu masuk?",
+        "Choices": [
+          "靴を脱ぎました",
+          "お茶を飲みました",
+          "魚を食べました",
+          "写真を売りました"
+        ],
+        "Correct": 0,
+        "Explanation": "玄関で靴を脱いで berarti melepas sepatu di pintu masuk."
+      },
+      {
+        "Prompt": "夕食の前に何をしましたか。\nApa yang mereka lakukan sebelum makan malam?",
+        "Choices": [
+          "浴衣に着替えました",
+          "家に帰りました",
+          "庭を掃除しました",
+          "駅で待ちました"
+        ],
+        "Correct": 0,
+        "Explanation": "夕食の前に浴衣に着替えました menyebut berganti ke yukata."
+      },
+      {
+        "Prompt": "ゆいさんは何を聞きましたか。\nApa yang ditanyakan Yui?",
+        "Choices": [
+          "料理の名前",
+          "電車の時間",
+          "庭の広さ",
+          "部屋の数"
+        ],
+        "Correct": 0,
+        "Explanation": "初めて食べる料理の名前を聞きました berarti bertanya nama hidangan baru."
+      },
+      {
+        "Prompt": "二人はいつまた来たいと思っていますか。\nKapan mereka ingin datang lagi?",
+        "Choices": [
+          "休みが取れたら",
+          "明日の仕事の前",
+          "毎週水曜日",
+          "雨が降るまで"
+        ],
+        "Correct": 0,
+        "Explanation": "また休みが取れたら来よう menunjukkan rencana bersyarat ketika bisa mendapat libur."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n4-12",
+    "Title": "Kafe di festival sekolah",
+    "JapaneseTitle": "文化祭の小さな喫茶店",
+    "Chapter": "Kerja dan belajar",
+    "Description": "Siapkan acara, hadapi kesalahan, dan rayakan kerja sama. Latih ～ておく, ～てしまう, dan ～おかげで.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n4-12.png",
+    "Pages": [
+      {
+        "title": "Persiapan sehari sebelumnya",
+        "japanese": "文化祭で、はなさんのクラスは喫茶店を開くことになりました。前の日に、机を並べたり、教室を飾ったりしました。当日は忙しくなるので、紙のコップを先に用意しておきました。はなさんは飲み物、ゆいさんはケーキを担当します。",
+        "reading": "ぶんかさいで、はなさんのクラスはきっさてんをひらくことになりました。まえのひに、つくえをならべたり、きょうしつをかざったりしました。とうじつはいそがしくなるので、かみのコップをさきによういしておきました。はなさんはのみもの、ゆいさんはケーキをたんとうします。",
+        "meaning": "Pada festival sekolah, diputuskan bahwa kelas Hana akan membuka kafe. Sehari sebelumnya, mereka melakukan kegiatan seperti menyusun meja dan menghias kelas. Karena hari acara akan sibuk, mereka menyiapkan gelas kertas lebih dahulu. Hana bertanggung jawab atas minuman, sedangkan Yui atas kue.",
+        "imageDescription": "Hana dan Yui menghias kafe kelas dan menyiapkan gelas sebelum festival sekolah.",
+        "vocabulary": [
+          {
+            "japanese": "文化祭",
+            "reading": "ぶんかさい",
+            "meaning": "festival budaya sekolah"
+          },
+          {
+            "japanese": "用意する",
+            "reading": "よういする",
+            "meaning": "menyiapkan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-12.png",
+        "imageUrl": "",
+        "imagePanel": 0
+      },
+      {
+        "title": "Pelanggan mulai datang",
+        "japanese": "店を開けると、すぐにお客さんが来ました。はなさんは一度、注文を間違えてしまいました。すぐに謝って、正しい飲み物を持って行きました。ゆいさんが手伝ってくれたおかげで、お客さんを長く待たせずにすみました。",
+        "reading": "みせをあけると、すぐにおきゃくさんがきました。はなさんはいちど、ちゅうもんをまちがえてしまいました。すぐにあやまって、ただしいのみものをもっていきました。ゆいさんがてつだってくれたおかげで、おきゃくさんをながくまたせずにすみました。",
+        "meaning": "Begitu kafe dibuka, pelanggan langsung datang. Hana sempat salah menerima pesanan satu kali. Ia segera meminta maaf dan membawa minuman yang benar. Berkat bantuan Yui, mereka dapat menghindari membuat pelanggan menunggu lama.",
+        "imageDescription": "Hana membawa minuman kepada pengunjung sementara Yui menyiapkan kue di kafe kelas.",
+        "vocabulary": [
+          {
+            "japanese": "間違える",
+            "reading": "まちがえる",
+            "meaning": "melakukan kesalahan"
+          },
+          {
+            "japanese": "謝る",
+            "reading": "あやまる",
+            "meaning": "meminta maaf"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-12.png",
+        "imageUrl": "",
+        "imagePanel": 1
+      },
+      {
+        "title": "Lelah tetapi senang",
+        "japanese": "夕方、用意したケーキは全部売れました。みんなで教室を片付けてから、今日のことを話しました。はなさんは疲れていましたが、一人ではできないことができて、うれしかったです。来年はもっと早く準備を始めようと思いました。",
+        "reading": "ゆうがた、よういしたケーキはぜんぶうれました。みんなできょうしつをかたづけてから、きょうのことをはなしました。はなさんはつかれていましたが、ひとりではできないことができて、うれしかったです。らいねんはもっとはやくじゅんびをはじめようとおもいました。",
+        "meaning": "Menjelang sore, semua kue yang disiapkan terjual. Setelah membereskan kelas bersama, mereka membicarakan pengalaman hari itu. Hana lelah, tetapi senang karena bisa melakukan hal yang tidak dapat dikerjakan sendiri. Ia ingin mulai bersiap lebih awal tahun depan.",
+        "imageDescription": "Hana, Yui, dan teman sekelas membereskan ruangan saat senja dengan perasaan puas.",
+        "vocabulary": [
+          {
+            "japanese": "売れる",
+            "reading": "うれる",
+            "meaning": "terjual"
+          },
+          {
+            "japanese": "準備",
+            "reading": "じゅんび",
+            "meaning": "persiapan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n4-12.png",
+        "imageUrl": "",
+        "imagePanel": 2
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "クラスは文化祭で何を開きましたか。\nApa yang dibuka kelas mereka?",
+        "Choices": [
+          "喫茶店",
+          "本屋",
+          "旅館",
+          "花屋"
+        ],
+        "Correct": 0,
+        "Explanation": "喫茶店を開くことになりました menyebut keputusan membuka kafe."
+      },
+      {
+        "Prompt": "なぜコップを先に用意しましたか。\nMengapa gelas disiapkan lebih dahulu?",
+        "Choices": [
+          "当日は忙しくなるから",
+          "教室が閉まるから",
+          "お客さんが来ないから",
+          "ゆいさんが休むから"
+        ],
+        "Correct": 0,
+        "Explanation": "当日は忙しくなるので menunjukkan persiapan untuk kesibukan pada hari acara."
+      },
+      {
+        "Prompt": "ゆいさんは何を担当しましたか。\nApa tugas Yui?",
+        "Choices": [
+          "ケーキ",
+          "飲み物",
+          "切符",
+          "本"
+        ],
+        "Correct": 0,
+        "Explanation": "はなさんは飲み物、ゆいさんはケーキ membedakan tugas masing-masing."
+      },
+      {
+        "Prompt": "注文を間違えた後、はなさんはどうしましたか。\nApa yang dilakukan Hana setelah salah pesanan?",
+        "Choices": [
+          "謝って、正しい飲み物を持って行きました",
+          "店をすぐ閉めました",
+          "お客さんに帰ってもらいました",
+          "何も言いませんでした"
+        ],
+        "Correct": 0,
+        "Explanation": "Ia segera meminta maaf dan membawa minuman yang benar."
+      },
+      {
+        "Prompt": "来年は何を変えたいと思いましたか。\nApa yang ingin diubah tahun depan?",
+        "Choices": [
+          "もっと早く準備を始める",
+          "一人で全部する",
+          "ケーキを売らない",
+          "文化祭に参加しない"
+        ],
+        "Correct": 0,
+        "Explanation": "もっと早く準備を始めようと思いました menyatakan keinginan memulai persiapan lebih awal."
+      }
+    ]
+  }
+]

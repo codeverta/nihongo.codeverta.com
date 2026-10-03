@@ -36,4 +36,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/vocabulary/
+    - assets/images/reading/
     - assets/vectors/

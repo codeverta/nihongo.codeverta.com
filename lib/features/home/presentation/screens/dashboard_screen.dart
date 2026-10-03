@@ -91,7 +91,9 @@ class _DashboardContent extends StatelessWidget {
               ),
               const SizedBox(height: 14),
               _LearningMenuGrid(
-                categories: data.categories,
+                categories: data.categories
+                    .where((c) => c.id != 'listening' && c.id != 'speaking')
+                    .toList(growable: false),
                 onPressed: openLearn,
               ),
               if (jlptTracks.isNotEmpty) ...[
