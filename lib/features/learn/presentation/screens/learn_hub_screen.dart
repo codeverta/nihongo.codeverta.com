@@ -118,9 +118,11 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
                             ? () => context.push(
                                   '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
                                 )
-                            : index == 2 && _selectedLevel == 0
-                                ? () => context.push(AppRoutes.kanjiPath)
-                                : index == 3 && _selectedLevel <= 1
+                            : index == 2 && _selectedLevel <= 1
+                                ? () => context.push(
+                                      '${AppRoutes.kanjiPath}?level=${_levels[_selectedLevel]}',
+                                    )
+                                : index == 3 && _selectedLevel <= 3
                                     ? () => context.push(
                                           AppRoutes.readingCoursePath(
                                             _levels[_selectedLevel],

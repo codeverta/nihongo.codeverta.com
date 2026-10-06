@@ -90,6 +90,12 @@ func NewMemoryStore() *MemoryStore {
 		if result.categories[i].ID == "grammar" {
 			result.categories[i].LessonCount = len(result.grammar)
 		}
+		if result.categories[i].ID == "reading" {
+			result.categories[i].LessonCount = len(result.reading)
+		}
+		if result.categories[i].ID == "kanji" {
+			result.categories[i].LessonCount = len(result.kanji)
+		}
 		if result.categories[i].ID == "vocabulary" {
 			result.categories[i].LessonCount = 0
 			for _, level := range result.vocabulary {
@@ -305,8 +311,8 @@ func seedCategories() []domain.LearningCategory {
 	return []domain.LearningCategory{
 		{ID: "vocabulary", Name: "Vocabulary", Description: "Kosakata tematik dengan spaced repetition", LessonCount: 240, RequiredTier: domain.TierFree},
 		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5 dan N4: pola, contoh kalimat, dan kuis", LessonCount: 84, RequiredTier: domain.TierFree},
-		{ID: "kanji", Name: "Kanji", Description: "Kanji N5: bacaan, contoh kata, dan kuis", LessonCount: 20, RequiredTier: domain.TierFree},
-		{ID: "reading", Name: "Reading", Description: "Reading N5 dan N4: cerita bergambar, kosakata, dan kuis", LessonCount: 24, RequiredTier: domain.TierFree},
+		{ID: "kanji", Name: "Kanji", Description: "Kanji N5 dan N4: bacaan, contoh kata, dan kuis", LessonCount: 54, RequiredTier: domain.TierFree},
+		{ID: "reading", Name: "Reading", Description: "Reading N5, N4, N3, dan N2: cerita bergambar, kosakata, dan kuis", LessonCount: 48, RequiredTier: domain.TierFree},
 	}
 }
 

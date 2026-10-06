@@ -23,6 +23,7 @@ Dokumentasi lengkap:
 - [Grammar JLPT N5: kurikulum dan API](../docs/grammar-n5.md)
 - [Grammar JLPT N4: 44 lesson, 88 unit pola, dan 220 soal](../docs/grammar-n4.md)
 - [Kanji N5: 100 kanji, latihan tulis, dan kuis](../docs/kanji-n5.md)
+- [Kanji N4: 166 kanji, 34 lesson, dan progres per level](../docs/kanji-n4.md)
 - [Reading N5: 12 cerita dan 36 adegan bergambar](../docs/reading-n5.md)
 - [Reading N4: 12 cerita baru dan 36 adegan bergambar](../docs/reading-n4.md)
 - [JLPT N5 Diagnostic: 25 soal, timer, hasil dan pembahasan](../docs/jlpt-n5-diagnostic.md)
@@ -107,6 +108,8 @@ Lihat [panduan OAuth](../docs/authentication.md).
 ## Quality checks
 
 Materi Vocabulary N5 bergambar: [panduan konten dan UI](../docs/vocabulary-n5.md).
+
+Materi Reading N3 bergambar: [panduan lesson](../docs/reading-n3.md).
 
 ```powershell
 go fmt ./...

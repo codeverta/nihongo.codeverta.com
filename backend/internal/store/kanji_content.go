@@ -3,25 +3,38 @@ package store
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
+	"unicode"
 
 	"nihongo-master-backend/data/kanji"
 )
 
 func seedKanji() []kanjiLessonContent {
+	lessons := seedKanjiLevel("N5", kanji.N5, 20, 100)
+	return append(lessons, seedKanjiLevel("N4", kanji.N4, 34, 166)...)
+}
+
+func seedKanjiLevel(level string, content []byte, lessonCount, characterCount int) []kanjiLessonContent {
 	var lessons []kanjiLessonContent
-	if err := json.Unmarshal(kanji.N5, &lessons); err != nil {
+	if err := json.Unmarshal(content, &lessons); err != nil {
 		panic("invalid embedded kanji curriculum: " + err.Error())
 	}
 	seen := map[string]bool{}
 	for i, lesson := range lessons {
-		if lesson.ID != fmt.Sprintf("kanji-n5-%02d", i+1) || len(lesson.Characters) != 5 || len(lesson.Questions) != 10 {
+		lessons[i].Level = level
+		if lesson.ID != fmt.Sprintf("kanji-%s-%02d", strings.ToLower(level), i+1) || lesson.Title == "" || lesson.Chapter == "" || len(lesson.Characters) < 4 || len(lesson.Characters) > 5 || len(lesson.Questions) != 2*len(lesson.Characters) {
 			panic("invalid kanji lesson structure: " + lesson.ID)
 		}
 		for _, c := range lesson.Characters {
-			if seen[c.Character] || len([]rune(c.Character)) != 1 || c.Strokes < 1 || len(c.Examples) != 2 || c.Meaning == "" || c.OnReading == "" || c.KunReading == "" || c.Mnemonic == "" {
+			if seen[c.Character] || len([]rune(c.Character)) != 1 || !unicode.Is(unicode.Han, []rune(c.Character)[0]) || c.Strokes < 1 || len(c.Examples) != 2 || c.Meaning == "" || c.OnReading == "" || c.KunReading == "" || c.Mnemonic == "" || c.Note == "" {
 				panic("invalid kanji character: " + c.Character)
 			}
 			seen[c.Character] = true
+			for _, example := range c.Examples {
+				if !strings.Contains(example.Japanese, c.Character) || example.Reading == "" || example.Meaning == "" {
+					panic("invalid kanji example: " + c.Character)
+				}
+			}
 		}
 		for _, q := range lesson.Questions {
 			choices := map[string]bool{}
@@ -36,8 +49,8 @@ func seedKanji() []kanjiLessonContent {
 			}
 		}
 	}
-	if len(lessons) != 20 || len(seen) != 100 {
-		panic("incomplete kanji N5 curriculum")
+	if len(lessons) != lessonCount || len(seen) != characterCount {
+		panic("incomplete kanji " + level + " curriculum")
 	}
 	return lessons
 }

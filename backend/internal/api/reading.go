@@ -7,8 +7,8 @@ func (s *Server) readingCourse(w http.ResponseWriter, r *http.Request) {
 	if level == "" {
 		level = "N5"
 	}
-	if level != "N5" && level != "N4" {
-		writeError(w, http.StatusBadRequest, "invalid_level", "Reading tersedia untuk N5 dan N4.")
+	if level != "N5" && level != "N4" && level != "N3" && level != "N2" {
+		writeError(w, http.StatusBadRequest, "invalid_level", "Reading tersedia untuk N5, N4, N3, dan N2.")
 		return
 	}
 	writeData(w, http.StatusOK, s.store.ReadingCourse(userID(r), level))

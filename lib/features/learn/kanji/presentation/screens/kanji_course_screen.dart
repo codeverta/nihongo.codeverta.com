@@ -6,7 +6,8 @@ import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 
 class KanjiCourseScreen extends ConsumerStatefulWidget {
-  const KanjiCourseScreen({super.key});
+  const KanjiCourseScreen({this.level = 'N5', super.key});
+  final String level;
   @override
   ConsumerState<KanjiCourseScreen> createState() => _KanjiCourseScreenState();
 }
@@ -16,14 +17,15 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
   String chapter = 'Semua';
   Future<void> open(KanjiLessonSummary lesson) async {
     await context.push(AppRoutes.kanjiLessonPath(lesson.id));
-    if (mounted) ref.invalidate(kanjiCourseProvider);
+    if (mounted) ref.invalidate(kanjiCourseProvider(widget.level));
   }
 
   @override
   Widget build(BuildContext context) {
-    final course = ref.watch(kanjiCourseProvider);
+    final provider = kanjiCourseProvider(widget.level);
+    final course = ref.watch(provider);
     return Scaffold(
-      appBar: AppBar(title: const Text('Kanji JLPT N5')),
+      appBar: AppBar(title: Text('Kanji JLPT ${widget.level}')),
       body: course.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, s) => Center(
@@ -37,7 +39,7 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                 Text(e.toString(), textAlign: TextAlign.center),
                 const SizedBox(height: 16),
                 FilledButton(
-                  onPressed: () => ref.invalidate(kanjiCourseProvider),
+                  onPressed: () => ref.invalidate(provider),
                   child: const Text('Muat ulang'),
                 ),
               ],
@@ -61,7 +63,7 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
               .toList();
           final resume = data.lessons.where((l) => !l.completed).firstOrNull;
           return RefreshIndicator(
-            onRefresh: () => ref.refresh(kanjiCourseProvider.future),
+            onRefresh: () => ref.refresh(provider.future),
             child: ListView(
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
@@ -83,9 +85,11 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                         size: 36,
                       ),
                       const SizedBox(height: 14),
-                      const Text(
-                        'Kenali dan baca kanji dasar',
-                        style: TextStyle(
+                      Text(
+                        widget.level == 'N4'
+                            ? 'Perluas kemampuan kanji N4'
+                            : 'Kenali dan baca kanji dasar',
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
@@ -227,6 +231,29 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                   ),
                   const SizedBox(height: 10),
                 ],
+                if (widget.level == 'N4')
+                  const Card(
+                    child: ExpansionTile(
+                      key: Key('kanji-n4-sources'),
+                      title: Text('Tentang materi dan sumber'),
+                      childrenPadding: EdgeInsets.all(16),
+                      children: [
+                        SelectableText(
+                          '166 kanji dari daftar rujukan N4, termasuk 21 kanji pengulangan N5. '
+                          'Bacaan pada kartu merupakan pilihan bacaan umum. '
+                          'Petunjuk mengingat dibuat sebagai bantuan belajar.\n\n'
+                          'Jumlah goresan dan data bacaan menggunakan KANJIDIC oleh James William Breen dan EDRDG, '
+                          'melalui kanji-data oleh David Gouveia. '
+                          'Materi data N4 diadaptasi dengan arti, contoh, dan kuis Indonesia; CC BY-SA 4.0.\n'
+                          'Sumber: https://github.com/davidluzgouveia/kanji-data\n'
+                          'Lisensi kamus: https://www.edrdg.org/edrdg/licence.html\n'
+                          'CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/\n\n'
+                          'JLPT tidak menerbitkan daftar kanji resmi yang tertutup: '
+                          'https://www.jlpt.jp/e/faq/',
+                        ),
+                      ],
+                    ),
+                  ),
               ],
             ),
           );

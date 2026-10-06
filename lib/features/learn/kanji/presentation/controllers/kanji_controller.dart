@@ -10,11 +10,12 @@ import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 final kanjiRepositoryProvider = Provider<KanjiRepository>(
   (ref) => KanjiRepository(ref.watch(dioProvider)),
 );
-final kanjiCourseProvider = FutureProvider.autoDispose<KanjiCourse>((ref) {
+final kanjiCourseProvider =
+    FutureProvider.autoDispose.family<KanjiCourse, String>((ref, level) {
   ref
     ..watch(authControllerProvider.select((s) => s.status))
     ..watch(authControllerProvider.select((s) => s.user?.id));
-  return ref.watch(kanjiRepositoryProvider).getCourse();
+  return ref.watch(kanjiRepositoryProvider).getCourse(level: level);
 });
 
 enum KanjiStage { study, quiz, result }

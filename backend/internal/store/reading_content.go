@@ -10,7 +10,9 @@ import (
 
 func seedReading() []readingLessonContent {
 	lessons := seedReadingLevel("N5", reading.N5)
-	return append(lessons, seedReadingLevel("N4", reading.N4)...)
+	lessons = append(lessons, seedReadingLevel("N4", reading.N4)...)
+	lessons = append(lessons, seedReadingLevel("N3", reading.N3)...)
+	return append(lessons, seedReadingLevel("N2", reading.N2)...)
 }
 
 func seedReadingLevel(level string, content []byte) []readingLessonContent {

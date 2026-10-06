@@ -11,8 +11,12 @@ class KanjiException implements Exception {
 class KanjiRepository {
   const KanjiRepository(this._dio);
   final Dio _dio;
-  Future<KanjiCourse> getCourse() async =>
-      KanjiCourse.fromJson(await _request('/kanji/course'));
+  Future<KanjiCourse> getCourse({String level = 'N5'}) async =>
+      KanjiCourse.fromJson(
+        await _request(
+          '/kanji/course?level=${Uri.encodeQueryComponent(level)}',
+        ),
+      );
   Future<KanjiLesson> getLesson(String id) async => KanjiLesson.fromJson(
         await _request('/kanji/lessons/${Uri.encodeComponent(id)}'),
       );

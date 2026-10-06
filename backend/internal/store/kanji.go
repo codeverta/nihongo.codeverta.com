@@ -14,6 +14,7 @@ type kanjiQuestionContent struct {
 	Explanation string
 }
 type kanjiLessonContent struct {
+	Level              string
 	ID, Chapter, Title string
 	Characters         []domain.KanjiCharacter
 	Questions          []kanjiQuestionContent
@@ -27,11 +28,18 @@ type kanjiAttemptState struct {
 	Result       *domain.KanjiAttemptResult
 }
 
-func (s *MemoryStore) KanjiCourse(userID string) domain.KanjiCourse {
+func (s *MemoryStore) KanjiCourse(userID string, levels ...string) domain.KanjiCourse {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
-	course := domain.KanjiCourse{Level: "N5", Title: "Kanji JLPT N5", Lessons: make([]domain.KanjiLessonSummary, 0, len(s.kanji))}
+	level := "N5"
+	if len(levels) > 0 {
+		level = levels[0]
+	}
+	course := domain.KanjiCourse{Level: level, Title: "Kanji JLPT " + level, Lessons: make([]domain.KanjiLessonSummary, 0)}
 	for i := range s.kanji {
+		if s.kanji[i].Level != level {
+			continue
+		}
 		item := s.kanjiSummaryLocked(userID, i)
 		course.Lessons = append(course.Lessons, item)
 		if item.Completed {
@@ -45,8 +53,14 @@ func (s *MemoryStore) KanjiCourse(userID string) domain.KanjiCourse {
 }
 func (s *MemoryStore) kanjiSummaryLocked(userID string, index int) domain.KanjiLessonSummary {
 	lesson := s.kanji[index]
+	order := 0
+	for i := 0; i <= index; i++ {
+		if s.kanji[i].Level == lesson.Level {
+			order++
+		}
+	}
 	progress := s.progress[userID][lesson.ID]
-	return domain.KanjiLessonSummary{ID: lesson.ID, Order: index + 1, Chapter: lesson.Chapter, Title: lesson.Title, CharacterCount: len(lesson.Characters), QuestionCount: len(lesson.Questions), BestScore: progress.Completion, Completed: progress.Completed}
+	return domain.KanjiLessonSummary{ID: lesson.ID, Order: order, Chapter: lesson.Chapter, Title: lesson.Title, CharacterCount: len(lesson.Characters), QuestionCount: len(lesson.Questions), BestScore: progress.Completion, Completed: progress.Completed}
 }
 func (s *MemoryStore) KanjiLesson(userID, lessonID string) (domain.KanjiLesson, error) {
 	s.mu.RLock()
@@ -151,13 +165,24 @@ func (s *MemoryStore) CompleteKanjiAttempt(userID, attemptID string) (domain.Kan
 		profile.Level = 1 + profile.XP/500
 		s.profiles[userID] = profile
 	}
-	completed := 0
+	level := ""
 	for _, l := range s.kanji {
+		if l.ID == state.Attempt.LessonID {
+			level = l.Level
+			break
+		}
+	}
+	completed, total := 0, 0
+	for _, l := range s.kanji {
+		if l.Level != level {
+			continue
+		}
+		total++
 		if s.progress[userID][l.ID].Completed {
 			completed++
 		}
 	}
-	result := domain.KanjiAttemptResult{AttemptID: attemptID, LessonID: state.Attempt.LessonID, Score: score, Correct: correct, Total: len(state.Answers), Passed: passed, BestScore: best, Progress: completed * 100 / len(s.kanji), CanRetry: true}
+	result := domain.KanjiAttemptResult{AttemptID: attemptID, LessonID: state.Attempt.LessonID, Score: score, Correct: correct, Total: len(state.Answers), Passed: passed, BestScore: best, Progress: completed * 100 / total, CanRetry: true}
 	state.Result = &result
 	return result, nil
 }

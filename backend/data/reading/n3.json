@@ -1,0 +1,1610 @@
+[
+  {
+    "ID": "reading-n3-01",
+    "Title": "Layanan baru perpustakaan",
+    "JapaneseTitle": "図書館の新しいサービス",
+    "Chapter": "Layanan dan masyarakat",
+    "Description": "Hana menyadari layanan digital belum membantu semua pengunjung. Latih ～わけではない, ～にとって, dan membaca maksud penulis.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "Usulan yang tampak praktis",
+        "japanese": "町の図書館では、来月からスマートフォンで本を予約できるようになる。はなは、利用者が本を探す時間を減らせると思い、このサービスに賛成した。説明会には多くの人が集まったが、参加した人の中にはスマートフォンを持っていない人もいた。便利なサービスなら、誰にとっても便利なはずだと考えていたはなは、少し驚いた。",
+        "reading": "まちの としょかんでは、らいげつから スマートフォンで ほんを よやくできるように なる。はなは、りようしゃが ほんを さがす じかんを へらせると おもい、この サービスに さんせいした。せつめいかいには おおくの ひとが あつまったが、さんかした ひとの なかには スマートフォンを もっていない ひとも いた。べんりな サービスなら、だれにとっても べんりなはずだと かんがえていた はなは、すこし おどろいた。",
+        "meaning": "Di perpustakaan kota, mulai bulan depan buku dapat dipesan lewat ponsel. Hana mendukung layanan ini karena menurutnya waktu pengguna untuk mencari buku akan berkurang. Banyak orang menghadiri penjelasan layanan, tetapi beberapa peserta tidak memiliki ponsel. Hana sedikit terkejut karena sebelumnya menganggap layanan yang praktis pasti praktis bagi semua orang.",
+        "vocabulary": [
+          {
+            "japanese": "利用者",
+            "reading": "りようしゃ",
+            "meaning": "pengguna layanan"
+          },
+          {
+            "japanese": "賛成",
+            "reading": "さんせい",
+            "meaning": "setuju; mendukung"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana berdiskusi dengan petugas perpustakaan dan pengunjung lansia yang melihat ponsel."
+      },
+      {
+        "title": "Suara seorang pengunjung",
+        "japanese": "帰りに、はなはいつも図書館に来るおじいさんと話した。おじいさんは、新しいサービスに反対しているわけではないと言った。ただ、操作の方法が分からないため、今までどおり窓口で頼めるか心配していたのだ。はなは、予約の方法を増やすことと、今の方法をなくすことは別だと気づいた。",
+        "reading": "かえりに、はなは いつも としょかんに くる おじいさんと はなした。おじいさんは、あたらしい サービスに はんたいしているわけではないと いった。ただ、そうさの ほうほうが わからないため、いままでどおり まどぐちで たのめるか しんぱいしていたのだ。はなは、よやくの ほうほうを ふやすことと、いまの ほうほうを なくすことは べつだと きづいた。",
+        "meaning": "Dalam perjalanan pulang, Hana berbicara dengan seorang kakek yang rutin datang ke perpustakaan. Kakek itu menjelaskan bahwa ia bukannya menolak layanan baru. Ia hanya khawatir apakah masih bisa memesan di meja layanan seperti biasa karena tidak tahu cara mengoperasikan ponsel. Hana menyadari menambah cara pemesanan berbeda dengan menghapus cara yang sudah ada.",
+        "vocabulary": [
+          {
+            "japanese": "操作",
+            "reading": "そうさ",
+            "meaning": "pengoperasian"
+          },
+          {
+            "japanese": "窓口",
+            "reading": "まどぐち",
+            "meaning": "loket; meja layanan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana mendengarkan pengunjung lansia di meja layanan saat petugas menunjukkan formulir kertas."
+      },
+      {
+        "title": "Pilihan yang tetap tersedia",
+        "japanese": "次の日、はなは職員にこの話を伝えた。職員によると、窓口での予約はこれからも続ける予定だという。しかし、そのことが説明の紙に書かれていなかった。はなは、スマートフォンを使わない人にも分かる案内を作ることを提案した。新しいサービスを始めるだけでなく、安心して選べるように説明することも大切なのだ。",
+        "reading": "つぎの ひ、はなは しょくいんに この はなしを つたえた。しょくいんに よると、まどぐちでの よやくは これからも つづける よていだという。しかし、そのことが せつめいの かみに かかれていなかった。はなは、スマートフォンを つかわない ひとにも わかる あんないを つくることを ていあんした。あたらしい サービスを はじめるだけでなく、あんしんして えらべるように せつめいすることも たいせつなのだ。",
+        "meaning": "Keesokan harinya Hana menceritakan hal itu kepada petugas. Menurut petugas, pemesanan di loket akan tetap tersedia. Namun, informasi tersebut belum tercantum di lembar penjelasan. Hana mengusulkan panduan yang bisa dipahami orang yang tidak menggunakan ponsel. Selain membuka layanan baru, menjelaskan agar pengguna dapat memilih dengan tenang juga penting.",
+        "vocabulary": [
+          {
+            "japanese": "提案",
+            "reading": "ていあん",
+            "meaning": "usulan"
+          },
+          {
+            "japanese": "安心",
+            "reading": "あんしん",
+            "meaning": "rasa tenang; tidak khawatir"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Kakek menerima buku dengan senyum di dekat rak brosur kertas, Hana berdiri di sampingnya."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなが最初に新しいサービスに賛成した理由は何ですか。",
+        "Choices": [
+          "本を探す時間を減らせると思ったから。",
+          "図書館の職員になりたかったから。",
+          "窓口を閉めてほしかったから。",
+          "おじいさんが勧めたから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1: Hana mendukung layanan karena dapat mengurangi waktu pengguna mencari buku."
+      },
+      {
+        "Prompt": "おじいさんが心配していたことは何ですか。",
+        "Choices": [
+          "今までの方法で予約できるかどうか。",
+          "図書館の本が全部なくなること。",
+          "スマートフォンの値段が上がること。",
+          "説明会に人が集まらないこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 menyebut kekhawatiran apakah pemesanan di loket masih bisa dilakukan, bukan penolakan terhadap layanan digital."
+      },
+      {
+        "Prompt": "「反対しているわけではない」は、ここではどんな意味ですか。",
+        "Choices": [
+          "新しいサービス自体を否定しているのではない。",
+          "新しいサービスを必ず使いたい。",
+          "説明を全く聞かなかった。",
+          "図書館にもう来たくない。"
+        ],
+        "Correct": 0,
+        "Explanation": "～わけではない menyangkal kesimpulan umum. Kakek tidak menolak layanan itu sendiri, tetapi khawatir tentang pilihannya."
+      },
+      {
+        "Prompt": "はなが職員に提案したことは何ですか。",
+        "Choices": [
+          "従来の方法も使えると分かる案内を作ること。",
+          "すべての予約をスマートフォンだけにすること。",
+          "説明会を中止すること。",
+          "利用者にスマートフォンを配ること。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3: loket tetap tersedia, tetapi informasi itu tidak tertulis. Usulan Hana adalah memperjelas panduan."
+      },
+      {
+        "Prompt": "この文章で最も伝えたいことは何ですか。",
+        "Choices": [
+          "利用者が安心して方法を選べる説明も必要だ。",
+          "新しいサービスはいつも不便だ。",
+          "図書館には若い人だけが来るべきだ。",
+          "紙の案内はすべてなくしたほうがよい。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat terakhir menekankan bukan hanya membuat layanan baru, tetapi menjelaskan pilihan bagi berbagai pengguna."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-02",
+    "Title": "Pasar yang tetap ramai saat hujan",
+    "JapaneseTitle": "雨の日の商店街",
+    "Chapter": "Layanan dan masyarakat",
+    "Description": "Rencana pasar berubah karena hujan. Latih ～ことになっている, ～おかげで, dan hubungan alasan dengan keputusan.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-02.png",
+    "Pages": [
+      {
+        "title": "Rencana hari Sabtu",
+        "japanese": "商店街では、今週の土曜日に小さな市場を開くことになっている。はなとゆいは、店の人たちと一緒に準備を進めていた。最初の計画では、道の両側に机を並べ、手作りの物を売る予定だった。ところが、天気予報によると、その日は一日中雨が降るらしい。店の人たちからは、中止したほうがいいのではないかという意見も出た。",
+        "reading": "しょうてんがいでは、こんしゅうの どようびに ちいさな いちばを ひらくことに なっている。はなと ゆいは、みせの ひとたちと いっしょに じゅんびを すすめていた。さいしょの けいかくでは、みちの りょうがわに つくえを ならべ、てづくりの ものを うる よていだった。ところが、てんきよほうに よると、その ひは いちにちじゅう あめが ふるらしい。みせの ひとたちからは、ちゅうししたほうが いいのではないかという いけんも でた。",
+        "meaning": "Kawasan pertokoan dijadwalkan mengadakan pasar kecil hari Sabtu ini. Hana dan Yui menyiapkannya bersama para pemilik toko. Awalnya meja akan disusun di kedua sisi jalan untuk menjual barang buatan tangan. Namun, prakiraan menyebut hujan sepanjang hari itu. Sebagian pemilik toko pun berpendapat acara sebaiknya dibatalkan.",
+        "vocabulary": [
+          {
+            "japanese": "商店街",
+            "reading": "しょうてんがい",
+            "meaning": "kawasan pertokoan"
+          },
+          {
+            "japanese": "中止",
+            "reading": "ちゅうし",
+            "meaning": "pembatalan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-02.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana dan Yui merencanakan pasar bersama pemilik toko di meja dengan hiasan acara."
+      },
+      {
+        "title": "Mengubah tempat, menjaga tujuan",
+        "japanese": "ゆいは、雨が降るからといって、必ず中止する必要はないと言った。商店街には長い屋根があり、その下なら商品がぬれにくい。机の数は減るが、店の入り口をふさがないように並べれば、市場を開けそうだ。はなは、商品を売ることだけが目的ではなく、住民と店の人が話す機会を作ることも大切だと説明した。",
+        "reading": "ゆいは、あめが ふるからといって、かならず ちゅうしする ひつようは ないと いった。しょうてんがいには ながい やねが あり、その したなら しょうひんが ぬれにくい。つくえの かずは へるが、みせの いりぐちを ふさがないように ならべれば、いちばを ひらけそうだ。はなは、しょうひんを うることだけが もくてきではなく、じゅうみんと みせの ひとが はなす きかいを つくることも たいせつだと せつめいした。",
+        "meaning": "Yui berkata hujan tidak berarti acara harus dibatalkan. Pertokoan memiliki atap panjang, sehingga barang di bawahnya lebih sulit basah. Jumlah meja akan berkurang, tetapi pasar tampaknya bisa diadakan jika meja disusun tanpa menutup pintu toko. Hana menjelaskan tujuannya bukan hanya menjual barang, melainkan juga membuka kesempatan berbicara antara warga dan pemilik toko.",
+        "vocabulary": [
+          {
+            "japanese": "住民",
+            "reading": "じゅうみん",
+            "meaning": "warga"
+          },
+          {
+            "japanese": "目的",
+            "reading": "もくてき",
+            "meaning": "tujuan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-02.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Pasar dipindahkan ke lorong beratap, Hana membantu menata meja saat jalan di luar basah."
+      },
+      {
+        "title": "Hasil yang berbeda dari perkiraan",
+        "japanese": "当日は予報どおり雨だったが、市場には思ったより多くの人が来た。屋根の下に集まったおかげで、普段は別々の店に行く人たちも自然に話し始めた。売れた商品の数は去年より少なかったものの、店の人たちは満足していた。はなは、成功したかどうかを売上だけで決めるべきではないと感じた。",
+        "reading": "とうじつは よほうどおり あめだったが、いちばには おもったより おおくの ひとが きた。やねの したに あつまったおかげで、ふだんは べつべつの みせに いく ひとたちも しぜんに はなしはじめた。うれた しょうひんの かずは きょねんより すくなかったものの、みせの ひとたちは まんぞくしていた。はなは、せいこうしたかどうかを うりあげだけで きめるべきではないと かんじた。",
+        "meaning": "Hari itu hujan sesuai prakiraan, tetapi pasar didatangi lebih banyak orang dari dugaan. Karena berkumpul di bawah atap, orang yang biasanya pergi ke toko masing-masing mulai berbicara secara alami. Walaupun jumlah barang terjual lebih sedikit daripada tahun lalu, pemilik toko merasa puas. Hana merasa keberhasilan tidak seharusnya ditentukan hanya dari penjualan.",
+        "vocabulary": [
+          {
+            "japanese": "売上",
+            "reading": "うりあげ",
+            "meaning": "penjualan; omzet"
+          },
+          {
+            "japanese": "満足",
+            "reading": "まんぞく",
+            "meaning": "kepuasan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-02.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Warga berbagai usia menikmati pasar kerajinan dan saling mengobrol di lorong beratap."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "中止しようという意見が出たのはなぜですか。",
+        "Choices": [
+          "土曜日は一日中雨だと予報されたから。",
+          "商品がすべて売れてしまったから。",
+          "商店街の屋根がなくなったから。",
+          "住民が参加を断ったから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1: ramalan hujan sepanjang Sabtu memunculkan usulan pembatalan."
+      },
+      {
+        "Prompt": "新しい計画では、机をどう並べますか。",
+        "Choices": [
+          "屋根の下で、店の入り口をふさがないように並べる。",
+          "屋根のない道の中央だけに並べる。",
+          "すべての店の入り口をふさいで並べる。",
+          "去年より必ず多く並べる。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 menentukan dua batasan: di bawah atap dan tidak menghalangi pintu toko."
+      },
+      {
+        "Prompt": "はなが市場の目的として挙げたことは何ですか。",
+        "Choices": [
+          "住民と店の人が話す機会を作ること。",
+          "すべての店を一つにすること。",
+          "雨の日の買い物を禁止すること。",
+          "去年の机を全部売ること。"
+        ],
+        "Correct": 0,
+        "Explanation": "Tujuan sosial disebut eksplisit pada akhir halaman 2."
+      },
+      {
+        "Prompt": "商品が去年より少なく売れたのに、店の人たちが満足した理由として最も適切なのはどれですか。",
+        "Choices": [
+          "市場で人々の交流が生まれたから。",
+          "予定より多くの机を買ったから。",
+          "雨が途中で止んだから。",
+          "商品を売るのをやめたから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 menghubungkan berkumpul di bawah atap dengan percakapan alami. Kepuasan berasal dari interaksi, meskipun penjualan lebih sedikit."
+      },
+      {
+        "Prompt": "文章の内容に合うものはどれですか。",
+        "Choices": [
+          "成功を判断するには、売上以外も考える必要がある。",
+          "雨ならどんな行事も中止しなければならない。",
+          "去年より多く売れなければ、意味がない。",
+          "市場では人と話す時間を減らすべきだ。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan Hana adalah tidak menilai keberhasilan hanya dari penjualan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-03",
+    "Title": "Usulan yang berubah di rapat",
+    "JapaneseTitle": "会議で変わった提案",
+    "Chapter": "Pekerjaan dan keputusan",
+    "Description": "Hana mengubah usulan setelah mendengar batasan tim. Latih ～に対して, ～わけではない, dan penentuan prioritas.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-03.png",
+    "Pages": [
+      {
+        "title": "Usulan pertama",
+        "japanese": "会社の新しいサービスを紹介するために、はなは大きなイベントを開こうと考えた。たくさんの人を集めれば、サービスを知ってもらえるに違いないと思ったからだ。会議で計画を説明したところ、部長はすぐに賛成しなかった。準備に使える時間も費用も限られており、今の計画のままでは難しいと言った。",
+        "reading": "かいしゃの あたらしい サービスを しょうかいするために、はなは おおきな イベントを ひらこうと かんがえた。たくさんの ひとを あつめれば、サービスを しってもらえるに ちがいないと おもったからだ。かいぎで けいかくを せつめいしたところ、ぶちょうは すぐに さんせいしなかった。じゅんびに つかえる じかんも ひようも かぎられており、いまの けいかくのままでは むずかしいと いった。",
+        "meaning": "Untuk memperkenalkan layanan baru perusahaan, Hana ingin mengadakan acara besar. Ia yakin banyak pengunjung akan membuat layanan itu dikenal. Setelah menjelaskan rencana di rapat, kepala bagian tidak langsung setuju. Waktu dan biaya persiapan terbatas sehingga rencana itu sulit dilaksanakan tanpa perubahan.",
+        "vocabulary": [
+          {
+            "japanese": "費用",
+            "reading": "ひよう",
+            "meaning": "biaya"
+          },
+          {
+            "japanese": "限られる",
+            "reading": "かぎられる",
+            "meaning": "terbatas"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-03.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana mempresentasikan rancangan acara kepada Yui dan kepala bagian dalam rapat kantor kecil."
+      },
+      {
+        "title": "Mendengar maksud keberatan",
+        "japanese": "はなは、自分の考えを否定されたように感じた。しかし、ゆいに相談すると、部長は紹介すること自体に反対しているわけではないと言われた。大切なのは人数よりも、必要としている人に内容を伝えることではないか。はなはその意見に対して、初めは迷ったが、もう一度目的から考え直すことにした。",
+        "reading": "はなは、じぶんの かんがえを ひていされたように かんじた。しかし、ゆいに そうだんすると、ぶちょうは しょうかいすること じたいに はんたいしているわけではないと いわれた。たいせつなのは にんずうよりも、ひつようとしている ひとに ないようを つたえることではないか。はなは その いけんに たいして、はじめは まよったが、もういちど もくてきから かんがえなおすことに した。",
+        "meaning": "Hana merasa gagasannya ditolak. Namun, ketika berkonsultasi dengan Yui, ia diberi tahu bahwa kepala bagian bukannya menolak pengenalan layanan itu sendiri. Bukankah yang penting justru menyampaikan isi layanan kepada orang yang membutuhkan, bukan jumlah pengunjung? Hana awalnya ragu terhadap pendapat itu, lalu memutuskan memikirkan ulang tujuannya.",
+        "vocabulary": [
+          {
+            "japanese": "否定",
+            "reading": "ひてい",
+            "meaning": "penyangkalan; penolakan"
+          },
+          {
+            "japanese": "考え直す",
+            "reading": "かんがえなおす",
+            "meaning": "mempertimbangkan ulang"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-03.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana dan Yui memperbaiki rancangan di laptop sementara kepala bagian meninjau dokumen."
+      },
+      {
+        "title": "Rencana yang lebih sesuai",
+        "japanese": "二人は、近くの会場で短い説明会を開く計画に変えた。参加者は少なかったが、一人ずつ質問を聞く時間を十分に取れた。説明を聞いた人からは、使い方がよく分かったという感想が届いた。はなは、計画を小さくすることは、目標をあきらめることとは限らないと学んだ。むしろ、条件に合わせて方法を変えることが、目標に近づく場合もある。",
+        "reading": "ふたりは、ちかくの かいじょうで みじかい せつめいかいを ひらく けいかくに かえた。さんかしゃは すくなかったが、ひとりずつ しつもんを きく じかんを じゅうぶんに とれた。せつめいを きいた ひとからは、つかいかたが よく わかったという かんそうが とどいた。はなは、けいかくを ちいさくすることは、もくひょうを あきらめることとは かぎらないと まなんだ。むしろ、じょうけんに あわせて ほうほうを かえることが、もくひょうに ちかづく ばあいも ある。",
+        "meaning": "Mereka mengubah rencana menjadi sesi penjelasan singkat di aula terdekat. Pesertanya sedikit, tetapi cukup waktu tersedia untuk mendengarkan pertanyaan satu per satu. Peserta mengirim tanggapan bahwa mereka memahami cara menggunakan layanan. Hana belajar bahwa memperkecil rencana tidak selalu berarti menyerah pada tujuan. Mengubah cara sesuai kondisi justru terkadang mendekatkan kita pada tujuan.",
+        "vocabulary": [
+          {
+            "japanese": "条件",
+            "reading": "じょうけん",
+            "meaning": "kondisi; persyaratan"
+          },
+          {
+            "japanese": "目標",
+            "reading": "もくひょう",
+            "meaning": "sasaran; tujuan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-03.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana melayani pertanyaan pengunjung di sesi penjelasan kecil, tim kantor tersenyum di belakang."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "部長が最初の計画にすぐ賛成しなかった理由は何ですか。",
+        "Choices": [
+          "時間と費用に制限があったから。",
+          "新しいサービスをやめたかったから。",
+          "はなが会議に遅れたから。",
+          "参加者がすでに多すぎたから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1 menyebut keterbatasan waktu dan biaya, bukan penolakan terhadap layanan."
+      },
+      {
+        "Prompt": "ゆいは、何を重視すべきだと考えましたか。",
+        "Choices": [
+          "必要としている人に内容を伝えること。",
+          "会場をできるだけ遠くにすること。",
+          "参加者の数だけを増やすこと。",
+          "部長に何も相談しないこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 membandingkan jumlah peserta dengan menyampaikan informasi kepada orang yang membutuhkan."
+      },
+      {
+        "Prompt": "はなはゆいの意見を聞いた後、どうしましたか。",
+        "Choices": [
+          "目的をもう一度考えて計画を変えた。",
+          "会社をすぐに辞めた。",
+          "最初の計画をそのまま実行した。",
+          "説明会を完全に取りやめた。"
+        ],
+        "Correct": 0,
+        "Explanation": "Ia memikirkan ulang tujuan, lalu mengubah skala acara, tidak membatalkannya sepenuhnya."
+      },
+      {
+        "Prompt": "小さな説明会のよかった点は何ですか。",
+        "Choices": [
+          "一人ずつの質問に時間を使えたこと。",
+          "費用を無制限に使えたこと。",
+          "参加者が質問できなかったこと。",
+          "サービスの説明をしなくてよかったこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3: jumlah peserta sedikit memungkinkan waktu untuk pertanyaan individu."
+      },
+      {
+        "Prompt": "「目標をあきらめることとは限らない」の意味に近いものはどれですか。",
+        "Choices": [
+          "計画を小さくしても、目的に近づける場合がある。",
+          "小さな計画には目標がない。",
+          "どんな計画でも必ず成功する。",
+          "最初の方法を変えるべきではない。"
+        ],
+        "Correct": 0,
+        "Explanation": "～とは限らない menolak kesimpulan mutlak. Cerita menunjukkan rencana lebih kecil masih dapat mencapai tujuan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-04",
+    "Title": "Makan siang tanpa banyak sisa",
+    "JapaneseTitle": "お弁当の無駄を減らすには",
+    "Chapter": "Pilihan dan kebiasaan",
+    "Description": "Sistem pesanan mengurangi sisa, tetapi tetap perlu memberi pilihan. Latih ～によって, ～一方で, dan menafsirkan data.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-04.png",
+    "Pages": [
+      {
+        "title": "Kotak yang tidak terjual",
+        "japanese": "大学の食堂では、毎日同じ数のお弁当を作っていた。しかし、授業の時間や天気によって、買いに来る学生の数は変わる。雨の日には多く売れることもあれば、試験のない日には残ることもあった。手伝いに来ていたはなは、昼休みが終わった後、売れなかったお弁当を見るたびに、何かできないかと考えていた。",
+        "reading": "だいがくの しょくどうでは、まいにち おなじ かずの おべんとうを つくっていた。しかし、じゅぎょうの じかんや てんきに よって、かいに くる がくせいの かずは かわる。あめの ひには おおく うれることも あれば、しけんの ない ひには のこることも あった。てつだいに きていた はなは、ひるやすみが おわった あと、うれなかった おべんとうを みるたびに、なにか できないかと かんがえていた。",
+        "meaning": "Kantin kampus membuat jumlah bento yang sama setiap hari. Namun, jumlah mahasiswa yang membeli berubah sesuai jadwal kuliah dan cuaca. Ada hari hujan ketika penjualan banyak, dan ada hari tanpa ujian ketika bento tersisa. Hana, yang membantu di sana, selalu bertanya-tanya apa yang bisa dilakukan saat melihat bento tidak terjual setelah jam makan siang.",
+        "vocabulary": [
+          {
+            "japanese": "食堂",
+            "reading": "しょくどう",
+            "meaning": "kantin"
+          },
+          {
+            "japanese": "残る",
+            "reading": "のこる",
+            "meaning": "tersisa"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-04.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana melihat kotak bento yang belum terjual di meja kantin setelah jam makan siang."
+      },
+      {
+        "title": "Percobaan sistem pesanan",
+        "japanese": "はなは、前の日までに希望する数を知らせてもらう方法を提案した。予約があれば、作る数を決めやすくなる。一方で、予定が急に変わる学生もいるため、予約していない人の分を全く作らないのは困る。食堂の人たちは、予約の数に少し足して作り、一週間試してみることにした。",
+        "reading": "はなは、まえの ひまでに きぼうする かずを しらせてもらう ほうほうを ていあんした。よやくが あれば、つくる かずを きめやすく なる。いっぽうで、よていが きゅうに かわる がくせいも いるため、よやくしていない ひとの ぶんを まったく つくらないのは こまる。しょくどうの ひとたちは、よやくの かずに すこし たして つくり、いっしゅうかん ためしてみることに した。",
+        "meaning": "Hana mengusulkan agar jumlah pesanan diberitahukan paling lambat sehari sebelumnya. Dengan reservasi, jumlah produksi lebih mudah ditentukan. Di sisi lain, jadwal mahasiswa bisa mendadak berubah, jadi tidak membuat bento sama sekali untuk orang tanpa pesanan akan menjadi masalah. Petugas kantin memutuskan membuat sedikit lebih banyak dari jumlah reservasi dan mencobanya selama seminggu.",
+        "vocabulary": [
+          {
+            "japanese": "希望",
+            "reading": "きぼう",
+            "meaning": "keinginan; harapan"
+          },
+          {
+            "japanese": "試す",
+            "reading": "ためす",
+            "meaning": "mencoba; menguji"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-04.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana dan petugas kantin membahas kartu pesanan di dekat bento dan laptop."
+      },
+      {
+        "title": "Angka dan pengalaman pembeli",
+        "japanese": "一週間後、残るお弁当は以前より減った。予約していない学生も、早めに来れば買うことができた。ただ、買いたいのに売り切れていた日もあったという。食堂では、無駄を減らすだけでなく、必要な人が買えることも大切だと考え、作る数を少しずつ調整することにした。はなは、一度うまくいった方法でも、続けて確かめる必要があると感じた。",
+        "reading": "いっしゅうかんご、のこる おべんとうは いぜんより へった。よやくしていない がくせいも、はやめに くれば かうことが できた。ただ、かいたいのに うりきれていた ひも あったという。しょくどうでは、むだを へらすだけでなく、ひつような ひとが かえることも たいせつだと かんがえ、つくる かずを すこしずつ ちょうせいすることに した。はなは、いちど うまくいった ほうほうでも、つづけて たしかめる ひつようが あると かんじた。",
+        "meaning": "Setelah seminggu, bento tersisa berkurang. Mahasiswa tanpa pesanan juga bisa membeli jika datang lebih awal. Namun, ada hari ketika bento habis meskipun masih ada yang ingin membeli. Kantin memutuskan menyesuaikan produksi sedikit demi sedikit karena mengurangi sisa dan menyediakan makanan bagi yang membutuhkan sama-sama penting. Hana merasa metode yang pernah berhasil pun masih perlu dipantau.",
+        "vocabulary": [
+          {
+            "japanese": "調整",
+            "reading": "ちょうせい",
+            "meaning": "penyesuaian"
+          },
+          {
+            "japanese": "売り切れる",
+            "reading": "うりきれる",
+            "meaning": "habis terjual"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-04.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Mahasiswa mengambil bento pesanan, baki pajangan hampir kosong dan Hana mengamati."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "お弁当が残る理由として、本文に書かれていることはどれですか。",
+        "Choices": [
+          "買う学生の数が日によって変わること。",
+          "毎日お弁当の味が悪くなること。",
+          "学生が全員食堂を使わないこと。",
+          "作る数が毎日増え続けること。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1: jumlah yang dibuat tetap, tetapi jumlah pembeli berubah menurut cuaca dan jadwal."
+      },
+      {
+        "Prompt": "新しい方法では、予約した数と同じ数だけ作りますか。",
+        "Choices": [
+          "いいえ、予約の数より少し多く作ります。",
+          "はい、必ず同じ数だけ作ります。",
+          "いいえ、予約した数より半分少なく作ります。",
+          "はい、予約していない人は利用を禁止されます。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2: 予約の数に少し足して作る berarti menambah sedikit dari jumlah reservasi."
+      },
+      {
+        "Prompt": "「一方で」の後では、何を説明していますか。",
+        "Choices": [
+          "予約だけに頼る場合の問題点。",
+          "新しい食堂の場所。",
+          "試験の詳しい内容。",
+          "予約が成功した後の売上。"
+        ],
+        "Correct": 0,
+        "Explanation": "Konektor ini memperkenalkan sisi lain: mahasiswa dengan rencana berubah perlu pilihan tanpa reservasi."
+      },
+      {
+        "Prompt": "一週間後も調整が必要だったのはなぜですか。",
+        "Choices": [
+          "売り切れて買えない学生がいたから。",
+          "残るお弁当が増え続けたから。",
+          "予約をする学生が一人もいなかったから。",
+          "食堂が閉まったから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3: sisa memang berkurang, tetapi ada pembeli yang tidak kebagian."
+      },
+      {
+        "Prompt": "この話から分かるはなの考えはどれですか。",
+        "Choices": [
+          "効果と問題を見ながら方法を改善すべきだ。",
+          "一度成功したら確認は不要だ。",
+          "予約のない学生の希望は考えなくてよい。",
+          "残りを減らすには弁当を作らないのが一番だ。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat terakhir menekankan perlunya pemeriksaan berkelanjutan bahkan setelah suatu metode berhasil."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-05",
+    "Title": "Surat dari nenek",
+    "JapaneseTitle": "祖母からの手紙",
+    "Chapter": "Hubungan dan komunikasi",
+    "Description": "Sebuah surat membuat Hana memikirkan cara menjaga hubungan. Latih ～たびに, ～というより, dan perubahan perasaan.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-05.png",
+    "Pages": [
+      {
+        "title": "Surat di meja",
+        "japanese": "はなは毎週、祖母に短いメッセージを送っている。忙しい日でも、スマートフォンならすぐに連絡できるからだ。ある朝、祖母から手紙が届いた。封筒を開けると、庭の花や近所の人について、ゆっくり書かれた文章が入っていた。祖母は、返事は急がなくていいので、時間がある時に読んでほしいと書いていた。",
+        "reading": "はなは まいしゅう、そぼに みじかい メッセージを おくっている。いそがしい ひでも、スマートフォンなら すぐに れんらくできるからだ。ある あさ、そぼから てがみが とどいた。ふうとうを あけると、にわの はなや きんじょの ひとについて、ゆっくり かかれた ぶんしょうが はいっていた。そぼは、へんじは いそがなくて いいので、じかんが ある ときに よんでほしいと かいていた。",
+        "meaning": "Hana mengirim pesan singkat kepada nenek setiap minggu karena ponsel memudahkan kontak bahkan saat sibuk. Suatu pagi sebuah surat datang. Isinya tulisan yang dibuat perlahan tentang bunga di kebun dan para tetangga. Nenek menulis bahwa balasan tidak perlu segera, dan Hana boleh membaca saat punya waktu.",
+        "vocabulary": [
+          {
+            "japanese": "祖母",
+            "reading": "そぼ",
+            "meaning": "nenek sendiri"
+          },
+          {
+            "japanese": "封筒",
+            "reading": "ふうとう",
+            "meaning": "amplop"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-05.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana membaca surat di meja apartemen, ponsel terletak di sampingnya."
+      },
+      {
+        "title": "Hal yang tidak tampak di layar",
+        "japanese": "週末にはなは祖母を訪ねた。祖母は、手紙を書くたびに、はながどんな顔で読むだろうかと想像するそうだ。はなは、いつものメッセージでは予定や体調を確かめることが多く、細かい出来事はあまり話していなかったと気づいた。手紙が特別なのは、古い方法だからというより、相手のために時間を使っていることが伝わるからかもしれない。",
+        "reading": "しゅうまつに はなは そぼを たずねた。そぼは、てがみを かくたびに、はなが どんな かおで よむだろうかと そうぞうするそうだ。はなは、いつもの メッセージでは よていや たいちょうを たしかめることが おおく、こまかい できごとは あまり はなしていなかったと きづいた。てがみが とくべつなのは、ふるい ほうほうだからというより、あいてのために じかんを つかっていることが つたわるからかも しれない。",
+        "meaning": "Akhir pekan itu Hana mengunjungi nenek. Nenek berkata setiap menulis surat ia membayangkan wajah Hana saat membaca. Hana sadar pesan biasanya hanya memastikan jadwal dan kesehatan, bukan menceritakan kejadian kecil. Surat mungkin terasa istimewa bukan karena caranya lama, melainkan karena waktu yang diberikan untuk penerima terasa di dalamnya.",
+        "vocabulary": [
+          {
+            "japanese": "想像",
+            "reading": "そうぞう",
+            "meaning": "membayangkan"
+          },
+          {
+            "japanese": "出来事",
+            "reading": "できごと",
+            "meaning": "kejadian"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-05.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana minum teh bersama nenek di beranda rumah desa sambil melihat album foto."
+      },
+      {
+        "title": "Menyediakan waktu untuk cerita",
+        "japanese": "家に帰ってから、はなは初めて祖母に長い手紙を書いた。近所で起きたことや、最近うれしかったことを、思い出しながら書いた。スマートフォンを使うのをやめるつもりはない。急ぎの連絡には便利だからだ。しかし、時々は手紙でも話したい。大切なのは道具を一つに決めることではなく、相手を思って使い分けることだと感じた。",
+        "reading": "いえに かえってから、はなは はじめて そぼに ながい てがみを かいた。きんじょで おきたことや、さいきん うれしかったことを、おもいだしながら かいた。スマートフォンを つかうのを やめるつもりは ない。いそぎの れんらくには べんりだからだ。しかし、ときどきは てがみでも はなしたい。たいせつなのは どうぐを ひとつに きめることではなく、あいてを おもって つかいわけることだと かんじた。",
+        "meaning": "Sepulangnya, Hana pertama kali menulis surat panjang kepada nenek. Ia mengenang kejadian di lingkungan dan hal yang baru-baru ini menyenangkan. Ia tidak berniat berhenti menggunakan ponsel karena tetap praktis untuk kabar mendesak. Namun, ia ingin sesekali bercerita lewat surat. Yang penting bukan memilih satu alat saja, melainkan menggunakan cara yang sesuai sambil memikirkan penerima.",
+        "vocabulary": [
+          {
+            "japanese": "思い出す",
+            "reading": "おもいだす",
+            "meaning": "mengingat kembali"
+          },
+          {
+            "japanese": "使い分ける",
+            "reading": "つかいわける",
+            "meaning": "menggunakan secara berbeda sesuai keperluan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-05.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana menulis surat baru pada malam hari dengan foto nenek dan amplop di meja."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "祖母は手紙で、はなに何を伝えましたか。",
+        "Choices": [
+          "時間がある時に読んで、返事は急がなくてよい。",
+          "すぐに返事を書かなければならない。",
+          "毎日のメッセージを全部消してほしい。",
+          "週末の訪問をやめてほしい。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1 menegaskan nenek tidak menuntut balasan cepat."
+      },
+      {
+        "Prompt": "いつものメッセージについて、はなが気づいたことは何ですか。",
+        "Choices": [
+          "予定や体調の確認が中心になっていた。",
+          "祖母は一度も読んでいなかった。",
+          "手紙より必ず長かった。",
+          "近所の出来事を毎日詳しく書いていた。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2: pesan sehari-hari lebih banyak memeriksa jadwal dan kesehatan, bukan cerita rinci."
+      },
+      {
+        "Prompt": "手紙が特別だとはなが考えた主な理由はどれですか。",
+        "Choices": [
+          "相手のために使った時間が感じられるから。",
+          "スマートフォンより必ず安いから。",
+          "文字がすべて印刷されているから。",
+          "古い方法はすべて新しい方法よりよいから。"
+        ],
+        "Correct": 0,
+        "Explanation": "～というより mengoreksi penjelasan: bukan sekadar metode lama, melainkan waktu dan perhatian untuk penerima."
+      },
+      {
+        "Prompt": "はなは今後、どのように連絡するつもりですか。",
+        "Choices": [
+          "スマートフォンと手紙を状況に応じて使う。",
+          "手紙だけを使い、電話はしない。",
+          "祖母から連絡が来るまで何もしない。",
+          "すべての連絡を短いメッセージだけにする。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 menyatakan tetap memakai ponsel untuk kabar cepat dan sesekali surat."
+      },
+      {
+        "Prompt": "文章の内容に合うものはどれですか。",
+        "Choices": [
+          "方法そのものより、相手への配慮が大切だ。",
+          "連絡は早ければ早いほど十分だ。",
+          "長い文章を書けば相手の気持ちは考えなくてよい。",
+          "道具は一つだけに決めなければならない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan menekankan memakai cara berbeda sesuai kebutuhan dengan perhatian kepada penerima."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-06",
+    "Title": "Reservasi pada tanggal yang keliru",
+    "JapaneseTitle": "消えた予約",
+    "Chapter": "Perjalanan dan informasi",
+    "Description": "Hana dan Yui menemukan kesalahan tanggal pemesanan. Latih ～はずだった, ～せいで, dan mencari bukti sebelum menyimpulkan.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-06.png",
+    "Pages": [
+      {
+        "title": "Kamar yang tidak ditemukan",
+        "japanese": "旅行の初日、はなとゆいは予約した宿に着いた。受付で名前を伝えたが、その日の予約は見つからなかった。はなは、確認のメールを受け取ったはずだと思い、スマートフォンを取り出した。宿の人が画面を見たところ、予約の日付は一週間後になっていた。はなは、出発の前にメールを読んだのに、名前と宿の場所しか確かめていなかった。",
+        "reading": "りょこうの しょにち、はなと ゆいは よやくした やどに ついた。うけつけで なまえを つたえたが、その ひの よやくは みつからなかった。はなは、かくにんの メールを うけとったはずだと おもい、スマートフォンを とりだした。やどの ひとが がめんを みたところ、よやくの ひづけは いっしゅうかんごに なっていた。はなは、しゅっぱつの まえに メールを よんだのに、なまえと やどの ばしょしか たしかめていなかった。",
+        "meaning": "Pada hari pertama perjalanan, Hana dan Yui tiba di penginapan yang dipesan. Resepsionis tidak menemukan reservasi hari itu. Hana membuka ponsel karena merasa sudah menerima email konfirmasi. Ketika petugas memeriksa layar, tanggal reservasi ternyata satu minggu sesudahnya. Hana memang membaca email sebelum berangkat, tetapi hanya memeriksa nama dan lokasi penginapan.",
+        "vocabulary": [
+          {
+            "japanese": "日付",
+            "reading": "ひづけ",
+            "meaning": "tanggal"
+          },
+          {
+            "japanese": "確認",
+            "reading": "かくにん",
+            "meaning": "pemeriksaan; konfirmasi"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-06.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana dan Yui dengan tas perjalanan terkejut saat petugas resepsionis memeriksa pemesanan."
+      },
+      {
+        "title": "Mengurutkan fakta",
+        "japanese": "はなは、予約サイトのせいで間違えたのではないかと思った。しかし、入力した内容の記録を見ると、自分で違う日を選んでいたことが分かった。今日の部屋は満室だったため、宿の人は近くの別の宿を紹介してくれた。ゆいは、誰が悪いかを考えるより先に、今夜泊まれる場所を探そうと言った。二人は一緒に空いている宿へ連絡した。",
+        "reading": "はなは、よやくサイトのせいで まちがえたのではないかと おもった。しかし、にゅうりょくした ないようの きろくを みると、じぶんで ちがう ひを えらんでいたことが わかった。きょうの へやは まんしつだったため、やどの ひとは ちかくの べつの やどを しょうかいしてくれた。ゆいは、だれが わるいかを かんがえるより さきに、こんや とまれる ばしょを さがそうと いった。ふたりは いっしょに あいている やどへ れんらくした。",
+        "meaning": "Hana menduga kesalahan mungkin disebabkan situs pemesanan. Namun, catatan masukan menunjukkan dirinya memilih hari yang salah. Karena kamar hari itu penuh, petugas merekomendasikan penginapan lain di dekatnya. Yui mengajak mencari tempat bermalam terlebih dahulu daripada memikirkan siapa yang salah. Mereka pun menghubungi penginapan yang masih tersedia.",
+        "vocabulary": [
+          {
+            "japanese": "記録",
+            "reading": "きろく",
+            "meaning": "catatan; rekaman"
+          },
+          {
+            "japanese": "満室",
+            "reading": "まんしつ",
+            "meaning": "semua kamar penuh"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-06.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Kedua teman membandingkan kalender ponsel dan rencana perjalanan bersama petugas yang membantu."
+      },
+      {
+        "title": "Pemeriksaan bersama",
+        "japanese": "別の宿に着いてから、二人は残りの予定を一つずつ確認した。電車の切符も、見学の予約も、日付と時間を声に出して読んだ。はなは、一人が予約したものを、もう一人が確かめることにしようと提案した。失敗したことは残念だったが、確認の仕方を変えるきっかけになった。分かったつもりで読むことと、必要な点を確かめることは同じではない。",
+        "reading": "べつの やどに ついてから、ふたりは のこりの よていを ひとつずつ かくにんした。でんしゃの きっぷも、けんがくの よやくも、ひづけと じかんを こえに だして よんだ。はなは、ひとりが よやくしたものを、もうひとりが たしかめることに しようと ていあんした。しっぱいしたことは ざんねんだったが、かくにんの しかたを かえる きっかけに なった。わかったつもりで よむことと、ひつような てんを たしかめることは おなじではない。",
+        "meaning": "Di penginapan kedua, mereka memeriksa rencana tersisa satu per satu. Tanggal dan waktu tiket kereta serta reservasi kunjungan dibaca dengan bersuara. Hana mengusulkan satu orang memesan dan yang lain memeriksa. Kesalahan itu disayangkan, tetapi menjadi kesempatan mengubah cara pengecekan. Membaca sambil merasa sudah paham berbeda dengan benar-benar memeriksa poin penting.",
+        "vocabulary": [
+          {
+            "japanese": "きっかけ",
+            "reading": "きっかけ",
+            "meaning": "pemicu; kesempatan awal"
+          },
+          {
+            "japanese": "見学",
+            "reading": "けんがく",
+            "meaning": "kunjungan untuk melihat atau belajar"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-06.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana dan Yui meninjau rencana perjalanan dengan tenang di meja teh penginapan kedua."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "最初の宿に泊まれなかった主な理由は何ですか。",
+        "Choices": [
+          "別の日を予約していて、その日は満室だったから。",
+          "二人が名前を忘れたから。",
+          "宿が一週間休みだったから。",
+          "メールが一通も届いていなかったから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1–2: tanggal yang dipesan satu minggu kemudian dan kamar hari kedatangan penuh."
+      },
+      {
+        "Prompt": "はなは出発前、何を確認していませんでしたか。",
+        "Choices": [
+          "予約の日付。",
+          "宿の場所。",
+          "自分の名前。",
+          "メールを受け取ったこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Ia hanya mengecek nama dan lokasi, sehingga tanggal terlewat."
+      },
+      {
+        "Prompt": "ゆいが先にしようと言ったことは何ですか。",
+        "Choices": [
+          "今夜泊まれる場所を探すこと。",
+          "予約サイトへの不満を書き続けること。",
+          "旅行を全部やめて家へ帰ること。",
+          "宿の人に予約の記録を消してもらうこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Yui memprioritaskan solusi tempat bermalam sebelum menyalahkan pihak tertentu."
+      },
+      {
+        "Prompt": "今後の確認方法について、はなは何を提案しましたか。",
+        "Choices": [
+          "予約した人とは別の人が内容を確かめる。",
+          "予約のメールはもう読まない。",
+          "宿の場所だけを調べる。",
+          "二人が別々の日に旅行する。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 menyebut pemeriksaan silang oleh orang lain, juga membaca tanggal dan waktu dengan bersuara."
+      },
+      {
+        "Prompt": "この話のまとめとして最も適切なのはどれですか。",
+        "Choices": [
+          "理解したつもりでも、必要な情報を具体的に確認することが大切だ。",
+          "確認のメールがあれば、内容を読む必要はない。",
+          "旅行の問題はすべて予約サイトの責任だ。",
+          "失敗したら予定を考え直すことはできない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat terakhir membedakan merasa paham dengan pengecekan poin penting; bukti juga menunjukkan kesalahan input sendiri."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-07",
+    "Title": "Kota yang ditemukan lewat sepeda",
+    "JapaneseTitle": "自転車で見つけた町",
+    "Chapter": "Lingkungan dan penemuan",
+    "Description": "Jalan memutar memperlihatkan hal yang biasanya terlewat. Latih ～うちに, ～に気づく, dan sudut pandang tokoh.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-07.png",
+    "Pages": [
+      {
+        "title": "Jalan yang berbeda",
+        "japanese": "はなは普段、駅前の大きな道を通って仕事へ行く。ある日、その道で工事が始まったため、川沿いの道を自転車で走ることにした。いつもの道に比べて少し遠いが、車が少なく、ゆっくり走れた。しばらく行くと、小さな店や古い家が並んでいた。同じ町に住んでいるのに、知らない場所がこんなにあるとは思わなかった。",
+        "reading": "はなは ふだん、えきまえの おおきな みちを とおって しごとへ いく。ある ひ、その みちで こうじが はじまったため、かわぞいの みちを じてんしゃで はしることに した。いつもの みちに くらべて すこし とおいが、くるまが すくなく、ゆっくり はしれた。しばらく いくと、ちいさな みせや ふるい いえが ならんでいた。おなじ まちに すんでいるのに、しらない ばしょが こんなに あるとは おもわなかった。",
+        "meaning": "Hana biasanya bekerja melalui jalan besar di depan stasiun. Suatu hari jalan itu mulai diperbaiki sehingga ia bersepeda lewat tepian sungai. Jalannya sedikit lebih jauh, tetapi kendaraan lebih sedikit dan ia bisa berjalan santai. Ia menemukan toko kecil dan rumah tua. Meski tinggal di kota yang sama, ia tidak menyangka begitu banyak tempat yang belum dikenal.",
+        "vocabulary": [
+          {
+            "japanese": "工事",
+            "reading": "こうじ",
+            "meaning": "pekerjaan konstruksi"
+          },
+          {
+            "japanese": "川沿い",
+            "reading": "かわぞい",
+            "meaning": "sepanjang tepi sungai"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-07.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana bersepeda di jalur tepi sungai melewati rumah tua yang belum dikenalnya."
+      },
+      {
+        "title": "Peta yang dibuat warga",
+        "japanese": "橋の近くで、地域の人が新しい地図を取り付けようとしていた。はなは自転車を止め、少し手伝った。地図には観光地だけでなく、休めるベンチや小さな店も書かれていた。その人によると、住民が歩くうちに見つけた場所を集めたものだという。急いで通り過ぎるだけでは、町のよさに気づきにくいのかもしれない。",
+        "reading": "はしの ちかくで、ちいきの ひとが あたらしい ちずを とりつけようとしていた。はなは じてんしゃを とめ、すこし てつだった。ちずには かんこうちだけでなく、やすめる ベンチや ちいさな みせも かかれていた。その ひとに よると、じゅうみんが あるくうちに みつけた ばしょを あつめたものだという。いそいで とおりすぎるだけでは、まちの よさに きづきにくいのかも しれない。",
+        "meaning": "Dekat jembatan, seorang warga hendak memasang peta baru. Hana berhenti dan membantu. Peta itu memuat tempat wisata, bangku untuk beristirahat, dan toko kecil. Menurut warga tersebut, peta mengumpulkan tempat yang ditemukan warga selama berjalan kaki. Jika hanya lewat terburu-buru, mungkin kita sulit melihat daya tarik kota.",
+        "vocabulary": [
+          {
+            "japanese": "取り付ける",
+            "reading": "とりつける",
+            "meaning": "memasang"
+          },
+          {
+            "japanese": "通り過ぎる",
+            "reading": "とおりすぎる",
+            "meaning": "melewati tanpa berhenti"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-07.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana membantu relawan warga memasang peta bergambar di persimpangan dekat kanal."
+      },
+      {
+        "title": "Menentukan kecepatan sendiri",
+        "japanese": "週末、はなはゆいと同じ道を走った。二人は地図を見ながら、気になった店に立ち寄った。目的地へ早く着くことも必要だが、時間がある時には、途中を楽しんでもいい。工事が終われば大きな道を使う日もあるだろう。それでもはなは、遠回りを無駄だと決めつけないようにしようと思った。",
+        "reading": "しゅうまつ、はなは ゆいと おなじ みちを はしった。ふたりは ちずを みながら、きに なった みせに たちよった。もくてきちへ はやく つくことも ひつようだが、じかんが ある ときには、とちゅうを たのしんでも いい。こうじが おわれば おおきな みちを つかう ひも あるだろう。それでも はなは、とおまわりを むだだと きめつけないように しようと おもった。",
+        "meaning": "Akhir pekan Hana dan Yui melewati jalur yang sama. Sambil melihat peta, mereka mampir ke toko yang menarik perhatian. Sampai cepat ke tujuan memang kadang perlu, tetapi ketika punya waktu perjalanan itu sendiri boleh dinikmati. Setelah pekerjaan jalan selesai, Hana mungkin tetap memakai jalan besar pada hari tertentu. Namun, ia tidak ingin langsung menganggap memutar jalan sebagai sesuatu yang sia-sia.",
+        "vocabulary": [
+          {
+            "japanese": "立ち寄る",
+            "reading": "たちよる",
+            "meaning": "mampir"
+          },
+          {
+            "japanese": "遠回り",
+            "reading": "とおまわり",
+            "meaning": "jalan memutar"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-07.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana dan Yui bersepeda santai di sepanjang kanal sambil menyapa pemilik toko kecil."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなが川沿いの道を使った最初の理由は何ですか。",
+        "Choices": [
+          "いつもの道で工事が始まったから。",
+          "ゆいに店を紹介されたから。",
+          "駅がなくなったから。",
+          "仕事を辞めたから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1 menyebut pekerjaan konstruksi sebagai alasan awal, bukan niat wisata."
+      },
+      {
+        "Prompt": "新しい地図の特徴は何ですか。",
+        "Choices": [
+          "住民が見つけた身近な場所も載っている。",
+          "観光地だけを大きく載せている。",
+          "すべての道を使えないと示している。",
+          "町の外の店しか載っていない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2: peta memuat bangku dan toko kecil yang ditemukan warga, bukan hanya tempat wisata."
+      },
+      {
+        "Prompt": "「急いで通り過ぎるだけでは」という言葉から、はなは何を考えていますか。",
+        "Choices": [
+          "ゆっくり見ると町のよさを発見できる。",
+          "道を歩く人は全員仕事に遅れる。",
+          "町には見るべき場所がない。",
+          "地図があれば周りを見る必要はない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kontras cerita memperlihatkan bahwa berjalan pelan membantu menemukan tempat yang sebelumnya terlewat."
+      },
+      {
+        "Prompt": "工事が終わった後、はなはどうするつもりですか。",
+        "Choices": [
+          "状況に応じて道を選び、遠回りも楽しむ。",
+          "大きな道を二度と使わない。",
+          "いつも必ず最も遠い道を走る。",
+          "自転車を使うのをやめる。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 tidak menolak jalan cepat; Hana ingin memilih sesuai waktu dan tidak menilai jalan memutar otomatis sia-sia."
+      },
+      {
+        "Prompt": "文章のまとめとして適切なのはどれですか。",
+        "Choices": [
+          "目的地だけでなく、途中にも価値がある。",
+          "早く着くことには全く意味がない。",
+          "知らない道はすべて避けるべきだ。",
+          "工事は必ず観光のために行われる。"
+        ],
+        "Correct": 0,
+        "Explanation": "Perubahan pandangan Hana menekankan nilai pengalaman di sepanjang perjalanan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-08",
+    "Title": "Nyaman, tetapi terlalu banyak notifikasi",
+    "JapaneseTitle": "便利さと静けさ",
+    "Chapter": "Pilihan dan kebiasaan",
+    "Description": "Hana membatasi notifikasi tanpa meninggalkan teknologi. Latih ～ばかりでなく, ～ほど, dan memahami kontras.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-08.png",
+    "Pages": [
+      {
+        "title": "Belajar yang sering terputus",
+        "japanese": "はなはスマートフォンで辞書を調べたり、予定を管理したりしている。便利な道具だが、勉強中にも次々と知らせが届く。内容を少し見るだけのつもりでも、気づくと別の画面を開いていることがあった。机に向かっている時間は長いのに、読んだ文章の内容を思い出せない。はなは、時間を増やすだけでは解決しないと考えた。",
+        "reading": "はなは スマートフォンで じしょを しらべたり、よていを かんりしたり している。べんりな どうぐだが、べんきょうちゅうにも つぎつぎと しらせが とどく。ないようを すこし みるだけの つもりでも、きづくと べつの がめんを ひらいていることが あった。つくえに むかっている じかんは ながいのに、よんだ ぶんしょうの ないようを おもいだせない。はなは、じかんを ふやすだけでは かいけつしないと かんがえた。",
+        "meaning": "Hana memakai ponsel untuk kamus dan mengatur jadwal. Alat itu praktis, tetapi notifikasi terus datang saat belajar. Ia hanya berniat melihat sebentar, namun tahu-tahu membuka layar lain. Waktu duduk di meja panjang, tetapi isi bacaan sulit diingat. Hana merasa menambah waktu saja tidak akan menyelesaikan masalah.",
+        "vocabulary": [
+          {
+            "japanese": "管理",
+            "reading": "かんり",
+            "meaning": "pengelolaan"
+          },
+          {
+            "japanese": "解決",
+            "reading": "かいけつ",
+            "meaning": "penyelesaian masalah"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-08.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana sulit fokus pada buku ketika ponsel di meja terus menyala dengan notifikasi."
+      },
+      {
+        "title": "Percobaan kecil di perpustakaan",
+        "japanese": "そこで、はなは図書館で三十分だけ勉強してみた。必要な連絡以外の知らせを止め、スマートフォンをかばんに入れた。分からない言葉は、まず紙に書き、一区切りついてからまとめて調べた。最初は少し不安だったが、文章を続けて読めるようになった。長く勉強することばかりでなく、途中で気を取られないことも大切だった。",
+        "reading": "そこで、はなは としょかんで さんじゅっぷんだけ べんきょうしてみた。ひつような れんらくいがいの しらせを とめ、スマートフォンを かばんに いれた。わからない ことばは、まず かみに かき、ひとくぎり ついてから まとめて しらべた。さいしょは すこし ふあんだったが、ぶんしょうを つづけて よめるように なった。ながく べんきょうすることばかりでなく、とちゅうで きを とられないことも たいせつだった。",
+        "meaning": "Hana mencoba belajar hanya tiga puluh menit di perpustakaan. Ia mematikan notifikasi selain kontak penting dan memasukkan ponsel ke tas. Kata yang tidak dikenal dicatat dulu, lalu dicari bersama setelah mencapai titik berhenti. Awalnya ia agak khawatir, tetapi kini bisa membaca terus tanpa terputus. Selain durasi, tidak terus teralihkan juga penting.",
+        "vocabulary": [
+          {
+            "japanese": "一区切り",
+            "reading": "ひとくぎり",
+            "meaning": "satu tahap atau titik berhenti"
+          },
+          {
+            "japanese": "気を取られる",
+            "reading": "きをとられる",
+            "meaning": "teralihkan perhatian"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-08.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana membaca dengan tenang di perpustakaan, ponsel dijauhkan dan catatan kecil di sebelah buku."
+      },
+      {
+        "title": "Memilih kapan memeriksa",
+        "japanese": "はなは、スマートフォンが悪い道具だと言いたいわけではない。使う場面を自分で選べば、役に立つことは多い。ゆいと会う時も、すぐに画面を見るのではなく、話が終わってから確かめるようにした。知らせが多いほど、何を今見る必要があるか考えたい。便利さに任せきりにせず、使い方を決めるのは自分だと思った。",
+        "reading": "はなは、スマートフォンが わるい どうぐだと いいたいわけではない。つかう ばめんを じぶんで えらべば、やくに たつことは おおい。ゆいと あう ときも、すぐに がめんを みるのではなく、はなしが おわってから たしかめるように した。しらせが おおいほど、なにを いま みる ひつようが あるか かんがえたい。べんりさに まかせきりに せず、つかいかたを きめるのは じぶんだと おもった。",
+        "meaning": "Hana tidak bermaksud menyebut ponsel sebagai alat yang buruk. Jika ia memilih kapan menggunakannya, ponsel banyak membantu. Saat bertemu Yui, ia mulai menunggu percakapan selesai sebelum mengecek layar. Semakin banyak notifikasi, semakin ia ingin mempertimbangkan mana yang perlu dilihat sekarang. Ia merasa dirinyalah yang menentukan cara penggunaan, bukan sekadar mengikuti kemudahan alat itu.",
+        "vocabulary": [
+          {
+            "japanese": "場面",
+            "reading": "ばめん",
+            "meaning": "situasi; adegan"
+          },
+          {
+            "japanese": "役に立つ",
+            "reading": "やくにたつ",
+            "meaning": "berguna"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-08.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana dan Yui berbincang di kafe, Hana memeriksa ponsel sebentar setelah obrolan selesai."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなの勉強の問題は何でしたか。",
+        "Choices": [
+          "時間をかけても、注意がそれて内容を覚えにくかった。",
+          "辞書を使う方法を全く知らなかった。",
+          "図書館が毎日閉まっていた。",
+          "勉強する机を持っていなかった。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1 membandingkan waktu belajar lama dengan isi yang sulit diingat karena gangguan layar."
+      },
+      {
+        "Prompt": "図書館で分からない言葉が出た時、はなはまず何をしましたか。",
+        "Choices": [
+          "紙に書いて、後でまとめて調べた。",
+          "すぐにすべての友達へ連絡した。",
+          "その文章を読むのをやめた。",
+          "言葉を見ないふりをした。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2: kata dicatat dahulu, kemudian ditelusuri setelah satu tahap selesai."
+      },
+      {
+        "Prompt": "はなはスマートフォンをどう評価していますか。",
+        "Choices": [
+          "使う場面を選べば、役に立つ道具だ。",
+          "どんな場面でも必ず使うべきだ。",
+          "悪い道具なので全部捨てるべきだ。",
+          "連絡には全く使えない道具だ。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 menolak kesimpulan bahwa ponsel buruk; penggunaan sesuai situasi tetap bermanfaat."
+      },
+      {
+        "Prompt": "「知らせが多いほど」の後の考えに近いものはどれですか。",
+        "Choices": [
+          "今確認すべき情報を選ぶ必要がある。",
+          "すべての知らせを同時に開くべきだ。",
+          "友達との会話をすぐ終えるべきだ。",
+          "勉強の時間を必ず倍にするべきだ。"
+        ],
+        "Correct": 0,
+        "Explanation": "Semakin banyak informasi, semakin perlu memilih mana yang perlu segera diperiksa."
+      },
+      {
+        "Prompt": "この文章の主なテーマは何ですか。",
+        "Choices": [
+          "便利な道具との付き合い方を自分で決めること。",
+          "図書館では辞書を使ってはいけないこと。",
+          "紙の辞書だけが正しいこと。",
+          "長時間座っていれば必ず勉強が進むこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Hana mengubah kendali cara penggunaan, bukan menolak teknologi atau hanya menambah durasi."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-09",
+    "Title": "Latihan bersama warga",
+    "JapaneseTitle": "地域の防災訓練",
+    "Chapter": "Layanan dan masyarakat",
+    "Description": "Panduan bergambar membantu warga mengikuti latihan. Latih ～だけでなく, ～に合わせて, dan kesenjangan informasi.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-09.png",
+    "Pages": [
+      {
+        "title": "Undangan yang belum dipahami",
+        "japanese": "町では、日曜日に防災訓練を行うことになった。集合場所や時間は、住民に配られた紙に詳しく書いてあった。はなとゆいが会場に着くと、近所に引っ越してきた人が案内を見ながら迷っていた。その人は日本語を勉強中で、時間は読めたが、どの建物に集まるのか分からなかったそうだ。説明が詳しくても、全員が理解できるとは限らない。",
+        "reading": "まちでは、にちようびに ぼうさいくんれんを おこなうことに なった。しゅうごうばしょや じかんは、じゅうみんに くばられた かみに くわしく かいてあった。はなと ゆいが かいじょうに つくと、きんじょに ひっこしてきた ひとが あんないを みながら まよっていた。その ひとは にほんごを べんきょうちゅうで、じかんは よめたが、どの たてものに あつまるのか わからなかったそうだ。せつめいが くわしくても、ぜんいんが りかいできるとは かぎらない。",
+        "meaning": "Kota memutuskan mengadakan latihan kesiapsiagaan hari Minggu. Tempat dan waktu berkumpul dijelaskan rinci pada kertas yang dibagikan. Saat Hana dan Yui tiba, warga baru tampak bingung membaca panduan. Ia sedang belajar bahasa Jepang; waktu bisa dibaca, tetapi gedung tujuan belum dipahami. Penjelasan yang rinci belum tentu dipahami semua orang.",
+        "vocabulary": [
+          {
+            "japanese": "防災訓練",
+            "reading": "ぼうさいくんれん",
+            "meaning": "latihan kesiapsiagaan bencana"
+          },
+          {
+            "japanese": "集合場所",
+            "reading": "しゅうごうばしょ",
+            "meaning": "tempat berkumpul"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-09.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana dan Yui masuk ke balai warga untuk latihan bersama peta dan panduan sederhana."
+      },
+      {
+        "title": "Menambahkan petunjuk yang tampak",
+        "japanese": "はなは、建物の絵と道の矢印があれば分かりやすくなるのではないかと考えた。係の人に相談し、一緒に簡単な案内を作った。難しい言葉を短い説明に変え、実際の建物の写真も加えた。日本語が得意でない人だけでなく、初めて来た子供にも役に立つようだった。情報を減らすというより、伝え方を増やしたのだ。",
+        "reading": "はなは、たてものの えと みちの やじるしが あれば わかりやすく なるのではないかと かんがえた。かかりの ひとに そうだんし、いっしょに かんたんな あんないを つくった。むずかしい ことばを みじかい せつめいに かえ、じっさいの たてものの しゃしんも くわえた。にほんごが とくいでない ひとだけでなく、はじめて きた こどもにも やくに たつようだった。じょうほうを へらすというより、つたえかたを ふやしたのだ。",
+        "meaning": "Hana berpikir gambar gedung dan panah jalur mungkin memudahkan panduan. Ia berkonsultasi dengan petugas dan membuat panduan sederhana bersama. Kata sulit diganti penjelasan singkat, dan foto gedung ditambahkan. Bukan hanya orang yang kurang fasih berbahasa Jepang, anak yang baru datang pun tampak terbantu. Alih-alih mengurangi informasi, mereka menambah cara menyampaikannya.",
+        "vocabulary": [
+          {
+            "japanese": "矢印",
+            "reading": "やじるし",
+            "meaning": "tanda panah"
+          },
+          {
+            "japanese": "係",
+            "reading": "かかり",
+            "meaning": "petugas yang bertanggung jawab"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-09.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana, warga baru, dan petugas membuat simbol gambar serta penjelasan singkat di meja balai warga."
+      },
+      {
+        "title": "Panduan untuk berbagai orang",
+        "japanese": "訓練の後、係の人は参加者に分かりにくかった点を聞いた。新しい案内のおかげで場所が分かったという声もあったが、写真が小さくて見えにくかったという意見もあった。次回は読む人に合わせて、文字や写真の大きさも変える予定だ。はなは、案内を作って終わりではなく、使った人の話を聞くことも準備の一部だと感じた。",
+        "reading": "くんれんの あと、かかりの ひとは さんかしゃに わかりにくかった てんを きいた。あたらしい あんないのおかげで ばしょが わかったという こえも あったが、しゃしんが ちいさくて みえにくかったという いけんも あった。じかいは よむ ひとに あわせて、もじや しゃしんの おおきさも かえる よていだ。はなは、あんないを つくって おわりではなく、つかった ひとの はなしを きくことも じゅんびの いちぶだと かんじた。",
+        "meaning": "Setelah latihan, petugas menanyakan bagian yang sulit dipahami. Ada peserta yang terbantu menemukan lokasi lewat panduan baru, tetapi ada yang merasa fotonya terlalu kecil. Berikutnya ukuran huruf dan foto akan disesuaikan dengan pembaca. Hana merasa mendengarkan pengalaman pengguna juga bagian persiapan, bukan selesai begitu panduan dibuat.",
+        "vocabulary": [
+          {
+            "japanese": "次回",
+            "reading": "じかい",
+            "meaning": "kesempatan berikutnya"
+          },
+          {
+            "japanese": "一部",
+            "reading": "いちぶ",
+            "meaning": "sebagian; satu bagian"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-09.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Warga mengikuti jalur latihan dengan tenang, menggunakan papan berpanah dan gambar gedung pada siang hari."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "新しく来た住民が困っていたことは何ですか。",
+        "Choices": [
+          "集まる建物が分からなかったこと。",
+          "日曜日という言葉だけが読めなかったこと。",
+          "訓練に参加する気がなかったこと。",
+          "はなに会う時間が決まらなかったこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1 secara khusus menyebut kebingungan gedung, meskipun waktu bisa dibaca."
+      },
+      {
+        "Prompt": "はなたちは案内をどう変えましたか。",
+        "Choices": [
+          "短い説明にして、絵や写真を加えた。",
+          "集合場所の情報をすべて消した。",
+          "難しい言葉だけを増やした。",
+          "日本語を勉強中の人に案内を渡さなかった。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 memadukan kata lebih mudah dengan gambar dan foto, tidak menghapus informasi inti."
+      },
+      {
+        "Prompt": "新しい案内は、誰にも役立ちそうでしたか。",
+        "Choices": [
+          "初めて会場に来た子供にも。",
+          "案内を一度も見ない人だけに。",
+          "訓練に来ない人だけに。",
+          "建物を作った人だけに。"
+        ],
+        "Correct": 0,
+        "Explanation": "～だけでなく memperluas manfaat dari pembelajar bahasa ke anak yang pertama kali datang."
+      },
+      {
+        "Prompt": "次回、さらに変える予定のものは何ですか。",
+        "Choices": [
+          "文字や写真の大きさ。",
+          "訓練を行う曜日だけ。",
+          "住民の名前だけ。",
+          "参加者の国籍。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 mencatat foto kecil sebagai umpan balik dan penyesuaian ukuran pada kesempatan berikutnya."
+      },
+      {
+        "Prompt": "はなが最後に感じたことは何ですか。",
+        "Choices": [
+          "利用者の意見を聞くことも準備に含まれる。",
+          "一度作った案内は変えてはいけない。",
+          "詳しく書けば必ず全員に伝わる。",
+          "分からない人は参加すべきではない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan menekankan perbaikan melalui pengalaman orang yang memakai panduan, bukan asumsi semua pasti memahami."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-10",
+    "Title": "Pesan singkat yang disalahpahami",
+    "JapaneseTitle": "伝え方で変わる気持ち",
+    "Chapter": "Hubungan dan komunikasi",
+    "Description": "Pesan pendek membuat Hana mengambil kesimpulan terlalu cepat. Latih ～わけではない, ～ように思える, dan memahami sudut pandang.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-10.png",
+    "Pages": [
+      {
+        "title": "Pesan yang terasa dingin",
+        "japanese": "はなは週末にゆいと会う約束をしていた。前の日、「明日は行けない」とだけ書かれたメッセージが届いた。理由も、次の予定も書いていなかったので、はなは自分と会いたくなくなったのではないかと思った。すぐに返事をしようとしたが、何と書けばいいか分からず、画面を閉じた。短い言葉ほど、いろいろな意味に読めることがある。",
+        "reading": "はなは しゅうまつに ゆいと あう やくそくを していた。まえの ひ、「あしたは いけない」とだけ かかれた メッセージが とどいた。りゆうも、つぎの よていも かいていなかったので、はなは じぶんと あいたくなくなったのではないかと おもった。すぐに へんじを しようと したが、なんと かけば いいか わからず、がめんを とじた。みじかい ことばほど、いろいろな いみに よめることが ある。",
+        "meaning": "Hana berjanji bertemu Yui pada akhir pekan. Sehari sebelumnya datang pesan yang hanya berbunyi, “Besok aku tidak bisa datang.” Tanpa alasan atau usulan waktu lain, Hana menduga Yui tak ingin lagi bertemu dengannya. Ia hendak membalas, tetapi tidak tahu harus menulis apa dan menutup layar. Kata yang singkat terkadang justru dapat dibaca dengan berbagai makna.",
+        "vocabulary": [
+          {
+            "japanese": "約束",
+            "reading": "やくそく",
+            "meaning": "janji"
+          },
+          {
+            "japanese": "返事",
+            "reading": "へんじ",
+            "meaning": "balasan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-10.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana duduk sendiri di kafe sambil membaca pesan singkat di ponsel dengan wajah kecewa."
+      },
+      {
+        "title": "Mendengar penjelasan langsung",
+        "japanese": "次の週に会った時、ゆいは急に仕事の予定が変わったと説明した。連絡できる時間が少なかったため、来られないことだけを先に送ったのだ。はなに会いたくないわけではなかった。はなは、自分には冷たく思えた文章でも、書いた人は急いでいただけかもしれないと気づいた。ゆいも、理由を一言加えればよかったと言った。",
+        "reading": "つぎの しゅうに あった とき、ゆいは きゅうに しごとの よていが かわったと せつめいした。れんらくできる じかんが すくなかったため、こられないことだけを さきに おくったのだ。はなに あいたくないわけではなかった。はなは、じぶんには つめたく おもえた ぶんしょうでも、かいた ひとは いそいでいただけかも しれないと きづいた。ゆいも、りゆうを ひとこと くわえれば よかったと いった。",
+        "meaning": "Saat bertemu minggu berikutnya, Yui menjelaskan jadwal kerja berubah tiba-tiba. Waktu untuk menghubungi sedikit, jadi ia lebih dahulu hanya mengabarkan tidak bisa datang. Bukan karena enggan bertemu Hana. Hana sadar tulisan yang terasa dingin baginya mungkin hanya ditulis oleh orang yang terburu-buru. Yui juga merasa seharusnya menambahkan sedikit alasan.",
+        "vocabulary": [
+          {
+            "japanese": "一言",
+            "reading": "ひとこと",
+            "meaning": "sepatah kata; penjelasan singkat"
+          },
+          {
+            "japanese": "加える",
+            "reading": "くわえる",
+            "meaning": "menambahkan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-10.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Yui membawa berkas kerja dan menjelaskan situasi kepada Hana yang mendengarkan di taman."
+      },
+      {
+        "title": "Cara mengirim dan membaca",
+        "japanese": "二人は、これから予定を変える時には、理由と次に連絡する時期も書こうと決めた。ただし、いつでも長い文章を送れるとは限らない。はなも、分からないことがあれば、悪い意味に決めつける前に聞いてみようと思った。伝える側が少し工夫し、受け取る側も確かめる。その両方があれば、すれ違いを減らせるのではないだろうか。",
+        "reading": "ふたりは、これから よていを かえる ときには、りゆうと つぎに れんらくする じきも かこうと きめた。ただし、いつでも ながい ぶんしょうを おくれるとは かぎらない。はなも、わからないことが あれば、わるい いみに きめつける まえに きいてみようと おもった。つたえる がわが すこし くふうし、うけとる がわも たしかめる。その りょうほうが あれば、すれちがいを へらせるのではないだろうか。",
+        "meaning": "Mereka memutuskan ketika rencana berubah, akan menuliskan alasan dan kapan menghubungi lagi. Namun, tidak selalu mungkin mengirim tulisan panjang. Hana pun ingin bertanya dulu jika sesuatu belum jelas, sebelum memaknainya buruk. Pengirim berusaha memperjelas dan penerima ikut memeriksa. Jika keduanya dilakukan, mungkin salah paham dapat berkurang.",
+        "vocabulary": [
+          {
+            "japanese": "工夫",
+            "reading": "くふう",
+            "meaning": "upaya kreatif memperbaiki cara"
+          },
+          {
+            "japanese": "すれ違い",
+            "reading": "すれちがい",
+            "meaning": "ketidaksesuaian pemahaman; salah paham"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-10.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana dan Yui berbicara santai di kafe sambil meninjau pesan yang lebih jelas."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなが最初に不安になった理由は何ですか。",
+        "Choices": [
+          "短い連絡に理由がなく、悪い意味に読んだから。",
+          "ゆいが長い説明を何度も送ったから。",
+          "約束の場所を忘れたから。",
+          "仕事の予定を自分で変えたから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1: Hana menafsirkan pesan tanpa konteks sebagai keengganan bertemu."
+      },
+      {
+        "Prompt": "ゆいが短いメッセージだけを送った実際の理由は何ですか。",
+        "Choices": [
+          "仕事の予定が急に変わり、連絡の時間が少なかったから。",
+          "はなに会いたくなかったから。",
+          "スマートフォンをなくしたから。",
+          "約束をしたことがなかったから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Penjelasan langsung pada halaman 2 mengungkap alasan kerja dan keterbatasan waktu."
+      },
+      {
+        "Prompt": "ゆいは、自分の連絡についてどう思いましたか。",
+        "Choices": [
+          "短くても理由を一言加えればよかった。",
+          "何も知らせないほうがよかった。",
+          "もっと冷たい言葉を使えばよかった。",
+          "次に会う必要はないと思った。"
+        ],
+        "Correct": 0,
+        "Explanation": "Yui mengakui bahwa tambahan satu alasan akan membantu, tidak menolak kebutuhan komunikasi."
+      },
+      {
+        "Prompt": "はなが今後しようと考えたことは何ですか。",
+        "Choices": [
+          "分からない時は、決めつける前に質問する。",
+          "短い連絡をすべて無視する。",
+          "ゆいからの連絡を全部消す。",
+          "相手の理由は絶対に聞かない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 menekankan memeriksa maksud sebelum menyimpulkan negatif."
+      },
+      {
+        "Prompt": "この文章で重要だとされていることはどれですか。",
+        "Choices": [
+          "送る側の工夫と受け取る側の確認の両方。",
+          "どんな時も長文を送ることだけ。",
+          "短い文章には必ず悪意があると考えること。",
+          "予定を一度決めたら変えないこと。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan menyatukan tanggung jawab pengirim dan penerima serta mengakui keterbatasan waktu."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-11",
+    "Title": "Pakaian lama menjadi tas baru",
+    "JapaneseTitle": "古い服の新しい役割",
+    "Chapter": "Lingkungan dan penemuan",
+    "Description": "Hana belajar memanfaatkan bahan tanpa membuat barang yang tidak dibutuhkan. Latih ～代わりに, ～ことに気づく, dan maksud tindakan.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-11.png",
+    "Pages": [
+      {
+        "title": "Lemari yang terlalu penuh",
+        "japanese": "季節が変わるので、はなは服を整理した。着なくなったシャツが何枚も出てきたが、まだ布は丈夫だった。捨てるにはもったいないと思い、どうしたらいいかゆいに相談した。ゆいは、町の手作り教室で古い服から袋を作れると教えてくれた。はなは、服を減らしたいのに物を増やしてしまうのではないかと、初めは迷った。",
+        "reading": "きせつが かわるので、はなは ふくを せいりした。きなくなった シャツが なんまいも でてきたが、まだ ぬのは じょうぶだった。すてるには もったいないと おもい、どうしたら いいか ゆいに そうだんした。ゆいは、まちの てづくりきょうしつで ふるい ふくから ふくろを つくれると おしえてくれた。はなは、ふくを へらしたいのに ものを ふやしてしまうのではないかと、はじめは まよった。",
+        "meaning": "Saat musim berganti, Hana merapikan pakaian. Ada beberapa kemeja yang tak lagi dipakai, tetapi kainnya masih kuat. Ia merasa sayang membuangnya dan bertanya kepada Yui. Yui memberi tahu tentang kelas kerajinan yang dapat mengubah pakaian lama menjadi tas. Awalnya Hana ragu, sebab ingin mengurangi barang, bukan malah menambahnya.",
+        "vocabulary": [
+          {
+            "japanese": "整理",
+            "reading": "せいり",
+            "meaning": "penataan; merapikan"
+          },
+          {
+            "japanese": "丈夫",
+            "reading": "じょうぶ",
+            "meaning": "kuat; tahan lama"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-11.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana memilah kemeja katun bersih dari lemari di samping sebuah tas kain kecil."
+      },
+      {
+        "title": "Memikirkan pengguna sebelum membuat",
+        "japanese": "教室の先生は、何を作るか決める前に、誰が何に使うのか考えるといいと言った。はなは、買い物で新しい袋をもらう代わりに使える、小さな布の袋を作ることにした。シャツの形をそのまま残す必要はなく、使いやすい大きさに変えた。ゆいは祖母のために、持ち手が長すぎない袋を作った。同じ材料でも、使う人によって形は変わる。",
+        "reading": "きょうしつの せんせいは、なにを つくるか きめる まえに、だれが なにに つかうのか かんがえると いいと いった。はなは、かいもので あたらしい ふくろを もらう かわりに つかえる、ちいさな ぬのの ふくろを つくることに した。シャツの かたちを そのまま のこす ひつようは なく、つかいやすい おおきさに かえた。ゆいは そぼのために、もちてが ながすぎない ふくろを つくった。おなじ ざいりょうでも、つかう ひとに よって かたちは かわる。",
+        "meaning": "Guru menyarankan memikirkan siapa akan memakai dan untuk apa, sebelum menentukan benda yang dibuat. Hana membuat tas kain kecil yang dapat dipakai sebagai pengganti menerima kantong baru saat belanja. Bentuk kemeja tidak harus dipertahankan; ukurannya disesuaikan agar praktis. Yui membuat tas bertali tidak terlalu panjang untuk neneknya. Bahan yang sama dapat menghasilkan bentuk berbeda sesuai pemakai.",
+        "vocabulary": [
+          {
+            "japanese": "持ち手",
+            "reading": "もちて",
+            "meaning": "pegangan; tali tas"
+          },
+          {
+            "japanese": "材料",
+            "reading": "ざいりょう",
+            "meaning": "bahan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-11.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana dan Yui membuat tas tambal sulam dari kemeja di meja kelas kerajinan bersama pengajar."
+      },
+      {
+        "title": "Barang yang benar-benar dipakai",
+        "japanese": "次の買い物で、はなは自分で作った袋を持って行った。店の人に袋が必要か聞かれた時、持っているので大丈夫だと答えた。家に置いたままなら、作った意味は少ない。はなは、古い物を新しくするだけでなく、暮らしの中で使い続けることが大切だと気づいた。ゆいの袋も祖母に喜ばれ、毎週の買い物に使われているという。",
+        "reading": "つぎの かいもので、はなは じぶんで つくった ふくろを もっていった。みせの ひとに ふくろが ひつようか きかれた とき、もっているので だいじょうぶだと こたえた。いえに おいたままなら、つくった いみは すくない。はなは、ふるい ものを あたらしくするだけでなく、くらしの なかで つかいつづけることが たいせつだと きづいた。ゆいの ふくろも そぼに よろこばれ、まいしゅうの かいものに つかわれているという。",
+        "meaning": "Saat berbelanja berikutnya, Hana membawa tas buatannya. Ketika ditanya apakah memerlukan kantong, ia menjawab sudah membawa sendiri. Jika hanya dibiarkan di rumah, manfaat pembuatannya kecil. Hana menyadari bukan hanya mengubah barang lama yang penting, tetapi terus menggunakannya dalam kehidupan. Tas Yui juga disukai nenek dan dipakai berbelanja setiap minggu.",
+        "vocabulary": [
+          {
+            "japanese": "暮らし",
+            "reading": "くらし",
+            "meaning": "kehidupan sehari-hari"
+          },
+          {
+            "japanese": "使い続ける",
+            "reading": "つかいつづける",
+            "meaning": "terus menggunakan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-11.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Hana membawa tas kain buatannya ke pasar, nenek tersenyum dengan tas buatan Yui."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "はなが初めに迷った理由は何ですか。",
+        "Choices": [
+          "服を減らすつもりが、物を増やすかもしれないと思ったから。",
+          "シャツの布がすべて破れていたから。",
+          "ゆいが教室に反対したから。",
+          "買い物に行ったことがなかったから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1 menjelaskan keraguan tentang menambah barang, bukan bahan yang rusak."
+      },
+      {
+        "Prompt": "先生は作る前に何を考えるよう勧めましたか。",
+        "Choices": [
+          "誰が何のために使うか。",
+          "材料が新しいかどうかだけ。",
+          "できるだけ大きく作る方法だけ。",
+          "同じ物を何個も作ることだけ。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 menempatkan pengguna dan fungsi sebagai pertimbangan utama."
+      },
+      {
+        "Prompt": "はなの袋は何の代わりに使うためのものですか。",
+        "Choices": [
+          "買い物でもらう新しい袋。",
+          "着るための新しいシャツ。",
+          "祖母の家の家具。",
+          "教室で使う机。"
+        ],
+        "Correct": 0,
+        "Explanation": "～代わりに menjelaskan tas sendiri menggantikan kantong baru yang diterima saat belanja."
+      },
+      {
+        "Prompt": "「家に置いたままなら、作った意味は少ない」は何を伝えていますか。",
+        "Choices": [
+          "作るだけではなく、実際に使うことが重要だ。",
+          "手作りの物は家の中だけで使うべきだ。",
+          "物はすぐに捨てたほうがよい。",
+          "使い方を考える必要はない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kalimat itu menekankan pemakaian nyata, bukan melarang menyimpan barang di rumah."
+      },
+      {
+        "Prompt": "文章の内容に合うものはどれですか。",
+        "Choices": [
+          "同じ材料でも、利用者に合わせて形を変えられる。",
+          "古い服はすべて同じ形の袋にするべきだ。",
+          "はなは作った袋を一度も使わなかった。",
+          "祖母は袋を受け取らなかった。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 menyebut penyesuaian bentuk menurut pengguna; halaman 3 memperlihatkan kedua tas benar-benar dipakai."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n3-12",
+    "Title": "Perubahan kecil di toko roti",
+    "JapaneseTitle": "小さな店の大きな変化",
+    "Chapter": "Pekerjaan dan keputusan",
+    "Description": "Toko roti mencoba panduan baru tanpa kehilangan cirinya. Latih ～に比べて, ～につれて, dan simpulan dari perubahan kecil.",
+    "Minutes": 13,
+    "ImageAsset": "assets/images/reading/story-n3-12.png",
+    "Pages": [
+      {
+        "title": "Pertanyaan pemilik toko",
+        "japanese": "駅の近くに、長く続いている小さなパン屋がある。はなはそこのパンが好きで、時々買いに行く。ある日、店主は、最近は新しい客が以前に比べて少ないと話した。味を変えるべきか迷っているという。しかし、いつもの客は今の味を気に入っていた。はなは、パンのよさが初めて来た人に十分伝わっていないのではないかと考えた。",
+        "reading": "えきの ちかくに、ながく つづいている ちいさな パンやが ある。はなは そこの パンが すきで、ときどき かいに いく。ある ひ、てんしゅは、さいきんは あたらしい きゃくが いぜんに くらべて すくないと はなした。あじを かえるべきか まよっているという。しかし、いつもの きゃくは いまの あじを きにいっていた。はなは、パンの よさが はじめて きた ひとに じゅうぶん つたわっていないのではないかと かんがえた。",
+        "meaning": "Dekat stasiun ada toko roti kecil yang sudah lama berdiri. Hana menyukai rotinya dan kadang berbelanja di sana. Pemilik berkata pelanggan baru belakangan lebih sedikit daripada sebelumnya, dan ia ragu apakah harus mengubah rasa. Namun, pelanggan tetap menyukai rasa yang ada. Hana menduga daya tarik roti belum cukup tersampaikan kepada pengunjung pertama.",
+        "vocabulary": [
+          {
+            "japanese": "店主",
+            "reading": "てんしゅ",
+            "meaning": "pemilik toko"
+          },
+          {
+            "japanese": "気に入る",
+            "reading": "きにいる",
+            "meaning": "menyukai; merasa cocok"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-12.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Hana berbicara dengan pemilik toko roti tua di depan keranjang roti."
+      },
+      {
+        "title": "Menjelaskan hal yang sudah baik",
+        "japanese": "はなとゆいは、パンの特徴が分かる小さなカードを作ることを提案した。材料や食感を短い言葉で書き、写真も添えた。店主は初め、写真を載せれば売れるというほど簡単ではないと言った。二人もその点は同じ考えだった。売上をすぐに増やす約束ではなく、客が選びやすくなるかを少しずつ確かめるための試みだった。",
+        "reading": "はなと ゆいは、パンの とくちょうが わかる ちいさな カードを つくることを ていあんした。ざいりょうや しょっかんを みじかい ことばで かき、しゃしんも そえた。てんしゅは はじめ、しゃしんを のせれば うれるというほど かんたんではないと いった。ふたりも その てんは おなじ かんがえだった。うりあげを すぐに ふやす やくそくではなく、きゃくが えらびやすく なるかを すこしずつ たしかめるための こころみだった。",
+        "meaning": "Hana dan Yui mengusulkan kartu kecil untuk menjelaskan ciri roti. Bahan dan tekstur ditulis singkat, disertai foto. Awalnya pemilik mengatakan penjualan tidak sesederhana menambahkan foto. Mereka sepakat. Percobaan itu bukan janji omzet akan segera naik, melainkan untuk memeriksa perlahan apakah pelanggan lebih mudah memilih.",
+        "vocabulary": [
+          {
+            "japanese": "特徴",
+            "reading": "とくちょう",
+            "meaning": "ciri khas"
+          },
+          {
+            "japanese": "試み",
+            "reading": "こころみ",
+            "meaning": "percobaan; usaha baru"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-12.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Hana dan Yui membantu membuat kartu roti bergambar serta mengambil foto dekat jendela toko."
+      },
+      {
+        "title": "Perubahan dalam percakapan",
+        "japanese": "カードを置いてから、初めて来た客が店主に質問することが増えた。店主が説明するにつれて、客は自分の好みに合うパンを選べるようになった。売上が大きく変わったわけではないが、店主は以前より客と話せるのがうれしいと言った。はなは、店のよさを変えなくても、それを伝える方法は変えられると学んだ。小さな変化が、新しい関係のきっかけになることもある。",
+        "reading": "カードを おいてから、はじめて きた きゃくが てんしゅに しつもんすることが ふえた。てんしゅが せつめいするにつれて、きゃくは じぶんの このみに あう パンを えらべるように なった。うりあげが おおきく かわったわけではないが、てんしゅは いぜんより きゃくと はなせるのが うれしいと いった。はなは、みせの よさを かえなくても、それを つたえる ほうほうは かえられると まなんだ。ちいさな へんかが、あたらしい かんけいの きっかけに なることも ある。",
+        "meaning": "Setelah kartu dipasang, pengunjung baru lebih sering bertanya kepada pemilik. Seiring penjelasannya, pelanggan dapat memilih roti yang cocok dengan selera. Penjualan memang tidak berubah besar, tetapi pemilik senang lebih banyak berbicara dengan pelanggan. Hana belajar bahwa cara menyampaikan kelebihan toko bisa diubah tanpa mengubah kelebihannya sendiri. Perubahan kecil terkadang memulai hubungan baru.",
+        "vocabulary": [
+          {
+            "japanese": "好み",
+            "reading": "このみ",
+            "meaning": "selera; kesukaan"
+          },
+          {
+            "japanese": "関係",
+            "reading": "かんけい",
+            "meaning": "hubungan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-12.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Beberapa pelanggan memilih roti sambil pemilik menjelaskan dengan kartu bergambar dan Hana tersenyum."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "店主は最初、何を変えるべきか迷っていましたか。",
+        "Choices": [
+          "パンの味。",
+          "駅の場所。",
+          "店の前の道。",
+          "はなの仕事。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 1: pemilik ragu apakah perlu mengubah rasa karena pelanggan baru berkurang."
+      },
+      {
+        "Prompt": "はなは、客が少ない理由としてどんな可能性を考えましたか。",
+        "Choices": [
+          "パンのよさが初めての客に伝わっていない可能性。",
+          "常連客が全員今の味を嫌っている可能性。",
+          "駅が閉まった可能性。",
+          "店主がパンを作れなくなった可能性。"
+        ],
+        "Correct": 0,
+        "Explanation": "Cerita menegaskan pelanggan tetap menyukai rasa, sementara informasi bagi pengunjung baru mungkin kurang."
+      },
+      {
+        "Prompt": "カードを作る目的は何でしたか。",
+        "Choices": [
+          "客が選びやすくなるか確かめるため。",
+          "すぐに売上が倍になると約束するため。",
+          "店主が客と話さなくてよくなるため。",
+          "パンの材料をすべて変えるため。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 2 menyatakan tujuan percobaan dan secara eksplisit menolak janji peningkatan omzet segera."
+      },
+      {
+        "Prompt": "カードを置いた後に起きたことは何ですか。",
+        "Choices": [
+          "初めての客が質問し、店主と話す機会が増えた。",
+          "すべての客がカードだけを買うようになった。",
+          "店主が説明をやめた。",
+          "売上が必ず大きく増えた。"
+        ],
+        "Correct": 0,
+        "Explanation": "Halaman 3 menunjukkan perubahan interaksi; omzet tidak berubah besar."
+      },
+      {
+        "Prompt": "文章から読み取れる考えはどれですか。",
+        "Choices": [
+          "よさを保ちながら、伝え方を改善できる。",
+          "新しい客を増やすには味を必ず変える必要がある。",
+          "小さな工夫には意味がない。",
+          "写真を置けば必ず成功する。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan membedakan mengubah kualitas inti toko dengan memperbaiki cara menyampaikannya."
+      }
+    ]
+  }
+]

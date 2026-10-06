@@ -1,0 +1,1810 @@
+{
+  "source": "https://github.com/davidluzgouveia/kanji-data",
+  "downloadUrl": "https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji.json",
+  "retrievedOn": "2026-10-03",
+  "sourceSha256": "561b72ea9df703c58fae0c68585812e172aaa7611d2fcee6719d55fd2dfd4fa4",
+  "dictionarySource": "KANJIDIC by James William Breen and EDRDG",
+  "levelSource": "Jonathan Waller JLPT Resources via kanji-data jlpt_new field",
+  "characters": {
+    "力": {
+      "strokes": 2,
+      "readings_on": [
+        "りょく",
+        "りき",
+        "りい"
+      ],
+      "readings_kun": [
+        "ちから"
+      ]
+    },
+    "口": {
+      "strokes": 3,
+      "readings_on": [
+        "こう",
+        "く"
+      ],
+      "readings_kun": [
+        "くち"
+      ]
+    },
+    "工": {
+      "strokes": 3,
+      "readings_on": [
+        "こう",
+        "く",
+        "ぐ"
+      ],
+      "readings_kun": []
+    },
+    "夕": {
+      "strokes": 3,
+      "readings_on": [
+        "せき"
+      ],
+      "readings_kun": [
+        "ゆう"
+      ]
+    },
+    "手": {
+      "strokes": 4,
+      "readings_on": [
+        "しゅ",
+        "ず"
+      ],
+      "readings_kun": [
+        "て",
+        "て-",
+        "-て",
+        "た-"
+      ]
+    },
+    "文": {
+      "strokes": 4,
+      "readings_on": [
+        "ぶん",
+        "もん"
+      ],
+      "readings_kun": [
+        "ふみ",
+        "あや"
+      ]
+    },
+    "犬": {
+      "strokes": 4,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [
+        "いぬ",
+        "いぬ-"
+      ]
+    },
+    "正": {
+      "strokes": 5,
+      "readings_on": [
+        "せい",
+        "しょう"
+      ],
+      "readings_kun": [
+        "ただ.しい",
+        "ただ.す",
+        "まさ",
+        "まさ.に"
+      ]
+    },
+    "田": {
+      "strokes": 5,
+      "readings_on": [
+        "でん"
+      ],
+      "readings_kun": [
+        "た"
+      ]
+    },
+    "目": {
+      "strokes": 5,
+      "readings_on": [
+        "もく",
+        "ぼく"
+      ],
+      "readings_kun": [
+        "め",
+        "-め",
+        "ま-"
+      ]
+    },
+    "立": {
+      "strokes": 5,
+      "readings_on": [
+        "りつ",
+        "りゅう",
+        "りっとる"
+      ],
+      "readings_kun": [
+        "た.つ",
+        "-た.つ",
+        "た.ち-",
+        "た.てる",
+        "-た.てる",
+        "た.て-",
+        "たて-",
+        "-た.て",
+        "-だ.て",
+        "-だ.てる"
+      ]
+    },
+    "元": {
+      "strokes": 4,
+      "readings_on": [
+        "げん",
+        "がん"
+      ],
+      "readings_kun": [
+        "もと"
+      ]
+    },
+    "公": {
+      "strokes": 4,
+      "readings_on": [
+        "こう",
+        "く"
+      ],
+      "readings_kun": [
+        "おおやけ"
+      ]
+    },
+    "切": {
+      "strokes": 4,
+      "readings_on": [
+        "せつ",
+        "さい"
+      ],
+      "readings_kun": [
+        "き.る",
+        "-き.る",
+        "き.り",
+        "-き.り",
+        "-ぎ.り",
+        "き.れる",
+        "-き.れる",
+        "き.れ",
+        "-き.れ",
+        "-ぎ.れ"
+      ]
+    },
+    "少": {
+      "strokes": 4,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "すく.ない",
+        "すこ.し"
+      ]
+    },
+    "心": {
+      "strokes": 4,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "こころ",
+        "-ごころ"
+      ]
+    },
+    "方": {
+      "strokes": 4,
+      "readings_on": [
+        "ほう"
+      ],
+      "readings_kun": [
+        "かた",
+        "-かた",
+        "-がた"
+      ]
+    },
+    "牛": {
+      "strokes": 4,
+      "readings_on": [
+        "ぎゅう"
+      ],
+      "readings_kun": [
+        "うし"
+      ]
+    },
+    "止": {
+      "strokes": 4,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "と.まる",
+        "-ど.まり",
+        "と.める",
+        "-と.める",
+        "-ど.め",
+        "とど.める",
+        "とど.め",
+        "とど.まる",
+        "や.める",
+        "や.む",
+        "-や.む",
+        "よ.す",
+        "-さ.す",
+        "-さ.し"
+      ]
+    },
+    "兄": {
+      "strokes": 5,
+      "readings_on": [
+        "けい",
+        "きょう"
+      ],
+      "readings_kun": [
+        "あに"
+      ]
+    },
+    "冬": {
+      "strokes": 5,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "ふゆ"
+      ]
+    },
+    "古": {
+      "strokes": 5,
+      "readings_on": [
+        "こ"
+      ],
+      "readings_kun": [
+        "ふる.い",
+        "ふる-",
+        "-ふる.す"
+      ]
+    },
+    "台": {
+      "strokes": 5,
+      "readings_on": [
+        "だい",
+        "たい"
+      ],
+      "readings_kun": [
+        "うてな",
+        "われ",
+        "つかさ"
+      ]
+    },
+    "広": {
+      "strokes": 5,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "ひろ.い",
+        "ひろ.まる",
+        "ひろ.める",
+        "ひろ.がる",
+        "ひろ.げる"
+      ]
+    },
+    "用": {
+      "strokes": 5,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": [
+        "もち.いる"
+      ]
+    },
+    "世": {
+      "strokes": 5,
+      "readings_on": [
+        "せい",
+        "せ",
+        "そう"
+      ],
+      "readings_kun": [
+        "よ"
+      ]
+    },
+    "主": {
+      "strokes": 5,
+      "readings_on": [
+        "しゅ",
+        "す",
+        "しゅう"
+      ],
+      "readings_kun": [
+        "ぬし",
+        "おも",
+        "あるじ"
+      ]
+    },
+    "代": {
+      "strokes": 5,
+      "readings_on": [
+        "だい",
+        "たい"
+      ],
+      "readings_kun": [
+        "か.わる",
+        "かわ.る",
+        "かわ.り",
+        "か.わり",
+        "-がわ.り",
+        "-が.わり",
+        "か.える",
+        "よ",
+        "しろ"
+      ]
+    },
+    "写": {
+      "strokes": 5,
+      "readings_on": [
+        "しゃ",
+        "じゃ"
+      ],
+      "readings_kun": [
+        "うつ.す",
+        "うつ.る",
+        "うつ-",
+        "うつ.し"
+      ]
+    },
+    "去": {
+      "strokes": 5,
+      "readings_on": [
+        "きょ",
+        "こ"
+      ],
+      "readings_kun": [
+        "さ.る",
+        "-さ.る"
+      ]
+    },
+    "字": {
+      "strokes": 6,
+      "readings_on": [
+        "じ"
+      ],
+      "readings_kun": [
+        "あざ",
+        "あざな",
+        "-な"
+      ]
+    },
+    "早": {
+      "strokes": 6,
+      "readings_on": [
+        "そう",
+        "さっ"
+      ],
+      "readings_kun": [
+        "はや.い",
+        "はや",
+        "はや-",
+        "はや.まる",
+        "はや.める",
+        "さ-"
+      ]
+    },
+    "町": {
+      "strokes": 7,
+      "readings_on": [
+        "ちょう"
+      ],
+      "readings_kun": [
+        "まち"
+      ]
+    },
+    "花": {
+      "strokes": 7,
+      "readings_on": [
+        "か",
+        "け"
+      ],
+      "readings_kun": [
+        "はな"
+      ]
+    },
+    "赤": {
+      "strokes": 7,
+      "readings_on": [
+        "せき",
+        "しゃく"
+      ],
+      "readings_kun": [
+        "あか",
+        "あか-",
+        "あか.い",
+        "あか.らむ",
+        "あか.らめる"
+      ]
+    },
+    "足": {
+      "strokes": 7,
+      "readings_on": [
+        "そく"
+      ],
+      "readings_kun": [
+        "あし",
+        "た.りる",
+        "た.る",
+        "た.す"
+      ]
+    },
+    "不": {
+      "strokes": 4,
+      "readings_on": [
+        "ふ",
+        "ぶ"
+      ],
+      "readings_kun": []
+    },
+    "仕": {
+      "strokes": 5,
+      "readings_on": [
+        "し",
+        "じ"
+      ],
+      "readings_kun": [
+        "つか.える"
+      ]
+    },
+    "会": {
+      "strokes": 6,
+      "readings_on": [
+        "かい",
+        "え"
+      ],
+      "readings_kun": [
+        "あ.う",
+        "あ.わせる",
+        "あつ.まる"
+      ]
+    },
+    "同": {
+      "strokes": 6,
+      "readings_on": [
+        "どう"
+      ],
+      "readings_kun": [
+        "おな.じ"
+      ]
+    },
+    "多": {
+      "strokes": 6,
+      "readings_on": [
+        "た"
+      ],
+      "readings_kun": [
+        "おお.い",
+        "まさ.に",
+        "まさ.る"
+      ]
+    },
+    "考": {
+      "strokes": 6,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "かんが.える",
+        "かんが.え"
+      ]
+    },
+    "肉": {
+      "strokes": 6,
+      "readings_on": [
+        "にく"
+      ],
+      "readings_kun": [
+        "しし"
+      ]
+    },
+    "自": {
+      "strokes": 6,
+      "readings_on": [
+        "じ",
+        "し"
+      ],
+      "readings_kun": [
+        "みずか.ら",
+        "おの.ずから",
+        "おの.ずと"
+      ]
+    },
+    "色": {
+      "strokes": 6,
+      "readings_on": [
+        "しょく",
+        "しき"
+      ],
+      "readings_kun": [
+        "いろ"
+      ]
+    },
+    "体": {
+      "strokes": 7,
+      "readings_on": [
+        "たい",
+        "てい"
+      ],
+      "readings_kun": [
+        "からだ",
+        "かたち"
+      ]
+    },
+    "作": {
+      "strokes": 7,
+      "readings_on": [
+        "さく",
+        "さ"
+      ],
+      "readings_kun": [
+        "つく.る",
+        "つく.り",
+        "-づく.り"
+      ]
+    },
+    "図": {
+      "strokes": 7,
+      "readings_on": [
+        "ず",
+        "と"
+      ],
+      "readings_kun": [
+        "え",
+        "はか.る"
+      ]
+    },
+    "売": {
+      "strokes": 7,
+      "readings_on": [
+        "ばい"
+      ],
+      "readings_kun": [
+        "う.る",
+        "う.れる"
+      ]
+    },
+    "弟": {
+      "strokes": 7,
+      "readings_on": [
+        "てい",
+        "だい",
+        "で"
+      ],
+      "readings_kun": [
+        "おとうと"
+      ]
+    },
+    "社": {
+      "strokes": 7,
+      "readings_on": [
+        "しゃ"
+      ],
+      "readings_kun": [
+        "やしろ"
+      ]
+    },
+    "言": {
+      "strokes": 7,
+      "readings_on": [
+        "げん",
+        "ごん"
+      ],
+      "readings_kun": [
+        "い.う",
+        "こと"
+      ]
+    },
+    "走": {
+      "strokes": 7,
+      "readings_on": [
+        "そう"
+      ],
+      "readings_kun": [
+        "はし.る"
+      ]
+    },
+    "近": {
+      "strokes": 7,
+      "readings_on": [
+        "きん",
+        "こん"
+      ],
+      "readings_kun": [
+        "ちか.い"
+      ]
+    },
+    "空": {
+      "strokes": 8,
+      "readings_on": [
+        "くう"
+      ],
+      "readings_kun": [
+        "そら",
+        "あ.く",
+        "あ.き",
+        "あ.ける",
+        "から",
+        "す.く",
+        "す.かす",
+        "むな.しい"
+      ]
+    },
+    "青": {
+      "strokes": 8,
+      "readings_on": [
+        "せい",
+        "しょう"
+      ],
+      "readings_kun": [
+        "あお",
+        "あお-",
+        "あお.い"
+      ]
+    },
+    "音": {
+      "strokes": 9,
+      "readings_on": [
+        "おん",
+        "いん",
+        "-のん"
+      ],
+      "readings_kun": [
+        "おと",
+        "ね"
+      ]
+    },
+    "地": {
+      "strokes": 6,
+      "readings_on": [
+        "ち",
+        "じ"
+      ],
+      "readings_kun": []
+    },
+    "安": {
+      "strokes": 6,
+      "readings_on": [
+        "あん"
+      ],
+      "readings_kun": [
+        "やす.い",
+        "やす.まる",
+        "やす",
+        "やす.らか"
+      ]
+    },
+    "有": {
+      "strokes": 6,
+      "readings_on": [
+        "ゆう",
+        "う"
+      ],
+      "readings_kun": [
+        "あ.る"
+      ]
+    },
+    "死": {
+      "strokes": 6,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "し.ぬ",
+        "し.に-"
+      ]
+    },
+    "京": {
+      "strokes": 8,
+      "readings_on": [
+        "きょう",
+        "けい",
+        "きん"
+      ],
+      "readings_kun": [
+        "みやこ"
+      ]
+    },
+    "夜": {
+      "strokes": 8,
+      "readings_on": [
+        "や"
+      ],
+      "readings_kun": [
+        "よ",
+        "よる"
+      ]
+    },
+    "妹": {
+      "strokes": 8,
+      "readings_on": [
+        "まい"
+      ],
+      "readings_kun": [
+        "いもうと"
+      ]
+    },
+    "姉": {
+      "strokes": 8,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "あね",
+        "はは"
+      ]
+    },
+    "店": {
+      "strokes": 8,
+      "readings_on": [
+        "てん"
+      ],
+      "readings_kun": [
+        "みせ",
+        "たな"
+      ]
+    },
+    "明": {
+      "strokes": 8,
+      "readings_on": [
+        "めい",
+        "みょう",
+        "みん"
+      ],
+      "readings_kun": [
+        "あ.かり",
+        "あか.るい",
+        "あか.るむ",
+        "あか.らむ",
+        "あき.らか",
+        "あ.ける",
+        "-あ.け",
+        "あ.く",
+        "あ.くる",
+        "あ.かす"
+      ]
+    },
+    "歩": {
+      "strokes": 8,
+      "readings_on": [
+        "ほ",
+        "ぶ",
+        "ふ"
+      ],
+      "readings_kun": [
+        "ある.く",
+        "あゆ.む"
+      ]
+    },
+    "画": {
+      "strokes": 8,
+      "readings_on": [
+        "が",
+        "かく",
+        "え",
+        "かい"
+      ],
+      "readings_kun": [
+        "えが.く",
+        "かく.する",
+        "かぎ.る",
+        "はかりごと",
+        "はか.る"
+      ]
+    },
+    "知": {
+      "strokes": 8,
+      "readings_on": [
+        "ち"
+      ],
+      "readings_kun": [
+        "し.る",
+        "し.らせる"
+      ]
+    },
+    "室": {
+      "strokes": 9,
+      "readings_on": [
+        "しつ"
+      ],
+      "readings_kun": [
+        "むろ"
+      ]
+    },
+    "思": {
+      "strokes": 9,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "おも.う",
+        "おもえら.く",
+        "おぼ.す"
+      ]
+    },
+    "海": {
+      "strokes": 9,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "うみ"
+      ]
+    },
+    "茶": {
+      "strokes": 9,
+      "readings_on": [
+        "ちゃ",
+        "さ"
+      ],
+      "readings_kun": []
+    },
+    "以": {
+      "strokes": 5,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": [
+        "もっ.て"
+      ]
+    },
+    "夏": {
+      "strokes": 10,
+      "readings_on": [
+        "か",
+        "が",
+        "げ"
+      ],
+      "readings_kun": [
+        "なつ"
+      ]
+    },
+    "家": {
+      "strokes": 10,
+      "readings_on": [
+        "か",
+        "け"
+      ],
+      "readings_kun": [
+        "いえ",
+        "や",
+        "うち"
+      ]
+    },
+    "紙": {
+      "strokes": 10,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "かみ"
+      ]
+    },
+    "通": {
+      "strokes": 10,
+      "readings_on": [
+        "つう",
+        "つ"
+      ],
+      "readings_kun": [
+        "とお.る",
+        "とお.り",
+        "-とお.り",
+        "-どお.り",
+        "とお.す",
+        "とお.し",
+        "-どお.し",
+        "かよ.う"
+      ]
+    },
+    "強": {
+      "strokes": 11,
+      "readings_on": [
+        "きょう",
+        "ごう"
+      ],
+      "readings_kun": [
+        "つよ.い",
+        "つよ.まる",
+        "つよ.める",
+        "し.いる",
+        "こわ.い"
+      ]
+    },
+    "教": {
+      "strokes": 11,
+      "readings_on": [
+        "きょう"
+      ],
+      "readings_kun": [
+        "おし.える",
+        "おそ.わる"
+      ]
+    },
+    "理": {
+      "strokes": 11,
+      "readings_on": [
+        "り"
+      ],
+      "readings_kun": [
+        "ことわり"
+      ]
+    },
+    "週": {
+      "strokes": 11,
+      "readings_on": [
+        "しゅう"
+      ],
+      "readings_kun": []
+    },
+    "魚": {
+      "strokes": 11,
+      "readings_on": [
+        "ぎょ"
+      ],
+      "readings_kun": [
+        "うお",
+        "さかな",
+        "-ざかな"
+      ]
+    },
+    "鳥": {
+      "strokes": 11,
+      "readings_on": [
+        "ちょう"
+      ],
+      "readings_kun": [
+        "とり"
+      ]
+    },
+    "黒": {
+      "strokes": 11,
+      "readings_on": [
+        "こく"
+      ],
+      "readings_kun": [
+        "くろ",
+        "くろ.ずむ",
+        "くろ.い"
+      ]
+    },
+    "住": {
+      "strokes": 7,
+      "readings_on": [
+        "じゅう",
+        "ぢゅう",
+        "ちゅう"
+      ],
+      "readings_kun": [
+        "す.む",
+        "す.まう",
+        "-ず.まい"
+      ]
+    },
+    "医": {
+      "strokes": 7,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": [
+        "い.やす",
+        "い.する",
+        "くすし"
+      ]
+    },
+    "究": {
+      "strokes": 7,
+      "readings_on": [
+        "きゅう",
+        "く"
+      ],
+      "readings_kun": [
+        "きわ.める"
+      ]
+    },
+    "者": {
+      "strokes": 8,
+      "readings_on": [
+        "しゃ"
+      ],
+      "readings_kun": [
+        "もの"
+      ]
+    },
+    "研": {
+      "strokes": 9,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [
+        "と.ぐ"
+      ]
+    },
+    "場": {
+      "strokes": 12,
+      "readings_on": [
+        "じょう",
+        "ちょう"
+      ],
+      "readings_kun": [
+        "ば"
+      ]
+    },
+    "朝": {
+      "strokes": 12,
+      "readings_on": [
+        "ちょう"
+      ],
+      "readings_kun": [
+        "あさ"
+      ]
+    },
+    "答": {
+      "strokes": 12,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "こた.える",
+        "こた.え"
+      ]
+    },
+    "買": {
+      "strokes": 12,
+      "readings_on": [
+        "ばい"
+      ],
+      "readings_kun": [
+        "か.う"
+      ]
+    },
+    "道": {
+      "strokes": 12,
+      "readings_on": [
+        "どう",
+        "とう"
+      ],
+      "readings_kun": [
+        "みち",
+        "いう"
+      ]
+    },
+    "楽": {
+      "strokes": 13,
+      "readings_on": [
+        "がく",
+        "らく",
+        "ごう"
+      ],
+      "readings_kun": [
+        "たの.しい",
+        "たの.しむ",
+        "この.む"
+      ]
+    },
+    "事": {
+      "strokes": 8,
+      "readings_on": [
+        "じ",
+        "ず"
+      ],
+      "readings_kun": [
+        "こと",
+        "つか.う",
+        "つか.える"
+      ]
+    },
+    "使": {
+      "strokes": 8,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "つか.う",
+        "つか.い",
+        "-つか.い",
+        "-づか.い"
+      ]
+    },
+    "始": {
+      "strokes": 8,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "はじ.める",
+        "-はじ.める",
+        "はじ.まる"
+      ]
+    },
+    "服": {
+      "strokes": 8,
+      "readings_on": [
+        "ふく"
+      ],
+      "readings_kun": []
+    },
+    "物": {
+      "strokes": 8,
+      "readings_on": [
+        "ぶつ",
+        "もつ"
+      ],
+      "readings_kun": [
+        "もの",
+        "もの-"
+      ]
+    },
+    "屋": {
+      "strokes": 9,
+      "readings_on": [
+        "おく"
+      ],
+      "readings_kun": [
+        "や"
+      ]
+    },
+    "度": {
+      "strokes": 9,
+      "readings_on": [
+        "ど",
+        "と",
+        "たく"
+      ],
+      "readings_kun": [
+        "たび",
+        "-た.い"
+      ]
+    },
+    "待": {
+      "strokes": 9,
+      "readings_on": [
+        "たい"
+      ],
+      "readings_kun": [
+        "ま.つ",
+        "-ま.ち"
+      ]
+    },
+    "持": {
+      "strokes": 9,
+      "readings_on": [
+        "じ"
+      ],
+      "readings_kun": [
+        "も.つ",
+        "-も.ち",
+        "も.てる"
+      ]
+    },
+    "界": {
+      "strokes": 9,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": []
+    },
+    "発": {
+      "strokes": 9,
+      "readings_on": [
+        "はつ",
+        "ほつ"
+      ],
+      "readings_kun": [
+        "た.つ",
+        "あば.く",
+        "おこ.る",
+        "つか.わす",
+        "はな.つ"
+      ]
+    },
+    "送": {
+      "strokes": 9,
+      "readings_on": [
+        "そう"
+      ],
+      "readings_kun": [
+        "おく.る"
+      ]
+    },
+    "重": {
+      "strokes": 9,
+      "readings_on": [
+        "じゅう",
+        "ちょう"
+      ],
+      "readings_kun": [
+        "え",
+        "おも.い",
+        "おも.り",
+        "おも.なう",
+        "かさ.ねる",
+        "かさ.なる",
+        "おも"
+      ]
+    },
+    "起": {
+      "strokes": 10,
+      "readings_on": [
+        "き"
+      ],
+      "readings_kun": [
+        "お.きる",
+        "お.こる",
+        "お.こす",
+        "おこ.す",
+        "た.つ"
+      ]
+    },
+    "院": {
+      "strokes": 10,
+      "readings_on": [
+        "いん"
+      ],
+      "readings_kun": []
+    },
+    "終": {
+      "strokes": 11,
+      "readings_on": [
+        "しゅう"
+      ],
+      "readings_kun": [
+        "お.わる",
+        "-お.わる",
+        "おわ.る",
+        "お.える",
+        "つい",
+        "つい.に"
+      ]
+    },
+    "習": {
+      "strokes": 11,
+      "readings_on": [
+        "しゅう",
+        "じゅ"
+      ],
+      "readings_kun": [
+        "なら.う",
+        "なら.い"
+      ]
+    },
+    "転": {
+      "strokes": 11,
+      "readings_on": [
+        "てん"
+      ],
+      "readings_kun": [
+        "ころ.がる",
+        "ころ.げる",
+        "ころ.がす",
+        "ころ.ぶ",
+        "まろ.ぶ",
+        "うたた",
+        "うつ.る",
+        "くる.めく"
+      ]
+    },
+    "運": {
+      "strokes": 12,
+      "readings_on": [
+        "うん"
+      ],
+      "readings_kun": [
+        "はこ.ぶ"
+      ]
+    },
+    "開": {
+      "strokes": 12,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "ひら.く",
+        "ひら.き",
+        "-びら.き",
+        "ひら.ける",
+        "あ.く",
+        "あ.ける"
+      ]
+    },
+    "集": {
+      "strokes": 12,
+      "readings_on": [
+        "しゅう"
+      ],
+      "readings_kun": [
+        "あつ.まる",
+        "あつ.める",
+        "つど.う"
+      ]
+    },
+    "飲": {
+      "strokes": 12,
+      "readings_on": [
+        "いん",
+        "おん"
+      ],
+      "readings_kun": [
+        "の.む",
+        "-の.み"
+      ]
+    },
+    "業": {
+      "strokes": 13,
+      "readings_on": [
+        "ぎょう",
+        "ごう"
+      ],
+      "readings_kun": [
+        "わざ"
+      ]
+    },
+    "漢": {
+      "strokes": 13,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": []
+    },
+    "歌": {
+      "strokes": 14,
+      "readings_on": [
+        "か"
+      ],
+      "readings_kun": [
+        "うた",
+        "うた.う"
+      ]
+    },
+    "親": {
+      "strokes": 16,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "おや",
+        "おや-",
+        "した.しい",
+        "した.しむ"
+      ]
+    },
+    "病": {
+      "strokes": 10,
+      "readings_on": [
+        "びょう",
+        "へい"
+      ],
+      "readings_kun": [
+        "や.む",
+        "-や.み",
+        "やまい"
+      ]
+    },
+    "別": {
+      "strokes": 7,
+      "readings_on": [
+        "べつ"
+      ],
+      "readings_kun": [
+        "わか.れる",
+        "わ.ける"
+      ]
+    },
+    "注": {
+      "strokes": 8,
+      "readings_on": [
+        "ちゅう"
+      ],
+      "readings_kun": [
+        "そそ.ぐ",
+        "さ.す",
+        "つ.ぐ"
+      ]
+    },
+    "洋": {
+      "strokes": 9,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": []
+    },
+    "特": {
+      "strokes": 10,
+      "readings_on": [
+        "とく"
+      ],
+      "readings_kun": []
+    },
+    "意": {
+      "strokes": 13,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": []
+    },
+    "味": {
+      "strokes": 8,
+      "readings_on": [
+        "み"
+      ],
+      "readings_kun": [
+        "あじ",
+        "あじ.わう"
+      ]
+    },
+    "勉": {
+      "strokes": 10,
+      "readings_on": [
+        "べん"
+      ],
+      "readings_kun": [
+        "つと.める"
+      ]
+    },
+    "旅": {
+      "strokes": 10,
+      "readings_on": [
+        "りょ"
+      ],
+      "readings_kun": [
+        "たび"
+      ]
+    },
+    "員": {
+      "strokes": 10,
+      "readings_on": [
+        "いん"
+      ],
+      "readings_kun": []
+    },
+    "動": {
+      "strokes": 11,
+      "readings_on": [
+        "どう"
+      ],
+      "readings_kun": [
+        "うご.く",
+        "うご.かす"
+      ]
+    },
+    "悪": {
+      "strokes": 11,
+      "readings_on": [
+        "あく",
+        "お"
+      ],
+      "readings_kun": [
+        "わる.い",
+        "わる-",
+        "あ.し",
+        "にく.い",
+        "-にく.い",
+        "ああ",
+        "いずくに",
+        "いずくんぞ",
+        "にく.む"
+      ]
+    },
+    "族": {
+      "strokes": 11,
+      "readings_on": [
+        "ぞく"
+      ],
+      "readings_kun": []
+    },
+    "着": {
+      "strokes": 12,
+      "readings_on": [
+        "ちゃく",
+        "じゃく"
+      ],
+      "readings_kun": [
+        "き.る",
+        "-ぎ",
+        "き.せる",
+        "-き.せ",
+        "つ.く",
+        "つ.ける"
+      ]
+    },
+    "野": {
+      "strokes": 11,
+      "readings_on": [
+        "や",
+        "しょ"
+      ],
+      "readings_kun": [
+        "の",
+        "の-"
+      ]
+    },
+    "風": {
+      "strokes": 9,
+      "readings_on": [
+        "ふう",
+        "ふ"
+      ],
+      "readings_kun": [
+        "かぜ",
+        "かざ-",
+        "-かぜ"
+      ]
+    },
+    "新": {
+      "strokes": 13,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "あたら.しい",
+        "あら.た",
+        "あら-",
+        "にい-"
+      ]
+    },
+    "問": {
+      "strokes": 11,
+      "readings_on": [
+        "もん"
+      ],
+      "readings_kun": [
+        "と.う",
+        "と.い",
+        "とん"
+      ]
+    },
+    "銀": {
+      "strokes": 14,
+      "readings_on": [
+        "ぎん"
+      ],
+      "readings_kun": [
+        "しろがね"
+      ]
+    },
+    "題": {
+      "strokes": 18,
+      "readings_on": [
+        "だい"
+      ],
+      "readings_kun": []
+    },
+    "館": {
+      "strokes": 16,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "やかた",
+        "たて"
+      ]
+    },
+    "駅": {
+      "strokes": 14,
+      "readings_on": [
+        "えき"
+      ],
+      "readings_kun": []
+    },
+    "料": {
+      "strokes": 10,
+      "readings_on": [
+        "りょう"
+      ],
+      "readings_kun": []
+    },
+    "映": {
+      "strokes": 9,
+      "readings_on": [
+        "えい"
+      ],
+      "readings_kun": [
+        "うつ.る",
+        "うつ.す",
+        "は.える",
+        "-ば.え"
+      ]
+    },
+    "私": {
+      "strokes": 7,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "わたくし",
+        "わたし"
+      ]
+    },
+    "帰": {
+      "strokes": 10,
+      "readings_on": [
+        "き"
+      ],
+      "readings_kun": [
+        "かえ.る",
+        "かえ.す",
+        "おく.る",
+        "とつ.ぐ"
+      ]
+    },
+    "春": {
+      "strokes": 9,
+      "readings_on": [
+        "しゅん"
+      ],
+      "readings_kun": [
+        "はる"
+      ]
+    },
+    "昼": {
+      "strokes": 9,
+      "readings_on": [
+        "ちゅう"
+      ],
+      "readings_kun": [
+        "ひる"
+      ]
+    },
+    "秋": {
+      "strokes": 9,
+      "readings_on": [
+        "しゅう"
+      ],
+      "readings_kun": [
+        "あき",
+        "とき"
+      ]
+    },
+    "計": {
+      "strokes": 9,
+      "readings_on": [
+        "けい"
+      ],
+      "readings_kun": [
+        "はか.る",
+        "はか.らう"
+      ]
+    },
+    "建": {
+      "strokes": 9,
+      "readings_on": [
+        "けん",
+        "こん"
+      ],
+      "readings_kun": [
+        "た.てる",
+        "た.て",
+        "-だ.て",
+        "た.つ"
+      ]
+    },
+    "英": {
+      "strokes": 8,
+      "readings_on": [
+        "えい"
+      ],
+      "readings_kun": [
+        "はなぶさ"
+      ]
+    },
+    "飯": {
+      "strokes": 12,
+      "readings_on": [
+        "はん"
+      ],
+      "readings_kun": [
+        "めし"
+      ]
+    },
+    "曜": {
+      "strokes": 18,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": []
+    },
+    "品": {
+      "strokes": 9,
+      "readings_on": [
+        "ひん",
+        "ほん"
+      ],
+      "readings_kun": [
+        "しな"
+      ]
+    },
+    "急": {
+      "strokes": 9,
+      "readings_on": [
+        "きゅう"
+      ],
+      "readings_kun": [
+        "いそ.ぐ",
+        "いそ.ぎ",
+        "せ.く"
+      ]
+    },
+    "真": {
+      "strokes": 10,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "ま",
+        "ま-",
+        "まこと"
+      ]
+    },
+    "堂": {
+      "strokes": 11,
+      "readings_on": [
+        "どう"
+      ],
+      "readings_kun": []
+    },
+    "試": {
+      "strokes": 13,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "こころ.みる",
+        "ため.す"
+      ]
+    },
+    "借": {
+      "strokes": 10,
+      "readings_on": [
+        "しゃく"
+      ],
+      "readings_kun": [
+        "か.りる"
+      ]
+    },
+    "験": {
+      "strokes": 18,
+      "readings_on": [
+        "けん",
+        "げん"
+      ],
+      "readings_kun": [
+        "あかし",
+        "しるし",
+        "ため.す",
+        "ためし"
+      ]
+    },
+    "質": {
+      "strokes": 15,
+      "readings_on": [
+        "しつ",
+        "しち",
+        "ち"
+      ],
+      "readings_kun": [
+        "たち",
+        "ただ.す",
+        "もと",
+        "わりふ"
+      ]
+    },
+    "貸": {
+      "strokes": 12,
+      "readings_on": [
+        "たい"
+      ],
+      "readings_kun": [
+        "か.す",
+        "か.し-",
+        "かし-"
+      ]
+    }
+  },
+  "license": "CC BY-SA 4.0 (KANJIDIC data); MIT (kanji-data conversion)"
+}

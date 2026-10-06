@@ -3,7 +3,15 @@ package api
 import "net/http"
 
 func (s *Server) kanjiCourse(w http.ResponseWriter, r *http.Request) {
-	writeData(w, http.StatusOK, s.store.KanjiCourse(userID(r)))
+	level := r.URL.Query().Get("level")
+	if level == "" {
+		level = "N5"
+	}
+	if level != "N5" && level != "N4" {
+		writeError(w, http.StatusBadRequest, "invalid_level", "Kanji tersedia untuk N5 dan N4.")
+		return
+	}
+	writeData(w, http.StatusOK, s.store.KanjiCourse(userID(r), level))
 }
 func (s *Server) kanjiLesson(w http.ResponseWriter, r *http.Request) {
 	lesson, err := s.store.KanjiLesson(userID(r), r.PathValue("lessonID"))

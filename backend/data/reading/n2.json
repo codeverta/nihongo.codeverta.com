@@ -1,0 +1,1574 @@
+[
+  {
+    "ID": "reading-n2-01",
+    "Title": "Perpustakaan dan kesenjangan digital",
+    "JapaneseTitle": "便利さの向こう側",
+    "Chapter": "Masyarakat dan akses",
+    "Description": "Bedakan efisiensi dengan akses yang adil. Latih ～に伴って, ～とは限らない, dan kesimpulan penulis.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "Efisiensi yang tampak berhasil",
+        "japanese": "図書館の予約が電子化されるに伴って、窓口で待つ時間は短くなった。職員の負担も減ったという。しかし、利用件数が増えたからといって、誰もが使いやすくなったとは限らない。数字に表れない不便さにも目を向ける必要がある。\n\n例えば、予約を終えた人だけに感想を尋ねれば、途中で操作をやめた人の経験は調査の対象から外れてしまう。回答に満足という言葉が多くても、それは全ての住民の満足を示すわけではない。便利になった点を認めつつ、調査に含まれなかった人が誰なのかを考えることが必要だ。職員が作業の速さを重視するのは自然だが、その速さだけでサービスの価値を測ると、本来助けるべき人を見失う可能性がある。",
+        "reading": "としょかんの よやくが でんしかされるに ともなって、まどぐちで まつ じかんは みじかくなった。しょくいんの ふたんも へったという。しかし、りようけんすうが ふえたからといって、だれもが つかいやすくなったとは かぎらない。すうじに あらわれない ふべんさにも めを むける ひつようが ある。\n\nたとえば、よやくをおえたひとだけにかんそうをたずねれば、とちゅうでそうさをやめたひとのけいけんはちょうさのたいしょうからはずれてしまう。かいとうにまんぞくということばがおおくても、それはすべてのじゅうみんのまんぞくをしめすわけではない。べんりになったてんをみとめつつ、ちょうさにふくまれなかったひとがだれなのかをかんがえることがひつようだ。しょくいんがさぎょうのはやさをじゅうしするのはしぜんだが、そのはやさだけでサービスのかちをはかると、ほんらいたすけるべきひとをみうしなうかのうせいがある。",
+        "meaning": "Seiring digitalisasi pemesanan buku, waktu tunggu di loket menjadi lebih pendek dan beban petugas berkurang. Namun, bertambahnya jumlah penggunaan tidak selalu berarti layanan menjadi mudah bagi semua orang. Kesulitan yang tidak terlihat dalam angka juga perlu diperhatikan.\n\nMisalnya, jika survei hanya menanyakan orang yang selesai memesan, pengalaman orang yang berhenti di tengah pengoperasian tidak tercakup. Banyak jawaban puas belum menunjukkan kepuasan semua warga. Selain mengakui manfaat layanan baru, kita perlu memikirkan siapa yang tidak masuk survei. Wajar petugas memperhatikan kecepatan kerja, tetapi menjadikannya satu-satunya ukuran nilai layanan berisiko membuat mereka kehilangan perhatian pada orang yang semestinya dibantu.",
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi perpustakaan dengan layanan digital dan pengunjung.",
+        "vocabulary": [
+          {
+            "japanese": "電子化",
+            "reading": "でんしか",
+            "meaning": "digitalisasi"
+          },
+          {
+            "japanese": "負担",
+            "reading": "ふたん",
+            "meaning": "beban"
+          }
+        ]
+      },
+      {
+        "title": "Pengguna yang tidak terlihat",
+        "japanese": "ある高齢の利用者は、操作を間違えるのが怖くて予約を諦めたと話した。職員に尋ねれば済むと思われがちだが、忙しそうな相手に声をかけること自体が難しい人もいる。その人が来なくなれば、不満は記録にも残らない。\n\nこの利用者は、新しい技術そのものに反対していたのではなかった。家で練習できる端末がなく、一度教わっただけでは手順を覚えられなかったのだ。失敗すれば迷惑をかけるという気持ちも、相談をためらう原因になっていた。質問が少ないことを、説明が十分だった証拠として扱うのは危険である。質問できる人と、何を質問すればよいか分からない人の間には、見えにくい違いがあるからだ。",
+        "reading": "ある こうれいの りようしゃは、そうさを まちがえるのが こわくて よやくを あきらめたと はなした。しょくいんに たずねれば すむと おもわれがちだが、いそがしそうな あいてに こえを かけること じたいが むずかしい ひとも いる。その ひとが こなくなれば、ふまんは きろくにも のこらない。\n\nこのりようしゃは、あたらしいぎじゅつそのものにはんたいしていたのではなかった。いえでれんしゅうできるたんまつがなく、いちどおそわっただけではてじゅんをおぼえられなかったのだ。しっぱいすればめいわくをかけるというきもちも、そうだんをためらうげんいんになっていた。しつもんがすくないことを、せつめいがじゅうぶんだったしょうことしてあつかうのはきけんである。しつもんできるひとと、なにをしつもんすればよいかわからないひとのあいだには、みえにくいちがいがあるからだ。",
+        "meaning": "Seorang pengguna lansia mengatakan ia berhenti mencoba memesan karena takut salah mengoperasikan sistem. Orang cenderung menganggap cukup bertanya kepada petugas, tetapi menyapa petugas yang terlihat sibuk pun bisa sulit. Jika pengguna tersebut tidak lagi datang, keluhannya bahkan tidak tercatat.\n\nPengguna ini tidak menolak teknologi itu sendiri. Ia tidak memiliki perangkat untuk berlatih di rumah dan belum hafal langkahnya setelah satu kali penjelasan. Kekhawatiran merepotkan orang jika salah juga menghambat konsultasi. Sedikit pertanyaan tidak aman dianggap bukti penjelasan sudah cukup: ada perbedaan yang sulit terlihat antara orang yang bisa bertanya dan orang yang tidak tahu apa yang perlu ditanyakan.",
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imagePanel": 1,
+        "imageDescription": "Pengunjung lansia berbicara dengan petugas di meja layanan.",
+        "vocabulary": [
+          {
+            "japanese": "諦める",
+            "reading": "あきらめる",
+            "meaning": "menyerah; berhenti mencoba"
+          },
+          {
+            "japanese": "記録",
+            "reading": "きろく",
+            "meaning": "catatan"
+          }
+        ]
+      },
+      {
+        "title": "Mengukur keberhasilan",
+        "japanese": "だからといって、電子化をやめるべきだと言いたいのではない。紙の予約や相談できる時間を残した上で、利用をやめた人の声を聞くべきだ。効率だけを基準にせず、選択肢が実際に使える状態にあるかを確かめてこそ、改善の成果を評価できる。\n\n例えば、最初の予約を職員と一緒に行える時間を設ければ、使い方だけでなく、不安に感じる箇所も確かめられる。紙を選ぶ人にはその理由を尋ね、必要なら案内を変えることもできる。ただし、全員を電子予約に移すことを目的にしてはいけない。図書館の役割は特定の方法に慣れさせることではなく、読みたい本に出会える機会を支えることだ。その目的を基準にすれば、速さと安心の両方を考えた改善が可能になる。",
+        "reading": "だからといって、でんしかを やめるべきだと いいたいのではない。かみの よやくや そうだんできる じかんを のこした うえで、りようを やめた ひとの こえを きくべきだ。こうりつだけを きじゅんにせず、せんたくしが じっさいに つかえる じょうたいに あるかを たしかめてこそ、かいぜんの せいかを ひょうかできる。\n\nたとえば、さいしょのよやくをしょくいんといっしょにおこなえるじかんをもうければ、つかいかただけでなく、ふあんにかんじるかしょもたしかめられる。かみをえらぶひとにはそのりゆうをたずね、ひつようならあんないをかえることもできる。ただし、ぜんいんをでんしよやくにうつすことをもくてきにしてはいけない。としょかんのやくわりはとくていのほうほうになれさせることではなく、よみたいほんにであえるきかいをささえることだ。そのもくてきをきじゅんにすれば、はやさとあんしんのりょうほうをかんがえたかいぜんがかのうになる。",
+        "meaning": "Penulis tidak bermaksud mengatakan digitalisasi harus dihentikan. Pemesanan lewat kertas dan waktu konsultasi perlu dipertahankan sambil mendengar orang yang berhenti memakai layanan. Hasil perbaikan baru dapat dinilai setelah memeriksa apakah pilihan benar-benar bisa digunakan, tanpa menjadikan efisiensi satu-satunya ukuran.\n\nSesi pemesanan pertama bersama petugas dapat menunjukkan bukan hanya cara penggunaan, tetapi juga bagian yang menimbulkan kecemasan. Alasan memilih kertas bisa ditanyakan dan panduan disesuaikan. Namun, tujuan tidak boleh sekadar memindahkan semua orang ke pemesanan elektronik. Perpustakaan mendukung kesempatan menemukan buku yang ingin dibaca, bukan melatih semua orang memakai satu metode. Dengan tujuan itu, perbaikan dapat mempertimbangkan kecepatan dan rasa nyaman bersama-sama.",
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imagePanel": 2,
+        "imageDescription": "Pengunjung menerima buku melalui layanan langsung.",
+        "vocabulary": [
+          {
+            "japanese": "選択肢",
+            "reading": "せんたくし",
+            "meaning": "pilihan yang tersedia"
+          },
+          {
+            "japanese": "評価",
+            "reading": "ひょうか",
+            "meaning": "evaluasi; penilaian"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "利用件数の増加だけでは分からないことは何か。",
+        "Choices": [
+          "職員の人数。",
+          "すべての人にとっての使いやすさ。",
+          "図書館が開いた年。",
+          "予約できる本の題名。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 1 memakai ～とは限らない: jumlah penggunaan yang meningkat tidak membuktikan kemudahan bagi setiap pengguna."
+      },
+      {
+        "Prompt": "高齢の利用者が予約を諦めた直接の理由は何か。",
+        "Choices": [
+          "操作を間違えるのが怖かったから。",
+          "本を読み終わったから。",
+          "職員に断られたから。",
+          "紙の予約が有料になったから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Bagian 2 secara eksplisit menyebut takut salah mengoperasikan sistem; tidak ada penolakan petugas atau biaya kertas."
+      },
+      {
+        "Prompt": "「不満は記録にも残らない」のはなぜか。",
+        "Choices": [
+          "記録が毎日消されるから。",
+          "職員が苦情を隠すから。",
+          "利用をやめて声を届けない人がいるから。",
+          "電子化で紙が禁止されたから。"
+        ],
+        "Correct": 2,
+        "Explanation": "Pengguna yang tidak datang lagi tidak menyampaikan keluhan. Ini inferensi tentang bias data, bukan tuduhan bahwa petugas menyembunyikan keluhan."
+      },
+      {
+        "Prompt": "筆者は電子化についてどう考えているか。",
+        "Choices": [
+          "すぐに廃止すべきだ。",
+          "紙の予約は一切不要だ。",
+          "利用件数が増えれば十分だ。",
+          "他の手段と支援を残して進めるべきだ。"
+        ],
+        "Correct": 3,
+        "Explanation": "Bagian 3 menolak kesimpulan bahwa digitalisasi harus dihentikan, lalu meminta pilihan kertas dan dukungan konsultasi."
+      },
+      {
+        "Prompt": "この文章の主張に最も近いものはどれか。",
+        "Choices": [
+          "成果は効率と実際の利用可能性の両方から評価する。",
+          "新しい技術は必ず不便を増やす。",
+          "相談の件数が少なければ問題はない。",
+          "高齢者だけを対象にサービスを作る。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan menyeimbangkan efisiensi dengan akses nyata; penulis tidak menolak teknologi atau membatasi layanan pada lansia."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-02",
+    "Title": "Harga murah dan nilai pasar lokal",
+    "JapaneseTitle": "値段だけでは測れないもの",
+    "Chapter": "Ekonomi sehari-hari",
+    "Description": "Bandingkan manfaat jangka pendek dan hubungan jangka panjang. Latih ～一方で dan rujukan この違い.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-02.png",
+    "Pages": [
+      {
+        "title": "Dua pilihan belanja",
+        "japanese": "近所に大型店ができ、安さを求める客が増えた。一方で、昔からある市場にも通い続ける人がいる。同じ野菜なら安い方がよい、と考えるだけでは、この違いは説明できない。客は商品以外にも何かを受け取っているのだろう。\n\n大型店では、値札を見比べながら自分のペースで買い物ができる。営業時間も長く、仕事帰りに立ち寄れる点は便利だ。市場に通う人も、その利点を知らないわけではない。それでも市場を選ぶのは、単に昔からの習慣を変えたくないからとは限らない。安さという分かりやすい基準に注目するあまり、それぞれの店がどんな生活を支えているかを見落とすことがある。二つの店を比べるには、客が何を必要としているかも知る必要がある。",
+        "reading": "きんじょに おおがたてんが でき、やすさを もとめる きゃくが ふえた。いっぽうで、むかしから ある いちばにも かよいつづける ひとが いる。おなじ やさいなら やすい ほうが よい、と かんがえるだけでは、この ちがいは せつめいできない。きゃくは しょうひん いがいにも なにかを うけとっているのだろう。\n\nおおがたてんでは、ねふだをみくらべながらじぶんのペースでかいものができる。えいぎょうじかんもながく、しごとがえりにたちよれるてんはべんりだ。いちばにかようひとも、そのりてんをしらないわけではない。それでもいちばをえらぶのは、たんにむかしからのしゅうかんをかえたくないからとはかぎらない。やすさというわかりやすいきじゅんにちゅうもくするあまり、それぞれのみせがどんなせいかつをささえているかをみおとすことがある。ふたつのみせをくらべるには、きゃくがなにをひつようとしているかもしるひつようがある。",
+        "meaning": "Sebuah toko besar dibuka di lingkungan sekitar dan semakin banyak pelanggan mencari harga murah. Di sisi lain, sebagian orang tetap berbelanja di pasar lama. Anggapan bahwa sayur yang sama sebaiknya dibeli lebih murah saja tidak dapat menjelaskan perbedaan ini. Pelanggan mungkin memperoleh sesuatu selain barang.\n\nDi toko besar, orang dapat membandingkan harga dan berbelanja dengan kecepatannya sendiri. Jam buka yang panjang juga memudahkan singgah sepulang kerja. Pengunjung pasar mengetahui manfaat itu, tetapi tetap memilih pasar bukan selalu karena enggan mengubah kebiasaan. Terlalu fokus pada harga yang mudah dibandingkan dapat membuat kita melewatkan cara tiap toko mendukung kehidupan pelanggan. Perbandingan perlu mempertimbangkan kebutuhan pelanggan.",
+        "imageAsset": "assets/images/reading/story-n3-02.png",
+        "imagePanel": 0,
+        "imageDescription": "Pasar lokal dengan pedagang dan pembeli.",
+        "vocabulary": [
+          {
+            "japanese": "大型店",
+            "reading": "おおがたてん",
+            "meaning": "toko besar"
+          },
+          {
+            "japanese": "商品",
+            "reading": "しょうひん",
+            "meaning": "barang dagangan"
+          }
+        ]
+      },
+      {
+        "title": "Pengetahuan dari percakapan",
+        "japanese": "市場では、店主が客の家族の人数に合わせて量を勧める。余った野菜の保存方法も教えてくれる。こうしたやり取りのおかげで、買いすぎや廃棄が減ったという客もいる。支払う金額が少し高くても、結果として損とは言い切れない。\n\n例えば、一人暮らしの客に大きな袋を勧めず、食べ切れる分だけ売る店もある。料理に慣れていない客は、簡単な調理方法を聞くことで、買った物を使わずに捨てる失敗を避けられる。一回の支払いでは高く見えても、一週間の食費や使い切った量で比べれば、評価が変わるかもしれない。こうした助言はレシートには記されないが、客の暮らしの中では具体的な役に立っている。商品の値段と、買い物全体にかかる費用は必ずしも同じではない。",
+        "reading": "いちばでは、てんしゅが きゃくの かぞくの にんずうに あわせて りょうを すすめる。あまった やさいの ほぞんほうほうも おしえてくれる。こうした やりとりの おかげで、かいすぎや はいきが へったという きゃくも いる。しはらう きんがくが すこし たかくても、けっかとして そんとは いいきれない。\n\nたとえば、ひとりぐらしのきゃくにおおきなふくろをすすめず、たべきれるぶんだけうるみせもある。りょうりになれていないきゃくは、かんたんなちょうりほうほうをきくことで、かったものをつかわずにすてるしっぱいをさけられる。いっかいのしはらいではたかくみえても、いっしゅうかんのしょくひやつかいきったりょうでくらべれば、ひょうかがかわるかもしれない。こうしたじょげんはレシートにはしるされないが、きゃくのくらしのなかではぐたいてきなやくにたっている。しょうひんのねだんと、かいものぜんたいにかかるひようはかならずしもおなじではない。",
+        "meaning": "Di pasar, pedagang menyarankan jumlah sesuai anggota keluarga pelanggan dan menjelaskan cara menyimpan sisa sayur. Ada pelanggan yang mengatakan percakapan ini mengurangi pembelian berlebihan dan makanan terbuang. Meski pembayaran sedikit lebih mahal, hasil akhirnya tidak dapat langsung disebut merugikan.\n\nAda penjual yang menjual jumlah secukupnya kepada pelanggan yang tinggal sendiri, bukan kantong besar. Pelanggan yang belum terbiasa memasak dapat meminta cara memasak sederhana agar bahan tidak terbuang. Belanja sekali terlihat lebih mahal, tetapi penilaian bisa berubah jika membandingkan pengeluaran seminggu dan bahan yang benar-benar dihabiskan. Saran ini tidak tertulis pada struk, tetapi berguna dalam kehidupan. Harga barang belum tentu sama dengan biaya keseluruhan kegiatan belanja.",
+        "imageAsset": "assets/images/reading/story-n3-02.png",
+        "imagePanel": 1,
+        "imageDescription": "Pembeli dan pedagang berbincang di kios pasar.",
+        "vocabulary": [
+          {
+            "japanese": "廃棄",
+            "reading": "はいき",
+            "meaning": "pembuangan barang atau makanan"
+          },
+          {
+            "japanese": "言い切る",
+            "reading": "いいきる",
+            "meaning": "menyatakan dengan tegas tanpa keraguan"
+          }
+        ]
+      },
+      {
+        "title": "Nilai yang tidak selalu tampak",
+        "japanese": "もちろん、会話を負担に感じる客もいるので、市場が誰にでも最適なわけではない。大切なのは、価格以外の価値も比べて選ぶことだ。買い物の満足度は、レシートの数字だけで判断できるものではない。\n\n忙しい日には大型店で短く済ませ、献立に迷う日には市場で相談するという選び方もある。どちらか一方をいつも優れていると決める必要はない。人によって、また同じ人でもその日の条件によって、便利さの意味は変わるからだ。地域に異なる買い物の場が残ることは、客が自分に合う方法を選べることにつながる。店を評価する時には、安いか高いかに加えて、どんな困り事を減らしてくれるのかを考えたい。",
+        "reading": "もちろん、かいわを ふたんに かんじる きゃくも いるので、いちばが だれにでも さいてきな わけではない。たいせつなのは、かかく いがいの かちも くらべて えらぶことだ。かいものの まんぞくどは、レシートの すうじだけで はんだんできるものではない。\n\nいそがしいひにはおおがたてんでみじかくすませ、こんだてにまようひにはいちばでそうだんするというえらびかたもある。どちらかいっぽうをいつもすぐれているときめるひつようはない。ひとによって、またおなじひとでもそのひのじょうけんによって、べんりさのいみはかわるからだ。ちいきにことなるかいもののばがのこることは、きゃくがじぶんにあうほうほうをえらべることにつながる。みせをひょうかするときには、やすいかたかいかにくわえて、どんなこまりごとをへらしてくれるのかをかんがえたい。",
+        "meaning": "Tentu, sebagian pelanggan merasa percakapan itu membebani, sehingga pasar bukan pilihan terbaik bagi setiap orang. Yang penting adalah membandingkan nilai selain harga ketika memilih. Kepuasan berbelanja tidak bisa dinilai hanya dari angka pada struk.\n\nOrang bisa belanja singkat di toko besar saat sibuk dan meminta saran di pasar ketika bingung menyusun menu. Tidak perlu menetapkan satu jenis toko selalu unggul. Arti praktis berubah menurut orang dan kondisi hari itu. Beragam tempat belanja di lingkungan memungkinkan pelanggan memilih metode yang cocok. Selain murah atau mahal, penilaian toko perlu menanyakan kesulitan apa yang dapat dikuranginya.",
+        "imageAsset": "assets/images/reading/story-n3-02.png",
+        "imagePanel": 2,
+        "imageDescription": "Suasana pasar lokal tempat orang berbelanja.",
+        "vocabulary": [
+          {
+            "japanese": "最適",
+            "reading": "さいてき",
+            "meaning": "paling sesuai"
+          },
+          {
+            "japanese": "満足度",
+            "reading": "まんぞくど",
+            "meaning": "tingkat kepuasan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "「この違い」は何を指すか。",
+        "Choices": [
+          "野菜の色が違うこと。",
+          "大型店と市場の建物の高さ。",
+          "安い大型店を選ぶ人と市場に通う人がいること。",
+          "同じ客が毎日違う物を買うこと。"
+        ],
+        "Correct": 2,
+        "Explanation": "Rujukan kembali ke dua perilaku pada bagian 1: mencari harga murah di toko besar atau tetap ke pasar lama."
+      },
+      {
+        "Prompt": "市場でのやり取りによる効果として書かれているのはどれか。",
+        "Choices": [
+          "野菜がすべて無料になる。",
+          "買いすぎや廃棄が減る。",
+          "家族の人数が増える。",
+          "レシートが不要になる。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 2 menyebut saran jumlah dan penyimpanan mengurangi pembelian berlebihan serta pembuangan."
+      },
+      {
+        "Prompt": "「損とは言い切れない」とする理由は何か。",
+        "Choices": [
+          "必ず大型店より安いから。",
+          "市場で税金を払わないから。",
+          "会話が長ければ値引きされるから。",
+          "支払いが高くても無駄を減らせる場合があるから。"
+        ],
+        "Correct": 3,
+        "Explanation": "Harga pembelian lebih tinggi dapat diimbangi berkurangnya makanan terbuang; teks tidak menyebut diskon atau pajak."
+      },
+      {
+        "Prompt": "筆者が市場の欠点にも触れる目的は何か。",
+        "Choices": [
+          "市場がすべての人に合うとは言えないと示すため。",
+          "市場をなくすべきだと訴えるため。",
+          "会話を法律で禁止するため。",
+          "大型店には価値がないと示すため。"
+        ],
+        "Correct": 0,
+        "Explanation": "Bagian 3 memberi batas pada argumen: sebagian orang tidak suka percakapan, sehingga pilihan bergantung kebutuhan."
+      },
+      {
+        "Prompt": "筆者が買い物について勧めていることは何か。",
+        "Choices": [
+          "値段だけで決める。",
+          "価格以外の価値も考えて選ぶ。",
+          "必ず市場に行く。",
+          "人と話さずに買う。"
+        ],
+        "Correct": 1,
+        "Explanation": "Kalimat 価格以外の価値も比べて選ぶこと adalah anjuran utama penulis, bukan kewajiban memilih pasar."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-03",
+    "Title": "Rapat yang benar-benar terbuka",
+    "JapaneseTitle": "意見が出る会議とは",
+    "Chapter": "Tempat kerja",
+    "Description": "Cari penyebab diamnya peserta dan makna ～にすぎない. Bedakan kebebasan formal dengan rasa aman.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-03.png",
+    "Pages": [
+      {
+        "title": "Undangan belum cukup",
+        "japanese": "部長は会議のたびに「自由に意見を」と呼びかける。しかし、発言するのはいつも同じ人だ。若手に聞くと、反対した後の評価が気になるという。発言を許すだけでは、形式的な自由にすぎない場合がある。\n\nある若手社員は、会議の前には疑問をいくつも書いていたのに、部長の前では一つも言えなかった。以前、別の社員が計画の問題点を指摘した時、準備不足だと強く注意されたのを覚えていたからだ。自分への批判ではなくても、その場にいた人は反対を述べた結果を学んでしまう。意見を求める言葉と実際の対応が食い違えば、社員は言葉より行動を信じる。黙っていることが、賛成している証拠になるとは限らないのである。",
+        "reading": "ぶちょうは かいぎの たびに「じゆうに いけんを」と よびかける。しかし、はつげんするのは いつも おなじ ひとだ。わかてに きくと、はんたいした あとの ひょうかが きになるという。はつげんを ゆるすだけでは、けいしきてきな じゆうに すぎない ばあいが ある。\n\nあるわかてしゃいんは、かいぎのまえにはぎもんをいくつもかいていたのに、ぶちょうのまえではひとつもいえなかった。いぜん、べつのしゃいんがけいかくのもんだいてんをしてきしたとき、じゅんびぶそくだとつよくちゅういされたのをおぼえていたからだ。じぶんへのひはんではなくても、そのばにいたひとははんたいをのべたけっかをまなんでしまう。いけんをもとめることばとじっさいのたいおうがくいちがえば、しゃいんはことばよりこうどうをしんじる。だまっていることが、さんせいしているしょうこになるとはかぎらないのである。",
+        "meaning": "Setiap rapat, kepala bagian meminta peserta berbicara bebas. Namun, orang yang berbicara selalu sama. Pegawai muda khawatir bagaimana mereka akan dinilai setelah menyatakan ketidaksetujuan. Sekadar mengizinkan bicara kadang hanya merupakan kebebasan formal.\n\nSeorang pegawai muda telah mencatat banyak pertanyaan sebelum rapat, tetapi tidak menyampaikan satu pun di depan kepala bagian. Ia ingat pegawai lain pernah ditegur keras karena menunjukkan kelemahan rencana. Meski bukan dirinya yang dikritik, orang yang hadir belajar akibat menyampaikan penolakan. Jika ajakan berpendapat tidak sesuai respons nyata, pegawai percaya tindakan. Diam belum tentu berarti setuju.",
+        "imageAsset": "assets/images/reading/story-n3-03.png",
+        "imagePanel": 0,
+        "imageDescription": "Tim kerja berkumpul dalam rapat.",
+        "vocabulary": [
+          {
+            "japanese": "若手",
+            "reading": "わかて",
+            "meaning": "anggota atau pegawai muda"
+          },
+          {
+            "japanese": "形式的",
+            "reading": "けいしきてき",
+            "meaning": "bersifat formal; hanya mengikuti bentuk"
+          }
+        ]
+      },
+      {
+        "title": "Mengubah respons pemimpin",
+        "japanese": "そこで部長は、反対意見が出た際、すぐに説得するのをやめた。まず理由を聞き、提案に取り入れられる点を皆で探すようにした。採用しない場合にも理由を説明した。しばらくすると、以前は黙っていた人からも質問が出始めた。\n\n部長は、誰の意見かを評価する前に、どんな情報に基づいているかを確認するようにした。すぐには答えられない疑問は会議の後で調べ、次の会議で結果を共有した。反対した人に調査を全て任せるのではなく、必要な仕事を分担した点も重要だった。意見を出すと仕事だけが増える仕組みでは、再び発言を避ける人が出かねない。こうした変更を何度か経験して、若手は質問しても自分だけが不利になるわけではないと感じ始めた。",
+        "reading": "そこで ぶちょうは、はんたいいけんが でた さい、すぐに せっとくするのを やめた。まず りゆうを きき、ていあんに とりいれられる てんを みなで さがすようにした。さいようしない ばあいにも りゆうを せつめいした。しばらくすると、いぜんは だまっていた ひとからも しつもんが ではじめた。\n\nぶちょうは、だれのいけんかをひょうかするまえに、どんなじょうほうにもとづいているかをかくにんするようにした。すぐにはこたえられないぎもんはかいぎのあとでしらべ、つぎのかいぎでけっかをきょうゆうした。はんたいしたひとにちょうさをすべてまかせるのではなく、ひつようなしごとをぶんたんしたてんもじゅうようだった。いけんをだすとしごとだけがふえるしくみでは、ふたたびはつげんをさけるひとがでかねない。こうしたへんこうをなんどかけいけんして、わかてはしつもんしてもじぶんだけがふりになるわけではないとかんじはじめた。",
+        "meaning": "Kepala bagian kemudian berhenti langsung membujuk ketika ada pendapat yang menentang. Ia mendengar alasannya terlebih dahulu dan mengajak semua orang mencari aspek yang bisa dimasukkan ke usulan. Jika pendapat tidak dipakai, alasannya juga dijelaskan. Setelah beberapa waktu, peserta yang sebelumnya diam mulai bertanya.\n\nKepala bagian memeriksa dasar informasi sebelum menilai siapa yang mengusulkan. Pertanyaan yang belum bisa dijawab diteliti setelah rapat, lalu hasilnya dibagikan berikutnya. Tugas penelitian dibagi, bukan seluruhnya diberikan kepada orang yang menolak. Jika berpendapat hanya menambah pekerjaan, orang bisa kembali menghindarinya. Setelah mengalami perubahan beberapa kali, pegawai muda mulai merasa bertanya tidak membuat dirinya saja dirugikan.",
+        "imageAsset": "assets/images/reading/story-n3-03.png",
+        "imagePanel": 1,
+        "imageDescription": "Peserta rapat menyampaikan usulan kepada rekan kerja.",
+        "vocabulary": [
+          {
+            "japanese": "説得",
+            "reading": "せっとく",
+            "meaning": "membujuk dengan alasan"
+          },
+          {
+            "japanese": "採用",
+            "reading": "さいよう",
+            "meaning": "mengadopsi usulan; menerima"
+          }
+        ]
+      },
+      {
+        "title": "Bukti dari tindakan",
+        "japanese": "自由に話せる雰囲気は、掛け声によって生まれるものではない。異なる意見をどう扱うかという日々の行動によって作られる。発言数を増やすことだけを目標にするのではなく、発言した人が次も話そうと思える対応を積み重ねるべきだ。\n\n意見が増えれば、会議には以前より時間がかかることもある。しかし、決定した後に問題が発見されてやり直す負担を減らせるなら、その時間には意味がある。全ての案を採用する必要はないが、聞いたことと検討したことが伝わる説明は必要だ。発言した内容がどう扱われたか分からなければ、社員は自由に話せるという約束を信じにくい。一度の会議を静かに終えることより、次の会議にも疑問を持ち寄れる関係を育てることが大切なのである。",
+        "reading": "じゆうに はなせる ふんいきは、かけごえに よって うまれるものではない。ことなる いけんを どう あつかうかという ひびの こうどうに よって つくられる。はつげんすうを ふやすことだけを もくひょうにするのではなく、はつげんした ひとが つぎも はなそうと おもえる たいおうを つみかさねるべきだ。\n\nいけんがふえれば、かいぎにはいぜんよりじかんがかかることもある。しかし、けっていしたあとにもんだいがはっけんされてやりなおすふたんをへらせるなら、そのじかんにはいみがある。すべてのあんをさいようするひつようはないが、きいたこととけんとうしたことがつたわるせつめいはひつようだ。はつげんしたないようがどうあつかわれたかわからなければ、しゃいんはじゆうにはなせるというやくそくをしんじにくい。いちどのかいぎをしずかにおえることより、つぎのかいぎにもぎもんをもちよれるかんけいをそだてることがたいせつなのである。",
+        "meaning": "Suasana yang memungkinkan orang berbicara bebas tidak lahir hanya dari seruan. Suasana itu dibentuk lewat tindakan sehari-hari dalam memperlakukan perbedaan pendapat. Sasaran sebaiknya tidak hanya menambah jumlah pernyataan, tetapi terus merespons dengan cara yang membuat pembicara mau berbicara lagi.\n\nBertambahnya pendapat kadang memperlama rapat. Namun, waktu itu bermakna jika mengurangi pekerjaan ulang setelah keputusan. Semua usulan tidak harus diterima, tetapi perlu ada penjelasan yang menunjukkan bahwa usulan telah didengar dan dipertimbangkan. Tanpa mengetahui bagaimana pendapat diproses, pegawai sulit percaya pada kebebasan berbicara. Hubungan yang memungkinkan pertanyaan dibawa ke rapat berikutnya lebih penting daripada sekadar menutup satu rapat dengan tenang.",
+        "imageAsset": "assets/images/reading/story-n3-03.png",
+        "imagePanel": 2,
+        "imageDescription": "Tim menyepakati hasil diskusi bersama.",
+        "vocabulary": [
+          {
+            "japanese": "掛け声",
+            "reading": "かけごえ",
+            "meaning": "seruan; slogan ajakan"
+          },
+          {
+            "japanese": "積み重ねる",
+            "reading": "つみかさねる",
+            "meaning": "membangun lewat tindakan berulang"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "若手が発言しにくかった理由は何か。",
+        "Choices": [
+          "会議の時間を知らなかった。",
+          "反対による評価への影響を心配した。",
+          "意見が一つもなかった。",
+          "部長が発言を禁止した。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 1: yang ditakuti adalah penilaian setelah menentang, meskipun berbicara sudah diizinkan."
+      },
+      {
+        "Prompt": "「形式的な自由にすぎない」とはどういうことか。",
+        "Choices": [
+          "許可はあっても安心して話せるとは限らない。",
+          "誰も会議に参加できない。",
+          "意見は必ず採用される。",
+          "若手だけが自由に話せる。"
+        ],
+        "Correct": 0,
+        "Explanation": "～にすぎない berarti hanya sebatas. Kebebasan secara formal belum menjamin rasa aman untuk berbicara."
+      },
+      {
+        "Prompt": "部長が変えた対応はどれか。",
+        "Choices": [
+          "反対意見を全て採用した。",
+          "会議を全て中止した。",
+          "まず理由を聞き、採用しない理由も説明した。",
+          "質問した人の評価を下げた。"
+        ],
+        "Correct": 2,
+        "Explanation": "Bagian 2 menjelaskan mendengar alasan dahulu serta menjelaskan keputusan; tidak semua ide otomatis diterima."
+      },
+      {
+        "Prompt": "以前黙っていた人が質問を始めたことから何が分かるか。",
+        "Choices": [
+          "会議が短くなった。",
+          "若手の人数が減った。",
+          "部長の説明が全て間違っていた。",
+          "意見を出すことへの不安が和らいだと考えられる。"
+        ],
+        "Correct": 3,
+        "Explanation": "Perubahan partisipasi setelah respons pimpinan berubah mendukung inferensi berkurangnya kecemasan; durasi rapat tidak disebut."
+      },
+      {
+        "Prompt": "筆者が最も重視しているのは何か。",
+        "Choices": [
+          "発言数を毎回記録すること。",
+          "次も話したくなる対応を続けること。",
+          "会議で同じ意見だけを集めること。",
+          "自由という言葉を繰り返すこと。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 3 menekankan akumulasi respons yang mendorong partisipasi berikutnya, bukan slogan atau angka semata."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-04",
+    "Title": "Menilai program pengurangan sisa makanan",
+    "JapaneseTitle": "数字の裏にある変化",
+    "Chapter": "Lingkungan dan data",
+    "Description": "Baca data dengan mempertimbangkan konteks dan perbandingan. Latih ～にもかかわらず dan ～とはいえ.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-04.png",
+    "Pages": [
+      {
+        "title": "Laporan yang menggembirakan",
+        "japanese": "社員食堂が小盛りを選べる制度を始めた。翌月の報告では、廃棄量が前月より三割減ったという。制度は成功したように見えた。しかし同じ月、在宅勤務が増え、食堂を利用する人数も減っていた。\n\n報告を見た社員の中には、すぐに他の支店にも同じ制度を広げようとする人がいた。廃棄が減ったという数字は分かりやすく、会議でも説明しやすかったからだ。だが、比較する時には、同じ条件で測った数字かどうかを確かめなければならない。百人の食事で出た残りと、七十人の食事で出た残りを、そのまま比べることはできない。制度の開始と変化が同時に起きたとしても、一方が他方の原因だと決まるわけではない。",
+        "reading": "しゃいんしょくどうが こもりを えらべる せいどを はじめた。よくげつの ほうこくでは、はいきりょうが ぜんげつより さんわり へったという。せいどは せいこうしたように みえた。しかし おなじ つき、ざいたくきんむが ふえ、しょくどうを りようする にんずうも へっていた。\n\nほうこくをみたしゃいんのなかには、すぐにほかのしてんにもおなじせいどをひろげようとするひとがいた。はいきがへったというすうじはわかりやすく、かいぎでもせつめいしやすかったからだ。だが、ひかくするときには、おなじじょうけんではかったすうじかどうかをたしかめなければならない。ひゃくにんのしょくじででたのこりと、しちじゅうひとのしょくじででたのこりを、そのままくらべることはできない。せいどのかいしとへんかがどうじにおきたとしても、いっぽうがたほうのげんいんだときまるわけではない。",
+        "meaning": "Kantin perusahaan mulai menyediakan pilihan porsi kecil. Laporan bulan berikutnya menyebut total makanan terbuang turun 30% dibanding bulan sebelumnya. Program terlihat berhasil, tetapi pada bulan yang sama kerja dari rumah meningkat sehingga jumlah pengguna kantin turun.\n\nSebagian pegawai ingin langsung memperluas program ke cabang lain karena angka pengurangan mudah dipahami dan dijelaskan dalam rapat. Namun, perbandingan harus memeriksa apakah pengukuran dilakukan pada kondisi setara. Sisa makanan seratus orang tidak bisa dibandingkan begitu saja dengan sisa tujuh puluh orang. Dimulainya program dan perubahan pada waktu bersamaan belum membuktikan hubungan sebab-akibat.",
+        "imageAsset": "assets/images/reading/story-n3-04.png",
+        "imagePanel": 0,
+        "imageDescription": "Pengunjung mengambil makan siang di kantin.",
+        "vocabulary": [
+          {
+            "japanese": "小盛り",
+            "reading": "こもり",
+            "meaning": "porsi kecil"
+          },
+          {
+            "japanese": "在宅勤務",
+            "reading": "ざいたくきんむ",
+            "meaning": "bekerja dari rumah"
+          }
+        ]
+      },
+      {
+        "title": "Ukuran pembanding",
+        "japanese": "そこで担当者は、一人当たりの廃棄量を調べ直した。その値は以前とほぼ同じだった。選択肢を増やしたにもかかわらず、小盛りの場所が分かりにくく、多くの人がいつもの量を取っていたことも分かった。\n\n担当者は実際に料理を取る場所に立ち、利用者の動きを観察した。小盛りは通常の皿の奥に置かれ、初めて来た人には選べることが伝わりにくかった。説明は入口にあったが、急いでいる人は読まずに列へ進んでいた。制度が存在することと、その制度を使えると気づくことは別である。食べ残しの理由を個人の意識だけに求める前に、選択する場面で必要な情報が届いているかを調べる必要があった。",
+        "reading": "そこで たんとうしゃは、ひとりあたりの はいきりょうを しらべなおした。その あたいは いぜんと ほぼ おなじだった。せんたくしを ふやしたにも かかわらず、こもりの ばしょが わかりにくく、おおくの ひとが いつもの りょうを とっていたことも わかった。\n\nたんとうしゃはじっさいにりょうりをとるばしょにたち、りようしゃのうごきをかんさつした。こもりはつうじょうのさらのおくにおかれ、はじめてきたひとにはえらべることがつたわりにくかった。せつめいはいりぐちにあったが、いそいでいるひとはよまずにれつへすすんでいた。せいどがそんざいすることと、そのせいどをつかえるときづくことはべつである。たべのこしのりゆうをこじんのいしきだけにもとめるまえに、せんたくするばめんでひつようなじょうほうがとどいているかをしらべるひつようがあった。",
+        "meaning": "Penanggung jawab kemudian memeriksa ulang makanan terbuang per orang. Nilainya hampir sama dengan sebelumnya. Walaupun pilihan sudah ditambah, lokasi porsi kecil sulit dikenali sehingga banyak orang tetap mengambil porsi biasa.\n\nPenanggung jawab mengamati pengunjung di tempat pengambilan makanan. Porsi kecil berada di belakang piring biasa dan sulit dikenali oleh pengunjung baru. Penjelasan ada di pintu masuk, tetapi orang yang buru-buru langsung mengantre. Adanya program berbeda dari menyadari bahwa program dapat digunakan. Sebelum mengaitkan sisa makanan hanya dengan kesadaran individu, perlu diperiksa apakah informasi tersedia pada saat pilihan dibuat.",
+        "imageAsset": "assets/images/reading/story-n3-04.png",
+        "imagePanel": 1,
+        "imageDescription": "Percakapan mengenai porsi dan sisa makanan di kantin.",
+        "vocabulary": [
+          {
+            "japanese": "一人当たり",
+            "reading": "ひとりあたり",
+            "meaning": "per orang"
+          },
+          {
+            "japanese": "値",
+            "reading": "あたい",
+            "meaning": "nilai numerik"
+          }
+        ]
+      },
+      {
+        "title": "Perbaikan setelah evaluasi",
+        "japanese": "担当者は表示を変え、その後も一人当たりの量を記録することにした。最初の結果が期待どおりでなかったとはいえ、制度に意味がないとは言えない。原因を区別して調べれば、次に何を直すべきかが見えてくる。\n\n新しい表示には、量を少なく選べることを短い言葉と図で示した。また、利用人数や献立も記録し、できるだけ似た条件の日を比べることにした。一つの数字が改善しただけで結論を急がず、別の条件が変わっていないかも見ていく。こうした確認には手間がかかるが、効果のない工夫を広げる無駄を避けられる。評価の目的は成功と呼べる報告を作ることではなく、食べ物を無駄にしない方法を、確かな情報から選ぶことなのだ。",
+        "reading": "たんとうしゃは ひょうじを かえ、そのごも ひとりあたりの りょうを きろくすることにした。さいしょの けっかが きたいどおりで なかったとはいえ、せいどに いみが ないとは いえない。げんいんを くべつして しらべれば、つぎに なにを なおすべきかが みえてくる。\n\nあたらしいひょうじには、りょうをすくなくえらべることをみじかいことばとずでしめした。また、りようにんずうやこんだてもきろくし、できるだけにたじょうけんのひをくらべることにした。ひとつのすうじがかいぜんしただけでけつろんをいそがず、べつのじょうけんがかわっていないかもみていく。こうしたかくにんにはてまがかかるが、こうかのないくふうをひろげるむだをさけられる。ひょうかのもくてきはせいこうとよべるほうこくをつくることではなく、たべものをむだにしないほうほうを、たしかなじょうほうからえらぶことなのだ。",
+        "meaning": "Penanggung jawab mengganti penanda dan memutuskan terus mencatat jumlah per orang. Meski hasil awal tidak sesuai harapan, itu tidak berarti program tidak berguna. Memisahkan dan meneliti penyebab memperjelas apa yang perlu diperbaiki selanjutnya.\n\nPenanda baru memakai kata singkat dan gambar untuk menunjukkan pilihan porsi kecil. Jumlah pengunjung dan menu juga dicatat agar hari dengan kondisi serupa dapat dibandingkan. Satu angka yang membaik tidak langsung dijadikan kesimpulan; perubahan kondisi lain ikut diperiksa. Proses ini membutuhkan usaha, tetapi menghindari penyebaran cara yang tidak efektif. Tujuan evaluasi adalah memilih metode mengurangi pemborosan berdasarkan informasi yang dapat dipercaya, bukan sekadar membuat laporan yang tampak sukses.",
+        "imageAsset": "assets/images/reading/story-n3-04.png",
+        "imagePanel": 2,
+        "imageDescription": "Pengunjung makan dengan porsi yang sesuai di kantin.",
+        "vocabulary": [
+          {
+            "japanese": "表示",
+            "reading": "ひょうじ",
+            "meaning": "penanda; tampilan informasi"
+          },
+          {
+            "japanese": "区別",
+            "reading": "くべつ",
+            "meaning": "pembedaan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "最初の報告だけで制度の成功を判断できないのはなぜか。",
+        "Choices": [
+          "食堂の利用人数も減っていたから。",
+          "小盛りの値段が上がったから。",
+          "社員が全員退職したから。",
+          "廃棄量が増えていたから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Total turun bersamaan dengan turunnya jumlah pengguna, jadi tidak dapat langsung diatribusikan pada program."
+      },
+      {
+        "Prompt": "「その値」は何を指すか。",
+        "Choices": [
+          "一食の値段。",
+          "利用者の年齢。",
+          "一人当たりの廃棄量。",
+          "在宅勤務の日数。"
+        ],
+        "Correct": 2,
+        "Explanation": "Rujukan その値 menunjuk ukuran yang disebut tepat sebelumnya: 一人当たりの廃棄量."
+      },
+      {
+        "Prompt": "小盛りがあまり選ばれなかった原因は何か。",
+        "Choices": [
+          "制度がまだ始まっていなかった。",
+          "場所が分かりにくかった。",
+          "小盛りは社員向けではなかった。",
+          "小盛りの味が違っていた。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 2 menyebut lokasi pilihan porsi kecil sulit ditemukan, bukan perbedaan rasa atau sasaran."
+      },
+      {
+        "Prompt": "担当者が次にすることは何か。",
+        "Choices": [
+          "記録をやめる。",
+          "食堂を閉鎖する。",
+          "全員を在宅勤務にする。",
+          "表示を変えて一人当たりの量を記録する。"
+        ],
+        "Correct": 3,
+        "Explanation": "Bagian 3 menyebut perubahan penanda dan pencatatan lanjutan untuk mengevaluasi efek per orang."
+      },
+      {
+        "Prompt": "筆者の考えに合うものはどれか。",
+        "Choices": [
+          "悪い結果でも原因を調べれば改善につなげられる。",
+          "減少という数字があれば制度は成功だ。",
+          "期待外れならすぐに制度を廃止すべきだ。",
+          "人数の変化は評価に関係しない。"
+        ],
+        "Correct": 0,
+        "Explanation": "Kesimpulan menekankan pemisahan penyebab untuk menentukan perbaikan, bukan menilai hanya dari total atau langsung menghentikan program."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-05",
+    "Title": "Surat dan makna menunggu",
+    "JapaneseTitle": "返事を待つ時間",
+    "Chapter": "Esai dan sudut pandang",
+    "Description": "Telusuri perubahan pandangan narator dan batas argumen. Latih ～からこそ serta informasi tersirat.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-05.png",
+    "Pages": [
+      {
+        "title": "Pandangan awal",
+        "japanese": "祖母から手紙が届いた。電話ならその日に話せるのに、なぜわざわざ書くのだろう。私は返事を急ぐのが当たり前だと思っていたため、届くまでに数日かかる手紙を不便なものと考えていた。\n\n封筒には祖母の町の風景を描いた切手が貼ってあり、便せんの端には庭で咲いた花の絵があった。それでも最初の私は、用件だけなら短いメッセージで十分なのにと思った。仕事では早く返事をすることが評価されるため、その基準を家族との連絡にも当てはめていたのである。届くのに時間がかかることを欠点と考え、書いている間に祖母が何を考えていたかには関心を向けていなかった。速さに慣れると、別の価値は見えにくくなる。",
+        "reading": "そぼから てがみが とどいた。でんわなら その ひに はなせるのに、なぜ わざわざ かくのだろう。わたしは へんじを いそぐのが あたりまえだと おもっていたため、とどくまでに すうじつ かかる てがみを ふべんなものと かんがえていた。\n\nふうとうにはそぼのまちのふうけいをえがいたきってがはってあり、びんせんのはしにはにわでさいたはなのえがあった。それでもさいしょのわたしは、ようけんだけならみじかいメッセージでじゅうぶんなのにとおもった。しごとでははやくへんじをすることがひょうかされるため、そのきじゅんをかぞくとのれんらくにもあてはめていたのである。とどくのにじかんがかかることをけってんとかんがえ、かいているあいだにそぼがなにをかんがえていたかにはかんしんをむけていなかった。はやさになれると、べつのかちはみえにくくなる。",
+        "meaning": "Sebuah surat tiba dari nenek. Narator bertanya mengapa nenek sengaja menulis padahal bisa berbicara lewat telepon hari itu juga. Karena menganggap balasan cepat sebagai hal wajar, narator memandang surat yang memerlukan beberapa hari sebagai sesuatu yang tidak praktis.\n\nAmplop memakai prangko bergambar kota nenek dan kertas surat memiliki gambar bunga taman. Awalnya saya tetap menganggap pesan singkat cukup untuk urusan praktis. Karena respons cepat dihargai dalam pekerjaan, saya memakai ukuran itu untuk komunikasi keluarga juga. Saya melihat waktu pengiriman sebagai kekurangan tanpa memikirkan apa yang dipikirkan nenek saat menulis. Terbiasa dengan kecepatan dapat membuat nilai lain sulit terlihat.",
+        "imageAsset": "assets/images/reading/story-n3-05.png",
+        "imagePanel": 0,
+        "imageDescription": "Seseorang menerima surat keluarga.",
+        "vocabulary": [
+          {
+            "japanese": "わざわざ",
+            "reading": "わざわざ",
+            "meaning": "sengaja meluangkan usaha"
+          },
+          {
+            "japanese": "当たり前",
+            "reading": "あたりまえ",
+            "meaning": "wajar; dianggap sudah seharusnya"
+          }
+        ]
+      },
+      {
+        "title": "Memilih kata",
+        "japanese": "返事を書こうとして、私は何度も言葉を選び直した。画面の通知に追われる時とは違い、相手の生活を想像する余裕があった。祖母は、待つ時間があるからこそ、次に何を伝えようか考える楽しみが生まれるのだと言った。\n\n私は最近の出来事をただ並べるだけでは、祖母に自分の生活が伝わらないと感じた。何が楽しかったのか、なぜ困ったのかを説明しようとして、自分の経験も整理できた。返事がすぐ来ないからこそ、相手の反応を待たずに最後まで考えて書けたのである。祖母が手紙を大切にするのは、機械が苦手だからというだけではなかった。言葉を残して何度も読み返せることや、書く時間そのものに、電話とは違う楽しさを見いだしていた。",
+        "reading": "へんじを かこうとして、わたしは なんども ことばを えらびなおした。がめんの つうちに おわれる ときとは ちがい、あいての せいかつを そうぞうする よゆうが あった。そぼは、まつ じかんが あるからこそ、つぎに なにを つたえようか かんがえる たのしみが うまれるのだと いった。\n\nわたしはさいきんのできごとをただならべるだけでは、そぼにじぶんのせいかつがつたわらないとかんじた。なにがたのしかったのか、なぜこまったのかをせつめいしようとして、じぶんのけいけんもせいりできた。へんじがすぐこないからこそ、あいてのはんのうをまたずにさいごまでかんがえてかけたのである。そぼがてがみをたいせつにするのは、きかいがにがてだからというだけではなかった。ことばをのこしてなんどもよみかえせることや、かくじかんそのものに、でんわとはちがうたのしさをみいだしていた。",
+        "meaning": "Saat menulis balasan, narator berulang kali memilih ulang kata-kata. Berbeda dari saat dikejar notifikasi, ia punya waktu untuk membayangkan kehidupan penerima. Nenek mengatakan justru adanya waktu menunggu menciptakan kesenangan memikirkan apa yang ingin disampaikan berikutnya.\n\nSekadar daftar peristiwa tidak cukup menggambarkan kehidupan saya kepada nenek. Menjelaskan apa yang menyenangkan dan mengapa sesuatu sulit juga merapikan pengalaman saya sendiri. Karena balasan tidak langsung datang, saya dapat berpikir sampai selesai tanpa menunggu reaksi. Nenek menghargai surat bukan hanya karena kurang terbiasa dengan perangkat. Menyimpan kata-kata untuk dibaca kembali dan waktu menulis itu sendiri memberikan kesenangan yang berbeda dari telepon.",
+        "imageAsset": "assets/images/reading/story-n3-05.png",
+        "imagePanel": 1,
+        "imageDescription": "Seseorang membaca dan menulis surat di meja.",
+        "vocabulary": [
+          {
+            "japanese": "余裕",
+            "reading": "よゆう",
+            "meaning": "kelonggaran waktu atau pikiran"
+          },
+          {
+            "japanese": "通知",
+            "reading": "つうち",
+            "meaning": "notifikasi; pemberitahuan"
+          }
+        ]
+      },
+      {
+        "title": "Memilih kecepatan sesuai kebutuhan",
+        "japanese": "もちろん、急な用事には電話の方がよい。手紙が常に優れているとは思わない。ただ、速さばかりを求めると失うものもある。連絡の方法を選ぶ際には、情報が届く速さだけでなく、相手について考える時間も大切にしたい。\n\nその後、私は日程の確認には電話を使い、ゆっくり伝えたい経験は手紙に書くようになった。方法を分けると、返事が遅いことを気にしなくて済む場面も増えた。連絡の速さは大切だが、いつでも同じ速さを求める必要はない。相手の事情を想像する時間を持つことで、短い言葉では伝えにくい気持ちにも気づける。便利な方法を捨てるのではなく、便利さだけでは測れない時間を生活の中に残すことが、私にとって手紙の意味になった。",
+        "reading": "もちろん、きゅうな ようじには でんわの ほうが よい。てがみが つねに すぐれているとは おもわない。ただ、はやさばかりを もとめると うしなうものも ある。れんらくの ほうほうを えらぶ さいには、じょうほうが とどく はやさだけでなく、あいてについて かんがえる じかんも たいせつにしたい。\n\nそのあと、わたしはにっていのかくにんにはでんわをつかい、ゆっくりつたえたいけいけんはてがみにかくようになった。ほうほうをわけると、へんじがおそいことをきにしなくてすむばめんもふえた。れんらくのはやさはたいせつだが、いつでもおなじはやさをもとめるひつようはない。あいてのじじょうをそうぞうするじかんをもつことで、みじかいことばではつたえにくいきもちにもきづける。べんりなほうほうをすてるのではなく、べんりさだけでははかれないじかんをせいかつのなかにのこすことが、わたしにとっててがみのいみになった。",
+        "meaning": "Tentu telepon lebih baik untuk urusan mendadak, dan narator tidak menganggap surat selalu unggul. Namun, hanya mengejar kecepatan juga membuat sesuatu hilang. Saat memilih cara berkomunikasi, narator ingin menghargai waktu untuk memikirkan lawan bicara selain kecepatan informasi sampai.\n\nKemudian saya memakai telepon untuk memastikan jadwal dan surat untuk pengalaman yang ingin disampaikan perlahan. Memisahkan cara membuat saya lebih jarang mempermasalahkan balasan lambat. Kecepatan penting, tetapi tidak harus selalu sama. Waktu membayangkan keadaan orang lain membantu menyadari perasaan yang sulit tersampaikan dalam kata singkat. Arti surat bagi saya adalah menyisakan waktu yang tidak bisa diukur hanya dari kepraktisan, sambil tetap menggunakan metode praktis.",
+        "imageAsset": "assets/images/reading/story-n3-05.png",
+        "imagePanel": 2,
+        "imageDescription": "Suasana hangat hubungan keluarga melalui surat.",
+        "vocabulary": [
+          {
+            "japanese": "優れる",
+            "reading": "すぐれる",
+            "meaning": "unggul"
+          },
+          {
+            "japanese": "失う",
+            "reading": "うしなう",
+            "meaning": "kehilangan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "筆者は最初、手紙をどう考えていたか。",
+        "Choices": [
+          "電話より必ず便利だ。",
+          "届くのが遅く不便だ。",
+          "祖母にしか書けない。",
+          "返事を書く必要がない。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 1 menggambarkan anggapan awal: beberapa hari perjalanan surat dianggap tidak praktis."
+      },
+      {
+        "Prompt": "返事を書く時、筆者に生まれたものは何か。",
+        "Choices": [
+          "相手の生活を想像する余裕。",
+          "通知を増やす工夫。",
+          "祖母に電話する義務。",
+          "すぐに返信する焦り。"
+        ],
+        "Correct": 0,
+        "Explanation": "Bagian 2 menyebut kelonggaran untuk membayangkan kehidupan penerima, berbeda dari saat dikejar notifikasi."
+      },
+      {
+        "Prompt": "祖母が待つ時間を肯定している理由は何か。",
+        "Choices": [
+          "郵便代が安くなるから。",
+          "返事をしなくてよいから。",
+          "電話が使えないから。",
+          "次に伝えることを考える楽しみがあるから。"
+        ],
+        "Correct": 3,
+        "Explanation": "～からこそ menekankan bahwa justru menunggu memberi kesempatan menikmati persiapan pesan berikutnya."
+      },
+      {
+        "Prompt": "筆者が手紙にも限界があると認めている箇所はどれか。",
+        "Choices": [
+          "祖母から手紙が届いた。",
+          "私は言葉を選び直した。",
+          "急な用事には電話の方がよい。",
+          "考える楽しみが生まれる。"
+        ],
+        "Correct": 2,
+        "Explanation": "Pengakuan manfaat telepon untuk urusan mendesak membatasi klaim: surat bukan selalu terbaik."
+      },
+      {
+        "Prompt": "筆者の考えの変化として適切なものはどれか。",
+        "Choices": [
+          "全ての連絡を手紙に変えるべきだと思うようになった。",
+          "速さ以外にも連絡の価値があると気づいた。",
+          "祖母への返事をやめることにした。",
+          "電話には価値がないと判断した。"
+        ],
+        "Correct": 1,
+        "Explanation": "Perubahan utama ialah mengakui nilai waktu memikirkan penerima tanpa menolak telepon."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-06",
+    "Title": "Memahami ketentuan perubahan reservasi",
+    "JapaneseTitle": "予約変更のご案内",
+    "Chapter": "Pencarian informasi",
+    "Description": "Cocokkan tenggat, syarat, dan pengecualian dalam pengumuman. Semua tanggal dan ketentuan adalah skenario latihan.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-06.png",
+    "Pages": [
+      {
+        "title": "Ketentuan dasar",
+        "japanese": "宿泊日の変更は、到着予定日の三日前の午後六時まで、予約画面から受け付けます。ただし、割引プランをご利用の場合、画面での変更はできません。予約番号を添えて、同じ期限までにメールでお問い合わせください。\n\n例えば、到着予定日が十日の場合、七日の午後六時が変更申込みの期限となります。通常プランのお客様は、画面上で希望日を選び、表示される内容をご確認ください。割引プランのお客様は画面で手続きを進めず、メールをご利用ください。電話番号やお名前のみでは予約を特定できない場合があるため、予約番号の記載をお願いいたします。変更を希望する新しい日程も、最初のメールにお書き添えください。",
+        "reading": "しゅくはくびの へんこうは、とうちゃくよていびの みっかまえの ごご ろくじまで、よやくがめんから うけつけます。ただし、わりびきプランを ごりようの ばあい、がめんでの へんこうは できません。よやくばんごうを そえて、おなじ きげんまでに メールで おといあわせください。\n\nたとえば、とうちゃくよていびがとうかのばあい、なのかのごごろくじがへんこうもうしこみのきげんとなります。つうじょうプランのおきゃくさまは、がめんじょうできぼうびをえらび、ひょうじされるないようをごかくにんください。わりびきプランのおきゃくさまはがめんでてつづきをすすめず、メールをごりようください。でんわばんごうやおなまえのみではよやくをとくていできないばあいがあるため、よやくばんごうのきさいをおねがいいたします。へんこうをきぼうするあたらしいにっていも、さいしょのメールにおかきそえください。",
+        "meaning": "Perubahan tanggal menginap diterima lewat layar reservasi sampai pukul 18.00 tiga hari sebelum tanggal kedatangan yang dijadwalkan. Namun, pengguna paket diskon tidak dapat mengubah lewat layar. Mereka harus menghubungi lewat email dengan nomor reservasi sebelum tenggat yang sama.\n\nMisalnya, untuk kedatangan tanggal 10, tenggat pengajuan perubahan adalah tanggal 7 pukul 18.00. Pelanggan paket biasa memilih tanggal yang diinginkan dan memeriksa informasi pada layar. Pelanggan paket diskon menggunakan email, bukan melanjutkan proses di layar. Nomor reservasi perlu dicantumkan karena nama atau nomor telepon saja kadang tidak cukup untuk menemukan reservasi. Tanggal baru yang diinginkan juga perlu ditulis pada email pertama.",
+        "imageAsset": "assets/images/reading/story-n3-06.png",
+        "imagePanel": 0,
+        "imageDescription": "Pengunjung memeriksa informasi reservasi pada ponsel.",
+        "vocabulary": [
+          {
+            "japanese": "期限",
+            "reading": "きげん",
+            "meaning": "batas waktu"
+          },
+          {
+            "japanese": "添える",
+            "reading": "そえる",
+            "meaning": "menyertakan"
+          }
+        ]
+      },
+      {
+        "title": "Biaya dan pilihan pengganti",
+        "japanese": "期限内の変更に手数料はかかりませんが、新しい日程の宿泊料金との差額は精算します。満室の場合は変更をお受けできません。その場合、元の予約は維持されます。取消しをご希望の場合は、別途取消し手続きが必要です。\n\n手数料が無料という条件は、変更後の宿泊料金が元の料金と同じになることを意味しません。新しい日程の方が高い場合は差額をお支払いいただき、安い場合は差額をご返金します。変更可能かどうかと、お支払いの合計額は、それぞれ確認する必要があります。また、変更できないとの連絡を受けても、元の予約が自動的に取り消されることはありません。元の日程に宿泊されない場合は、取消しに関する案内も必ずご確認ください。",
+        "reading": "きげんないの へんこうに てすうりょうは かかりませんが、あたらしい にっていの しゅくはくりょうきんとの さがくは せいさんします。まんしつの ばあいは へんこうを おうけできません。その ばあい、もとの よやくは いじされます。とりけしを ごきぼうの ばあいは、べっと とりけし てつづきが ひつようです。\n\nてすうりょうがむりょうというじょうけんは、へんこうごのしゅくはくりょうきんがもとのりょうきんとおなじになることをいみしません。あたらしいにっていのほうがたかいばあいはさがくをおしはらいいただき、やすいばあいはさがくをごへんきんします。へんこうかのうかどうかと、おしはらいのごうけいがくは、それぞれかくにんするひつようがあります。また、へんこうできないとのれんらくをうけても、もとのよやくがじどうてきにとりけされることはありません。もとのにっていにしゅくはくされないばあいは、とりけしにかんするあんないもかならずごかくにんください。",
+        "meaning": "Tidak ada biaya administrasi untuk perubahan sebelum tenggat, tetapi selisih tarif dengan tanggal baru akan diperhitungkan. Jika kamar penuh, perubahan tidak bisa diterima dan reservasi awal tetap berlaku. Untuk membatalkan diperlukan prosedur pembatalan tersendiri.\n\nBebas biaya administrasi tidak berarti tarif menginap yang baru selalu sama. Jika tanggal baru lebih mahal, selisih perlu dibayar; jika lebih murah, selisih dikembalikan. Ketersediaan perubahan dan total pembayaran harus diperiksa masing-masing. Pemberitahuan bahwa perubahan tidak bisa dilakukan juga tidak membatalkan reservasi lama secara otomatis. Jika tidak akan menginap pada tanggal lama, periksa pula panduan pembatalan.",
+        "imageAsset": "assets/images/reading/story-n3-06.png",
+        "imagePanel": 1,
+        "imageDescription": "Tamu berkonsultasi dengan petugas mengenai reservasi.",
+        "vocabulary": [
+          {
+            "japanese": "差額",
+            "reading": "さがく",
+            "meaning": "selisih harga"
+          },
+          {
+            "japanese": "維持",
+            "reading": "いじ",
+            "meaning": "mempertahankan keadaan"
+          }
+        ]
+      },
+      {
+        "title": "Kapan perubahan dianggap selesai",
+        "japanese": "メールを送信した時点では、変更は確定していません。当館からの確認メールを受け取って初めて完了となります。通常は一日以内に返信します。期限を過ぎてからのご相談は電話のみで承りますが、変更できることを保証するものではありません。\n\n返信が見当たらない場合は、迷惑メールのフォルダーをご確認ください。通常の返信時間を過ぎても連絡がない場合は、予約番号を用意して当館へお電話ください。希望日へ変更できることを前提に、交通機関の予約などを進めると、調整が難しくなる場合があります。確認メールには変更後の日程と料金を記載しますので、受け取った際に内容をご確認ください。お客様が申込みを行った段階と、当館が変更を確定した段階は区別してお考えください。",
+        "reading": "メールを そうしんした じてんでは、へんこうは かくていしていません。とうかんからの かくにんメールを うけとって はじめて かんりょうと なります。つうじょうは いちにちいないに へんしんします。きげんを すぎてからの ごそうだんは でんわのみで うけたまわりますが、へんこうできることを ほしょうするものでは ありません。\n\nへんしんがみあたらないばあいは、めいわくメールのフォルダーをごかくにんください。つうじょうのへんしんじかんをすぎてもれんらくがないばあいは、よやくばんごうをよういしてとうかんへおでんわください。きぼうびへへんこうできることをぜんていに、こうつうきかんのよやくなどをすすめると、ちょうせいがむずかしくなるばあいがあります。かくにんメールにはへんこうごのにっていとりょうきんをきさいしますので、うけとったさいにないようをごかくにんください。おきゃくさまがもうしこみをおこなっただんかいと、とうかんがへんこうをかくていしただんかいはくべつしておかんがえください。",
+        "meaning": "Perubahan belum pasti hanya karena email telah dikirim. Proses baru selesai setelah email konfirmasi dari penginapan diterima. Biasanya balasan diberikan dalam sehari. Konsultasi setelah tenggat hanya diterima lewat telepon, tetapi tidak menjamin perubahan dapat dilakukan.\n\nJika balasan tidak ditemukan, periksa folder spam. Jika waktu balasan biasa telah lewat, telepon penginapan dengan nomor reservasi siap. Memesan transportasi dengan menganggap perubahan pasti diterima dapat menyulitkan penyesuaian. Email konfirmasi memuat tanggal dan tarif baru yang perlu diperiksa saat diterima. Tahap pengajuan oleh pelanggan harus dibedakan dari tahap pengesahan perubahan oleh penginapan.",
+        "imageAsset": "assets/images/reading/story-n3-06.png",
+        "imagePanel": 2,
+        "imageDescription": "Tamu dan petugas setelah membicarakan pemesanan.",
+        "vocabulary": [
+          {
+            "japanese": "確定",
+            "reading": "かくてい",
+            "meaning": "kepastian; penetapan final"
+          },
+          {
+            "japanese": "保証",
+            "reading": "ほしょう",
+            "meaning": "jaminan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "割引プランの利用者が期限内に変更を希望する場合、どうするか。",
+        "Choices": [
+          "画面で変更する。",
+          "何もせず確認を待つ。",
+          "予約番号を添えてメールする。",
+          "必ず元の予約を取り消す。"
+        ],
+        "Correct": 2,
+        "Explanation": "Pengecualian paket diskon: kirim email disertai nomor reservasi, bukan memakai layar reservasi."
+      },
+      {
+        "Prompt": "到着予定日が十五日なら、通常の変更期限はいつか。",
+        "Choices": [
+          "十二日の午後六時。",
+          "十三日の午後六時。",
+          "十五日の午前六時。",
+          "十二日の午前六時。"
+        ],
+        "Correct": 0,
+        "Explanation": "Tiga hari sebelum tanggal 15 adalah tanggal 12, dan 午後六時 adalah pukul 18.00."
+      },
+      {
+        "Prompt": "「手数料はかかりません」について正しい理解はどれか。",
+        "Choices": [
+          "宿泊料金も無料になる。",
+          "変更先との料金差は精算される。",
+          "取消しも必ず無料になる。",
+          "割引プランだけ追加料金がない。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bebas biaya administrasi berbeda dari selisih tarif menginap; teks tetap mewajibkan perhitungan selisih."
+      },
+      {
+        "Prompt": "希望の日が満室の場合、元の予約はどうなるか。",
+        "Choices": [
+          "自動的に消える。",
+          "別の日に自動変更される。",
+          "電話した時点で取り消される。",
+          "取消し手続きをしない限り維持される。"
+        ],
+        "Correct": 3,
+        "Explanation": "Bagian 2 menyatakan reservasi awal tetap ada; pembatalan perlu prosedur terpisah."
+      },
+      {
+        "Prompt": "メールによる変更が完了するのはいつか。",
+        "Choices": [
+          "確認メールを受け取った時。",
+          "メールを送った時。",
+          "一日が過ぎた時。",
+          "予約番号を書いた時。"
+        ],
+        "Correct": 0,
+        "Explanation": "～て初めて menetapkan kondisi penyelesaian: menerima email konfirmasi, bukan sekadar mengirim permintaan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-07",
+    "Title": "Kota yang ramah sepeda",
+    "JapaneseTitle": "道を譲り合う街",
+    "Chapter": "Kebijakan publik",
+    "Description": "Baca dua kepentingan yang berlawanan dan solusi kompromi. Latih ～に応じて dan ～に限らず.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-07.png",
+    "Pages": [
+      {
+        "title": "Usulan jalur baru",
+        "japanese": "市は、車道の一部を自転車専用にする計画を発表した。安全に走れる道が増えれば、車に頼る人も減ると期待されている。一方、沿道の店からは、荷物の受け渡しが難しくなるのではないかという声が上がった。\n\n商店にとって、道路は客が通る場所であると同時に、商品を運び入れる場所でもある。重い荷物を遠くから運ぶ必要が生じれば、店員の仕事が増え、配達の時間にも影響する。計画に疑問を示した店主も、自転車の安全を軽く考えていたわけではない。自分たちの仕事に必要な条件が説明に含まれていないことを心配していたのである。賛成と反対に分けるだけでは、何を調整すればよいかは分からない。",
+        "reading": "しは、しゃどうの いちぶを じてんしゃせんようにする けいかくを はっぴょうした。あんぜんに はしれる みちが ふえれば、くるまに たよる ひとも へると きたいされている。いっぽう、えんどうの みせからは、にもつの うけわたしが むずかしくなるのではないかという こえが あがった。\n\nしょうてんにとって、どうろはきゃくがとおるばしょであるとどうじに、しょうひんをはこびいれるばしょでもある。おもいにもつをとおくからはこぶひつようがしょうじれば、てんいんのしごとがふえ、はいたつのじかんにもえいきょうする。けいかくにぎもんをしめしたてんしゅも、じてんしゃのあんぜんをかるくかんがえていたわけではない。じぶんたちのしごとにひつようなじょうけんがせつめいにふくまれていないことをしんぱいしていたのである。さんせいとはんたいにわけるだけでは、なにをちょうせいすればよいかはわからない。",
+        "meaning": "Kota mengumumkan rencana menjadikan sebagian jalan khusus sepeda. Jalur aman diharapkan mengurangi ketergantungan pada mobil. Namun, toko di sepanjang jalan menyuarakan kekhawatiran bahwa bongkar muat akan menjadi sulit.\n\nBagi toko, jalan sekaligus tempat pelanggan lewat dan tempat menerima barang. Jika barang berat harus dibawa dari jauh, beban pegawai dan waktu pengiriman terpengaruh. Pemilik yang mempertanyakan rencana bukan meremehkan keselamatan pesepeda. Mereka khawatir syarat pekerjaan toko tidak diperhitungkan. Membagi orang hanya menjadi pihak setuju dan menolak belum menjelaskan apa yang perlu disesuaikan.",
+        "imageAsset": "assets/images/reading/story-n3-07.png",
+        "imagePanel": 0,
+        "imageDescription": "Pengendara sepeda menjelajahi jalan kota.",
+        "vocabulary": [
+          {
+            "japanese": "沿道",
+            "reading": "えんどう",
+            "meaning": "sepanjang jalan"
+          },
+          {
+            "japanese": "受け渡し",
+            "reading": "うけわたし",
+            "meaning": "serah terima"
+          }
+        ]
+      },
+      {
+        "title": "Menguji sebelum menetapkan",
+        "japanese": "市は反対を無視せず、まず一か月の試行を行った。交通量の少ない朝には短時間の荷下ろしを認め、混雑する夕方は自転車専用とした。時間帯に応じて使い方を変えた結果、店の営業を妨げずに走りやすさを確保できた。\n\n試行中は、道路に時間帯ごとの使い方を表示し、配達する人にも変更を知らせた。市の職員は利用者の数だけでなく、車が止まる位置や歩行者の通り方も観察した。最初は荷下ろしの場所が分かりにくいという意見が出たため、表示を増やした。計画を一度発表して終えるのではなく、実際に使われる場面を見ながら直したことが、理解を得る助けになった。試行は成功を示すためだけでなく、不便が残る点を発見するためにも役立った。",
+        "reading": "しは はんたいを むしせず、まず いっかげつの しこうを おこなった。こうつうりょうの すくない あさには たんじかんの におろしを みとめ、こんざつする ゆうがたは じてんしゃせんようとした。じかんたいに おうじて つかいかたを かえた けっか、みせの えいぎょうを さまたげずに はしりやすさを かくほできた。\n\nしこうちゅうは、どうろにじかんたいごとのつかいかたをひょうじし、はいたつするひとにもへんこうをしらせた。しのしょくいんはりようしゃのかずだけでなく、くるまがとまるいちやほこうしゃのとおりほうもかんさつした。さいしょはにおろしのばしょがわかりにくいといういけんがでたため、ひょうじをふやした。けいかくをいちどはっぴょうしておえるのではなく、じっさいにつかわれるばめんをみながらなおしたことが、りかいをえるたすけになった。しこうはせいこうをしめすためだけでなく、ふべんがのこるてんをはっけんするためにもやくたった。",
+        "meaning": "Kota tidak mengabaikan keberatan dan melakukan uji coba sebulan. Bongkar muat singkat diizinkan pada pagi yang sepi, sedangkan sore yang ramai dikhususkan untuk sepeda. Dengan penggunaan menurut waktu, kemudahan bersepeda dapat dipertahankan tanpa menghambat operasi toko.\n\nSelama uji coba, penggunaan jalan menurut jam ditampilkan dan pengantar barang diberi tahu. Petugas mengamati jumlah pengguna, posisi kendaraan berhenti, serta pergerakan pejalan kaki. Penanda ditambah setelah lokasi bongkar muat dinilai kurang jelas. Meninjau penggunaan nyata dan memperbaikinya setelah pengumuman membantu memperoleh pemahaman. Uji coba berguna menemukan kesulitan yang tersisa, selain menunjukkan keberhasilan.",
+        "imageAsset": "assets/images/reading/story-n3-07.png",
+        "imagePanel": 1,
+        "imageDescription": "Pesepeda berhenti di lingkungan pertokoan.",
+        "vocabulary": [
+          {
+            "japanese": "試行",
+            "reading": "しこう",
+            "meaning": "uji coba"
+          },
+          {
+            "japanese": "荷下ろし",
+            "reading": "におろし",
+            "meaning": "bongkar muatan"
+          }
+        ]
+      },
+      {
+        "title": "Prinsip yang bisa diperluas",
+        "japanese": "自転車の利用者に限らず、歩行者や商店にも配慮してこそ、計画は地域に受け入れられる。道路の幅はすぐには変えられないが、使う時間の調整はできる。限られた空間を分け合うには、誰かの我慢だけに頼らない工夫が必要だ。\n\n全ての道路で同じ時間割が使えるとは限らない。学校が近い場所と、夜まで営業する店が多い場所では、人の動きが違うからだ。他の地域の例を参考にしつつ、そこで暮らす人に条件を聞く必要がある。安全と営業を対立する目的として扱うより、両方を支える利用方法を探したい。公共の空間を変える時には、最も多い意見だけで決めるのではなく、少数の人に大きな負担が生じていないかも確認すべきだ。",
+        "reading": "じてんしゃの りようしゃに かぎらず、ほこうしゃや しょうてんにも はいりょしてこそ、けいかくは ちいきに うけいれられる。どうろの はばは すぐには かえられないが、つかう じかんの ちょうせいは できる。かぎられた くうかんを わけあうには、だれかの がまんだけに たよらない くふうが ひつようだ。\n\nすべてのどうろでおなじじかんわりがつかえるとはかぎらない。がっこうがちかいばしょと、よるまでえいぎょうするみせがおおいばしょでは、ひとのうごきがちがうからだ。ほかのちいきのれいをさんこうにしつつ、そこでくらすひとにじょうけんをきくひつようがある。あんぜんとえいぎょうをたいりつするもくてきとしてあつかうより、りょうほうをささえるりようほうほうをさがしたい。こうきょうのくうかんをかえるときには、もっともおおいいけんだけできめるのではなく、しょうすうのひとにおおきなふたんがしょうじていないかもかくにんすべきだ。",
+        "meaning": "Rencana dapat diterima komunitas jika mempertimbangkan tidak hanya pesepeda, tetapi juga pejalan kaki dan toko. Lebar jalan tidak dapat langsung diubah, tetapi waktu penggunaannya bisa diatur. Berbagi ruang terbatas memerlukan cara yang tidak hanya mengandalkan pengorbanan salah satu pihak.\n\nJadwal yang sama belum tentu cocok untuk semua jalan. Pergerakan orang berbeda antara kawasan dekat sekolah dan kawasan toko yang buka malam. Contoh tempat lain dapat dirujuk sambil tetap mendengar kondisi warga setempat. Daripada mempertentangkan keselamatan dengan kegiatan usaha, carilah penggunaan yang mendukung keduanya. Perubahan ruang publik perlu memeriksa apakah kelompok kecil menanggung beban besar, selain mendengar pendapat mayoritas.",
+        "imageAsset": "assets/images/reading/story-n3-07.png",
+        "imagePanel": 2,
+        "imageDescription": "Pengendara sepeda berada di ruang kota bersama pengguna lain.",
+        "vocabulary": [
+          {
+            "japanese": "配慮",
+            "reading": "はいりょ",
+            "meaning": "perhatian terhadap kebutuhan pihak lain"
+          },
+          {
+            "japanese": "調整",
+            "reading": "ちょうせい",
+            "meaning": "penyesuaian; pengaturan"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "沿道の店が心配していたことは何か。",
+        "Choices": [
+          "自転車が全て禁止されること。",
+          "商品の値段が上がること。",
+          "道が広くなること。",
+          "荷物を受け渡しにくくなること。"
+        ],
+        "Correct": 3,
+        "Explanation": "Bagian 1 menyebut kekhawatiran mengenai serah terima barang, bukan harga atau pelebaran jalan."
+      },
+      {
+        "Prompt": "試行中、朝の利用について認められたのはどれか。",
+        "Choices": [
+          "一日中の駐車。",
+          "短時間の荷下ろし。",
+          "全ての車の通行禁止。",
+          "自転車だけの利用。"
+        ],
+        "Correct": 1,
+        "Explanation": "Pada pagi dengan lalu lintas rendah, bongkar muat singkat diizinkan. Sore khusus sepeda."
+      },
+      {
+        "Prompt": "「時間帯に応じて」の意味に近いものはどれか。",
+        "Choices": [
+          "時間帯に合わせて。",
+          "時間帯に関係なく。",
+          "時間を一切決めずに。",
+          "毎日同じ人だけで。"
+        ],
+        "Correct": 0,
+        "Explanation": "～に応じて berarti menyesuaikan dengan kondisi, di sini karakter lalu lintas pada waktu berbeda."
+      },
+      {
+        "Prompt": "試行で両立できたものは何か。",
+        "Choices": [
+          "道の拡張と人口の増加。",
+          "車の値下げと営業時間の短縮。",
+          "店の営業と自転車の走りやすさ。",
+          "歩行者の排除と駐車場の増設。"
+        ],
+        "Correct": 2,
+        "Explanation": "Hasil pada bagian 2: operasional toko tidak terhambat dan kenyamanan bersepeda tetap terjamin."
+      },
+      {
+        "Prompt": "筆者が必要だと考える工夫は何か。",
+        "Choices": [
+          "商店だけに我慢を求めること。",
+          "利用者全員を同じ時間に集めること。",
+          "自転車の台数だけを数えること。",
+          "複数の利用者に配慮して空間の使い方を調整すること。"
+        ],
+        "Correct": 3,
+        "Explanation": "Kesimpulan menekankan pembagian ruang dan waktu dengan mempertimbangkan beragam pihak."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-08",
+    "Title": "Notifikasi dan kendali perhatian",
+    "JapaneseTitle": "便利な道具との距離",
+    "Chapter": "Teknologi dan perilaku",
+    "Description": "Bedakan sebab, korelasi, dan solusi terbatas. Latih ～かねない dan penggunaan そのため.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-08.png",
+    "Pages": [
+      {
+        "title": "Gangguan kecil yang menumpuk",
+        "japanese": "通知が鳴るたびに画面を確認していると、短い作業でも時間がかかる。確認は数秒で終わるとしても、元の考えに戻るには時間が必要だ。便利なはずの機能が、集中を妨げる原因になりかねない。\n\n私は文章を書く間にも、知らせが来ればすぐ確認していた。画面を見る時間は短くても、どの文まで考えていたかを思い出すたびに、作業が止まった。夕方には何時間も働いた感覚があるのに、完成した文章はわずかだった。時間の使い方を記録して初めて、一回の中断だけでなく、その繰り返しに問題があると分かった。便利さを判断するには、連絡をすぐ知れる利点と、注意が何度も切り替わる負担の両方を見る必要がある。",
+        "reading": "つうちが なる たびに がめんを かくにんしていると、みじかい さぎょうでも じかんが かかる。かくにんは すうびょうで おわるとしても、もとの かんがえに もどるには じかんが ひつようだ。べんりなはずの きのうが、しゅうちゅうを さまたげる げんいんに なりかねない。\n\nわたしはぶんしょうをかくあいだにも、しらせがこればすぐかくにんしていた。がめんをみるじかんはみじかくても、どのぶんまでかんがえていたかをおもいだすたびに、さぎょうがとまった。ゆうがたにはなんじかんもはたらいたかんかくがあるのに、かんせいしたぶんしょうはわずかだった。じかんのつかいかたをきろくしてはじめて、いっかいのちゅうだんだけでなく、そのくりかえしにもんだいがあるとわかった。べんりさをはんだんするには、れんらくをすぐしれるりてんと、ちゅういがなんどもきりかわるふたんのりょうほうをみるひつようがある。",
+        "meaning": "Memeriksa layar setiap kali notifikasi berbunyi membuat pekerjaan singkat pun lebih lama. Walaupun pemeriksaan hanya beberapa detik, kembali ke alur pikir sebelumnya memerlukan waktu. Fitur yang seharusnya praktis berpotensi menjadi penyebab gangguan konsentrasi.\n\nSaat menulis saya langsung memeriksa setiap pemberitahuan. Waktu melihat layar singkat, tetapi pekerjaan berhenti setiap kali harus mengingat kalimat yang sedang dipikirkan. Sore hari terasa sudah bekerja berjam-jam, padahal tulisan selesai sedikit. Catatan waktu menunjukkan bahwa pengulangan gangguanlah persoalannya. Menilai kepraktisan perlu mempertimbangkan manfaat mengetahui pesan segera dan beban berganti perhatian berkali-kali.",
+        "imageAsset": "assets/images/reading/story-n3-08.png",
+        "imagePanel": 0,
+        "imageDescription": "Pengguna ponsel di dekat meja belajar.",
+        "vocabulary": [
+          {
+            "japanese": "集中",
+            "reading": "しゅうちゅう",
+            "meaning": "konsentrasi"
+          },
+          {
+            "japanese": "妨げる",
+            "reading": "さまたげる",
+            "meaning": "menghambat; mengganggu"
+          }
+        ]
+      },
+      {
+        "title": "Bukan mematikan semuanya",
+        "japanese": "私は最初、全ての通知を止めたが、急ぎの連絡まで見落としてしまった。そのため、相手と内容によって通知を分け、急ぎでないものは決まった時間に読むようにした。連絡を受けることと、その場で反応することを区別したのである。\n\n同僚には、急ぎの時に使う連絡方法と、通常の返事をする時間を伝えた。自分だけで設定を変えても、相手がいつ返事をもらえるか分からなければ、何度も連絡が来る可能性があるからだ。緊急の連絡は確認できるように残し、資料の共有などは作業の区切りにまとめて読んだ。通知を分ける際には、誰から来たかだけでなく、何についての連絡かも考えた。頻繁に鳴るというだけで重要だと判断しないことが、注意を守る第一歩になった。",
+        "reading": "わたしは さいしょ、すべての つうちを とめたが、いそぎの れんらくまで みおとしてしまった。そのため、あいてと ないように よって つうちを わけ、いそぎでないものは きまった じかんに よむようにした。れんらくを うけることと、その ばで はんのうすることを くべつしたのである。\n\nどうりょうには、いそぎのときにつかうれんらくほうほうと、つうじょうのへんじをするじかんをつたえた。じぶんだけでせっていをかえても、あいてがいつへんじをもらえるかわからなければ、なんどもれんらくがくるかのうせいがあるからだ。きんきゅうのれんらくはかくにんできるようにのこし、しりょうのきょうゆうなどはさぎょうのくぎりにまとめてよんだ。つうちをわけるさいには、だれからきたかだけでなく、なにについてのれんらくかもかんがえた。ひんぱんになるというだけでじゅうようだとはんだんしないことが、ちゅういをまもるだいいっぽになった。",
+        "meaning": "Awalnya narator mematikan semua notifikasi, tetapi sampai melewatkan pesan mendesak. Karena itu ia memilah berdasarkan pengirim dan isi, lalu membaca pesan tidak mendesak pada waktu tertentu. Ia membedakan menerima pesan dari merespons langsung saat pesan tiba.\n\nSaya memberi tahu rekan jalur untuk pesan mendesak dan waktu balasan biasa. Mengubah pengaturan sendiri tanpa memberi tahu waktu respons dapat memicu kontak berulang. Pesan darurat tetap bisa diperiksa, sedangkan berbagi dokumen dibaca bersama saat jeda kerja. Pengelompokan mempertimbangkan isi selain pengirim. Tidak menganggap pesan penting hanya karena sering berbunyi menjadi langkah pertama menjaga perhatian.",
+        "imageAsset": "assets/images/reading/story-n3-08.png",
+        "imagePanel": 1,
+        "imageDescription": "Pengguna mengatur ponsel di ruang belajar.",
+        "vocabulary": [
+          {
+            "japanese": "見落とす",
+            "reading": "みおとす",
+            "meaning": "melewatkan; tidak menyadari"
+          },
+          {
+            "japanese": "反応",
+            "reading": "はんのう",
+            "meaning": "reaksi; respons"
+          }
+        ]
+      },
+      {
+        "title": "Memilih batas yang sesuai",
+        "japanese": "通知を止めれば誰もが集中できる、と断言するつもりはない。仕事によっては即時の対応が求められる。ただ、全てを急ぎだと扱う習慣は見直せる。道具に合わせて生活するだけでなく、自分の目的に合わせて道具を設定したい。\n\n例えば、問い合わせにすぐ答える担当者は、全ての通知を一度に切ることが難しい。その場合でも、交代で対応する時間を設けたり、集中が必要な仕事を別の時間に行ったりする工夫は考えられる。個人の我慢だけに頼らず、周囲と連絡のルールを共有することも大切だ。集中できない自分を責める前に、作業と道具の関係を見直してみたい。設定は一度決めたら終わりではなく、仕事の条件が変わるたびに調整してよいのである。",
+        "reading": "つうちを とめれば だれもが しゅうちゅうできる、と だんげんする つもりは ない。しごとに よっては そくじの たいおうが もとめられる。ただ、すべてを いそぎだと あつかう しゅうかんは みなおせる。どうぐに あわせて せいかつするだけでなく、じぶんの もくてきに あわせて どうぐを せっていしたい。\n\nたとえば、といあわせにすぐこたえるたんとうしゃは、すべてのつうちをいちどにきることがむずかしい。そのばあいでも、こうたいでたいおうするじかんをもうけたり、しゅうちゅうがひつようなしごとをべつのじかんにおこなったりするくふうはかんがえられる。こじんのがまんだけにたよらず、しゅういとれんらくのルールをきょうゆうすることもたいせつだ。しゅうちゅうできないじぶんをせめるまえに、さぎょうとどうぐのかんけいをみなおしてみたい。せっていはいちどきめたらおわりではなく、しごとのじょうけんがかわるたびにちょうせいしてよいのである。",
+        "meaning": "Penulis tidak bermaksud menyatakan semua orang akan berkonsentrasi jika notifikasi dimatikan. Beberapa pekerjaan memerlukan respons segera. Namun, kebiasaan memperlakukan setiap pesan sebagai mendesak bisa ditinjau ulang. Perangkat sebaiknya diatur menurut tujuan pengguna, bukan hanya hidup mengikuti perangkat.\n\nPetugas yang harus menjawab pertanyaan segera sulit mematikan semua notifikasi. Namun, jadwal respons bergiliran atau waktu berbeda untuk tugas yang memerlukan konsentrasi bisa dipertimbangkan. Aturan komunikasi bersama juga penting agar tidak hanya mengandalkan kesabaran individu. Sebelum menyalahkan diri karena sulit fokus, tinjau hubungan tugas dengan perangkat. Pengaturan dapat diubah lagi ketika kondisi kerja berubah.",
+        "imageAsset": "assets/images/reading/story-n3-08.png",
+        "imagePanel": 2,
+        "imageDescription": "Seseorang belajar dengan ponsel yang diletakkan di samping.",
+        "vocabulary": [
+          {
+            "japanese": "断言",
+            "reading": "だんげん",
+            "meaning": "pernyataan tegas dan pasti"
+          },
+          {
+            "japanese": "即時",
+            "reading": "そくじ",
+            "meaning": "seketika; segera"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "短い確認でも作業が遅れる理由は何か。",
+        "Choices": [
+          "元の考えに戻る時間も必要だから。",
+          "画面が必ず壊れるから。",
+          "通知の数が必ず増えるから。",
+          "作業の内容が全て消えるから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Bagian 1 menyoroti biaya kembali ke alur pikir selain beberapa detik memeriksa layar."
+      },
+      {
+        "Prompt": "「なりかねない」が表す意味はどれか。",
+        "Choices": [
+          "絶対にそうならない。",
+          "悪い結果になる可能性がある。",
+          "必ず役に立つ。",
+          "既に完全に解決した。"
+        ],
+        "Correct": 1,
+        "Explanation": "～かねない menyatakan kemungkinan hasil yang tidak diinginkan: menghambat konsentrasi."
+      },
+      {
+        "Prompt": "筆者が通知を分けるようにしたきっかけは何か。",
+        "Choices": [
+          "全ての仕事が終わったこと。",
+          "携帯電話を失ったこと。",
+          "急ぎの連絡まで見落としたこと。",
+          "相手が全員返事をやめたこと。"
+        ],
+        "Correct": 2,
+        "Explanation": "そのため merujuk pada akibat mematikan semua notifikasi, yaitu terlewatnya pesan mendesak."
+      },
+      {
+        "Prompt": "新しい方法で急ぎでない連絡はどうするか。",
+        "Choices": [
+          "二度と読まない。",
+          "受信を完全に拒否する。",
+          "必ずその場で返す。",
+          "決まった時間に読む。"
+        ],
+        "Correct": 3,
+        "Explanation": "Bagian 2 membedakan menerima pesan dengan merespons saat itu juga; pesan tidak mendesak dibaca terjadwal."
+      },
+      {
+        "Prompt": "筆者の主張として適切なものはどれか。",
+        "Choices": [
+          "全ての人が通知を止めるべきだ。",
+          "目的と必要性に合わせて通知を設定する。",
+          "仕事の連絡は全て急ぎだ。",
+          "道具の設定は変えられない。"
+        ],
+        "Correct": 1,
+        "Explanation": "Penulis mengakui kebutuhan respons cepat pada sebagian pekerjaan, lalu mengusulkan pengaturan sesuai tujuan."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-09",
+    "Title": "Latihan bencana yang mengikutsertakan semua warga",
+    "JapaneseTitle": "参加できる備え",
+    "Chapter": "Masyarakat dan keselamatan",
+    "Description": "Analisis makna akses nyata dan informasi tersirat. Latih ～に当たって dan ～ものの.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-09.png",
+    "Pages": [
+      {
+        "title": "Angka kehadiran",
+        "japanese": "防災訓練を行うに当たって、自治会は全世帯に案内を配った。当日は例年と同じ人数が集まったものの、参加者の顔ぶれはほとんど変わらなかった。案内が届くことと、実際に参加できることは同じではない。\n\n自治会は、案内を全ての家に届けたので、情報は十分に伝わったと考えていた。ところが、集合場所や時間を知っている人でも、その日に参加できるとは限らない。何年も同じやり方を続けていると、参加している人には当たり前の条件が、初めての人には大きな壁になっている場合がある。いつも来る人だけに感想を聞けば、その壁は見えにくい。人数が変わらない理由を調べるには、会場の外にいる住民の事情にも目を向ける必要があった。",
+        "reading": "ぼうさいくんれんを おこなうに あたって、じちかいは ぜんせたいに あんないを くばった。とうじつは れいねんと おなじ にんずうが あつまったものの、さんかしゃの かおぶれは ほとんど かわらなかった。あんないが とどくことと、じっさいに さんかできることは おなじではない。\n\nじちかいは、あんないをすべてのいえにとどけたので、じょうほうはじゅうぶんにつたわったとかんがえていた。ところが、しゅうごうばしょやじかんをしっているひとでも、そのひにさんかできるとはかぎらない。なんねんもおなじやりほうをつづけていると、さんかしているひとにはあたりまえのじょうけんが、はじめてのひとにはおおきなかべになっているばあいがある。いつもくるひとだけにかんそうをきけば、そのかべはみえにくい。にんずうがかわらないりゆうをしらべるには、かいじょうのそとにいるじゅうみんのじじょうにもめをむけるひつようがあった。",
+        "meaning": "Untuk menyelenggarakan latihan bencana, asosiasi warga membagikan pengumuman ke semua rumah tangga. Meski jumlah peserta sama seperti tahun-tahun sebelumnya, orang-orang yang hadir hampir tidak berubah. Menerima pengumuman berbeda dari benar-benar bisa berpartisipasi.\n\nPengurus mengira informasi sudah cukup tersampaikan karena pengumuman dikirim ke semua rumah. Namun, mengetahui waktu dan tempat belum berarti bisa hadir. Kondisi yang biasa bagi peserta lama bisa menjadi penghalang besar bagi orang baru. Jika pendapat hanya ditanyakan kepada peserta rutin, hambatan itu sulit terlihat. Untuk memahami jumlah peserta yang tidak berubah, keadaan warga di luar tempat latihan perlu diperhatikan.",
+        "imageAsset": "assets/images/reading/story-n3-09.png",
+        "imagePanel": 0,
+        "imageDescription": "Warga berkumpul mengikuti kegiatan kesiapsiagaan.",
+        "vocabulary": [
+          {
+            "japanese": "自治会",
+            "reading": "じちかい",
+            "meaning": "asosiasi warga setempat"
+          },
+          {
+            "japanese": "顔ぶれ",
+            "reading": "かおぶれ",
+            "meaning": "susunan orang yang hadir"
+          }
+        ]
+      },
+      {
+        "title": "Hambatan yang berbeda",
+        "japanese": "聞き取りをすると、休日も働く人や、小さな子を連れて避難経路を歩くのが難しい人がいた。日本語の説明を十分に理解できず、参加をためらった住民もいた。参加しない理由を、関心の低さだけで説明するのは無理がある。\n\nある住民は、訓練に行かないのではなく、仕事の時間を変えられないのだと説明した。別の住民は、子供が途中で疲れた場合に、どこで休めるか分からず不安だったという。日本語が難しい人には、案内の一部を読めても、当日の指示が理解できるかという心配が残っていた。これらは、防災に関心を持つよう呼びかけるだけでは解決しない。何が参加を難しくしているかを分けて考えれば、必要な支援も具体的になる。",
+        "reading": "ききとりを すると、きゅうじつも はたらく ひとや、ちいさな こを つれて ひなんけいろを あるくのが むずかしい ひとが いた。にほんごの せつめいを じゅうぶんに りかいできず、さんかを ためらった じゅうみんも いた。さんかしない りゆうを、かんしんの ひくさだけで せつめいするのは むりが ある。\n\nあるじゅうみんは、くんれんにいかないのではなく、しごとのじかんをかえられないのだとせつめいした。べつのじゅうみんは、こどもがとちゅうでつかれたばあいに、どこでやすめるかわからずふあんだったという。にほんごがむずかしいひとには、あんないのいちぶをよめても、とうじつのしじがりかいできるかというしんぱいがのこっていた。これらは、ぼうさいにかんしんをもつようよびかけるだけではかいけつしない。なにがさんかをむずかしくしているかをわけてかんがえれば、ひつようなしえんもぐたいてきになる。",
+        "meaning": "Wawancara menemukan orang yang bekerja saat libur serta orang yang sulit menyusuri rute evakuasi sambil membawa anak kecil. Ada pula warga yang ragu ikut karena tidak memahami penjelasan Jepang dengan cukup baik. Tidak masuk akal menjelaskan ketidakhadiran hanya dengan kurangnya minat.\n\nSeorang warga menjelaskan ia tidak bisa mengubah jam kerja, bukan tidak mau ikut. Warga lain khawatir tidak tahu tempat istirahat jika anak lelah. Orang yang kesulitan bahasa Jepang mungkin membaca sebagian pengumuman, tetapi tetap cemas memahami instruksi pada hari kegiatan. Hambatan ini tidak selesai hanya dengan ajakan meningkatkan kepedulian. Memisahkan penyebab kesulitan membuat dukungan yang diperlukan lebih konkret.",
+        "imageAsset": "assets/images/reading/story-n3-09.png",
+        "imagePanel": 1,
+        "imageDescription": "Warga saling membantu dalam latihan bersama.",
+        "vocabulary": [
+          {
+            "japanese": "避難経路",
+            "reading": "ひなんけいろ",
+            "meaning": "rute evakuasi"
+          },
+          {
+            "japanese": "ためらう",
+            "reading": "ためらう",
+            "meaning": "ragu melakukan sesuatu"
+          }
+        ]
+      },
+      {
+        "title": "Menambah bentuk partisipasi",
+        "japanese": "自治会は、短い平日の説明会と、図を多く使った資料を用意した。訓練そのものを全員同じ形で行うのではなく、必要な知識に触れる機会を増やしたのだ。地域の備えを強くするには、来た人の数だけでなく、取り残される人がいないかも確かめたい。\n\n資料には避難場所までの道と、途中で注意する点を図で示した。説明会では、分からない言葉を質問できる時間も残した。一度に全てを覚えさせるのではなく、自宅で見直せる資料を渡すことに意味がある。災害時には、普段訓練に来る人だけが避難するわけではない。様々な条件の住民が情報を使えるようにしておくことが、地域全体の備えになる。次の計画では参加人数と共に、情報が届きにくい場所や人についても記録することにした。",
+        "reading": "じちかいは、みじかい へいじつの せつめいかいと、ずを おおく つかった しりょうを よういした。くんれん そのものを ぜんいん おなじ かたちで おこなうのではなく、ひつような ちしきに ふれる きかいを ふやしたのだ。ちいきの そなえを つよくするには、きた ひとの かずだけでなく、とりのこされる ひとが いないかも たしかめたい。\n\nしりょうにはひなんばしょまでのみちと、とちゅうでちゅういするてんをずでしめした。せつめいかいでは、わからないことばをしつもんできるじかんものこした。いちどにすべてをおぼえさせるのではなく、じたくでみなおせるしりょうをわたすことにいみがある。さいがいじには、ふだんくんれんにくるひとだけがひなんするわけではない。さまざまなじょうけんのじゅうみんがじょうほうをつかえるようにしておくことが、ちいきぜんたいのそなえになる。つぎのけいかくではさんかにんずうとともに、じょうほうがとどきにくいばしょやひとについてもきろくすることにした。",
+        "meaning": "Asosiasi menyediakan sesi penjelasan singkat pada hari kerja dan materi dengan banyak gambar. Mereka menambah kesempatan memperoleh pengetahuan, alih-alih memaksa semua orang berlatih dengan cara sama. Kesiapsiagaan komunitas perlu dinilai tidak hanya lewat jumlah peserta, tetapi juga apakah ada orang yang tertinggal.\n\nDokumen memperlihatkan rute evakuasi dan titik perhatian melalui gambar. Sesi penjelasan menyisakan waktu menanyakan kata yang belum dipahami. Materi untuk ditinjau ulang di rumah lebih bermakna daripada memaksa semua dihafal sekaligus. Saat bencana, bukan hanya peserta latihan rutin yang perlu mengungsi. Informasi yang dapat digunakan warga dalam kondisi beragam memperkuat kesiapan bersama. Rencana berikutnya mencatat kelompok atau lokasi yang sulit dijangkau informasi selain jumlah peserta.",
+        "imageAsset": "assets/images/reading/story-n3-09.png",
+        "imagePanel": 2,
+        "imageDescription": "Warga menyelesaikan latihan dan membahas informasi bersama.",
+        "vocabulary": [
+          {
+            "japanese": "備え",
+            "reading": "そなえ",
+            "meaning": "persiapan; kesiapsiagaan"
+          },
+          {
+            "japanese": "取り残す",
+            "reading": "とりのこす",
+            "meaning": "meninggalkan seseorang tertinggal"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "最初の訓練で問題になったことは何か。",
+        "Choices": [
+          "誰にも案内が届かなかった。",
+          "参加者が一人もいなかった。",
+          "来る人が毎年ほぼ同じだった。",
+          "全員が日本語を理解していた。"
+        ],
+        "Correct": 2,
+        "Explanation": "Bagian 1 menyebut susunan peserta hampir tidak berubah meskipun undangan menjangkau semua rumah tangga."
+      },
+      {
+        "Prompt": "聞き取りで確認された参加の障害はどれか。",
+        "Choices": [
+          "全員が訓練を嫌っていたこと。",
+          "仕事や育児、説明の言語の問題。",
+          "会費が高すぎることだけ。",
+          "案内が全て間違っていたこと。"
+        ],
+        "Correct": 1,
+        "Explanation": "Bagian 2 memberi tiga kendala berbeda: jadwal kerja, anak kecil, dan pemahaman bahasa."
+      },
+      {
+        "Prompt": "「関心の低さだけで説明するのは無理がある」の意味は何か。",
+        "Choices": [
+          "参加しないのは必ず無関心だからだ。",
+          "関心があれば障害は全てなくなる。",
+          "聞き取りをする必要はない。",
+          "参加したくても条件が合わない人がいる。"
+        ],
+        "Correct": 3,
+        "Explanation": "Kesimpulan menolak penyederhanaan ketidakhadiran menjadi ketidakpedulian, karena ada kendala praktis."
+      },
+      {
+        "Prompt": "自治会が用意した新しいものは何か。",
+        "Choices": [
+          "平日の短い説明会と図の多い資料。",
+          "全員必須の長い休日訓練。",
+          "日本語だけの難しい試験。",
+          "参加しない人への罰金。"
+        ],
+        "Correct": 0,
+        "Explanation": "Bagian 3 menyebut dua bentuk dukungan ini secara eksplisit; tidak ada kewajiban atau hukuman."
+      },
+      {
+        "Prompt": "筆者が備えの評価で重視することは何か。",
+        "Choices": [
+          "人数が例年と同じかだけを見る。",
+          "知識に触れる機会から取り残される人がいないかを見る。",
+          "参加者の年齢だけを調べる。",
+          "全員が同じ方法で訓練する。"
+        ],
+        "Correct": 1,
+        "Explanation": "Argumen utama ialah akses terhadap pengetahuan bagi warga beragam, bukan keseragaman latihan atau jumlah semata."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-10",
+    "Title": "Membandingkan dua pendapat tentang komunikasi",
+    "JapaneseTitle": "短く伝える、十分に伝える",
+    "Chapter": "Pemahaman terpadu",
+    "Description": "Bandingkan teks A dan B, cari persamaan serta perbedaan. Latih ～に対して dan ～にほかならない.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-10.png",
+    "Pages": [
+      {
+        "title": "Teks A: ringkas agar terbaca",
+        "japanese": "【意見Ａ】社内の連絡は短い方がよい。長いメールでは、重要な依頼が説明に埋もれがちだ。結論と期限を先に示し、詳細は必要な人が見られるように分ければよい。短さは相手の時間を尊重する工夫にほかならない。\n\n例えば、依頼の期限が最後の段落にしか書かれていなければ、忙しい受け手は見落とすかもしれない。最初に何をいつまでにするかを示せば、読む順番を自分で選べる。私は、背景を全て消すべきだと言っているのではない。すぐ行動するために必要な部分と、後で読めばよい部分を分けたいのである。書き手が調べた順番のまま情報を並べるより、受け手が使う順番を考えて並べるほうが、短い時間で内容をつかみやすい。",
+        "reading": "【いけんエー】しゃないの れんらくは みじかい ほうが よい。ながい メールでは、じゅうような いらいが せつめいに うもれがちだ。けつろんと きげんを さきに しめし、しょうさいは ひつような ひとが みられるように わければ よい。みじかさは あいての じかんを そんちょうする くふうに ほかならない。\n\nたとえば、いらいのきげんがさいごのだんらくにしかかかれていなければ、いそがしいうけてはみおとすかもしれない。さいしょになにをいつまでにするかをしめせば、よむじゅんばんをじぶんでえらべる。わたしは、はいけいをすべてけすべきだといっているのではない。すぐこうどうするためにひつようなぶぶんと、あとでよめばよいぶぶんをわけたいのである。かきてがしらべたじゅんばんのままじょうほうをならべるより、うけてがつかうじゅんばんをかんがえてならべるほうが、みじかいじかんでないようをつかみやすい。",
+        "meaning": "Pendapat A: komunikasi internal sebaiknya singkat. Dalam email panjang, permintaan penting cenderung tertutup penjelasan. Kesimpulan dan tenggat disampaikan dahulu, sedangkan detail dipisahkan agar bisa dibaca yang membutuhkan. Keringkasan merupakan cara menghargai waktu penerima.\n\nA mencontohkan bahwa tenggat di paragraf terakhir bisa terlewat oleh pembaca sibuk. Menaruh tindakan dan tenggat di awal memungkinkan orang memilih urutan membaca. A tidak meminta seluruh latar belakang dihapus, tetapi memisahkan informasi yang diperlukan untuk bertindak segera dari detail yang bisa dibaca kemudian. Urutan informasi mengikuti kebutuhan penerima, bukan urutan penelitian penulis.",
+        "imageAsset": "assets/images/reading/story-n3-10.png",
+        "imagePanel": 0,
+        "imageDescription": "Seseorang memeriksa pesan di ponsel.",
+        "vocabulary": [
+          {
+            "japanese": "埋もれる",
+            "reading": "うもれる",
+            "meaning": "terpendam; tenggelam di antara hal lain"
+          },
+          {
+            "japanese": "尊重",
+            "reading": "そんちょう",
+            "meaning": "menghargai; menghormati"
+          }
+        ]
+      },
+      {
+        "title": "Teks B: konteks membantu keputusan",
+        "japanese": "【意見Ｂ】背景を省いた連絡では、受け手が状況に合わせて判断できない。単に「今日中に変更して」と言われても、何を優先すべきか分からない場合がある。長さを減らすことより、判断に必要な理由を残すことを優先したい。\n\n例えば、別の仕事にも期限がある時、変更がなぜ急がれるのか分からなければ、どちらを先にするか決めにくい。相手が判断するための情報を省くと、確認のやり取りが増え、全体では余計な時間がかかることもある。私は、長い文章なら必ず親切だとは考えていない。必要な理由が含まれているかが重要なのであり、同じ説明を何度も繰り返す必要はない。送る側が短く書けたことより、受け取る側が迷わず動けることを基準にしたい。",
+        "reading": "【いけんビー】はいけいを はぶいた れんらくでは、うけてが じょうきょうに あわせて はんだんできない。たんに「きょうじゅうに へんこうして」と いわれても、なにを ゆうせんすべきか わからない ばあいが ある。ながさを へらすことより、はんだんに ひつような りゆうを のこすことを ゆうせんしたい。\n\nたとえば、べつのしごとにもきげんがあるとき、へんこうがなぜいそがれるのかわからなければ、どちらをさきにするかきめにくい。あいてがはんだんするためのじょうほうをはぶくと、かくにんのやりとりがふえ、ぜんたいではよけいなじかんがかかることもある。わたしは、ながいぶんしょうならかならずしんせつだとはかんがえていない。ひつようなりゆうがふくまれているかがじゅうようなのであり、おなじせつめいをなんどもくりかえすひつようはない。おくるがわがみじかくかけたことより、うけとるがわがまよわずうごけることをきじゅんにしたい。",
+        "meaning": "Pendapat B: jika latar belakang dihilangkan, penerima tidak bisa memutuskan sesuai situasi. Perintah ‘ubah hari ini’ saja kadang tidak menjelaskan apa yang harus diprioritaskan. Daripada mengurangi panjang pesan, alasan yang diperlukan untuk mengambil keputusan sebaiknya dipertahankan.\n\nB menjelaskan bahwa ketika pekerjaan lain juga memiliki tenggat, alasan perubahan mendesak dibutuhkan untuk memilih prioritas. Menghapus informasi yang diperlukan bisa menambah pertukaran konfirmasi dan memperlama proses keseluruhan. B tidak menganggap tulisan panjang pasti baik: yang penting alasan relevan tetap ada, tanpa pengulangan. Ukurannya adalah penerima bisa bertindak tanpa bingung, bukan sekadar pengirim berhasil menyingkat.",
+        "imageAsset": "assets/images/reading/story-n3-10.png",
+        "imagePanel": 1,
+        "imageDescription": "Dua orang membicarakan maksud sebuah pesan.",
+        "vocabulary": [
+          {
+            "japanese": "背景",
+            "reading": "はいけい",
+            "meaning": "latar belakang; konteks"
+          },
+          {
+            "japanese": "省く",
+            "reading": "はぶく",
+            "meaning": "menghilangkan; tidak menyertakan"
+          }
+        ]
+      },
+      {
+        "title": "Titik temu kedua pendapat",
+        "japanese": "Ａが読みやすさを重視するのに対して、Ｂは判断のしやすさを重視している。どちらも、受け手が動きやすい連絡を目指す点では共通している。要点を先に置き、その理由を簡潔に添えるなら、両方の考えを取り入れられるだろう。\n\n両者の違いは、理由が必要かどうかより、何を先に示すかという重点の置き方にある。Ａの意見を短い連絡だけ、Ｂの意見を長い連絡だけとまとめると、それぞれの意図を取り違える。どちらも無駄な負担を減らしたいが、Ａは探す手間を、Ｂは判断に迷う手間を問題にしている。実際のメールでは、冒頭に依頼と期限を書き、続けて理由を短く説明し、詳しい資料への案内を添える方法が考えられる。長さそのものを目標にしないことが共通の目的につながる。",
+        "reading": "エーが よみやすさを じゅうしするのに たいして、ビーは はんだんの しやすさを じゅうししている。どちらも、うけてが うごきやすい れんらくを めざす てんでは きょうつうしている。ようてんを さきに おき、その りゆうを かんけつに そえるなら、りょうほうの かんがえを とりいれられるだろう。\n\nりょうしゃのちがいは、りゆうがひつようかどうかより、なにをさきにしめすかというじゅうてんのおきかたにある。Ａのいけんをみじかいれんらくだけ、Ｂのいけんをながいれんらくだけとまとめると、それぞれのいとをとりちがえる。どちらもむだなふたんをへらしたいが、Ａはさがすてまを、Ｂははんだんにまようてまをもんだいにしている。じっさいのメールでは、ぼうとうにいらいときげんをかき、つづけてりゆうをみじかくせつめいし、くわしいしりょうへのあんないをそえるほうほうがかんがえられる。ながさそのものをもくひょうにしないことがきょうつうのもくてきにつながる。",
+        "meaning": "A menekankan kemudahan membaca, sedangkan B menekankan kemudahan memutuskan. Keduanya sama-sama ingin komunikasi yang memudahkan penerima bertindak. Mendahulukan poin utama dan menambahkan alasan secara ringkas dapat menggabungkan kedua pandangan.\n\nPerbedaannya lebih terletak pada penekanan penyajian daripada perlu atau tidaknya alasan. Merangkum A sekadar ingin pendek dan B sekadar ingin panjang akan keliru. Keduanya ingin mengurangi beban: A menyoroti pencarian informasi, B kebingungan menilai. Email dapat diawali tindakan dan tenggat, disusul alasan singkat dan rujukan dokumen rinci. Tidak menjadikan panjang teks sebagai tujuan mendukung maksud bersama mereka.",
+        "imageAsset": "assets/images/reading/story-n3-10.png",
+        "imagePanel": 2,
+        "imageDescription": "Dua orang memahami pesan melalui percakapan.",
+        "vocabulary": [
+          {
+            "japanese": "要点",
+            "reading": "ようてん",
+            "meaning": "poin utama"
+          },
+          {
+            "japanese": "簡潔",
+            "reading": "かんけつ",
+            "meaning": "ringkas dan jelas"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "Ａが長いメールで問題にしていることは何か。",
+        "Choices": [
+          "受け手が全ての背景を理解すること。",
+          "重要な依頼が目立たなくなること。",
+          "期限が必ず延びること。",
+          "短い返事しか来ないこと。"
+        ],
+        "Correct": 1,
+        "Explanation": "A menilai permintaan penting dapat tenggelam dalam penjelasan panjang, sehingga kesimpulan dan tenggat harus muncul dahulu."
+      },
+      {
+        "Prompt": "Ｂが残すべきだと考えるものは何か。",
+        "Choices": [
+          "判断に必要な理由。",
+          "関係のない説明。",
+          "全ての過去のメール。",
+          "相手の感想だけ。"
+        ],
+        "Correct": 0,
+        "Explanation": "B secara eksplisit memprioritaskan alasan yang dibutuhkan penerima untuk memutuskan, bukan semua detail tanpa seleksi."
+      },
+      {
+        "Prompt": "ＡとＢに共通する目的は何か。",
+        "Choices": [
+          "全ての連絡を一文にする。",
+          "返事を不要にする。",
+          "受け手が行動しやすくする。",
+          "メールの数を必ず増やす。"
+        ],
+        "Correct": 2,
+        "Explanation": "Teks ketiga mengidentifikasi tujuan bersama: membuat penerima mudah bertindak."
+      },
+      {
+        "Prompt": "両方の意見を取り入れた連絡はどれか。",
+        "Choices": [
+          "背景だけを長く書き、期限を省く。",
+          "変更して、とだけ書く。",
+          "無関係な話を先に書く。",
+          "要点と期限を先に示し、必要な理由を短く添える。"
+        ],
+        "Correct": 3,
+        "Explanation": "Menggabungkan urutan ringkas yang disukai A dengan konteks keputusan yang diperlukan B."
+      },
+      {
+        "Prompt": "「工夫にほかならない」の意味に近いものはどれか。",
+        "Choices": [
+          "工夫ではない。",
+          "まさにそのような工夫である。",
+          "工夫かどうか分からない。",
+          "他の工夫に変えるべきだ。"
+        ],
+        "Correct": 1,
+        "Explanation": "～にほかならない menegaskan identitas atau esensi: tidak lain merupakan cara menghargai waktu."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-11",
+    "Title": "Daur ulang dan konsumsi berlebihan",
+    "JapaneseTitle": "再利用の前に考えること",
+    "Chapter": "Lingkungan dan argumen",
+    "Description": "Kenali paradoks, maksud penulis, dan fungsi ～からといって. Bedakan mengolah sampah dengan mencegah sampah.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-11.png",
+    "Pages": [
+      {
+        "title": "Keberhasilan yang perlu dibaca ulang",
+        "japanese": "古着を回収する店が増え、捨てずに再利用できるようになった。これは喜ばしい変化だ。しかし、回収量が増えたことを環境への貢献と見る前に、服が不要になる量そのものが増えていないかも考えたい。\n\n回収の箱が目につく場所にあると、不要な服をただごみに出さずに済む点は助かる。使える物が別の人の手に渡る機会も増えるだろう。ただ、集まった量だけを見ても、服を使う期間が長くなったかは分からない。一人が以前より多く買い、短い間で手放すようになれば、回収量は増える。増えた数字をそのままよい変化と受け取らず、何が増えた原因なのかを考える必要がある。環境への影響は、回収する場面だけで決まるものではない。",
+        "reading": "ふるぎを かいしゅうする みせが ふえ、すてずに さいりようできるようになった。これは よろこばしい へんかだ。しかし、かいしゅうりょうが ふえたことを かんきょうへの こうけんと みる まえに、ふくが ふように なる りょう そのものが ふえていないかも かんがえたい。\n\nかいしゅうのはこがめにつくばしょにあると、ふようなふくをただごみにださずにすむてんはたすかる。つかえるものがべつのひとのてにわたるきかいもふえるだろう。ただ、あつまったりょうだけをみても、ふくをつかうきかんがながくなったかはわからない。ひとりがいぜんよりおおくかい、みじかいあいだでてばなすようになれば、かいしゅうりょうはふえる。ふえたすうじをそのままよいへんかとうけとらず、なにがふえたげんいんなのかをかんがえるひつようがある。かんきょうへのえいきょうは、かいしゅうするばめんだけできまるものではない。",
+        "meaning": "Semakin banyak toko mengumpulkan pakaian bekas sehingga dapat digunakan kembali tanpa dibuang. Perubahan ini menggembirakan. Namun, sebelum menganggap peningkatan volume pengumpulan sebagai kontribusi lingkungan, kita juga perlu memikirkan apakah jumlah pakaian yang tidak lagi diperlukan justru meningkat.\n\nKotak pengumpulan memudahkan menyerahkan pakaian tanpa langsung membuangnya dan membuka kesempatan dipakai orang lain. Namun, jumlah terkumpul tidak menunjukkan apakah pakaian digunakan lebih lama. Jika orang membeli lebih banyak dan melepasnya lebih cepat, jumlah pengumpulan naik. Angka yang naik perlu diteliti sebabnya, bukan langsung dianggap baik. Dampak lingkungan tidak ditentukan pada tahap pengumpulan saja.",
+        "imageAsset": "assets/images/reading/story-n3-11.png",
+        "imagePanel": 0,
+        "imageDescription": "Pakaian lama dipilah untuk digunakan kembali.",
+        "vocabulary": [
+          {
+            "japanese": "回収",
+            "reading": "かいしゅう",
+            "meaning": "pengumpulan kembali"
+          },
+          {
+            "japanese": "貢献",
+            "reading": "こうけん",
+            "meaning": "kontribusi"
+          }
+        ]
+      },
+      {
+        "title": "Rasa aman yang mendorong pembelian",
+        "japanese": "回収に出せるからといって、気軽に新しい服を買うようになれば、資源の消費は減らないかもしれない。再利用にも輸送や加工が必要で、負担が全くないわけではない。捨て方が改善されても、買い方の問題が消えるわけではないのだ。\n\n店で新しい服を見た時、古い物は回収に出せばよいと思うと、まだ使えるかを考えなくなる場合がある。よいことをしているという感覚が、次の購入を後押しするのである。回収した後も、状態を調べ、分け、運ぶ作業が必要だ。全ての物がそのまま同じ目的で使われるとも限らない。だから、回収できるという情報だけで買う量を増やしてよいとは言えない。物を手放す時の安心と、物を作る時の負担は、別に考える必要がある。",
+        "reading": "かいしゅうに だせるからといって、きがるに あたらしい ふくを かうようになれば、しげんの しょうひは へらないかもしれない。さいりようにも ゆそうや かこうが ひつようで、ふたんが まったく ない わけではない。すてかたが かいぜんされても、かいかたの もんだいが きえる わけではないのだ。\n\nみせであたらしいふくをみたとき、ふるいものはかいしゅうにだせばよいとおもうと、まだつかえるかをかんがえなくなるばあいがある。よいことをしているというかんかくが、つぎのこうにゅうをあとおしするのである。かいしゅうしたあとも、じょうたいをしらべ、わけ、はこぶさぎょうがひつようだ。すべてのものがそのままおなじもくてきでつかわれるともかぎらない。だから、かいしゅうできるというじょうほうだけでかうりょうをふやしてよいとはいえない。ものをてばなすときのあんしんと、ものをつくるときのふたんは、べつにかんがえるひつようがある。",
+        "meaning": "Jika orang jadi membeli baju baru dengan mudah hanya karena bisa mengirim baju lama untuk dikumpulkan, penggunaan sumber daya mungkin tidak berkurang. Penggunaan kembali juga membutuhkan transportasi dan pengolahan sehingga bukan tanpa beban. Perbaikan cara membuang tidak menghilangkan masalah cara membeli.\n\nSaat melihat pakaian baru, anggapan bahwa yang lama bisa dikumpulkan dapat membuat orang tidak memikirkan apakah yang lama masih bisa dipakai. Perasaan melakukan hal baik mendorong pembelian berikutnya. Setelah dikumpulkan, pakaian tetap diperiksa, dipilah, dan diangkut; tidak semuanya digunakan kembali untuk tujuan semula. Kemungkinan pengumpulan tidak membenarkan peningkatan pembelian. Rasa lega ketika melepas barang perlu dibedakan dari beban saat memproduksinya.",
+        "imageAsset": "assets/images/reading/story-n3-11.png",
+        "imagePanel": 1,
+        "imageDescription": "Bahan pakaian lama diolah menjadi barang baru.",
+        "vocabulary": [
+          {
+            "japanese": "資源",
+            "reading": "しげん",
+            "meaning": "sumber daya"
+          },
+          {
+            "japanese": "加工",
+            "reading": "かこう",
+            "meaning": "pengolahan bahan"
+          }
+        ]
+      },
+      {
+        "title": "Urutan tindakan",
+        "japanese": "回収の仕組みを否定する必要はない。まず今ある服を修理して長く使い、本当に必要な時に買う。その上で、使えなくなった物を回収に出す。再利用を買い替えの言い訳にせず、不要な物を生み出さない工夫と組み合わせることが大切だ。\n\n例えば、ボタンを付け直せば着られる服や、組み合わせを変えれば使える服もある。買う前に手持ちの物を確認すれば、似た物を重ねて買うことを減らせる。こうした行動は回収量のように目立つ数字にはなりにくいが、資源を使う量を抑えることにつながる。環境への配慮を、買った後にする活動だけとして考えないようにしたい。回収は最後の選択肢として役に立つ。その仕組みを生かすためにも、物を長く使う最初の工夫を忘れてはならない。",
+        "reading": "かいしゅうの しくみを ひていする ひつようは ない。まず いま ある ふくを しゅうりして ながく つかい、ほんとうに ひつような ときに かう。その うえで、つかえなくなった ものを かいしゅうに だす。さいりようを かいかえの いいわけにせず、ふような ものを うみださない くふうと くみあわせることが たいせつだ。\n\nたとえば、ボタンをつけなおせばきられるふくや、くみあわせをかえればつかえるふくもある。かうまえにてもちのものをかくにんすれば、にたものをかさねてかうことをへらせる。こうしたこうどうはかいしゅうりょうのようにめだつすうじにはなりにくいが、しげんをつかうりょうをおさえることにつながる。かんきょうへのはいりょを、かったあとにするかつどうだけとしてかんがえないようにしたい。かいしゅうはさいごのせんたくしとしてやくにたつ。そのしくみをいかすためにも、ものをながくつかうさいしょのくふうをわすれてはならない。",
+        "meaning": "Mekanisme pengumpulan tidak perlu ditolak. Pertama, perbaiki dan gunakan pakaian yang ada lebih lama, lalu beli ketika benar-benar perlu. Setelah itu serahkan barang yang tidak bisa dipakai lagi untuk dikumpulkan. Penggunaan kembali perlu digabung dengan pencegahan barang tak diperlukan, bukan dijadikan alasan membeli pengganti.\n\nMemasang kembali kancing atau mengubah kombinasi pakaian dapat memperpanjang pemakaian. Memeriksa barang yang sudah dimiliki sebelum membeli mengurangi pembelian barang serupa. Tindakan ini kurang terlihat dalam angka pengumpulan, tetapi membantu membatasi penggunaan sumber daya. Kepedulian lingkungan perlu dipikirkan sebelum pembelian juga. Pengumpulan berguna sebagai pilihan akhir, sambil tetap menjaga upaya awal memakai barang lebih lama.",
+        "imageAsset": "assets/images/reading/story-n3-11.png",
+        "imagePanel": 2,
+        "imageDescription": "Barang baru hasil pemanfaatan pakaian lama.",
+        "vocabulary": [
+          {
+            "japanese": "買い替え",
+            "reading": "かいかえ",
+            "meaning": "pembelian barang pengganti"
+          },
+          {
+            "japanese": "言い訳",
+            "reading": "いいわけ",
+            "meaning": "alasan pembenaran; dalih"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "回収量の増加を見る時、筆者が確認したいことは何か。",
+        "Choices": [
+          "店の名前が変わったか。",
+          "服の色が明るくなったか。",
+          "回収を全てやめられるか。",
+          "不要になる服の量も増えていないか。"
+        ],
+        "Correct": 3,
+        "Explanation": "Bagian 1 meminta melihat apakah produksi pakaian tak terpakai juga meningkat, sebelum menyebut pengumpulan sebagai keberhasilan."
+      },
+      {
+        "Prompt": "資源の消費が減らない可能性があるのはどんな場合か。",
+        "Choices": [
+          "服を修理して使う場合。",
+          "回収できる安心感で新しい服を気軽に買う場合。",
+          "本当に必要な時だけ買う場合。",
+          "買い方を見直す場合。"
+        ],
+        "Correct": 1,
+        "Explanation": "Paradoks pada bagian 2: rasa aman karena pengumpulan bisa mendorong pembelian baru yang lebih banyak."
+      },
+      {
+        "Prompt": "再利用にも負担がある理由は何か。",
+        "Choices": [
+          "輸送や加工が必要だから。",
+          "再利用した服は必ず売れないから。",
+          "回収が禁止されているから。",
+          "修理は全て無料だから。"
+        ],
+        "Correct": 0,
+        "Explanation": "Transportasi dan pengolahan membutuhkan sumber daya, jadi penggunaan kembali bukan tanpa beban lingkungan."
+      },
+      {
+        "Prompt": "筆者が勧める順序はどれか。",
+        "Choices": [
+          "買う、すぐ捨てる、また買う。",
+          "回収をやめて全て捨てる。",
+          "修理して長く使い、必要なら買い、使えない物を回収に出す。",
+          "回収するために新しい服を買う。"
+        ],
+        "Correct": 2,
+        "Explanation": "Bagian 3 memprioritaskan pemakaian lama dan pembelian sesuai kebutuhan sebelum pengumpulan."
+      },
+      {
+        "Prompt": "筆者の主張に最も近いものはどれか。",
+        "Choices": [
+          "回収制度に価値は全くない。",
+          "回収量が多ければ必ず環境によい。",
+          "再利用できれば何着でも買ってよい。",
+          "再利用と不要な物を減らす工夫を組み合わせる。"
+        ],
+        "Correct": 3,
+        "Explanation": "Penulis mendukung mekanisme pengumpulan sambil meminta pencegahan konsumsi berlebihan, bukan menolak daur ulang."
+      }
+    ]
+  },
+  {
+    "ID": "reading-n2-12",
+    "Title": "Perubahan kecil dan eksperimen yang adil",
+    "JapaneseTitle": "小さく試して学ぶ",
+    "Chapter": "Evaluasi dan keputusan",
+    "Description": "Tentukan bukti yang cukup, batas generalisasi, dan langkah berikutnya. Latih ～に基づいて serta ～とはいえ.",
+    "Minutes": 22,
+    "ImageAsset": "assets/images/reading/story-n3-12.png",
+    "Pages": [
+      {
+        "title": "Hasil pertama",
+        "japanese": "パン屋の店主は、閉店前の売れ残りを減らすため、焼く時間を変えてみた。一週間後、廃棄は減ったが、ちょうど近くで祭りが開かれていた。売れ行きの変化が新しい時間割によるものか、祭りによるものかは分からなかった。\n\n祭りの間は、普段この町を歩かない人も店に立ち寄っていた。昼間の客が増えれば、いつもは残るパンも売れる可能性がある。店主が時間割を変えた日と祭りの期間が重なっていたため、二つの影響を区別することが難しかったのである。よい結果が出ると、すぐ自分の工夫の効果だと考えたくなる。しかし、続けて同じ結果が得られるかを知るには、特別な行事のない日にも確かめる必要がある。店主は一週間の数字だけで結論を出さないことにした。",
+        "reading": "パンやの てんしゅは、へいてんまえの うれのこりを へらすため、やく じかんを かえてみた。いっしゅうかんご、はいきは へったが、ちょうど ちかくで まつりが ひらかれていた。うれゆきの へんかが あたらしい じかんわりに よるものか、まつりに よるものかは わからなかった。\n\nまつりのあいだは、ふだんこのまちをあるかないひともみせにたちよっていた。ひるまのきゃくがふえれば、いつもはのこるパンもうれるかのうせいがある。てんしゅがじかんわりをかえたひとまつりのきかんがかさなっていたため、ふたつのえいきょうをくべつすることがむずかしかったのである。よいけっかがでると、すぐじぶんのくふうのこうかだとかんがえたくなる。しかし、つづけておなじけっかがえられるかをしるには、とくべつなぎょうじのないひにもたしかめるひつようがある。てんしゅはいっしゅうかんのすうじだけでけつろんをださないことにした。",
+        "meaning": "Pemilik toko roti mencoba mengubah waktu memanggang untuk mengurangi sisa sebelum tutup. Seminggu kemudian makanan terbuang berkurang, tetapi saat itu ada festival di dekat toko. Belum jelas apakah perubahan penjualan disebabkan jadwal baru atau festival.\n\nSelama festival, orang yang biasanya tidak berjalan di kota ikut singgah. Peningkatan pelanggan siang bisa membuat roti yang biasanya tersisa terjual. Perubahan jadwal bersamaan dengan festival menyulitkan pemisahan pengaruh keduanya. Hasil baik mudah dianggap efek ide sendiri, tetapi untuk mengetahui apakah bisa berulang, hari tanpa acara khusus juga perlu diperiksa. Pemilik tidak menyimpulkan hanya dari satu minggu.",
+        "imageAsset": "assets/images/reading/story-n3-12.png",
+        "imagePanel": 0,
+        "imageDescription": "Pemilik toko roti meninjau roti dan penjualan.",
+        "vocabulary": [
+          {
+            "japanese": "売れ残り",
+            "reading": "うれのこり",
+            "meaning": "barang yang tidak terjual"
+          },
+          {
+            "japanese": "売れ行き",
+            "reading": "うれゆき",
+            "meaning": "laju atau kondisi penjualan"
+          }
+        ]
+      },
+      {
+        "title": "Menambah bukti pembanding",
+        "japanese": "そこで店主は、祭りが終わってからも記録を続け、同じ曜日の客数と廃棄量を比較した。雨の日も区別して記した。記録に基づいて調整すると、朝の量は減らせるものの、夕方には追加で焼く必要があると分かった。\n\n同じ曜日でも、雨が強い日は昼の客が少なく、仕事帰りの客は夕方に集中していた。店主は全体の量を一度に減らすのではなく、時間ごとに必要な量を見直した。記録には売れ残りだけでなく、客が欲しいパンを買えなかった時も書いた。廃棄を減らしても、必要な時間に商品がなければ、別の問題を生むからだ。数字を集める目的は少なく焼くことを正当化するためではなく、無駄と売り切れの両方を減らす条件を探すためだった。",
+        "reading": "そこで てんしゅは、まつりが おわってからも きろくを つづけ、おなじ ようびの きゃくすうと はいきりょうを ひかくした。あめの ひも くべつして しるした。きろくに もとづいて ちょうせいすると、あさの りょうは へらせるものの、ゆうがたには ついかで やく ひつようが あると わかった。\n\nおなじようびでも、あめがつよいひはひるのきゃくがすくなく、しごとがえりのきゃくはゆうがたにしゅうちゅうしていた。てんしゅはぜんたいのりょうをいちどにへらすのではなく、じかんごとにひつようなりょうをみなおした。きろくにはうれのこりだけでなく、きゃくがほしいパンをかえなかったときもかいた。はいきをへらしても、ひつようなじかんにしょうひんがなければ、べつのもんだいをうむからだ。すうじをあつめるもくてきはすくなくやくことをせいとうかするためではなく、むだとうりきれのりょうほうをへらすじょうけんをさがすためだった。",
+        "meaning": "Pemilik terus mencatat setelah festival selesai dan membandingkan jumlah pelanggan serta sisa pada hari yang sama dalam pekan. Hari hujan juga ditandai terpisah. Penyesuaian berdasarkan catatan menunjukkan produksi pagi bisa dikurangi, tetapi sore perlu ada pemanggangan tambahan.\n\nPada hari dengan hujan deras, pelanggan siang sedikit dan pelanggan sepulang kerja terkumpul sore. Pemilik meninjau kebutuhan menurut jam, bukan mengurangi seluruh jumlah sekaligus. Catatan memuat sisa dan saat pelanggan tidak dapat membeli roti yang diinginkan. Pengurangan limbah tetap bermasalah jika barang tidak tersedia saat diperlukan. Tujuan pengumpulan data adalah menemukan kondisi yang mengurangi sisa dan kehabisan stok, bukan sekadar membenarkan produksi lebih sedikit.",
+        "imageAsset": "assets/images/reading/story-n3-12.png",
+        "imagePanel": 1,
+        "imageDescription": "Pemilik toko membicarakan pilihan roti dengan pelanggan.",
+        "vocabulary": [
+          {
+            "japanese": "比較",
+            "reading": "ひかく",
+            "meaning": "perbandingan"
+          },
+          {
+            "japanese": "追加",
+            "reading": "ついか",
+            "meaning": "tambahan"
+          }
+        ]
+      },
+      {
+        "title": "Keputusan yang bisa direvisi",
+        "japanese": "一つの店で効果があったとはいえ、全ての店に同じ方法が合うとは限らない。客の生活や地域の条件は異なるからだ。小さく試す目的は、正解を一度で当てることではなく、条件を確かめながら、自分の店に合う方法を見つけることにある。\n\n例えば、学校の近くの店では授業の終わる時間が重要で、駅前の店では列車の利用者の動きが影響するかもしれない。方法の形だけをまねても、その条件まで同じにはならない。他の店の経験からは、答えよりも何を記録し、どう比べたかを学ぶほうが役に立つ。試して直す過程を残しておけば、季節や客の生活が変わった時にも判断しやすい。一度うまくいった方法を守り続けることではなく、変化に合わせて確かめ直せることが、小さな実験の価値なのである。",
+        "reading": "ひとつの みせで こうかが あったとはいえ、すべての みせに おなじ ほうほうが あうとは かぎらない。きゃくの せいかつや ちいきの じょうけんは ことなるからだ。ちいさく ためす もくてきは、せいかいを いちどで あてることではなく、じょうけんを たしかめながら、じぶんの みせに あう ほうほうを みつけることに ある。\n\nたとえば、がっこうのちかくのみせではじゅぎょうのおわるじかんがじゅうようで、えきまえのみせではれっしゃのりようしゃのうごきがえいきょうするかもしれない。ほうほうのかたちだけをまねても、そのじょうけんまでおなじにはならない。ほかのみせのけいけんからは、こたえよりもなにをきろくし、どうくらべたかをまなぶほうがやくにたつ。ためしてなおすかていをのこしておけば、きせつやきゃくのせいかつがかわったときにもはんだんしやすい。いちどうまくいったほうほうをまもりつづけることではなく、へんかにあわせてたしかめなおせることが、ちいさなじっけんのかちなのである。",
+        "meaning": "Meski efektif di satu toko, metode yang sama belum tentu cocok di semua toko karena kehidupan pelanggan dan kondisi daerah berbeda. Tujuan mencoba dalam skala kecil bukan langsung menemukan jawaban benar dalam sekali coba, tetapi mencari metode yang cocok untuk toko sendiri sambil memeriksa kondisi.\n\nToko dekat sekolah mungkin dipengaruhi jam selesai kelas; toko depan stasiun oleh pergerakan penumpang. Meniru bentuk metode tidak menyamakan kondisinya. Dari pengalaman toko lain, lebih berguna mempelajari apa yang dicatat dan bagaimana membandingkan daripada menyalin jawabannya. Catatan proses uji dan perbaikan membantu saat musim atau kebiasaan pelanggan berubah. Nilai eksperimen kecil adalah kemampuan memeriksa kembali ketika keadaan berubah, bukan terus mempertahankan cara yang sekali berhasil.",
+        "imageAsset": "assets/images/reading/story-n3-12.png",
+        "imagePanel": 2,
+        "imageDescription": "Toko roti melayani pelanggan setelah penyesuaian produksi.",
+        "vocabulary": [
+          {
+            "japanese": "効果",
+            "reading": "こうか",
+            "meaning": "efek; hasil"
+          },
+          {
+            "japanese": "条件",
+            "reading": "じょうけん",
+            "meaning": "kondisi; syarat"
+          }
+        ]
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "最初の一週間だけでは分からなかったことは何か。",
+        "Choices": [
+          "店が何を売っているか。",
+          "廃棄が減った主な原因は何か。",
+          "祭りが開かれたかどうか。",
+          "時間割を変えたかどうか。"
+        ],
+        "Correct": 1,
+        "Explanation": "Dua faktor berubah bersamaan: jadwal dan festival. Teks menyatakan penyebab perubahan penjualan belum bisa dipisahkan."
+      },
+      {
+        "Prompt": "店主は比較のために何を記録したか。",
+        "Choices": [
+          "同じ曜日の客数と廃棄量、雨の日の区別。",
+          "店員の好きなパンだけ。",
+          "祭りの名前だけ。",
+          "他の店の全ての料金。"
+        ],
+        "Correct": 0,
+        "Explanation": "Bagian 2 menyebut pelanggan dan sisa pada hari sebanding serta penandaan hujan, untuk memahami konteks hasil."
+      },
+      {
+        "Prompt": "記録から分かった調整方法はどれか。",
+        "Choices": [
+          "朝も夕方も必ず増やす。",
+          "夕方の営業をやめる。",
+          "全てのパンを前日に焼く。",
+          "朝の量を減らし、夕方に追加で焼く。"
+        ],
+        "Correct": 3,
+        "Explanation": "Catatan menunjukkan produksi pagi dapat berkurang tetapi sore memerlukan tambahan, bukan pengurangan menyeluruh."
+      },
+      {
+        "Prompt": "同じ方法が全ての店に合うとは限らないのはなぜか。",
+        "Choices": [
+          "記録は全く役に立たないから。",
+          "パン屋は全て同じ地域にあるから。",
+          "客の生活や地域の条件が異なるから。",
+          "試した方法は必ず失敗するから。"
+        ],
+        "Correct": 2,
+        "Explanation": "Bagian 3 membatasi generalisasi karena karakter pelanggan dan wilayah berbeda."
+      },
+      {
+        "Prompt": "小さく試す目的として筆者が述べているのはどれか。",
+        "Choices": [
+          "一度で必ず正解を出すこと。",
+          "条件を確かめて自分の店に合う方法を探すこと。",
+          "祭りの期間だけ営業すること。",
+          "他店の方法を必ずそのまま使うこと。"
+        ],
+        "Correct": 1,
+        "Explanation": "Kalimat akhir menempatkan eksperimen sebagai proses belajar dan penyesuaian, bukan jaminan berhasil sekali coba."
+      }
+    ]
+  }
+]

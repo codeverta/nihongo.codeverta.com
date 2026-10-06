@@ -101,9 +101,13 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
                         style: const TextStyle(color: Colors.white),
                       ),
                       const SizedBox(height: 12),
-                      const Text(
-                        'Ikuti Hana dalam cerita bergambar. Buka bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.',
-                        style: TextStyle(
+                      Text(
+                        widget.level == 'N2'
+                            ? 'Latih inferensi, maksud penulis, perbandingan pendapat, dan pencarian informasi. Gunakan bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.'
+                            : widget.level == 'N3'
+                                ? 'Pahami alasan, maksud tokoh, dan kesimpulan dalam cerita Hana. Buka bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.'
+                                : 'Ikuti Hana dalam cerita bergambar. Buka bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.',
+                        style: const TextStyle(
                           color: Colors.white,
                           height: 1.5,
                         ),

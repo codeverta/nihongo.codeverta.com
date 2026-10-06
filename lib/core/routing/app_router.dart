@@ -150,7 +150,9 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: AppRoutes.kanjiPath,
-        builder: (context, state) => const KanjiCourseScreen(),
+        builder: (context, state) => KanjiCourseScreen(
+          level: state.uri.queryParameters['level'] ?? 'N5',
+        ),
       ),
       GoRoute(
         path: AppRoutes.kanjiLessonRoute,
