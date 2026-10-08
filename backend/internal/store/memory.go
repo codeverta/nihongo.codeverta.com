@@ -75,7 +75,7 @@ func NewMemoryStore() *MemoryStore {
 		sessions:           map[string]string{},
 		vocabulary:         seedVocabulary(),
 		vocabAttempts:      map[string]*vocabularyAttemptState{},
-		grammar:            append(seedGrammar(), seedGrammarN4()...),
+		grammar:            append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...),
 		grammarAttempts:    map[string]*grammarAttemptState{},
 		kanji:              seedKanji(),
 		kanjiAttempts:      map[string]*kanjiAttemptState{},
@@ -243,6 +243,9 @@ func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, erro
 		}
 		return s.StartSimulation(userID)
 	}
+	if examID == "jlpt-n4-simulation-1" {
+		return s.StartSimulation(userID, "N4")
+	}
 	if examID == "jlpt-n5-simulation-1" {
 		return s.StartSimulation(userID)
 	}
@@ -310,8 +313,8 @@ func filterTracks(tracks []domain.LearningTrack, system string) []domain.Learnin
 func seedCategories() []domain.LearningCategory {
 	return []domain.LearningCategory{
 		{ID: "vocabulary", Name: "Vocabulary", Description: "Kosakata tematik dengan spaced repetition", LessonCount: 240, RequiredTier: domain.TierFree},
-		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5 dan N4: pola, contoh kalimat, dan kuis", LessonCount: 84, RequiredTier: domain.TierFree},
-		{ID: "kanji", Name: "Kanji", Description: "Kanji N5 dan N4: bacaan, contoh kata, dan kuis", LessonCount: 54, RequiredTier: domain.TierFree},
+		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5, N4, dan N3: pola, contoh kalimat, dan kuis", LessonCount: 120, RequiredTier: domain.TierFree},
+		{ID: "kanji", Name: "Kanji", Description: "Kanji N5, N4, dan N3: bacaan, contoh pemakaian, dan kuis", LessonCount: 131, RequiredTier: domain.TierFree},
 		{ID: "reading", Name: "Reading", Description: "Reading N5, N4, N3, dan N2: cerita bergambar, kosakata, dan kuis", LessonCount: 48, RequiredTier: domain.TierFree},
 	}
 }
@@ -330,6 +333,7 @@ func seedTracks() []domain.LearningTrack {
 
 func seedExams() []domain.Exam {
 	return []domain.Exam{
+		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-simulation-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
 		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Simulation", QuestionCount: 70, DurationMin: 90, RequiredTier: domain.TierPremium},

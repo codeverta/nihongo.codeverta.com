@@ -5,6 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"math/big"
+	"strings"
 	"time"
 
 	"nihongo-master-backend/internal/domain"
@@ -25,13 +26,38 @@ func simulationSections() []domain.SimulationSection {
 	}
 }
 
-func (s *MemoryStore) StartSimulation(userID string) (domain.ExamAttempt, error) {
+type simulationPaperConfig struct {
+	level, examID, paperID string
+	sections               []domain.SimulationSection
+	items                  []simulationItem
+	omitted                []string
+}
+
+func simulationPaper(levels ...string) simulationPaperConfig {
+	level := "N5"
+	if len(levels) > 0 {
+		level = strings.ToUpper(levels[0])
+	}
+	if level == "N4" {
+		return simulationPaperConfig{level, "jlpt-n4-simulation-1", "n4-language-01", []domain.SimulationSection{
+			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1500, QuestionCount: 28},
+			{ID: "grammar", Name: "文法・読解 · Grammar & Reading", DurationSeconds: 3300, QuestionCount: 29},
+		}, simulationN4Content(), []string{"listening"}}
+	}
+	return simulationPaperConfig{level, "jlpt-n5-simulation-1", "n5-language-01", simulationSections(), simulationContent(), []string{"dokkai", "listening"}}
+}
+
+func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.ExamAttempt, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
+	paper := simulationPaper(levels...)
+	if paper.level != "N5" && paper.level != "N4" {
+		return domain.ExamAttempt{}, ErrInvalid
+	}
 	for i := len(s.simulationOrder) - 1; i >= 0; i-- {
 		state := s.simulationAttempts[s.simulationOrder[i]]
-		if state.session.Attempt.UserID != userID {
+		if state.session.Attempt.UserID != userID || state.session.Attempt.ExamID != paper.examID {
 			continue
 		}
 		s.syncSimulationLocked(state, now)
@@ -43,13 +69,13 @@ func (s *MemoryStore) StartSimulation(userID string) (domain.ExamAttempt, error)
 	if _, err := rand.Read(raw); err != nil {
 		return domain.ExamAttempt{}, err
 	}
-	attempt := domain.ExamAttempt{ID: "simulation-" + hex.EncodeToString(raw), ExamID: "jlpt-n5-simulation-1", UserID: userID, Status: "in_progress", StartedAt: now}
+	attempt := domain.ExamAttempt{ID: "simulation-" + hex.EncodeToString(raw), ExamID: paper.examID, UserID: userID, Status: "in_progress", StartedAt: now}
 	state := &simulationAttemptState{
-		session: domain.SimulationSession{Attempt: attempt, PaperID: "n5-language-01", ActiveSection: "vocabulary", SectionStartedAt: now, ExpiresAt: now.Add(20 * time.Minute), Sections: simulationSections(), Answers: map[string]string{}},
+		session: domain.SimulationSession{Attempt: attempt, PaperID: paper.paperID, ActiveSection: "vocabulary", SectionStartedAt: now, ExpiresAt: now.Add(time.Duration(paper.sections[0].DurationSeconds) * time.Second), Sections: paper.sections, Answers: map[string]string{}},
 		correct: map[string]string{}, explanations: map[string]string{}, marked: map[string]bool{},
 	}
-	for i, item := range simulationContent() {
-		id := fmt.Sprintf("n5-sim-01-q%02d", i+1)
+	for i, item := range paper.items {
+		id := fmt.Sprintf("%s-sim-01-q%02d", strings.ToLower(paper.level), i+1)
 		options := make([]domain.QuizOption, 4)
 		for j, choice := range item.choices {
 			optionKey := make([]byte, 8)
@@ -87,10 +113,13 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 	if state.session.ActiveSection == "vocabulary" {
 		state.session.ActiveSection = "grammar"
 		state.session.SectionStartedAt = at
-		state.session.ExpiresAt = at.Add(20 * time.Minute)
+		state.session.ExpiresAt = at.Add(time.Duration(state.session.Sections[1].DurationSeconds) * time.Second)
 		return
 	}
 	result := domain.SimulationResult{AttemptID: state.session.Attempt.ID, PaperID: state.session.PaperID, Total: len(state.questions), Answered: len(state.session.Answers), CompletedAt: at, DurationSeconds: int(at.Sub(state.session.Attempt.StartedAt).Seconds()), Sections: []domain.DiagnosticSection{}, Reviews: []domain.SimulationReview{}, ScoringNote: "Skor latihan = persentase jawaban benar. Dokkai dan listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."}
+	if state.session.PaperID == "n4-language-01" {
+		result.ScoringNote = "Skor latihan = persentase jawaban benar. Listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."
+	}
 	groups := map[string]*domain.DiagnosticSection{}
 	for _, q := range state.questions {
 		if groups[q.Group] == nil {
@@ -224,15 +253,16 @@ func (s *MemoryStore) SubmitSimulationSection(userID, id, section string) (domai
 	return simulationSnapshot(state, now), nil
 }
 
-func (s *MemoryStore) SimulationOverview(userID string) map[string]any {
+func (s *MemoryStore) SimulationOverview(userID string, levels ...string) map[string]any {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
+	paper := simulationPaper(levels...)
 	history := []map[string]any{}
 	active := ""
 	for i := len(s.simulationOrder) - 1; i >= 0; i-- {
 		state := s.simulationAttempts[s.simulationOrder[i]]
-		if state.session.Attempt.UserID != userID {
+		if state.session.Attempt.UserID != userID || state.session.Attempt.ExamID != paper.examID {
 			continue
 		}
 		s.syncSimulationLocked(state, now)
@@ -244,5 +274,9 @@ func (s *MemoryStore) SimulationOverview(userID string) map[string]any {
 			active = state.session.Attempt.ID
 		}
 	}
-	return map[string]any{"paperId": "n5-language-01", "title": "JLPT N5 Simulation", "questionCount": 38, "durationMinutes": 40, "sections": simulationSections(), "activeAttemptId": active, "history": history, "omittedSections": []string{"dokkai", "listening"}}
+	duration := 0
+	for _, section := range paper.sections {
+		duration += section.DurationSeconds
+	}
+	return map[string]any{"paperId": paper.paperID, "title": "JLPT " + paper.level + " Simulation", "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted}
 }

@@ -86,9 +86,11 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                       ),
                       const SizedBox(height: 14),
                       Text(
-                        widget.level == 'N4'
-                            ? 'Perluas kemampuan kanji N4'
-                            : 'Kenali dan baca kanji dasar',
+                        widget.level == 'N3'
+                            ? 'Kenali kanji N3 dalam kalimat sehari-hari'
+                            : widget.level == 'N4'
+                                ? 'Perluas kemampuan kanji N4'
+                                : 'Kenali dan baca kanji dasar',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,
@@ -231,20 +233,20 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                   ),
                   const SizedBox(height: 10),
                 ],
-                if (widget.level == 'N4')
-                  const Card(
+                if (widget.level == 'N4' || widget.level == 'N3')
+                  Card(
                     child: ExpansionTile(
-                      key: Key('kanji-n4-sources'),
-                      title: Text('Tentang materi dan sumber'),
-                      childrenPadding: EdgeInsets.all(16),
+                      key: Key('kanji-${widget.level.toLowerCase()}-sources'),
+                      title: const Text('Tentang materi dan sumber'),
+                      childrenPadding: const EdgeInsets.all(16),
                       children: [
                         SelectableText(
-                          '166 kanji dari daftar rujukan N4, termasuk 21 kanji pengulangan N5. '
-                          'Bacaan pada kartu merupakan pilihan bacaan umum. '
+                          '${widget.level == 'N3' ? '367 kanji dari daftar rujukan N3, dengan contoh kosakata dan kalimat.' : '166 kanji dari daftar rujukan N4, termasuk 21 kanji pengulangan N5.'} '
+                          'Bacaan pada kartu merupakan pilihan bacaan kamus. '
                           'Petunjuk mengingat dibuat sebagai bantuan belajar.\n\n'
                           'Jumlah goresan dan data bacaan menggunakan KANJIDIC oleh James William Breen dan EDRDG, '
                           'melalui kanji-data oleh David Gouveia. '
-                          'Materi data N4 diadaptasi dengan arti, contoh, dan kuis Indonesia; CC BY-SA 4.0.\n'
+                          'Materi data ${widget.level} diadaptasi dengan arti, contoh, dan kuis Indonesia; CC BY-SA 4.0.\n'
                           'Sumber: https://github.com/davidluzgouveia/kanji-data\n'
                           'Lisensi kamus: https://www.edrdg.org/edrdg/licence.html\n'
                           'CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/\n\n'

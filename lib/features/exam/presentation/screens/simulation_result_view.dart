@@ -5,7 +5,12 @@ import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_wid
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
 
 class SimulationResultView extends StatefulWidget {
-  const SimulationResultView({required this.result, super.key});
+  const SimulationResultView({
+    required this.result,
+    super.key,
+    this.level = 'N5',
+  });
+  final String level;
   final Json result;
 
   @override
@@ -25,7 +30,7 @@ class _ResultState extends State<SimulationResultView> {
         DiagnosticHero(
           title: 'Simulasi selesai.',
           subtitle:
-              'Paket 01 · Kosakata & Grammar\n${result['correct']}/${result['total']} benar · ${result['score']}%',
+              'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level == 'N4' ? ' & Reading' : ''}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
           child: Text(
             '${result['answered']} dijawab · ${(result['total'] as int) - (result['answered'] as int)} kosong\n'
             'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik',
@@ -102,7 +107,9 @@ class _ResultState extends State<SimulationResultView> {
           ),
         const SizedBox(height: 24),
         OutlinedButton.icon(
-          onPressed: () => context.pushReplacement('/exams/n5/simulation'),
+          onPressed: () => context.pushReplacement(
+            '/exams/${widget.level.toLowerCase()}/simulation',
+          ),
           icon: const Icon(Icons.refresh_rounded),
           label: const Text('Ulangi paket 01'),
         ),

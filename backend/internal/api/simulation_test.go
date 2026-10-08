@@ -12,7 +12,7 @@ import (
 func TestSimulationAPIAuthAndContract(t *testing.T) {
 	server := newServer()
 	endpoints := []struct{ method, path string }{
-		{"GET", "/v1/simulation/n5"}, {"GET", "/v1/simulation/attempts/test"},
+		{"GET", "/v1/simulation/n5"}, {"GET", "/v1/simulation/n4"}, {"GET", "/v1/simulation/attempts/test"},
 		{"PUT", "/v1/simulation/attempts/test/answers"}, {"POST", "/v1/simulation/attempts/test/submit-section"},
 	}
 	for _, e := range endpoints {
@@ -68,5 +68,62 @@ func TestSimulationAPIAuthAndContract(t *testing.T) {
 	}
 	if w := request("GET", "/v1/simulation/attempts/not-owned", ""); w.Code != http.StatusNotFound {
 		t.Fatal("unknown attempt must be hidden")
+	}
+}
+
+func TestSimulationN4API(t *testing.T) {
+	server := newServer()
+	token := login(t, server)
+	request := func(method, path, body string) *httptest.ResponseRecorder {
+		r := httptest.NewRequest(method, path, strings.NewReader(body))
+		r.Header.Set("Authorization", "Bearer "+token)
+		w := httptest.NewRecorder()
+		server.ServeHTTP(w, r)
+		return w
+	}
+	overview := request("GET", "/v1/simulation/n4", "")
+	if overview.Code != 200 || !strings.Contains(overview.Body.String(), `"questionCount":57`) || !strings.Contains(overview.Body.String(), `"durationMinutes":80`) {
+		t.Fatal(overview.Body.String())
+	}
+	if w := request("GET", "/v1/simulation/n3", ""); w.Code != 400 {
+		t.Fatal("unsupported level accepted")
+	}
+	w := request("POST", "/v1/exam-attempts", `{"examId":"jlpt-n4-simulation-1"}`)
+	var attempt struct {
+		Data domain.ExamAttempt `json:"data"`
+	}
+	if err := json.Unmarshal(w.Body.Bytes(), &attempt); err != nil {
+		t.Fatal(err)
+	}
+	if w.Code != 201 || attempt.Data.ExamID != "jlpt-n4-simulation-1" {
+		t.Fatal(w.Body.String())
+	}
+	path := "/v1/simulation/attempts/" + attempt.Data.ID
+	w = request("GET", path, "")
+	var session struct {
+		Data domain.SimulationSession `json:"data"`
+	}
+	if err := json.Unmarshal(w.Body.Bytes(), &session); err != nil {
+		t.Fatal(err)
+	}
+	if len(session.Data.Questions) != 28 || session.Data.Sections[0].DurationSeconds != 1500 || session.Data.Sections[1].DurationSeconds != 3300 {
+		t.Fatal("wrong N4 session")
+	}
+	w = request("POST", path+"/submit-section", `{"section":"vocabulary"}`)
+	if err := json.Unmarshal(w.Body.Bytes(), &session); err != nil {
+		t.Fatal(err)
+	}
+	if len(session.Data.Questions) != 29 || session.Data.Questions[21].Passage == "" {
+		t.Fatal("missing N4 reading")
+	}
+	w = request("POST", path+"/submit-section", `{"section":"grammar"}`)
+	if err := json.Unmarshal(w.Body.Bytes(), &session); err != nil {
+		t.Fatal(err)
+	}
+	if session.Data.Result == nil || session.Data.Result.Total != 57 || len(session.Data.Result.Reviews) != 57 {
+		t.Fatal("missing review")
+	}
+	if w = request("GET", "/v1/simulation/n5", ""); strings.Contains(w.Body.String(), attempt.Data.ID) {
+		t.Fatal("N4 result leaked into N5 history")
 	}
 }

@@ -20,7 +20,7 @@ func main() {
 	if err := config.LoadEnvFile(".env", "backend/.env"); err != nil {
 		log.Fatal(err)
 	}
-	source := flag.String("source", "../assets", "local asset directory")
+	source := flag.String("source", "assets", "local asset directory (relative to backend)")
 	prefix := flag.String("prefix", "assets", "COS object key prefix")
 	publicRead := flag.Bool("public-read", true, "make uploaded assets publicly readable")
 	flag.Parse()

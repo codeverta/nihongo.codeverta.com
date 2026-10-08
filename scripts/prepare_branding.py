@@ -7,6 +7,7 @@ Remote branding is exported for the next build; runtime settings are independent
 import argparse
 import io
 import json
+import shutil
 from pathlib import Path
 from urllib.request import urlopen
 from PIL import Image
@@ -41,6 +42,7 @@ def export_icon(image):
     folder = ROOT / 'android/app/src/main/res/drawable-nodpi'
     folder.mkdir(parents=True, exist_ok=True)
     square.resize((288,288), Image.Resampling.LANCZOS).save(folder / 'brand_splash.png')
+    shutil.copyfile(folder / 'brand_splash.png', ROOT / 'assets/images/app-icon-small.png')
     for scale in [1,2,3]:
         name = 'LaunchImage.png' if scale == 1 else f'LaunchImage@{scale}x.png'
         square.convert('RGB').resize((168*scale,168*scale), Image.Resampling.LANCZOS).save(

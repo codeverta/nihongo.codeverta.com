@@ -38,7 +38,7 @@ func (s *MemoryStore) VocabularyLevels(userID string) []domain.VocabularyLevel {
 			progress := s.progress[userID][lesson.ID]
 			total += progress.Completion
 			lessons = append(lessons, domain.VocabularyLessonSummary{
-				ImageAsset: asset, QuestionCount: questionCount,
+				ImageAsset: asset, ImageURL: s.assetURLLocked(asset), QuestionCount: questionCount,
 				ID: lesson.ID, Order: lesson.Order, Title: lesson.Title,
 				Description: lesson.Description, WordCount: len(lesson.Words),
 				BestScore: progress.Completion, Completed: progress.Completed,
@@ -119,8 +119,14 @@ func (s *MemoryStore) StartVocabularyAttempt(userID, lessonID string) (domain.Vo
 	return attempt, nil
 }
 
+func (s *MemoryStore) AssetURL(key string) string {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return s.assetURLLocked(key)
+}
+
 func (s *MemoryStore) assetURLLocked(key string) string {
-	if s.assetBaseURL == "" {
+	if key == "" {
 		return ""
 	}
 	return s.assetBaseURL + "/" + strings.TrimLeft(key, "/")

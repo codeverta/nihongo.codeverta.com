@@ -252,6 +252,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                   child: lesson.imageAsset.isNotEmpty
                                       ? VocabularyArt(
                                           asset: lesson.imageAsset,
+                                          url: lesson.imageUrl,
                                           description:
                                               'Ilustrasi tema ${lesson.title}',
                                         )

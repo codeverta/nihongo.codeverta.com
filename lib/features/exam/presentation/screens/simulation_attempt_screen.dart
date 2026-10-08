@@ -10,7 +10,12 @@ import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_wid
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
 
 class SimulationAttemptScreen extends ConsumerStatefulWidget {
-  const SimulationAttemptScreen({required this.attemptId, super.key});
+  const SimulationAttemptScreen({
+    required this.attemptId,
+    super.key,
+    this.level = 'N5',
+  });
+  final String level;
   final String attemptId;
 
   @override
@@ -34,7 +39,8 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
   final scroll = ScrollController();
   Timer? timer;
 
-  SimulationRepository get repository => ref.read(simulationRepositoryProvider);
+  SimulationRepository get repository =>
+      ref.read(simulationLevelRepositoryProvider(widget.level));
   List<Json> get questions => diagnosticList(session!['questions']);
   Map<String, dynamic> get answers => session!['answers'] as Json;
   Set<String> get marked => (session!['marked'] as List).cast<String>().toSet();
@@ -42,7 +48,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
   String get section => session?['activeSection'] as String? ?? '';
   int get remaining =>
       ((millisecondsAtSync - clock.elapsedMilliseconds + 999) ~/ 1000)
-          .clamp(0, 1200);
+          .clamp(0, widget.level == 'N4' ? 3300 : 1200);
 
   @override
   void initState() {
@@ -88,14 +94,20 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       if (previousSection.isNotEmpty && previousSection != section) {
         index = 0;
         notice = section == 'grammar'
-            ? 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
+            ? widget.level == 'N4'
+                ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
+                : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
             : 'Kedua bagian selesai. Jawaban tersimpan telah dinilai.';
       }
     });
     if (previousSection != section && scroll.hasClients) scroll.jumpTo(0);
     if (result != null) {
       timer?.cancel();
-      if (previousResult == null) ref.invalidate(simulationOverviewProvider);
+      if (previousResult == null) {
+        ref
+          ..invalidate(simulationOverviewProvider)
+          ..invalidate(simulationLevelOverviewProvider(widget.level));
+      }
     }
   }
 
@@ -175,11 +187,13 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
         title: Text(
           expected == 'vocabulary'
               ? 'Kunci bagian kosakata?'
-              : 'Kirim bagian grammar?',
+              : widget.level == 'N4'
+                  ? 'Kirim grammar dan reading?'
+                  : 'Kirim bagian grammar?',
         ),
         content: Text(
           '${unanswered > 0 ? 'Masih ada $unanswered soal kosong; soal kosong dihitung salah.\n\n' : ''}'
-          '${expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer grammar langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
+          '${expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
         ),
         actions: [
           TextButton(
@@ -331,8 +345,11 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       },
       child: Scaffold(
         appBar: AppBar(
-          title:
-              Text(result != null ? 'Hasil simulasi N5' : 'JLPT N5 Simulation'),
+          title: Text(
+            result != null
+                ? 'Hasil simulasi ${widget.level}'
+                : 'JLPT ${widget.level} Simulation',
+          ),
           actions: [
             if (data != null && result == null)
               Padding(
@@ -360,7 +377,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                   )
                 : const Center(child: CircularProgressIndicator())
             : result != null
-                ? SimulationResultView(result: result!)
+                ? SimulationResultView(result: result!, level: widget.level)
                 : Column(
                     children: [
                       if (busy || fetching)
@@ -376,7 +393,9 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                   child: Text(
                                     section == 'vocabulary'
                                         ? 'Bagian 1 · 文字・語彙'
-                                        : 'Bagian 2 · 文法',
+                                        : widget.level == 'N4'
+                                            ? 'Bagian 2 · 文法・読解'
+                                            : 'Bagian 2 · 文法',
                                     style: const TextStyle(
                                       color: examInk,
                                       fontWeight: FontWeight.w800,

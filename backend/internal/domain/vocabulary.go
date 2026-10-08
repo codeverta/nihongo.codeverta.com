@@ -40,6 +40,7 @@ type VocabularyLevelContent struct {
 }
 
 type VocabularyLessonSummary struct {
+	ImageURL      string `json:"imageUrl,omitempty"`
 	ImageAsset    string `json:"imageAsset,omitempty"`
 	QuestionCount int    `json:"questionCount"`
 	ID            string `json:"id"`

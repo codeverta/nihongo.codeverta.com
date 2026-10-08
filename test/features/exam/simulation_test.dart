@@ -7,8 +7,93 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/simulation_intro_screen.dart';
 
 void main() {
+  test('N4 repository uses its own overview and exam ID', () async {
+    final requests = <RequestOptions>[];
+    final dio = Dio();
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          requests.add(options);
+          handler.resolve(
+            Response<Json>(
+              requestOptions: options,
+              statusCode: 200,
+              data: {
+                'data': {'id': 'n4-attempt', 'questionCount': 57},
+              },
+            ),
+          );
+        },
+      ),
+    );
+    final repository = SimulationRepository(dio, level: 'N4');
+    expect((await repository.overview())['questionCount'], 57);
+    expect(await repository.start(), 'n4-attempt');
+    expect(requests[0].path, '/simulation/n4');
+    expect(requests[1].method, 'POST');
+    expect(requests[1].data, {'examId': 'jlpt-n4-simulation-1'});
+  });
+  testWidgets('N4 grammar and reading keeps the full 55 minute timer',
+      (tester) async {
+    final repository = FakeSimulation()
+      ..active = 'grammar'
+      ..durationSeconds = 3300;
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          simulationLevelRepositoryProvider('N4').overrideWithValue(repository),
+        ],
+        child: const MaterialApp(
+          home: SimulationAttemptScreen(attemptId: 'n4', level: 'N4'),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('JLPT N4 Simulation'), findsOneWidget);
+    expect(find.text('Bagian 2 · 文法・読解'), findsOneWidget);
+    final timer =
+        tester.widget<Text>(find.byKey(const Key('simulation-timer')));
+    expect(timer.data, startsWith('55:'));
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('N4 intro shows both sections and reading content on a phone',
+      (tester) async {
+    tester.view.physicalSize = const Size(360, 740);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          simulationLevelOverviewProvider('N4').overrideWith(
+            (ref) async => {
+              'activeAttemptId': '',
+              'history': <Json>[],
+            },
+          ),
+        ],
+        child: const MaterialApp(home: SimulationIntroScreen(level: 'N4')),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('JLPT N4 Simulation'), findsOneWidget);
+    expect(find.textContaining('57 soal · 80 menit'), findsOneWidget);
+    expect(find.text('1. 文字・語彙 — 28 soal / 25 menit'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('2. 文法・読解 — 29 soal / 55 menit'),
+      100,
+    );
+    expect(find.textContaining('8 reading'), findsOneWidget);
+    expect(find.text('Mulai simulasi'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+  });
+
   Future<void> open(WidgetTester tester, FakeSimulation repository) async {
     tester.view.physicalSize = const Size(360, 740);
     tester.view.devicePixelRatio = 1;
@@ -129,6 +214,7 @@ class FakeSimulation extends SimulationRepository {
   bool failSave = false;
   bool expiredFirst = false;
   int calls = 0;
+  int durationSeconds = 1200;
   Completer<void>? pending;
 
   Json question(String id, int number) => {
@@ -156,7 +242,11 @@ class FakeSimulation extends SimulationRepository {
       'activeSection': active,
       'serverTime': now.toIso8601String(),
       'expiresAt': now
-          .add(Duration(seconds: expiredFirst && calls == 1 ? 0 : 1200))
+          .add(
+            Duration(
+              seconds: expiredFirst && calls == 1 ? 0 : durationSeconds,
+            ),
+          )
           .toIso8601String(),
       'questions': active == 'vocabulary'
           ? [question('v1', 1), question('v2', 2)]

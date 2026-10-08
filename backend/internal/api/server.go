@@ -16,6 +16,7 @@ import (
 )
 
 type Server struct {
+	assetDirectory string
 	store          *store.MemoryStore
 	googleVerifier backendAuth.GoogleVerifier
 	branding       *BrandingStore
@@ -29,8 +30,9 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerAssets(mux)
 	s.registerBranding(mux)
-	mux.HandleFunc("GET /v1/simulation/n5", s.requireAuth(s.simulationOverview))
+	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
 	mux.HandleFunc("GET /v1/simulation/attempts/{attemptID}", s.requireAuth(s.simulationSession))
 	mux.HandleFunc("PUT /v1/simulation/attempts/{attemptID}/answers", s.requireAuth(s.simulationAnswer))
 	mux.HandleFunc("POST /v1/simulation/attempts/{attemptID}/submit-section", s.requireAuth(s.simulationSubmit))

@@ -125,7 +125,7 @@ class _Study extends StatelessWidget {
               ),
               const SizedBox(height: 22),
               const Text(
-                'Contoh kata',
+                'Contoh kata dan pemakaian',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 12),

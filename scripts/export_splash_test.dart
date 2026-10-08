@@ -36,7 +36,7 @@ void main() {
     );
     await tester.runAsync(
       () => precacheImage(
-        const AssetImage('assets/images/app-icon-default.png'),
+        const AssetImage('assets/images/app-icon-small.png'),
         key.currentContext!,
       ),
     );

@@ -51,6 +51,31 @@ class ExamHubScreen extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 24),
+          DiagnosticHero(
+            title: 'JLPT N4\nSimulation',
+            subtitle:
+                'Paket 01 · 57 soal · 80 menit\nKosakata dan kanji 25 menit, grammar dan reading 55 menit. Lengkap dengan pembahasan dan riwayat hasil.',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Listening dilewati',
+                  style: TextStyle(color: Colors.white),
+                ),
+                const SizedBox(height: 14),
+                FilledButton.icon(
+                  onPressed: () => context.push('/exams/n4/simulation'),
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: examInk,
+                  ),
+                  icon: const Icon(Icons.timer_outlined),
+                  label: const Text('Buka simulasi N4'),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
           const ExamHeading('Cek awal dengan diagnostic'),
           DiagnosticHero(
             title: 'Seberapa kuat\ndasar bahasa Jepangmu?',

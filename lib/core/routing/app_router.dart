@@ -132,6 +132,17 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         ),
       ),
       GoRoute(
+        path: '/exams/n4/simulation',
+        builder: (context, state) => const SimulationIntroScreen(level: 'N4'),
+      ),
+      GoRoute(
+        path: '/exams/n4/simulation/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          level: 'N4',
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
         path: '/exams/n5/attempt/:attemptId',
         builder: (context, state) => DiagnosticAttemptScreen(
           attemptId: state.pathParameters['attemptId']!,

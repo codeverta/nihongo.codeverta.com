@@ -68,7 +68,9 @@ void main() {
     await tester.tap(find.text('Ujian'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Pusat Ujian'), findsOneWidget);
+    expect(find.text('Latihan Ujian'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Buka simulasi N4'), 150);
+    expect(find.text('Buka simulasi N4'), findsOneWidget);
 
     await tester.tap(find.text('Profil'));
     await tester.pumpAndSettle();

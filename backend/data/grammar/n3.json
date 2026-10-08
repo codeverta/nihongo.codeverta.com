@@ -1,0 +1,3638 @@
+[
+  {
+    "chapter": "Waktu dan kesempatan",
+    "title": "Selagi keadaan masih berlangsung",
+    "points": [
+      {
+        "pattern": "～うちに",
+        "meaning": "selagi …; sebelum keadaan berubah",
+        "formation": "V辞書形／Vない形／Vている + うちに; Aい + うちに; Aな + なうちに; N + のうちに",
+        "explanation": "Kesempatan melakukan tindakan dibatasi keadaan yang masih berlangsung. Bagian akhir biasanya tindakan yang ingin diselesaikan sebelum keadaan berubah. Dibanding 間に, うちに menekankan kesempatan yang dapat hilang.",
+        "commonMistake": "Kata benda memakai の, sifat な memakai な. Jangan menyamakan ないうちに dengan setelah tindakan selesai.",
+        "examples": [
+          {
+            "japanese": "温かいうちに食べてください。",
+            "reading": "あたたかい うちに たべてください。",
+            "meaning": "Silakan makan selagi masih hangat."
+          },
+          {
+            "japanese": "忘れないうちにメモしておきます。",
+            "reading": "わすれない うちに メモしておきます。",
+            "meaning": "Saya akan mencatatnya sebelum lupa."
+          }
+        ]
+      },
+      {
+        "pattern": "～ているうちに",
+        "meaning": "selama melakukan …, perlahan terjadi perubahan",
+        "formation": "Vている + うちに",
+        "explanation": "Menunjukkan perubahan yang muncul selama suatu proses, sering tanpa direncanakan. Subjek mulai memahami, terbiasa, atau berubah perasaan setelah kegiatan berlangsung.",
+        "commonMistake": "Dalam makna perubahan alami ini, bagian akhir bukan selalu tindakan sengaja untuk memanfaatkan kesempatan.",
+        "examples": [
+          {
+            "japanese": "毎日話しているうちに、日本語に慣れました。",
+            "reading": "まいにち はなしている うちに、にほんごに なれました。",
+            "meaning": "Selama berbicara setiap hari, saya menjadi terbiasa dengan bahasa Jepang."
+          },
+          {
+            "japanese": "本を読んでいるうちに、眠くなりました。",
+            "reading": "ほんを よんでいる うちに、ねむく なりました。",
+            "meaning": "Ketika terus membaca buku, saya menjadi mengantuk."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Silakan makan sebelum makanan dingin: 温かい（　）食べてください。",
+        "choices": [
+          "うちに",
+          "のうちに",
+          "なうちに",
+          "うちを"
+        ],
+        "correct": 0,
+        "explanation": "温かい merupakan sifat い, langsung diikuti うちに. Kesempatan makan hangat akan hilang ketika dingin."
+      },
+      {
+        "prompt": "変化が少しずつ起きました: 毎日話している（　）、日本語に慣れました。",
+        "choices": [
+          "うちに",
+          "前に",
+          "までに",
+          "ためだけに"
+        ],
+        "correct": 0,
+        "explanation": "Berbicara terjadi lebih dahulu sebagai proses; menjadi terbiasa berkembang selama proses itu. 前に justru berarti sebelum."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n温かいうちに食べてください。",
+        "choices": [
+          "Silakan makan selagi masih hangat.",
+          "Saya akan mencatatnya sebelum lupa.",
+          "Selama berbicara setiap hari, saya menjadi terbiasa dengan bahasa Jepang.",
+          "Ketika terus membaca buku, saya menjadi mengantuk."
+        ],
+        "correct": 0,
+        "explanation": "～うちに: selagi …; sebelum keadaan berubah.\nあたたかい うちに たべてください。\nSilakan makan selagi masih hangat."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n毎日話しているうちに、日本語に慣れました。",
+        "choices": [
+          "Selama berbicara setiap hari, saya menjadi terbiasa dengan bahasa Jepang.",
+          "Silakan makan selagi masih hangat.",
+          "Saya akan mencatatnya sebelum lupa.",
+          "Ketika terus membaca buku, saya menjadi mengantuk."
+        ],
+        "correct": 0,
+        "explanation": "～ているうちに: selama melakukan …, perlahan terjadi perubahan.\nまいにち はなしている うちに、にほんごに なれました。\nSelama berbicara setiap hari, saya menjadi terbiasa dengan bahasa Jepang."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKetika terus membaca buku, saya menjadi mengantuk.",
+        "choices": [
+          "本を読んでいるうちに、眠くなりました。",
+          "温かいうちに食べてください。",
+          "忘れないうちにメモしておきます。",
+          "毎日話しているうちに、日本語に慣れました。"
+        ],
+        "correct": 0,
+        "explanation": "～ているうちに: Menunjukkan perubahan yang muncul selama suatu proses, sering tanpa direncanakan. Subjek mulai memahami, terbiasa, atau berubah perasaan setelah kegiatan berlangsung.\nほんを よんでいる うちに、ねむく なりました。\nKetika terus membaca buku, saya menjadi mengantuk."
+      }
+    ]
+  },
+  {
+    "chapter": "Waktu dan kesempatan",
+    "title": "Rentang waktu dan kejadian di dalamnya",
+    "points": [
+      {
+        "pattern": "～間／～間に",
+        "meaning": "selama seluruh rentang / pada suatu saat dalam rentang",
+        "formation": "Vている／V辞書形 + 間（に）; Aい + 間（に）; Aな + な間（に）; N + の間（に）",
+        "explanation": "間 menunjukkan kegiatan yang berlangsung sepanjang rentang, sedangkan 間に menempatkan suatu kejadian di dalam rentang tersebut. Fokusnya rentang waktu, bukan kesempatan yang akan hilang seperti うちに.",
+        "commonMistake": "Jangan memakai 間 untuk satu kejadian singkat jika maksudnya terjadi sekali saat rentang berlangsung; gunakan 間に.",
+        "examples": [
+          {
+            "japanese": "夏休みの間、図書館で働きました。",
+            "reading": "なつやすみの あいだ、としょかんで はたらきました。",
+            "meaning": "Saya bekerja di perpustakaan selama liburan musim panas."
+          },
+          {
+            "japanese": "留守の間に、荷物が届きました。",
+            "reading": "るすの あいだに、にもつが とどきました。",
+            "meaning": "Paket tiba ketika saya sedang tidak di rumah."
+          }
+        ]
+      },
+      {
+        "pattern": "～最中に",
+        "meaning": "tepat ketika sedang di tengah …",
+        "formation": "Vている + 最中に; N + の最中に",
+        "explanation": "Menekankan kegiatan sedang berjalan di tengah proses. Sering diikuti kejadian yang menyela atau mengejutkan, tetapi gangguan bukan syarat mutlak.",
+        "commonMistake": "最中 dibaca さいちゅう. Kata kerja belum mulai tidak memakai 辞書形＋最中 dalam pola ini.",
+        "examples": [
+          {
+            "japanese": "会議の最中に、電話が鳴りました。",
+            "reading": "かいぎの さいちゅうに、でんわが なりました。",
+            "meaning": "Telepon berbunyi tepat di tengah rapat."
+          },
+          {
+            "japanese": "料理している最中に、友達が来ました。",
+            "reading": "りょうりしている さいちゅうに、ともだちが きました。",
+            "meaning": "Teman datang ketika saya sedang memasak."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Paket tiba sekali saat rumah kosong: 留守の（　）、荷物が届きました。",
+        "choices": [
+          "間に",
+          "間を",
+          "間で",
+          "間から"
+        ],
+        "correct": 0,
+        "explanation": "Kejadian tiba terjadi pada suatu saat di dalam waktu rumah kosong: 間に."
+      },
+      {
+        "prompt": "会議（　）最中に、電話が鳴りました。",
+        "choices": [
+          "の",
+          "な",
+          "を",
+          "と"
+        ],
+        "correct": 0,
+        "explanation": "会議 merupakan kata benda dan dihubungkan dengan の sebelum 最中に."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n夏休みの間、図書館で働きました。",
+        "choices": [
+          "Saya bekerja di perpustakaan selama liburan musim panas.",
+          "Paket tiba ketika saya sedang tidak di rumah.",
+          "Telepon berbunyi tepat di tengah rapat.",
+          "Teman datang ketika saya sedang memasak."
+        ],
+        "correct": 0,
+        "explanation": "～間／～間に: selama seluruh rentang / pada suatu saat dalam rentang.\nなつやすみの あいだ、としょかんで はたらきました。\nSaya bekerja di perpustakaan selama liburan musim panas."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n会議の最中に、電話が鳴りました。",
+        "choices": [
+          "Telepon berbunyi tepat di tengah rapat.",
+          "Saya bekerja di perpustakaan selama liburan musim panas.",
+          "Paket tiba ketika saya sedang tidak di rumah.",
+          "Teman datang ketika saya sedang memasak."
+        ],
+        "correct": 0,
+        "explanation": "～最中に: tepat ketika sedang di tengah ….\nかいぎの さいちゅうに、でんわが なりました。\nTelepon berbunyi tepat di tengah rapat."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nTeman datang ketika saya sedang memasak.",
+        "choices": [
+          "料理している最中に、友達が来ました。",
+          "夏休みの間、図書館で働きました。",
+          "留守の間に、荷物が届きました。",
+          "会議の最中に、電話が鳴りました。"
+        ],
+        "correct": 0,
+        "explanation": "～最中に: Menekankan kegiatan sedang berjalan di tengah proses. Sering diikuti kejadian yang menyela atau mengejutkan, tetapi gangguan bukan syarat mutlak.\nりょうりしている さいちゅうに、ともだちが きました。\nTeman datang ketika saya sedang memasak."
+      }
+    ]
+  },
+  {
+    "chapter": "Waktu dan kesempatan",
+    "title": "Syarat urutan dan waktu mendadak",
+    "points": [
+      {
+        "pattern": "～てからでないと",
+        "meaning": "jika belum selesai …, tidak bisa …",
+        "formation": "Vて + からでないと + hasil negatif",
+        "explanation": "Tindakan pertama harus selesai sebelum tindakan kedua mungkin atau diizinkan. Akhir kalimat umumnya negatif, seperti できない atau 分からない. Bentuk tertulis terkait: てからでなければ.",
+        "commonMistake": "Berbeda dari てから biasa, pola ini menegaskan prasyarat dan lazim diikuti hasil negatif.",
+        "examples": [
+          {
+            "japanese": "予約してからでないと、入れません。",
+            "reading": "よやくしてからでないと、はいれません。",
+            "meaning": "Anda tidak bisa masuk sebelum membuat reservasi."
+          },
+          {
+            "japanese": "実物を見てからでないと、決められません。",
+            "reading": "じつぶつを みてからでないと、きめられません。",
+            "meaning": "Saya tidak bisa memutuskan sebelum melihat barang aslinya."
+          }
+        ]
+      },
+      {
+        "pattern": "～たとたん（に）",
+        "meaning": "begitu …, langsung terjadi …",
+        "formation": "Vた + とたん（に）",
+        "explanation": "Dua kejadian terjadi berdekatan; kejadian kedua sering mendadak dan tidak diduga. Digunakan untuk laporan kejadian, bukan permintaan atau rencana yang sengaja dilakukan.",
+        "commonMistake": "Untuk instruksi seperti “setelah pulang, teleponlah”, gunakan たら atau てから, bukan たとたん.",
+        "examples": [
+          {
+            "japanese": "窓を開けたとたん、風が入ってきました。",
+            "reading": "まどを あけた とたん、かぜが はいってきました。",
+            "meaning": "Begitu jendela dibuka, angin langsung masuk."
+          },
+          {
+            "japanese": "立ち上がったとたんに、めまいがしました。",
+            "reading": "たちあがった とたんに、めまいが しました。",
+            "meaning": "Begitu berdiri, saya langsung merasa pusing."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "予約（　）、入れません。 Pilih prasyarat yang harus selesai dulu.",
+        "choices": [
+          "してからでないと",
+          "するうちに",
+          "した最中に",
+          "している間ずっと"
+        ],
+        "correct": 0,
+        "explanation": "してからでないと menegaskan reservasi harus dilakukan sebelum masuk bisa dilakukan."
+      },
+      {
+        "prompt": "Begitu jendela dibuka, angin mendadak masuk: 窓を（　）とたん、風が入ってきました。",
+        "choices": [
+          "開けた",
+          "開ける",
+          "開けて",
+          "開けない"
+        ],
+        "correct": 0,
+        "explanation": "とたん mengikuti bentuk lampau た: 開けたとたん."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n予約してからでないと、入れません。",
+        "choices": [
+          "Anda tidak bisa masuk sebelum membuat reservasi.",
+          "Saya tidak bisa memutuskan sebelum melihat barang aslinya.",
+          "Begitu jendela dibuka, angin langsung masuk.",
+          "Begitu berdiri, saya langsung merasa pusing."
+        ],
+        "correct": 0,
+        "explanation": "～てからでないと: jika belum selesai …, tidak bisa ….\nよやくしてからでないと、はいれません。\nAnda tidak bisa masuk sebelum membuat reservasi."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n窓を開けたとたん、風が入ってきました。",
+        "choices": [
+          "Begitu jendela dibuka, angin langsung masuk.",
+          "Anda tidak bisa masuk sebelum membuat reservasi.",
+          "Saya tidak bisa memutuskan sebelum melihat barang aslinya.",
+          "Begitu berdiri, saya langsung merasa pusing."
+        ],
+        "correct": 0,
+        "explanation": "～たとたん（に）: begitu …, langsung terjadi ….\nまどを あけた とたん、かぜが はいってきました。\nBegitu jendela dibuka, angin langsung masuk."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nBegitu berdiri, saya langsung merasa pusing.",
+        "choices": [
+          "立ち上がったとたんに、めまいがしました。",
+          "予約してからでないと、入れません。",
+          "実物を見てからでないと、決められません。",
+          "窓を開けたとたん、風が入ってきました。"
+        ],
+        "correct": 0,
+        "explanation": "～たとたん（に）: Dua kejadian terjadi berdekatan; kejadian kedua sering mendadak dan tidak diduga. Digunakan untuk laporan kejadian, bukan permintaan atau rencana yang sengaja dilakukan.\nたちあがった とたんに、めまいが しました。\nBegitu berdiri, saya langsung merasa pusing."
+      }
+    ]
+  },
+  {
+    "chapter": "Waktu dan kesempatan",
+    "title": "Setiap kejadian dan sambil sekalian",
+    "points": [
+      {
+        "pattern": "～たびに",
+        "meaning": "setiap kali …",
+        "formation": "V辞書形 + たびに; N + のたびに",
+        "explanation": "Menghubungkan kejadian berulang dengan hasil yang muncul setiap kali. Tidak hanya satu pengalaman; pola ini menyatakan pengulangan yang diamati pembicara.",
+        "commonMistake": "たびに bukan penanda satu kejadian lampau. Kata benda memerlukan の.",
+        "examples": [
+          {
+            "japanese": "この写真を見るたびに、旅行を思い出します。",
+            "reading": "この しゃしんを みる たびに、りょこうを おもいだします。",
+            "meaning": "Setiap melihat foto ini, saya teringat perjalanan itu."
+          },
+          {
+            "japanese": "出張のたびに、お土産を買います。",
+            "reading": "しゅっちょうの たびに、おみやげを かいます。",
+            "meaning": "Setiap perjalanan dinas, saya membeli oleh-oleh."
+          }
+        ]
+      },
+      {
+        "pattern": "～ついでに",
+        "meaning": "sekalian saat melakukan …",
+        "formation": "V辞書形／Vた + ついでに; N + のついでに",
+        "explanation": "Tindakan pertama merupakan tujuan utama. Tindakan kedua dilakukan sebagai tambahan karena kesempatan yang sama, sering lebih ringan atau berkaitan tempat.",
+        "commonMistake": "Berbeda dari ながら, dua kegiatan tidak harus dilakukan pada saat yang persis sama.",
+        "examples": [
+          {
+            "japanese": "買い物に行くついでに、郵便局に寄ります。",
+            "reading": "かいものに いく ついでに、ゆうびんきょくに よります。",
+            "meaning": "Saya akan mampir ke kantor pos sekalian pergi belanja."
+          },
+          {
+            "japanese": "部屋を掃除したついでに、窓も拭きました。",
+            "reading": "へやを そうじした ついでに、まども ふきました。",
+            "meaning": "Sekalian membersihkan kamar, saya juga mengelap jendela."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "出張（　）たびに、お土産を買います。",
+        "choices": [
+          "の",
+          "な",
+          "に",
+          "を"
+        ],
+        "correct": 0,
+        "explanation": "出張 adalah kata benda: 出張のたびに."
+      },
+      {
+        "prompt": "Tujuan utama belanja, tambahan mampir: 買い物に行く（　）、郵便局に寄ります。",
+        "choices": [
+          "ついでに",
+          "とたんに",
+          "最中だけ",
+          "せいで"
+        ],
+        "correct": 0,
+        "explanation": "ついでに menyatakan kesempatan kegiatan utama dipakai untuk kegiatan tambahan."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nこの写真を見るたびに、旅行を思い出します。",
+        "choices": [
+          "Setiap melihat foto ini, saya teringat perjalanan itu.",
+          "Setiap perjalanan dinas, saya membeli oleh-oleh.",
+          "Saya akan mampir ke kantor pos sekalian pergi belanja.",
+          "Sekalian membersihkan kamar, saya juga mengelap jendela."
+        ],
+        "correct": 0,
+        "explanation": "～たびに: setiap kali ….\nこの しゃしんを みる たびに、りょこうを おもいだします。\nSetiap melihat foto ini, saya teringat perjalanan itu."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n買い物に行くついでに、郵便局に寄ります。",
+        "choices": [
+          "Saya akan mampir ke kantor pos sekalian pergi belanja.",
+          "Setiap melihat foto ini, saya teringat perjalanan itu.",
+          "Setiap perjalanan dinas, saya membeli oleh-oleh.",
+          "Sekalian membersihkan kamar, saya juga mengelap jendela."
+        ],
+        "correct": 0,
+        "explanation": "～ついでに: sekalian saat melakukan ….\nかいものに いく ついでに、ゆうびんきょくに よります。\nSaya akan mampir ke kantor pos sekalian pergi belanja."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nSekalian membersihkan kamar, saya juga mengelap jendela.",
+        "choices": [
+          "部屋を掃除したついでに、窓も拭きました。",
+          "この写真を見るたびに、旅行を思い出します。",
+          "出張のたびに、お土産を買います。",
+          "買い物に行くついでに、郵便局に寄ります。"
+        ],
+        "correct": 0,
+        "explanation": "～ついでに: Tindakan pertama merupakan tujuan utama. Tindakan kedua dilakukan sebagai tambahan karena kesempatan yang sama, sering lebih ringan atau berkaitan tempat.\nへやを そうじした ついでに、まども ふきました。\nSekalian membersihkan kamar, saya juga mengelap jendela."
+      }
+    ]
+  },
+  {
+    "chapter": "Tahap dan hasil kegiatan",
+    "title": "Hampir terjadi dan temuan setelah mencoba",
+    "points": [
+      {
+        "pattern": "～ところだった",
+        "meaning": "hampir …, tetapi akhirnya tidak terjadi",
+        "formation": "V辞書形 + ところだった",
+        "explanation": "Konteks masa lampau menunjukkan tindakan atau kejadian hampir terjadi. Sering dipakai saat merasa lega atau menyesal karena sesuatu nyaris terjadi; あやうく dapat memperjelas makna hampir.",
+        "commonMistake": "ところです berarti baru hendak melakukan; makna “nyaris” pada ところだった perlu konteks yang menunjukkan hasil tidak terjadi.",
+        "examples": [
+          {
+            "japanese": "あやうく電車に乗り遅れるところでした。",
+            "reading": "あやうく でんしゃに のりおくれる ところでした。",
+            "meaning": "Saya hampir ketinggalan kereta."
+          },
+          {
+            "japanese": "財布を忘れるところでしたが、友達が教えてくれました。",
+            "reading": "さいふを わすれる ところでしたが、ともだちが おしえてくれました。",
+            "meaning": "Saya nyaris meninggalkan dompet, tetapi teman mengingatkan saya."
+          }
+        ]
+      },
+      {
+        "pattern": "～たところ",
+        "meaning": "setelah mencoba …, ternyata …",
+        "formation": "Vた + ところ + hasil atau temuan",
+        "explanation": "Melaporkan hasil atau informasi yang ditemukan setelah melakukan tindakan. Berbeda dari たところです yang menunjukkan baru saja selesai; di sini ところ menghubungkan tindakan dengan hasil.",
+        "commonMistake": "Jangan menganggap semua たところ berarti “baru saja”. Perhatikan klausa hasil yang mengikutinya.",
+        "examples": [
+          {
+            "japanese": "店に電話したところ、今日は休みだと分かりました。",
+            "reading": "みせに でんわした ところ、きょうは やすみだと わかりました。",
+            "meaning": "Setelah menelepon toko, ternyata hari ini toko tutup."
+          },
+          {
+            "japanese": "先生に聞いたところ、締め切りは金曜日でした。",
+            "reading": "せんせいに きいた ところ、しめきりは きんようびでした。",
+            "meaning": "Setelah bertanya kepada guru, ternyata tenggatnya hari Jumat."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Saya hampir ketinggalan, tetapi sempat naik: あやうく電車に（　）ところでした。",
+        "choices": [
+          "乗り遅れる",
+          "乗り遅れた",
+          "乗り遅れて",
+          "乗り遅れます"
+        ],
+        "correct": 0,
+        "explanation": "Makna nyaris memakai V辞書形＋ところだった. 乗り遅れたところ justru menunjuk tahap sesudah ketinggalan."
+      },
+      {
+        "prompt": "店に（　）ところ、今日は休みだと分かりました。",
+        "choices": [
+          "電話した",
+          "電話する",
+          "電話して",
+          "電話しない"
+        ],
+        "correct": 0,
+        "explanation": "Temuan diperoleh setelah menelepon: 電話したところ."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nあやうく電車に乗り遅れるところでした。",
+        "choices": [
+          "Saya hampir ketinggalan kereta.",
+          "Saya nyaris meninggalkan dompet, tetapi teman mengingatkan saya.",
+          "Setelah menelepon toko, ternyata hari ini toko tutup.",
+          "Setelah bertanya kepada guru, ternyata tenggatnya hari Jumat."
+        ],
+        "correct": 0,
+        "explanation": "～ところだった: hampir …, tetapi akhirnya tidak terjadi.\nあやうく でんしゃに のりおくれる ところでした。\nSaya hampir ketinggalan kereta."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n店に電話したところ、今日は休みだと分かりました。",
+        "choices": [
+          "Setelah menelepon toko, ternyata hari ini toko tutup.",
+          "Saya hampir ketinggalan kereta.",
+          "Saya nyaris meninggalkan dompet, tetapi teman mengingatkan saya.",
+          "Setelah bertanya kepada guru, ternyata tenggatnya hari Jumat."
+        ],
+        "correct": 0,
+        "explanation": "～たところ: setelah mencoba …, ternyata ….\nみせに でんわした ところ、きょうは やすみだと わかりました。\nSetelah menelepon toko, ternyata hari ini toko tutup."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nSetelah bertanya kepada guru, ternyata tenggatnya hari Jumat.",
+        "choices": [
+          "先生に聞いたところ、締め切りは金曜日でした。",
+          "あやうく電車に乗り遅れるところでした。",
+          "財布を忘れるところでしたが、友達が教えてくれました。",
+          "店に電話したところ、今日は休みだと分かりました。"
+        ],
+        "correct": 0,
+        "explanation": "～たところ: Melaporkan hasil atau informasi yang ditemukan setelah melakukan tindakan. Berbeda dari たところです yang menunjukkan baru saja selesai; di sini ところ menghubungkan tindakan dengan hasil.\nせんせいに きいた ところ、しめきりは きんようびでした。\nSetelah bertanya kepada guru, ternyata tenggatnya hari Jumat."
+      }
+    ]
+  },
+  {
+    "chapter": "Tahap dan hasil kegiatan",
+    "title": "Sejak suatu kejadian dan kegiatan terus-menerus",
+    "points": [
+      {
+        "pattern": "～て以来",
+        "meaning": "sejak … hingga sekarang",
+        "formation": "Vて + 以来; N peristiwa + 以来",
+        "explanation": "Suatu peristiwa menjadi titik awal keadaan atau kebiasaan yang berlanjut sampai waktu yang dibicarakan. Umumnya memerlukan rentang yang cukup berarti, bukan baru beberapa saat.",
+        "commonMistake": "Akibat sesaat tidak cocok dengan makna kesinambungan 以来. Untuk urutan singkat cukup てから.",
+        "examples": [
+          {
+            "japanese": "日本に来て以来、毎日日本語を使っています。",
+            "reading": "にほんに きていらい、まいにち にほんごを つかっています。",
+            "meaning": "Sejak datang ke Jepang, saya memakai bahasa Jepang setiap hari."
+          },
+          {
+            "japanese": "卒業以来、彼に会っていません。",
+            "reading": "そつぎょういらい、かれに あっていません。",
+            "meaning": "Sejak lulus, saya belum pernah bertemu dengannya."
+          }
+        ]
+      },
+      {
+        "pattern": "～てばかりいる",
+        "meaning": "terus saja melakukan …",
+        "formation": "Vて + ばかりいる",
+        "explanation": "Menyatakan satu jenis kegiatan mendominasi, sering dengan penilaian bahwa pelaku sebaiknya melakukan hal lain. Bentuk sopannya てばかりいます.",
+        "commonMistake": "Jangan tertukar dengan たばかり, yang berarti baru saja selesai.",
+        "examples": [
+          {
+            "japanese": "弟はゲームをしてばかりいます。",
+            "reading": "おとうとは ゲームを してばかりいます。",
+            "meaning": "Adik laki-laki saya terus saja bermain gim."
+          },
+          {
+            "japanese": "文句を言ってばかりいないで、手伝ってください。",
+            "reading": "もんくを いってばかりいないで、てつだってください。",
+            "meaning": "Jangan terus mengeluh; tolong bantu."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "日本に（　）以来、毎日日本語を使っています。",
+        "choices": [
+          "来て",
+          "来た",
+          "来る",
+          "来ない"
+        ],
+        "correct": 0,
+        "explanation": "Bentuk て menghubungkan titik awal dengan 以来: 来て以来."
+      },
+      {
+        "prompt": "弟はゲームを（　）ばかりいます。",
+        "choices": [
+          "して",
+          "した",
+          "する",
+          "しない"
+        ],
+        "correct": 0,
+        "explanation": "Kegiatan yang terus mendominasi memakai bentuk て: してばかりいる."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n日本に来て以来、毎日日本語を使っています。",
+        "choices": [
+          "Sejak datang ke Jepang, saya memakai bahasa Jepang setiap hari.",
+          "Sejak lulus, saya belum pernah bertemu dengannya.",
+          "Adik laki-laki saya terus saja bermain gim.",
+          "Jangan terus mengeluh; tolong bantu."
+        ],
+        "correct": 0,
+        "explanation": "～て以来: sejak … hingga sekarang.\nにほんに きていらい、まいにち にほんごを つかっています。\nSejak datang ke Jepang, saya memakai bahasa Jepang setiap hari."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n弟はゲームをしてばかりいます。",
+        "choices": [
+          "Adik laki-laki saya terus saja bermain gim.",
+          "Sejak datang ke Jepang, saya memakai bahasa Jepang setiap hari.",
+          "Sejak lulus, saya belum pernah bertemu dengannya.",
+          "Jangan terus mengeluh; tolong bantu."
+        ],
+        "correct": 0,
+        "explanation": "～てばかりいる: terus saja melakukan ….\nおとうとは ゲームを してばかりいます。\nAdik laki-laki saya terus saja bermain gim."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nJangan terus mengeluh; tolong bantu.",
+        "choices": [
+          "文句を言ってばかりいないで、手伝ってください。",
+          "日本に来て以来、毎日日本語を使っています。",
+          "卒業以来、彼に会っていません。",
+          "弟はゲームをしてばかりいます。"
+        ],
+        "correct": 0,
+        "explanation": "～てばかりいる: Menyatakan satu jenis kegiatan mendominasi, sering dengan penilaian bahwa pelaku sebaiknya melakukan hal lain. Bentuk sopannya てばかりいます.\nもんくを いってばかりいないで、てつだってください。\nJangan terus mengeluh; tolong bantu."
+      }
+    ]
+  },
+  {
+    "chapter": "Keputusan dan usaha",
+    "title": "Kebiasaan yang diputuskan dan instruksi tidak langsung",
+    "points": [
+      {
+        "pattern": "～ことにしている",
+        "meaning": "menetapkan kebiasaan untuk …",
+        "formation": "V辞書形／Vない形 + ことにしている",
+        "explanation": "Keputusan pribadi telah dijadikan aturan atau kebiasaan yang dipertahankan. Berbeda dari ことにした yang berfokus pada saat keputusan dibuat.",
+        "commonMistake": "ことになっている lazim menyatakan aturan atau pengaturan dari luar, bukan kebiasaan pilihan pribadi.",
+        "examples": [
+          {
+            "japanese": "毎朝三十分歩くことにしています。",
+            "reading": "まいあさ さんじゅっぷん あるくことに しています。",
+            "meaning": "Saya menetapkan kebiasaan berjalan tiga puluh menit setiap pagi."
+          },
+          {
+            "japanese": "寝る前にスマホを見ないことにしています。",
+            "reading": "ねる まえに スマホを みないことに しています。",
+            "meaning": "Saya membiasakan diri tidak melihat ponsel sebelum tidur."
+          }
+        ]
+      },
+      {
+        "pattern": "～ように言う",
+        "meaning": "menyuruh atau mengingatkan agar …",
+        "formation": "V辞書形／Vない形 + ように + 言う／頼む／注意する",
+        "explanation": "Menyampaikan isi instruksi secara tidak langsung. Pelaku perintah dan orang yang diminta melakukan tindakan dapat berbeda; penerima instruksi biasanya diikuti に.",
+        "commonMistake": "Untuk melaporkan pernyataan informasi biasa gunakan と言う. ように言う berfokus pada instruksi.",
+        "examples": [
+          {
+            "japanese": "先生は学生に早く来るように言いました。",
+            "reading": "せんせいは がくせいに はやく くるように いいました。",
+            "meaning": "Guru menyuruh murid datang lebih awal."
+          },
+          {
+            "japanese": "母に無理をしないように言われました。",
+            "reading": "ははに むりを しないように いわれました。",
+            "meaning": "Ibu mengingatkan saya agar tidak memaksakan diri."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Aturan pribadi yang dipertahankan: 毎朝歩く（　）しています。",
+        "choices": [
+          "ことに",
+          "ことを",
+          "ものに",
+          "ためを"
+        ],
+        "correct": 0,
+        "explanation": "ことにしている menyatakan keputusan pribadi yang terus dijalankan."
+      },
+      {
+        "prompt": "Instruksi agar datang awal: 先生は早く来る（　）言いました。",
+        "choices": [
+          "ように",
+          "ことを",
+          "ためで",
+          "うちを"
+        ],
+        "correct": 0,
+        "explanation": "来るように言う adalah laporan instruksi tidak langsung."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n毎朝三十分歩くことにしています。",
+        "choices": [
+          "Saya menetapkan kebiasaan berjalan tiga puluh menit setiap pagi.",
+          "Saya membiasakan diri tidak melihat ponsel sebelum tidur.",
+          "Guru menyuruh murid datang lebih awal.",
+          "Ibu mengingatkan saya agar tidak memaksakan diri."
+        ],
+        "correct": 0,
+        "explanation": "～ことにしている: menetapkan kebiasaan untuk ….\nまいあさ さんじゅっぷん あるくことに しています。\nSaya menetapkan kebiasaan berjalan tiga puluh menit setiap pagi."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n先生は学生に早く来るように言いました。",
+        "choices": [
+          "Guru menyuruh murid datang lebih awal.",
+          "Saya menetapkan kebiasaan berjalan tiga puluh menit setiap pagi.",
+          "Saya membiasakan diri tidak melihat ponsel sebelum tidur.",
+          "Ibu mengingatkan saya agar tidak memaksakan diri."
+        ],
+        "correct": 0,
+        "explanation": "～ように言う: menyuruh atau mengingatkan agar ….\nせんせいは がくせいに はやく くるように いいました。\nGuru menyuruh murid datang lebih awal."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nIbu mengingatkan saya agar tidak memaksakan diri.",
+        "choices": [
+          "母に無理をしないように言われました。",
+          "毎朝三十分歩くことにしています。",
+          "寝る前にスマホを見ないことにしています。",
+          "先生は学生に早く来るように言いました。"
+        ],
+        "correct": 0,
+        "explanation": "～ように言う: Menyampaikan isi instruksi secara tidak langsung. Pelaku perintah dan orang yang diminta melakukan tindakan dapat berbeda; penerima instruksi biasanya diikuti に.\nははに むりを しないように いわれました。\nIbu mengingatkan saya agar tidak memaksakan diri."
+      }
+    ]
+  },
+  {
+    "chapter": "Keputusan dan usaha",
+    "title": "Mencoba bertindak dan enggan bertindak",
+    "points": [
+      {
+        "pattern": "～ようとする",
+        "meaning": "berusaha atau baru hendak …",
+        "formation": "V意向形 + とする",
+        "explanation": "Menunjukkan usaha memulai tindakan atau saat tepat sebelum memulai. Bentuk kehendak berbeda menurut kelompok: 読もう, 食べよう, しよう, 来よう.",
+        "commonMistake": "Jangan memakai V辞書形＋とする untuk pola usaha ini. てみる berfokus mencoba pengalaman, bukan usaha memulai.",
+        "examples": [
+          {
+            "japanese": "ドアを開けようとしましたが、開きませんでした。",
+            "reading": "ドアを あけようと しましたが、あきませんでした。",
+            "meaning": "Saya mencoba membuka pintu, tetapi pintu tidak terbuka."
+          },
+          {
+            "japanese": "出かけようとした時、電話が鳴りました。",
+            "reading": "でかけようと した とき、でんわが なりました。",
+            "meaning": "Ketika saya baru hendak pergi, telepon berbunyi."
+          }
+        ]
+      },
+      {
+        "pattern": "～ようとしない",
+        "meaning": "tidak mau atau tidak berusaha …",
+        "formation": "V意向形 + としない",
+        "explanation": "Menggambarkan keengganan atau tidak adanya usaha yang terlihat pada seseorang. Sering membicarakan orang lain berdasarkan perilakunya.",
+        "commonMistake": "Tidak mau mencoba berbeda dari tidak bisa. Kemampuan yang tidak ada dinyatakan dengan bentuk potensial negatif.",
+        "examples": [
+          {
+            "japanese": "弟は野菜を食べようとしません。",
+            "reading": "おとうとは やさいを たべようと しません。",
+            "meaning": "Adik laki-laki saya tidak mau makan sayuran."
+          },
+          {
+            "japanese": "彼は理由を説明しようとしません。",
+            "reading": "かれは りゆうを せつめいしようと しません。",
+            "meaning": "Dia tidak mau menjelaskan alasannya."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Saya mencoba membuka: ドアを（　）としました。",
+        "choices": [
+          "開けよう",
+          "開ける",
+          "開けた",
+          "開けて"
+        ],
+        "correct": 0,
+        "explanation": "意向形 dari 開ける adalah 開けよう: 開けようとする."
+      },
+      {
+        "prompt": "Enggan menjelaskan: 彼は理由を（　）としません。",
+        "choices": [
+          "説明しよう",
+          "説明した",
+          "説明して",
+          "説明する"
+        ],
+        "correct": 0,
+        "explanation": "Keengganan memakai bentuk kehendak＋としない: 説明しようとしない."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nドアを開けようとしましたが、開きませんでした。",
+        "choices": [
+          "Saya mencoba membuka pintu, tetapi pintu tidak terbuka.",
+          "Ketika saya baru hendak pergi, telepon berbunyi.",
+          "Adik laki-laki saya tidak mau makan sayuran.",
+          "Dia tidak mau menjelaskan alasannya."
+        ],
+        "correct": 0,
+        "explanation": "～ようとする: berusaha atau baru hendak ….\nドアを あけようと しましたが、あきませんでした。\nSaya mencoba membuka pintu, tetapi pintu tidak terbuka."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n弟は野菜を食べようとしません。",
+        "choices": [
+          "Adik laki-laki saya tidak mau makan sayuran.",
+          "Saya mencoba membuka pintu, tetapi pintu tidak terbuka.",
+          "Ketika saya baru hendak pergi, telepon berbunyi.",
+          "Dia tidak mau menjelaskan alasannya."
+        ],
+        "correct": 0,
+        "explanation": "～ようとしない: tidak mau atau tidak berusaha ….\nおとうとは やさいを たべようと しません。\nAdik laki-laki saya tidak mau makan sayuran."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nDia tidak mau menjelaskan alasannya.",
+        "choices": [
+          "彼は理由を説明しようとしません。",
+          "ドアを開けようとしましたが、開きませんでした。",
+          "出かけようとした時、電話が鳴りました。",
+          "弟は野菜を食べようとしません。"
+        ],
+        "correct": 0,
+        "explanation": "～ようとしない: Menggambarkan keengganan atau tidak adanya usaha yang terlihat pada seseorang. Sering membicarakan orang lain berdasarkan perilakunya.\nかれは りゆうを せつめいしようと しません。\nDia tidak mau menjelaskan alasannya."
+      }
+    ]
+  },
+  {
+    "chapter": "Saran dan kewajiban",
+    "title": "Tindakan yang seharusnya dilakukan",
+    "points": [
+      {
+        "pattern": "～べきだ",
+        "meaning": "seharusnya …; patut …",
+        "formation": "V辞書形 + べきだ; する dapat menjadi するべき／すべき",
+        "explanation": "Penilaian kuat tentang tindakan yang benar atau tanggung jawab. Lebih tegas daripada たほうがいい, sehingga perlu berhati-hati saat memberi nasihat langsung kepada orang lain.",
+        "commonMistake": "べき tidak cocok untuk memaksakan pilihan selera pribadi atau hal yang tidak dapat dikendalikan seperti cuaca.",
+        "examples": [
+          {
+            "japanese": "約束は守るべきです。",
+            "reading": "やくそくは まもるべきです。",
+            "meaning": "Janji seharusnya ditepati."
+          },
+          {
+            "japanese": "大切なことは自分で確認すべきです。",
+            "reading": "たいせつな ことは じぶんで かくにんすべきです。",
+            "meaning": "Hal penting seharusnya diperiksa sendiri."
+          }
+        ]
+      },
+      {
+        "pattern": "～べきではない",
+        "meaning": "seharusnya tidak …",
+        "formation": "V辞書形 + べきではない",
+        "explanation": "Menilai tindakan sebagai tidak patut. Negasi ditempatkan setelah べき; kalimat tidak menyuruh melakukan tindakan negatif.",
+        "commonMistake": "Untuk “tidak seharusnya berbohong” gunakan うそをつくべきではない. つかないべき bukan bentuk dasar yang diajarkan.",
+        "examples": [
+          {
+            "japanese": "人の秘密を話すべきではありません。",
+            "reading": "ひとの ひみつを はなすべきでは ありません。",
+            "meaning": "Anda tidak seharusnya menceritakan rahasia orang lain."
+          },
+          {
+            "japanese": "見た目だけで判断すべきではありません。",
+            "reading": "みためだけで はんだんすべきでは ありません。",
+            "meaning": "Kita tidak seharusnya menilai hanya dari penampilan."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "約束は（　）べきです。",
+        "choices": [
+          "守る",
+          "守った",
+          "守って",
+          "守らない"
+        ],
+        "correct": 0,
+        "explanation": "べき langsung mengikuti bentuk kamus: 守るべき."
+      },
+      {
+        "prompt": "人の秘密を話す（　）。 Pilih larangan berupa penilaian “tidak seharusnya”.",
+        "choices": [
+          "べきではありません",
+          "べきでした",
+          "べきになります",
+          "べきにします"
+        ],
+        "correct": 0,
+        "explanation": "Negasi penilaian べき adalah べきではない／べきではありません."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n約束は守るべきです。",
+        "choices": [
+          "Janji seharusnya ditepati.",
+          "Hal penting seharusnya diperiksa sendiri.",
+          "Anda tidak seharusnya menceritakan rahasia orang lain.",
+          "Kita tidak seharusnya menilai hanya dari penampilan."
+        ],
+        "correct": 0,
+        "explanation": "～べきだ: seharusnya …; patut ….\nやくそくは まもるべきです。\nJanji seharusnya ditepati."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n人の秘密を話すべきではありません。",
+        "choices": [
+          "Anda tidak seharusnya menceritakan rahasia orang lain.",
+          "Janji seharusnya ditepati.",
+          "Hal penting seharusnya diperiksa sendiri.",
+          "Kita tidak seharusnya menilai hanya dari penampilan."
+        ],
+        "correct": 0,
+        "explanation": "～べきではない: seharusnya tidak ….\nひとの ひみつを はなすべきでは ありません。\nAnda tidak seharusnya menceritakan rahasia orang lain."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKita tidak seharusnya menilai hanya dari penampilan.",
+        "choices": [
+          "見た目だけで判断すべきではありません。",
+          "約束は守るべきです。",
+          "大切なことは自分で確認すべきです。",
+          "人の秘密を話すべきではありません。"
+        ],
+        "correct": 0,
+        "explanation": "～べきではない: Menilai tindakan sebagai tidak patut. Negasi ditempatkan setelah べき; kalimat tidak menyuruh melakukan tindakan negatif.\nみためだけで はんだんすべきでは ありません。\nKita tidak seharusnya menilai hanya dari penampilan."
+      }
+    ]
+  },
+  {
+    "chapter": "Saran dan kewajiban",
+    "title": "Tidak perlu dan tidak punya pilihan",
+    "points": [
+      {
+        "pattern": "～ことはない",
+        "meaning": "tidak perlu …",
+        "formation": "V辞書形 + ことはない",
+        "explanation": "Menenangkan atau memberi saran bahwa suatu tindakan tidak perlu dilakukan. Tidak menyatakan larangan dan bukan keterangan pengalaman.",
+        "commonMistake": "Vたことがない berarti belum pernah, sedangkan V辞書形＋ことはない berarti tidak perlu dalam makna ini.",
+        "examples": [
+          {
+            "japanese": "そんなに心配することはありません。",
+            "reading": "そんなに しんぱいすることは ありません。",
+            "meaning": "Tidak perlu khawatir sampai seperti itu."
+          },
+          {
+            "japanese": "急ぐことはないので、ゆっくり来てください。",
+            "reading": "いそぐことは ないので、ゆっくり きてください。",
+            "meaning": "Tidak perlu terburu-buru, jadi datanglah dengan santai."
+          }
+        ]
+      },
+      {
+        "pattern": "～しかない",
+        "meaning": "tidak ada pilihan selain …",
+        "formation": "V辞書形 + しかない",
+        "explanation": "Pembicara menilai pilihan lain tidak tersedia. Bisa bernuansa terpaksa atau keputusan praktis. Ini berbeda dari Nしかない yang membatasi jumlah benda.",
+        "commonMistake": "Jangan memakai Vない＋しかない untuk arti “harus melakukan”; tindakan yang menjadi satu-satunya pilihan memakai bentuk kamus.",
+        "examples": [
+          {
+            "japanese": "終電がないので、タクシーで帰るしかありません。",
+            "reading": "しゅうでんが ないので、タクシーで かえるしか ありません。",
+            "meaning": "Karena kereta terakhir sudah tidak ada, saya hanya bisa pulang naik taksi."
+          },
+          {
+            "japanese": "データが消えたので、最初から作り直すしかありません。",
+            "reading": "データが きえたので、さいしょから つくりなおすしか ありません。",
+            "meaning": "Karena datanya hilang, tidak ada pilihan selain membuatnya ulang dari awal."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Tidak perlu khawatir: そんなに心配（　）ことはありません。",
+        "choices": [
+          "する",
+          "した",
+          "して",
+          "します"
+        ],
+        "correct": 0,
+        "explanation": "Nasihat tidak perlu memakai bentuk kamus: 心配することはない."
+      },
+      {
+        "prompt": "Kereta sudah tidak ada, satu-satunya pilihan taksi: タクシーで（　）しかありません。",
+        "choices": [
+          "帰る",
+          "帰った",
+          "帰って",
+          "帰ります"
+        ],
+        "correct": 0,
+        "explanation": "帰るしかない berarti tidak ada pilihan selain pulang dengan cara itu."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nそんなに心配することはありません。",
+        "choices": [
+          "Tidak perlu khawatir sampai seperti itu.",
+          "Tidak perlu terburu-buru, jadi datanglah dengan santai.",
+          "Karena kereta terakhir sudah tidak ada, saya hanya bisa pulang naik taksi.",
+          "Karena datanya hilang, tidak ada pilihan selain membuatnya ulang dari awal."
+        ],
+        "correct": 0,
+        "explanation": "～ことはない: tidak perlu ….\nそんなに しんぱいすることは ありません。\nTidak perlu khawatir sampai seperti itu."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n終電がないので、タクシーで帰るしかありません。",
+        "choices": [
+          "Karena kereta terakhir sudah tidak ada, saya hanya bisa pulang naik taksi.",
+          "Tidak perlu khawatir sampai seperti itu.",
+          "Tidak perlu terburu-buru, jadi datanglah dengan santai.",
+          "Karena datanya hilang, tidak ada pilihan selain membuatnya ulang dari awal."
+        ],
+        "correct": 0,
+        "explanation": "～しかない: tidak ada pilihan selain ….\nしゅうでんが ないので、タクシーで かえるしか ありません。\nKarena kereta terakhir sudah tidak ada, saya hanya bisa pulang naik taksi."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena datanya hilang, tidak ada pilihan selain membuatnya ulang dari awal.",
+        "choices": [
+          "データが消えたので、最初から作り直すしかありません。",
+          "そんなに心配することはありません。",
+          "急ぐことはないので、ゆっくり来てください。",
+          "終電がないので、タクシーで帰るしかありません。"
+        ],
+        "correct": 0,
+        "explanation": "～しかない: Pembicara menilai pilihan lain tidak tersedia. Bisa bernuansa terpaksa atau keputusan praktis. Ini berbeda dari Nしかない yang membatasi jumlah benda.\nデータが きえたので、さいしょから つくりなおすしか ありません。\nKarena datanya hilang, tidak ada pilihan selain membuatnya ulang dari awal."
+      }
+    ]
+  },
+  {
+    "chapter": "Saran dan kewajiban",
+    "title": "Tidak bisa menghindari tanggung jawab",
+    "points": [
+      {
+        "pattern": "～わけにはいかない",
+        "meaning": "tidak bisa … karena tanggung jawab atau keadaan",
+        "formation": "V辞書形 + わけにはいかない",
+        "explanation": "Kemampuan fisik mungkin ada, tetapi tanggung jawab, norma, janji, atau situasi menghalangi tindakan. Berbeda dari bentuk potensial negatif yang berfokus pada ketidakmampuan.",
+        "commonMistake": "Pola ini tidak sekadar berarti tidak tahu cara atau tidak sanggup secara fisik.",
+        "examples": [
+          {
+            "japanese": "明日は試験なので、遊ぶわけにはいきません。",
+            "reading": "あしたは しけんなので、あそぶ わけには いきません。",
+            "meaning": "Besok ada ujian, jadi saya tidak bisa bersantai bermain."
+          },
+          {
+            "japanese": "約束したので、断るわけにはいきません。",
+            "reading": "やくそくしたので、ことわる わけには いきません。",
+            "meaning": "Karena sudah berjanji, saya tidak bisa menolak."
+          }
+        ]
+      },
+      {
+        "pattern": "～ないわけにはいかない",
+        "meaning": "tidak bisa tidak …; harus …",
+        "formation": "Vない形 + わけにはいかない",
+        "explanation": "Negasi ganda berarti tidak dapat menghindari melakukan tindakan karena keadaan atau kewajiban sosial. Maknanya harus dilakukan, bukan dilarang melakukan.",
+        "commonMistake": "Perhatikan ない pada kata kerja: 行くわけにはいかない berarti tidak bisa pergi; 行かないわけにはいかない berarti harus pergi.",
+        "examples": [
+          {
+            "japanese": "招待されたので、行かないわけにはいきません。",
+            "reading": "しょうたいされたので、いかない わけには いきません。",
+            "meaning": "Karena sudah diundang, saya tidak bisa tidak hadir."
+          },
+          {
+            "japanese": "私のミスなので、謝らないわけにはいきません。",
+            "reading": "わたしの ミスなので、あやまらない わけには いきません。",
+            "meaning": "Karena ini kesalahan saya, saya harus meminta maaf."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Sudah berjanji sehingga tidak pantas menolak: 断る（　）。",
+        "choices": [
+          "わけにはいきません",
+          "ことはありません",
+          "たびにいます",
+          "最中です"
+        ],
+        "correct": 0,
+        "explanation": "わけにはいかない menyatakan kendala tanggung jawab meskipun menolak secara fisik mungkin dilakukan."
+      },
+      {
+        "prompt": "Kesalahan sendiri, harus meminta maaf: （　）わけにはいきません。",
+        "choices": [
+          "謝らない",
+          "謝る",
+          "謝った",
+          "謝って"
+        ],
+        "correct": 0,
+        "explanation": "謝らないわけにはいかない berarti tidak bisa menghindari meminta maaf."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n明日は試験なので、遊ぶわけにはいきません。",
+        "choices": [
+          "Besok ada ujian, jadi saya tidak bisa bersantai bermain.",
+          "Karena sudah berjanji, saya tidak bisa menolak.",
+          "Karena sudah diundang, saya tidak bisa tidak hadir.",
+          "Karena ini kesalahan saya, saya harus meminta maaf."
+        ],
+        "correct": 0,
+        "explanation": "～わけにはいかない: tidak bisa … karena tanggung jawab atau keadaan.\nあしたは しけんなので、あそぶ わけには いきません。\nBesok ada ujian, jadi saya tidak bisa bersantai bermain."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n招待されたので、行かないわけにはいきません。",
+        "choices": [
+          "Karena sudah diundang, saya tidak bisa tidak hadir.",
+          "Besok ada ujian, jadi saya tidak bisa bersantai bermain.",
+          "Karena sudah berjanji, saya tidak bisa menolak.",
+          "Karena ini kesalahan saya, saya harus meminta maaf."
+        ],
+        "correct": 0,
+        "explanation": "～ないわけにはいかない: tidak bisa tidak …; harus ….\nしょうたいされたので、いかない わけには いきません。\nKarena sudah diundang, saya tidak bisa tidak hadir."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena ini kesalahan saya, saya harus meminta maaf.",
+        "choices": [
+          "私のミスなので、謝らないわけにはいきません。",
+          "明日は試験なので、遊ぶわけにはいきません。",
+          "約束したので、断るわけにはいきません。",
+          "招待されたので、行かないわけにはいきません。"
+        ],
+        "correct": 0,
+        "explanation": "～ないわけにはいかない: Negasi ganda berarti tidak dapat menghindari melakukan tindakan karena keadaan atau kewajiban sosial. Maknanya harus dilakukan, bukan dilarang melakukan.\nわたしの ミスなので、あやまらない わけには いきません。\nKarena ini kesalahan saya, saya harus meminta maaf."
+      }
+    ]
+  },
+  {
+    "chapter": "Alasan dan akibat",
+    "title": "Penyebab yang menguntungkan dan merugikan",
+    "points": [
+      {
+        "pattern": "～おかげで",
+        "meaning": "berkat …",
+        "formation": "V普通形／Aい + おかげで; Aな + なおかげで; N + のおかげで",
+        "explanation": "Menjelaskan penyebab hasil yang menguntungkan dengan rasa syukur. Kadang dipakai ironis, tetapi materi ini memakai makna positif dasar.",
+        "commonMistake": "Kata benda memakai の; untuk hasil buruk yang disalahkan biasanya gunakan せいで.",
+        "examples": [
+          {
+            "japanese": "先生のおかげで、合格できました。",
+            "reading": "せんせいの おかげで、ごうかくできました。",
+            "meaning": "Berkat guru, saya bisa lulus."
+          },
+          {
+            "japanese": "道が空いていたおかげで、早く着きました。",
+            "reading": "みちが すいていた おかげで、はやく つきました。",
+            "meaning": "Berkat jalan yang tidak ramai, saya tiba lebih awal."
+          }
+        ]
+      },
+      {
+        "pattern": "～せいで／～せいだ",
+        "meaning": "karena …; gara-gara …",
+        "formation": "V普通形／Aい + せいで; Aな + なせいで; N + のせいで",
+        "explanation": "Mengaitkan hasil buruk dengan penyebab, sering mengandung penilaian atau menyalahkan. せいだ mengakhiri kalimat; せいで menghubungkan ke akibat.",
+        "commonMistake": "せいで terdengar menyalahkan jika dipakai kepada orang. Untuk sebab netral gunakan ので atau ため.",
+        "examples": [
+          {
+            "japanese": "雨のせいで、試合が中止になりました。",
+            "reading": "あめの せいで、しあいが ちゅうしに なりました。",
+            "meaning": "Gara-gara hujan, pertandingan dibatalkan."
+          },
+          {
+            "japanese": "寝不足のせいで、集中できません。",
+            "reading": "ねぶそくの せいで、しゅうちゅうできません。",
+            "meaning": "Karena kurang tidur, saya tidak bisa berkonsentrasi."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "先生（　）おかげで、合格できました。",
+        "choices": [
+          "の",
+          "な",
+          "を",
+          "で"
+        ],
+        "correct": 0,
+        "explanation": "先生 merupakan kata benda: 先生のおかげで."
+      },
+      {
+        "prompt": "Akibat buruk karena hujan: 雨の（　）、試合が中止になりました。",
+        "choices": [
+          "せいで",
+          "おかげで",
+          "ついでに",
+          "たびだけ"
+        ],
+        "correct": 0,
+        "explanation": "せいで menghubungkan penyebab dengan hasil buruk. おかげで biasanya memberi penilaian positif."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n先生のおかげで、合格できました。",
+        "choices": [
+          "Berkat guru, saya bisa lulus.",
+          "Berkat jalan yang tidak ramai, saya tiba lebih awal.",
+          "Gara-gara hujan, pertandingan dibatalkan.",
+          "Karena kurang tidur, saya tidak bisa berkonsentrasi."
+        ],
+        "correct": 0,
+        "explanation": "～おかげで: berkat ….\nせんせいの おかげで、ごうかくできました。\nBerkat guru, saya bisa lulus."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n雨のせいで、試合が中止になりました。",
+        "choices": [
+          "Gara-gara hujan, pertandingan dibatalkan.",
+          "Berkat guru, saya bisa lulus.",
+          "Berkat jalan yang tidak ramai, saya tiba lebih awal.",
+          "Karena kurang tidur, saya tidak bisa berkonsentrasi."
+        ],
+        "correct": 0,
+        "explanation": "～せいで／～せいだ: karena …; gara-gara ….\nあめの せいで、しあいが ちゅうしに なりました。\nGara-gara hujan, pertandingan dibatalkan."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena kurang tidur, saya tidak bisa berkonsentrasi.",
+        "choices": [
+          "寝不足のせいで、集中できません。",
+          "先生のおかげで、合格できました。",
+          "道が空いていたおかげで、早く着きました。",
+          "雨のせいで、試合が中止になりました。"
+        ],
+        "correct": 0,
+        "explanation": "～せいで／～せいだ: Mengaitkan hasil buruk dengan penyebab, sering mengandung penilaian atau menyalahkan. せいだ mengakhiri kalimat; せいで menghubungkan ke akibat.\nねぶそくの せいで、しゅうちゅうできません。\nKarena kurang tidur, saya tidak bisa berkonsentrasi."
+      }
+    ]
+  },
+  {
+    "chapter": "Alasan dan akibat",
+    "title": "Penyebab formal dan emosi berlebihan",
+    "points": [
+      {
+        "pattern": "～ため（に）：原因",
+        "meaning": "karena …; akibat …",
+        "formation": "V普通形／Aい + ため（に）; Aな + なため（に）; N + のため（に）",
+        "explanation": "Melaporkan penyebab secara relatif formal dan objektif, sering dalam pengumuman. Bedakan dari makna tujuan: dalam sebab, klausa berikut melaporkan akibat, bukan tindakan untuk mencapai tujuan.",
+        "commonMistake": "Nのために dan V辞書形＋ために dapat bermakna tujuan atau sebab. Tentukan berdasarkan konteks, jangan terjemahkan selalu “untuk”.",
+        "examples": [
+          {
+            "japanese": "大雪のため、電車が止まっています。",
+            "reading": "おおゆきの ため、でんしゃが とまっています。",
+            "meaning": "Karena salju lebat, kereta sedang berhenti beroperasi."
+          },
+          {
+            "japanese": "道が混んでいたため、到着が遅れました。",
+            "reading": "みちが こんでいた ため、とうちゃくが おくれました。",
+            "meaning": "Karena jalan ramai, kedatangan terlambat."
+          }
+        ]
+      },
+      {
+        "pattern": "～あまり（に）",
+        "meaning": "karena terlalu … sampai …",
+        "formation": "V辞書形／Vた + あまり; Aな + なあまり; N + のあまり",
+        "explanation": "Keadaan atau emosi menjadi begitu kuat sehingga menyebabkan hasil yang biasanya tidak diharapkan. Bentuk あまりに＋Aい juga dapat menyatakan terlalu, tetapi rumus utama di sini menghubungkan sebab dan akibat.",
+        "commonMistake": "あまり～ない berarti tidak begitu; あまり tanpa negasi dalam pola ini berarti berlebihan sampai menimbulkan akibat.",
+        "examples": [
+          {
+            "japanese": "緊張のあまり、名前を忘れてしまいました。",
+            "reading": "きんちょうの あまり、なまえを わすれてしまいました。",
+            "meaning": "Karena terlalu gugup, saya sampai lupa nama."
+          },
+          {
+            "japanese": "心配するあまり、何度も電話しました。",
+            "reading": "しんぱいする あまり、なんども でんわしました。",
+            "meaning": "Karena terlalu khawatir, saya menelepon berkali-kali."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Penyebab pengumuman: 大雪（　）ため、電車が止まっています。",
+        "choices": [
+          "の",
+          "な",
+          "を",
+          "と"
+        ],
+        "correct": 0,
+        "explanation": "大雪 adalah kata benda: 大雪のため. Kereta berhenti merupakan akibat, bukan tujuan salju."
+      },
+      {
+        "prompt": "緊張（　）あまり、名前を忘れてしまいました。",
+        "choices": [
+          "の",
+          "な",
+          "に",
+          "を"
+        ],
+        "correct": 0,
+        "explanation": "緊張 adalah kata benda dan mengikuti rumus Nのあまり."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n大雪のため、電車が止まっています。",
+        "choices": [
+          "Karena salju lebat, kereta sedang berhenti beroperasi.",
+          "Karena jalan ramai, kedatangan terlambat.",
+          "Karena terlalu gugup, saya sampai lupa nama.",
+          "Karena terlalu khawatir, saya menelepon berkali-kali."
+        ],
+        "correct": 0,
+        "explanation": "～ため（に）：原因: karena …; akibat ….\nおおゆきの ため、でんしゃが とまっています。\nKarena salju lebat, kereta sedang berhenti beroperasi."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n緊張のあまり、名前を忘れてしまいました。",
+        "choices": [
+          "Karena terlalu gugup, saya sampai lupa nama.",
+          "Karena salju lebat, kereta sedang berhenti beroperasi.",
+          "Karena jalan ramai, kedatangan terlambat.",
+          "Karena terlalu khawatir, saya menelepon berkali-kali."
+        ],
+        "correct": 0,
+        "explanation": "～あまり（に）: karena terlalu … sampai ….\nきんちょうの あまり、なまえを わすれてしまいました。\nKarena terlalu gugup, saya sampai lupa nama."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena terlalu khawatir, saya menelepon berkali-kali.",
+        "choices": [
+          "心配するあまり、何度も電話しました。",
+          "大雪のため、電車が止まっています。",
+          "道が混んでいたため、到着が遅れました。",
+          "緊張のあまり、名前を忘れてしまいました。"
+        ],
+        "correct": 0,
+        "explanation": "～あまり（に）: Keadaan atau emosi menjadi begitu kuat sehingga menyebabkan hasil yang biasanya tidak diharapkan. Bentuk あまりに＋Aい juga dapat menyatakan terlalu, tetapi rumus utama di sini menghubungkan sebab dan akibat.\nしんぱいする あまり、なんども でんわしました。\nKarena terlalu khawatir, saya menelepon berkali-kali."
+      }
+    ]
+  },
+  {
+    "chapter": "Penilaian dan penyangkalan",
+    "title": "Tidak berarti demikian dan mustahil demikian",
+    "points": [
+      {
+        "pattern": "～わけではない",
+        "meaning": "bukan berarti …; tidak selalu …",
+        "formation": "V普通形／Aい + わけではない; Aな + な／である + わけではない; N + な／である + わけではない",
+        "explanation": "Menolak kesimpulan atau generalisasi, bukan selalu menyangkal seluruh kenyataan. Dipakai untuk memperjelas bahwa suatu hal tidak otomatis mengandung arti tertentu.",
+        "commonMistake": "好きなわけではない bukan sama dengan pasti benci; yang disangkal adalah kesimpulan bahwa menyukai.",
+        "examples": [
+          {
+            "japanese": "高い物がいつもいいわけではありません。",
+            "reading": "たかい ものが いつも いい わけでは ありません。",
+            "meaning": "Barang mahal tidak selalu bagus."
+          },
+          {
+            "japanese": "日本に住んでいるからといって、漢字が全部読めるわけではありません。",
+            "reading": "にほんに すんでいるからといって、かんじが ぜんぶ よめる わけでは ありません。",
+            "meaning": "Tinggal di Jepang bukan berarti bisa membaca semua kanji."
+          }
+        ]
+      },
+      {
+        "pattern": "～わけがない",
+        "meaning": "tidak mungkin …",
+        "formation": "V普通形／Aい + わけがない; Aな + な + わけがない; N + の／である + わけがない",
+        "explanation": "Pembicara menolak kemungkinan dengan keyakinan kuat berdasarkan alasan atau penilaian. Lebih kuat daripada sekadar tidak begitu yakin.",
+        "commonMistake": "Bedakan わけがない yang menolak kemungkinan dari わけではない yang membatasi suatu kesimpulan.",
+        "examples": [
+          {
+            "japanese": "一日で全部覚えられるわけがありません。",
+            "reading": "いちにちで ぜんぶ おぼえられる わけが ありません。",
+            "meaning": "Tidak mungkin bisa menghafal semuanya dalam satu hari."
+          },
+          {
+            "japanese": "彼がそんなうそをつくわけがありません。",
+            "reading": "かれが そんな うそを つく わけが ありません。",
+            "meaning": "Tidak mungkin dia berbohong seperti itu."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Tolak generalisasi barang mahal selalu baik: 高い物がいつもいい（　）。",
+        "choices": [
+          "わけではありません",
+          "わけにはいきません",
+          "ためにします",
+          "最中にします"
+        ],
+        "correct": 0,
+        "explanation": "わけではない menyangkal kesimpulan umum. わけにはいかない menyatakan kendala melakukan tindakan."
+      },
+      {
+        "prompt": "Keyakinan bahwa mustahil menghafal semuanya sehari: 一日で全部覚えられる（　）。",
+        "choices": [
+          "わけがありません",
+          "ことにしました",
+          "ようにします",
+          "ところでした"
+        ],
+        "correct": 0,
+        "explanation": "わけがない menolak kemungkinan dengan kuat."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n高い物がいつもいいわけではありません。",
+        "choices": [
+          "Barang mahal tidak selalu bagus.",
+          "Tinggal di Jepang bukan berarti bisa membaca semua kanji.",
+          "Tidak mungkin bisa menghafal semuanya dalam satu hari.",
+          "Tidak mungkin dia berbohong seperti itu."
+        ],
+        "correct": 0,
+        "explanation": "～わけではない: bukan berarti …; tidak selalu ….\nたかい ものが いつも いい わけでは ありません。\nBarang mahal tidak selalu bagus."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n一日で全部覚えられるわけがありません。",
+        "choices": [
+          "Tidak mungkin bisa menghafal semuanya dalam satu hari.",
+          "Barang mahal tidak selalu bagus.",
+          "Tinggal di Jepang bukan berarti bisa membaca semua kanji.",
+          "Tidak mungkin dia berbohong seperti itu."
+        ],
+        "correct": 0,
+        "explanation": "～わけがない: tidak mungkin ….\nいちにちで ぜんぶ おぼえられる わけが ありません。\nTidak mungkin bisa menghafal semuanya dalam satu hari."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nTidak mungkin dia berbohong seperti itu.",
+        "choices": [
+          "彼がそんなうそをつくわけがありません。",
+          "高い物がいつもいいわけではありません。",
+          "日本に住んでいるからといって、漢字が全部読めるわけではありません。",
+          "一日で全部覚えられるわけがありません。"
+        ],
+        "correct": 0,
+        "explanation": "～わけがない: Pembicara menolak kemungkinan dengan keyakinan kuat berdasarkan alasan atau penilaian. Lebih kuat daripada sekadar tidak begitu yakin.\nかれが そんな うそを つく わけが ありません。\nTidak mungkin dia berbohong seperti itu."
+      }
+    ]
+  },
+  {
+    "chapter": "Dugaan dan kepastian",
+    "title": "Ekspektasi yang gagal dan kepastian negatif",
+    "points": [
+      {
+        "pattern": "～はずだった",
+        "meaning": "seharusnya … menurut rencana atau perkiraan sebelumnya",
+        "formation": "V普通形／Aい + はずだった; Aな + なはずだった; N + のはずだった",
+        "explanation": "Menyatakan ekspektasi di masa lalu. Sering dikontraskan dengan kenyataan yang berbeda, tetapi はずだった sendiri tidak selalu membuktikan rencana gagal tanpa konteks.",
+        "commonMistake": "Bukan nasihat moral seperti べきだった. はず berangkat dari jadwal, informasi, atau alasan yang dimiliki pembicara.",
+        "examples": [
+          {
+            "japanese": "今日は晴れるはずでしたが、雨が降りました。",
+            "reading": "きょうは はれる はずでしたが、あめが ふりました。",
+            "meaning": "Menurut perkiraan hari ini seharusnya cerah, tetapi hujan turun."
+          },
+          {
+            "japanese": "会議は三時に終わるはずでしたが、長引きました。",
+            "reading": "かいぎは さんじに おわる はずでしたが、ながびきました。",
+            "meaning": "Rapat seharusnya selesai pukul tiga, tetapi berlangsung lebih lama."
+          }
+        ]
+      },
+      {
+        "pattern": "～はずがない",
+        "meaning": "tidak mungkin … menurut alasan yang ada",
+        "formation": "V普通形／Aい + はずがない; Aな + なはずがない; N + のはずがない",
+        "explanation": "Menolak kemungkinan karena bertentangan dengan informasi atau penalaran pembicara. Maknanya dapat dekat dengan わけがない; bukan perbedaan mutlak antara logika dan emosi.",
+        "commonMistake": "はずがない berarti mustahil menurut perkiraan, bukan kewajiban untuk tidak melakukan.",
+        "examples": [
+          {
+            "japanese": "鍵をかけたので、ドアが開いているはずがありません。",
+            "reading": "かぎを かけたので、ドアが あいている はずが ありません。",
+            "meaning": "Karena sudah dikunci, tidak mungkin pintunya terbuka."
+          },
+          {
+            "japanese": "彼は海外にいるので、ここにいるはずがありません。",
+            "reading": "かれは かいがいに いるので、ここに いる はずが ありません。",
+            "meaning": "Karena dia di luar negeri, tidak mungkin dia berada di sini."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Ekspektasi sebelumnya lalu berbeda kenyataan: 今日は晴れる（　）が、雨が降りました。",
+        "choices": [
+          "はずでした",
+          "べきです",
+          "わけにはいきません",
+          "最中でした"
+        ],
+        "correct": 0,
+        "explanation": "はずでした menyatakan perkiraan sebelumnya; klausa が menunjukkan kenyataan yang berbeda."
+      },
+      {
+        "prompt": "Tidak mungkin dia di sini karena sedang di luar negeri: ここにいる（　）。",
+        "choices": [
+          "はずがありません",
+          "べきではありません",
+          "ことはありません",
+          "ついでです"
+        ],
+        "correct": 0,
+        "explanation": "はずがない menyangkal kemungkinan berdasarkan informasi keberadaannya di luar negeri."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n今日は晴れるはずでしたが、雨が降りました。",
+        "choices": [
+          "Menurut perkiraan hari ini seharusnya cerah, tetapi hujan turun.",
+          "Rapat seharusnya selesai pukul tiga, tetapi berlangsung lebih lama.",
+          "Karena sudah dikunci, tidak mungkin pintunya terbuka.",
+          "Karena dia di luar negeri, tidak mungkin dia berada di sini."
+        ],
+        "correct": 0,
+        "explanation": "～はずだった: seharusnya … menurut rencana atau perkiraan sebelumnya.\nきょうは はれる はずでしたが、あめが ふりました。\nMenurut perkiraan hari ini seharusnya cerah, tetapi hujan turun."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n鍵をかけたので、ドアが開いているはずがありません。",
+        "choices": [
+          "Karena sudah dikunci, tidak mungkin pintunya terbuka.",
+          "Menurut perkiraan hari ini seharusnya cerah, tetapi hujan turun.",
+          "Rapat seharusnya selesai pukul tiga, tetapi berlangsung lebih lama.",
+          "Karena dia di luar negeri, tidak mungkin dia berada di sini."
+        ],
+        "correct": 0,
+        "explanation": "～はずがない: tidak mungkin … menurut alasan yang ada.\nかぎを かけたので、ドアが あいている はずが ありません。\nKarena sudah dikunci, tidak mungkin pintunya terbuka."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena dia di luar negeri, tidak mungkin dia berada di sini.",
+        "choices": [
+          "彼は海外にいるので、ここにいるはずがありません。",
+          "今日は晴れるはずでしたが、雨が降りました。",
+          "会議は三時に終わるはずでしたが、長引きました。",
+          "鍵をかけたので、ドアが開いているはずがありません。"
+        ],
+        "correct": 0,
+        "explanation": "～はずがない: Menolak kemungkinan karena bertentangan dengan informasi atau penalaran pembicara. Maknanya dapat dekat dengan わけがない; bukan perbedaan mutlak antara logika dan emosi.\nかれは かいがいに いるので、ここに いる はずが ありません。\nKarena dia di luar negeri, tidak mungkin dia berada di sini."
+      }
+    ]
+  },
+  {
+    "chapter": "Dugaan dan kepastian",
+    "title": "Keyakinan kuat dan kesimpulan yang tidak mutlak",
+    "points": [
+      {
+        "pattern": "～に違いない",
+        "meaning": "pasti … menurut keyakinan pembicara",
+        "formation": "V普通形／Aい + に違いない; Aな／N（tanpa だ） + に違いない",
+        "explanation": "Dugaan dengan keyakinan kuat berdasarkan petunjuk. Tetap merupakan penilaian pembicara, bukan jaminan fakta telah diverifikasi.",
+        "commonMistake": "Kata benda dan sifat な tidak memakai だ tepat sebelum に違いない: 学生に違いない.",
+        "examples": [
+          {
+            "japanese": "電気がついているので、誰かいるに違いありません。",
+            "reading": "でんきが ついているので、だれか いるに ちがいありません。",
+            "meaning": "Karena lampunya menyala, pasti ada seseorang di sana."
+          },
+          {
+            "japanese": "彼は毎日練習しているので、上手に違いありません。",
+            "reading": "かれは まいにち れんしゅうしているので、じょうずに ちがいありません。",
+            "meaning": "Karena dia berlatih setiap hari, pasti dia mahir."
+          }
+        ]
+      },
+      {
+        "pattern": "～とは限らない",
+        "meaning": "belum tentu …; tidak selalu …",
+        "formation": "V普通形／Aい + とは限らない; Aな／N + だとは限らない",
+        "explanation": "Menegaskan bahwa pernyataan bukan kebenaran universal dan ada kemungkinan pengecualian. Sering muncul bersama 必ずしも atau いつも.",
+        "commonMistake": "Bukan penyangkalan total. 安いとは限らない tidak berarti semuanya mahal.",
+        "examples": [
+          {
+            "japanese": "有名な店がおいしいとは限りません。",
+            "reading": "ゆうめいな みせが おいしいとは かぎりません。",
+            "meaning": "Restoran terkenal belum tentu enak."
+          },
+          {
+            "japanese": "努力すれば必ず成功するとは限りません。",
+            "reading": "どりょくすれば かならず せいこうするとは かぎりません。",
+            "meaning": "Berusaha tidak selalu menjamin keberhasilan."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Sifat な langsung diikuti pola dugaan kuat: 彼は上手（　）。",
+        "choices": [
+          "に違いありません",
+          "だに違いありません",
+          "なに違いありません",
+          "を違いません"
+        ],
+        "correct": 0,
+        "explanation": "上手 adalah sifat な tetapi sebelum に違いない tidak memakai だ atau な."
+      },
+      {
+        "prompt": "Belum tentu restoran terkenal enak: 有名な店がおいしい（　）。",
+        "choices": [
+          "とは限りません",
+          "に決まりました",
+          "ように言います",
+          "ことにします"
+        ],
+        "correct": 0,
+        "explanation": "とは限らない membatasi generalisasi; bukan berarti semua restoran terkenal tidak enak."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n電気がついているので、誰かいるに違いありません。",
+        "choices": [
+          "Karena lampunya menyala, pasti ada seseorang di sana.",
+          "Karena dia berlatih setiap hari, pasti dia mahir.",
+          "Restoran terkenal belum tentu enak.",
+          "Berusaha tidak selalu menjamin keberhasilan."
+        ],
+        "correct": 0,
+        "explanation": "～に違いない: pasti … menurut keyakinan pembicara.\nでんきが ついているので、だれか いるに ちがいありません。\nKarena lampunya menyala, pasti ada seseorang di sana."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n有名な店がおいしいとは限りません。",
+        "choices": [
+          "Restoran terkenal belum tentu enak.",
+          "Karena lampunya menyala, pasti ada seseorang di sana.",
+          "Karena dia berlatih setiap hari, pasti dia mahir.",
+          "Berusaha tidak selalu menjamin keberhasilan."
+        ],
+        "correct": 0,
+        "explanation": "～とは限らない: belum tentu …; tidak selalu ….\nゆうめいな みせが おいしいとは かぎりません。\nRestoran terkenal belum tentu enak."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nBerusaha tidak selalu menjamin keberhasilan.",
+        "choices": [
+          "努力すれば必ず成功するとは限りません。",
+          "電気がついているので、誰かいるに違いありません。",
+          "彼は毎日練習しているので、上手に違いありません。",
+          "有名な店がおいしいとは限りません。"
+        ],
+        "correct": 0,
+        "explanation": "～とは限らない: Menegaskan bahwa pernyataan bukan kebenaran universal dan ada kemungkinan pengecualian. Sering muncul bersama 必ずしも atau いつも.\nどりょくすれば かならず せいこうするとは かぎりません。\nBerusaha tidak selalu menjamin keberhasilan."
+      }
+    ]
+  },
+  {
+    "chapter": "Dugaan dan informasi",
+    "title": "Informasi belum pasti dan penampilan khas",
+    "points": [
+      {
+        "pattern": "～らしい：推量・伝聞",
+        "meaning": "tampaknya atau kabarnya …",
+        "formation": "V普通形／Aい + らしい; Aな／N（tanpa だ） + らしい",
+        "explanation": "Kesimpulan dari kabar atau petunjuk tidak langsung. Dapat melaporkan informasi yang belum dikonfirmasi. Dibanding そうだ sebagai laporan, らしい juga mudah membawa kesan dugaan pembicara.",
+        "commonMistake": "Dalam dugaan, jangan menambahkan だ setelah kata benda: 学生らしい. Bedakan dari Nらしい yang berarti khas.",
+        "examples": [
+          {
+            "japanese": "天気予報によると、明日は雪らしいです。",
+            "reading": "てんきよほうに よると、あしたは ゆきらしいです。",
+            "meaning": "Menurut prakiraan cuaca, kabarnya besok turun salju."
+          },
+          {
+            "japanese": "隣の店は閉店するらしいです。",
+            "reading": "となりの みせは へいてんするらしいです。",
+            "meaning": "Kabarnya toko sebelah akan tutup permanen."
+          }
+        ]
+      },
+      {
+        "pattern": "Nらしい",
+        "meaning": "khas …; sesuai sifat atau peran …",
+        "formation": "N + らしい; bentuk penghubung: らしく／らしいN",
+        "explanation": "Menilai bahwa sifat atau perilaku sesuai citra khas suatu kategori. Dalam 子供らしい, yang dibicarakan ialah karakter khas anak, bukan kabar bahwa orang itu seorang anak.",
+        "commonMistake": "Makna dugaan dan kekhasan dapat sama-sama berbentuk Nらしい. Tentukan melalui konteks, jangan hanya melihat rumus.",
+        "examples": [
+          {
+            "japanese": "今日は春らしい暖かい日です。",
+            "reading": "きょうは はるらしい あたたかい ひです。",
+            "meaning": "Hari ini hangat, khas musim semi."
+          },
+          {
+            "japanese": "最後まで頑張るのは、彼らしいです。",
+            "reading": "さいごまで がんばるのは、かれらしいです。",
+            "meaning": "Berusaha sampai akhir itu khas dirinya."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Kabarnya besok bersalju: 明日は雪（　）です。",
+        "choices": [
+          "らしい",
+          "だらしい",
+          "ならしい",
+          "のらしい"
+        ],
+        "correct": 0,
+        "explanation": "Kata benda 雪 langsung diikuti らしい dalam dugaan."
+      },
+      {
+        "prompt": "Hari hangat khas musim semi: 春（　）暖かい日です。",
+        "choices": [
+          "らしい",
+          "だらしい",
+          "のらしい",
+          "ならしい"
+        ],
+        "correct": 0,
+        "explanation": "春らしい menerangkan sifat khas musim, bukan kabar bahwa hari ini musim semi."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n天気予報によると、明日は雪らしいです。",
+        "choices": [
+          "Menurut prakiraan cuaca, kabarnya besok turun salju.",
+          "Kabarnya toko sebelah akan tutup permanen.",
+          "Hari ini hangat, khas musim semi.",
+          "Berusaha sampai akhir itu khas dirinya."
+        ],
+        "correct": 0,
+        "explanation": "～らしい：推量・伝聞: tampaknya atau kabarnya ….\nてんきよほうに よると、あしたは ゆきらしいです。\nMenurut prakiraan cuaca, kabarnya besok turun salju."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n今日は春らしい暖かい日です。",
+        "choices": [
+          "Hari ini hangat, khas musim semi.",
+          "Menurut prakiraan cuaca, kabarnya besok turun salju.",
+          "Kabarnya toko sebelah akan tutup permanen.",
+          "Berusaha sampai akhir itu khas dirinya."
+        ],
+        "correct": 0,
+        "explanation": "Nらしい: khas …; sesuai sifat atau peran ….\nきょうは はるらしい あたたかい ひです。\nHari ini hangat, khas musim semi."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nBerusaha sampai akhir itu khas dirinya.",
+        "choices": [
+          "最後まで頑張るのは、彼らしいです。",
+          "天気予報によると、明日は雪らしいです。",
+          "隣の店は閉店するらしいです。",
+          "今日は春らしい暖かい日です。"
+        ],
+        "correct": 0,
+        "explanation": "Nらしい: Menilai bahwa sifat atau perilaku sesuai citra khas suatu kategori. Dalam 子供らしい, yang dibicarakan ialah karakter khas anak, bukan kabar bahwa orang itu seorang anak.\nさいごまで がんばるのは、かれらしいです。\nBerusaha sampai akhir itu khas dirinya."
+      }
+    ]
+  },
+  {
+    "chapter": "Pertentangan dan penilaian",
+    "title": "Tidak sesuai harapan dan kritik tajam",
+    "points": [
+      {
+        "pattern": "～わりに（は）",
+        "meaning": "meskipun …, hasilnya relatif …",
+        "formation": "V普通形／Aい + わりに; Aな + なわりに; N + のわりに",
+        "explanation": "Hasil berbeda dari perkiraan yang dibuat berdasarkan tingkat, kondisi, harga, atau usaha. Penilaian dapat positif maupun negatif.",
+        "commonMistake": "Kata benda memakai の. Jangan menyamakan わりに dengan perbandingan dua benda secara umum seperti に比べて.",
+        "examples": [
+          {
+            "japanese": "この部屋は家賃のわりに広いです。",
+            "reading": "この へやは やちんの わりに ひろいです。",
+            "meaning": "Kamar ini luas dibandingkan harga sewanya."
+          },
+          {
+            "japanese": "たくさん勉強したわりに、点数が低かったです。",
+            "reading": "たくさん べんきょうした わりに、てんすうが ひくかったです。",
+            "meaning": "Nilainya rendah meskipun sudah belajar banyak."
+          }
+        ]
+      },
+      {
+        "pattern": "～くせに",
+        "meaning": "padahal …, tetapi …; dasar …",
+        "formation": "V普通形／Aい + くせに; Aな + なくせに; N + のくせに",
+        "explanation": "Menyampaikan ketidaksesuaian dengan kritik, kesal, atau ejekan. Lebih tajam daripada のに. Hindari dalam percakapan sopan dengan atasan atau orang yang belum akrab.",
+        "commonMistake": "くせに bukan penghubung netral. Pemakaian kepada orang lain dapat terdengar merendahkan.",
+        "examples": [
+          {
+            "japanese": "彼は知っているくせに、教えてくれません。",
+            "reading": "かれは しっている くせに、おしえてくれません。",
+            "meaning": "Padahal dia tahu, tetapi tidak mau memberi tahu saya."
+          },
+          {
+            "japanese": "弟は約束したくせに、来ませんでした。",
+            "reading": "おとうとは やくそくした くせに、きませんでした。",
+            "meaning": "Padahal adik sudah berjanji, tetapi dia tidak datang."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "この部屋は家賃（　）わりに広いです。",
+        "choices": [
+          "の",
+          "な",
+          "を",
+          "と"
+        ],
+        "correct": 0,
+        "explanation": "家賃 adalah kata benda: 家賃のわりに. Luas kamar melebihi harapan berdasarkan sewanya."
+      },
+      {
+        "prompt": "Dengan nada kesal karena ia tahu tetapi merahasiakan: 知っている（　）、教えてくれません。",
+        "choices": [
+          "くせに",
+          "おかげで",
+          "ために",
+          "ついでに"
+        ],
+        "correct": 0,
+        "explanation": "くせに menghubungkan keadaan dengan hasil yang dikritik."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nこの部屋は家賃のわりに広いです。",
+        "choices": [
+          "Kamar ini luas dibandingkan harga sewanya.",
+          "Nilainya rendah meskipun sudah belajar banyak.",
+          "Padahal dia tahu, tetapi tidak mau memberi tahu saya.",
+          "Padahal adik sudah berjanji, tetapi dia tidak datang."
+        ],
+        "correct": 0,
+        "explanation": "～わりに（は）: meskipun …, hasilnya relatif ….\nこの へやは やちんの わりに ひろいです。\nKamar ini luas dibandingkan harga sewanya."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n彼は知っているくせに、教えてくれません。",
+        "choices": [
+          "Padahal dia tahu, tetapi tidak mau memberi tahu saya.",
+          "Kamar ini luas dibandingkan harga sewanya.",
+          "Nilainya rendah meskipun sudah belajar banyak.",
+          "Padahal adik sudah berjanji, tetapi dia tidak datang."
+        ],
+        "correct": 0,
+        "explanation": "～くせに: padahal …, tetapi …; dasar ….\nかれは しっている くせに、おしえてくれません。\nPadahal dia tahu, tetapi tidak mau memberi tahu saya."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nPadahal adik sudah berjanji, tetapi dia tidak datang.",
+        "choices": [
+          "弟は約束したくせに、来ませんでした。",
+          "この部屋は家賃のわりに広いです。",
+          "たくさん勉強したわりに、点数が低かったです。",
+          "彼は知っているくせに、教えてくれません。"
+        ],
+        "correct": 0,
+        "explanation": "～くせに: Menyampaikan ketidaksesuaian dengan kritik, kesal, atau ejekan. Lebih tajam daripada のに. Hindari dalam percakapan sopan dengan atasan atau orang yang belum akrab.\nおとうとは やくそくした くせに、きませんでした。\nPadahal adik sudah berjanji, tetapi dia tidak datang."
+      }
+    ]
+  },
+  {
+    "chapter": "Pertentangan dan penilaian",
+    "title": "Standar suatu kategori dan dua sisi",
+    "points": [
+      {
+        "pattern": "～にしては",
+        "meaning": "untuk ukuran …, ternyata …",
+        "formation": "V普通形 + にしては; N + にしては",
+        "explanation": "Menggunakan suatu kategori atau fakta sebagai standar, lalu hasilnya tidak sesuai harapan. Contoh: pemula tetapi mahir. Berbeda dari わりに yang mudah dipakai dengan ukuran bertingkat seperti harga atau usaha.",
+        "commonMistake": "Kata benda langsung diikuti にしては, tanpa の. Hindari menganggap わりに dan にしては selalu dapat saling menggantikan.",
+        "examples": [
+          {
+            "japanese": "彼は初心者にしては上手です。",
+            "reading": "かれは しょしんしゃにしては じょうずです。",
+            "meaning": "Untuk ukuran pemula, dia mahir."
+          },
+          {
+            "japanese": "昨日買ったにしては、もう汚れています。",
+            "reading": "きのう かったにしては、もう よごれています。",
+            "meaning": "Padahal baru dibeli kemarin, barangnya sudah kotor."
+          }
+        ]
+      },
+      {
+        "pattern": "～反面",
+        "meaning": "di sisi lain …",
+        "formation": "V普通形／Aい + 反面; Aな + な反面; N + である反面",
+        "explanation": "Membandingkan dua sisi berbeda dari hal yang sama, sering keuntungan dengan kerugian. Kedua sisi dapat sama-sama benar.",
+        "commonMistake": "Tidak sekadar menyatakan urutan dua peristiwa. Sisi kedua harus menjadi aspek yang berlawanan atau berbeda secara bermakna.",
+        "examples": [
+          {
+            "japanese": "この仕事は忙しい反面、やりがいがあります。",
+            "reading": "この しごとは いそがしい はんめん、やりがいが あります。",
+            "meaning": "Pekerjaan ini sibuk, tetapi di sisi lain memberi kepuasan."
+          },
+          {
+            "japanese": "一人暮らしは自由な反面、寂しいこともあります。",
+            "reading": "ひとりぐらしは じゆうな はんめん、さびしいことも あります。",
+            "meaning": "Tinggal sendiri memberi kebebasan, tetapi kadang juga terasa sepi."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "彼は初心者（　）上手です。",
+        "choices": [
+          "にしては",
+          "のにしては",
+          "なにしては",
+          "をしては"
+        ],
+        "correct": 0,
+        "explanation": "初心者 merupakan standar kategori; langsung memakai にしては."
+      },
+      {
+        "prompt": "Sifat な dihubungkan dengan dua sisi: 一人暮らしは自由（　）反面、寂しいこともあります。",
+        "choices": [
+          "な",
+          "の",
+          "を",
+          "と"
+        ],
+        "correct": 0,
+        "explanation": "自由 merupakan sifat な, sehingga 自由な反面."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n彼は初心者にしては上手です。",
+        "choices": [
+          "Untuk ukuran pemula, dia mahir.",
+          "Padahal baru dibeli kemarin, barangnya sudah kotor.",
+          "Pekerjaan ini sibuk, tetapi di sisi lain memberi kepuasan.",
+          "Tinggal sendiri memberi kebebasan, tetapi kadang juga terasa sepi."
+        ],
+        "correct": 0,
+        "explanation": "～にしては: untuk ukuran …, ternyata ….\nかれは しょしんしゃにしては じょうずです。\nUntuk ukuran pemula, dia mahir."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nこの仕事は忙しい反面、やりがいがあります。",
+        "choices": [
+          "Pekerjaan ini sibuk, tetapi di sisi lain memberi kepuasan.",
+          "Untuk ukuran pemula, dia mahir.",
+          "Padahal baru dibeli kemarin, barangnya sudah kotor.",
+          "Tinggal sendiri memberi kebebasan, tetapi kadang juga terasa sepi."
+        ],
+        "correct": 0,
+        "explanation": "～反面: di sisi lain ….\nこの しごとは いそがしい はんめん、やりがいが あります。\nPekerjaan ini sibuk, tetapi di sisi lain memberi kepuasan."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nTinggal sendiri memberi kebebasan, tetapi kadang juga terasa sepi.",
+        "choices": [
+          "一人暮らしは自由な反面、寂しいこともあります。",
+          "彼は初心者にしては上手です。",
+          "昨日買ったにしては、もう汚れています。",
+          "この仕事は忙しい反面、やりがいがあります。"
+        ],
+        "correct": 0,
+        "explanation": "～反面: Membandingkan dua sisi berbeda dari hal yang sama, sering keuntungan dengan kerugian. Kedua sisi dapat sama-sama benar.\nひとりぐらしは じゆうな はんめん、さびしいことも あります。\nTinggal sendiri memberi kebebasan, tetapi kadang juga terasa sepi."
+      }
+    ]
+  },
+  {
+    "chapter": "Pertentangan dan penilaian",
+    "title": "Meluruskan sebutan dan menolak kesimpulan",
+    "points": [
+      {
+        "pattern": "～というより",
+        "meaning": "lebih tepat disebut … daripada …",
+        "formation": "V普通形／Aい + というより; Aな／N（だ boleh muncul） + というより",
+        "explanation": "Menyebut label pertama lalu menggantinya dengan penilaian yang lebih tepat. Sering dipasangkan dengan むしろ, tetapi むしろ tidak wajib.",
+        "commonMistake": "Berbeda dari より untuk perbandingan jumlah, pola ini meluruskan deskripsi atau penilaian.",
+        "examples": [
+          {
+            "japanese": "彼は怒っているというより、困っているようです。",
+            "reading": "かれは おこっているというより、こまっているようです。",
+            "meaning": "Dia tampaknya lebih kebingungan daripada marah."
+          },
+          {
+            "japanese": "ここは店というより、家のようです。",
+            "reading": "ここは みせというより、いえのようです。",
+            "meaning": "Tempat ini lebih seperti rumah daripada toko."
+          }
+        ]
+      },
+      {
+        "pattern": "～からといって",
+        "meaning": "hanya karena …, bukan berarti …",
+        "formation": "V普通形／Aい + からといって; Aな／N + だからといって",
+        "explanation": "Menolak kesimpulan otomatis dari satu alasan. Biasanya diikuti penyangkalan generalisasi seperti わけではない atau とは限らない.",
+        "commonMistake": "Pola ini bukan sekadar sebab positif seperti から. Klausa kedua lazim menolak kesimpulan yang terlalu luas.",
+        "examples": [
+          {
+            "japanese": "安いからといって、悪い物とは限りません。",
+            "reading": "やすいからといって、わるい ものとは かぎりません。",
+            "meaning": "Hanya karena murah, belum tentu barangnya buruk."
+          },
+          {
+            "japanese": "大人だからといって、何でも知っているわけではありません。",
+            "reading": "おとなだからといって、なんでも しっている わけでは ありません。",
+            "meaning": "Menjadi orang dewasa bukan berarti mengetahui segalanya."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Meluruskan bahwa ia lebih bingung daripada marah: 怒っている（　）、困っているようです。",
+        "choices": [
+          "というより",
+          "たびに",
+          "ためだけに",
+          "最中に"
+        ],
+        "correct": 0,
+        "explanation": "というより mengganti penilaian pertama dengan penilaian yang dirasa lebih tepat."
+      },
+      {
+        "prompt": "Kata benda 大人 sebelum penolakan generalisasi: 大人（　）、何でも知っているわけではありません。",
+        "choices": [
+          "だからといって",
+          "なからといって",
+          "のからといって",
+          "をからといって"
+        ],
+        "correct": 0,
+        "explanation": "Kata benda dalam sebab memakai だ: 大人だからといって."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n彼は怒っているというより、困っているようです。",
+        "choices": [
+          "Dia tampaknya lebih kebingungan daripada marah.",
+          "Tempat ini lebih seperti rumah daripada toko.",
+          "Hanya karena murah, belum tentu barangnya buruk.",
+          "Menjadi orang dewasa bukan berarti mengetahui segalanya."
+        ],
+        "correct": 0,
+        "explanation": "～というより: lebih tepat disebut … daripada ….\nかれは おこっているというより、こまっているようです。\nDia tampaknya lebih kebingungan daripada marah."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n安いからといって、悪い物とは限りません。",
+        "choices": [
+          "Hanya karena murah, belum tentu barangnya buruk.",
+          "Dia tampaknya lebih kebingungan daripada marah.",
+          "Tempat ini lebih seperti rumah daripada toko.",
+          "Menjadi orang dewasa bukan berarti mengetahui segalanya."
+        ],
+        "correct": 0,
+        "explanation": "～からといって: hanya karena …, bukan berarti ….\nやすいからといって、わるい ものとは かぎりません。\nHanya karena murah, belum tentu barangnya buruk."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nMenjadi orang dewasa bukan berarti mengetahui segalanya.",
+        "choices": [
+          "大人だからといって、何でも知っているわけではありません。",
+          "彼は怒っているというより、困っているようです。",
+          "ここは店というより、家のようです。",
+          "安いからといって、悪い物とは限りません。"
+        ],
+        "correct": 0,
+        "explanation": "～からといって: Menolak kesimpulan otomatis dari satu alasan. Biasanya diikuti penyangkalan generalisasi seperti わけではない atau とは限らない.\nおとなだからといって、なんでも しっている わけでは ありません。\nMenjadi orang dewasa bukan berarti mengetahui segalanya."
+      }
+    ]
+  },
+  {
+    "chapter": "Penambahan dan penekanan",
+    "title": "Bukan hanya dan kejutan bahkan",
+    "points": [
+      {
+        "pattern": "～ばかりでなく",
+        "meaning": "bukan hanya …, tetapi juga …",
+        "formation": "V普通形／Aい + ばかりでなく; Aな + な／である + ばかりでなく; N + ばかりでなく",
+        "explanation": "Menambahkan informasi yang searah. Klausa kedua sering memakai も. Makna dasarnya dekat dengan だけでなく, tetapi sering digunakan dalam penjelasan atau tulisan.",
+        "commonMistake": "Bukan ばかり yang berarti hanya atau terus saja. Ada bagian kedua yang menambah cakupan.",
+        "examples": [
+          {
+            "japanese": "この店は安いばかりでなく、おいしいです。",
+            "reading": "この みせは やすい ばかりでなく、おいしいです。",
+            "meaning": "Restoran ini bukan hanya murah, tetapi juga enak."
+          },
+          {
+            "japanese": "彼は英語ばかりでなく、中国語も話せます。",
+            "reading": "かれは えいごばかりでなく、ちゅうごくごも はなせます。",
+            "meaning": "Dia bukan hanya bisa berbahasa Inggris, tetapi juga Mandarin."
+          }
+        ]
+      },
+      {
+        "pattern": "～さえ",
+        "meaning": "bahkan …",
+        "formation": "N（+ partikel yang sesuai） + さえ; Vます語幹 + さえする",
+        "explanation": "Menunjukkan contoh yang mengejutkan atau pada batas ekstrem. は／が／を biasanya digantikan; に atau で dapat dipertahankan seperti にさえ.",
+        "commonMistake": "さえ sering berdekatan makna dengan も, tetapi memberi penekanan “bahkan” yang lebih kuat. Cek partikel asal sebelum mengganti.",
+        "examples": [
+          {
+            "japanese": "忙しくて、昼ご飯さえ食べられませんでした。",
+            "reading": "いそがしくて、ひるごはんさえ たべられませんでした。",
+            "meaning": "Saya sangat sibuk sampai makan siang pun tidak sempat."
+          },
+          {
+            "japanese": "この問題は先生にさえ難しいです。",
+            "reading": "この もんだいは せんせいにさえ むずかしいです。",
+            "meaning": "Soal ini sulit bahkan bagi guru."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Bukan hanya murah tetapi enak: 安い（　）、おいしいです。",
+        "choices": [
+          "ばかりでなく",
+          "せいで",
+          "とたんに",
+          "わけがなく"
+        ],
+        "correct": 0,
+        "explanation": "ばかりでなく menambahkan kelebihan lain, bukan akibat atau urutan waktu."
+      },
+      {
+        "prompt": "Sangat sibuk, bahkan makan siang tak sempat: 昼ご飯（　）食べられませんでした。",
+        "choices": [
+          "さえ",
+          "こそ",
+          "によって",
+          "に関して"
+        ],
+        "correct": 0,
+        "explanation": "さえ menekankan bahwa kebutuhan dasar seperti makan siang pun tidak bisa dilakukan."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nこの店は安いばかりでなく、おいしいです。",
+        "choices": [
+          "Restoran ini bukan hanya murah, tetapi juga enak.",
+          "Dia bukan hanya bisa berbahasa Inggris, tetapi juga Mandarin.",
+          "Saya sangat sibuk sampai makan siang pun tidak sempat.",
+          "Soal ini sulit bahkan bagi guru."
+        ],
+        "correct": 0,
+        "explanation": "～ばかりでなく: bukan hanya …, tetapi juga ….\nこの みせは やすい ばかりでなく、おいしいです。\nRestoran ini bukan hanya murah, tetapi juga enak."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n忙しくて、昼ご飯さえ食べられませんでした。",
+        "choices": [
+          "Saya sangat sibuk sampai makan siang pun tidak sempat.",
+          "Restoran ini bukan hanya murah, tetapi juga enak.",
+          "Dia bukan hanya bisa berbahasa Inggris, tetapi juga Mandarin.",
+          "Soal ini sulit bahkan bagi guru."
+        ],
+        "correct": 0,
+        "explanation": "～さえ: bahkan ….\nいそがしくて、ひるごはんさえ たべられませんでした。\nSaya sangat sibuk sampai makan siang pun tidak sempat."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nSoal ini sulit bahkan bagi guru.",
+        "choices": [
+          "この問題は先生にさえ難しいです。",
+          "この店は安いばかりでなく、おいしいです。",
+          "彼は英語ばかりでなく、中国語も話せます。",
+          "忙しくて、昼ご飯さえ食べられませんでした。"
+        ],
+        "correct": 0,
+        "explanation": "～さえ: Menunjukkan contoh yang mengejutkan atau pada batas ekstrem. は／が／を biasanya digantikan; に atau で dapat dipertahankan seperti にさえ.\nこの もんだいは せんせいにさえ むずかしいです。\nSoal ini sulit bahkan bagi guru."
+      }
+    ]
+  },
+  {
+    "chapter": "Penambahan dan penekanan",
+    "title": "Justru yang ditekankan dan cukup satu syarat",
+    "points": [
+      {
+        "pattern": "～こそ",
+        "meaning": "justru …; …lah yang penting",
+        "formation": "N + こそ; sebab から + こそ",
+        "explanation": "Menekankan unsur sebagai yang benar-benar penting atau tepat, sering mengontraskan dengan kesempatan atau hal lain. からこそ menegaskan alasan.",
+        "commonMistake": "こそ bukan “bahkan”; untuk contoh yang mengejutkan gunakan さえ. Jangan menumpuk はこそ dalam pola dasar topik.",
+        "examples": [
+          {
+            "japanese": "今年こそ合格したいです。",
+            "reading": "ことしこそ ごうかくしたいです。",
+            "meaning": "Tahun inilah saya benar-benar ingin lulus."
+          },
+          {
+            "japanese": "大切な友達だからこそ、本当のことを言います。",
+            "reading": "たいせつな ともだちだからこそ、ほんとうの ことを いいます。",
+            "meaning": "Justru karena kamu teman berharga, saya mengatakan yang sebenarnya."
+          }
+        ]
+      },
+      {
+        "pattern": "～さえ～ば",
+        "meaning": "asalkan … saja, maka …",
+        "formation": "N + さえ + Vば; Vます語幹 + さえすれば; Aい→くさえあれば; Aな／N + でさえあれば",
+        "explanation": "Menjadikan satu syarat sebagai syarat minimal yang cukup. Unsur yang menjadi fokus diletakkan sebelum さえ; hasil biasanya suatu kemungkinan atau keinginan.",
+        "commonMistake": "Berbeda dari さえ biasa yang berarti bahkan. Bentuk bersyarat ば pada bagian berikut diperlukan untuk makna “asalkan”.",
+        "examples": [
+          {
+            "japanese": "時間さえあれば、参加できます。",
+            "reading": "じかんさえ あれば、さんかできます。",
+            "meaning": "Asalkan ada waktu, saya bisa ikut."
+          },
+          {
+            "japanese": "練習しさえすれば、上手になります。",
+            "reading": "れんしゅうしさえ すれば、じょうずに なります。",
+            "meaning": "Asalkan berlatih, Anda akan menjadi lebih mahir."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Penekanan “tahun inilah”: 今年（　）合格したいです。",
+        "choices": [
+          "こそ",
+          "さえも",
+          "について",
+          "によると"
+        ],
+        "correct": 0,
+        "explanation": "こそ menegaskan tahun ini sebagai kesempatan yang ingin diwujudkan."
+      },
+      {
+        "prompt": "時間さえ（　）、参加できます。",
+        "choices": [
+          "あれば",
+          "あるときに",
+          "あった最中",
+          "ありますが"
+        ],
+        "correct": 0,
+        "explanation": "さえ＋あれば membentuk syarat minimal: asalkan ada waktu."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n今年こそ合格したいです。",
+        "choices": [
+          "Tahun inilah saya benar-benar ingin lulus.",
+          "Justru karena kamu teman berharga, saya mengatakan yang sebenarnya.",
+          "Asalkan ada waktu, saya bisa ikut.",
+          "Asalkan berlatih, Anda akan menjadi lebih mahir."
+        ],
+        "correct": 0,
+        "explanation": "～こそ: justru …; …lah yang penting.\nことしこそ ごうかくしたいです。\nTahun inilah saya benar-benar ingin lulus."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n時間さえあれば、参加できます。",
+        "choices": [
+          "Asalkan ada waktu, saya bisa ikut.",
+          "Tahun inilah saya benar-benar ingin lulus.",
+          "Justru karena kamu teman berharga, saya mengatakan yang sebenarnya.",
+          "Asalkan berlatih, Anda akan menjadi lebih mahir."
+        ],
+        "correct": 0,
+        "explanation": "～さえ～ば: asalkan … saja, maka ….\nじかんさえ あれば、さんかできます。\nAsalkan ada waktu, saya bisa ikut."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nAsalkan berlatih, Anda akan menjadi lebih mahir.",
+        "choices": [
+          "練習しさえすれば、上手になります。",
+          "今年こそ合格したいです。",
+          "大切な友達だからこそ、本当のことを言います。",
+          "時間さえあれば、参加できます。"
+        ],
+        "correct": 0,
+        "explanation": "～さえ～ば: Menjadikan satu syarat sebagai syarat minimal yang cukup. Unsur yang menjadi fokus diletakkan sebelum さえ; hasil biasanya suatu kemungkinan atau keinginan.\nれんしゅうしさえ すれば、じょうずに なります。\nAsalkan berlatih, Anda akan menjadi lebih mahir."
+      }
+    ]
+  },
+  {
+    "chapter": "Topik dan arah sikap",
+    "title": "Mengenai topik dan terhadap sasaran",
+    "points": [
+      {
+        "pattern": "～について",
+        "meaning": "tentang …",
+        "formation": "N + について; N + についての + N",
+        "explanation": "Menetapkan topik untuk berbicara, menulis, meneliti, atau berpikir. Untuk menerangkan kata benda setelahnya, tambahkan の.",
+        "commonMistake": "Nについての本 benar; Nについて本 tanpa の bukan bentuk penerang kata benda yang diajarkan.",
+        "examples": [
+          {
+            "japanese": "日本の文化について調べています。",
+            "reading": "にほんの ぶんかについて しらべています。",
+            "meaning": "Saya sedang meneliti budaya Jepang."
+          },
+          {
+            "japanese": "これは環境についての本です。",
+            "reading": "これは かんきょうについての ほんです。",
+            "meaning": "Ini buku tentang lingkungan."
+          }
+        ]
+      },
+      {
+        "pattern": "～に対して",
+        "meaning": "terhadap …; kepada …",
+        "formation": "N + に対して; N + に対する + N",
+        "explanation": "Menunjukkan sasaran sikap, respons, atau tindakan. Bentuk penerang kata benda ialah に対する. Dalam konteks lain dapat mengontraskan dua klausa; lesson ini berfokus pada sasaran.",
+        "commonMistake": "について menandai topik, sedangkan に対して menunjukkan arah sikap atau tindakan. Tidak selalu dapat saling menggantikan.",
+        "examples": [
+          {
+            "japanese": "お客様に対して、丁寧に話してください。",
+            "reading": "おきゃくさまにたいして、ていねいに はなしてください。",
+            "meaning": "Tolong berbicara sopan kepada pelanggan."
+          },
+          {
+            "japanese": "彼は仕事に対する責任感が強いです。",
+            "reading": "かれは しごとにたいする せきにんかんが つよいです。",
+            "meaning": "Dia mempunyai rasa tanggung jawab yang kuat terhadap pekerjaan."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Buku tentang lingkungan: 環境について（　）本です。",
+        "choices": [
+          "の",
+          "な",
+          "を",
+          "で"
+        ],
+        "correct": 0,
+        "explanation": "Pola yang menerangkan 本 ialah についての＋N."
+      },
+      {
+        "prompt": "Penerang kata benda 責任感: 仕事（　）責任感が強いです。",
+        "choices": [
+          "に対する",
+          "に対してのを",
+          "に対したら",
+          "に対しています"
+        ],
+        "correct": 0,
+        "explanation": "に対する menerangkan kata benda 責任感 sebagai sasaran rasa tanggung jawab."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n日本の文化について調べています。",
+        "choices": [
+          "Saya sedang meneliti budaya Jepang.",
+          "Ini buku tentang lingkungan.",
+          "Tolong berbicara sopan kepada pelanggan.",
+          "Dia mempunyai rasa tanggung jawab yang kuat terhadap pekerjaan."
+        ],
+        "correct": 0,
+        "explanation": "～について: tentang ….\nにほんの ぶんかについて しらべています。\nSaya sedang meneliti budaya Jepang."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nお客様に対して、丁寧に話してください。",
+        "choices": [
+          "Tolong berbicara sopan kepada pelanggan.",
+          "Saya sedang meneliti budaya Jepang.",
+          "Ini buku tentang lingkungan.",
+          "Dia mempunyai rasa tanggung jawab yang kuat terhadap pekerjaan."
+        ],
+        "correct": 0,
+        "explanation": "～に対して: terhadap …; kepada ….\nおきゃくさまにたいして、ていねいに はなしてください。\nTolong berbicara sopan kepada pelanggan."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nDia mempunyai rasa tanggung jawab yang kuat terhadap pekerjaan.",
+        "choices": [
+          "彼は仕事に対する責任感が強いです。",
+          "日本の文化について調べています。",
+          "これは環境についての本です。",
+          "お客様に対して、丁寧に話してください。"
+        ],
+        "correct": 0,
+        "explanation": "～に対して: Menunjukkan sasaran sikap, respons, atau tindakan. Bentuk penerang kata benda ialah に対する. Dalam konteks lain dapat mengontraskan dua klausa; lesson ini berfokus pada sasaran.\nかれは しごとにたいする せきにんかんが つよいです。\nDia mempunyai rasa tanggung jawab yang kuat terhadap pekerjaan."
+      }
+    ]
+  },
+  {
+    "chapter": "Sudut pandang dan peran",
+    "title": "Bagi seseorang dan sebagai suatu peran",
+    "points": [
+      {
+        "pattern": "～にとって",
+        "meaning": "bagi … dari sudut pandangnya",
+        "formation": "N + にとって; N + にとっての + N",
+        "explanation": "Menilai penting, sulit, bermanfaat, atau bernilai dari sudut pandang orang atau kelompok. Biasanya diikuti penilaian, bukan sasaran tindakan.",
+        "commonMistake": "私にとって難しい adalah penilaian; 私に対して話す adalah tindakan kepada saya. Jangan mengganti keduanya begitu saja.",
+        "examples": [
+          {
+            "japanese": "私にとって、家族が一番大切です。",
+            "reading": "わたしにとって、かぞくが いちばん たいせつです。",
+            "meaning": "Bagi saya, keluarga adalah yang paling penting."
+          },
+          {
+            "japanese": "この仕事は彼にとって難しいです。",
+            "reading": "この しごとは かれにとって むずかしいです。",
+            "meaning": "Pekerjaan ini sulit bagi dia."
+          }
+        ]
+      },
+      {
+        "pattern": "～として",
+        "meaning": "sebagai …",
+        "formation": "N + として; N + としての + N",
+        "explanation": "Menyatakan status, peran, atau fungsi saat melakukan tindakan. Berbeda dari にとって yang berfokus pada penilaian dari sudut pandang.",
+        "commonMistake": "Gunakan としての untuk menerangkan kata benda: 教師としての経験.",
+        "examples": [
+          {
+            "japanese": "彼は医者として働いています。",
+            "reading": "かれは いしゃとして はたらいています。",
+            "meaning": "Dia bekerja sebagai dokter."
+          },
+          {
+            "japanese": "これは友達としてのアドバイスです。",
+            "reading": "これは ともだちとしての アドバイスです。",
+            "meaning": "Ini nasihat saya sebagai teman."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Penilaian dari sudut pandang saya: 私（　）、家族が一番大切です。",
+        "choices": [
+          "にとって",
+          "に対する",
+          "によるとを",
+          "をとって"
+        ],
+        "correct": 0,
+        "explanation": "にとって menandai sudut pandang yang digunakan dalam penilaian."
+      },
+      {
+        "prompt": "Penerang kata benda アドバイス: 友達として（　）アドバイスです。",
+        "choices": [
+          "の",
+          "な",
+          "を",
+          "で"
+        ],
+        "correct": 0,
+        "explanation": "としての＋N menyatakan peran yang melandasi nasihat."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n私にとって、家族が一番大切です。",
+        "choices": [
+          "Bagi saya, keluarga adalah yang paling penting.",
+          "Pekerjaan ini sulit bagi dia.",
+          "Dia bekerja sebagai dokter.",
+          "Ini nasihat saya sebagai teman."
+        ],
+        "correct": 0,
+        "explanation": "～にとって: bagi … dari sudut pandangnya.\nわたしにとって、かぞくが いちばん たいせつです。\nBagi saya, keluarga adalah yang paling penting."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n彼は医者として働いています。",
+        "choices": [
+          "Dia bekerja sebagai dokter.",
+          "Bagi saya, keluarga adalah yang paling penting.",
+          "Pekerjaan ini sulit bagi dia.",
+          "Ini nasihat saya sebagai teman."
+        ],
+        "correct": 0,
+        "explanation": "～として: sebagai ….\nかれは いしゃとして はたらいています。\nDia bekerja sebagai dokter."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nIni nasihat saya sebagai teman.",
+        "choices": [
+          "これは友達としてのアドバイスです。",
+          "私にとって、家族が一番大切です。",
+          "この仕事は彼にとって難しいです。",
+          "彼は医者として働いています。"
+        ],
+        "correct": 0,
+        "explanation": "～として: Menyatakan status, peran, atau fungsi saat melakukan tindakan. Berbeda dari にとって yang berfokus pada penilaian dari sudut pandang.\nこれは ともだちとしての アドバイスです。\nIni nasihat saya sebagai teman."
+      }
+    ]
+  },
+  {
+    "chapter": "Sarana dan sumber informasi",
+    "title": "Menurut keadaan dan menurut sumber",
+    "points": [
+      {
+        "pattern": "～によって",
+        "meaning": "bergantung pada …; melalui …; oleh …",
+        "formation": "N + によって; N + による + N",
+        "explanation": "Makna ditentukan konteks: variasi menurut orang atau keadaan, sarana untuk menghasilkan sesuatu, sebab, atau pelaku dalam pasif formal. Contoh di sini berfokus pada variasi dan pelaku karya.",
+        "commonMistake": "によって tidak selalu berarti “menurut sumber berita”. Untuk melaporkan sumber gunakan によると atau によれば.",
+        "examples": [
+          {
+            "japanese": "人によって、考え方が違います。",
+            "reading": "ひとによって、かんがえかたが ちがいます。",
+            "meaning": "Cara berpikir berbeda menurut orangnya."
+          },
+          {
+            "japanese": "この小説は有名な作家によって書かれました。",
+            "reading": "この しょうせつは ゆうめいな さっかによって かかれました。",
+            "meaning": "Novel ini ditulis oleh seorang penulis terkenal."
+          }
+        ]
+      },
+      {
+        "pattern": "～によると／～によれば",
+        "meaning": "menurut sumber …",
+        "formation": "N sumber informasi + によると／によれば",
+        "explanation": "Menandai asal informasi yang dilaporkan. Klausa berikut sering memakai そうだ, らしい, atau ということだ untuk menunjukkan informasi bukan pengamatan langsung pembicara.",
+        "commonMistake": "Untuk variasi orang gunakan 人によって, bukan 人によると kecuali orang tersebut benar-benar sumber ucapan.",
+        "examples": [
+          {
+            "japanese": "ニュースによると、来月新しい駅ができるそうです。",
+            "reading": "ニュースによると、らいげつ あたらしい えきが できるそうです。",
+            "meaning": "Menurut berita, kabarnya stasiun baru akan selesai bulan depan."
+          },
+          {
+            "japanese": "先生によれば、試験は来週だそうです。",
+            "reading": "せんせいによれば、しけんは らいしゅうだそうです。",
+            "meaning": "Menurut guru, kabarnya ujian diadakan minggu depan."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Variasi antarorang: 人（　）、考え方が違います。",
+        "choices": [
+          "によって",
+          "についての",
+          "としての",
+          "にとっての"
+        ],
+        "correct": 0,
+        "explanation": "人によって menandai faktor yang membuat hasil bervariasi, bukan topik atau sudut pandang penilaian."
+      },
+      {
+        "prompt": "Sumber kabar berupa berita: ニュース（　）、来月新しい駅ができるそうです。",
+        "choices": [
+          "によると",
+          "にとって",
+          "として",
+          "に対する"
+        ],
+        "correct": 0,
+        "explanation": "によると menandai sumber berita; そうです mengakhiri laporan informasi."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n人によって、考え方が違います。",
+        "choices": [
+          "Cara berpikir berbeda menurut orangnya.",
+          "Novel ini ditulis oleh seorang penulis terkenal.",
+          "Menurut berita, kabarnya stasiun baru akan selesai bulan depan.",
+          "Menurut guru, kabarnya ujian diadakan minggu depan."
+        ],
+        "correct": 0,
+        "explanation": "～によって: bergantung pada …; melalui …; oleh ….\nひとによって、かんがえかたが ちがいます。\nCara berpikir berbeda menurut orangnya."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nニュースによると、来月新しい駅ができるそうです。",
+        "choices": [
+          "Menurut berita, kabarnya stasiun baru akan selesai bulan depan.",
+          "Cara berpikir berbeda menurut orangnya.",
+          "Novel ini ditulis oleh seorang penulis terkenal.",
+          "Menurut guru, kabarnya ujian diadakan minggu depan."
+        ],
+        "correct": 0,
+        "explanation": "～によると／～によれば: menurut sumber ….\nニュースによると、らいげつ あたらしい えきが できるそうです。\nMenurut berita, kabarnya stasiun baru akan selesai bulan depan."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nMenurut guru, kabarnya ujian diadakan minggu depan.",
+        "choices": [
+          "先生によれば、試験は来週だそうです。",
+          "人によって、考え方が違います。",
+          "この小説は有名な作家によって書かれました。",
+          "ニュースによると、来月新しい駅ができるそうです。"
+        ],
+        "correct": 0,
+        "explanation": "～によると／～によれば: Menandai asal informasi yang dilaporkan. Klausa berikut sering memakai そうだ, らしい, atau ということだ untuk menunjukkan informasi bukan pengamatan langsung pembicara.\nせんせいによれば、しけんは らいしゅうだそうです。\nMenurut guru, kabarnya ujian diadakan minggu depan."
+      }
+    ]
+  },
+  {
+    "chapter": "Perbandingan dan derajat",
+    "title": "Membandingkan dan tidak mencapai tingkat",
+    "points": [
+      {
+        "pattern": "～に比べて",
+        "meaning": "dibandingkan dengan …",
+        "formation": "N + に比べて; V普通形 + のに比べて",
+        "explanation": "Menjadikan sesuatu sebagai standar lalu menjelaskan perbedaan. Dapat membandingkan harga, tingkat, keadaan, atau perubahan antartahun.",
+        "commonMistake": "比べて dibaca くらべて. Untuk tindakan yang menjadi standar, nominalkan dengan の.",
+        "examples": [
+          {
+            "japanese": "去年に比べて、今年は暑いです。",
+            "reading": "きょねんに くらべて、ことしは あついです。",
+            "meaning": "Dibanding tahun lalu, tahun ini panas."
+          },
+          {
+            "japanese": "電車に比べて、バスは安いです。",
+            "reading": "でんしゃに くらべて、バスは やすいです。",
+            "meaning": "Dibanding kereta, bus lebih murah."
+          }
+        ]
+      },
+      {
+        "pattern": "～ほど～ない",
+        "meaning": "tidak se…",
+        "formation": "N + ほど + predikat negatif; V普通形 + ほど + predikat negatif",
+        "explanation": "Menyatakan hal pertama tidak mencapai tingkat standar pembanding. Fokus latihan N3 di sini ialah memahami arah perbandingan, termasuk perkiraan yang ternyata berlebihan.",
+        "commonMistake": "AはBほど高くない berarti A lebih rendah tingkat mahalnya daripada B, bukan sebaliknya.",
+        "examples": [
+          {
+            "japanese": "今日は昨日ほど寒くありません。",
+            "reading": "きょうは きのうほど さむくありません。",
+            "meaning": "Hari ini tidak sedingin kemarin."
+          },
+          {
+            "japanese": "この仕事は思っていたほど難しくありません。",
+            "reading": "この しごとは おもっていたほど むずかしくありません。",
+            "meaning": "Pekerjaan ini tidak sesulit yang saya bayangkan."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "去年（　）、今年は暑いです。",
+        "choices": [
+          "に比べて",
+          "に比べるの",
+          "を比べての",
+          "の比べて"
+        ],
+        "correct": 0,
+        "explanation": "Nに比べて menjadikan tahun lalu sebagai standar perbandingan."
+      },
+      {
+        "prompt": "Hari ini tidak sedingin kemarin: 今日は昨日（　）寒くありません。",
+        "choices": [
+          "ほど",
+          "だけに",
+          "さえも",
+          "こそ"
+        ],
+        "correct": 0,
+        "explanation": "ほど dengan predikat negatif membandingkan tingkat: dingin hari ini tidak mencapai tingkat kemarin."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n去年に比べて、今年は暑いです。",
+        "choices": [
+          "Dibanding tahun lalu, tahun ini panas.",
+          "Dibanding kereta, bus lebih murah.",
+          "Hari ini tidak sedingin kemarin.",
+          "Pekerjaan ini tidak sesulit yang saya bayangkan."
+        ],
+        "correct": 0,
+        "explanation": "～に比べて: dibandingkan dengan ….\nきょねんに くらべて、ことしは あついです。\nDibanding tahun lalu, tahun ini panas."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n今日は昨日ほど寒くありません。",
+        "choices": [
+          "Hari ini tidak sedingin kemarin.",
+          "Dibanding tahun lalu, tahun ini panas.",
+          "Dibanding kereta, bus lebih murah.",
+          "Pekerjaan ini tidak sesulit yang saya bayangkan."
+        ],
+        "correct": 0,
+        "explanation": "～ほど～ない: tidak se….\nきょうは きのうほど さむくありません。\nHari ini tidak sedingin kemarin."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nPekerjaan ini tidak sesulit yang saya bayangkan.",
+        "choices": [
+          "この仕事は思っていたほど難しくありません。",
+          "去年に比べて、今年は暑いです。",
+          "電車に比べて、バスは安いです。",
+          "今日は昨日ほど寒くありません。"
+        ],
+        "correct": 0,
+        "explanation": "～ほど～ない: Menyatakan hal pertama tidak mencapai tingkat standar pembanding. Fokus latihan N3 di sini ialah memahami arah perbandingan, termasuk perkiraan yang ternyata berlebihan.\nこの しごとは おもっていたほど むずかしくありません。\nPekerjaan ini tidak sesulit yang saya bayangkan."
+      }
+    ]
+  },
+  {
+    "chapter": "Perbandingan dan derajat",
+    "title": "Perubahan seiring tingkat dan gambaran intensitas",
+    "points": [
+      {
+        "pattern": "～ば～ほど",
+        "meaning": "semakin …, semakin …",
+        "formation": "Vば + V辞書形 + ほど; Aい→ければ + Aい + ほど; Aな + なら／であれば + Aな + なほど",
+        "explanation": "Dua tingkat berubah bersama. Kata yang menjadi ukuran biasanya diulang: 読めば読むほど, 安ければ安いほど. Hubungan dapat positif maupun negatif.",
+        "commonMistake": "Jangan memakai bentuk たら pada bagian pertama dalam pola pengulangan ini. 安ければ安いほど memakai sifat い tanpa です.",
+        "examples": [
+          {
+            "japanese": "練習すればするほど、上手になります。",
+            "reading": "れんしゅうすれば するほど、じょうずに なります。",
+            "meaning": "Semakin berlatih, semakin mahir."
+          },
+          {
+            "japanese": "荷物は少なければ少ないほど、楽です。",
+            "reading": "にもつは すくなければ すくないほど、らくです。",
+            "meaning": "Semakin sedikit barang bawaan, semakin ringan perjalanan."
+          }
+        ]
+      },
+      {
+        "pattern": "～くらい／～ほど：程度",
+        "meaning": "sampai tingkat …",
+        "formation": "V普通形／Aい + くらい／ほど; Aな + なくらい／なほど; N + くらい／ほど",
+        "explanation": "Memberi gambaran tingkat melalui contoh atau perbandingan. Pada contoh 感動して泣くほど, menangis menjadi ukuran kuatnya perasaan, bukan syarat wajib.",
+        "commonMistake": "Jangan selalu menafsirkan くらい sebagai perkiraan jumlah. Di sini klausa menjadi gambaran intensitas.",
+        "examples": [
+          {
+            "japanese": "声が出ないくらい驚きました。",
+            "reading": "こえが でないくらい おどろきました。",
+            "meaning": "Saya sangat terkejut sampai tidak bisa bersuara."
+          },
+          {
+            "japanese": "涙が出るほど感動しました。",
+            "reading": "なみだが でるほど かんどうしました。",
+            "meaning": "Saya begitu tersentuh sampai meneteskan air mata."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "練習（　）するほど、上手になります。",
+        "choices": [
+          "すれば",
+          "したら",
+          "して",
+          "した"
+        ],
+        "correct": 0,
+        "explanation": "Pengulangan bersyarat yang menyatakan semakin ialah すればするほど."
+      },
+      {
+        "prompt": "Intensitas sangat tersentuh: 涙が出る（　）感動しました。",
+        "choices": [
+          "ほど",
+          "たびに",
+          "前だけ",
+          "によると"
+        ],
+        "correct": 0,
+        "explanation": "ほど memakai keluarnya air mata sebagai gambaran tingkat keterharuan."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n練習すればするほど、上手になります。",
+        "choices": [
+          "Semakin berlatih, semakin mahir.",
+          "Semakin sedikit barang bawaan, semakin ringan perjalanan.",
+          "Saya sangat terkejut sampai tidak bisa bersuara.",
+          "Saya begitu tersentuh sampai meneteskan air mata."
+        ],
+        "correct": 0,
+        "explanation": "～ば～ほど: semakin …, semakin ….\nれんしゅうすれば するほど、じょうずに なります。\nSemakin berlatih, semakin mahir."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n声が出ないくらい驚きました。",
+        "choices": [
+          "Saya sangat terkejut sampai tidak bisa bersuara.",
+          "Semakin berlatih, semakin mahir.",
+          "Semakin sedikit barang bawaan, semakin ringan perjalanan.",
+          "Saya begitu tersentuh sampai meneteskan air mata."
+        ],
+        "correct": 0,
+        "explanation": "～くらい／～ほど：程度: sampai tingkat ….\nこえが でないくらい おどろきました。\nSaya sangat terkejut sampai tidak bisa bersuara."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nSaya begitu tersentuh sampai meneteskan air mata.",
+        "choices": [
+          "涙が出るほど感動しました。",
+          "練習すればするほど、上手になります。",
+          "荷物は少なければ少ないほど、楽です。",
+          "声が出ないくらい驚きました。"
+        ],
+        "correct": 0,
+        "explanation": "～くらい／～ほど：程度: Memberi gambaran tingkat melalui contoh atau perbandingan. Pada contoh 感動して泣くほど, menangis menjadi ukuran kuatnya perasaan, bukan syarat wajib.\nなみだが でるほど かんどうしました。\nSaya begitu tersentuh sampai meneteskan air mata."
+      }
+    ]
+  },
+  {
+    "chapter": "Pengandaian",
+    "title": "Walaupun hipotesis dan prasyarat yang wajib",
+    "points": [
+      {
+        "pattern": "～たとえ～ても",
+        "meaning": "sekalipun …, tetap …",
+        "formation": "たとえ + Vて／Aい→くて／Aな・N→で + も",
+        "explanation": "Mengandaikan kondisi yang kuat atau ekstrem, tetapi keputusan atau hasil tetap tidak berubah. たとえ memberi penekanan hipotetis; ても sendiri juga dipakai untuk fakta.",
+        "commonMistake": "たとえ dipasangkan dengan ても／でも, bukan otomatis dengan たら. Setelah sifat い gunakan くても.",
+        "examples": [
+          {
+            "japanese": "たとえ雨が降っても、参加します。",
+            "reading": "たとえ あめが ふっても、さんかします。",
+            "meaning": "Sekalipun hujan turun, saya tetap akan ikut."
+          },
+          {
+            "japanese": "たとえ高くても、このかばんを買いたいです。",
+            "reading": "たとえ たかくても、この かばんを かいたいです。",
+            "meaning": "Sekalipun mahal, saya tetap ingin membeli tas ini."
+          }
+        ]
+      },
+      {
+        "pattern": "～ないことには",
+        "meaning": "kalau tidak …, tidak akan bisa …",
+        "formation": "Vない形 + ことには + predikat negatif",
+        "explanation": "Menekankan bahwa tindakan atau keadaan pertama merupakan syarat minimum bagi hasil kedua. Tanpa tindakan pertama, hasil tidak dapat dicapai atau dinilai.",
+        "commonMistake": "Bagian akhir lazim negatif. Pola ini bukan pengandaian hasil positif yang bebas.",
+        "examples": [
+          {
+            "japanese": "実際に使ってみないことには、便利かどうか分かりません。",
+            "reading": "じっさいに つかってみないことには、べんりかどうか わかりません。",
+            "meaning": "Kalau tidak mencoba memakainya langsung, saya tidak tahu apakah praktis."
+          },
+          {
+            "japanese": "話し合わないことには、問題は解決しません。",
+            "reading": "はなしあわないことには、もんだいは かいけつしません。",
+            "meaning": "Tanpa berdiskusi, masalah tidak akan selesai."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "たとえ（　）、このかばんを買いたいです。",
+        "choices": [
+          "高くても",
+          "高いでも",
+          "高かったら",
+          "高くては"
+        ],
+        "correct": 0,
+        "explanation": "Sifat い diubah menjadi 高くても untuk pengandaian konsesif."
+      },
+      {
+        "prompt": "Prasyarat diskusi sebelum masalah selesai: （　）ことには、問題は解決しません。",
+        "choices": [
+          "話し合わない",
+          "話し合う",
+          "話し合った",
+          "話し合って"
+        ],
+        "correct": 0,
+        "explanation": "Vない＋ことには diikuti hasil negatif: tidak berdiskusi berarti masalah tidak selesai."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nたとえ雨が降っても、参加します。",
+        "choices": [
+          "Sekalipun hujan turun, saya tetap akan ikut.",
+          "Sekalipun mahal, saya tetap ingin membeli tas ini.",
+          "Kalau tidak mencoba memakainya langsung, saya tidak tahu apakah praktis.",
+          "Tanpa berdiskusi, masalah tidak akan selesai."
+        ],
+        "correct": 0,
+        "explanation": "～たとえ～ても: sekalipun …, tetap ….\nたとえ あめが ふっても、さんかします。\nSekalipun hujan turun, saya tetap akan ikut."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n実際に使ってみないことには、便利かどうか分かりません。",
+        "choices": [
+          "Kalau tidak mencoba memakainya langsung, saya tidak tahu apakah praktis.",
+          "Sekalipun hujan turun, saya tetap akan ikut.",
+          "Sekalipun mahal, saya tetap ingin membeli tas ini.",
+          "Tanpa berdiskusi, masalah tidak akan selesai."
+        ],
+        "correct": 0,
+        "explanation": "～ないことには: kalau tidak …, tidak akan bisa ….\nじっさいに つかってみないことには、べんりかどうか わかりません。\nKalau tidak mencoba memakainya langsung, saya tidak tahu apakah praktis."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nTanpa berdiskusi, masalah tidak akan selesai.",
+        "choices": [
+          "話し合わないことには、問題は解決しません。",
+          "たとえ雨が降っても、参加します。",
+          "たとえ高くても、このかばんを買いたいです。",
+          "実際に使ってみないことには、便利かどうか分かりません。"
+        ],
+        "correct": 0,
+        "explanation": "～ないことには: Menekankan bahwa tindakan atau keadaan pertama merupakan syarat minimum bagi hasil kedua. Tanpa tindakan pertama, hasil tidak dapat dicapai atau dinilai.\nはなしあわないことには、もんだいは かいけつしません。\nTanpa berdiskusi, masalah tidak akan selesai."
+      }
+    ]
+  },
+  {
+    "chapter": "Penggantian dan pertukaran",
+    "title": "Sebagai pengganti dan mewakili orang",
+    "points": [
+      {
+        "pattern": "～代わりに",
+        "meaning": "sebagai ganti …; sebagai imbalan …",
+        "formation": "V普通形／Aい + 代わりに; Aな + な代わりに; N + の代わりに",
+        "explanation": "Bisa mengganti tindakan atau benda, atau menyatakan pertukaran keuntungan dengan kekurangan. Contoh pertama mengganti kegiatan, kedua menyebut biaya sebagai sisi pengganti kenyamanan.",
+        "commonMistake": "Kata benda memakai の代わりに. Jangan menyamakan semua penggunaan dengan に代わって yang menekankan pengganti pelaku atau peran.",
+        "examples": [
+          {
+            "japanese": "外で食べる代わりに、家で料理しました。",
+            "reading": "そとで たべる かわりに、いえで りょうりしました。",
+            "meaning": "Sebagai ganti makan di luar, saya memasak di rumah."
+          },
+          {
+            "japanese": "この部屋は狭い代わりに、家賃が安いです。",
+            "reading": "この へやは せまい かわりに、やちんが やすいです。",
+            "meaning": "Kamar ini sempit, tetapi sebagai gantinya sewanya murah."
+          }
+        ]
+      },
+      {
+        "pattern": "～に代わって",
+        "meaning": "menggantikan atau mewakili …",
+        "formation": "N orang／kelompok／peran + に代わって",
+        "explanation": "Seseorang atau sesuatu menjalankan fungsi yang biasanya dilakukan pihak lain. Bentuk に代わり juga dipakai dalam bahasa formal.",
+        "commonMistake": "Nに代わって menunjuk pihak yang digantikan, bukan pihak penggantinya. Kata benda tidak memakai の dalam rumus ini.",
+        "examples": [
+          {
+            "japanese": "部長に代わって、私が説明します。",
+            "reading": "ぶちょうに かわって、わたしが せつめいします。",
+            "meaning": "Saya akan menjelaskan menggantikan kepala bagian."
+          },
+          {
+            "japanese": "母に代わって、私が弟を迎えに行きました。",
+            "reading": "ははに かわって、わたしが おとうとを むかえに いきました。",
+            "meaning": "Saya menjemput adik laki-laki menggantikan ibu."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Kegiatan memasak menggantikan makan di luar: 外で食べる（　）、家で料理しました。",
+        "choices": [
+          "代わりに",
+          "たびに",
+          "おかげで",
+          "最中に"
+        ],
+        "correct": 0,
+        "explanation": "代わりに menghubungkan tindakan yang diganti dengan tindakan penggantinya."
+      },
+      {
+        "prompt": "部長（　）、私が説明します。",
+        "choices": [
+          "に代わって",
+          "の代わって",
+          "を代わって",
+          "な代わって"
+        ],
+        "correct": 0,
+        "explanation": "部長に代わって menempatkan kepala bagian sebagai pihak yang digantikan oleh saya."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n外で食べる代わりに、家で料理しました。",
+        "choices": [
+          "Sebagai ganti makan di luar, saya memasak di rumah.",
+          "Kamar ini sempit, tetapi sebagai gantinya sewanya murah.",
+          "Saya akan menjelaskan menggantikan kepala bagian.",
+          "Saya menjemput adik laki-laki menggantikan ibu."
+        ],
+        "correct": 0,
+        "explanation": "～代わりに: sebagai ganti …; sebagai imbalan ….\nそとで たべる かわりに、いえで りょうりしました。\nSebagai ganti makan di luar, saya memasak di rumah."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n部長に代わって、私が説明します。",
+        "choices": [
+          "Saya akan menjelaskan menggantikan kepala bagian.",
+          "Sebagai ganti makan di luar, saya memasak di rumah.",
+          "Kamar ini sempit, tetapi sebagai gantinya sewanya murah.",
+          "Saya menjemput adik laki-laki menggantikan ibu."
+        ],
+        "correct": 0,
+        "explanation": "～に代わって: menggantikan atau mewakili ….\nぶちょうに かわって、わたしが せつめいします。\nSaya akan menjelaskan menggantikan kepala bagian."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nSaya menjemput adik laki-laki menggantikan ibu.",
+        "choices": [
+          "母に代わって、私が弟を迎えに行きました。",
+          "外で食べる代わりに、家で料理しました。",
+          "この部屋は狭い代わりに、家賃が安いです。",
+          "部長に代わって、私が説明します。"
+        ],
+        "correct": 0,
+        "explanation": "～に代わって: Seseorang atau sesuatu menjalankan fungsi yang biasanya dilakukan pihak lain. Bentuk に代わり juga dipakai dalam bahasa formal.\nははに かわって、わたしが おとうとを むかえに いきました。\nSaya menjemput adik laki-laki menggantikan ibu."
+      }
+    ]
+  },
+  {
+    "chapter": "Kecenderungan dan keadaan",
+    "title": "Sering terjadi dan gejala ringan",
+    "points": [
+      {
+        "pattern": "～がち",
+        "meaning": "cenderung atau sering …",
+        "formation": "Vます語幹／N + がち; penghubung: がちなN／がちのN",
+        "explanation": "Menggambarkan kecenderungan berulang, sering bernilai negatif atau perlu perhatian: 忘れがち, 遅れがち, 病気がち. Bukan pasti terjadi setiap saat.",
+        "commonMistake": "Tidak semua kata sifat dapat langsung ditempeli がち. Kata kerja memakai pangkal ます, bukan bentuk kamus.",
+        "examples": [
+          {
+            "japanese": "忙しいと、約束を忘れがちです。",
+            "reading": "いそがしいと、やくそくを わすれがちです。",
+            "meaning": "Saat sibuk, saya cenderung lupa janji."
+          },
+          {
+            "japanese": "最近、授業を休みがちです。",
+            "reading": "さいきん、じゅぎょうを やすみがちです。",
+            "meaning": "Akhir-akhir ini saya sering tidak masuk kelas."
+          }
+        ]
+      },
+      {
+        "pattern": "～気味",
+        "meaning": "agak …; menunjukkan sedikit gejala …",
+        "formation": "Vます語幹／N + 気味",
+        "explanation": "Menunjukkan keadaan ringan atau tanda awal, sering pada kondisi tubuh atau kecenderungan buruk: 疲れ気味, 風邪気味. 気味 dibaca ぎみ pada pola ini.",
+        "commonMistake": "気味 menyatakan keadaan agak demikian, bukan frekuensi berulang seperti がち.",
+        "examples": [
+          {
+            "japanese": "今日は疲れ気味です。",
+            "reading": "きょうは つかれぎみです。",
+            "meaning": "Hari ini saya agak lelah."
+          },
+          {
+            "japanese": "風邪気味なので、早く寝ます。",
+            "reading": "かぜぎみなので、はやく ねます。",
+            "meaning": "Karena agak merasa seperti masuk angin, saya akan tidur lebih awal."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "忙しいと、約束を（　）がちです。",
+        "choices": [
+          "忘れ",
+          "忘れる",
+          "忘れた",
+          "忘れて"
+        ],
+        "correct": 0,
+        "explanation": "忘れます diambil pangkal 忘れ lalu ditambah がち."
+      },
+      {
+        "prompt": "Agak lelah sekarang: 今日は（　）気味です。",
+        "choices": [
+          "疲れ",
+          "疲れる",
+          "疲れた",
+          "疲れて"
+        ],
+        "correct": 0,
+        "explanation": "Pangkal 疲れ ditambah 気味 menunjukkan keadaan ringan saat ini."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n忙しいと、約束を忘れがちです。",
+        "choices": [
+          "Saat sibuk, saya cenderung lupa janji.",
+          "Akhir-akhir ini saya sering tidak masuk kelas.",
+          "Hari ini saya agak lelah.",
+          "Karena agak merasa seperti masuk angin, saya akan tidur lebih awal."
+        ],
+        "correct": 0,
+        "explanation": "～がち: cenderung atau sering ….\nいそがしいと、やくそくを わすれがちです。\nSaat sibuk, saya cenderung lupa janji."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n今日は疲れ気味です。",
+        "choices": [
+          "Hari ini saya agak lelah.",
+          "Saat sibuk, saya cenderung lupa janji.",
+          "Akhir-akhir ini saya sering tidak masuk kelas.",
+          "Karena agak merasa seperti masuk angin, saya akan tidur lebih awal."
+        ],
+        "correct": 0,
+        "explanation": "～気味: agak …; menunjukkan sedikit gejala ….\nきょうは つかれぎみです。\nHari ini saya agak lelah."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena agak merasa seperti masuk angin, saya akan tidur lebih awal.",
+        "choices": [
+          "風邪気味なので、早く寝ます。",
+          "忙しいと、約束を忘れがちです。",
+          "最近、授業を休みがちです。",
+          "今日は疲れ気味です。"
+        ],
+        "correct": 0,
+        "explanation": "～気味: Menunjukkan keadaan ringan atau tanda awal, sering pada kondisi tubuh atau kecenderungan buruk: 疲れ気味, 風邪気味. 気味 dibaca ぎみ pada pola ini.\nかぜぎみなので、はやく ねます。\nKarena agak merasa seperti masuk angin, saya akan tidur lebih awal."
+      }
+    ]
+  },
+  {
+    "chapter": "Kecenderungan dan keadaan",
+    "title": "Terkesan seperti dan penuh sesuatu",
+    "points": [
+      {
+        "pattern": "～っぽい",
+        "meaning": "terkesan seperti …; cenderung …",
+        "formation": "N／sebagian Vます語幹 + っぽい; berkonjugasi seperti Aい",
+        "explanation": "Membentuk sifat yang menunjukkan kesan, ciri dominan, atau kecenderungan: 子供っぽい, 忘れっぽい. Kata yang dapat digabung bersifat leksikal; tidak setiap kata bisa diberi っぽい.",
+        "commonMistake": "っぽい biasanya lebih kasual dan dapat bernilai negatif. 子供らしい lebih menekankan karakter khas yang wajar.",
+        "examples": [
+          {
+            "japanese": "彼の話し方は子供っぽいです。",
+            "reading": "かれの はなしかたは こどもっぽいです。",
+            "meaning": "Cara bicaranya terkesan kekanak-kanakan."
+          },
+          {
+            "japanese": "最近、忘れっぽくなりました。",
+            "reading": "さいきん、わすれっぽく なりました。",
+            "meaning": "Akhir-akhir ini saya menjadi mudah lupa."
+          }
+        ]
+      },
+      {
+        "pattern": "～だらけ",
+        "meaning": "penuh …",
+        "formation": "N + だらけ; N + だらけの + N",
+        "explanation": "Menunjukkan banyak unsur yang tidak diinginkan tersebar atau menempel, seperti kesalahan, lumpur, atau debu. Bukan penanda netral semua jenis isi.",
+        "commonMistake": "Untuk ruangan penuh orang, 人でいっぱい umumnya lebih netral daripada 人だらけ. Pemakaian だらけ memberi penilaian.",
+        "examples": [
+          {
+            "japanese": "この作文は間違いだらけです。",
+            "reading": "この さくぶんは まちがいだらけです。",
+            "meaning": "Karangan ini penuh kesalahan."
+          },
+          {
+            "japanese": "子供は泥だらけの靴で帰ってきました。",
+            "reading": "こどもは どろだらけの くつで かえってきました。",
+            "meaning": "Anak itu pulang dengan sepatu penuh lumpur."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Bentuk penghubung sebelum なる: 忘れっぽ（　）なりました。",
+        "choices": [
+          "く",
+          "に",
+          "な",
+          "で"
+        ],
+        "correct": 0,
+        "explanation": "っぽい berkonjugasi seperti sifat い, sehingga 忘れっぽくなる."
+      },
+      {
+        "prompt": "Sepatu penuh lumpur: 泥だらけ（　）靴です。",
+        "choices": [
+          "の",
+          "な",
+          "に",
+          "を"
+        ],
+        "correct": 0,
+        "explanation": "だらけの＋N menerangkan benda yang penuh unsur tersebut."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n彼の話し方は子供っぽいです。",
+        "choices": [
+          "Cara bicaranya terkesan kekanak-kanakan.",
+          "Akhir-akhir ini saya menjadi mudah lupa.",
+          "Karangan ini penuh kesalahan.",
+          "Anak itu pulang dengan sepatu penuh lumpur."
+        ],
+        "correct": 0,
+        "explanation": "～っぽい: terkesan seperti …; cenderung ….\nかれの はなしかたは こどもっぽいです。\nCara bicaranya terkesan kekanak-kanakan."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nこの作文は間違いだらけです。",
+        "choices": [
+          "Karangan ini penuh kesalahan.",
+          "Cara bicaranya terkesan kekanak-kanakan.",
+          "Akhir-akhir ini saya menjadi mudah lupa.",
+          "Anak itu pulang dengan sepatu penuh lumpur."
+        ],
+        "correct": 0,
+        "explanation": "～だらけ: penuh ….\nこの さくぶんは まちがいだらけです。\nKarangan ini penuh kesalahan."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nAnak itu pulang dengan sepatu penuh lumpur.",
+        "choices": [
+          "子供は泥だらけの靴で帰ってきました。",
+          "彼の話し方は子供っぽいです。",
+          "最近、忘れっぽくなりました。",
+          "この作文は間違いだらけです。"
+        ],
+        "correct": 0,
+        "explanation": "～だらけ: Menunjukkan banyak unsur yang tidak diinginkan tersebar atau menempel, seperti kesalahan, lumpur, atau debu. Bukan penanda netral semua jenis isi.\nこどもは どろだらけの くつで かえってきました。\nAnak itu pulang dengan sepatu penuh lumpur."
+      }
+    ]
+  },
+  {
+    "chapter": "Hasil dan beban tindakan",
+    "title": "Cukup dengan dan bebas dari keharusan",
+    "points": [
+      {
+        "pattern": "～て済む",
+        "meaning": "cukup dengan …; selesai dengan …",
+        "formation": "Vて + 済む",
+        "explanation": "Tindakan sudah cukup untuk menyelesaikan masalah atau memenuhi kebutuhan, tanpa membutuhkan tindakan yang lebih berat. 済む dibaca すむ. Variasi Nで済む dan だけで済む juga menyebut sarana atau batas kebutuhan.",
+        "commonMistake": "Pola ini bukan selesai melakukan seperti Vます語幹＋終わる; fokusnya kebutuhan atau masalah yang teratasi.",
+        "examples": [
+          {
+            "japanese": "メールを送って済みました。",
+            "reading": "メールを おくって すみました。",
+            "meaning": "Urusannya selesai dengan mengirim email."
+          },
+          {
+            "japanese": "その場で説明して済みました。",
+            "reading": "その ばで せつめいして すみました。",
+            "meaning": "Urusannya selesai dengan menjelaskan di tempat itu."
+          }
+        ]
+      },
+      {
+        "pattern": "～ずに済む／～ないで済む",
+        "meaning": "tidak perlu … dan masalah tetap selesai",
+        "formation": "Vない形 tanpa ない + ずに済む; する→せずに済む; Vない + で済む",
+        "explanation": "Kebutuhan tetap terpenuhi tanpa melakukan tindakan yang biasanya dianggap perlu. Sering menyatakan lega karena terhindar dari biaya, perjalanan, atau pekerjaan tambahan.",
+        "commonMistake": "する berubah menjadi せず, bukan しず. Bedakan dari ことはない sebagai nasihat; ずに済む menggambarkan terselesaikannya kebutuhan.",
+        "examples": [
+          {
+            "japanese": "友達が送ってくれたので、歩かずに済みました。",
+            "reading": "ともだちが おくってくれたので、あるかずに すみました。",
+            "meaning": "Teman mengantar saya, jadi saya tidak perlu berjalan kaki."
+          },
+          {
+            "japanese": "オンラインで申し込めたので、窓口へ行かないで済みました。",
+            "reading": "オンラインで もうしこめたので、まどぐちへ いかないで すみました。",
+            "meaning": "Karena bisa mendaftar daring, saya tidak perlu pergi ke loket."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "その場で（　）済みました。",
+        "choices": [
+          "説明して",
+          "説明する",
+          "説明した",
+          "説明しない"
+        ],
+        "correct": 0,
+        "explanation": "て済む mengikuti tindakan yang cukup untuk menyelesaikan kebutuhan."
+      },
+      {
+        "prompt": "Tidak perlu berjalan berkat diantar: 歩か（　）済みました。",
+        "choices": [
+          "ずに",
+          "ないに",
+          "ずで",
+          "なくに"
+        ],
+        "correct": 0,
+        "explanation": "歩かない diubah menjadi 歩かずに, lalu ditambah 済む."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nメールを送って済みました。",
+        "choices": [
+          "Urusannya selesai dengan mengirim email.",
+          "Urusannya selesai dengan menjelaskan di tempat itu.",
+          "Teman mengantar saya, jadi saya tidak perlu berjalan kaki.",
+          "Karena bisa mendaftar daring, saya tidak perlu pergi ke loket."
+        ],
+        "correct": 0,
+        "explanation": "～て済む: cukup dengan …; selesai dengan ….\nメールを おくって すみました。\nUrusannya selesai dengan mengirim email."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n友達が送ってくれたので、歩かずに済みました。",
+        "choices": [
+          "Teman mengantar saya, jadi saya tidak perlu berjalan kaki.",
+          "Urusannya selesai dengan mengirim email.",
+          "Urusannya selesai dengan menjelaskan di tempat itu.",
+          "Karena bisa mendaftar daring, saya tidak perlu pergi ke loket."
+        ],
+        "correct": 0,
+        "explanation": "～ずに済む／～ないで済む: tidak perlu … dan masalah tetap selesai.\nともだちが おくってくれたので、あるかずに すみました。\nTeman mengantar saya, jadi saya tidak perlu berjalan kaki."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nKarena bisa mendaftar daring, saya tidak perlu pergi ke loket.",
+        "choices": [
+          "オンラインで申し込めたので、窓口へ行かないで済みました。",
+          "メールを送って済みました。",
+          "その場で説明して済みました。",
+          "友達が送ってくれたので、歩かずに済みました。"
+        ],
+        "correct": 0,
+        "explanation": "～ずに済む／～ないで済む: Kebutuhan tetap terpenuhi tanpa melakukan tindakan yang biasanya dianggap perlu. Sering menyatakan lega karena terhindar dari biaya, perjalanan, atau pekerjaan tambahan.\nオンラインで もうしこめたので、まどぐちへ いかないで すみました。\nKarena bisa mendaftar daring, saya tidak perlu pergi ke loket."
+      }
+    ]
+  },
+  {
+    "chapter": "Kemungkinan dan tahap belum selesai",
+    "title": "Tidak ada cara dan baru sebagian",
+    "points": [
+      {
+        "pattern": "～ようがない",
+        "meaning": "tidak ada cara untuk …",
+        "formation": "Vます語幹 + ようがない",
+        "explanation": "Tidak dapat melakukan karena cara, sarana, atau informasi yang diperlukan tidak ada. よう di sini berarti cara, bukan bentuk kehendak.",
+        "commonMistake": "Cara melakukan dibentuk dari pangkal ます: 説明しようがない. Jangan menyamakan dengan V意向形＋としない yang berarti enggan.",
+        "examples": [
+          {
+            "japanese": "連絡先が分からないので、連絡しようがありません。",
+            "reading": "れんらくさきが わからないので、れんらくしようが ありません。",
+            "meaning": "Karena tidak tahu kontaknya, tidak ada cara untuk menghubunginya."
+          },
+          {
+            "japanese": "資料がないので、確かめようがありません。",
+            "reading": "しりょうが ないので、たしかめようが ありません。",
+            "meaning": "Karena tidak ada bahan rujukan, tidak ada cara untuk memastikannya."
+          }
+        ]
+      },
+      {
+        "pattern": "～かける／～かけの",
+        "meaning": "baru mulai atau belum selesai …",
+        "formation": "Vます語幹 + かける; Vます語幹 + かけの + N",
+        "explanation": "Tindakan dimulai tetapi belum selesai, atau hampir mulai. Contoh yang diajarkan berfokus pada benda yang sudah sebagian dikerjakan: 読みかけの本, 食べかけのパン.",
+        "commonMistake": "かけ menunjukkan ketidakselesaian, bukan hasil selesai seperti たばかり. Kata kerja memakai pangkal ます.",
+        "examples": [
+          {
+            "japanese": "机に読みかけの本があります。",
+            "reading": "つくえに よみかけの ほんが あります。",
+            "meaning": "Di meja ada buku yang baru saya baca sebagian."
+          },
+          {
+            "japanese": "食べかけのパンを冷蔵庫に入れました。",
+            "reading": "たべかけの パンを れいぞうこに いれました。",
+            "meaning": "Saya memasukkan roti yang belum habis dimakan ke kulkas."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Tidak ada cara memeriksa tanpa data: 資料がないので、（　）ようがありません。",
+        "choices": [
+          "確かめ",
+          "確かめる",
+          "確かめた",
+          "確かめて"
+        ],
+        "correct": 0,
+        "explanation": "Pangkal ます 確かめ ditambah ようがない menyatakan ketiadaan cara."
+      },
+      {
+        "prompt": "Buku yang dibaca sebagian: （　）かけの本です。",
+        "choices": [
+          "読み",
+          "読む",
+          "読んだ",
+          "読んで"
+        ],
+        "correct": 0,
+        "explanation": "読みます diambil pangkal 読み, lalu 読みかけの本 berarti buku yang belum selesai dibaca."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n連絡先が分からないので、連絡しようがありません。",
+        "choices": [
+          "Karena tidak tahu kontaknya, tidak ada cara untuk menghubunginya.",
+          "Karena tidak ada bahan rujukan, tidak ada cara untuk memastikannya.",
+          "Di meja ada buku yang baru saya baca sebagian.",
+          "Saya memasukkan roti yang belum habis dimakan ke kulkas."
+        ],
+        "correct": 0,
+        "explanation": "～ようがない: tidak ada cara untuk ….\nれんらくさきが わからないので、れんらくしようが ありません。\nKarena tidak tahu kontaknya, tidak ada cara untuk menghubunginya."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n机に読みかけの本があります。",
+        "choices": [
+          "Di meja ada buku yang baru saya baca sebagian.",
+          "Karena tidak tahu kontaknya, tidak ada cara untuk menghubunginya.",
+          "Karena tidak ada bahan rujukan, tidak ada cara untuk memastikannya.",
+          "Saya memasukkan roti yang belum habis dimakan ke kulkas."
+        ],
+        "correct": 0,
+        "explanation": "～かける／～かけの: baru mulai atau belum selesai ….\nつくえに よみかけの ほんが あります。\nDi meja ada buku yang baru saya baca sebagian."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nSaya memasukkan roti yang belum habis dimakan ke kulkas.",
+        "choices": [
+          "食べかけのパンを冷蔵庫に入れました。",
+          "連絡先が分からないので、連絡しようがありません。",
+          "資料がないので、確かめようがありません。",
+          "机に読みかけの本があります。"
+        ],
+        "correct": 0,
+        "explanation": "～かける／～かけの: Tindakan dimulai tetapi belum selesai, atau hampir mulai. Contoh yang diajarkan berfokus pada benda yang sudah sebagian dikerjakan: 読みかけの本, 食べかけのパン.\nたべかけの パンを れいぞうこに いれました。\nSaya memasukkan roti yang belum habis dimakan ke kulkas."
+      }
+    ]
+  },
+  {
+    "chapter": "Menjelaskan informasi",
+    "title": "Melaporkan isi dan mendefinisikan istilah",
+    "points": [
+      {
+        "pattern": "～ということだ",
+        "meaning": "kabarnya …; berarti …",
+        "formation": "V普通形／Aい + ということだ; Aな／N + だということだ",
+        "explanation": "Dapat melaporkan informasi dari sumber atau menyimpulkan arti fakta. Sumber yang disebut dan isi kalimat menentukan makna; jangan selalu menerjemahkannya sebagai kabar.",
+        "commonMistake": "Kalimat nominal dalam kutipan memakai だ: 休みだということだ. Kesimpulan pembicara perlu didukung konteks.",
+        "examples": [
+          {
+            "japanese": "ニュースによると、橋は来月完成するということです。",
+            "reading": "ニュースによると、はしは らいげつ かんせいするということです。",
+            "meaning": "Menurut berita, kabarnya jembatan akan selesai bulan depan."
+          },
+          {
+            "japanese": "返事がないのは、まだ決めていないということです。",
+            "reading": "へんじが ないのは、まだ きめていないということです。",
+            "meaning": "Tidak adanya jawaban berarti keputusan belum dibuat."
+          }
+        ]
+      },
+      {
+        "pattern": "～というのは",
+        "meaning": "yang disebut … adalah …",
+        "formation": "N istilah + というのは; klausa + というのは",
+        "explanation": "Memperkenalkan istilah atau tindakan sebagai topik yang akan didefinisikan atau dijelaskan. Penjelasan sering diakhiri ことだ untuk tindakan atau ものだ untuk benda.",
+        "commonMistake": "というのは tidak selalu definisi kamus; dapat menempatkan suatu peristiwa atau ucapan sebagai topik penjelasan.",
+        "examples": [
+          {
+            "japanese": "リサイクルというのは、使った物をもう一度利用することです。",
+            "reading": "リサイクルというのは、つかった ものを もういちど りようすることです。",
+            "meaning": "Daur ulang adalah menggunakan kembali barang yang telah dipakai."
+          },
+          {
+            "japanese": "締め切りというのは、提出しなければならない最後の日です。",
+            "reading": "しめきりというのは、ていしゅつしなければならない さいごの ひです。",
+            "meaning": "Tenggat adalah hari terakhir sesuatu harus diserahkan."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Laporan kutipan nominal: 明日は休み（　）ことです。",
+        "choices": [
+          "だという",
+          "なという",
+          "のという",
+          "をいう"
+        ],
+        "correct": 0,
+        "explanation": "Isi kutipan nominal ialah 休みだ; ditambah ということです menjadi laporan."
+      },
+      {
+        "prompt": "Mendefinisikan istilah: リサイクル（　）、使った物をもう一度利用することです。",
+        "choices": [
+          "というのは",
+          "によっては",
+          "に対しては",
+          "の最中は"
+        ],
+        "correct": 0,
+        "explanation": "というのは memperkenalkan istilah yang dijelaskan maknanya."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nニュースによると、橋は来月完成するということです。",
+        "choices": [
+          "Menurut berita, kabarnya jembatan akan selesai bulan depan.",
+          "Tidak adanya jawaban berarti keputusan belum dibuat.",
+          "Daur ulang adalah menggunakan kembali barang yang telah dipakai.",
+          "Tenggat adalah hari terakhir sesuatu harus diserahkan."
+        ],
+        "correct": 0,
+        "explanation": "～ということだ: kabarnya …; berarti ….\nニュースによると、はしは らいげつ かんせいするということです。\nMenurut berita, kabarnya jembatan akan selesai bulan depan."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\nリサイクルというのは、使った物をもう一度利用することです。",
+        "choices": [
+          "Daur ulang adalah menggunakan kembali barang yang telah dipakai.",
+          "Menurut berita, kabarnya jembatan akan selesai bulan depan.",
+          "Tidak adanya jawaban berarti keputusan belum dibuat.",
+          "Tenggat adalah hari terakhir sesuatu harus diserahkan."
+        ],
+        "correct": 0,
+        "explanation": "～というのは: yang disebut … adalah ….\nリサイクルというのは、つかった ものを もういちど りようすることです。\nDaur ulang adalah menggunakan kembali barang yang telah dipakai."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nTenggat adalah hari terakhir sesuatu harus diserahkan.",
+        "choices": [
+          "締め切りというのは、提出しなければならない最後の日です。",
+          "ニュースによると、橋は来月完成するということです。",
+          "返事がないのは、まだ決めていないということです。",
+          "リサイクルというのは、使った物をもう一度利用することです。"
+        ],
+        "correct": 0,
+        "explanation": "～というのは: Memperkenalkan istilah atau tindakan sebagai topik yang akan didefinisikan atau dijelaskan. Penjelasan sering diakhiri ことだ untuk tindakan atau ものだ untuk benda.\nしめきりというのは、ていしゅつしなければならない さいごの ひです。\nTenggat adalah hari terakhir sesuatu harus diserahkan."
+      }
+    ]
+  },
+  {
+    "chapter": "Kausatif dan kesopanan",
+    "title": "Terpaksa melakukan dan izin yang dihargai",
+    "points": [
+      {
+        "pattern": "使役受身：～させられる",
+        "meaning": "disuruh atau dipaksa melakukan …",
+        "formation": "五段: ない形 tanpa ない + せられる（bentuk singkat ～される, kecuali ～す）; 一段: る→させられる; する→させられる; 来る→来させられる",
+        "explanation": "Gabungan kausatif dan pasif: pelaku melakukan tindakan atas tekanan orang lain. Pelaku tindakan memakai は／が; pihak yang menyuruh memakai に. Contoh 五段: 書かせられる→書かされる; 話す→話させられる.",
+        "commonMistake": "Bedakan pasif biasa 読まれる dari kausatif pasif 読まされる. Bentuk singkat tidak dipakai untuk kata kerja 五段 berakhiran す.",
+        "examples": [
+          {
+            "japanese": "子供の時、毎日野菜を食べさせられました。",
+            "reading": "こどもの とき、まいにち やさいを たべさせられました。",
+            "meaning": "Saat kecil, saya disuruh makan sayuran setiap hari."
+          },
+          {
+            "japanese": "先生に作文を書かされました。",
+            "reading": "せんせいに さくぶんを かかされました。",
+            "meaning": "Saya disuruh guru menulis karangan."
+          }
+        ]
+      },
+      {
+        "pattern": "～させていただく",
+        "meaning": "mohon izin untuk …; diizinkan melakukan dengan rasa terima kasih",
+        "formation": "V使役形て + いただく",
+        "explanation": "Pembicara melakukan tindakan dengan izin pihak lain dan merasakan manfaat izin tersebut. Cocok misalnya saat meminta izin menjelaskan. Tidak perlu dipakai untuk semua tindakan diri sendiri; untuk pernyataan sederhana, いたします sering cukup.",
+        "commonMistake": "Pelaku tindakan ialah pembicara, bukan pihak yang dihormati. Bedakan 説明していただく: orang lain menjelaskan untuk kita.",
+        "examples": [
+          {
+            "japanese": "私から説明させていただきます。",
+            "reading": "わたしから せつめいさせて いただきます。",
+            "meaning": "Dengan izin Anda, saya akan menjelaskan terlebih dahulu."
+          },
+          {
+            "japanese": "今日は早く帰らせていただけませんか。",
+            "reading": "きょうは はやく かえらせて いただけませんか。",
+            "meaning": "Bolehkah saya mendapat izin pulang lebih awal hari ini?"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Kausatif pasif singkat dari 書く: 先生に作文を（　）。",
+        "choices": [
+          "書かされました",
+          "書かれました",
+          "書きました",
+          "書けました"
+        ],
+        "correct": 0,
+        "explanation": "書かせられる dapat disingkat menjadi 書かされる. 書かれる hanya bentuk pasif biasa."
+      },
+      {
+        "prompt": "Pembicara meminta izin melakukan penjelasan: 私から（　）いただきます。",
+        "choices": [
+          "説明させて",
+          "説明して",
+          "説明されて",
+          "説明しなくて"
+        ],
+        "correct": 0,
+        "explanation": "説明させていただく berarti saya melakukan penjelasan dengan izin. 説明していただく berarti orang lain menjelaskan untuk saya."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n子供の時、毎日野菜を食べさせられました。",
+        "choices": [
+          "Saat kecil, saya disuruh makan sayuran setiap hari.",
+          "Saya disuruh guru menulis karangan.",
+          "Dengan izin Anda, saya akan menjelaskan terlebih dahulu.",
+          "Bolehkah saya mendapat izin pulang lebih awal hari ini?"
+        ],
+        "correct": 0,
+        "explanation": "使役受身：～させられる: disuruh atau dipaksa melakukan ….\nこどもの とき、まいにち やさいを たべさせられました。\nSaat kecil, saya disuruh makan sayuran setiap hari."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n私から説明させていただきます。",
+        "choices": [
+          "Dengan izin Anda, saya akan menjelaskan terlebih dahulu.",
+          "Saat kecil, saya disuruh makan sayuran setiap hari.",
+          "Saya disuruh guru menulis karangan.",
+          "Bolehkah saya mendapat izin pulang lebih awal hari ini?"
+        ],
+        "correct": 0,
+        "explanation": "～させていただく: mohon izin untuk …; diizinkan melakukan dengan rasa terima kasih.\nわたしから せつめいさせて いただきます。\nDengan izin Anda, saya akan menjelaskan terlebih dahulu."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nBolehkah saya mendapat izin pulang lebih awal hari ini?",
+        "choices": [
+          "今日は早く帰らせていただけませんか。",
+          "子供の時、毎日野菜を食べさせられました。",
+          "先生に作文を書かされました。",
+          "私から説明させていただきます。"
+        ],
+        "correct": 0,
+        "explanation": "～させていただく: Pembicara melakukan tindakan dengan izin pihak lain dan merasakan manfaat izin tersebut. Cocok misalnya saat meminta izin menjelaskan. Tidak perlu dipakai untuk semua tindakan diri sendiri; untuk pernyataan sederhana, いたします sering cukup.\nきょうは はやく かえらせて いただけませんか。\nBolehkah saya mendapat izin pulang lebih awal hari ini?"
+      }
+    ]
+  },
+  {
+    "chapter": "Kebiasaan dan kenangan",
+    "title": "Sifat umum dan kebiasaan masa lalu",
+    "points": [
+      {
+        "pattern": "～ものだ：一般的な性質",
+        "meaning": "memang pada umumnya …",
+        "formation": "V辞書形／Vない形／Aい + ものだ; Aな + なものだ",
+        "explanation": "Mengungkapkan sifat umum, kecenderungan yang dianggap wajar, atau rasa takjub pada kenyataan umum. Contoh di sini menjelaskan pengalaman manusia secara umum, bukan benda fisik.",
+        "commonMistake": "Pola ものだ memiliki beberapa fungsi. Vたものだ untuk nostalgia berbeda dari penjelasan sifat umum dengan bentuk nonlampau.",
+        "examples": [
+          {
+            "japanese": "時間がたつと、記憶は薄くなるものです。",
+            "reading": "じかんが たつと、きおくは うすくなる ものです。",
+            "meaning": "Seiring waktu, ingatan memang biasanya memudar."
+          },
+          {
+            "japanese": "新しいことを始める時は、不安になるものです。",
+            "reading": "あたらしい ことを はじめる ときは、ふあんに なる ものです。",
+            "meaning": "Saat mulai hal baru, orang memang biasanya merasa cemas."
+          }
+        ]
+      },
+      {
+        "pattern": "～たものだ",
+        "meaning": "dulu sering …; mengenang kebiasaan masa lalu",
+        "formation": "Vた + ものだ",
+        "explanation": "Pembicara mengenang kebiasaan yang berulang pada masa lalu, sering dengan perasaan nostalgia. Biasanya didukung kata waktu seperti 子供のころ atau 昔.",
+        "commonMistake": "Bukan satu kejadian yang baru selesai. Untuk satu pengalaman gunakan たことがある; たものだ mengingat kebiasaan.",
+        "examples": [
+          {
+            "japanese": "子供のころ、この川でよく泳いだものです。",
+            "reading": "こどもの ころ、この かわで よく およいだ ものです。",
+            "meaning": "Dulu saat kecil, saya sering berenang di sungai ini."
+          },
+          {
+            "japanese": "学生のころ、友達と夜遅くまで話したものです。",
+            "reading": "がくせいの ころ、ともだちと よる おそくまで はなした ものです。",
+            "meaning": "Dulu saat menjadi pelajar, saya sering berbicara dengan teman sampai larut malam."
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "Penjelasan kecenderungan umum: 記憶は薄くなる（　）です。",
+        "choices": [
+          "もの",
+          "ところ",
+          "たび",
+          "ついで"
+        ],
+        "correct": 0,
+        "explanation": "ものだ mengungkapkan kecenderungan yang dianggap umum, bukan tahap tindakan."
+      },
+      {
+        "prompt": "Kenangan kebiasaan dulu: 子供のころ、よく（　）ものです。",
+        "choices": [
+          "泳いだ",
+          "泳ぐ",
+          "泳いで",
+          "泳がない"
+        ],
+        "correct": 0,
+        "explanation": "Kenangan kebiasaan lampau menggunakan Vた＋ものだ: 泳いだものだ."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n時間がたつと、記憶は薄くなるものです。",
+        "choices": [
+          "Seiring waktu, ingatan memang biasanya memudar.",
+          "Saat mulai hal baru, orang memang biasanya merasa cemas.",
+          "Dulu saat kecil, saya sering berenang di sungai ini.",
+          "Dulu saat menjadi pelajar, saya sering berbicara dengan teman sampai larut malam."
+        ],
+        "correct": 0,
+        "explanation": "～ものだ：一般的な性質: memang pada umumnya ….\nじかんが たつと、きおくは うすくなる ものです。\nSeiring waktu, ingatan memang biasanya memudar."
+      },
+      {
+        "prompt": "Kalimat ini bermakna apa?\n子供のころ、この川でよく泳いだものです。",
+        "choices": [
+          "Dulu saat kecil, saya sering berenang di sungai ini.",
+          "Seiring waktu, ingatan memang biasanya memudar.",
+          "Saat mulai hal baru, orang memang biasanya merasa cemas.",
+          "Dulu saat menjadi pelajar, saya sering berbicara dengan teman sampai larut malam."
+        ],
+        "correct": 0,
+        "explanation": "～たものだ: dulu sering …; mengenang kebiasaan masa lalu.\nこどもの ころ、この かわで よく およいだ ものです。\nDulu saat kecil, saya sering berenang di sungai ini."
+      },
+      {
+        "prompt": "Pilih kalimat yang sesuai situasi atau maksud berikut:\nDulu saat menjadi pelajar, saya sering berbicara dengan teman sampai larut malam.",
+        "choices": [
+          "学生のころ、友達と夜遅くまで話したものです。",
+          "時間がたつと、記憶は薄くなるものです。",
+          "新しいことを始める時は、不安になるものです。",
+          "子供のころ、この川でよく泳いだものです。"
+        ],
+        "correct": 0,
+        "explanation": "～たものだ: Pembicara mengenang kebiasaan yang berulang pada masa lalu, sering dengan perasaan nostalgia. Biasanya didukung kata waktu seperti 子供のころ atau 昔.\nがくせいの ころ、ともだちと よる おそくまで はなした ものです。\nDulu saat menjadi pelajar, saya sering berbicara dengan teman sampai larut malam."
+      }
+    ]
+  }
+]

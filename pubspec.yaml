@@ -34,8 +34,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/icons/
-    - assets/images/
-    - assets/images/vocabulary/
-    - assets/images/reading/
-    - assets/vectors/
+    - assets/images/app-icon-small.png

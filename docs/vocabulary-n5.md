@@ -20,7 +20,7 @@ Bantuan kana adalah satu baris bacaan lengkap, bukan furigana di atas setiap kan
 
 - Materi: `backend/data/vocabulary/n5.json`, dimuat dengan Go embed saat backend dibangun.
 - Soal dan penilaian: `backend/internal/store/vocabulary.go`. API tidak mengirim kunci jawaban ketika kuis dimulai.
-- Gambar: `assets/images/vocabulary/n5-theme-01.png` hingga `n5-theme-20.png`, dibuat menggunakan imagegen bawaan. Setiap lembar berisi delapan ilustrasi dalam susunan 4 kolom × 2 baris; aplikasi mengambil panel sesuai kata.
+- Gambar: `backend/assets/images/vocabulary/n5-theme-01.png` hingga `n5-theme-20.png`, dibuat menggunakan imagegen bawaan. Setiap lembar berisi delapan ilustrasi dalam susunan 4 kolom × 2 baris; aplikasi mengambil panel sesuai kata.
 - Prompt lengkap dan pemetaan aset: `docs/vocabulary-n5-art.json`.
 - Gambar lokal dibundel dengan aplikasi. URL aset backend, bila dikonfigurasi, memiliki fallback ke gambar lokal.
 

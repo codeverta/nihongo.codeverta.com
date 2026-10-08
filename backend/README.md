@@ -9,13 +9,20 @@ dibuka dengan Swagger Editor atau dipakai untuk menghasilkan API client.
 Sinkronkan seluruh asset lokal ke Tencent COS dari folder `backend`:
 
 ```powershell
-go run ./cmd/assetsync -source ../assets -prefix assets
+go run ./cmd/assetsync -source assets -prefix assets
 ```
 
 Credential dibaca dari `.env`; secret tidak pernah dikirim ke aplikasi.
 Secara default object asset diberi ACL `public-read` agar dapat ditampilkan oleh
 mobile app. Gunakan `-public-read=false` untuk bucket yang dilayani melalui URL
 bertanda tangan atau CDN private.
+
+Gambar reading, vocabulary, dan onboarding berada di `backend/assets/images/` dan tidak
+dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`, backend
+menyajikannya di `/assets/images/...`; aplikasi memakai origin `API_BASE_URL`.
+Deploy folder `backend/assets` bersama backend (atau atur `ASSET_DIRECTORY`).
+Untuk CDN, atur `ASSET_BASE_URL` ke origin CDN dengan object prefix `assets`.
+Panduan build APK kecil: [Android app size](../docs/android-app-size.md).
 
 Dokumentasi lengkap:
 
@@ -111,8 +118,14 @@ Materi Vocabulary N5 bergambar: [panduan konten dan UI](../docs/vocabulary-n5.md
 
 Materi Reading N3 bergambar: [panduan lesson](../docs/reading-n3.md).
 
+Materi Grammar N3: [kurikulum dan panduan lesson](../docs/grammar-n3.md).
+
+Materi Kanji N3: [kurikulum, contoh, dan sumber kamus](../docs/kanji-n3.md).
+
 ```powershell
 go fmt ./...
 go vet ./...
 go test ./...
 ```
+
+Simulasi ujian N4: [struktur, timer, dan penilaian](../docs/jlpt-n4-simulation.md).

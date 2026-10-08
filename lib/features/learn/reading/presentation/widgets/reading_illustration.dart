@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/network/remote_asset_image.dart';
 
 /// Each generated sheet contains three square scenes. The viewport shows one.
 class ReadingIllustration extends StatelessWidget {
@@ -18,17 +19,6 @@ class ReadingIllustration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget unavailable() => ColoredBox(
-          color: Theme.of(context).colorScheme.surfaceContainerHighest,
-          child: const Center(child: Icon(Icons.image_not_supported_outlined)),
-        );
-    Widget local() => Image.asset(
-          asset,
-          fit: BoxFit.fill,
-          cacheWidth: 2172,
-          excludeFromSemantics: true,
-          errorBuilder: (context, error, stack) => unavailable(),
-        );
     return Semantics(
       image: true,
       label: description,
@@ -42,17 +32,7 @@ class ReadingIllustration extends StatelessWidget {
               maxWidth: constraints.maxWidth * 3,
               minHeight: constraints.maxWidth,
               maxHeight: constraints.maxWidth,
-              child: url.isEmpty
-                  ? local()
-                  : Image.network(
-                      url,
-                      fit: BoxFit.fill,
-                      cacheWidth: 2172,
-                      excludeFromSemantics: true,
-                      errorBuilder: (context, error, stack) => local(),
-                      loadingBuilder: (context, child, progress) =>
-                          progress == null ? child : local(),
-                    ),
+              child: RemoteAssetImage(asset: asset, url: url),
             ),
           ),
         ),

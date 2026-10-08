@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/network/remote_asset_image.dart';
 
-/// A generated 4×2 sheet supplies eight independent word illustrations.
+/// A generated 4 x 2 sheet supplies eight independent word illustrations.
 class VocabularyArt extends StatelessWidget {
   const VocabularyArt({
     required this.asset,
@@ -18,16 +19,6 @@ class VocabularyArt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cell = panel.clamp(0, 7);
-    Widget fallback() => Image.asset(
-          asset,
-          fit: BoxFit.fill,
-          cacheWidth: 2172,
-          excludeFromSemantics: true,
-          errorBuilder: (_, __, ___) => ColoredBox(
-            color: Theme.of(context).colorScheme.surfaceContainerLow,
-            child: const Center(child: Icon(Icons.image_outlined)),
-          ),
-        );
     return Semantics(
       image: true,
       label: description,
@@ -44,17 +35,7 @@ class VocabularyArt extends StatelessWidget {
               maxWidth: c.maxWidth * 4,
               minHeight: c.maxWidth * 2,
               maxHeight: c.maxWidth * 2,
-              child: url.isEmpty
-                  ? fallback()
-                  : Image.network(
-                      url,
-                      fit: BoxFit.fill,
-                      cacheWidth: 2172,
-                      excludeFromSemantics: true,
-                      errorBuilder: (_, __, ___) => fallback(),
-                      loadingBuilder: (_, child, progress) =>
-                          progress == null ? child : fallback(),
-                    ),
+              child: RemoteAssetImage(asset: asset, url: url),
             ),
           ),
         ),

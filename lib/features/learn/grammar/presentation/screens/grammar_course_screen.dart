@@ -16,7 +16,9 @@ class GrammarCourseScreen extends ConsumerStatefulWidget {
 class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
   String query = '';
   String chapter = 'Semua';
-  late String level = widget.initialLevel == 'N4' ? 'N4' : 'N5';
+  late String level = ['N5', 'N4', 'N3'].contains(widget.initialLevel)
+      ? widget.initialLevel
+      : 'N5';
   void invalidateCourse() {
     if (level == 'N5') ref.invalidate(grammarCourseProvider);
     ref.invalidate(grammarCourseLevelProvider(level));
@@ -80,7 +82,7 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
               children: [
                 Row(
                   children: [
-                    for (final item in ['N5', 'N4'])
+                    for (final item in ['N5', 'N4', 'N3'])
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: ChoiceChip(
@@ -114,9 +116,11 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                       ),
                       const SizedBox(height: 14),
                       Text(
-                        level == 'N4'
-                            ? 'Ungkapkan rencana, alasan, dan pendapat'
-                            : 'Bangun kalimat Jepang dari dasar',
+                        level == 'N3'
+                            ? 'Pahami nuansa, hubungan, dan maksud kalimat'
+                            : level == 'N4'
+                                ? 'Ungkapkan rencana, alasan, dan pendapat'
+                                : 'Bangun kalimat Jepang dari dasar',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,

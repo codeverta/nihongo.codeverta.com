@@ -1,9 +1,17 @@
 package api
 
-import "net/http"
+import (
+	"net/http"
+	"strings"
+)
 
 func (s *Server) simulationOverview(w http.ResponseWriter, r *http.Request) {
-	writeData(w, 200, s.store.SimulationOverview(userID(r)))
+	level := strings.ToUpper(r.PathValue("level"))
+	if level != "N5" && level != "N4" {
+		writeError(w, 400, "invalid_level", "Simulation supports N5 and N4")
+		return
+	}
+	writeData(w, 200, s.store.SimulationOverview(userID(r), level))
 }
 
 func (s *Server) simulationSession(w http.ResponseWriter, r *http.Request) {

@@ -11,7 +11,8 @@ import (
 
 func seedKanji() []kanjiLessonContent {
 	lessons := seedKanjiLevel("N5", kanji.N5, 20, 100)
-	return append(lessons, seedKanjiLevel("N4", kanji.N4, 34, 166)...)
+	lessons = append(lessons, seedKanjiLevel("N4", kanji.N4, 34, 166)...)
+	return append(lessons, seedKanjiLevel("N3", kanji.N3, 77, 367)...)
 }
 
 func seedKanjiLevel(level string, content []byte, lessonCount, characterCount int) []kanjiLessonContent {

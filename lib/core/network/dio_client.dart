@@ -3,16 +3,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 
-final dioProvider = Provider<Dio>((ref) {
-  final preferences = ref.watch(sharedPreferencesProvider);
+final apiBaseUrlProvider = Provider<String>((ref) {
   const configuredApiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
     defaultValue: 'http://10.0.2.2:8080/v1',
   );
-  final apiBaseUrl = _resolveApiBaseUrl(
+  return _resolveApiBaseUrl(
     configuredApiBaseUrl,
     defaultTargetPlatform,
   );
+});
+
+final dioProvider = Provider<Dio>((ref) {
+  final preferences = ref.watch(sharedPreferencesProvider);
+  final apiBaseUrl = ref.watch(apiBaseUrlProvider);
 
   final dio = Dio(
     BaseOptions(

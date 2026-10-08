@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/network/remote_asset_image.dart';
 
 const _pageCount = 3;
 const _homePath = '/home';
@@ -317,10 +318,11 @@ class _JourneyArtwork extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(31),
-        child: Image.asset(
-          'assets/images/onboarding-japanese-journey.png',
+        child: const RemoteAssetImage(
+          asset: 'assets/images/onboarding-japanese-journey.png',
+          url: '',
           fit: BoxFit.cover,
-          alignment: const Alignment(0, 0.22),
+          alignment: Alignment(0, 0.22),
         ),
       ),
     );

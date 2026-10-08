@@ -40,12 +40,14 @@ class VocabularyLessonSummary {
     required this.bestScore,
     required this.completed,
     this.imageAsset = '',
+    this.imageUrl = '',
     this.questionCount = 0,
   });
 
   factory VocabularyLessonSummary.fromJson(Map<String, dynamic> json) =>
       VocabularyLessonSummary(
         imageAsset: json['imageAsset'] as String? ?? '',
+        imageUrl: json['imageUrl'] as String? ?? '',
         questionCount: json['questionCount'] as int? ?? 0,
         id: json['id'] as String? ?? '',
         order: json['order'] as int? ?? 0,
@@ -58,6 +60,7 @@ class VocabularyLessonSummary {
 
   final String id;
   final String imageAsset;
+  final String imageUrl;
   final int questionCount;
   final int order;
   final String title;

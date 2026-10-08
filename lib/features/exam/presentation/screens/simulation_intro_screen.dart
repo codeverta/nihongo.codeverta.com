@@ -6,7 +6,8 @@ import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 
 class SimulationIntroScreen extends ConsumerStatefulWidget {
-  const SimulationIntroScreen({super.key});
+  const SimulationIntroScreen({super.key, this.level = 'N5'});
+  final String level;
 
   @override
   ConsumerState<SimulationIntroScreen> createState() => _IntroState();
@@ -15,6 +16,10 @@ class SimulationIntroScreen extends ConsumerStatefulWidget {
 class _IntroState extends ConsumerState<SimulationIntroScreen> {
   bool busy = false;
   String? error;
+  bool get n4 => widget.level == 'N4';
+  AutoDisposeFutureProvider<Json> get overviewProvider => n4
+      ? simulationLevelOverviewProvider(widget.level)
+      : simulationOverviewProvider;
 
   Future<void> start() async {
     setState(() {
@@ -22,10 +27,13 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
       error = null;
     });
     try {
-      final id = await ref.read(simulationRepositoryProvider).start();
+      final id = await ref
+          .read(simulationLevelRepositoryProvider(widget.level))
+          .start();
       if (mounted) {
-        ref.invalidate(simulationOverviewProvider);
-        await context.push('/exams/n5/simulation/$id');
+        ref.invalidate(overviewProvider);
+        await context
+            .push('/exams/${widget.level.toLowerCase()}/simulation/$id');
       }
     } on Object catch (e) {
       if (mounted) setState(() => error = diagnosticError(e));
@@ -36,14 +44,14 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('JLPT N5 Simulation')),
-        body: ref.watch(simulationOverviewProvider).when(
+        appBar: AppBar(title: Text('JLPT ${widget.level} Simulation')),
+        body: ref.watch(overviewProvider).when(
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (e, _) => Padding(
                 padding: const EdgeInsets.all(20),
                 child: ExamMessage(
                   message: diagnosticError(e),
-                  retry: () => ref.invalidate(simulationOverviewProvider),
+                  retry: () => ref.invalidate(overviewProvider),
                 ),
               ),
               data: (data) {
@@ -55,35 +63,48 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
                       child: ListView(
                         padding: const EdgeInsets.all(20),
                         children: [
-                          const DiagnosticHero(
+                          DiagnosticHero(
                             title: 'Duduk. Fokus.\nKerjakan seperti ujian.',
-                            subtitle:
-                                'Paket 01 · 38 soal · 40 menit\nKosakata, kanji, dan grammar N5. Dokkai dan listening dilewati.',
+                            subtitle: n4
+                                ? 'Paket 01 · 57 soal · 80 menit\nKosakata, kanji, grammar, dan reading N4. Listening dilewati.'
+                                : 'Paket 01 · 38 soal · 40 menit\nKosakata, kanji, dan grammar N5. Dokkai dan listening dilewati.',
                           ),
                           const SizedBox(height: 24),
                           const ExamHeading('Dua bagian, dua timer'),
-                          const ExamPanel(
+                          ExamPanel(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '1. 文字・語彙 — 21 soal / 20 menit',
-                                  style: TextStyle(fontWeight: FontWeight.w800),
+                                  n4
+                                      ? '1. 文字・語彙 — 28 soal / 25 menit'
+                                      : '1. 文字・語彙 — 21 soal / 20 menit',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Text(
-                                  '7 bacaan kanji · 5 penulisan · 6 konteks · 3 padanan makna',
-                                  style: TextStyle(height: 1.6),
+                                  n4
+                                      ? '7 bacaan kanji · 5 penulisan · 8 konteks · 4 padanan makna · 4 penggunaan kata'
+                                      : '7 bacaan kanji · 5 penulisan · 6 konteks · 3 padanan makna',
+                                  style: const TextStyle(height: 1.6),
                                 ),
-                                Divider(height: 28),
+                                const Divider(height: 28),
                                 Text(
-                                  '2. 文法 — 17 soal / 20 menit',
-                                  style: TextStyle(fontWeight: FontWeight.w800),
+                                  n4
+                                      ? '2. 文法・読解 — 29 soal / 55 menit'
+                                      : '2. 文法 — 17 soal / 20 menit',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Text(
-                                  '9 pilihan grammar · 4 susunan kalimat ★ · 4 grammar teks',
-                                  style: TextStyle(height: 1.6),
+                                  n4
+                                      ? '13 pilihan grammar · 4 susunan kalimat ★ · 4 grammar teks · 8 reading (3 pendek, 3 sedang, 2 pencarian informasi)'
+                                      : '9 pilihan grammar · 4 susunan kalimat ★ · 4 grammar teks',
+                                  style: const TextStyle(height: 1.6),
                                 ),
                               ],
                             ),
@@ -103,12 +124,14 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
                             ),
                           ),
                           const SizedBox(height: 16),
-                          const Text(
-                            'Struktur mengikuti jenis soal N5 dan perkiraan jumlah resmi setelah revisi 2020. '
-                            'Grammar teks termasuk bunpou, bukan tes pemahaman dokkai. '
-                            'Waktu grammar disesuaikan menjadi 20 menit karena dokkai dilewati; waktu resmi grammar + dokkai adalah 40 menit. '
-                            'Soal orisinal Nihongo Master. Nilai berupa persentase benar, bukan skor berskala atau kelulusan resmi JLPT.',
-                            style: TextStyle(fontSize: 12, height: 1.6),
+                          Text(
+                            n4
+                                ? 'Struktur mengikuti jenis soal N4 dan perkiraan jumlah setelah revisi 2020. Waktu kosakata 25 menit dan grammar + reading 55 menit. Listening dilewati. Soal orisinal Nihongo Master. Nilai berupa persentase benar, bukan skor berskala atau kelulusan resmi JLPT.'
+                                : 'Struktur mengikuti jenis soal N5 dan perkiraan jumlah resmi setelah revisi 2020. '
+                                    'Grammar teks termasuk bunpou, bukan tes pemahaman dokkai. '
+                                    'Waktu grammar disesuaikan menjadi 20 menit karena dokkai dilewati; waktu resmi grammar + dokkai adalah 40 menit. '
+                                    'Soal orisinal Nihongo Master. Nilai berupa persentase benar, bukan skor berskala atau kelulusan resmi JLPT.',
+                            style: const TextStyle(fontSize: 12, height: 1.6),
                           ),
                           if (history.isNotEmpty) ...[
                             const SizedBox(height: 24),
@@ -129,7 +152,7 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
                                   ),
                                 ),
                                 onTap: () => context.push(
-                                  '/exams/n5/simulation/${r['attemptId']}',
+                                  '/exams/${widget.level.toLowerCase()}/simulation/${r['attemptId']}',
                                 ),
                               ),
                           ],
