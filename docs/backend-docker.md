@@ -42,12 +42,13 @@ network dan arahkan koneksi database ke hostname gateway host sesuai platform.
 
 ## Catatan database
 
-Code backend saat ini memakai `MemoryStore` di RAM dan belum memiliki adapter
-database SQL. Compose memang tidak menambah database, dan mode network host
-membuka jalur jaringan ke database host, tetapi belum membuat API membaca atau
-menulis ke database itu. Session, profil, dan progres yang disimpan oleh API
-akan hilang saat container dimulai ulang. Database baru akan dipakai setelah
-adapter dan konfigurasi koneksinya ditambahkan ke backend.
+Backend memakai SQLite untuk akun, pembayaran, gamifikasi/progres lesson, serta
+cache dan arsip hasil kamus. File ditentukan oleh `GAMIFICATION_DB_PATH` dan pada
+Compose berada di `/app/data/gamification.db` pada volume data. Data tersebut
+tetap tersedia setelah restart; session login dan attempt aktif masih di RAM.
+Tidak ada adapter MySQL/MariaDB atau koneksi ke database host yang diaktifkan
+oleh mode network host. Jalankan satu proses API per file SQLite dan backup
+volume data lengkap. Lihat [penyimpanan kamus](dictionary.md).
 
 Volume bernama `backend_branding` menjaga konfigurasi branding yang diedit
 melalui endpoint admin. Materi gambar reading, vocabulary, dan onboarding

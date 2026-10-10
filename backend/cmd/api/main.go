@@ -54,6 +54,11 @@ func main() {
 		auth.NewGoogleVerifier(os.Getenv("GOOGLE_CLIENT_ID")),
 	)
 	apiServer.ConfigureBilling(billingService, os.Getenv("GOOGLE_PLAY_PUSH_AUDIENCE"), os.Getenv("GOOGLE_PLAY_PUSH_EMAIL"))
+	dictionaryCache, err := memoryStore.DictionaryCache()
+	if err != nil {
+		log.Fatal(err)
+	}
+	apiServer.ConfigureDictionaryCache(dictionaryCache)
 	billingContext, stopBilling := context.WithCancel(context.Background())
 	defer stopBilling()
 	go func() {

@@ -7,6 +7,11 @@ import (
 	"strconv"
 )
 
+// ConfigureDictionaryCache must run before Handler starts serving requests.
+func (s *Server) ConfigureDictionaryCache(cache *dictionary.SQLCache) {
+	s.dictionary.Persistence = cache
+}
+
 func (s *Server) dictionarySearch(w http.ResponseWriter, r *http.Request) {
 	page := 1
 	if raw := r.URL.Query().Get("page"); raw != "" {

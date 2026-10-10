@@ -40,12 +40,13 @@ type flight struct {
 	err  error
 }
 type Client struct {
-	HTTP    *http.Client
-	mu      sync.Mutex
-	cache   map[string]cached
-	flights map[string]*flight
-	slots   chan struct{}
-	next    time.Time
+	HTTP        *http.Client
+	Persistence *SQLCache
+	mu          sync.Mutex
+	cache       map[string]cached
+	flights     map[string]*flight
+	slots       chan struct{}
+	next        time.Time
 }
 
 func NewClient() *Client {
@@ -116,8 +117,12 @@ func (c *Client) Kanji(ctx context.Context, character string) (json.RawMessage, 
 }
 func (c *Client) evict(key string) { c.mu.Lock(); delete(c.cache, key); c.mu.Unlock() }
 func (c *Client) get(ctx context.Context, endpoint string) ([]byte, error) {
+	ttl := 6 * time.Hour
+	if c.Persistence != nil {
+		ttl = persistentTTL
+	}
 	c.mu.Lock()
-	if hit, ok := c.cache[endpoint]; ok && time.Since(hit.at) < 6*time.Hour {
+	if hit, ok := c.cache[endpoint]; ok && time.Since(hit.at) < ttl {
 		c.mu.Unlock()
 		return hit.body, nil
 	}
@@ -133,7 +138,8 @@ func (c *Client) get(ctx context.Context, endpoint string) ([]byte, error) {
 	f := &flight{done: make(chan struct{})}
 	c.flights[endpoint] = f
 	c.mu.Unlock()
-	body, err := c.fetch(ctx, endpoint)
+	hit, err := c.loadOrFetch(ctx, endpoint, ttl)
+	body := hit.body
 	c.mu.Lock()
 	if err == nil {
 		if len(c.cache) >= 128 {
@@ -147,13 +153,40 @@ func (c *Client) get(ctx context.Context, endpoint string) ([]byte, error) {
 			}
 			delete(c.cache, oldest)
 		}
-		c.cache[endpoint] = cached{body: body, at: time.Now()}
+		c.cache[endpoint] = hit
 	}
 	f.body, f.err = body, err
 	delete(c.flights, endpoint)
 	close(f.done)
 	c.mu.Unlock()
 	return body, err
+}
+func (c *Client) loadOrFetch(ctx context.Context, endpoint string, ttl time.Duration) (cached, error) {
+	if c.Persistence != nil {
+		hit, ok, err := c.Persistence.load(ctx, endpoint)
+		if err != nil {
+			return cached{}, fmt.Errorf("%w: database read failed", ErrUnavailable)
+		}
+		if ok && !hit.at.After(time.Now()) && time.Since(hit.at) < ttl {
+			if _, _, _, err = responseEntries(endpoint, hit.body); err == nil {
+				return hit, nil
+			}
+		}
+	}
+	body, err := c.fetch(ctx, endpoint)
+	if err != nil {
+		return cached{}, err
+	}
+	if _, _, _, err = responseEntries(endpoint, body); err != nil {
+		return cached{}, err
+	}
+	hit := cached{body: body, at: time.Now()}
+	if c.Persistence != nil {
+		if err = c.Persistence.save(ctx, endpoint, hit); err != nil {
+			return cached{}, fmt.Errorf("%w: database write failed", ErrUnavailable)
+		}
+	}
+	return hit, nil
 }
 func (c *Client) fetch(ctx context.Context, endpoint string) ([]byte, error) {
 	// Bound waiting requests as well as active connections; callers can retry busy sources.
