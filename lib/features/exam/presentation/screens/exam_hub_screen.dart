@@ -7,201 +7,128 @@ import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_wid
 
 class ExamHubScreen extends ConsumerWidget {
   const ExamHubScreen({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    if (!ref.watch(authControllerProvider).isAuthenticated) {
-      return const SizedBox.shrink();
-    }
+    final auth = ref.watch(authControllerProvider);
+    if (!auth.isAuthenticated) return const SizedBox.shrink();
     final overview = ref.watch(diagnosticOverviewProvider);
+    final premium = auth.user?.isPremium ?? false;
+    final colors = Theme.of(context).colorScheme;
     return RefreshIndicator(
       onRefresh: () => ref.refresh(diagnosticOverviewProvider.future),
       child: ListView(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 32),
+        padding: const EdgeInsets.fromLTRB(20, 24, 20, 32),
         physics: const AlwaysScrollableScrollPhysics(),
         children: [
           const Text(
             'Latihan Ujian',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 6),
-          const Text('Kenali kemampuanmu. Tentukan langkah berikutnya.'),
-          const SizedBox(height: 24),
-          DiagnosticHero(
-            title: 'JLPT N5\nSimulation',
-            subtitle:
-                'Paket 01 · 38 soal · 40 menit\nKosakata, kanji, dan grammar. Dua bagian dengan timer dan jawaban yang dikunci setelah selesai.',
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Dokkai & listening dilewati',
-                  style: TextStyle(color: Colors.white),
-                ),
-                const SizedBox(height: 14),
-                FilledButton.icon(
-                  onPressed: () => context.push('/exams/n5/simulation'),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: examInk,
-                  ),
-                  icon: const Icon(Icons.timer_outlined),
-                  label: const Text('Buka simulasi N5'),
-                ),
-              ],
-            ),
+          Text(
+            'Pilih level dan mulai latihan sesuai format JLPT.',
+            style: TextStyle(color: colors.onSurfaceVariant),
           ),
-          const SizedBox(height: 24),
-          DiagnosticHero(
-            title: 'JLPT N4\nSimulation',
-            subtitle:
-                'Paket 01 · 57 soal · 80 menit\nKosakata dan kanji 25 menit, grammar dan reading 55 menit. Lengkap dengan pembahasan dan riwayat hasil.',
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Listening dilewati',
-                  style: TextStyle(color: Colors.white),
-                ),
-                const SizedBox(height: 14),
-                FilledButton.icon(
-                  onPressed: () => context.push('/exams/n4/simulation'),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: examInk,
-                  ),
-                  icon: const Icon(Icons.timer_outlined),
-                  label: const Text('Buka simulasi N4'),
-                ),
-              ],
-            ),
+          const SizedBox(height: 28),
+          const _SectionTitle('Simulasi JLPT'),
+          const SizedBox(height: 4),
+          _ExamRow(
+            badge: 'N5',
+            title: 'Simulasi N5',
+            metadata: '38 soal · 40 menit',
+            description: 'Kosakata, kanji & grammar',
+            note: 'Tanpa reading & listening',
+            onTap: () => context.push('/exams/n5/simulation'),
           ),
-          const SizedBox(height: 24),
-          const ExamHeading('Cek awal dengan diagnostic'),
-          DiagnosticHero(
-            title: 'Seberapa kuat\ndasar bahasa Jepangmu?',
-            subtitle:
-                'Mulai dari diagnostic N5. Temukan bagian yang sudah kamu kuasai dan yang masih perlu dilatih.',
-            child: FilledButton.icon(
-              onPressed: () => context.push('/exams/n5'),
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: examInk,
-              ),
-              icon: const Icon(Icons.arrow_forward_rounded),
-              label: const Text('Buka diagnostic N5'),
-            ),
+          const Divider(height: 1),
+          _ExamRow(
+            badge: 'N4',
+            title: 'Simulasi N4',
+            metadata: '57 soal · 80 menit',
+            description: 'Kosakata, kanji, grammar & reading',
+            note: 'Tanpa listening',
+            locked: !premium,
+            onTap: () =>
+                context.push(premium ? '/exams/n4/simulation' : '/premium'),
           ),
-          const SizedBox(height: 24),
-          const ExamHeading('Satu tes, empat kemampuan'),
-          const Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              Chip(
-                avatar: Icon(Icons.translate_rounded, size: 18),
-                label: Text('Kosakata'),
-              ),
-              Chip(
-                avatar: Icon(Icons.brush_rounded, size: 18),
-                label: Text('Kanji'),
-              ),
-              Chip(
-                avatar: Icon(Icons.account_tree_outlined, size: 18),
-                label: Text('Grammar'),
-              ),
-              Chip(
-                avatar: Icon(Icons.auto_stories_outlined, size: 18),
-                label: Text('Reading'),
-              ),
-            ],
+          const SizedBox(height: 20),
+          const _SectionTitle('Cek kemampuan awal'),
+          const SizedBox(height: 4),
+          _ExamRow(
+            icon: Icons.insights_outlined,
+            title: 'Diagnostic N5',
+            description: 'Temukan bagian yang perlu kamu latih.',
+            onTap: () => context.push('/exams/n5'),
           ),
-          const SizedBox(height: 24),
-          const ExamHeading('Perjalanan diagnostic'),
+          const SizedBox(height: 20),
+          const _SectionTitle('Riwayat diagnostic'),
+          const SizedBox(height: 12),
           overview.when(
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const Padding(
+              padding: EdgeInsets.all(20),
+              child: Center(child: CircularProgressIndicator()),
+            ),
             error: (e, _) => ExamMessage(
               message: diagnosticError(e),
               retry: () => ref.invalidate(diagnosticOverviewProvider),
             ),
             data: (data) {
               final history = diagnosticList(data['history']);
+              final activeAttemptId = data['activeAttemptId'] as String;
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  if ((data['activeAttemptId'] as String).isNotEmpty) ...[
-                    ListTile(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      tileColor: examInk.withValues(alpha: .06),
-                      leading: const Icon(
-                        Icons.play_circle_outline,
-                        color: examInk,
-                      ),
-                      title: const Text('Ada sesi yang belum selesai'),
-                      subtitle: const Text('Lanjutkan dari jawaban tersimpan.'),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () => context.push(
-                        '/exams/n5/attempt/${data['activeAttemptId']}',
+                  if (activeAttemptId.isNotEmpty) ...[
+                    Material(
+                      color: examInk.withValues(alpha: .06),
+                      borderRadius: BorderRadius.circular(12),
+                      clipBehavior: Clip.antiAlias,
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.play_circle_outline,
+                          color: examInk,
+                        ),
+                        title: const Text('Lanjutkan diagnostic N5'),
+                        subtitle: const Text('Jawabanmu sudah tersimpan.'),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () =>
+                            context.push('/exams/n5/attempt/$activeAttemptId'),
                       ),
                     ),
                     const SizedBox(height: 12),
                   ],
                   if (history.isEmpty)
-                    const ExamPanel(
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.insights_rounded,
-                            size: 38,
-                            color: examGreen,
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Langkah pertamamu dimulai di sini',
-                            style: TextStyle(fontWeight: FontWeight.w800),
-                          ),
-                          SizedBox(height: 6),
-                          Text(
-                            'Hasil dan perkembanganmu akan tampil setelah menyelesaikan diagnostic.',
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                    Text(
+                      'Belum ada hasil. Riwayat akan muncul setelah kamu menyelesaikan diagnostic.',
+                      style: TextStyle(
+                        color: colors.onSurfaceVariant,
+                        height: 1.5,
                       ),
                     ),
-                  for (final result in history)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: ExamPanel(
-                        child: ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          leading: const CircleAvatar(
-                            backgroundColor: examInk,
-                            foregroundColor: Colors.white,
-                            child: Text('N5'),
-                          ),
-                          title: const Text(
-                            'JLPT N5 Diagnostic',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                          subtitle: Text(
-                            '${result['correct']}/${result['total']} benar • ${_date(result['completedAt'] as String)}',
-                          ),
-                          trailing: Text(
-                            '${result['score']}%',
-                            style: const TextStyle(
-                              color: examGreen,
-                              fontSize: 23,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                          onTap: () => context.push(
-                            '/exams/n5/attempt/${result['attemptId']}',
-                          ),
+                  for (var i = 0; i < history.length; i++) ...[
+                    if (i > 0) const Divider(height: 1),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        'Diagnostic N5',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      subtitle: Text(
+                        '${history[i]['correct']}/${history[i]['total']} benar · ${_date(history[i]['completedAt'] as String)}',
+                      ),
+                      trailing: Text(
+                        '${history[i]['score']}%',
+                        style: const TextStyle(
+                          color: examGreen,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
+                      onTap: () => context
+                          .push('/exams/n5/attempt/${history[i]['attemptId']}'),
                     ),
+                  ],
                 ],
               );
             },
@@ -214,5 +141,135 @@ class ExamHubScreen extends ConsumerWidget {
   String _date(String value) {
     final d = DateTime.parse(value).toLocal();
     return '${d.day}/${d.month}/${d.year}';
+  }
+}
+
+class _SectionTitle extends StatelessWidget {
+  const _SectionTitle(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Text(
+        text,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+      );
+}
+
+class _ExamRow extends StatelessWidget {
+  const _ExamRow({
+    required this.title,
+    required this.description,
+    required this.onTap,
+    this.badge,
+    this.icon,
+    this.metadata,
+    this.note,
+    this.locked = false,
+  });
+
+  final String? badge;
+  final IconData? icon;
+  final String title;
+  final String? metadata;
+  final String description;
+  final String? note;
+  final bool locked;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Semantics(
+      button: true,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 4),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 48,
+                  height: 48,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: examInk.withValues(alpha: .07),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: badge != null
+                      ? Text(
+                          badge!,
+                          style: const TextStyle(
+                            color: examInk,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        )
+                      : Icon(icon, color: examInk),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      if (metadata != null) ...[
+                        const SizedBox(height: 4),
+                        Text(metadata!, style: const TextStyle(fontSize: 13)),
+                      ],
+                      const SizedBox(height: 4),
+                      Text(
+                        description,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: colors.onSurfaceVariant,
+                        ),
+                      ),
+                      if (note != null)
+                        Text(
+                          note!,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: colors.onSurfaceVariant,
+                          ),
+                        ),
+                      if (locked) ...[
+                        const SizedBox(height: 6),
+                        Text(
+                          'Lifetime Access',
+                          style: TextStyle(
+                            color: colors.primary,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Icon(
+                    locked ? Icons.lock_outline : Icons.chevron_right,
+                    size: 20,
+                    color: colors.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

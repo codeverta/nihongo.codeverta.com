@@ -63,6 +63,7 @@ func TestSimulationN4Paper(t *testing.T) {
 
 func TestSimulationN4DeadlinesAndIsolation(t *testing.T) {
 	s := NewMemoryStore()
+	grantTestLifetime(t, s, "user")
 	now := time.Date(2026, 10, 6, 0, 0, 0, 0, time.UTC)
 	s.simulationNow = func() time.Time { return now }
 	n5, err := s.StartSimulation("user")
@@ -131,6 +132,7 @@ func TestSimulationN4DeadlinesAndIsolation(t *testing.T) {
 
 func TestSimulationN4GradesAndRetry(t *testing.T) {
 	s := NewMemoryStore()
+	grantTestLifetime(t, s, "user")
 	attempt, err := s.StartSimulation("user", "N4")
 	if err != nil {
 		t.Fatal(err)

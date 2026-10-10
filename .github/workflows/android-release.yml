@@ -1,0 +1,118 @@
+name: Android release build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-assets-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build signed AAB and APK
+    runs-on: ubuntu-latest
+    env:
+      API_BASE_URL: ${{ vars.API_BASE_URL }}
+      GOOGLE_SERVER_CLIENT_ID: ${{ vars.GOOGLE_SERVER_CLIENT_ID }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.6'
+          channel: stable
+          cache: true
+
+      - name: Validate release configuration
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          : "${ANDROID_KEYSTORE_BASE64:?Add the Android upload keystore as an Actions secret.}"
+          : "${ANDROID_KEYSTORE_PASSWORD:?Add the upload keystore password as an Actions secret.}"
+          : "${ANDROID_KEY_ALIAS:?Add the upload key alias as an Actions secret.}"
+          : "${ANDROID_KEY_PASSWORD:?Add the upload key password as an Actions secret.}"
+          : "${GOOGLE_SERVER_CLIENT_ID:?Add the Web OAuth Client ID as an Actions variable.}"
+          : "${API_BASE_URL:?Add the production API URL as an Actions variable.}"
+          [[ "$GOOGLE_SERVER_CLIENT_ID" == *.apps.googleusercontent.com ]]
+          [[ "$API_BASE_URL" == https://* ]]
+
+      - name: Configure upload signing key
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/upload-key.jks"
+          test -s "$RUNNER_TEMP/upload-key.jks"
+          echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/upload-key.jks" >> "$GITHUB_ENV"
+
+      - name: Get Flutter packages
+        run: flutter pub get
+
+      - name: Build Play Store app bundle
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: >-
+          flutter build appbundle --release
+          --dart-define=API_BASE_URL="$API_BASE_URL"
+          --dart-define=GOOGLE_SERVER_CLIENT_ID="$GOOGLE_SERVER_CLIENT_ID"
+
+      - name: Build installable APK
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: >-
+          flutter build apk --release
+          --dart-define=API_BASE_URL="$API_BASE_URL"
+          --dart-define=GOOGLE_SERVER_CLIENT_ID="$GOOGLE_SERVER_CLIENT_ID"
+
+      - name: Prepare release files
+        run: |
+          set -euo pipefail
+          mkdir -p release-output
+          cp build/app/outputs/bundle/release/app-release.aab release-output/nihongo-master.aab
+          cp build/app/outputs/flutter-apk/app-release.apk release-output/nihongo-master.apk
+          (cd release-output && sha256sum nihongo-master.aab nihongo-master.apk > SHA256SUMS)
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nihongo-master-android-${{ github.ref_name }}
+          path: release-output/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Attach files to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" release-output/* --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" release-output/* \
+              --title "Nihongo Master $GITHUB_REF_NAME" \
+              --generate-notes
+          fi

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
+import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
 
@@ -16,7 +17,7 @@ class GrammarCourseScreen extends ConsumerStatefulWidget {
 class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
   String query = '';
   String chapter = 'Semua';
-  late String level = ['N5', 'N4', 'N3'].contains(widget.initialLevel)
+  late String level = ['N5', 'N4', 'N3', 'N2'].contains(widget.initialLevel)
       ? widget.initialLevel
       : 'N5';
   void invalidateCourse() {
@@ -82,17 +83,28 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
               children: [
                 Row(
                   children: [
-                    for (final item in ['N5', 'N4', 'N3'])
+                    for (final item in ['N5', 'N4', 'N3', 'N2'])
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: ChoiceChip(
                           label: Text(item),
                           selected: item == level,
-                          onSelected: (_) => setState(() {
-                            level = item;
-                            query = '';
-                            chapter = 'Semua';
-                          }),
+                          onSelected: (_) {
+                            if (const ['N3', 'N2', 'N1'].contains(item) &&
+                                !(ref
+                                        .read(authControllerProvider)
+                                        .user
+                                        ?.isPremium ??
+                                    false)) {
+                              context.push('/premium');
+                              return;
+                            }
+                            setState(() {
+                              level = item;
+                              query = '';
+                              chapter = 'Semua';
+                            });
+                          },
                         ),
                       ),
                   ],
@@ -116,11 +128,13 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                       ),
                       const SizedBox(height: 14),
                       Text(
-                        level == 'N3'
-                            ? 'Pahami nuansa, hubungan, dan maksud kalimat'
-                            : level == 'N4'
-                                ? 'Ungkapkan rencana, alasan, dan pendapat'
-                                : 'Bangun kalimat Jepang dari dasar',
+                        level == 'N2'
+                            ? 'Kuasai nuansa dan hubungan gagasan yang kompleks'
+                            : level == 'N3'
+                                ? 'Pahami nuansa, hubungan, dan maksud kalimat'
+                                : level == 'N4'
+                                    ? 'Ungkapkan rencana, alasan, dan pendapat'
+                                    : 'Bangun kalimat Jepang dari dasar',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,

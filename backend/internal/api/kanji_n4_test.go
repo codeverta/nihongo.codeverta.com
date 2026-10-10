@@ -36,7 +36,7 @@ func TestKanjiN4APIContract(t *testing.T) {
 			t.Fatalf("invalid catalog: %s %v", w.Body.String(), err)
 		}
 	}
-	for _, level := range []string{"N3", "N2", "N1", "n4"} {
+	for _, level := range []string{"N2", "N1", "n4"} {
 		if request("GET", "/v1/kanji/course?level="+level, token, "").Code != 400 {
 			t.Fatalf("unsupported level %s accepted", level)
 		}

@@ -8,6 +8,8 @@ import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_result_view.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
+import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 class SimulationAttemptScreen extends ConsumerStatefulWidget {
   const SimulationAttemptScreen({
@@ -105,6 +107,8 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       timer?.cancel();
       if (previousResult == null) {
         ref
+          ..invalidate(gamificationProvider)
+          ..invalidate(homeDashboardProvider)
           ..invalidate(simulationOverviewProvider)
           ..invalidate(simulationLevelOverviewProvider(widget.level));
       }

@@ -42,12 +42,14 @@ final dioProvider = Provider<Dio>((ref) {
     ),
   );
 
-  dio.interceptors.add(
-    LogInterceptor(
-      requestBody: true,
-      responseBody: true,
-    ),
-  );
+  if (kDebugMode) {
+    dio.interceptors.add(
+      LogInterceptor(
+        requestHeader: false,
+        responseHeader: false,
+      ),
+    );
+  }
 
   return dio;
 });

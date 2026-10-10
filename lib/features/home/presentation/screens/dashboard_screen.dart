@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
@@ -79,7 +80,10 @@ class _DashboardContent extends StatelessWidget {
               _DashboardHeader(data: data, openProfile: openProfile),
               if (premiumPlan != null && data.profile?.tier != 'premium') ...[
                 const SizedBox(height: 22),
-                _PremiumBanner(plan: premiumPlan, onPressed: openProfile),
+                _PremiumBanner(
+                  plan: premiumPlan,
+                  onPressed: () => context.push('/premium'),
+                ),
               ],
               const SizedBox(height: 22),
               _DailyGoalCard(goal: data.dailyGoal, onPressed: openLearn),
@@ -131,7 +135,8 @@ class _DashboardContent extends StatelessWidget {
   }
 
   Achievement _nextAchievement(List<Achievement> achievements) {
-    return achievements.reduce((current, next) {
+    final locked = achievements.where((a) => !a.isUnlocked).toList();
+    return (locked.isEmpty ? achievements : locked).reduce((current, next) {
       final currentRemaining = current.target - current.progress;
       final nextRemaining = next.target - next.progress;
       return nextRemaining < currentRemaining ? next : current;
@@ -634,7 +639,9 @@ class _AchievementPreview extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      '$remaining langkah lagi • ${achievement.description}',
+                      achievement.isUnlocked
+                          ? 'Terbuka • ${achievement.description}'
+                          : '$remaining langkah lagi • ${achievement.description}',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
+import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 
-class LearnHubScreen extends StatefulWidget {
+class LearnHubScreen extends ConsumerStatefulWidget {
   const LearnHubScreen({super.key});
 
   @override
-  State<LearnHubScreen> createState() => _LearnHubScreenState();
+  ConsumerState<LearnHubScreen> createState() => _LearnHubScreenState();
 }
 
-class _LearnHubScreenState extends State<LearnHubScreen> {
+class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
   int _selectedLevel = 0;
 
   static const _levels = ['N5', 'N4', 'N3', 'N2', 'N1'];
@@ -35,6 +37,8 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    final locked = _selectedLevel >= 2 &&
+        !(ref.watch(authControllerProvider).user?.isPremium ?? false);
     return CustomScrollView(
       key: const PageStorageKey('learn-scroll'),
       slivers: [
@@ -51,7 +55,7 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
               ),
               const SizedBox(height: 8),
               const Text(
-                'Pilih level target, lalu mulai dari materi yang sudah tersedia.',
+                'N5–N4 gratis. Materi N3–N1 memerlukan Lifetime Access.',
               ),
               const SizedBox(height: 24),
               Text(
@@ -91,7 +95,9 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
               _VocabularyCallout(
                 level: _levels[_selectedLevel],
                 onPressed: () => context.push(
-                  '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
+                  locked
+                      ? '/premium'
+                      : '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
                 ),
               ),
               const SizedBox(height: 28),
@@ -108,27 +114,31 @@ class _LearnHubScreenState extends State<LearnHubScreen> {
                   padding: const EdgeInsets.only(bottom: 12),
                   child: _SubjectTile(
                     title: subject.$1,
-                    subtitle: subject.$2,
+                    subtitle:
+                        locked ? 'Lifetime Access diperlukan' : subject.$2,
                     icon: subject.$3,
-                    onTap: index == 0
-                        ? () => context.push(
-                              '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
-                            )
-                        : index == 1 && _selectedLevel <= 2
+                    locked: locked,
+                    onTap: locked
+                        ? () => context.push('/premium')
+                        : index == 0
                             ? () => context.push(
-                                  '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
+                                  '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
                                 )
-                            : index == 2 && _selectedLevel <= 2
+                            : index == 1 && _selectedLevel <= 3
                                 ? () => context.push(
-                                      '${AppRoutes.kanjiPath}?level=${_levels[_selectedLevel]}',
+                                      '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
                                     )
-                                : index == 3 && _selectedLevel <= 3
+                                : index == 2 && _selectedLevel <= 2
                                     ? () => context.push(
-                                          AppRoutes.readingCoursePath(
-                                            _levels[_selectedLevel],
-                                          ),
+                                          '${AppRoutes.kanjiPath}?level=${_levels[_selectedLevel]}',
                                         )
-                                    : null,
+                                    : index == 3 && _selectedLevel <= 3
+                                        ? () => context.push(
+                                              AppRoutes.readingCoursePath(
+                                                _levels[_selectedLevel],
+                                              ),
+                                            )
+                                        : null,
                   ),
                 ),
             ],
@@ -213,12 +223,14 @@ class _SubjectTile extends StatelessWidget {
     required this.subtitle,
     required this.icon,
     required this.onTap,
+    this.locked = false,
   });
 
   final String title;
   final String subtitle;
   final IconData icon;
   final VoidCallback? onTap;
+  final bool locked;
 
   @override
   Widget build(BuildContext context) {
@@ -238,9 +250,11 @@ class _SubjectTile extends StatelessWidget {
         ),
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.w700)),
         subtitle: Text(subtitle),
-        trailing: onTap == null
-            ? const Chip(label: Text('Segera'))
-            : const Icon(Icons.chevron_right_rounded),
+        trailing: locked
+            ? const Icon(Icons.lock_outline)
+            : onTap == null
+                ? const Chip(label: Text('Segera'))
+                : const Icon(Icons.chevron_right_rounded),
       ),
     );
   }

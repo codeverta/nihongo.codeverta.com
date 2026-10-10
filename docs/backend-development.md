@@ -301,8 +301,9 @@ Invoke-RestMethod `
 
 ### Simpan lesson progress
 
-`completion` harus berada antara 0 dan 100. Ketika bernilai 100, lesson dianggap
-selesai dan XP pengguna ditambahkan.
+`completion` harus berada antara 0 dan 100. Endpoint legacy ini tidak memberikan
+XP atau achievement. Lesson vocabulary, grammar, kanji, dan reading harus
+diselesaikan melalui kuis yang dinilai server; lihat [aturan gamifikasi](gamification.md).
 
 ```powershell
 Invoke-RestMethod `

@@ -129,7 +129,7 @@ Package name dapat dilihat pada `android/app/build.gradle.kts`, bagian
 Nilai proyek saat ini:
 
 ```text
-com.example.nihongo_master
+com.codeverta.nihongomaster
 ```
 
 Sebelum production, ganti package contoh tersebut dengan application ID resmi,
@@ -187,7 +187,7 @@ Android OAuth client untuk SHA-1 release yang baru.
 2. Tekan **Create Client**.
 3. Application type: **Android**.
 4. Name: `Nihongo Master Android Debug`.
-5. Package name: `com.example.nihongo_master`.
+5. Package name: `com.codeverta.nihongomaster`.
 6. SHA-1: masukkan fingerprint debug di atas.
 7. Tekan **Create**.
 
@@ -239,16 +239,17 @@ belum diisi. Token dengan audience berbeda akan ditolak dengan `401`.
 
 ## Menjalankan Flutter dengan Google OAuth
 
-Android Emulator:
+Dari folder utama project di Windows, Linux, atau macOS, jalankan:
 
-```powershell
-flutter run `
-  --dart-define=API_BASE_URL=http://10.0.2.2:8080/v1 `
-  --dart-define=GOOGLE_SERVER_CLIENT_ID=YOUR_WEB_CLIENT_ID.apps.googleusercontent.com
+```text
+dart run.dart
 ```
 
-Nilai `GOOGLE_SERVER_CLIENT_ID` **harus sama** dengan `GOOGLE_CLIENT_ID` pada
-backend dan harus berupa Web OAuth Client ID, bukan Android Client ID.
+Launcher membaca `GOOGLE_SERVER_CLIENT_ID` dari `backend/.env` (atau memakai
+`GOOGLE_CLIENT_ID` jika key itu kosong), menjalankan backend, lalu meneruskan
+Web Client ID tersebut ke build Flutter. Jika kedua key diisi, nilainya harus
+sama. Lihat [panduan menjalankan project](running-project.md) untuk memilih
+device atau memakai ponsel fisik.
 
 Jika menggunakan Firebase `google-services.json`, pastikan file tersebut berisi
 OAuth web client (`client_type: 3`). Implementasi proyek saat ini tidak
@@ -270,8 +271,9 @@ mewajibkan Firebase dan dapat berjalan hanya dengan `serverClientId`.
 
 ### `GOOGLE_SERVER_CLIENT_ID belum dikonfigurasi`
 
-Flutter dijalankan tanpa `--dart-define`. Stop aplikasi dan jalankan ulang dengan
-command lengkap; hot reload tidak dapat mengubah compile-time variable.
+Launcher tidak menerima ID saat app dijalankan. Jalankan ulang dengan
+`dart run.dart` dari folder utama project; hot reload tidak dapat mengubah
+compile-time variable. Launcher mengambil nilainya dari `backend/.env`.
 
 ### `google_not_configured`
 

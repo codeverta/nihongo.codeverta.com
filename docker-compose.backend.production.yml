@@ -1,0 +1,47 @@
+name: nihongo-master-production
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend.production
+    # On Linux, this lets the container reach services on the host through
+    # 127.0.0.1. Docker Desktop requires host networking to be enabled.
+    network_mode: host
+    environment:
+      PORT: ${BACKEND_DOCKER_PORT:-18084}
+      ASSET_DIRECTORY: /app/assets
+      BRANDING_CONFIG_PATH: /app/data/branding.json
+      GAMIFICATION_DB_PATH: /app/data/gamification.db
+    volumes:
+      # The API reads this file itself so values containing special characters
+      # aren't reinterpreted by Compose.
+      - type: bind
+        source: ./backend/.env
+        target: /app/.env
+        read_only: true
+        bind:
+          create_host_path: false
+      - backend_branding:/app/data
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - /bin/busybox wget -q -O /dev/null "http://127.0.0.1:$${PORT}/healthz" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  backend_branding:

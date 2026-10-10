@@ -9,6 +9,6 @@ final homeRepositoryProvider = Provider<HomeRepository>((ref) {
 });
 
 final homeDashboardProvider = FutureProvider.autoDispose<HomeDashboard>((ref) {
-  ref.watch(authControllerProvider.select((state) => state.status));
+  ref.watch(authControllerProvider.select((state) => state.user?.id));
   return ref.watch(homeRepositoryProvider).fetchDashboard();
 });

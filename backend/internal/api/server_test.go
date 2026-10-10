@@ -9,6 +9,7 @@ import (
 	"net/http/httptest"
 	"strings"
 	"testing"
+	"time"
 
 	"nihongo-master-backend/internal/api"
 	backendAuth "nihongo-master-backend/internal/auth"
@@ -25,9 +26,16 @@ func (f fakeGoogleVerifier) Verify(context.Context, string) (domain.GoogleIdenti
 	return f.identity, f.err
 }
 
-func newServer() http.Handler {
+func newServer(premium ...bool) http.Handler {
+	memory := store.NewMemoryStore()
+	if len(premium) > 0 && premium[0] {
+		token, _ := memory.BillingAccountToken("demo-user")
+		if err := memory.SaveVerifiedPurchase("demo-user", domain.Purchase{Platform: "android", ID: "test-purchase", ProductID: "nihongo_master_lifetime", AccountToken: token, State: "purchased", CheckedAt: time.Now()}); err != nil {
+			panic(err)
+		}
+	}
 	return api.NewServer(
-		store.NewMemoryStore(),
+		memory,
 		fakeGoogleVerifier{identity: domain.GoogleIdentity{
 			Subject:     "google-123",
 			Email:       "google@example.com",
@@ -179,7 +187,7 @@ func TestSaveProgressRejectsInvalidPercentage(t *testing.T) {
 func TestFreeUserCannotStartPremiumExam(t *testing.T) {
 	server := newServer()
 	token := login(t, server)
-	body := bytes.NewBufferString(`{"examId":"jlpt-n5-full-1"}`)
+	body := bytes.NewBufferString(`{"examId":"jlpt-n4-simulation-1"}`)
 	request := httptest.NewRequest(http.MethodPost, "/v1/exam-attempts", body)
 	request.Header.Set("Authorization", "Bearer "+token)
 	request.Header.Set("Content-Type", "application/json")
@@ -222,14 +230,48 @@ func TestVocabularyAttemptEvaluatesAnswersPersistsProgressAndRetries(t *testing.
 	server := newServer()
 	token := login(t, server)
 	attempt := startVocabularyAttempt(t, server, token, "n5-daily")
-	correctOptions := []string{"n5-watashi", "n5-gakusei", "n5-taberu", "n5-mizu"}
+	requestLesson := httptest.NewRequest(http.MethodGet, "/v1/vocabulary/lessons/n5-daily", nil)
+	requestLesson.Header.Set("Authorization", "Bearer "+token)
+	lessonResponse := httptest.NewRecorder()
+	server.ServeHTTP(lessonResponse, requestLesson)
+	var lesson struct {
+		Data domain.VocabularyLesson `json:"data"`
+	}
+	if err := json.Unmarshal(lessonResponse.Body.Bytes(), &lesson); err != nil || lessonResponse.Code != 200 {
+		t.Fatal("cannot load vocabulary lesson")
+	}
+	correctOption := func(index int, question domain.VocabularyQuestion) string {
+		word := lesson.Data.Words[index%len(lesson.Data.Words)]
+		text := word.Meaning
+		switch question.Kind {
+		case "Cara baca":
+			text = word.Reading
+		case "Penulisan kata":
+			text = word.Term
+		case "Pemakaian kalimat":
+			text = word.Example
+		}
+		for _, option := range question.Options {
+			if option.Text == text {
+				return option.ID
+			}
+		}
+		t.Fatalf("question has no matching answer for %s", question.ID)
+		return ""
+	}
+	wrongCount := (len(attempt.Questions) + 3) / 4
 	for index, question := range attempt.Questions {
-		option := correctOptions[index]
-		if index == 0 {
-			option = "n5-mizu"
+		option := correctOption(index, question)
+		if index < wrongCount {
+			for _, choice := range question.Options {
+				if choice.ID != option {
+					option = choice.ID
+					break
+				}
+			}
 		}
 		feedback := answerVocabulary(t, server, token, attempt.ID, question.ID, option)
-		if feedback.Correct == (index == 0) {
+		if feedback.Correct == (index < wrongCount) {
 			t.Fatalf("unexpected correctness for question %d", index)
 		}
 		if feedback.CorrectOptionID == "" || feedback.Explanation == "" {
@@ -237,13 +279,14 @@ func TestVocabularyAttemptEvaluatesAnswersPersistsProgressAndRetries(t *testing.
 		}
 	}
 	result := completeVocabulary(t, server, token, attempt.ID)
-	if result.Score != 75 || result.Passed || result.BestScore != 75 {
+	expected := (len(attempt.Questions) - wrongCount) * 100 / len(attempt.Questions)
+	if result.Score != expected || result.Passed || result.BestScore != expected {
 		t.Fatalf("unexpected first result: %#v", result)
 	}
 
 	retry := startVocabularyAttempt(t, server, token, "n5-daily")
 	for index, question := range retry.Questions {
-		answerVocabulary(t, server, token, retry.ID, question.ID, correctOptions[index])
+		answerVocabulary(t, server, token, retry.ID, question.ID, correctOption(index, question))
 	}
 	retryResult := completeVocabulary(t, server, token, retry.ID)
 	if retryResult.Score != 100 || !retryResult.Passed || retryResult.BestScore != 100 {

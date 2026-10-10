@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
@@ -6,6 +7,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/kanji/data/kanji_repository.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final kanjiRepositoryProvider = Provider<KanjiRepository>(
   (ref) => KanjiRepository(ref.watch(dioProvider)),
@@ -80,7 +82,8 @@ final kanjiLessonProvider = StateNotifierProvider.autoDispose
     onProgress: () {
       ref
         ..invalidate(kanjiCourseProvider)
-        ..invalidate(homeDashboardProvider);
+        ..invalidate(homeDashboardProvider)
+        ..invalidate(gamificationProvider);
     },
   );
   unawaited(c.load());

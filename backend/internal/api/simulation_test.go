@@ -72,7 +72,7 @@ func TestSimulationAPIAuthAndContract(t *testing.T) {
 }
 
 func TestSimulationN4API(t *testing.T) {
-	server := newServer()
+	server := newServer(true)
 	token := login(t, server)
 	request := func(method, path, body string) *httptest.ResponseRecorder {
 		r := httptest.NewRequest(method, path, strings.NewReader(body))

@@ -1,171 +1,93 @@
 # Panduan Menjalankan Nihongo Master
 
-Project ini terdiri dari dua proses yang harus aktif bersamaan saat memakai
-aplikasi Android:
+Project ini terdiri dari backend Go dan aplikasi Flutter. Satu launcher
+menjalankan keduanya supaya konfigurasi Google Sign-In ikut masuk ke Flutter.
 
-1. **Backend Go** menyediakan API untuk Beranda, katalog, akun, dan progress.
-2. **Flutter app** berjalan di Android Emulator atau perangkat Android.
+## Kebutuhan
 
-Kalau backend belum aktif, aplikasi tetap bisa terbuka, tetapi Beranda akan
-menampilkan pesan bahwa data tidak dapat dimuat.
+- Flutter SDK dan Dart dari Flutter SDK ada di `PATH`.
+- Go 1.22 atau lebih baru ada di `PATH`.
+- Android SDK dan Android Emulator, atau perangkat Android dengan USB debugging.
+- File `backend/.env` berisi `GOOGLE_CLIENT_ID` (Web OAuth Client ID).
 
-## Kebutuhan awal
+## Jalankan semuanya
 
-- Flutter SDK terpasang dan bisa dipanggil dengan `flutter --version`.
-- Go 1.22 atau lebih baru dan bisa dipanggil dengan `go version`.
-- Android Studio dengan plugin Flutter dan Dart.
-- Android SDK serta satu Android Emulator (AVD), atau perangkat Android.
-
-## Cara menjalankan dari Android Studio
-
-### 1. Buka project Flutter
-
-Di Android Studio pilih **File > Open**, lalu buka folder utama repository ini,
-yaitu folder yang berisi `pubspec.yaml`. Jangan buka folder `android` sebagai
-project terpisah untuk menjalankan aplikasi Flutter.
-
-Pastikan plugin Flutter dan Dart aktif. Pilih Android Emulator dari daftar
-perangkat di bagian atas, lalu jalankan emulator dari **Device Manager** jika
-belum menyala.
-
-### 2. Jalankan backend
-
-Buka terminal Android Studio dengan **View > Tool Windows > Terminal** (atau
-`Alt+F12`). Dari folder utama project, jalankan:
-
-```powershell
-cd backend
-go run ./cmd/api
-```
-
-Biarkan terminal ini tetap terbuka. Backend normalnya menampilkan:
+Buka terminal di folder utama project—folder yang memiliki `pubspec.yaml`—dan
+jalankan perintah yang sama di Windows, Linux, maupun macOS:
 
 ```text
-nihongo master API listening on http://localhost:8080
+dart run.dart
 ```
 
-Periksa backend dari terminal kedua:
+Launcher membaca `backend/.env`, menyalakan backend, menunggu endpoint health
+siap, lalu menjalankan Flutter dengan `API_BASE_URL` dan
+`GOOGLE_SERVER_CLIENT_ID` yang benar. Output backend dan Flutter tampil di
+terminal yang sama. Tekan `q` untuk menghentikan Flutter; backend ikut berhenti.
 
-```powershell
-Invoke-RestMethod http://localhost:8080/healthz
-Invoke-RestMethod http://localhost:8080/v1/home
-```
-
-Health check harus menampilkan status `ok`, dan `/v1/home` harus mengembalikan
-data Beranda.
-
-### 3. Jalankan Flutter di emulator
-
-Buka terminal Android Studio kedua pada folder utama repository, lalu jalankan:
-
-```powershell
-flutter pub get
-flutter run
-```
-
-Jika ada lebih dari satu perangkat, pilih emulator secara eksplisit:
-
-```powershell
-flutter devices
-flutter run -d emulator-5554
-```
-
-`emulator-5554` hanya contoh; gunakan ID yang tampil dari `flutter devices`.
-Alternatifnya, pilih konfigurasi Flutter `lib/main.dart` dan tekan **Run** di
-Android Studio. Pastikan target device yang dipilih adalah emulator Android.
-
-Alamat API default aplikasi sudah disiapkan untuk Android Emulator:
+Pilih emulator bila ada beberapa perangkat:
 
 ```text
-http://10.0.2.2:8080/v1
+dart run.dart -d emulator-5554
 ```
 
-Alamat `10.0.2.2` adalah jalur khusus dari emulator ke `localhost` komputer.
-Jadi backend berjalan di komputer, sementara app berjalan di emulator.
+Ganti `emulator-5554` dengan ID dari `flutter devices`. Alamat API default
+`http://10.0.2.2:8080/v1` adalah alamat khusus Android Emulator untuk mengakses
+backend di komputer.
 
-## Menjalankan di perangkat Android fisik
+## Menjalankan ke perangkat Android fisik
 
-Hubungkan komputer dan ponsel ke jaringan Wi-Fi yang sama, aktifkan USB
-debugging, lalu cek perangkat dengan `flutter devices`. Cari alamat IPv4 komputer
-dengan `ipconfig`, misalnya `192.168.1.20`, kemudian jalankan:
+Hubungkan ponsel dan komputer ke jaringan yang sama, aktifkan USB debugging,
+lalu arahkan app ke alamat IPv4 komputer:
 
-```powershell
-flutter run -d <DEVICE_ID> --dart-define=API_BASE_URL=http://192.168.1.20:8080/v1
+```text
+dart run.dart --api-base-url http://192.168.1.20:8080/v1 -d <DEVICE_ID>
 ```
 
-Ganti alamat contoh dengan IPv4 komputer sendiri. Izinkan koneksi Go pada port
-8080 di Windows Firewall jika diminta. Pada perangkat fisik, `localhost` berarti
-ponsel itu sendiri, bukan komputer.
+Ganti alamat contoh dan `<DEVICE_ID>` dengan alamat komputer dan ID perangkat
+sendiri. Ponsel harus dapat mengakses port backend `8080` melalui firewall.
 
-## Memperbaiki pesan “Beranda belum dapat dimuat”
+## Opsi launcher
 
-1. Pastikan terminal backend masih terbuka dan menampilkan `API listening`.
-2. Di terminal komputer, jalankan `Invoke-RestMethod
-   http://localhost:8080/healthz`. Jika gagal, backend belum aktif atau portnya
-   berbeda.
-3. Pastikan app sedang berjalan di Android Emulator, bukan browser atau
-   perangkat fisik. Emulator harus memakai `10.0.2.2`, bukan `localhost`.
-4. Jika backend memakai port selain 8080, samakan port pada `PORT` backend dan
-   `API_BASE_URL` Flutter.
-5. Di app, coba muat ulang Beranda. Jika masih gagal, stop Flutter dengan
-   `q`/`Ctrl+C`, lalu jalankan lagi `flutter run` setelah backend aktif.
-6. Periksa error jaringan di terminal Flutter. `Connection refused` biasanya
-   berarti server mati atau port salah; timeout pada perangkat fisik biasanya
-   terkait alamat IP, Wi-Fi, atau firewall.
+- `dart run.dart --help` menampilkan bantuan.
+- `dart run.dart --backend-only` hanya menyalakan backend.
+- `dart run.dart --no-backend` menjalankan Flutter jika backend sudah aktif di
+  terminal lain.
+- `dart run.dart --api-base-url URL` mengganti alamat API yang dipakai app.
 
-Jika port 8080 sudah dipakai, jalankan backend pada port lain:
+Kalau backend memakai port selain `8080`, set `PORT` pada `backend/.env` atau
+environment terminal, lalu berikan port yang sama melalui `--api-base-url`.
 
-```powershell
-$env:PORT = '9090'
-go run ./cmd/api
-```
+## Troubleshooting
 
-Lalu jalankan app emulator dengan URL yang sama portnya:
+### `dart`, `flutter`, atau `go` tidak ditemukan
 
-```powershell
-flutter run -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:9090/v1
-```
+Pastikan Flutter SDK (yang menyertakan Dart) dan Go sudah dipasang dan folder
+`bin` masing-masing sudah ditambahkan ke `PATH`. Tutup dan buka ulang terminal
+setelah mengubah `PATH`.
 
-## Login demo
+### `GOOGLE_SERVER_CLIENT_ID belum dikonfigurasi`
 
-Backend lokal menyediakan akun development berikut:
+Jalankan app dengan `dart run.dart` dari folder utama project. Jangan memakai
+`flutter run` langsung atau tombol Run Android Studio untuk alur ini, karena
+keduanya melewati launcher yang meneruskan nilai dari `backend/.env`.
+
+Pastikan `GOOGLE_CLIENT_ID` di `backend/.env` berupa Web OAuth Client ID yang
+berakhiran `.apps.googleusercontent.com`. Jika `GOOGLE_SERVER_CLIENT_ID` juga
+diisi, nilainya harus sama.
+
+### Beranda gagal memuat data
+
+Pastikan output terminal menunjukkan backend aktif. Emulator Android memakai
+`10.0.2.2`; perangkat fisik memakai alamat IPv4 komputer. Jika `PORT` bukan
+`8080`, pastikan port pada konfigurasi backend dan URL API app sama.
+
+## Akun demo
 
 ```text
 Email: demo@nihongomaster.app
 Password: Demo123!
 ```
 
-Backend fase saat ini memakai penyimpanan in-memory. Data progress dan sesi
-akan kembali ke seed awal ketika proses backend dihentikan.
-
-## Membuka Reading N5 dan N4
-
-Setelah backend dan aplikasi berjalan, login lalu buka **Belajar → N5/N4 →
-Reading**. Masing-masing level berisi 12 cerita bergambar. Materi berasal
-dari backend; ilustrasinya dibundel di aplikasi.
-
-Jika baru menambahkan materi atau gambar, restart backend dan jalankan ulang
-Flutter agar konten serta asset terbaru dimuat. Progres Reading dihitung
-terpisah per level, tetapi masih reset ketika backend direstart.
-Detail: [Reading N5](reading-n5.md) dan [Reading N4](reading-n4.md).
-
-## Menghentikan aplikasi
-
-- Flutter: tekan `q` di terminal `flutter run`, atau tombol **Stop** Android
-  Studio.
-- Backend: tekan `Ctrl+C` di terminal backend.
-
-## Jika build Android gagal
-
-Jalankan pemeriksaan berikut dari terminal:
-
-```powershell
-flutter doctor -v
-flutter doctor --android-licenses
-flutter clean
-flutter pub get
-flutter run -d emulator-5554
-```
-
-Terima lisensi Android yang diminta oleh perintah tersebut. Ganti device ID
-sesuai output `flutter devices`.
+Akun ini hanya untuk development. Backend fase saat ini memakai penyimpanan
+in-memory untuk sebagian data; state tersebut kembali ke seed awal saat proses
+backend dihentikan.

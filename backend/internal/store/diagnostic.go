@@ -149,6 +149,9 @@ func (s *MemoryStore) CompleteDiagnostic(userID, id string) (domain.DiagnosticRe
 		section.Score = section.Correct * 100 / section.Total
 		result.Sections = append(result.Sections, *section)
 	}
+	if err := s.recordStudyLocked(userID, studyEvent{ID: "diagnostic:" + id, Kind: "exam", ExamID: a.session.Attempt.ExamID, Score: result.Score, Answered: result.Answered, Seconds: result.DurationSeconds, At: now}); err != nil {
+		return domain.DiagnosticResult{}, err
+	}
 	a.session.Attempt.Status = "completed"
 	a.session.Result = &result
 	return result, nil

@@ -1,26 +1,29 @@
 # Panduan Deploy Android ke Google Play Store
 
-Panduan ini berlaku untuk project Flutter **Nihongo Master** dan terakhir
-diverifikasi pada **23 Juli 2026**. Menu Play Console dapat berubah; gunakan
+Panduan ini berlaku untuk project Flutter **Nihongo Master** dan diperbarui
+pada **10 Oktober 2026**. Menu Play Console dapat berubah; gunakan
 tautan dokumentasi resmi pada bagian akhir jika nama menu berbeda.
 
 ## 1. Status project saat ini
 
-Jangan mengunggah build saat ini langsung ke production. Masih ada beberapa
-hal yang wajib diselesaikan:
+Jangan mengunggah build sebelum signing key dan API production dikonfigurasi.
+Status project:
 
-- `applicationId` masih `com.example.nihongo_master`.
-- Nama aplikasi Android masih `nihongo_master`, bukan `Nihongo Master`.
-- Build `release` masih ditandatangani menggunakan debug key.
+- `applicationId` sudah `com.codeverta.nihongomaster` dan nama aplikasi sudah `Nihongo Master`.
+- Release Gradle memakai upload key jika dikonfigurasi; fallback debug hanya
+  untuk preview lokal. Workflow GitHub menolak build tanpa upload key.
 - Default API Flutter masih `http://10.0.2.2:8080/v1`, yang hanya berlaku pada
   emulator Android.
-- Backend phase-1 masih menggunakan penyimpanan in-memory. Data dan session
-  hilang ketika server restart.
-- Login membuat akun pengguna, tetapi fitur hapus akun dan halaman web
-  permintaan penghapusan belum tersedia.
-- Paket Premium/Lifetime belum terhubung ke Google Play Billing.
+- Account, pembelian, progress, dan achievement sekarang persistent di SQLite;
+  sesi login tetap perlu login ulang setelah restart API.
+- Hapus akun tersedia di Profil; sediakan URL permintaan penghapusan untuk listing.
+- Lifetime sudah terhubung ke billing client dan server verification; produk console,
+  kredensial, notifications, serta tes license tester perlu dikonfigurasi sesuai
+  [panduan lifetime billing](lifetime-billing.md).
 
-Semua item tersebut merupakan release blocker, bukan pekerjaan opsional.
+Upload key dan API HTTPS production belum tersedia di workspace. Konfigurasi
+store, billing, policy, dan pengujian native juga perlu diselesaikan sebelum
+production.
 
 ## 2. Prasyarat
 
@@ -49,7 +52,7 @@ Package ID bersifat unik dan praktis permanen setelah aplikasi dibuat di Play
 Console. Saat ini project memakai:
 
 ```text
-com.example.nihongo_master
+com.codeverta.nihongomaster
 ```
 
 Pilih ID final milik developer/organisasi, misalnya pola:
@@ -148,7 +151,8 @@ keytool -list -v `
 
 ## 7. Konfigurasi signing Flutter
 
-Buat file lokal `android/key.properties`:
+Konfigurasi release Gradle sudah membaca upload key dari environment atau file
+lokal `android/key.properties`. Buat file lokal seperti ini:
 
 ```properties
 storePassword=PASSWORD_KEYSTORE
@@ -158,48 +162,33 @@ storeFile=C:/secure/nihongo-master-upload.jks
 ```
 
 File `key.properties` dan semua file `.jks` sudah diabaikan oleh `.gitignore`.
+Release lokal tanpa signing key memakai debug key hanya untuk preview; jangan
+unggah hasil itu ke Play Console.
 
-Pada bagian paling atas `android/app/build.gradle.kts`, tambahkan:
+Untuk build GitHub, jangan commit keystore atau password. Di repository buka
+**Settings > Secrets and variables > Actions**, lalu tambahkan Actions secrets:
 
-```kotlin
-import java.io.FileInputStream
-import java.util.Properties
+- `ANDROID_KEYSTORE_BASE64`: keystore `.jks` yang diubah ke Base64.
+- `ANDROID_KEYSTORE_PASSWORD`
+- `ANDROID_KEY_ALIAS`
+- `ANDROID_KEY_PASSWORD`
 
-val keystoreProperties = Properties()
-val keystorePropertiesFile = rootProject.file("key.properties")
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-}
+Tambahkan Actions variables berikut:
+
+- `API_BASE_URL`: URL backend production yang diawali `https://`.
+- `GOOGLE_SERVER_CLIENT_ID`: Web OAuth Client ID berakhiran
+  `.apps.googleusercontent.com`.
+
+Workflow menolak build bila salah satu variable/secret ini belum diisi. Client
+ID tersebut harus sama dengan `GOOGLE_CLIENT_ID` di backend production. Untuk
+mengubah keystore ke Base64 di Windows PowerShell tanpa menampilkan nilainya ke
+terminal:
+
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes('C:\secure\nihongo-master-upload.jks')) | Set-Clipboard
 ```
 
-Di dalam blok `android`, sebelum `buildTypes`, tambahkan:
-
-```kotlin
-signingConfigs {
-    create("release") {
-        keyAlias = keystoreProperties["keyAlias"] as String
-        keyPassword = keystoreProperties["keyPassword"] as String
-        storeFile = file(keystoreProperties["storeFile"] as String)
-        storePassword = keystoreProperties["storePassword"] as String
-    }
-}
-```
-
-Kemudian ganti konfigurasi release yang saat ini memakai debug key menjadi:
-
-```kotlin
-buildTypes {
-    release {
-        signingConfig = signingConfigs.getByName("release")
-    }
-}
-```
-
-Pastikan tidak ada lagi baris berikut pada release:
-
-```kotlin
-signingConfig = signingConfigs.getByName("debug")
-```
+Paste hasil clipboard langsung ke secret `ANDROID_KEYSTORE_BASE64` di GitHub.
 
 ## 8. Versioning
 
@@ -277,6 +266,26 @@ Sebelum upload, pastikan:
 - Deep link, icon, splash screen, dark mode, offline/error state, dan rotasi
   layar diuji.
 - Crash-free pada build release, bukan hanya debug.
+
+## Build dan download dari GitHub
+
+Workflow ada di `.github/workflows/android-release.yml`. Workflow membuat AAB
+untuk Play Console dan APK untuk uji install, lalu memuat keduanya ke **GitHub
+Release** saat tag versi `v*` dibuat dan didorong. Jalankan manual dari tab
+**Actions** untuk mendapat workflow artifact selama 30 hari.
+
+Setelah secrets dan variables pada bagian 7 tersimpan:
+
+1. Commit dan push konfigurasi build ke GitHub.
+2. Buat tag versi baru seperti `v1.0.0` melalui **Releases > Draft a new
+   release** atau push tag ke repository. Jangan pakai ulang tag yang sudah
+   pernah dirilis.
+3. Buka **Actions** dan tunggu **Android release build** selesai.
+4. Unduh `nihongo-master.aab` dari bagian Assets di GitHub Release, lalu upload
+   AAB tersebut ke Play Console. `nihongo-master.apk` hanya untuk install/test.
+
+Setiap update wajib menaikkan `versionCode` pada `pubspec.yaml` sebelum tag
+baru dibuat. Keystore tidak dimasukkan ke artifact atau repository.
 
 ## 11. Buat aplikasi di Play Console
 
@@ -374,15 +383,10 @@ regional yang berlaku dipenuhi.
 
 Sebelum mengaktifkan tombol pembelian:
 
-1. Buat subscription product untuk bulanan/tahunan di Play Console.
-2. Buat one-time product untuk lifetime access.
-3. Integrasikan Flutter dengan Play Billing.
-4. Kirim purchase token ke backend melalui HTTPS.
-5. Verifikasi pembelian di backend menggunakan Google Play Developer API.
-6. Grant entitlement hanya setelah token valid.
-7. Tangani pending, active, grace period, on-hold, canceled, expired, refund,
-   restore purchase, dan acknowledgment.
-8. Uji memakai license tester dan testing track.
+1. Buat one-time product `nihongo_master_lifetime`, opsi Buy, harga Indonesia Rp99.000.
+2. Integrasi Flutter dan verifikasi backend sudah tersedia; isi kredensial server dan aktifkan RTDN sesuai [panduan lifetime billing](lifetime-billing.md).
+3. Uji cancel, pending, refund, restore, acknowledgment, pindah akun, dan account deletion memakai license tester serta testing track.
+4. Lifetime tidak mempunyai renewal atau expiry subscription; paket bulanan/tahunan sudah dihapus.
 
 Jangan mempercayai status premium yang hanya disimpan di perangkat.
 

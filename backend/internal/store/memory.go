@@ -1,6 +1,9 @@
 package store
 
 import (
+	"crypto/rand"
+	"database/sql"
+	"encoding/binary"
 	"errors"
 	"fmt"
 	"strings"
@@ -29,10 +32,15 @@ type account struct {
 }
 
 type MemoryStore struct {
+	purchases          map[string]domain.Purchase
+	billingTokens      map[string]string
+	billingEnabled     bool
 	mu                 sync.RWMutex
+	gamification       map[string]*gamificationState
+	gamificationDB     *sql.DB
+	gamificationNow    func() time.Time
 	profiles           map[string]domain.Profile
 	progress           map[string]map[string]domain.LessonProgress
-	achievements       map[string][]domain.Achievement
 	categories         []domain.LearningCategory
 	tracks             []domain.LearningTrack
 	exams              []domain.Exam
@@ -64,9 +72,12 @@ func (s *MemoryStore) SetAssetBaseURL(value string) {
 
 func NewMemoryStore() *MemoryStore {
 	result := &MemoryStore{
+		purchases:          map[string]domain.Purchase{},
+		billingTokens:      map[string]string{},
 		profiles:           map[string]domain.Profile{},
+		gamification:       map[string]*gamificationState{},
+		gamificationNow:    time.Now,
 		progress:           map[string]map[string]domain.LessonProgress{},
-		achievements:       map[string][]domain.Achievement{},
 		categories:         seedCategories(),
 		tracks:             seedTracks(),
 		exams:              seedExams(),
@@ -75,7 +86,7 @@ func NewMemoryStore() *MemoryStore {
 		sessions:           map[string]string{},
 		vocabulary:         seedVocabulary(),
 		vocabAttempts:      map[string]*vocabularyAttemptState{},
-		grammar:            append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...),
+		grammar:            append(append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...), seedGrammarN2()...),
 		grammarAttempts:    map[string]*grammarAttemptState{},
 		kanji:              seedKanji(),
 		kanjiAttempts:      map[string]*kanjiAttemptState{},
@@ -85,6 +96,11 @@ func NewMemoryStore() *MemoryStore {
 		simulationAttempts: map[string]*simulationAttemptState{},
 		simulationNow:      time.Now,
 	}
+	var nonce [8]byte
+	if _, err := rand.Read(nonce[:]); err != nil {
+		panic(err)
+	}
+	result.attemptID.Store(binary.LittleEndian.Uint64(nonce[:]) >> 1)
 	result.seedDemoAccount()
 	for i := range result.categories {
 		if result.categories[i].ID == "grammar" {
@@ -121,7 +137,7 @@ func (s *MemoryStore) Dashboard(userID string) domain.Dashboard {
 	profile := s.Profile(userID)
 	dashboard.Profile = &profile
 	dashboard.DailyGoal.StreakDays = profile.StreakDays
-	dashboard.DailyGoal.MinutesLearned = todayMinutes(s.Progress(userID))
+	dashboard.DailyGoal.MinutesLearned = s.Gamification(userID).MinutesToday
 	dashboard.Achievements = s.Achievements(userID)
 	return dashboard
 }
@@ -174,7 +190,14 @@ func (s *MemoryStore) Plans() []domain.Plan {
 func (s *MemoryStore) Profile(userID string) domain.Profile {
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	return s.ensureProfileLocked(userID)
+	profile := s.ensureProfileLocked(userID)
+	profile.Entitlement = s.entitlementLocked(userID)
+	if state := s.gamification[userID]; state != nil {
+		profile.XP = state.XP
+		profile.Level = 1 + state.XP/500
+		profile.StreakDays, _ = studyStreaks(state, s.gamificationNow())
+	}
+	return profile
 }
 
 func (s *MemoryStore) UpdateProfile(userID, displayName, target string) (domain.Profile, error) {
@@ -186,6 +209,7 @@ func (s *MemoryStore) UpdateProfile(userID, displayName, target string) (domain.
 	profile := s.ensureProfileLocked(userID)
 	profile.DisplayName = strings.TrimSpace(displayName)
 	profile.Target = strings.ToUpper(strings.TrimSpace(target))
+	profile.Entitlement = s.entitlementLocked(userID)
 	s.profiles[userID] = profile
 	return profile, nil
 }
@@ -210,37 +234,24 @@ func (s *MemoryStore) SaveProgress(userID string, input domain.LessonProgress) (
 
 	s.mu.Lock()
 	defer s.mu.Unlock()
+	if _, lesson := s.findVocabularyLessonLocked(input.LessonID); lesson != nil {
+		return domain.LessonProgress{}, ErrInvalid
+	}
 	if s.progress[userID] == nil {
 		s.progress[userID] = map[string]domain.LessonProgress{}
 	}
-	previous := s.progress[userID][input.LessonID]
 	s.progress[userID][input.LessonID] = input
-	if input.Completed && !previous.Completed {
-		profile := s.ensureProfileLocked(userID)
-		profile.XP += 50
-		profile.Level = 1 + profile.XP/500
-		s.profiles[userID] = profile
-	}
+
 	return input, nil
 }
 
 func (s *MemoryStore) Achievements(userID string) []domain.Achievement {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-	if existing, ok := s.achievements[userID]; ok {
-		return append([]domain.Achievement(nil), existing...)
-	}
-	items := seedAchievements()
-	s.achievements[userID] = items
-	return append([]domain.Achievement(nil), items...)
+	return s.Gamification(userID).Achievements
 }
 
 func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, error) {
 	// Older clients used this ID for the premium N5 catalog placeholder.
 	if examID == "jlpt-n5-full-1" {
-		if s.Profile(userID).Entitlement.Tier != domain.TierPremium {
-			return domain.ExamAttempt{}, ErrPremium
-		}
 		return s.StartSimulation(userID)
 	}
 	if examID == "jlpt-n4-simulation-1" {
@@ -261,12 +272,12 @@ func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, erro
 			break
 		}
 	}
-	profile := s.profiles[userID]
+	profile := s.entitlementLocked(userID)
 	s.mu.RUnlock()
 	if selected == nil {
 		return domain.ExamAttempt{}, ErrNotFound
 	}
-	if selected.RequiredTier == domain.TierPremium && profile.Entitlement.Tier != domain.TierPremium {
+	if selected.RequiredTier == domain.TierPremium && profile.Tier != domain.TierPremium {
 		return domain.ExamAttempt{}, ErrPremium
 	}
 	id := s.attemptID.Add(1)
@@ -313,7 +324,7 @@ func filterTracks(tracks []domain.LearningTrack, system string) []domain.Learnin
 func seedCategories() []domain.LearningCategory {
 	return []domain.LearningCategory{
 		{ID: "vocabulary", Name: "Vocabulary", Description: "Kosakata tematik dengan spaced repetition", LessonCount: 240, RequiredTier: domain.TierFree},
-		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5, N4, dan N3: pola, contoh kalimat, dan kuis", LessonCount: 120, RequiredTier: domain.TierFree},
+		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5, N4, N3, dan N2: pola, contoh kalimat, dan kuis", LessonCount: 180, RequiredTier: domain.TierFree},
 		{ID: "kanji", Name: "Kanji", Description: "Kanji N5, N4, dan N3: bacaan, contoh pemakaian, dan kuis", LessonCount: 131, RequiredTier: domain.TierFree},
 		{ID: "reading", Name: "Reading", Description: "Reading N5, N4, N3, dan N2: cerita bergambar, kosakata, dan kuis", LessonCount: 48, RequiredTier: domain.TierFree},
 	}
@@ -333,7 +344,7 @@ func seedTracks() []domain.LearningTrack {
 
 func seedExams() []domain.Exam {
 	return []domain.Exam{
-		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-simulation-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
 		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Simulation", QuestionCount: 70, DurationMin: 90, RequiredTier: domain.TierPremium},
@@ -342,20 +353,9 @@ func seedExams() []domain.Exam {
 }
 
 func seedPlans() []domain.Plan {
-	features := []string{"Semua level N5–N1", "JLPT, NAT, dan JFT mock exam", "Materi offline", "Analisis belajar lengkap"}
+	features := []string{"Materi N3–N1 yang tersedia", "Seluruh tes yang tersedia", "Restore pembelian", "Sekali bayar tanpa perpanjangan"}
 	return []domain.Plan{
 		{ID: "free", Name: "Free", BillingType: "free", PriceIDR: 0, Features: []string{"JLPT N5–N4 dasar", "Daily practice", "Progress dasar"}},
-		{ID: "premium-monthly", Name: "Premium Bulanan", BillingType: "monthly", PriceIDR: 59000, Features: features},
-		{ID: "premium-yearly", Name: "Premium Tahunan", BillingType: "yearly", PriceIDR: 499000, Features: features, Recommended: true},
-		{ID: "premium-lifetime", Name: "Lifetime Access", BillingType: "lifetime", PriceIDR: 1499000, Features: append(features, "Akses selamanya")},
-	}
-}
-
-func seedAchievements() []domain.Achievement {
-	return []domain.Achievement{
-		{ID: "first-lesson", Name: "First Step", Description: "Selesaikan pelajaran pertama", Icon: "footprints", Progress: 0, Target: 1},
-		{ID: "streak-7", Name: "7-Day Streak", Description: "Belajar tujuh hari berturut-turut", Icon: "flame", Progress: 0, Target: 7},
-		{ID: "kana-master", Name: "Kana Master", Description: "Kuasai hiragana dan katakana", Icon: "kana", Progress: 0, Target: 92},
-		{ID: "exam-ready", Name: "Exam Ready", Description: "Dapatkan skor minimal 80%", Icon: "trophy", Progress: 0, Target: 1},
+		{ID: "premium-lifetime", Name: "Lifetime Access", BillingType: "lifetime", PriceIDR: 99000, Features: features, Recommended: true},
 	}
 }

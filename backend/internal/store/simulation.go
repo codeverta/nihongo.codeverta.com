@@ -55,12 +55,17 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	if paper.level != "N5" && paper.level != "N4" {
 		return domain.ExamAttempt{}, ErrInvalid
 	}
+	if paper.level != "N5" && s.entitlementLocked(userID).Tier != domain.TierPremium {
+		return domain.ExamAttempt{}, ErrPremium
+	}
 	for i := len(s.simulationOrder) - 1; i >= 0; i-- {
 		state := s.simulationAttempts[s.simulationOrder[i]]
 		if state.session.Attempt.UserID != userID || state.session.Attempt.ExamID != paper.examID {
 			continue
 		}
-		s.syncSimulationLocked(state, now)
+		if err := s.syncSimulationLocked(state, now); err != nil {
+			return domain.ExamAttempt{}, err
+		}
 		if state.session.Result == nil {
 			return state.session.Attempt, nil
 		}
@@ -103,18 +108,21 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 }
 
 // Expired sections advance at their original deadline, not at reconnection time.
-func (s *MemoryStore) syncSimulationLocked(state *simulationAttemptState, now time.Time) {
+func (s *MemoryStore) syncSimulationLocked(state *simulationAttemptState, now time.Time) error {
 	for state.session.Result == nil && !now.Before(state.session.ExpiresAt) {
-		s.advanceSimulationLocked(state, state.session.ExpiresAt)
+		if err := s.advanceSimulationLocked(state, state.session.ExpiresAt); err != nil {
+			return err
+		}
 	}
+	return nil
 }
 
-func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at time.Time) {
+func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at time.Time) error {
 	if state.session.ActiveSection == "vocabulary" {
 		state.session.ActiveSection = "grammar"
 		state.session.SectionStartedAt = at
 		state.session.ExpiresAt = at.Add(time.Duration(state.session.Sections[1].DurationSeconds) * time.Second)
-		return
+		return nil
 	}
 	result := domain.SimulationResult{AttemptID: state.session.Attempt.ID, PaperID: state.session.PaperID, Total: len(state.questions), Answered: len(state.session.Answers), CompletedAt: at, DurationSeconds: int(at.Sub(state.session.Attempt.StartedAt).Seconds()), Sections: []domain.DiagnosticSection{}, Reviews: []domain.SimulationReview{}, ScoringNote: "Skor latihan = persentase jawaban benar. Dokkai dan listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."}
 	if state.session.PaperID == "n4-language-01" {
@@ -145,9 +153,13 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 		}
 	}
 	result.Score = result.Correct * 100 / result.Total
+	if err := s.recordStudyLocked(state.session.Attempt.UserID, studyEvent{ID: "simulation:" + state.session.Attempt.ID, Kind: "exam", ExamID: state.session.Attempt.ExamID, Score: result.Score, Answered: result.Answered, Seconds: result.DurationSeconds, At: at}); err != nil {
+		return err
+	}
 	state.session.Result = &result
 	state.session.Attempt.Status = "completed"
 	state.session.ActiveSection = "completed"
+	return nil
 }
 
 // Return detached objects: callers cannot mutate live answers or option slices.
@@ -191,7 +203,9 @@ func (s *MemoryStore) SimulationSession(userID, id string) (domain.SimulationSes
 		return domain.SimulationSession{}, ErrNotFound
 	}
 	now := s.simulationNow().UTC()
-	s.syncSimulationLocked(state, now)
+	if err := s.syncSimulationLocked(state, now); err != nil {
+		return domain.SimulationSession{}, err
+	}
 	return simulationSnapshot(state, now), nil
 }
 
@@ -203,7 +217,9 @@ func (s *MemoryStore) SaveSimulationAnswer(userID, id, question, option string, 
 		return ErrNotFound
 	}
 	now := s.simulationNow().UTC()
-	s.syncSimulationLocked(state, now)
+	if err := s.syncSimulationLocked(state, now); err != nil {
+		return err
+	}
 	if state.session.Result != nil {
 		return ErrInvalid
 	}
@@ -240,7 +256,9 @@ func (s *MemoryStore) SubmitSimulationSection(userID, id, section string) (domai
 		return domain.SimulationSession{}, ErrNotFound
 	}
 	now := s.simulationNow().UTC()
-	s.syncSimulationLocked(state, now)
+	if err := s.syncSimulationLocked(state, now); err != nil {
+		return domain.SimulationSession{}, err
+	}
 	if section != "vocabulary" && section != "grammar" {
 		return domain.SimulationSession{}, ErrInvalid
 	}
@@ -248,12 +266,18 @@ func (s *MemoryStore) SubmitSimulationSection(userID, id, section string) (domai
 		return domain.SimulationSession{}, ErrInvalid
 	}
 	if state.session.Result == nil && state.session.ActiveSection == section {
-		s.advanceSimulationLocked(state, now)
+		if err := s.advanceSimulationLocked(state, now); err != nil {
+			return domain.SimulationSession{}, err
+		}
 	}
 	return simulationSnapshot(state, now), nil
 }
 
 func (s *MemoryStore) SimulationOverview(userID string, levels ...string) map[string]any {
+	result, _ := s.SimulationOverviewChecked(userID, levels...)
+	return result
+}
+func (s *MemoryStore) SimulationOverviewChecked(userID string, levels ...string) (map[string]any, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
@@ -265,7 +289,9 @@ func (s *MemoryStore) SimulationOverview(userID string, levels ...string) map[st
 		if state.session.Attempt.UserID != userID || state.session.Attempt.ExamID != paper.examID {
 			continue
 		}
-		s.syncSimulationLocked(state, now)
+		if err := s.syncSimulationLocked(state, now); err != nil {
+			return nil, err
+		}
 		if r := state.session.Result; r != nil {
 			if len(history) < 10 {
 				history = append(history, map[string]any{"attemptId": r.AttemptID, "paperId": r.PaperID, "score": r.Score, "correct": r.Correct, "total": r.Total, "completedAt": r.CompletedAt})
@@ -278,5 +304,5 @@ func (s *MemoryStore) SimulationOverview(userID string, levels ...string) map[st
 	for _, section := range paper.sections {
 		duration += section.DurationSeconds
 	}
-	return map[string]any{"paperId": paper.paperID, "title": "JLPT " + paper.level + " Simulation", "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted}
+	return map[string]any{"paperId": paper.paperID, "title": "JLPT " + paper.level + " Simulation", "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted}, nil
 }

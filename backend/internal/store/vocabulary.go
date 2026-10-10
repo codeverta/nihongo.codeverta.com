@@ -25,6 +25,9 @@ func (s *MemoryStore) VocabularyLevels(userID string) []domain.VocabularyLevel {
 	defer s.mu.RUnlock()
 	result := make([]domain.VocabularyLevel, 0, len(s.vocabulary))
 	for _, level := range s.vocabulary {
+		if PremiumLevel(level.Level) {
+			level.RequiredTier = domain.TierPremium
+		}
 		lessons := make([]domain.VocabularyLessonSummary, 0, len(level.Lessons))
 		total := 0
 		for _, lesson := range level.Lessons {
@@ -198,16 +201,15 @@ func (s *MemoryStore) CompleteVocabularyAttempt(userID, attemptID string) (domai
 	if score > best {
 		best = score
 	}
-	s.progress[userID][state.attempt.LessonID] = domain.LessonProgress{
+	progress := domain.LessonProgress{
 		LessonID: state.attempt.LessonID, Completion: best,
 		LastPosition: len(state.attempt.Questions) * 60,
 		Completed:    previous.Completed || passed, UpdatedAt: time.Now().UTC(),
 	}
-	if passed && !previous.Completed {
-		profile := s.ensureProfileLocked(userID)
-		profile.XP += 50
-		profile.Level = 1 + profile.XP/500
-		s.profiles[userID] = profile
+	now := s.gamificationNow().UTC()
+	progress.UpdatedAt = now
+	if err := s.recordStudyLocked(userID, studyEvent{ID: "vocabulary:" + attemptID, Kind: "lesson", Subject: "vocabulary", LessonID: state.attempt.LessonID, Score: score, Answered: len(state.answers), Seconds: int(now.Sub(state.attempt.StartedAt).Seconds()), At: now, Progress: &progress}); err != nil {
+		return domain.VocabularyAttemptResult{}, err
 	}
 	result := domain.VocabularyAttemptResult{
 		AttemptID: attemptID, LessonID: state.attempt.LessonID, Score: score,

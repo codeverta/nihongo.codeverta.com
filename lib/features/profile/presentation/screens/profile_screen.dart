@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
+import 'package:nihongo_master/features/profile/presentation/widgets/gamification_widgets.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -10,55 +12,95 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final colorScheme = Theme.of(context).colorScheme;
     final user = ref.watch(authControllerProvider).user;
+    if (user == null) {
+      return const Center(child: Text('Masuk untuk melihat profil.'));
+    }
+    final gamification = ref.watch(gamificationProvider);
 
-    return CustomScrollView(
-      key: const PageStorageKey('profile-scroll'),
-      slivers: [
-        SliverPadding(
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 32),
-          sliver: SliverList.list(
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Profil',
-                      style:
-                          Theme.of(context).textTheme.headlineMedium?.copyWith(
-                                fontWeight: FontWeight.w900,
-                              ),
+    return RefreshIndicator(
+      onRefresh: () async {
+        await ref.read(authControllerProvider.notifier).refreshUser();
+        await ref.refresh(gamificationProvider.future).then<void>(
+              (_) {},
+              onError: (Object error, StackTrace stack) {},
+            );
+      },
+      child: CustomScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        key: const PageStorageKey('profile-scroll'),
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 32),
+            sliver: SliverList.list(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Profil',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(
+                              fontWeight: FontWeight.w900,
+                            ),
+                      ),
                     ),
-                  ),
-                  IconButton.filledTonal(
-                    onPressed: () {},
-                    icon: const Icon(Icons.settings_outlined),
-                    tooltip: 'Pengaturan',
-                  ),
-                ],
-              ),
-              const SizedBox(height: 22),
-              _ProfileHeader(user: user),
-              const SizedBox(height: 16),
-              const _StatsRow(),
-              const SizedBox(height: 24),
-              _LifetimeCard(colorScheme: colorScheme),
-              const SizedBox(height: 28),
-              Text(
-                'Gamification',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w800,
+                    IconButton.filledTonal(
+                      onPressed: () {},
+                      icon: const Icon(Icons.settings_outlined),
+                      tooltip: 'Pengaturan',
                     ),
-              ),
-              const SizedBox(height: 14),
-              const _AchievementsCard(),
-              const SizedBox(height: 24),
-              _ProfileMenu(
-                onLogout: () => _confirmLogout(context, ref),
-              ),
-            ],
+                  ],
+                ),
+                const SizedBox(height: 22),
+                _ProfileHeader(user: user),
+                const SizedBox(height: 16),
+                gamification.when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (_, __) => GamificationError(
+                    retry: () => ref.invalidate(gamificationProvider),
+                  ),
+                  data: (data) => GamificationStats(data: data),
+                ),
+                const SizedBox(height: 24),
+                _LifetimeCard(colorScheme: colorScheme),
+                const SizedBox(height: 28),
+                Text(
+                  'Gamification',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
+                ),
+                const SizedBox(height: 14),
+                gamification.when(
+                  loading: () => const SizedBox.shrink(),
+                  error: (_, __) => const SizedBox.shrink(),
+                  data: (data) => Column(
+                    children: [
+                      for (final a in data.achievements.take(3))
+                        AchievementTile(achievement: a),
+                      TextButton.icon(
+                        onPressed: () => context.push('/achievements'),
+                        icon: const Icon(Icons.emoji_events_outlined),
+                        label: Text(
+                          'Lihat semua achievement (${data.unlockedCount}/${data.achievements.length})',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 24),
+                _ProfileMenu(
+                  onLogout: () => _confirmLogout(context, ref),
+                  onDelete: () => _confirmDelete(context, ref),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -85,6 +127,42 @@ class ProfileScreen extends ConsumerWidget {
     if (confirmed != true) return;
     await ref.read(authControllerProvider.notifier).logout();
     if (context.mounted) context.go('/home');
+  }
+
+  Future<void> _confirmDelete(BuildContext context, WidgetRef ref) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Hapus akun permanen?'),
+        content: const Text(
+          'Profil, progress, achievement, dan sesi login akan dihapus. Pembayaran store tidak otomatis direfund. Bukti transaksi minimum disimpan untuk restore dan mencegah penyalahgunaan. Setelah membuat akun baru, gunakan Restore dengan akun store pembeli.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Batal'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Hapus akun'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    try {
+      await ref.read(authControllerProvider.notifier).deleteAccount();
+      if (context.mounted) context.go('/home');
+    } on Object {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content:
+                Text('Akun belum dihapus. Periksa koneksi lalu coba lagi.'),
+          ),
+        );
+      }
+    }
   }
 }
 
@@ -147,7 +225,7 @@ class _ProfileHeader extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 7),
-              const _PlanBadge(),
+              _PlanBadge(premium: user?.isPremium ?? false),
             ],
           ),
         ),
@@ -157,7 +235,8 @@ class _ProfileHeader extends StatelessWidget {
 }
 
 class _PlanBadge extends StatelessWidget {
-  const _PlanBadge();
+  const _PlanBadge({required this.premium});
+  final bool premium;
 
   @override
   Widget build(BuildContext context) {
@@ -167,62 +246,15 @@ class _PlanBadge extends StatelessWidget {
         color: const Color(0xFFE59E24).withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(99),
       ),
-      child: const Text(
-        'FREE MEMBER',
-        style: TextStyle(
+      child: Text(
+        premium ? 'LIFETIME MEMBER' : 'FREE MEMBER',
+        style: const TextStyle(
           color: Color(0xFFB87500),
           fontWeight: FontWeight.w800,
           fontSize: 10,
           letterSpacing: 0.8,
         ),
       ),
-    );
-  }
-}
-
-class _StatsRow extends StatelessWidget {
-  const _StatsRow();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Card(
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 18),
-        child: Row(
-          children: [
-            Expanded(child: _Stat(value: '7', label: 'Streak', icon: '🔥')),
-            SizedBox(height: 40, child: VerticalDivider()),
-            Expanded(child: _Stat(value: '2.480', label: 'XP', icon: '⚡')),
-            SizedBox(height: 40, child: VerticalDivider()),
-            Expanded(child: _Stat(value: '12', label: 'Badge', icon: '🏆')),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _Stat extends StatelessWidget {
-  const _Stat({required this.value, required this.label, required this.icon});
-
-  final String value;
-  final String label;
-  final String icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(icon, style: const TextStyle(fontSize: 20)),
-        const SizedBox(height: 5),
-        Text(
-          value,
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w900,
-              ),
-        ),
-        Text(label, style: Theme.of(context).textTheme.bodySmall),
-      ],
     );
   }
 }
@@ -279,7 +311,7 @@ class _LifetimeCard extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () => context.push('/premium'),
             style: TextButton.styleFrom(foregroundColor: Colors.white),
             child: const Text('Lihat'),
           ),
@@ -289,79 +321,11 @@ class _LifetimeCard extends StatelessWidget {
   }
 }
 
-class _AchievementsCard extends StatelessWidget {
-  const _AchievementsCard();
-
-  @override
-  Widget build(BuildContext context) {
-    const achievements = [
-      ('🔥', '7-Day Streak'),
-      ('あ', 'Kana Master'),
-      ('📚', 'Bookworm'),
-      ('🔒', 'Locked'),
-    ];
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Row(
-              children: achievements.map((item) {
-                final locked = item.$2 == 'Locked';
-                return Expanded(
-                  child: Opacity(
-                    opacity: locked ? 0.4 : 1,
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 52,
-                          height: 52,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .primary
-                                .withValues(alpha: 0.08),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Text(
-                            item.$1,
-                            style: const TextStyle(fontSize: 25),
-                          ),
-                        ),
-                        const SizedBox(height: 7),
-                        Text(
-                          item.$2,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.labelSmall,
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              }).toList(),
-            ),
-            const SizedBox(height: 14),
-            const Divider(),
-            TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.emoji_events_outlined),
-              label: const Text('Lihat semua achievement'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class _ProfileMenu extends StatelessWidget {
-  const _ProfileMenu({required this.onLogout});
+  const _ProfileMenu({required this.onLogout, required this.onDelete});
 
   final VoidCallback onLogout;
+  final VoidCallback onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -371,7 +335,7 @@ class _ProfileMenu extends StatelessWidget {
           _ProfileMenuTile(
             icon: Icons.bar_chart_rounded,
             title: 'Statistik pembelajaran',
-            onTap: () {},
+            onTap: () => context.push('/achievements'),
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
@@ -391,7 +355,14 @@ class _ProfileMenu extends StatelessWidget {
           _ProfileMenuTile(
             icon: Icons.credit_card_rounded,
             title: 'Paket & pembayaran',
-            onTap: () {},
+            onTap: () => context.push('/premium'),
+          ),
+          const Divider(height: 1, indent: 68),
+          _ProfileMenuTile(
+            icon: Icons.delete_forever_outlined,
+            title: 'Hapus akun',
+            iconColor: Theme.of(context).colorScheme.error,
+            onTap: onDelete,
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(

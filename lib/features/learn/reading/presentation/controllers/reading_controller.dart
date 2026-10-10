@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
@@ -6,6 +7,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/reading/data/reading_repository.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final readingRepositoryProvider = Provider<ReadingRepository>(
   (ref) => ReadingRepository(ref.watch(dioProvider)),
@@ -80,7 +82,8 @@ final readingLessonProvider = StateNotifierProvider.autoDispose
     onProgress: () {
       ref
         ..invalidate(readingCourseProvider)
-        ..invalidate(homeDashboardProvider);
+        ..invalidate(homeDashboardProvider)
+        ..invalidate(gamificationProvider);
     },
   );
   unawaited(c.load());

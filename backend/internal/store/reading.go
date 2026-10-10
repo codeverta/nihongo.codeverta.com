@@ -164,12 +164,11 @@ func (s *MemoryStore) CompleteReadingAttempt(userID, attemptID string) (domain.R
 	if score > best {
 		best = score
 	}
-	s.progress[userID][state.Attempt.LessonID] = domain.LessonProgress{LessonID: state.Attempt.LessonID, Completion: best, Completed: previous.Completed || passed, LastPosition: len(state.Answers) * 60, UpdatedAt: time.Now().UTC()}
-	if passed && !previous.Completed {
-		profile := s.ensureProfileLocked(userID)
-		profile.XP += 50
-		profile.Level = 1 + profile.XP/500
-		s.profiles[userID] = profile
+	progress := domain.LessonProgress{LessonID: state.Attempt.LessonID, Completion: best, Completed: previous.Completed || passed, LastPosition: len(state.Answers) * 60, UpdatedAt: time.Now().UTC()}
+	now := s.gamificationNow().UTC()
+	progress.UpdatedAt = now
+	if err := s.recordStudyLocked(userID, studyEvent{ID: "reading:" + attemptID, Kind: "lesson", Subject: "reading", LessonID: state.Attempt.LessonID, Score: score, Answered: len(state.Answers), Seconds: int(now.Sub(state.Attempt.StartedAt).Seconds()), At: now, Progress: &progress}); err != nil {
+		return domain.ReadingAttemptResult{}, err
 	}
 	level := ""
 	for _, l := range s.reading {

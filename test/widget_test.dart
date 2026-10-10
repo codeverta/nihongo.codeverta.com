@@ -11,6 +11,28 @@ import 'package:nihongo_master/shared/presentation/widgets/main_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  testWidgets('guest can open the free dictionary tab', (tester) async {
+    SharedPreferences.setMockInitialValues({'is_first_time': false});
+    final preferences = await SharedPreferences.getInstance();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(preferences),
+          authControllerProvider.overrideWith(
+              (ref) => AuthController.test(const AuthenticationState.guest()),),
+          homeDashboardProvider.overrideWith((ref) async => _dashboard),
+        ],
+        child:
+            MaterialApp(theme: AppTheme.lightTheme, home: const MainScaffold()),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Kamus'));
+    await tester.pumpAndSettle();
+    expect(find.text('Kamus Jepang'), findsOneWidget);
+    expect(find.text('Cari di kamus'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
   testWidgets('first launch redirects to onboarding', (tester) async {
     SharedPreferences.setMockInitialValues({});
     final preferences = await SharedPreferences.getInstance();
@@ -69,8 +91,11 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Latihan Ujian'), findsOneWidget);
-    await tester.scrollUntilVisible(find.text('Buka simulasi N4'), 150);
-    expect(find.text('Buka simulasi N4'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Lifetime Access'),
+      150,
+    );
+    expect(find.text('Lifetime Access'), findsOneWidget);
 
     await tester.tap(find.text('Profil'));
     await tester.pumpAndSettle();

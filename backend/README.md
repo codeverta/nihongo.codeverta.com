@@ -6,6 +6,8 @@ learning progress, exam entitlement, plans, profile, dan achievement.
 Kontrak seluruh endpoint tersedia di [`openapi.yaml`](./openapi.yaml) dan dapat
 dibuka dengan Swagger Editor atau dipakai untuk menghasilkan API client.
 
+Panduan Docker Compose production ada di [Deploy backend dengan Docker](../docs/backend-docker.md).
+
 Sinkronkan seluruh asset lokal ke Tencent COS dari folder `backend`:
 
 ```powershell
@@ -17,18 +19,21 @@ Secara default object asset diberi ACL `public-read` agar dapat ditampilkan oleh
 mobile app. Gunakan `-public-read=false` untuk bucket yang dilayani melalui URL
 bertanda tangan atau CDN private.
 
-Gambar reading, vocabulary, dan onboarding berada di `backend/assets/images/` dan tidak
-dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`, backend
-menyajikannya di `/assets/images/...`; aplikasi memakai origin `API_BASE_URL`.
-Deploy folder `backend/assets` bersama backend (atau atur `ASSET_DIRECTORY`).
-Untuk CDN, atur `ASSET_BASE_URL` ke origin CDN dengan object prefix `assets`.
+Gambar reading, vocabulary, dan onboarding berada di `backend/assets/images/`
+dan tidak dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`,
+backend menyajikannya di `/assets/images/...`; aplikasi memakai origin
+`API_BASE_URL`. Untuk CDN, atur `ASSET_BASE_URL` ke origin CDN dengan object
+prefix `assets`.
 Panduan build APK kecil: [Android app size](../docs/android-app-size.md).
 
 Dokumentasi lengkap:
 
 - [Backend Developer Guide](../docs/backend-development.md)
+- [Gamifikasi: XP, streak, achievements, dan database permanen](../docs/gamification.md)
 - [Grammar JLPT N5: kurikulum dan API](../docs/grammar-n5.md)
 - [Grammar JLPT N4: 44 lesson, 88 unit pola, dan 220 soal](../docs/grammar-n4.md)
+- [Grammar JLPT N2: 60 lesson, 120 unit pola, dan 300 soal](../docs/grammar-n2.md)
+- [Lifetime Rp99.000, Google Play, App Store, dan penghapusan akun](../docs/lifetime-billing.md)
 - [Kanji N5: 100 kanji, latihan tulis, dan kuis](../docs/kanji-n5.md)
 - [Kanji N4: 166 kanji, 34 lesson, dan progres per level](../docs/kanji-n4.md)
 - [Reading N5: 12 cerita dan 36 adegan bergambar](../docs/reading-n5.md)
@@ -106,6 +111,7 @@ Lihat [panduan OAuth](../docs/authentication.md).
 | Auth | GET | `/v1/me/progress` | Progress pengguna |
 | Auth | PUT | `/v1/me/progress/{lessonID}` | Simpan progress |
 | Auth | GET | `/v1/me/achievements` | Achievement pengguna |
+| Auth | GET | `/v1/me/gamification` | XP, level, streak, statistik, dan 12 achievements dari aktivitas terverifikasi |
 | Auth | GET | `/v1/vocabulary/levels` | Level N5-N1, lesson, dan progress vocabulary |
 | Auth | GET | `/v1/vocabulary/lessons/{lessonID}` | Konten pengajaran vocabulary |
 | Auth | POST | `/v1/vocabulary/lessons/{lessonID}/attempts` | Mulai/retry kuis lesson |

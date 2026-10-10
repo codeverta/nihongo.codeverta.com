@@ -17,6 +17,8 @@ class AuthenticatedUser {
     required this.displayName,
     required this.email,
     this.photoUrl,
+    this.isPremium = false,
+    this.isLifetime = false,
   });
 
   factory AuthenticatedUser.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,10 @@ class AuthenticatedUser {
       displayName: json['displayName'] as String,
       email: json['email'] as String,
       photoUrl: json['photoUrl'] as String?,
+      isPremium:
+          (json['entitlement'] as Map<String, dynamic>?)?['tier'] == 'premium',
+      isLifetime:
+          (json['entitlement'] as Map<String, dynamic>?)?['isLifetime'] == true,
     );
   }
 
@@ -32,6 +38,8 @@ class AuthenticatedUser {
   final String displayName;
   final String email;
   final String? photoUrl;
+  final bool isPremium;
+  final bool isLifetime;
 }
 
 @immutable
@@ -154,6 +162,31 @@ class AuthController extends StateNotifier<AuthenticationState> {
       state = const AuthenticationState.guest();
     }
   }
+
+  Future<void> refreshUser() async {
+    final id = state.user?.id;
+    if (_repository == null || id == null) return;
+    try {
+      final user = await _repository.currentUser();
+      if (mounted && state.user?.id == id) {
+        state = AuthenticationState.authenticated(user);
+      }
+    } on AuthException catch (error) {
+      if (error.statusCode == 401 && mounted && state.user?.id == id) {
+        await _repository.clearSession();
+        state = const AuthenticationState.guest();
+      }
+    } on Object {
+      // Temporary outages do not destroy the login session. The server enforces access.
+    }
+  }
+
+  Future<void> deleteAccount() async {
+    final repository = _repository;
+    if (repository == null) return;
+    await repository.deleteAccount(userId: state.user?.id);
+    await logout();
+  }
 }
 
 class AuthRepository {
@@ -184,7 +217,10 @@ class AuthRepository {
       final response = await _dio.get<Map<String, dynamic>>('/auth/me');
       return AuthenticatedUser.fromJson(_data(response.data));
     } on DioException catch (error) {
-      throw AuthException(_messageFromDio(error));
+      throw AuthException(
+        _messageFromDio(error),
+        statusCode: error.response?.statusCode,
+      );
     }
   }
 
@@ -195,6 +231,14 @@ class AuthRepository {
     } on DioException {
       // Local logout must still finish when the network is unavailable.
     }
+  }
+
+  Future<void> deleteAccount({String? userId}) async {
+    await _dio.delete<void>('/me/account', data: {'confirmation': 'DELETE'});
+    if (userId != null) {
+      await _preferences.remove('dictionary_library_v1_$userId');
+    }
+    await clearSession();
   }
 
   Future<void> clearSession() async {
@@ -279,7 +323,8 @@ class GoogleAuthenticationService {
 }
 
 class AuthException implements Exception {
-  const AuthException(this.message);
+  const AuthException(this.message, {this.statusCode});
 
   final String message;
+  final int? statusCode;
 }

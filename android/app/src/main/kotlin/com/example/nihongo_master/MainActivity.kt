@@ -1,4 +1,4 @@
-package com.example.nihongo_master
+package com.codeverta.nihongomaster
 
 import io.flutter.embedding.android.FlutterActivity
 

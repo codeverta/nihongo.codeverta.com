@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/exam_hub_screen.dart';
 import 'package:nihongo_master/features/home/presentation/screens/dashboard_screen.dart';
 import 'package:nihongo_master/features/learn/presentation/screens/learn_hub_screen.dart';
@@ -17,6 +18,7 @@ class MainScaffold extends ConsumerStatefulWidget {
 
 class _MainScaffoldState extends ConsumerState<MainScaffold> {
   int _selectedIndex = 0;
+  bool _dictionaryOpened = false;
 
   Future<bool> _ensureAuthenticated() async {
     if (ref.read(authControllerProvider).isAuthenticated) return true;
@@ -25,8 +27,13 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
   }
 
   Future<void> _selectDestination(int index) async {
-    if (index == 0 || await _ensureAuthenticated()) {
-      if (mounted) setState(() => _selectedIndex = index);
+    if (index == 0 || index == 3 || await _ensureAuthenticated()) {
+      if (mounted) {
+        setState(() {
+          _selectedIndex = index;
+          if (index == 3) _dictionaryOpened = true;
+        });
+      }
     }
   }
 
@@ -37,10 +44,14 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
       DashboardScreen(
         openLearn: () => _selectDestination(1),
         openExam: () => _selectDestination(2),
-        openProfile: () => _selectDestination(3),
+        openProfile: () => _selectDestination(4),
       ),
       const LearnHubScreen(),
       const ExamHubScreen(),
+      if (_dictionaryOpened)
+        const DictionaryScreen(embedded: true)
+      else
+        const SizedBox.shrink(),
       const ProfileScreen(),
     ];
     ref.listen<AuthenticationState>(authControllerProvider, (previous, next) {
@@ -101,6 +112,11 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
               icon: Icon(Icons.quiz_outlined),
               selectedIcon: Icon(Icons.quiz_rounded),
               label: 'Ujian',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.search_outlined),
+              selectedIcon: Icon(Icons.manage_search_rounded),
+              label: 'Kamus',
             ),
             NavigationDestination(
               icon: Icon(Icons.person_outline_rounded),

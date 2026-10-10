@@ -11,25 +11,38 @@ import (
 	"time"
 
 	backendAuth "nihongo-master-backend/internal/auth"
+	"nihongo-master-backend/internal/billing"
+	"nihongo-master-backend/internal/dictionary"
 	"nihongo-master-backend/internal/domain"
 	"nihongo-master-backend/internal/store"
 )
 
 type Server struct {
-	assetDirectory string
-	store          *store.MemoryStore
-	googleVerifier backendAuth.GoogleVerifier
-	branding       *BrandingStore
+	dictionary          *dictionary.Client
+	billing             *billing.Service
+	billingPushAudience string
+	billingPushEmail    string
+	assetDirectory      string
+	store               *store.MemoryStore
+	googleVerifier      backendAuth.GoogleVerifier
+	branding            *BrandingStore
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
-	return &Server{store: store, googleVerifier: googleVerifier}
+	return &Server{store: store, googleVerifier: googleVerifier, dictionary: dictionary.NewClient()}
 }
 
 type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
+	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
+	mux.HandleFunc("GET /v1/billing", s.requireAuth(s.billingStatus))
+	mux.HandleFunc("POST /v1/billing/verify", s.requireAuth(s.verifyPurchase))
+	mux.HandleFunc("POST /v1/billing/notifications/apple", s.appleBillingNotification)
+	mux.HandleFunc("POST /v1/billing/notifications/google", s.googleBillingNotification)
+	mux.HandleFunc("DELETE /v1/me/account", s.requireAuth(s.deleteAccount))
 	s.registerAssets(mux)
 	s.registerBranding(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
@@ -55,6 +68,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("PATCH /v1/me/profile", s.requireAuth(s.updateProfile))
 	mux.HandleFunc("GET /v1/me/progress", s.requireAuth(s.progress))
 	mux.HandleFunc("PUT /v1/me/progress/{lessonID}", s.requireAuth(s.saveProgress))
+	mux.HandleFunc("GET /v1/me/gamification", s.requireAuth(s.gamification))
 	mux.HandleFunc("GET /v1/me/achievements", s.requireAuth(s.achievements))
 	mux.HandleFunc("GET /v1/vocabulary/levels", s.requireAuth(s.vocabularyLevels))
 	mux.HandleFunc("GET /v1/vocabulary/lessons/{lessonID}", s.requireAuth(s.vocabularyLesson))
@@ -124,7 +138,11 @@ func (s *Server) googleLogin(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnauthorized, "invalid_google_token", "Google ID token tidak valid")
 		return
 	}
-	profile := s.store.AuthenticateGoogle(identity)
+	profile, err := s.store.AuthenticateGoogle(identity)
+	if err != nil {
+		writeStoreError(w, err)
+		return
+	}
 	s.writeSession(w, profile)
 }
 
@@ -139,7 +157,7 @@ func (s *Server) writeSession(w http.ResponseWriter, profile domain.Profile) {
 		writeError(w, http.StatusInternalServerError, "session_error", "gagal membuat sesi")
 		return
 	}
-	writeData(w, http.StatusOK, domain.AuthSession{Token: token, User: profile})
+	writeData(w, http.StatusOK, domain.AuthSession{Token: token, User: s.store.Profile(profile.ID)})
 }
 
 func (s *Server) categories(w http.ResponseWriter, _ *http.Request) {
@@ -204,6 +222,10 @@ func (s *Server) saveProgress(w http.ResponseWriter, r *http.Request) {
 	writeData(w, http.StatusOK, result)
 }
 
+func (s *Server) gamification(w http.ResponseWriter, r *http.Request) {
+	writeData(w, http.StatusOK, s.store.Gamification(userID(r)))
+}
+
 func (s *Server) achievements(w http.ResponseWriter, r *http.Request) {
 	writeData(w, http.StatusOK, s.store.Achievements(userID(r)))
 }
@@ -266,6 +288,12 @@ func (s *Server) startExam(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusBadRequest, "invalid_json", err.Error())
 		return
 	}
+	if s.billing != nil && s.store.ExamRequiresPremium(input.ExamID) {
+		if err := s.billing.RefreshUser(r.Context(), userID(r)); err != nil {
+			writeBillingError(w, err)
+			return
+		}
+	}
 	attempt, err := s.store.StartExam(userID(r), input.ExamID)
 	if err != nil {
 		writeStoreError(w, err)
@@ -280,6 +308,9 @@ func (s *Server) requireAuth(next http.HandlerFunc) http.HandlerFunc {
 		id, ok := s.store.ResolveSession(token)
 		if !ok {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "Bearer token tidak valid atau sudah dicabut")
+			return
+		}
+		if !s.authorizePremium(w, r, id) {
 			return
 		}
 		next(w, r.WithContext(context.WithValue(r.Context(), userContextKey{}, id)))
@@ -302,7 +333,7 @@ func (s *Server) middleware(next http.Handler) http.Handler {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS")
 		if r.Method == http.MethodOptions {
 			w.WriteHeader(http.StatusNoContent)
 			return

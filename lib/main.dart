@@ -4,6 +4,7 @@ import 'package:nihongo_master/core/branding/app_branding.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
+import 'package:nihongo_master/features/billing/presentation/billing_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
@@ -26,6 +27,7 @@ class NihongoMasterApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
+    ref.watch(billingControllerProvider);
 
     return MaterialApp.router(
       title: ref.watch(appBrandingProvider).valueOrNull?.appName ??

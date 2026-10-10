@@ -11,7 +11,12 @@ func (s *Server) simulationOverview(w http.ResponseWriter, r *http.Request) {
 		writeError(w, 400, "invalid_level", "Simulation supports N5 and N4")
 		return
 	}
-	writeData(w, 200, s.store.SimulationOverview(userID(r), level))
+	result, err := s.store.SimulationOverviewChecked(userID(r), level)
+	if err != nil {
+		writeStoreError(w, err)
+		return
+	}
+	writeData(w, 200, result)
 }
 
 func (s *Server) simulationSession(w http.ResponseWriter, r *http.Request) {

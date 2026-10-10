@@ -235,6 +235,7 @@ class Achievement {
     required this.icon,
     required this.progress,
     required this.target,
+    this.unlockedAt,
   });
 
   factory Achievement.fromJson(Map<String, dynamic> json) => Achievement(
@@ -244,6 +245,9 @@ class Achievement {
         icon: json['icon'] as String? ?? '',
         progress: json['progress'] as int? ?? 0,
         target: json['target'] as int? ?? 0,
+        unlockedAt: json['unlockedAt'] == null
+            ? null
+            : DateTime.parse(json['unlockedAt'] as String),
       );
 
   final String id;
@@ -252,6 +256,8 @@ class Achievement {
   final String icon;
   final int progress;
   final int target;
+  final DateTime? unlockedAt;
+  bool get isUnlocked => unlockedAt != null;
 }
 
 Map<String, dynamic> _map(Object? value) =>

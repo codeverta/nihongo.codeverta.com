@@ -1,0 +1,226 @@
+name: iOS release build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+# Android and iOS can both create/upload assets for the same GitHub Release.
+concurrency:
+  group: release-assets-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build signed App Store IPA
+    runs-on: macos-26
+    env:
+      API_BASE_URL: ${{ vars.API_BASE_URL }}
+      GOOGLE_SERVER_CLIENT_ID: ${{ vars.GOOGLE_SERVER_CLIENT_ID }}
+      IOS_BUNDLE_ID: ${{ vars.IOS_BUNDLE_ID }}
+      IOS_TEAM_ID: ${{ vars.IOS_TEAM_ID }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.6'
+          channel: stable
+          cache: true
+
+      - name: Validate release configuration
+        shell: bash
+        env:
+          IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          set -euo pipefail
+          : "${API_BASE_URL:?Add the production API URL as an Actions variable.}"
+          : "${GOOGLE_SERVER_CLIENT_ID:?Add the Web OAuth Client ID as an Actions variable.}"
+          : "${IOS_BUNDLE_ID:?Add the registered iOS bundle ID as an Actions variable.}"
+          : "${IOS_TEAM_ID:?Add the Apple Developer Team ID as an Actions variable.}"
+          : "${IOS_CERTIFICATE_BASE64:?Add the Apple Distribution .p12 as an Actions secret.}"
+          : "${IOS_CERTIFICATE_PASSWORD:?Add the .p12 password as an Actions secret.}"
+          : "${IOS_PROVISIONING_PROFILE_BASE64:?Add the App Store provisioning profile as an Actions secret.}"
+          [[ "$API_BASE_URL" == https://* ]]
+          [[ "$GOOGLE_SERVER_CLIENT_ID" == *.apps.googleusercontent.com ]]
+          [[ "$IOS_BUNDLE_ID" =~ ^[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$ ]]
+          [[ "$IOS_BUNDLE_ID" != com.example* ]]
+          [[ "$IOS_TEAM_ID" =~ ^[A-Z0-9]{10}$ ]]
+          if ! grep -Fq "PRODUCT_BUNDLE_IDENTIFIER = ${IOS_BUNDLE_ID};" ios/Runner.xcodeproj/project.pbxproj; then
+            echo "Set the Runner target bundle ID in ios/Runner.xcodeproj to IOS_BUNDLE_ID (${IOS_BUNDLE_ID}) before building."
+            exit 1
+          fi
+
+      - name: Get Flutter packages
+        run: flutter pub get
+
+      - name: Install signing certificate and provisioning profile
+        shell: bash
+        env:
+          IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
+          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          set -euo pipefail
+
+          KEYCHAIN_PATH="$RUNNER_TEMP/nihongo-signing.keychain-db"
+          KEYCHAIN_PASSWORD="$(openssl rand -hex 24)"
+          CERTIFICATE_PATH="$RUNNER_TEMP/ios-distribution.p12"
+          PROFILE_PATH="$RUNNER_TEMP/ios-appstore.mobileprovision"
+          echo "IOS_KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
+
+          python3 - <<'PY'
+          import base64
+          import os
+          from pathlib import Path
+
+          Path(os.environ["RUNNER_TEMP"], "ios-distribution.p12").write_bytes(
+              base64.b64decode(os.environ["IOS_CERTIFICATE_BASE64"])
+          )
+          Path(os.environ["RUNNER_TEMP"], "ios-appstore.mobileprovision").write_bytes(
+              base64.b64decode(os.environ["IOS_PROVISIONING_PROFILE_BASE64"])
+          )
+          PY
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERTIFICATE_PATH" \
+            -k "$KEYCHAIN_PATH" \
+            -P "$IOS_CERTIFICATE_PASSWORD" \
+            -T /usr/bin/codesign \
+            -T /usr/bin/security
+          security set-key-partition-list \
+            -S apple-tool:,apple:,codesign: \
+            -s \
+            -k "$KEYCHAIN_PASSWORD" \
+            "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH"
+          security default-keychain -d user -s "$KEYCHAIN_PATH"
+
+          security cms -D -i "$PROFILE_PATH" > "$RUNNER_TEMP/ios-profile.plist"
+          PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' "$RUNNER_TEMP/ios-profile.plist")
+          PROFILE_TEAM_ID=$(/usr/libexec/PlistBuddy -c 'Print :TeamIdentifier:0' "$RUNNER_TEMP/ios-profile.plist")
+          PROFILE_APP_ID=$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' "$RUNNER_TEMP/ios-profile.plist")
+          echo "IOS_PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
+
+          if [[ "$PROFILE_TEAM_ID" != "$IOS_TEAM_ID" || "$PROFILE_APP_ID" != "$IOS_TEAM_ID.$IOS_BUNDLE_ID" ]]; then
+            echo "The provisioning profile must match IOS_TEAM_ID and IOS_BUNDLE_ID."
+            exit 1
+          fi
+
+          # Use the uploaded App Store profile for the archive on this runner.
+          export IOS_PROFILE_UUID="$PROFILE_UUID"
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          project = Path("ios/Runner.xcodeproj/project.pbxproj")
+          bundle_setting = f"PRODUCT_BUNDLE_IDENTIFIER = {os.environ['IOS_BUNDLE_ID']};"
+          lines = project.read_text().splitlines(keepends=True)
+          output = []
+          matches = 0
+          for line in lines:
+              output.append(line)
+              if line.strip() == bundle_setting:
+                  matches += 1
+                  indent = line[: len(line) - len(line.lstrip())]
+                  output.extend(
+                      [
+                          f'{indent}"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";\n',
+                          f"{indent}CODE_SIGN_STYLE = Manual;\n",
+                          f"{indent}DEVELOPMENT_TEAM = {os.environ['IOS_TEAM_ID']};\n",
+                          f"{indent}PROVISIONING_PROFILE_SPECIFIER = {os.environ['IOS_PROFILE_UUID']};\n",
+                      ]
+                  )
+          if matches == 0:
+              raise SystemExit("No Runner target bundle ID matched IOS_BUNDLE_ID.")
+          project.write_text("".join(output))
+          PY
+
+          PROFILE_DIRECTORY="$HOME/Library/MobileDevice/Provisioning Profiles"
+          mkdir -p "$PROFILE_DIRECTORY"
+          cp "$PROFILE_PATH" "$PROFILE_DIRECTORY/$PROFILE_UUID.mobileprovision"
+
+          python3 - <<'PY'
+          import os
+          import plistlib
+          from pathlib import Path
+
+          export_options = {
+              "method": "app-store-connect",
+              "signingStyle": "manual",
+              "teamID": os.environ["IOS_TEAM_ID"],
+              "provisioningProfiles": {
+                  os.environ["IOS_BUNDLE_ID"]: os.environ["IOS_PROFILE_UUID"]
+              },
+              "stripSwiftSymbols": True,
+              "uploadSymbols": True,
+          }
+          with Path(os.environ["RUNNER_TEMP"], "ExportOptions.plist").open("wb") as file:
+              plistlib.dump(export_options, file)
+          PY
+
+      - name: Build App Store IPA
+        run: >-
+          flutter build ipa --release
+          --export-options-plist="$RUNNER_TEMP/ExportOptions.plist"
+          --dart-define=API_BASE_URL="$API_BASE_URL"
+          --dart-define=GOOGLE_SERVER_CLIENT_ID="$GOOGLE_SERVER_CLIENT_ID"
+
+      - name: Prepare release files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p release-output
+          IPA_PATH="$(find build/ios/ipa -maxdepth 1 -name '*.ipa' -print -quit)"
+          test -n "$IPA_PATH"
+          cp "$IPA_PATH" release-output/nihongo-master.ipa
+          (cd release-output && shasum -a 256 nihongo-master.ipa > SHA256SUMS)
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nihongo-master-ios-${{ github.ref_name }}
+          path: release-output/*
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Attach IPA to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" release-output/* --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" release-output/* \
+              --title "Nihongo Master $GITHUB_REF_NAME" \
+              --generate-notes
+          fi
+
+      - name: Remove signing files
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f \
+            "$RUNNER_TEMP/ios-distribution.p12" \
+            "$RUNNER_TEMP/ios-appstore.mobileprovision" \
+            "$RUNNER_TEMP/ios-profile.plist" \
+            "$RUNNER_TEMP/ExportOptions.plist"
+          if [[ -n "${IOS_PROFILE_UUID:-}" ]]; then
+            rm -f "$HOME/Library/MobileDevice/Provisioning Profiles/$IOS_PROFILE_UUID.mobileprovision"
+          fi
+          if [[ -n "${IOS_KEYCHAIN_PATH:-}" ]]; then
+            security delete-keychain "$IOS_KEYCHAIN_PATH" || true
+          fi

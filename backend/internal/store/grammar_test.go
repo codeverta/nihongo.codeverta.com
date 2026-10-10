@@ -10,13 +10,13 @@ import (
 )
 
 func TestGrammarCurriculumAndQuizIntegrity(t *testing.T) {
-	s := NewMemoryStore()
-	if len(s.grammar) != 40 {
-		t.Fatalf("expected 40 lessons, got %d", len(s.grammar))
+	lessons := seedGrammar()
+	if len(lessons) != 40 {
+		t.Fatalf("expected 40 N5 lessons, got %d", len(lessons))
 	}
 	seen := map[string]bool{}
 	points, examples, questions := 0, 0, 0
-	for i, l := range s.grammar {
+	for i, l := range lessons {
 		if seen[l.ID] || l.ID == "" || l.Title == "" || l.Chapter == "" {
 			t.Fatalf("invalid lesson %d: %+v", i, l)
 		}
@@ -59,6 +59,9 @@ func TestGrammarFullCourseCompletionAndResultRetry(t *testing.T) {
 	s := NewMemoryStore()
 	const user = "demo-user"
 	for _, lesson := range s.grammar {
+		if lesson.Level != "N5" {
+			continue
+		}
 		attempt, err := s.StartGrammarAttempt(user, lesson.ID)
 		if err != nil {
 			t.Fatal(err)

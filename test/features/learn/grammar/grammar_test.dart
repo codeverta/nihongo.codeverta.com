@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,70 @@ import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_model
     show QuizOption;
 
 void main() {
+  testWidgets('N2 opens its full catalog and searches Japanese patterns',
+      (tester) async {
+    tester.view.physicalSize = const Size(360, 640);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final content = jsonDecode(
+      File('backend/data/grammar/n2.json').readAsStringSync(),
+    ) as List<dynamic>;
+    final lessons = content.indexed.map((entry) {
+      final data = entry.$2 as Map<String, dynamic>;
+      return GrammarLessonSummary(
+        id: 'grammar-n2-${(entry.$1 + 1).toString().padLeft(2, '0')}',
+        level: 'N2',
+        order: entry.$1 + 1,
+        chapter: data['chapter'] as String,
+        title: data['title'] as String,
+        pointCount: (data['points'] as List<dynamic>).length,
+        questionCount: (data['questions'] as List<dynamic>).length,
+        patterns: (data['points'] as List<dynamic>)
+            .map((p) => (p as Map<String, dynamic>)['pattern'] as String)
+            .toList(),
+        bestScore: 0,
+        completed: false,
+      );
+    }).toList();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          grammarCourseLevelProvider('N2').overrideWith(
+            (ref) async => GrammarCourse(
+              level: 'N2',
+              title: 'Grammar JLPT N2',
+              progress: 0,
+              completedLessons: 0,
+              lessons: lessons,
+            ),
+          ),
+        ],
+        child: const MaterialApp(home: GrammarCourseScreen(initialLevel: 'N2')),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Grammar JLPT N2'), findsOneWidget);
+    expect(find.text('60 lesson • 120 pola • 300 soal'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    final search = find.byKey(const ValueKey('grammar-search-N2'));
+    await tester.scrollUntilVisible(
+      search,
+      100,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.enterText(search, 'に先立って');
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('grammar-lesson-grammar-n2-59')),
+      100,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text('Seolah-olah dan sebelum tahap penting'), findsOneWidget);
+    expect(find.byKey(const Key('grammar-lesson-grammar-n2-01')), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('course displays saved progress and searches lesson titles',
       (tester) async {
     await tester.pumpWidget(
@@ -24,7 +90,11 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(find.text('1/2 lesson selesai • 50%'), findsOneWidget);
-    await tester.enterText(find.byKey(const Key('grammar-search')), 'Waktu');
+    await tester.ensureVisible(find.byKey(const ValueKey('grammar-search-N5')));
+    await tester.enterText(
+      find.byKey(const ValueKey('grammar-search-N5')),
+      'Waktu',
+    );
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('grammar-lesson-grammar-n5-01')), findsNothing);
     await tester.scrollUntilVisible(

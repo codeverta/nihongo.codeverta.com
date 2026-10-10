@@ -3,6 +3,8 @@ package store
 import (
 	"crypto/rand"
 	"encoding/base64"
+	"encoding/json"
+	"github.com/google/uuid"
 	"strings"
 
 	"golang.org/x/crypto/bcrypt"
@@ -19,29 +21,42 @@ func (s *MemoryStore) AuthenticateEmail(email, password string) (domain.Profile,
 	return s.Profile(account.ID), nil
 }
 
-func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) domain.Profile {
+func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain.Profile, error) {
 	email := strings.ToLower(strings.TrimSpace(identity.Email))
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	existingAccount, ok := s.accounts[email]
 	if !ok {
+		id := "google-" + uuid.NewString()
+		// Preserve progress from accounts created before durable account storage.
+		if s.gamification["google-"+identity.Subject] != nil {
+			id = "google-" + identity.Subject
+		}
 		existingAccount = account{
-			ID:          "google-" + identity.Subject,
+			ID:          id,
 			Email:       email,
 			DisplayName: identity.DisplayName,
 			PhotoURL:    identity.PhotoURL,
 			GoogleSub:   identity.Subject,
 		}
-		s.accounts[email] = existingAccount
 	} else {
 		existingAccount.GoogleSub = identity.Subject
 		existingAccount.PhotoURL = identity.PhotoURL
 		if identity.DisplayName != "" {
 			existingAccount.DisplayName = identity.DisplayName
 		}
-		s.accounts[email] = existingAccount
 	}
-	return s.ensureProfileForAccountLocked(existingAccount)
+	if s.billingEnabled {
+		raw, err := json.Marshal(existingAccount)
+		if err != nil {
+			return domain.Profile{}, err
+		}
+		if _, err = s.gamificationDB.Exec(`INSERT INTO accounts(email,state) VALUES(?,?) ON CONFLICT(email) DO UPDATE SET state=excluded.state`, email, raw); err != nil {
+			return domain.Profile{}, err
+		}
+	}
+	s.accounts[email] = existingAccount
+	return s.ensureProfileForAccountLocked(existingAccount), nil
 }
 
 func (s *MemoryStore) CreateSession(userID string) (string, error) {

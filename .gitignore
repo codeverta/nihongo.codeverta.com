@@ -46,3 +46,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Runtime learning state
+*.db
+*.db-wal
+*.db-shm
+# Store credentials must never be committed.
+*.p8
+*service-account*.json
+backend/secrets/

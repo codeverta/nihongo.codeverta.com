@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
+import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/auth/presentation/screens/login_screen.dart';
+import 'package:nihongo_master/features/billing/presentation/premium_screen.dart';
+import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_attempt_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_intro_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
@@ -16,6 +19,7 @@ import 'package:nihongo_master/features/learn/reading/presentation/screens/readi
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_course_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
 import 'package:nihongo_master/shared/presentation/widgets/main_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -87,6 +91,20 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
     initialLocation: AppRoutes.splashPath,
     routes: [
+      GoRoute(
+        path: '/dictionary',
+        builder: (context, state) => DictionaryScreen(
+          initialQuery: state.uri.queryParameters['q'] ?? '',
+        ),
+      ),
+      GoRoute(
+        path: '/premium',
+        builder: (context, state) => const PremiumScreen(),
+      ),
+      GoRoute(
+        path: '/achievements',
+        builder: (context, state) => const AchievementsScreen(),
+      ),
       GoRoute(
         path: AppRoutes.splashPath,
         name: AppRoutes.splashName,
@@ -203,6 +221,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           location == AppRoutes.onboardingPath) {
         return AppRoutes.homePath;
       }
+
+      final user = ref.read(authControllerProvider).user;
+      if (requiresPremium(state.uri) && !(user?.isPremium ?? false)) {
+        return '/premium?from=${Uri.encodeQueryComponent(state.uri.toString())}';
+      }
       return null;
     },
     errorBuilder: (context, state) => Scaffold(
@@ -215,10 +238,23 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   // GoRouter perlu diberi tahu saat state yang dipakai redirect berubah.
   ref
     ..listen<bool>(isFirstTimeProvider, (previous, next) => router.refresh())
+    ..listen<bool>(
+      authControllerProvider.select((s) => s.user?.isPremium ?? false),
+      (previous, next) => router.refresh(),
+    )
     ..onDispose(router.dispose);
 
   return router;
 });
+
+bool requiresPremium(Uri uri) {
+  final path = uri.path.toLowerCase();
+  if (path.startsWith('/exams/') && !path.startsWith('/exams/n5')) return true;
+  if (!path.startsWith('/learn/')) return false;
+  final level = (uri.queryParameters['level'] ?? '').toUpperCase();
+  return const ['N3', 'N2', 'N1'].contains(level) ||
+      RegExp(r'(?:-|/|^)n[123](?:-|/|$)').hasMatch(path);
+}
 
 class _SplashScreen extends StatelessWidget {
   const _SplashScreen();

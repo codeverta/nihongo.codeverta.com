@@ -7,6 +7,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/data/vocabulary_repository.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final vocabularyRepositoryProvider = Provider<VocabularyRepository>((ref) {
   return VocabularyRepository(ref.watch(dioProvider));
@@ -90,7 +91,8 @@ final vocabularyLessonControllerProvider = StateNotifierProvider.autoDispose
     onProgressChanged: () {
       ref
         ..invalidate(vocabularyLevelsProvider)
-        ..invalidate(homeDashboardProvider);
+        ..invalidate(homeDashboardProvider)
+        ..invalidate(gamificationProvider);
     },
   );
   unawaited(controller.load());

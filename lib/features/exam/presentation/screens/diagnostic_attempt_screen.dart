@@ -1,10 +1,13 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_result_view.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
+import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 class DiagnosticAttemptScreen extends ConsumerStatefulWidget {
   const DiagnosticAttemptScreen({required this.attemptId, super.key});
@@ -110,7 +113,10 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
       if (!mounted) return;
       timer?.cancel();
       setState(() => result = data);
-      ref.invalidate(diagnosticOverviewProvider);
+      ref
+        ..invalidate(diagnosticOverviewProvider)
+        ..invalidate(gamificationProvider)
+        ..invalidate(homeDashboardProvider);
     } catch (e) {
       if (mounted) setState(() => error = diagnosticError(e));
     } finally {
@@ -262,7 +268,10 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
     );
     if ((yes ?? false) && mounted) {
       setState(() => allowPop = true);
-      ref.invalidate(diagnosticOverviewProvider);
+      ref
+        ..invalidate(diagnosticOverviewProvider)
+        ..invalidate(gamificationProvider)
+        ..invalidate(homeDashboardProvider);
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) context.pop();
       });

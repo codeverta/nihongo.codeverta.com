@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
+import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
@@ -85,10 +86,22 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                   ? colors.onSecondary
                                   : colors.onSurface,
                             ),
-                            onSelected: (_) => setState(() {
-                              selected = item.level;
-                              query = '';
-                            }),
+                            onSelected: (_) {
+                              if (const ['N3', 'N2', 'N1']
+                                      .contains(item.level) &&
+                                  !(ref
+                                          .read(authControllerProvider)
+                                          .user
+                                          ?.isPremium ??
+                                      false)) {
+                                context.push('/premium');
+                                return;
+                              }
+                              setState(() {
+                                selected = item.level;
+                                query = '';
+                              });
+                            },
                           ),
                         ),
                     ],

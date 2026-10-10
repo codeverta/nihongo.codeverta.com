@@ -7,6 +7,99 @@ servers:
   - url: http://localhost:8080/v1
     description: Local development
 paths:
+  /dictionary/search:
+    get:
+      tags: [Dictionary]
+      summary: Search free Japanese-English dictionary via Jisho
+      security: []
+      parameters:
+        - {name: q, in: query, required: true, schema: {type: string, minLength: 1, maxLength: 100}}
+        - {name: page, in: query, schema: {type: integer, minimum: 1, maximum: 100, default: 1}}
+        - {name: jlpt, in: query, schema: {type: string, enum: [N5, N4, N3, N2, N1]}}
+        - {name: common, in: query, schema: {type: boolean, default: false}}
+      responses:
+        '200': {description: 'data contains query, page, hasMore, entries (original Jisho entry objects), source'}
+        '400': {description: Invalid query or filter}
+        '503': {description: External source busy or unavailable}
+  /dictionary/kanji/{character}:
+    get:
+      tags: [Dictionary]
+      summary: Get kanji readings and meanings from kanjiapi.dev
+      security: []
+      parameters:
+        - {name: character, in: path, required: true, schema: {type: string}, description: One Han character}
+      responses:
+        '200': {description: data contains a kanjiapi.dev kanji object; JLPT classification uses legacy levels}
+        '400': {description: Invalid character}
+        '404': {description: Kanji not found}
+        '503': {description: External source busy or unavailable}
+  /billing:
+    get:
+      tags: [Billing]
+      summary: Get lifetime product ID, opaque account binding, configured platforms and verified entitlement
+      security: [{bearerAuth: []}]
+      responses:
+        '200': {description: Billing account; priceIdr is 99000, final localized price comes from store}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '503': {description: Store revalidation unavailable}
+  /billing/verify:
+    post:
+      tags: [Billing]
+      summary: Verify one-time lifetime purchase with Google Play or App Store and bind one app account
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [platform, productId, verificationData]
+              properties:
+                platform: {type: string, enum: [android, ios]}
+                productId: {type: string, example: nihongo_master_lifetime}
+                verificationData: {type: string, description: Google purchase token or Apple StoreKit 2 signed JWS}
+                transactionId: {type: string}
+      responses:
+        '200': {description: Verified purchased or revoked state and current entitlement}
+        '202': {description: Pending payment; no entitlement granted}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '402': {description: Transaction belongs to another active app account}
+        '422': {description: Invalid proof, product, platform, or account binding}
+        '503': {description: Store verifier unavailable; retry without repurchasing}
+  /billing/notifications/google:
+    post:
+      tags: [Billing]
+      summary: Receive authenticated Google Pub/Sub RTDN; re-fetch authoritative store state
+      responses:
+        '204': {description: Notification processed}
+        '401': {description: Invalid Pub/Sub OIDC audience or service account identity}
+        '503': {description: Temporary store failure; Pub/Sub should retry}
+  /billing/notifications/apple:
+    post:
+      tags: [Billing]
+      summary: Receive App Store Server Notifications V2 with verified Apple signedPayload
+      responses:
+        '204': {description: Notification processed}
+        '422': {description: Invalid signed notification}
+        '503': {description: Temporary store failure; Apple should retry}
+  /me/account:
+    delete:
+      tags: [Profile]
+      summary: Permanently delete account and personal learning data; detach purchase for legitimate store restore
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [confirmation]
+              properties:
+                confirmation: {type: string, enum: [DELETE]}
+      responses:
+        '204': {description: Account deleted and sessions revoked; does not request store refund}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '422': {description: Missing explicit confirmation}
   /assets/images/onboarding-japanese-journey.png:
     servers:
       - url: http://localhost:8080
@@ -426,6 +519,21 @@ paths:
       responses:
         '200': {description: Progress saved}
         '401': {$ref: '#/components/responses/Unauthorized'}
+  /me/gamification:
+    get:
+      tags: [Profile]
+      summary: Server-verified XP, level, Jakarta daily streak, and permanent achievements
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Current account summary; fresh accounts have zero XP and locked achievements
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data: {$ref: '#/components/schemas/GamificationSummary'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
   /me/achievements:
     get:
       tags: [Profile]
@@ -532,12 +640,12 @@ paths:
   /grammar/course:
     get:
       tags: [Grammar]
-      summary: Get an N5, N4, or N3 grammar curriculum and signed-in user's completion progress
+      summary: Get an N5, N4, N3, or N2 grammar curriculum and signed-in user's completion progress
       security: [{bearerAuth: []}]
       parameters:
         - in: query
           name: level
-          schema: {type: string, enum: [N5, N4, N3], default: N5}
+          schema: {type: string, enum: [N5, N4, N3, N2], default: N5}
       responses:
         '200':
           description: Grammar course
@@ -548,7 +656,7 @@ paths:
                 properties:
                   data: {$ref: '#/components/schemas/GrammarCourse'}
         '401': {$ref: '#/components/responses/Unauthorized'}
-        '422': {description: Unsupported grammar level; supported levels are N5, N4, and N3}
+        '422': {description: Unsupported grammar level; supported levels are N5, N4, N3, and N2}
   /grammar/lessons/{lessonId}:
     get:
       tags: [Grammar]
@@ -1079,7 +1187,7 @@ components:
       required: [id, order, chapter, title, pointCount, questionCount, bestScore, completed]
       properties:
         id: {type: string, example: grammar-n5-01}
-        level: {type: string, enum: [N5, N4, N3]}
+        level: {type: string, enum: [N5, N4, N3, N2]}
         patterns: {type: array, items: {type: string}}
         order: {type: integer, minimum: 1}
         chapter: {type: string}
@@ -1092,7 +1200,7 @@ components:
       type: object
       required: [level, title, progress, completedLessons, lessons]
       properties:
-        level: {type: string, enum: [N5, N4, N3]}
+        level: {type: string, enum: [N5, N4, N3, N2]}
         title: {type: string}
         progress: {type: integer, minimum: 0, maximum: 100}
         completedLessons: {type: integer, minimum: 0}
@@ -1525,6 +1633,22 @@ components:
         priceIdr: {type: integer}
         features: {type: array, items: {type: string}}
         recommended: {type: boolean}
+    GamificationSummary:
+      type: object
+      required: [xp, level, levelXp, nextLevelXp, streakDays, bestStreak, lessonsCompleted, examsCompleted, activeDays, minutesToday, timezone, achievements]
+      properties:
+        xp: {type: integer, minimum: 0}
+        level: {type: integer, minimum: 1}
+        levelXp: {type: integer, minimum: 0, maximum: 499}
+        nextLevelXp: {type: integer, const: 500}
+        streakDays: {type: integer, minimum: 0}
+        bestStreak: {type: integer, minimum: 0}
+        lessonsCompleted: {type: integer, minimum: 0}
+        examsCompleted: {type: integer, minimum: 0, description: Distinct exam IDs completed with at least one answer}
+        activeDays: {type: integer, minimum: 0}
+        minutesToday: {type: integer, minimum: 0, description: Capped server duration of completed quiz or exam sessions}
+        timezone: {type: string, const: Asia/Jakarta}
+        achievements: {type: array, items: {$ref: '#/components/schemas/Achievement'}}
     Achievement:
       type: object
       properties:

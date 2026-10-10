@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
@@ -6,6 +7,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/grammar/data/grammar_repository.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final grammarRepositoryProvider = Provider<GrammarRepository>(
   (ref) => GrammarRepository(ref.watch(dioProvider)),
@@ -85,7 +87,8 @@ final grammarLessonProvider = StateNotifierProvider.autoDispose
       ref
         ..invalidate(grammarCourseProvider)
         ..invalidate(grammarCourseLevelProvider)
-        ..invalidate(homeDashboardProvider);
+        ..invalidate(homeDashboardProvider)
+        ..invalidate(gamificationProvider);
     },
   );
   unawaited(c.load());

@@ -77,3 +77,49 @@ func TestGrammarAPIContractAndAuthentication(t *testing.T) {
 		t.Fatalf("bad feedback: %s", w.Body.String())
 	}
 }
+
+func TestGrammarN2API(t *testing.T) {
+	server := newServer(true)
+	token := login(t, server)
+	for _, tc := range []struct {
+		path   string
+		status int
+	}{
+		{"/v1/grammar/course?level=n2", 200},
+		{"/v1/grammar/lessons/grammar-n2-01", 200},
+		{"/v1/grammar/lessons/grammar-n2-60", 200},
+		{"/v1/grammar/course?level=N1", 422},
+	} {
+		r := httptest.NewRequest(http.MethodGet, tc.path, nil)
+		r.Header.Set("Authorization", "Bearer "+token)
+		w := httptest.NewRecorder()
+		server.ServeHTTP(w, r)
+		if w.Code != tc.status {
+			t.Fatalf("%s: %s", tc.path, w.Body.String())
+		}
+		if tc.path == "/v1/grammar/course?level=n2" {
+			var payload struct {
+				Data domain.GrammarCourse `json:"data"`
+			}
+			if err := json.Unmarshal(w.Body.Bytes(), &payload); err != nil {
+				t.Fatal(err)
+			}
+			if payload.Data.Level != "N2" || len(payload.Data.Lessons) != 60 {
+				t.Fatal("incomplete N2 catalog")
+			}
+		}
+	}
+	r := httptest.NewRequest(http.MethodPost, "/v1/grammar/lessons/grammar-n2-60/attempts", nil)
+	r.Header.Set("Authorization", "Bearer "+token)
+	w := httptest.NewRecorder()
+	server.ServeHTTP(w, r)
+	var quiz struct {
+		Data domain.GrammarAttempt `json:"data"`
+	}
+	if err := json.Unmarshal(w.Body.Bytes(), &quiz); err != nil {
+		t.Fatal(err)
+	}
+	if w.Code != 201 || len(quiz.Data.Questions) != 5 || strings.Contains(w.Body.String(), "correctOptionId") {
+		t.Fatal("invalid N2 quiz")
+	}
+}
