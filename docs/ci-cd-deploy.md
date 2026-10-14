@@ -46,6 +46,21 @@ Host key harus berasal dari `known_hosts` server yang sudah dipercaya, bukan has
 - Pull request: hanya test dan build; tidak mendapat deploy key dan tidak menyentuh server.
 - Deploy ulang atau rollback: buka **Actions → Nihongo API CI/CD** atau **Fitapp API CI/CD → Run workflow**, pilih `deploy` atau `rollback`. Rollback beralih ke binary sebelumnya dan tetap mengecek health.
 
+## File `.env` di server
+
+Contoh konfigurasi tanpa rahasia tersedia di [`backend/.env.example`](../backend/.env.example) (Nihongo) dan [`api/.env.example` di repo Fitapp](https://github.com/codeverta/fitapp.codeverta.com/blob/main/api/.env.example). File produksi tetap berada di `/home/rabihutomo/apps/codeverta-api/nihongo/backend/.env` dan `/home/rabihutomo/apps/codeverta-api/fitapp/api/.env`. Workflow binary tidak menyalin atau menimpa `.env` maupun `.env.example`.
+
+Jika ingin menaruh template di server untuk referensi, unggah hanya file contoh berikut dari checkout repo; ini tidak mengubah `.env`:
+
+```sh
+# Jalankan dari root checkout repo Nihongo:
+scp backend/.env.example serverku:/home/rabihutomo/apps/codeverta-api/nihongo/backend/.env.example
+# Jalankan terpisah dari root checkout repo Fitapp:
+scp api/.env.example serverku:/home/rabihutomo/apps/codeverta-api/fitapp/api/.env.example
+```
+
+Jangan menyalin template di atas `.env` produksi yang sudah ada. Contoh memakai nama database `nihongo` dan `fitapp`, port API `18100` dan `18101`, serta placeholder untuk password dan key.
+
 Sebelum mengganti binary atau melakukan rollback, helper membuat dump gzip database target memakai akun aplikasi dari `.env`/`DATABASE_DSN`. Backup disimpan di `/home/rabihutomo/apps/codeverta-api/backups/` dengan nama rilis dan waktu; backup lama tidak dibersihkan otomatis. Health endpoint Nihongo `http://127.0.0.1:18100/healthz`; Fitapp `http://127.0.0.1:18101/healthz`. Jika deployment baru gagal health check, helper mengembalikan symlink ke binary sebelumnya dan mencoba restart service tersebut lagi.
 
 ## Batas perubahan dan database
