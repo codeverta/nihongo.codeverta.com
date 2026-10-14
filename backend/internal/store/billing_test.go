@@ -3,7 +3,7 @@ package store
 import (
 	"errors"
 	"nihongo-master-backend/internal/domain"
-	"path/filepath"
+	"nihongo-master-backend/internal/testdb"
 	"testing"
 	"time"
 )
@@ -46,7 +46,7 @@ func TestBillingOwnershipFreshnessAndMultipleStores(t *testing.T) {
 	}
 }
 func TestBillingDeletionRestoreAndRestart(t *testing.T) {
-	path := filepath.Join(t.TempDir(), "state.db")
+	path := testdb.DSN(t)
 	s := NewMemoryStore()
 	if err := s.EnableGamificationPersistence(path); err != nil {
 		t.Fatal(err)

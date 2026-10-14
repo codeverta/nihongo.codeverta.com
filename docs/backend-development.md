@@ -9,7 +9,8 @@ Backend menggunakan:
 
 - Go standard library `net/http`
 - Go module bernama `nihongo-master-backend`
-- In-memory repository untuk phase-1
+- GORM dan MariaDB untuk persistence akun, billing, progress, dan kamus; sesi/attempt aktif masih di memori
+- [Setup database MariaDB](mariadb.md)
 - JSON REST API
 - OpenAPI 3.1 contract pada `backend/openapi.yaml`
 
@@ -53,7 +54,8 @@ go version
 go env GOROOT GOPATH
 ```
 
-Tidak perlu menambahkan dependency database atau framework untuk phase-1.
+Pastikan MariaDB aktif dan `backend/.env` memiliki konfigurasi `DB_*`.
+Ikuti [setup MariaDB](mariadb.md) sebelum menjalankan API.
 
 Untuk menjelajahi kontrak endpoint, buka `backend/openapi.yaml` di Swagger
 Editor. Kontrak ini mencakup autentikasi, Beranda, pembelajaran, ujian, paket,
@@ -361,15 +363,15 @@ untuk validasi ID token dan `x/crypto` untuk bcrypt password hashing.
 5. Tambahkan contract test dengan `httptest`.
 6. Jalankan formatter, vet, dan test.
 
-## 11. Batasan phase-1
+## 11. Penyimpanan dan batasan
 
-- Semua data hilang ketika server restart.
-- Tidak ada database atau migration.
-- Tidak ada password, JWT, atau refresh token.
-- Upgrade premium/lifetime belum terhubung payment gateway.
-- Question bank dan scoring exam belum persisten.
-- Achievement masih berupa fondasi katalog dan progress awal.
-- File audio, video, dan offline package belum memakai object storage.
+- Akun, billing, XP/progress lesson, achievements, serta cache dan arsip kamus
+  disimpan di MariaDB.
+- Session login, attempt aktif, dan detail riwayat ujian masih berada di memori.
+- Satu proses API memegang named writer lock per database untuk menjaga
+  konsistensi cache akun/progress.
+- Schema dibuat saat startup. Data lama dapat dipindahkan melalui importer;
+  lihat [panduan MariaDB](mariadb.md).
 
 ## 12. Troubleshooting
 
@@ -415,12 +417,13 @@ Authorization: Bearer <session-token>
 
 ### Data hilang setelah restart
 
-Ini perilaku yang diharapkan karena repository masih in-memory. Persistence ke
-PostgreSQL merupakan pekerjaan backend phase berikutnya.
+Session login dan attempt aktif masih berada di memori. Akun, billing, dan
+progress lesson tersimpan di MariaDB; periksa koneksi `DB_*` dan database yang
+dipakai jika data tersebut tidak muncul.
 
 ## 13. Roadmap backend production
 
-1. PostgreSQL schema, migration, dan transaction-safe repository.
+1. Perluas persistence MariaDB untuk data pengguna yang masih berada di memori.
 2. Persistent session dengan expiry, refresh rotation, dan device management.
 3. Payment provider webhook dengan signature validation dan idempotency key.
 4. Premium/lifetime entitlement audit log.

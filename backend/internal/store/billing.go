@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
+	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 	"strings"
 	"time"
@@ -16,85 +19,47 @@ func (s *MemoryStore) EnableBillingPersistence() error {
 	if s.gamificationDB == nil {
 		return fmt.Errorf("billing requires a persistent database")
 	}
-	for _, query := range []string{
-		`CREATE TABLE IF NOT EXISTS billing_purchases(id TEXT PRIMARY KEY, state BLOB NOT NULL)`,
-		`CREATE TABLE IF NOT EXISTS billing_tokens(user_id TEXT PRIMARY KEY, token TEXT UNIQUE NOT NULL)`,
-		`CREATE TABLE IF NOT EXISTS accounts(email TEXT PRIMARY KEY, state BLOB NOT NULL)`,
-		`CREATE TABLE IF NOT EXISTS deleted_demo(id TEXT PRIMARY KEY)`,
-	} {
-		if _, err := s.gamificationDB.Exec(query); err != nil {
+	if err := database.Migrate(s.ormDB, &database.BillingPurchase{}, &database.BillingToken{}, &database.Account{}, &database.DeletedDemo{}); err != nil {
+		return err
+	}
+	var purchases []database.BillingPurchase
+	if err := s.ormDB.Find(&purchases).Error; err != nil {
+		return err
+	}
+	for _, record := range purchases {
+		var purchase domain.Purchase
+		if err := json.Unmarshal(record.State, &purchase); err != nil {
 			return err
 		}
+		s.purchases[purchase.Platform+":"+purchase.ID] = purchase
 	}
-	rows, err := s.gamificationDB.Query(`SELECT state FROM billing_purchases`)
-	if err != nil {
+	var tokens []database.BillingToken
+	if err := s.ormDB.Find(&tokens).Error; err != nil {
 		return err
 	}
-	for rows.Next() {
-		var raw []byte
-		var p domain.Purchase
-		if err = rows.Scan(&raw); err != nil {
-			rows.Close()
-			return err
-		}
-		if err = json.Unmarshal(raw, &p); err != nil {
-			rows.Close()
-			return err
-		}
-		s.purchases[p.Platform+":"+p.ID] = p
+	for _, record := range tokens {
+		s.billingTokens[record.UserID] = record.Token
 	}
-	err = rows.Err()
-	rows.Close()
-	if err != nil {
+	var accounts []database.Account
+	if err := s.ormDB.Find(&accounts).Error; err != nil {
 		return err
 	}
-	rows, err = s.gamificationDB.Query(`SELECT user_id,token FROM billing_tokens`)
-	if err != nil {
-		return err
-	}
-	for rows.Next() {
-		var id, token string
-		if err = rows.Scan(&id, &token); err != nil {
-			rows.Close()
-			return err
-		}
-		s.billingTokens[id] = token
-	}
-	err = rows.Err()
-	rows.Close()
-	if err != nil {
-		return err
-	}
-	rows, err = s.gamificationDB.Query(`SELECT state FROM accounts`)
-	if err != nil {
-		return err
-	}
-	for rows.Next() {
-		var raw []byte
+	for _, record := range accounts {
 		var a account
-		if err = rows.Scan(&raw); err != nil {
-			rows.Close()
-			return err
-		}
-		if err = json.Unmarshal(raw, &a); err != nil {
-			rows.Close()
+		if err := json.Unmarshal(record.State, &a); err != nil {
 			return err
 		}
 		s.accounts[a.Email] = a
 		s.profiles[a.ID] = profileForAccount(a)
 	}
-	err = rows.Err()
-	rows.Close()
-	if err != nil {
+	var deleted int64
+	if err := s.ormDB.Model(&database.DeletedDemo{}).Where("user_id = ?", database.DemoUserID).Count(&deleted).Error; err != nil {
 		return err
 	}
-	var deleted int
-	if err = s.gamificationDB.QueryRow(`SELECT count(*) FROM deleted_demo WHERE id='demo-user'`).Scan(&deleted); err != nil {
-		return err
-	}
+
 	if deleted > 0 {
 		delete(s.accounts, "demo@nihongomaster.app")
-		delete(s.profiles, "demo-user")
+		delete(s.profiles, database.DemoUserID)
 	}
 	s.billingEnabled = true
 	return nil
@@ -108,7 +73,7 @@ func (s *MemoryStore) BillingAccountToken(user string) (string, error) {
 	}
 	token := uuid.NewString()
 	if s.billingEnabled {
-		if _, err := s.gamificationDB.Exec(`INSERT INTO billing_tokens(user_id,token) VALUES(?,?)`, user, token); err != nil {
+		if err := s.ormWriter.Create(&database.BillingToken{UserID: user, Token: token}).Error; err != nil {
 			return "", err
 		}
 	}
@@ -169,7 +134,7 @@ func (s *MemoryStore) SaveVerifiedPurchase(user string, p domain.Purchase) error
 		if err != nil {
 			return err
 		}
-		if _, err = s.gamificationDB.Exec(`INSERT INTO billing_purchases(id,state) VALUES(?,?) ON CONFLICT(id) DO UPDATE SET state=excluded.state`, key, raw); err != nil {
+		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state", "user_id"})}).Create(&database.BillingPurchase{PurchaseKey: key, UserID: database.OptionalUserID(user), State: raw}).Error; err != nil {
 			return err
 		}
 	}
@@ -194,7 +159,7 @@ func (s *MemoryStore) UpdateVerifiedPurchase(p domain.Purchase) error {
 		if err != nil {
 			return err
 		}
-		if _, err = s.gamificationDB.Exec(`UPDATE billing_purchases SET state=? WHERE id=?`, raw, key); err != nil {
+		if err = s.ormWriter.Model(&database.BillingPurchase{}).Where("purchase_key = ?", key).Updates(map[string]any{"state": raw, "user_id": database.OptionalUserID(p.UserID)}).Error; err != nil {
 			return err
 		}
 	}
@@ -226,7 +191,7 @@ func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bo
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 	if strings.Contains(path, "/simulation/") && attemptID == "" {
-		return strings.ToUpper(level) == "N4"
+		return strings.ToUpper(level) == "N4" || strings.ToUpper(level) == "N3" || strings.ToUpper(level) == "JFT" || strings.ToUpper(level) == "NAT"
 	}
 	if strings.Contains(path, "/course") {
 		if strings.Contains(path, "/grammar/") {
@@ -311,42 +276,44 @@ func (s *MemoryStore) DeleteAccount(user string) error {
 		}
 	}
 	if s.billingEnabled {
-		tx, err := s.gamificationDB.Begin()
-		if err != nil {
-			return err
-		}
-		defer tx.Rollback()
-		for _, q := range []string{`DELETE FROM gamification_users WHERE user_id=?`, `DELETE FROM billing_tokens WHERE user_id=?`} {
-			if _, err = tx.Exec(q, user); err != nil {
+		if err := s.ormWriter.Transaction(func(tx *gorm.DB) error {
+			if err := tx.Where("user_id = ?", user).Delete(&database.GamificationUser{}).Error; err != nil {
 				return err
 			}
-		}
-		for email, a := range s.accounts {
-			if a.ID == user {
-				if _, err = tx.Exec(`DELETE FROM accounts WHERE email=?`, email); err != nil {
+			if err := tx.Where("user_id = ?", user).Delete(&database.BillingToken{}).Error; err != nil {
+				return err
+			}
+			for email, a := range s.accounts {
+				if a.ID == user {
+					if err := tx.Where("email = ?", email).Delete(&database.Account{}).Error; err != nil {
+						return err
+					}
+				}
+			}
+			if user == database.DemoUserID {
+				if err := tx.Clauses(clause.OnConflict{DoNothing: true}).Create(&database.DeletedDemo{UserID: user}).Error; err != nil {
 					return err
 				}
 			}
-		}
-		if user == "demo-user" {
-			if _, err = tx.Exec(`INSERT OR IGNORE INTO deleted_demo(id) VALUES(?)`, user); err != nil {
-				return err
+			for key, p := range detached {
+				raw, err := json.Marshal(p)
+				if err != nil {
+					return err
+				}
+				if err := tx.Model(&database.BillingPurchase{}).Where("purchase_key = ?", key).Updates(map[string]any{"state": raw, "user_id": database.OptionalUserID(p.UserID)}).Error; err != nil {
+					return err
+				}
 			}
-		}
-		for key, p := range detached {
-			raw, _ := json.Marshal(p)
-			if _, err = tx.Exec(`UPDATE billing_purchases SET state=? WHERE id=?`, raw, key); err != nil {
-				return err
-			}
-		}
-		if err = tx.Commit(); err != nil {
+			return nil
+		}); err != nil {
 			return err
 		}
 	} else if s.gamificationDB != nil {
-		if _, err := s.gamificationDB.Exec(`DELETE FROM gamification_users WHERE user_id=?`, user); err != nil {
+		if err := s.ormWriter.Where("user_id = ?", user).Delete(&database.GamificationUser{}).Error; err != nil {
 			return err
 		}
 	}
+
 	for key, p := range detached {
 		s.purchases[key] = p
 	}

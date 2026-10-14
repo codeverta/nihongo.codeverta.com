@@ -17,7 +17,7 @@ func (s *Server) ConfigureBilling(service *billing.Service, audience, email stri
 	s.billingPushEmail = email
 }
 func (s *Server) billingStatus(w http.ResponseWriter, r *http.Request) {
-	if !personalBillingAccount(w, r) {
+	if !s.personalBillingAccount(w, r) {
 		return
 	}
 	token, err := s.store.BillingAccountToken(userID(r))
@@ -38,7 +38,7 @@ func (s *Server) billingStatus(w http.ResponseWriter, r *http.Request) {
 	writeData(w, 200, map[string]any{"productId": product, "accountToken": token, "priceIdr": 99000, "billingType": "lifetime", "platforms": platforms, "entitlement": s.store.Profile(userID(r)).Entitlement})
 }
 func (s *Server) verifyPurchase(w http.ResponseWriter, r *http.Request) {
-	if !personalBillingAccount(w, r) {
+	if !s.personalBillingAccount(w, r) {
 		return
 	}
 	if s.billing == nil {
@@ -61,8 +61,8 @@ func (s *Server) verifyPurchase(w http.ResponseWriter, r *http.Request) {
 	}
 	writeData(w, status, map[string]any{"state": p.State, "entitlement": s.store.Profile(userID(r)).Entitlement})
 }
-func personalBillingAccount(w http.ResponseWriter, r *http.Request) bool {
-	if userID(r) == "demo-user" {
+func (s *Server) personalBillingAccount(w http.ResponseWriter, r *http.Request) bool {
+	if s.store.IsDemoUser(userID(r)) {
 		writeError(w, 403, "personal_account_required", "Masuk dengan akun Google pribadi untuk membeli atau restore. Akun demo digunakan bersama.")
 		return false
 	}

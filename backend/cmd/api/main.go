@@ -28,11 +28,11 @@ func main() {
 	}
 
 	memoryStore := store.NewMemoryStore()
-	databasePath := strings.TrimSpace(os.Getenv("GAMIFICATION_DB_PATH"))
-	if databasePath == "" {
-		databasePath = "data/gamification.db"
+	dsn, err := config.MariaDBDSN()
+	if err != nil {
+		log.Fatal(err)
 	}
-	if err := memoryStore.EnableGamificationPersistence(databasePath); err != nil {
+	if err := memoryStore.EnableGamificationPersistence(dsn); err != nil {
 		log.Fatal(err)
 	}
 	defer memoryStore.Close()

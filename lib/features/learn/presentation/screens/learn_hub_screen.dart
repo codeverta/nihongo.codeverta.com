@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 
 class LearnHubScreen extends ConsumerStatefulWidget {
   const LearnHubScreen({super.key});
@@ -100,6 +101,8 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                       : '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
                 ),
               ),
+              const SizedBox(height: 20),
+              const SswEntryCard(),
               const SizedBox(height: 28),
               Text(
                 'Materi ${_levels[_selectedLevel]}',

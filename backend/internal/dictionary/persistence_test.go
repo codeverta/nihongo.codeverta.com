@@ -4,13 +4,16 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"fmt"
+	"github.com/google/uuid"
 	"net/http"
-	"path/filepath"
+	"nihongo-master-backend/internal/database"
+	"nihongo-master-backend/internal/testdb"
 	"strings"
 	"testing"
 	"time"
 
-	_ "modernc.org/sqlite"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 const wordFixture = `{"meta":{"status":200},"data":[{"slug":"猫","is_common":true,"japanese":[{"word":"猫","reading":"ねこ"}],"senses":[{"english_definitions":["cat"]}],"attribution":{"jmdict":true}}]}`
@@ -18,13 +21,17 @@ const kanjiFixture = `{"kanji":"猫","stroke_count":11,"meanings":["cat"],"on_re
 
 func persistentTestClient(t *testing.T, path string) (*Client, *sql.DB) {
 	t.Helper()
-	db, err := sql.Open("sqlite", path)
+	db, err := sql.Open("mysql", path)
 	if err != nil {
 		t.Fatal(err)
 	}
 	db.SetMaxOpenConns(1)
 	t.Cleanup(func() { db.Close() })
-	cache, err := NewSQLCache(db)
+	orm, err := database.FromSQL(db)
+	if err != nil {
+		t.Fatal(err)
+	}
+	cache, err := NewSQLCache(orm)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -33,7 +40,7 @@ func persistentTestClient(t *testing.T, path string) (*Client, *sql.DB) {
 	return c, db
 }
 func TestDatabaseCacheSurvivesRestartAndArchivesUniqueEntries(t *testing.T) {
-	path := filepath.Join(t.TempDir(), "dictionary.db")
+	path := testdb.DSN(t)
 	c, db := persistentTestClient(t, path)
 	c.HTTP.Transport = transport(func(r *http.Request) (*http.Response, error) {
 		if r.URL.Host == "kanjiapi.dev" {
@@ -58,7 +65,7 @@ func TestDatabaseCacheSurvivesRestartAndArchivesUniqueEntries(t *testing.T) {
 		t.Fatalf("archive duplicated words or lost kanji: %d %v", count, err)
 	}
 	var raw string
-	if err := db.QueryRow(`SELECT body FROM dictionary_entries WHERE source='jisho.org' AND entry_id='猫'`).Scan(&raw); err != nil || !strings.Contains(raw, `"jmdict":true`) {
+	if err := db.QueryRow(`SELECT body FROM dictionary_entries WHERE source='jisho.org' AND source_entry_id='猫'`).Scan(&raw); err != nil || !strings.Contains(raw, `"jmdict":true`) {
 		t.Fatal("source attribution not retained")
 	}
 	db.Close()
@@ -76,7 +83,7 @@ func TestDatabaseCacheSurvivesRestartAndArchivesUniqueEntries(t *testing.T) {
 	}
 }
 func TestExpiredDatabaseResponseRefreshesButKeepsCollectedEntries(t *testing.T) {
-	c, db := persistentTestClient(t, filepath.Join(t.TempDir(), "dictionary.db"))
+	c, db := persistentTestClient(t, testdb.DSN(t))
 	calls := 0
 	c.HTTP.Transport = transport(func(*http.Request) (*http.Response, error) { calls++; return response(200, wordFixture), nil })
 	if _, err := c.Search(context.Background(), "cat", 1, "", false); err != nil {
@@ -100,7 +107,7 @@ func TestExpiredDatabaseResponseRefreshesButKeepsCollectedEntries(t *testing.T) 
 	}
 }
 func TestInvalidPayloadNeverPersistsAndWritesAreAtomic(t *testing.T) {
-	c, db := persistentTestClient(t, filepath.Join(t.TempDir(), "dictionary.db"))
+	c, db := persistentTestClient(t, testdb.DSN(t))
 	c.HTTP.Transport = transport(func(*http.Request) (*http.Response, error) {
 		return response(200, `{"meta":{"status":200},"data":[{"slug":"bad"}]}`), nil
 	})
@@ -112,7 +119,7 @@ func TestInvalidPayloadNeverPersistsAndWritesAreAtomic(t *testing.T) {
 	if count != 0 {
 		t.Fatal("bad payload persisted")
 	}
-	if _, err := db.Exec(`CREATE TRIGGER fail_archive BEFORE INSERT ON dictionary_entries BEGIN SELECT RAISE(ABORT,'test disk failure'); END`); err != nil {
+	if _, err := db.Exec(`CREATE TRIGGER fail_archive BEFORE INSERT ON dictionary_entries FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='test database failure'`); err != nil {
 		t.Fatal(err)
 	}
 	c.HTTP.Transport = transport(func(*http.Request) (*http.Response, error) { return response(200, wordFixture), nil })
@@ -134,7 +141,7 @@ func TestInvalidPayloadNeverPersistsAndWritesAreAtomic(t *testing.T) {
 	}
 }
 func TestFilterAndPageCacheKeysDoNotMixResults(t *testing.T) {
-	c, _ := persistentTestClient(t, filepath.Join(t.TempDir(), "dictionary.db"))
+	c, _ := persistentTestClient(t, testdb.DSN(t))
 	calls := 0
 	c.HTTP.Transport = transport(func(*http.Request) (*http.Response, error) { calls++; return response(200, wordFixture), nil })
 	for _, input := range []struct {
@@ -149,5 +156,37 @@ func TestFilterAndPageCacheKeysDoNotMixResults(t *testing.T) {
 	}
 	if calls != 4 {
 		t.Fatal("page/filter keys were mixed or duplicate fetched")
+	}
+}
+
+func TestMariaDBCachePruningKeepsLatestResponsesAndArchive(t *testing.T) {
+	c, db := persistentTestClient(t, testdb.DSN(t))
+	tx, err := db.Begin()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer tx.Rollback()
+	stmt, err := tx.Prepare(`INSERT INTO dictionary_responses(id,cache_key,source,body,fetched_at) VALUES(?,?,?,?,?)`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer stmt.Close()
+	for i := 0; i < maxPersistentResponses+1; i++ {
+		if _, err := stmt.Exec(uuid.NewString(), responseKey(fmt.Sprint(i)), "jisho.org", []byte(wordFixture), i); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := tx.Commit(); err != nil {
+		t.Fatal(err)
+	}
+	if err := c.Persistence.save(context.Background(), "https://jisho.org/api/v1/search/words?keyword=cat", cached{body: []byte(wordFixture), at: time.Now()}); err != nil {
+		t.Fatal(err)
+	}
+	var count int
+	if err := db.QueryRow(`SELECT COUNT(*) FROM dictionary_responses`).Scan(&count); err != nil || count != maxPersistentResponses {
+		t.Fatalf("cache pruning: %d %v", count, err)
+	}
+	if err := db.QueryRow(`SELECT COUNT(*) FROM dictionary_entries WHERE source_entry_id='猫'`).Scan(&count); err != nil || count != 1 {
+		t.Fatalf("archive lost: %d %v", count, err)
 	}
 }

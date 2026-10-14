@@ -8,6 +8,7 @@ import 'package:nihongo_master/features/billing/presentation/premium_screen.dart
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_attempt_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_intro_screen.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/jft_intro_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_intro_screen.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_course_screen.dart';
@@ -20,6 +21,8 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vo
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
+import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 import 'package:nihongo_master/shared/presentation/widgets/main_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -98,6 +101,24 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         ),
       ),
       GoRoute(
+        path: '/ssw',
+        builder: (context, state) => SswHubScreen(
+          exams: state.uri.queryParameters['tab'] == 'test',
+        ),
+      ),
+      GoRoute(
+        path: '/ssw/nursing-care/lessons/:lessonId',
+        builder: (context, state) =>
+            KaigoLessonScreen(lessonId: state.pathParameters['lessonId']!),
+      ),
+      GoRoute(
+        path: '/ssw/:sectorId',
+        builder: (context, state) => SswSectorScreen(
+          sectorId: state.pathParameters['sectorId']!,
+          exams: state.uri.queryParameters['tab'] == 'test',
+        ),
+      ),
+      GoRoute(
         path: '/premium',
         builder: (context, state) => const PremiumScreen(),
       ),
@@ -140,6 +161,28 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const DiagnosticIntroScreen(),
       ),
       GoRoute(
+        path: '/exams/nat/simulation',
+        builder: (context, state) => const SimulationIntroScreen(level: 'NAT'),
+      ),
+      GoRoute(
+        path: '/exams/nat/simulation/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          level: 'NAT',
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/exams/jft/exam-1',
+        builder: (context, state) => const JftIntroScreen(),
+      ),
+      GoRoute(
+        path: '/exams/jft/exam-1/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          level: 'JFT',
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
         path: '/exams/n5/simulation',
         builder: (context, state) => const SimulationIntroScreen(),
       ),
@@ -157,6 +200,17 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/exams/n4/simulation/:attemptId',
         builder: (context, state) => SimulationAttemptScreen(
           level: 'N4',
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/exams/n3/simulation',
+        builder: (context, state) => const SimulationIntroScreen(level: 'N3'),
+      ),
+      GoRoute(
+        path: '/exams/n3/simulation/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          level: 'N3',
           attemptId: state.pathParameters['attemptId']!,
         ),
       ),

@@ -14,7 +14,7 @@ Status project:
   untuk preview lokal. Workflow GitHub menolak build tanpa upload key.
 - Default API Flutter masih `http://10.0.2.2:8080/v1`, yang hanya berlaku pada
   emulator Android.
-- Account, pembelian, progress, dan achievement sekarang persistent di SQLite;
+- Account, pembelian, progress, dan achievement sekarang persistent di MariaDB;
   sesi login tetap perlu login ulang setelah restart API.
 - Hapus akun tersedia di Profil; sediakan URL permintaan penghapusan untuk listing.
 - Lifetime sudah terhubung ke billing client dan server verification; produk console,
@@ -101,7 +101,7 @@ Build Play Store tidak dapat memakai `localhost` atau `10.0.2.2`. Sebelum
 membuat AAB:
 
 1. Deploy backend Go ke server/container production.
-2. Gunakan database persisten seperti PostgreSQL untuk akun, progress,
+2. Gunakan MariaDB dengan konfigurasi `DB_*` untuk akun, progress,
    entitlement, achievement, dan session.
 3. Pasang HTTPS dengan sertifikat valid.
 4. Simpan `GOOGLE_CLIENT_SECRET` dan credential database sebagai secret milik

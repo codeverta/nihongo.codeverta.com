@@ -3,35 +3,33 @@ package dictionary
 import (
 	"context"
 	"crypto/sha256"
-	"database/sql"
 	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"fmt"
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 	"net/url"
+	"nihongo-master-backend/internal/database"
 	"strings"
 	"time"
 )
 
-// SQLCache uses the application's SQLite connection; its owner closes the DB.
+// SQLCache uses the application's MariaDB connection; its owner closes the DB.
 // Responses are shared across users, while entries form a retained source archive.
-type SQLCache struct{ db *sql.DB }
+type SQLCache struct{ db *gorm.DB }
 
 const persistentTTL = 30 * 24 * time.Hour
 const maxPersistentResponses = 5000
 
-func NewSQLCache(db *sql.DB) (*SQLCache, error) {
+func NewSQLCache(db *gorm.DB) (*SQLCache, error) {
 	if db == nil {
 		return nil, fmt.Errorf("dictionary persistence requires a database")
 	}
-	for _, statement := range []string{
-		`CREATE TABLE IF NOT EXISTS dictionary_responses(cache_key TEXT PRIMARY KEY, source TEXT NOT NULL, body BLOB NOT NULL, fetched_at INTEGER NOT NULL)`,
-		`CREATE INDEX IF NOT EXISTS dictionary_responses_age ON dictionary_responses(fetched_at)`,
-		`CREATE TABLE IF NOT EXISTS dictionary_entries(source TEXT NOT NULL, entry_id TEXT NOT NULL, kind TEXT NOT NULL, body BLOB NOT NULL, fetched_at INTEGER NOT NULL, PRIMARY KEY(source,entry_id))`,
-	} {
-		if _, err := db.Exec(statement); err != nil {
-			return nil, fmt.Errorf("initialize dictionary persistence: %w", err)
-		}
+	if err := database.Migrate(db, &database.DictionaryResponse{}, &database.DictionaryEntry{}); err != nil {
+		return nil, fmt.Errorf("initialize GORM dictionary schema: %w", err)
 	}
+
 	return &SQLCache{db: db}, nil
 }
 func responseKey(endpoint string) string {
@@ -39,17 +37,15 @@ func responseKey(endpoint string) string {
 	return hex.EncodeToString(sum[:])
 }
 func (s *SQLCache) load(ctx context.Context, endpoint string) (cached, bool, error) {
-	var hit cached
-	var at int64
-	err := s.db.QueryRowContext(ctx, `SELECT body,fetched_at FROM dictionary_responses WHERE cache_key=?`, responseKey(endpoint)).Scan(&hit.body, &at)
-	if err == sql.ErrNoRows {
-		return hit, false, nil
+	var record database.DictionaryResponse
+	err := s.db.WithContext(ctx).Where("cache_key = ?", responseKey(endpoint)).Take(&record).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return cached{}, false, nil
 	}
 	if err != nil {
-		return hit, false, err
+		return cached{}, false, err
 	}
-	hit.at = time.UnixMilli(at)
-	return hit, true, nil
+	return cached{body: record.Body, at: time.UnixMilli(record.FetchedAt)}, true, nil
 }
 
 type archiveEntry struct {
@@ -103,22 +99,19 @@ func (s *SQLCache) save(ctx context.Context, endpoint string, hit cached) error 
 	if err != nil {
 		return err
 	}
-	tx, err := s.db.BeginTx(ctx, nil)
-	if err != nil {
-		return err
-	}
-	defer tx.Rollback()
-	if _, err = tx.ExecContext(ctx, `INSERT INTO dictionary_responses(cache_key,source,body,fetched_at) VALUES(?,?,?,?) ON CONFLICT(cache_key) DO UPDATE SET body=excluded.body,fetched_at=excluded.fetched_at`, responseKey(endpoint), source, hit.body, hit.at.UnixMilli()); err != nil {
-		return err
-	}
-	for _, entry := range entries {
-		if _, err = tx.ExecContext(ctx, `INSERT INTO dictionary_entries(source,entry_id,kind,body,fetched_at) VALUES(?,?,?,?,?) ON CONFLICT(source,entry_id) DO UPDATE SET body=excluded.body,fetched_at=excluded.fetched_at`, source, entry.id, kind, []byte(entry.body), hit.at.UnixMilli()); err != nil {
+	return s.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
+		response := database.DictionaryResponse{CacheKey: responseKey(endpoint), Source: source, Body: hit.body, FetchedAt: hit.at.UnixMilli()}
+		upsert := clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"body", "fetched_at"})}
+		if err := tx.Clauses(upsert).Create(&response).Error; err != nil {
 			return err
 		}
-	}
-	// Limit query combinations in the response cache; collected entries are retained.
-	if _, err = tx.ExecContext(ctx, `DELETE FROM dictionary_responses WHERE cache_key IN (SELECT cache_key FROM dictionary_responses ORDER BY fetched_at DESC,cache_key LIMIT -1 OFFSET ?)`, maxPersistentResponses); err != nil {
-		return err
-	}
-	return tx.Commit()
+		for _, entry := range entries {
+			record := database.DictionaryEntry{Source: source, EntryID: entry.id, Kind: kind, Body: []byte(entry.body), FetchedAt: hit.at.UnixMilli()}
+			if err := tx.Clauses(upsert).Create(&record).Error; err != nil {
+				return err
+			}
+		}
+		// MariaDB requires a derived join when deleting a limited selection of this table.
+		return tx.Exec(`DELETE r FROM dictionary_responses AS r JOIN (SELECT cache_key FROM dictionary_responses ORDER BY fetched_at DESC,cache_key LIMIT 18446744073709551615 OFFSET ?) AS stale ON stale.cache_key=r.cache_key`, maxPersistentResponses).Error
+	})
 }

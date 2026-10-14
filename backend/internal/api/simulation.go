@@ -7,8 +7,8 @@ import (
 
 func (s *Server) simulationOverview(w http.ResponseWriter, r *http.Request) {
 	level := strings.ToUpper(r.PathValue("level"))
-	if level != "N5" && level != "N4" {
-		writeError(w, 400, "invalid_level", "Simulation supports N5 and N4")
+	if level != "N5" && level != "N4" && level != "N3" && level != "JFT" && level != "NAT" {
+		writeError(w, 400, "invalid_level", "Simulation supports N5, N4, N3, JFT and NAT")
 		return
 	}
 	result, err := s.store.SimulationOverviewChecked(userID(r), level)

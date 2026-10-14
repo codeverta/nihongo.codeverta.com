@@ -24,3 +24,6 @@ assets
 !**/.env.example
 backend/data/branding.json
 backend/data/branding.json.tmp
+**/*.db
+**/*.db-wal
+**/*.db-shm

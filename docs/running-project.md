@@ -9,6 +9,8 @@ menjalankan keduanya supaya konfigurasi Google Sign-In ikut masuk ke Flutter.
 - Go 1.22 atau lebih baru ada di `PATH`.
 - Android SDK dan Android Emulator, atau perangkat Android dengan USB debugging.
 - File `backend/.env` berisi `GOOGLE_CLIENT_ID` (Web OAuth Client ID).
+- MariaDB aktif di port 3306 dan konfigurasi `DB_*` sudah ada di `backend/.env`.
+  Lihat [setup MariaDB](mariadb.md).
 
 ## Jalankan semuanya
 

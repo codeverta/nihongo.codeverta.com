@@ -47,6 +47,11 @@ Dokumentasi lengkap:
 - Tested: **Go 1.26.5 windows/amd64**
 - Google OAuth: Web OAuth Client ID dari Google Cloud
 
+## Database
+
+Backend memakai GORM dan wajib terhubung ke MariaDB di port 3306. Konfigurasi `DB_*` dibaca
+dari `.env`. Lihat [setup MariaDB dan migrasi data](../docs/mariadb.md).
+
 ## Environment
 
 Backend otomatis membaca `backend/.env` ketika dijalankan dari root project atau

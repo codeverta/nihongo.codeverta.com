@@ -8,6 +8,8 @@ import (
 	"strings"
 
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm/clause"
+	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 )
 
@@ -27,10 +29,10 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 	defer s.mu.Unlock()
 	existingAccount, ok := s.accounts[email]
 	if !ok {
-		id := "google-" + uuid.NewString()
+		id := uuid.NewString()
 		// Preserve progress from accounts created before durable account storage.
-		if s.gamification["google-"+identity.Subject] != nil {
-			id = "google-" + identity.Subject
+		if s.gamification[database.UserUUID("google-"+identity.Subject)] != nil {
+			id = database.UserUUID("google-" + identity.Subject)
 		}
 		existingAccount = account{
 			ID:          id,
@@ -51,7 +53,7 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 		if err != nil {
 			return domain.Profile{}, err
 		}
-		if _, err = s.gamificationDB.Exec(`INSERT INTO accounts(email,state) VALUES(?,?) ON CONFLICT(email) DO UPDATE SET state=excluded.state`, email, raw); err != nil {
+		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.Account{ID: existingAccount.ID, Email: email, State: raw}).Error; err != nil {
 			return domain.Profile{}, err
 		}
 	}
@@ -90,7 +92,7 @@ func (s *MemoryStore) seedDemoAccount() {
 		panic(err)
 	}
 	account := account{
-		ID:           "demo-user",
+		ID:           database.DemoUserID,
 		Email:        "demo@nihongomaster.app",
 		DisplayName:  "Demo Learner",
 		PasswordHash: hash,
@@ -123,3 +125,5 @@ func profileForAccount(account account) domain.Profile {
 		Entitlement: domain.Entitlement{Tier: domain.TierFree},
 	}
 }
+
+func (s *MemoryStore) IsDemoUser(id string) bool { return id == database.DemoUserID }

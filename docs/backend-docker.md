@@ -42,13 +42,14 @@ network dan arahkan koneksi database ke hostname gateway host sesuai platform.
 
 ## Catatan database
 
-Backend memakai SQLite untuk akun, pembayaran, gamifikasi/progres lesson, serta
-cache dan arsip hasil kamus. File ditentukan oleh `GAMIFICATION_DB_PATH` dan pada
-Compose berada di `/app/data/gamification.db` pada volume data. Data tersebut
-tetap tersedia setelah restart; session login dan attempt aktif masih di RAM.
-Tidak ada adapter MySQL/MariaDB atau koneksi ke database host yang diaktifkan
-oleh mode network host. Jalankan satu proses API per file SQLite dan backup
-volume data lengkap. Lihat [penyimpanan kamus](dictionary.md).
+Backend memakai MariaDB untuk akun, pembayaran, gamifikasi/progres lesson,
+cache, dan arsip hasil kamus. Koneksi memakai `DB_HOST`, `DB_PORT` (default
+3306), `DB_NAME`, `DB_USER`, dan `DB_PASSWORD` dari `backend/.env`. MariaDB
+harus berjalan sebelum API dimulai. Compose ini mengakses server database
+tersebut tanpa membuat container database baru. Session login dan attempt aktif
+masih di RAM. Jalankan satu proses API per database; named writer lock menolak
+proses API kedua. Backup database MariaDB mencakup seluruh tabel aplikasi.
+Lihat [setup MariaDB dan migrasi data](mariadb.md).
 
 Volume bernama `backend_branding` menjaga konfigurasi branding yang diedit
 melalui endpoint admin. Materi gambar reading, vocabulary, dan onboarding

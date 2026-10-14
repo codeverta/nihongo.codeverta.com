@@ -57,7 +57,7 @@ func TestGrammarCurriculumAndQuizIntegrity(t *testing.T) {
 
 func TestGrammarFullCourseCompletionAndResultRetry(t *testing.T) {
 	s := NewMemoryStore()
-	const user = "demo-user"
+	const user = "a5090412-9ab4-5852-8229-c7d19eb5cb1c"
 	for _, lesson := range s.grammar {
 		if lesson.Level != "N5" {
 			continue
@@ -109,7 +109,7 @@ func TestGrammarFullCourseCompletionAndResultRetry(t *testing.T) {
 
 func TestGrammarFailedRetryPreservesBestScoreAndAnswerIsImmutable(t *testing.T) {
 	s := NewMemoryStore()
-	const user = "demo-user"
+	const user = "a5090412-9ab4-5852-8229-c7d19eb5cb1c"
 	lessonID := s.grammar[0].ID
 	for run := 0; run < 2; run++ {
 		a, _ := s.StartGrammarAttempt(user, lessonID)

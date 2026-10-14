@@ -6,6 +6,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"gorm.io/gorm"
 	"strings"
 	"sync"
 	"sync/atomic"
@@ -32,36 +33,42 @@ type account struct {
 }
 
 type MemoryStore struct {
-	purchases          map[string]domain.Purchase
-	billingTokens      map[string]string
-	billingEnabled     bool
-	mu                 sync.RWMutex
-	gamification       map[string]*gamificationState
-	gamificationDB     *sql.DB
-	gamificationNow    func() time.Time
-	profiles           map[string]domain.Profile
-	progress           map[string]map[string]domain.LessonProgress
-	categories         []domain.LearningCategory
-	tracks             []domain.LearningTrack
-	exams              []domain.Exam
-	plans              []domain.Plan
-	attemptID          atomic.Uint64
-	accounts           map[string]account
-	sessions           map[string]string
-	vocabulary         []domain.VocabularyLevelContent
-	vocabAttempts      map[string]*vocabularyAttemptState
-	assetBaseURL       string
-	grammar            []grammarLessonContent
-	grammarAttempts    map[string]*grammarAttemptState
-	kanji              []kanjiLessonContent
-	kanjiAttempts      map[string]*kanjiAttemptState
-	reading            []readingLessonContent
-	readingAttempts    map[string]*readingAttemptState
-	diagnosticAttempts map[string]*diagnosticAttemptState
-	diagnosticOrder    []string
-	simulationAttempts map[string]*simulationAttemptState
-	simulationOrder    []string
-	simulationNow      func() time.Time
+	purchases           map[string]domain.Purchase
+	billingTokens       map[string]string
+	billingEnabled      bool
+	mu                  sync.RWMutex
+	gamification        map[string]*gamificationState
+	gamificationDB      *sql.DB
+	ormDB               *gorm.DB
+	ormWriter           *gorm.DB
+	persistenceConn     *sql.Conn
+	persistenceLockName string
+	persistenceClosed   bool
+	persistenceStop     chan struct{}
+	gamificationNow     func() time.Time
+	profiles            map[string]domain.Profile
+	progress            map[string]map[string]domain.LessonProgress
+	categories          []domain.LearningCategory
+	tracks              []domain.LearningTrack
+	exams               []domain.Exam
+	plans               []domain.Plan
+	attemptID           atomic.Uint64
+	accounts            map[string]account
+	sessions            map[string]string
+	vocabulary          []domain.VocabularyLevelContent
+	vocabAttempts       map[string]*vocabularyAttemptState
+	assetBaseURL        string
+	grammar             []grammarLessonContent
+	grammarAttempts     map[string]*grammarAttemptState
+	kanji               []kanjiLessonContent
+	kanjiAttempts       map[string]*kanjiAttemptState
+	reading             []readingLessonContent
+	readingAttempts     map[string]*readingAttemptState
+	diagnosticAttempts  map[string]*diagnosticAttemptState
+	diagnosticOrder     []string
+	simulationAttempts  map[string]*simulationAttemptState
+	simulationOrder     []string
+	simulationNow       func() time.Time
 }
 
 func (s *MemoryStore) SetAssetBaseURL(value string) {
@@ -250,9 +257,18 @@ func (s *MemoryStore) Achievements(userID string) []domain.Achievement {
 }
 
 func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, error) {
+	if examID == "nat-5q-full-1" {
+		return s.StartSimulation(userID, "NAT")
+	}
+	if examID == "jft-a2-full-1" {
+		return s.StartSimulation(userID, "JFT")
+	}
 	// Older clients used this ID for the premium N5 catalog placeholder.
 	if examID == "jlpt-n5-full-1" {
 		return s.StartSimulation(userID)
+	}
+	if examID == "jlpt-n3-simulation-1" {
+		return s.StartSimulation(userID, "N3")
 	}
 	if examID == "jlpt-n4-simulation-1" {
 		return s.StartSimulation(userID, "N4")
@@ -344,11 +360,12 @@ func seedTracks() []domain.LearningTrack {
 
 func seedExams() []domain.Exam {
 	return []domain.Exam{
+		{ID: "jlpt-n3-simulation-1", System: "JLPT", Level: "N3", Title: "JLPT N3 Simulation · Kosakata, Grammar & Reading", QuestionCount: 74, DurationMin: 100, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-simulation-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
-		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Simulation", QuestionCount: 70, DurationMin: 90, RequiredTier: domain.TierPremium},
-		{ID: "jft-a2-full-1", System: "JFT", Level: "A2", Title: "JFT-Basic A2 Simulation", QuestionCount: 60, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 1 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "jft-a2-full-1", System: "JFT", Level: "A2", Title: "JFT Exam 1 · Latihan tertulis", QuestionCount: 36, DurationMin: 45, RequiredTier: domain.TierPremium},
 	}
 }
 

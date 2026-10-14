@@ -36,4 +36,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/exams/
+    - assets/images/ssw/
+    - assets/content/ssw/
     - assets/images/app-icon-small.png

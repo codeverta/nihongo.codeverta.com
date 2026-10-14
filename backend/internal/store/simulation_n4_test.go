@@ -125,7 +125,7 @@ func TestSimulationN4DeadlinesAndIsolation(t *testing.T) {
 	if overview["questionCount"] != 57 || overview["durationMinutes"] != 80 || len(overview["history"].([]map[string]any)) != 1 {
 		t.Fatal("incorrect N4 overview")
 	}
-	if _, err = s.StartSimulation("user", "N3"); !errors.Is(err, ErrInvalid) {
+	if _, err = s.StartSimulation("user", "N2"); !errors.Is(err, ErrInvalid) {
 		t.Fatal("unsupported level accepted")
 	}
 }

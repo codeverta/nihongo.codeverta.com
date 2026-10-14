@@ -43,14 +43,32 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
 
   SimulationRepository get repository =>
       ref.read(simulationLevelRepositoryProvider(widget.level));
+  bool get isJft => widget.level == 'JFT';
+  bool get isNat => widget.level == 'NAT';
+  String get jftSectionLabel => switch (section) {
+        'vocabulary' => 'Bagian 1 · 文字と語彙',
+        'conversation' => 'Bagian 2 · 会話と表現',
+        'reading' => 'Bagian 3 · 読解',
+        _ => 'Selesai',
+      };
   List<Json> get questions => diagnosticList(session!['questions']);
   Map<String, dynamic> get answers => session!['answers'] as Json;
   Set<String> get marked => (session!['marked'] as List).cast<String>().toSet();
   Json? get result => session?['result'] as Json?;
   String get section => session?['activeSection'] as String? ?? '';
   int get remaining =>
-      ((millisecondsAtSync - clock.elapsedMilliseconds + 999) ~/ 1000)
-          .clamp(0, widget.level == 'N4' ? 3300 : 1200);
+      ((millisecondsAtSync - clock.elapsedMilliseconds + 999) ~/ 1000).clamp(
+        0,
+        isJft
+            ? 2700
+            : isNat
+                ? 2400
+                : widget.level == 'N3'
+                    ? 4200
+                    : widget.level == 'N4'
+                        ? 3300
+                        : 1200,
+      );
 
   @override
   void initState() {
@@ -95,11 +113,17 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       session = data;
       if (previousSection.isNotEmpty && previousSection != section) {
         index = 0;
-        notice = section == 'grammar'
-            ? widget.level == 'N4'
-                ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
-                : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
-            : 'Kedua bagian selesai. Jawaban tersimpan telah dinilai.';
+        notice = isJft && result == null
+            ? 'Bagian sebelumnya dikunci. $jftSectionLabel dimulai; timer total terus berjalan.'
+            : section == 'grammar'
+                ? isNat
+                    ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
+                    : widget.level == 'N3'
+                        ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
+                        : widget.level != 'N5'
+                            ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
+                            : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
+                : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.';
       }
     });
     if (previousSection != section && scroll.hasClients) scroll.jumpTo(0);
@@ -189,15 +213,17 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       context: context,
       builder: (c) => AlertDialog(
         title: Text(
-          expected == 'vocabulary'
-              ? 'Kunci bagian kosakata?'
-              : widget.level == 'N4'
-                  ? 'Kirim grammar dan reading?'
-                  : 'Kirim bagian grammar?',
+          isJft
+              ? 'Kirim $jftSectionLabel?'
+              : expected == 'vocabulary'
+                  ? 'Kunci bagian kosakata?'
+                  : widget.level != 'N5'
+                      ? 'Kirim grammar dan reading?'
+                      : 'Kirim bagian grammar?',
         ),
         content: Text(
           '${unanswered > 0 ? 'Masih ada $unanswered soal kosong; soal kosong dihitung salah.\n\n' : ''}'
-          '${expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
+          '${isJft ? expected == 'reading' ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.' : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.' : expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
         ),
         actions: [
           TextButton(
@@ -350,9 +376,17 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            result != null
-                ? 'Hasil simulasi ${widget.level}'
-                : 'JLPT ${widget.level} Simulation',
+            isJft
+                ? result != null
+                    ? 'Hasil JFT Exam 1'
+                    : 'JFT Exam 1'
+                : isNat
+                    ? result != null
+                        ? 'Hasil NAT 5Q Exam 1'
+                        : 'NAT 5Q Exam 1'
+                    : result != null
+                        ? 'Hasil simulasi ${widget.level}'
+                        : 'JLPT ${widget.level} Simulation',
           ),
           actions: [
             if (data != null && result == null)
@@ -395,11 +429,13 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                               children: [
                                 Expanded(
                                   child: Text(
-                                    section == 'vocabulary'
-                                        ? 'Bagian 1 · 文字・語彙'
-                                        : widget.level == 'N4'
-                                            ? 'Bagian 2 · 文法・読解'
-                                            : 'Bagian 2 · 文法',
+                                    isJft
+                                        ? jftSectionLabel
+                                        : section == 'vocabulary'
+                                            ? 'Bagian 1 · 文字・語彙'
+                                            : widget.level != 'N5'
+                                                ? 'Bagian 2 · 文法・読解'
+                                                : 'Bagian 2 · 文法',
                                     style: const TextStyle(
                                       color: examInk,
                                       fontWeight: FontWeight.w800,

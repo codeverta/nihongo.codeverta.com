@@ -29,8 +29,8 @@ func (f fakeGoogleVerifier) Verify(context.Context, string) (domain.GoogleIdenti
 func newServer(premium ...bool) http.Handler {
 	memory := store.NewMemoryStore()
 	if len(premium) > 0 && premium[0] {
-		token, _ := memory.BillingAccountToken("demo-user")
-		if err := memory.SaveVerifiedPurchase("demo-user", domain.Purchase{Platform: "android", ID: "test-purchase", ProductID: "nihongo_master_lifetime", AccountToken: token, State: "purchased", CheckedAt: time.Now()}); err != nil {
+		token, _ := memory.BillingAccountToken("a5090412-9ab4-5852-8229-c7d19eb5cb1c")
+		if err := memory.SaveVerifiedPurchase("a5090412-9ab4-5852-8229-c7d19eb5cb1c", domain.Purchase{Platform: "android", ID: "test-purchase", ProductID: "nihongo_master_lifetime", AccountToken: token, State: "purchased", CheckedAt: time.Now()}); err != nil {
 			panic(err)
 		}
 	}

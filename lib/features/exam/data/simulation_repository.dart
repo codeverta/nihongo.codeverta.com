@@ -14,7 +14,13 @@ class SimulationRepository extends DiagnosticRepository {
   Future<String> start() async => (await request(
         '/exam-attempts',
         method: 'POST',
-        body: {'examId': 'jlpt-${level.toLowerCase()}-simulation-1'},
+        body: {
+          'examId': level == 'JFT'
+              ? 'jft-a2-full-1'
+              : level == 'NAT'
+                  ? 'nat-5q-full-1'
+                  : 'jlpt-${level.toLowerCase()}-simulation-1',
+        },
       ))['id'] as String;
 
   @override

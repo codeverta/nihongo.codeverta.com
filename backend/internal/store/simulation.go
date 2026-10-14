@@ -38,6 +38,25 @@ func simulationPaper(levels ...string) simulationPaperConfig {
 	if len(levels) > 0 {
 		level = strings.ToUpper(levels[0])
 	}
+	if level == "NAT" {
+		return simulationPaperConfig{level, "nat-5q-full-1", "nat-5q-written-01", []domain.SimulationSection{
+			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1200, QuestionCount: 21},
+			{ID: "grammar", Name: "文法・読解 · Grammar & Reading", DurationSeconds: 2400, QuestionCount: 22},
+		}, simulationNATContent(), []string{"listening"}}
+	}
+	if level == "JFT" {
+		return simulationPaperConfig{level, "jft-a2-full-1", "jft-written-01", []domain.SimulationSection{
+			{ID: "vocabulary", Name: "文字と語彙 · Kosakata", DurationSeconds: 2700, QuestionCount: 12},
+			{ID: "conversation", Name: "会話と表現 · Percakapan & Ungkapan", QuestionCount: 12},
+			{ID: "reading", Name: "読解 · Reading", QuestionCount: 12},
+		}, simulationJFTContent(), []string{"listening"}}
+	}
+	if level == "N3" {
+		return simulationPaperConfig{level, "jlpt-n3-simulation-1", "n3-language-01", []domain.SimulationSection{
+			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1800, QuestionCount: 35},
+			{ID: "grammar", Name: "文法・読解 · Grammar & Reading", DurationSeconds: 4200, QuestionCount: 39},
+		}, simulationN3Content(), []string{"listening"}}
+	}
 	if level == "N4" {
 		return simulationPaperConfig{level, "jlpt-n4-simulation-1", "n4-language-01", []domain.SimulationSection{
 			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1500, QuestionCount: 28},
@@ -52,7 +71,7 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
 	paper := simulationPaper(levels...)
-	if paper.level != "N5" && paper.level != "N4" {
+	if paper.level != "N5" && paper.level != "N4" && paper.level != "N3" && paper.level != "JFT" && paper.level != "NAT" {
 		return domain.ExamAttempt{}, ErrInvalid
 	}
 	if paper.level != "N5" && s.entitlementLocked(userID).Tier != domain.TierPremium {
@@ -118,15 +137,27 @@ func (s *MemoryStore) syncSimulationLocked(state *simulationAttemptState, now ti
 }
 
 func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at time.Time) error {
-	if state.session.ActiveSection == "vocabulary" {
-		state.session.ActiveSection = "grammar"
-		state.session.SectionStartedAt = at
-		state.session.ExpiresAt = at.Add(time.Duration(state.session.Sections[1].DurationSeconds) * time.Second)
-		return nil
+	for i, section := range state.session.Sections {
+		if section.ID == state.session.ActiveSection && i+1 < len(state.session.Sections) {
+			next := state.session.Sections[i+1]
+			state.session.ActiveSection = next.ID
+			state.session.SectionStartedAt = at
+			// JFT written practice shares one deadline across all three sections.
+			if state.session.PaperID != "jft-written-01" {
+				state.session.ExpiresAt = at.Add(time.Duration(next.DurationSeconds) * time.Second)
+			}
+			return nil
+		}
 	}
 	result := domain.SimulationResult{AttemptID: state.session.Attempt.ID, PaperID: state.session.PaperID, Total: len(state.questions), Answered: len(state.session.Answers), CompletedAt: at, DurationSeconds: int(at.Sub(state.session.Attempt.StartedAt).Seconds()), Sections: []domain.DiagnosticSection{}, Reviews: []domain.SimulationReview{}, ScoringNote: "Skor latihan = persentase jawaban benar. Dokkai dan listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."}
-	if state.session.PaperID == "n4-language-01" {
+	if state.session.PaperID == "n4-language-01" || state.session.PaperID == "n3-language-01" {
 		result.ScoringNote = "Skor latihan = persentase jawaban benar. Listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."
+	}
+	if state.session.PaperID == "jft-written-01" {
+		result.ScoringNote = "Skor latihan tertulis = persentase jawaban benar. Listening belum termasuk. Soal orisinal; bukan skor berskala atau keputusan kelulusan resmi JFT-Basic."
+	}
+	if state.session.PaperID == "nat-5q-written-01" {
+		result.ScoringNote = "Skor latihan tertulis = persentase jawaban benar. Listening belum termasuk. Soal orisinal; bukan skor berskala atau keputusan kelulusan resmi NAT-TEST."
 	}
 	groups := map[string]*domain.DiagnosticSection{}
 	for _, q := range state.questions {
@@ -259,10 +290,19 @@ func (s *MemoryStore) SubmitSimulationSection(userID, id, section string) (domai
 	if err := s.syncSimulationLocked(state, now); err != nil {
 		return domain.SimulationSession{}, err
 	}
-	if section != "vocabulary" && section != "grammar" {
+	requested, active := -1, len(state.session.Sections)
+	for i, part := range state.session.Sections {
+		if part.ID == section {
+			requested = i
+		}
+		if part.ID == state.session.ActiveSection {
+			active = i
+		}
+	}
+	if requested < 0 {
 		return domain.SimulationSession{}, ErrInvalid
 	}
-	if section == "grammar" && state.session.ActiveSection == "vocabulary" {
+	if requested > active {
 		return domain.SimulationSession{}, ErrInvalid
 	}
 	if state.session.Result == nil && state.session.ActiveSection == section {
@@ -304,5 +344,12 @@ func (s *MemoryStore) SimulationOverviewChecked(userID string, levels ...string)
 	for _, section := range paper.sections {
 		duration += section.DurationSeconds
 	}
-	return map[string]any{"paperId": paper.paperID, "title": "JLPT " + paper.level + " Simulation", "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted}, nil
+	title := "JLPT " + paper.level + " Simulation"
+	if paper.level == "JFT" {
+		title = "JFT Exam 1 · Latihan tertulis"
+	}
+	if paper.level == "NAT" {
+		title = "NAT 5Q Exam 1 · Latihan tertulis"
+	}
+	return map[string]any{"paperId": paper.paperID, "title": title, "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted, "sharedTimer": paper.level == "JFT"}, nil
 }

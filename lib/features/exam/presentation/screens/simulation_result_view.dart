@@ -30,7 +30,7 @@ class _ResultState extends State<SimulationResultView> {
         DiagnosticHero(
           title: 'Simulasi selesai.',
           subtitle:
-              'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level == 'N4' ? ' & Reading' : ''}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
+              '${widget.level == 'JFT' ? 'JFT Exam 1 · Kosakata, Percakapan & Reading' : widget.level == 'NAT' ? 'NAT 5Q Exam 1 · Kosakata, Grammar & Reading' : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
           child: Text(
             '${result['answered']} dijawab · ${(result['total'] as int) - (result['answered'] as int)} kosong\n'
             'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik',

@@ -31,21 +31,23 @@ Flutter memanggil backend aplikasi; backend hanya mengakses host HTTPS tetap Jis
 
 ## Penyimpanan database bersama
 
-Backend saat ini menggunakan **SQLite**, bukan MySQL/MariaDB. Startup menginisialisasi tabel kamus pada koneksi yang sama dengan akun, billing, dan gamifikasi, di lokasi `GAMIFICATION_DB_PATH` (default `backend/data/gamification.db` ketika menjalankan API dari folder backend; Docker `/app/data/gamification.db`). Tidak memerlukan API key atau konfigurasi DB tambahan.
+Backend memakai **MariaDB**. Startup menginisialisasi tabel kamus pada database
+yang sama dengan akun, billing, dan gamifikasi. Koneksi menggunakan `DB_*`
+dari `backend/.env`, dengan port default 3306. Lihat [setup MariaDB](mariadb.md).
 
-Alur pencarian: cache memori (maksimal 128 respons) → cache SQLite → API eksternal bila belum ada atau kedaluwarsa. Cache produksi berlaku 30 hari dan tetap dapat dipakai setelah restart. Berlaku bersama untuk seluruh pengguna/tamu; tidak diduplikasi per akun. Query, halaman, filter JLPT, dan filter kata umum menjadi identitas cache berbeda agar hasil tidak tercampur. Client test tanpa persistence tetap memakai cache memori enam jam.
+Alur pencarian: cache memori (maksimal 128 respons) → cache MariaDB → API eksternal bila belum ada atau kedaluwarsa. Cache produksi berlaku 30 hari dan tetap dapat dipakai setelah restart. Berlaku bersama untuk seluruh pengguna/tamu; tidak diduplikasi per akun. Query, halaman, filter JLPT, dan filter kata umum menjadi identitas cache berbeda agar hasil tidak tercampur. Client test tanpa persistence tetap memakai cache memori enam jam.
 
 - `dictionary_responses`: respons JSON asli yang tervalidasi, sumber, waktu fetch, dan SHA-256 identitas request. Tidak menyimpan ID user maupun teks query mentah. Maksimal 5.000 kombinasi request; yang paling lama dihapus jika kapasitas terlampaui. Hasil kosong yang sah juga disimpan.
-- `dictionary_entries`: arsip setiap entri kata Jisho dan detail kanji, unik berdasarkan `(source, entry_id)`. JSON lengkap mempertahankan makna, bacaan, tag dan atribusi sumber. Query berbeda yang menghasilkan kata yang sama memperbarui satu entri. Arsip ini tetap disimpan saat response cache kedaluwarsa/dihapus dan saat akun pengguna dihapus.
+- `dictionary_entries`: arsip setiap entri kata Jisho dan detail kanji, unik berdasarkan `(source, source_entry_id)`. JSON lengkap mempertahankan makna, bacaan, tag dan atribusi sumber. Query berbeda yang menghasilkan kata yang sama memperbarui satu entri. Arsip ini tetap disimpan saat response cache kedaluwarsa/dihapus dan saat akun pengguna dihapus.
 
 Respons HTTP error, JSON invalid, atau payload yang tidak sesuai schema tidak dimasukkan database. Respons dan arsip entri ditulis dalam satu transaksi: kegagalan salah satu membatalkan semuanya. Jika DB read/write gagal, endpoint mengembalikan `503`; kegagalan baca tidak menyebabkan backend terus memanggil sumber eksternal. Setelah 30 hari, satu permintaan melakukan refresh ke sumber; request serupa yang sedang berjalan menunggu hasil yang sama. Jika refresh gagal, respons lama dan arsip tetap berada di DB, tetapi respons yang kedaluwarsa belum disajikan sebagai data baru.
 
-Cache menyalin hasil berdasarkan query yang benar-benar dicari, bukan melakukan bulk crawling. Arsip data tetap mengikuti atribusi/lisensi EDRDG/DBpedia; penyimpanan tidak memindahkan kepemilikan data ke aplikasi. Backup SQLite/volume harus mencakup tabel kamus; pantau ukuran arsip dan disk karena entri dikumpulkan secara bertahap. Setup memakai satu proses API per file DB dan tidak memiliki adapter MySQL/MariaDB.
+Cache menyalin hasil berdasarkan query yang benar-benar dicari, bukan melakukan bulk crawling. Arsip data tetap mengikuti atribusi/lisensi EDRDG/DBpedia; penyimpanan tidak memindahkan kepemilikan data ke aplikasi. Backup MariaDB harus mencakup tabel kamus; pantau ukuran arsip dan disk karena entri dikumpulkan secara bertahap. Setup memakai satu proses API per database dengan named writer lock.
 
 Route Flutter `/dictionary?q=...` juga bisa membuka pencarian tertentu secara langsung. UI tetap mengikuti tema Nihongo Master; tidak menyalin logo/branding Jisho.
 
 ## Pemeriksaan
 
-Tes backend memakai HTTP transport fixture untuk memverifikasi encoding, filter, cache, pembatalan request yang menunggu, status upstream, validasi kanji, dan endpoint publik. Tes persistence memakai DB SQLite nyata sementara: restart tanpa fetch ulang, deduplikasi arsip kata/kanji, refresh setelah TTL, pemisahan page/filter, penolakan payload invalid, rollback ketika penulisan arsip gagal, serta integrasi dengan koneksi DB yang sudah dipakai akun/billing/gamifikasi. Tes Flutter memverifikasi race pencarian, deduplikasi pagination, retry, persistensi/isolation favorit, layar ponsel, serta akses kamus sebagai tamu.
+Tes backend memakai HTTP transport fixture untuk memverifikasi encoding, filter, cache, pembatalan request yang menunggu, status upstream, validasi kanji, dan endpoint publik. Tes persistence memakai schema MariaDB nyata sementara: restart tanpa fetch ulang, deduplikasi arsip kata/kanji, refresh setelah TTL, pemisahan page/filter, penolakan payload invalid, rollback ketika penulisan arsip gagal, serta integrasi dengan koneksi DB yang sudah dipakai akun/billing/gamifikasi. Tes Flutter memverifikasi race pencarian, deduplikasi pagination, retry, persistensi/isolation favorit, layar ponsel, serta akses kamus sebagai tamu.
 
 Smoke test sumber asli bersifat opt-in (memerlukan internet): jalankan `go test ./internal/dictionary -run TestLiveDictionarySources -v` dengan environment `DICTIONARY_LIVE_TEST=1`.

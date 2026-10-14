@@ -1,0 +1,3194 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-11",
+  "modules": [
+    {
+      "id": "foundations",
+      "title": "Dasar Kaigo, martabat, dan etika",
+      "description": "Memahami peran caregiver, pilihan pengguna layanan, serta batas kewenangan.",
+      "lessons": [
+        {
+          "id": "kaigo-01",
+          "title": "Kaigo dan kehidupan yang bermakna",
+          "minutes": 20,
+          "objectives": [
+            "Membedakan dukungan hidup dengan mengambil alih seluruh kegiatan",
+            "Mengidentifikasi ADL, IADL, dan kualitas hidup"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Kaigo (介護) adalah dukungan agar seseorang dapat menjalani kehidupan sehari-hari sesuai kemampuan dan keinginannya. Pengguna layanan disebut riyōsha, bukan sekadar kumpulan penyakit. Kebutuhan mereka mencakup tubuh, perasaan, hubungan sosial, kebiasaan, serta makna hidup. Bantuan yang cepat belum tentu menjadi bantuan yang tepat bila pengguna kehilangan pilihan dan kesempatan melakukan sesuatu sendiri.\n\nADL adalah kegiatan dasar seperti makan, berpakaian, berpindah, mandi, dan menggunakan toilet. IADL mencakup kegiatan yang lebih kompleks, misalnya berbelanja, mengelola jadwal, dan menggunakan transportasi. QOL atau kualitas hidup menanyakan apakah kehidupan terasa nyaman dan berarti bagi orang tersebut. Ketiganya membantu caregiver melihat kebutuhan secara utuh."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Awali dengan mengenali kebiasaan: jam bangun, makanan yang disukai, bahasa, kegiatan, serta bagian tubuh yang masih dapat digunakan. Amati kemampuan nyata, lalu cocokkan dengan rencana perawatan. Dukungan dapat berupa menata lingkungan, memberi petunjuk, mengawasi, atau membantu sebagian. Tidak setiap kebutuhan memerlukan bantuan penuh.\n\nMisalnya pengguna mampu menyisir rambut bila sisir diletakkan di tangan kanannya. Menyiapkan sisir dan cermin menjaga kemampuan serta rasa percaya diri. Catatan yang baik menyebut bantuan yang diperlukan dan respons pengguna; jangan hanya menulis 'sudah dibantu'."
+            }
+          ],
+          "steps": [
+            "Baca rencana dukungan dan kebiasaan pengguna.",
+            "Tanyakan kegiatan yang ingin dilakukan.",
+            "Amati kemampuan, hambatan, dan kelelahan.",
+            "Bantu hanya bagian yang diperlukan lalu evaluasi respons."
+          ],
+          "caution": "Kecepatan kerja tidak boleh menjadi alasan mengambil alih kemampuan pengguna.",
+          "scenario": "Pak Sato makan perlahan tetapi dapat memegang sendok. Petugas baru ingin langsung menyuapi agar jadwal selesai.",
+          "response": "Sediakan waktu dan posisi nyaman, dekatkan peralatan yang sesuai, lalu bantu bagian yang sulit sesuai rencana. Nilai kemampuan dan keinginan Pak Sato sebelum memilih bantuan penuh.",
+          "vocabulary": [
+            {
+              "japanese": "介護",
+              "reading": "かいご",
+              "meaning": "dukungan perawatan"
+            },
+            {
+              "japanese": "利用者",
+              "reading": "りようしゃ",
+              "meaning": "pengguna layanan"
+            },
+            {
+              "japanese": "日常生活",
+              "reading": "にちじょうせいかつ",
+              "meaning": "kehidupan sehari-hari"
+            },
+            {
+              "japanese": "生活の質",
+              "reading": "せいかつのしつ",
+              "meaning": "kualitas hidup"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご自分でできますか。",
+              "reading": "ごじぶんでできますか。",
+              "meaning": "Apakah Anda dapat melakukannya sendiri?"
+            },
+            {
+              "japanese": "難しいところをお手伝いします。",
+              "reading": "むずかしいところをおてつだいします。",
+              "meaning": "Saya akan membantu bagian yang sulit."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pengguna masih mampu menyisir rambut. Bantuan yang mendukung kemandirian adalah…",
+              "options": [
+                "Menyisir tanpa bertanya",
+                "Menyiapkan sisir dan membantu bagian sulit",
+                "Melarang pengguna mencoba"
+              ],
+              "answer": 1,
+              "explanation": "Lingkungan dan bantuan sebagian mempertahankan kemampuan yang masih dimiliki."
+            },
+            {
+              "prompt": "Contoh IADL adalah…",
+              "options": [
+                "Mengelola jadwal belanja",
+                "Menelan makanan",
+                "Mengubah posisi tidur"
+              ],
+              "answer": 0,
+              "explanation": "IADL merupakan kegiatan kehidupan yang lebih kompleks dibanding ADL dasar."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-02",
+          "title": "Martabat, persetujuan, dan kemandirian",
+          "minutes": 20,
+          "objectives": [
+            "Meminta persetujuan sebelum bantuan",
+            "Menjaga pilihan dan privasi saat kebutuhan tubuh dibantu"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Martabat berarti setiap orang tetap berharga, termasuk ketika membutuhkan bantuan penuh. Menggunakan nama yang disukai, berbicara sebagai orang dewasa, dan menjelaskan tindakan merupakan bentuk penghormatan yang nyata. Kemandirian tidak berarti memaksa seseorang melakukan semuanya sendiri. Kemandirian juga berarti menentukan pilihan, menyampaikan keinginan, dan menerima dukungan yang sesuai.\n\nPersetujuan adalah proses komunikasi, bukan sekadar satu kata 'ya'. Jelaskan apa yang akan dilakukan, alasan, dan pilihan yang tersedia dengan bahasa yang dapat dipahami. Orang yang sulit bicara tetap dapat menunjukkan persetujuan atau keberatan melalui gerakan, ekspresi, dan perilaku. Pastikan pemahaman dan perhatikan perubahan respons selama bantuan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Saat membantu mengganti pakaian, tutup pintu atau tirai dan tutupi bagian tubuh yang tidak sedang dirawat. Berikan pilihan yang sederhana dan nyata, misalnya pakaian biru atau hijau. Jangan menawarkan pilihan yang sebenarnya tidak akan dihormati.\n\nJika pengguna menolak mandi, cari alasan: kedinginan, malu, nyeri, takut jatuh, atau waktu yang tidak cocok. Dengarkan, tawarkan alternatif yang diperbolehkan, dan laporkan kepada tim bila kebutuhan belum terpenuhi. Kesulitan memahami keputusan perlu dukungan tim, bukan alasan caregiver menetapkan semua keputusan sendiri."
+            }
+          ],
+          "steps": [
+            "Sapa pengguna dan jelaskan tujuan bantuan.",
+            "Tawarkan pilihan yang aman dan mudah dipahami.",
+            "Konfirmasi persetujuan serta tutup area privat.",
+            "Amati respons sepanjang bantuan; hentikan dan diskusikan bila menolak."
+          ],
+          "caution": "Jangan mengancam, memaksa, atau mempermalukan pengguna untuk memperoleh kepatuhan.",
+          "scenario": "Ibu Tanaka menolak mandi sore. Ia berkata ruangan terasa dingin.",
+          "response": "Akui rasa dinginnya, periksa lingkungan bersama tim, dan tawarkan waktu atau bentuk kebersihan lain sesuai rencana. Catat alasan penolakan serta alternatif yang diterima.",
+          "vocabulary": [
+            {
+              "japanese": "尊厳",
+              "reading": "そんげん",
+              "meaning": "martabat"
+            },
+            {
+              "japanese": "自立",
+              "reading": "じりつ",
+              "meaning": "kemandirian"
+            },
+            {
+              "japanese": "同意",
+              "reading": "どうい",
+              "meaning": "persetujuan"
+            },
+            {
+              "japanese": "意思",
+              "reading": "いし",
+              "meaning": "kehendak"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今、お着替えしてもよろしいですか。",
+              "reading": "いま、おきがえしてもよろしいですか。",
+              "meaning": "Bolehkah kita berganti pakaian sekarang?"
+            },
+            {
+              "japanese": "どちらがいいですか。",
+              "reading": "どちらがいいですか。",
+              "meaning": "Yang mana yang Anda pilih?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Saat pengguna menolak mandi, langkah pertama adalah…",
+              "options": [
+                "Memaksa agar jadwal selesai",
+                "Mengabaikan selamanya",
+                "Mendengarkan alasan dan mencari alternatif"
+              ],
+              "answer": 2,
+              "explanation": "Penolakan dapat menunjukkan kebutuhan atau rasa tidak nyaman yang perlu dipahami."
+            },
+            {
+              "prompt": "Kemandirian juga mencakup…",
+              "options": [
+                "Hak memilih dengan dukungan",
+                "Harus selalu tanpa bantuan",
+                "Tidak boleh menggunakan alat bantu"
+              ],
+              "answer": 0,
+              "explanation": "Pilihan dan penggunaan dukungan tetap merupakan bagian dari kemandirian."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-03",
+          "title": "Etika profesi, kerahasiaan, dan kerja tim",
+          "minutes": 20,
+          "objectives": [
+            "Melindungi informasi pengguna",
+            "Mengenali batas pekerjaan dan meminta bantuan yang tepat",
+            "Mengenali perlakuan tidak layak dan melaporkannya melalui jalur fasilitas"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Caregiver bekerja dalam tim yang dapat melibatkan perawat, dokter, pekerja sosial, terapis, ahli gizi, dan pengelola layanan. Peran caregiver terutama mendukung kehidupan harian, mengamati, mendokumentasikan, serta menyampaikan perubahan. Rencana yang sama membantu petugas memberikan dukungan konsisten. Kompetensi dan kewenangan ditetapkan oleh aturan tempat kerja dan pelatihan, bukan oleh keberanian mencoba.\n\nKerahasiaan melindungi identitas, kesehatan, keluarga, foto, serta percakapan pribadi pengguna. Informasi hanya dibagikan kepada pihak berwenang yang memerlukannya untuk pelayanan. Membicarakan pengguna di lift, mengirim foto melalui akun pribadi, atau membagikan cerita dengan identitas tersamar yang masih mudah dikenali dapat melanggar privasi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika instruksi tidak jelas, ulangi inti instruksi dan minta penjelasan sebelum bertindak. Ketika tugas berada di luar pelatihan, sampaikan keterbatasan dan hubungi penanggung jawab. Jangan mengubah obat, dosis, atau keputusan klinis sendiri. Bantuan terkait obat hanya dilakukan sesuai aturan, kewenangan, dan supervisi yang berlaku.\n\nGunakan sistem catatan resmi, kunci perangkat, serta periksa penerima sebelum mengirim laporan. Permintaan informasi dari keluarga juga perlu verifikasi identitas dan kewenangan. Hubungan profesional tetap ramah, tetapi hadiah, uang, dan urusan pribadi mengikuti kebijakan fasilitas."
+            },
+            {
+              "title": "Mencegah perlakuan tidak layak",
+              "body": "Perlakuan tidak layak dapat berbentuk kekerasan, penghinaan, ancaman, pengabaian kebutuhan, penyalahgunaan uang, atau pelanggaran batas tubuh dan privasi. Tekanan kerja tidak membenarkan tindakan tersebut. Pengguna yang kesulitan bicara atau membutuhkan bantuan penuh tetap memiliki hak untuk didengar dan dilindungi.\n\nBila menyaksikan kejadian atau menerima keluhan, prioritaskan keselamatan dan ikuti jalur pelaporan perlindungan pengguna. Catat ucapan serta fakta yang diamati, jangan menyelidiki atau menyimpulkan sendiri. Hindari membalas, menyalahkan pengguna, atau menjanjikan rahasia yang mencegah perlindungan. Gunakan supervisi dan dukungan tim ketika tekanan kerja mulai memengaruhi perilaku petugas."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, rencana, dan kewenangan tugas.",
+            "Sampaikan bila belum dilatih atau membutuhkan supervisi.",
+            "Bagikan informasi melalui saluran resmi kepada tim terkait.",
+            "Simpan dokumen dan perangkat dengan aman."
+          ],
+          "caution": "Jangan melakukan tindakan medis atau mengubah obat berdasarkan materi aplikasi ini.",
+          "scenario": "Kerabat yang belum dikenal menelepon meminta diagnosis pengguna. Petugas juga diminta memberi dosis obat tambahan.",
+          "response": "Verifikasi permintaan informasi melalui penanggung jawab dan kebijakan privasi. Untuk obat tambahan, hubungi perawat; jangan menentukan dosis sendiri.",
+          "vocabulary": [
+            {
+              "japanese": "守秘義務",
+              "reading": "しゅひぎむ",
+              "meaning": "kewajiban menjaga rahasia"
+            },
+            {
+              "japanese": "連携",
+              "reading": "れんけい",
+              "meaning": "koordinasi"
+            },
+            {
+              "japanese": "看護師",
+              "reading": "かんごし",
+              "meaning": "perawat"
+            },
+            {
+              "japanese": "個人情報",
+              "reading": "こじんじょうほう",
+              "meaning": "informasi pribadi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "看護師に確認します。",
+              "reading": "かんごしにかくにんします。",
+              "meaning": "Saya akan memastikannya kepada perawat."
+            },
+            {
+              "japanese": "もう一度説明していただけますか。",
+              "reading": "もういちどせつめいしていただけますか。",
+              "meaning": "Bisa dijelaskan sekali lagi?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Foto pengguna sebaiknya…",
+              "options": [
+                "Dikirim ke grup pribadi",
+                "Dikelola sesuai persetujuan dan kebijakan resmi",
+                "Diunggah bila wajah diburamkan saja"
+              ],
+              "answer": 1,
+              "explanation": "Persetujuan, tujuan, penerima, dan kebijakan penggunaan tetap perlu diperiksa."
+            },
+            {
+              "prompt": "Instruksi obat tidak jelas. Tindakan yang tepat adalah…",
+              "options": [
+                "Menebak dari kemasan",
+                "Mengikuti pengalaman teman",
+                "Mengonfirmasi kepada petugas berwenang"
+              ],
+              "answer": 2,
+              "explanation": "Keputusan obat memerlukan kewenangan dan instruksi yang jelas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "title": "Tubuh, penuaan, dan disabilitas",
+      "description": "Menghubungkan fungsi tubuh dengan kebutuhan dukungan, tanpa mendiagnosis.",
+      "lessons": [
+        {
+          "id": "kaigo-04",
+          "title": "Fungsi tubuh dan pengamatan harian",
+          "minutes": 20,
+          "objectives": [
+            "Menghubungkan organ dengan aktivitas sehari-hari",
+            "Membedakan pengamatan dengan diagnosis",
+            "Melaporkan nyeri dan mendukung kenyamanan sesuai rencana, termasuk akhir hayat"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Tubuh bekerja sebagai satu kesatuan. Otak dan saraf mengatur gerakan, perhatian, serta sensasi; otot, tulang, dan sendi menopang posisi dan perpindahan. Jantung dan pembuluh darah mengedarkan darah, paru-paru mendukung pernapasan, sementara sistem pencernaan serta ginjal mengolah makanan dan mengatur pembuangan. Gangguan satu fungsi dapat mengubah cara seseorang makan, berjalan, berbicara, atau menggunakan toilet.\n\nCaregiver tidak perlu menetapkan diagnosis untuk menyampaikan pengamatan yang berguna. Bandingkan keadaan hari ini dengan keadaan biasanya: cara bicara, warna wajah, napas, nafsu makan, aktivitas, dan pola buang air. Keluhan pengguna merupakan data penting, bukan sesuatu yang boleh diabaikan hanya karena pemeriksaan tampak normal."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan urutan melihat, mendengar, bertanya, dan mencatat. Bila ditugaskan mengukur tanda vital, gunakan alat serta metode yang telah dilatih dan ikuti batas pelaporan fasilitas. Angka harus disertai waktu, kondisi saat pengukuran, dan gejala; jangan menentukan keamanan hanya dari satu angka.\n\nPerubahan mendadak seperti sulit dibangunkan, kesulitan bernapas, atau kelemahan baru memerlukan respons segera sesuai prosedur. Hindari menyimpulkan 'hanya tua'. Sampaikan fakta dan panggil petugas berwenang sebelum melanjutkan aktivitas yang berisiko."
+            },
+            {
+              "title": "Nyeri, kenyamanan, dan dukungan akhir hayat",
+              "body": "Keluhan nyeri perlu didengar: lokasi, waktu mulai, kegiatan saat muncul, serta kata yang digunakan pengguna. Pada orang yang sulit bicara, amati perubahan ekspresi, gerak, dan respons bantuan lalu laporkan. Gunakan alat penilaian hanya bila telah ditugaskan dan dilatih. Jangan menganggap diam berarti tidak nyeri atau mengubah obat untuk mengatasinya.\n\nDalam perawatan akhir hayat, dukungan mengikuti rencana tim dan pilihan yang telah dikomunikasikan oleh pengguna atau pihak berwenang sesuai prosedur. Caregiver membantu kenyamanan, privasi, hubungan keluarga, dan kebutuhan spiritual tanpa memaksakan keyakinan sendiri. Penolakan makan, perubahan napas, atau keluhan baru tetap disampaikan; tidak ditangani dengan pemaksaan maupun keputusan klinis mandiri. Kehadiran yang tenang, mendengarkan, dan serah terima yang jelas merupakan bagian penting dukungan."
+            }
+          ],
+          "steps": [
+            "Kenali kondisi dasar pengguna dari catatan dan tim.",
+            "Amati aktivitas, napas, ekspresi, serta keluhan.",
+            "Catat waktu dan perubahan yang terlihat.",
+            "Laporkan perubahan dan ikuti instruksi penanggung jawab."
+          ],
+          "caution": "Pengamatan caregiver tidak menggantikan diagnosis atau penilaian klinis.",
+          "scenario": "Pak Mori biasanya aktif berbicara. Pagi ini ia mengantuk tidak biasa dan sulit mengikuti percakapan.",
+          "response": "Hentikan aktivitas berisiko, pastikan keselamatan, dan segera laporkan perubahan kesadaran beserta waktu mulai serta kondisi sebelumnya. Jangan langsung memberi label demensia.",
+          "vocabulary": [
+            {
+              "japanese": "呼吸",
+              "reading": "こきゅう",
+              "meaning": "pernapasan"
+            },
+            {
+              "japanese": "脈拍",
+              "reading": "みゃくはく",
+              "meaning": "denyut nadi"
+            },
+            {
+              "japanese": "意識",
+              "reading": "いしき",
+              "meaning": "kesadaran"
+            },
+            {
+              "japanese": "観察",
+              "reading": "かんさつ",
+              "meaning": "pengamatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いつから苦しいですか。",
+              "reading": "いつからくるしいですか。",
+              "meaning": "Sejak kapan terasa sesak atau tidak nyaman?"
+            },
+            {
+              "japanese": "いつもと様子が違います。",
+              "reading": "いつもとようすがちがいます。",
+              "meaning": "Keadaannya berbeda dari biasanya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Laporan pengamatan yang paling jelas adalah…",
+              "options": [
+                "Beliau aneh",
+                "Mungkin penyakit berat",
+                "Pukul 08.00 sulit dibangunkan, berbeda dari biasanya"
+              ],
+              "answer": 2,
+              "explanation": "Waktu, perilaku teramati, dan perbandingan dengan kondisi dasar membantu tim menilai perubahan."
+            },
+            {
+              "prompt": "Satu angka tanda vital harus…",
+              "options": [
+                "Ditafsirkan bersama gejala dan prosedur",
+                "Selalu dianggap normal",
+                "Digunakan untuk menentukan diagnosis sendiri"
+              ],
+              "answer": 0,
+              "explanation": "Konteks serta jalur pelaporan diperlukan untuk pengamatan yang aman."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-05",
+          "title": "Penuaan, kebutuhan psikologis, dan kemampuan tersisa",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali variasi penuaan",
+            "Menyesuaikan lingkungan tanpa merendahkan pengguna"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Penuaan dapat disertai perubahan kekuatan, keseimbangan, penglihatan, pendengaran, kulit, dan kecepatan merespons. Namun perubahan tidak sama pada semua orang. Umur saja tidak menjelaskan kemampuan, minat, atau keputusan seseorang. Perhatikan riwayat hidup, lingkungan, penyakit yang telah dinilai tenaga kesehatan, serta bantuan yang biasa digunakan.\n\nKehilangan pasangan, pindah tempat tinggal, atau berkurangnya peran sosial dapat memengaruhi perasaan aman dan harga diri. Pengguna mungkin ingin tetap mengurus tanaman atau memilih pakaian meskipun membutuhkan bantuan fisik. Memberi kesempatan ikut kegiatan yang berarti mendukung kehidupan, bukan hanya memenuhi jadwal perawatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sesuaikan pencahayaan, kurangi kebisingan, letakkan barang yang sering digunakan dalam jangkauan, dan beri waktu merespons. Pastikan kacamata atau alat bantu dengar digunakan sesuai keinginan dan rencana. Jangan berteriak secara otomatis atau berbicara seperti kepada anak kecil.\n\nAmati perubahan baru secara terpisah dari perubahan yang sudah biasa. Hilang nafsu makan, menarik diri, atau nyeri baru perlu disampaikan kepada tim. Jangan menentukan bahwa semua lansia pasti lupa, depresi, atau tidak mampu belajar."
+            }
+          ],
+          "steps": [
+            "Tanyakan kebiasaan, minat, serta alat bantu yang biasa digunakan.",
+            "Sesuaikan cahaya, suara, dan jangkauan barang.",
+            "Berikan waktu dan bantuan sebagian sesuai kemampuan.",
+            "Catat perubahan baru serta respons terhadap penyesuaian."
+          ],
+          "caution": "Perubahan mendadak tidak boleh dianggap sebagai akibat usia tanpa penilaian tim.",
+          "scenario": "Ibu Yamada sering tidak menjawab di ruang makan yang ramai, tetapi merespons ketika diajak bicara di tempat tenang.",
+          "response": "Kurangi kebisingan, hadapkan wajah, dan periksa kebutuhan alat bantu sesuai rencana. Laporkan pengamatan spesifik; jangan menganggap ia sengaja tidak mau berkomunikasi.",
+          "vocabulary": [
+            {
+              "japanese": "老化",
+              "reading": "ろうか",
+              "meaning": "penuaan"
+            },
+            {
+              "japanese": "視力",
+              "reading": "しりょく",
+              "meaning": "kemampuan melihat"
+            },
+            {
+              "japanese": "聴力",
+              "reading": "ちょうりょく",
+              "meaning": "kemampuan mendengar"
+            },
+            {
+              "japanese": "残存能力",
+              "reading": "ざんぞんのうりょく",
+              "meaning": "kemampuan yang masih dimiliki"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ゆっくりで大丈夫です。",
+              "reading": "ゆっくりでだいじょうぶです。",
+              "meaning": "Tidak apa-apa, perlahan saja."
+            },
+            {
+              "japanese": "静かな場所でお話ししましょう。",
+              "reading": "しずかなばしょでおはなししましょう。",
+              "meaning": "Mari berbicara di tempat yang tenang."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Cara mendukung pengguna yang membutuhkan waktu menjawab adalah…",
+              "options": [
+                "Memberi waktu dan mengurangi gangguan",
+                "Menjawab untuknya setiap saat",
+                "Mengulang pertanyaan dengan marah"
+              ],
+              "answer": 0,
+              "explanation": "Penyesuaian komunikasi memberi ruang bagi kemampuan yang masih dimiliki."
+            },
+            {
+              "prompt": "Penuaan pada setiap pengguna…",
+              "options": [
+                "Selalu sama",
+                "Perlu dinilai secara individual",
+                "Selalu menyebabkan demensia"
+              ],
+              "answer": 1,
+              "explanation": "Kemampuan dan kebutuhan tidak dapat diputuskan hanya berdasarkan umur."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-06",
+          "title": "Disabilitas, hemiparesis, dan aksesibilitas",
+          "minutes": 20,
+          "objectives": [
+            "Menyesuaikan dukungan dengan fungsi dan lingkungan",
+            "Menggunakan informasi sisi tubuh dari rencana perawatan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Disabilitas dapat berkaitan dengan gerakan, penglihatan, pendengaran, komunikasi, atau fungsi kognitif. Hambatan juga muncul dari lingkungan: pintu sempit, informasi yang tidak terbaca, atau alat yang sulit dijangkau. Dukungan yang baik mengurangi hambatan dan memperhatikan apa yang ingin dilakukan pengguna.\n\nHemiparesis berarti kelemahan pada satu sisi tubuh. Kondisi dan kemampuan masing-masing pengguna berbeda, sehingga sisi yang lebih kuat, nyeri, rentang gerak, dan cara transfer harus diketahui dari penilaian tim. Jangan menarik lengan yang lemah atau menganggap sisi tersebut tidak mempunyai sensasi. Gangguan bicara juga tidak otomatis berarti pengguna tidak memahami percakapan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pada bantuan berpakaian untuk kelemahan satu sisi, prinsip umum adalah memasukkan sisi yang membutuhkan bantuan terlebih dahulu dan melepas dari sisi yang lebih mudah terlebih dahulu. Sesuaikan dengan rencana, jenis pakaian, nyeri, dan latihan petugas. Jelaskan tiap tahap dan tetap libatkan tangan atau kemampuan yang dapat digunakan.\n\nGunakan petunjuk visual, tulisan, gambar, atau waktu tambahan untuk komunikasi sesuai kebutuhan. Penempatan alat makan, bel panggil, dan kursi harus mengikuti hasil penilaian pengguna, bukan kebiasaan petugas. Konsultasikan perubahan alat bantu kepada tim."
+            }
+          ],
+          "steps": [
+            "Periksa kemampuan, sisi tubuh, nyeri, dan rencana bantuan.",
+            "Tanyakan cara yang biasa dirasakan nyaman.",
+            "Atur alat serta lingkungan agar dapat diakses.",
+            "Bantu bertahap tanpa menarik anggota tubuh yang lemah."
+          ],
+          "caution": "Teknik transfer untuk kelemahan satu sisi harus dipelajari langsung dengan supervisi.",
+          "scenario": "Pak Ito memahami pembicaraan tetapi sulit mengucapkan kata. Petugas baru berbicara hanya kepada keluarganya.",
+          "response": "Tetap ajak Pak Ito berkomunikasi langsung, gunakan pilihan singkat atau alat komunikasi yang sesuai, dan beri waktu. Libatkan keluarga sebagai dukungan, bukan pengganti semua keputusan.",
+          "vocabulary": [
+            {
+              "japanese": "障害",
+              "reading": "しょうがい",
+              "meaning": "disabilitas"
+            },
+            {
+              "japanese": "片麻痺",
+              "reading": "かたまひ",
+              "meaning": "kelumpuhan atau kelemahan satu sisi"
+            },
+            {
+              "japanese": "健側",
+              "reading": "けんそく",
+              "meaning": "sisi yang tidak terdampak"
+            },
+            {
+              "japanese": "患側",
+              "reading": "かんそく",
+              "meaning": "sisi yang terdampak"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "痛いところはありますか。",
+              "reading": "いたいところはありますか。",
+              "meaning": "Apakah ada bagian yang sakit?"
+            },
+            {
+              "japanese": "こちらの手を使えますか。",
+              "reading": "こちらのてをつかえますか。",
+              "meaning": "Apakah tangan ini dapat digunakan?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kesulitan bicara berarti…",
+              "options": [
+                "Pasti tidak memahami",
+                "Tidak perlu diajak berbicara",
+                "Kemampuan memahami tetap perlu diperhatikan"
+              ],
+              "answer": 2,
+              "explanation": "Kemampuan berbicara dan memahami tidak selalu terganggu dengan cara yang sama."
+            },
+            {
+              "prompt": "Saat berpakaian dengan kelemahan satu sisi, prinsip umum memasukkan pakaian adalah…",
+              "options": [
+                "Sisi yang lebih kuat selalu dahulu",
+                "Sisi yang memerlukan bantuan dahulu, sesuai rencana",
+                "Menarik lengan agar cepat"
+              ],
+              "answer": 1,
+              "explanation": "Urutan bantuan bertujuan mengurangi kesulitan; tetap sesuaikan kondisi dan rencana."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dementia",
+      "title": "Demensia dan dukungan perilaku",
+      "description": "Memahami perubahan kognitif, merespons emosi, serta mengenali perubahan akut.",
+      "lessons": [
+        {
+          "id": "kaigo-07",
+          "title": "Demensia: memori, orientasi, dan persepsi",
+          "minutes": 20,
+          "objectives": [
+            "Membedakan demensia dari stereotip penuaan",
+            "Mengenali pengaruh kognitif terhadap aktivitas sehari-hari"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Demensia adalah kondisi yang dapat memengaruhi ingatan, berpikir, komunikasi, serta aktivitas harian. Demensia bukan bagian yang pasti terjadi pada setiap proses penuaan. Diagnosis dilakukan tenaga kesehatan. Untuk caregiver, yang penting adalah memahami kebutuhan individual dan membantu orang merasa aman, bukan menguji atau mempermalukan ingatannya.\n\nKesulitan mengingat kejadian baru dapat membuat pengguna mengulang pertanyaan. Gangguan orientasi dapat menyebabkan bingung tentang tempat atau waktu. Kesulitan menjalankan urutan kegiatan dapat membuat pakaian atau peralatan tampak sulit digunakan. Respons dukungan harus terkait hambatan yang diamati, bukan semata label diagnosis."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan jadwal yang mudah dikenali, penanda sederhana, dan petunjuk satu tahap. Jika pengguna mengulang pertanyaan tentang waktu makan, jawab dengan tenang dan tunjukkan petunjuk yang sesuai. Jangan memaksa pengguna mengakui bahwa ia sudah menanyakan hal yang sama.\n\nDukung pilihan yang masih dapat dibuat, misalnya memilih minuman dari dua pilihan yang aman. Perhatikan bahasa, kebiasaan, dan riwayat hidup. Koordinasikan perubahan dukungan dengan tim agar petugas memberikan pendekatan konsisten dan tidak membingungkan."
+            }
+          ],
+          "steps": [
+            "Kenali pola kesulitan dan kemampuan yang masih ada.",
+            "Gunakan kalimat pendek serta petunjuk satu langkah.",
+            "Atur lingkungan dengan tanda yang mudah dikenali.",
+            "Evaluasi apakah dukungan membuat pengguna lebih tenang."
+          ],
+          "caution": "Jangan menyimpulkan diagnosis demensia dari satu kejadian lupa.",
+          "scenario": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'.",
+          "response": "Jawab singkat dengan nada tenang, tunjukkan penanda jadwal, dan amati apakah ia lapar atau cemas. Pengulangan pertanyaan perlu dukungan, bukan teguran.",
+          "vocabulary": [
+            {
+              "japanese": "認知症",
+              "reading": "にんちしょう",
+              "meaning": "demensia"
+            },
+            {
+              "japanese": "記憶",
+              "reading": "きおく",
+              "meaning": "ingatan"
+            },
+            {
+              "japanese": "見当識",
+              "reading": "けんとうしき",
+              "meaning": "orientasi waktu tempat dan orang"
+            },
+            {
+              "japanese": "不安",
+              "reading": "ふあん",
+              "meaning": "kecemasan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "昼ご飯は十二時です。",
+              "reading": "ひるごはんはじゅうにじです。",
+              "meaning": "Makan siang pukul dua belas."
+            },
+            {
+              "japanese": "一緒に確認しましょう。",
+              "reading": "いっしょにかくにんしましょう。",
+              "meaning": "Mari kita periksa bersama."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pengguna mengulang pertanyaan. Respons yang tepat adalah…",
+              "options": [
+                "Menjawab tenang dan memberi petunjuk",
+                "Menguji ingatan dengan paksa",
+                "Mempermalukan di depan orang lain"
+              ],
+              "answer": 0,
+              "explanation": "Petunjuk dan ketenangan membantu kebutuhan yang muncul dari kesulitan mengingat."
+            },
+            {
+              "prompt": "Demensia…",
+              "options": [
+                "Selalu dialami setiap lansia",
+                "Memerlukan penilaian profesional dan dukungan individual",
+                "Dapat didiagnosis dari satu kali lupa"
+              ],
+              "answer": 1,
+              "explanation": "Usia atau satu kejadian lupa tidak cukup untuk menentukan diagnosis."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-08",
+          "title": "Emosi, penolakan, dan perilaku yang menantang",
+          "minutes": 20,
+          "objectives": [
+            "Mencari kebutuhan di balik perilaku",
+            "Memilih respons yang menenangkan tanpa berdebat"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Perilaku yang tampak sulit sering merupakan bentuk komunikasi kebutuhan yang belum dipahami. Pengguna bisa merasa takut, kesepian, malu, tidak nyaman, atau bingung. Sebelum memberi label 'rewel', amati apa yang terjadi sebelum, selama, dan sesudah perilaku tersebut. Lingkungan ramai, perubahan petugas, serta instruksi terlalu cepat dapat menjadi konteks penting.\n\nMemvalidasi emosi berarti mengakui perasaan, bukan membenarkan semua isi pernyataan. Bila pengguna berkata ingin pulang, petugas dapat berkata bahwa ia tampak merindukan rumah dan menanyakan hal yang membuatnya nyaman. Berdebat panjang tentang fakta sering tidak membantu hubungan atau keselamatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat pemicu, ucapan pengguna, respons petugas, dan hasilnya. Coba pendekatan sederhana: turunkan suara, beri ruang, tawarkan kegiatan yang disukai, atau ulangi penjelasan pada waktu yang lebih tepat. Bila kebutuhan tubuh atau kondisi baru dicurigai, laporkan kepada tim.\n\nGunakan pengawasan dan penyesuaian lingkungan sesuai rencana ketika pengguna ingin berjalan. Mengunci, mengikat, atau memberi obat untuk kenyamanan petugas bukan keputusan caregiver. Risiko harus ditangani oleh tim melalui prosedur yang menghormati hak pengguna."
+            }
+          ],
+          "steps": [
+            "Pastikan keselamatan dan kurangi keramaian.",
+            "Dengarkan perasaan tanpa menghakimi.",
+            "Cari pemicu serta kebutuhan yang belum terpenuhi.",
+            "Tawarkan pilihan, amati hasil, dan laporkan pola kepada tim."
+          ],
+          "caution": "Pembatasan fisik atau pemberian obat bukan solusi mandiri caregiver.",
+          "scenario": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat.",
+          "response": "Kurangi jumlah suara, jelaskan satu tahap dengan tenang, jaga privasi, dan beri kesempatan menjawab. Catat apakah pendekatan ini mengurangi penolakan.",
+          "vocabulary": [
+            {
+              "japanese": "拒否",
+              "reading": "きょひ",
+              "meaning": "penolakan"
+            },
+            {
+              "japanese": "行動",
+              "reading": "こうどう",
+              "meaning": "perilaku"
+            },
+            {
+              "japanese": "安心",
+              "reading": "あんしん",
+              "meaning": "rasa aman"
+            },
+            {
+              "japanese": "気持ち",
+              "reading": "きもち",
+              "meaning": "perasaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "心配なことがありますか。",
+              "reading": "しんぱいなことがありますか。",
+              "meaning": "Apakah ada yang membuat Anda khawatir?"
+            },
+            {
+              "japanese": "少し休みましょう。",
+              "reading": "すこしやすみましょう。",
+              "meaning": "Mari beristirahat sebentar."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Memvalidasi emosi berarti…",
+              "options": [
+                "Mengakui perasaan pengguna",
+                "Selalu menyetujui semua fakta",
+                "Memaksa pengguna berhenti bicara"
+              ],
+              "answer": 0,
+              "explanation": "Perasaan dapat diakui tanpa berdebat atau membenarkan informasi yang tidak tepat."
+            },
+            {
+              "prompt": "Catatan perilaku sebaiknya memuat…",
+              "options": [
+                "Label 'nakal' saja",
+                "Pendapat tanpa waktu",
+                "Pemicu, perilaku, respons, dan hasil"
+              ],
+              "answer": 2,
+              "explanation": "Urutan kejadian membantu tim menentukan dukungan yang sesuai."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-09",
+          "title": "Perubahan akut dan dukungan keluarga",
+          "minutes": 20,
+          "objectives": [
+            "Melaporkan perubahan mendadak dari kondisi dasar",
+            "Mengumpulkan riwayat kebiasaan melalui keluarga secara tepat"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Kebingungan yang muncul mendadak atau berubah-ubah tidak boleh langsung dianggap sebagai pola demensia yang biasa. Caregiver perlu menyampaikan perubahan perhatian, kesadaran, aktivitas, atau perilaku kepada petugas klinis. Tugasnya adalah mengamati serta menjaga keselamatan; membedakan penyebab klinis memerlukan penilaian profesional.\n\nKeluarga dapat membantu mengenali kebiasaan, panggilan yang disukai, pekerjaan masa lalu, serta hal yang menenangkan pengguna. Informasi ini dipakai untuk dukungan yang personal. Namun pengguna tetap menjadi pusat percakapan dan pilihan; keluarga tidak otomatis berwenang menerima setiap informasi pribadi atau memutuskan semua hal."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Saat perubahan terjadi, sebutkan kondisi biasanya, waktu terakhir tampak seperti biasa, perubahan yang terlihat, dan tindakan yang sudah dilakukan. Tanyakan informasi tambahan hanya jika tidak menunda panggilan bantuan. Catat tanpa menetapkan diagnosis sendiri.\n\nDalam percakapan keluarga, ajukan pertanyaan terbuka tentang rutinitas dan preferensi. Ulangi pemahaman untuk memastikan informasi akurat. Sampaikan kekhawatiran melalui tim dan hindari menjanjikan hasil yang tidak dapat dipastikan. Petugas juga perlu berdiskusi ketika dukungan keluarga dan keinginan pengguna tampak berbeda."
+            }
+          ],
+          "steps": [
+            "Bandingkan keadaan dengan kondisi dasar pengguna.",
+            "Laporkan perubahan akut segera melalui jalur fasilitas.",
+            "Kumpulkan waktu, keluhan, dan tindakan yang telah dilakukan.",
+            "Gunakan riwayat keluarga untuk dukungan setelah keselamatan ditangani."
+          ],
+          "caution": "Jangan menunda eskalasi perubahan akut demi menyelesaikan catatan atau wawancara.",
+          "scenario": "Pengguna dengan demensia biasanya mengikuti sapaan. Sore ini ia tiba-tiba tidak dapat memusatkan perhatian dan jauh lebih mengantuk.",
+          "response": "Segera panggil petugas berwenang, pastikan pengguna aman, dan laporkan perubahan dari kondisi dasar beserta waktunya. Jangan menganggapnya sekadar demensia bertambah.",
+          "vocabulary": [
+            {
+              "japanese": "急変",
+              "reading": "きゅうへん",
+              "meaning": "perubahan kondisi mendadak"
+            },
+            {
+              "japanese": "家族",
+              "reading": "かぞく",
+              "meaning": "keluarga"
+            },
+            {
+              "japanese": "普段",
+              "reading": "ふだん",
+              "meaning": "biasanya"
+            },
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "pelaporan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "午後から急に様子が変わりました。",
+              "reading": "ごごからきゅうにようすがかわりました。",
+              "meaning": "Sejak siang keadaannya tiba-tiba berubah."
+            },
+            {
+              "japanese": "普段の生活について教えてください。",
+              "reading": "ふだんのせいかつについておしえてください。",
+              "meaning": "Mohon ceritakan kebiasaan hidupnya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kebingungan mendadak pada pengguna dengan demensia perlu…",
+              "options": [
+                "Diabaikan sebagai usia",
+                "Dilaporkan sebagai perubahan baru",
+                "Ditunggu sampai shift besok"
+              ],
+              "answer": 1,
+              "explanation": "Perubahan dari kondisi dasar memerlukan penilaian, bukan asumsi."
+            },
+            {
+              "prompt": "Informasi keluarga paling berguna untuk dukungan personal adalah…",
+              "options": [
+                "Kebiasaan dan hal yang menenangkan",
+                "Gosip tetangga",
+                "Perintah yang selalu mengganti pilihan pengguna"
+              ],
+              "answer": 0,
+              "explanation": "Riwayat hidup membantu tim memahami kebutuhan, dengan pengguna tetap menjadi pusat dukungan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "title": "Komunikasi yang menghormati pengguna",
+      "description": "Latihan mendengarkan, menjelaskan bantuan, dan mengatasi hambatan komunikasi.",
+      "lessons": [
+        {
+          "id": "kaigo-10",
+          "title": "Mendengarkan aktif dan komunikasi nonverbal",
+          "minutes": 20,
+          "objectives": [
+            "Menggunakan pertanyaan terbuka dan konfirmasi",
+            "Membaca ekspresi tanpa menganggapnya sebagai diagnosis"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Komunikasi bukan hanya menyampaikan instruksi. Petugas perlu memahami apa yang dirasakan, dibutuhkan, dan diinginkan pengguna. Mendengarkan aktif dilakukan dengan perhatian, jeda, serta pengulangan inti ucapan menggunakan kata sendiri. Pertanyaan terbuka seperti 'bagian mana yang terasa tidak nyaman?' memberi ruang lebih luas daripada menebak jawaban.\n\nEkspresi, tatapan, posisi tubuh, dan gerakan dapat melengkapi ucapan. Wajah meringis mungkin menunjukkan ketidaknyamanan, tetapi penyebabnya perlu ditanyakan atau dilaporkan. Diam tidak selalu berarti setuju. Hindari menafsirkan perilaku berdasarkan budaya atau usia saja; konfirmasikan dengan pengguna dan informasi tim."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Duduk atau berdiri pada posisi yang membuat wajah terlihat tanpa mengintimidasi. Perkenalkan diri, gunakan nama yang disukai, dan kurangi gangguan. Setelah pengguna bicara, rangkum lalu tanyakan apakah pemahaman sudah benar. Jika pengguna sulit bicara, gunakan alat komunikasi yang telah disepakati.\n\nJangan terburu-buru mengisi semua jeda. Beri waktu untuk menyusun jawaban. Saat dukungan tubuh dilakukan, tetap amati ekspresi dan tanyakan rasa nyaman. Catat ucapan penting secara akurat, bukan menggantinya dengan asumsi seperti 'tidak kooperatif'."
+            }
+          ],
+          "steps": [
+            "Sapa dan pastikan pengguna dapat melihat serta mendengar.",
+            "Ajukan satu pertanyaan yang jelas.",
+            "Dengarkan sampai selesai, termasuk jeda.",
+            "Rangkum isi dan konfirmasikan pemahaman."
+          ],
+          "caution": "Sentuhan harus sesuai persetujuan, preferensi pengguna, dan konteks perawatan.",
+          "scenario": "Ibu Arai berkata 'saya tidak suka ruang makan'. Petugas hendak menyimpulkan ia tidak lapar.",
+          "response": "Tanyakan apa yang terasa tidak nyaman dan dengarkan jawabannya. Bisa jadi suara, posisi kursi, atau pengalaman tertentu yang menjadi hambatan, sehingga asumsi soal nafsu makan belum tepat.",
+          "vocabulary": [
+            {
+              "japanese": "傾聴",
+              "reading": "けいちょう",
+              "meaning": "mendengarkan aktif"
+            },
+            {
+              "japanese": "表情",
+              "reading": "ひょうじょう",
+              "meaning": "ekspresi wajah"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "konfirmasi"
+            },
+            {
+              "japanese": "会話",
+              "reading": "かいわ",
+              "meaning": "percakapan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "どんなことが気になりますか。",
+              "reading": "どんなことがきになりますか。",
+              "meaning": "Hal apa yang mengganggu Anda?"
+            },
+            {
+              "japanese": "椅子が低いということですね。",
+              "reading": "いすがひくいということですね。",
+              "meaning": "Jadi, kursinya terlalu rendah, ya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pengguna diam ketika ditawari bantuan. Petugas sebaiknya…",
+              "options": [
+                "Langsung menganggap setuju",
+                "Mengonfirmasi pemahaman dan respons",
+                "Menganggap menolak selamanya"
+              ],
+              "answer": 1,
+              "explanation": "Diam dapat memiliki banyak makna; persetujuan perlu dikonfirmasi."
+            },
+            {
+              "prompt": "Mendengarkan aktif mencakup…",
+              "options": [
+                "Memotong jawaban",
+                "Menebak tanpa bertanya",
+                "Merangkum dan memastikan pemahaman"
+              ],
+              "answer": 2,
+              "explanation": "Konfirmasi mencegah salah memahami kebutuhan pengguna."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-11",
+          "title": "Menjelaskan bantuan dan memberi arahan sederhana",
+          "minutes": 20,
+          "objectives": [
+            "Menggunakan satu instruksi per tahap",
+            "Meminta izin dan memeriksa kenyamanan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Penjelasan bantuan yang baik menjawab apa, mengapa, dan bagaimana pengguna dapat ikut serta. Gunakan bahasa sehari-hari sebelum istilah teknis. Kalimat yang pendek memudahkan pengguna mengikuti, terutama ketika perhatian atau pendengaran terbatas. Nada tenang dan tempo yang sesuai lebih berguna daripada volume besar.\n\nArahan harus terkait tindakan saat itu. 'Mari pegang sandaran ini' lebih mudah diikuti daripada beberapa perintah sekaligus. Hindari janji seperti 'pasti tidak sakit'. Sebaliknya jelaskan bahwa pengguna dapat memberi tahu bila terasa sakit atau ingin berhenti. Pertanyaan 'sudah mengerti?' dapat dilengkapi dengan meminta pengguna menunjukkan atau menyampaikan bagian yang dipahami."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum bantuan, jelaskan tujuan lalu minta izin. Saat bantuan berjalan, beritahu tindakan berikut dan tunggu respons. Jika pengguna tampak bingung, ulangi dengan susunan lebih sederhana, tunjukkan alat, atau gunakan contoh gerak yang aman. Jangan memaksa pengulangan yang membuatnya malu.\n\nSetelah bantuan, tanyakan kenyamanan dan letakkan bel panggil dalam jangkauan. Umpan balik pengguna membantu penyesuaian berikutnya. Dalam bahasa Jepang, gunakan ungkapan sopan yang jelas; kalimat terlalu panjang atau keigo rumit dapat mengurangi pemahaman."
+            }
+          ],
+          "steps": [
+            "Jelaskan satu tujuan sebelum mulai.",
+            "Minta izin dengan pilihan yang sesuai.",
+            "Berikan satu arahan, lalu tunggu respons.",
+            "Periksa kenyamanan selama dan sesudah bantuan."
+          ],
+          "caution": "Arahan gerak harus sesuai rencana serta teknik yang telah dilatih; kata-kata tidak menggantikan penilaian transfer.",
+          "scenario": "Petugas mengatakan 'pegang, berdiri, putar, duduk' dalam satu kalimat. Pengguna berhenti dan tampak takut.",
+          "response": "Berhenti, tenangkan pengguna, lalu ulangi satu tahap sesuai rencana dengan konfirmasi. Bila bantuan belum aman, minta petugas terlatih mendampingi.",
+          "vocabulary": [
+            {
+              "japanese": "説明",
+              "reading": "せつめい",
+              "meaning": "penjelasan"
+            },
+            {
+              "japanese": "声かけ",
+              "reading": "こえかけ",
+              "meaning": "sapaan atau arahan verbal"
+            },
+            {
+              "japanese": "介助",
+              "reading": "かいじょ",
+              "meaning": "bantuan"
+            },
+            {
+              "japanese": "手順",
+              "reading": "てじゅん",
+              "meaning": "urutan tindakan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "これから椅子に移ります。",
+              "reading": "これからいすにうつります。",
+              "meaning": "Sekarang kita akan berpindah ke kursi."
+            },
+            {
+              "japanese": "痛かったら教えてください。",
+              "reading": "いたかったらおしえてください。",
+              "meaning": "Beri tahu saya bila terasa sakit."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Cara memberi arahan yang mudah diikuti adalah…",
+              "options": [
+                "Beberapa perintah cepat",
+                "Satu tahap lalu menunggu respons",
+                "Hanya berbicara kepada rekan"
+              ],
+              "answer": 1,
+              "explanation": "Pengguna perlu waktu memahami dan merespons satu tahap."
+            },
+            {
+              "prompt": "Sebelum bantuan tubuh, petugas perlu…",
+              "options": [
+                "Menjelaskan dan meminta persetujuan",
+                "Langsung menyentuh",
+                "Menjanjikan pasti tidak sakit"
+              ],
+              "answer": 0,
+              "explanation": "Penjelasan dan persetujuan membangun rasa aman dan menghormati pengguna."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-12",
+          "title": "Hambatan bahasa, pendengaran, dan komunikasi",
+          "minutes": 20,
+          "objectives": [
+            "Menyesuaikan komunikasi tanpa menebak",
+            "Menggunakan klarifikasi dan bantuan tim"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Hambatan komunikasi dapat berasal dari bahasa, pendengaran, penglihatan, atau kesulitan menyampaikan kata. Pilih dukungan berdasarkan kebutuhan orang tersebut. Tulisan besar membantu sebagian pengguna, tetapi tidak semua dapat membaca dengan baik. Alat bantu dengar pun tidak menghilangkan semua gangguan, terutama di ruang ramai.\n\nCaregiver yang belajar bahasa Jepang perlu membedakan kata yang tidak dikenal dari instruksi yang tidak jelas. Mengangguk untuk menutupi ketidakpahaman dapat menimbulkan kesalahan. Klarifikasi adalah bagian kerja profesional: minta pengulangan, ulangi isi, atau tunjukkan istilah yang perlu dipastikan. Untuk informasi penting, gunakan penerjemah atau bantuan resmi sesuai kebijakan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Berbicara dengan wajah terlihat, jarak yang nyaman, dan suara jelas. Jangan berteriak dari belakang. Pada pengguna yang sulit menyampaikan kata, gunakan pilihan ya/tidak atau papan komunikasi yang telah disepakati, sambil tetap memastikan preferensi. Jangan menganggap jawaban singkat berarti tidak ingin dilibatkan.\n\nSaat menerima instruksi, ulangi waktu, nama, jumlah, dan tindakan. Bila masih tidak paham, hentikan sebelum tugas berisiko dimulai. Catat istilah baru untuk dipelajari setelah keselamatan pekerjaan dipastikan."
+            }
+          ],
+          "steps": [
+            "Identifikasi hambatan serta alat komunikasi yang biasa digunakan.",
+            "Kurangi kebisingan dan pastikan wajah terlihat.",
+            "Gunakan kalimat pendek, tulisan, atau gambar sesuai kebutuhan.",
+            "Konfirmasi isi; minta bantuan bila informasi penting belum jelas."
+          ],
+          "caution": "Jangan mengandalkan tebakan atau terjemahan otomatis saja untuk instruksi klinis penting.",
+          "scenario": "Petugas mendengar instruksi Jepang tentang waktu makan, tetapi tidak yakin apakah sebelum atau sesudah pemeriksaan.",
+          "response": "Minta pengulangan dan ulangi urutan kegiatan kepada pemberi instruksi. Jangan memulai berdasarkan kata yang hanya sebagian dipahami.",
+          "vocabulary": [
+            {
+              "japanese": "聞き取り",
+              "reading": "ききとり",
+              "meaning": "pemahaman saat mendengar"
+            },
+            {
+              "japanese": "補聴器",
+              "reading": "ほちょうき",
+              "meaning": "alat bantu dengar"
+            },
+            {
+              "japanese": "筆談",
+              "reading": "ひつだん",
+              "meaning": "komunikasi tertulis"
+            },
+            {
+              "japanese": "失語症",
+              "reading": "しつごしょう",
+              "meaning": "afasia"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "もう少しゆっくり話してください。",
+              "reading": "もうすこしゆっくりはなしてください。",
+              "meaning": "Mohon bicara sedikit lebih perlahan."
+            },
+            {
+              "japanese": "食事の前ですか、後ですか。",
+              "reading": "しょくじのまえですか、あとですか。",
+              "meaning": "Apakah sebelum atau sesudah makan?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Instruksi penting belum dipahami. Tindakan yang tepat…",
+              "options": [
+                "Mengangguk lalu menebak",
+                "Mengabaikan rincian waktu",
+                "Meminta klarifikasi sebelum bertindak"
+              ],
+              "answer": 2,
+              "explanation": "Mengonfirmasi mencegah kesalahan yang timbul dari pemahaman sebagian."
+            },
+            {
+              "prompt": "Pengguna kurang mendengar paling terbantu oleh…",
+              "options": [
+                "Wajah terlihat dan kebisingan berkurang",
+                "Teriakan dari belakang",
+                "Bicara lebih cepat"
+              ],
+              "answer": 0,
+              "explanation": "Konteks visual dan lingkungan yang tenang dapat membantu komunikasi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Keselamatan, infeksi, dan keadaan darurat",
+      "description": "Mengenali risiko, menjaga kebersihan, dan mengeskalasi keadaan yang berubah.",
+      "lessons": [
+        {
+          "id": "kaigo-13",
+          "title": "Pencegahan infeksi dan kebersihan tangan",
+          "minutes": 20,
+          "objectives": [
+            "Menerapkan kebersihan tangan pada momen yang tepat",
+            "Membedakan sarung tangan dengan kebersihan tangan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Pencegahan infeksi berlaku pada setiap pengguna, bukan hanya orang yang sudah diketahui sakit. Risiko dinilai dari kegiatan dan kemungkinan kontak dengan cairan tubuh, kulit yang tidak utuh, atau benda terkontaminasi. Kebersihan tangan dan alat pelindung yang sesuai memutus perpindahan kotoran di antara kegiatan.\n\nSarung tangan tidak menggantikan kebersihan tangan. Bersihkan tangan sesuai metode fasilitas sebelum dan setelah kontak yang memerlukannya serta setelah melepas sarung tangan. Tangan yang tampak kotor perlu dicuci dengan sabun dan air. Aturan tambahan untuk kondisi infeksi tertentu mengikuti petugas penanggung jawab; jangan menentukan jenis isolasi sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pisahkan alur bersih dan kotor: persiapkan alat bersih sebelum memulai, letakkan barang terpakai di tempat yang ditentukan, dan jangan menyentuh gagang pintu atau telepon dengan sarung tangan kotor. Ganti sarung tangan antara pengguna dan ketika berpindah dari kegiatan kotor ke kegiatan bersih.\n\nPilih alat pelindung berdasarkan penilaian tugas serta pelatihan. Gunakan urutan memakai dan melepas yang diajarkan agar tidak mencemari diri. Ikuti produk, pengenceran, dan waktu kontak pembersihan yang disetujui fasilitas; jangan mencampur bahan pembersih."
+            }
+          ],
+          "steps": [
+            "Siapkan alat bersih dan tempat barang kotor.",
+            "Lakukan kebersihan tangan serta gunakan pelindung sesuai tugas.",
+            "Pisahkan alur bersih dan kotor selama bantuan.",
+            "Lepas pelindung dengan benar, lalu bersihkan tangan dan alat."
+          ],
+          "caution": "Ikuti SOP infeksi fasilitas dan jangan memakai sarung tangan yang sama untuk dua pengguna.",
+          "scenario": "Setelah bantuan toilet, petugas masih memakai sarung tangan saat menyiapkan sendok makan pengguna lain.",
+          "response": "Hentikan alur yang mencemari. Lepas sarung tangan, bersihkan tangan, dan tangani peralatan yang mungkin terkontaminasi menurut SOP sebelum menyiapkan bantuan bersih.",
+          "vocabulary": [
+            {
+              "japanese": "感染",
+              "reading": "かんせん",
+              "meaning": "infeksi"
+            },
+            {
+              "japanese": "手洗い",
+              "reading": "てあらい",
+              "meaning": "mencuci tangan"
+            },
+            {
+              "japanese": "手袋",
+              "reading": "てぶくろ",
+              "meaning": "sarung tangan"
+            },
+            {
+              "japanese": "消毒",
+              "reading": "しょうどく",
+              "meaning": "disinfeksi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "手を洗ってからお手伝いします。",
+              "reading": "てをあらってからおてつだいします。",
+              "meaning": "Saya mencuci tangan dahulu sebelum membantu."
+            },
+            {
+              "japanese": "手袋を交換します。",
+              "reading": "てぶくろをこうかんします。",
+              "meaning": "Saya akan mengganti sarung tangan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Sarung tangan…",
+              "options": [
+                "Menggantikan cuci tangan",
+                "Boleh dipakai antar pengguna",
+                "Tetap memerlukan kebersihan tangan"
+              ],
+              "answer": 2,
+              "explanation": "Sarung tangan dapat terkontaminasi dan tangan perlu dibersihkan pada momen yang tepat."
+            },
+            {
+              "prompt": "Setelah bantuan toilet sebelum menyiapkan makanan, petugas harus…",
+              "options": [
+                "Melepas pelindung dan melakukan kebersihan tangan",
+                "Langsung menggunakan sarung tangan sama",
+                "Hanya mengelap sarung tangan"
+              ],
+              "answer": 0,
+              "explanation": "Alur kotor dan bersih perlu dipisahkan untuk mencegah kontaminasi."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-14",
+          "title": "Risiko jatuh, lingkungan, dan near miss",
+          "minutes": 20,
+          "objectives": [
+            "Mengidentifikasi bahaya yang dapat diubah",
+            "Melaporkan kejadian hampir celaka tanpa menyalahkan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Risiko jatuh dipengaruhi pengguna, aktivitas, dan lingkungan. Lantai basah, kabel, pencahayaan buruk, alas kaki tidak sesuai, serta alat yang jauh dari jangkauan dapat memperbesar risiko. Kebutuhan toilet mendesak atau perubahan kondisi juga perlu diperhatikan. Satu penilaian lama tidak cukup bila keadaan berubah.\n\nNear miss atau hiyari-hatto adalah kejadian hampir celaka yang belum menimbulkan cedera. Pelaporan membantu tim memperbaiki sistem sebelum kecelakaan terjadi. Tujuan utamanya memahami penyebab dan pencegahan, bukan mencari siapa yang dapat disalahkan. Pengamatan perlu objektif: apa yang terjadi, di mana, kapan, dan apa kondisi saat itu."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa jalur berjalan, rem alat bila relevan, bel panggil, serta posisi barang sebelum bantuan. Pastikan alat bantu yang digunakan sesuai rencana dan pengguna tahu cara meminta bantuan. Jangan menghilangkan kesempatan bergerak hanya karena petugas merasa takut; diskusikan cara yang aman dengan tim.\n\nJika pengguna jatuh, jangan langsung mengangkat atau menariknya. Panggil bantuan, amankan lingkungan, dan ikuti prosedur penilaian serta respons fasilitas. Catat fakta setelah kebutuhan segera ditangani. Perubahan berulang pada waktu atau tempat tertentu dapat menunjukkan perlunya penyesuaian rencana."
+            }
+          ],
+          "steps": [
+            "Periksa jalur, cahaya, lantai, dan barang dalam jangkauan.",
+            "Cocokkan aktivitas dengan penilaian terbaru.",
+            "Laporkan bahaya serta kejadian hampir celaka.",
+            "Evaluasi perbaikan bersama tim dan dokumentasikan hasil."
+          ],
+          "caution": "Setelah jatuh, jangan memindahkan pengguna secara otomatis sebelum respons dan penilaian sesuai prosedur.",
+          "scenario": "Pengguna hampir tersandung kabel charger di samping tempat tidur. Tidak ada cedera.",
+          "response": "Amankan kabel dengan cara yang disetujui, pastikan pengguna nyaman, lalu laporkan near miss beserta lokasi dan konteks. Tidak adanya cedera bukan alasan untuk melewati pelaporan.",
+          "vocabulary": [
+            {
+              "japanese": "転倒",
+              "reading": "てんとう",
+              "meaning": "jatuh"
+            },
+            {
+              "japanese": "危険",
+              "reading": "きけん",
+              "meaning": "bahaya"
+            },
+            {
+              "japanese": "予防",
+              "reading": "よぼう",
+              "meaning": "pencegahan"
+            },
+            {
+              "japanese": "事故",
+              "reading": "じこ",
+              "meaning": "kecelakaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "床が濡れています。",
+              "reading": "ゆかがぬれています。",
+              "meaning": "Lantainya basah."
+            },
+            {
+              "japanese": "歩く前に確認しましょう。",
+              "reading": "あるくまえにかくにんしましょう。",
+              "meaning": "Mari kita periksa sebelum berjalan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kejadian hampir tersandung tanpa cedera perlu…",
+              "options": [
+                "Disembunyikan",
+                "Dilaporkan untuk pencegahan",
+                "Diabaikan karena belum cedera"
+              ],
+              "answer": 1,
+              "explanation": "Near miss menyediakan informasi untuk memperbaiki keselamatan."
+            },
+            {
+              "prompt": "Pengguna sudah jatuh. Langkah yang tepat adalah…",
+              "options": [
+                "Panggil bantuan dan ikuti prosedur penilaian",
+                "Langsung tarik agar berdiri",
+                "Suruh berjalan untuk menguji"
+              ],
+              "answer": 0,
+              "explanation": "Keselamatan dan penilaian sesuai prosedur didahulukan sebelum pemindahan."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-15",
+          "title": "Perubahan mendadak, panggilan bantuan, dan evakuasi",
+          "minutes": 20,
+          "objectives": [
+            "Memprioritaskan keselamatan dan eskalasi",
+            "Menyampaikan lokasi serta kondisi secara ringkas"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Saat terjadi keadaan mendadak, petugas perlu mengenali bahaya, memanggil bantuan, dan mengikuti prosedur yang telah dilatih. Kesulitan bernapas, tidak responsif, atau perubahan fungsi yang tiba-tiba harus segera dieskalasi. Jangan menunggu diagnosis sendiri. Di tempat kerja, ketahui tombol panggil, jalur kontak, alamat, dan penanggung jawab tiap shift.\n\nPanggilan bantuan yang baik menyebut lokasi, identitas pengguna sesuai sistem, kondisi teramati, waktu kejadian, serta bantuan yang dibutuhkan. Jika ada bahaya di lingkungan, sampaikan juga. Penanganan kegawatdaruratan seperti resusitasi memerlukan pelatihan langsung dan instruksi yang berlaku; aplikasi ini tidak menggantikan pelatihan tersebut."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Dalam kebakaran atau bencana, ikuti rencana evakuasi fasilitas dan arahan petugas. Kenali rute aman, titik berkumpul, daftar pengguna, serta kebutuhan alat bantu sebelum kejadian. Hindari tindakan spontan yang dapat menambah bahaya, misalnya menggunakan rute yang belum dinyatakan aman.\n\nSetelah kejadian, serahkan informasi kepada tim penerima dan catat urutan faktual. Jangan meninggalkan pengguna berisiko tanpa pengawasan untuk mencari dokumen; minta bantuan rekan dan atur pembagian tugas. Tinjau latihan berkala agar respons tidak hanya bergantung pada hafalan."
+            }
+          ],
+          "steps": [
+            "Pastikan keselamatan diri, pengguna, dan lingkungan.",
+            "Panggil bantuan segera melalui jalur yang ditetapkan.",
+            "Sampaikan lokasi, kondisi, waktu, dan kebutuhan bantuan.",
+            "Ikuti arahan serta tindakan yang telah dilatih, lalu serah terima."
+          ],
+          "caution": "Jangan memberikan makanan, minuman, atau obat kepada orang yang tidak responsif.",
+          "scenario": "Saat kegiatan pagi, Pak Ono tiba-tiba sulit merespons dan tampak kesulitan bernapas.",
+          "response": "Hentikan kegiatan, panggil bantuan segera dengan lokasi yang jelas, amankan pengguna, dan ikuti instruksi serta prosedur darurat. Dokumentasi dilakukan setelah respons segera terorganisasi.",
+          "vocabulary": [
+            {
+              "japanese": "緊急",
+              "reading": "きんきゅう",
+              "meaning": "darurat"
+            },
+            {
+              "japanese": "避難",
+              "reading": "ひなん",
+              "meaning": "evakuasi"
+            },
+            {
+              "japanese": "応援",
+              "reading": "おうえん",
+              "meaning": "bantuan tambahan"
+            },
+            {
+              "japanese": "安全",
+              "reading": "あんぜん",
+              "meaning": "keselamatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "すぐに来てください。",
+              "reading": "すぐにきてください。",
+              "meaning": "Mohon segera datang."
+            },
+            {
+              "japanese": "二階の食堂です。呼吸が苦しそうです。",
+              "reading": "にかいのしょくどうです。こきゅうがくるしそうです。",
+              "meaning": "Di ruang makan lantai dua. Tampak sulit bernapas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Saat keadaan darurat, catatan panjang sebaiknya…",
+              "options": [
+                "Diselesaikan sebelum memanggil",
+                "Menggantikan panggilan bantuan",
+                "Dikerjakan setelah respons segera ditangani"
+              ],
+              "answer": 2,
+              "explanation": "Eskalasi dan keselamatan tidak boleh tertunda oleh administrasi."
+            },
+            {
+              "prompt": "Panggilan bantuan harus mencakup…",
+              "options": [
+                "Hanya 'tolong'",
+                "Lokasi dan kondisi yang diamati",
+                "Diagnosis yang ditebak"
+              ],
+              "answer": 1,
+              "explanation": "Lokasi serta kondisi membantu tim memberi respons yang tepat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobility",
+      "title": "Posisi tubuh, transfer, dan mobilitas",
+      "description": "Menilai kesiapan, menggunakan alat sesuai pelatihan, dan mempertahankan aktivitas.",
+      "lessons": [
+        {
+          "id": "kaigo-16",
+          "title": "Body mechanics dan penanganan yang aman",
+          "minutes": 20,
+          "objectives": [
+            "Menjelaskan prinsip pusat gravitasi dan tumpuan",
+            "Memilih bantuan berdasarkan penilaian, bukan kekuatan petugas"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Body mechanics memanfaatkan posisi dan gerak tubuh agar kerja lebih stabil. Tumpuan yang cukup, kedekatan dengan aktivitas, serta menghindari memutar punggung sambil membawa beban membantu mengurangi gerakan yang tidak efisien. Namun teknik tubuh saja tidak menjadikan semua pemindahan pengguna aman. Beban, kemampuan pengguna, alat, ruang, dan jumlah petugas tetap menentukan cara bantuan.\n\nPenanganan pengguna berbeda dari mengangkat barang. Orang dapat bergerak tiba-tiba, merasa nyeri, atau kehilangan keseimbangan. Ikuti penilaian transfer dan kebijakan penggunaan alat. Pengguna yang tidak dapat menopang tubuh tidak boleh diangkat sendirian hanya karena petugas merasa kuat."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum bantuan, baca rencana dan cek perubahan kondisi. Pastikan alat tersedia, berfungsi, dan sesuai pengguna. Penggunaan hoist, sling, atau alat transfer memerlukan pelatihan khusus serta pemeriksaan kecocokan alat. Jumlah petugas mengikuti penilaian dan instruksi alat, bukan asumsi bahwa dua orang selalu cukup.\n\nJelaskan cara pengguna dapat ikut serta dan koordinasikan satu pemimpin arahan. Bila situasi tidak sesuai rencana, hentikan dan minta penilaian ulang. Merasa terburu-buru atau kekurangan petugas bukan alasan melewati pemeriksaan."
+            }
+          ],
+          "steps": [
+            "Cek kemampuan pengguna dan rencana penanganan terbaru.",
+            "Siapkan ruang, alat, serta jumlah petugas yang ditetapkan.",
+            "Jelaskan tahap dan koordinasikan arahan.",
+            "Hentikan bila kemampuan atau kondisi tidak sesuai penilaian."
+          ],
+          "caution": "Jangan mencoba teknik angkat atau hoist pertama kali hanya dari bacaan; praktikkan dengan instruktur.",
+          "scenario": "Pak Endo yang biasanya membantu berdiri hari ini tidak mampu menumpu. Petugas hendak tetap memakai cara kemarin.",
+          "response": "Hentikan transfer yang tidak sesuai kemampuan hari ini dan minta penilaian tim. Siapkan bantuan serta alat berdasarkan rencana yang diperbarui.",
+          "vocabulary": [
+            {
+              "japanese": "重心",
+              "reading": "じゅうしん",
+              "meaning": "pusat gravitasi"
+            },
+            {
+              "japanese": "支持基底面",
+              "reading": "しじきていめん",
+              "meaning": "bidang tumpuan"
+            },
+            {
+              "japanese": "移乗",
+              "reading": "いじょう",
+              "meaning": "transfer"
+            },
+            {
+              "japanese": "福祉用具",
+              "reading": "ふくしようぐ",
+              "meaning": "alat bantu kesejahteraan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日は立てそうですか。",
+              "reading": "きょうはたてそうですか。",
+              "meaning": "Apakah hari ini tampaknya bisa berdiri?"
+            },
+            {
+              "japanese": "二人で確認してから行います。",
+              "reading": "ふたりでかくにんしてからおこないます。",
+              "meaning": "Kami akan melakukannya setelah memeriksa bersama."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Body mechanics yang baik…",
+              "options": [
+                "Menjamin semua angkat aman",
+                "Menggantikan alat bantu",
+                "Tetap memerlukan penilaian dan alat sesuai kebutuhan"
+              ],
+              "answer": 2,
+              "explanation": "Kemampuan pengguna, alat, ruang, serta petugas harus dipertimbangkan bersama."
+            },
+            {
+              "prompt": "Kemampuan menumpu berubah hari ini. Petugas perlu…",
+              "options": [
+                "Memakai cara kemarin tanpa perubahan",
+                "Menghentikan dan meminta penilaian ulang",
+                "Menarik pengguna lebih kuat"
+              ],
+              "answer": 1,
+              "explanation": "Rencana bantuan harus sesuai kondisi aktual."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-17",
+          "title": "Posisi tidur, kenyamanan, dan perlindungan kulit",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali posisi dasar dan kebutuhan dukungan",
+            "Mengamati kulit serta melaporkan perubahan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Posisi telentang, miring, dan duduk memiliki kegunaan serta risiko yang berbeda. Posisi yang nyaman harus memperhatikan kemampuan bergerak, nyeri, kondisi pernapasan, dan rencana dukungan pengguna. Bantal atau alat penopang digunakan sesuai penilaian; tujuan bukan sekadar membuat tubuh tampak rapi.\n\nTekanan berkepanjangan, gesekan, kelembapan, dan gaya geser dapat merusak kulit. Orang yang sulit mengubah posisi memerlukan penilaian risiko serta rencana individual. Tidak ada satu jadwal perubahan posisi yang otomatis cocok untuk semua pengguna. Ikuti rencana dan laporkan bila tidak dapat dilaksanakan atau pengguna merasa tidak nyaman."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Saat membantu posisi, jaga privasi dan gunakan metode yang telah dilatih untuk mengurangi gesekan. Jangan menyeret tubuh dengan menarik lengan atau pakaian. Pastikan lipatan seprai, alat, dan bagian tubuh tidak menimbulkan tekanan yang tidak diinginkan. Bel panggil tetap dalam jangkauan setelah selesai.\n\nAmati kulit ketika kegiatan perawatan memungkinkan, dengan persetujuan. Kemerahan baru, luka, kelembapan berlebih, atau keluhan nyeri perlu dilaporkan kepada perawat. Jangan memijat kemerahan atau mengoleskan produk baru tanpa arahan. Catat lokasi dan waktu temuan secara objektif."
+            }
+          ],
+          "steps": [
+            "Periksa rencana posisi serta keluhan pengguna.",
+            "Siapkan alat penopang dan bantuan yang diperlukan.",
+            "Ubah posisi dengan teknik terlatih serta minim gesekan.",
+            "Periksa kenyamanan, kulit yang dapat diamati, dan jangkauan bel."
+          ],
+          "caution": "Jangan menentukan jadwal reposisi atau penanganan luka sendiri; ikuti penilaian klinis dan rencana individual.",
+          "scenario": "Saat merapikan pakaian, petugas melihat kemerahan baru di area tumit pengguna yang jarang bergerak.",
+          "response": "Laporkan lokasi, waktu, dan keluhan kepada perawat, lalu ikuti instruksi perlindungan tekanan. Jangan langsung memijat area atau mengoleskan krim tanpa arahan.",
+          "vocabulary": [
+            {
+              "japanese": "仰臥位",
+              "reading": "ぎょうがい",
+              "meaning": "posisi telentang"
+            },
+            {
+              "japanese": "側臥位",
+              "reading": "そくがい",
+              "meaning": "posisi miring"
+            },
+            {
+              "japanese": "体位変換",
+              "reading": "たいいへんかん",
+              "meaning": "perubahan posisi"
+            },
+            {
+              "japanese": "褥瘡",
+              "reading": "じょくそう",
+              "meaning": "luka akibat tekanan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この姿勢は楽ですか。",
+              "reading": "このしせいはらくですか。",
+              "meaning": "Apakah posisi ini nyaman?"
+            },
+            {
+              "japanese": "かかとに赤いところがあります。",
+              "reading": "かかとにあかいところがあります。",
+              "meaning": "Ada bagian kemerahan pada tumit."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kemerahan kulit baru sebaiknya…",
+              "options": [
+                "Dipijat kuat",
+                "Dilaporkan dan ditangani sesuai arahan",
+                "Ditutupi tanpa catatan"
+              ],
+              "answer": 1,
+              "explanation": "Perubahan kulit memerlukan penilaian serta perlindungan yang sesuai."
+            },
+            {
+              "prompt": "Jadwal perubahan posisi harus…",
+              "options": [
+                "Mengikuti rencana individual",
+                "Sama untuk semua orang",
+                "Ditentukan dari kebiasaan petugas saja"
+              ],
+              "answer": 0,
+              "explanation": "Risiko, kenyamanan, serta kondisi pengguna berbeda-beda."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-18",
+          "title": "Kursi roda, berjalan, dan keluar ruangan",
+          "minutes": 20,
+          "objectives": [
+            "Memeriksa kesiapan alat dan jalur",
+            "Menjaga aktivitas tanpa mengabaikan perubahan kondisi"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Kursi roda dan alat jalan mendukung partisipasi, tetapi perlu ukuran, cara penggunaan, dan rencana yang sesuai. Periksa bagian yang relevan seperti rem, dudukan, pijakan kaki, serta jalur sebelum digunakan. Tidak semua kursi atau alat memiliki cara operasi yang sama; ikuti pelatihan dan instruksi perangkat.\n\nBantuan berjalan mempertimbangkan keseimbangan, kelelahan, nyeri, serta kemampuan mengikuti arahan. Pengguna yang biasanya mampu berjalan dapat membutuhkan bantuan berbeda pada hari tertentu. Aktivitas bukan ujian keberanian; beri kesempatan beristirahat dan minta penilaian bila muncul perubahan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum transfer ke atau dari kursi roda, tempatkan alat dan atur rem serta pijakan sesuai prosedur. Jangan membiarkan pengguna berdiri di atas pijakan kaki. Transfer dilakukan dengan cara yang telah ditetapkan, bukan menarik lengan. Setelah duduk, periksa kenyamanan, posisi kaki, dan kebutuhan penopang.\n\nUntuk perjalanan, rencanakan jalur, cuaca, akses toilet, pendampingan, dan titik istirahat. Melewati tanjakan, ambang pintu, atau jalan tidak rata memerlukan teknik alat yang telah dilatih. Jelaskan perubahan gerakan sebelum dilakukan agar pengguna tidak terkejut."
+            }
+          ],
+          "steps": [
+            "Periksa kondisi pengguna, alat, dan jalur.",
+            "Atur transfer serta bagian alat sesuai prosedur.",
+            "Jelaskan gerakan dan pantau kenyamanan serta kelelahan.",
+            "Berhenti bila muncul pusing, nyeri, atau kesulitan baru dan laporkan."
+          ],
+          "caution": "Jangan menuruni lereng atau melewati rintangan dengan teknik yang belum dilatih.",
+          "scenario": "Petugas melihat pijakan kaki kursi roda masih menghalangi saat pengguna hendak berdiri.",
+          "response": "Hentikan dulu, jelaskan, lalu atur pijakan dan rem sesuai prosedur alat. Mulai kembali hanya setelah transfer siap dan bantuan sesuai rencana.",
+          "vocabulary": [
+            {
+              "japanese": "車椅子",
+              "reading": "くるまいす",
+              "meaning": "kursi roda"
+            },
+            {
+              "japanese": "歩行",
+              "reading": "ほこう",
+              "meaning": "berjalan"
+            },
+            {
+              "japanese": "杖",
+              "reading": "つえ",
+              "meaning": "tongkat"
+            },
+            {
+              "japanese": "段差",
+              "reading": "だんさ",
+              "meaning": "perbedaan tinggi lantai"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ブレーキを確認します。",
+              "reading": "ぶれーきをかくにんします。",
+              "meaning": "Saya akan memeriksa rem."
+            },
+            {
+              "japanese": "疲れたら休みましょう。",
+              "reading": "つかれたらやすみましょう。",
+              "meaning": "Mari beristirahat bila lelah."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Saat transfer, pijakan kaki yang menghalangi harus…",
+              "options": [
+                "Dibiarkan agar cepat",
+                "Dipakai sebagai tempat berdiri",
+                "Diatur sesuai prosedur sebelum mulai"
+              ],
+              "answer": 2,
+              "explanation": "Persiapan alat mencegah hambatan dan risiko saat transfer."
+            },
+            {
+              "prompt": "Pengguna tiba-tiba pusing saat berjalan. Petugas sebaiknya…",
+              "options": [
+                "Memaksa menyelesaikan jarak",
+                "Berhenti dengan aman dan melaporkan",
+                "Menganggap malas"
+              ],
+              "answer": 1,
+              "explanation": "Perubahan kondisi perlu perhatian sebelum aktivitas dilanjutkan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Makan, minum, dan kesehatan mulut",
+      "description": "Menghormati pilihan makan, memahami rencana menelan, dan mengamati respons.",
+      "lessons": [
+        {
+          "id": "kaigo-19",
+          "title": "Persiapan makan dan dukungan kemandirian",
+          "minutes": 20,
+          "objectives": [
+            "Memeriksa identitas, diet, dan alergi sesuai sistem",
+            "Memberi bantuan makan yang terarah dan menghormati tempo"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Makan memenuhi kebutuhan tubuh sekaligus menjadi kegiatan sosial dan sumber kesenangan. Periksa makanan yang diberikan kepada pengguna sesuai sistem identifikasi fasilitas, diet, alergi, serta rencana bantuan. Jangan mengandalkan lokasi kursi atau tampilan piring untuk memastikan penerima. Pilihan budaya, agama, dan kebiasaan perlu dicatat serta disesuaikan oleh tim.\n\nDukungan kemandirian dimulai dari lingkungan: meja, peralatan, pencahayaan, dan jangkauan. Pengguna mungkin dapat makan sendiri jika makanan dipotong sesuai rencana atau alat tertentu disiapkan. Posisi tubuh, tingkat kesiagaan, dan kemampuan menelan harus sesuai penilaian sebelum bantuan dimulai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jelaskan makanan dan minta izin membantu. Ikuti tempo pengguna, jangan menyuapi ketika mulut masih berisi makanan. Amati respons seperti kesulitan, batuk, atau kelelahan dan ikuti jalur pelaporan. Jangan memaksa menghabiskan porsi atau mencampur semua makanan hanya demi efisiensi.\n\nCatat jumlah yang dimakan berdasarkan cara fasilitas, jenis bantuan, penolakan, serta keluhan. Angka konsumsi saja tidak menjelaskan pengalaman makan; tambahkan pengamatan yang dapat membantu penyesuaian rencana. Bila makanan tidak sesuai, konfirmasikan sebelum memberikannya."
+            }
+          ],
+          "steps": [
+            "Pastikan pengguna, makanan, alergi, dan rencana cocok.",
+            "Atur lingkungan serta posisi menurut penilaian.",
+            "Jelaskan, beri kesempatan makan sendiri, dan bantu sesuai tempo.",
+            "Amati serta catat konsumsi, bantuan, dan respons."
+          ],
+          "caution": "Jangan mengubah tekstur atau diet sendiri saat makanan tampak sulit dikonsumsi.",
+          "scenario": "Dua nampan mirip diletakkan berdampingan. Petugas belum memeriksa label dan rencana diet.",
+          "response": "Konfirmasikan penerima serta diet melalui sistem fasilitas sebelum makanan diberikan. Kemiripan menu tidak memastikan keamanan atau kesesuaian.",
+          "vocabulary": [
+            {
+              "japanese": "食事",
+              "reading": "しょくじ",
+              "meaning": "makan"
+            },
+            {
+              "japanese": "食欲",
+              "reading": "しょくよく",
+              "meaning": "nafsu makan"
+            },
+            {
+              "japanese": "主食",
+              "reading": "しゅしょく",
+              "meaning": "makanan pokok"
+            },
+            {
+              "japanese": "副食",
+              "reading": "ふくしょく",
+              "meaning": "lauk atau pendamping"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日の昼ご飯はこちらです。",
+              "reading": "きょうのひるごはんはこちらです。",
+              "meaning": "Ini makan siang hari ini."
+            },
+            {
+              "japanese": "ご自分で食べてみますか。",
+              "reading": "ごじぶんでたべてみますか。",
+              "meaning": "Apakah ingin mencoba makan sendiri?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Nampan yang mirip perlu…",
+              "options": [
+                "Diberikan menurut posisi kursi",
+                "Diperiksa penerima dan rencana dietnya",
+                "Dibagi secara acak"
+              ],
+              "answer": 1,
+              "explanation": "Identitas, alergi, serta rencana diet harus cocok sebelum pemberian."
+            },
+            {
+              "prompt": "Tempo bantuan makan sebaiknya…",
+              "options": [
+                "Mengikuti kemampuan dan respons pengguna",
+                "Selalu cepat",
+                "Sama pada semua pengguna"
+              ],
+              "answer": 0,
+              "explanation": "Kenyamanan serta kemampuan pengguna menentukan bantuan, bukan jadwal petugas saja."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-20",
+          "title": "Menelan, aspirasi, dan rencana hidrasi",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali kesulitan yang perlu dilaporkan",
+            "Mengikuti rencana tekstur dan cairan individual"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Menelan memindahkan makanan atau cairan menuju saluran pencernaan. Kesulitan menelan disebut enge shōgai; masuknya bahan ke saluran napas disebut goen atau aspirasi. Batuk ketika makan, suara berubah setelah menelan, atau kesulitan berulang perlu dilaporkan. Tidak adanya batuk juga tidak memastikan bahwa menelan aman. Penilaian menelan dilakukan oleh tenaga berwenang.\n\nRencana dapat mengatur posisi, tekstur makanan, konsistensi cairan, alat, serta tingkat bantuan. Petugas mengikuti rencana individual dan pelatihan. Kekentalan atau jumlah tidak ditentukan dari perkiraan. Memotong makanan lebih kecil pun tidak otomatis cocok untuk setiap kesulitan menelan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika muncul kesulitan baru saat makan, hentikan pemberian, pastikan keselamatan, dan panggil petugas sesuai prosedur. Bila pengguna tidak dapat bernapas atau tidak responsif, gunakan respons darurat yang telah dilatih. Jangan memaksa minum untuk 'mendorong' makanan.\n\nHidrasi juga mengikuti kondisi dan rencana. Tidak ada satu target cairan yang cocok untuk semua pengguna, terutama bila ada pembatasan klinis. Catat asupan menurut sistem fasilitas dan laporkan perubahan kebiasaan minum, mulut kering, atau keluhan baru. Pengamatan menjadi dasar komunikasi, bukan diagnosis dehidrasi sendiri."
+            }
+          ],
+          "steps": [
+            "Baca rencana menelan dan hidrasi terbaru.",
+            "Pastikan posisi, tekstur, alat, dan bantuan sesuai rencana.",
+            "Pantau respons selama pemberian dan hentikan bila muncul kesulitan.",
+            "Laporkan perubahan dan catat asupan secara akurat."
+          ],
+          "caution": "Jangan menawarkan air, mengubah kekentalan, atau meneruskan makanan saat pengguna mengalami kesulitan menelan baru.",
+          "scenario": "Saat makan, suara pengguna menjadi basah dan ia berulang kali batuk. Teman menyarankan memberi banyak air.",
+          "response": "Hentikan pemberian makanan atau minuman, panggil petugas berwenang, dan ikuti prosedur. Laporkan makanan yang diberikan serta respons; jangan menggunakan air sebagai solusi spontan.",
+          "vocabulary": [
+            {
+              "japanese": "嚥下",
+              "reading": "えんげ",
+              "meaning": "menelan"
+            },
+            {
+              "japanese": "誤嚥",
+              "reading": "ごえん",
+              "meaning": "aspirasi"
+            },
+            {
+              "japanese": "水分",
+              "reading": "すいぶん",
+              "meaning": "cairan"
+            },
+            {
+              "japanese": "とろみ",
+              "reading": "とろみ",
+              "meaning": "kekentalan cairan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "飲み込みにくいですか。",
+              "reading": "のみこみにくいですか。",
+              "meaning": "Apakah sulit menelan?"
+            },
+            {
+              "japanese": "食事を止めて、看護師を呼びます。",
+              "reading": "しょくじをとめて、かんごしをよびます。",
+              "meaning": "Saya hentikan makan dan memanggil perawat."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kesulitan baru saat menelan harus direspons dengan…",
+              "options": [
+                "Air sebanyak mungkin",
+                "Hentikan pemberian dan eskalasi sesuai prosedur",
+                "Lanjutkan lebih cepat"
+              ],
+              "answer": 1,
+              "explanation": "Perubahan menelan memerlukan penilaian dan tidak diselesaikan dengan minuman spontan."
+            },
+            {
+              "prompt": "Tekstur dan target cairan ditetapkan berdasarkan…",
+              "options": [
+                "Selera petugas",
+                "Aturan yang sama bagi semua lansia",
+                "Rencana individual dari tim"
+              ],
+              "answer": 2,
+              "explanation": "Kebutuhan serta pembatasan tiap pengguna dapat berbeda."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-21",
+          "title": "Kebersihan mulut dan perawatan gigi palsu",
+          "minutes": 20,
+          "objectives": [
+            "Menyiapkan bantuan mulut sesuai rencana",
+            "Mengamati keluhan dan menjaga identitas alat pribadi"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Kebersihan mulut mendukung kenyamanan, makan, komunikasi, dan hubungan sosial. Pengguna mungkin membutuhkan bantuan menyikat, membersihkan mulut, atau merawat gigi palsu. Pilihan alat, posisi, serta penggunaan cairan harus mengikuti kemampuan pengguna dan rencana, terutama bila ada kesulitan menelan.\n\nAmati keluhan seperti nyeri, sariawan, perdarahan, mulut kering, atau gigi palsu tidak nyaman. Sampaikan temuan kepada tim; jangan menganggap penolakan makan selalu berkaitan dengan tidak suka menu. Caregiver tidak melakukan penyesuaian gigi palsu atau tindakan gigi sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Minta izin, siapkan alat pribadi yang sesuai, dan pastikan posisi aman. Berikan kesempatan pengguna melakukan bagian yang mampu dilakukan. Bantuan dilakukan dengan lembut sesuai pelatihan, sambil memantau kenyamanan dan toleransi. Jika muncul kesulitan atau perdarahan baru, hentikan bagian yang bermasalah dan laporkan.\n\nGigi palsu milik tiap pengguna perlu identifikasi, penanganan, penyimpanan, dan produk pembersih sesuai petunjuk serta kebijakan. Jangan menukar wadah atau memakai air sangat panas secara sembarangan. Setelah selesai, catat bantuan serta temuan yang perlu ditindaklanjuti."
+            }
+          ],
+          "steps": [
+            "Cek rencana, alat pribadi, dan kondisi mulut.",
+            "Jelaskan serta minta izin sebelum bantuan.",
+            "Bantu dengan lembut sesuai kemampuan dan pelatihan.",
+            "Bersihkan serta simpan alat dengan identitas tepat; laporkan keluhan."
+          ],
+          "caution": "Jangan memaksa berkumur atau menggunakan volume cairan tanpa menyesuaikan rencana menelan.",
+          "scenario": "Ibu Noda mengurangi makan dan mengatakan gigi palsunya sakit saat dipakai.",
+          "response": "Catat ucapan serta perubahan konsumsi, laporkan kepada tim untuk penilaian, dan ikuti rencana bantuan. Jangan mengikir atau memperbaiki gigi palsu sendiri.",
+          "vocabulary": [
+            {
+              "japanese": "口腔",
+              "reading": "こうくう",
+              "meaning": "rongga mulut"
+            },
+            {
+              "japanese": "義歯",
+              "reading": "ぎし",
+              "meaning": "gigi palsu"
+            },
+            {
+              "japanese": "歯磨き",
+              "reading": "はみがき",
+              "meaning": "menyikat gigi"
+            },
+            {
+              "japanese": "うがい",
+              "reading": "うがい",
+              "meaning": "berkumur"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "口の中に痛みはありますか。",
+              "reading": "くちのなかにいたみはありますか。",
+              "meaning": "Apakah ada nyeri di dalam mulut?"
+            },
+            {
+              "japanese": "入れ歯の具合はどうですか。",
+              "reading": "いればのぐあいはどうですか。",
+              "meaning": "Bagaimana kenyamanan gigi palsunya?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pengguna mengatakan gigi palsu sakit. Petugas harus…",
+              "options": [
+                "Melaporkan untuk penilaian",
+                "Memperbaiki sendiri",
+                "Memaksa agar tetap dipakai"
+              ],
+              "answer": 0,
+              "explanation": "Keluhan perlu penilaian dan tindak lanjut sesuai kewenangan."
+            },
+            {
+              "prompt": "Wadah gigi palsu perlu…",
+              "options": [
+                "Dipakai bergantian",
+                "Diberi identitas dan disimpan sesuai prosedur",
+                "Dicampur agar mudah dibersihkan"
+              ],
+              "answer": 1,
+              "explanation": "Identifikasi mencegah alat pribadi tertukar dan mendukung kebersihan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toileting",
+      "title": "Toilet, eliminasi, dan martabat",
+      "description": "Mendukung kebiasaan buang air, menjaga kebersihan, dan mencatat perubahan.",
+      "lessons": [
+        {
+          "id": "kaigo-22",
+          "title": "Bantuan toilet dan kebiasaan eliminasi",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali pola dan kebutuhan bantuan",
+            "Menjaga privasi tanpa meninggalkan risiko"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Eliminasi mencakup buang air kecil dan besar. Dukungan toilet mempertimbangkan kebiasaan waktu, kemampuan bergerak, pakaian, komunikasi, serta rasa malu. Pengguna yang membutuhkan bantuan tetap berhak mendapat penjelasan dan pilihan. Jangan membuat semua orang mengikuti jadwal yang sama tanpa melihat rencana individual.\n\nKemandirian dapat didukung dengan jalur yang aman, pakaian yang mudah digunakan, penanda toilet, dan alat yang sesuai. Kebutuhan mendesak dapat meningkatkan risiko jika bel panggil jauh atau respons lambat. Tujuan bukan sekadar menghindari kebocoran, tetapi membantu pengguna nyaman dan mempertahankan kebiasaan yang mungkin dilakukan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum bantuan, cek rencana transfer, siapkan kebersihan serta alat pelindung, dan jelaskan tahapnya. Setelah pengguna berada pada posisi yang aman, jaga privasi sesuai kebutuhan pengawasan. Tidak semua pengguna aman ditinggalkan sendirian; keputusan mengikuti penilaian. Bel panggil harus dapat dijangkau dan pengguna memahami cara memakainya.\n\nBantu pakaian dan kebersihan sesuai kemampuan. Setelah selesai, pastikan posisi nyaman, alur kotor ditangani, serta tangan dibersihkan. Catat waktu dan jenis bantuan. Keluhan nyeri, kesulitan baru, atau perubahan pola perlu disampaikan kepada tim."
+            }
+          ],
+          "steps": [
+            "Tanyakan kebutuhan dan cek pola serta rencana toilet.",
+            "Siapkan jalur, alat, transfer, dan kebersihan.",
+            "Jaga privasi dengan tingkat pengawasan sesuai penilaian.",
+            "Bantu kebersihan, rapikan dengan izin, dan catat respons."
+          ],
+          "caution": "Jangan meninggalkan pengguna berisiko di toilet hanya untuk memberi privasi.",
+          "scenario": "Pak Hara perlu diawasi saat duduk dan berdiri. Petugas ingin keluar jauh dari toilet demi privasi.",
+          "response": "Ikuti tingkat pengawasan yang ditetapkan dan cari cara menjaga privasi tanpa meninggalkan risiko. Jelaskan kepada pengguna serta pastikan bantuan dapat diberikan segera.",
+          "vocabulary": [
+            {
+              "japanese": "排泄",
+              "reading": "はいせつ",
+              "meaning": "eliminasi"
+            },
+            {
+              "japanese": "排尿",
+              "reading": "はいにょう",
+              "meaning": "buang air kecil"
+            },
+            {
+              "japanese": "排便",
+              "reading": "はいべん",
+              "meaning": "buang air besar"
+            },
+            {
+              "japanese": "便座",
+              "reading": "べんざ",
+              "meaning": "dudukan toilet"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お手洗いに行きますか。",
+              "reading": "おてあらいにいきますか。",
+              "meaning": "Apakah ingin ke toilet?"
+            },
+            {
+              "japanese": "終わったら呼んでください。",
+              "reading": "おわったらよんでください。",
+              "meaning": "Panggil saya setelah selesai."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Privasi saat toilet harus…",
+              "options": [
+                "Selalu membuat pengguna ditinggal",
+                "Diseimbangkan dengan kebutuhan pengawasan",
+                "Diabaikan bila petugas sibuk"
+              ],
+              "answer": 1,
+              "explanation": "Privasi penting, tetapi bantuan tetap mengikuti penilaian risiko individual."
+            },
+            {
+              "prompt": "Jadwal dukungan toilet sebaiknya mengikuti…",
+              "options": [
+                "Kebiasaan dan rencana pengguna",
+                "Satu jadwal untuk semua",
+                "Kenyamanan petugas saja"
+              ],
+              "answer": 0,
+              "explanation": "Pola serta kebutuhan individual menjadi dasar dukungan."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-23",
+          "title": "Inkontinensia, pad, dan kebersihan kulit",
+          "minutes": 20,
+          "objectives": [
+            "Menghindari stigma pada kebocoran",
+            "Mengelola alat penyerap dan alur bersih-kotor sesuai rencana"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Inkontinensia adalah keluarnya urine atau feses tanpa kendali yang diinginkan. Kejadian ini dapat membuat pengguna malu dan khawatir berinteraksi. Respons caregiver perlu tenang, privat, dan tanpa menyalahkan. Jangan menyebut pengguna 'jorok' atau membicarakan kebocoran di depan orang lain.\n\nAlat penyerap dapat membantu, tetapi pemilihan jenis, ukuran, frekuensi pemeriksaan, serta penggunaan mengikuti rencana. Alat tidak otomatis menggantikan kesempatan menggunakan toilet. Tim perlu memahami pola kebocoran serta hambatan yang dapat dibantu, bukan hanya mengganti produk setiap kali kejadian."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Siapkan perlengkapan sebelum mulai agar pengguna tidak dibiarkan terbuka. Jaga kenyamanan dan tutupi bagian tubuh yang tidak sedang dibantu. Pisahkan alat bersih serta kotor dan ikuti teknik kebersihan yang telah dilatih. Kulit dikeringkan dengan lembut; penggunaan pelindung kulit sesuai arahan.\n\nPeriksa keluhan, kemerahan, atau perubahan kulit yang terlihat selama bantuan dan laporkan temuan baru. Setelah penggantian, pastikan alat tidak terlalu ketat, pakaian nyaman, dan posisi sesuai rencana. Catat waktu, kebocoran, serta bantuan yang diberikan; jangan mengurangi cairan secara mandiri untuk mencegah kebocoran."
+            }
+          ],
+          "steps": [
+            "Jelaskan bantuan dengan suara serta tempat yang menjaga privasi.",
+            "Siapkan alat sesuai rencana dan pisahkan bersih-kotor.",
+            "Bantu kebersihan serta penggantian sesuai pelatihan.",
+            "Periksa kenyamanan, kulit, dan pola; laporkan perubahan."
+          ],
+          "caution": "Jangan mengurangi minum, menambah lapisan pad, atau memakai produk kulit baru tanpa rencana tim.",
+          "scenario": "Ibu Kondo mengalami kebocoran dan meminta petugas tidak berbicara keras tentangnya.",
+          "response": "Hormati permintaan, beri bantuan privat dengan tenang, dan catat lewat sistem resmi. Tinjau pola bersama tim tanpa mempermalukan atau mengubah asupan cairan sendiri.",
+          "vocabulary": [
+            {
+              "japanese": "失禁",
+              "reading": "しっきん",
+              "meaning": "inkontinensia"
+            },
+            {
+              "japanese": "尿",
+              "reading": "にょう",
+              "meaning": "urine"
+            },
+            {
+              "japanese": "皮膚",
+              "reading": "ひふ",
+              "meaning": "kulit"
+            },
+            {
+              "japanese": "清潔",
+              "reading": "せいけつ",
+              "meaning": "kebersihan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "着替えをお持ちします。",
+              "reading": "きがえをおもちします。",
+              "meaning": "Saya akan membawakan pakaian ganti."
+            },
+            {
+              "japanese": "皮膚がかゆいですか。",
+              "reading": "ひふがかゆいですか。",
+              "meaning": "Apakah kulit terasa gatal?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengurangi cairan sendiri agar tidak bocor adalah…",
+              "options": [
+                "Selalu benar",
+                "Cara utama caregiver",
+                "Tidak tepat tanpa rencana dan penilaian tim"
+              ],
+              "answer": 2,
+              "explanation": "Kebutuhan cairan tidak ditentukan dari kenyamanan penggantian alat."
+            },
+            {
+              "prompt": "Penggunaan pad sebaiknya…",
+              "options": [
+                "Mengikuti rencana serta tetap mempertimbangkan toilet",
+                "Selalu mengganti semua kesempatan toilet",
+                "Ditambah lapisan sebanyak mungkin"
+              ],
+              "answer": 0,
+              "explanation": "Dukungan perlu sesuai kebutuhan, pola, dan kenyamanan pengguna."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-24",
+          "title": "Catatan urine, feses, dan perubahan pola",
+          "minutes": 20,
+          "objectives": [
+            "Menulis pengamatan eliminasi secara objektif",
+            "Melaporkan nyeri atau perubahan tanpa mendiagnosis"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Catatan eliminasi membantu tim memahami pola serta perubahan. Informasi dapat mencakup waktu, frekuensi, jumlah bila diukur menurut prosedur, bentuk atau warna yang diamati, keluhan, dan jenis bantuan. Bedakan pengamatan langsung dari ucapan pengguna. Jika jumlah tidak diukur, jangan menuliskan angka seolah pasti.\n\nSembelit, diare, atau kesulitan berkemih memerlukan penilaian dan rencana; caregiver tidak menentukan obat atau diagnosis. Perubahan baru, darah yang terlihat, nyeri, atau keadaan pengguna memburuk perlu dilaporkan menurut urgensi prosedur. Jangan menunggu catatan beberapa hari jika ada tanda yang memerlukan respons segera."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan istilah atau skala yang dipakai fasilitas setelah pelatihan. Catatan 'BAB buruk' kurang membantu dibanding keterangan waktu, bentuk yang diamati, serta keluhan. Catat juga apakah pengguna menolak bantuan atau tidak dapat mencapai toilet tepat waktu.\n\nDukungan aktivitas, diet, dan cairan mengikuti rencana individual. Jangan memberikan obat pencahar, mengubah obat, atau melakukan tindakan invasif karena hasil catatan tampak tidak biasa. Bila pengguna malu membicarakan eliminasi, jelaskan tujuan pengamatan serta lakukan percakapan secara privat."
+            }
+          ],
+          "steps": [
+            "Amati dengan persetujuan dan sesuai kebutuhan pelayanan.",
+            "Catat waktu, fakta, ukuran yang benar-benar diukur, serta keluhan.",
+            "Bandingkan dengan pola yang diketahui.",
+            "Laporkan perubahan dan ikuti instruksi tanpa membuat terapi sendiri."
+          ],
+          "caution": "Darah yang terlihat atau keluhan baru perlu disampaikan; jangan menetapkan penyebabnya sendiri.",
+          "scenario": "Pak Ueda berkata buang air kecil terasa sakit. Catatan sebelumnya tidak mencantumkan keluhan ini.",
+          "response": "Catat ucapan, waktu, serta pengamatan yang relevan dan laporkan kepada perawat. Jangan menyimpulkan infeksi atau memberi obat dari persediaan lain.",
+          "vocabulary": [
+            {
+              "japanese": "便秘",
+              "reading": "べんぴ",
+              "meaning": "sembelit"
+            },
+            {
+              "japanese": "下痢",
+              "reading": "げり",
+              "meaning": "diare"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            },
+            {
+              "japanese": "量",
+              "reading": "りょう",
+              "meaning": "jumlah"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いつ排便がありましたか。",
+              "reading": "いつはいべんがありましたか。",
+              "meaning": "Kapan terakhir buang air besar?"
+            },
+            {
+              "japanese": "排尿のときに痛いと話しています。",
+              "reading": "はいにょうのときにいたいとはなしています。",
+              "meaning": "Beliau mengatakan sakit ketika buang air kecil."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Jumlah urine tidak diukur. Catatan sebaiknya…",
+              "options": [
+                "Menebak angka",
+                "Tidak mencantumkan angka sebagai hasil pasti",
+                "Menggunakan angka pengguna lain"
+              ],
+              "answer": 1,
+              "explanation": "Catatan harus membedakan ukuran nyata dari perkiraan."
+            },
+            {
+              "prompt": "Nyeri baru saat berkemih perlu…",
+              "options": [
+                "Diobati sendiri",
+                "Diabaikan bila malu",
+                "Dicatat dan dilaporkan"
+              ],
+              "answer": 2,
+              "explanation": "Penilaian serta keputusan terapi berada pada petugas berwenang."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hygiene",
+      "title": "Mandi, pakaian, dan perawatan diri",
+      "description": "Merencanakan bantuan kebersihan yang nyaman, privat, dan sesuai kemampuan.",
+      "lessons": [
+        {
+          "id": "kaigo-25",
+          "title": "Persiapan mandi dan keselamatan kamar mandi",
+          "minutes": 20,
+          "objectives": [
+            "Memeriksa kesiapan pengguna dan lingkungan",
+            "Mendukung preferensi serta privasi saat mandi"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Mandi mendukung kebersihan, kenyamanan, dan rutinitas. Sebelum mulai, cek rencana, kondisi hari itu, preferensi, serta bantuan yang diperlukan. Pengguna dapat merasa tidak nyaman karena dingin, takut jatuh, malu, atau pengalaman sebelumnya. Penjelasan dan persetujuan membantu menentukan cara dukungan yang sesuai.\n\nKamar mandi memiliki risiko lantai basah, perubahan suhu, ruang terbatas, dan perpindahan posisi. Periksa alat, jalur, pegangan, serta kebutuhan petugas berdasarkan prosedur. Suhu air dan ruangan diperiksa sesuai SOP dan dikonfirmasi kepada pengguna; jangan hanya mengandalkan rasa tangan petugas atau satu angka tanpa konteks."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Siapkan pakaian, handuk, perlengkapan, dan rencana transfer sebelum membuka pakaian. Tutupi tubuh sejauh mungkin dan berikan kesempatan pengguna membersihkan bagian yang mampu dijangkau. Pantau respons selama kegiatan, termasuk keluhan pusing, nyeri, atau kelelahan. Bila kondisi berubah, hentikan dan ikuti jalur pelaporan.\n\nSetelah mandi, keringkan dengan lembut sesuai rencana, bantu berpakaian, dan pastikan pengguna nyaman. Amati kulit ketika sesuai kebutuhan dan persetujuan. Laporkan temuan baru serta catat bantuan dan respons; jadwal mandi yang selesai tidak cukup menggambarkan keamanan kegiatan."
+            }
+          ],
+          "steps": [
+            "Konfirmasi persetujuan, kondisi, serta rencana mandi.",
+            "Siapkan perlengkapan, alat, petugas, dan lingkungan.",
+            "Periksa air menurut SOP, lalu bantu dengan menjaga privasi.",
+            "Pantau respons, bantu selesai dengan nyaman, dan dokumentasikan."
+          ],
+          "caution": "Pengguna yang memerlukan pengawasan tidak boleh ditinggalkan sendiri di area mandi.",
+          "scenario": "Ibu Hayashi tampak pusing sebelum mandi yang sudah dijadwalkan.",
+          "response": "Jangan memaksakan jadwal. Pastikan aman, laporkan perubahan, dan tunggu arahan tentang penyesuaian kegiatan.",
+          "vocabulary": [
+            {
+              "japanese": "入浴",
+              "reading": "にゅうよく",
+              "meaning": "mandi"
+            },
+            {
+              "japanese": "浴室",
+              "reading": "よくしつ",
+              "meaning": "kamar mandi"
+            },
+            {
+              "japanese": "湯温",
+              "reading": "ゆおん",
+              "meaning": "suhu air mandi"
+            },
+            {
+              "japanese": "更衣",
+              "reading": "こうい",
+              "meaning": "berganti pakaian"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お湯の温度はいかがですか。",
+              "reading": "おゆのおんどはいかがですか。",
+              "meaning": "Bagaimana suhu airnya?"
+            },
+            {
+              "japanese": "めまいはありませんか。",
+              "reading": "めまいはありませんか。",
+              "meaning": "Apakah ada rasa pusing?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pusing sebelum mandi perlu…",
+              "options": [
+                "Dilaporkan sebelum kegiatan dilanjutkan",
+                "Diabaikan karena jadwal",
+                "Diatasi dengan air lebih panas"
+              ],
+              "answer": 0,
+              "explanation": "Kondisi aktual harus diperiksa sebelum melanjutkan aktivitas."
+            },
+            {
+              "prompt": "Persiapan mandi meliputi…",
+              "options": [
+                "Handuk saja",
+                "Lingkungan, alat, rencana, dan kondisi pengguna",
+                "Hanya menyalakan air"
+              ],
+              "answer": 1,
+              "explanation": "Risiko berasal dari pengguna, alat, dan lingkungan sekaligus."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-26",
+          "title": "Seishiki, rambut, dan perawatan kebersihan",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali alternatif kebersihan saat mandi tidak sesuai",
+            "Mengamati kulit dengan menjaga kenyamanan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Seishiki (清拭) adalah membersihkan tubuh dengan menyeka. Cara ini dapat menjadi bagian rencana ketika mandi penuh tidak sesuai, tetapi keputusan mengikuti kondisi serta arahan tim. Bantuan kebersihan tetap mencakup persetujuan, privasi, kenyamanan, serta kesempatan melakukan bagian yang mampu dikerjakan pengguna.\n\nSiapkan perlengkapan sesuai SOP dan pertahankan pemisahan alat bersih serta kotor. Membuka seluruh tubuh lebih lama tidak diperlukan untuk membersihkan satu area. Perhatikan keluhan dingin, nyeri, serta keadaan kulit. Produk yang digunakan perlu sesuai rencana, terutama bila ada sensitivitas atau masalah kulit."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Kerjakan bertahap dengan teknik yang telah dilatih, lalu keringkan area dengan lembut. Jangan menggosok kuat untuk menghilangkan semua noda. Pada rambut, sesuaikan cara mencuci atau menyisir dengan posisi, toleransi, dan preferensi. Alat pribadi tidak dipakai bergantian tanpa pengelolaan yang disetujui.\n\nPerawatan kuku atau area yang berisiko membutuhkan aturan khusus fasilitas dan penilaian kondisi pengguna. Jangan memotong area yang tidak dapat dinilai dengan baik, menangani luka, atau melakukan tindakan di luar pelatihan. Laporkan perubahan kulit, kuku, atau keluhan kepada petugas terkait."
+            }
+          ],
+          "steps": [
+            "Cek rencana alternatif kebersihan dan preferensi.",
+            "Siapkan alat, suhu lingkungan, serta pelindung sesuai tugas.",
+            "Bantu satu area dengan privasi dan teknik lembut.",
+            "Keringkan, rapikan, lalu laporkan temuan baru."
+          ],
+          "caution": "Perawatan kuku, luka, dan kulit bermasalah hanya sesuai kewenangan serta arahan; jangan mencoba tindakan baru sendiri.",
+          "scenario": "Pengguna tidak menjalani mandi hari ini menurut rencana, tetapi merasa tidak nyaman karena berkeringat.",
+          "response": "Konfirmasikan bentuk bantuan kebersihan yang diizinkan, jelaskan, dan bantu bertahap sambil menjaga tubuh tetap hangat serta privat.",
+          "vocabulary": [
+            {
+              "japanese": "清拭",
+              "reading": "せいしき",
+              "meaning": "membersihkan tubuh dengan menyeka"
+            },
+            {
+              "japanese": "洗髪",
+              "reading": "せんぱつ",
+              "meaning": "mencuci rambut"
+            },
+            {
+              "japanese": "整容",
+              "reading": "せいよう",
+              "meaning": "merapikan penampilan"
+            },
+            {
+              "japanese": "保湿",
+              "reading": "ほしつ",
+              "meaning": "menjaga kelembapan kulit"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "体を拭いてもよろしいですか。",
+              "reading": "からだをふいてもよろしいですか。",
+              "meaning": "Bolehkah saya membantu menyeka tubuh?"
+            },
+            {
+              "japanese": "寒くないですか。",
+              "reading": "さむくないですか。",
+              "meaning": "Apakah tidak kedinginan?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Saat menyeka tubuh, privasi dijaga dengan…",
+              "options": [
+                "Membuka seluruh tubuh lama",
+                "Menutup area yang tidak sedang dibantu",
+                "Membiarkan pintu terbuka"
+              ],
+              "answer": 1,
+              "explanation": "Bantuan bertahap menjaga kenyamanan serta martabat."
+            },
+            {
+              "prompt": "Temuan kulit baru sebaiknya…",
+              "options": [
+                "Digosok sampai hilang",
+                "Ditangani dengan produk apa pun",
+                "Dilaporkan untuk penilaian"
+              ],
+              "answer": 2,
+              "explanation": "Penanganan kulit perlu sesuai kondisi, arahan, dan kewenangan."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-27",
+          "title": "Berpakaian, pilihan penampilan, dan bantuan sebagian",
+          "minutes": 20,
+          "objectives": [
+            "Memberi pilihan pakaian yang nyata",
+            "Menyesuaikan urutan bantuan dengan kemampuan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Pakaian berkaitan dengan identitas, kenyamanan, budaya, suhu, serta kegiatan yang akan dilakukan. Pengguna dapat mempunyai preferensi warna atau model yang penting baginya. Pilihan sederhana yang dapat dihormati membantu partisipasi. Kebutuhan bantuan fisik tidak menghilangkan hak menentukan penampilan.\n\nPeriksa kemampuan tangan, keseimbangan saat duduk, nyeri, serta bagian pakaian yang sulit digunakan. Dukungan dapat berupa menata pakaian, memberi arahan, membantu kancing, atau membantu sebagian gerakan. Pada kelemahan satu sisi, urutan umum memasukkan sisi yang membutuhkan bantuan dahulu disesuaikan dengan rencana dan teknik yang telah dilatih."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Siapkan pakaian sebelum mengganti, tutup pintu atau tirai, dan jelaskan tiap tahap. Jangan menarik anggota tubuh atau memaksakan rentang gerak. Jika pakaian sulit digunakan, diskusikan alternatif dengan pengguna dan tim, bukan mengganti preferensi tanpa penjelasan.\n\nSetelah berpakaian, periksa lipatan, bagian yang terlalu ketat, posisi alat bantu, dan kenyamanan. Sepatu serta alas kaki juga disesuaikan dengan rencana mobilitas. Beri cermin atau kesempatan pengguna merapikan diri bila diinginkan. Catat bantuan yang diperlukan agar petugas berikutnya dapat memberi dukungan konsisten."
+            }
+          ],
+          "steps": [
+            "Tanyakan pilihan serta siapkan pakaian yang sesuai.",
+            "Periksa kemampuan, nyeri, serta posisi bantuan.",
+            "Jelaskan dan bantu bagian sulit sesuai urutan rencana.",
+            "Periksa kenyamanan serta beri kesempatan merapikan diri."
+          ],
+          "caution": "Jangan menarik lengan yang lemah atau memaksakan sendi demi memasukkan pakaian.",
+          "scenario": "Pak Ishii ingin memakai kemeja favorit, tetapi kesulitan menutup kancing kecil.",
+          "response": "Hormati pilihannya dan bantu kancing yang sulit. Diskusikan alat atau alternatif yang sesuai jika dibutuhkan, sambil mempertahankan bagian kegiatan yang masih mampu ia lakukan.",
+          "vocabulary": [
+            {
+              "japanese": "衣服",
+              "reading": "いふく",
+              "meaning": "pakaian"
+            },
+            {
+              "japanese": "袖",
+              "reading": "そで",
+              "meaning": "lengan baju"
+            },
+            {
+              "japanese": "着脱",
+              "reading": "ちゃくだつ",
+              "meaning": "memakai dan melepas"
+            },
+            {
+              "japanese": "身だしなみ",
+              "reading": "みだしなみ",
+              "meaning": "kerapian penampilan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日はどの服にしますか。",
+              "reading": "きょうはどのふくにしますか。",
+              "meaning": "Hari ini ingin memakai pakaian yang mana?"
+            },
+            {
+              "japanese": "ボタンをお手伝いしましょうか。",
+              "reading": "ぼたんをおてつだいしましょうか。",
+              "meaning": "Apakah saya bantu mengancingkan?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pengguna kesulitan kancing tetapi memilih bajunya sendiri. Petugas sebaiknya…",
+              "options": [
+                "Mengganti tanpa bertanya",
+                "Membantu bagian kancing yang sulit",
+                "Melarang memilih"
+              ],
+              "answer": 1,
+              "explanation": "Bantuan sebagian dapat menghormati pilihan serta mempertahankan kemampuan."
+            },
+            {
+              "prompt": "Setelah berpakaian, petugas memeriksa…",
+              "options": [
+                "Kenyamanan dan bagian yang menekan",
+                "Hanya warna",
+                "Hanya jadwal selesai"
+              ],
+              "answer": 0,
+              "explanation": "Lipatan serta pakaian yang menekan dapat mengganggu kenyamanan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daily-life",
+      "title": "Istirahat, aktivitas, dan lingkungan hidup",
+      "description": "Menjaga rutinitas, partisipasi, dan kenyamanan ruang pengguna.",
+      "lessons": [
+        {
+          "id": "kaigo-28",
+          "title": "Tidur, istirahat, dan pengamatan malam",
+          "minutes": 20,
+          "objectives": [
+            "Mengidentifikasi kebiasaan tidur dan gangguan lingkungan",
+            "Mencatat pola tanpa menetapkan obat tidur"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Tidur dan istirahat dipengaruhi rutinitas, aktivitas siang, lingkungan, kenyamanan tubuh, serta kekhawatiran. Pengguna mungkin terbiasa tidur dengan cahaya tertentu atau memerlukan bantuan toilet pada malam hari. Dukungan perlu mempertimbangkan kebiasaan ini dan rencana, bukan menganggap semua orang harus tidur pada waktu yang sama.\n\nPengamatan tidur mencakup waktu tampak tidur, terbangun, keluhan, kegiatan, dan bantuan. Petugas hanya mencatat apa yang dapat diketahui; jangan menuliskan jumlah jam tidur yang pasti bila tidak diamati sepanjang waktu. Mengantuk baru atau sulit dibangunkan memerlukan perhatian dan pelaporan, bukan sekadar dimasukkan ke catatan tidur."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Siapkan lingkungan nyaman dengan pencahayaan dan suara sesuai preferensi serta risiko. Pastikan jalur, bel panggil, dan alat bantu dapat digunakan. Pemeriksaan malam mengikuti rencana dan sebisa mungkin mengurangi gangguan yang tidak perlu. Tetap sapa dan jelaskan sebelum bantuan tubuh.\n\nBila pengguna terus terbangun, tanyakan kebutuhan seperti nyeri, toilet, suhu, atau cemas, lalu laporkan pola kepada tim. Jangan memberi obat tidur tambahan atau menahan pengguna di tempat tidur sebagai keputusan mandiri. Dukungan aktivitas siang dan rutinitas tidur dibahas bersama tim."
+            }
+          ],
+          "steps": [
+            "Pelajari kebiasaan tidur serta rencana malam.",
+            "Atur lingkungan dan jangkauan bel dengan aman.",
+            "Amati pola serta bantu kebutuhan sesuai rencana.",
+            "Catat fakta dan laporkan perubahan atau keluhan baru."
+          ],
+          "caution": "Perubahan kesadaran atau napas saat malam memerlukan respons sesuai prosedur, bukan menunggu pagi.",
+          "scenario": "Pengguna terbangun tiga kali karena ingin ke toilet. Catatan petugas hanya menyebut 'sulit tidur'.",
+          "response": "Catat waktu terbangun, kebutuhan toilet, bantuan, dan respons setelahnya. Informasi tersebut lebih berguna untuk menyesuaikan dukungan daripada label umum.",
+          "vocabulary": [
+            {
+              "japanese": "睡眠",
+              "reading": "すいみん",
+              "meaning": "tidur"
+            },
+            {
+              "japanese": "休息",
+              "reading": "きゅうそく",
+              "meaning": "istirahat"
+            },
+            {
+              "japanese": "起床",
+              "reading": "きしょう",
+              "meaning": "bangun tidur"
+            },
+            {
+              "japanese": "就寝",
+              "reading": "しゅうしん",
+              "meaning": "pergi tidur"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "眠れましたか。",
+              "reading": "ねむれましたか。",
+              "meaning": "Apakah bisa tidur?"
+            },
+            {
+              "japanese": "何か気になることがありますか。",
+              "reading": "なにかきになることがありますか。",
+              "meaning": "Apakah ada yang mengganggu pikiran?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Catatan tidur yang baik mencakup…",
+              "options": [
+                "Waktu dan kebutuhan yang diamati",
+                "Label malas",
+                "Jumlah jam yang ditebak"
+              ],
+              "answer": 0,
+              "explanation": "Fakta dan konteks membantu tim menilai pola istirahat."
+            },
+            {
+              "prompt": "Pengguna sangat sulit dibangunkan, berbeda dari biasanya. Petugas perlu…",
+              "options": [
+                "Menunggu pagi",
+                "Memberi obat tidur lagi",
+                "Mengeskalasi segera"
+              ],
+              "answer": 2,
+              "explanation": "Perubahan kesadaran baru merupakan kebutuhan penilaian segera."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-29",
+          "title": "Rekreasi, peran sosial, dan aktivitas bermakna",
+          "minutes": 20,
+          "objectives": [
+            "Memilih aktivitas berdasarkan minat pengguna",
+            "Menyesuaikan bantuan dan mengevaluasi pengalaman"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Kegiatan bermakna berbeda untuk tiap orang: berkebun, musik, membaca, memasak sederhana, berbincang, atau kegiatan spiritual. Tujuan dukungan bukan membuat semua pengguna mengikuti aktivitas yang sama. Minat, riwayat hidup, kemampuan, dan keinginan saat itu perlu diperhatikan. Menolak satu kegiatan tidak otomatis berarti tidak mau bersosialisasi.\n\nPartisipasi dapat berbentuk melakukan sebagian kegiatan, memilih lagu, mengamati, atau membantu menentukan hasil. Aktivitas yang sederhana tetap dapat memberi peran dan rasa dihargai. Hindari kompetisi atau pujian yang merendahkan pengguna sebagai anak kecil."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cek risiko kegiatan dan rencana individual: posisi, kelelahan, alat, serta kebutuhan pendampingan. Sediakan pilihan yang nyata dan jangan memaksa. Latihan gerak yang bersifat terapi mengikuti arahan terapis; caregiver tidak membuat program latihan klinis sendiri.\n\nEvaluasi pengalaman, bukan hanya jumlah peserta. Tanyakan apakah pengguna menikmati kegiatan, amati kelelahan atau rasa tidak nyaman, dan catat dukungan yang efektif. Kegiatan pendek yang disukai bisa lebih bermakna daripada sesi panjang yang membuat pengguna tertekan."
+            }
+          ],
+          "steps": [
+            "Tanyakan minat dan pilihan kegiatan.",
+            "Periksa kesesuaian dengan kemampuan serta rencana.",
+            "Sesuaikan alat, tempo, dan bentuk partisipasi.",
+            "Evaluasi kenyamanan, kesenangan, dan keinginan mengulang."
+          ],
+          "caution": "Jangan memaksa kegiatan atau menjalankan latihan terapi di luar arahan dan pelatihan.",
+          "scenario": "Pak Fujita menolak bingo, tetapi antusias ketika ditanya tentang tanaman yang pernah dirawatnya.",
+          "response": "Tawarkan kegiatan yang terkait minat tanaman dengan dukungan aman. Gunakan riwayat hidup sebagai panduan, bukan memaksa bingo agar jumlah peserta bertambah.",
+          "vocabulary": [
+            {
+              "japanese": "余暇",
+              "reading": "よか",
+              "meaning": "waktu luang"
+            },
+            {
+              "japanese": "役割",
+              "reading": "やくわり",
+              "meaning": "peran"
+            },
+            {
+              "japanese": "参加",
+              "reading": "さんか",
+              "meaning": "partisipasi"
+            },
+            {
+              "japanese": "趣味",
+              "reading": "しゅみ",
+              "meaning": "hobi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "好きなことは何ですか。",
+              "reading": "すきなことはなんですか。",
+              "meaning": "Kegiatan apa yang Anda sukai?"
+            },
+            {
+              "japanese": "またやってみたいですか。",
+              "reading": "またやってみたいですか。",
+              "meaning": "Apakah ingin mencoba lagi?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Keberhasilan aktivitas dapat dilihat dari…",
+              "options": [
+                "Semua orang dipaksa hadir",
+                "Kesenangan dan partisipasi yang bermakna",
+                "Hanya durasi terpanjang"
+              ],
+              "answer": 1,
+              "explanation": "Pengalaman serta pilihan pengguna merupakan bagian utama evaluasi."
+            },
+            {
+              "prompt": "Pengguna menolak bingo. Petugas sebaiknya…",
+              "options": [
+                "Melabeli tidak sosial",
+                "Menghukum",
+                "Menanyakan minat dan menawarkan pilihan lain"
+              ],
+              "answer": 2,
+              "explanation": "Penolakan terhadap satu aktivitas tidak menjelaskan semua minat pengguna."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-30",
+          "title": "Kamar, linen, dan lingkungan yang mendukung",
+          "minutes": 20,
+          "objectives": [
+            "Menata ruang tanpa menghilangkan pilihan",
+            "Mengelola linen dan barang pribadi sesuai prosedur"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Ruang pengguna adalah lingkungan hidup, bukan hanya tempat petugas bekerja. Susunan barang dapat membantu orientasi dan rasa memiliki. Menata ulang semua benda tanpa izin mungkin membuat pengguna bingung atau kehilangan akses ke barang yang penting. Kebersihan, keselamatan, dan preferensi perlu dipertimbangkan bersama.\n\nPeriksa pencahayaan, jalur, suhu, suara, dan jangkauan barang. Bel panggil, minuman yang diizinkan, kacamata, atau alat komunikasi ditempatkan sesuai rencana dan kemampuan. Jangan menaruh barang di sisi yang tidak dapat dijangkau hanya karena terlihat lebih rapi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Linen bersih dan kotor ditangani dengan alur berbeda. Gunakan pelindung bila diperlukan dan ikuti penanganan fasilitas tanpa mengguncang linen kotor. Jangan meletakkan linen terpakai di lantai atau membawa alat bersih melalui area kotor. Teknik mengganti seprai saat tempat tidur digunakan harus dipelajari dengan supervisi.\n\nSetelah merapikan, pastikan tidak ada lipatan atau benda yang menekan pengguna, serta alat dan barang penting kembali dapat dijangkau. Konfirmasikan perubahan kepada pengguna. Laporkan kerusakan alat atau lingkungan agar diperbaiki melalui jalur yang benar."
+            }
+          ],
+          "steps": [
+            "Tanyakan pilihan susunan barang dan cek rencana.",
+            "Siapkan linen serta alat dengan alur bersih-kotor.",
+            "Rapikan sesuai teknik yang dilatih tanpa memindahkan barang sembarangan.",
+            "Periksa kenyamanan, akses bel, serta keamanan jalur."
+          ],
+          "caution": "Jangan mengubah posisi alat, tinggi tempat tidur, atau pengaman tanpa mengikuti rencana dan prosedur.",
+          "scenario": "Setelah kamar dirapikan, bel panggil diletakkan di meja yang jauh dari tangan pengguna.",
+          "response": "Kembalikan bel ke lokasi yang dapat dijangkau sesuai rencana dan pastikan pengguna dapat menggunakannya. Kerapian tidak boleh mengurangi akses bantuan.",
+          "vocabulary": [
+            {
+              "japanese": "環境",
+              "reading": "かんきょう",
+              "meaning": "lingkungan"
+            },
+            {
+              "japanese": "寝具",
+              "reading": "しんぐ",
+              "meaning": "perlengkapan tidur"
+            },
+            {
+              "japanese": "シーツ",
+              "reading": "しーつ",
+              "meaning": "seprai"
+            },
+            {
+              "japanese": "整理",
+              "reading": "せいり",
+              "meaning": "penataan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "物の場所を変えてもいいですか。",
+              "reading": "もののばしょをかえてもいいですか。",
+              "meaning": "Bolehkah saya mengubah letak barang?"
+            },
+            {
+              "japanese": "呼び出しボタンに手が届きますか。",
+              "reading": "よびだしぼたんにてがとどきますか。",
+              "meaning": "Apakah tombol panggil dapat dijangkau?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Menata ulang barang pengguna sebaiknya…",
+              "options": [
+                "Dilakukan tanpa bertanya",
+                "Mempertimbangkan izin, kebiasaan, dan jangkauan",
+                "Mengutamakan foto yang rapi"
+              ],
+              "answer": 1,
+              "explanation": "Ruang adalah lingkungan hidup dan harus tetap mendukung kemampuan pengguna."
+            },
+            {
+              "prompt": "Linen kotor perlu…",
+              "options": [
+                "Ditangani melalui alur yang ditetapkan",
+                "Diguncang di dekat alat bersih",
+                "Diletakkan di lantai"
+              ],
+              "answer": 0,
+              "explanation": "Pemisahan dan penanganan benar mengurangi kontaminasi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "title": "Proses perawatan, laporan, dan profesionalisme",
+      "description": "Mengubah pengamatan menjadi catatan, serah terima, dan evaluasi dukungan.",
+      "lessons": [
+        {
+          "id": "kaigo-31",
+          "title": "Asesmen, rencana, pelaksanaan, dan evaluasi",
+          "minutes": 20,
+          "objectives": [
+            "Menjelaskan siklus proses perawatan",
+            "Menghubungkan tujuan dengan dukungan dan respons nyata"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Proses perawatan adalah siklus memahami kebutuhan, menyusun tujuan serta rencana, melaksanakan dukungan, dan mengevaluasi hasil. Caregiver menyumbang pengamatan aktivitas harian dan preferensi pengguna kepada tim. Kebutuhan tidak hanya dinilai dari kekurangan; kemampuan yang masih dimiliki dan hal yang ingin dilakukan juga penting.\n\nTujuan sebaiknya dapat dipahami pengguna dan ditinjau melalui pengamatan. Contohnya bukan 'semua lebih baik', melainkan pengguna dapat memilih pakaian dan memakai bagian tertentu dengan bantuan yang sesuai. Rencana menjelaskan bentuk bantuan, alat, tingkat pengawasan, serta hal yang perlu dilaporkan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pelaksanaan mengikuti rencana terbaru dan kondisi aktual. Bila pengguna menolak, mengalami keluhan baru, atau cara dukungan tidak efektif, catat dan diskusikan. Mengikuti rencana tidak berarti mengabaikan perubahan. Sebaliknya, perubahan rencana dilakukan melalui tim agar konsisten dan aman.\n\nEvaluasi membandingkan tujuan dengan respons: bagian yang berhasil, bantuan yang masih diperlukan, kenyamanan, dan pilihan pengguna. Dokumentasi yang jelas membuat keputusan penyesuaian memiliki dasar. Jangan menandai tujuan tercapai hanya karena kegiatan sudah dijadwalkan atau petugas selesai membantu."
+            }
+          ],
+          "steps": [
+            "Kumpulkan kebutuhan, kemampuan, dan preferensi pengguna.",
+            "Pahami tujuan serta rencana yang disepakati tim.",
+            "Laksanakan sambil mengamati respons aktual.",
+            "Laporkan hasil dan bahas penyesuaian bila diperlukan."
+          ],
+          "caution": "Rencana tidak diubah sendiri untuk kegiatan yang memerlukan penilaian tim atau kewenangan klinis.",
+          "scenario": "Rencana meminta bantuan sebagian berpakaian. Pengguna berhasil memakai lengan baju tetapi masih perlu bantuan kancing.",
+          "response": "Catat kemampuan tersebut dan jenis bantuan yang masih dibutuhkan. Informasi spesifik membantu tim mengevaluasi tujuan tanpa menyebut 'mandiri penuh' secara keliru.",
+          "vocabulary": [
+            {
+              "japanese": "介護過程",
+              "reading": "かいごかてい",
+              "meaning": "proses perawatan"
+            },
+            {
+              "japanese": "計画",
+              "reading": "けいかく",
+              "meaning": "rencana"
+            },
+            {
+              "japanese": "実施",
+              "reading": "じっし",
+              "meaning": "pelaksanaan"
+            },
+            {
+              "japanese": "評価",
+              "reading": "ひょうか",
+              "meaning": "evaluasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "計画を確認してから行います。",
+              "reading": "けいかくをかくにんしてからおこないます。",
+              "meaning": "Saya akan melakukannya setelah memeriksa rencana."
+            },
+            {
+              "japanese": "どこまでできたか記録します。",
+              "reading": "どこまでできたかきろくします。",
+              "meaning": "Saya mencatat bagian yang berhasil dilakukan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Evaluasi rencana menilai…",
+              "options": [
+                "Jadwal saja",
+                "Respons, tujuan, dan kebutuhan bantuan",
+                "Kecepatan petugas saja"
+              ],
+              "answer": 1,
+              "explanation": "Hasil dukungan harus dihubungkan dengan tujuan serta pengalaman pengguna."
+            },
+            {
+              "prompt": "Pengguna hanya mandiri pada sebagian berpakaian. Catatan sebaiknya…",
+              "options": [
+                "Mandiri penuh",
+                "Tidak mampu sama sekali",
+                "Menjelaskan bagian mandiri dan bagian yang dibantu"
+              ],
+              "answer": 2,
+              "explanation": "Kemampuan spesifik memberi dasar penyesuaian yang akurat."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-32",
+          "title": "Ho-ren-so dan catatan objektif",
+          "minutes": 20,
+          "objectives": [
+            "Membedakan laporan, berbagi informasi, dan konsultasi",
+            "Memisahkan fakta, ucapan, dan dugaan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Hōkoku adalah melaporkan hasil atau perubahan kepada penanggung jawab. Renraku adalah menyampaikan informasi yang diperlukan pihak terkait. Sōdan adalah berkonsultasi saat membutuhkan keputusan atau bantuan. Ketiganya sering dirangkum sebagai hō-ren-sō. Informasi perlu disampaikan tepat waktu, kepada orang yang tepat, dan melalui saluran yang sesuai.\n\nCatatan objektif menjelaskan hal yang dapat diamati atau diukur. Ucapan pengguna dapat dicatat sebagai ucapan, sementara dugaan tidak ditulis sebagai fakta. 'Pukul 12.10 mengatakan mual dan makan dua sendok' lebih berguna daripada 'sengaja tidak makan'. Hindari label yang menyalahkan atau menilai kepribadian."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Untuk laporan, susun waktu, lokasi, kejadian, kondisi biasanya, tindakan yang dilakukan, serta respons. Jika memerlukan keputusan, nyatakan pertanyaan dengan jelas. Informasi darurat disampaikan segera; catatan lengkap menyusul. Jangan menunggu akhir shift bila perubahan memerlukan respons saat itu.\n\nGunakan sistem resmi dan koreksi kesalahan sesuai kebijakan agar jejak perubahan tetap jelas. Jangan menghapus fakta untuk membuat laporan tampak baik. Pemeriksaan nama serta penerima informasi membantu mencegah data salah masuk ke pengguna lain."
+            }
+          ],
+          "steps": [
+            "Identifikasi apakah perlu laporan, informasi, atau konsultasi.",
+            "Sampaikan fakta, waktu, dan kebutuhan keputusan.",
+            "Gunakan saluran resmi serta penerima yang tepat.",
+            "Catat respons dan tindak lanjut tanpa mengganti fakta dengan dugaan."
+          ],
+          "caution": "Jangan mencatat diagnosis yang belum ditetapkan atau menjadikan penilaian pribadi sebagai fakta.",
+          "scenario": "Petugas ingin menulis 'pengguna malas makan', padahal pengguna mengatakan mual dan berhenti setelah dua sendok.",
+          "response": "Tulis waktu, ucapan mual, konsumsi yang diamati, serta tindakan pelaporan. Informasi ini dapat ditindaklanjuti tanpa label yang menghakimi.",
+          "vocabulary": [
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            },
+            {
+              "japanese": "連絡",
+              "reading": "れんらく",
+              "meaning": "penyampaian informasi"
+            },
+            {
+              "japanese": "相談",
+              "reading": "そうだん",
+              "meaning": "konsultasi"
+            },
+            {
+              "japanese": "事実",
+              "reading": "じじつ",
+              "meaning": "fakta"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "十二時十分に、吐き気がすると話しました。",
+              "reading": "じゅうにじじゅっぷんに、はきけがするとはなしました。",
+              "meaning": "Pukul 12.10 beliau mengatakan mual."
+            },
+            {
+              "japanese": "対応について相談したいです。",
+              "reading": "たいおうについてそうだんしたいです。",
+              "meaning": "Saya ingin berkonsultasi tentang tindakannya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Catatan objektif adalah…",
+              "options": [
+                "Beliau malas",
+                "Sengaja merepotkan",
+                "Pukul 12.10 mengatakan mual dan makan dua sendok"
+              ],
+              "answer": 2,
+              "explanation": "Waktu, ucapan, dan pengamatan dapat diverifikasi serta ditindaklanjuti."
+            },
+            {
+              "prompt": "Sōdan dilakukan ketika…",
+              "options": [
+                "Perlu keputusan atau bantuan",
+                "Ingin menyembunyikan kesalahan",
+                "Tidak ingin memberi informasi"
+              ],
+              "answer": 0,
+              "explanation": "Konsultasi membantu tugas ditangani dengan kewenangan dan dukungan yang sesuai."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-33",
+          "title": "Serah terima, insiden, dan kesiapan caregiver",
+          "minutes": 20,
+          "objectives": [
+            "Memberi serah terima yang dapat ditindaklanjuti",
+            "Menjaga kebugaran kerja dan meminta dukungan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Serah terima membantu kesinambungan dukungan antarpengguna shift. Isinya mencakup kondisi, perubahan, bantuan yang sudah diberikan, respons, serta hal yang belum selesai. Informasi harus cukup spesifik agar petugas berikutnya tahu apa yang perlu dipantau atau dilakukan. Membaca catatan tidak menggantikan klarifikasi bila ada bagian penting yang belum jelas.\n\nLaporan insiden menjelaskan urutan fakta dan tindakan setelah keselamatan ditangani. Kesalahan atau near miss perlu dilaporkan melalui prosedur. Menyembunyikan kejadian untuk melindungi citra petugas dapat menghilangkan kesempatan pencegahan dan membuat tim kehilangan informasi penting."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Saat serah terima, pastikan penerima memahami prioritas serta tugas tertunda. Ulangi poin yang berkaitan dengan keselamatan dan konfirmasikan tanggung jawab. Lindungi privasi dengan memilih tempat atau sistem yang sesuai. Hindari menyertakan gosip atau label yang tidak membantu dukungan.\n\nCaregiver juga perlu menjaga kesiapan diri: istirahat, pelatihan, ergonomi, dan dukungan emosi. Laporkan kelelahan berat, cedera, atau keterbatasan yang dapat memengaruhi keselamatan. Meminta bantuan merupakan bagian tanggung jawab profesional, bukan kegagalan pribadi. Gunakan saluran supervisi ketika menghadapi tekanan atau dugaan perlakuan tidak layak."
+            }
+          ],
+          "steps": [
+            "Susun perubahan, tindakan, respons, dan tugas tertunda.",
+            "Sampaikan kepada penerima yang tepat serta konfirmasi prioritas.",
+            "Laporkan insiden secara faktual melalui jalur resmi.",
+            "Minta dukungan bila kondisi petugas memengaruhi keselamatan."
+          ],
+          "caution": "Jangan menyembunyikan insiden atau melanjutkan tugas berisiko ketika kondisi diri tidak aman.",
+          "scenario": "Petugas malam menemukan keluhan baru yang sudah dilaporkan ke perawat, tetapi belum ada tindak lanjut saat pergantian shift.",
+          "response": "Serahkan keluhan, waktu laporan, respons yang diterima, dan tugas tindak lanjut yang belum selesai. Konfirmasikan siapa yang akan memantau, bukan hanya berkata 'sudah dilaporkan'.",
+          "vocabulary": [
+            {
+              "japanese": "申し送り",
+              "reading": "もうしおくり",
+              "meaning": "serah terima"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "pengalihan tugas"
+            },
+            {
+              "japanese": "勤務",
+              "reading": "きんむ",
+              "meaning": "dinas atau kerja"
+            },
+            {
+              "japanese": "疲労",
+              "reading": "ひろう",
+              "meaning": "kelelahan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "まだ確認が必要です。",
+              "reading": "まだかくにんがひつようです。",
+              "meaning": "Masih perlu dikonfirmasi."
+            },
+            {
+              "japanese": "次の担当者に申し送ります。",
+              "reading": "つぎのたんとうしゃにもうしおくります。",
+              "meaning": "Saya akan menyerahkannya kepada petugas berikutnya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Serah terima keluhan yang belum selesai perlu mencakup…",
+              "options": [
+                "Tindak lanjut dan penanggung jawab",
+                "Hanya 'sudah dilaporkan'",
+                "Pendapat tentang sifat pengguna"
+              ],
+              "answer": 0,
+              "explanation": "Tugas tertunda harus dapat dipahami dan ditindaklanjuti oleh tim berikutnya."
+            },
+            {
+              "prompt": "Kelelahan berat yang memengaruhi tugas sebaiknya…",
+              "options": [
+                "Disembunyikan",
+                "Dilaporkan untuk pengaturan dukungan",
+                "Diatasi dengan memaksa semua transfer sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Kesiapan petugas merupakan bagian keselamatan pengguna serta tim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japanese",
+      "title": "Bahasa Jepang Kaigo dan integrasi materi",
+      "description": "Membaca istilah, menyampaikan bantuan, dan memahami catatan kerja dalam konteks.",
+      "lessons": [
+        {
+          "id": "kaigo-34",
+          "title": "Istilah tubuh, posisi, angka, dan waktu",
+          "minutes": 20,
+          "objectives": [
+            "Membaca istilah penting dalam konteks",
+            "Mengonfirmasi waktu, sisi tubuh, dan jumlah secara tepat"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Kosakata Kaigo perlu dipelajari bersama konteks. 右 (migi) berarti kanan, 左 (hidari) kiri, 手 (te) tangan, 足 (ashi) kaki, dan 腰 (koshi) pinggang. Istilah 痛み (itami) adalah nyeri, sedangkan かゆみ (kayumi) adalah gatal. Jangan mengganti satu keluhan dengan istilah lain ketika membuat laporan.\n\nWaktu dan urutan sering menentukan tindakan: 前 (mae) sebelum, 後 (ato) sesudah, 今 (ima) sekarang, dan 後で (ato de) nanti. 午前 (gozen) serta 午後 (gogo) membedakan waktu sebelum dan sesudah tengah hari. Bacaan angka berubah dalam beberapa gabungan; 四時 dibaca よじ, 七時 しちじ, dan 九時 くじ. Pastikan isi melalui pengulangan, bukan hanya mengenali kanji."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Latih membaca instruksi singkat: 食事の前に手を洗います berarti mencuci tangan sebelum makan. 右の足が痛いです berarti kaki kanan sakit. Bedakan pengamatan petugas dari ucapan pengguna dengan menambahkan と話しています saat melaporkan ucapan.\n\nPada jumlah cairan atau ukuran lain, sebutkan satuan sesuai catatan dan jangan mengubah angka tanpa dasar. Istilah 少し (sedikit) atau 全部 (seluruhnya) bukan pengukuran pasti. Jika belum memahami angka, sisi tubuh, atau urutan, ulangi kepada pemberi informasi dan minta konfirmasi. Buat kartu belajar pribadi dari kosakata lesson sebelumnya, lalu gunakan dalam kalimat yang relevan."
+            }
+          ],
+          "steps": [
+            "Baca istilah Jepang, kana, lalu artinya.",
+            "Gunakan istilah dalam satu kalimat kerja.",
+            "Latih waktu, sisi tubuh, serta urutan sebelum-sesudah.",
+            "Ulangi informasi penting dan minta konfirmasi bila ragu."
+          ],
+          "caution": "Jangan bertindak berdasarkan tebakan angka, sisi tubuh, atau satuan yang belum dipahami.",
+          "scenario": "Pengguna berkata '左の足が痛いです'. Petugas baru hanya memahami 足 dan menulis kaki kanan sakit.",
+          "response": "左 berarti kiri. Konfirmasikan keluhan dengan menunjuk secara sopan atau mengulang ucapan, lalu laporkan lokasi yang benar. Jangan mengisi sisi tubuh dari tebakan.",
+          "vocabulary": [
+            {
+              "japanese": "右",
+              "reading": "みぎ",
+              "meaning": "kanan"
+            },
+            {
+              "japanese": "左",
+              "reading": "ひだり",
+              "meaning": "kiri"
+            },
+            {
+              "japanese": "午前",
+              "reading": "ごぜん",
+              "meaning": "sebelum tengah hari"
+            },
+            {
+              "japanese": "午後",
+              "reading": "ごご",
+              "meaning": "sesudah tengah hari"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "左の足が痛いですか。",
+              "reading": "ひだりのあしがいたいですか。",
+              "meaning": "Apakah kaki kiri sakit?"
+            },
+            {
+              "japanese": "午後四時ですね。",
+              "reading": "ごごよじですね。",
+              "meaning": "Pukul empat sore, benar?"
+            },
+            {
+              "japanese": "食事の後で行います。",
+              "reading": "しょくじのあとでおこないます。",
+              "meaning": "Dilakukan setelah makan."
+            },
+            {
+              "japanese": "量と時間を確認します。",
+              "reading": "りょうとじかんをかくにんします。",
+              "meaning": "Saya memastikan jumlah dan waktunya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "左の足が痛いです berarti…",
+              "options": [
+                "Kaki kanan gatal",
+                "Kaki kiri sakit",
+                "Tangan kiri sakit"
+              ],
+              "answer": 1,
+              "explanation": "左 adalah kiri, 足 adalah kaki, dan 痛い menyampaikan nyeri."
+            },
+            {
+              "prompt": "午後四時 adalah…",
+              "options": [
+                "Pukul empat sore",
+                "Pukul empat pagi",
+                "Pukul sembilan malam"
+              ],
+              "answer": 0,
+              "explanation": "午後 menyatakan sesudah tengah hari; 四時 dibaca よじ."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-35",
+          "title": "Percakapan bantuan dan konfirmasi keluhan",
+          "minutes": 20,
+          "objectives": [
+            "Menggunakan permintaan izin serta tawaran bantuan",
+            "Menjawab penolakan dengan klarifikasi dan empati"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Pola ～てもよろしいですか meminta izin secara sopan, misalnya お手伝いしてもよろしいですか (bolehkah saya membantu?). Pola ～ましょうか menawarkan bantuan, misalnya カーテンを閉めましょうか (apakah tirainya saya tutup?). Gunakan kalimat yang jelas sesuai kemampuan pengguna, bukan keigo panjang yang sulit dipahami.\n\nUntuk keluhan, tanyakan どこが痛いですか (bagian mana yang sakit?) dan いつからですか (sejak kapan?). Dengarkan tanpa memberi diagnosis. Jawaban 大丈夫です dapat berarti baik-baik saja atau penolakan sopan terhadap tawaran; konteks dan konfirmasi tetap penting. まだ berarti belum atau masih, sedangkan もう dapat berarti sudah. Salah memahami kata ini dapat mengubah urutan bantuan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Contoh percakapan: petugas 'お手洗いに行きますか。' Pengguna 'まだ大丈夫です。' Petugas '分かりました。行きたくなったら教えてください。' Artinya: apakah ingin ke toilet; belum perlu; baik, beri tahu jika ingin pergi. Respons petugas menghormati jawaban dan tetap menyediakan akses bantuan.\n\nContoh lain: pengguna '寒いです。' Petugas '寒いのですね。毛布をお持ちしましょうか。' Artinya: dingin; jadi terasa dingin, apakah saya bawakan selimut? Jika keluhan baru atau terkait kondisi klinis, tambahkan pelaporan kepada tim sesuai prosedur. Tujuan latihan bahasa adalah komunikasi yang akurat, bukan sekadar menghafal terjemahan."
+            }
+          ],
+          "steps": [
+            "Latih sapaan dan izin sebelum setiap bantuan.",
+            "Tanyakan satu keluhan atau pilihan dalam satu waktu.",
+            "Ulangi inti jawaban untuk konfirmasi.",
+            "Sampaikan rencana bantuan dan akses panggilan yang jelas."
+          ],
+          "caution": "Bahasa sopan tidak menggantikan persetujuan; perhatikan jawaban dan respons pengguna.",
+          "scenario": "Petugas menawarkan bantuan. Pengguna menjawab 'まだ大丈夫です'. Petugas mulai membantu tanpa konfirmasi.",
+          "response": "Dalam konteks ini pengguna menyatakan belum perlu. Konfirmasikan jawaban, hormati pilihan, dan jelaskan bahwa bantuan tetap tersedia bila dibutuhkan.",
+          "vocabulary": [
+            {
+              "japanese": "痛み",
+              "reading": "いたみ",
+              "meaning": "nyeri"
+            },
+            {
+              "japanese": "寒い",
+              "reading": "さむい",
+              "meaning": "dingin"
+            },
+            {
+              "japanese": "まだ",
+              "reading": "まだ",
+              "meaning": "belum atau masih"
+            },
+            {
+              "japanese": "手伝う",
+              "reading": "てつだう",
+              "meaning": "membantu"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お手伝いしてもよろしいですか。",
+              "reading": "おてつだいしてもよろしいですか。",
+              "meaning": "Bolehkah saya membantu?"
+            },
+            {
+              "japanese": "まだ大丈夫です。",
+              "reading": "まだだいじょうぶです。",
+              "meaning": "Saat ini belum perlu."
+            },
+            {
+              "japanese": "行きたくなったら教えてください。",
+              "reading": "いきたくなったらおしえてください。",
+              "meaning": "Beri tahu jika ingin pergi."
+            },
+            {
+              "japanese": "どこが痛いですか。",
+              "reading": "どこがいたいですか。",
+              "meaning": "Bagian mana yang sakit?"
+            },
+            {
+              "japanese": "寒いのですね。",
+              "reading": "さむいのですね。",
+              "meaning": "Jadi terasa dingin, ya."
+            },
+            {
+              "japanese": "毛布をお持ちしましょうか。",
+              "reading": "もうふをおもちしましょうか。",
+              "meaning": "Apakah saya bawakan selimut?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "～てもよろしいですか digunakan untuk…",
+              "options": [
+                "Memberi diagnosis",
+                "Meminta izin",
+                "Mengancam"
+              ],
+              "answer": 1,
+              "explanation": "Pola ini meminta persetujuan secara sopan sebelum tindakan."
+            },
+            {
+              "prompt": "'まだ大丈夫です' saat tawaran bantuan dapat berarti…",
+              "options": [
+                "Selalu setuju dibantu",
+                "Harus dipaksa",
+                "Belum perlu, sehingga perlu dihormati dan dikonfirmasi"
+              ],
+              "answer": 2,
+              "explanation": "Makna 大丈夫 bergantung konteks; jangan otomatis menganggap persetujuan."
+            }
+          ]
+        },
+        {
+          "id": "kaigo-36",
+          "title": "Membaca catatan dan menyelesaikan kasus terpadu",
+          "minutes": 20,
+          "objectives": [
+            "Mengambil waktu, fakta, dan tindak lanjut dari catatan Jepang",
+            "Menggabungkan pilihan pengguna, keselamatan, dan laporan"
+          ],
+          "sections": [
+            {
+              "title": "Pahami konsep",
+              "body": "Catatan kerja sering berisi waktu, kegiatan, bantuan, ucapan, serta tindak lanjut. Contoh buatan untuk latihan: '12:10 昼食を半分食べた。吐き気がすると話した。看護師に報告した。' Artinya: pukul 12.10 makan setengah makan siang; mengatakan mual; telah dilaporkan kepada perawat. Catatan ini tidak menyebut diagnosis atau memastikan semua tindak lanjut selesai.\n\nContoh kedua: '15:00 歩行中に疲れたと話した。椅子で休んだ。' Artinya: pukul 15.00 mengatakan lelah saat berjalan; beristirahat di kursi. Dalam serah terima, petugas masih perlu menjelaskan respons setelah istirahat dan arahan tim bila ada. Kata 報告した menunjukkan telah melapor, bukan otomatis memperoleh keputusan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Kasus terpadu: pengguna memilih makan sendiri, tetapi hari ini tampak lebih mengantuk dan mengalami kesulitan baru ketika menelan. Dukungan kemandirian tetap penting, namun keselamatan dan perubahan kondisi mengharuskan penghentian pemberian serta eskalasi sesuai prosedur. Jangan melanjutkan hanya karena pengguna sebelumnya mandiri.\n\nGunakan alur belajar yang sudah dipelajari: kenali kondisi dasar, dengarkan keluhan, cek rencana, minta persetujuan, siapkan bantuan, amati respons, dan laporkan perubahan. Setelah kebutuhan segera ditangani, dokumentasikan fakta serta tindak lanjut. Menuntaskan kursus menunjukkan materi telah dipelajari dan cek pemahaman dikerjakan; kompetensi praktik tetap dinilai melalui pelatihan dan supervisi kerja."
+            }
+          ],
+          "steps": [
+            "Cari waktu serta tindakan utama dalam catatan.",
+            "Pisahkan ucapan pengguna dari pengamatan petugas.",
+            "Identifikasi informasi atau tindak lanjut yang belum jelas.",
+            "Gunakan prinsip martabat, keselamatan, dan koordinasi pada kasus terpadu."
+          ],
+          "caution": "Cek pemahaman kursus bukan ujian resmi SSW dan tidak membuktikan kewenangan praktik klinis.",
+          "scenario": "Catatan menyebut '看護師に報告した', tetapi petugas berikutnya menganggap semua instruksi sudah dilaksanakan.",
+          "response": "Konfirmasikan respons perawat, instruksi yang diterima, dan tugas yang masih tertunda. Catatan 'sudah dilaporkan' tidak sama dengan 'tindak lanjut sudah selesai'.",
+          "vocabulary": [
+            {
+              "japanese": "半分",
+              "reading": "はんぶん",
+              "meaning": "setengah"
+            },
+            {
+              "japanese": "吐き気",
+              "reading": "はきけ",
+              "meaning": "mual"
+            },
+            {
+              "japanese": "歩行中",
+              "reading": "ほこうちゅう",
+              "meaning": "saat berjalan"
+            },
+            {
+              "japanese": "対応",
+              "reading": "たいおう",
+              "meaning": "respons atau penanganan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "昼食を半分食べました。",
+              "reading": "ちゅうしょくをはんぶんたべました。",
+              "meaning": "Makan setengah porsi makan siang."
+            },
+            {
+              "japanese": "吐き気がすると話しています。",
+              "reading": "はきけがするとはなしています。",
+              "meaning": "Beliau mengatakan mual."
+            },
+            {
+              "japanese": "看護師に報告しました。",
+              "reading": "かんごしにほうこくしました。",
+              "meaning": "Saya telah melaporkan kepada perawat."
+            },
+            {
+              "japanese": "その後の対応を確認します。",
+              "reading": "そのごのたいおうをかくにんします。",
+              "meaning": "Saya memastikan penanganan setelahnya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "看護師に報告した berarti…",
+              "options": [
+                "Telah dilaporkan kepada perawat",
+                "Diagnosis sudah pasti",
+                "Semua tindak lanjut pasti selesai"
+              ],
+              "answer": 0,
+              "explanation": "Kalimat ini menyatakan tindakan pelaporan; respons dan tindak lanjut tetap perlu diketahui."
+            },
+            {
+              "prompt": "Pengguna biasanya mandiri makan, tetapi kini ada kesulitan menelan baru. Petugas perlu…",
+              "options": [
+                "Tetap lanjut demi kemandirian",
+                "Hentikan pemberian dan eskalasi sesuai prosedur",
+                "Mengubah tekstur sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Kondisi aktual dan keselamatan didahulukan sambil tetap menghormati pengguna."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "MHLW — materi Kaigo dan revisi ke-2 (2026)",
+      "url": "https://www.mhlw.go.jp/stf/newpage_28131.html"
+    },
+    {
+      "title": "MHLW — teks resmi Kaigo bahasa Indonesia, revisi ke-2",
+      "url": "https://www.mhlw.go.jp/content/12000000/001472066.pdf"
+    },
+    {
+      "title": "MHLW — cakupan evaluasi keterampilan dan bahasa Kaigo",
+      "url": "https://www.mhlw.go.jp/stf/newpage_000117702.html"
+    },
+    {
+      "title": "WHO — pemahaman demensia",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/dementia"
+    },
+    {
+      "title": "CDC — kebersihan tangan petugas",
+      "url": "https://www.cdc.gov/clean-hands/hcp/clinical-safety/"
+    },
+    {
+      "title": "OSHA — penanganan pengguna dan alat transfer",
+      "url": "https://www.osha.gov/healthcare/safe-patient-handling"
+    },
+    {
+      "title": "NHS — kesulitan menelan",
+      "url": "https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/"
+    }
+  ]
+}

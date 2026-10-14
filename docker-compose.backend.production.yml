@@ -12,7 +12,6 @@ services:
       PORT: ${BACKEND_DOCKER_PORT:-18084}
       ASSET_DIRECTORY: /app/assets
       BRANDING_CONFIG_PATH: /app/data/branding.json
-      GAMIFICATION_DB_PATH: /app/data/gamification.db
     volumes:
       # The API reads this file itself so values containing special characters
       # aren't reinterpreted by Compose.

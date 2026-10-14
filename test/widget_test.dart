@@ -19,7 +19,8 @@ void main() {
         overrides: [
           sharedPreferencesProvider.overrideWithValue(preferences),
           authControllerProvider.overrideWith(
-              (ref) => AuthController.test(const AuthenticationState.guest()),),
+            (ref) => AuthController.test(const AuthenticationState.guest()),
+          ),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
         ],
         child:
@@ -92,10 +93,10 @@ void main() {
 
     expect(find.text('Latihan Ujian'), findsOneWidget);
     await tester.scrollUntilVisible(
-      find.text('Lifetime Access'),
+      find.text('Lifetime Access').first,
       150,
     );
-    expect(find.text('Lifetime Access'), findsOneWidget);
+    expect(find.text('Lifetime Access'), findsWidgets);
 
     await tester.tap(find.text('Profil'));
     await tester.pumpAndSettle();

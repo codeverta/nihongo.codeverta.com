@@ -16,15 +16,20 @@ Profil dan halaman **Achievements** memakai `GET /v1/me/gamification`, bukan ang
 
 ## Penyimpanan dan operasi
 
-Startup API wajib membuka database SQLite dari `GAMIFICATION_DB_PATH` (default `data/gamification.db`). Kegagalan membuka atau membaca database menghentikan startup; tidak ada fallback diam-diam ke data sementara. Container Compose menyimpan file ini di volume `/app/data`, bersama konfigurasi branding.
+Startup API wajib membuka MariaDB melalui konfigurasi `DB_*` pada
+`backend/.env` (port default 3306). Kegagalan membuka atau membaca database
+menghentikan startup. Setup dan pemindahan data ada di [panduan MariaDB](mariadb.md).
 
 XP, event idempotency, hak reward per lesson/ujian, hari aktif, timestamp unlock, serta best score/completion lesson disimpan atomik sebelum respons completion berhasil. Jika penulisan gagal, API mengembalikan 500 tanpa memberi hasil sukses atau reward parsial; request dapat dicoba lagi. Saat restart, progres lesson yang terverifikasi ikut dipulihkan, sehingga mengulang lesson tidak menghasilkan reward baru.
 
-Gunakan **satu proses API per database lokal**. Koneksi memakai exclusive locking untuk menolak proses kedua yang memakai file yang sama; file ini tidak ditujukan untuk NFS atau deployment beberapa replica. Pertahankan volume saat redeploy, jangan menjalankan `docker compose down -v` jika ingin menyimpan progres. Untuk backup, hentikan API dengan bersih lalu salin database; untuk restore, pulihkan file sebelum startup. Test suite memakai memory store atau database sementara, tanpa menyentuh database production.
+Gunakan **satu proses API per database**. Named writer lock MariaDB menolak
+proses API kedua untuk melindungi cache progress. Backup menggunakan
+`mariadb-dump`, bukan salinan file lokal. Test persistence memakai schema
+MariaDB sementara yang terpisah dari database aplikasi.
 
 Lingkup persistensi ini adalah gamifikasi dan progres lesson terverifikasi. Sesi login, attempt yang sedang berjalan, serta detail riwayat ujian masih mengikuti memory store aplikasi. Setelah restart, pengguna perlu masuk kembali; progres dan rewards tetap melekat pada ID akun yang sama. Ini belum merupakan migrasi seluruh backend ke penyimpanan permanen.
 
-Referensi implementasi database: [driver SQLite Go](https://pkg.go.dev/modernc.org/sqlite) dan [transaksi SQLite](https://www.sqlite.org/lang_transaction.html).
+Referensi implementasi database: [driver Go MySQL/MariaDB](https://github.com/go-sql-driver/mysql).
 
 ## Verifikasi
 

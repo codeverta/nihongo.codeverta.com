@@ -1,15 +1,18 @@
 package store
 
 import (
+	"context"
+	"crypto/sha256"
 	"database/sql"
 	"encoding/json"
+	"errors"
 	"fmt"
-	_ "modernc.org/sqlite"
+	"github.com/go-sql-driver/mysql"
+	"gorm.io/gorm/clause"
+	"log"
+	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
-	"os"
-	"path/filepath"
 	"sort"
-	"strings"
 	"time"
 )
 
@@ -52,61 +55,92 @@ func newGamificationState() *gamificationState {
 	return &gamificationState{Events: map[string]bool{}, Rewards: map[string]bool{}, Lessons: map[string]domain.LessonProgress{}, Subjects: map[string]string{}, Days: map[string]int{}, Unlocked: map[string]time.Time{}, Exams: map[string]bool{}}
 }
 
-// EnableGamificationPersistence must run before serving traffic. A deployment uses
-// one API process per database; SQLite is a local durable store, not shared NFS.
-func (s *MemoryStore) EnableGamificationPersistence(path string) error {
-	if strings.TrimSpace(path) == "" {
-		return fmt.Errorf("gamification database path is required")
+// EnableGamificationPersistence connects to MariaDB before serving traffic.
+// Cached account/progress state has one writer per database. The dedicated
+// connection owns an advisory lock and performs every account/progress write;
+// a lost connection fails writes instead of silently losing the lock.
+func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
+	cfg, err := mysql.ParseDSN(dsn)
+	if err != nil || cfg.DBName == "" {
+		return fmt.Errorf("a valid MariaDB DSN with a database name is required")
 	}
-	if err := os.MkdirAll(filepath.Dir(path), 0700); err != nil {
-		return err
+	orm, err := database.Open(dsn)
+	if err != nil {
+		return fmt.Errorf("open MariaDB: %w", err)
 	}
-	db, err := sql.Open("sqlite", path)
+	db, err := orm.DB()
 	if err != nil {
 		return err
 	}
-	db.SetMaxOpenConns(1)
+	db.SetMaxOpenConns(6)
+	db.SetMaxIdleConns(3)
+	db.SetConnMaxLifetime(3 * time.Minute)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
 	failed := true
+	var writer *sql.Conn
+	lockName := fmt.Sprintf("nihongo-master:%x", sha256.Sum256([]byte(cfg.DBName)))[:63]
 	defer func() {
 		if failed {
+			if writer != nil {
+				writer.ExecContext(context.Background(), "SELECT RELEASE_LOCK(?)", lockName)
+				writer.Close()
+			}
 			db.Close()
 		}
 	}()
-	for _, statement := range []string{"PRAGMA busy_timeout=5000", "PRAGMA locking_mode=EXCLUSIVE", "PRAGMA journal_mode=WAL", "PRAGMA synchronous=FULL", `CREATE TABLE IF NOT EXISTS gamification_users(user_id TEXT PRIMARY KEY, state BLOB NOT NULL)`} {
-		if _, err = db.Exec(statement); err != nil {
-			return fmt.Errorf("initialize gamification database: %w", err)
-		}
+	if err = db.PingContext(ctx); err != nil {
+		return fmt.Errorf("connect to MariaDB: %w", err)
 	}
-	rows, err := db.Query("SELECT user_id,state FROM gamification_users")
+	writer, err = db.Conn(ctx)
 	if err != nil {
 		return err
 	}
-	defer rows.Close()
+	var acquired int
+	if err = writer.QueryRowContext(ctx, "SELECT GET_LOCK(?,0)", lockName).Scan(&acquired); err != nil {
+		return err
+	}
+	if acquired != 1 {
+		return fmt.Errorf("another API process already owns this MariaDB database")
+	}
+	writerORM, err := database.Writer(writer)
+	if err != nil {
+		return err
+	}
+	schemaCtx, cancelSchema := context.WithTimeout(context.Background(), 2*time.Minute)
+	defer cancelSchema()
+	if err := database.EnsureUUIDSchema(orm.WithContext(schemaCtx)); err != nil {
+		return fmt.Errorf("migrate UUID schema: %w", err)
+	}
+	if err := database.Migrate(orm.WithContext(schemaCtx), &database.GamificationUser{}); err != nil {
+		return fmt.Errorf("initialize GORM gamification schema: %w", err)
+	}
+	var records []database.GamificationUser
+	if err := orm.Find(&records).Error; err != nil {
+		return err
+	}
 	loaded := map[string]*gamificationState{}
-	for rows.Next() {
-		var id string
-		var raw []byte
-		if err = rows.Scan(&id, &raw); err != nil {
-			return err
-		}
+	for _, record := range records {
 		state := newGamificationState()
-		if err = json.Unmarshal(raw, state); err != nil {
+		if err := json.Unmarshal(record.State, state); err != nil {
 			return fmt.Errorf("invalid gamification record: %w", err)
 		}
 		if state.XP < 0 || state.Events == nil || state.Rewards == nil || state.Lessons == nil || state.Subjects == nil || state.Days == nil || state.Unlocked == nil || state.Exams == nil {
-			return fmt.Errorf("invalid gamification record for user %q", id)
+			return fmt.Errorf("invalid gamification record for user %q", record.UserID)
 		}
-		loaded[id] = state
+		loaded[record.UserID] = state
 	}
-	if err = rows.Err(); err != nil {
-		return err
-	}
+
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	if s.gamificationDB != nil {
 		return fmt.Errorf("gamification persistence already enabled")
 	}
 	s.gamificationDB = db
+	s.ormDB = orm
+	s.ormWriter = writerORM
+	s.persistenceConn = writer
+	s.persistenceLockName = lockName
 	s.gamification = loaded
 	for id, state := range loaded {
 		s.progress[id] = map[string]domain.LessonProgress{}
@@ -119,14 +153,47 @@ func (s *MemoryStore) EnableGamificationPersistence(path string) error {
 		s.profiles[id] = profile
 	}
 	failed = false
+	s.persistenceStop = make(chan struct{})
+	go keepMariaDBWriterAlive(writer, s.persistenceStop)
 	return nil
 }
 
-func (s *MemoryStore) Close() error {
-	if s.gamificationDB != nil {
-		return s.gamificationDB.Close()
+func keepMariaDBWriterAlive(conn *sql.Conn, stop <-chan struct{}) {
+	ticker := time.NewTicker(time.Minute)
+	defer ticker.Stop()
+	for {
+		select {
+		case <-stop:
+			return
+		case <-ticker.C:
+			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+			err := conn.PingContext(ctx)
+			cancel()
+			if err != nil {
+				select {
+				case <-stop:
+					return
+				default:
+				}
+				log.Printf("MariaDB writer connection lost; restart the API: %v", err)
+				return
+			}
+		}
 	}
-	return nil
+}
+
+func (s *MemoryStore) Close() error {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if s.gamificationDB == nil || s.persistenceClosed {
+		return nil
+	}
+	s.persistenceClosed = true
+	close(s.persistenceStop)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	_, lockErr := s.persistenceConn.ExecContext(ctx, "SELECT RELEASE_LOCK(?)", s.persistenceLockName)
+	return errors.Join(lockErr, s.persistenceConn.Close(), s.gamificationDB.Close())
 }
 
 // Commit the full next state before changing the live cache or attempt result.
@@ -197,7 +264,7 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		if err != nil {
 			return err
 		}
-		if _, err = s.gamificationDB.Exec(`INSERT INTO gamification_users(user_id,state) VALUES(?,?) ON CONFLICT(user_id) DO UPDATE SET state=excluded.state`, userID, raw); err != nil {
+		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.GamificationUser{UserID: userID, State: raw}).Error; err != nil {
 			return fmt.Errorf("persist study reward: %w", err)
 		}
 	}

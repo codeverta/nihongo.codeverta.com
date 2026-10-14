@@ -237,6 +237,7 @@ class AuthRepository {
     await _dio.delete<void>('/me/account', data: {'confirmation': 'DELETE'});
     if (userId != null) {
       await _preferences.remove('dictionary_library_v1_$userId');
+      await _preferences.remove('ssw_kaigo_completed_v1_$userId');
     }
     await clearSession();
   }
