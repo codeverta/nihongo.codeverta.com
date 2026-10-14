@@ -1,0 +1,126 @@
+name: Nihongo API CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**/*.go'
+      - 'backend/go.mod'
+      - 'backend/go.sum'
+  pull_request:
+    paths:
+      - 'backend/**/*.go'
+      - 'backend/go.mod'
+      - 'backend/go.sum'
+      - '.github/workflows/deploy-api.yml'
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Deploy the latest main build, or roll back to the previous release
+        type: choice
+        options: [deploy, rollback]
+        default: deploy
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nihongo-api-production
+  cancel-in-progress: false
+
+jobs:
+  verify-build-deploy:
+    if: github.event_name != 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    services:
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: ci-root-password
+          MARIADB_ROOT_HOST: '%'
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=12
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: backend/go.mod
+          cache-dependency-path: backend/go.sum
+
+      - name: Test with temporary CI MariaDB
+        working-directory: backend
+        env:
+          MARIADB_TEST_DSN: root:ci-root-password@tcp(127.0.0.1:3306)/
+        run: go test ./...
+
+      - name: Vet API
+        working-directory: backend
+        run: go vet ./...
+
+      - name: Build Linux API binary
+        working-directory: backend
+        run: CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags='-s -w' -o "$RUNNER_TEMP/nihongo-api" ./cmd/api
+
+      - name: Configure restricted SSH access
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          [[ "$DEPLOY_HOST" =~ ^[A-Za-z0-9.-]+$ ]]
+          [[ "$DEPLOY_USER" =~ ^[A-Za-z0-9._-]+$ ]]
+          [[ "$DEPLOY_PORT" =~ ^[0-9]+$ ]]
+          test -n "$DEPLOY_KNOWN_HOSTS"
+          test -n "$DEPLOY_SSH_KEY"
+          install -d -m 700 "$RUNNER_TEMP/ssh"
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$RUNNER_TEMP/ssh/id_ed25519"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$RUNNER_TEMP/ssh/known_hosts"
+          chmod 600 "$RUNNER_TEMP/ssh/id_ed25519" "$RUNNER_TEMP/ssh/known_hosts"
+
+      - name: Deploy API
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.operation == 'deploy')
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        run: |
+          set -euo pipefail
+          ssh -T \
+            -i "$RUNNER_TEMP/ssh/id_ed25519" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$RUNNER_TEMP/ssh/known_hosts" \
+            -p "$DEPLOY_PORT" \
+            "$DEPLOY_USER@$DEPLOY_HOST" \
+            "deploy nihongo $GITHUB_SHA" < "$RUNNER_TEMP/nihongo-api"
+
+      - name: Roll back to previous healthy release
+        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'rollback'
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        run: |
+          set -euo pipefail
+          ssh -T \
+            -i "$RUNNER_TEMP/ssh/id_ed25519" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$RUNNER_TEMP/ssh/known_hosts" \
+            -p "$DEPLOY_PORT" \
+            "$DEPLOY_USER@$DEPLOY_HOST" \
+            'rollback nihongo'

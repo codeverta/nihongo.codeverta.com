@@ -1,0 +1,255 @@
+#!/usr/bin/env bash
+# Forced SSH command for the narrowly scoped GitHub Actions deployment key.
+# It accepts only API release deployment or rollback requests for these two apps.
+set -Eeuo pipefail
+
+BASE=/home/rabihutomo/apps/codeverta-api
+BIN_DIR="$BASE/bin"
+RELEASE_DIR="$BIN_DIR/releases"
+PREVIOUS_DIR="$BIN_DIR/previous"
+ORIGINAL_COMMAND=${SSH_ORIGINAL_COMMAND:-}
+
+if [[ "$ORIGINAL_COMMAND" =~ ^deploy\ (nihongo|fitapp)\ ([0-9a-f]{40})$ ]]; then
+  OPERATION=deploy
+  APP=${BASH_REMATCH[1]}
+  REVISION=${BASH_REMATCH[2]}
+elif [[ "$ORIGINAL_COMMAND" =~ ^rollback\ (nihongo|fitapp)$ ]]; then
+  OPERATION=rollback
+  APP=${BASH_REMATCH[1]}
+  REVISION=
+else
+  echo "Rejected deployment request." >&2
+  exit 64
+fi
+
+case "$APP" in
+  nihongo)
+    ACTIVE="$BIN_DIR/nihongo-api"
+    SERVICE=nihongo-api.service
+    PORT=18100
+    HEALTH_KIND=nihongo
+    ;;
+  fitapp)
+    ACTIVE="$BIN_DIR/fitapp-api"
+    SERVICE=fitapp-api.service
+    PORT=18101
+    HEALTH_KIND=fitapp
+    ;;
+esac
+
+RELEASES="$RELEASE_DIR/${APP}-api-"
+PREVIOUS="$PREVIOUS_DIR/${APP}-api"
+mkdir -p "$RELEASE_DIR" "$PREVIOUS_DIR"
+
+health_check() {
+  local response
+  for _ in {1..15}; do
+    if response=$(curl -fsS --max-time 4 "http://127.0.0.1:${PORT}/healthz" 2>/dev/null); then
+      case "$HEALTH_KIND" in
+        nihongo)
+          if [[ "$response" =~ \"status\"[[:space:]]*:[[:space:]]*\"ok\" ]]; then return 0; fi
+          ;;
+        fitapp)
+          if [[ "$response" =~ \"status\"[[:space:]]*:[[:space:]]*\"ok\" ]] && [[ "$response" =~ \"database\"[[:space:]]*:[[:space:]]*\"ok\" ]]; then return 0; fi
+          ;;
+      esac
+    fi
+    sleep 2
+  done
+  return 1
+}
+
+switch_active() {
+  local target=$1
+  local temporary="$BIN_DIR/.${APP}-api.next.$$"
+  test -x "$target"
+  test ! -e "$temporary"
+  ln -s "$target" "$temporary"
+  mv -Tf "$temporary" "$ACTIVE"
+}
+
+set_previous() {
+  local target=$1
+  local temporary="$PREVIOUS.next.$$"
+  test -x "$target"
+  test ! -e "$temporary"
+  ln -s "$target" "$temporary"
+  mv -Tf "$temporary" "$PREVIOUS"
+}
+
+ensure_release_snapshot() {
+  if [[ -L "$ACTIVE" ]]; then
+    local resolved
+    resolved=$(readlink -f "$ACTIVE")
+    [[ "$resolved" == "$RELEASE_DIR/"* ]]
+    test -x "$resolved"
+    printf '%s\n' "$resolved"
+    return
+  fi
+
+  test -f "$ACTIVE" && test -x "$ACTIVE"
+  local snapshot="$RELEASE_DIR/${APP}-api-before-ci-$(date -u +%Y%m%dT%H%M%SZ)"
+  test ! -e "$snapshot"
+  cp -p "$ACTIVE" "$snapshot"
+  printf '%s\n' "$snapshot"
+}
+
+restart_and_check() {
+  systemctl --user restart "$SERVICE" || return 1
+  health_check
+}
+
+backup_database() {
+  local app=$1
+  local revision=$2
+  local env_file
+  case "$app" in
+    nihongo) env_file="$BASE/nihongo/backend/.env" ;;
+    fitapp) env_file="$BASE/fitapp/api/.env" ;;
+  esac
+  test -r "$env_file"
+  command -v mariadb-dump >/dev/null
+  command -v python3 >/dev/null
+  command -v gzip >/dev/null
+
+  local backup_dir="$BASE/backups"
+  mkdir -p "$backup_dir"
+  local defaults_file dump_file backup_file timestamp
+  defaults_file=$(mktemp "$backup_dir/.${app}-client.XXXXXX")
+  dump_file=$(mktemp "$backup_dir/.${app}-before-${revision}.XXXXXX")
+  chmod 600 "$defaults_file" "$dump_file"
+
+  if ! python3 - "$app" "$env_file" "$defaults_file" <<'PY'
+import os
+import re
+import shlex
+import sys
+
+app, env_path, output_path = sys.argv[1:]
+values = {}
+with open(env_path, encoding="utf-8") as source:
+    for raw in source:
+        line = raw.strip()
+        if line.startswith("export "):
+            line = line[7:].lstrip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        if app == "nihongo" and key not in {"DB_HOST", "DB_PORT", "DB_NAME", "DB_USER", "DB_PASSWORD"}:
+            continue
+        if app == "fitapp" and key != "DATABASE_DSN":
+            continue
+        value = value.strip()
+        parsed = shlex.split(value, comments=False, posix=True) if value else []
+        values[key] = parsed[0] if parsed else ""
+
+if app == "nihongo":
+    host = values.get("DB_HOST", "")
+    port = values.get("DB_PORT", "")
+    database = values.get("DB_NAME", "")
+    user = values.get("DB_USER", "")
+    password = values.get("DB_PASSWORD", "")
+elif app == "fitapp":
+    match = re.fullmatch(r"([^:]+):(.*)@tcp\(([^)]+)\)/([^?]+)(?:\?.*)?", values.get("DATABASE_DSN", ""))
+    if not match:
+        raise SystemExit("Fitapp DATABASE_DSN is not in the expected TCP DSN format.")
+    user, password, address, database = match.groups()
+    if ":" not in address:
+        raise SystemExit("Fitapp DATABASE_DSN is missing its TCP port.")
+    host, port = address.rsplit(":", 1)
+else:
+    raise SystemExit("Unknown application.")
+
+expected_database = app
+if database != expected_database:
+    raise SystemExit("Database name did not match the application being deployed.")
+if host not in {"127.0.0.1", "localhost"} or port != "3306":
+    raise SystemExit("Database endpoint is not the local MariaDB instance.")
+if not user or any("\n" in item or "\r" in item for item in (user, password)):
+    raise SystemExit("Database credentials are missing or malformed.")
+
+def quote_option(value):
+    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+content = "[client]\nhost={}\nport={}\nuser={}\npassword={}\n".format(
+    quote_option(host), quote_option(port), quote_option(user), quote_option(password)
+)
+fd = os.open(output_path, os.O_WRONLY | os.O_TRUNC, 0o600)
+with os.fdopen(fd, "w", encoding="utf-8") as target:
+    target.write(content)
+PY
+  then
+    rm -f -- "$defaults_file" "$dump_file"
+    return 1
+  fi
+
+  timestamp=$(date -u +%Y%m%dT%H%M%SZ)
+  backup_file="$backup_dir/${app}-before-${revision}-${timestamp}.sql.gz"
+  if ! mariadb-dump --defaults-extra-file="$defaults_file" --single-transaction --skip-lock-tables --quick --hex-blob "$app" | gzip -c > "$dump_file"; then
+    rm -f -- "$defaults_file" "$dump_file"
+    return 1
+  fi
+  if ! gzip -t "$dump_file" || [[ ! -s "$dump_file" ]] || [[ -e "$backup_file" ]]; then
+    rm -f -- "$defaults_file" "$dump_file"
+    return 1
+  fi
+  mv "$dump_file" "$backup_file"
+  rm -f -- "$defaults_file"
+  echo "Database backup created at $backup_file."
+}
+
+if [[ "$OPERATION" == deploy ]]; then
+  DESTINATION="${RELEASES}${REVISION}"
+  UPLOAD=$(mktemp "$RELEASE_DIR/.${APP}-api-upload-${REVISION}.XXXXXX")
+  trap 'rm -f -- "$UPLOAD"' EXIT
+  cat > "$UPLOAD"
+  test -s "$UPLOAD"
+  [[ "$(od -An -tx1 -N4 "$UPLOAD" | tr -d ' \n')" == 7f454c46 ]]
+  chmod 755 "$UPLOAD"
+
+  if [[ -e "$DESTINATION" ]]; then
+    cmp -s "$UPLOAD" "$DESTINATION" || { echo "Release already exists with different contents." >&2; exit 65; }
+  else
+    mv "$UPLOAD" "$DESTINATION"
+  fi
+  rm -f -- "$UPLOAD"
+  trap - EXIT
+
+  OLD=$(ensure_release_snapshot)
+  if [[ "$OLD" == "$DESTINATION" ]]; then
+    health_check
+    echo "$APP API already runs release ${REVISION}."
+    exit
+  fi
+
+  backup_database "$APP" "$REVISION"
+  switch_active "$DESTINATION"
+  if ! restart_and_check; then
+    switch_active "$OLD"
+    restart_and_check || echo "Previous $APP API did not become healthy after automatic rollback." >&2
+    echo "Deployment failed; the previous binary was restored." >&2
+    exit 1
+  fi
+  set_previous "$OLD"
+  echo "$APP API release ${REVISION} is healthy."
+  exit
+fi
+
+test -L "$PREVIOUS"
+CURRENT=$(ensure_release_snapshot)
+TARGET=$(readlink -f "$PREVIOUS")
+[[ "$TARGET" == "$RELEASE_DIR/"* ]]
+test -x "$TARGET"
+test "$TARGET" != "$CURRENT"
+
+backup_database "$APP" "rollback-$(date -u +%Y%m%dT%H%M%SZ)"
+switch_active "$TARGET"
+if ! restart_and_check; then
+  switch_active "$CURRENT"
+  restart_and_check || echo "Current $APP API did not become healthy after rollback recovery." >&2
+  echo "Rollback failed; the previously active binary was restored." >&2
+  exit 1
+fi
+set_previous "$CURRENT"
+echo "$APP API rollback is healthy."
