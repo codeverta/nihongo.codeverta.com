@@ -124,44 +124,25 @@ https://api.domain-anda.com/v1
 ## 6. Buat upload key
 
 Gunakan **Play App Signing**. Google menyimpan app signing key, sedangkan tim
-menyimpan upload key untuk menandatangani AAB yang diunggah.
-
-Jalankan di PowerShell. Simpan file di lokasi aman di luar repository:
-
-```powershell
-keytool -genkeypair -v `
-  -keystore C:\secure\nihongo-master-upload.jks `
-  -keyalg RSA `
-  -keysize 2048 `
-  -validity 10000 `
-  -alias upload
-```
-
-Gunakan password kuat dan simpan di password manager organisasi. Backup
-keystore secara terenkripsi. Jangan mengirim keystore atau password melalui
-chat/email dan jangan commit ke Git.
-
-Lihat fingerprint upload key:
+menyimpan upload key untuk menandatangani AAB yang diunggah. Buat upload key
+sekali dari PowerShell pada folder utama repository:
 
 ```powershell
-keytool -list -v `
-  -keystore C:\secure\nihongo-master-upload.jks `
-  -alias upload
+.\scripts\create_android_upload_key.ps1
 ```
+
+Script membuat JKS, password acak, alias `nihongo-master-upload`, fingerprint,
+dan konfigurasi lokal `android/key.properties`. File signing tersimpan di
+`android/.signing-secrets/`; Git sudah mengabaikan folder ini. Simpan backup JKS
+dan password di password manager atau penyimpanan terenkripsi. Jika keystore
+hilang setelah upload pertama, ikuti prosedur reset upload key di Play Console;
+jangan membuat key baru untuk menandatangani update biasa.
 
 ## 7. Konfigurasi signing Flutter
 
-Konfigurasi release Gradle sudah membaca upload key dari environment atau file
-lokal `android/key.properties`. Buat file lokal seperti ini:
-
-```properties
-storePassword=PASSWORD_KEYSTORE
-keyPassword=PASSWORD_KEY
-keyAlias=upload
-storeFile=C:/secure/nihongo-master-upload.jks
-```
-
-File `key.properties` dan semua file `.jks` sudah diabaikan oleh `.gitignore`.
+Konfigurasi release Gradle membaca upload key dari environment atau file
+`android/key.properties` yang dibuat oleh script di bagian sebelumnya. File ini
+dan folder `android/.signing-secrets/` diabaikan oleh `.gitignore`.
 Release lokal tanpa signing key memakai debug key hanya untuk preview; jangan
 unggah hasil itu ke Play Console.
 
@@ -173,6 +154,11 @@ Untuk build GitHub, jangan commit keystore atau password. Di repository buka
 - `ANDROID_KEY_ALIAS`
 - `ANDROID_KEY_PASSWORD`
 
+Salin nilai masing-masing dari file bernama sama di
+`android/.signing-secrets/`, atau buka `github-actions-secrets.txt` untuk
+melihat seluruh pasangan nama dan nilai. Tambahkan nilainya di GitHub satu per
+satu; jangan commit atau mengirim file tersebut.
+
 Tambahkan Actions variables berikut:
 
 - `API_BASE_URL`: URL backend production yang diawali `https://`.
@@ -180,15 +166,9 @@ Tambahkan Actions variables berikut:
   `.apps.googleusercontent.com`.
 
 Workflow menolak build bila salah satu variable/secret ini belum diisi. Client
-ID tersebut harus sama dengan `GOOGLE_CLIENT_ID` di backend production. Untuk
-mengubah keystore ke Base64 di Windows PowerShell tanpa menampilkan nilainya ke
-terminal:
-
-```powershell
-[Convert]::ToBase64String([IO.File]::ReadAllBytes('C:\secure\nihongo-master-upload.jks')) | Set-Clipboard
-```
-
-Paste hasil clipboard langsung ke secret `ANDROID_KEYSTORE_BASE64` di GitHub.
+ID tersebut harus sama dengan `GOOGLE_CLIENT_ID` di backend production. Secret
+`ANDROID_KEYSTORE_BASE64` berisi teks Base64, bukan file JKS; script di bagian 6
+sudah membuat teksnya di `android/.signing-secrets/ANDROID_KEYSTORE_BASE64.txt`.
 
 ## 8. Versioning
 
@@ -200,7 +180,8 @@ version: 1.0.0+1
 
 - `1.0.0` menjadi `versionName` yang terlihat pengguna.
 - `1` menjadi `versionCode` internal Play Store.
-- Setiap AAB update wajib memiliki `versionCode` lebih tinggi.
+- Setiap AAB update wajib memiliki `versionCode` lebih tinggi. Workflow release
+  GitHub bisa menaikkan versi dan build number ini otomatis.
 
 Contoh update berikutnya:
 
@@ -269,23 +250,26 @@ Sebelum upload, pastikan:
 
 ## Build dan download dari GitHub
 
-Workflow ada di `.github/workflows/android-release.yml`. Workflow membuat AAB
-untuk Play Console dan APK untuk uji install, lalu memuat keduanya ke **GitHub
-Release** saat tag versi `v*` dibuat dan didorong. Jalankan manual dari tab
-**Actions** untuk mendapat workflow artifact selama 30 hari.
+Workflow `.github/workflows/android-release.yml` menyediakan mode build biasa
+dan release otomatis. Setelah workflow tersedia pada default branch serta
+secrets/variables bagian 7 terisi:
 
-Setelah secrets dan variables pada bagian 7 tersimpan:
+1. Buka repository > **Actions > Android release build > Run workflow**.
+2. Pilih branch default dan pilih jenis proses:
+   - `build`: build AAB/APK tanpa menaikkan versi atau membuat Release.
+   - `patch`: naikkan patch, misalnya `1.0.0` menjadi `1.0.1`.
+   - `minor`: naikkan minor dan reset patch, misalnya `1.0.1` menjadi `1.1.0`.
+   - `major`: naikkan major dan reset minor/patch, misalnya `1.1.0` menjadi `2.0.0`.
+3. Klik **Run workflow**. Untuk patch/minor/major, workflow menaikkan build
+   number, memperbarui `pubspec.yaml`, mengirim commit versi dan tag `vX.Y.Z`,
+   lalu membuat GitHub Release dengan AAB dan APK terlampir.
+4. Buka **Releases**, unduh `nihongo-master.aab`, lalu unggah ke Play Console.
 
-1. Commit dan push konfigurasi build ke GitHub.
-2. Buat tag versi baru seperti `v1.0.0` melalui **Releases > Draft a new
-   release** atau push tag ke repository. Jangan pakai ulang tag yang sudah
-   pernah dirilis.
-3. Buka **Actions** dan tunggu **Android release build** selesai.
-4. Unduh `nihongo-master.aab` dari bagian Assets di GitHub Release, lalu upload
-   AAB tersebut ke Play Console. `nihongo-master.apk` hanya untuk install/test.
-
-Setiap update wajib menaikkan `versionCode` pada `pubspec.yaml` sebelum tag
-baru dibuat. Keystore tidak dimasukkan ke artifact atau repository.
+Pilihan `build` menghasilkan artifact yang tersedia di halaman run selama 30
+hari. Tag versi `v*` yang dibuat manual tetap menjalankan workflow; pastikan
+versinya sama dengan `pubspec.yaml`. Workflow otomatis meminta build iOS pada
+tag release baru jika sertifikat, provisioning profile, dan variable iOS sudah
+disiapkan. Keystore tidak dimasukkan ke artifact atau repository.
 
 ## 11. Buat aplikasi di Play Console
 
@@ -471,9 +455,10 @@ aturan tersebut.
 
 ## 18. Membuat update berikutnya
 
-1. Naikkan `version`/`versionCode` di `pubspec.yaml`.
-2. Jalankan test dan build AAB dengan production dart-defines yang sama.
-3. Upload ke Internal atau Closed testing terlebih dahulu.
+1. Jalankan workflow Android release dan pilih `patch`, `minor`, atau `major`.
+2. Workflow menaikkan `version`/`versionCode`, membuat tag, dan melampirkan
+   AAB baru ke GitHub Release.
+3. Upload AAB ke Internal atau Closed testing terlebih dahulu.
 4. Pastikan migration backend/database backward-compatible dengan versi app
    lama selama rollout.
 5. Promote release yang sama ke Production jika memungkinkan.
