@@ -38,6 +38,7 @@ Profil menampilkan tautan privasi, ketentuan, refund, penghapusan data, dan bant
 - Jangan menjanjikan purge backup otomatis atau batas retensi yang belum diterapkan. Deployment membuat backup dan mempertahankan rilis lama. Restore database membutuhkan penerapan ulang permintaan penghapusan yang telah diproses.
 - Perubahan penggunaan data/SDK membutuhkan pembaruan kebijakan, tanggal berlaku, serta jawaban Data safety. Template publik tidak boleh berisi secrets atau detail reviewer.
 - Pembayaran diproses store; jangan membuat aturan “refund selalu ditolak” atau menjamin refund. Halaman mengarahkan ke proses Google/Apple dan mempertahankan hak wajib konsumen.
+- Respons legal mengirim `Cache-Control: no-transform` agar Cloudflare tidak mengganti alamat email publik dengan obfuscation yang membutuhkan JavaScript. Header ini hanya berlaku pada halaman legal.
 - Halaman tersedia sebagai HTML publik di HTTPS origin yang sama. Cloudflare Access, geofencing, atau challenge login tidak boleh diterapkan pada URL legal.
 
 ## Sumber resmi

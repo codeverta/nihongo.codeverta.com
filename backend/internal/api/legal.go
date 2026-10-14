@@ -32,7 +32,7 @@ func (s *Server) registerLegal(mux *http.ServeMux) {
 			w.Header().Set("X-Content-Type-Options", "nosniff")
 			w.Header().Set("Referrer-Policy", "no-referrer")
 			w.Header().Set("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'")
-			w.Header().Set("Cache-Control", "public, max-age=300")
+			w.Header().Set("Cache-Control", "public, max-age=300, no-transform")
 			w.Write(body)
 		}
 		mux.HandleFunc("GET "+page.path, handler)

@@ -21,6 +21,9 @@ func TestPublicLegalPages(t *testing.T) {
 					t.Errorf("missing %q", required)
 				}
 			}
+			if !strings.Contains(response.Header().Get("Cache-Control"), "no-transform") {
+				t.Fatal("public contact must not be obfuscated by the CDN")
+			}
 			if response.Header().Get("Set-Cookie") != "" || response.Header().Get("Content-Security-Policy") == "" {
 				t.Fatal("unexpected cookie or missing CSP")
 			}
