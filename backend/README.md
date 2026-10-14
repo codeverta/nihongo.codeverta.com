@@ -140,3 +140,7 @@ go test ./...
 ```
 
 Simulasi ujian N4: [struktur, timer, dan penilaian](../docs/jlpt-n4-simulation.md).
+
+## Google Play: halaman kebijakan publik
+
+Backend menyediakan HTML publik `/privacy-policy`, `/terms-of-service`, `/refund-policy`, `/delete-account`, `/support`, `/data-safety`, dan indeks `/legal`. Semua template dibundel dalam binary; tidak perlu server frontend tambahan. Kontak pengguna adalah `contact@codeverta.com`. Panduan URL dan pengisian Console ada di [Google Play setup](../docs/google-play-setup.md).

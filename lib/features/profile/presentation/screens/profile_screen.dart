@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
@@ -13,7 +14,14 @@ class ProfileScreen extends ConsumerWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final user = ref.watch(authControllerProvider).user;
     if (user == null) {
-      return const Center(child: Text('Masuk untuk melihat profil.'));
+      return const Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [Text('Masuk untuk melihat profil.'), LegalLinks()],
+          ),
+        ),
+      );
     }
     final gamification = ref.watch(gamificationProvider);
 
@@ -96,6 +104,8 @@ class ProfileScreen extends ConsumerWidget {
                   onLogout: () => _confirmLogout(context, ref),
                   onDelete: () => _confirmDelete(context, ref),
                 ),
+                const SizedBox(height: 16),
+                const LegalLinks(),
               ],
             ),
           ),
@@ -368,7 +378,7 @@ class _ProfileMenu extends StatelessWidget {
           _ProfileMenuTile(
             icon: Icons.help_outline_rounded,
             title: 'Bantuan',
-            onTap: () {},
+            onTap: () => openLegalPage(context, '/support'),
           ),
         ],
       ),
