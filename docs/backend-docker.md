@@ -25,6 +25,12 @@ docker compose -f docker-compose.backend.production.yml ps
 curl http://127.0.0.1:18084/healthz
 ```
 
+Untuk akun reviewer Google Play, isi `PLAY_REVIEW_EMAIL` dan
+`PLAY_REVIEW_PASSWORD` pada `backend/.env` di server sebelum menjalankan ulang
+Compose. Gunakan alamat khusus yang hanya dipakai untuk review dan password
+acak yang kuat. Backend memberi akun tersebut akses premium saat startup tanpa
+membuat transaksi pembelian.
+
 Log dapat dilihat dengan:
 
 ```sh

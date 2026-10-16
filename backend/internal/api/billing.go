@@ -62,8 +62,8 @@ func (s *Server) verifyPurchase(w http.ResponseWriter, r *http.Request) {
 	writeData(w, status, map[string]any{"state": p.State, "entitlement": s.store.Profile(userID(r)).Entitlement})
 }
 func (s *Server) personalBillingAccount(w http.ResponseWriter, r *http.Request) bool {
-	if s.store.IsDemoUser(userID(r)) {
-		writeError(w, 403, "personal_account_required", "Masuk dengan akun Google pribadi untuk membeli atau restore. Akun demo digunakan bersama.")
+	if s.store.IsDemoUser(userID(r)) || s.store.IsPlayReviewUser(userID(r)) {
+		writeError(w, 403, "personal_account_required", "Masuk dengan akun Google pribadi untuk membeli atau restore. Akun demo/reviewer digunakan bersama.")
 		return false
 	}
 	return true

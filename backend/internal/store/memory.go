@@ -20,6 +20,7 @@ var (
 	ErrInvalid            = errors.New("invalid input")
 	ErrPremium            = errors.New("premium entitlement required")
 	ErrInvalidCredentials = errors.New("invalid email or password")
+	ErrReviewEmailLogin   = errors.New("play review account must use email and password")
 	ErrSessionNotFound    = errors.New("session not found")
 )
 
@@ -54,6 +55,8 @@ type MemoryStore struct {
 	plans               []domain.Plan
 	attemptID           atomic.Uint64
 	accounts            map[string]account
+	playReviewEmail     string
+	playReviewUserID    string
 	sessions            map[string]string
 	vocabulary          []domain.VocabularyLevelContent
 	vocabAttempts       map[string]*vocabularyAttemptState

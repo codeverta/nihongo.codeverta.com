@@ -140,6 +140,10 @@ func (s *Server) googleLogin(w http.ResponseWriter, r *http.Request) {
 	}
 	profile, err := s.store.AuthenticateGoogle(identity)
 	if err != nil {
+		if errors.Is(err, store.ErrReviewEmailLogin) {
+			writeError(w, http.StatusForbidden, "email_login_required", "Akun reviewer harus masuk menggunakan email dan password.")
+			return
+		}
 		writeStoreError(w, err)
 		return
 	}

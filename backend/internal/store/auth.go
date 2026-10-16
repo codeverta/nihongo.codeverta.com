@@ -4,9 +4,11 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
-	"github.com/google/uuid"
+	"fmt"
+	"net/mail"
 	"strings"
 
+	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm/clause"
 	"nihongo-master-backend/internal/database"
@@ -27,6 +29,9 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 	email := strings.ToLower(strings.TrimSpace(identity.Email))
 	s.mu.Lock()
 	defer s.mu.Unlock()
+	if email == s.playReviewEmail {
+		return domain.Profile{}, ErrReviewEmailLogin
+	}
 	existingAccount, ok := s.accounts[email]
 	if !ok {
 		id := uuid.NewString()
@@ -59,6 +64,51 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 	}
 	s.accounts[email] = existingAccount
 	return s.ensureProfileForAccountLocked(existingAccount), nil
+}
+
+// ConfigurePlayReviewAccount adds an email/password login for Play's app review.
+// Its credentials are supplied by the backend environment and its premium access
+// exists only in this API process. Never store the password in the database.
+func (s *MemoryStore) ConfigurePlayReviewAccount(email, password string) error {
+	email = strings.ToLower(strings.TrimSpace(email))
+	if email == "" && password == "" {
+		return nil
+	}
+	if email == "" || password == "" {
+		return fmt.Errorf("PLAY_REVIEW_EMAIL and PLAY_REVIEW_PASSWORD must both be set")
+	}
+	parsed, err := mail.ParseAddress(email)
+	if err != nil || parsed.Address != email {
+		return fmt.Errorf("PLAY_REVIEW_EMAIL must be a valid email address")
+	}
+	if email == "demo@nihongomaster.app" {
+		return fmt.Errorf("PLAY_REVIEW_EMAIL must be different from the development demo account")
+	}
+	if strings.TrimSpace(password) != password || len([]byte(password)) > 72 {
+		return fmt.Errorf("PLAY_REVIEW_PASSWORD must not have surrounding spaces and must be at most 72 bytes")
+	}
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	if err != nil {
+		return fmt.Errorf("hash Play review password: %w", err)
+	}
+	userID := uuid.NewSHA1(uuid.NameSpaceURL, []byte("nihongo-master:play-review:"+email)).String()
+	configuredAccount := account{
+		ID:           userID,
+		Email:        email,
+		DisplayName:  "Google Play Reviewer",
+		PasswordHash: hash,
+	}
+
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if existing, ok := s.accounts[email]; ok && existing.ID != userID {
+		return fmt.Errorf("PLAY_REVIEW_EMAIL is already assigned to another account")
+	}
+	s.accounts[email] = configuredAccount
+	s.profiles[userID] = profileForAccount(configuredAccount)
+	s.playReviewEmail = email
+	s.playReviewUserID = userID
+	return nil
 }
 
 func (s *MemoryStore) CreateSession(userID string) (string, error) {
@@ -127,3 +177,9 @@ func profileForAccount(account account) domain.Profile {
 }
 
 func (s *MemoryStore) IsDemoUser(id string) bool { return id == database.DemoUserID }
+
+func (s *MemoryStore) IsPlayReviewUser(id string) bool {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return id != "" && id == s.playReviewUserID
+}

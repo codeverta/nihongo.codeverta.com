@@ -337,16 +337,34 @@ Logout atau menonaktifkan akun tidak dihitung sebagai penghapusan.
 
 ### App access
 
-Pilih bahwa sebagian fitur dibatasi login dan berikan akun review yang aktif:
+Pilih bahwa sebagian fitur dibatasi login. Untuk memberi akses reviewer ke
+seluruh materi premium tanpa pembelian, siapkan akun reviewer khusus di
+`backend/.env` pada server production:
 
 ```text
-Email: demo@nihongomaster.app
-Password: password khusus review yang stabil
-Langkah: buka Profil/Belajar/Ujian untuk mengakses fitur login.
+PLAY_REVIEW_EMAIL=alamat-email-review-yang-kamu-tentukan
+PLAY_REVIEW_PASSWORD=password-kuat-yang-kamu-buat
 ```
 
-Jangan menggunakan password production pribadi. Akun review harus tersedia
-selama seluruh proses review dan tidak memerlukan OTP/manual approval.
+Jangan memakai akun demo development atau akun pribadi. Backend membuat akun
+ini setiap kali API dimulai, memberinya tier premium, dan tidak menyimpan
+password mentah maupun akun reviewer di database. Akun harus dikonfigurasi dan
+login-nya diverifikasi pada backend production sebelum kredensial dimasukkan ke
+Play Console. Perubahan konfigurasi memerlukan restart/rebuild backend.
+
+Isi detail Play Console dalam bahasa Inggris:
+
+```text
+Name: Nihongo Master review account
+Username: nilai PLAY_REVIEW_EMAIL
+Password: nilai PLAY_REVIEW_PASSWORD
+Any other information required to access your app:
+Sign in with the email and password above. No one-time password, two-step verification, or purchase is required. This account has full access to premium content and features. After signing in, open the Profile, Learn, or Exams tabs to review restricted areas.
+```
+
+Akun reviewer harus tetap tersedia selama proses review. Akun ini khusus login
+email/password, tidak dapat memakai Google Sign-In, dan tidak dapat membeli atau
+restore pembelian. Jangan commit kredensial ke repository.
 
 ### Deklarasi lain
 

@@ -82,6 +82,9 @@ func (s *MemoryStore) BillingAccountToken(user string) (string, error) {
 }
 
 func (s *MemoryStore) entitlementLocked(user string) domain.Entitlement {
+	if user != "" && user == s.playReviewUserID {
+		return domain.Entitlement{Tier: domain.TierPremium}
+	}
 	for _, p := range s.purchases {
 		if p.UserID == user && p.State == "purchased" && time.Since(p.CheckedAt) < 15*time.Minute {
 			return domain.Entitlement{Tier: domain.TierPremium, IsLifetime: true}

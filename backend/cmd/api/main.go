@@ -39,6 +39,9 @@ func main() {
 	if err := memoryStore.EnableBillingPersistence(); err != nil {
 		log.Fatal(err)
 	}
+	if err := memoryStore.ConfigurePlayReviewAccount(os.Getenv("PLAY_REVIEW_EMAIL"), os.Getenv("PLAY_REVIEW_PASSWORD")); err != nil {
+		log.Fatalf("configure Google Play review account: %v", err)
+	}
 	verifier, err := billing.NewStoreVerifier(context.Background())
 	if err != nil {
 		log.Fatal(err)
