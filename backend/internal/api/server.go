@@ -36,6 +36,7 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerLegal(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
 	mux.HandleFunc("GET /v1/billing", s.requireAuth(s.billingStatus))
