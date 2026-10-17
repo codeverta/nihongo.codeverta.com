@@ -39,6 +39,7 @@ func main() {
 	if err := memoryStore.EnableBillingPersistence(); err != nil {
 		log.Fatal(err)
 	}
+	// Keep Play reviewer credentials in the server environment, outside the repository.
 	if err := memoryStore.ConfigurePlayReviewAccount(os.Getenv("PLAY_REVIEW_EMAIL"), os.Getenv("PLAY_REVIEW_PASSWORD")); err != nil {
 		log.Fatalf("configure Google Play review account: %v", err)
 	}
