@@ -67,7 +67,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
           busy: false,
         ),
       ) {
-    // First-time installs do not initialize Firebase or register a device until opt-in.
+    // Keep Dart messaging startup and FCM registration behind explicit opt-in.
     if (state.enabled ||
         (_preferences.getBool('announcement_sync_pending') ?? false)) {
       unawaited(initialize());
@@ -158,7 +158,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
           }),
         )
         ..add(
-          _messaging.onRegistered.listen((_) {
+          _messaging.onTokenRefresh.listen((_) {
             // Reapply the public topic after registration/token renewal.
             if (mounted && state.enabled && !state.busy) {
               unawaited(_subscribeAfterRegistration());
@@ -225,7 +225,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
       _set(granted: granted);
       if (state.enabled && granted) {
         await _messaging.setAutoInitEnabled(true);
-        await _messaging.register().timeout(const Duration(seconds: 15));
+        await _messaging.getToken().timeout(const Duration(seconds: 15));
         await _messaging
             .subscribeToTopic(announcementTopic)
             .timeout(const Duration(seconds: 15));
@@ -235,7 +235,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
         await _messaging
             .unsubscribeFromTopic(announcementTopic)
             .timeout(const Duration(seconds: 15));
-        await _messaging.unregister().timeout(const Duration(seconds: 15));
+        await _messaging.deleteToken().timeout(const Duration(seconds: 15));
         await _messaging.setAutoInitEnabled(false);
         await _preferences.setBool('announcement_sync_pending', false);
       }
