@@ -52,7 +52,7 @@ jobs:
       - run: flutter analyze lib/core/app_update lib/core/notifications lib/core/routing/app_router.dart lib/main.dart test/core/app_update test/core/notifications
       - run: flutter test test/core/app_update test/core/notifications test/widget_test.dart test/core/branding_test.dart
   ios-host:
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
