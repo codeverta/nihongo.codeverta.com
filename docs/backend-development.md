@@ -301,6 +301,17 @@ Invoke-RestMethod `
   -Body '{"displayName":"Rabih","target":"JLPT N4"}'
 ```
 
+### Foto profil
+
+Mobile memilih foto dari galeri atau kamera lalu mengirim JPEG yang sudah
+dikompres. Backend hanya menerima gambar JPEG, PNG, atau GIF hingga 8 MB,
+memeriksa batas dimensi, mengecilkannya hingga 512 px, mengubahnya ke JPEG
+quality 82 tanpa metadata EXIF, lalu menyimpan objek ke Tencent COS. Endpoint
+`POST /v1/me/profile/photo` membutuhkan sesi login dan field multipart `photo`;
+responsnya berisi profil terbaru dengan `photoUrl`. URL foto dapat dibuka oleh
+siapa pun yang memiliki tautannya. Pastikan COS dan URL publik dikonfigurasi
+seperti pada [panduan backend](../backend/README.md).
+
 ### Simpan lesson progress
 
 `completion` harus berada antara 0 dan 100. Endpoint legacy ini tidak memberikan

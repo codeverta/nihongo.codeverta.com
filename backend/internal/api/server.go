@@ -14,6 +14,7 @@ import (
 	"nihongo-master-backend/internal/billing"
 	"nihongo-master-backend/internal/dictionary"
 	"nihongo-master-backend/internal/domain"
+	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/store"
 )
 
@@ -28,6 +29,7 @@ type Server struct {
 	branding            *BrandingStore
 	appUpdates          *AppUpdateStore
 	notifications       *NotificationStore
+	profilePhotos       *media.ProfilePhotoStorage
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
@@ -74,6 +76,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("GET /v1/plans", s.plans)
 	mux.HandleFunc("GET /v1/me/profile", s.requireAuth(s.profile))
 	mux.HandleFunc("PATCH /v1/me/profile", s.requireAuth(s.updateProfile))
+	mux.HandleFunc("POST /v1/me/profile/photo", s.requireAuth(s.uploadProfilePhoto))
 	mux.HandleFunc("GET /v1/me/progress", s.requireAuth(s.progress))
 	mux.HandleFunc("PUT /v1/me/progress/{lessonID}", s.requireAuth(s.saveProgress))
 	mux.HandleFunc("GET /v1/me/gamification", s.requireAuth(s.gamification))
@@ -99,6 +102,10 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/answers", s.requireAuth(s.answerReadingQuestion))
 	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/complete", s.requireAuth(s.completeReadingAttempt))
 	return s.middleware(mux)
+}
+
+func (s *Server) ConfigureProfilePhotoStorage(storage *media.ProfilePhotoStorage) {
+	s.profilePhotos = storage
 }
 
 func (s *Server) health(w http.ResponseWriter, _ *http.Request) {

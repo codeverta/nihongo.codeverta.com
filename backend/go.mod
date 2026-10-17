@@ -7,6 +7,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.74
 	golang.org/x/crypto v0.31.0
+	golang.org/x/image v0.23.0
 	golang.org/x/oauth2 v0.24.0
 	google.golang.org/api v0.214.0
 	gorm.io/driver/mysql v1.6.0

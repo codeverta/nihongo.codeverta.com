@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
 
 class DashboardScreen extends ConsumerWidget {
@@ -189,19 +190,10 @@ class _DashboardHeader extends StatelessWidget {
           InkWell(
             onTap: openProfile,
             customBorder: const CircleBorder(),
-            child: CircleAvatar(
+            child: ProfileAvatar(
               radius: 24,
-              backgroundImage: profile.photoUrl?.isNotEmpty ?? false
-                  ? NetworkImage(profile.photoUrl!)
-                  : null,
-              child: profile.photoUrl?.isNotEmpty ?? false
-                  ? null
-                  : Text(
-                      profile.displayName.isEmpty
-                          ? 'N'
-                          : profile.displayName.characters.first.toUpperCase(),
-                      style: const TextStyle(fontWeight: FontWeight.w800),
-                    ),
+              displayName: profile.displayName,
+              photoUrl: profile.photoUrl,
             ),
           ),
       ],

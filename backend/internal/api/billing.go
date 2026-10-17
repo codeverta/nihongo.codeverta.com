@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"google.golang.org/api/idtoken"
+	"log"
 	"net/http"
 	"nihongo-master-backend/internal/anki"
 	"nihongo-master-backend/internal/billing"
@@ -88,9 +89,16 @@ func (s *Server) deleteAccount(w http.ResponseWriter, r *http.Request) {
 		writeError(w, 422, "confirmation_required", "Konfirmasi penghapusan akun diperlukan.")
 		return
 	}
-	if err := s.store.DeleteAccount(userID(r)); err != nil {
+	id := userID(r)
+	photoURL, err := s.store.DeleteAccountWithProfilePhoto(id)
+	if err != nil {
 		writeStoreError(w, err)
 		return
+	}
+	if s.profilePhotos != nil && photoURL != "" {
+		if err := s.profilePhotos.Delete(r.Context(), id, photoURL); err != nil {
+			log.Printf("cleanup profile photo after account deletion: %v", err)
+		}
 	}
 	w.WriteHeader(204)
 }

@@ -308,7 +308,7 @@ Selesaikan seluruh menu **Policy and programs > App content**:
 Privacy policy wajib tersedia melalui URL HTTPS publik dan juga dapat diakses
 dari dalam aplikasi. Jelaskan minimal:
 
-- Data akun: nama, email, foto profil Google jika digunakan.
+- Data akun: nama, email, foto profil Google jika digunakan, serta foto profil yang pengguna pilih dan unggah (opsional). Foto unggahan disimpan di Tencent COS agar dapat ditampilkan melalui URL publik.
 - Data belajar: progress, exam, XP, streak, achievement.
 - Tujuan pemrosesan, masa retensi, penghapusan, keamanan, dan kontak.
 - Penggunaan Google Sign-In serta pihak ketiga lain.

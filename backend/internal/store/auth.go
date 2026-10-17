@@ -48,7 +48,9 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 		}
 	} else {
 		existingAccount.GoogleSub = identity.Subject
-		existingAccount.PhotoURL = identity.PhotoURL
+		if existingAccount.CustomPhotoURL == "" {
+			existingAccount.PhotoURL = identity.PhotoURL
+		}
 		if identity.DisplayName != "" {
 			existingAccount.DisplayName = identity.DisplayName
 		}
@@ -155,7 +157,7 @@ func (s *MemoryStore) ensureProfileForAccountLocked(account account) domain.Prof
 	if profile, ok := s.profiles[account.ID]; ok {
 		profile.DisplayName = account.DisplayName
 		profile.Email = account.Email
-		profile.PhotoURL = account.PhotoURL
+		profile.PhotoURL = account.profilePhotoURL()
 		s.profiles[account.ID] = profile
 		return profile
 	}
@@ -169,11 +171,18 @@ func profileForAccount(account account) domain.Profile {
 		ID:          account.ID,
 		DisplayName: account.DisplayName,
 		Email:       account.Email,
-		PhotoURL:    account.PhotoURL,
+		PhotoURL:    account.profilePhotoURL(),
 		Target:      "JLPT N5",
 		Level:       1,
 		Entitlement: domain.Entitlement{Tier: domain.TierFree},
 	}
+}
+
+func (a account) profilePhotoURL() string {
+	if a.CustomPhotoURL != "" {
+		return a.CustomPhotoURL
+	}
+	return a.PhotoURL
 }
 
 func (s *MemoryStore) IsDemoUser(id string) bool { return id == database.DemoUserID }

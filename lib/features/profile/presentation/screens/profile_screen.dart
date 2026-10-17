@@ -1,16 +1,30 @@
+import 'dart:typed_data';
+
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
+import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/gamification_widgets.dart';
 
-class ProfileScreen extends ConsumerWidget {
+class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends ConsumerState<ProfileScreen> {
+  final _imagePicker = ImagePicker();
+  bool _uploadingPhoto = false;
+
+  @override
+  Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final user = ref.watch(authControllerProvider).user;
     if (user == null) {
@@ -28,10 +42,9 @@ class ProfileScreen extends ConsumerWidget {
     return RefreshIndicator(
       onRefresh: () async {
         await ref.read(authControllerProvider.notifier).refreshUser();
-        await ref.refresh(gamificationProvider.future).then<void>(
-              (_) {},
-              onError: (Object error, StackTrace stack) {},
-            );
+        await ref
+            .refresh(gamificationProvider.future)
+            .then<void>((_) {}, onError: (Object error, StackTrace stack) {});
       },
       child: CustomScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
@@ -46,12 +59,8 @@ class ProfileScreen extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         'Profil',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium
-                            ?.copyWith(
-                              fontWeight: FontWeight.w900,
-                            ),
+                        style: Theme.of(context).textTheme.headlineMedium
+                            ?.copyWith(fontWeight: FontWeight.w900),
                       ),
                     ),
                     IconButton.filledTonal(
@@ -62,7 +71,16 @@ class ProfileScreen extends ConsumerWidget {
                   ],
                 ),
                 const SizedBox(height: 22),
-                _ProfileHeader(user: user),
+                _ProfileHeader(
+                  user: user,
+                  uploadingPhoto: _uploadingPhoto,
+                  onChangePhoto: _uploadingPhoto ? null : _chooseProfilePhoto,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Foto dikompres sebelum diunggah. Tautan foto dapat dibuka oleh siapa pun yang memilikinya.',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 const SizedBox(height: 16),
                 gamification.when(
                   loading: () =>
@@ -77,9 +95,9 @@ class ProfileScreen extends ConsumerWidget {
                 const SizedBox(height: 28),
                 Text(
                   'Gamification',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.w800,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 14),
                 gamification.when(
@@ -112,6 +130,75 @@ class ProfileScreen extends ConsumerWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _chooseProfilePhoto() async {
+    final source = await showModalBottomSheet<ImageSource>(
+      context: context,
+      showDragHandle: true,
+      builder: (context) => SafeArea(
+        child: Wrap(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: const Text('Pilih dari galeri'),
+              onTap: () => Navigator.pop(context, ImageSource.gallery),
+            ),
+            ListTile(
+              leading: const Icon(Icons.photo_camera_outlined),
+              title: const Text('Ambil foto'),
+              onTap: () => Navigator.pop(context, ImageSource.camera),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (source == null || !mounted) return;
+
+    setState(() => _uploadingPhoto = true);
+    try {
+      final photo = await _imagePicker.pickImage(
+        source: source,
+        requestFullMetadata: false,
+      );
+      if (photo == null || !mounted) return;
+      final compressed = await FlutterImageCompress.compressWithFile(
+        photo.path,
+        minWidth: 1024,
+        minHeight: 1024,
+        quality: 82,
+        format: CompressFormat.jpeg,
+        keepExif: false,
+      );
+      if (compressed == null || compressed.isEmpty) {
+        throw const AuthException(
+          'Foto tidak dapat diproses. Pilih foto lain.',
+        );
+      }
+      if (compressed.length > 8 * 1024 * 1024) {
+        throw const AuthException('Foto masih terlalu besar. Pilih foto lain.');
+      }
+      await ref
+          .read(authControllerProvider.notifier)
+          .uploadProfilePhoto(Uint8List.fromList(compressed));
+      ref.invalidate(homeDashboardProvider);
+      _showPhotoMessage('Foto profil berhasil diperbarui.');
+    } on AuthException catch (error) {
+      _showPhotoMessage(error.message);
+    } on Object {
+      _showPhotoMessage(
+        'Foto gagal diproses atau diunggah. Periksa koneksi lalu coba lagi.',
+      );
+    } finally {
+      if (mounted) setState(() => _uploadingPhoto = false);
+    }
+  }
+
+  void _showPhotoMessage(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text(message)));
   }
 
   Future<void> _confirmLogout(BuildContext context, WidgetRef ref) async {
@@ -167,8 +254,9 @@ class ProfileScreen extends ConsumerWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content:
-                Text('Akun belum dihapus. Periksa koneksi lalu coba lagi.'),
+            content: Text(
+              'Akun belum dihapus. Periksa koneksi lalu coba lagi.',
+            ),
           ),
         );
       }
@@ -177,9 +265,15 @@ class ProfileScreen extends ConsumerWidget {
 }
 
 class _ProfileHeader extends StatelessWidget {
-  const _ProfileHeader({required this.user});
+  const _ProfileHeader({
+    required this.user,
+    required this.uploadingPhoto,
+    required this.onChangePhoto,
+  });
 
   final AuthenticatedUser? user;
+  final bool uploadingPhoto;
+  final VoidCallback? onChangePhoto;
 
   @override
   Widget build(BuildContext context) {
@@ -187,36 +281,46 @@ class _ProfileHeader extends StatelessWidget {
 
     return Row(
       children: [
-        Stack(
-          children: [
-            CircleAvatar(
-              radius: 38,
-              backgroundColor: colorScheme.primary.withValues(alpha: 0.10),
-              child: Text(
-                (user?.displayName.isNotEmpty ?? false)
-                    ? user!.displayName.characters.first.toUpperCase()
-                    : 'N',
-                style: TextStyle(
-                  color: colorScheme.primary,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w900,
+        Semantics(
+          button: onChangePhoto != null,
+          label: 'Ubah foto profil',
+          child: InkWell(
+            onTap: onChangePhoto,
+            customBorder: const CircleBorder(),
+            child: Stack(
+              children: [
+                ProfileAvatar(
+                  radius: 38,
+                  displayName: user?.displayName ?? '',
+                  photoUrl: user?.photoUrl,
                 ),
-              ),
-            ),
-            Positioned(
-              right: 0,
-              bottom: 0,
-              child: CircleAvatar(
-                radius: 13,
-                backgroundColor: colorScheme.primary,
-                child: const Icon(
-                  Icons.edit_rounded,
-                  size: 14,
-                  color: Colors.white,
+                Positioned(
+                  right: 0,
+                  bottom: 0,
+                  child: IgnorePointer(
+                    child: CircleAvatar(
+                      radius: 13,
+                      backgroundColor: colorScheme.primary,
+                      child: uploadingPhoto
+                          ? const SizedBox(
+                              width: 15,
+                              height: 15,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            )
+                          : const Icon(
+                              Icons.edit_rounded,
+                              size: 14,
+                              color: Colors.white,
+                            ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -225,9 +329,9 @@ class _ProfileHeader extends StatelessWidget {
             children: [
               Text(
                 user?.displayName ?? 'Nihongo Learner',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w900,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
               ),
               const SizedBox(height: 4),
               Text(

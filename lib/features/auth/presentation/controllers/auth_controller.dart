@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -51,16 +52,13 @@ class AuthenticationState {
   });
 
   const AuthenticationState.checking()
-      : this(status: AuthenticationStatus.checking);
+    : this(status: AuthenticationStatus.checking);
 
   const AuthenticationState.guest({String? errorMessage})
-      : this(
-          status: AuthenticationStatus.guest,
-          errorMessage: errorMessage,
-        );
+    : this(status: AuthenticationStatus.guest, errorMessage: errorMessage);
 
   const AuthenticationState.authenticated(AuthenticatedUser user)
-      : this(status: AuthenticationStatus.authenticated, user: user);
+    : this(status: AuthenticationStatus.authenticated, user: user);
 
   final AuthenticationStatus status;
   final AuthenticatedUser? user;
@@ -72,25 +70,23 @@ class AuthenticationState {
 
 final authControllerProvider =
     StateNotifierProvider<AuthController, AuthenticationState>((ref) {
-  final controller = AuthController(
-    AuthRepository(
-      ref.watch(dioProvider),
-      ref.watch(sharedPreferencesProvider),
-    ),
-    GoogleAuthenticationService(),
-  );
-  unawaited(controller.restoreSession());
-  return controller;
-});
+      final controller = AuthController(
+        AuthRepository(
+          ref.watch(dioProvider),
+          ref.watch(sharedPreferencesProvider),
+        ),
+        GoogleAuthenticationService(),
+      );
+      unawaited(controller.restoreSession());
+      return controller;
+    });
 
 class AuthController extends StateNotifier<AuthenticationState> {
   AuthController(this._repository, this._googleService)
-      : super(const AuthenticationState.checking());
+    : super(const AuthenticationState.checking());
 
   @visibleForTesting
-  AuthController.test(super.state)
-      : _repository = null,
-        _googleService = null;
+  AuthController.test(super.state) : _repository = null, _googleService = null;
 
   final AuthRepository? _repository;
   final GoogleAuthenticationService? _googleService;
@@ -181,6 +177,18 @@ class AuthController extends StateNotifier<AuthenticationState> {
     }
   }
 
+  Future<void> uploadProfilePhoto(Uint8List compressedPhoto) async {
+    final repository = _repository;
+    final currentUser = state.user;
+    if (repository == null || currentUser == null) {
+      throw const AuthException('Masuk ke akun untuk mengubah foto profil.');
+    }
+    final updatedUser = await repository.uploadProfilePhoto(compressedPhoto);
+    if (mounted && state.user?.id == currentUser.id) {
+      state = AuthenticationState.authenticated(updatedUser);
+    }
+  }
+
   Future<void> deleteAccount() async {
     final repository = _repository;
     if (repository == null) return;
@@ -202,10 +210,10 @@ class AuthRepository {
     String email,
     String password,
   ) async {
-    return _authenticate(
-      '/auth/login',
-      {'email': email.trim(), 'password': password},
-    );
+    return _authenticate('/auth/login', {
+      'email': email.trim(),
+      'password': password,
+    });
   }
 
   Future<AuthenticatedUser> loginWithGoogle(String idToken) async {
@@ -215,6 +223,29 @@ class AuthRepository {
   Future<AuthenticatedUser> currentUser() async {
     try {
       final response = await _dio.get<Map<String, dynamic>>('/auth/me');
+      return AuthenticatedUser.fromJson(_data(response.data));
+    } on DioException catch (error) {
+      throw AuthException(
+        _messageFromDio(error),
+        statusCode: error.response?.statusCode,
+      );
+    }
+  }
+
+  Future<AuthenticatedUser> uploadProfilePhoto(
+    Uint8List compressedPhoto,
+  ) async {
+    try {
+      final response = await _dio.post<Map<String, dynamic>>(
+        '/me/profile/photo',
+        data: FormData.fromMap({
+          'photo': MultipartFile.fromBytes(
+            compressedPhoto,
+            filename: 'profile.jpg',
+          ),
+        }),
+        options: Options(contentType: Headers.multipartFormDataContentType),
+      );
       return AuthenticatedUser.fromJson(_data(response.data));
     } on DioException catch (error) {
       throw AuthException(
@@ -295,9 +326,7 @@ class GoogleAuthenticationService {
 
   Future<String> authenticate() async {
     if (_serverClientId.isEmpty) {
-      throw const AuthException(
-        'GOOGLE_SERVER_CLIENT_ID belum dikonfigurasi.',
-      );
+      throw const AuthException('GOOGLE_SERVER_CLIENT_ID belum dikonfigurasi.');
     }
     final signIn = GoogleSignIn.instance;
     if (!_initialized) {
