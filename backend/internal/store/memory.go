@@ -4,14 +4,18 @@ import (
 	"crypto/rand"
 	"database/sql"
 	"encoding/binary"
+	"encoding/json"
 	"errors"
 	"fmt"
-	"gorm.io/gorm"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
 
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
+
+	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 )
 
