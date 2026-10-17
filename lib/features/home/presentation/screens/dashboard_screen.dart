@@ -166,9 +166,9 @@ class _DashboardHeader extends StatelessWidget {
                     : 'おはよう, $name!',
                 key: const Key('home-greeting'),
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: -0.4,
-                    ),
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.4,
+                ),
               ),
               const SizedBox(height: 5),
               Text(
@@ -179,6 +179,11 @@ class _DashboardHeader extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        IconButton(
+          onPressed: () => context.push('/notifications'),
+          tooltip: 'Pengaturan notifikasi',
+          icon: const Icon(Icons.notifications_outlined),
         ),
         if (profile != null)
           InkWell(
@@ -320,10 +325,9 @@ class _DailyGoalCard extends StatelessWidget {
                   children: [
                     Text(
                       'Target harian',
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(fontWeight: FontWeight.w700),
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Text(
@@ -333,9 +337,9 @@ class _DailyGoalCard extends StatelessWidget {
                     Text(
                       '${goal.streakDays} hari beruntun',
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: const Color(0xFFE86A33),
-                            fontWeight: FontWeight.w700,
-                          ),
+                        color: const Color(0xFFE86A33),
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ],
                 ),
@@ -420,9 +424,7 @@ class _LearningMenuCard extends StatelessWidget {
                             category.name,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                         ),
                         if (category.isPremium) ...[
@@ -522,10 +524,9 @@ class _JlptLevelList extends StatelessWidget {
                   const SizedBox(height: 7),
                   Text(
                     track.isPremium ? 'Premium' : '${track.progress}% selesai',
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelSmall
-                        ?.copyWith(fontWeight: FontWeight.w700),
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ],
               ),
@@ -612,8 +613,10 @@ class _AchievementPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    final remaining = (achievement.target - achievement.progress)
-        .clamp(0, achievement.target);
+    final remaining = (achievement.target - achievement.progress).clamp(
+      0,
+      achievement.target,
+    );
     return Material(
       color: colors.primary.withValues(alpha: 0.055),
       borderRadius: BorderRadius.circular(20),
@@ -632,10 +635,9 @@ class _AchievementPreview extends StatelessWidget {
                   children: [
                     Text(
                       achievement.name,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(fontWeight: FontWeight.w800),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Text(
@@ -675,9 +677,9 @@ class _SectionHeader extends StatelessWidget {
           child: Text(
             title,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: -0.25,
-                ),
+              fontWeight: FontWeight.w800,
+              letterSpacing: -0.25,
+            ),
           ),
         ),
         TextButton(onPressed: onPressed, child: Text(action)),
@@ -721,10 +723,9 @@ class _ErrorView extends StatelessWidget {
             const SizedBox(height: 14),
             Text(
               'Beranda belum dapat dimuat',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(fontWeight: FontWeight.w800),
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 7),
             Text(message, textAlign: TextAlign.center),
@@ -742,29 +743,29 @@ class _ErrorView extends StatelessWidget {
 }
 
 IconData _categoryIcon(String id) => switch (id) {
-      'vocabulary' => Icons.translate_rounded,
-      'grammar' => Icons.menu_book_rounded,
-      'listening' => Icons.headphones_rounded,
-      'reading' => Icons.chrome_reader_mode_rounded,
-      'kanji' => Icons.brush_rounded,
-      'speaking' => Icons.record_voice_over_rounded,
-      _ => Icons.school_rounded,
-    };
+  'vocabulary' => Icons.translate_rounded,
+  'grammar' => Icons.menu_book_rounded,
+  'listening' => Icons.headphones_rounded,
+  'reading' => Icons.chrome_reader_mode_rounded,
+  'kanji' => Icons.brush_rounded,
+  'speaking' => Icons.record_voice_over_rounded,
+  _ => Icons.school_rounded,
+};
 
 Color _categoryColor(String id) => switch (id) {
-      'vocabulary' => const Color(0xFFE85555),
-      'grammar' => const Color(0xFF5B67D7),
-      'listening' => const Color(0xFF16A085),
-      'reading' => const Color(0xFFE59E24),
-      'kanji' => const Color(0xFF9B59B6),
-      _ => const Color(0xFF2E86C1),
-    };
+  'vocabulary' => const Color(0xFFE85555),
+  'grammar' => const Color(0xFF5B67D7),
+  'listening' => const Color(0xFF16A085),
+  'reading' => const Color(0xFFE59E24),
+  'kanji' => const Color(0xFF9B59B6),
+  _ => const Color(0xFF2E86C1),
+};
 
 Color _examColor(String system) => switch (system.toUpperCase()) {
-      'JLPT' => const Color(0xFFE60012),
-      'NAT' => const Color(0xFF1D2088),
-      _ => const Color(0xFF168C72),
-    };
+  'JLPT' => const Color(0xFFE60012),
+  'NAT' => const Color(0xFF1D2088),
+  _ => const Color(0xFF168C72),
+};
 
 String _rupiah(int value) {
   final digits = value.toString();

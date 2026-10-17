@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - 'lib/core/app_update/**'
+      - 'lib/core/notifications/**'
+      - 'test/core/notifications/**'
+      - 'pubspec.*'
+      - 'android/**/*.kts'
+      - 'android/app/google-services.json'
+      - 'android/app/src/main/AndroidManifest.xml'
+      - 'ios/Runner/Info.plist'
       - 'lib/main.dart'
       - 'test/core/app_update/**'
       - 'android/app/src/main/kotlin/**'
@@ -13,6 +20,13 @@ on:
   pull_request:
     paths:
       - 'lib/core/app_update/**'
+      - 'lib/core/notifications/**'
+      - 'test/core/notifications/**'
+      - 'pubspec.*'
+      - 'android/**/*.kts'
+      - 'android/app/google-services.json'
+      - 'android/app/src/main/AndroidManifest.xml'
+      - 'ios/Runner/Info.plist'
       - 'lib/main.dart'
       - 'test/core/app_update/**'
       - 'android/app/src/main/kotlin/**'
@@ -35,8 +49,8 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter analyze lib/core/app_update lib/main.dart test/core/app_update
-      - run: flutter test test/core/app_update
+      - run: flutter analyze lib/core/app_update lib/core/notifications lib/core/routing/app_router.dart lib/main.dart test/core/app_update test/core/notifications
+      - run: flutter test test/core/app_update test/core/notifications test/widget_test.dart test/core/branding_test.dart
   ios-host:
     runs-on: macos-15
     timeout-minutes: 30

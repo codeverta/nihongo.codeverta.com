@@ -7,6 +7,52 @@ servers:
   - url: http://localhost:8080/v1
     description: Local development
 paths:
+  /admin/notifications:
+    get:
+      summary: List private announcement drafts/history and sender configuration state (admin bearer key)
+      responses:
+        '200': {description: Announcement history; requires NOTIFICATIONS_ADMIN_TOKEN or branding admin key}
+        '401': {description: Invalid admin key}
+    post:
+      summary: Save an announcement draft without sending it (admin bearer key)
+      responses:
+        '201': {description: Draft saved with generated ID}
+        '401': {description: Invalid admin key}
+        '422': {description: Invalid title/body/allowed internal route or oversized topic message}
+  /admin/notifications/{id}:
+    put:
+      summary: Edit a draft or explicitly reopen a definitively rejected message (admin bearer key)
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Draft saved}
+        '409': {description: Sent or uncertain message cannot be edited or retried}
+  /admin/notifications/{id}/send:
+    post:
+      summary: Dispatch a saved draft once to the public Nihongo announcement topic
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [confirmId]
+              properties:
+                confirmId: {type: string, description: Must match the saved draft ID}
+      responses:
+        '200': {description: Persisted result (sent, failed, or uncertain); sent means FCM acceptance, not device receipt}
+        '409': {description: Message already processed; duplicate dispatch blocked}
+        '503': {description: FCM sender not configured}
+  /admin/notifications/check:
+    post:
+      summary: Validate FCM access without sending a notification (validate_only)
+      responses:
+        '200': {description: Sender validated; no broadcast sent}
+        '502': {description: Firebase rejected validation or connection failed}
+        '503': {description: FCM sender not configured}
+
   /app-update-policy:
     get:
       tags: [App updates]
