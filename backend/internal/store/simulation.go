@@ -181,6 +181,9 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 	}
 	if strings.HasPrefix(state.session.PaperID, "ssw-") {
 		result.ScoringNote = "Soal orisinal Nihongo Master. Nilai adalah persentase benar, bukan hasil resmi SSW. Penilaian praktik di aplikasi memakai skenario teks, tanpa demonstrasi alat atau seluruh variasi visual resmi."
+		if strings.HasPrefix(state.session.PaperID, "ssw-agriculture-") {
+			result.ScoringNote += " Adaptasi tertulis: komponen audio instruksi Jepang belum tersedia; hasil tidak mengukur kemampuan mendengar."
+		}
 	}
 	groups := map[string]*domain.DiagnosticSection{}
 	for _, q := range state.questions {

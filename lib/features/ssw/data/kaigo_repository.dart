@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/ssw/domain/kaigo_curriculum.dart';
+import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final kaigoCurriculumProvider = FutureProvider<KaigoCurriculum>((ref) async {
@@ -17,9 +18,11 @@ final sswCurriculumProvider =
   if (sector == 'nursing-care') {
     return ref.watch(kaigoCurriculumProvider.future);
   }
-  if (sector != 'building-cleaning') throw StateError('Materi belum tersedia');
+  if (!sswActiveSectorIds.contains(sector)) {
+    throw StateError('Materi belum tersedia');
+  }
   final content = await rootBundle.loadString(
-    'assets/content/ssw/building-cleaning.json',
+    'assets/content/ssw/$sector.json',
   );
   return KaigoCurriculum.fromJson(jsonDecode(content) as Map<String, dynamic>);
 });

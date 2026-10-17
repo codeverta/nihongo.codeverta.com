@@ -48,15 +48,15 @@ void main() {
         scrollable: find.byType(Scrollable).first,
       );
       expect(find.text('19 bidang'), findsOneWidget);
-      await tester.enterText(find.byType(TextField), 'pertanian');
+      await tester.enterText(find.byType(TextField), 'kehutanan');
       tester.testTextInput.hide();
       await tester.pumpAndSettle();
       await tester.scrollUntilVisible(
-        find.text('Pertanian'),
+        find.text('Kehutanan'),
         100,
         scrollable: find.byType(Scrollable).first,
       );
-      await tester.tap(find.text('Pertanian'));
+      await tester.tap(find.text('Kehutanan'));
       await tester.pumpAndSettle();
       final expected = exams ? 'Latihan soal' : 'Materi bidang';
       await tester.scrollUntilVisible(

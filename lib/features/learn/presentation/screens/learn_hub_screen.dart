@@ -103,10 +103,6 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              const AnkiEntryCard(),
-              const SizedBox(height: 16),
-              const SswEntryCard(),
-              const SizedBox(height: 28),
               Text(
                 'Materi ${_levels[_selectedLevel]}',
                 style: Theme.of(context)
@@ -147,6 +143,10 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                                         : null,
                   ),
                 ),
+              const SizedBox(height: 20),
+              const AnkiEntryCard(),
+              const SizedBox(height: 16),
+              const SswEntryCard(),
             ],
           ),
         ),

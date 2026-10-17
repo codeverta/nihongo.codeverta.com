@@ -3,6 +3,7 @@ package store
 import (
 	_ "embed"
 	"encoding/json"
+	"sort"
 	"strings"
 	"sync"
 
@@ -25,11 +26,14 @@ type sswQuestion struct {
 	Explanation string   `json:"explanation"`
 	Section     string   `json:"section"`
 	Passage     string   `json:"passage"`
+	Track       string   `json:"track"`
+	Kind        string   `json:"kind"`
 }
 type sswPaper struct {
 	Title    string                     `json:"title"`
 	Sections []domain.SimulationSection `json:"sections"`
 	Items    []sswQuestion              `json:"items"`
+	Omitted  []string                   `json:"omitted"`
 }
 
 var sswData struct {
@@ -63,7 +67,21 @@ func sswSimulationPaper(level string) (simulationPaperConfig, bool) {
 		}
 		items = append(items, simulationItem{q.Section, q.Group, "Pilih satu jawaban paling tepat. Soal orisinal Nihongo Master.", q.Passage, q.Prompt, choices, q.Explanation})
 	}
-	return simulationPaperConfig{level, strings.ToLower(level) + "-simulation-1", strings.ToLower(level) + "-01", p.Sections, items, []string{}}, true
+	omitted := p.Omitted
+	if omitted == nil {
+		omitted = []string{}
+	}
+	return simulationPaperConfig{level, strings.ToLower(level) + "-simulation-1", strings.ToLower(level) + "-01", p.Sections, items, omitted}, true
+}
+
+func SSWLevels() []string {
+	loadSSW()
+	levels := make([]string, 0, len(sswData.Papers))
+	for level := range sswData.Papers {
+		levels = append(levels, level)
+	}
+	sort.Strings(levels)
+	return levels
 }
 func IsSSWLevel(level string) bool { _, ok := sswSimulationPaper(strings.ToUpper(level)); return ok }
 func sswTitle(level string) string { loadSSW(); return sswData.Papers[level].Title }

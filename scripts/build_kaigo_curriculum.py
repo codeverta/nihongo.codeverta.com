@@ -556,7 +556,7 @@ if __name__ == "__main__":
               "",
               "Materi berupa asset offline `assets/content/ssw/kaigo.json`. Pembuka referensi membutuhkan browser/jaringan. Progress menggunakan SharedPreferences dengan key per akun `ssw_kaigo_completed_v1_{userId}`, tersimpan pada perangkat yang sama, tidak disinkronkan ke server, dan dibersihkan setelah penghapusan akun berhasil. Tamu dapat belajar dengan progress sesi saja. Menyelesaikan lesson tidak memberi XP atau achievement palsu.",
               "",
-              "Materi Kaigo dapat dibaca tanpa pembelian. Ini tidak mengubah entitlement JLPT atau ujian yang sudah ada. Latihan dan simulasi Kaigo serta materi, latihan, dan simulasi Pembersihan Gedung kini aktif; lihat [latihan SSW](ssw-assessments.md). Materi 17 bidang lain masih Coming Soon.",
+              "Materi Kaigo dapat dibaca tanpa pembelian. Ini tidak mengubah entitlement JLPT atau ujian yang sudah ada. Latihan dan simulasi Kaigo serta materi, latihan, dan simulasi Pembersihan Gedung kini aktif; lihat [latihan SSW](ssw-assessments.md). Pertanian serta Perikanan dan Budi Daya juga aktif; lihat [bidang baru](ssw-agriculture-fishery.md). Materi 15 bidang lain masih Coming Soon.",
               "", "## Referensi", "", "Ditinjau 11 Oktober 2026.", ""]
     lines += [f"- [{s['title']}]({s['url']})" for s in sources]
     docs.write_text("\n".join(lines) + "\n", encoding="utf-8")

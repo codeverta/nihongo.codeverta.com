@@ -26,7 +26,11 @@ func TestSSWAPIAuthEntitlementValidationAndRevocation(t *testing.T) {
 		h.ServeHTTP(w, r)
 		return w
 	}
-	for _, path := range []string{"/v1/ssw/building-cleaning/practice", "/v1/simulation/ssw-kaigo", "/v1/simulation/ssw-kaigo-jp", "/v1/simulation/ssw-cleaning"} {
+	paths := []string{"/v1/ssw/building-cleaning/practice", "/v1/ssw/agriculture/practice", "/v1/ssw/fishery/practice"}
+	for _, level := range store.SSWLevels() {
+		paths = append(paths, "/v1/simulation/"+strings.ToLower(level))
+	}
+	for _, path := range paths {
 		if w := request("GET", path, "", false); w.Code != 401 {
 			t.Fatal("guest allowed", path, w.Code)
 		}

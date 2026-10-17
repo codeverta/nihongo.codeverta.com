@@ -22,6 +22,7 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vo
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
+import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
@@ -134,7 +135,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) =>
             SswPracticeScreen(sector: state.pathParameters['sectorId']!),
       ),
-      for (final level in ['SSW-KAIGO', 'SSW-KAIGO-JP', 'SSW-CLEANING']) ...[
+      for (final level
+          in sswAssessmentLevels.values.expand((levels) => levels)) ...[
         GoRoute(
           path: '/exams/${level.toLowerCase()}/simulation',
           builder: (context, state) => SswSimulationIntroScreen(level: level),

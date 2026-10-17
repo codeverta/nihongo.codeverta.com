@@ -239,6 +239,8 @@ class AuthRepository {
       await _preferences.remove('dictionary_library_v1_$userId');
       await _preferences.remove('ssw_kaigo_completed_v1_$userId');
       await _preferences.remove('ssw_building-cleaning_completed_v1_$userId');
+      await _preferences.remove('ssw_agriculture_completed_v1_$userId');
+      await _preferences.remove('ssw_fishery_completed_v1_$userId');
     }
     await clearSession();
   }

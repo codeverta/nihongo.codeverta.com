@@ -11,7 +11,7 @@ def bank(course, sector):
     for module in course['modules']:
         for lesson in module['lessons']:
             for i, q in enumerate(lesson['checks']):
-                result.append(dict(id=f'{lesson["id"]}-{i+1}', moduleId=module['id'], group=module['title'], lessonId=lesson['id'], prompt=q['prompt'], options=q['options'], answer=q['answer'], explanation=q['explanation'], scenario=lesson['scenario']))
+                result.append(dict(id=f'{lesson["id"]}-{i+1}', moduleId=module['id'], group=module['title'], lessonId=lesson['id'], prompt=q['prompt'], options=q['options'], answer=q['answer'], explanation=q['explanation'], scenario=lesson['scenario'], track=module.get('track',''), kind=q.get('kind','knowledge')))
     return result
 
 kaigo = load('kaigo')
@@ -69,6 +69,41 @@ theory=[next(q for q in pool if q['id']==f'cleaning-{n:02}-1') for n in theory_l
 used={q['id'] for q in theory}
 practical=select(pool,30,used)
 papers['SSW-CLEANING']=dict(title='Pembersihan Gedung · Simulasi 1',minutes=50,sections=[dict(id='vocabulary',name='Teori · 学科',durationSeconds=1200,questionCount=20),dict(id='grammar',name='Penilaian praktik · 実技',durationSeconds=1800,questionCount=30)],items=[dict(q,section='vocabulary') for q in theory]+[dict(q,section='grammar',passage=q['scenario']) for q in practical])
+
+for sector in ['agriculture','fishery']:
+    banks[sector]=bank(load(sector),sector)
+
+for track,level,title in [
+    ('crop','SSW-AGRICULTURE-CROP','Pertanian · Tanaman'),
+    ('livestock','SSW-AGRICULTURE-LIVESTOCK','Pertanian · Peternakan')]:
+    pool=[q for q in banks['agriculture'] if q['track']==track]
+    # Seventy original written items, distributed over all 20 lessons. The
+    # official audio component is explicitly omitted, not replaced by fake audio.
+    selected=[q for q in pool if q['kind']!='vocabulary']+[q for q in pool if q['kind']=='vocabulary'][:10]
+    selected.sort(key=lambda q:q['id'])
+    assert len(selected)==70 and len({q['id'] for q in selected})==70
+    papers[level]=dict(title=title+' · Simulasi Tertulis 1',minutes=60,
+        omitted=['listening','visual_practical'],
+        sections=[dict(id='vocabulary',name=title+' · 70 soal tertulis',durationSeconds=3600,questionCount=70)],
+        items=[dict(q,section='vocabulary') for q in selected])
+
+for track,level,title in [
+    ('capture','SSW-FISHERY-CAPTURE','Perikanan Tangkap'),
+    ('aquaculture','SSW-FISHERY-AQUACULTURE','Budi Daya')]:
+    pool=[q for q in banks['fishery'] if q['track']==track]
+    theory=[q for q in pool if q['kind'] in ['knowledge','vocabulary']]
+    cases=[q for q in pool if q['kind']=='case']
+    workflows=[q for q in pool if q['kind']=='workflow']
+    if track=='capture':
+        practical=cases+workflows[:10]
+    else:
+        theory+=workflows[:10]
+        practical=[cases[i] for i in [0,2,3,4,6,7,8,9,10,12]]
+    assert len(theory)==(30 if track=='capture' else 40)
+    assert len(practical)==(25 if track=='capture' else 10)
+    papers[level]=dict(title=title+' · Simulasi 1',minutes=70,omitted=['visual_practical'],
+        sections=[dict(id='vocabulary',name='Teori · '+title,durationSeconds=3000,questionCount=len(theory)),dict(id='grammar',name='Keputusan praktik · '+title,durationSeconds=1200,questionCount=len(practical))],
+        items=[dict(q,section='vocabulary') for q in theory]+[dict(q,section='grammar') for q in practical])
 
 # Randomize the stored option positions deterministically; server re-randomizes simulations.
 for questions in banks.values():

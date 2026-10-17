@@ -12,7 +12,7 @@ import (
 
 func TestSSWContentCoverageAndPracticeGrading(t *testing.T) {
 	loadSSW()
-	for sector, count := range map[string]int{"nursing-care": 87, "building-cleaning": 60} {
+	for sector, count := range map[string]int{"nursing-care": 87, "building-cleaning": 60, "agriculture": 160, "fishery": 120} {
 		bank := sswData.Banks[sector]
 		if len(bank) != count {
 			t.Fatal(sector, len(bank))
@@ -32,10 +32,31 @@ func TestSSWContentCoverageAndPracticeGrading(t *testing.T) {
 			}
 		}
 	}
-	for level, count := range map[string]int{"SSW-KAIGO": 45, "SSW-KAIGO-JP": 15, "SSW-CLEANING": 50} {
+	for level, count := range map[string]int{"SSW-KAIGO": 45, "SSW-KAIGO-JP": 15, "SSW-CLEANING": 50, "SSW-AGRICULTURE-CROP": 70, "SSW-AGRICULTURE-LIVESTOCK": 70, "SSW-FISHERY-CAPTURE": 55, "SSW-FISHERY-AQUACULTURE": 50} {
 		p, ok := sswSimulationPaper(level)
 		if !ok || len(p.items) != count {
 			t.Fatal(level, len(p.items))
+		}
+		seen := map[string]bool{}
+		for _, q := range sswData.Papers[level].Items {
+			if seen[q.ID] {
+				t.Fatal("repeated question", level, q.ID)
+			}
+			seen[q.ID] = true
+			matches := 0
+			for _, bank := range sswData.Banks {
+				for _, source := range bank {
+					if source.ID == q.ID {
+						matches++
+						if source.Options[source.Answer] != q.Options[q.Answer] {
+							t.Fatal("answer rotation corrupted key", q.ID)
+						}
+					}
+				}
+			}
+			if matches != 1 {
+				t.Fatal("untraceable question", q.ID)
+			}
 		}
 		for _, part := range p.sections {
 			n := 0
@@ -81,7 +102,7 @@ func TestSSWSimulationSectionsClockOwnershipAndIdempotence(t *testing.T) {
 	grantTestLifetime(t, s, "user")
 	now := time.Date(2026, 10, 17, 1, 0, 0, 0, time.UTC)
 	s.simulationNow = func() time.Time { return now }
-	for _, level := range []string{"SSW-KAIGO", "SSW-KAIGO-JP", "SSW-CLEANING"} {
+	for _, level := range SSWLevels() {
 		if _, err := s.StartSimulation("free", level); !errors.Is(err, ErrPremium) {
 			t.Fatal("free exam allowed")
 		}
@@ -123,8 +144,9 @@ func TestSSWSimulationSectionsClockOwnershipAndIdempotence(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		if level == "SSW-CLEANING" {
-			if out.ActiveSection != "grammar" || len(out.Questions) != 30 || out.ExpiresAt.Sub(now) != 30*time.Minute {
+		if len(simulationPaper(level).sections) > 1 {
+			last := simulationPaper(level).sections[1]
+			if out.ActiveSection != "grammar" || len(out.Questions) != last.QuestionCount || out.ExpiresAt.Sub(now) != time.Duration(last.DurationSeconds)*time.Second {
 				t.Fatal("bad practical boundary", out.ActiveSection)
 			}
 			if err = s.SaveSimulationAnswer("user", a.ID, q.ID, q.Options[0].ID, false); !errors.Is(err, ErrInvalid) {
@@ -134,7 +156,7 @@ func TestSSWSimulationSectionsClockOwnershipAndIdempotence(t *testing.T) {
 			if retry.ActiveSection != "grammar" {
 				t.Fatal("retry advanced twice")
 			}
-			now = now.Add(31 * time.Minute)
+			now = now.Add(time.Duration(last.DurationSeconds+1) * time.Second)
 			out, err = s.SimulationSession("user", a.ID)
 		}
 		if err != nil || out.Result == nil || out.Result.Correct != 1 || out.Result.Answered != 1 {
@@ -208,5 +230,68 @@ func TestSSWMariaDBResumeAndFailedWrite(t *testing.T) {
 	}
 	if restored.simulationAttempts[a.ID].session.Result != nil || restored.Gamification(user).ExamsCompleted != 0 {
 		t.Fatal("failed completion published result or reward")
+	}
+}
+
+func TestSSWNewTracksMariaDBResume(t *testing.T) {
+	dsn := testdb.DSN(t)
+	user := database.DemoUserID
+	s := NewMemoryStore()
+	if err := s.EnableGamificationPersistence(dsn); err != nil {
+		t.Fatal(err)
+	}
+	grantTestLifetime(t, s, user)
+	ids := map[string]string{}
+	for _, level := range []string{"SSW-AGRICULTURE-CROP", "SSW-AGRICULTURE-LIVESTOCK", "SSW-FISHERY-CAPTURE", "SSW-FISHERY-AQUACULTURE"} {
+		a, err := s.StartExam(user, strings.ToLower(level)+"-simulation-1")
+		if err != nil {
+			t.Fatal(err)
+		}
+		ids[level] = a.ID
+		current, err := s.SimulationSession(user, a.ID)
+		if err != nil {
+			t.Fatal(err)
+		}
+		q := current.Questions[0]
+		if err = s.SaveSimulationAnswer(user, a.ID, q.ID, q.Options[0].ID, true); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := s.Close(); err != nil {
+		t.Fatal(err)
+	}
+	restored := NewMemoryStore()
+	if err := restored.EnableGamificationPersistence(dsn); err != nil {
+		t.Fatal(err)
+	}
+	defer restored.Close()
+	grantTestLifetime(t, restored, user)
+	for level, id := range ids {
+		current, err := restored.SimulationSession(user, id)
+		if err != nil || len(current.Answers) != 1 || len(current.Marked) != 1 {
+			t.Fatal("restart lost new track", level, err)
+		}
+		a, err := restored.StartSimulation(user, level)
+		if err != nil || a.ID != id {
+			t.Fatal("resume duplicated track", level, err)
+		}
+		if strings.HasPrefix(level, "SSW-FISHERY") {
+			out, err := restored.SubmitSimulationSection(user, id, "vocabulary")
+			expected := 25
+			if level == "SSW-FISHERY-AQUACULTURE" {
+				expected = 10
+			}
+			if err != nil || out.ActiveSection != "grammar" || len(out.Questions) != expected {
+				t.Fatal("wrong practical question count", level, err)
+			}
+		}
+	}
+	if err := restored.DeleteAccount(user); err != nil {
+		t.Fatal(err)
+	}
+	for _, id := range ids {
+		if _, err := restored.SimulationSession(user, id); !errors.Is(err, ErrNotFound) {
+			t.Fatal("deleted session accessible")
+		}
 	}
 }

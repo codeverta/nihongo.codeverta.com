@@ -96,3 +96,17 @@ SswSector? sswSectorById(String id) {
   }
   return null;
 }
+
+const sswActiveSectorIds = {
+  'nursing-care',
+  'building-cleaning',
+  'agriculture',
+  'fishery',
+};
+
+const sswAssessmentLevels = <String, List<String>>{
+  'nursing-care': ['SSW-KAIGO', 'SSW-KAIGO-JP'],
+  'building-cleaning': ['SSW-CLEANING'],
+  'agriculture': ['SSW-AGRICULTURE-CROP', 'SSW-AGRICULTURE-LIVESTOCK'],
+  'fishery': ['SSW-FISHERY-CAPTURE', 'SSW-FISHERY-AQUACULTURE'],
+};

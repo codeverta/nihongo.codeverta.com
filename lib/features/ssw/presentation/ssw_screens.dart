@@ -25,8 +25,8 @@ class SswEntryCard extends StatelessWidget {
           ),
           subtitle: Text(
             exams
-                ? 'Kaigo & Pembersihan Gedung · Latihan dan simulasi'
-                : '2 bidang tersedia · 19 bidang',
+                ? '4 bidang aktif · Materi, latihan & simulasi'
+                : '4 bidang tersedia · 19 bidang',
           ),
           trailing: const Icon(Icons.chevron_right),
           onTap: () => context.push(exams ? '/ssw?tab=test' : '/ssw'),
@@ -87,8 +87,8 @@ class _SswHubState extends State<SswHubScreen> {
           const SizedBox(height: 12),
           Text(
             widget.exams
-                ? 'Latihan per topik dan simulasi Kaigo serta Pembersihan Gedung tersedia. Ukur pemahamanmu dan tinjau pembahasannya.'
-                : 'Pelajari Kaigo dan Pembersihan Gedung melalui kurikulum, kasus kerja, serta bahasa Jepang. Lanjutkan dengan latihan dan simulasi.',
+                ? 'Latihan dan simulasi tersedia untuk Kaigo, Pembersihan Gedung, Pertanian, serta Perikanan dan Budi Daya. Pilih jalur yang ingin kamu pelajari.'
+                : 'Empat bidang aktif dengan kurikulum, kasus kerja, serta bahasa Jepang. Mulai dari materi, lalu lanjutkan ke latihan per topik dan simulasi.',
             style: const TextStyle(height: 1.5),
           ),
           const SizedBox(height: 20),
@@ -218,7 +218,8 @@ class _SswSectorState extends State<SswSectorScreen> {
   @override
   void didUpdateWidget(covariant SswSectorScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.sectorId != widget.sectorId || oldWidget.exams != widget.exams) {
+    if (oldWidget.sectorId != widget.sectorId ||
+        oldWidget.exams != widget.exams) {
       exams = widget.exams;
     }
   }

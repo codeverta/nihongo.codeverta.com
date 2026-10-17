@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/ssw/data/kaigo_repository.dart';
 import 'package:nihongo_master/features/ssw/domain/kaigo_curriculum.dart';
+import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String kaigoLessonPath(String id) =>
@@ -14,8 +15,9 @@ String sswLessonPath(String sector, String id) =>
 class KaigoCurriculumPanel extends ConsumerWidget {
   const KaigoCurriculumPanel({super.key, this.sectorId = 'nursing-care'});
   final String sectorId;
-  String get label =>
-      sectorId == 'nursing-care' ? 'Kaigo' : 'Pembersihan Gedung';
+  String get label => sectorId == 'nursing-care'
+      ? 'Kaigo'
+      : sswSectorById(sectorId)?.name ?? 'SSW';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => ref
@@ -53,6 +55,16 @@ class KaigoCurriculumPanel extends ConsumerWidget {
               Text(
                 '${course.modules.length} modul · ${course.lessons.length} lesson · ±${course.minutes ~/ 60} jam belajar',
               ),
+              if (sectorId == 'agriculture' || sectorId == 'fishery') ...[
+                const SizedBox(height: 12),
+                Text(
+                  sectorId == 'agriculture'
+                      ? 'Dua jalur: Tanaman (20 lesson) dan Peternakan (20 lesson). Pilih modul sesuai pekerjaan yang ingin kamu persiapkan. Simulasi tiap jalur tersedia terpisah di tab Tes.'
+                      : 'Dua jalur: Perikanan Tangkap (15 lesson) dan Budi Daya (15 lesson). Pilih modul sesuai jalurmu; paket simulasi Tangkap dan Budi Daya berbeda.',
+                  style:
+                      const TextStyle(height: 1.6, fontWeight: FontWeight.w600),
+                ),
+              ],
               const SizedBox(height: 12),
               const Text(
                 'Pelajari berurutan dari dasar bidang hingga bahasa Jepang di tempat kerja. Tiap lesson berisi tujuan, penjelasan, langkah kerja, kasus, kosakata, dan cek pemahaman.',
@@ -176,7 +188,7 @@ class KaigoLessonScreen extends ConsumerWidget {
           title: Text(
             sectorId == 'nursing-care'
                 ? 'Lesson Kaigo'
-                : 'Lesson Pembersihan Gedung',
+                : 'Lesson ${sswSectorById(sectorId)?.name ?? 'SSW'}',
           ),
         ),
         body: ref.watch(sswCurriculumProvider(sectorId)).when(

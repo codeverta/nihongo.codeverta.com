@@ -2,6 +2,8 @@
 
 Ditinjau 17 Oktober 2026. Buka **Belajar / Ujian → SSW → Kaigo atau Pembersihan Gedung → Materi / Tes**.
 
+Dua bidang baru dijelaskan di [Pertanian serta Perikanan dan Budi Daya](ssw-agriculture-fishery.md).
+
 ## Konten aktif
 
 | Bidang | Materi | Latihan per topik | Simulasi |

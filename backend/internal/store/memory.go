@@ -260,7 +260,7 @@ func (s *MemoryStore) Achievements(userID string) []domain.Achievement {
 }
 
 func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, error) {
-	for _, level := range []string{"SSW-KAIGO", "SSW-KAIGO-JP", "SSW-CLEANING"} {
+	for _, level := range SSWLevels() {
 		if examID == strings.ToLower(level)+"-simulation-1" {
 			return s.StartSimulation(userID, level)
 		}
@@ -368,6 +368,10 @@ func seedTracks() []domain.LearningTrack {
 
 func seedExams() []domain.Exam {
 	return []domain.Exam{
+		{ID: "ssw-agriculture-crop-simulation-1", System: "SSW", Level: "Tanaman", Title: "Pertanian · Tanaman · Simulasi Tertulis 1", QuestionCount: 70, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "ssw-agriculture-livestock-simulation-1", System: "SSW", Level: "Peternakan", Title: "Pertanian · Peternakan · Simulasi Tertulis 1", QuestionCount: 70, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "ssw-fishery-capture-simulation-1", System: "SSW", Level: "Tangkap", Title: "Perikanan Tangkap · Simulasi 1", QuestionCount: 55, DurationMin: 70, RequiredTier: domain.TierPremium},
+		{ID: "ssw-fishery-aquaculture-simulation-1", System: "SSW", Level: "Budi daya", Title: "Budi Daya · Simulasi 1", QuestionCount: 50, DurationMin: 70, RequiredTier: domain.TierPremium},
 		{ID: "ssw-kaigo-simulation-1", System: "SSW", Level: "Kaigo", Title: "Kaigo · Simulasi Keterampilan 1", QuestionCount: 45, DurationMin: 60, RequiredTier: domain.TierPremium},
 		{ID: "ssw-kaigo-jp-simulation-1", System: "SSW", Level: "Kaigo", Title: "Kaigo · Simulasi Bahasa Jepang 1", QuestionCount: 15, DurationMin: 30, RequiredTier: domain.TierPremium},
 		{ID: "ssw-cleaning-simulation-1", System: "SSW", Level: "Building cleaning", Title: "Pembersihan Gedung · Simulasi 1", QuestionCount: 50, DurationMin: 50, RequiredTier: domain.TierPremium},
