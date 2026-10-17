@@ -112,7 +112,7 @@ Jawaban dipilih sebelum pembahasan ditampilkan. Jika belum tepat, pengguna dapat
 
 Materi berupa asset offline `assets/content/ssw/kaigo.json`. Pembuka referensi membutuhkan browser/jaringan. Progress menggunakan SharedPreferences dengan key per akun `ssw_kaigo_completed_v1_{userId}`, tersimpan pada perangkat yang sama, tidak disinkronkan ke server, dan dibersihkan setelah penghapusan akun berhasil. Tamu dapat belajar dengan progress sesi saja. Menyelesaikan lesson tidak memberi XP atau achievement palsu.
 
-Materi Kaigo dapat dibaca tanpa pembelian. Ini tidak mengubah entitlement JLPT atau ujian yang sudah ada. Semua ujian SSW dan materi 18 bidang lain masih Coming Soon.
+Materi Kaigo dapat dibaca tanpa pembelian. Ini tidak mengubah entitlement JLPT atau ujian yang sudah ada. Latihan dan simulasi Kaigo serta materi, latihan, dan simulasi Pembersihan Gedung kini aktif; lihat [latihan SSW](ssw-assessments.md). Materi 17 bidang lain masih Coming Soon.
 
 ## Referensi
 

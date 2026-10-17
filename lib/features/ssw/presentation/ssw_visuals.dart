@@ -57,7 +57,7 @@ class SswStatusBadge extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Text(
-          available ? 'Materi tersedia' : 'Coming Soon',
+          available ? 'Materi & tes tersedia' : 'Coming Soon',
           style: TextStyle(
             fontSize: 12,
             color:

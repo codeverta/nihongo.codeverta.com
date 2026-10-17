@@ -6,8 +6,10 @@ import (
 	"errors"
 	"google.golang.org/api/idtoken"
 	"net/http"
+	"nihongo-master-backend/internal/anki"
 	"nihongo-master-backend/internal/billing"
 	"nihongo-master-backend/internal/domain"
+	"nihongo-master-backend/internal/store"
 	"strings"
 )
 
@@ -180,7 +182,13 @@ func (s *Server) authorizePremium(w http.ResponseWriter, r *http.Request, id str
 	if level == "" {
 		level = "N5"
 	}
-	if !s.store.PremiumRequest(r.URL.Path, strings.ToUpper(strings.TrimSpace(level)), r.PathValue("lessonID"), r.PathValue("attemptID")) {
+	required := s.store.PremiumRequest(r.URL.Path, strings.ToUpper(strings.TrimSpace(level)), r.PathValue("lessonID"), r.PathValue("attemptID"))
+	if strings.HasPrefix(r.URL.Path, "/v1/anki/decks/") && (strings.HasSuffix(r.URL.Path, "/study") || strings.HasSuffix(r.URL.Path, "/review")) {
+		if deck, err := anki.Get(r.PathValue("deckID")); err == nil {
+			required = store.PremiumLevel(deck.Level)
+		}
+	}
+	if !required {
 		return true
 	}
 	if s.billing != nil {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/gamification_widgets.dart';

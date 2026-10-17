@@ -2,12 +2,14 @@ package api
 
 import (
 	"net/http"
+	"nihongo-master-backend/internal/store"
 	"strings"
 )
 
 func (s *Server) simulationOverview(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Cache-Control", "private, no-store")
 	level := strings.ToUpper(r.PathValue("level"))
-	if level != "N5" && level != "N4" && level != "N3" && level != "JFT" && level != "NAT" {
+	if level != "N5" && level != "N4" && level != "N3" && level != "JFT" && level != "NAT" && !store.IsSSWLevel(level) {
 		writeError(w, 400, "invalid_level", "Simulation supports N5, N4, N3, JFT and NAT")
 		return
 	}
@@ -20,6 +22,7 @@ func (s *Server) simulationOverview(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) simulationSession(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Cache-Control", "private, no-store")
 	result, err := s.store.SimulationSession(userID(r), r.PathValue("attemptID"))
 	if err != nil {
 		writeStoreError(w, err)

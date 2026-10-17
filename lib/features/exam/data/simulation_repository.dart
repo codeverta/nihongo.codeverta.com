@@ -15,11 +15,13 @@ class SimulationRepository extends DiagnosticRepository {
         '/exam-attempts',
         method: 'POST',
         body: {
-          'examId': level == 'JFT'
-              ? 'jft-a2-full-1'
-              : level == 'NAT'
-                  ? 'nat-5q-full-1'
-                  : 'jlpt-${level.toLowerCase()}-simulation-1',
+          'examId': level.startsWith('SSW-')
+              ? '${level.toLowerCase()}-simulation-1'
+              : level == 'JFT'
+                  ? 'jft-a2-full-1'
+                  : level == 'NAT'
+                      ? 'nat-5q-full-1'
+                      : 'jlpt-${level.toLowerCase()}-simulation-1',
         },
       ))['id'] as String;
 

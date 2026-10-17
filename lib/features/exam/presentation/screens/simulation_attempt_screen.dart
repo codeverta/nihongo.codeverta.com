@@ -10,6 +10,7 @@ import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_wid
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 
 class SimulationAttemptScreen extends ConsumerStatefulWidget {
   const SimulationAttemptScreen({
@@ -45,6 +46,13 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       ref.read(simulationLevelRepositoryProvider(widget.level));
   bool get isJft => widget.level == 'JFT';
   bool get isNat => widget.level == 'NAT';
+  bool get isSsw => widget.level.startsWith('SSW-');
+  String get sswSectionLabel =>
+      diagnosticList(session?['sections'])
+          .where((s) => s['id'] == section)
+          .map((s) => s['name'] as String)
+          .firstOrNull ??
+      'Selesai';
   String get jftSectionLabel => switch (section) {
         'vocabulary' => 'Bagian 1 · 文字と語彙',
         'conversation' => 'Bagian 2 · 会話と表現',
@@ -59,15 +67,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
   int get remaining =>
       ((millisecondsAtSync - clock.elapsedMilliseconds + 999) ~/ 1000).clamp(
         0,
-        isJft
-            ? 2700
-            : isNat
-                ? 2400
-                : widget.level == 'N3'
-                    ? 4200
-                    : widget.level == 'N4'
-                        ? 3300
-                        : 1200,
+        86400,
       );
 
   @override
@@ -113,17 +113,19 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       session = data;
       if (previousSection.isNotEmpty && previousSection != section) {
         index = 0;
-        notice = isJft && result == null
-            ? 'Bagian sebelumnya dikunci. $jftSectionLabel dimulai; timer total terus berjalan.'
-            : section == 'grammar'
-                ? isNat
-                    ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
-                    : widget.level == 'N3'
-                        ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
-                        : widget.level != 'N5'
-                            ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
-                            : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
-                : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.';
+        notice = isSsw && result == null
+            ? 'Bagian sebelumnya dikunci. $sswSectionLabel dimulai dengan timer bagian baru.'
+            : isJft && result == null
+                ? 'Bagian sebelumnya dikunci. $jftSectionLabel dimulai; timer total terus berjalan.'
+                : section == 'grammar'
+                    ? isNat
+                        ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
+                        : widget.level == 'N3'
+                            ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
+                            : widget.level != 'N5'
+                                ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
+                                : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
+                    : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.';
       }
     });
     if (previousSection != section && scroll.hasClients) scroll.jumpTo(0);
@@ -213,17 +215,19 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       context: context,
       builder: (c) => AlertDialog(
         title: Text(
-          isJft
-              ? 'Kirim $jftSectionLabel?'
-              : expected == 'vocabulary'
-                  ? 'Kunci bagian kosakata?'
-                  : widget.level != 'N5'
-                      ? 'Kirim grammar dan reading?'
-                      : 'Kirim bagian grammar?',
+          isSsw
+              ? 'Kirim $sswSectionLabel?'
+              : isJft
+                  ? 'Kirim $jftSectionLabel?'
+                  : expected == 'vocabulary'
+                      ? 'Kunci bagian kosakata?'
+                      : widget.level != 'N5'
+                          ? 'Kirim grammar dan reading?'
+                          : 'Kirim bagian grammar?',
         ),
         content: Text(
           '${unanswered > 0 ? 'Masih ada $unanswered soal kosong; soal kosong dihitung salah.\n\n' : ''}'
-          '${isJft ? expected == 'reading' ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.' : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.' : expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
+          '${isSsw ? (diagnosticList(session!['sections']).last['id'] == expected ? 'Jawaban dikunci dan hasil ditampilkan.' : 'Bagian ini dikunci. Timer bagian berikutnya langsung dimulai.') : isJft ? expected == 'reading' ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.' : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.' : expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
         ),
         actions: [
           TextButton(
@@ -376,17 +380,19 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            isJft
-                ? result != null
-                    ? 'Hasil JFT Exam 1'
-                    : 'JFT Exam 1'
-                : isNat
+            isSsw
+                ? '${result != null ? 'Hasil' : 'Simulasi'} ${sswExamTitle(widget.level)}'
+                : isJft
                     ? result != null
-                        ? 'Hasil NAT 5Q Exam 1'
-                        : 'NAT 5Q Exam 1'
-                    : result != null
-                        ? 'Hasil simulasi ${widget.level}'
-                        : 'JLPT ${widget.level} Simulation',
+                        ? 'Hasil JFT Exam 1'
+                        : 'JFT Exam 1'
+                    : isNat
+                        ? result != null
+                            ? 'Hasil NAT 5Q Exam 1'
+                            : 'NAT 5Q Exam 1'
+                        : result != null
+                            ? 'Hasil simulasi ${widget.level}'
+                            : 'JLPT ${widget.level} Simulation',
           ),
           actions: [
             if (data != null && result == null)
@@ -429,13 +435,15 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                               children: [
                                 Expanded(
                                   child: Text(
-                                    isJft
-                                        ? jftSectionLabel
-                                        : section == 'vocabulary'
-                                            ? 'Bagian 1 · 文字・語彙'
-                                            : widget.level != 'N5'
-                                                ? 'Bagian 2 · 文法・読解'
-                                                : 'Bagian 2 · 文法',
+                                    isSsw
+                                        ? sswSectionLabel
+                                        : isJft
+                                            ? jftSectionLabel
+                                            : section == 'vocabulary'
+                                                ? 'Bagian 1 · 文字・語彙'
+                                                : widget.level != 'N5'
+                                                    ? 'Bagian 2 · 文法・読解'
+                                                    : 'Bagian 2 · 文法',
                                     style: const TextStyle(
                                       color: examInk,
                                       fontWeight: FontWeight.w800,

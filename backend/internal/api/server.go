@@ -37,6 +37,7 @@ type userContextKey struct{}
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
 	s.registerLegal(mux)
+	s.registerAnki(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
 	mux.HandleFunc("GET /v1/billing", s.requireAuth(s.billingStatus))
@@ -47,6 +48,8 @@ func (s *Server) Handler() http.Handler {
 	s.registerAssets(mux)
 	s.registerBranding(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
+	mux.HandleFunc("GET /v1/ssw/{sector}/practice", s.requireAuth(s.sswPractice))
+	mux.HandleFunc("POST /v1/ssw/{sector}/practice/check", s.requireAuth(s.sswPracticeCheck))
 	mux.HandleFunc("GET /v1/simulation/attempts/{attemptID}", s.requireAuth(s.simulationSession))
 	mux.HandleFunc("PUT /v1/simulation/attempts/{attemptID}/answers", s.requireAuth(s.simulationAnswer))
 	mux.HandleFunc("POST /v1/simulation/attempts/{attemptID}/submit-section", s.requireAuth(s.simulationSubmit))

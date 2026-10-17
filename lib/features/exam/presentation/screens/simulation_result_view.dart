@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 
 class SimulationResultView extends StatefulWidget {
   const SimulationResultView({
@@ -30,7 +31,7 @@ class _ResultState extends State<SimulationResultView> {
         DiagnosticHero(
           title: 'Simulasi selesai.',
           subtitle:
-              '${widget.level == 'JFT' ? 'JFT Exam 1 · Kosakata, Percakapan & Reading' : widget.level == 'NAT' ? 'NAT 5Q Exam 1 · Kosakata, Grammar & Reading' : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
+              '${widget.level.startsWith('SSW-') ? sswExamTitle(widget.level) : widget.level == 'JFT' ? 'JFT Exam 1 · Kosakata, Percakapan & Reading' : widget.level == 'NAT' ? 'NAT 5Q Exam 1 · Kosakata, Grammar & Reading' : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
           child: Text(
             '${result['answered']} dijawab · ${(result['total'] as int) - (result['answered'] as int)} kosong\n'
             'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik',

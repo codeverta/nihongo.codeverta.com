@@ -24,17 +24,20 @@ type studyEvent struct {
 	Score, Answered, Seconds            int
 	At                                  time.Time
 	Progress                            *domain.LessonProgress
+	SSWAttempt                          *SSWAttemptRecord
 }
 type gamificationState struct {
-	XP         int
-	Events     map[string]bool
-	Rewards    map[string]bool
-	Lessons    map[string]domain.LessonProgress
-	Subjects   map[string]string
-	Days       map[string]int
-	Unlocked   map[string]time.Time
-	Exams      map[string]bool
-	PassedExam bool
+	SSWAttempts map[string]SSWAttemptRecord
+	Anki        map[string]*AnkiDeckState
+	XP          int
+	Events      map[string]bool
+	Rewards     map[string]bool
+	Lessons     map[string]domain.LessonProgress
+	Subjects    map[string]string
+	Days        map[string]int
+	Unlocked    map[string]time.Time
+	Exams       map[string]bool
+	PassedExam  bool
 }
 type GamificationSummary struct {
 	XP               int                  `json:"xp"`
@@ -128,6 +131,11 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 		if state.XP < 0 || state.Events == nil || state.Rewards == nil || state.Lessons == nil || state.Subjects == nil || state.Days == nil || state.Unlocked == nil || state.Exams == nil {
 			return fmt.Errorf("invalid gamification record for user %q", record.UserID)
 		}
+		for attemptID, r := range state.SSWAttempts {
+			if r.Session.Attempt.UserID != record.UserID || r.Session.Attempt.ID != attemptID || len(r.Session.Sections) == 0 || r.Correct == nil || r.Marked == nil {
+				return fmt.Errorf("invalid SSW attempt")
+			}
+		}
 		loaded[record.UserID] = state
 	}
 
@@ -143,6 +151,10 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 	s.persistenceLockName = lockName
 	s.gamification = loaded
 	for id, state := range loaded {
+		for attemptID, r := range state.SSWAttempts {
+			s.simulationAttempts[attemptID] = &simulationAttemptState{r.Session, r.Questions, r.Correct, r.Explanations, r.Marked}
+			s.simulationOrder = append(s.simulationOrder, attemptID)
+		}
 		s.progress[id] = map[string]domain.LessonProgress{}
 		for key, progress := range state.Lessons {
 			s.progress[id][key] = progress
@@ -152,6 +164,9 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 		profile.Level = 1 + state.XP/500
 		s.profiles[id] = profile
 	}
+	sort.SliceStable(s.simulationOrder, func(i, j int) bool {
+		return s.simulationAttempts[s.simulationOrder[i]].session.Attempt.StartedAt.Before(s.simulationAttempts[s.simulationOrder[j]].session.Attempt.StartedAt)
+	})
 	failed = false
 	s.persistenceStop = make(chan struct{})
 	go keepMariaDBWriterAlive(writer, s.persistenceStop)
@@ -213,6 +228,20 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 	next := newGamificationState()
 	if err = json.Unmarshal(raw, next); err != nil {
 		return err
+	}
+	if event.SSWAttempt != nil {
+		if next.SSWAttempts == nil {
+			next.SSWAttempts = map[string]SSWAttemptRecord{}
+		}
+		raw, err := json.Marshal(event.SSWAttempt)
+		if err != nil {
+			return err
+		}
+		var record SSWAttemptRecord
+		if err := json.Unmarshal(raw, &record); err != nil {
+			return err
+		}
+		next.SSWAttempts[record.Session.Attempt.ID] = record
 	}
 	next.Events[event.ID] = true
 	if event.Progress != nil {

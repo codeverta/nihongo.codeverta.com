@@ -194,7 +194,13 @@ func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bo
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 	if strings.Contains(path, "/simulation/") && attemptID == "" {
+		if IsSSWLevel(level) {
+			return true
+		}
 		return strings.ToUpper(level) == "N4" || strings.ToUpper(level) == "N3" || strings.ToUpper(level) == "JFT" || strings.ToUpper(level) == "NAT"
+	}
+	if strings.Contains(path, "/ssw/") {
+		return true
 	}
 	if strings.Contains(path, "/course") {
 		if strings.Contains(path, "/grammar/") {

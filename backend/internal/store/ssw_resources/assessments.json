@@ -1,0 +1,4198 @@
+{
+  "banks": {
+    "nursing-care": [
+      {
+        "id": "kaigo-01-1",
+        "moduleId": "foundations",
+        "group": "Dasar Kaigo, martabat, dan etika",
+        "lessonId": "kaigo-01",
+        "prompt": "Pengguna masih mampu menyisir rambut. Bantuan yang mendukung kemandirian adalah…",
+        "options": [
+          "Menyisir tanpa bertanya",
+          "Menyiapkan sisir dan membantu bagian sulit",
+          "Melarang pengguna mencoba"
+        ],
+        "answer": 1,
+        "explanation": "Lingkungan dan bantuan sebagian mempertahankan kemampuan yang masih dimiliki.",
+        "scenario": "Pak Sato makan perlahan tetapi dapat memegang sendok. Petugas baru ingin langsung menyuapi agar jadwal selesai."
+      },
+      {
+        "id": "kaigo-01-2",
+        "moduleId": "foundations",
+        "group": "Dasar Kaigo, martabat, dan etika",
+        "lessonId": "kaigo-01",
+        "prompt": "Contoh IADL adalah…",
+        "options": [
+          "Menelan makanan",
+          "Mengubah posisi tidur",
+          "Mengelola jadwal belanja"
+        ],
+        "answer": 2,
+        "explanation": "IADL merupakan kegiatan kehidupan yang lebih kompleks dibanding ADL dasar.",
+        "scenario": "Pak Sato makan perlahan tetapi dapat memegang sendok. Petugas baru ingin langsung menyuapi agar jadwal selesai."
+      },
+      {
+        "id": "kaigo-02-1",
+        "moduleId": "foundations",
+        "group": "Dasar Kaigo, martabat, dan etika",
+        "lessonId": "kaigo-02",
+        "prompt": "Saat pengguna menolak mandi, langkah pertama adalah…",
+        "options": [
+          "Mendengarkan alasan dan mencari alternatif",
+          "Memaksa agar jadwal selesai",
+          "Mengabaikan selamanya"
+        ],
+        "answer": 0,
+        "explanation": "Penolakan dapat menunjukkan kebutuhan atau rasa tidak nyaman yang perlu dipahami.",
+        "scenario": "Ibu Tanaka menolak mandi sore. Ia berkata ruangan terasa dingin."
+      },
+      {
+        "id": "kaigo-02-2",
+        "moduleId": "foundations",
+        "group": "Dasar Kaigo, martabat, dan etika",
+        "lessonId": "kaigo-02",
+        "prompt": "Kemandirian juga mencakup…",
+        "options": [
+          "Hak memilih dengan dukungan",
+          "Harus selalu tanpa bantuan",
+          "Tidak boleh menggunakan alat bantu"
+        ],
+        "answer": 0,
+        "explanation": "Pilihan dan penggunaan dukungan tetap merupakan bagian dari kemandirian.",
+        "scenario": "Ibu Tanaka menolak mandi sore. Ia berkata ruangan terasa dingin."
+      },
+      {
+        "id": "kaigo-03-1",
+        "moduleId": "foundations",
+        "group": "Dasar Kaigo, martabat, dan etika",
+        "lessonId": "kaigo-03",
+        "prompt": "Foto pengguna sebaiknya…",
+        "options": [
+          "Dikelola sesuai persetujuan dan kebijakan resmi",
+          "Diunggah bila wajah diburamkan saja",
+          "Dikirim ke grup pribadi"
+        ],
+        "answer": 0,
+        "explanation": "Persetujuan, tujuan, penerima, dan kebijakan penggunaan tetap perlu diperiksa.",
+        "scenario": "Kerabat yang belum dikenal menelepon meminta diagnosis pengguna. Petugas juga diminta memberi dosis obat tambahan."
+      },
+      {
+        "id": "kaigo-03-2",
+        "moduleId": "foundations",
+        "group": "Dasar Kaigo, martabat, dan etika",
+        "lessonId": "kaigo-03",
+        "prompt": "Instruksi obat tidak jelas. Tindakan yang tepat adalah…",
+        "options": [
+          "Mengonfirmasi kepada petugas berwenang",
+          "Menebak dari kemasan",
+          "Mengikuti pengalaman teman"
+        ],
+        "answer": 0,
+        "explanation": "Keputusan obat memerlukan kewenangan dan instruksi yang jelas.",
+        "scenario": "Kerabat yang belum dikenal menelepon meminta diagnosis pengguna. Petugas juga diminta memberi dosis obat tambahan."
+      },
+      {
+        "id": "kaigo-04-1",
+        "moduleId": "body",
+        "group": "Tubuh, penuaan, dan disabilitas",
+        "lessonId": "kaigo-04",
+        "prompt": "Laporan pengamatan yang paling jelas adalah…",
+        "options": [
+          "Beliau aneh",
+          "Mungkin penyakit berat",
+          "Pukul 08.00 sulit dibangunkan, berbeda dari biasanya"
+        ],
+        "answer": 2,
+        "explanation": "Waktu, perilaku teramati, dan perbandingan dengan kondisi dasar membantu tim menilai perubahan.",
+        "scenario": "Pak Mori biasanya aktif berbicara. Pagi ini ia mengantuk tidak biasa dan sulit mengikuti percakapan."
+      },
+      {
+        "id": "kaigo-04-2",
+        "moduleId": "body",
+        "group": "Tubuh, penuaan, dan disabilitas",
+        "lessonId": "kaigo-04",
+        "prompt": "Satu angka tanda vital harus…",
+        "options": [
+          "Selalu dianggap normal",
+          "Digunakan untuk menentukan diagnosis sendiri",
+          "Ditafsirkan bersama gejala dan prosedur"
+        ],
+        "answer": 2,
+        "explanation": "Konteks serta jalur pelaporan diperlukan untuk pengamatan yang aman.",
+        "scenario": "Pak Mori biasanya aktif berbicara. Pagi ini ia mengantuk tidak biasa dan sulit mengikuti percakapan."
+      },
+      {
+        "id": "kaigo-05-1",
+        "moduleId": "body",
+        "group": "Tubuh, penuaan, dan disabilitas",
+        "lessonId": "kaigo-05",
+        "prompt": "Cara mendukung pengguna yang membutuhkan waktu menjawab adalah…",
+        "options": [
+          "Mengulang pertanyaan dengan marah",
+          "Memberi waktu dan mengurangi gangguan",
+          "Menjawab untuknya setiap saat"
+        ],
+        "answer": 1,
+        "explanation": "Penyesuaian komunikasi memberi ruang bagi kemampuan yang masih dimiliki.",
+        "scenario": "Ibu Yamada sering tidak menjawab di ruang makan yang ramai, tetapi merespons ketika diajak bicara di tempat tenang."
+      },
+      {
+        "id": "kaigo-05-2",
+        "moduleId": "body",
+        "group": "Tubuh, penuaan, dan disabilitas",
+        "lessonId": "kaigo-05",
+        "prompt": "Penuaan pada setiap pengguna…",
+        "options": [
+          "Selalu sama",
+          "Perlu dinilai secara individual",
+          "Selalu menyebabkan demensia"
+        ],
+        "answer": 1,
+        "explanation": "Kemampuan dan kebutuhan tidak dapat diputuskan hanya berdasarkan umur.",
+        "scenario": "Ibu Yamada sering tidak menjawab di ruang makan yang ramai, tetapi merespons ketika diajak bicara di tempat tenang."
+      },
+      {
+        "id": "kaigo-06-1",
+        "moduleId": "body",
+        "group": "Tubuh, penuaan, dan disabilitas",
+        "lessonId": "kaigo-06",
+        "prompt": "Kesulitan bicara berarti…",
+        "options": [
+          "Tidak perlu diajak berbicara",
+          "Kemampuan memahami tetap perlu diperhatikan",
+          "Pasti tidak memahami"
+        ],
+        "answer": 1,
+        "explanation": "Kemampuan berbicara dan memahami tidak selalu terganggu dengan cara yang sama.",
+        "scenario": "Pak Ito memahami pembicaraan tetapi sulit mengucapkan kata. Petugas baru berbicara hanya kepada keluarganya."
+      },
+      {
+        "id": "kaigo-06-2",
+        "moduleId": "body",
+        "group": "Tubuh, penuaan, dan disabilitas",
+        "lessonId": "kaigo-06",
+        "prompt": "Saat berpakaian dengan kelemahan satu sisi, prinsip umum memasukkan pakaian adalah…",
+        "options": [
+          "Menarik lengan agar cepat",
+          "Sisi yang lebih kuat selalu dahulu",
+          "Sisi yang memerlukan bantuan dahulu, sesuai rencana"
+        ],
+        "answer": 2,
+        "explanation": "Urutan bantuan bertujuan mengurangi kesulitan; tetap sesuaikan kondisi dan rencana.",
+        "scenario": "Pak Ito memahami pembicaraan tetapi sulit mengucapkan kata. Petugas baru berbicara hanya kepada keluarganya."
+      },
+      {
+        "id": "kaigo-07-1",
+        "moduleId": "dementia",
+        "group": "Demensia dan dukungan perilaku",
+        "lessonId": "kaigo-07",
+        "prompt": "Pengguna mengulang pertanyaan. Respons yang tepat adalah…",
+        "options": [
+          "Menjawab tenang dan memberi petunjuk",
+          "Menguji ingatan dengan paksa",
+          "Mempermalukan di depan orang lain"
+        ],
+        "answer": 0,
+        "explanation": "Petunjuk dan ketenangan membantu kebutuhan yang muncul dari kesulitan mengingat.",
+        "scenario": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'."
+      },
+      {
+        "id": "kaigo-07-2",
+        "moduleId": "dementia",
+        "group": "Demensia dan dukungan perilaku",
+        "lessonId": "kaigo-07",
+        "prompt": "Demensia…",
+        "options": [
+          "Memerlukan penilaian profesional dan dukungan individual",
+          "Dapat didiagnosis dari satu kali lupa",
+          "Selalu dialami setiap lansia"
+        ],
+        "answer": 0,
+        "explanation": "Usia atau satu kejadian lupa tidak cukup untuk menentukan diagnosis.",
+        "scenario": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'."
+      },
+      {
+        "id": "kaigo-08-1",
+        "moduleId": "dementia",
+        "group": "Demensia dan dukungan perilaku",
+        "lessonId": "kaigo-08",
+        "prompt": "Memvalidasi emosi berarti…",
+        "options": [
+          "Memaksa pengguna berhenti bicara",
+          "Mengakui perasaan pengguna",
+          "Selalu menyetujui semua fakta"
+        ],
+        "answer": 1,
+        "explanation": "Perasaan dapat diakui tanpa berdebat atau membenarkan informasi yang tidak tepat.",
+        "scenario": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat."
+      },
+      {
+        "id": "kaigo-08-2",
+        "moduleId": "dementia",
+        "group": "Demensia dan dukungan perilaku",
+        "lessonId": "kaigo-08",
+        "prompt": "Catatan perilaku sebaiknya memuat…",
+        "options": [
+          "Label 'nakal' saja",
+          "Pendapat tanpa waktu",
+          "Pemicu, perilaku, respons, dan hasil"
+        ],
+        "answer": 2,
+        "explanation": "Urutan kejadian membantu tim menentukan dukungan yang sesuai.",
+        "scenario": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat."
+      },
+      {
+        "id": "kaigo-09-1",
+        "moduleId": "dementia",
+        "group": "Demensia dan dukungan perilaku",
+        "lessonId": "kaigo-09",
+        "prompt": "Kebingungan mendadak pada pengguna dengan demensia perlu…",
+        "options": [
+          "Dilaporkan sebagai perubahan baru",
+          "Ditunggu sampai shift besok",
+          "Diabaikan sebagai usia"
+        ],
+        "answer": 0,
+        "explanation": "Perubahan dari kondisi dasar memerlukan penilaian, bukan asumsi.",
+        "scenario": "Pengguna dengan demensia biasanya mengikuti sapaan. Sore ini ia tiba-tiba tidak dapat memusatkan perhatian dan jauh lebih mengantuk."
+      },
+      {
+        "id": "kaigo-09-2",
+        "moduleId": "dementia",
+        "group": "Demensia dan dukungan perilaku",
+        "lessonId": "kaigo-09",
+        "prompt": "Informasi keluarga paling berguna untuk dukungan personal adalah…",
+        "options": [
+          "Perintah yang selalu mengganti pilihan pengguna",
+          "Kebiasaan dan hal yang menenangkan",
+          "Gosip tetangga"
+        ],
+        "answer": 1,
+        "explanation": "Riwayat hidup membantu tim memahami kebutuhan, dengan pengguna tetap menjadi pusat dukungan.",
+        "scenario": "Pengguna dengan demensia biasanya mengikuti sapaan. Sore ini ia tiba-tiba tidak dapat memusatkan perhatian dan jauh lebih mengantuk."
+      },
+      {
+        "id": "kaigo-10-1",
+        "moduleId": "communication",
+        "group": "Komunikasi yang menghormati pengguna",
+        "lessonId": "kaigo-10",
+        "prompt": "Pengguna diam ketika ditawari bantuan. Petugas sebaiknya…",
+        "options": [
+          "Langsung menganggap setuju",
+          "Mengonfirmasi pemahaman dan respons",
+          "Menganggap menolak selamanya"
+        ],
+        "answer": 1,
+        "explanation": "Diam dapat memiliki banyak makna; persetujuan perlu dikonfirmasi.",
+        "scenario": "Ibu Arai berkata 'saya tidak suka ruang makan'. Petugas hendak menyimpulkan ia tidak lapar."
+      },
+      {
+        "id": "kaigo-10-2",
+        "moduleId": "communication",
+        "group": "Komunikasi yang menghormati pengguna",
+        "lessonId": "kaigo-10",
+        "prompt": "Mendengarkan aktif mencakup…",
+        "options": [
+          "Menebak tanpa bertanya",
+          "Merangkum dan memastikan pemahaman",
+          "Memotong jawaban"
+        ],
+        "answer": 1,
+        "explanation": "Konfirmasi mencegah salah memahami kebutuhan pengguna.",
+        "scenario": "Ibu Arai berkata 'saya tidak suka ruang makan'. Petugas hendak menyimpulkan ia tidak lapar."
+      },
+      {
+        "id": "kaigo-11-1",
+        "moduleId": "communication",
+        "group": "Komunikasi yang menghormati pengguna",
+        "lessonId": "kaigo-11",
+        "prompt": "Cara memberi arahan yang mudah diikuti adalah…",
+        "options": [
+          "Hanya berbicara kepada rekan",
+          "Beberapa perintah cepat",
+          "Satu tahap lalu menunggu respons"
+        ],
+        "answer": 2,
+        "explanation": "Pengguna perlu waktu memahami dan merespons satu tahap.",
+        "scenario": "Petugas mengatakan 'pegang, berdiri, putar, duduk' dalam satu kalimat. Pengguna berhenti dan tampak takut."
+      },
+      {
+        "id": "kaigo-11-2",
+        "moduleId": "communication",
+        "group": "Komunikasi yang menghormati pengguna",
+        "lessonId": "kaigo-11",
+        "prompt": "Sebelum bantuan tubuh, petugas perlu…",
+        "options": [
+          "Menjelaskan dan meminta persetujuan",
+          "Langsung menyentuh",
+          "Menjanjikan pasti tidak sakit"
+        ],
+        "answer": 0,
+        "explanation": "Penjelasan dan persetujuan membangun rasa aman dan menghormati pengguna.",
+        "scenario": "Petugas mengatakan 'pegang, berdiri, putar, duduk' dalam satu kalimat. Pengguna berhenti dan tampak takut."
+      },
+      {
+        "id": "kaigo-12-1",
+        "moduleId": "communication",
+        "group": "Komunikasi yang menghormati pengguna",
+        "lessonId": "kaigo-12",
+        "prompt": "Instruksi penting belum dipahami. Tindakan yang tepat…",
+        "options": [
+          "Mengabaikan rincian waktu",
+          "Meminta klarifikasi sebelum bertindak",
+          "Mengangguk lalu menebak"
+        ],
+        "answer": 1,
+        "explanation": "Mengonfirmasi mencegah kesalahan yang timbul dari pemahaman sebagian.",
+        "scenario": "Petugas mendengar instruksi Jepang tentang waktu makan, tetapi tidak yakin apakah sebelum atau sesudah pemeriksaan."
+      },
+      {
+        "id": "kaigo-12-2",
+        "moduleId": "communication",
+        "group": "Komunikasi yang menghormati pengguna",
+        "lessonId": "kaigo-12",
+        "prompt": "Pengguna kurang mendengar paling terbantu oleh…",
+        "options": [
+          "Bicara lebih cepat",
+          "Wajah terlihat dan kebisingan berkurang",
+          "Teriakan dari belakang"
+        ],
+        "answer": 1,
+        "explanation": "Konteks visual dan lingkungan yang tenang dapat membantu komunikasi.",
+        "scenario": "Petugas mendengar instruksi Jepang tentang waktu makan, tetapi tidak yakin apakah sebelum atau sesudah pemeriksaan."
+      },
+      {
+        "id": "kaigo-13-1",
+        "moduleId": "safety",
+        "group": "Keselamatan, infeksi, dan keadaan darurat",
+        "lessonId": "kaigo-13",
+        "prompt": "Sarung tangan…",
+        "options": [
+          "Menggantikan cuci tangan",
+          "Boleh dipakai antar pengguna",
+          "Tetap memerlukan kebersihan tangan"
+        ],
+        "answer": 2,
+        "explanation": "Sarung tangan dapat terkontaminasi dan tangan perlu dibersihkan pada momen yang tepat.",
+        "scenario": "Setelah bantuan toilet, petugas masih memakai sarung tangan saat menyiapkan sendok makan pengguna lain."
+      },
+      {
+        "id": "kaigo-13-2",
+        "moduleId": "safety",
+        "group": "Keselamatan, infeksi, dan keadaan darurat",
+        "lessonId": "kaigo-13",
+        "prompt": "Setelah bantuan toilet sebelum menyiapkan makanan, petugas harus…",
+        "options": [
+          "Langsung menggunakan sarung tangan sama",
+          "Hanya mengelap sarung tangan",
+          "Melepas pelindung dan melakukan kebersihan tangan"
+        ],
+        "answer": 2,
+        "explanation": "Alur kotor dan bersih perlu dipisahkan untuk mencegah kontaminasi.",
+        "scenario": "Setelah bantuan toilet, petugas masih memakai sarung tangan saat menyiapkan sendok makan pengguna lain."
+      },
+      {
+        "id": "kaigo-14-1",
+        "moduleId": "safety",
+        "group": "Keselamatan, infeksi, dan keadaan darurat",
+        "lessonId": "kaigo-14",
+        "prompt": "Kejadian hampir tersandung tanpa cedera perlu…",
+        "options": [
+          "Diabaikan karena belum cedera",
+          "Disembunyikan",
+          "Dilaporkan untuk pencegahan"
+        ],
+        "answer": 2,
+        "explanation": "Near miss menyediakan informasi untuk memperbaiki keselamatan.",
+        "scenario": "Pengguna hampir tersandung kabel charger di samping tempat tidur. Tidak ada cedera."
+      },
+      {
+        "id": "kaigo-14-2",
+        "moduleId": "safety",
+        "group": "Keselamatan, infeksi, dan keadaan darurat",
+        "lessonId": "kaigo-14",
+        "prompt": "Pengguna sudah jatuh. Langkah yang tepat adalah…",
+        "options": [
+          "Panggil bantuan dan ikuti prosedur penilaian",
+          "Langsung tarik agar berdiri",
+          "Suruh berjalan untuk menguji"
+        ],
+        "answer": 0,
+        "explanation": "Keselamatan dan penilaian sesuai prosedur didahulukan sebelum pemindahan.",
+        "scenario": "Pengguna hampir tersandung kabel charger di samping tempat tidur. Tidak ada cedera."
+      },
+      {
+        "id": "kaigo-15-1",
+        "moduleId": "safety",
+        "group": "Keselamatan, infeksi, dan keadaan darurat",
+        "lessonId": "kaigo-15",
+        "prompt": "Saat keadaan darurat, catatan panjang sebaiknya…",
+        "options": [
+          "Menggantikan panggilan bantuan",
+          "Dikerjakan setelah respons segera ditangani",
+          "Diselesaikan sebelum memanggil"
+        ],
+        "answer": 1,
+        "explanation": "Eskalasi dan keselamatan tidak boleh tertunda oleh administrasi.",
+        "scenario": "Saat kegiatan pagi, Pak Ono tiba-tiba sulit merespons dan tampak kesulitan bernapas."
+      },
+      {
+        "id": "kaigo-15-2",
+        "moduleId": "safety",
+        "group": "Keselamatan, infeksi, dan keadaan darurat",
+        "lessonId": "kaigo-15",
+        "prompt": "Panggilan bantuan harus mencakup…",
+        "options": [
+          "Diagnosis yang ditebak",
+          "Hanya 'tolong'",
+          "Lokasi dan kondisi yang diamati"
+        ],
+        "answer": 2,
+        "explanation": "Lokasi serta kondisi membantu tim memberi respons yang tepat.",
+        "scenario": "Saat kegiatan pagi, Pak Ono tiba-tiba sulit merespons dan tampak kesulitan bernapas."
+      },
+      {
+        "id": "kaigo-16-1",
+        "moduleId": "mobility",
+        "group": "Posisi tubuh, transfer, dan mobilitas",
+        "lessonId": "kaigo-16",
+        "prompt": "Body mechanics yang baik…",
+        "options": [
+          "Menjamin semua angkat aman",
+          "Menggantikan alat bantu",
+          "Tetap memerlukan penilaian dan alat sesuai kebutuhan"
+        ],
+        "answer": 2,
+        "explanation": "Kemampuan pengguna, alat, ruang, serta petugas harus dipertimbangkan bersama.",
+        "scenario": "Pak Endo yang biasanya membantu berdiri hari ini tidak mampu menumpu. Petugas hendak tetap memakai cara kemarin."
+      },
+      {
+        "id": "kaigo-16-2",
+        "moduleId": "mobility",
+        "group": "Posisi tubuh, transfer, dan mobilitas",
+        "lessonId": "kaigo-16",
+        "prompt": "Kemampuan menumpu berubah hari ini. Petugas perlu…",
+        "options": [
+          "Menghentikan dan meminta penilaian ulang",
+          "Menarik pengguna lebih kuat",
+          "Memakai cara kemarin tanpa perubahan"
+        ],
+        "answer": 0,
+        "explanation": "Rencana bantuan harus sesuai kondisi aktual.",
+        "scenario": "Pak Endo yang biasanya membantu berdiri hari ini tidak mampu menumpu. Petugas hendak tetap memakai cara kemarin."
+      },
+      {
+        "id": "kaigo-17-1",
+        "moduleId": "mobility",
+        "group": "Posisi tubuh, transfer, dan mobilitas",
+        "lessonId": "kaigo-17",
+        "prompt": "Kemerahan kulit baru sebaiknya…",
+        "options": [
+          "Ditutupi tanpa catatan",
+          "Dipijat kuat",
+          "Dilaporkan dan ditangani sesuai arahan"
+        ],
+        "answer": 2,
+        "explanation": "Perubahan kulit memerlukan penilaian serta perlindungan yang sesuai.",
+        "scenario": "Saat merapikan pakaian, petugas melihat kemerahan baru di area tumit pengguna yang jarang bergerak."
+      },
+      {
+        "id": "kaigo-17-2",
+        "moduleId": "mobility",
+        "group": "Posisi tubuh, transfer, dan mobilitas",
+        "lessonId": "kaigo-17",
+        "prompt": "Jadwal perubahan posisi harus…",
+        "options": [
+          "Mengikuti rencana individual",
+          "Sama untuk semua orang",
+          "Ditentukan dari kebiasaan petugas saja"
+        ],
+        "answer": 0,
+        "explanation": "Risiko, kenyamanan, serta kondisi pengguna berbeda-beda.",
+        "scenario": "Saat merapikan pakaian, petugas melihat kemerahan baru di area tumit pengguna yang jarang bergerak."
+      },
+      {
+        "id": "kaigo-18-1",
+        "moduleId": "mobility",
+        "group": "Posisi tubuh, transfer, dan mobilitas",
+        "lessonId": "kaigo-18",
+        "prompt": "Saat transfer, pijakan kaki yang menghalangi harus…",
+        "options": [
+          "Dipakai sebagai tempat berdiri",
+          "Diatur sesuai prosedur sebelum mulai",
+          "Dibiarkan agar cepat"
+        ],
+        "answer": 1,
+        "explanation": "Persiapan alat mencegah hambatan dan risiko saat transfer.",
+        "scenario": "Petugas melihat pijakan kaki kursi roda masih menghalangi saat pengguna hendak berdiri."
+      },
+      {
+        "id": "kaigo-18-2",
+        "moduleId": "mobility",
+        "group": "Posisi tubuh, transfer, dan mobilitas",
+        "lessonId": "kaigo-18",
+        "prompt": "Pengguna tiba-tiba pusing saat berjalan. Petugas sebaiknya…",
+        "options": [
+          "Menganggap malas",
+          "Memaksa menyelesaikan jarak",
+          "Berhenti dengan aman dan melaporkan"
+        ],
+        "answer": 2,
+        "explanation": "Perubahan kondisi perlu perhatian sebelum aktivitas dilanjutkan.",
+        "scenario": "Petugas melihat pijakan kaki kursi roda masih menghalangi saat pengguna hendak berdiri."
+      },
+      {
+        "id": "kaigo-19-1",
+        "moduleId": "food",
+        "group": "Makan, minum, dan kesehatan mulut",
+        "lessonId": "kaigo-19",
+        "prompt": "Nampan yang mirip perlu…",
+        "options": [
+          "Diberikan menurut posisi kursi",
+          "Diperiksa penerima dan rencana dietnya",
+          "Dibagi secara acak"
+        ],
+        "answer": 1,
+        "explanation": "Identitas, alergi, serta rencana diet harus cocok sebelum pemberian.",
+        "scenario": "Dua nampan mirip diletakkan berdampingan. Petugas belum memeriksa label dan rencana diet."
+      },
+      {
+        "id": "kaigo-19-2",
+        "moduleId": "food",
+        "group": "Makan, minum, dan kesehatan mulut",
+        "lessonId": "kaigo-19",
+        "prompt": "Tempo bantuan makan sebaiknya…",
+        "options": [
+          "Selalu cepat",
+          "Sama pada semua pengguna",
+          "Mengikuti kemampuan dan respons pengguna"
+        ],
+        "answer": 2,
+        "explanation": "Kenyamanan serta kemampuan pengguna menentukan bantuan, bukan jadwal petugas saja.",
+        "scenario": "Dua nampan mirip diletakkan berdampingan. Petugas belum memeriksa label dan rencana diet."
+      },
+      {
+        "id": "kaigo-20-1",
+        "moduleId": "food",
+        "group": "Makan, minum, dan kesehatan mulut",
+        "lessonId": "kaigo-20",
+        "prompt": "Kesulitan baru saat menelan harus direspons dengan…",
+        "options": [
+          "Lanjutkan lebih cepat",
+          "Air sebanyak mungkin",
+          "Hentikan pemberian dan eskalasi sesuai prosedur"
+        ],
+        "answer": 2,
+        "explanation": "Perubahan menelan memerlukan penilaian dan tidak diselesaikan dengan minuman spontan.",
+        "scenario": "Saat makan, suara pengguna menjadi basah dan ia berulang kali batuk. Teman menyarankan memberi banyak air."
+      },
+      {
+        "id": "kaigo-20-2",
+        "moduleId": "food",
+        "group": "Makan, minum, dan kesehatan mulut",
+        "lessonId": "kaigo-20",
+        "prompt": "Tekstur dan target cairan ditetapkan berdasarkan…",
+        "options": [
+          "Selera petugas",
+          "Aturan yang sama bagi semua lansia",
+          "Rencana individual dari tim"
+        ],
+        "answer": 2,
+        "explanation": "Kebutuhan serta pembatasan tiap pengguna dapat berbeda.",
+        "scenario": "Saat makan, suara pengguna menjadi basah dan ia berulang kali batuk. Teman menyarankan memberi banyak air."
+      },
+      {
+        "id": "kaigo-21-1",
+        "moduleId": "food",
+        "group": "Makan, minum, dan kesehatan mulut",
+        "lessonId": "kaigo-21",
+        "prompt": "Pengguna mengatakan gigi palsu sakit. Petugas harus…",
+        "options": [
+          "Memperbaiki sendiri",
+          "Memaksa agar tetap dipakai",
+          "Melaporkan untuk penilaian"
+        ],
+        "answer": 2,
+        "explanation": "Keluhan perlu penilaian dan tindak lanjut sesuai kewenangan.",
+        "scenario": "Ibu Noda mengurangi makan dan mengatakan gigi palsunya sakit saat dipakai."
+      },
+      {
+        "id": "kaigo-21-2",
+        "moduleId": "food",
+        "group": "Makan, minum, dan kesehatan mulut",
+        "lessonId": "kaigo-21",
+        "prompt": "Wadah gigi palsu perlu…",
+        "options": [
+          "Dicampur agar mudah dibersihkan",
+          "Dipakai bergantian",
+          "Diberi identitas dan disimpan sesuai prosedur"
+        ],
+        "answer": 2,
+        "explanation": "Identifikasi mencegah alat pribadi tertukar dan mendukung kebersihan.",
+        "scenario": "Ibu Noda mengurangi makan dan mengatakan gigi palsunya sakit saat dipakai."
+      },
+      {
+        "id": "kaigo-22-1",
+        "moduleId": "toileting",
+        "group": "Toilet, eliminasi, dan martabat",
+        "lessonId": "kaigo-22",
+        "prompt": "Privasi saat toilet harus…",
+        "options": [
+          "Selalu membuat pengguna ditinggal",
+          "Diseimbangkan dengan kebutuhan pengawasan",
+          "Diabaikan bila petugas sibuk"
+        ],
+        "answer": 1,
+        "explanation": "Privasi penting, tetapi bantuan tetap mengikuti penilaian risiko individual.",
+        "scenario": "Pak Hara perlu diawasi saat duduk dan berdiri. Petugas ingin keluar jauh dari toilet demi privasi."
+      },
+      {
+        "id": "kaigo-22-2",
+        "moduleId": "toileting",
+        "group": "Toilet, eliminasi, dan martabat",
+        "lessonId": "kaigo-22",
+        "prompt": "Jadwal dukungan toilet sebaiknya mengikuti…",
+        "options": [
+          "Satu jadwal untuk semua",
+          "Kenyamanan petugas saja",
+          "Kebiasaan dan rencana pengguna"
+        ],
+        "answer": 2,
+        "explanation": "Pola serta kebutuhan individual menjadi dasar dukungan.",
+        "scenario": "Pak Hara perlu diawasi saat duduk dan berdiri. Petugas ingin keluar jauh dari toilet demi privasi."
+      },
+      {
+        "id": "kaigo-23-1",
+        "moduleId": "toileting",
+        "group": "Toilet, eliminasi, dan martabat",
+        "lessonId": "kaigo-23",
+        "prompt": "Mengurangi cairan sendiri agar tidak bocor adalah…",
+        "options": [
+          "Tidak tepat tanpa rencana dan penilaian tim",
+          "Selalu benar",
+          "Cara utama caregiver"
+        ],
+        "answer": 0,
+        "explanation": "Kebutuhan cairan tidak ditentukan dari kenyamanan penggantian alat.",
+        "scenario": "Ibu Kondo mengalami kebocoran dan meminta petugas tidak berbicara keras tentangnya."
+      },
+      {
+        "id": "kaigo-23-2",
+        "moduleId": "toileting",
+        "group": "Toilet, eliminasi, dan martabat",
+        "lessonId": "kaigo-23",
+        "prompt": "Penggunaan pad sebaiknya…",
+        "options": [
+          "Mengikuti rencana serta tetap mempertimbangkan toilet",
+          "Selalu mengganti semua kesempatan toilet",
+          "Ditambah lapisan sebanyak mungkin"
+        ],
+        "answer": 0,
+        "explanation": "Dukungan perlu sesuai kebutuhan, pola, dan kenyamanan pengguna.",
+        "scenario": "Ibu Kondo mengalami kebocoran dan meminta petugas tidak berbicara keras tentangnya."
+      },
+      {
+        "id": "kaigo-24-1",
+        "moduleId": "toileting",
+        "group": "Toilet, eliminasi, dan martabat",
+        "lessonId": "kaigo-24",
+        "prompt": "Jumlah urine tidak diukur. Catatan sebaiknya…",
+        "options": [
+          "Tidak mencantumkan angka sebagai hasil pasti",
+          "Menggunakan angka pengguna lain",
+          "Menebak angka"
+        ],
+        "answer": 0,
+        "explanation": "Catatan harus membedakan ukuran nyata dari perkiraan.",
+        "scenario": "Pak Ueda berkata buang air kecil terasa sakit. Catatan sebelumnya tidak mencantumkan keluhan ini."
+      },
+      {
+        "id": "kaigo-24-2",
+        "moduleId": "toileting",
+        "group": "Toilet, eliminasi, dan martabat",
+        "lessonId": "kaigo-24",
+        "prompt": "Nyeri baru saat berkemih perlu…",
+        "options": [
+          "Dicatat dan dilaporkan",
+          "Diobati sendiri",
+          "Diabaikan bila malu"
+        ],
+        "answer": 0,
+        "explanation": "Penilaian serta keputusan terapi berada pada petugas berwenang.",
+        "scenario": "Pak Ueda berkata buang air kecil terasa sakit. Catatan sebelumnya tidak mencantumkan keluhan ini."
+      },
+      {
+        "id": "kaigo-25-1",
+        "moduleId": "hygiene",
+        "group": "Mandi, pakaian, dan perawatan diri",
+        "lessonId": "kaigo-25",
+        "prompt": "Pusing sebelum mandi perlu…",
+        "options": [
+          "Dilaporkan sebelum kegiatan dilanjutkan",
+          "Diabaikan karena jadwal",
+          "Diatasi dengan air lebih panas"
+        ],
+        "answer": 0,
+        "explanation": "Kondisi aktual harus diperiksa sebelum melanjutkan aktivitas.",
+        "scenario": "Ibu Hayashi tampak pusing sebelum mandi yang sudah dijadwalkan."
+      },
+      {
+        "id": "kaigo-25-2",
+        "moduleId": "hygiene",
+        "group": "Mandi, pakaian, dan perawatan diri",
+        "lessonId": "kaigo-25",
+        "prompt": "Persiapan mandi meliputi…",
+        "options": [
+          "Lingkungan, alat, rencana, dan kondisi pengguna",
+          "Hanya menyalakan air",
+          "Handuk saja"
+        ],
+        "answer": 0,
+        "explanation": "Risiko berasal dari pengguna, alat, dan lingkungan sekaligus.",
+        "scenario": "Ibu Hayashi tampak pusing sebelum mandi yang sudah dijadwalkan."
+      },
+      {
+        "id": "kaigo-26-1",
+        "moduleId": "hygiene",
+        "group": "Mandi, pakaian, dan perawatan diri",
+        "lessonId": "kaigo-26",
+        "prompt": "Saat menyeka tubuh, privasi dijaga dengan…",
+        "options": [
+          "Membiarkan pintu terbuka",
+          "Membuka seluruh tubuh lama",
+          "Menutup area yang tidak sedang dibantu"
+        ],
+        "answer": 2,
+        "explanation": "Bantuan bertahap menjaga kenyamanan serta martabat.",
+        "scenario": "Pengguna tidak menjalani mandi hari ini menurut rencana, tetapi merasa tidak nyaman karena berkeringat."
+      },
+      {
+        "id": "kaigo-26-2",
+        "moduleId": "hygiene",
+        "group": "Mandi, pakaian, dan perawatan diri",
+        "lessonId": "kaigo-26",
+        "prompt": "Temuan kulit baru sebaiknya…",
+        "options": [
+          "Digosok sampai hilang",
+          "Ditangani dengan produk apa pun",
+          "Dilaporkan untuk penilaian"
+        ],
+        "answer": 2,
+        "explanation": "Penanganan kulit perlu sesuai kondisi, arahan, dan kewenangan.",
+        "scenario": "Pengguna tidak menjalani mandi hari ini menurut rencana, tetapi merasa tidak nyaman karena berkeringat."
+      },
+      {
+        "id": "kaigo-27-1",
+        "moduleId": "hygiene",
+        "group": "Mandi, pakaian, dan perawatan diri",
+        "lessonId": "kaigo-27",
+        "prompt": "Pengguna kesulitan kancing tetapi memilih bajunya sendiri. Petugas sebaiknya…",
+        "options": [
+          "Membantu bagian kancing yang sulit",
+          "Melarang memilih",
+          "Mengganti tanpa bertanya"
+        ],
+        "answer": 0,
+        "explanation": "Bantuan sebagian dapat menghormati pilihan serta mempertahankan kemampuan.",
+        "scenario": "Pak Ishii ingin memakai kemeja favorit, tetapi kesulitan menutup kancing kecil."
+      },
+      {
+        "id": "kaigo-27-2",
+        "moduleId": "hygiene",
+        "group": "Mandi, pakaian, dan perawatan diri",
+        "lessonId": "kaigo-27",
+        "prompt": "Setelah berpakaian, petugas memeriksa…",
+        "options": [
+          "Hanya jadwal selesai",
+          "Kenyamanan dan bagian yang menekan",
+          "Hanya warna"
+        ],
+        "answer": 1,
+        "explanation": "Lipatan serta pakaian yang menekan dapat mengganggu kenyamanan.",
+        "scenario": "Pak Ishii ingin memakai kemeja favorit, tetapi kesulitan menutup kancing kecil."
+      },
+      {
+        "id": "kaigo-28-1",
+        "moduleId": "daily-life",
+        "group": "Istirahat, aktivitas, dan lingkungan hidup",
+        "lessonId": "kaigo-28",
+        "prompt": "Catatan tidur yang baik mencakup…",
+        "options": [
+          "Waktu dan kebutuhan yang diamati",
+          "Label malas",
+          "Jumlah jam yang ditebak"
+        ],
+        "answer": 0,
+        "explanation": "Fakta dan konteks membantu tim menilai pola istirahat.",
+        "scenario": "Pengguna terbangun tiga kali karena ingin ke toilet. Catatan petugas hanya menyebut 'sulit tidur'."
+      },
+      {
+        "id": "kaigo-28-2",
+        "moduleId": "daily-life",
+        "group": "Istirahat, aktivitas, dan lingkungan hidup",
+        "lessonId": "kaigo-28",
+        "prompt": "Pengguna sangat sulit dibangunkan, berbeda dari biasanya. Petugas perlu…",
+        "options": [
+          "Memberi obat tidur lagi",
+          "Mengeskalasi segera",
+          "Menunggu pagi"
+        ],
+        "answer": 1,
+        "explanation": "Perubahan kesadaran baru merupakan kebutuhan penilaian segera.",
+        "scenario": "Pengguna terbangun tiga kali karena ingin ke toilet. Catatan petugas hanya menyebut 'sulit tidur'."
+      },
+      {
+        "id": "kaigo-29-1",
+        "moduleId": "daily-life",
+        "group": "Istirahat, aktivitas, dan lingkungan hidup",
+        "lessonId": "kaigo-29",
+        "prompt": "Keberhasilan aktivitas dapat dilihat dari…",
+        "options": [
+          "Hanya durasi terpanjang",
+          "Semua orang dipaksa hadir",
+          "Kesenangan dan partisipasi yang bermakna"
+        ],
+        "answer": 2,
+        "explanation": "Pengalaman serta pilihan pengguna merupakan bagian utama evaluasi.",
+        "scenario": "Pak Fujita menolak bingo, tetapi antusias ketika ditanya tentang tanaman yang pernah dirawatnya."
+      },
+      {
+        "id": "kaigo-29-2",
+        "moduleId": "daily-life",
+        "group": "Istirahat, aktivitas, dan lingkungan hidup",
+        "lessonId": "kaigo-29",
+        "prompt": "Pengguna menolak bingo. Petugas sebaiknya…",
+        "options": [
+          "Melabeli tidak sosial",
+          "Menghukum",
+          "Menanyakan minat dan menawarkan pilihan lain"
+        ],
+        "answer": 2,
+        "explanation": "Penolakan terhadap satu aktivitas tidak menjelaskan semua minat pengguna.",
+        "scenario": "Pak Fujita menolak bingo, tetapi antusias ketika ditanya tentang tanaman yang pernah dirawatnya."
+      },
+      {
+        "id": "kaigo-30-1",
+        "moduleId": "daily-life",
+        "group": "Istirahat, aktivitas, dan lingkungan hidup",
+        "lessonId": "kaigo-30",
+        "prompt": "Menata ulang barang pengguna sebaiknya…",
+        "options": [
+          "Mempertimbangkan izin, kebiasaan, dan jangkauan",
+          "Mengutamakan foto yang rapi",
+          "Dilakukan tanpa bertanya"
+        ],
+        "answer": 0,
+        "explanation": "Ruang adalah lingkungan hidup dan harus tetap mendukung kemampuan pengguna.",
+        "scenario": "Setelah kamar dirapikan, bel panggil diletakkan di meja yang jauh dari tangan pengguna."
+      },
+      {
+        "id": "kaigo-30-2",
+        "moduleId": "daily-life",
+        "group": "Istirahat, aktivitas, dan lingkungan hidup",
+        "lessonId": "kaigo-30",
+        "prompt": "Linen kotor perlu…",
+        "options": [
+          "Diletakkan di lantai",
+          "Ditangani melalui alur yang ditetapkan",
+          "Diguncang di dekat alat bersih"
+        ],
+        "answer": 1,
+        "explanation": "Pemisahan dan penanganan benar mengurangi kontaminasi.",
+        "scenario": "Setelah kamar dirapikan, bel panggil diletakkan di meja yang jauh dari tangan pengguna."
+      },
+      {
+        "id": "kaigo-31-1",
+        "moduleId": "team",
+        "group": "Proses perawatan, laporan, dan profesionalisme",
+        "lessonId": "kaigo-31",
+        "prompt": "Evaluasi rencana menilai…",
+        "options": [
+          "Jadwal saja",
+          "Respons, tujuan, dan kebutuhan bantuan",
+          "Kecepatan petugas saja"
+        ],
+        "answer": 1,
+        "explanation": "Hasil dukungan harus dihubungkan dengan tujuan serta pengalaman pengguna.",
+        "scenario": "Rencana meminta bantuan sebagian berpakaian. Pengguna berhasil memakai lengan baju tetapi masih perlu bantuan kancing."
+      },
+      {
+        "id": "kaigo-31-2",
+        "moduleId": "team",
+        "group": "Proses perawatan, laporan, dan profesionalisme",
+        "lessonId": "kaigo-31",
+        "prompt": "Pengguna hanya mandiri pada sebagian berpakaian. Catatan sebaiknya…",
+        "options": [
+          "Tidak mampu sama sekali",
+          "Menjelaskan bagian mandiri dan bagian yang dibantu",
+          "Mandiri penuh"
+        ],
+        "answer": 1,
+        "explanation": "Kemampuan spesifik memberi dasar penyesuaian yang akurat.",
+        "scenario": "Rencana meminta bantuan sebagian berpakaian. Pengguna berhasil memakai lengan baju tetapi masih perlu bantuan kancing."
+      },
+      {
+        "id": "kaigo-32-1",
+        "moduleId": "team",
+        "group": "Proses perawatan, laporan, dan profesionalisme",
+        "lessonId": "kaigo-32",
+        "prompt": "Catatan objektif adalah…",
+        "options": [
+          "Pukul 12.10 mengatakan mual dan makan dua sendok",
+          "Beliau malas",
+          "Sengaja merepotkan"
+        ],
+        "answer": 0,
+        "explanation": "Waktu, ucapan, dan pengamatan dapat diverifikasi serta ditindaklanjuti.",
+        "scenario": "Petugas ingin menulis 'pengguna malas makan', padahal pengguna mengatakan mual dan berhenti setelah dua sendok."
+      },
+      {
+        "id": "kaigo-32-2",
+        "moduleId": "team",
+        "group": "Proses perawatan, laporan, dan profesionalisme",
+        "lessonId": "kaigo-32",
+        "prompt": "Sōdan dilakukan ketika…",
+        "options": [
+          "Perlu keputusan atau bantuan",
+          "Ingin menyembunyikan kesalahan",
+          "Tidak ingin memberi informasi"
+        ],
+        "answer": 0,
+        "explanation": "Konsultasi membantu tugas ditangani dengan kewenangan dan dukungan yang sesuai.",
+        "scenario": "Petugas ingin menulis 'pengguna malas makan', padahal pengguna mengatakan mual dan berhenti setelah dua sendok."
+      },
+      {
+        "id": "kaigo-33-1",
+        "moduleId": "team",
+        "group": "Proses perawatan, laporan, dan profesionalisme",
+        "lessonId": "kaigo-33",
+        "prompt": "Serah terima keluhan yang belum selesai perlu mencakup…",
+        "options": [
+          "Hanya 'sudah dilaporkan'",
+          "Pendapat tentang sifat pengguna",
+          "Tindak lanjut dan penanggung jawab"
+        ],
+        "answer": 2,
+        "explanation": "Tugas tertunda harus dapat dipahami dan ditindaklanjuti oleh tim berikutnya.",
+        "scenario": "Petugas malam menemukan keluhan baru yang sudah dilaporkan ke perawat, tetapi belum ada tindak lanjut saat pergantian shift."
+      },
+      {
+        "id": "kaigo-33-2",
+        "moduleId": "team",
+        "group": "Proses perawatan, laporan, dan profesionalisme",
+        "lessonId": "kaigo-33",
+        "prompt": "Kelelahan berat yang memengaruhi tugas sebaiknya…",
+        "options": [
+          "Diatasi dengan memaksa semua transfer sendiri",
+          "Disembunyikan",
+          "Dilaporkan untuk pengaturan dukungan"
+        ],
+        "answer": 2,
+        "explanation": "Kesiapan petugas merupakan bagian keselamatan pengguna serta tim.",
+        "scenario": "Petugas malam menemukan keluhan baru yang sudah dilaporkan ke perawat, tetapi belum ada tindak lanjut saat pergantian shift."
+      },
+      {
+        "id": "kaigo-34-1",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang Kaigo dan integrasi materi",
+        "lessonId": "kaigo-34",
+        "prompt": "左の足が痛いです berarti…",
+        "options": [
+          "Kaki kanan gatal",
+          "Kaki kiri sakit",
+          "Tangan kiri sakit"
+        ],
+        "answer": 1,
+        "explanation": "左 adalah kiri, 足 adalah kaki, dan 痛い menyampaikan nyeri.",
+        "scenario": "Pengguna berkata '左の足が痛いです'. Petugas baru hanya memahami 足 dan menulis kaki kanan sakit."
+      },
+      {
+        "id": "kaigo-34-2",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang Kaigo dan integrasi materi",
+        "lessonId": "kaigo-34",
+        "prompt": "午後四時 adalah…",
+        "options": [
+          "Pukul empat pagi",
+          "Pukul sembilan malam",
+          "Pukul empat sore"
+        ],
+        "answer": 2,
+        "explanation": "午後 menyatakan sesudah tengah hari; 四時 dibaca よじ.",
+        "scenario": "Pengguna berkata '左の足が痛いです'. Petugas baru hanya memahami 足 dan menulis kaki kanan sakit."
+      },
+      {
+        "id": "kaigo-35-1",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang Kaigo dan integrasi materi",
+        "lessonId": "kaigo-35",
+        "prompt": "～てもよろしいですか digunakan untuk…",
+        "options": [
+          "Mengancam",
+          "Memberi diagnosis",
+          "Meminta izin"
+        ],
+        "answer": 2,
+        "explanation": "Pola ini meminta persetujuan secara sopan sebelum tindakan.",
+        "scenario": "Petugas menawarkan bantuan. Pengguna menjawab 'まだ大丈夫です'. Petugas mulai membantu tanpa konfirmasi."
+      },
+      {
+        "id": "kaigo-35-2",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang Kaigo dan integrasi materi",
+        "lessonId": "kaigo-35",
+        "prompt": "'まだ大丈夫です' saat tawaran bantuan dapat berarti…",
+        "options": [
+          "Selalu setuju dibantu",
+          "Harus dipaksa",
+          "Belum perlu, sehingga perlu dihormati dan dikonfirmasi"
+        ],
+        "answer": 2,
+        "explanation": "Makna 大丈夫 bergantung konteks; jangan otomatis menganggap persetujuan.",
+        "scenario": "Petugas menawarkan bantuan. Pengguna menjawab 'まだ大丈夫です'. Petugas mulai membantu tanpa konfirmasi."
+      },
+      {
+        "id": "kaigo-36-1",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang Kaigo dan integrasi materi",
+        "lessonId": "kaigo-36",
+        "prompt": "看護師に報告した berarti…",
+        "options": [
+          "Diagnosis sudah pasti",
+          "Semua tindak lanjut pasti selesai",
+          "Telah dilaporkan kepada perawat"
+        ],
+        "answer": 2,
+        "explanation": "Kalimat ini menyatakan tindakan pelaporan; respons dan tindak lanjut tetap perlu diketahui.",
+        "scenario": "Catatan menyebut '看護師に報告した', tetapi petugas berikutnya menganggap semua instruksi sudah dilaksanakan."
+      },
+      {
+        "id": "kaigo-36-2",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang Kaigo dan integrasi materi",
+        "lessonId": "kaigo-36",
+        "prompt": "Pengguna biasanya mandiri makan, tetapi kini ada kesulitan menelan baru. Petugas perlu…",
+        "options": [
+          "Mengubah tekstur sendiri",
+          "Tetap lanjut demi kemandirian",
+          "Hentikan pemberian dan eskalasi sesuai prosedur"
+        ],
+        "answer": 2,
+        "explanation": "Kondisi aktual dan keselamatan didahulukan sambil tetap menghormati pengguna.",
+        "scenario": "Catatan menyebut '看護師に報告した', tetapi petugas berikutnya menganggap semua instruksi sudah dilaksanakan."
+      },
+      {
+        "id": "kaigo-jp-01",
+        "moduleId": "japanese-assessment",
+        "group": "Kosakata Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "利用者（りようしゃ）とは、だれですか。",
+        "options": [
+          "介護（かいご）のサービスを使（つか）う人（ひと）",
+          "建物（たてもの）を修理（しゅうり）する人",
+          "荷物（にもつ）を売（う）る人",
+          "試験（しけん）を作（つく）る人"
+        ],
+        "answer": 0,
+        "explanation": "利用者 adalah orang yang menggunakan layanan; konteksnya penerima layanan perawatan.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-02",
+        "moduleId": "japanese-assessment",
+        "group": "Kosakata Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "「車（くるま）いす」の読（よ）み方（かた）はどれですか。",
+        "options": [
+          "くるまいし",
+          "しゃいす",
+          "くるまいず",
+          "くるまいす"
+        ],
+        "answer": 3,
+        "explanation": "車いす dibaca くるまいす, kursi roda.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-03",
+        "moduleId": "japanese-assessment",
+        "group": "Kosakata Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "「食後（しょくご）」は、いつですか。",
+        "options": [
+          "寝（ね）ている間（あいだ）",
+          "起（お）きる前",
+          "ご飯（はん）を食（た）べた後（あと）",
+          "ご飯を食べる前（まえ）"
+        ],
+        "answer": 2,
+        "explanation": "食後 = setelah makan; 食前 = sebelum makan.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-04",
+        "moduleId": "japanese-assessment",
+        "group": "Kosakata Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "「排泄（はいせつ）」に関係（かんけい）があるのはどれですか。",
+        "options": [
+          "洗濯（せんたく）",
+          "トイレ",
+          "散歩（さんぽ）",
+          "買（か）い物（もの）"
+        ],
+        "answer": 1,
+        "explanation": "排泄 berkaitan dengan eliminasi, misalnya buang air di toilet.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-05",
+        "moduleId": "japanese-assessment",
+        "group": "Kosakata Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "「むせる」とは、どのような様子（ようす）ですか。",
+        "options": [
+          "飲食中（いんしょくちゅう）などに、せきが出（で）る",
+          "気持（きも）ちよく眠（ねむ）る",
+          "服（ふく）を着替（きが）える",
+          "ゆっくり歩（ある）く"
+        ],
+        "answer": 0,
+        "explanation": "むせる adalah tersedak/batuk saat menelan; perlu menghentikan bantuan makan dan menilai sesuai prosedur.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-06",
+        "moduleId": "japanese-assessment",
+        "group": "Percakapan Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "ベッドから車（くるま）いすに移（うつ）る前（まえ）に、何（なん）と言（い）いますか。",
+        "options": [
+          "もう食事（しょくじ）は終（お）わりました。",
+          "窓（まど）を閉（し）めました。",
+          "今日（きょう）は休（やす）みです。",
+          "これから車いすに移りましょう。"
+        ],
+        "answer": 3,
+        "explanation": "Sampaikan apa yang akan dilakukan sebelum transfer agar pengguna memahami dan dapat berpartisipasi.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-07",
+        "moduleId": "japanese-assessment",
+        "group": "Percakapan Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "利用者（りようしゃ）が「寒（さむ）いです」と言（い）いました。適切（てきせつ）な返事（へんじ）はどれですか。",
+        "options": [
+          "寒くありません。",
+          "何（なに）も言わないでください。",
+          "毛布（もうふ）をお持（も）ちしましょうか。",
+          "もっと冷（つめ）たい水（みず）を飲（の）んでください。"
+        ],
+        "answer": 2,
+        "explanation": "Tawarkan selimut dan periksa kenyamanan; jangan menyangkal sensasi pengguna.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-08",
+        "moduleId": "japanese-assessment",
+        "group": "Percakapan Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "利用者（りようしゃ）が「右（みぎ）の足（あし）が痛（いた）いです」と言（い）いました。どこが痛いですか。",
+        "options": [
+          "頭（あたま）",
+          "右の足",
+          "左（ひだり）の手（て）",
+          "おなか"
+        ],
+        "answer": 1,
+        "explanation": "右の足 = kaki kanan. Lokasi keluhan harus dikonfirmasi dan dilaporkan.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-09",
+        "moduleId": "japanese-assessment",
+        "group": "Percakapan Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "「立（た）つ前（まえ）に、ブレーキを確認（かくにん）してください。」最初（さいしょ）に何（なに）をしますか。",
+        "options": [
+          "ブレーキを確認する",
+          "すぐに立つ",
+          "車（くるま）いすを動（うご）かす",
+          "靴（くつ）を捨（す）てる"
+        ],
+        "answer": 0,
+        "explanation": "Instruksi 前に menunjukkan pemeriksaan rem sebelum berdiri.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-10",
+        "moduleId": "japanese-assessment",
+        "group": "Percakapan Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "利用者（りようしゃ）に聞（き）こえなかったとき、何（なん）と言（い）いますか。",
+        "options": [
+          "話さないでください。",
+          "絶対（ぜったい）に違（ちが）います。",
+          "何でもいいです。",
+          "もう一度（いちど）お話（はな）しいただけますか。"
+        ],
+        "answer": 3,
+        "explanation": "Minta pengulangan dengan sopan agar tidak menebak kebutuhan pengguna.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-11",
+        "moduleId": "japanese-assessment",
+        "group": "Dokumen Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "記録（きろく）：「午前（ごぜん）十時（じ）、水（みず）を百（ひゃく）ミリリットル飲（の）んだ。」何（なに）を飲みましたか。",
+        "options": [
+          "お茶（ちゃ）を1リットル",
+          "牛乳（ぎゅうにゅう）を10ミリリットル",
+          "水を100ミリリットル",
+          "薬（くすり）を100個（こ）"
+        ],
+        "answer": 2,
+        "explanation": "Catatan menyebut pukul 10 pagi minum air 100 ml; satuan dan jenis minuman perlu dibaca tepat.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-12",
+        "moduleId": "japanese-assessment",
+        "group": "Dokumen Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "連絡（れんらく）：「田中（たなか）さんは、今日（きょう）は入浴（にゅうよく）しません。」正（ただ）しいのはどれですか。",
+        "options": [
+          "田中さんは今（いま）入浴しています。",
+          "田中さんは今日はお風呂（ふろ）に入りません。",
+          "田中さんは毎日（まいにち）入浴しません。",
+          "全員（ぜんいん）が入浴しません。"
+        ],
+        "answer": 1,
+        "explanation": "今日は hanya hari ini; 入浴しません = tidak mandi. Jangan memperluas instruksi ke semua orang atau semua hari.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-13",
+        "moduleId": "japanese-assessment",
+        "group": "Dokumen Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "申し送（もうしおく）り：「昼食後（ちゅうしょくご）、せきが続（つづ）いています。看護師（かんごし）に報告済（ほうこくず）みです。」報告はどうなっていますか。",
+        "options": [
+          "すでに看護師に報告しました。",
+          "まだ誰（だれ）にも報告していません。",
+          "明日（あした）報告します。",
+          "利用者（りようしゃ）が報告を断（ことわ）りました。"
+        ],
+        "answer": 0,
+        "explanation": "報告済み berarti sudah dilaporkan. Catatan menyebut batuk terus setelah makan siang dan sudah melapor ke perawat.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-14",
+        "moduleId": "japanese-assessment",
+        "group": "Dokumen Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "予定（よてい）：「午後（ごご）二時（じ）に体操（たいそう）。その前（まえ）にトイレを確認（かくにん）。」順番（じゅんばん）はどれですか。",
+        "options": [
+          "体操をしてから、トイレを確認する",
+          "午前二時に体操をする",
+          "トイレの確認はしない",
+          "トイレを確認してから、二時に体操をする"
+        ],
+        "answer": 3,
+        "explanation": "その前に menunjukkan pemeriksaan kebutuhan toilet sebelum senam pukul 14.00.",
+        "scenario": ""
+      },
+      {
+        "id": "kaigo-jp-15",
+        "moduleId": "japanese-assessment",
+        "group": "Dokumen Kaigo",
+        "lessonId": "kaigo-34",
+        "prompt": "利用者（りようしゃ）：「自分（じぶん）で顔（かお）を洗（あら）いたいです。」返事（へんじ）はどれがよいですか。",
+        "options": [
+          "自分では何（なに）もしないでください。",
+          "顔を洗ってはいけません。",
+          "分（わ）かりました。必要（ひつよう）なときはお手伝（てつだ）いします。",
+          "時間（じかん）がないので全部（ぜんぶ）私（わたし）がします。"
+        ],
+        "answer": 2,
+        "explanation": "Hormati pilihan dan kemampuan pengguna; tawarkan bantuan sesuai kebutuhan dan rencana perawatan.",
+        "scenario": ""
+      }
+    ],
+    "building-cleaning": [
+      {
+        "id": "cleaning-01-1",
+        "moduleId": "role",
+        "group": "Dasar profesi dan mutu layanan",
+        "lessonId": "cleaning-01",
+        "prompt": "Panel listrik kotor di luar lingkup tugas. Apa tindakan tepat?",
+        "options": [
+          "Laporkan ke penanggung jawab teknis",
+          "Buka panel sendiri",
+          "Semprot dengan air",
+          "Abaikan tanpa laporan"
+        ],
+        "answer": 0,
+        "explanation": "Batas tugas dan risiko listrik harus diperiksa sebelum pekerjaan dilakukan.",
+        "scenario": "Kamu diminta membuka panel listrik yang berdebu."
+      },
+      {
+        "id": "cleaning-01-2",
+        "moduleId": "role",
+        "group": "Dasar profesi dan mutu layanan",
+        "lessonId": "cleaning-01",
+        "prompt": "Standar hasil kerja sebaiknya ditentukan dari apa?",
+        "options": [
+          "Kecepatan saja",
+          "Bau pewangi saja",
+          "Jumlah air yang dipakai",
+          "Instruksi kerja dan kebutuhan permukaan"
+        ],
+        "answer": 3,
+        "explanation": "Standar meliputi kebersihan, keamanan, kondisi permukaan, serta kontrak pekerjaan.",
+        "scenario": "Kamu diminta membuka panel listrik yang berdebu."
+      },
+      {
+        "id": "cleaning-02-1",
+        "moduleId": "role",
+        "group": "Dasar profesi dan mutu layanan",
+        "lessonId": "cleaning-02",
+        "prompt": "Pencucian berkala tidak dapat dilakukan saat ruang dipakai. Apa yang dilakukan?",
+        "options": [
+          "Paksakan saat rapat",
+          "Hilangkan dari jadwal",
+          "Koordinasikan dan catat penundaan",
+          "Centang selesai"
+        ],
+        "answer": 2,
+        "explanation": "Catatan penundaan menjaga keterlacakan dan keselamatan pengguna.",
+        "scenario": "Jadwal pencucian lantai bertabrakan dengan rapat."
+      },
+      {
+        "id": "cleaning-02-2",
+        "moduleId": "role",
+        "group": "Dasar profesi dan mutu layanan",
+        "lessonId": "cleaning-02",
+        "prompt": "Pembersihan harian terutama menangani apa?",
+        "options": [
+          "Semua pelapisan setiap hari",
+          "Kotoran dari penggunaan rutin",
+          "Perbaikan panel listrik",
+          "Penggantian struktur lantai"
+        ],
+        "answer": 1,
+        "explanation": "Pekerjaan harian berbeda dari pemeliharaan berkala dan perbaikan teknis.",
+        "scenario": "Jadwal pencucian lantai bertabrakan dengan rapat."
+      },
+      {
+        "id": "cleaning-03-1",
+        "moduleId": "role",
+        "group": "Dasar profesi dan mutu layanan",
+        "lessonId": "cleaning-03",
+        "prompt": "Kertas di meja menghalangi pembersihan. Pilih tindakan tepat.",
+        "options": [
+          "Tanyakan prosedur sebelum memindahkan",
+          "Buang semua kertas",
+          "Foto isinya",
+          "Baca untuk menentukan pemilik"
+        ],
+        "answer": 0,
+        "explanation": "Dokumen bukan sampah hanya karena berada di area kerja.",
+        "scenario": "Ada dompet di bawah kursi ruang rapat."
+      },
+      {
+        "id": "cleaning-03-2",
+        "moduleId": "role",
+        "group": "Dasar profesi dan mutu layanan",
+        "lessonId": "cleaning-03",
+        "prompt": "Dompet temuan harus bagaimana?",
+        "options": [
+          "Dibawa pulang",
+          "Diumumkan isinya",
+          "Ditaruh di tong sampah",
+          "Diserahkan melalui prosedur barang temuan"
+        ],
+        "answer": 3,
+        "explanation": "Pencatatan dan penyerahan resmi melindungi pemilik serta petugas.",
+        "scenario": "Ada dompet di bawah kursi ruang rapat."
+      },
+      {
+        "id": "cleaning-04-1",
+        "moduleId": "safety",
+        "group": "Keselamatan dan kesehatan kerja",
+        "lessonId": "cleaning-04",
+        "prompt": "Kapan rambu lantai basah boleh dipindahkan?",
+        "options": [
+          "Saat atasan pergi",
+          "Setelah lima menit tanpa pemeriksaan",
+          "Setelah kering dan area diperiksa aman",
+          "Begitu mengepel selesai"
+        ],
+        "answer": 2,
+        "explanation": "Pembukaan area berdasarkan kondisi nyata, bukan waktu perkiraan saja.",
+        "scenario": "Lantai lobi basah dan pengunjung terus lewat."
+      },
+      {
+        "id": "cleaning-04-2",
+        "moduleId": "safety",
+        "group": "Keselamatan dan kesehatan kerja",
+        "lessonId": "cleaning-04",
+        "prompt": "Jalur evakuasi harus bagaimana saat pembersihan?",
+        "options": [
+          "Diisi ember",
+          "Tetap aman dan tidak terhalang",
+          "Dipakai menyimpan troli",
+          "Ditutup tanpa koordinasi"
+        ],
+        "answer": 1,
+        "explanation": "Jalur evakuasi tidak boleh dihalangi oleh alat atau pembatas.",
+        "scenario": "Lantai lobi basah dan pengunjung terus lewat."
+      },
+      {
+        "id": "cleaning-05-1",
+        "moduleId": "safety",
+        "group": "Keselamatan dan kesehatan kerja",
+        "lessonId": "cleaning-05",
+        "prompt": "Sarung tangan robek saat kerja. Apa yang tepat?",
+        "options": [
+          "Hentikan dan ganti secara aman",
+          "Lanjutkan hingga istirahat",
+          "Tutup dengan kertas",
+          "Gunakan sisi yang robek"
+        ],
+        "answer": 0,
+        "explanation": "APD rusak tidak memberikan perlindungan yang direncanakan.",
+        "scenario": "Kantong sampah basah terasa sangat berat."
+      },
+      {
+        "id": "cleaning-05-2",
+        "moduleId": "safety",
+        "group": "Keselamatan dan kesehatan kerja",
+        "lessonId": "cleaning-05",
+        "prompt": "Cara mengurangi risiko saat beban terlalu berat?",
+        "options": [
+          "Memutar pinggang lebih cepat",
+          "Menjauhkan beban dari tubuh",
+          "Mengangkat sambil berlari",
+          "Gunakan alat bantu dan bantuan"
+        ],
+        "answer": 3,
+        "explanation": "Alat bantu dan pembagian beban lebih aman daripada memaksakan postur.",
+        "scenario": "Kantong sampah basah terasa sangat berat."
+      },
+      {
+        "id": "cleaning-06-1",
+        "moduleId": "safety",
+        "group": "Keselamatan dan kesehatan kerja",
+        "lessonId": "cleaning-06",
+        "prompt": "Bahan tanpa label tumpah. Tindakan awal?",
+        "options": [
+          "Campur dengan pemutih",
+          "Lap dengan tangan kosong",
+          "Jauhi, batasi akses, dan laporkan",
+          "Cium untuk mengenali"
+        ],
+        "answer": 2,
+        "explanation": "Bahan tak dikenal tidak boleh diuji sendiri atau dicampur.",
+        "scenario": "Botol tanpa label pecah dan mengeluarkan bau menyengat."
+      },
+      {
+        "id": "cleaning-06-2",
+        "moduleId": "safety",
+        "group": "Keselamatan dan kesehatan kerja",
+        "lessonId": "cleaning-06",
+        "prompt": "Apa isi laporan insiden yang berguna?",
+        "options": [
+          "Foto pribadi pengguna",
+          "Lokasi, waktu, kondisi, dan tindakan",
+          "Dugaan tanpa fakta",
+          "Kesalahan rekan saja"
+        ],
+        "answer": 1,
+        "explanation": "Laporan faktual membantu respons dan pencegahan kejadian berulang.",
+        "scenario": "Botol tanpa label pecah dan mengeluarkan bau menyengat."
+      },
+      {
+        "id": "cleaning-07-1",
+        "moduleId": "chemicals",
+        "group": "Kotoran, bahan permukaan, dan bahan kimia",
+        "lessonId": "cleaning-07",
+        "prompt": "Material lantai belum diketahui. Pilihan aman?",
+        "options": [
+          "Periksa spesifikasi sebelum bahan kuat",
+          "Langsung pakai asam",
+          "Gosok dengan logam",
+          "Rendam semalaman"
+        ],
+        "answer": 0,
+        "explanation": "Kompatibilitas bergantung pada material, bukan hanya jenis noda.",
+        "scenario": "Ada kerak di lantai batu yang jenisnya belum diketahui."
+      },
+      {
+        "id": "cleaning-07-2",
+        "moduleId": "chemicals",
+        "group": "Kotoran, bahan permukaan, dan bahan kimia",
+        "lessonId": "cleaning-07",
+        "prompt": "Mengapa debu dan pasir diangkat sebelum menggosok?",
+        "options": [
+          "Menambah kilap kimia",
+          "Mengganti disinfeksi",
+          "Menghilangkan kebutuhan rambu",
+          "Mengurangi risiko goresan"
+        ],
+        "answer": 3,
+        "explanation": "Partikel kasar dapat menggores ketika tertarik alat pembersih.",
+        "scenario": "Ada kerak di lantai batu yang jenisnya belum diketahui."
+      },
+      {
+        "id": "cleaning-08-1",
+        "moduleId": "chemicals",
+        "group": "Kotoran, bahan permukaan, dan bahan kimia",
+        "lessonId": "cleaning-08",
+        "prompt": "Wadah bahan kimia yang benar?",
+        "options": [
+          "Gelas kantin",
+          "Botol acak berdasarkan warna",
+          "Wadah sesuai prosedur dengan label jelas",
+          "Botol minuman tanpa label"
+        ],
+        "answer": 2,
+        "explanation": "Identitas dan wadah sesuai mencegah paparan serta salah penggunaan.",
+        "scenario": "Rekan memberikan botol minuman berisi cairan pembersih."
+      },
+      {
+        "id": "cleaning-08-2",
+        "moduleId": "chemicals",
+        "group": "Kotoran, bahan permukaan, dan bahan kimia",
+        "lessonId": "cleaning-08",
+        "prompt": "Pemutih berklorin boleh dicampur pembersih asam?",
+        "options": [
+          "Ya bila baunya enak",
+          "Tidak, dapat menghasilkan gas berbahaya",
+          "Ya agar lebih kuat",
+          "Ya dengan air panas"
+        ],
+        "answer": 1,
+        "explanation": "Campuran kimia yang tidak kompatibel berbahaya; ikuti label produk.",
+        "scenario": "Rekan memberikan botol minuman berisi cairan pembersih."
+      },
+      {
+        "id": "cleaning-09-1",
+        "moduleId": "chemicals",
+        "group": "Kotoran, bahan permukaan, dan bahan kimia",
+        "lessonId": "cleaning-09",
+        "prompt": "Pengenceran AKHIR 100 kali, volume akhir 1000 ml. Berapa produk?",
+        "options": [
+          "10 ml",
+          "100 ml",
+          "1 ml",
+          "1000 ml"
+        ],
+        "answer": 0,
+        "explanation": "1000 dibagi 100 = 10 ml produk; tambahkan air hingga volume akhir.",
+        "scenario": "Label meminta pengenceran akhir 100 kali untuk 1 liter."
+      },
+      {
+        "id": "cleaning-09-2",
+        "moduleId": "chemicals",
+        "group": "Kotoran, bahan permukaan, dan bahan kimia",
+        "lessonId": "cleaning-09",
+        "prompt": "Waktu kontak disinfektan ditentukan oleh apa?",
+        "options": [
+          "Angka yang sama untuk semua produk",
+          "Bau larutan",
+          "Keinginan bekerja cepat",
+          "Petunjuk produk dan penggunaan"
+        ],
+        "answer": 3,
+        "explanation": "Konsentrasi, permukaan, dan waktu kontak harus mengikuti petunjuk produk.",
+        "scenario": "Label meminta pengenceran akhir 100 kali untuk 1 liter."
+      },
+      {
+        "id": "cleaning-10-1",
+        "moduleId": "tools",
+        "group": "Peralatan manual dan mesin",
+        "lessonId": "cleaning-10",
+        "prompt": "Kain toilet boleh digunakan ke meja?",
+        "options": [
+          "Boleh setelah disemprot pewangi",
+          "Boleh bila warna sama",
+          "Tidak, gunakan alat zona meja",
+          "Boleh bila tampak bersih"
+        ],
+        "answer": 2,
+        "explanation": "Pemisahan alat mencegah kontaminasi silang antar-zona.",
+        "scenario": "Kain dari toilet hendak dipakai untuk meja resepsionis."
+      },
+      {
+        "id": "cleaning-10-2",
+        "moduleId": "tools",
+        "group": "Peralatan manual dan mesin",
+        "lessonId": "cleaning-10",
+        "prompt": "Setelah dicuci, kain sebaiknya bagaimana?",
+        "options": [
+          "Dicampur sampah",
+          "Dikeringkan dan disimpan bersih",
+          "Dibiarkan basah dalam kantong",
+          "Ditaruh di lantai"
+        ],
+        "answer": 1,
+        "explanation": "Pengeringan dan penyimpanan membantu menjaga kondisi higienis alat.",
+        "scenario": "Kain dari toilet hendak dipakai untuk meja resepsionis."
+      },
+      {
+        "id": "cleaning-11-1",
+        "moduleId": "tools",
+        "group": "Peralatan manual dan mesin",
+        "lessonId": "cleaning-11",
+        "prompt": "Vacuum kering boleh mengisap genangan?",
+        "options": [
+          "Tidak, gunakan alat yang sesuai cairan",
+          "Boleh semua vacuum",
+          "Boleh jika cepat",
+          "Boleh tanpa filter"
+        ],
+        "answer": 0,
+        "explanation": "Desain mesin menentukan apakah cairan aman diisap.",
+        "scenario": "Ada genangan di dekat vacuum kering."
+      },
+      {
+        "id": "cleaning-11-2",
+        "moduleId": "tools",
+        "group": "Peralatan manual dan mesin",
+        "lessonId": "cleaning-11",
+        "prompt": "Sebelum membuka bagian untuk membersihkan sumbatan?",
+        "options": [
+          "Biarkan menyala",
+          "Tarik selang sambil berjalan",
+          "Tambah air",
+          "Matikan dan putus daya sesuai manual"
+        ],
+        "answer": 3,
+        "explanation": "Isolasi daya diperlukan untuk pemeriksaan dan perawatan aman.",
+        "scenario": "Ada genangan di dekat vacuum kering."
+      },
+      {
+        "id": "cleaning-12-1",
+        "moduleId": "tools",
+        "group": "Peralatan manual dan mesin",
+        "lessonId": "cleaning-12",
+        "prompt": "Kabel terkelupas tetapi mesin berfungsi. Apa yang tepat?",
+        "options": [
+          "Balut tisu",
+          "Pegang bagian terkelupas",
+          "Hentikan, tandai, dan laporkan",
+          "Tetap gunakan"
+        ],
+        "answer": 2,
+        "explanation": "Fungsi motor tidak membuktikan keamanan kabel listrik.",
+        "scenario": "Kabel mesin terkelupas namun motor masih bekerja."
+      },
+      {
+        "id": "cleaning-12-2",
+        "moduleId": "tools",
+        "group": "Peralatan manual dan mesin",
+        "lessonId": "cleaning-12",
+        "prompt": "Aksesori mesin dipilih berdasarkan apa?",
+        "options": [
+          "Ukuran sepatu operator",
+          "Manual, jenis permukaan, dan tugas",
+          "Warna favorit",
+          "Harga saja"
+        ],
+        "answer": 1,
+        "explanation": "Kompatibilitas pad/sikat dan material menentukan metode yang aman.",
+        "scenario": "Kabel mesin terkelupas namun motor masih bekerja."
+      },
+      {
+        "id": "cleaning-13-1",
+        "moduleId": "floors",
+        "group": "Lantai keras dan karpet",
+        "lessonId": "cleaning-13",
+        "prompt": "Urutan pembersihan lantai yang tepat?",
+        "options": [
+          "Angkat debu lalu pel sesuai material",
+          "Pel di atas pasir",
+          "Tuang konsentrat dahulu",
+          "Buka rambu sebelum mulai"
+        ],
+        "answer": 0,
+        "explanation": "Pengangkatan partikel mengurangi lumpur dan goresan.",
+        "scenario": "Lantai tetap lengket setelah dipel dengan larutan pekat."
+      },
+      {
+        "id": "cleaning-13-2",
+        "moduleId": "floors",
+        "group": "Lantai keras dan karpet",
+        "lessonId": "cleaning-13",
+        "prompt": "Air berlebih pada lantai peka air dapat apa?",
+        "options": [
+          "Selalu mempercepat pengeringan",
+          "Mengganti deterjen",
+          "Menghilangkan semua risiko",
+          "Merusak material atau sambungan"
+        ],
+        "answer": 3,
+        "explanation": "Volume air disesuaikan material dan metode, bukan sebanyak mungkin.",
+        "scenario": "Lantai tetap lengket setelah dipel dengan larutan pekat."
+      },
+      {
+        "id": "cleaning-14-1",
+        "moduleId": "floors",
+        "group": "Lantai keras dan karpet",
+        "lessonId": "cleaning-14",
+        "prompt": "Semua lantai harus diberi wax?",
+        "options": [
+          "Ya termasuk semua karpet",
+          "Ya tanpa pemeriksaan",
+          "Tidak, ikuti spesifikasi material",
+          "Ya setiap hari"
+        ],
+        "answer": 2,
+        "explanation": "Lapisan pelindung harus cocok dengan sistem lantai.",
+        "scenario": "Atasan meminta pelapis tetapi lantai masih lembap."
+      },
+      {
+        "id": "cleaning-14-2",
+        "moduleId": "floors",
+        "group": "Lantai keras dan karpet",
+        "lessonId": "cleaning-14",
+        "prompt": "Sebelum aplikasi lapisan, apa yang penting?",
+        "options": [
+          "Larutan sengaja dipekatkan",
+          "Kebersihan dan kondisi kering sesuai produk",
+          "Debu dibiarkan",
+          "Air menggenang"
+        ],
+        "answer": 1,
+        "explanation": "Residu dan kelembapan dapat mengganggu hasil serta keselamatan.",
+        "scenario": "Atasan meminta pelapis tetapi lantai masih lembap."
+      },
+      {
+        "id": "cleaning-15-1",
+        "moduleId": "floors",
+        "group": "Lantai keras dan karpet",
+        "lessonId": "cleaning-15",
+        "prompt": "Tumpahan cairan biasa pada karpet sebaiknya bagaimana?",
+        "options": [
+          "Serap sesuai prosedur dari tepi ke tengah",
+          "Gosok keras ke luar",
+          "Banjiri air panas",
+          "Campur semua penghilang noda"
+        ],
+        "answer": 0,
+        "explanation": "Penyerapan terarah membantu mencegah noda meluas dan serat rusak.",
+        "scenario": "Kopi baru tumpah di karpet ruang tunggu."
+      },
+      {
+        "id": "cleaning-15-2",
+        "moduleId": "floors",
+        "group": "Lantai keras dan karpet",
+        "lessonId": "cleaning-15",
+        "prompt": "Karpet lembap setelah perawatan boleh langsung dibuka?",
+        "options": [
+          "Ya selalu",
+          "Ya jika wangi",
+          "Ya jika rambu mahal",
+          "Belum, pastikan kondisi aman dan kering sesuai prosedur"
+        ],
+        "answer": 3,
+        "explanation": "Kelembapan dan keselamatan area harus diperiksa sebelum akses dibuka.",
+        "scenario": "Kopi baru tumpah di karpet ruang tunggu."
+      },
+      {
+        "id": "cleaning-16-1",
+        "moduleId": "sanitary",
+        "group": "Toilet dan area sanitasi",
+        "lessonId": "cleaning-16",
+        "prompt": "Alat kloset dipakai ke wastafel. Apa masalahnya?",
+        "options": [
+          "Menghemat dengan aman",
+          "Tidak ada bila basah",
+          "Memindahkan kontaminasi ke area lebih bersih",
+          "Mempercepat disinfeksi"
+        ],
+        "answer": 2,
+        "explanation": "Alat harus dipisah menurut zona dan jenis tugas.",
+        "scenario": "Toilet masih dipakai ketika jadwal pembersihan tiba."
+      },
+      {
+        "id": "cleaning-16-2",
+        "moduleId": "sanitary",
+        "group": "Toilet dan area sanitasi",
+        "lessonId": "cleaning-16",
+        "prompt": "Sebelum masuk toilet untuk membersihkan?",
+        "options": [
+          "Matikan semua lampu",
+          "Pastikan akses dan privasi sesuai prosedur",
+          "Langsung masuk semua bilik",
+          "Foto pengguna"
+        ],
+        "answer": 1,
+        "explanation": "Keselamatan dan privasi pengguna diperiksa sebelum pekerjaan.",
+        "scenario": "Toilet masih dipakai ketika jadwal pembersihan tiba."
+      },
+      {
+        "id": "cleaning-17-1",
+        "moduleId": "sanitary",
+        "group": "Toilet dan area sanitasi",
+        "lessonId": "cleaning-17",
+        "prompt": "Pewangi dapat menggantikan pembersihan?",
+        "options": [
+          "Tidak, bau tidak membuktikan kebersihan",
+          "Ya jika kuat",
+          "Ya pada semua toilet",
+          "Ya tanpa pemeriksaan"
+        ],
+        "answer": 0,
+        "explanation": "Kotoran dan kondisi higienis harus ditangani dengan metode yang tepat.",
+        "scenario": "Rekan hendak menambah pemutih pada kloset yang baru diberi pembersih asam."
+      },
+      {
+        "id": "cleaning-17-2",
+        "moduleId": "sanitary",
+        "group": "Toilet dan area sanitasi",
+        "lessonId": "cleaning-17",
+        "prompt": "Titik sentuh dibersihkan memakai apa?",
+        "options": [
+          "Sikat kloset",
+          "Kain lantai bekas",
+          "Tangan kosong saja",
+          "Kain bersih sesuai zona dan produk tepat"
+        ],
+        "answer": 3,
+        "explanation": "Pemisahan alat mencegah perpindahan kontaminasi ke titik sentuh.",
+        "scenario": "Rekan hendak menambah pemutih pada kloset yang baru diberi pembersih asam."
+      },
+      {
+        "id": "cleaning-18-1",
+        "moduleId": "sanitary",
+        "group": "Toilet dan area sanitasi",
+        "lessonId": "cleaning-18",
+        "prompt": "Sabun berbeda jenis boleh langsung dicampur?",
+        "options": [
+          "Ya jika warnanya sama",
+          "Ya tanpa label",
+          "Tidak, ikuti prosedur penggantian",
+          "Ya agar penuh"
+        ],
+        "answer": 2,
+        "explanation": "Campuran dan pengisian yang salah dapat menyebabkan kontaminasi atau gangguan produk.",
+        "scenario": "Sabun tersisa sedikit tetapi produk pengganti berbeda jenis."
+      },
+      {
+        "id": "cleaning-18-2",
+        "moduleId": "sanitary",
+        "group": "Toilet dan area sanitasi",
+        "lessonId": "cleaning-18",
+        "prompt": "Apa yang diperiksa sebelum membuka toilet?",
+        "options": [
+          "Warna seragam",
+          "Fungsi, kebersihan, stok, dan lantai aman",
+          "Bau saja",
+          "Jam saja"
+        ],
+        "answer": 1,
+        "explanation": "Pemeriksaan menyeluruh memastikan fasilitas benar-benar siap digunakan.",
+        "scenario": "Sabun tersisa sedikit tetapi produk pengganti berbeda jenis."
+      },
+      {
+        "id": "cleaning-19-1",
+        "moduleId": "glass",
+        "group": "Kaca, logam, dan area umum",
+        "lessonId": "cleaning-19",
+        "prompt": "Kaca tidak terjangkau. Apa yang tepat?",
+        "options": [
+          "Gunakan metode akses resmi dan petugas terlatih",
+          "Naik kursi beroda",
+          "Berdiri di ember",
+          "Menjulur keluar jendela"
+        ],
+        "answer": 0,
+        "explanation": "Risiko jatuh tidak diselesaikan dengan alat improvisasi.",
+        "scenario": "Bagian atas kaca tidak terjangkau dari lantai."
+      },
+      {
+        "id": "cleaning-19-2",
+        "moduleId": "glass",
+        "group": "Kaca, logam, dan area umum",
+        "lessonId": "cleaning-19",
+        "prompt": "Squeegee meninggalkan garis. Periksa apa?",
+        "options": [
+          "Volume pewangi",
+          "Warna dinding",
+          "Jam gedung",
+          "Kondisi karet dan kebersihannya"
+        ],
+        "answer": 3,
+        "explanation": "Karet kotor atau rusak mengganggu pengangkatan larutan dari kaca.",
+        "scenario": "Bagian atas kaca tidak terjangkau dari lantai."
+      },
+      {
+        "id": "cleaning-20-1",
+        "moduleId": "glass",
+        "group": "Kaca, logam, dan area umum",
+        "lessonId": "cleaning-20",
+        "prompt": "Cara membersihkan panel tombol elektronik?",
+        "options": [
+          "Rendam panel",
+          "Gosok logam kasar",
+          "Metode kain sesuai manual tanpa cairan masuk",
+          "Semprot sampai menetes"
+        ],
+        "answer": 2,
+        "explanation": "Celah perangkat harus dilindungi dari cairan.",
+        "scenario": "Sidik jari ada pada panel tombol lift."
+      },
+      {
+        "id": "cleaning-20-2",
+        "moduleId": "glass",
+        "group": "Kaca, logam, dan area umum",
+        "lessonId": "cleaning-20",
+        "prompt": "Stainless steel tahan semua bahan kimia?",
+        "options": [
+          "Ya bila digosok kuat",
+          "Tidak, tetap perlu kompatibilitas",
+          "Ya tanpa batas",
+          "Ya bila panas"
+        ],
+        "answer": 1,
+        "explanation": "Lapisan dan finishing dapat rusak oleh produk atau gesekan yang salah.",
+        "scenario": "Sidik jari ada pada panel tombol lift."
+      },
+      {
+        "id": "cleaning-21-1",
+        "moduleId": "glass",
+        "group": "Kaca, logam, dan area umum",
+        "lessonId": "cleaning-21",
+        "prompt": "Tempat menyimpan ember saat membersihkan tangga?",
+        "options": [
+          "Area aman yang tidak menghalangi jalan",
+          "Di tengah anak tangga",
+          "Di pintu darurat",
+          "Di tepi anak tangga"
+        ],
+        "answer": 0,
+        "explanation": "Alat tidak boleh menciptakan bahaya tersandung atau menutup akses.",
+        "scenario": "Kabel vacuum harus melintasi pintu keluar darurat."
+      },
+      {
+        "id": "cleaning-21-2",
+        "moduleId": "glass",
+        "group": "Kaca, logam, dan area umum",
+        "lessonId": "cleaning-21",
+        "prompt": "Kerusakan tepi tangga ditemukan. Apa tindakan tepat?",
+        "options": [
+          "Tutup dengan kain lepas",
+          "Abaikan",
+          "Perbaiki struktur sendiri",
+          "Tandai bahaya dan laporkan"
+        ],
+        "answer": 3,
+        "explanation": "Penandaan dan laporan memungkinkan penanganan teknis yang sesuai.",
+        "scenario": "Kabel vacuum harus melintasi pintu keluar darurat."
+      },
+      {
+        "id": "cleaning-22-1",
+        "moduleId": "waste",
+        "group": "Sampah dan pencegahan kontaminasi",
+        "lessonId": "cleaning-22",
+        "prompt": "Bolehkah menekan sampah dalam kantong dengan tangan?",
+        "options": [
+          "Ya agar hemat",
+          "Ya jika kantong hitam",
+          "Tidak, ada risiko benda tajam tersembunyi",
+          "Ya jika pakai sarung tipis"
+        ],
+        "answer": 2,
+        "explanation": "Sarung tangan tidak menghilangkan risiko tusukan dari isi tak terlihat.",
+        "scenario": "Kantong penuh berisi benda yang tidak terlihat."
+      },
+      {
+        "id": "cleaning-22-2",
+        "moduleId": "waste",
+        "group": "Sampah dan pencegahan kontaminasi",
+        "lessonId": "cleaning-22",
+        "prompt": "Aturan pemilahan sampah mengacu pada apa?",
+        "options": [
+          "Kecepatan angkut saja",
+          "Ketentuan daerah dan gedung",
+          "Warna favorit",
+          "Satu aturan untuk semua negara"
+        ],
+        "answer": 1,
+        "explanation": "Kategori dan jalur pembuangan bergantung ketentuan lokasi.",
+        "scenario": "Kantong penuh berisi benda yang tidak terlihat."
+      },
+      {
+        "id": "cleaning-23-1",
+        "moduleId": "waste",
+        "group": "Sampah dan pencegahan kontaminasi",
+        "lessonId": "cleaning-23",
+        "prompt": "Jarum bekas ditemukan. Apa yang tepat?",
+        "options": [
+          "Amankan area dan hubungi petugas sesuai protokol",
+          "Ambil dengan tangan",
+          "Tutup kembali jarumnya",
+          "Masukkan ke sampah kertas"
+        ],
+        "answer": 0,
+        "explanation": "Penanganan benda tajam memerlukan alat, wadah, dan pelatihan khusus.",
+        "scenario": "Jarum bekas ditemukan di toilet umum."
+      },
+      {
+        "id": "cleaning-23-2",
+        "moduleId": "waste",
+        "group": "Sampah dan pencegahan kontaminasi",
+        "lessonId": "cleaning-23",
+        "prompt": "Terkena tusukan saat kerja. Apa yang dilakukan?",
+        "options": [
+          "Tunggu akhir bulan",
+          "Rahasiakan tanpa tindakan",
+          "Lanjutkan kerja saja",
+          "Segera ikuti prosedur paparan dan penilaian medis"
+        ],
+        "answer": 3,
+        "explanation": "Penanganan paparan perlu cepat sesuai protokol fasilitas.",
+        "scenario": "Jarum bekas ditemukan di toilet umum."
+      },
+      {
+        "id": "cleaning-24-1",
+        "moduleId": "waste",
+        "group": "Sampah dan pencegahan kontaminasi",
+        "lessonId": "cleaning-24",
+        "prompt": "Setelah melepas sarung tangan dari tugas kotor?",
+        "options": [
+          "Cukup ganti seragam",
+          "Semprot pewangi",
+          "Lakukan kebersihan tangan",
+          "Langsung pegang makanan"
+        ],
+        "answer": 2,
+        "explanation": "Tangan dapat terkontaminasi selama pelepasan sarung tangan.",
+        "scenario": "Sarung tangan dilepas setelah membersihkan toilet."
+      },
+      {
+        "id": "cleaning-24-2",
+        "moduleId": "waste",
+        "group": "Sampah dan pencegahan kontaminasi",
+        "lessonId": "cleaning-24",
+        "prompt": "Disinfeksi menggantikan pengangkatan kotoran?",
+        "options": [
+          "Ya tanpa waktu kontak",
+          "Tidak, ikuti tahap pembersihan dan label",
+          "Ya selalu",
+          "Ya jika cairan banyak"
+        ],
+        "answer": 1,
+        "explanation": "Kotoran dapat mengganggu efektivitas proses disinfeksi.",
+        "scenario": "Sarung tangan dilepas setelah membersihkan toilet."
+      },
+      {
+        "id": "cleaning-25-1",
+        "moduleId": "planning",
+        "group": "Perencanaan, komunikasi, dan mutu",
+        "lessonId": "cleaning-25",
+        "prompt": "Instruksi tidak jelas. Apa yang tepat?",
+        "options": [
+          "Tanyakan dan konfirmasi ulang",
+          "Tebak agar cepat",
+          "Lewati keselamatan",
+          "Pakai konsentrasi tertinggi"
+        ],
+        "answer": 0,
+        "explanation": "Konfirmasi mencegah kesalahan metode, angka, dan lokasi.",
+        "scenario": "Instruksi pengenceran terdengar berbeda dari label."
+      },
+      {
+        "id": "cleaning-25-2",
+        "moduleId": "planning",
+        "group": "Perencanaan, komunikasi, dan mutu",
+        "lessonId": "cleaning-25",
+        "prompt": "Prinsip umum urutan pembersihan?",
+        "options": [
+          "Kotor ke bersih selalu",
+          "Acak tanpa inspeksi",
+          "Lantai dahulu lalu debu plafon",
+          "Atas ke bawah sesuai rencana dan risiko"
+        ],
+        "answer": 3,
+        "explanation": "Urutan terencana mengurangi pengotoran kembali area yang sudah bersih.",
+        "scenario": "Instruksi pengenceran terdengar berbeda dari label."
+      },
+      {
+        "id": "cleaning-26-1",
+        "moduleId": "planning",
+        "group": "Perencanaan, komunikasi, dan mutu",
+        "lessonId": "cleaning-26",
+        "prompt": "Kerusakan ditemukan setelah kerja. Apa tindakan tepat?",
+        "options": [
+          "Salahkan pengguna",
+          "Abaikan agar cepat",
+          "Catat fakta dan laporkan",
+          "Sembunyikan dengan troli"
+        ],
+        "answer": 2,
+        "explanation": "Pelaporan faktual memungkinkan penilaian dan penanganan yang tepat.",
+        "scenario": "Pengguna mengeluh lantai masih lengket setelah dibersihkan."
+      },
+      {
+        "id": "cleaning-26-2",
+        "moduleId": "planning",
+        "group": "Perencanaan, komunikasi, dan mutu",
+        "lessonId": "cleaning-26",
+        "prompt": "Keluhan pengguna ditanggapi dengan apa?",
+        "options": [
+          "Membagikan identitasnya",
+          "Dengarkan, konfirmasi, dan tindak lanjuti",
+          "Berdebat tanpa memeriksa",
+          "Janji apa pun"
+        ],
+        "answer": 1,
+        "explanation": "Komunikasi netral membantu penyelesaian tanpa janji di luar kewenangan.",
+        "scenario": "Pengguna mengeluh lantai masih lengket setelah dibersihkan."
+      },
+      {
+        "id": "cleaning-27-1",
+        "moduleId": "planning",
+        "group": "Perencanaan, komunikasi, dan mutu",
+        "lessonId": "cleaning-27",
+        "prompt": "Karpet masih basah saat pergantian shift. Apa yang perlu disampaikan?",
+        "options": [
+          "Lokasi, status, dan pemeriksaan sebelum membuka",
+          "Hanya salam",
+          "Nilai ujian",
+          "Warna seragam"
+        ],
+        "answer": 0,
+        "explanation": "Serah terima menjaga bahaya tidak terlewat saat pergantian petugas.",
+        "scenario": "Shift selesai tetapi karpet masih basah dan dibatasi."
+      },
+      {
+        "id": "cleaning-27-2",
+        "moduleId": "planning",
+        "group": "Perencanaan, komunikasi, dan mutu",
+        "lessonId": "cleaning-27",
+        "prompt": "Cara menghemat bahan dengan aman?",
+        "options": [
+          "Encerkan sesuka hati",
+          "Lewati waktu kontak",
+          "Campur sisa semua produk",
+          "Siapkan volume dan pengenceran sesuai label"
+        ],
+        "answer": 3,
+        "explanation": "Efisiensi tidak boleh mengubah syarat efektivitas dan keselamatan.",
+        "scenario": "Shift selesai tetapi karpet masih basah dan dibatasi."
+      },
+      {
+        "id": "cleaning-28-1",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang kerja dan integrasi kasus",
+        "lessonId": "cleaning-28",
+        "prompt": "使用禁止 berarti apa?",
+        "options": [
+          "Sudah kering",
+          "Stok tersedia",
+          "Dilarang digunakan",
+          "Silakan digunakan"
+        ],
+        "answer": 2,
+        "explanation": "使用 berarti penggunaan dan 禁止 berarti larangan.",
+        "scenario": "Mesin bertanda 使用禁止 tersedia di gudang."
+      },
+      {
+        "id": "cleaning-28-2",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang kerja dan integrasi kasus",
+        "lessonId": "cleaning-28",
+        "prompt": "清掃中 pada pintu menunjukkan apa?",
+        "options": [
+          "Bebas masuk semua orang",
+          "Sedang dibersihkan; ikuti pembatasan",
+          "Toko tutup selamanya",
+          "Perbaikan listrik selesai"
+        ],
+        "answer": 1,
+        "explanation": "清掃中 menunjukkan proses pembersihan sedang berlangsung.",
+        "scenario": "Mesin bertanda 使用禁止 tersedia di gudang."
+      },
+      {
+        "id": "cleaning-29-1",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang kerja dan integrasi kasus",
+        "lessonId": "cleaning-29",
+        "prompt": "午後二時 berarti pukul berapa?",
+        "options": [
+          "14.00",
+          "02.00",
+          "12.00",
+          "20.00"
+        ],
+        "answer": 0,
+        "explanation": "午後 menunjukkan setelah tengah hari; 二時 adalah pukul dua.",
+        "scenario": "Jadwal tertulis 3階、午後2時、点検."
+      },
+      {
+        "id": "cleaning-29-2",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang kerja dan integrasi kasus",
+        "lessonId": "cleaning-29",
+        "prompt": "三階のトイレで水漏れがあります melaporkan apa?",
+        "options": [
+          "Sampah di lobi",
+          "Kaca lantai dua retak",
+          "Stok sabun penuh",
+          "Kebocoran di toilet lantai tiga"
+        ],
+        "answer": 3,
+        "explanation": "三階 = lantai tiga, トイレ = toilet, 水漏れ = kebocoran air.",
+        "scenario": "Jadwal tertulis 3階、午後2時、点検."
+      },
+      {
+        "id": "cleaning-30-1",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang kerja dan integrasi kasus",
+        "lessonId": "cleaning-30",
+        "prompt": "Urutan aman untuk pekerjaan basah di jalur umum?",
+        "options": [
+          "Buka akses saat basah",
+          "Simpan alat di pintu darurat",
+          "Amankan area, bersihkan, keringkan, periksa lalu buka",
+          "Pel lalu pasang rambu"
+        ],
+        "answer": 2,
+        "explanation": "Pengendalian akses dilakukan sebelum bahaya diciptakan dan diakhiri setelah inspeksi.",
+        "scenario": "Lobi ramai, lantai peka air, dan ada tumpahan dekat kabel."
+      },
+      {
+        "id": "cleaning-30-2",
+        "moduleId": "japanese",
+        "group": "Bahasa Jepang kerja dan integrasi kasus",
+        "lessonId": "cleaning-30",
+        "prompt": "Simulasi teks membuktikan kemampuan mengoperasikan mesin?",
+        "options": [
+          "Ya tanpa pelatihan",
+          "Tidak, diperlukan latihan langsung terawasi",
+          "Ya otomatis",
+          "Ya jika satu soal benar"
+        ],
+        "answer": 1,
+        "explanation": "Pengambilan keputusan tertulis tidak menggantikan keterampilan praktik nyata.",
+        "scenario": "Lobi ramai, lantai peka air, dan ada tumpahan dekat kabel."
+      }
+    ]
+  },
+  "papers": {
+    "SSW-KAIGO": {
+      "title": "Kaigo · Simulasi Keterampilan 1",
+      "minutes": 60,
+      "sections": [
+        {
+          "id": "vocabulary",
+          "name": "Keterampilan Kaigo · 45 soal",
+          "durationSeconds": 3600,
+          "questionCount": 45
+        }
+      ],
+      "items": [
+        {
+          "id": "kaigo-01-1",
+          "moduleId": "foundations",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-01",
+          "prompt": "Pengguna masih mampu menyisir rambut. Bantuan yang mendukung kemandirian adalah…",
+          "options": [
+            "Menyisir tanpa bertanya",
+            "Menyiapkan sisir dan membantu bagian sulit",
+            "Melarang pengguna mencoba"
+          ],
+          "answer": 1,
+          "explanation": "Lingkungan dan bantuan sebagian mempertahankan kemampuan yang masih dimiliki.",
+          "scenario": "Pak Sato makan perlahan tetapi dapat memegang sendok. Petugas baru ingin langsung menyuapi agar jadwal selesai.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-01-2",
+          "moduleId": "foundations",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-01",
+          "prompt": "Contoh IADL adalah…",
+          "options": [
+            "Mengelola jadwal belanja",
+            "Menelan makanan",
+            "Mengubah posisi tidur"
+          ],
+          "answer": 0,
+          "explanation": "IADL merupakan kegiatan kehidupan yang lebih kompleks dibanding ADL dasar.",
+          "scenario": "Pak Sato makan perlahan tetapi dapat memegang sendok. Petugas baru ingin langsung menyuapi agar jadwal selesai.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-02-1",
+          "moduleId": "foundations",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-02",
+          "prompt": "Saat pengguna menolak mandi, langkah pertama adalah…",
+          "options": [
+            "Memaksa agar jadwal selesai",
+            "Mengabaikan selamanya",
+            "Mendengarkan alasan dan mencari alternatif"
+          ],
+          "answer": 2,
+          "explanation": "Penolakan dapat menunjukkan kebutuhan atau rasa tidak nyaman yang perlu dipahami.",
+          "scenario": "Ibu Tanaka menolak mandi sore. Ia berkata ruangan terasa dingin.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-02-2",
+          "moduleId": "foundations",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-02",
+          "prompt": "Kemandirian juga mencakup…",
+          "options": [
+            "Hak memilih dengan dukungan",
+            "Harus selalu tanpa bantuan",
+            "Tidak boleh menggunakan alat bantu"
+          ],
+          "answer": 0,
+          "explanation": "Pilihan dan penggunaan dukungan tetap merupakan bagian dari kemandirian.",
+          "scenario": "Ibu Tanaka menolak mandi sore. Ia berkata ruangan terasa dingin.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-03-1",
+          "moduleId": "foundations",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-03",
+          "prompt": "Foto pengguna sebaiknya…",
+          "options": [
+            "Dikirim ke grup pribadi",
+            "Dikelola sesuai persetujuan dan kebijakan resmi",
+            "Diunggah bila wajah diburamkan saja"
+          ],
+          "answer": 1,
+          "explanation": "Persetujuan, tujuan, penerima, dan kebijakan penggunaan tetap perlu diperiksa.",
+          "scenario": "Kerabat yang belum dikenal menelepon meminta diagnosis pengguna. Petugas juga diminta memberi dosis obat tambahan.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-03-2",
+          "moduleId": "foundations",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-03",
+          "prompt": "Instruksi obat tidak jelas. Tindakan yang tepat adalah…",
+          "options": [
+            "Menebak dari kemasan",
+            "Mengikuti pengalaman teman",
+            "Mengonfirmasi kepada petugas berwenang"
+          ],
+          "answer": 2,
+          "explanation": "Keputusan obat memerlukan kewenangan dan instruksi yang jelas.",
+          "scenario": "Kerabat yang belum dikenal menelepon meminta diagnosis pengguna. Petugas juga diminta memberi dosis obat tambahan.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-31-1",
+          "moduleId": "team",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-31",
+          "prompt": "Evaluasi rencana menilai…",
+          "options": [
+            "Jadwal saja",
+            "Respons, tujuan, dan kebutuhan bantuan",
+            "Kecepatan petugas saja"
+          ],
+          "answer": 1,
+          "explanation": "Hasil dukungan harus dihubungkan dengan tujuan serta pengalaman pengguna.",
+          "scenario": "Rencana meminta bantuan sebagian berpakaian. Pengguna berhasil memakai lengan baju tetapi masih perlu bantuan kancing.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-31-2",
+          "moduleId": "team",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-31",
+          "prompt": "Pengguna hanya mandiri pada sebagian berpakaian. Catatan sebaiknya…",
+          "options": [
+            "Mandiri penuh",
+            "Tidak mampu sama sekali",
+            "Menjelaskan bagian mandiri dan bagian yang dibantu"
+          ],
+          "answer": 2,
+          "explanation": "Kemampuan spesifik memberi dasar penyesuaian yang akurat.",
+          "scenario": "Rencana meminta bantuan sebagian berpakaian. Pengguna berhasil memakai lengan baju tetapi masih perlu bantuan kancing.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-32-1",
+          "moduleId": "team",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-32",
+          "prompt": "Catatan objektif adalah…",
+          "options": [
+            "Beliau malas",
+            "Sengaja merepotkan",
+            "Pukul 12.10 mengatakan mual dan makan dua sendok"
+          ],
+          "answer": 2,
+          "explanation": "Waktu, ucapan, dan pengamatan dapat diverifikasi serta ditindaklanjuti.",
+          "scenario": "Petugas ingin menulis 'pengguna malas makan', padahal pengguna mengatakan mual dan berhenti setelah dua sendok.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-32-2",
+          "moduleId": "team",
+          "group": "Dasar Kaigo",
+          "lessonId": "kaigo-32",
+          "prompt": "Sōdan dilakukan ketika…",
+          "options": [
+            "Perlu keputusan atau bantuan",
+            "Ingin menyembunyikan kesalahan",
+            "Tidak ingin memberi informasi"
+          ],
+          "answer": 0,
+          "explanation": "Konsultasi membantu tugas ditangani dengan kewenangan dan dukungan yang sesuai.",
+          "scenario": "Petugas ingin menulis 'pengguna malas makan', padahal pengguna mengatakan mual dan berhenti setelah dua sendok.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-04-1",
+          "moduleId": "body",
+          "group": "Tubuh dan mental",
+          "lessonId": "kaigo-04",
+          "prompt": "Laporan pengamatan yang paling jelas adalah…",
+          "options": [
+            "Beliau aneh",
+            "Mungkin penyakit berat",
+            "Pukul 08.00 sulit dibangunkan, berbeda dari biasanya"
+          ],
+          "answer": 2,
+          "explanation": "Waktu, perilaku teramati, dan perbandingan dengan kondisi dasar membantu tim menilai perubahan.",
+          "scenario": "Pak Mori biasanya aktif berbicara. Pagi ini ia mengantuk tidak biasa dan sulit mengikuti percakapan.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-04-2",
+          "moduleId": "body",
+          "group": "Tubuh dan mental",
+          "lessonId": "kaigo-04",
+          "prompt": "Satu angka tanda vital harus…",
+          "options": [
+            "Ditafsirkan bersama gejala dan prosedur",
+            "Selalu dianggap normal",
+            "Digunakan untuk menentukan diagnosis sendiri"
+          ],
+          "answer": 0,
+          "explanation": "Konteks serta jalur pelaporan diperlukan untuk pengamatan yang aman.",
+          "scenario": "Pak Mori biasanya aktif berbicara. Pagi ini ia mengantuk tidak biasa dan sulit mengikuti percakapan.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-05-1",
+          "moduleId": "body",
+          "group": "Tubuh dan mental",
+          "lessonId": "kaigo-05",
+          "prompt": "Cara mendukung pengguna yang membutuhkan waktu menjawab adalah…",
+          "options": [
+            "Memberi waktu dan mengurangi gangguan",
+            "Menjawab untuknya setiap saat",
+            "Mengulang pertanyaan dengan marah"
+          ],
+          "answer": 0,
+          "explanation": "Penyesuaian komunikasi memberi ruang bagi kemampuan yang masih dimiliki.",
+          "scenario": "Ibu Yamada sering tidak menjawab di ruang makan yang ramai, tetapi merespons ketika diajak bicara di tempat tenang.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-05-2",
+          "moduleId": "body",
+          "group": "Tubuh dan mental",
+          "lessonId": "kaigo-05",
+          "prompt": "Penuaan pada setiap pengguna…",
+          "options": [
+            "Selalu sama",
+            "Perlu dinilai secara individual",
+            "Selalu menyebabkan demensia"
+          ],
+          "answer": 1,
+          "explanation": "Kemampuan dan kebutuhan tidak dapat diputuskan hanya berdasarkan umur.",
+          "scenario": "Ibu Yamada sering tidak menjawab di ruang makan yang ramai, tetapi merespons ketika diajak bicara di tempat tenang.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-06-1",
+          "moduleId": "body",
+          "group": "Tubuh dan mental",
+          "lessonId": "kaigo-06",
+          "prompt": "Kesulitan bicara berarti…",
+          "options": [
+            "Pasti tidak memahami",
+            "Tidak perlu diajak berbicara",
+            "Kemampuan memahami tetap perlu diperhatikan"
+          ],
+          "answer": 2,
+          "explanation": "Kemampuan berbicara dan memahami tidak selalu terganggu dengan cara yang sama.",
+          "scenario": "Pak Ito memahami pembicaraan tetapi sulit mengucapkan kata. Petugas baru berbicara hanya kepada keluarganya.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-06-2",
+          "moduleId": "body",
+          "group": "Tubuh dan mental",
+          "lessonId": "kaigo-06",
+          "prompt": "Saat berpakaian dengan kelemahan satu sisi, prinsip umum memasukkan pakaian adalah…",
+          "options": [
+            "Sisi yang lebih kuat selalu dahulu",
+            "Sisi yang memerlukan bantuan dahulu, sesuai rencana",
+            "Menarik lengan agar cepat"
+          ],
+          "answer": 1,
+          "explanation": "Urutan bantuan bertujuan mengurangi kesulitan; tetap sesuaikan kondisi dan rencana.",
+          "scenario": "Pak Ito memahami pembicaraan tetapi sulit mengucapkan kata. Petugas baru berbicara hanya kepada keluarganya.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-10-1",
+          "moduleId": "communication",
+          "group": "Komunikasi",
+          "lessonId": "kaigo-10",
+          "prompt": "Pengguna diam ketika ditawari bantuan. Petugas sebaiknya…",
+          "options": [
+            "Langsung menganggap setuju",
+            "Mengonfirmasi pemahaman dan respons",
+            "Menganggap menolak selamanya"
+          ],
+          "answer": 1,
+          "explanation": "Diam dapat memiliki banyak makna; persetujuan perlu dikonfirmasi.",
+          "scenario": "Ibu Arai berkata 'saya tidak suka ruang makan'. Petugas hendak menyimpulkan ia tidak lapar.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-10-2",
+          "moduleId": "communication",
+          "group": "Komunikasi",
+          "lessonId": "kaigo-10",
+          "prompt": "Mendengarkan aktif mencakup…",
+          "options": [
+            "Memotong jawaban",
+            "Menebak tanpa bertanya",
+            "Merangkum dan memastikan pemahaman"
+          ],
+          "answer": 2,
+          "explanation": "Konfirmasi mencegah salah memahami kebutuhan pengguna.",
+          "scenario": "Ibu Arai berkata 'saya tidak suka ruang makan'. Petugas hendak menyimpulkan ia tidak lapar.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-11-1",
+          "moduleId": "communication",
+          "group": "Komunikasi",
+          "lessonId": "kaigo-11",
+          "prompt": "Cara memberi arahan yang mudah diikuti adalah…",
+          "options": [
+            "Beberapa perintah cepat",
+            "Satu tahap lalu menunggu respons",
+            "Hanya berbicara kepada rekan"
+          ],
+          "answer": 1,
+          "explanation": "Pengguna perlu waktu memahami dan merespons satu tahap.",
+          "scenario": "Petugas mengatakan 'pegang, berdiri, putar, duduk' dalam satu kalimat. Pengguna berhenti dan tampak takut.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-11-2",
+          "moduleId": "communication",
+          "group": "Komunikasi",
+          "lessonId": "kaigo-11",
+          "prompt": "Sebelum bantuan tubuh, petugas perlu…",
+          "options": [
+            "Menjelaskan dan meminta persetujuan",
+            "Langsung menyentuh",
+            "Menjanjikan pasti tidak sakit"
+          ],
+          "answer": 0,
+          "explanation": "Penjelasan dan persetujuan membangun rasa aman dan menghormati pengguna.",
+          "scenario": "Petugas mengatakan 'pegang, berdiri, putar, duduk' dalam satu kalimat. Pengguna berhenti dan tampak takut.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-16-1",
+          "moduleId": "mobility",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-16",
+          "prompt": "Body mechanics yang baik…",
+          "options": [
+            "Menjamin semua angkat aman",
+            "Menggantikan alat bantu",
+            "Tetap memerlukan penilaian dan alat sesuai kebutuhan"
+          ],
+          "answer": 2,
+          "explanation": "Kemampuan pengguna, alat, ruang, serta petugas harus dipertimbangkan bersama.",
+          "scenario": "Pak Endo yang biasanya membantu berdiri hari ini tidak mampu menumpu. Petugas hendak tetap memakai cara kemarin.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-16-2",
+          "moduleId": "mobility",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-16",
+          "prompt": "Kemampuan menumpu berubah hari ini. Petugas perlu…",
+          "options": [
+            "Memakai cara kemarin tanpa perubahan",
+            "Menghentikan dan meminta penilaian ulang",
+            "Menarik pengguna lebih kuat"
+          ],
+          "answer": 1,
+          "explanation": "Rencana bantuan harus sesuai kondisi aktual.",
+          "scenario": "Pak Endo yang biasanya membantu berdiri hari ini tidak mampu menumpu. Petugas hendak tetap memakai cara kemarin.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-17-1",
+          "moduleId": "mobility",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-17",
+          "prompt": "Kemerahan kulit baru sebaiknya…",
+          "options": [
+            "Dipijat kuat",
+            "Dilaporkan dan ditangani sesuai arahan",
+            "Ditutupi tanpa catatan"
+          ],
+          "answer": 1,
+          "explanation": "Perubahan kulit memerlukan penilaian serta perlindungan yang sesuai.",
+          "scenario": "Saat merapikan pakaian, petugas melihat kemerahan baru di area tumit pengguna yang jarang bergerak.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-17-2",
+          "moduleId": "mobility",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-17",
+          "prompt": "Jadwal perubahan posisi harus…",
+          "options": [
+            "Mengikuti rencana individual",
+            "Sama untuk semua orang",
+            "Ditentukan dari kebiasaan petugas saja"
+          ],
+          "answer": 0,
+          "explanation": "Risiko, kenyamanan, serta kondisi pengguna berbeda-beda.",
+          "scenario": "Saat merapikan pakaian, petugas melihat kemerahan baru di area tumit pengguna yang jarang bergerak.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-18-1",
+          "moduleId": "mobility",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-18",
+          "prompt": "Saat transfer, pijakan kaki yang menghalangi harus…",
+          "options": [
+            "Dibiarkan agar cepat",
+            "Dipakai sebagai tempat berdiri",
+            "Diatur sesuai prosedur sebelum mulai"
+          ],
+          "answer": 2,
+          "explanation": "Persiapan alat mencegah hambatan dan risiko saat transfer.",
+          "scenario": "Petugas melihat pijakan kaki kursi roda masih menghalangi saat pengguna hendak berdiri.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-18-2",
+          "moduleId": "mobility",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-18",
+          "prompt": "Pengguna tiba-tiba pusing saat berjalan. Petugas sebaiknya…",
+          "options": [
+            "Memaksa menyelesaikan jarak",
+            "Berhenti dengan aman dan melaporkan",
+            "Menganggap malas"
+          ],
+          "answer": 1,
+          "explanation": "Perubahan kondisi perlu perhatian sebelum aktivitas dilanjutkan.",
+          "scenario": "Petugas melihat pijakan kaki kursi roda masih menghalangi saat pengguna hendak berdiri.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-19-1",
+          "moduleId": "food",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-19",
+          "prompt": "Nampan yang mirip perlu…",
+          "options": [
+            "Diberikan menurut posisi kursi",
+            "Diperiksa penerima dan rencana dietnya",
+            "Dibagi secara acak"
+          ],
+          "answer": 1,
+          "explanation": "Identitas, alergi, serta rencana diet harus cocok sebelum pemberian.",
+          "scenario": "Dua nampan mirip diletakkan berdampingan. Petugas belum memeriksa label dan rencana diet.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-19-2",
+          "moduleId": "food",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-19",
+          "prompt": "Tempo bantuan makan sebaiknya…",
+          "options": [
+            "Mengikuti kemampuan dan respons pengguna",
+            "Selalu cepat",
+            "Sama pada semua pengguna"
+          ],
+          "answer": 0,
+          "explanation": "Kenyamanan serta kemampuan pengguna menentukan bantuan, bukan jadwal petugas saja.",
+          "scenario": "Dua nampan mirip diletakkan berdampingan. Petugas belum memeriksa label dan rencana diet.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-20-1",
+          "moduleId": "food",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-20",
+          "prompt": "Kesulitan baru saat menelan harus direspons dengan…",
+          "options": [
+            "Air sebanyak mungkin",
+            "Hentikan pemberian dan eskalasi sesuai prosedur",
+            "Lanjutkan lebih cepat"
+          ],
+          "answer": 1,
+          "explanation": "Perubahan menelan memerlukan penilaian dan tidak diselesaikan dengan minuman spontan.",
+          "scenario": "Saat makan, suara pengguna menjadi basah dan ia berulang kali batuk. Teman menyarankan memberi banyak air.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-20-2",
+          "moduleId": "food",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-20",
+          "prompt": "Tekstur dan target cairan ditetapkan berdasarkan…",
+          "options": [
+            "Selera petugas",
+            "Aturan yang sama bagi semua lansia",
+            "Rencana individual dari tim"
+          ],
+          "answer": 2,
+          "explanation": "Kebutuhan serta pembatasan tiap pengguna dapat berbeda.",
+          "scenario": "Saat makan, suara pengguna menjadi basah dan ia berulang kali batuk. Teman menyarankan memberi banyak air.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-21-1",
+          "moduleId": "food",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-21",
+          "prompt": "Pengguna mengatakan gigi palsu sakit. Petugas harus…",
+          "options": [
+            "Melaporkan untuk penilaian",
+            "Memperbaiki sendiri",
+            "Memaksa agar tetap dipakai"
+          ],
+          "answer": 0,
+          "explanation": "Keluhan perlu penilaian dan tindak lanjut sesuai kewenangan.",
+          "scenario": "Ibu Noda mengurangi makan dan mengatakan gigi palsunya sakit saat dipakai.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-21-2",
+          "moduleId": "food",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-21",
+          "prompt": "Wadah gigi palsu perlu…",
+          "options": [
+            "Dipakai bergantian",
+            "Diberi identitas dan disimpan sesuai prosedur",
+            "Dicampur agar mudah dibersihkan"
+          ],
+          "answer": 1,
+          "explanation": "Identifikasi mencegah alat pribadi tertukar dan mendukung kebersihan.",
+          "scenario": "Ibu Noda mengurangi makan dan mengatakan gigi palsunya sakit saat dipakai.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-22-1",
+          "moduleId": "toileting",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-22",
+          "prompt": "Privasi saat toilet harus…",
+          "options": [
+            "Selalu membuat pengguna ditinggal",
+            "Diseimbangkan dengan kebutuhan pengawasan",
+            "Diabaikan bila petugas sibuk"
+          ],
+          "answer": 1,
+          "explanation": "Privasi penting, tetapi bantuan tetap mengikuti penilaian risiko individual.",
+          "scenario": "Pak Hara perlu diawasi saat duduk dan berdiri. Petugas ingin keluar jauh dari toilet demi privasi.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-22-2",
+          "moduleId": "toileting",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-22",
+          "prompt": "Jadwal dukungan toilet sebaiknya mengikuti…",
+          "options": [
+            "Kebiasaan dan rencana pengguna",
+            "Satu jadwal untuk semua",
+            "Kenyamanan petugas saja"
+          ],
+          "answer": 0,
+          "explanation": "Pola serta kebutuhan individual menjadi dasar dukungan.",
+          "scenario": "Pak Hara perlu diawasi saat duduk dan berdiri. Petugas ingin keluar jauh dari toilet demi privasi.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-23-1",
+          "moduleId": "toileting",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-23",
+          "prompt": "Mengurangi cairan sendiri agar tidak bocor adalah…",
+          "options": [
+            "Selalu benar",
+            "Cara utama caregiver",
+            "Tidak tepat tanpa rencana dan penilaian tim"
+          ],
+          "answer": 2,
+          "explanation": "Kebutuhan cairan tidak ditentukan dari kenyamanan penggantian alat.",
+          "scenario": "Ibu Kondo mengalami kebocoran dan meminta petugas tidak berbicara keras tentangnya.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-23-2",
+          "moduleId": "toileting",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-23",
+          "prompt": "Penggunaan pad sebaiknya…",
+          "options": [
+            "Mengikuti rencana serta tetap mempertimbangkan toilet",
+            "Selalu mengganti semua kesempatan toilet",
+            "Ditambah lapisan sebanyak mungkin"
+          ],
+          "answer": 0,
+          "explanation": "Dukungan perlu sesuai kebutuhan, pola, dan kenyamanan pengguna.",
+          "scenario": "Ibu Kondo mengalami kebocoran dan meminta petugas tidak berbicara keras tentangnya.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-24-1",
+          "moduleId": "toileting",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-24",
+          "prompt": "Jumlah urine tidak diukur. Catatan sebaiknya…",
+          "options": [
+            "Menebak angka",
+            "Tidak mencantumkan angka sebagai hasil pasti",
+            "Menggunakan angka pengguna lain"
+          ],
+          "answer": 1,
+          "explanation": "Catatan harus membedakan ukuran nyata dari perkiraan.",
+          "scenario": "Pak Ueda berkata buang air kecil terasa sakit. Catatan sebelumnya tidak mencantumkan keluhan ini.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-24-2",
+          "moduleId": "toileting",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-24",
+          "prompt": "Nyeri baru saat berkemih perlu…",
+          "options": [
+            "Diobati sendiri",
+            "Diabaikan bila malu",
+            "Dicatat dan dilaporkan"
+          ],
+          "answer": 2,
+          "explanation": "Penilaian serta keputusan terapi berada pada petugas berwenang.",
+          "scenario": "Pak Ueda berkata buang air kecil terasa sakit. Catatan sebelumnya tidak mencantumkan keluhan ini.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-25-1",
+          "moduleId": "hygiene",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-25",
+          "prompt": "Pusing sebelum mandi perlu…",
+          "options": [
+            "Dilaporkan sebelum kegiatan dilanjutkan",
+            "Diabaikan karena jadwal",
+            "Diatasi dengan air lebih panas"
+          ],
+          "answer": 0,
+          "explanation": "Kondisi aktual harus diperiksa sebelum melanjutkan aktivitas.",
+          "scenario": "Ibu Hayashi tampak pusing sebelum mandi yang sudah dijadwalkan.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-25-2",
+          "moduleId": "hygiene",
+          "group": "Dukungan kehidupan",
+          "lessonId": "kaigo-25",
+          "prompt": "Persiapan mandi meliputi…",
+          "options": [
+            "Handuk saja",
+            "Lingkungan, alat, rencana, dan kondisi pengguna",
+            "Hanya menyalakan air"
+          ],
+          "answer": 1,
+          "explanation": "Risiko berasal dari pengguna, alat, dan lingkungan sekaligus.",
+          "scenario": "Ibu Hayashi tampak pusing sebelum mandi yang sudah dijadwalkan.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-07-1",
+          "moduleId": "dementia",
+          "group": "Keputusan praktik · skenario teks",
+          "lessonId": "kaigo-07",
+          "prompt": "Pengguna mengulang pertanyaan. Respons yang tepat adalah…",
+          "options": [
+            "Menjawab tenang dan memberi petunjuk",
+            "Menguji ingatan dengan paksa",
+            "Mempermalukan di depan orang lain"
+          ],
+          "answer": 0,
+          "explanation": "Petunjuk dan ketenangan membantu kebutuhan yang muncul dari kesulitan mengingat.",
+          "scenario": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'.",
+          "section": "vocabulary",
+          "passage": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'."
+        },
+        {
+          "id": "kaigo-07-2",
+          "moduleId": "dementia",
+          "group": "Keputusan praktik · skenario teks",
+          "lessonId": "kaigo-07",
+          "prompt": "Demensia…",
+          "options": [
+            "Selalu dialami setiap lansia",
+            "Memerlukan penilaian profesional dan dukungan individual",
+            "Dapat didiagnosis dari satu kali lupa"
+          ],
+          "answer": 1,
+          "explanation": "Usia atau satu kejadian lupa tidak cukup untuk menentukan diagnosis.",
+          "scenario": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'.",
+          "section": "vocabulary",
+          "passage": "Ibu Suzuki bertanya berulang kali kapan makan siang. Petugas mulai berkata 'sudah saya jawab'."
+        },
+        {
+          "id": "kaigo-08-1",
+          "moduleId": "dementia",
+          "group": "Keputusan praktik · skenario teks",
+          "lessonId": "kaigo-08",
+          "prompt": "Memvalidasi emosi berarti…",
+          "options": [
+            "Mengakui perasaan pengguna",
+            "Selalu menyetujui semua fakta",
+            "Memaksa pengguna berhenti bicara"
+          ],
+          "answer": 0,
+          "explanation": "Perasaan dapat diakui tanpa berdebat atau membenarkan informasi yang tidak tepat.",
+          "scenario": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat.",
+          "section": "vocabulary",
+          "passage": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat."
+        },
+        {
+          "id": "kaigo-08-2",
+          "moduleId": "dementia",
+          "group": "Keputusan praktik · skenario teks",
+          "lessonId": "kaigo-08",
+          "prompt": "Catatan perilaku sebaiknya memuat…",
+          "options": [
+            "Label 'nakal' saja",
+            "Pendapat tanpa waktu",
+            "Pemicu, perilaku, respons, dan hasil"
+          ],
+          "answer": 2,
+          "explanation": "Urutan kejadian membantu tim menentukan dukungan yang sesuai.",
+          "scenario": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat.",
+          "section": "vocabulary",
+          "passage": "Pak Kato menolak berganti pakaian ketika dua petugas berbicara keras dan bergerak cepat."
+        },
+        {
+          "id": "kaigo-09-1",
+          "moduleId": "dementia",
+          "group": "Keputusan praktik · skenario teks",
+          "lessonId": "kaigo-09",
+          "prompt": "Kebingungan mendadak pada pengguna dengan demensia perlu…",
+          "options": [
+            "Diabaikan sebagai usia",
+            "Dilaporkan sebagai perubahan baru",
+            "Ditunggu sampai shift besok"
+          ],
+          "answer": 1,
+          "explanation": "Perubahan dari kondisi dasar memerlukan penilaian, bukan asumsi.",
+          "scenario": "Pengguna dengan demensia biasanya mengikuti sapaan. Sore ini ia tiba-tiba tidak dapat memusatkan perhatian dan jauh lebih mengantuk.",
+          "section": "vocabulary",
+          "passage": "Pengguna dengan demensia biasanya mengikuti sapaan. Sore ini ia tiba-tiba tidak dapat memusatkan perhatian dan jauh lebih mengantuk."
+        }
+      ]
+    },
+    "SSW-KAIGO-JP": {
+      "title": "Kaigo · Simulasi Bahasa Jepang 1",
+      "minutes": 30,
+      "sections": [
+        {
+          "id": "vocabulary",
+          "name": "Bahasa Jepang Kaigo · 15 soal",
+          "durationSeconds": 1800,
+          "questionCount": 15
+        }
+      ],
+      "items": [
+        {
+          "id": "kaigo-jp-01",
+          "moduleId": "japanese-assessment",
+          "group": "Kosakata Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "利用者（りようしゃ）とは、だれですか。",
+          "options": [
+            "介護（かいご）のサービスを使（つか）う人（ひと）",
+            "建物（たてもの）を修理（しゅうり）する人",
+            "荷物（にもつ）を売（う）る人",
+            "試験（しけん）を作（つく）る人"
+          ],
+          "answer": 0,
+          "explanation": "利用者 adalah orang yang menggunakan layanan; konteksnya penerima layanan perawatan.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-02",
+          "moduleId": "japanese-assessment",
+          "group": "Kosakata Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "「車（くるま）いす」の読（よ）み方（かた）はどれですか。",
+          "options": [
+            "くるまいす",
+            "くるまいし",
+            "しゃいす",
+            "くるまいず"
+          ],
+          "answer": 0,
+          "explanation": "車いす dibaca くるまいす, kursi roda.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-03",
+          "moduleId": "japanese-assessment",
+          "group": "Kosakata Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "「食後（しょくご）」は、いつですか。",
+          "options": [
+            "ご飯（はん）を食（た）べた後（あと）",
+            "ご飯を食べる前（まえ）",
+            "寝（ね）ている間（あいだ）",
+            "起（お）きる前"
+          ],
+          "answer": 0,
+          "explanation": "食後 = setelah makan; 食前 = sebelum makan.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-04",
+          "moduleId": "japanese-assessment",
+          "group": "Kosakata Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "「排泄（はいせつ）」に関係（かんけい）があるのはどれですか。",
+          "options": [
+            "トイレ",
+            "散歩（さんぽ）",
+            "買（か）い物（もの）",
+            "洗濯（せんたく）"
+          ],
+          "answer": 0,
+          "explanation": "排泄 berkaitan dengan eliminasi, misalnya buang air di toilet.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-05",
+          "moduleId": "japanese-assessment",
+          "group": "Kosakata Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "「むせる」とは、どのような様子（ようす）ですか。",
+          "options": [
+            "飲食中（いんしょくちゅう）などに、せきが出（で）る",
+            "気持（きも）ちよく眠（ねむ）る",
+            "服（ふく）を着替（きが）える",
+            "ゆっくり歩（ある）く"
+          ],
+          "answer": 0,
+          "explanation": "むせる adalah tersedak/batuk saat menelan; perlu menghentikan bantuan makan dan menilai sesuai prosedur.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-06",
+          "moduleId": "japanese-assessment",
+          "group": "Percakapan Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "ベッドから車（くるま）いすに移（うつ）る前（まえ）に、何（なん）と言（い）いますか。",
+          "options": [
+            "これから車いすに移りましょう。",
+            "もう食事（しょくじ）は終（お）わりました。",
+            "窓（まど）を閉（し）めました。",
+            "今日（きょう）は休（やす）みです。"
+          ],
+          "answer": 0,
+          "explanation": "Sampaikan apa yang akan dilakukan sebelum transfer agar pengguna memahami dan dapat berpartisipasi.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-07",
+          "moduleId": "japanese-assessment",
+          "group": "Percakapan Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "利用者（りようしゃ）が「寒（さむ）いです」と言（い）いました。適切（てきせつ）な返事（へんじ）はどれですか。",
+          "options": [
+            "毛布（もうふ）をお持（も）ちしましょうか。",
+            "もっと冷（つめ）たい水（みず）を飲（の）んでください。",
+            "寒くありません。",
+            "何（なに）も言わないでください。"
+          ],
+          "answer": 0,
+          "explanation": "Tawarkan selimut dan periksa kenyamanan; jangan menyangkal sensasi pengguna.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-08",
+          "moduleId": "japanese-assessment",
+          "group": "Percakapan Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "利用者（りようしゃ）が「右（みぎ）の足（あし）が痛（いた）いです」と言（い）いました。どこが痛いですか。",
+          "options": [
+            "右の足",
+            "左（ひだり）の手（て）",
+            "おなか",
+            "頭（あたま）"
+          ],
+          "answer": 0,
+          "explanation": "右の足 = kaki kanan. Lokasi keluhan harus dikonfirmasi dan dilaporkan.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-09",
+          "moduleId": "japanese-assessment",
+          "group": "Percakapan Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "「立（た）つ前（まえ）に、ブレーキを確認（かくにん）してください。」最初（さいしょ）に何（なに）をしますか。",
+          "options": [
+            "ブレーキを確認する",
+            "すぐに立つ",
+            "車（くるま）いすを動（うご）かす",
+            "靴（くつ）を捨（す）てる"
+          ],
+          "answer": 0,
+          "explanation": "Instruksi 前に menunjukkan pemeriksaan rem sebelum berdiri.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-10",
+          "moduleId": "japanese-assessment",
+          "group": "Percakapan Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "利用者（りようしゃ）に聞（き）こえなかったとき、何（なん）と言（い）いますか。",
+          "options": [
+            "もう一度（いちど）お話（はな）しいただけますか。",
+            "話さないでください。",
+            "絶対（ぜったい）に違（ちが）います。",
+            "何でもいいです。"
+          ],
+          "answer": 0,
+          "explanation": "Minta pengulangan dengan sopan agar tidak menebak kebutuhan pengguna.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-11",
+          "moduleId": "japanese-assessment",
+          "group": "Dokumen Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "記録（きろく）：「午前（ごぜん）十時（じ）、水（みず）を百（ひゃく）ミリリットル飲（の）んだ。」何（なに）を飲みましたか。",
+          "options": [
+            "水を100ミリリットル",
+            "薬（くすり）を100個（こ）",
+            "お茶（ちゃ）を1リットル",
+            "牛乳（ぎゅうにゅう）を10ミリリットル"
+          ],
+          "answer": 0,
+          "explanation": "Catatan menyebut pukul 10 pagi minum air 100 ml; satuan dan jenis minuman perlu dibaca tepat.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-12",
+          "moduleId": "japanese-assessment",
+          "group": "Dokumen Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "連絡（れんらく）：「田中（たなか）さんは、今日（きょう）は入浴（にゅうよく）しません。」正（ただ）しいのはどれですか。",
+          "options": [
+            "田中さんは今日はお風呂（ふろ）に入りません。",
+            "田中さんは毎日（まいにち）入浴しません。",
+            "全員（ぜんいん）が入浴しません。",
+            "田中さんは今（いま）入浴しています。"
+          ],
+          "answer": 0,
+          "explanation": "今日は hanya hari ini; 入浴しません = tidak mandi. Jangan memperluas instruksi ke semua orang atau semua hari.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-13",
+          "moduleId": "japanese-assessment",
+          "group": "Dokumen Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "申し送（もうしおく）り：「昼食後（ちゅうしょくご）、せきが続（つづ）いています。看護師（かんごし）に報告済（ほうこくず）みです。」報告はどうなっていますか。",
+          "options": [
+            "すでに看護師に報告しました。",
+            "まだ誰（だれ）にも報告していません。",
+            "明日（あした）報告します。",
+            "利用者（りようしゃ）が報告を断（ことわ）りました。"
+          ],
+          "answer": 0,
+          "explanation": "報告済み berarti sudah dilaporkan. Catatan menyebut batuk terus setelah makan siang dan sudah melapor ke perawat.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-14",
+          "moduleId": "japanese-assessment",
+          "group": "Dokumen Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "予定（よてい）：「午後（ごご）二時（じ）に体操（たいそう）。その前（まえ）にトイレを確認（かくにん）。」順番（じゅんばん）はどれですか。",
+          "options": [
+            "トイレを確認してから、二時に体操をする",
+            "体操をしてから、トイレを確認する",
+            "午前二時に体操をする",
+            "トイレの確認はしない"
+          ],
+          "answer": 0,
+          "explanation": "その前に menunjukkan pemeriksaan kebutuhan toilet sebelum senam pukul 14.00.",
+          "scenario": "",
+          "section": "vocabulary"
+        },
+        {
+          "id": "kaigo-jp-15",
+          "moduleId": "japanese-assessment",
+          "group": "Dokumen Kaigo",
+          "lessonId": "kaigo-34",
+          "prompt": "利用者（りようしゃ）：「自分（じぶん）で顔（かお）を洗（あら）いたいです。」返事（へんじ）はどれがよいですか。",
+          "options": [
+            "分（わ）かりました。必要（ひつよう）なときはお手伝（てつだ）いします。",
+            "時間（じかん）がないので全部（ぜんぶ）私（わたし）がします。",
+            "自分では何（なに）もしないでください。",
+            "顔を洗ってはいけません。"
+          ],
+          "answer": 0,
+          "explanation": "Hormati pilihan dan kemampuan pengguna; tawarkan bantuan sesuai kebutuhan dan rencana perawatan.",
+          "scenario": "",
+          "section": "vocabulary"
+        }
+      ]
+    },
+    "SSW-CLEANING": {
+      "title": "Pembersihan Gedung · Simulasi 1",
+      "minutes": 50,
+      "sections": [
+        {
+          "id": "vocabulary",
+          "name": "Teori · 学科",
+          "durationSeconds": 1200,
+          "questionCount": 20
+        },
+        {
+          "id": "grammar",
+          "name": "Penilaian praktik · 実技",
+          "durationSeconds": 1800,
+          "questionCount": 30
+        }
+      ],
+      "items": [
+        {
+          "id": "cleaning-01-1",
+          "moduleId": "role",
+          "group": "Dasar profesi dan mutu layanan",
+          "lessonId": "cleaning-01",
+          "prompt": "Panel listrik kotor di luar lingkup tugas. Apa tindakan tepat?",
+          "options": [
+            "Laporkan ke penanggung jawab teknis",
+            "Buka panel sendiri",
+            "Semprot dengan air",
+            "Abaikan tanpa laporan"
+          ],
+          "answer": 0,
+          "explanation": "Batas tugas dan risiko listrik harus diperiksa sebelum pekerjaan dilakukan.",
+          "scenario": "Kamu diminta membuka panel listrik yang berdebu.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-02-1",
+          "moduleId": "role",
+          "group": "Dasar profesi dan mutu layanan",
+          "lessonId": "cleaning-02",
+          "prompt": "Pencucian berkala tidak dapat dilakukan saat ruang dipakai. Apa yang dilakukan?",
+          "options": [
+            "Koordinasikan dan catat penundaan",
+            "Centang selesai",
+            "Paksakan saat rapat",
+            "Hilangkan dari jadwal"
+          ],
+          "answer": 0,
+          "explanation": "Catatan penundaan menjaga keterlacakan dan keselamatan pengguna.",
+          "scenario": "Jadwal pencucian lantai bertabrakan dengan rapat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-03-1",
+          "moduleId": "role",
+          "group": "Dasar profesi dan mutu layanan",
+          "lessonId": "cleaning-03",
+          "prompt": "Kertas di meja menghalangi pembersihan. Pilih tindakan tepat.",
+          "options": [
+            "Tanyakan prosedur sebelum memindahkan",
+            "Buang semua kertas",
+            "Foto isinya",
+            "Baca untuk menentukan pemilik"
+          ],
+          "answer": 0,
+          "explanation": "Dokumen bukan sampah hanya karena berada di area kerja.",
+          "scenario": "Ada dompet di bawah kursi ruang rapat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-04-1",
+          "moduleId": "safety",
+          "group": "Keselamatan dan kesehatan kerja",
+          "lessonId": "cleaning-04",
+          "prompt": "Kapan rambu lantai basah boleh dipindahkan?",
+          "options": [
+            "Setelah kering dan area diperiksa aman",
+            "Begitu mengepel selesai",
+            "Saat atasan pergi",
+            "Setelah lima menit tanpa pemeriksaan"
+          ],
+          "answer": 0,
+          "explanation": "Pembukaan area berdasarkan kondisi nyata, bukan waktu perkiraan saja.",
+          "scenario": "Lantai lobi basah dan pengunjung terus lewat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-05-1",
+          "moduleId": "safety",
+          "group": "Keselamatan dan kesehatan kerja",
+          "lessonId": "cleaning-05",
+          "prompt": "Sarung tangan robek saat kerja. Apa yang tepat?",
+          "options": [
+            "Hentikan dan ganti secara aman",
+            "Lanjutkan hingga istirahat",
+            "Tutup dengan kertas",
+            "Gunakan sisi yang robek"
+          ],
+          "answer": 0,
+          "explanation": "APD rusak tidak memberikan perlindungan yang direncanakan.",
+          "scenario": "Kantong sampah basah terasa sangat berat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-06-1",
+          "moduleId": "safety",
+          "group": "Keselamatan dan kesehatan kerja",
+          "lessonId": "cleaning-06",
+          "prompt": "Bahan tanpa label tumpah. Tindakan awal?",
+          "options": [
+            "Jauhi, batasi akses, dan laporkan",
+            "Cium untuk mengenali",
+            "Campur dengan pemutih",
+            "Lap dengan tangan kosong"
+          ],
+          "answer": 0,
+          "explanation": "Bahan tak dikenal tidak boleh diuji sendiri atau dicampur.",
+          "scenario": "Botol tanpa label pecah dan mengeluarkan bau menyengat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-07-1",
+          "moduleId": "chemicals",
+          "group": "Kotoran, bahan permukaan, dan bahan kimia",
+          "lessonId": "cleaning-07",
+          "prompt": "Material lantai belum diketahui. Pilihan aman?",
+          "options": [
+            "Periksa spesifikasi sebelum bahan kuat",
+            "Langsung pakai asam",
+            "Gosok dengan logam",
+            "Rendam semalaman"
+          ],
+          "answer": 0,
+          "explanation": "Kompatibilitas bergantung pada material, bukan hanya jenis noda.",
+          "scenario": "Ada kerak di lantai batu yang jenisnya belum diketahui.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-08-1",
+          "moduleId": "chemicals",
+          "group": "Kotoran, bahan permukaan, dan bahan kimia",
+          "lessonId": "cleaning-08",
+          "prompt": "Wadah bahan kimia yang benar?",
+          "options": [
+            "Wadah sesuai prosedur dengan label jelas",
+            "Botol minuman tanpa label",
+            "Gelas kantin",
+            "Botol acak berdasarkan warna"
+          ],
+          "answer": 0,
+          "explanation": "Identitas dan wadah sesuai mencegah paparan serta salah penggunaan.",
+          "scenario": "Rekan memberikan botol minuman berisi cairan pembersih.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-09-1",
+          "moduleId": "chemicals",
+          "group": "Kotoran, bahan permukaan, dan bahan kimia",
+          "lessonId": "cleaning-09",
+          "prompt": "Pengenceran AKHIR 100 kali, volume akhir 1000 ml. Berapa produk?",
+          "options": [
+            "10 ml",
+            "100 ml",
+            "1 ml",
+            "1000 ml"
+          ],
+          "answer": 0,
+          "explanation": "1000 dibagi 100 = 10 ml produk; tambahkan air hingga volume akhir.",
+          "scenario": "Label meminta pengenceran akhir 100 kali untuk 1 liter.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-10-1",
+          "moduleId": "tools",
+          "group": "Peralatan manual dan mesin",
+          "lessonId": "cleaning-10",
+          "prompt": "Kain toilet boleh digunakan ke meja?",
+          "options": [
+            "Tidak, gunakan alat zona meja",
+            "Boleh bila tampak bersih",
+            "Boleh setelah disemprot pewangi",
+            "Boleh bila warna sama"
+          ],
+          "answer": 0,
+          "explanation": "Pemisahan alat mencegah kontaminasi silang antar-zona.",
+          "scenario": "Kain dari toilet hendak dipakai untuk meja resepsionis.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-11-1",
+          "moduleId": "tools",
+          "group": "Peralatan manual dan mesin",
+          "lessonId": "cleaning-11",
+          "prompt": "Vacuum kering boleh mengisap genangan?",
+          "options": [
+            "Tidak, gunakan alat yang sesuai cairan",
+            "Boleh semua vacuum",
+            "Boleh jika cepat",
+            "Boleh tanpa filter"
+          ],
+          "answer": 0,
+          "explanation": "Desain mesin menentukan apakah cairan aman diisap.",
+          "scenario": "Ada genangan di dekat vacuum kering.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-12-1",
+          "moduleId": "tools",
+          "group": "Peralatan manual dan mesin",
+          "lessonId": "cleaning-12",
+          "prompt": "Kabel terkelupas tetapi mesin berfungsi. Apa yang tepat?",
+          "options": [
+            "Hentikan, tandai, dan laporkan",
+            "Tetap gunakan",
+            "Balut tisu",
+            "Pegang bagian terkelupas"
+          ],
+          "answer": 0,
+          "explanation": "Fungsi motor tidak membuktikan keamanan kabel listrik.",
+          "scenario": "Kabel mesin terkelupas namun motor masih bekerja.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-13-1",
+          "moduleId": "floors",
+          "group": "Lantai keras dan karpet",
+          "lessonId": "cleaning-13",
+          "prompt": "Urutan pembersihan lantai yang tepat?",
+          "options": [
+            "Angkat debu lalu pel sesuai material",
+            "Pel di atas pasir",
+            "Tuang konsentrat dahulu",
+            "Buka rambu sebelum mulai"
+          ],
+          "answer": 0,
+          "explanation": "Pengangkatan partikel mengurangi lumpur dan goresan.",
+          "scenario": "Lantai tetap lengket setelah dipel dengan larutan pekat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-14-1",
+          "moduleId": "floors",
+          "group": "Lantai keras dan karpet",
+          "lessonId": "cleaning-14",
+          "prompt": "Semua lantai harus diberi wax?",
+          "options": [
+            "Tidak, ikuti spesifikasi material",
+            "Ya setiap hari",
+            "Ya termasuk semua karpet",
+            "Ya tanpa pemeriksaan"
+          ],
+          "answer": 0,
+          "explanation": "Lapisan pelindung harus cocok dengan sistem lantai.",
+          "scenario": "Atasan meminta pelapis tetapi lantai masih lembap.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-15-1",
+          "moduleId": "floors",
+          "group": "Lantai keras dan karpet",
+          "lessonId": "cleaning-15",
+          "prompt": "Tumpahan cairan biasa pada karpet sebaiknya bagaimana?",
+          "options": [
+            "Serap sesuai prosedur dari tepi ke tengah",
+            "Gosok keras ke luar",
+            "Banjiri air panas",
+            "Campur semua penghilang noda"
+          ],
+          "answer": 0,
+          "explanation": "Penyerapan terarah membantu mencegah noda meluas dan serat rusak.",
+          "scenario": "Kopi baru tumpah di karpet ruang tunggu.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-16-1",
+          "moduleId": "sanitary",
+          "group": "Toilet dan area sanitasi",
+          "lessonId": "cleaning-16",
+          "prompt": "Alat kloset dipakai ke wastafel. Apa masalahnya?",
+          "options": [
+            "Memindahkan kontaminasi ke area lebih bersih",
+            "Mempercepat disinfeksi",
+            "Menghemat dengan aman",
+            "Tidak ada bila basah"
+          ],
+          "answer": 0,
+          "explanation": "Alat harus dipisah menurut zona dan jenis tugas.",
+          "scenario": "Toilet masih dipakai ketika jadwal pembersihan tiba.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-19-1",
+          "moduleId": "glass",
+          "group": "Kaca, logam, dan area umum",
+          "lessonId": "cleaning-19",
+          "prompt": "Kaca tidak terjangkau. Apa yang tepat?",
+          "options": [
+            "Gunakan metode akses resmi dan petugas terlatih",
+            "Naik kursi beroda",
+            "Berdiri di ember",
+            "Menjulur keluar jendela"
+          ],
+          "answer": 0,
+          "explanation": "Risiko jatuh tidak diselesaikan dengan alat improvisasi.",
+          "scenario": "Bagian atas kaca tidak terjangkau dari lantai.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-22-1",
+          "moduleId": "waste",
+          "group": "Sampah dan pencegahan kontaminasi",
+          "lessonId": "cleaning-22",
+          "prompt": "Bolehkah menekan sampah dalam kantong dengan tangan?",
+          "options": [
+            "Tidak, ada risiko benda tajam tersembunyi",
+            "Ya jika pakai sarung tipis",
+            "Ya agar hemat",
+            "Ya jika kantong hitam"
+          ],
+          "answer": 0,
+          "explanation": "Sarung tangan tidak menghilangkan risiko tusukan dari isi tak terlihat.",
+          "scenario": "Kantong penuh berisi benda yang tidak terlihat.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-23-1",
+          "moduleId": "waste",
+          "group": "Sampah dan pencegahan kontaminasi",
+          "lessonId": "cleaning-23",
+          "prompt": "Jarum bekas ditemukan. Apa yang tepat?",
+          "options": [
+            "Amankan area dan hubungi petugas sesuai protokol",
+            "Ambil dengan tangan",
+            "Tutup kembali jarumnya",
+            "Masukkan ke sampah kertas"
+          ],
+          "answer": 0,
+          "explanation": "Penanganan benda tajam memerlukan alat, wadah, dan pelatihan khusus.",
+          "scenario": "Jarum bekas ditemukan di toilet umum.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-24-1",
+          "moduleId": "waste",
+          "group": "Sampah dan pencegahan kontaminasi",
+          "lessonId": "cleaning-24",
+          "prompt": "Setelah melepas sarung tangan dari tugas kotor?",
+          "options": [
+            "Lakukan kebersihan tangan",
+            "Langsung pegang makanan",
+            "Cukup ganti seragam",
+            "Semprot pewangi"
+          ],
+          "answer": 0,
+          "explanation": "Tangan dapat terkontaminasi selama pelepasan sarung tangan.",
+          "scenario": "Sarung tangan dilepas setelah membersihkan toilet.",
+          "section": "vocabulary"
+        },
+        {
+          "id": "cleaning-01-2",
+          "moduleId": "role",
+          "group": "Dasar profesi dan mutu layanan",
+          "lessonId": "cleaning-01",
+          "prompt": "Standar hasil kerja sebaiknya ditentukan dari apa?",
+          "options": [
+            "Instruksi kerja dan kebutuhan permukaan",
+            "Kecepatan saja",
+            "Bau pewangi saja",
+            "Jumlah air yang dipakai"
+          ],
+          "answer": 0,
+          "explanation": "Standar meliputi kebersihan, keamanan, kondisi permukaan, serta kontrak pekerjaan.",
+          "scenario": "Kamu diminta membuka panel listrik yang berdebu.",
+          "section": "grammar",
+          "passage": "Kamu diminta membuka panel listrik yang berdebu."
+        },
+        {
+          "id": "cleaning-02-2",
+          "moduleId": "role",
+          "group": "Dasar profesi dan mutu layanan",
+          "lessonId": "cleaning-02",
+          "prompt": "Pembersihan harian terutama menangani apa?",
+          "options": [
+            "Kotoran dari penggunaan rutin",
+            "Perbaikan panel listrik",
+            "Penggantian struktur lantai",
+            "Semua pelapisan setiap hari"
+          ],
+          "answer": 0,
+          "explanation": "Pekerjaan harian berbeda dari pemeliharaan berkala dan perbaikan teknis.",
+          "scenario": "Jadwal pencucian lantai bertabrakan dengan rapat.",
+          "section": "grammar",
+          "passage": "Jadwal pencucian lantai bertabrakan dengan rapat."
+        },
+        {
+          "id": "cleaning-03-2",
+          "moduleId": "role",
+          "group": "Dasar profesi dan mutu layanan",
+          "lessonId": "cleaning-03",
+          "prompt": "Dompet temuan harus bagaimana?",
+          "options": [
+            "Diserahkan melalui prosedur barang temuan",
+            "Dibawa pulang",
+            "Diumumkan isinya",
+            "Ditaruh di tong sampah"
+          ],
+          "answer": 0,
+          "explanation": "Pencatatan dan penyerahan resmi melindungi pemilik serta petugas.",
+          "scenario": "Ada dompet di bawah kursi ruang rapat.",
+          "section": "grammar",
+          "passage": "Ada dompet di bawah kursi ruang rapat."
+        },
+        {
+          "id": "cleaning-04-2",
+          "moduleId": "safety",
+          "group": "Keselamatan dan kesehatan kerja",
+          "lessonId": "cleaning-04",
+          "prompt": "Jalur evakuasi harus bagaimana saat pembersihan?",
+          "options": [
+            "Tetap aman dan tidak terhalang",
+            "Dipakai menyimpan troli",
+            "Ditutup tanpa koordinasi",
+            "Diisi ember"
+          ],
+          "answer": 0,
+          "explanation": "Jalur evakuasi tidak boleh dihalangi oleh alat atau pembatas.",
+          "scenario": "Lantai lobi basah dan pengunjung terus lewat.",
+          "section": "grammar",
+          "passage": "Lantai lobi basah dan pengunjung terus lewat."
+        },
+        {
+          "id": "cleaning-05-2",
+          "moduleId": "safety",
+          "group": "Keselamatan dan kesehatan kerja",
+          "lessonId": "cleaning-05",
+          "prompt": "Cara mengurangi risiko saat beban terlalu berat?",
+          "options": [
+            "Gunakan alat bantu dan bantuan",
+            "Memutar pinggang lebih cepat",
+            "Menjauhkan beban dari tubuh",
+            "Mengangkat sambil berlari"
+          ],
+          "answer": 0,
+          "explanation": "Alat bantu dan pembagian beban lebih aman daripada memaksakan postur.",
+          "scenario": "Kantong sampah basah terasa sangat berat.",
+          "section": "grammar",
+          "passage": "Kantong sampah basah terasa sangat berat."
+        },
+        {
+          "id": "cleaning-06-2",
+          "moduleId": "safety",
+          "group": "Keselamatan dan kesehatan kerja",
+          "lessonId": "cleaning-06",
+          "prompt": "Apa isi laporan insiden yang berguna?",
+          "options": [
+            "Lokasi, waktu, kondisi, dan tindakan",
+            "Dugaan tanpa fakta",
+            "Kesalahan rekan saja",
+            "Foto pribadi pengguna"
+          ],
+          "answer": 0,
+          "explanation": "Laporan faktual membantu respons dan pencegahan kejadian berulang.",
+          "scenario": "Botol tanpa label pecah dan mengeluarkan bau menyengat.",
+          "section": "grammar",
+          "passage": "Botol tanpa label pecah dan mengeluarkan bau menyengat."
+        },
+        {
+          "id": "cleaning-07-2",
+          "moduleId": "chemicals",
+          "group": "Kotoran, bahan permukaan, dan bahan kimia",
+          "lessonId": "cleaning-07",
+          "prompt": "Mengapa debu dan pasir diangkat sebelum menggosok?",
+          "options": [
+            "Mengurangi risiko goresan",
+            "Menambah kilap kimia",
+            "Mengganti disinfeksi",
+            "Menghilangkan kebutuhan rambu"
+          ],
+          "answer": 0,
+          "explanation": "Partikel kasar dapat menggores ketika tertarik alat pembersih.",
+          "scenario": "Ada kerak di lantai batu yang jenisnya belum diketahui.",
+          "section": "grammar",
+          "passage": "Ada kerak di lantai batu yang jenisnya belum diketahui."
+        },
+        {
+          "id": "cleaning-08-2",
+          "moduleId": "chemicals",
+          "group": "Kotoran, bahan permukaan, dan bahan kimia",
+          "lessonId": "cleaning-08",
+          "prompt": "Pemutih berklorin boleh dicampur pembersih asam?",
+          "options": [
+            "Tidak, dapat menghasilkan gas berbahaya",
+            "Ya agar lebih kuat",
+            "Ya dengan air panas",
+            "Ya bila baunya enak"
+          ],
+          "answer": 0,
+          "explanation": "Campuran kimia yang tidak kompatibel berbahaya; ikuti label produk.",
+          "scenario": "Rekan memberikan botol minuman berisi cairan pembersih.",
+          "section": "grammar",
+          "passage": "Rekan memberikan botol minuman berisi cairan pembersih."
+        },
+        {
+          "id": "cleaning-09-2",
+          "moduleId": "chemicals",
+          "group": "Kotoran, bahan permukaan, dan bahan kimia",
+          "lessonId": "cleaning-09",
+          "prompt": "Waktu kontak disinfektan ditentukan oleh apa?",
+          "options": [
+            "Petunjuk produk dan penggunaan",
+            "Angka yang sama untuk semua produk",
+            "Bau larutan",
+            "Keinginan bekerja cepat"
+          ],
+          "answer": 0,
+          "explanation": "Konsentrasi, permukaan, dan waktu kontak harus mengikuti petunjuk produk.",
+          "scenario": "Label meminta pengenceran akhir 100 kali untuk 1 liter.",
+          "section": "grammar",
+          "passage": "Label meminta pengenceran akhir 100 kali untuk 1 liter."
+        },
+        {
+          "id": "cleaning-10-2",
+          "moduleId": "tools",
+          "group": "Peralatan manual dan mesin",
+          "lessonId": "cleaning-10",
+          "prompt": "Setelah dicuci, kain sebaiknya bagaimana?",
+          "options": [
+            "Dikeringkan dan disimpan bersih",
+            "Dibiarkan basah dalam kantong",
+            "Ditaruh di lantai",
+            "Dicampur sampah"
+          ],
+          "answer": 0,
+          "explanation": "Pengeringan dan penyimpanan membantu menjaga kondisi higienis alat.",
+          "scenario": "Kain dari toilet hendak dipakai untuk meja resepsionis.",
+          "section": "grammar",
+          "passage": "Kain dari toilet hendak dipakai untuk meja resepsionis."
+        },
+        {
+          "id": "cleaning-11-2",
+          "moduleId": "tools",
+          "group": "Peralatan manual dan mesin",
+          "lessonId": "cleaning-11",
+          "prompt": "Sebelum membuka bagian untuk membersihkan sumbatan?",
+          "options": [
+            "Matikan dan putus daya sesuai manual",
+            "Biarkan menyala",
+            "Tarik selang sambil berjalan",
+            "Tambah air"
+          ],
+          "answer": 0,
+          "explanation": "Isolasi daya diperlukan untuk pemeriksaan dan perawatan aman.",
+          "scenario": "Ada genangan di dekat vacuum kering.",
+          "section": "grammar",
+          "passage": "Ada genangan di dekat vacuum kering."
+        },
+        {
+          "id": "cleaning-12-2",
+          "moduleId": "tools",
+          "group": "Peralatan manual dan mesin",
+          "lessonId": "cleaning-12",
+          "prompt": "Aksesori mesin dipilih berdasarkan apa?",
+          "options": [
+            "Manual, jenis permukaan, dan tugas",
+            "Warna favorit",
+            "Harga saja",
+            "Ukuran sepatu operator"
+          ],
+          "answer": 0,
+          "explanation": "Kompatibilitas pad/sikat dan material menentukan metode yang aman.",
+          "scenario": "Kabel mesin terkelupas namun motor masih bekerja.",
+          "section": "grammar",
+          "passage": "Kabel mesin terkelupas namun motor masih bekerja."
+        },
+        {
+          "id": "cleaning-13-2",
+          "moduleId": "floors",
+          "group": "Lantai keras dan karpet",
+          "lessonId": "cleaning-13",
+          "prompt": "Air berlebih pada lantai peka air dapat apa?",
+          "options": [
+            "Merusak material atau sambungan",
+            "Selalu mempercepat pengeringan",
+            "Mengganti deterjen",
+            "Menghilangkan semua risiko"
+          ],
+          "answer": 0,
+          "explanation": "Volume air disesuaikan material dan metode, bukan sebanyak mungkin.",
+          "scenario": "Lantai tetap lengket setelah dipel dengan larutan pekat.",
+          "section": "grammar",
+          "passage": "Lantai tetap lengket setelah dipel dengan larutan pekat."
+        },
+        {
+          "id": "cleaning-14-2",
+          "moduleId": "floors",
+          "group": "Lantai keras dan karpet",
+          "lessonId": "cleaning-14",
+          "prompt": "Sebelum aplikasi lapisan, apa yang penting?",
+          "options": [
+            "Kebersihan dan kondisi kering sesuai produk",
+            "Debu dibiarkan",
+            "Air menggenang",
+            "Larutan sengaja dipekatkan"
+          ],
+          "answer": 0,
+          "explanation": "Residu dan kelembapan dapat mengganggu hasil serta keselamatan.",
+          "scenario": "Atasan meminta pelapis tetapi lantai masih lembap.",
+          "section": "grammar",
+          "passage": "Atasan meminta pelapis tetapi lantai masih lembap."
+        },
+        {
+          "id": "cleaning-15-2",
+          "moduleId": "floors",
+          "group": "Lantai keras dan karpet",
+          "lessonId": "cleaning-15",
+          "prompt": "Karpet lembap setelah perawatan boleh langsung dibuka?",
+          "options": [
+            "Belum, pastikan kondisi aman dan kering sesuai prosedur",
+            "Ya selalu",
+            "Ya jika wangi",
+            "Ya jika rambu mahal"
+          ],
+          "answer": 0,
+          "explanation": "Kelembapan dan keselamatan area harus diperiksa sebelum akses dibuka.",
+          "scenario": "Kopi baru tumpah di karpet ruang tunggu.",
+          "section": "grammar",
+          "passage": "Kopi baru tumpah di karpet ruang tunggu."
+        },
+        {
+          "id": "cleaning-16-2",
+          "moduleId": "sanitary",
+          "group": "Toilet dan area sanitasi",
+          "lessonId": "cleaning-16",
+          "prompt": "Sebelum masuk toilet untuk membersihkan?",
+          "options": [
+            "Pastikan akses dan privasi sesuai prosedur",
+            "Langsung masuk semua bilik",
+            "Foto pengguna",
+            "Matikan semua lampu"
+          ],
+          "answer": 0,
+          "explanation": "Keselamatan dan privasi pengguna diperiksa sebelum pekerjaan.",
+          "scenario": "Toilet masih dipakai ketika jadwal pembersihan tiba.",
+          "section": "grammar",
+          "passage": "Toilet masih dipakai ketika jadwal pembersihan tiba."
+        },
+        {
+          "id": "cleaning-17-1",
+          "moduleId": "sanitary",
+          "group": "Toilet dan area sanitasi",
+          "lessonId": "cleaning-17",
+          "prompt": "Pewangi dapat menggantikan pembersihan?",
+          "options": [
+            "Tidak, bau tidak membuktikan kebersihan",
+            "Ya jika kuat",
+            "Ya pada semua toilet",
+            "Ya tanpa pemeriksaan"
+          ],
+          "answer": 0,
+          "explanation": "Kotoran dan kondisi higienis harus ditangani dengan metode yang tepat.",
+          "scenario": "Rekan hendak menambah pemutih pada kloset yang baru diberi pembersih asam.",
+          "section": "grammar",
+          "passage": "Rekan hendak menambah pemutih pada kloset yang baru diberi pembersih asam."
+        },
+        {
+          "id": "cleaning-17-2",
+          "moduleId": "sanitary",
+          "group": "Toilet dan area sanitasi",
+          "lessonId": "cleaning-17",
+          "prompt": "Titik sentuh dibersihkan memakai apa?",
+          "options": [
+            "Kain bersih sesuai zona dan produk tepat",
+            "Sikat kloset",
+            "Kain lantai bekas",
+            "Tangan kosong saja"
+          ],
+          "answer": 0,
+          "explanation": "Pemisahan alat mencegah perpindahan kontaminasi ke titik sentuh.",
+          "scenario": "Rekan hendak menambah pemutih pada kloset yang baru diberi pembersih asam.",
+          "section": "grammar",
+          "passage": "Rekan hendak menambah pemutih pada kloset yang baru diberi pembersih asam."
+        },
+        {
+          "id": "cleaning-18-1",
+          "moduleId": "sanitary",
+          "group": "Toilet dan area sanitasi",
+          "lessonId": "cleaning-18",
+          "prompt": "Sabun berbeda jenis boleh langsung dicampur?",
+          "options": [
+            "Tidak, ikuti prosedur penggantian",
+            "Ya agar penuh",
+            "Ya jika warnanya sama",
+            "Ya tanpa label"
+          ],
+          "answer": 0,
+          "explanation": "Campuran dan pengisian yang salah dapat menyebabkan kontaminasi atau gangguan produk.",
+          "scenario": "Sabun tersisa sedikit tetapi produk pengganti berbeda jenis.",
+          "section": "grammar",
+          "passage": "Sabun tersisa sedikit tetapi produk pengganti berbeda jenis."
+        },
+        {
+          "id": "cleaning-18-2",
+          "moduleId": "sanitary",
+          "group": "Toilet dan area sanitasi",
+          "lessonId": "cleaning-18",
+          "prompt": "Apa yang diperiksa sebelum membuka toilet?",
+          "options": [
+            "Fungsi, kebersihan, stok, dan lantai aman",
+            "Bau saja",
+            "Jam saja",
+            "Warna seragam"
+          ],
+          "answer": 0,
+          "explanation": "Pemeriksaan menyeluruh memastikan fasilitas benar-benar siap digunakan.",
+          "scenario": "Sabun tersisa sedikit tetapi produk pengganti berbeda jenis.",
+          "section": "grammar",
+          "passage": "Sabun tersisa sedikit tetapi produk pengganti berbeda jenis."
+        },
+        {
+          "id": "cleaning-19-2",
+          "moduleId": "glass",
+          "group": "Kaca, logam, dan area umum",
+          "lessonId": "cleaning-19",
+          "prompt": "Squeegee meninggalkan garis. Periksa apa?",
+          "options": [
+            "Kondisi karet dan kebersihannya",
+            "Volume pewangi",
+            "Warna dinding",
+            "Jam gedung"
+          ],
+          "answer": 0,
+          "explanation": "Karet kotor atau rusak mengganggu pengangkatan larutan dari kaca.",
+          "scenario": "Bagian atas kaca tidak terjangkau dari lantai.",
+          "section": "grammar",
+          "passage": "Bagian atas kaca tidak terjangkau dari lantai."
+        },
+        {
+          "id": "cleaning-20-1",
+          "moduleId": "glass",
+          "group": "Kaca, logam, dan area umum",
+          "lessonId": "cleaning-20",
+          "prompt": "Cara membersihkan panel tombol elektronik?",
+          "options": [
+            "Metode kain sesuai manual tanpa cairan masuk",
+            "Semprot sampai menetes",
+            "Rendam panel",
+            "Gosok logam kasar"
+          ],
+          "answer": 0,
+          "explanation": "Celah perangkat harus dilindungi dari cairan.",
+          "scenario": "Sidik jari ada pada panel tombol lift.",
+          "section": "grammar",
+          "passage": "Sidik jari ada pada panel tombol lift."
+        },
+        {
+          "id": "cleaning-20-2",
+          "moduleId": "glass",
+          "group": "Kaca, logam, dan area umum",
+          "lessonId": "cleaning-20",
+          "prompt": "Stainless steel tahan semua bahan kimia?",
+          "options": [
+            "Tidak, tetap perlu kompatibilitas",
+            "Ya tanpa batas",
+            "Ya bila panas",
+            "Ya bila digosok kuat"
+          ],
+          "answer": 0,
+          "explanation": "Lapisan dan finishing dapat rusak oleh produk atau gesekan yang salah.",
+          "scenario": "Sidik jari ada pada panel tombol lift.",
+          "section": "grammar",
+          "passage": "Sidik jari ada pada panel tombol lift."
+        },
+        {
+          "id": "cleaning-21-1",
+          "moduleId": "glass",
+          "group": "Kaca, logam, dan area umum",
+          "lessonId": "cleaning-21",
+          "prompt": "Tempat menyimpan ember saat membersihkan tangga?",
+          "options": [
+            "Area aman yang tidak menghalangi jalan",
+            "Di tengah anak tangga",
+            "Di pintu darurat",
+            "Di tepi anak tangga"
+          ],
+          "answer": 0,
+          "explanation": "Alat tidak boleh menciptakan bahaya tersandung atau menutup akses.",
+          "scenario": "Kabel vacuum harus melintasi pintu keluar darurat.",
+          "section": "grammar",
+          "passage": "Kabel vacuum harus melintasi pintu keluar darurat."
+        },
+        {
+          "id": "cleaning-21-2",
+          "moduleId": "glass",
+          "group": "Kaca, logam, dan area umum",
+          "lessonId": "cleaning-21",
+          "prompt": "Kerusakan tepi tangga ditemukan. Apa tindakan tepat?",
+          "options": [
+            "Tandai bahaya dan laporkan",
+            "Tutup dengan kain lepas",
+            "Abaikan",
+            "Perbaiki struktur sendiri"
+          ],
+          "answer": 0,
+          "explanation": "Penandaan dan laporan memungkinkan penanganan teknis yang sesuai.",
+          "scenario": "Kabel vacuum harus melintasi pintu keluar darurat.",
+          "section": "grammar",
+          "passage": "Kabel vacuum harus melintasi pintu keluar darurat."
+        },
+        {
+          "id": "cleaning-22-2",
+          "moduleId": "waste",
+          "group": "Sampah dan pencegahan kontaminasi",
+          "lessonId": "cleaning-22",
+          "prompt": "Aturan pemilahan sampah mengacu pada apa?",
+          "options": [
+            "Ketentuan daerah dan gedung",
+            "Warna favorit",
+            "Satu aturan untuk semua negara",
+            "Kecepatan angkut saja"
+          ],
+          "answer": 0,
+          "explanation": "Kategori dan jalur pembuangan bergantung ketentuan lokasi.",
+          "scenario": "Kantong penuh berisi benda yang tidak terlihat.",
+          "section": "grammar",
+          "passage": "Kantong penuh berisi benda yang tidak terlihat."
+        },
+        {
+          "id": "cleaning-23-2",
+          "moduleId": "waste",
+          "group": "Sampah dan pencegahan kontaminasi",
+          "lessonId": "cleaning-23",
+          "prompt": "Terkena tusukan saat kerja. Apa yang dilakukan?",
+          "options": [
+            "Segera ikuti prosedur paparan dan penilaian medis",
+            "Tunggu akhir bulan",
+            "Rahasiakan tanpa tindakan",
+            "Lanjutkan kerja saja"
+          ],
+          "answer": 0,
+          "explanation": "Penanganan paparan perlu cepat sesuai protokol fasilitas.",
+          "scenario": "Jarum bekas ditemukan di toilet umum.",
+          "section": "grammar",
+          "passage": "Jarum bekas ditemukan di toilet umum."
+        },
+        {
+          "id": "cleaning-24-2",
+          "moduleId": "waste",
+          "group": "Sampah dan pencegahan kontaminasi",
+          "lessonId": "cleaning-24",
+          "prompt": "Disinfeksi menggantikan pengangkatan kotoran?",
+          "options": [
+            "Tidak, ikuti tahap pembersihan dan label",
+            "Ya selalu",
+            "Ya jika cairan banyak",
+            "Ya tanpa waktu kontak"
+          ],
+          "answer": 0,
+          "explanation": "Kotoran dapat mengganggu efektivitas proses disinfeksi.",
+          "scenario": "Sarung tangan dilepas setelah membersihkan toilet.",
+          "section": "grammar",
+          "passage": "Sarung tangan dilepas setelah membersihkan toilet."
+        },
+        {
+          "id": "cleaning-25-1",
+          "moduleId": "planning",
+          "group": "Perencanaan, komunikasi, dan mutu",
+          "lessonId": "cleaning-25",
+          "prompt": "Instruksi tidak jelas. Apa yang tepat?",
+          "options": [
+            "Tanyakan dan konfirmasi ulang",
+            "Tebak agar cepat",
+            "Lewati keselamatan",
+            "Pakai konsentrasi tertinggi"
+          ],
+          "answer": 0,
+          "explanation": "Konfirmasi mencegah kesalahan metode, angka, dan lokasi.",
+          "scenario": "Instruksi pengenceran terdengar berbeda dari label.",
+          "section": "grammar",
+          "passage": "Instruksi pengenceran terdengar berbeda dari label."
+        },
+        {
+          "id": "cleaning-25-2",
+          "moduleId": "planning",
+          "group": "Perencanaan, komunikasi, dan mutu",
+          "lessonId": "cleaning-25",
+          "prompt": "Prinsip umum urutan pembersihan?",
+          "options": [
+            "Atas ke bawah sesuai rencana dan risiko",
+            "Kotor ke bersih selalu",
+            "Acak tanpa inspeksi",
+            "Lantai dahulu lalu debu plafon"
+          ],
+          "answer": 0,
+          "explanation": "Urutan terencana mengurangi pengotoran kembali area yang sudah bersih.",
+          "scenario": "Instruksi pengenceran terdengar berbeda dari label.",
+          "section": "grammar",
+          "passage": "Instruksi pengenceran terdengar berbeda dari label."
+        }
+      ]
+    }
+  }
+}

@@ -38,6 +38,9 @@ func simulationPaper(levels ...string) simulationPaperConfig {
 	if len(levels) > 0 {
 		level = strings.ToUpper(levels[0])
 	}
+	if paper, ok := sswSimulationPaper(level); ok {
+		return paper
+	}
 	if level == "NAT" {
 		return simulationPaperConfig{level, "nat-5q-full-1", "nat-5q-written-01", []domain.SimulationSection{
 			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1200, QuestionCount: 21},
@@ -71,7 +74,7 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
 	paper := simulationPaper(levels...)
-	if paper.level != "N5" && paper.level != "N4" && paper.level != "N3" && paper.level != "JFT" && paper.level != "NAT" {
+	if paper.level != "N5" && paper.level != "N4" && paper.level != "N3" && paper.level != "JFT" && paper.level != "NAT" && !IsSSWLevel(paper.level) {
 		return domain.ExamAttempt{}, ErrInvalid
 	}
 	if paper.level != "N5" && s.entitlementLocked(userID).Tier != domain.TierPremium {
@@ -100,18 +103,21 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	}
 	for i, item := range paper.items {
 		id := fmt.Sprintf("%s-sim-01-q%02d", strings.ToLower(paper.level), i+1)
-		options := make([]domain.QuizOption, 4)
-		for j, choice := range item.choices {
+		options := make([]domain.QuizOption, 0, 4)
+		for _, choice := range item.choices {
+			if choice == "" {
+				continue
+			}
 			optionKey := make([]byte, 8)
 			if _, err := rand.Read(optionKey); err != nil {
 				return domain.ExamAttempt{}, err
 			}
-			options[j] = domain.QuizOption{ID: hex.EncodeToString(optionKey), Text: choice}
+			options = append(options, domain.QuizOption{ID: hex.EncodeToString(optionKey), Text: choice})
 		}
 		state.correct[id] = options[0].ID
 		state.explanations[id] = item.explanation
 		// Cryptographic Fisher-Yates prevents a predictable answer-position pattern.
-		for j := 3; j > 0; j-- {
+		for j := len(options) - 1; j > 0; j-- {
 			n, err := rand.Int(rand.Reader, big.NewInt(int64(j+1)))
 			if err != nil {
 				return domain.ExamAttempt{}, err
@@ -120,6 +126,9 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 			options[j], options[k] = options[k], options[j]
 		}
 		state.questions = append(state.questions, domain.SimulationQuestion{ID: id, Number: i + 1, Section: item.section, Group: item.group, Instructions: item.instructions, Passage: item.passage, Prompt: item.prompt, Options: options})
+	}
+	if err := s.persistSSWLocked(state); err != nil {
+		return domain.ExamAttempt{}, err
 	}
 	s.simulationAttempts[attempt.ID] = state
 	s.simulationOrder = append(s.simulationOrder, attempt.ID)
@@ -136,7 +145,18 @@ func (s *MemoryStore) syncSimulationLocked(state *simulationAttemptState, now ti
 	return nil
 }
 
-func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at time.Time) error {
+func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at time.Time) (err error) {
+	if strings.HasPrefix(state.session.PaperID, "ssw-") {
+		before := cloneSimulation(state)
+		defer func() {
+			if err == nil && state.session.Result == nil {
+				err = s.persistSSWLocked(state)
+			}
+			if err != nil {
+				*state = *before
+			}
+		}()
+	}
 	for i, section := range state.session.Sections {
 		if section.ID == state.session.ActiveSection && i+1 < len(state.session.Sections) {
 			next := state.session.Sections[i+1]
@@ -158,6 +178,9 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 	}
 	if state.session.PaperID == "nat-5q-written-01" {
 		result.ScoringNote = "Skor latihan tertulis = persentase jawaban benar. Listening belum termasuk. Soal orisinal; bukan skor berskala atau keputusan kelulusan resmi NAT-TEST."
+	}
+	if strings.HasPrefix(state.session.PaperID, "ssw-") {
+		result.ScoringNote = "Soal orisinal Nihongo Master. Nilai adalah persentase benar, bukan hasil resmi SSW. Penilaian praktik di aplikasi memakai skenario teks, tanpa demonstrasi alat atau seluruh variasi visual resmi."
 	}
 	groups := map[string]*domain.DiagnosticSection{}
 	for _, q := range state.questions {
@@ -184,12 +207,19 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 		}
 	}
 	result.Score = result.Correct * 100 / result.Total
-	if err := s.recordStudyLocked(state.session.Attempt.UserID, studyEvent{ID: "simulation:" + state.session.Attempt.ID, Kind: "exam", ExamID: state.session.Attempt.ExamID, Score: result.Score, Answered: result.Answered, Seconds: result.DurationSeconds, At: at}); err != nil {
-		return err
-	}
 	state.session.Result = &result
 	state.session.Attempt.Status = "completed"
 	state.session.ActiveSection = "completed"
+	event := studyEvent{ID: "simulation:" + state.session.Attempt.ID, Kind: "exam", ExamID: state.session.Attempt.ExamID, Score: result.Score, Answered: result.Answered, Seconds: result.DurationSeconds, At: at}
+	if strings.HasPrefix(state.session.PaperID, "ssw-") {
+		event.SSWAttempt = &SSWAttemptRecord{state.session, state.questions, state.correct, state.explanations, state.marked}
+	}
+	if err := s.recordStudyLocked(state.session.Attempt.UserID, event); err != nil {
+		state.session.Result = nil
+		state.session.Attempt.Status = "in_progress"
+		state.session.ActiveSection = state.session.Sections[len(state.session.Sections)-1].ID
+		return err
+	}
 	return nil
 }
 
@@ -267,12 +297,17 @@ func (s *MemoryStore) SaveSimulationAnswer(userID, id, question, option string, 
 		if !valid {
 			return ErrInvalid
 		}
+		before := cloneSimulation(state)
 		if option == "" {
 			delete(state.session.Answers, question)
 		} else {
 			state.session.Answers[question] = option
 		}
 		state.marked[question] = marked
+		if err := s.persistSSWLocked(state); err != nil {
+			*state = *before
+			return err
+		}
 		return nil
 	}
 	return ErrInvalid
@@ -350,6 +385,9 @@ func (s *MemoryStore) SimulationOverviewChecked(userID string, levels ...string)
 	}
 	if paper.level == "NAT" {
 		title = "NAT 5Q Exam 1 · Latihan tertulis"
+	}
+	if IsSSWLevel(paper.level) {
+		title = sswTitle(paper.level)
 	}
 	return map[string]any{"paperId": paper.paperID, "title": title, "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted, "sharedTimer": paper.level == "JFT"}, nil
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 
@@ -102,6 +103,8 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                 ),
               ),
               const SizedBox(height: 20),
+              const AnkiEntryCard(),
+              const SizedBox(height: 16),
               const SswEntryCard(),
               const SizedBox(height: 28),
               Text(

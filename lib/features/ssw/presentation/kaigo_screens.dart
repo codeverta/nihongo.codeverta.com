@@ -8,19 +8,29 @@ import 'package:url_launcher/url_launcher.dart';
 
 String kaigoLessonPath(String id) =>
     '/ssw/nursing-care/lessons/${Uri.encodeComponent(id)}';
+String sswLessonPath(String sector, String id) =>
+    '/ssw/$sector/lessons/${Uri.encodeComponent(id)}';
 
 class KaigoCurriculumPanel extends ConsumerWidget {
-  const KaigoCurriculumPanel({super.key});
+  const KaigoCurriculumPanel({super.key, this.sectorId = 'nursing-care'});
+  final String sectorId;
+  String get label =>
+      sectorId == 'nursing-care' ? 'Kaigo' : 'Pembersihan Gedung';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => ref
-      .watch(kaigoCurriculumProvider)
+      .watch(sswCurriculumProvider(sectorId))
       .when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, __) =>
-            _LoadError(onRetry: () => ref.invalidate(kaigoCurriculumProvider)),
+        error: (_, __) => _LoadError(
+          onRetry: () => ref.invalidate(sswCurriculumProvider(sectorId)),
+        ),
         data: (course) {
-          final completed = ref.watch(kaigoProgressProvider);
+          final completed = ref.watch(
+            sectorId == 'nursing-care'
+                ? kaigoProgressProvider
+                : sswProgressProvider(sectorId),
+          );
           final count =
               course.lessons.where((l) => completed.contains(l.id)).length;
           final next = course.lessons.firstWhere(
@@ -33,7 +43,7 @@ class KaigoCurriculumPanel extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Kurikulum Kaigo',
+                'Kurikulum $label',
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge
@@ -45,7 +55,7 @@ class KaigoCurriculumPanel extends ConsumerWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                'Pelajari berurutan dari dasar perawatan hingga bahasa Jepang di tempat kerja. Tiap lesson berisi tujuan, penjelasan, langkah kerja, kasus, kosakata, dan cek pemahaman.',
+                'Pelajari berurutan dari dasar bidang hingga bahasa Jepang di tempat kerja. Tiap lesson berisi tujuan, penjelasan, langkah kerja, kasus, kosakata, dan cek pemahaman.',
                 style: TextStyle(height: 1.6),
               ),
               const SizedBox(height: 12),
@@ -81,7 +91,8 @@ class KaigoCurriculumPanel extends ConsumerWidget {
                       const SizedBox(height: 12),
                       FilledButton.icon(
                         key: const Key('kaigo-continue'),
-                        onPressed: () => context.push(kaigoLessonPath(next.id)),
+                        onPressed: () =>
+                            context.push(sswLessonPath(sectorId, next.id)),
                         icon: const Icon(Icons.menu_book_rounded),
                         label: Text(
                           count == 0
@@ -136,7 +147,8 @@ class KaigoCurriculumPanel extends ConsumerWidget {
                             '±${lesson.minutes} menit · ${lesson.checks.length} cek pemahaman',
                           ),
                           trailing: const Icon(Icons.chevron_right_rounded),
-                          onTap: () => context.push(kaigoLessonPath(lesson.id)),
+                          onTap: () =>
+                              context.push(sswLessonPath(sectorId, lesson.id)),
                         ),
                     ],
                   ),
@@ -150,16 +162,27 @@ class KaigoCurriculumPanel extends ConsumerWidget {
 }
 
 class KaigoLessonScreen extends ConsumerWidget {
-  const KaigoLessonScreen({required this.lessonId, super.key});
+  const KaigoLessonScreen({
+    required this.lessonId,
+    super.key,
+    this.sectorId = 'nursing-care',
+  });
+  final String sectorId;
   final String lessonId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-        appBar: AppBar(title: const Text('Lesson Kaigo')),
-        body: ref.watch(kaigoCurriculumProvider).when(
+        appBar: AppBar(
+          title: Text(
+            sectorId == 'nursing-care'
+                ? 'Lesson Kaigo'
+                : 'Lesson Pembersihan Gedung',
+          ),
+        ),
+        body: ref.watch(sswCurriculumProvider(sectorId)).when(
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (_, __) => _LoadError(
-                onRetry: () => ref.invalidate(kaigoCurriculumProvider),
+                onRetry: () => ref.invalidate(sswCurriculumProvider(sectorId)),
               ),
               data: (course) {
                 final lesson = course.lessonById(lessonId);
@@ -169,6 +192,7 @@ class KaigoLessonScreen extends ConsumerWidget {
                 return _LessonReader(
                   key: ValueKey(lesson.id),
                   course: course,
+                  sectorId: sectorId,
                   lesson: lesson,
                 );
               },
@@ -177,9 +201,15 @@ class KaigoLessonScreen extends ConsumerWidget {
 }
 
 class _LessonReader extends ConsumerStatefulWidget {
-  const _LessonReader({required this.course, required this.lesson, super.key});
+  const _LessonReader({
+    required this.course,
+    required this.lesson,
+    required this.sectorId,
+    super.key,
+  });
   final KaigoCurriculum course;
   final KaigoLesson lesson;
+  final String sectorId;
   @override
   ConsumerState<_LessonReader> createState() => _LessonReaderState();
 }
@@ -193,7 +223,13 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
     setState(() => saving = true);
     final account = ref.read(authControllerProvider).user?.id;
     try {
-      await ref.read(kaigoProgressProvider.notifier).complete(widget.lesson.id);
+      await ref
+          .read(
+            widget.sectorId == 'nursing-care'
+                ? kaigoProgressProvider.notifier
+                : sswProgressProvider(widget.sectorId).notifier,
+          )
+          .complete(widget.lesson.id);
       if (!mounted) return;
       if (ref.read(authControllerProvider).user?.id != account) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -207,9 +243,11 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
       final lessons = widget.course.lessons;
       final index = lessons.indexWhere((l) => l.id == widget.lesson.id);
       if (index + 1 < lessons.length) {
-        context.pushReplacement(kaigoLessonPath(lessons[index + 1].id));
+        context.pushReplacement(
+          sswLessonPath(widget.sectorId, lessons[index + 1].id),
+        );
       } else {
-        context.go('/ssw/nursing-care');
+        context.go('/ssw/${widget.sectorId}');
       }
     } on Object {
       if (mounted) {
@@ -234,7 +272,13 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
           lesson.checks.length,
           (i) => selections[i] == lesson.checks[i].answer,
         ).every((v) => v);
-    final completed = ref.watch(kaigoProgressProvider).contains(lesson.id);
+    final completed = ref
+        .watch(
+          widget.sectorId == 'nursing-care'
+              ? kaigoProgressProvider
+              : sswProgressProvider(widget.sectorId),
+        )
+        .contains(lesson.id);
     final colors = Theme.of(context).colorScheme;
     return ListView(
       key: PageStorageKey('kaigo-reader-${lesson.id}'),
@@ -539,7 +583,7 @@ class _StudyNote extends StatelessWidget {
   const _StudyNote();
   @override
   Widget build(BuildContext context) => Text(
-        'Materi belajar persiapan Kaigo, ditulis untuk Nihongo Master. Praktik bantuan tubuh memerlukan pelatihan dan supervisi. Di tempat kerja, ikuti rencana individual, SOP, dan arahan petugas berwenang.',
+        'Materi persiapan SSW ditulis untuk Nihongo Master. Keterampilan lapangan memerlukan pelatihan dan supervisi. Ikuti SOP, spesifikasi produk, serta arahan petugas berwenang.',
         style: TextStyle(
           height: 1.6,
           fontSize: 13,
@@ -558,7 +602,7 @@ class _Sources extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(12),
             child: Text(
-              'Cakupan mengacu pada dasar Kaigo, tubuh dan mental, komunikasi, dukungan kehidupan, serta bahasa Jepang Kaigo. Materi dan soal di aplikasi ditulis mandiri, bukan salinan teks atau bank soal resmi. Ditinjau 11 Oktober 2026.',
+              'Cakupan disusun berdasarkan referensi di bawah. Materi dan soal aplikasi ditulis mandiri, bukan salinan buku atau bank soal resmi. Pembaruan SSW: 17 Oktober 2026.',
               style: TextStyle(height: 1.6),
             ),
           ),
@@ -598,7 +642,7 @@ class _LoadError extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Materi Kaigo belum dapat dimuat.'),
+            const Text('Materi SSW belum dapat dimuat.'),
             const SizedBox(height: 12),
             OutlinedButton(onPressed: onRetry, child: const Text('Muat ulang')),
           ],

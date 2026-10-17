@@ -1,0 +1,1152 @@
+{
+  "repository": "https://github.com/mistval/kotoba",
+  "revision": "a0f8f984bf5dd8014527c6608d36b479ab622b07",
+  "files": [
+    {
+      "file": "10k.json",
+      "gitBlob": "9ba690926f2e8cc0e650df54f452f6968e1c6b13",
+      "sha256": "c52e0bcbdf5ebe82e956e8d5e25cc23a612e5b916746f59979ed2a229b447bd9",
+      "bytes": 13744
+    },
+    {
+      "file": "1k.json",
+      "gitBlob": "3e28b39113d6e6a249d8cedfad8b8debde35e97e",
+      "sha256": "497b5e197f6569006011111a6833d532a92704580b10f18cbc92b52606ec3da6",
+      "bytes": 56177
+    },
+    {
+      "file": "2k.json",
+      "gitBlob": "729ec5f2c69fb1f957cfc3635b44293fe8983069",
+      "sha256": "e064db2200c7b3b8c239e991cea18eff23d1361e3a6fa974cc6aaff62fce291d",
+      "bytes": 72052
+    },
+    {
+      "file": "3k.json",
+      "gitBlob": "0841d5976afd93228f3960831f099e20017aaf38",
+      "sha256": "ffb19bb9ad69002d445edda32fa6a817b700cfcaa2947c8664ba2170e678a0c5",
+      "bytes": 89265
+    },
+    {
+      "file": "4k.json",
+      "gitBlob": "fbff6ac2d01fc4b55f2f740b54345ab9cac6d675",
+      "sha256": "7b7de3a9cd66fa70662b32f0e8cddbf25e171e3cf5f1ed3b7bce37caea685721",
+      "bytes": 89560
+    },
+    {
+      "file": "5k.json",
+      "gitBlob": "369cc12a247e7eb69ec22b2534d8122c37b77ec3",
+      "sha256": "ad9660e508c20c5b9d76247726e62371e528a30bfff0a727fb1d79f3a2babacf",
+      "bytes": 58263
+    },
+    {
+      "file": "6k.json",
+      "gitBlob": "91925c9f588dad7efa604e2f709afcaa39fdac15",
+      "sha256": "2b68559c92bd2dd7ab3613616c1174528bb0517c4625d9ebfa5d1f9ccf569fc5",
+      "bytes": 17133
+    },
+    {
+      "file": "7k.json",
+      "gitBlob": "c26f792135987c54d217177ea37eab225c17527e",
+      "sha256": "99afc7dc71b4b59055e2de505bb4bbba678878c66da5b78bece9adcb157cabfb",
+      "bytes": 16346
+    },
+    {
+      "file": "8k.json",
+      "gitBlob": "a2a48a2977382dcfd8b33abbc883d7a867ac8420",
+      "sha256": "b5e15e95f12799be1b7acbb1dc599ece889e7f20445a0588712f21462425ccb1",
+      "bytes": 16032
+    },
+    {
+      "file": "9k.json",
+      "gitBlob": "3332d22215412b7dbc902a9584eafede3dd46bd9",
+      "sha256": "701b303e2715c0bb14219119ab6c77c2227e13f169b7db0ee3831537cec46695",
+      "bytes": 14816
+    },
+    {
+      "file": "Myouji.json",
+      "gitBlob": "69e3abeaf5d95b965a1ac11939540c92c27b4be4",
+      "sha256": "60fa51ccd21609fa1075304d2c6f7da724a95e28d246a7c508db7656d565ba7f",
+      "bytes": 462944
+    },
+    {
+      "file": "Namae.json",
+      "gitBlob": "55887e675e84e783bbf6bfbf068a4434f5811ca4",
+      "sha256": "8a9770b5d90f006a1db167ada0b6b56e27bfdc7a550f73f3401a1ed4fc60016e",
+      "bytes": 380221
+    },
+    {
+      "file": "Prefectures.json",
+      "gitBlob": "b0f1f434306655cae7d8b1d9762c2c27f4a20932",
+      "sha256": "51f1cc6a730f1786a9a37cae56fc9b4d639324791fb947ebe25fdeb0344fe844",
+      "bytes": 5258
+    },
+    {
+      "file": "Yojijukugo.json",
+      "gitBlob": "056258e31563faf3a002cf49f5e36deadbbae4f5",
+      "sha256": "97787b2636949abffdf352b6f7ac2704183d781389cadd4291e9087125e9e56f",
+      "bytes": 678317
+    },
+    {
+      "file": "aichi.json",
+      "gitBlob": "1c65d40c44911c4f5c3a6394cbfe04f1fdd9d2db",
+      "sha256": "8e9befa51fac416f5d5aede8a1f2b9338ad992fde201255c0053d591afeafce0",
+      "bytes": 279602
+    },
+    {
+      "file": "akita.json",
+      "gitBlob": "a85436da812056cdc5bebeb9bc6e4b605d480cfb",
+      "sha256": "f6a9320e843ed7bc7891e421c4d51ff805897cb73c3ddd09a0d90923e56dc1fc",
+      "bytes": 20725
+    },
+    {
+      "file": "anagrams10.json",
+      "gitBlob": "405fc8ec92285749dcfc09656cdfe058ddc92878",
+      "sha256": "b30f4d39b37a696d3ea899f7d57b706657e843708fdfec7954a1fd07e8ef0998",
+      "bytes": 185170
+    },
+    {
+      "file": "anagrams4.json",
+      "gitBlob": "0b40ae05b9390a89ce66257d53114b730a3a4660",
+      "sha256": "f4b78e0db00d8f9b50891799c535ca6f7d693c4eab6205e198fd4c29a78b192f",
+      "bytes": 120802
+    },
+    {
+      "file": "anagrams5.json",
+      "gitBlob": "990f4920028b997724de273f4b53ec11de6d6299",
+      "sha256": "e7ad42bc914fc05d096a857474e5872193ac7a960f5b06910cc0d8d48ff26060",
+      "bytes": 148573
+    },
+    {
+      "file": "anagrams6.json",
+      "gitBlob": "2a5f6f43806ebae8f03d3536a4bb537728cfb371",
+      "sha256": "0d9b0a440e8d9b411cb225df06bf690ae3142af35f100845149c1ee7a563bdbc",
+      "bytes": 171594
+    },
+    {
+      "file": "anagrams7.json",
+      "gitBlob": "82037635d604daa4b0ee9fa05b2ebeb7a58df1f5",
+      "sha256": "b35a1010c8b45577aec9fd95d66351402dccda176c28a06855df38aeaac17b39",
+      "bytes": 162338
+    },
+    {
+      "file": "anagrams8.json",
+      "gitBlob": "529682779d10518e5ee2f744cfeeaf0142af27be",
+      "sha256": "8f4b123b6f1057618d34a3cc0b8efcb135c10fe7bea686c87c44d70becd477e1",
+      "bytes": 136690
+    },
+    {
+      "file": "anagrams9.json",
+      "gitBlob": "68bcb857e2876447b8239bb0d3a1d27fd8d11b75",
+      "sha256": "b8efa029b3e2b73cbfc35d966a3c4d29ae21fdc0dd14665d6f1c2f9c22406b8d",
+      "bytes": 118131
+    },
+    {
+      "file": "animals.json",
+      "gitBlob": "82bd9531ccb7b7bcf595d7b5615d539e5a47ceb2",
+      "sha256": "45e19d79d90baab513188591feab2fb5718def3d9dfc2ef3c3169b9648c6f228",
+      "bytes": 20564
+    },
+    {
+      "file": "aomori.json",
+      "gitBlob": "9f361428ee1faf7ec51e575b7a8675f66845eb9e",
+      "sha256": "933f58ef9954da700ee829ee61f165f274b764eb37fb45b5884c55fb501defd3",
+      "bytes": 6486
+    },
+    {
+      "file": "birds.json",
+      "gitBlob": "b1c319683ace46c0ff859c424c6c0dd15eda967d",
+      "sha256": "345e33bb5185571ec89d30b7930d957e356be5e94282f9f525cad90bb8f0f65d",
+      "bytes": 22086
+    },
+    {
+      "file": "buddha.json",
+      "gitBlob": "c10b4cc43ffdc0c3dde029f895b913773d0c047b",
+      "sha256": "54dc461e51b82a28a7e2a8a42e936324842856962d576b3816a57249733f1d76",
+      "bytes": 198360
+    },
+    {
+      "file": "bugs.json",
+      "gitBlob": "575eeedb2d19b60930e80fce564d00cbc3f80cfc",
+      "sha256": "3bf199a12a325f20af9a865d330f67919e9dcb6874829350cbd63fdaa4846b36",
+      "bytes": 11628
+    },
+    {
+      "file": "chiba.json",
+      "gitBlob": "4dadb73e3dd37af4bfaaeffbff780550ee97258e",
+      "sha256": "e9cb48805a786d022862bfeb4fe6cee503527d1e56a121f035af876f98bdcc5a",
+      "bytes": 89684
+    },
+    {
+      "file": "cities.json",
+      "gitBlob": "61b8448e4453408485132f9c9ee0426ec3a0938f",
+      "sha256": "cb0013f648b4642df6dd6926eebb90afb08843d4f8568fef26c27ef9ea777318",
+      "bytes": 119832
+    },
+    {
+      "file": "common.json",
+      "gitBlob": "1d78b6d4963041c165e56db584fdc7ce8775e386",
+      "sha256": "674ca17dc355c00e1aad154355bdaf8c28cb42e5455218cd5e2d4302e75a8ca9",
+      "bytes": 2645239
+    },
+    {
+      "file": "common_nojlpt.json",
+      "gitBlob": "7072c6fc3cdd6ae966bc961dd7b02af1e98b6622",
+      "sha256": "59678888f57ceedb81811afcec4613bd63a3e6ae4827754f9f6594ff4e47efa2",
+      "bytes": 1617535
+    },
+    {
+      "file": "countries.json",
+      "gitBlob": "2d9fb2570f13bf8714503f0858358f9f827e8337",
+      "sha256": "2e19f18a1ae73e56857208920857877924d11b0eb6b2f8923eb950a7b55e0886",
+      "bytes": 11424
+    },
+    {
+      "file": "dqn.json",
+      "gitBlob": "410cb3c6fb3e98eb663ef3ca766245c323ca2414",
+      "sha256": "2c772c9db82b96996f790f8c1ff85261eec261cf5bc5da1c0afdda0b8e6ccb61",
+      "bytes": 939097
+    },
+    {
+      "file": "ehime.json",
+      "gitBlob": "44abce0a9fa702cb73ce9648541054ae401d2571",
+      "sha256": "af22339dc443b20a3fc194954dc1807c22147e1a1aaf883b935285b17aa34a39",
+      "bytes": 35761
+    },
+    {
+      "file": "ejtrans.json",
+      "gitBlob": "a95e3a2a213a1f20c9bbbfb26ed30902f74dce3a",
+      "sha256": "baa86b6bad651c114c52566271f3d53dd1f96f705fde98dddeca48806e3e64d3",
+      "bytes": 718878
+    },
+    {
+      "file": "emperors.json",
+      "gitBlob": "2abfbd5cce07e42e175496cf5dd579d5219e2721",
+      "sha256": "4dc3c36de228b1cc63fc0406835045ed8f3a42d20c12d84272031a20a8075a84",
+      "bytes": 70409
+    },
+    {
+      "file": "esyn_easy.json",
+      "gitBlob": "a1fa20d66fc75e32bb88962c3e49344fe961a48b",
+      "sha256": "6919a6c6c7e4d4f0aaeab75d128d76a032130333be2587487e8adbecb7907caf",
+      "bytes": 1061307
+    },
+    {
+      "file": "esyn_hard.json",
+      "gitBlob": "491efc70c1d1397f085ab8a6dbeff0f667dd5664",
+      "sha256": "68ab200350e4d44bf65a64831820a5d7a0ca4a8e47324cddba32ab6a3a3095b3",
+      "bytes": 3314211
+    },
+    {
+      "file": "esyn_med.json",
+      "gitBlob": "d4bb4888d49a1c3b498510d38b0d031f712f7fee",
+      "sha256": "44adb971f503aba4f09b7642ac2cb67623d0160533035cb6129d048e58e4a660",
+      "bytes": 1224792
+    },
+    {
+      "file": "fish.json",
+      "gitBlob": "edc57f196edc153ef98101c907971bf554e08a75",
+      "sha256": "0b69dee0e50fbbf0a9ca7a4addf9a49fb5f5c407ad9609223e8e55f5a2ac68b3",
+      "bytes": 22583
+    },
+    {
+      "file": "fukui.json",
+      "gitBlob": "a442f8ce89cfd343f1a58cca2b486708bcf9ad8f",
+      "sha256": "c4d7d5d9dd385fa8fe0dc1ae9051c278c3066540ab06650be09606905b9b4ca9",
+      "bytes": 21160
+    },
+    {
+      "file": "fukuoka.json",
+      "gitBlob": "dbba9575c86650559949685da0af181cded5f7d0",
+      "sha256": "efef88740b7ff5954179a14a164107a284ad1b508601b4c081e1dcfdaaa39249",
+      "bytes": 102885
+    },
+    {
+      "file": "fukushima.json",
+      "gitBlob": "6e34cfe6871586e69b6ead98652c023197d77620",
+      "sha256": "5aece9b8a3ccaf694080b20a044894f9b060c81f38643fa5522f41ad9ffbd499",
+      "bytes": 40664
+    },
+    {
+      "file": "gifu.json",
+      "gitBlob": "0d18ba2ec0654e8d8a1a8142c755699542673dbb",
+      "sha256": "099a75513775aa82930666f9310d1acfdabb310916049a95f03c2c28ff0866b1",
+      "bytes": 98998
+    },
+    {
+      "file": "gunma.json",
+      "gitBlob": "eca1dab4e1be6ae6efb82f22be7dde19b5334bc6",
+      "sha256": "4bec45009f1075828a5928b13baf59d627b1c456f394686e04d17c457d7fad10",
+      "bytes": 37280
+    },
+    {
+      "file": "haard.json",
+      "gitBlob": "85d42692c25febb990cd28dcff7fd04b55109d23",
+      "sha256": "a035bb36e11708ab0aa96b918dbe0bb810a119c71351add8e3497ff8e233cb9f",
+      "bytes": 1113805
+    },
+    {
+      "file": "hard.json",
+      "gitBlob": "50205c5912d74db188e74d39805c6a8553acbef0",
+      "sha256": "4b0e0d7f10e422c0ba92eaee2ce2037d3d22b08062cd0626d796745d93e0dab0",
+      "bytes": 164834
+    },
+    {
+      "file": "hentaigana.json",
+      "gitBlob": "7ccc8681398830ba12c9cd5a270154230326a2e5",
+      "sha256": "7558c2f05207ee707c60ea52dfdbc2dfc9475c085de47befc6179677f280587c",
+      "bytes": 34494
+    },
+    {
+      "file": "hiragana.json",
+      "gitBlob": "a4ae2a962ca0ca1603d8333b51dc63aba9025c0e",
+      "sha256": "b4de21f5ccf46fdfa78baaee3cd8b2d9380aeb8bee653375fd8910d0c717c04c",
+      "bytes": 8853
+    },
+    {
+      "file": "hiroshima.json",
+      "gitBlob": "bf4f68131a8b8838b2a6085561e8507c413c3116",
+      "sha256": "1e3cdd0ac0ebe47148b0a72be9a1614a5e9f496e2eb3d1f8071e436aacb226c5",
+      "bytes": 64061
+    },
+    {
+      "file": "hokkaido.json",
+      "gitBlob": "1f79984b179dab5594510e4903ff020d5fc747a5",
+      "sha256": "f14e90a2ba52fcea65f3344f2dc6eaaebd01136b4757899993ce0d2c88dabda3",
+      "bytes": 173101
+    },
+    {
+      "file": "houritsu.json",
+      "gitBlob": "f041c2db362ad962f190c501f52c5d9aa55568cb",
+      "sha256": "b2b9a915a8878fadcf55deaba950e8fc04dbdea32831aa0292d12c7684a7b025",
+      "bytes": 152187
+    },
+    {
+      "file": "hyogo.json",
+      "gitBlob": "8b87b883c2b118dd73a85175c50c94bc04a8cf40",
+      "sha256": "2ee0d000b15c2f83b9c1afc13c2e97c453d7e9f94ab1e43cbf364ab559121a84",
+      "bytes": 206882
+    },
+    {
+      "file": "ibaraki.json",
+      "gitBlob": "983717d6c53b90203a702fe2cc9fdc5348a9443b",
+      "sha256": "306d91296838967417d601906a27fb04aa60eb9b3bc668b4205a9b1635515060",
+      "bytes": 48408
+    },
+    {
+      "file": "igaku.json",
+      "gitBlob": "fbe05669e2ef00113f4bfeae595fc4611f0de654",
+      "sha256": "bf17c38fc8e31fb2013344082b026709b5abcc4df01864575500f551de3af545",
+      "bytes": 156115
+    },
+    {
+      "file": "images.json",
+      "gitBlob": "bbb4fc80f6af491257bf42f9aa79da263cefbe20",
+      "sha256": "87bd93b944fa423418d739e655c74a5d590281444cbd9bd2642299962416a3cf",
+      "bytes": 21554
+    },
+    {
+      "file": "insane.json",
+      "gitBlob": "29fdfa71e6d37c9c4a3ffee008256fe14119d757",
+      "sha256": "738ea4c9bc865b7dacb41b49ceb5aa7755245f071ff568b22d7863ebdfbbef59",
+      "bytes": 46121
+    },
+    {
+      "file": "ishikawa.json",
+      "gitBlob": "eb805879db20797d5334a51973bcead2f0a6ac38",
+      "sha256": "7f911a53b662be54a467d85a0cd97c7ec9b631dce3e27a762d06d819281fb28d",
+      "bytes": 25083
+    },
+    {
+      "file": "iwate.json",
+      "gitBlob": "954b00dc8987b23e6d0e357d6e5993c138f19de9",
+      "sha256": "7b2aaaa354fb0fe082979d25c7f216c5c9b91b5551800f7c8ae3dcaeaaa2c796",
+      "bytes": 15523
+    },
+    {
+      "file": "j1k.json",
+      "gitBlob": "9c6d3989493629d7c051a8ac3b80f676e7b8d1c2",
+      "sha256": "c8173d294379685dfc277f45d158251aca15a94fc420dac52425ad40f243ef71",
+      "bytes": 35105
+    },
+    {
+      "file": "j2k.json",
+      "gitBlob": "ea617e48309c1aaa0e6ce476d756dcc7adbb2cfa",
+      "sha256": "081b73828cf9614fd56f7577c8403976cde0a46e521f129dc501dec281904137",
+      "bytes": 91079
+    },
+    {
+      "file": "jmdict.json",
+      "gitBlob": "17a216b60777ccf381c0e9de887c15803fb2c43b",
+      "sha256": "0652c54fcdc2483bc035f25498274219367521a30c6e5a0a102374de000740fc",
+      "bytes": 39108263
+    },
+    {
+      "file": "jmndict.json",
+      "gitBlob": "a8b1e6ebca2b668726ad5a4b03b152b3237266d5",
+      "sha256": "ef9645aaafa481f4923ce2eace855d88cf6f819b845fc31eb33076f0c2135fcc",
+      "bytes": 84672110
+    },
+    {
+      "file": "jouyou.json",
+      "gitBlob": "3db21aa7852125310316d1a074250c7f05e6bb1f",
+      "sha256": "82008587651ed1b1f6afbbc0a5d13777c51be5863fc755643642f80291fa25b2",
+      "bytes": 294047
+    },
+    {
+      "file": "jpdbtop30k.json",
+      "gitBlob": "8dd335040f725bb77a12f4fb5bbe398c26cc93ae",
+      "sha256": "3c5b59af811c886816242fb57cd1e27583bc4796a34dbc3d6030b90d8b85756e",
+      "bytes": 5925145
+    },
+    {
+      "file": "jpdefs.json",
+      "gitBlob": "0ac396a9c6361264414ca4f8bff742827c59ceb6",
+      "sha256": "009ead9f33e4db1dcfea9c1d8eb0e90d3a7c27208a5fc9a675f2604de0b2e72d",
+      "bytes": 1361697
+    },
+    {
+      "file": "jptrivia.json",
+      "gitBlob": "f9367e6a02a457bf81e2a3ceed73fb09a7adeab9",
+      "sha256": "bec044d8af82f7cda3fcc2efd526db898cf2ed5ba3f6411ff382e526ed9a3788",
+      "bytes": 278119
+    },
+    {
+      "file": "jsyn.json",
+      "gitBlob": "58465f1078b5fcc1eec1de5f0f089e9e0bc2f06d",
+      "sha256": "689826d7e69f5dd07b30024711683cdcde9f53816061517b6eef0d22d8c5b70c",
+      "bytes": 8250490
+    },
+    {
+      "file": "jsyn_full.json",
+      "gitBlob": "ab929d2858be0d7f7d66c6cb4a9ba8ba30e9e207",
+      "sha256": "ad655be47a0f742d183979eca8c3c397bc6ca4d71a6cb57cfd449e714850bfd2",
+      "bytes": 37521949
+    },
+    {
+      "file": "k33.json",
+      "gitBlob": "d98f8df9a6a4dd4138053a479bbb50dcb1a3fac8",
+      "sha256": "221b0eca0a3fa5dfd02130ee042691353a66f09f37d3cae0dddd041fdd8c99a4",
+      "bytes": 157049
+    },
+    {
+      "file": "k_n1.json",
+      "gitBlob": "148f6c879ff1a671baf9fd5d0afc143084217a38",
+      "sha256": "8c994de8089e230ccf63caed685039f8fb4323c2a4745f0036e98f9dff441d07",
+      "bytes": 2576562
+    },
+    {
+      "file": "k_n2.json",
+      "gitBlob": "9b1a9ad76860fdfd9ada1f283e7998516280a6a8",
+      "sha256": "2d44d0e7e4b90fc648324d57f96a26cce4492ed21f081f81a84549345821da18",
+      "bytes": 2058613
+    },
+    {
+      "file": "k_n3.json",
+      "gitBlob": "413b03a3a5b280a9885e691294355f5ef83ce972",
+      "sha256": "8fd836c4f34280ba565166586b5a363858c51ef8787b170d0b7da4199d121fc3",
+      "bytes": 4370685
+    },
+    {
+      "file": "k_n4.json",
+      "gitBlob": "2a66e9b22fe09040263a990d49110fb376de01c1",
+      "sha256": "2d334f01527c47e72e6715dbb84dbc76dabc28a4f74230c623267f5802083f09",
+      "bytes": 3025792
+    },
+    {
+      "file": "k_n5.json",
+      "gitBlob": "ae387e8327710bb39e98d3dc4d26aa68526a9038",
+      "sha256": "3ed66dd9b6f8938b53b0743784a266534d5f2eb00c6dff52238e8d0a978e039c",
+      "bytes": 2189165
+    },
+    {
+      "file": "kagawa.json",
+      "gitBlob": "df513057c11a7f00197b58cceba6f84da040522e",
+      "sha256": "39cd410c4716d035317d22dc83e83103980dfaaaeb0e62602bc90f89ef004fd2",
+      "bytes": 20776
+    },
+    {
+      "file": "kagoshima.json",
+      "gitBlob": "cd98eacfc1b749c568345e6fab2290bd88a03ec3",
+      "sha256": "fee0f626369239b7bba984e746aab2f467f5a18afb39a6f0a848c2671d027ee8",
+      "bytes": 19925
+    },
+    {
+      "file": "kanagawa.json",
+      "gitBlob": "42d638ae37e67fbec1504421233bd42cede77a4b",
+      "sha256": "4f60a104540eb466ecc5fcb150859da9f549bc02d5af70d5e469d95c8be77a82",
+      "bytes": 129247
+    },
+    {
+      "file": "kanawords.json",
+      "gitBlob": "30ea2a9e5ad1a232d13ea17f54b8bc5e0f96a6a4",
+      "sha256": "c56264b16f9e40c7993119bfebe87ac9bf51ef307a0860feaf8707de1bc1bef5",
+      "bytes": 2710405
+    },
+    {
+      "file": "katakana.json",
+      "gitBlob": "193d255777d3fd13416e4a92d42c3372d6c02420",
+      "sha256": "0c8ce5e4b00329554ac700a6f0bf91b8296ea7a9f17a8838fc01bb86a12a4b3f",
+      "bytes": 7641
+    },
+    {
+      "file": "keizai.json",
+      "gitBlob": "6cdbe162b5a42ffc0090546b6b8452c4c06177fb",
+      "sha256": "b54c0eaa4b25bc94ec818e96d87168c0d0e47f0e4865d951bb738150c88e93d4",
+      "bytes": 199389
+    },
+    {
+      "file": "kenchiku.json",
+      "gitBlob": "a12ab429bcb4dfe3c2210fc7aa810083d68f9fda",
+      "sha256": "0026ecaf2bdd92b0903000dcf64be68e26265e2da13d77dbbf109dc998780b22",
+      "bytes": 578056
+    },
+    {
+      "file": "kirakira.json",
+      "gitBlob": "a11734f1a3c45fec34644aaa2b1b5fc83c41c4d0",
+      "sha256": "1349255b606a6cd0427b6a2686a64bacfbda2443883bd5306b642f08b92b4fce",
+      "bytes": 57842
+    },
+    {
+      "file": "kklc.json",
+      "gitBlob": "33fabd2c32f93511dd169f89a4bba7ce8c9e39af",
+      "sha256": "c63fbfc0b7576eddfda2dc2ea32fea806af6eefcdcb89900b41deaf5f098fab6",
+      "bytes": 986603
+    },
+    {
+      "file": "kochi.json",
+      "gitBlob": "25363c1a0a1f5feeb352e0e520f4b2024dda8c4a",
+      "sha256": "1e29e4b7d8de89d438439dda5a99cc73f128212d7dc77063575e1caa6c1f40e6",
+      "bytes": 17718
+    },
+    {
+      "file": "kokuji.json",
+      "gitBlob": "ca77d3bad55e0e9a79d1151bcc1bd841cac2c5ff",
+      "sha256": "a2bb2999c6ed32fc12aa7683a7e777dd28eda6e94f25f82c81cf79b00c0e71a3",
+      "bytes": 15457
+    },
+    {
+      "file": "kumamoto.json",
+      "gitBlob": "9f44e6ac7b61b26507e8a6f35120faf0615476a7",
+      "sha256": "fd92b5483499fd302333cefc90bd50464560e9a70170970dec4ba16a32178639",
+      "bytes": 32622
+    },
+    {
+      "file": "kyoto.json",
+      "gitBlob": "5d8e9e69e917ac2f8cc4d1832209708c121e393a",
+      "sha256": "695129aa61396872db8029da94bf3ee59f84050cd55562ffcc6eb569a5bae941",
+      "bytes": 504047
+    },
+    {
+      "file": "longwords.json",
+      "gitBlob": "361987293dcc3b6bc7324615b29f00aeac2a768f",
+      "sha256": "5b0d11d0394a82bc0e3df694fd8dca47464fda960374bbe6f2af1c6651174642",
+      "bytes": 6146474
+    },
+    {
+      "file": "mie.json",
+      "gitBlob": "56600672e87c95d17bb0a7f190db7fc6389c7457",
+      "sha256": "66b14afbad509da01aaac9689c653299e660b9887b046e4d43eec12b9e5866c0",
+      "bytes": 59133
+    },
+    {
+      "file": "miyagi.json",
+      "gitBlob": "608ae9f801ba1379747af4bd5ebf6cd7117fe621",
+      "sha256": "45d4acbebfc89a0c7ac9b7f50a5ec72b39d0c114d911f69be7183562c941bdaf",
+      "bytes": 49735
+    },
+    {
+      "file": "miyazaki.json",
+      "gitBlob": "ae43bd4517dad7b85c2c3d643c4be55ed709859b",
+      "sha256": "215c1c9a5de9c078ea845c0d9efaa6644f27ec583771cf8c73d6dd246d612ff4",
+      "bytes": 20160
+    },
+    {
+      "file": "n1.json",
+      "gitBlob": "f487393b97585d79a31da1a5e02766d3676f1bef",
+      "sha256": "88d36a2f0a58c5ade433628425e2a9d604d7e6f523d3aab38b08aa6c0b02f98a",
+      "bytes": 324454
+    },
+    {
+      "file": "n2.json",
+      "gitBlob": "cdbea7382f70647a9543bb612d2d73980bcdb73e",
+      "sha256": "31ec5bfdf172f3606f0f6a234dc08a6178a22f910165f5b6bcbdf878dff6bf68",
+      "bytes": 189476
+    },
+    {
+      "file": "n2m.json",
+      "gitBlob": "b355b6d733bd52ac1f344dd7cd14221170af0246",
+      "sha256": "23ddfba450eac59adfe565344de945cd756c74deee647cc8418a1cd48f3fa3c4",
+      "bytes": 588370
+    },
+    {
+      "file": "n3.json",
+      "gitBlob": "a65496208d4d9fd610900dfd6d9e764bd7578040",
+      "sha256": "2a89829ec0c24226c8776fdc329154659a09581be4acc66b1df7e78796ec59a7",
+      "bytes": 186805
+    },
+    {
+      "file": "n4.json",
+      "gitBlob": "8167fca5afbb7d697859ca7aa8f01318d709c928",
+      "sha256": "beb7396c848da725c74955709409f4d7b143c5a46a746a1a46b1fc854c803fa7",
+      "bytes": 58481
+    },
+    {
+      "file": "n4m.json",
+      "gitBlob": "871b011566e12e9dee8e23e0057f89432984d0ed",
+      "sha256": "a9c2896f04cde82a0482dc1cb99109a52294a14f69982d7b19d980d35d5aae5a",
+      "bytes": 77310
+    },
+    {
+      "file": "n5.json",
+      "gitBlob": "392ec613b66dd2a52c287f8e4d40e5a72608182e",
+      "sha256": "6ece54350d9c413b6ac68451216c6410c17ac83689b5835203079f4a29bf049c",
+      "bytes": 31675
+    },
+    {
+      "file": "n5m.json",
+      "gitBlob": "602da2abeacd8f70e18a5fe25905a1e88ddbdc93",
+      "sha256": "1ad0e5bcc56f4c264b475f89ad7459fc446b8a8b2918f70d4cc0b486ea08dced",
+      "bytes": 76526
+    },
+    {
+      "file": "nagano.json",
+      "gitBlob": "0fc7511ee118dadb6c6a1d4cdabac97518a60dea",
+      "sha256": "3d81172ae9b73b5447bdffdfd08358b6c21e9b4b04b04c31bd51bbba66233506",
+      "bytes": 39520
+    },
+    {
+      "file": "nagasaki.json",
+      "gitBlob": "919741b41ba84fa20238bd132ac980ee894fa73d",
+      "sha256": "0955c6f45fe0af6aa367fdd39f18191e24addb922c001fb0ca688857d027bbb0",
+      "bytes": 35289
+    },
+    {
+      "file": "nara.json",
+      "gitBlob": "6ea68b141f2bfab4cc57b206abe58ef28cc3b585",
+      "sha256": "da713bfe3d8b4ec1746f2bbcf9aa8825f64d2e58a0b0fca198915f59ef14f550",
+      "bytes": 59111
+    },
+    {
+      "file": "nature.json",
+      "gitBlob": "c81e6971d994c8444b472011b2bf63052d7efab3",
+      "sha256": "0af3342c1cd43eb179b767e65559e7a80899c1410b22f9542b3847b7419c3923",
+      "bytes": 98950
+    },
+    {
+      "file": "niigata.json",
+      "gitBlob": "c8c4f218a29772d31f2f0bc9fc142269efb7ddc6",
+      "sha256": "a1dc97900ef8089158b34ca17aacb5c18aa32c53e9f704527acfeb8bc308b024",
+      "bytes": 47473
+    },
+    {
+      "file": "numbers.json",
+      "gitBlob": "f8c3ef932ae4f7bafd9f205e6dd4a465e1cf2c35",
+      "sha256": "8922d4d6c8bc47489b3d440991b61d56b445c172ac8ef2c96dfd6ca06ba37b4d",
+      "bytes": 521551
+    },
+    {
+      "file": "oita.json",
+      "gitBlob": "12cfe896b013f92618d971a00388018b6f4bf5b6",
+      "sha256": "f13b0514bede04c8821c4ef4c632b2d1b71f251ee8fc6faae39cc7c2bd347d44",
+      "bytes": 20962
+    },
+    {
+      "file": "okayama.json",
+      "gitBlob": "b206f6585cd26076c41657103c2886daf5916c60",
+      "sha256": "2760457ebf11e6d5acef6326a2ed697b603c57b5eb81f13ab82d9297aeb196a4",
+      "bytes": 50881
+    },
+    {
+      "file": "okinawa.json",
+      "gitBlob": "e65fa618772a1dfc18340dea494cf80d12655c1f",
+      "sha256": "bf77483de7244320710e5bab64060a53c717dcb1c8a2c8c847f5ee826f286ed6",
+      "bytes": 8881
+    },
+    {
+      "file": "onago.json",
+      "gitBlob": "e5fea9ff51a4f7e24daa8d56952b9ae1abd8a862",
+      "sha256": "12d91a3768562d462ce96ac4a0146112ff6df1cfbd553cfbda1c89c8cf0b37c7",
+      "bytes": 16633
+    },
+    {
+      "file": "onomato.json",
+      "gitBlob": "8868333f526fbc566a319605127ee15cceb53bd5",
+      "sha256": "5d13e2663d28ebd0ab6ff3bb92d262f5770e93afcad8576bdcda4b28c17d2b9a",
+      "bytes": 23421
+    },
+    {
+      "file": "osaka.json",
+      "gitBlob": "5777ee54f66fcabd17039fff31a96f0fc33f5859",
+      "sha256": "309399fd14c8e39098ee1067a1f8d25db2c087a539d58d88932d230c3b180ada",
+      "bytes": 244336
+    },
+    {
+      "file": "pasokon.json",
+      "gitBlob": "e3ba7ac3a81ac31702b2664a9d4f62538a28763a",
+      "sha256": "6400f80f2af5093d2d4bcd6edbb4915dee70c72ab808d3aa5715eb483be40cbd",
+      "bytes": 537322
+    },
+    {
+      "file": "places_full.json",
+      "gitBlob": "cc21c10cbccdf31ce877fa755d9bef3a90b66ccc",
+      "sha256": "6caa0da21cdd44c15cc90f07504af3f0292a97aae6c480af60fa85ff54d59c30",
+      "bytes": 25433412
+    },
+    {
+      "file": "plants.json",
+      "gitBlob": "022759e9db485a7529e0ef45aed613525d081827",
+      "sha256": "dd55505d140a734dd46f3191c0e2517b1fbf70129dcf84ec0a2d27d221a65546",
+      "bytes": 14600
+    },
+    {
+      "file": "pokemon.json",
+      "gitBlob": "7f269332abc5c6f1436c7bc294c26fddcc8fda7a",
+      "sha256": "0c3bccd4e3667e6fcc315a8fdb14bf0c9c412c59683f37cfd28992de9c9de9e8",
+      "bytes": 186664
+    },
+    {
+      "file": "radicals.json",
+      "gitBlob": "b245babe571eced7fab31c224230e498df35d899",
+      "sha256": "f5539df8310eb5c67de79847c3b9bad70008202b63fb7b4aaa9c63240c6582ae",
+      "bytes": 248690
+    },
+    {
+      "file": "ranobe.json",
+      "gitBlob": "a2ee12036e49e00286315021fbbc876db9d1870c",
+      "sha256": "827134f8c588cbe56d19ecdceb61dca57bac90cd9645f9c9e1a9f5111b9ac669",
+      "bytes": 1115087
+    },
+    {
+      "file": "rikagaku.json",
+      "gitBlob": "ad5852035c5084d06680aef4c043f71396cb13af",
+      "sha256": "d5a760eaf9f711565aad60b8002474bf682a77647c81e7fa6dd8f57efee78687",
+      "bytes": 279386
+    },
+    {
+      "file": "saga.json",
+      "gitBlob": "5b2c1a453205ae2ac2aa63f074c2147a097c629d",
+      "sha256": "3c6c4d9611d185666adfdecf04e6290a3133b0082a12ff136f761921bc1379fa",
+      "bytes": 13893
+    },
+    {
+      "file": "saitama.json",
+      "gitBlob": "00dc89b2b563984657b4ce44dbdba326d1393982",
+      "sha256": "447c886d2ef785a6d6b518326bcefeabf38cdb7fa8ffd89b2748d8f56f73f31c",
+      "bytes": 66442
+    },
+    {
+      "file": "sao.json",
+      "gitBlob": "b1cc74bc493f3841744a06eb22c067f578694814",
+      "sha256": "7c2134edcdb9039adbe614925cc4d16c5378fc200ec8c7459c1a6a6b61370b10",
+      "bytes": 1164564
+    },
+    {
+      "file": "seiyuu.json",
+      "gitBlob": "cd099d10c412d4bbc60bbd32c5a49ff3860e0f8b",
+      "sha256": "241c5c3369ee891d0e4e30d021cc0d275dc29b656a887c818ae7e6ae2e82202a",
+      "bytes": 418468
+    },
+    {
+      "file": "shiga.json",
+      "gitBlob": "654b770532ce3bb515558ba22e9c66f20e299396",
+      "sha256": "876264089d72243324fba6ae4b7d6910d53dddf5aca00afae2b26b547344d62b",
+      "bytes": 39613
+    },
+    {
+      "file": "shimane.json",
+      "gitBlob": "2b2c0d0390705c279609b351f49472ad24f2caa2",
+      "sha256": "b1508225dccdbf7a7fa11e5c13e48e06c76743b3c791f0913888d88617afbf10",
+      "bytes": 8472
+    },
+    {
+      "file": "shinrigaku.json",
+      "gitBlob": "5aa93790bf47994a1f4270ba486dedeff2fa9297",
+      "sha256": "65ef4b7765fadd75c51b0ae4a7cebb28e8cdde2675f9a6a5ccfbf9e9bade4946",
+      "bytes": 189476
+    },
+    {
+      "file": "shizuoka.json",
+      "gitBlob": "22f477318c11964a740e7a3566b924ba24fd69d5",
+      "sha256": "4ce6dcee5a4a8b8b6480e35ef69abac8d33bf96f72c7f936e9262286d9e0d6ac",
+      "bytes": 84237
+    },
+    {
+      "file": "stations_aichi.json",
+      "gitBlob": "9a1cbfb198870486ae60d2cba5fa5601a94177dc",
+      "sha256": "4a584561e8e011b26ec006ff69eebe7160c24d0a30e6b5c8caf3c3037db9cbb9",
+      "bytes": 100030
+    },
+    {
+      "file": "stations_akita.json",
+      "gitBlob": "429549562a1c383ed3586df97a11f951e647222c",
+      "sha256": "a0a3cbb456b650de1fe36163454b9d15dd1ef5cb45b060bb5f6f9b3489d88a27",
+      "bytes": 30191
+    },
+    {
+      "file": "stations_aomori.json",
+      "gitBlob": "1b2ca6886f8821cdf903486e4d34a99410fceadf",
+      "sha256": "9ab29b99f2484375c8a6f0d1edc6036a539a97c10f622aa0d3058f4e975b82ec",
+      "bytes": 31636
+    },
+    {
+      "file": "stations_chiba.json",
+      "gitBlob": "940229bc2ca47dad4d54e020e201177d2d6584de",
+      "sha256": "757b4b19fbd5b1bc68a5150e848355c2d3d9f28cb854d71a048d58a8cb7a089d",
+      "bytes": 70693
+    },
+    {
+      "file": "stations_ehime.json",
+      "gitBlob": "993172a8da71362f9c1dbd42d874fcd6051ff03b",
+      "sha256": "c3b554f5da08eb3707e327c73964d4b41f52f40b9e8251262d3457fc5a55739c",
+      "bytes": 31958
+    },
+    {
+      "file": "stations_fukui.json",
+      "gitBlob": "84f9dd52d408ce420a95e6e0cc0414c4f7e868e1",
+      "sha256": "b172fae89a5329197babbf3271fd3473e572ee7b6ddcfe014a7d03e9fee01fce",
+      "bytes": 27376
+    },
+    {
+      "file": "stations_fukuoka.json",
+      "gitBlob": "8f0f416bd9f75e8b8e1449ec4ea75a0483d70ba9",
+      "sha256": "0f30aadc153047f8991dde77ff426cb494cdb076390cd3172b972593f335126a",
+      "bytes": 73229
+    },
+    {
+      "file": "stations_fukushima.json",
+      "gitBlob": "425721bd393895a1c2afc5269b9df61fab331814",
+      "sha256": "0450d14fcf734d92df0c994951eb21396dd865ed8073545afd59ecd94581cc17",
+      "bytes": 38224
+    },
+    {
+      "file": "stations_full.json",
+      "gitBlob": "7ad12044bb0f503da9dfcb418d242874e25482db",
+      "sha256": "587804441cd675efd20b331cc02bda57d3e89b3d6a9bbc131289ce942ddcda5f",
+      "bytes": 1792279
+    },
+    {
+      "file": "stations_gifu.json",
+      "gitBlob": "4d34cd764c581e2f7bc1d426242bb36819477d6e",
+      "sha256": "b722b4ec6da40ac200254d5c6032b505db899d4ace90dcb455314c71a3638122",
+      "bytes": 39945
+    },
+    {
+      "file": "stations_gunma.json",
+      "gitBlob": "eed2b3c35d166da350dd1e2e100f4b99070f9f41",
+      "sha256": "ebb9f52431633c28ef88e47b48444876bd5033bc3d3de03e6679478921822983",
+      "bytes": 29752
+    },
+    {
+      "file": "stations_hiroshima.json",
+      "gitBlob": "bf7fed69fe290b450635a54d92ebb50a6e5bf262",
+      "sha256": "e99132fd21f675ef9f181582323b0227e2ec8edee66af162bc47aefed1ceec0c",
+      "bytes": 53406
+    },
+    {
+      "file": "stations_hokkaido.json",
+      "gitBlob": "b75f5fb561cef75daafa85697c1c53df8d25167a",
+      "sha256": "a0557c7df8cb5ab1be8fecd2fa25a95eb5e5584beffefb4078dcd9fe5d0074b3",
+      "bytes": 107872
+    },
+    {
+      "file": "stations_hyougo.json",
+      "gitBlob": "ab26b0e3d0b680aa7d624c732220d52af34b12ba",
+      "sha256": "42fa0b60dd1d374405e3cb0a1e455627a5e26dac651c074e625603f92cd18484",
+      "bytes": 76149
+    },
+    {
+      "file": "stations_ibaraki.json",
+      "gitBlob": "57b2778940bac0e40dfb6b624384edb08a399c25",
+      "sha256": "ea5e5289c18d3e912ba86932317b73c09353650c4ed00a97fea943ea8d117831",
+      "bytes": 27907
+    },
+    {
+      "file": "stations_ishikawa.json",
+      "gitBlob": "7e310c33e1fc59083133edc1ca33a98efb096895",
+      "sha256": "2bd3d7e993f0b885e7cf46a62c7baee0117beb6708df722b540d2c57bed486fd",
+      "bytes": 15373
+    },
+    {
+      "file": "stations_iwate.json",
+      "gitBlob": "3f2d9ac0a901451aa7ade619c14adea9916127f6",
+      "sha256": "987f75409d826212657ecfb2416a2f036751c49a2ef2311e8f5ff64ec0a64866",
+      "bytes": 38537
+    },
+    {
+      "file": "stations_kagawa.json",
+      "gitBlob": "5b6087955aec989ff101c7a9b284068b88726fbc",
+      "sha256": "520e2cc6c21d7a127032da37308be46e774ee7cb120e9792a2b0809f563a8af9",
+      "bytes": 22262
+    },
+    {
+      "file": "stations_kagoshima.json",
+      "gitBlob": "2a6021fdc0ed782b67da77501697e463667d6907",
+      "sha256": "ed28590992f27d40cbe5c68fc90d9838ab1c828c95e603d6664bfc9af1bc498f",
+      "bytes": 26300
+    },
+    {
+      "file": "stations_kanagawa.json",
+      "gitBlob": "58fe4d1b88f795e00332aa6950a44657be2ccdce",
+      "sha256": "fcafed287079212a4d9d2514ffba133fc46a8e330ad06f8672563ef9c46aeba5",
+      "bytes": 76474
+    },
+    {
+      "file": "stations_kochi.json",
+      "gitBlob": "45ef7aa56b3ef7180381be974ea3480439152f84",
+      "sha256": "dbdbd22d7901895ae5d788754cbaec8e5d367f4611bc3d7fbed0729ae1ed291f",
+      "bytes": 36300
+    },
+    {
+      "file": "stations_kumamoto.json",
+      "gitBlob": "76e601281b1d88f4a3e3cc8f72dbb28409cd2311",
+      "sha256": "d2c9884df4a75492ad2c2260b65c2b2aa398a353626420278b30ff1d3b9d5f4b",
+      "bytes": 33897
+    },
+    {
+      "file": "stations_kyoto.json",
+      "gitBlob": "70237afba1c4a1a736ce8fca041943803fdae466",
+      "sha256": "9bb9bb3ea26db935a03bbb7b1e05869a65bc23bb5768e8a24b9bd538487df1ca",
+      "bytes": 51073
+    },
+    {
+      "file": "stations_mie.json",
+      "gitBlob": "27d213b31d2f8831f9db08eec928afdc47c4b679",
+      "sha256": "f237e216d1e645034ec4945f627b84f0ce6edafabedcaa3bb6475aa5f160e8b3",
+      "bytes": 49134
+    },
+    {
+      "file": "stations_miyagi.json",
+      "gitBlob": "6d6e61b0f4eb49035cdaa44400167eccd79358e5",
+      "sha256": "621f70dfcdc2e2821e0ba0f6092ea9a524134ca151740f85e2356dc8eccca5aa",
+      "bytes": 38311
+    },
+    {
+      "file": "stations_miyazaki.json",
+      "gitBlob": "6900f272b60e9c6e5582c14a8346bfce42a66200",
+      "sha256": "7da1847fcade099ef81aa6ca312e6f1b46153cd508ab11f37d277ebed7d46fdd",
+      "bytes": 16021
+    },
+    {
+      "file": "stations_nagano.json",
+      "gitBlob": "542974d964866c9370098002d27b5eb4eab816dd",
+      "sha256": "497a2715b3f11b54aceed955facf8a372fa2d17c62197a16f5740f0d1aef3677",
+      "bytes": 56057
+    },
+    {
+      "file": "stations_nagasaki.json",
+      "gitBlob": "9d7a268798826fcefcaf0ce6b1ecb2ca18e7af3d",
+      "sha256": "0c483d7cf880ed749a974c17d0f6a439372bae99bfcc56d34674a306ee65687e",
+      "bytes": 28916
+    },
+    {
+      "file": "stations_nara.json",
+      "gitBlob": "34cb87321c5a51026398be264ecca17ac4a1def5",
+      "sha256": "6034897a5c06cb17fea60b7babbcae9aa574a24bf39f337f3b87501d176d1aff",
+      "bytes": 27756
+    },
+    {
+      "file": "stations_niigata.json",
+      "gitBlob": "cc09e5aab62ebbfef545a67b58731629aea1abbb",
+      "sha256": "5e9b1f4d928b95a05191d9527c8e4438168adf834674718513968f095df03c85",
+      "bytes": 41111
+    },
+    {
+      "file": "stations_oita.json",
+      "gitBlob": "b79368619c098cd5f5db2943b3c25dcf3514e7b9",
+      "sha256": "45dae4698ceb10751cc79883acc5f1289e4dd37f774b7e116005dbb7d0af7c18",
+      "bytes": 18141
+    },
+    {
+      "file": "stations_okayama.json",
+      "gitBlob": "75cc33735aa108e488d5a4c4dc80e91f7af9ec64",
+      "sha256": "a5c8ad50dd8be4f5d512556b67d6cc24bafe3122bfe33b4f425635ca7bfadf12",
+      "bytes": 33824
+    },
+    {
+      "file": "stations_okinawa.json",
+      "gitBlob": "d813f1e53eb3c39a9ff287ab2e17b9029cc4b0fc",
+      "sha256": "7cac135e3c14fee3f9e093710a8d21bcb0b9158a1097e1a9ddc5fa0630e1d518",
+      "bytes": 4461
+    },
+    {
+      "file": "stations_osaka.json",
+      "gitBlob": "1e729663dfff830e05208afd5c542f4d72953280",
+      "sha256": "0c93a399fa892e9eafbcd8514151b6c04416a5d44898d123de4d1ab86244631e",
+      "bytes": 102465
+    },
+    {
+      "file": "stations_saga.json",
+      "gitBlob": "efef8b21d2a1bc0656c27da0d55e4b443f3fef38",
+      "sha256": "3af95ba129ef956a9f6cb3f479daba60780af5855f045710fd4a5bbe66ddbf2c",
+      "bytes": 16471
+    },
+    {
+      "file": "stations_saitama.json",
+      "gitBlob": "d5d039ab24518aca848b368d9b962bdfd06ce792",
+      "sha256": "cf10e8b3a2ef9d6a3cb8dbf8cf1d4aa20a9a540f9f97ea7a410cf69da4cd1aef",
+      "bytes": 48920
+    },
+    {
+      "file": "stations_shiga.json",
+      "gitBlob": "71f201160bc835629f2f57fc8dc47252912913fa",
+      "sha256": "117a659b1f7ded04cf7797ddb305e4c915265778bd84760c74013a3706547f76",
+      "bytes": 25901
+    },
+    {
+      "file": "stations_shimane.json",
+      "gitBlob": "39c0ab82c0d5f175886206df6f10bbc8732f46c8",
+      "sha256": "e397e16358d9326ae694231544aa7116c4a6457adafc1a3abce20f5042d922d6",
+      "bytes": 20000
+    },
+    {
+      "file": "stations_shizuoka.json",
+      "gitBlob": "c328b38548b31c6fafba5305cb639b6c4dd085d0",
+      "sha256": "48e4a9637efcb5089e13b36b234c166162270bef99f682a7cb7b5fafaabd8f79",
+      "bytes": 47730
+    },
+    {
+      "file": "stations_tochigi.json",
+      "gitBlob": "ef6cfe66cc4b8b125d103e9a084dca9504852df9",
+      "sha256": "e53c9682da8536073b7f8aa23f5f1228c96985dfd367da9a5e3d29c288c6b24a",
+      "bytes": 25513
+    },
+    {
+      "file": "stations_tokushima.json",
+      "gitBlob": "a158308e80d44a1ca0b58bc3e4426c3141f990d1",
+      "sha256": "24407487d0d3246ebca433b97fd9ac0872410e4d448d7e3b738787718cd887ea",
+      "bytes": 17113
+    },
+    {
+      "file": "stations_tokyo.json",
+      "gitBlob": "dcea0390b0c7dd5f142ae144bba2c5ef1113fb96",
+      "sha256": "1cf679bd4ed7e95c1e0fa0b1c5d4f1b2b86623fa3b00fcc6e4405158f899f277",
+      "bytes": 143544
+    },
+    {
+      "file": "stations_tottori.json",
+      "gitBlob": "b2c5ddc4286c196153c7621f6fa5a6dced0db953",
+      "sha256": "d23cbe8cf3b11cabe602f1240e6d975b9c4815624a46809681263fb229c1b96f",
+      "bytes": 15248
+    },
+    {
+      "file": "stations_toyama.json",
+      "gitBlob": "3ff7e470ad05f85c4b1c68a2e376fe79e733b0b9",
+      "sha256": "69fc0036e32f74c245c8ae886d40262a13f223f9eeadefeb5d08ea48e34d8bd7",
+      "bytes": 42463
+    },
+    {
+      "file": "stations_wakayama.json",
+      "gitBlob": "a49ac2a2bef701d685faa38283ef3ad3c893f878",
+      "sha256": "074a37238b30344613f964b50ade79145609ec401159c391bb0ce2cd30c44c89",
+      "bytes": 26578
+    },
+    {
+      "file": "stations_yamagata.json",
+      "gitBlob": "1d1f82edbdb12c6646435ad51da9c8578e72540c",
+      "sha256": "64847448437e896a890d0ace45feb06660f8ef2291221d5ecb6a290b46188242",
+      "bytes": 25648
+    },
+    {
+      "file": "stations_yamaguchi.json",
+      "gitBlob": "a3d77f6a8290b4fb569127edfea6a1f5bb72cd55",
+      "sha256": "e92d6cd94a1e03df7d56f44244c533684e06cc5c51ae2bd4e8f2197f60f17b8e",
+      "bytes": 31793
+    },
+    {
+      "file": "stations_yamanashi.json",
+      "gitBlob": "2c867264c2fd2031532448d3f64f7d6fa808e785",
+      "sha256": "647deddeb3d2657e4aba616886825c771d5e340eeeee711214485ef21041cb6b",
+      "bytes": 17024
+    },
+    {
+      "file": "strokes_kanken.json",
+      "gitBlob": "ad84d27f90abbc1cebeaa23d3e827d486626fb58",
+      "sha256": "b89618762eac7db18fa0cbe8c9b8004254d96ac50e82ce7a5f72c6d7d52bb59d",
+      "bytes": 483343
+    },
+    {
+      "file": "suugaku.json",
+      "gitBlob": "94845e52f54c7a5f9eada9e542057d448f766229",
+      "sha256": "7dcf8a8a3609b3a9a13a4c66cce064cd7b1e93cbfa02157fc23a07e310704dc1",
+      "bytes": 113544
+    },
+    {
+      "file": "tochigi.json",
+      "gitBlob": "44765aaeba7b93feef854410fe0306b1dd3d28e6",
+      "sha256": "253cbef0b711ae19f4d7b7933e5529d46d10ddeee570961f123fdbd91f7328c3",
+      "bytes": 41962
+    },
+    {
+      "file": "tokushima.json",
+      "gitBlob": "26eea2cf219ad49956ce31ae3bb9160f7d26f1be",
+      "sha256": "72b2acefa6d9f175e39078d2510f464eac5e801661309c3a90b509c91304c04e",
+      "bytes": 27356
+    },
+    {
+      "file": "tokyo.json",
+      "gitBlob": "b8a9c4318115837e4664425e78d65d1dca8aba26",
+      "sha256": "3822883203e384b85b9bb7fe12c5daa1258a4bb4cf0c181fc5948f5c941e04d4",
+      "bytes": 107253
+    },
+    {
+      "file": "tottori.json",
+      "gitBlob": "f7cfe017722df82ced312766aae2267085252798",
+      "sha256": "79bbf3850b32625c43ff3b2cd0e491817a2b79ea6ad129736b3a8a0ea70d57fd",
+      "bytes": 13864
+    },
+    {
+      "file": "toyama.json",
+      "gitBlob": "3f969faf40807ee45d248ae09a8bbd35f5a6dff8",
+      "sha256": "787f96734c215851fd1cf621aad0ee4ce933b910a5f2d4c016e5e735a19578c1",
+      "bytes": 46800
+    },
+    {
+      "file": "trivia.json",
+      "gitBlob": "192cfa2942682460d243e3325f07c8d4f14372a0",
+      "sha256": "1a7c651d979f968afe429ecc4da977194f68ae05f8d03c8059221d98dacdbdbb",
+      "bytes": 57613882
+    },
+    {
+      "file": "vegetables.json",
+      "gitBlob": "fa8e84dd44ee5ded261a3562ba34e78bbcb5dad7",
+      "sha256": "4f1ca520d5106ce15572ac9f8511d8044239c85bd6428f0a37201e3d03c5cb89",
+      "bytes": 17034
+    },
+    {
+      "file": "vnfreq.json",
+      "gitBlob": "98fafc3f3a6b44219c56169c9325dfe2cf6999b5",
+      "sha256": "99e7476dea6d5e74b7b2b8766d8b51d0f3322826b9b49569e289dd0f19175e8e",
+      "bytes": 2484226
+    },
+    {
+      "file": "wakayama.json",
+      "gitBlob": "a05065cb5e591d681905ece094914fd2ce14aaf9",
+      "sha256": "112a2e70af44d43ba8e35c73c3165d907cbd808e97405b7199ce1f58497f6c29",
+      "bytes": 40773
+    },
+    {
+      "file": "yamagata.json",
+      "gitBlob": "37affbefeac22e1710eb219e41cdd91bbd9823f5",
+      "sha256": "ff11c6be4cd1bd568cb060f6303cb9ac19bdc575c40104d6b12ccbe45874ad2b",
+      "bytes": 21675
+    },
+    {
+      "file": "yamaguchi.json",
+      "gitBlob": "e411ca47bb5115c6f717f006e412aa2676c4bdb8",
+      "sha256": "2e34ee03108443aeb5e8023cb89f7b4e63760f7759a841d3501cd6156c8a82c1",
+      "bytes": 38636
+    },
+    {
+      "file": "yamanashi.json",
+      "gitBlob": "029ff19dbb45b35546669f262b9cae1b04fd41ba",
+      "sha256": "765d207c214bf60d96df967af4e69a61f8405f4e5a22d65f68f84ff207b0441d",
+      "bytes": 18148
+    },
+    {
+      "file": "\u64ec\u97f3\u8a9e.json",
+      "gitBlob": "20a717e0da734c2cae80adbf01a27cfa0d82470a",
+      "sha256": "925e0e3f905ae6858bb992a8d7c9b52dd53808930b3327b83c243f25db3a9046",
+      "bytes": 26997
+    }
+  ]
+}

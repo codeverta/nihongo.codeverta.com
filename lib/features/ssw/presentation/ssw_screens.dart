@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_visuals.dart';
 
 class SswEntryCard extends StatelessWidget {
@@ -24,8 +25,8 @@ class SswEntryCard extends StatelessWidget {
           ),
           subtitle: Text(
             exams
-                ? '19 bidang · Tes Coming Soon'
-                : 'Kaigo tersedia · 19 bidang',
+                ? 'Kaigo & Pembersihan Gedung · Latihan dan simulasi'
+                : '2 bidang tersedia · 19 bidang',
           ),
           trailing: const Icon(Icons.chevron_right),
           onTap: () => context.push(exams ? '/ssw?tab=test' : '/ssw'),
@@ -55,11 +56,8 @@ class _SswHubState extends State<SswHubScreen> {
                   .toLowerCase()
                   .contains(query.trim().toLowerCase()) &&
               (filter == 'Semua' ||
-                  (filter == 'Tersedia' &&
-                      sector.id == 'nursing-care' &&
-                      !widget.exams) ||
-                  (filter == 'Segera hadir' &&
-                      (sector.id != 'nursing-care' || widget.exams))),
+                  (filter == 'Tersedia' && sswAvailable(sector.id)) ||
+                  (filter == 'Segera hadir' && (!sswAvailable(sector.id)))),
         )
         .toList();
     return Scaffold(
@@ -89,8 +87,8 @@ class _SswHubState extends State<SswHubScreen> {
           const SizedBox(height: 12),
           Text(
             widget.exams
-                ? 'Jelajahi bidang SSW. Latihan soal dan simulasi ujian sedang dipersiapkan.'
-                : 'Mulai dari Kaigo: pelajari keterampilan perawatan dan bahasa Jepang untuk bekerja. Bidang lainnya menyusul.',
+                ? 'Latihan per topik dan simulasi Kaigo serta Pembersihan Gedung tersedia. Ukur pemahamanmu dan tinjau pembahasannya.'
+                : 'Pelajari Kaigo dan Pembersihan Gedung melalui kurikulum, kasus kerja, serta bahasa Jepang. Lanjutkan dengan latihan dan simulasi.',
             style: const TextStyle(height: 1.5),
           ),
           const SizedBox(height: 20),
@@ -121,7 +119,8 @@ class _SswHubState extends State<SswHubScreen> {
                 Icons.arrow_forward_rounded,
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
-              onTap: () => context.push('/ssw/nursing-care'),
+              onTap: () => context
+                  .push('/ssw/nursing-care${widget.exams ? '?tab=test' : ''}'),
             ),
           ),
           const SizedBox(height: 20),
@@ -183,7 +182,7 @@ class _SswHubState extends State<SswHubScreen> {
                     Text(sector.japanese),
                     const SizedBox(height: 6),
                     SswStatusBadge(
-                      available: sector.id == 'nursing-care' && !widget.exams,
+                      available: sswAvailable(sector.id),
                     ),
                   ],
                 ),
@@ -217,6 +216,14 @@ class _SswSectorState extends State<SswSectorScreen> {
   late bool exams = widget.exams;
 
   @override
+  void didUpdateWidget(covariant SswSectorScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.sectorId != widget.sectorId || oldWidget.exams != widget.exams) {
+      exams = widget.exams;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final sector = sswSectorById(widget.sectorId);
     return Scaffold(
@@ -242,7 +249,7 @@ class _SswSectorState extends State<SswSectorScreen> {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: SswStatusBadge(
-                    available: sector.id == 'nursing-care' && !exams,
+                    available: sswAvailable(sector.id),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -262,7 +269,9 @@ class _SswSectorState extends State<SswSectorScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                if (exams) ...[
+                if (exams && sswAvailable(sector.id)) ...[
+                  SswAssessmentPanel(sector: sector.id),
+                ] else if (exams) ...[
                   const _FeaturePreview(
                     icon: Icons.quiz_outlined,
                     title: 'Latihan soal',
@@ -275,8 +284,8 @@ class _SswSectorState extends State<SswSectorScreen> {
                     description:
                         'Paket ujian dengan timer, hasil, dan pembahasan.',
                   ),
-                ] else if (sector.id == 'nursing-care') ...[
-                  const KaigoCurriculumPanel(),
+                ] else if (sswAvailable(sector.id)) ...[
+                  KaigoCurriculumPanel(sectorId: sector.id),
                 ] else ...[
                   const _FeaturePreview(
                     icon: Icons.menu_book_outlined,
@@ -291,7 +300,7 @@ class _SswSectorState extends State<SswSectorScreen> {
                   ),
                 ],
                 const SizedBox(height: 12),
-                if (sector.id != 'nursing-care' || exams)
+                if (!sswAvailable(sector.id))
                   const Text(
                     'Konten belum tersedia. Kamu belum dapat memulai materi atau tes pada bidang ini.',
                     style: TextStyle(height: 1.5),

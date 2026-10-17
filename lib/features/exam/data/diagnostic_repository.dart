@@ -24,6 +24,9 @@ class DiagnosticRepository {
       if (e.response?.statusCode == 401) {
         throw Exception('Sesi berakhir. Silakan masuk kembali.');
       }
+      if (e.response?.statusCode == 402) {
+        throw Exception('Lifetime Access diperlukan. Periksa status akses di halaman Premium.');
+      }
       if (e.response?.statusCode == 404) {
         throw Exception(
           'Sesi ujian tidak ditemukan. Kembali ke halaman Ujian untuk mulai lagi.',

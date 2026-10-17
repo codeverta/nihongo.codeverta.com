@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/auth/presentation/screens/login_screen.dart';
 import 'package:nihongo_master/features/billing/presentation/premium_screen.dart';
@@ -22,6 +23,7 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vo
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 import 'package:nihongo_master/shared/presentation/widgets/main_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -95,6 +97,20 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     initialLocation: AppRoutes.splashPath,
     routes: [
       GoRoute(
+        path: '/anki',
+        builder: (context, state) => const AnkiDeckListScreen(),
+      ),
+      GoRoute(
+        path: '/anki/decks/:deckId',
+        builder: (context, state) =>
+            AnkiDeckDetailScreen(deckId: state.pathParameters['deckId']!),
+      ),
+      GoRoute(
+        path: '/anki/decks/:deckId/study',
+        builder: (context, state) =>
+            AnkiStudyScreen(deckId: state.pathParameters['deckId']!),
+      ),
+      GoRoute(
         path: '/dictionary',
         builder: (context, state) => DictionaryScreen(
           initialQuery: state.uri.queryParameters['q'] ?? '',
@@ -107,10 +123,30 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         ),
       ),
       GoRoute(
-        path: '/ssw/nursing-care/lessons/:lessonId',
-        builder: (context, state) =>
-            KaigoLessonScreen(lessonId: state.pathParameters['lessonId']!),
+        path: '/ssw/:sectorId/lessons/:lessonId',
+        builder: (context, state) => KaigoLessonScreen(
+          lessonId: state.pathParameters['lessonId']!,
+          sectorId: state.pathParameters['sectorId']!,
+        ),
       ),
+      GoRoute(
+        path: '/ssw/:sectorId/practice',
+        builder: (context, state) =>
+            SswPracticeScreen(sector: state.pathParameters['sectorId']!),
+      ),
+      for (final level in ['SSW-KAIGO', 'SSW-KAIGO-JP', 'SSW-CLEANING']) ...[
+        GoRoute(
+          path: '/exams/${level.toLowerCase()}/simulation',
+          builder: (context, state) => SswSimulationIntroScreen(level: level),
+        ),
+        GoRoute(
+          path: '/exams/${level.toLowerCase()}/simulation/:attemptId',
+          builder: (context, state) => SimulationAttemptScreen(
+            level: level,
+            attemptId: state.pathParameters['attemptId']!,
+          ),
+        ),
+      ],
       GoRoute(
         path: '/ssw/:sectorId',
         builder: (context, state) => SswSectorScreen(
@@ -303,6 +339,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
 bool requiresPremium(Uri uri) {
   final path = uri.path.toLowerCase();
+  if (path.startsWith('/ssw/') && path.endsWith('/practice')) return true;
   if (path.startsWith('/exams/') && !path.startsWith('/exams/n5')) return true;
   if (!path.startsWith('/learn/')) return false;
   final level = (uri.queryParameters['level'] ?? '').toUpperCase();

@@ -12,6 +12,29 @@ final kaigoCurriculumProvider = FutureProvider<KaigoCurriculum>((ref) async {
   return KaigoCurriculum.fromJson(jsonDecode(content) as Map<String, dynamic>);
 });
 
+final sswCurriculumProvider =
+    FutureProvider.family<KaigoCurriculum, String>((ref, sector) async {
+  if (sector == 'nursing-care') {
+    return ref.watch(kaigoCurriculumProvider.future);
+  }
+  if (sector != 'building-cleaning') throw StateError('Materi belum tersedia');
+  final content = await rootBundle.loadString(
+    'assets/content/ssw/building-cleaning.json',
+  );
+  return KaigoCurriculum.fromJson(jsonDecode(content) as Map<String, dynamic>);
+});
+
+final sswProgressProvider =
+    StateNotifierProvider.family<KaigoProgress, Set<String>, String>(
+        (ref, sector) {
+  final userId = ref.watch(authControllerProvider.select((s) => s.user?.id));
+  return KaigoProgress(
+    ref.watch(sharedPreferencesProvider),
+    userId,
+    namespace: sector == 'nursing-care' ? 'kaigo' : sector,
+  );
+});
+
 // Progress is device-local, scoped by account, and gives no gamification XP.
 final kaigoProgressProvider =
     StateNotifierProvider<KaigoProgress, Set<String>>((ref) {
@@ -20,12 +43,14 @@ final kaigoProgressProvider =
 });
 
 class KaigoProgress extends StateNotifier<Set<String>> {
-  KaigoProgress(this.preferences, String? userId)
-      : key = userId == null ? null : 'ssw_kaigo_completed_v1_$userId',
+  KaigoProgress(this.preferences, String? userId, {String namespace = 'kaigo'})
+      : key = userId == null ? null : 'ssw_${namespace}_completed_v1_$userId',
         super(
           userId == null
               ? <String>{}
-              : (preferences.getStringList('ssw_kaigo_completed_v1_$userId') ??
+              : (preferences.getStringList(
+                        'ssw_${namespace}_completed_v1_$userId',
+                      ) ??
                       <String>[])
                   .toSet(),
         );

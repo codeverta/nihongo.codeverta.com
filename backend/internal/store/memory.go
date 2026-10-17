@@ -260,6 +260,11 @@ func (s *MemoryStore) Achievements(userID string) []domain.Achievement {
 }
 
 func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, error) {
+	for _, level := range []string{"SSW-KAIGO", "SSW-KAIGO-JP", "SSW-CLEANING"} {
+		if examID == strings.ToLower(level)+"-simulation-1" {
+			return s.StartSimulation(userID, level)
+		}
+	}
 	if examID == "nat-5q-full-1" {
 		return s.StartSimulation(userID, "NAT")
 	}
@@ -363,6 +368,9 @@ func seedTracks() []domain.LearningTrack {
 
 func seedExams() []domain.Exam {
 	return []domain.Exam{
+		{ID: "ssw-kaigo-simulation-1", System: "SSW", Level: "Kaigo", Title: "Kaigo · Simulasi Keterampilan 1", QuestionCount: 45, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "ssw-kaigo-jp-simulation-1", System: "SSW", Level: "Kaigo", Title: "Kaigo · Simulasi Bahasa Jepang 1", QuestionCount: 15, DurationMin: 30, RequiredTier: domain.TierPremium},
+		{ID: "ssw-cleaning-simulation-1", System: "SSW", Level: "Building cleaning", Title: "Pembersihan Gedung · Simulasi 1", QuestionCount: 50, DurationMin: 50, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n3-simulation-1", System: "JLPT", Level: "N3", Title: "JLPT N3 Simulation · Kosakata, Grammar & Reading", QuestionCount: 74, DurationMin: 100, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
