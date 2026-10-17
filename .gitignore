@@ -58,3 +58,6 @@ backend/secrets/
 backend/data/app-updates.json
 backend/data/app-updates.json.tmp
 /output/mariadb-migration/
+
+# Private admin notification drafts and dispatch history.
+backend/data/notifications.json*

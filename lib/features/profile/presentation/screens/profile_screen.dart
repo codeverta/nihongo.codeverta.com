@@ -55,9 +55,9 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     IconButton.filledTonal(
-                      onPressed: () {},
+                      onPressed: () => context.push('/notifications'),
                       icon: const Icon(Icons.settings_outlined),
-                      tooltip: 'Pengaturan',
+                      tooltip: 'Pengaturan notifikasi',
                     ),
                   ],
                 ),

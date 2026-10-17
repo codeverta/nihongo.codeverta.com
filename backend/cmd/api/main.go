@@ -14,6 +14,7 @@ import (
 	"nihongo-master-backend/internal/auth"
 	"nihongo-master-backend/internal/billing"
 	"nihongo-master-backend/internal/config"
+	"nihongo-master-backend/internal/notifications"
 	"nihongo-master-backend/internal/store"
 )
 
@@ -111,6 +112,25 @@ func main() {
 	}
 	if err := apiServer.ConfigureAppUpdates(updatePath, updateToken); err != nil {
 		log.Fatalf("configure app update policy: %v", err)
+	}
+	notificationPath := os.Getenv("NOTIFICATIONS_CONFIG_PATH")
+	if notificationPath == "" {
+		notificationPath = "data/notifications.json"
+	}
+	notificationToken := os.Getenv("NOTIFICATIONS_ADMIN_TOKEN")
+	if notificationToken == "" {
+		notificationToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	fcm, err := notifications.NewFCM(context.Background(), os.Getenv("FCM_PROJECT_ID"), os.Getenv("FCM_CREDENTIALS_FILE"))
+	if err != nil {
+		log.Fatalf("configure Firebase messaging: %v", err)
+	}
+	var notificationSender notifications.Sender
+	if fcm != nil {
+		notificationSender = fcm
+	}
+	if err := apiServer.ConfigureNotifications(notificationPath, notificationToken, notificationSender); err != nil {
+		log.Fatalf("configure notifications: %v", err)
 	}
 	handler := apiServer.Handler()
 	server := &http.Server{

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/notifications/notification_settings_screen.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -72,7 +73,7 @@ const _firstTimeKey = 'is_first_time';
 /// Menyimpan status onboarding dan menyinkronkannya ke SharedPreferences.
 class FirstTimeNotifier extends StateNotifier<bool> {
   FirstTimeNotifier(this._preferences)
-      : super(_preferences.getBool(_firstTimeKey) ?? true);
+    : super(_preferences.getBool(_firstTimeKey) ?? true);
 
   final SharedPreferences _preferences;
 
@@ -87,8 +88,9 @@ class FirstTimeNotifier extends StateNotifier<bool> {
   }
 }
 
-final isFirstTimeProvider =
-    StateNotifierProvider<FirstTimeNotifier, bool>((ref) {
+final isFirstTimeProvider = StateNotifierProvider<FirstTimeNotifier, bool>((
+  ref,
+) {
   return FirstTimeNotifier(ref.watch(sharedPreferencesProvider));
 });
 
@@ -97,6 +99,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
     initialLocation: AppRoutes.splashPath,
     routes: [
+      GoRoute(
+        path: '/notifications',
+        builder: (context, state) => const NotificationSettingsScreen(),
+      ),
       GoRoute(
         path: '/anki',
         builder: (context, state) => const AnkiDeckListScreen(),
@@ -119,9 +125,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/ssw',
-        builder: (context, state) => SswHubScreen(
-          exams: state.uri.queryParameters['tab'] == 'test',
-        ),
+        builder: (context, state) =>
+            SswHubScreen(exams: state.uri.queryParameters['tab'] == 'test'),
       ),
       GoRoute(
         path: '/ssw/:sectorId/lessons/:lessonId',
@@ -288,16 +293,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: AppRoutes.grammarLessonRoute,
-        builder: (context, state) => GrammarLessonScreen(
-          lessonId: state.pathParameters['lessonId']!,
-        ),
+        builder: (context, state) =>
+            GrammarLessonScreen(lessonId: state.pathParameters['lessonId']!),
       ),
       GoRoute(
         path: AppRoutes.vocabularyLessonRoute,
         name: AppRoutes.vocabularyLessonName,
-        builder: (context, state) => VocabularyLessonScreen(
-          lessonId: state.pathParameters['lessonId']!,
-        ),
+        builder: (context, state) =>
+            VocabularyLessonScreen(lessonId: state.pathParameters['lessonId']!),
       ),
     ],
     redirect: (context, state) {
@@ -321,9 +324,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       return null;
     },
     errorBuilder: (context, state) => Scaffold(
-      body: Center(
-        child: Text('Halaman tidak ditemukan: ${state.error}'),
-      ),
+      body: Center(child: Text('Halaman tidak ditemukan: ${state.error}')),
     ),
   );
 
@@ -354,8 +355,6 @@ class _SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
-    );
+    return const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }
