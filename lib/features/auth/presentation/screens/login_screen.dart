@@ -12,10 +12,8 @@ class LoginScreen extends ConsumerStatefulWidget {
 
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController(
-    text: 'demo@nihongomaster.app',
-  );
-  final _passwordController = TextEditingController(text: 'Demo123!');
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   bool _obscurePassword = true;
 
   @override
@@ -209,14 +207,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       onPressed:
                           authState.isLoading ? null : () => _finish(false),
                       child: const Text('Lanjut sebagai tamu'),
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      'Demo: demo@nihongomaster.app / Demo123!',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
                     ),
                   ],
                 ),
