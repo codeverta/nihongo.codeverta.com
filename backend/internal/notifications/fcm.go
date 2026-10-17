@@ -63,11 +63,13 @@ func NewFCM(ctx context.Context, project, credentialPath string) (*FCM, error) {
 	if json.Unmarshal(raw, &metadata) != nil || metadata.Type != "service_account" || metadata.Project != project {
 		return nil, fmt.Errorf("FCM credentials must be a service account for FCM_PROJECT_ID")
 	}
-	credentials, err := google.CredentialsFromJSON(ctx, raw, "https://www.googleapis.com/auth/firebase.messaging")
+	// Bound OAuth credential refresh too; it uses its own HTTP request context.
+	authContext := context.WithValue(ctx, oauth2.HTTPClient, &http.Client{Timeout: 10 * time.Second})
+	credentials, err := google.CredentialsFromJSON(authContext, raw, "https://www.googleapis.com/auth/firebase.messaging")
 	if err != nil {
 		return nil, fmt.Errorf("parse FCM credentials")
 	}
-	client := oauth2.NewClient(ctx, credentials.TokenSource)
+	client := oauth2.NewClient(authContext, credentials.TokenSource)
 	client.Timeout = 15 * time.Second
 	return &FCM{project: project, client: client, endpoint: "https://fcm.googleapis.com/v1/projects/" + project + "/messages:send"}, nil
 }
