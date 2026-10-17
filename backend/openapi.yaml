@@ -7,6 +7,34 @@ servers:
   - url: http://localhost:8080/v1
     description: Local development
 paths:
+  /app-update-policy:
+    get:
+      tags: [App updates]
+      summary: Get public Android and iOS minimum build and OS requirements before login
+      security: []
+      responses:
+        '200':
+          description: 'data.android and data.ios contain enabled, minimumBuild (0 disables forced updates), latestBuild, latestVersion, minimumAndroidApi, minimumIOSVersion, storeUrl, unsupportedDevicePolicy (allow/block), message. Cache-Control no-store.'
+  /admin/app-update-policy:
+    put:
+      tags: [App updates]
+      summary: Save durable update requirements; requires APP_UPDATE_ADMIN_TOKEN or the configured branding admin token
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [android, ios]
+              properties:
+                android: {type: object}
+                ios: {type: object}
+      responses:
+        '200': {description: Validated policy saved atomically and applied immediately}
+        '401': {description: Invalid or disabled admin token}
+        '422': {description: Invalid minimum build, OS version, or platform-specific store URL}
+        '500': {description: Policy could not be saved; previous policy remains active}
   /dictionary/search:
     get:
       tags: [Dictionary]

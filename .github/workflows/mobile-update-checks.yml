@@ -1,0 +1,52 @@
+name: Mobile update checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lib/core/app_update/**'
+      - 'lib/main.dart'
+      - 'test/core/app_update/**'
+      - 'android/app/src/main/kotlin/**'
+      - 'ios/Runner/AppDelegate.swift'
+      - '.github/workflows/mobile-update-checks.yml'
+  pull_request:
+    paths:
+      - 'lib/core/app_update/**'
+      - 'lib/main.dart'
+      - 'test/core/app_update/**'
+      - 'android/app/src/main/kotlin/**'
+      - 'ios/Runner/AppDelegate.swift'
+      - '.github/workflows/mobile-update-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  flutter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.6'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze lib/core/app_update lib/main.dart test/core/app_update
+      - run: flutter test test/core/app_update
+  ios-host:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.6'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - name: Compile iOS host without signing
+        run: flutter build ios --simulator --debug --no-codesign

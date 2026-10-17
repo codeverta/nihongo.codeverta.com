@@ -101,6 +101,17 @@ func main() {
 	if err := apiServer.ConfigureBranding(brandingPath, os.Getenv("BRANDING_ADMIN_TOKEN")); err != nil {
 		log.Fatal(err)
 	}
+	updatePath := os.Getenv("APP_UPDATE_CONFIG_PATH")
+	if updatePath == "" {
+		updatePath = "data/app-updates.json"
+	}
+	updateToken := os.Getenv("APP_UPDATE_ADMIN_TOKEN")
+	if updateToken == "" {
+		updateToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	if err := apiServer.ConfigureAppUpdates(updatePath, updateToken); err != nil {
+		log.Fatalf("configure app update policy: %v", err)
+	}
 	handler := apiServer.Handler()
 	server := &http.Server{
 		Addr:              ":" + port,

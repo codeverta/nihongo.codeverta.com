@@ -55,4 +55,6 @@ app.*.map.json
 *.p8
 *service-account*.json
 backend/secrets/
+backend/data/app-updates.json
+backend/data/app-updates.json.tmp
 /output/mariadb-migration/

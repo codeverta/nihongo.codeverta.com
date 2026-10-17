@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/app_update/app_update_controller.dart';
+import 'package:nihongo_master/core/app_update/app_update_gate.dart';
 import 'package:nihongo_master/core/branding/app_branding.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
@@ -32,11 +34,15 @@ class NihongoMasterApp extends ConsumerWidget {
     return MaterialApp.router(
       title: ref.watch(appBrandingProvider).valueOrNull?.appName ??
           'Nihongo Master',
-      builder: (context, child) => BrandStartup(child: child!),
+      builder: (context, child) =>
+          AppUpdateGate(child: BrandStartup(child: child!)),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      routerConfig: router,
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
+      backButtonDispatcher: ref.watch(appUpdateBackDispatcherProvider),
     );
   }
 }

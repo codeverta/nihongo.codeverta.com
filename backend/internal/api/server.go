@@ -26,6 +26,7 @@ type Server struct {
 	store               *store.MemoryStore
 	googleVerifier      backendAuth.GoogleVerifier
 	branding            *BrandingStore
+	appUpdates          *AppUpdateStore
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
@@ -47,6 +48,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("DELETE /v1/me/account", s.requireAuth(s.deleteAccount))
 	s.registerAssets(mux)
 	s.registerBranding(mux)
+	s.registerAppUpdates(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
 	mux.HandleFunc("GET /v1/ssw/{sector}/practice", s.requireAuth(s.sswPractice))
 	mux.HandleFunc("POST /v1/ssw/{sector}/practice/check", s.requireAuth(s.sswPracticeCheck))
