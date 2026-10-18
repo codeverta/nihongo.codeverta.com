@@ -10,6 +10,7 @@ class HomeDashboard {
     required this.exams,
     required this.plans,
     required this.achievements,
+    this.banners = const [],
     this.profile,
   });
 
@@ -25,6 +26,7 @@ class HomeDashboard {
       exams: _list(json['exams'], HomeExam.fromJson),
       plans: _list(json['plans'], SubscriptionPlan.fromJson),
       achievements: _list(json['achievements'], Achievement.fromJson),
+      banners: _list(json['banners'], HomeBanner.fromJson),
     );
   }
 
@@ -36,6 +38,35 @@ class HomeDashboard {
   final List<HomeExam> exams;
   final List<SubscriptionPlan> plans;
   final List<Achievement> achievements;
+  final List<HomeBanner> banners;
+}
+
+@immutable
+class HomeBanner {
+  const HomeBanner({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.imageUrl,
+    required this.action,
+    required this.buttonLabel,
+  });
+
+  factory HomeBanner.fromJson(Map<String, dynamic> json) => HomeBanner(
+    id: json['id'] as String? ?? '',
+    title: json['title'] as String? ?? '',
+    description: json['description'] as String? ?? '',
+    imageUrl: json['imageUrl'] as String? ?? '',
+    action: json['action'] as String? ?? '',
+    buttonLabel: json['buttonLabel'] as String? ?? '',
+  );
+
+  final String id;
+  final String title;
+  final String description;
+  final String imageUrl;
+  final String action;
+  final String buttonLabel;
 }
 
 @immutable
@@ -90,10 +121,10 @@ class HomeDailyGoal {
   });
 
   factory HomeDailyGoal.fromJson(Map<String, dynamic> json) => HomeDailyGoal(
-        minutesLearned: json['minutesLearned'] as int? ?? 0,
-        targetMinutes: json['targetMinutes'] as int? ?? 0,
-        streakDays: json['streakDays'] as int? ?? 0,
-      );
+    minutesLearned: json['minutesLearned'] as int? ?? 0,
+    targetMinutes: json['targetMinutes'] as int? ?? 0,
+    streakDays: json['streakDays'] as int? ?? 0,
+  );
 
   final int minutesLearned;
   final int targetMinutes;
@@ -144,14 +175,14 @@ class LearningTrack {
   });
 
   factory LearningTrack.fromJson(Map<String, dynamic> json) => LearningTrack(
-        id: json['id'] as String? ?? '',
-        system: json['system'] as String? ?? '',
-        level: json['level'] as String? ?? '',
-        title: json['title'] as String? ?? '',
-        description: json['description'] as String? ?? '',
-        progress: json['progress'] as int? ?? 0,
-        requiredTier: json['requiredTier'] as String? ?? 'free',
-      );
+    id: json['id'] as String? ?? '',
+    system: json['system'] as String? ?? '',
+    level: json['level'] as String? ?? '',
+    title: json['title'] as String? ?? '',
+    description: json['description'] as String? ?? '',
+    progress: json['progress'] as int? ?? 0,
+    requiredTier: json['requiredTier'] as String? ?? 'free',
+  );
 
   final String id;
   final String system;
@@ -176,14 +207,14 @@ class HomeExam {
   });
 
   factory HomeExam.fromJson(Map<String, dynamic> json) => HomeExam(
-        id: json['id'] as String? ?? '',
-        system: json['system'] as String? ?? '',
-        level: json['level'] as String? ?? '',
-        title: json['title'] as String? ?? '',
-        questionCount: json['questionCount'] as int? ?? 0,
-        durationMinutes: json['durationMinutes'] as int? ?? 0,
-        requiredTier: json['requiredTier'] as String? ?? 'free',
-      );
+    id: json['id'] as String? ?? '',
+    system: json['system'] as String? ?? '',
+    level: json['level'] as String? ?? '',
+    title: json['title'] as String? ?? '',
+    questionCount: json['questionCount'] as int? ?? 0,
+    durationMinutes: json['durationMinutes'] as int? ?? 0,
+    requiredTier: json['requiredTier'] as String? ?? 'free',
+  );
 
   final String id;
   final String system;
@@ -239,16 +270,16 @@ class Achievement {
   });
 
   factory Achievement.fromJson(Map<String, dynamic> json) => Achievement(
-        id: json['id'] as String? ?? '',
-        name: json['name'] as String? ?? '',
-        description: json['description'] as String? ?? '',
-        icon: json['icon'] as String? ?? '',
-        progress: json['progress'] as int? ?? 0,
-        target: json['target'] as int? ?? 0,
-        unlockedAt: json['unlockedAt'] == null
-            ? null
-            : DateTime.parse(json['unlockedAt'] as String),
-      );
+    id: json['id'] as String? ?? '',
+    name: json['name'] as String? ?? '',
+    description: json['description'] as String? ?? '',
+    icon: json['icon'] as String? ?? '',
+    progress: json['progress'] as int? ?? 0,
+    target: json['target'] as int? ?? 0,
+    unlockedAt: json['unlockedAt'] == null
+        ? null
+        : DateTime.parse(json['unlockedAt'] as String),
+  );
 
   final String id;
   final String name;

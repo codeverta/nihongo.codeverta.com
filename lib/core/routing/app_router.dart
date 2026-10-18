@@ -13,6 +13,7 @@ import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_int
 import 'package:nihongo_master/features/exam/presentation/screens/jft_intro_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_intro_screen.dart';
+import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_course_screen.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_course_screen.dart';
@@ -73,7 +74,7 @@ const _firstTimeKey = 'is_first_time';
 /// Menyimpan status onboarding dan menyinkronkannya ke SharedPreferences.
 class FirstTimeNotifier extends StateNotifier<bool> {
   FirstTimeNotifier(this._preferences)
-    : super(_preferences.getBool(_firstTimeKey) ?? true);
+      : super(_preferences.getBool(_firstTimeKey) ?? true);
 
   final SharedPreferences _preferences;
 
@@ -99,6 +100,16 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
     initialLocation: AppRoutes.splashPath,
     routes: [
+      GoRoute(path: '/jobs', builder: (context, state) => const JobsScreen()),
+      GoRoute(
+        path: '/jobs/sources',
+        builder: (context, state) => const JobSourcesScreen(),
+      ),
+      GoRoute(
+        path: '/jobs/:id',
+        builder: (context, state) =>
+            JobDetailScreen(id: state.pathParameters['id']!),
+      ),
       GoRoute(
         path: '/notifications',
         builder: (context, state) => const NotificationSettingsScreen(),

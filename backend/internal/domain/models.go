@@ -97,6 +97,7 @@ type DailyGoal struct {
 }
 
 type Dashboard struct {
+	Banners         []HomeBanner       `json:"banners"`
 	IsAuthenticated bool               `json:"isAuthenticated"`
 	Profile         *Profile           `json:"profile,omitempty"`
 	DailyGoal       DailyGoal          `json:"dailyGoal"`

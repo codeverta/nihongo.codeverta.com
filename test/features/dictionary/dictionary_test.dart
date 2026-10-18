@@ -47,7 +47,7 @@ final dog = DictionaryEntry({
   'senses': [
     {
       'english_definitions': ['dog'],
-    }
+    },
   ],
 });
 
@@ -57,6 +57,7 @@ class FakeDictionary extends DictionaryRepository {
   bool fail = false;
   bool failKanji = true;
   final calls = <(String, int, String?, bool)>[];
+  final modes = <String>[];
   @override
   Future<Map<String, dynamic>> kanji(String character) async {
     if (failKanji) throw StateError('offline');
@@ -77,8 +78,10 @@ class FakeDictionary extends DictionaryRepository {
     int page = 1,
     String? jlpt,
     bool common = false,
+    String mode = 'auto',
   }) async {
     calls.add((query, page, jlpt, common));
+    modes.add(mode);
     if (fail) throw StateError('offline');
     if (fetch != null) return fetch!(query, page);
     return DictionaryPage(
@@ -91,8 +94,9 @@ class FakeDictionary extends DictionaryRepository {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('kanji failure can retry and legacy JLPT is labeled accurately',
-      (tester) async {
+  testWidgets('kanji failure can retry and legacy JLPT is labeled accurately', (
+    tester,
+  ) async {
     final repository = FakeDictionary();
     await tester.pumpWidget(
       ProviderScope(
@@ -126,163 +130,233 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  test('kana-only entries retain their reading; every sense remains available',
-      () {
-    final kana = DictionaryEntry({
-      'slug': 'ありがとう',
-      'japanese': [
-        {'reading': 'ありがとう'},
-      ],
-      'senses': <Map<String, dynamic>>[],
-    });
-    expect(kana.word, 'ありがとう');
-    expect(cat.jlpt, ['N5']);
-    expect(cat.senses.length, 2);
-    expect(cat.kanji, ['猫']);
-  });
+  test(
+    'kana-only entries retain their reading; every sense remains available',
+    () {
+      final kana = DictionaryEntry({
+        'slug': 'ありがとう',
+        'japanese': [
+          {'reading': 'ありがとう'},
+        ],
+        'senses': <Map<String, dynamic>>[],
+      });
+      expect(kana.word, 'ありがとう');
+      expect(cat.jlpt, ['N5']);
+      expect(cat.senses.length, 2);
+      expect(cat.kanji, ['猫']);
+    },
+  );
 
   test(
-      'stale searches cannot replace newer results; filters reach the repository',
-      () async {
-    final old = Completer<DictionaryPage>();
-    final repository = FakeDictionary()
-      ..fetch = (query, page) async => query == 'old'
-          ? await old.future
-          : DictionaryPage(entries: [dog], hasMore: false);
-    final controller = DictionaryController(repository);
-    addTearDown(controller.dispose);
-    final pending = controller.search('old');
-    await controller.search('new');
-    old.complete(DictionaryPage(entries: [cat], hasMore: false));
-    await pending;
-    expect(controller.state.entries.single.id, '犬');
-    await controller.filter('N3', common: true);
-    expect(repository.calls.last, ('new', 1, 'N3', true));
-    await controller.filter(null, common: false);
-    expect(repository.calls.last, ('new', 1, null, false));
-  });
+    'stale searches cannot replace newer results; filters reach the repository',
+    () async {
+      final old = Completer<DictionaryPage>();
+      final repository = FakeDictionary()
+        ..fetch = (query, page) async => query == 'old'
+            ? await old.future
+            : DictionaryPage(entries: [dog], hasMore: false);
+      final controller = DictionaryController(repository);
+      addTearDown(controller.dispose);
+      final pending = controller.search('old');
+      await controller.search('new');
+      old.complete(DictionaryPage(entries: [cat], hasMore: false));
+      await pending;
+      expect(controller.state.entries.single.id, '犬');
+      await controller.filter('N3', common: true);
+      expect(repository.calls.last, ('new', 1, 'N3', true));
+      await controller.filter(null, common: false);
+      expect(repository.calls.last, ('new', 1, null, false));
+    },
+  );
 
   test(
-      'pagination deduplicates words and preserves results after a failed page',
-      () async {
-    final repository = FakeDictionary();
-    final controller = DictionaryController(repository);
-    addTearDown(controller.dispose);
-    await controller.search('cat');
-    repository.fail = true;
-    await controller.more();
-    expect(controller.state.entries.single.id, '猫');
-    expect(controller.state.page, 1);
-    expect(controller.state.error, isNotNull);
-    repository.fail = false;
-    await controller.more();
-    expect(controller.state.entries.map((e) => e.id), ['猫', '犬']);
-    expect(controller.state.hasMore, isFalse);
-    expect(controller.state.error, isNull);
-  });
+    'pagination deduplicates words and preserves results after a failed page',
+    () async {
+      final repository = FakeDictionary();
+      final controller = DictionaryController(repository);
+      addTearDown(controller.dispose);
+      await controller.search('cat');
+      repository.fail = true;
+      await controller.more();
+      expect(controller.state.entries.single.id, '猫');
+      expect(controller.state.page, 1);
+      expect(controller.state.error, isNotNull);
+      repository.fail = false;
+      await controller.more();
+      expect(controller.state.entries.map((e) => e.id), ['猫', '犬']);
+      expect(controller.state.hasMore, isFalse);
+      expect(controller.state.error, isNull);
+    },
+  );
 
   test(
-      'empty and oversized queries never fetch; clear invalidates pending results',
-      () async {
-    final result = Completer<DictionaryPage>();
-    final repository = FakeDictionary()..fetch = (_, page) => result.future;
-    final controller = DictionaryController(repository);
-    addTearDown(controller.dispose);
-    await controller.search(' ');
-    await controller.search('猫' * 101);
-    expect(repository.calls, isEmpty);
-    final pending = controller.search('cat');
-    await controller.search('');
-    result.complete(DictionaryPage(entries: [cat], hasMore: false));
-    await pending;
-    expect(controller.state.entries, isEmpty);
-    expect(controller.state.query, '');
-  });
+    'empty and oversized queries never fetch; clear invalidates pending results',
+    () async {
+      final result = Completer<DictionaryPage>();
+      final repository = FakeDictionary()..fetch = (_, page) => result.future;
+      final controller = DictionaryController(repository);
+      addTearDown(controller.dispose);
+      await controller.search(' ');
+      await controller.search('猫' * 101);
+      expect(repository.calls, isEmpty);
+      final pending = controller.search('cat');
+      await controller.search('');
+      result.complete(DictionaryPage(entries: [cat], hasMore: false));
+      await pending;
+      expect(controller.state.entries, isEmpty);
+      expect(controller.state.query, '');
+    },
+  );
 
   test(
-      'favorites persist offline, concurrent saves survive, accounts are isolated',
-      () async {
-    SharedPreferences.setMockInitialValues({});
-    final preferences = await SharedPreferences.getInstance();
-    final library = DictionaryLibraryController(preferences, 'buyer');
-    addTearDown(library.dispose);
-    await Future.wait(
-      [library.toggle(cat), library.toggle(dog), library.remember('neko')],
-    );
-    expect(library.state.saved.length, 2);
-    final restored = DictionaryLibraryController(preferences, 'buyer');
-    final other = DictionaryLibraryController(preferences, 'other');
-    addTearDown(restored.dispose);
-    addTearDown(other.dispose);
-    expect(restored.state.saved.first.word, '犬');
-    expect(restored.state.recent, ['neko']);
-    expect(other.state.saved, isEmpty);
-    await restored.clearHistory();
-    expect(restored.state.recent, isEmpty);
-    expect(restored.state.saved.length, 2);
-    await restored.toggle(cat);
-    expect(restored.state.saved.single.word, '犬');
-    await other.toggle(cat);
+    'mode reaches API and survives filters, pagination and search races',
+    () async {
+      final repository = FakeDictionary();
+      final controller = DictionaryController(repository);
+      addTearDown(controller.dispose);
+      await controller.search('pan');
+      await controller.setMode('japanese');
+      expect(repository.modes.last, 'japanese');
+      await controller.filter('N5', common: true);
+      await controller.more();
+      expect(repository.modes.last, 'japanese');
+      expect(repository.calls.last, ('pan', 2, 'N5', true));
+      final old = Completer<DictionaryPage>();
+      repository.fetch = (_, page) => old.future;
+      final pending = controller.setMode('english');
+      repository.fetch = (_, page) async =>
+          DictionaryPage(entries: [dog], hasMore: false);
+      await controller.setMode('auto');
+      old.complete(DictionaryPage(entries: [cat], hasMore: false));
+      await pending;
+      expect(controller.state.mode, 'auto');
+      expect(controller.state.entries.single.id, dog.id);
+    },
+  );
+
+  test('repository sends mode as a backend query parameter', () async {
     final dio = Dio(BaseOptions(baseUrl: 'https://api.example/v1'));
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          expect(options.method, 'DELETE');
-          expect(options.path, '/me/account');
+          expect(options.queryParameters['mode'], 'english');
+          expect(options.queryParameters['q'], 'pan');
           handler.resolve(
-            Response<void>(requestOptions: options, statusCode: 204),
+            Response<Map<String, dynamic>>(
+              requestOptions: options,
+              data: {
+                'data': {'entries': <dynamic>[], 'hasMore': false},
+              },
+              statusCode: 200,
+            ),
           );
         },
       ),
     );
-    await AuthRepository(dio, preferences).deleteAccount(userId: 'buyer');
-    expect(preferences.getString('dictionary_library_v1_buyer'), isNull);
-    expect(preferences.getString('dictionary_library_v1_other'), isNotNull);
+    await DictionaryRepository(dio).search('pan', mode: 'english');
+    dio.close();
   });
 
-  testWidgets('phone searches real-shaped entries, saves and reads all senses',
-      (tester) async {
-    tester.view.physicalSize = const Size(360, 800);
-    tester.view.devicePixelRatio = 1;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
-    SharedPreferences.setMockInitialValues({});
-    final preferences = await SharedPreferences.getInstance();
-    final repository = FakeDictionary();
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          sharedPreferencesProvider.overrideWithValue(preferences),
-          dictionaryRepositoryProvider.overrideWithValue(repository),
-          authControllerProvider.overrideWith(
-            (ref) => AuthController.test(const AuthenticationState.guest()),
-          ),
-        ],
-        child: MaterialApp(
-          theme: AppTheme.lightTheme,
-          home: const DictionaryScreen(),
+  test(
+    'favorites persist offline, concurrent saves survive, accounts are isolated',
+    () async {
+      SharedPreferences.setMockInitialValues({});
+      final preferences = await SharedPreferences.getInstance();
+      final library = DictionaryLibraryController(preferences, 'buyer');
+      addTearDown(library.dispose);
+      await Future.wait([
+        library.toggle(cat),
+        library.toggle(dog),
+        library.remember('neko'),
+      ]);
+      expect(library.state.saved.length, 2);
+      final restored = DictionaryLibraryController(preferences, 'buyer');
+      final other = DictionaryLibraryController(preferences, 'other');
+      addTearDown(restored.dispose);
+      addTearDown(other.dispose);
+      expect(restored.state.saved.first.word, '犬');
+      expect(restored.state.recent, ['neko']);
+      expect(other.state.saved, isEmpty);
+      await restored.clearHistory();
+      expect(restored.state.recent, isEmpty);
+      expect(restored.state.saved.length, 2);
+      await restored.toggle(cat);
+      expect(restored.state.saved.single.word, '犬');
+      await other.toggle(cat);
+      final dio = Dio(BaseOptions(baseUrl: 'https://api.example/v1'));
+      dio.interceptors.add(
+        InterceptorsWrapper(
+          onRequest: (options, handler) {
+            expect(options.method, 'DELETE');
+            expect(options.path, '/me/account');
+            handler.resolve(
+              Response<void>(requestOptions: options, statusCode: 204),
+            );
+          },
         ),
-      ),
-    );
-    await tester.enterText(find.byType(TextField), 'neko');
-    await tester.tap(find.text('Cari di kamus'));
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('猫'));
-    expect(find.text('ねこ'), findsOneWidget);
-    expect(find.text('cat; feline'), findsOneWidget);
-    await tester.tap(find.byTooltip('Simpan 猫'));
-    await tester.pumpAndSettle();
-    expect(find.byTooltip('Hapus 猫 dari favorit'), findsOneWidget);
-    await tester.tap(find.text('猫'));
-    await tester.pumpAndSettle();
-    expect(find.text('2. shamisen'), findsOneWidget);
-    expect(find.text('Bentuk dan bacaan lain'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-    await tester.tap(find.byTooltip('Tutup detail'));
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(find.byTooltip('Kata tersimpan'));
-    await tester.tap(find.byTooltip('Kata tersimpan'));
-    await tester.pumpAndSettle();
-    expect(find.text('Favorit tersimpan di perangkat • 1/60'), findsOneWidget);
-  });
+      );
+      await AuthRepository(dio, preferences).deleteAccount(userId: 'buyer');
+      expect(preferences.getString('dictionary_library_v1_buyer'), isNull);
+      expect(preferences.getString('dictionary_library_v1_other'), isNotNull);
+    },
+  );
+
+  testWidgets(
+    'phone searches real-shaped entries, saves and reads all senses',
+    (tester) async {
+      tester.view.physicalSize = const Size(360, 800);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      SharedPreferences.setMockInitialValues({});
+      final preferences = await SharedPreferences.getInstance();
+      final repository = FakeDictionary();
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(preferences),
+            dictionaryRepositoryProvider.overrideWithValue(repository),
+            authControllerProvider.overrideWith(
+              (ref) => AuthController.test(const AuthenticationState.guest()),
+            ),
+          ],
+          child: MaterialApp(
+            theme: AppTheme.lightTheme,
+            home: const DictionaryScreen(),
+          ),
+        ),
+      );
+      await tester.enterText(find.byType(TextField), 'neko');
+      await tester.tap(find.text('Cari di kamus'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.widgetWithText(ChoiceChip, 'Inggris'));
+      await tester.pumpAndSettle();
+      expect(repository.modes.last, 'english');
+      await tester.enterText(find.byType(TextField), 'konnichiwa');
+      await tester.tap(find.widgetWithText(ChoiceChip, 'Jepang'));
+      await tester.pumpAndSettle();
+      expect(repository.modes.last, 'japanese');
+      expect(repository.calls.last.$1, 'konnichiwa');
+      await tester.ensureVisible(find.text('猫'));
+      expect(find.text('ねこ'), findsOneWidget);
+      expect(find.text('cat; feline'), findsOneWidget);
+      await tester.tap(find.byTooltip('Simpan 猫'));
+      await tester.pumpAndSettle();
+      expect(find.byTooltip('Hapus 猫 dari favorit'), findsOneWidget);
+      await tester.tap(find.text('猫'));
+      await tester.pumpAndSettle();
+      expect(find.text('2. shamisen'), findsOneWidget);
+      expect(find.text('Bentuk dan bacaan lain'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.tap(find.byTooltip('Tutup detail'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byTooltip('Kata tersimpan'));
+      await tester.tap(find.byTooltip('Kata tersimpan'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Favorit tersimpan di perangkat • 1/60'),
+        findsOneWidget,
+      );
+    },
+  );
 }

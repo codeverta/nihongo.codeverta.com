@@ -22,7 +22,7 @@ Kedua sumber publik tidak menjamin SLA. Tidak ada biaya API maupun secret tambah
 
 ## Backend
 
-- `GET /v1/dictionary/search?q=猫&page=1&jlpt=N5&common=true`: publik; envelope `data` berisi `query`, `page`, `hasMore`, `entries`, `source`.
+- `GET /v1/dictionary/search?q=猫&mode=auto&page=1&jlpt=N5&common=true`: publik; envelope `data` berisi `query`, `page`, `hasMore`, `entries`, `source`.
 - `GET /v1/dictionary/kanji/猫`: publik; `data` berisi objek kanjiapi.dev.
 - `400`: query invalid, lebih dari 100 karakter, page di luar 1–100, filter invalid, atau path kanji bukan satu karakter Han.
 - `404`: kanji tidak tersedia. `503`: sumber sibuk/offline/invalid JSON.
@@ -35,19 +35,34 @@ Backend memakai **MariaDB**. Startup menginisialisasi tabel kamus pada database
 yang sama dengan akun, billing, dan gamifikasi. Koneksi menggunakan `DB_*`
 dari `backend/.env`, dengan port default 3306. Lihat [setup MariaDB](mariadb.md).
 
-Alur pencarian: cache memori (maksimal 128 respons) → cache MariaDB → API eksternal bila belum ada atau kedaluwarsa. Cache produksi berlaku 30 hari dan tetap dapat dipakai setelah restart. Berlaku bersama untuk seluruh pengguna/tamu; tidak diduplikasi per akun. Query, halaman, filter JLPT, dan filter kata umum menjadi identitas cache berbeda agar hasil tidak tercampur. Client test tanpa persistence tetap memakai cache memori enam jam.
+Alur pencarian: cache memori → MariaDB → API eksternal hanya jika identitas pencarian belum ada. Hasil berisi kata **dan hasil kosong** disimpan permanen, tanpa TTL 30 hari atau penghapusan otomatis setelah 5.000 respons. Memori dibatasi 128 respons sekaligus dan total 16 MiB. Setelah memori terbuang atau server restart, lookup berikutnya membaca MariaDB. Error jaringan, HTTP error, dan payload invalid tidak dianggap hasil kosong.
 
-- `dictionary_responses`: respons JSON asli yang tervalidasi, sumber, waktu fetch, dan SHA-256 identitas request. Tidak menyimpan ID user maupun teks query mentah. Maksimal 5.000 kombinasi request; yang paling lama dihapus jika kapasitas terlampaui. Hasil kosong yang sah juga disimpan.
-- `dictionary_entries`: arsip setiap entri kata Jisho dan detail kanji, unik berdasarkan `(source, source_entry_id)`. JSON lengkap mempertahankan makna, bacaan, tag dan atribusi sumber. Query berbeda yang menghasilkan kata yang sama memperbarui satu entri. Arsip ini tetap disimpan saat response cache kedaluwarsa/dihapus dan saat akun pengguna dihapus.
+### Mode dan normalisasi
 
-Respons HTTP error, JSON invalid, atau payload yang tidak sesuai schema tidak dimasukkan database. Respons dan arsip entri ditulis dalam satu transaksi: kegagalan salah satu membatalkan semuanya. Jika DB read/write gagal, endpoint mengembalikan `503`; kegagalan baca tidak menyebabkan backend terus memanggil sumber eksternal. Setelah 30 hari, satu permintaan melakukan refresh ke sumber; request serupa yang sedang berjalan menunggu hasil yang sama. Jika refresh gagal, respons lama dan arsip tetap berada di DB, tetapi respons yang kedaluwarsa belum disajikan sebagai data baru.
+- `mode=auto` (default): kana/kanji memakai jalur Jepang; romaji dalam daftar padanan yang sudah ditinjau (contoh `konnichiwa`, `neko`, `gakkou`) juga memakai jalur Jepang. Kata Latin lainnya mempertahankan pencarian sumber, agar kata ambigu seperti `pan` tidak dipaksa menjadi Jepang. Pilih mode Jepang untuk romaji di luar daftar tersebut.
+- `mode=japanese`: romaji ditransliterasi dengan tabel suku kata; mencakup Hepburn/Kunrei umum, konsonan ganda, `matcha`, apostrof setelah n, dan penanda vokal panjang. Huruf besar, komposisi Unicode, lebar karakter, hiragana dan katakana dinormalisasi sebelum fetch pertama. Ejaan greeting `konnichiwa`/`konnichiha`/`こんにちわ` menjadi `こんにちは`.
+- `mode=english`: pencarian dikutip agar Jisho tidak otomatis mengubah huruf Latin menjadi romaji. Tanda kutip dan backslash dalam input mode Inggris ditolak. Operator pencarian Jisho pada Auto/Jepang dipertahankan sebagai ekspresi mentah dengan identitas terpisah.
+- Auto dan Jepang berbagi cache jika menghasilkan query Jepang yang sama. Mode Inggris dan ekspresi mentah memiliki identitas berbeda. Halaman, filter JLPT, dan kata umum tetap bagian identitas. Identitas baru diberi versi `v2`.
+- Kanji `橋` dan `箸` tetap berbeda. Tidak ada pemetaan seluruh bacaan setiap hasil ke respons pencarian: hasil luas tidak boleh menjadi jawaban salah untuk pencarian kata tertentu. Vokal panjang `こう`, `こお`, `こー` tidak disamakan secara umum. Macron disimpan sebagai penanda panjang `ー`; alias tempat yang ditinjau seperti `Tōkyō`/`toukyou` memiliki ejaan khusus `とうきょう`.
 
-Cache menyalin hasil berdasarkan query yang benar-benar dicari, bukan melakukan bulk crawling. Arsip data tetap mengikuti atribusi/lisensi EDRDG/DBpedia; penyimpanan tidak memindahkan kepemilikan data ke aplikasi. Backup MariaDB harus mencakup tabel kamus; pantau ukuran arsip dan disk karena entri dikumpulkan secara bertahap. Setup memakai satu proses API per database dengan named writer lock.
+`dictionary_responses` menyimpan JSON tervalidasi, identitas hash, endpoint tetap, query kanonis, jenis pencarian efektif, halaman/filter, dan waktu fetch. Tidak ada ID pengguna. `dictionary_entries` tetap mengarsipkan entri unik `(source, source_entry_id)` lengkap dengan atribusi. Penulisan respons dan arsip berlangsung dalam satu transaksi. Kegagalan DB tidak menyebabkan bypass ke API.
+
+Cache lama tetap dipertahankan. Saat query kanonis mempunyai URL upstream yang persis sama dengan cache lama, respons lama dapat diadopsi tanpa fetch. Baris lama yang hanya memiliki hash tidak bisa dikonversi menjadi alias secara massal; query yang URL kanonisnya berbeda dapat membutuhkan fetch awal baru. Baris tanpa metadata ditandai pada admin dan belum dapat di-refresh sampai query diketahui melalui lookup baru.
+
+### Admin Cache Kamus
+
+Buka `/admin/dictionary` dari menu admin. Kunci memakai `DICTIONARY_ADMIN_TOKEN`, atau fallback `BRANDING_ADMIN_TOKEN`. Kunci tetap di memori browser dan dapat dikunci kembali.
+
+- `GET /v1/admin/dictionary?page=1&q=...`: bearer admin; daftar 50 respons per halaman, total, query/mode/filter/waktu fetch, dan statistik proses (`memoryHits`, `databaseHits`, `upstreamCalls`, `memoryBytes`, `memoryLimitBytes`). Daftar tidak memuat blob respons.
+- `POST /v1/admin/dictionary/{id}/refresh`: bearer admin; fetch dan validasi dahulu, commit database, lalu mengganti cache memori. Refresh yang gagal mempertahankan data lama. Request refresh memakai throttle upstream yang sama dengan pencarian publik.
+- Request dengan identitas kanonis sama digabung, termasuk variasi ejaan. Pembatalan satu pengguna tidak membatalkan fetch bersama. Pekerjaan bersama dibatasi 12 detik, dan timeout HTTP upstream tetap delapan detik. Refresh dan lookup biasa dikoordinasikan agar hasil lama tidak menimpa hasil refresh.
+
+Backup MariaDB perlu mencakup tabel kamus. Penyimpanan tetap mengikuti lisensi sumber. Lihat hasil pengukuran dan batas cakupan di [laporan performa](dictionary-performance.md).
 
 Route Flutter `/dictionary?q=...` juga bisa membuka pencarian tertentu secara langsung. UI tetap mengikuti tema Nihongo Master; tidak menyalin logo/branding Jisho.
 
 ## Pemeriksaan
 
-Tes backend memakai HTTP transport fixture untuk memverifikasi encoding, filter, cache, pembatalan request yang menunggu, status upstream, validasi kanji, dan endpoint publik. Tes persistence memakai schema MariaDB nyata sementara: restart tanpa fetch ulang, deduplikasi arsip kata/kanji, refresh setelah TTL, pemisahan page/filter, penolakan payload invalid, rollback ketika penulisan arsip gagal, serta integrasi dengan koneksi DB yang sudah dipakai akun/billing/gamifikasi. Tes Flutter memverifikasi race pencarian, deduplikasi pagination, retry, persistensi/isolation favorit, layar ponsel, serta akses kamus sebagai tamu.
+Tes backend memakai HTTP transport fixture untuk memverifikasi encoding, filter, cache, pembatalan request yang menunggu, status upstream, validasi kanji, dan endpoint publik. Tes persistence memakai schema MariaDB nyata sementara: restart dan variasi romaji/kana tanpa fetch ulang, hasil lama/kosong permanen, retensi di atas 5.000 respons, refresh manual atomik, pemisahan mode/page/filter/homofon, penolakan payload invalid, rollback ketika penulisan arsip gagal, serta integrasi dengan koneksi DB yang sudah dipakai akun/billing/gamifikasi. Tes Flutter memverifikasi race pencarian, deduplikasi pagination, retry, persistensi/isolation favorit, layar ponsel, serta akses kamus sebagai tamu.
 
 Smoke test sumber asli bersifat opt-in (memerlukan internet): jalankan `go test ./internal/dictionary -run TestLiveDictionarySources -v` dengan environment `DICTIONARY_LIVE_TEST=1`.

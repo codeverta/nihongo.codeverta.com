@@ -25,23 +25,30 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   Future<void> _loginWithEmail() async {
     if (!_formKey.currentState!.validate()) return;
-    final success =
-        await ref.read(authControllerProvider.notifier).loginWithEmail(
-              _emailController.text,
-              _passwordController.text,
-            );
+    final success = await ref
+        .read(authControllerProvider.notifier)
+        .loginWithEmail(_emailController.text, _passwordController.text);
     if (success && mounted) _finish(true);
   }
 
   Future<void> _loginWithGoogle() async {
-    final success =
-        await ref.read(authControllerProvider.notifier).loginWithGoogle();
+    final success = await ref
+        .read(authControllerProvider.notifier)
+        .loginWithGoogle();
     if (success && mounted) _finish(true);
   }
 
   void _finish(bool authenticated) {
+    // A successful login should always land on Beranda. Popping here can
+    // return to a premium gate or another stale route and leave the user
+    // feeling like login did not finish.
+    if (authenticated) {
+      context.go('/home');
+      return;
+    }
+
     if (context.canPop()) {
-      context.pop(authenticated);
+      context.pop(false);
     } else {
       context.go('/home');
     }
@@ -94,10 +101,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     Text(
                       'Masuk untuk mulai belajar',
                       textAlign: TextAlign.center,
-                      style:
-                          Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                fontWeight: FontWeight.w900,
-                              ),
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(fontWeight: FontWeight.w900),
                     ),
                     const SizedBox(height: 8),
                     Text(
@@ -204,8 +209,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     const SizedBox(height: 12),
                     TextButton(
-                      onPressed:
-                          authState.isLoading ? null : () => _finish(false),
+                      onPressed: authState.isLoading
+                          ? null
+                          : () => _finish(false),
                       child: const Text('Lanjut sebagai tamu'),
                     ),
                   ],

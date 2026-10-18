@@ -44,6 +44,9 @@ func DSN(t *testing.T) string {
 		db.Close()
 	})
 	cfg.DBName = name
+	// GORM models use DATETIME columns; callers may provide a DSN without this
+	// driver option, but integration schemas must return time.Time consistently.
+	cfg.ParseTime = true
 	cfg.Params = map[string]string{"charset": "utf8mb4"}
 	cfg.Collation = "utf8mb4_bin"
 	return cfg.FormatDSN()

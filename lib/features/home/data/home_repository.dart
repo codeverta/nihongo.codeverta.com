@@ -14,7 +14,23 @@ class HomeRepository {
       if (data is! Map<String, dynamic>) {
         throw const HomeException('Format data Beranda tidak valid.');
       }
-      return HomeDashboard.fromJson(data);
+      // Uploaded and bundled server images use root-relative URLs. Resolve them
+      // against the actual API host (including Android emulator host rewriting).
+      final banners = data['banners'];
+      final resolved = <String, dynamic>{...data};
+      if (banners is List) {
+        final base = Uri.parse(_dio.options.baseUrl);
+        resolved['banners'] = banners.whereType<Map<String, dynamic>>().map((
+          banner,
+        ) {
+          final image = banner['imageUrl'] as String? ?? '';
+          return <String, dynamic>{
+            ...banner,
+            'imageUrl': image.isEmpty ? '' : base.resolve(image).toString(),
+          };
+        }).toList();
+      }
+      return HomeDashboard.fromJson(resolved);
     } on HomeException {
       rethrow;
     } on DioException catch (error) {

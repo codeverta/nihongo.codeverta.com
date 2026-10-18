@@ -28,10 +28,9 @@ class ProfileScreen extends ConsumerWidget {
     return RefreshIndicator(
       onRefresh: () async {
         await ref.read(authControllerProvider.notifier).refreshUser();
-        await ref.refresh(gamificationProvider.future).then<void>(
-              (_) {},
-              onError: (Object error, StackTrace stack) {},
-            );
+        await ref
+            .refresh(gamificationProvider.future)
+            .then<void>((_) {}, onError: (Object error, StackTrace stack) {});
       },
       child: CustomScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
@@ -46,12 +45,8 @@ class ProfileScreen extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         'Profil',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium
-                            ?.copyWith(
-                              fontWeight: FontWeight.w900,
-                            ),
+                        style: Theme.of(context).textTheme.headlineMedium
+                            ?.copyWith(fontWeight: FontWeight.w900),
                       ),
                     ),
                     IconButton.filledTonal(
@@ -72,14 +67,16 @@ class ProfileScreen extends ConsumerWidget {
                   ),
                   data: (data) => GamificationStats(data: data),
                 ),
-                const SizedBox(height: 24),
-                _LifetimeCard(colorScheme: colorScheme),
+                if (!user.isLifetime && !user.isPremium) ...[
+                  const SizedBox(height: 24),
+                  _LifetimeCard(colorScheme: colorScheme),
+                ],
                 const SizedBox(height: 28),
                 Text(
                   'Gamification',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.w800,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 14),
                 gamification.when(
@@ -167,8 +164,9 @@ class ProfileScreen extends ConsumerWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content:
-                Text('Akun belum dihapus. Periksa koneksi lalu coba lagi.'),
+            content: Text(
+              'Akun belum dihapus. Periksa koneksi lalu coba lagi.',
+            ),
           ),
         );
       }
@@ -225,9 +223,9 @@ class _ProfileHeader extends StatelessWidget {
             children: [
               Text(
                 user?.displayName ?? 'Nihongo Learner',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w900,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
               ),
               const SizedBox(height: 4),
               Text(
@@ -235,7 +233,10 @@ class _ProfileHeader extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 7),
-              _PlanBadge(premium: user?.isPremium ?? false),
+              _PlanBadge(
+                premium:
+                    (user?.isPremium ?? false) || (user?.isLifetime ?? false),
+              ),
             ],
           ),
         ),
@@ -353,13 +354,6 @@ class _ProfileMenu extends StatelessWidget {
             title: 'Logout',
             iconColor: Theme.of(context).colorScheme.error,
             onTap: onLogout,
-          ),
-          const Divider(height: 1, indent: 68),
-          _ProfileMenuTile(
-            icon: Icons.download_for_offline_outlined,
-            title: 'Materi offline',
-            trailing: '3 tersimpan',
-            onTap: () {},
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(

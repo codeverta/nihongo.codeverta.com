@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
+import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
+import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
 
 class DashboardScreen extends ConsumerWidget {
@@ -10,16 +14,25 @@ class DashboardScreen extends ConsumerWidget {
     required this.openLearn,
     required this.openExam,
     required this.openProfile,
+    this.active = true,
     super.key,
   });
 
   final VoidCallback openLearn;
   final VoidCallback openExam;
   final VoidCallback openProfile;
+  final bool active;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dashboard = ref.watch(homeDashboardProvider);
+    final accountHasLifetimeAccess = ref.watch(
+      authControllerProvider.select(
+        (state) =>
+            (state.user?.isLifetime ?? false) ||
+            (state.user?.isPremium ?? false),
+      ),
+    );
     return dashboard.when(
       loading: () => const _LoadingView(),
       error: (error, stackTrace) => _ErrorView(
@@ -30,6 +43,8 @@ class DashboardScreen extends ConsumerWidget {
         onRefresh: () => ref.refresh(homeDashboardProvider.future),
         child: _DashboardContent(
           data: data,
+          active: active,
+          accountHasLifetimeAccess: accountHasLifetimeAccess,
           openLearn: () => _authorize(context, openLearn),
           openExam: () => _authorize(context, openExam),
           openProfile: () => _authorize(context, openProfile),
@@ -49,12 +64,16 @@ class DashboardScreen extends ConsumerWidget {
 class _DashboardContent extends StatelessWidget {
   const _DashboardContent({
     required this.data,
+    required this.active,
+    required this.accountHasLifetimeAccess,
     required this.openLearn,
     required this.openExam,
     required this.openProfile,
   });
 
   final HomeDashboard data;
+  final bool active;
+  final bool accountHasLifetimeAccess;
   final VoidCallback openLearn;
   final VoidCallback openExam;
   final VoidCallback openProfile;
@@ -65,6 +84,25 @@ class _DashboardContent extends StatelessWidget {
     final premiumPlan = lifetime.isNotEmpty
         ? lifetime.first
         : data.plans.where((plan) => plan.recommended).firstOrNull;
+    final hasLifetimeAccess =
+        accountHasLifetimeAccess ||
+        (data.profile?.isLifetime ?? false) ||
+        data.profile?.tier == 'premium';
+    final banners = [
+      if (premiumPlan != null && !hasLifetimeAccess)
+        HomeBanner(
+          id: 'lifetime-offer',
+          title: premiumPlan.name,
+          description:
+              '${premiumPlan.features.firstOrNull ?? premiumPlan.name} • ${_rupiah(premiumPlan.priceIdr)}',
+          imageUrl: '',
+          action: 'premium',
+          buttonLabel: 'Lihat paket',
+        ),
+      ...data.banners.where(
+        (banner) => !hasLifetimeAccess || banner.action != 'premium',
+      ),
+    ];
     final jlptTracks = data.tracks
         .where((track) => track.system.toUpperCase() == 'JLPT')
         .toList(growable: false);
@@ -78,15 +116,30 @@ class _DashboardContent extends StatelessWidget {
           sliver: SliverList.list(
             children: [
               _DashboardHeader(data: data, openProfile: openProfile),
-              if (premiumPlan != null && data.profile?.tier != 'premium') ...[
-                const SizedBox(height: 22),
-                _PremiumBanner(
-                  plan: premiumPlan,
-                  onPressed: () => context.push('/premium'),
-                ),
-              ],
               const SizedBox(height: 22),
-              _DailyGoalCard(goal: data.dailyGoal, onPressed: openLearn),
+              if (banners.isNotEmpty) ...[
+                HomeBannerCarousel(
+                  key: ValueKey(banners.map((banner) => banner.id).join(':')),
+                  banners: banners,
+                  active: active,
+                  onOpen: (banner) {
+                    switch (banner.action) {
+                      case 'premium':
+                        context.push('/premium');
+                      case 'learn':
+                        openLearn();
+                      case 'ssw':
+                        context.push('/ssw');
+                      case 'jobs':
+                        context.push('/jobs');
+                    }
+                  },
+                ),
+                const SizedBox(height: 16),
+              ],
+              const SswEntryCard(),
+              const SizedBox(height: 12),
+              const JobsEntryCard(),
               const SizedBox(height: 28),
               _SectionHeader(
                 title: 'Mulai belajar',
@@ -205,150 +258,6 @@ class _DashboardHeader extends StatelessWidget {
             ),
           ),
       ],
-    );
-  }
-}
-
-class _PremiumBanner extends StatelessWidget {
-  const _PremiumBanner({required this.plan, required this.onPressed});
-
-  final SubscriptionPlan plan;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    final feature = plan.features.isEmpty ? plan.name : plan.features.first;
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [colors.secondary, const Color(0xFF3538A8)],
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: colors.secondary.withValues(alpha: 0.22),
-            blurRadius: 24,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Row(
-            children: [
-              Icon(Icons.auto_awesome_rounded, color: Color(0xFFFFD166)),
-              SizedBox(width: 8),
-              Text(
-                'NIHONGO PREMIUM',
-                style: TextStyle(
-                  color: Color(0xFFFFE7A3),
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1.1,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Text(
-            plan.name,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            '$feature • ${_rupiah(plan.priceIdr)}',
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.78)),
-          ),
-          const SizedBox(height: 16),
-          FilledButton(
-            onPressed: onPressed,
-            style: FilledButton.styleFrom(
-              backgroundColor: Colors.white,
-              foregroundColor: colors.secondary,
-            ),
-            child: const Text('Lihat paket'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _DailyGoalCard extends StatelessWidget {
-  const _DailyGoalCard({required this.goal, required this.onPressed});
-
-  final HomeDailyGoal goal;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    final percent = (goal.completion * 100).round();
-    return Card(
-      child: InkWell(
-        onTap: onPressed,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(18),
-          child: Row(
-            children: [
-              SizedBox.square(
-                dimension: 62,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircularProgressIndicator(
-                      value: goal.completion,
-                      strokeWidth: 7,
-                      strokeCap: StrokeCap.round,
-                      backgroundColor: colors.primary.withValues(alpha: 0.1),
-                    ),
-                    Text(
-                      '$percent%',
-                      style: const TextStyle(fontWeight: FontWeight.w800),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Target harian',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      '${goal.minutesLearned} dari ${goal.targetMinutes} menit selesai',
-                    ),
-                    const SizedBox(height: 7),
-                    Text(
-                      '${goal.streakDays} hari beruntun',
-                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: const Color(0xFFE86A33),
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Icon(Icons.chevron_right_rounded, color: colors.outline),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

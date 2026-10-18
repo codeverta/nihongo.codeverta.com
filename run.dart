@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'scripts/android_emulator.dart';
+
 const _defaultApiBaseUrl = 'http://10.0.2.2:8080/v1';
 
 Future<void> main(List<String> args) async {
@@ -12,13 +14,15 @@ Future<void> main(List<String> args) async {
     }
 
     final projectRoot = File.fromUri(Platform.script).absolute.parent;
-    final backendRoot =
-        Directory('${projectRoot.path}${Platform.pathSeparator}backend');
+    final backendRoot = Directory(
+      '${projectRoot.path}${Platform.pathSeparator}backend',
+    );
     final env = await _readEnvFile(
       File('${backendRoot.path}${Platform.pathSeparator}.env'),
     );
     final googleServerClientId = _resolveGoogleClientId(env);
-    final apiBaseUrl = options.apiBaseUrl ??
+    final apiBaseUrl =
+        options.apiBaseUrl ??
         Platform.environment['API_BASE_URL'] ??
         _defaultApiBaseUrl;
     if (Uri.tryParse(apiBaseUrl)?.hasAuthority != true) {
@@ -30,6 +34,17 @@ Future<void> main(List<String> args) async {
       '--dart-define=GOOGLE_SERVER_CLIENT_ID=$googleServerClientId',
       ...options.flutterArgs,
     ];
+    final selectedFlutterArgs = options.backendOnly
+        ? flutterArgs
+        : <String>[
+            'run',
+            '--dart-define=API_BASE_URL=$apiBaseUrl',
+            '--dart-define=GOOGLE_SERVER_CLIENT_ID=$googleServerClientId',
+            ...await prepareAndroidDeviceArgs(
+              projectRoot: projectRoot,
+              flutterArgs: options.flutterArgs,
+            ),
+          ];
 
     Process? backend;
     Directory? backendBuildDirectory;
@@ -37,10 +52,12 @@ Future<void> main(List<String> args) async {
       if (!options.skipBackend) {
         final port = _backendPort(env);
         stdout.writeln('Membangun backend Go ...');
-        backendBuildDirectory =
-            await Directory.systemTemp.createTemp('nihongo-master-');
-        final executableName =
-            Platform.isWindows ? 'nihongo-api.exe' : 'nihongo-api';
+        backendBuildDirectory = await Directory.systemTemp.createTemp(
+          'nihongo-master-',
+        );
+        final executableName = Platform.isWindows
+            ? 'nihongo-api.exe'
+            : 'nihongo-api';
         final backendExecutable = File(
           '${backendBuildDirectory.path}${Platform.pathSeparator}$executableName',
         );
@@ -80,7 +97,7 @@ Future<void> main(List<String> args) async {
 
       final flutter = await Process.start(
         'flutter',
-        flutterArgs,
+        selectedFlutterArgs,
         workingDirectory: projectRoot.path,
         runInShell: Platform.isWindows,
         mode: ProcessStartMode.inheritStdio,
@@ -105,7 +122,9 @@ Future<void> main(List<String> args) async {
     stderr
       ..writeln('Tidak bisa menjalankan ${error.executable}.')
       ..writeln(
-        'Pastikan Flutter SDK dan Go sudah terpasang serta ada di PATH.',
+        error.message.isNotEmpty
+            ? error.message
+            : 'Pastikan Flutter SDK dan Go sudah terpasang serta ada di PATH.',
       );
     exitCode = 1;
   } catch (error) {
@@ -205,8 +224,9 @@ Future<void> _waitForBackend(Process backend, int port) async {
         final request = await client
             .getUrl(Uri.parse('http://127.0.0.1:$port/healthz'))
             .timeout(const Duration(seconds: 2));
-        final response =
-            await request.close().timeout(const Duration(seconds: 2));
+        final response = await request.close().timeout(
+          const Duration(seconds: 2),
+        );
         await response.drain<void>();
         if (response.statusCode == HttpStatus.ok) return;
       } on SocketException {
@@ -278,10 +298,15 @@ Contoh:
   dart run.dart -d emulator-5554
   dart run.dart --api-base-url http://192.168.1.20:8080/v1 -d <DEVICE_ID>
 
+Jika tidak ada perangkat Android aktif, launcher menyalakan AVD pertama.
+Pilih AVD tertentu dengan ID dari `flutter emulators`, misalnya:
+  dart run.dart -d Pixel_8_API_35
+
 Opsi launcher:
   --api-base-url URL  Alamat backend yang dipakai aplikasi
   --no-backend        Backend sudah berjalan di terminal lain
   --backend-only      Jalankan backend saja
+  -d, --device-id     Pilih perangkat atau AVD Android
   -h, --help          Tampilkan bantuan
 ''');
 }

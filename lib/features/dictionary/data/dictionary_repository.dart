@@ -15,11 +15,13 @@ class DictionaryRepository {
     int page = 1,
     String? jlpt,
     bool common = false,
+    String mode = 'auto',
   }) async {
     final response = await dio.get<Map<String, dynamic>>(
       '/dictionary/search',
       queryParameters: {
         'q': query,
+        'mode': mode,
         'page': page,
         'jlpt': jlpt,
         'common': common,
@@ -42,5 +44,5 @@ class DictionaryRepository {
 
 final dictionaryKanjiProvider = FutureProvider.autoDispose
     .family<Map<String, dynamic>, String>((ref, character) {
-  return ref.watch(dictionaryRepositoryProvider).kanji(character);
-});
+      return ref.watch(dictionaryRepositoryProvider).kanji(character);
+    });

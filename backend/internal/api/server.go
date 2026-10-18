@@ -14,20 +14,25 @@ import (
 	"nihongo-master-backend/internal/billing"
 	"nihongo-master-backend/internal/dictionary"
 	"nihongo-master-backend/internal/domain"
+	"nihongo-master-backend/internal/jobs"
 	"nihongo-master-backend/internal/store"
 )
 
 type Server struct {
-	dictionary          *dictionary.Client
-	billing             *billing.Service
-	billingPushAudience string
-	billingPushEmail    string
-	assetDirectory      string
-	store               *store.MemoryStore
-	googleVerifier      backendAuth.GoogleVerifier
-	branding            *BrandingStore
-	appUpdates          *AppUpdateStore
-	notifications       *NotificationStore
+	jobs                 *jobs.Repository
+	dictionary           *dictionary.Client
+	dictionaryAdminToken string
+	billing              *billing.Service
+	billingPushAudience  string
+	billingPushEmail     string
+	assetDirectory       string
+	store                *store.MemoryStore
+	googleVerifier       backendAuth.GoogleVerifier
+	branding             *BrandingStore
+	homeBanners          *HomeBannerStore
+	appUpdates           *AppUpdateStore
+	notifications        *NotificationStore
+	pricing              *PricingStore
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
@@ -38,6 +43,8 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerDictionaryAdmin(mux)
+	s.registerJobs(mux)
 	s.registerLegal(mux)
 	s.registerAnki(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
@@ -49,6 +56,8 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("DELETE /v1/me/account", s.requireAuth(s.deleteAccount))
 	s.registerAssets(mux)
 	s.registerBranding(mux)
+	s.registerHomeBanners(mux)
+	s.registerPricing(mux)
 	s.registerAppUpdates(mux)
 	s.registerNotifications(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
@@ -109,7 +118,11 @@ func (s *Server) health(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (s *Server) home(w http.ResponseWriter, r *http.Request) {
-	writeData(w, http.StatusOK, s.store.Dashboard(userID(r)))
+	dashboard := s.store.Dashboard(userID(r))
+	dashboard.Banners = s.homeBanners.publicBanners()
+	dashboard.Plans = s.plansWithConfiguredPrices(dashboard.Plans)
+	w.Header().Set("Cache-Control", "no-store")
+	writeData(w, http.StatusOK, dashboard)
 }
 
 func (s *Server) login(w http.ResponseWriter, r *http.Request) {
@@ -185,7 +198,18 @@ func (s *Server) exams(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) plans(w http.ResponseWriter, _ *http.Request) {
-	writeData(w, http.StatusOK, s.store.Plans())
+	w.Header().Set("Cache-Control", "no-store")
+	writeData(w, http.StatusOK, s.plansWithConfiguredPrices(s.store.Plans()))
+}
+
+func (s *Server) plansWithConfiguredPrices(plans []domain.Plan) []domain.Plan {
+	price := s.lifetimePriceIDR()
+	for i := range plans {
+		if plans[i].BillingType == "lifetime" {
+			plans[i].PriceIDR = price
+		}
+	}
+	return plans
 }
 
 func (s *Server) profile(w http.ResponseWriter, r *http.Request) {

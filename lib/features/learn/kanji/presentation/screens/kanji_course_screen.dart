@@ -90,7 +90,11 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                             ? 'Kenali kanji N3 dalam kalimat sehari-hari'
                             : widget.level == 'N4'
                                 ? 'Perluas kemampuan kanji N4'
-                                : 'Kenali dan baca kanji dasar',
+                                : widget.level == 'N2'
+                                    ? 'Pelajari kanji dan kosakata tingkat N2'
+                                    : widget.level == 'N1'
+                                        ? 'Perluas penguasaan kanji tingkat lanjut'
+                                        : 'Kenali dan baca kanji dasar',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,
@@ -233,7 +237,7 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                   ),
                   const SizedBox(height: 10),
                 ],
-                if (widget.level == 'N4' || widget.level == 'N3')
+                if (widget.level == 'N4' || widget.level == 'N3' || widget.level == 'N2' || widget.level == 'N1')
                   Card(
                     child: ExpansionTile(
                       key: Key('kanji-${widget.level.toLowerCase()}-sources'),
@@ -241,12 +245,12 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                       childrenPadding: const EdgeInsets.all(16),
                       children: [
                         SelectableText(
-                          '${widget.level == 'N3' ? '367 kanji dari daftar rujukan N3, dengan contoh kosakata dan kalimat.' : '166 kanji dari daftar rujukan N4, termasuk 21 kanji pengulangan N5.'} '
+                          '${widget.level == 'N3' ? '367 kanji dari daftar rujukan N3, dengan contoh kosakata dan kalimat.' : widget.level == 'N2' ? '367 kanji dari pemetaan JLPT N2 yang dirujuk; kartu memakai contoh kosakata dari korpus latihan.' : widget.level == 'N1' ? '1.232 kanji dari pemetaan JLPT N1 yang dirujuk, dengan contoh kosakata kamus.' : '166 kanji dari daftar rujukan N4, termasuk 21 kanji pengulangan N5.'} '
                           'Bacaan pada kartu merupakan pilihan bacaan kamus. '
                           'Petunjuk mengingat dibuat sebagai bantuan belajar.\n\n'
                           'Jumlah goresan dan data bacaan menggunakan KANJIDIC oleh James William Breen dan EDRDG, '
                           'melalui kanji-data oleh David Gouveia. '
-                          'Materi data ${widget.level} diadaptasi dengan arti, contoh, dan kuis Indonesia; CC BY-SA 4.0.\n'
+                          '${widget.level == 'N2' || widget.level == 'N1' ? 'Gloss kamus dan contoh ' + widget.level + ' mengikuti sumber berbahasa Inggris; belum diterjemahkan ke Bahasa Indonesia.' : 'Materi data ' + widget.level + ' diadaptasi dengan arti, contoh, dan kuis Indonesia; CC BY-SA 4.0.'}\n'
                           'Sumber: https://github.com/davidluzgouveia/kanji-data\n'
                           'Lisensi kamus: https://www.edrdg.org/edrdg/licence.html\n'
                           'CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/\n\n'

@@ -27,7 +27,7 @@ func (s *Server) dictionarySearch(w http.ResponseWriter, r *http.Request) {
 		dictionaryError(w, dictionary.ErrInvalid)
 		return
 	}
-	result, err := s.dictionary.Search(r.Context(), r.URL.Query().Get("q"), page, r.URL.Query().Get("jlpt"), common == "true")
+	result, err := s.dictionary.Search(r.Context(), r.URL.Query().Get("q"), page, r.URL.Query().Get("jlpt"), common == "true", r.URL.Query().Get("mode"))
 	if err != nil {
 		dictionaryError(w, err)
 		return
@@ -45,7 +45,7 @@ func (s *Server) dictionaryKanji(w http.ResponseWriter, r *http.Request) {
 func dictionaryError(w http.ResponseWriter, err error) {
 	switch {
 	case errors.Is(err, dictionary.ErrInvalid):
-		writeError(w, 400, "invalid_query", "Masukkan kata maksimal 100 karakter, halaman 1–100, atau satu karakter kanji.")
+		writeError(w, 400, "invalid_query", "Gunakan kata maksimal 100 karakter, halaman 1–100, mode yang valid, atau satu karakter kanji. Jika ejaan romaji belum dikenali pada mode Jepang, coba gunakan kana.")
 	case errors.Is(err, dictionary.ErrNotFound):
 		writeError(w, 404, "kanji_not_found", "Detail kanji belum tersedia dari sumber kamus.")
 	default:

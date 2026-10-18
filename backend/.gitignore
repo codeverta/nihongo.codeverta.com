@@ -1,5 +1,10 @@
 .env
 data/branding.json
 data/branding.json.tmp
+data/home-banners.json
+data/home-banner-images/
+data/.banner-*
+data/pricing.json
+data/.pricing-*
 .gocache/
 .gomodcache/

@@ -10,8 +10,8 @@ func (s *Server) grammarCourse(w http.ResponseWriter, r *http.Request) {
 	if level == "" {
 		level = "N5"
 	}
-	if level != "N5" && level != "N4" && level != "N3" && level != "N2" {
-		writeError(w, http.StatusUnprocessableEntity, "invalid_level", "Grammar tersedia untuk N5, N4, N3, dan N2.")
+	if level != "N5" && level != "N4" && level != "N3" && level != "N2" && level != "N1" {
+		writeError(w, http.StatusUnprocessableEntity, "invalid_level", "Grammar tersedia untuk N5, N4, N3, N2, dan N1.")
 		return
 	}
 	writeData(w, http.StatusOK, s.store.GrammarCourse(userID(r), level))

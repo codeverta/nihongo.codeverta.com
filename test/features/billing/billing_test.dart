@@ -45,58 +45,66 @@ void main() {
     }
   });
   test(
-      'buy uses store product and server account binding; pending/cancel do not grant',
-      () async {
-    expect(controller.state.product!.price, 'Rp99.000');
-    await controller.buy();
-    expect(gateway.param!.applicationUserName, 'account-token');
-    await controller.handle([purchase(PurchaseStatus.pending)]);
-    expect(controller.state.pending, isTrue);
-    expect(controller.state.premium, isFalse);
-    await controller.handle([purchase(PurchaseStatus.canceled)]);
-    expect(controller.state.busy, isFalse);
-    expect(controller.state.pending, isFalse);
-    expect(repository.verifications, 0);
-  });
-  test('successful duplicate notifications deliver entitlement and finish once',
-      () async {
-    final paid = purchase(PurchaseStatus.purchased)
-      ..pendingCompletePurchase = true;
-    await controller.handle([paid, paid]);
-    expect(controller.state.premium, isTrue);
-    expect(repository.verifications, 1);
-    expect(gateway.finishes, 1);
-    await controller.buy();
-    expect(gateway.buys, 0);
-    repository.premium = false;
-    await controller.refresh();
-    expect(controller.state.premium, isFalse);
-  });
-  test('offline verification leaves transaction unfinished and retries safely',
-      () async {
-    repository.fail = true;
-    final paid = purchase(PurchaseStatus.purchased)
-      ..pendingCompletePurchase = true;
-    await controller.handle([paid]);
-    expect(gateway.finishes, 0);
-    expect(controller.state.premium, isFalse);
-    repository.fail = false;
-    await controller.retry();
-    expect(gateway.finishes, 1);
-    expect(controller.state.premium, isTrue);
-  });
-  test('finish failure retries already verified purchase without losing access',
-      () async {
-    gateway.failFinish = true;
-    final paid = purchase(PurchaseStatus.purchased)
-      ..pendingCompletePurchase = true;
-    await controller.handle([paid]);
-    expect(controller.retryPurchases, isNotEmpty);
-    gateway.failFinish = false;
-    await controller.retry();
-    expect(controller.state.premium, isTrue);
-    expect(controller.retryPurchases, isEmpty);
-  });
+    'buy uses store product and server account binding; pending/cancel do not grant',
+    () async {
+      expect(controller.state.product!.price, 'Rp99.000');
+      expect(controller.state.priceIdr, 149000);
+      await controller.buy();
+      expect(gateway.param!.applicationUserName, 'account-token');
+      await controller.handle([purchase(PurchaseStatus.pending)]);
+      expect(controller.state.pending, isTrue);
+      expect(controller.state.premium, isFalse);
+      await controller.handle([purchase(PurchaseStatus.canceled)]);
+      expect(controller.state.busy, isFalse);
+      expect(controller.state.pending, isFalse);
+      expect(repository.verifications, 0);
+    },
+  );
+  test(
+    'successful duplicate notifications deliver entitlement and finish once',
+    () async {
+      final paid = purchase(PurchaseStatus.purchased)
+        ..pendingCompletePurchase = true;
+      await controller.handle([paid, paid]);
+      expect(controller.state.premium, isTrue);
+      expect(repository.verifications, 1);
+      expect(gateway.finishes, 1);
+      await controller.buy();
+      expect(gateway.buys, 0);
+      repository.premium = false;
+      await controller.refresh();
+      expect(controller.state.premium, isFalse);
+    },
+  );
+  test(
+    'offline verification leaves transaction unfinished and retries safely',
+    () async {
+      repository.fail = true;
+      final paid = purchase(PurchaseStatus.purchased)
+        ..pendingCompletePurchase = true;
+      await controller.handle([paid]);
+      expect(gateway.finishes, 0);
+      expect(controller.state.premium, isFalse);
+      repository.fail = false;
+      await controller.retry();
+      expect(gateway.finishes, 1);
+      expect(controller.state.premium, isTrue);
+    },
+  );
+  test(
+    'finish failure retries already verified purchase without losing access',
+    () async {
+      gateway.failFinish = true;
+      final paid = purchase(PurchaseStatus.purchased)
+        ..pendingCompletePurchase = true;
+      await controller.handle([paid]);
+      expect(controller.retryPurchases, isNotEmpty);
+      gateway.failFinish = false;
+      await controller.retry();
+      expect(controller.state.premium, isTrue);
+      expect(controller.retryPurchases, isEmpty);
+    },
+  );
   test('account conflict does not finish or transfer a purchase', () async {
     repository.conflict = true;
     final paid = purchase(PurchaseStatus.restored)
@@ -139,16 +147,16 @@ void main() {
 }
 
 PurchaseDetails purchase(PurchaseStatus status) => PurchaseDetails(
-      productID: 'nihongo_master_lifetime',
-      purchaseID: 'transaction',
-      verificationData: PurchaseVerificationData(
-        localVerificationData: '',
-        serverVerificationData: 'store-proof',
-        source: 'google_play',
-      ),
-      transactionDate: '1',
-      status: status,
-    );
+  productID: 'nihongo_master_lifetime',
+  purchaseID: 'transaction',
+  verificationData: PurchaseVerificationData(
+    localVerificationData: '',
+    serverVerificationData: 'store-proof',
+    source: 'google_play',
+  ),
+  transactionDate: '1',
+  status: status,
+);
 
 class FakeBilling extends BillingRepository {
   FakeBilling() : super(Dio());
@@ -159,11 +167,12 @@ class FakeBilling extends BillingRepository {
   Completer<String>? delayed;
   @override
   Future<BillingAccount> status() async => BillingAccount(
-        productId: 'nihongo_master_lifetime',
-        accountToken: 'account-token',
-        platforms: ['android', 'ios'],
-        premium: premium,
-      );
+    productId: 'nihongo_master_lifetime',
+    accountToken: 'account-token',
+    platforms: ['android', 'ios'],
+    premium: premium,
+    priceIdr: 149000,
+  );
   @override
   Future<String> verify({
     required String platform,

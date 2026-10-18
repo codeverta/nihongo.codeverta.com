@@ -96,7 +96,7 @@ func NewMemoryStore() *MemoryStore {
 		sessions:           map[string]string{},
 		vocabulary:         seedVocabulary(),
 		vocabAttempts:      map[string]*vocabularyAttemptState{},
-		grammar:            append(append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...), seedGrammarN2()...),
+		grammar:            append(append(append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...), seedGrammarN2()...), seedGrammarN1()...),
 		grammarAttempts:    map[string]*grammarAttemptState{},
 		kanji:              seedKanji(),
 		kanjiAttempts:      map[string]*kanjiAttemptState{},
@@ -348,9 +348,9 @@ func filterTracks(tracks []domain.LearningTrack, system string) []domain.Learnin
 func seedCategories() []domain.LearningCategory {
 	return []domain.LearningCategory{
 		{ID: "vocabulary", Name: "Vocabulary", Description: "Kosakata tematik dengan spaced repetition", LessonCount: 240, RequiredTier: domain.TierFree},
-		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5, N4, N3, dan N2: pola, contoh kalimat, dan kuis", LessonCount: 180, RequiredTier: domain.TierFree},
-		{ID: "kanji", Name: "Kanji", Description: "Kanji N5, N4, dan N3: bacaan, contoh pemakaian, dan kuis", LessonCount: 131, RequiredTier: domain.TierFree},
-		{ID: "reading", Name: "Reading", Description: "Reading N5, N4, N3, dan N2: cerita bergambar, kosakata, dan kuis", LessonCount: 48, RequiredTier: domain.TierFree},
+		{ID: "grammar", Name: "Grammar", Description: "Grammar JLPT N5 sampai N1: pola, contoh kalimat, dan kuis", LessonCount: 196, RequiredTier: domain.TierFree},
+		{ID: "kanji", Name: "Kanji", Description: "Kanji JLPT N5 sampai N1: bacaan, contoh pemakaian, dan kuis", LessonCount: 452, RequiredTier: domain.TierFree},
+		{ID: "reading", Name: "Reading", Description: "Reading JLPT N5 sampai N1: cerita, kosakata, dan kuis", LessonCount: 60, RequiredTier: domain.TierFree},
 	}
 }
 

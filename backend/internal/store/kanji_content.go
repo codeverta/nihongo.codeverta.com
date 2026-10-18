@@ -12,7 +12,9 @@ import (
 func seedKanji() []kanjiLessonContent {
 	lessons := seedKanjiLevel("N5", kanji.N5, 20, 100)
 	lessons = append(lessons, seedKanjiLevel("N4", kanji.N4, 34, 166)...)
-	return append(lessons, seedKanjiLevel("N3", kanji.N3, 77, 367)...)
+	lessons = append(lessons, seedKanjiLevel("N3", kanji.N3, 77, 367)...)
+	lessons = append(lessons, seedKanjiLevel("N2", kanji.N2, 74, 367)...)
+	return append(lessons, seedKanjiN1()...)
 }
 
 func seedKanjiLevel(level string, content []byte, lessonCount, characterCount int) []kanjiLessonContent {
@@ -21,13 +23,17 @@ func seedKanjiLevel(level string, content []byte, lessonCount, characterCount in
 		panic("invalid embedded kanji curriculum: " + err.Error())
 	}
 	seen := map[string]bool{}
+	idWidth := 2
+	if lessonCount >= 100 {
+		idWidth = 3
+	}
 	for i, lesson := range lessons {
 		lessons[i].Level = level
-		if lesson.ID != fmt.Sprintf("kanji-%s-%02d", strings.ToLower(level), i+1) || lesson.Title == "" || lesson.Chapter == "" || len(lesson.Characters) < 4 || len(lesson.Characters) > 5 || len(lesson.Questions) != 2*len(lesson.Characters) {
+		if lesson.ID != fmt.Sprintf("kanji-%s-%0*d", strings.ToLower(level), idWidth, i+1) || lesson.Title == "" || lesson.Chapter == "" || len(lesson.Characters) < 4 || len(lesson.Characters) > 5 || len(lesson.Questions) != 2*len(lesson.Characters) {
 			panic("invalid kanji lesson structure: " + lesson.ID)
 		}
 		for _, c := range lesson.Characters {
-			if seen[c.Character] || len([]rune(c.Character)) != 1 || !unicode.Is(unicode.Han, []rune(c.Character)[0]) || c.Strokes < 1 || len(c.Examples) != 2 || c.Meaning == "" || c.OnReading == "" || c.KunReading == "" || c.Mnemonic == "" || c.Note == "" {
+			if seen[c.Character] || len([]rune(c.Character)) != 1 || !unicode.Is(unicode.Han, []rune(c.Character)[0]) || c.Strokes < 1 || len(c.Examples) < 1 || len(c.Examples) > 2 || c.Meaning == "" || c.OnReading == "" || c.KunReading == "" || c.Mnemonic == "" || c.Note == "" {
 				panic("invalid kanji character: " + c.Character)
 			}
 			seen[c.Character] = true

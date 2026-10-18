@@ -1,0 +1,6122 @@
+{
+  "source": "https://github.com/davidluzgouveia/kanji-data",
+  "downloadUrl": "https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji.json",
+  "retrievedOn": "2026-10-18",
+  "sourceSha256": "561b72ea9df703c58fae0c68585812e172aaa7611d2fcee6719d55fd2dfd4fa4",
+  "dictionarySource": "KANJIDIC by James William Breen and EDRDG",
+  "levelSource": "Jonathan Waller JLPT Resources via kanji-data jlpt_new field",
+  "license": "CC BY-SA 4.0 for dictionary data; MIT for conversion scripts",
+  "characters": {
+    "了": {
+      "strokes": 2,
+      "readings_on": [
+        "りょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Complete",
+        "Finish"
+      ],
+      "freq": 792
+    },
+    "丸": {
+      "strokes": 3,
+      "readings_on": [
+        "がん"
+      ],
+      "readings_kun": [
+        "まる",
+        "まる.める",
+        "まる.い"
+      ],
+      "meanings": [
+        "Round",
+        "Full (month)",
+        "Perfection",
+        "-ship",
+        "Pills",
+        "Make Round",
+        "Roll Up",
+        "Curl Up",
+        "Seduce",
+        "Explain Away"
+      ],
+      "freq": 542
+    },
+    "玉": {
+      "strokes": 5,
+      "readings_on": [
+        "ぎょく"
+      ],
+      "readings_kun": [
+        "たま",
+        "たま-",
+        "-だま"
+      ],
+      "meanings": [
+        "Jewel",
+        "Ball"
+      ],
+      "freq": 737
+    },
+    "久": {
+      "strokes": 3,
+      "readings_on": [
+        "きゅう",
+        "く"
+      ],
+      "readings_kun": [
+        "ひさ.しい"
+      ],
+      "meanings": [
+        "Long Time",
+        "Old Story"
+      ],
+      "freq": 688
+    },
+    "戸": {
+      "strokes": 4,
+      "readings_on": [
+        "こ"
+      ],
+      "readings_kun": [
+        "と"
+      ],
+      "meanings": [
+        "Door",
+        "Counter For Houses",
+        "Door Radical (no. 63)"
+      ],
+      "freq": 575
+    },
+    "毛": {
+      "strokes": 4,
+      "readings_on": [
+        "もう"
+      ],
+      "readings_kun": [
+        "け"
+      ],
+      "meanings": [
+        "Fur",
+        "Hair",
+        "Feather",
+        "Down"
+      ],
+      "freq": 1179
+    },
+    "央": {
+      "strokes": 5,
+      "readings_on": [
+        "おう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Center",
+        "Middle"
+      ],
+      "freq": 582
+    },
+    "氷": {
+      "strokes": 5,
+      "readings_on": [
+        "ひょう"
+      ],
+      "readings_kun": [
+        "こおり",
+        "ひ",
+        "こお.る"
+      ],
+      "meanings": [
+        "Icicle",
+        "Ice",
+        "Hail",
+        "Freeze",
+        "Congeal"
+      ],
+      "freq": 1450
+    },
+    "皮": {
+      "strokes": 5,
+      "readings_on": [
+        "ひ"
+      ],
+      "readings_kun": [
+        "かわ"
+      ],
+      "meanings": [
+        "Pelt",
+        "Skin",
+        "Hide",
+        "Leather",
+        "Skin Radical (no. 107)"
+      ],
+      "freq": 1092
+    },
+    "皿": {
+      "strokes": 5,
+      "readings_on": [
+        "べい"
+      ],
+      "readings_kun": [
+        "さら"
+      ],
+      "meanings": [
+        "Dish",
+        "A Helping",
+        "Plate"
+      ],
+      "freq": 1812
+    },
+    "竹": {
+      "strokes": 6,
+      "readings_on": [
+        "ちく"
+      ],
+      "readings_kun": [
+        "たけ"
+      ],
+      "meanings": [
+        "Bamboo"
+      ],
+      "freq": 593
+    },
+    "糸": {
+      "strokes": 6,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "いと"
+      ],
+      "meanings": [
+        "Thread"
+      ],
+      "freq": 1488
+    },
+    "虫": {
+      "strokes": 6,
+      "readings_on": [
+        "ちゅう",
+        "き"
+      ],
+      "readings_kun": [
+        "むし"
+      ],
+      "meanings": [
+        "Insect",
+        "Bug",
+        "Temper"
+      ],
+      "freq": 1351
+    },
+    "村": {
+      "strokes": 7,
+      "readings_on": [
+        "そん"
+      ],
+      "readings_kun": [
+        "むら"
+      ],
+      "meanings": [
+        "Village",
+        "Town"
+      ],
+      "freq": 253
+    },
+    "貝": {
+      "strokes": 7,
+      "readings_on": [
+        "ばい"
+      ],
+      "readings_kun": [
+        "かい"
+      ],
+      "meanings": [
+        "Shellfish"
+      ],
+      "freq": 1787
+    },
+    "池": {
+      "strokes": 6,
+      "readings_on": [
+        "ち"
+      ],
+      "readings_kun": [
+        "いけ"
+      ],
+      "meanings": [
+        "Pond",
+        "Cistern",
+        "Pool",
+        "Reservoir"
+      ],
+      "freq": 827
+    },
+    "羽": {
+      "strokes": 6,
+      "readings_on": [
+        "う"
+      ],
+      "readings_kun": [
+        "は",
+        "わ",
+        "はね"
+      ],
+      "meanings": [
+        "Feathers",
+        "Counter For Birds, Rabbits"
+      ],
+      "freq": 748
+    },
+    "角": {
+      "strokes": 7,
+      "readings_on": [
+        "かく"
+      ],
+      "readings_kun": [
+        "かど",
+        "つの"
+      ],
+      "meanings": [
+        "Angle",
+        "Corner",
+        "Square",
+        "Horn",
+        "Antlers"
+      ],
+      "freq": 805
+    },
+    "谷": {
+      "strokes": 7,
+      "readings_on": [
+        "こく"
+      ],
+      "readings_kun": [
+        "たに",
+        "きわ.まる"
+      ],
+      "meanings": [
+        "Valley"
+      ],
+      "freq": 508
+    },
+    "麦": {
+      "strokes": 7,
+      "readings_on": [
+        "ばく"
+      ],
+      "readings_kun": [
+        "むぎ"
+      ],
+      "meanings": [
+        "Barley",
+        "Wheat"
+      ],
+      "freq": 1615
+    },
+    "林": {
+      "strokes": 8,
+      "readings_on": [
+        "りん"
+      ],
+      "readings_kun": [
+        "はやし"
+      ],
+      "meanings": [
+        "Grove",
+        "Forest"
+      ],
+      "freq": 656
+    },
+    "州": {
+      "strokes": 6,
+      "readings_on": [
+        "しゅう",
+        "す"
+      ],
+      "readings_kun": [
+        "す"
+      ],
+      "meanings": [
+        "State",
+        "Province"
+      ],
+      "freq": 386
+    },
+    "血": {
+      "strokes": 6,
+      "readings_on": [
+        "けつ"
+      ],
+      "readings_kun": [
+        "ち"
+      ],
+      "meanings": [
+        "Blood"
+      ],
+      "freq": 832
+    },
+    "星": {
+      "strokes": 9,
+      "readings_on": [
+        "せい",
+        "しょう"
+      ],
+      "readings_kun": [
+        "ほし",
+        "-ぼし"
+      ],
+      "meanings": [
+        "Star",
+        "Spot",
+        "Dot",
+        "Mark"
+      ],
+      "freq": 844
+    },
+    "札": {
+      "strokes": 5,
+      "readings_on": [
+        "さつ"
+      ],
+      "readings_kun": [
+        "ふだ"
+      ],
+      "meanings": [
+        "Tag",
+        "Paper Money",
+        "Counter For Bonds",
+        "Placard",
+        "Bid"
+      ],
+      "freq": 921
+    },
+    "辺": {
+      "strokes": 5,
+      "readings_on": [
+        "へん"
+      ],
+      "readings_kun": [
+        "あた.り",
+        "ほと.り",
+        "-べ"
+      ],
+      "meanings": [
+        "Environs",
+        "Boundary",
+        "Border",
+        "Vicinity"
+      ],
+      "freq": 428
+    },
+    "弱": {
+      "strokes": 10,
+      "readings_on": [
+        "じゃく"
+      ],
+      "readings_kun": [
+        "よわ.い",
+        "よわ.る",
+        "よわ.まる",
+        "よわ.める"
+      ],
+      "meanings": [
+        "Weak",
+        "Frail"
+      ],
+      "freq": 958
+    },
+    "黄": {
+      "strokes": 11,
+      "readings_on": [
+        "こう",
+        "おう"
+      ],
+      "readings_kun": [
+        "き",
+        "こ-"
+      ],
+      "meanings": [
+        "Yellow"
+      ],
+      "freq": 1240
+    },
+    "森": {
+      "strokes": 12,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "もり"
+      ],
+      "meanings": [
+        "Forest",
+        "Woods"
+      ],
+      "freq": 609
+    },
+    "雲": {
+      "strokes": 12,
+      "readings_on": [
+        "うん"
+      ],
+      "readings_kun": [
+        "くも",
+        "-ぐも"
+      ],
+      "meanings": [
+        "Cloud"
+      ],
+      "freq": 1256
+    },
+    "県": {
+      "strokes": 9,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [
+        "か.ける"
+      ],
+      "meanings": [
+        "Prefecture"
+      ],
+      "freq": 140
+    },
+    "軽": {
+      "strokes": 12,
+      "readings_on": [
+        "けい",
+        "きょう",
+        "きん"
+      ],
+      "readings_kun": [
+        "かる.い",
+        "かろ.やか",
+        "かろ.んじる"
+      ],
+      "meanings": [
+        "Lightly",
+        "Trifling",
+        "Unimportant"
+      ],
+      "freq": 790
+    },
+    "農": {
+      "strokes": 13,
+      "readings_on": [
+        "のう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Agriculture",
+        "Farmers"
+      ],
+      "freq": 385
+    },
+    "鉄": {
+      "strokes": 13,
+      "readings_on": [
+        "てつ"
+      ],
+      "readings_kun": [
+        "くろがね"
+      ],
+      "meanings": [
+        "Iron"
+      ],
+      "freq": 672
+    },
+    "算": {
+      "strokes": 14,
+      "readings_on": [
+        "さん"
+      ],
+      "readings_kun": [
+        "そろ"
+      ],
+      "meanings": [
+        "Calculate",
+        "Divining",
+        "Number",
+        "Abacus",
+        "Probability"
+      ],
+      "freq": 361
+    },
+    "線": {
+      "strokes": 15,
+      "readings_on": [
+        "せん"
+      ],
+      "readings_kun": [
+        "すじ"
+      ],
+      "meanings": [
+        "Line",
+        "Track"
+      ],
+      "freq": 382
+    },
+    "仲": {
+      "strokes": 6,
+      "readings_on": [
+        "ちゅう"
+      ],
+      "readings_kun": [
+        "なか"
+      ],
+      "meanings": [
+        "Go-between",
+        "Relationship"
+      ],
+      "freq": 919
+    },
+    "低": {
+      "strokes": 7,
+      "readings_on": [
+        "てい"
+      ],
+      "readings_kun": [
+        "ひく.い",
+        "ひく.める",
+        "ひく.まる"
+      ],
+      "meanings": [
+        "Lower",
+        "Short",
+        "Humble"
+      ],
+      "freq": 435
+    },
+    "岸": {
+      "strokes": 8,
+      "readings_on": [
+        "がん"
+      ],
+      "readings_kun": [
+        "きし"
+      ],
+      "meanings": [
+        "Beach"
+      ],
+      "freq": 556
+    },
+    "波": {
+      "strokes": 8,
+      "readings_on": [
+        "は"
+      ],
+      "readings_kun": [
+        "なみ"
+      ],
+      "meanings": [
+        "Waves",
+        "Billows",
+        "Poland"
+      ],
+      "freq": 740
+    },
+    "拾": {
+      "strokes": 9,
+      "readings_on": [
+        "しゅう",
+        "じゅう"
+      ],
+      "readings_kun": [
+        "ひろ.う"
+      ],
+      "meanings": [
+        "Pick Up",
+        "Gather",
+        "Find",
+        "Go On Foot",
+        "Ten"
+      ],
+      "freq": 1479
+    },
+    "秒": {
+      "strokes": 9,
+      "readings_on": [
+        "びょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Second (1/60 Minute)"
+      ],
+      "freq": 1015
+    },
+    "競": {
+      "strokes": 20,
+      "readings_on": [
+        "きょう",
+        "けい"
+      ],
+      "readings_kun": [
+        "きそ.う",
+        "せ.る",
+        "くら.べる"
+      ],
+      "meanings": [
+        "Emulate",
+        "Compete With",
+        "Bid",
+        "Sell At Auction",
+        "Bout",
+        "Contest",
+        "Race"
+      ],
+      "freq": 610
+    },
+    "令": {
+      "strokes": 5,
+      "readings_on": [
+        "れい"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Orders",
+        "Ancient Laws",
+        "Command",
+        "Decree"
+      ],
+      "freq": 804
+    },
+    "根": {
+      "strokes": 10,
+      "readings_on": [
+        "こん"
+      ],
+      "readings_kun": [
+        "ね",
+        "-ね"
+      ],
+      "meanings": [
+        "Root",
+        "Radical",
+        "Head (pimple)"
+      ],
+      "freq": 620
+    },
+    "倍": {
+      "strokes": 10,
+      "readings_on": [
+        "ばい"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Double",
+        "Twice",
+        "Times",
+        "Fold"
+      ],
+      "freq": 714
+    },
+    "島": {
+      "strokes": 10,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "しま"
+      ],
+      "meanings": [
+        "Island"
+      ],
+      "freq": 245
+    },
+    "祭": {
+      "strokes": 11,
+      "readings_on": [
+        "さい"
+      ],
+      "readings_kun": [
+        "まつ.る",
+        "まつ.り",
+        "まつり"
+      ],
+      "meanings": [
+        "Ritual",
+        "Offer Prayers",
+        "Celebrate",
+        "Deify",
+        "Enshrine",
+        "Worship"
+      ],
+      "freq": 1124
+    },
+    "章": {
+      "strokes": 11,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Badge",
+        "Chapter",
+        "Composition",
+        "Poem",
+        "Design"
+      ],
+      "freq": 990
+    },
+    "童": {
+      "strokes": 12,
+      "readings_on": [
+        "どう"
+      ],
+      "readings_kun": [
+        "わらべ"
+      ],
+      "meanings": [
+        "Juvenile",
+        "Child"
+      ],
+      "freq": 1138
+    },
+    "階": {
+      "strokes": 12,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "きざはし"
+      ],
+      "meanings": [
+        "Storey",
+        "Stair",
+        "Counter For Storeys Of A Building"
+      ],
+      "freq": 513
+    },
+    "植": {
+      "strokes": 12,
+      "readings_on": [
+        "しょく"
+      ],
+      "readings_kun": [
+        "う.える",
+        "う.わる"
+      ],
+      "meanings": [
+        "Plant"
+      ],
+      "freq": 699
+    },
+    "温": {
+      "strokes": 12,
+      "readings_on": [
+        "おん"
+      ],
+      "readings_kun": [
+        "あたた.か",
+        "あたた.かい",
+        "あたた.まる",
+        "あたた.める",
+        "ぬく"
+      ],
+      "meanings": [
+        "Warm"
+      ],
+      "freq": 838
+    },
+    "湯": {
+      "strokes": 12,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "ゆ"
+      ],
+      "meanings": [
+        "Hot Water",
+        "Bath",
+        "Hot Spring"
+      ],
+      "freq": 1356
+    },
+    "短": {
+      "strokes": 12,
+      "readings_on": [
+        "たん"
+      ],
+      "readings_kun": [
+        "みじか.い"
+      ],
+      "meanings": [
+        "Short",
+        "Brevity",
+        "Fault",
+        "Defect",
+        "Weak Point"
+      ],
+      "freq": 689
+    },
+    "泉": {
+      "strokes": 9,
+      "readings_on": [
+        "せん"
+      ],
+      "readings_kun": [
+        "いずみ"
+      ],
+      "meanings": [
+        "Spring",
+        "Fountain"
+      ],
+      "freq": 1086
+    },
+    "橋": {
+      "strokes": 16,
+      "readings_on": [
+        "きょう"
+      ],
+      "readings_kun": [
+        "はし"
+      ],
+      "meanings": [
+        "Bridge"
+      ],
+      "freq": 553
+    },
+    "緑": {
+      "strokes": 14,
+      "readings_on": [
+        "りょく",
+        "ろく"
+      ],
+      "readings_kun": [
+        "みどり"
+      ],
+      "meanings": [
+        "Green"
+      ],
+      "freq": 1180
+    },
+    "練": {
+      "strokes": 14,
+      "readings_on": [
+        "れん"
+      ],
+      "readings_kun": [
+        "ね.る",
+        "ね.り"
+      ],
+      "meanings": [
+        "Practice",
+        "Gloss",
+        "Train",
+        "Drill",
+        "Polish",
+        "Refine"
+      ],
+      "freq": 788
+    },
+    "億": {
+      "strokes": 15,
+      "readings_on": [
+        "おく"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Hundred Million",
+        "10**8"
+      ],
+      "freq": 716
+    },
+    "課": {
+      "strokes": 15,
+      "readings_on": [
+        "か"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Chapter",
+        "Lesson",
+        "Section",
+        "Department",
+        "Division",
+        "Counter For Chapters (of A Book)"
+      ],
+      "freq": 455
+    },
+    "賞": {
+      "strokes": 15,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "ほ.める"
+      ],
+      "meanings": [
+        "Prize",
+        "Reward",
+        "Praise"
+      ],
+      "freq": 426
+    },
+    "輪": {
+      "strokes": 15,
+      "readings_on": [
+        "りん"
+      ],
+      "readings_kun": [
+        "わ"
+      ],
+      "meanings": [
+        "Wheel",
+        "Ring",
+        "Circle",
+        "Link",
+        "Loop",
+        "Counter For Wheels And Flowers"
+      ],
+      "freq": 693
+    },
+    "像": {
+      "strokes": 14,
+      "readings_on": [
+        "ぞう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Statue",
+        "Picture",
+        "Image",
+        "Figure",
+        "Portrait"
+      ],
+      "freq": 856
+    },
+    "卒": {
+      "strokes": 8,
+      "readings_on": [
+        "そつ",
+        "しゅつ"
+      ],
+      "readings_kun": [
+        "そっ.する",
+        "お.える",
+        "お.わる",
+        "ついに",
+        "にわか"
+      ],
+      "meanings": [
+        "Graduate",
+        "Soldier",
+        "Private",
+        "Die"
+      ],
+      "freq": 772
+    },
+    "協": {
+      "strokes": 8,
+      "readings_on": [
+        "きょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Co-",
+        "Cooperation"
+      ],
+      "freq": 121
+    },
+    "周": {
+      "strokes": 8,
+      "readings_on": [
+        "しゅう"
+      ],
+      "readings_kun": [
+        "まわ.り"
+      ],
+      "meanings": [
+        "Circumference",
+        "Circuit",
+        "Lap"
+      ],
+      "freq": 562
+    },
+    "囲": {
+      "strokes": 7,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": [
+        "かこ.む",
+        "かこ.う",
+        "かこ.い"
+      ],
+      "meanings": [
+        "Surround",
+        "Besiege",
+        "Store",
+        "Paling",
+        "Enclosure",
+        "Encircle",
+        "Preserve",
+        "Keep"
+      ],
+      "freq": 771
+    },
+    "固": {
+      "strokes": 8,
+      "readings_on": [
+        "こ"
+      ],
+      "readings_kun": [
+        "かた.める",
+        "かた.まる",
+        "かた.まり",
+        "かた.い"
+      ],
+      "meanings": [
+        "Harden",
+        "Set",
+        "Clot",
+        "Curdle"
+      ],
+      "freq": 750
+    },
+    "季": {
+      "strokes": 8,
+      "readings_on": [
+        "き"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Seasons"
+      ],
+      "freq": 842
+    },
+    "希": {
+      "strokes": 7,
+      "readings_on": [
+        "き",
+        "け"
+      ],
+      "readings_kun": [
+        "まれ"
+      ],
+      "meanings": [
+        "Hope",
+        "Beg",
+        "Request",
+        "Pray",
+        "Beseech",
+        "Greece",
+        "Dilute (acid)",
+        "Rare",
+        "Few",
+        "Phenomenal"
+      ],
+      "freq": 896
+    },
+    "材": {
+      "strokes": 7,
+      "readings_on": [
+        "ざい"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Lumber",
+        "Log",
+        "Timber",
+        "Wood",
+        "Materials",
+        "Ingredients",
+        "Talent"
+      ],
+      "freq": 565
+    },
+    "芸": {
+      "strokes": 7,
+      "readings_on": [
+        "げい",
+        "うん"
+      ],
+      "readings_kun": [
+        "う.える",
+        "のり",
+        "わざ"
+      ],
+      "meanings": [
+        "Technique",
+        "Art",
+        "Craft",
+        "Performance",
+        "Acting",
+        "Trick",
+        "Stunt"
+      ],
+      "freq": 719
+    },
+    "技": {
+      "strokes": 7,
+      "readings_on": [
+        "ぎ"
+      ],
+      "readings_kun": [
+        "わざ"
+      ],
+      "meanings": [
+        "Skill",
+        "Art",
+        "Craft",
+        "Ability",
+        "Feat",
+        "Performance",
+        "Vocation",
+        "Arts"
+      ],
+      "freq": 434
+    },
+    "骨": {
+      "strokes": 10,
+      "readings_on": [
+        "こつ"
+      ],
+      "readings_kun": [
+        "ほね"
+      ],
+      "meanings": [
+        "Skeleton",
+        "Bone",
+        "Remains",
+        "Frame"
+      ],
+      "freq": 936
+    },
+    "寺": {
+      "strokes": 6,
+      "readings_on": [
+        "じ"
+      ],
+      "readings_kun": [
+        "てら"
+      ],
+      "meanings": [
+        "Buddhist Temple"
+      ],
+      "freq": 879
+    },
+    "岩": {
+      "strokes": 8,
+      "readings_on": [
+        "がん"
+      ],
+      "readings_kun": [
+        "いわ"
+      ],
+      "meanings": [
+        "Boulder",
+        "Rock",
+        "Cliff"
+      ],
+      "freq": 787
+    },
+    "区": {
+      "strokes": 4,
+      "readings_on": [
+        "く",
+        "おう",
+        "こう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Ward",
+        "District"
+      ],
+      "freq": 137
+    },
+    "坂": {
+      "strokes": 7,
+      "readings_on": [
+        "はん"
+      ],
+      "readings_kun": [
+        "さか"
+      ],
+      "meanings": [
+        "Slope",
+        "Incline",
+        "Hill"
+      ],
+      "freq": 865
+    },
+    "勇": {
+      "strokes": 9,
+      "readings_on": [
+        "ゆう"
+      ],
+      "readings_kun": [
+        "いさ.む"
+      ],
+      "meanings": [
+        "Courage",
+        "Cheer Up",
+        "Be In High Spirits",
+        "Bravery",
+        "Heroism"
+      ],
+      "freq": 1319
+    },
+    "毒": {
+      "strokes": 8,
+      "readings_on": [
+        "どく"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Poison",
+        "Virus",
+        "Venom",
+        "Germ",
+        "Harm",
+        "Injury",
+        "Spite"
+      ],
+      "freq": 1419
+    },
+    "浅": {
+      "strokes": 9,
+      "readings_on": [
+        "せん"
+      ],
+      "readings_kun": [
+        "あさ.い"
+      ],
+      "meanings": [
+        "Shallow",
+        "Superficial",
+        "Frivolous",
+        "Wretched",
+        "Shameful"
+      ],
+      "freq": 1253
+    },
+    "軍": {
+      "strokes": 9,
+      "readings_on": [
+        "ぐん"
+      ],
+      "readings_kun": [
+        "いくさ"
+      ],
+      "meanings": [
+        "Army",
+        "Force",
+        "Troops",
+        "War",
+        "Battle"
+      ],
+      "freq": 189
+    },
+    "仏": {
+      "strokes": 4,
+      "readings_on": [
+        "ぶつ",
+        "ふつ"
+      ],
+      "readings_kun": [
+        "ほとけ"
+      ],
+      "meanings": [
+        "Buddha",
+        "The Dead",
+        "France"
+      ],
+      "freq": 819
+    },
+    "築": {
+      "strokes": 16,
+      "readings_on": [
+        "ちく"
+      ],
+      "readings_kun": [
+        "きず.く"
+      ],
+      "meanings": [
+        "Fabricate",
+        "Build",
+        "Construct"
+      ],
+      "freq": 821
+    },
+    "門": {
+      "strokes": 8,
+      "readings_on": [
+        "もん"
+      ],
+      "readings_kun": [
+        "かど",
+        "と"
+      ],
+      "meanings": [
+        "Gate",
+        "Counter For Cannons"
+      ],
+      "freq": 452
+    },
+    "荷": {
+      "strokes": 10,
+      "readings_on": [
+        "か"
+      ],
+      "readings_kun": [
+        "に"
+      ],
+      "meanings": [
+        "Baggage",
+        "Shoulder-pole Load",
+        "Bear (a Burden)",
+        "Shoulder (a Gun)",
+        "Load",
+        "Cargo",
+        "Freight"
+      ],
+      "freq": 1230
+    },
+    "府": {
+      "strokes": 8,
+      "readings_on": [
+        "ふ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Borough",
+        "Urban Prefecture",
+        "Govt Office",
+        "Representative Body",
+        "Storehouse"
+      ],
+      "freq": 170
+    },
+    "浴": {
+      "strokes": 10,
+      "readings_on": [
+        "よく"
+      ],
+      "readings_kun": [
+        "あ.びる",
+        "あ.びせる"
+      ],
+      "meanings": [
+        "Bathe",
+        "Be Favored With",
+        "Bask In"
+      ],
+      "freq": 1136
+    },
+    "専": {
+      "strokes": 9,
+      "readings_on": [
+        "せん"
+      ],
+      "readings_kun": [
+        "もっぱ.ら"
+      ],
+      "meanings": [
+        "Specialty",
+        "Exclusive",
+        "Mainly",
+        "Solely"
+      ],
+      "freq": 506
+    },
+    "細": {
+      "strokes": 11,
+      "readings_on": [
+        "さい"
+      ],
+      "readings_kun": [
+        "ほそ.い",
+        "ほそ.る",
+        "こま.か",
+        "こま.かい"
+      ],
+      "meanings": [
+        "Dainty",
+        "Get Thin",
+        "Taper",
+        "Slender",
+        "Narrow",
+        "Detailed",
+        "Precise"
+      ],
+      "freq": 537
+    },
+    "鼻": {
+      "strokes": 14,
+      "readings_on": [
+        "び"
+      ],
+      "readings_kun": [
+        "はな"
+      ],
+      "meanings": [
+        "Nose",
+        "Snout"
+      ],
+      "freq": 1632
+    },
+    "兵": {
+      "strokes": 7,
+      "readings_on": [
+        "へい",
+        "ひょう"
+      ],
+      "readings_kun": [
+        "つわもの"
+      ],
+      "meanings": [
+        "Soldier",
+        "Private",
+        "Troops",
+        "Army",
+        "Warfare",
+        "Strategy",
+        "Tactics"
+      ],
+      "freq": 522
+    },
+    "塩": {
+      "strokes": 13,
+      "readings_on": [
+        "えん"
+      ],
+      "readings_kun": [
+        "しお"
+      ],
+      "meanings": [
+        "Salt"
+      ],
+      "freq": 1148
+    },
+    "栄": {
+      "strokes": 9,
+      "readings_on": [
+        "えい",
+        "よう"
+      ],
+      "readings_kun": [
+        "さか.える",
+        "は.え",
+        "-ば.え",
+        "は.える",
+        "え"
+      ],
+      "meanings": [
+        "Flourish",
+        "Prosperity",
+        "Honor",
+        "Glory",
+        "Splendor"
+      ],
+      "freq": 920
+    },
+    "干": {
+      "strokes": 3,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "ほ.す",
+        "ほ.し-",
+        "-ぼ.し",
+        "ひ.る"
+      ],
+      "meanings": [
+        "Dry",
+        "Parch",
+        "Ebb",
+        "Recede",
+        "Interfere",
+        "Intercede"
+      ],
+      "freq": 1349
+    },
+    "底": {
+      "strokes": 8,
+      "readings_on": [
+        "てい"
+      ],
+      "readings_kun": [
+        "そこ"
+      ],
+      "meanings": [
+        "Bottom",
+        "Sole",
+        "Depth",
+        "Bottom Price",
+        "Base",
+        "Kind",
+        "Sort"
+      ],
+      "freq": 867
+    },
+    "署": {
+      "strokes": 13,
+      "readings_on": [
+        "しょ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Signature",
+        "Govt Office",
+        "Police Station"
+      ],
+      "freq": 725
+    },
+    "恋": {
+      "strokes": 10,
+      "readings_on": [
+        "れん"
+      ],
+      "readings_kun": [
+        "こ.う",
+        "こい",
+        "こい.しい"
+      ],
+      "meanings": [
+        "Romance",
+        "In Love",
+        "Yearn For",
+        "Miss",
+        "Darling"
+      ],
+      "freq": 1296
+    },
+    "訓": {
+      "strokes": 10,
+      "readings_on": [
+        "くん",
+        "きん"
+      ],
+      "readings_kun": [
+        "おし.える",
+        "よ.む",
+        "くん.ずる"
+      ],
+      "meanings": [
+        "Instruction",
+        "Japanese Character Reading",
+        "Explanation",
+        "Read"
+      ],
+      "freq": 1134
+    },
+    "祈": {
+      "strokes": 8,
+      "readings_on": [
+        "き"
+      ],
+      "readings_kun": [
+        "いの.る"
+      ],
+      "meanings": [
+        "Pray",
+        "Wish"
+      ],
+      "freq": 1462
+    },
+    "焼": {
+      "strokes": 12,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "や.く",
+        "や.き",
+        "や.き-",
+        "-や.き",
+        "や.ける"
+      ],
+      "meanings": [
+        "Bake",
+        "Burning"
+      ],
+      "freq": 982
+    },
+    "胸": {
+      "strokes": 10,
+      "readings_on": [
+        "きょう"
+      ],
+      "readings_kun": [
+        "むね",
+        "むな-"
+      ],
+      "meanings": [
+        "Bosom",
+        "Breast",
+        "Chest",
+        "Heart",
+        "Feelings"
+      ],
+      "freq": 1144
+    },
+    "脳": {
+      "strokes": 11,
+      "readings_on": [
+        "のう",
+        "どう"
+      ],
+      "readings_kun": [
+        "のうずる"
+      ],
+      "meanings": [
+        "Brain",
+        "Memory"
+      ],
+      "freq": 459
+    },
+    "枚": {
+      "strokes": 8,
+      "readings_on": [
+        "まい",
+        "ばい"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Sheet Of...",
+        "Counter For Flat Thin Objects Or Sheets"
+      ],
+      "freq": 911
+    },
+    "禁": {
+      "strokes": 13,
+      "readings_on": [
+        "きん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Prohibition",
+        "Ban",
+        "Forbid"
+      ],
+      "freq": 681
+    },
+    "喫": {
+      "strokes": 12,
+      "readings_on": [
+        "きつ"
+      ],
+      "readings_kun": [
+        "の.む"
+      ],
+      "meanings": [
+        "Consume",
+        "Eat",
+        "Drink",
+        "Smoke",
+        "Receive (a Blow)"
+      ],
+      "freq": 1347
+    },
+    "減": {
+      "strokes": 12,
+      "readings_on": [
+        "げん"
+      ],
+      "readings_kun": [
+        "へ.る",
+        "へ.らす"
+      ],
+      "meanings": [
+        "Dwindle",
+        "Decrease",
+        "Reduce",
+        "Decline",
+        "Curtail",
+        "Get Hungry"
+      ],
+      "freq": 261
+    },
+    "順": {
+      "strokes": 12,
+      "readings_on": [
+        "じゅん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Obey",
+        "Order",
+        "Turn",
+        "Right",
+        "Docility",
+        "Occasion"
+      ],
+      "freq": 779
+    },
+    "布": {
+      "strokes": 5,
+      "readings_on": [
+        "ふ"
+      ],
+      "readings_kun": [
+        "ぬの"
+      ],
+      "meanings": [
+        "Linen",
+        "Cloth",
+        "Spread",
+        "Distribute"
+      ],
+      "freq": 877
+    },
+    "詞": {
+      "strokes": 12,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "ことば"
+      ],
+      "meanings": [
+        "Part Of Speech",
+        "Words",
+        "Poetry"
+      ],
+      "freq": 1636
+    },
+    "歴": {
+      "strokes": 14,
+      "readings_on": [
+        "れき",
+        "れっき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Curriculum",
+        "Continuation",
+        "Passage Of Time"
+      ],
+      "freq": 632
+    },
+    "冊": {
+      "strokes": 5,
+      "readings_on": [
+        "さつ",
+        "さく"
+      ],
+      "readings_kun": [
+        "ふみ"
+      ],
+      "meanings": [
+        "Tome",
+        "Counter For Books",
+        "Volume"
+      ],
+      "freq": 1313
+    },
+    "宇": {
+      "strokes": 6,
+      "readings_on": [
+        "う"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Eaves",
+        "Roof",
+        "House",
+        "Heaven"
+      ],
+      "freq": 883
+    },
+    "団": {
+      "strokes": 6,
+      "readings_on": [
+        "だん",
+        "とん"
+      ],
+      "readings_kun": [
+        "かたまり",
+        "まる.い"
+      ],
+      "meanings": [
+        "Group",
+        "Association"
+      ],
+      "freq": 213
+    },
+    "暴": {
+      "strokes": 15,
+      "readings_on": [
+        "ぼう",
+        "ばく"
+      ],
+      "readings_kun": [
+        "あば.く",
+        "あば.れる"
+      ],
+      "meanings": [
+        "Outburst",
+        "Rave",
+        "Fret",
+        "Force",
+        "Violence",
+        "Cruelty",
+        "Outrage"
+      ],
+      "freq": 692
+    },
+    "混": {
+      "strokes": 11,
+      "readings_on": [
+        "こん"
+      ],
+      "readings_kun": [
+        "ま.じる",
+        "-ま.じり",
+        "ま.ざる",
+        "ま.ぜる",
+        "こ.む"
+      ],
+      "meanings": [
+        "Mix",
+        "Blend",
+        "Confuse"
+      ],
+      "freq": 824
+    },
+    "乱": {
+      "strokes": 7,
+      "readings_on": [
+        "らん",
+        "ろん"
+      ],
+      "readings_kun": [
+        "みだ.れる",
+        "みだ.る",
+        "みだ.す",
+        "みだ",
+        "おさ.める",
+        "わた.る"
+      ],
+      "meanings": [
+        "Riot",
+        "War",
+        "Disorder",
+        "Disturb"
+      ],
+      "freq": 755
+    },
+    "改": {
+      "strokes": 7,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "あらた.める",
+        "あらた.まる"
+      ],
+      "meanings": [
+        "Reformation",
+        "Change",
+        "Modify",
+        "Mend",
+        "Renew",
+        "Examine",
+        "Inspect",
+        "Search"
+      ],
+      "freq": 147
+    },
+    "絡": {
+      "strokes": 12,
+      "readings_on": [
+        "らく"
+      ],
+      "readings_kun": [
+        "から.む",
+        "から.まる"
+      ],
+      "meanings": [
+        "Entwine",
+        "Coil Around",
+        "Get Caught In"
+      ],
+      "freq": 806
+    },
+    "比": {
+      "strokes": 4,
+      "readings_on": [
+        "ひ"
+      ],
+      "readings_kun": [
+        "くら.べる"
+      ],
+      "meanings": [
+        "Compare",
+        "Race",
+        "Ratio",
+        "Philippines"
+      ],
+      "freq": 329
+    },
+    "被": {
+      "strokes": 10,
+      "readings_on": [
+        "ひ"
+      ],
+      "readings_kun": [
+        "こうむ.る",
+        "おお.う",
+        "かぶ.る",
+        "かぶ.せる"
+      ],
+      "meanings": [
+        "Incur",
+        "Cover",
+        "Veil",
+        "Brood Over",
+        "Shelter",
+        "Wear",
+        "Put On",
+        "Be Exposed (film)",
+        "Receiving"
+      ],
+      "freq": 431
+    },
+    "震": {
+      "strokes": 15,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "ふる.う",
+        "ふる.える"
+      ],
+      "meanings": [
+        "Quake",
+        "Shake",
+        "Tremble",
+        "Quiver",
+        "Shiver"
+      ],
+      "freq": 893
+    },
+    "械": {
+      "strokes": 11,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "かせ"
+      ],
+      "meanings": [
+        "Contraption",
+        "Fetter",
+        "Machine",
+        "Instrument"
+      ],
+      "freq": 1321
+    },
+    "個": {
+      "strokes": 10,
+      "readings_on": [
+        "こ",
+        "か"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Individual",
+        "Counter For Articles"
+      ],
+      "freq": 451
+    },
+    "圧": {
+      "strokes": 5,
+      "readings_on": [
+        "あつ",
+        "えん",
+        "おう"
+      ],
+      "readings_kun": [
+        "お.す",
+        "へ.す",
+        "おさ.える",
+        "お.さえる"
+      ],
+      "meanings": [
+        "Pressure",
+        "Push",
+        "Overwhelm",
+        "Oppress",
+        "Dominate"
+      ],
+      "freq": 718
+    },
+    "厚": {
+      "strokes": 9,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "あつ.い",
+        "あか"
+      ],
+      "meanings": [
+        "Thick",
+        "Heavy",
+        "Rich",
+        "Kind",
+        "Cordial",
+        "Brazen",
+        "Shameless"
+      ],
+      "freq": 768
+    },
+    "防": {
+      "strokes": 7,
+      "readings_on": [
+        "ぼう"
+      ],
+      "readings_kun": [
+        "ふせ.ぐ"
+      ],
+      "meanings": [
+        "Ward Off",
+        "Defend",
+        "Protect",
+        "Resist"
+      ],
+      "freq": 331
+    },
+    "史": {
+      "strokes": 5,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "History",
+        "Chronicle"
+      ],
+      "freq": 511
+    },
+    "委": {
+      "strokes": 8,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": [
+        "ゆだ.ねる"
+      ],
+      "meanings": [
+        "Committee",
+        "Entrust To",
+        "Leave To",
+        "Devote",
+        "Discard"
+      ],
+      "freq": 187
+    },
+    "査": {
+      "strokes": 9,
+      "readings_on": [
+        "さ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Investigate"
+      ],
+      "freq": 184
+    },
+    "総": {
+      "strokes": 14,
+      "readings_on": [
+        "そう"
+      ],
+      "readings_kun": [
+        "す.べて",
+        "すべ.て",
+        "ふさ"
+      ],
+      "meanings": [
+        "General",
+        "Whole",
+        "All",
+        "Full",
+        "Total"
+      ],
+      "freq": 129
+    },
+    "設": {
+      "strokes": 11,
+      "readings_on": [
+        "せつ"
+      ],
+      "readings_kun": [
+        "もう.ける"
+      ],
+      "meanings": [
+        "Establishment",
+        "Provision",
+        "Prepare"
+      ],
+      "freq": 145
+    },
+    "省": {
+      "strokes": 9,
+      "readings_on": [
+        "せい",
+        "しょう"
+      ],
+      "readings_kun": [
+        "かえり.みる",
+        "はぶ.く"
+      ],
+      "meanings": [
+        "Focus",
+        "Government Ministry",
+        "Conserve"
+      ],
+      "freq": 548
+    },
+    "税": {
+      "strokes": 12,
+      "readings_on": [
+        "ぜい"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Tax",
+        "Duty"
+      ],
+      "freq": 289
+    },
+    "各": {
+      "strokes": 6,
+      "readings_on": [
+        "かく"
+      ],
+      "readings_kun": [
+        "おのおの"
+      ],
+      "meanings": [
+        "Each",
+        "Every",
+        "Either"
+      ],
+      "freq": 243
+    },
+    "勢": {
+      "strokes": 13,
+      "readings_on": [
+        "せい",
+        "ぜい"
+      ],
+      "readings_kun": [
+        "いきお.い",
+        "はずみ"
+      ],
+      "meanings": [
+        "Forces",
+        "Energy",
+        "Military Strength"
+      ],
+      "freq": 260
+    },
+    "営": {
+      "strokes": 12,
+      "readings_on": [
+        "えい"
+      ],
+      "readings_kun": [
+        "いとな.む",
+        "いとな.み"
+      ],
+      "meanings": [
+        "Occupation",
+        "Camp",
+        "Perform",
+        "Build",
+        "Conduct (business)"
+      ],
+      "freq": 303
+    },
+    "領": {
+      "strokes": 14,
+      "readings_on": [
+        "りょう"
+      ],
+      "readings_kun": [
+        "えり"
+      ],
+      "meanings": [
+        "Jurisdiction",
+        "Dominion",
+        "Territory",
+        "Fief",
+        "Reign"
+      ],
+      "freq": 138
+    },
+    "副": {
+      "strokes": 11,
+      "readings_on": [
+        "ふく"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Vice-",
+        "Assistant",
+        "Aide",
+        "Duplicate",
+        "Copy"
+      ],
+      "freq": 360
+    },
+    "域": {
+      "strokes": 11,
+      "readings_on": [
+        "いき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Range",
+        "Region",
+        "Limits",
+        "Stage",
+        "Level"
+      ],
+      "freq": 396
+    },
+    "停": {
+      "strokes": 11,
+      "readings_on": [
+        "てい"
+      ],
+      "readings_kun": [
+        "と.める",
+        "と.まる"
+      ],
+      "meanings": [
+        "Halt",
+        "Stopping"
+      ],
+      "freq": 733
+    },
+    "革": {
+      "strokes": 9,
+      "readings_on": [
+        "かく"
+      ],
+      "readings_kun": [
+        "かわ"
+      ],
+      "meanings": [
+        "Leather",
+        "Skin",
+        "Reform",
+        "Become Serious"
+      ],
+      "freq": 249
+    },
+    "律": {
+      "strokes": 9,
+      "readings_on": [
+        "りつ",
+        "りち",
+        "れつ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Rhythm",
+        "Law",
+        "Regulation",
+        "Gauge",
+        "Control"
+      ],
+      "freq": 992
+    },
+    "準": {
+      "strokes": 13,
+      "readings_on": [
+        "じゅん"
+      ],
+      "readings_kun": [
+        "じゅん.じる",
+        "じゅん.ずる",
+        "なぞら.える",
+        "のり",
+        "ひと.しい",
+        "みずもり"
+      ],
+      "meanings": [
+        "Semi-",
+        "Correspond To",
+        "Proportionate To",
+        "Conform",
+        "Imitate"
+      ],
+      "freq": 425
+    },
+    "則": {
+      "strokes": 9,
+      "readings_on": [
+        "そく"
+      ],
+      "readings_kun": [
+        "のっと.る"
+      ],
+      "meanings": [
+        "Rule",
+        "Follow",
+        "Based On",
+        "Model After"
+      ],
+      "freq": 753
+    },
+    "導": {
+      "strokes": 15,
+      "readings_on": [
+        "どう"
+      ],
+      "readings_kun": [
+        "みちび.く"
+      ],
+      "meanings": [
+        "Guidance",
+        "Leading",
+        "Conduct",
+        "Usher"
+      ],
+      "freq": 354
+    },
+    "乳": {
+      "strokes": 8,
+      "readings_on": [
+        "にゅう"
+      ],
+      "readings_kun": [
+        "ちち",
+        "ち"
+      ],
+      "meanings": [
+        "Milk",
+        "Breasts"
+      ],
+      "freq": 1289
+    },
+    "城": {
+      "strokes": 9,
+      "readings_on": [
+        "じょう",
+        "せい"
+      ],
+      "readings_kun": [
+        "しろ"
+      ],
+      "meanings": [
+        "Castle"
+      ],
+      "freq": 795
+    },
+    "担": {
+      "strokes": 8,
+      "readings_on": [
+        "たん"
+      ],
+      "readings_kun": [
+        "かつ.ぐ",
+        "にな.う"
+      ],
+      "meanings": [
+        "Shouldering",
+        "Carry",
+        "Raise",
+        "Bear"
+      ],
+      "freq": 422
+    },
+    "額": {
+      "strokes": 18,
+      "readings_on": [
+        "がく"
+      ],
+      "readings_kun": [
+        "ひたい"
+      ],
+      "meanings": [
+        "Forehead",
+        "Tablet",
+        "Plaque",
+        "Framed Picture",
+        "Sum",
+        "Amount",
+        "Volume"
+      ],
+      "freq": 407
+    },
+    "輸": {
+      "strokes": 16,
+      "readings_on": [
+        "ゆ",
+        "しゅ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Transport",
+        "Send",
+        "Be Inferior"
+      ],
+      "freq": 371
+    },
+    "燃": {
+      "strokes": 16,
+      "readings_on": [
+        "ねん"
+      ],
+      "readings_kun": [
+        "も.える",
+        "も.やす",
+        "も.す"
+      ],
+      "meanings": [
+        "Burn",
+        "Blaze",
+        "Glow"
+      ],
+      "freq": 948
+    },
+    "祝": {
+      "strokes": 9,
+      "readings_on": [
+        "しゅく",
+        "しゅう"
+      ],
+      "readings_kun": [
+        "いわ.う"
+      ],
+      "meanings": [
+        "Celebrate",
+        "Congratulate"
+      ],
+      "freq": 1184
+    },
+    "届": {
+      "strokes": 8,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "とど.ける",
+        "-とど.け",
+        "とど.く"
+      ],
+      "meanings": [
+        "Deliver",
+        "Reach",
+        "Arrive",
+        "Report",
+        "Notify",
+        "Forward"
+      ],
+      "freq": 939
+    },
+    "肩": {
+      "strokes": 8,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [
+        "かた"
+      ],
+      "meanings": [
+        "Shoulder"
+      ],
+      "freq": 1215
+    },
+    "腕": {
+      "strokes": 12,
+      "readings_on": [
+        "わん"
+      ],
+      "readings_kun": [
+        "うで"
+      ],
+      "meanings": [
+        "Arm",
+        "Ability",
+        "Talent"
+      ],
+      "freq": 1163
+    },
+    "腰": {
+      "strokes": 13,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": [
+        "こし"
+      ],
+      "meanings": [
+        "Loins",
+        "Hips",
+        "Waist",
+        "Low Wainscoting"
+      ],
+      "freq": 1306
+    },
+    "触": {
+      "strokes": 13,
+      "readings_on": [
+        "しょく"
+      ],
+      "readings_kun": [
+        "ふ.れる",
+        "さわ.る",
+        "さわ"
+      ],
+      "meanings": [
+        "Contact",
+        "Touch",
+        "Feel",
+        "Hit",
+        "Proclaim",
+        "Announce",
+        "Conflict"
+      ],
+      "freq": 904
+    },
+    "層": {
+      "strokes": 14,
+      "readings_on": [
+        "そう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Stratum",
+        "Social Class",
+        "Layer",
+        "Story",
+        "Floor"
+      ],
+      "freq": 801
+    },
+    "型": {
+      "strokes": 9,
+      "readings_on": [
+        "けい"
+      ],
+      "readings_kun": [
+        "かた",
+        "-がた"
+      ],
+      "meanings": [
+        "Mould",
+        "Type",
+        "Model"
+      ],
+      "freq": 482
+    },
+    "庁": {
+      "strokes": 5,
+      "readings_on": [
+        "ちょう",
+        "てい"
+      ],
+      "readings_kun": [
+        "やくしょ"
+      ],
+      "meanings": [
+        "Government Office"
+      ],
+      "freq": 793
+    },
+    "管": {
+      "strokes": 14,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "くだ"
+      ],
+      "meanings": [
+        "Pipe",
+        "Tube",
+        "Wind Instrument",
+        "Drunken Talk",
+        "Control",
+        "Jurisdiction"
+      ],
+      "freq": 517
+    },
+    "象": {
+      "strokes": 12,
+      "readings_on": [
+        "しょう",
+        "ぞう"
+      ],
+      "readings_kun": [
+        "かたど.る"
+      ],
+      "meanings": [
+        "Elephant",
+        "Pattern After",
+        "Imitate",
+        "Image",
+        "Shape",
+        "Sign (of The Times)"
+      ],
+      "freq": 394
+    },
+    "量": {
+      "strokes": 12,
+      "readings_on": [
+        "りょう"
+      ],
+      "readings_kun": [
+        "はか.る"
+      ],
+      "meanings": [
+        "Quantity",
+        "Measure",
+        "Weight",
+        "Amount",
+        "Consider",
+        "Estimate",
+        "Surmise"
+      ],
+      "freq": 469
+    },
+    "境": {
+      "strokes": 14,
+      "readings_on": [
+        "きょう",
+        "けい"
+      ],
+      "readings_kun": [
+        "さかい"
+      ],
+      "meanings": [
+        "Boundary",
+        "Border",
+        "Region"
+      ],
+      "freq": 346
+    },
+    "武": {
+      "strokes": 8,
+      "readings_on": [
+        "ぶ",
+        "む"
+      ],
+      "readings_kun": [
+        "たけ",
+        "たけ.し"
+      ],
+      "meanings": [
+        "Warrior",
+        "Military",
+        "Chivalry",
+        "Arms"
+      ],
+      "freq": 387
+    },
+    "述": {
+      "strokes": 8,
+      "readings_on": [
+        "じゅつ"
+      ],
+      "readings_kun": [
+        "の.べる"
+      ],
+      "meanings": [
+        "Mention",
+        "State",
+        "Speak",
+        "Relate"
+      ],
+      "freq": 379
+    },
+    "販": {
+      "strokes": 11,
+      "readings_on": [
+        "はん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Marketing",
+        "Sell",
+        "Trade"
+      ],
+      "freq": 627
+    },
+    "含": {
+      "strokes": 7,
+      "readings_on": [
+        "がん"
+      ],
+      "readings_kun": [
+        "ふく.む",
+        "ふく.める"
+      ],
+      "meanings": [
+        "Contain",
+        "Include",
+        "Hold In The Mouth",
+        "Bear In Mind",
+        "Understand",
+        "Cherish"
+      ],
+      "freq": 466
+    },
+    "況": {
+      "strokes": 8,
+      "readings_on": [
+        "きょう"
+      ],
+      "readings_kun": [
+        "まし.て",
+        "いわ.んや",
+        "おもむき"
+      ],
+      "meanings": [
+        "Condition",
+        "Situation"
+      ],
+      "freq": 490
+    },
+    "補": {
+      "strokes": 12,
+      "readings_on": [
+        "ほ"
+      ],
+      "readings_kun": [
+        "おぎな.う"
+      ],
+      "meanings": [
+        "Supplement",
+        "Supply",
+        "Make Good",
+        "Offset",
+        "Compensate",
+        "Assistant",
+        "Learner"
+      ],
+      "freq": 332
+    },
+    "効": {
+      "strokes": 8,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "き.く",
+        "ききめ",
+        "なら.う"
+      ],
+      "meanings": [
+        "Merit",
+        "Efficacy",
+        "Efficiency",
+        "Benefit"
+      ],
+      "freq": 538
+    },
+    "豊": {
+      "strokes": 13,
+      "readings_on": [
+        "ほう",
+        "ぶ"
+      ],
+      "readings_kun": [
+        "ゆた.か",
+        "とよ"
+      ],
+      "meanings": [
+        "Bountiful",
+        "Excellent",
+        "Rich"
+      ],
+      "freq": 762
+    },
+    "巻": {
+      "strokes": 9,
+      "readings_on": [
+        "かん",
+        "けん"
+      ],
+      "readings_kun": [
+        "ま.く",
+        "まき",
+        "ま.き"
+      ],
+      "meanings": [
+        "Scroll",
+        "Volume",
+        "Book",
+        "Part",
+        "Roll Up",
+        "Wind Up",
+        "Tie",
+        "Coil",
+        "Counter For Texts (or Book Scrolls)"
+      ],
+      "freq": 944
+    },
+    "捜": {
+      "strokes": 10,
+      "readings_on": [
+        "そう",
+        "しゅ",
+        "しゅう"
+      ],
+      "readings_kun": [
+        "さが.す"
+      ],
+      "meanings": [
+        "Search",
+        "Look For",
+        "Locate"
+      ],
+      "freq": 592
+    },
+    "替": {
+      "strokes": 12,
+      "readings_on": [
+        "たい"
+      ],
+      "readings_kun": [
+        "か.える",
+        "か.え-",
+        "か.わる"
+      ],
+      "meanings": [
+        "Exchange",
+        "Spare",
+        "Substitute",
+        "Per-"
+      ],
+      "freq": 979
+    },
+    "造": {
+      "strokes": 10,
+      "readings_on": [
+        "ぞう"
+      ],
+      "readings_kun": [
+        "つく.る",
+        "つく.り",
+        "-づく.り"
+      ],
+      "meanings": [
+        "Create",
+        "Make",
+        "Structure",
+        "Physique"
+      ],
+      "freq": 429
+    },
+    "印": {
+      "strokes": 6,
+      "readings_on": [
+        "いん"
+      ],
+      "readings_kun": [
+        "しるし",
+        "-じるし",
+        "しる.す"
+      ],
+      "meanings": [
+        "Stamp",
+        "Seal",
+        "Mark",
+        "Imprint",
+        "Symbol",
+        "Emblem",
+        "Trademark",
+        "Evidence",
+        "Souvenir",
+        "India"
+      ],
+      "freq": 682
+    },
+    "復": {
+      "strokes": 12,
+      "readings_on": [
+        "ふく"
+      ],
+      "readings_kun": [
+        "また"
+      ],
+      "meanings": [
+        "Restore",
+        "Return To",
+        "Revert",
+        "Resume"
+      ],
+      "freq": 438
+    },
+    "筆": {
+      "strokes": 12,
+      "readings_on": [
+        "ひつ"
+      ],
+      "readings_kun": [
+        "ふで"
+      ],
+      "meanings": [
+        "Writing Brush",
+        "Writing",
+        "Painting Brush",
+        "Handwriting"
+      ],
+      "freq": 1132
+    },
+    "貯": {
+      "strokes": 12,
+      "readings_on": [
+        "ちょ"
+      ],
+      "readings_kun": [
+        "た.める",
+        "たくわ.える"
+      ],
+      "meanings": [
+        "Savings",
+        "Store",
+        "Lay In",
+        "Keep",
+        "Wear Mustache"
+      ],
+      "freq": 1100
+    },
+    "刺": {
+      "strokes": 8,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "さ.す",
+        "さ.さる",
+        "さ.し",
+        "さし",
+        "とげ"
+      ],
+      "meanings": [
+        "Thorn",
+        "Pierce",
+        "Stab",
+        "Prick",
+        "Sting",
+        "Calling Card"
+      ],
+      "freq": 1031
+    },
+    "郵": {
+      "strokes": 11,
+      "readings_on": [
+        "ゆう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Mail",
+        "Stagecoach Stop"
+      ],
+      "freq": 917
+    },
+    "針": {
+      "strokes": 10,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "はり"
+      ],
+      "meanings": [
+        "Needle",
+        "Pin",
+        "Staple",
+        "Stinger"
+      ],
+      "freq": 505
+    },
+    "菓": {
+      "strokes": 11,
+      "readings_on": [
+        "か"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Candy",
+        "Cakes",
+        "Fruit"
+      ],
+      "freq": 1719
+    },
+    "河": {
+      "strokes": 8,
+      "readings_on": [
+        "か"
+      ],
+      "readings_kun": [
+        "かわ"
+      ],
+      "meanings": [
+        "River"
+      ],
+      "freq": 663
+    },
+    "汗": {
+      "strokes": 6,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "あせ"
+      ],
+      "meanings": [
+        "Sweat",
+        "Perspire"
+      ],
+      "freq": 1502
+    },
+    "再": {
+      "strokes": 6,
+      "readings_on": [
+        "さい",
+        "さ"
+      ],
+      "readings_kun": [
+        "ふたた.び"
+      ],
+      "meanings": [
+        "Again",
+        "Twice",
+        "Second Time"
+      ],
+      "freq": 275
+    },
+    "接": {
+      "strokes": 11,
+      "readings_on": [
+        "せつ",
+        "しょう"
+      ],
+      "readings_kun": [
+        "つ.ぐ"
+      ],
+      "meanings": [
+        "Touch",
+        "Contact",
+        "Adjoin",
+        "Piece Together"
+      ],
+      "freq": 523
+    },
+    "占": {
+      "strokes": 5,
+      "readings_on": [
+        "せん"
+      ],
+      "readings_kun": [
+        "し.める",
+        "うらな.う"
+      ],
+      "meanings": [
+        "Fortune-telling",
+        "Divining",
+        "Forecasting",
+        "Occupy",
+        "Hold",
+        "Have",
+        "Get",
+        "Take"
+      ],
+      "freq": 694
+    },
+    "胃": {
+      "strokes": 9,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Stomach",
+        "Paunch",
+        "Crop",
+        "Craw"
+      ],
+      "freq": 1647
+    },
+    "悩": {
+      "strokes": 10,
+      "readings_on": [
+        "のう"
+      ],
+      "readings_kun": [
+        "なや.む",
+        "なや.ます",
+        "なや.ましい",
+        "なやみ"
+      ],
+      "meanings": [
+        "Trouble",
+        "Worry",
+        "In Pain",
+        "Distress",
+        "Illness"
+      ],
+      "freq": 1084
+    },
+    "昇": {
+      "strokes": 8,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "のぼ.る"
+      ],
+      "meanings": [
+        "Rise Up"
+      ],
+      "freq": 826
+    },
+    "濃": {
+      "strokes": 16,
+      "readings_on": [
+        "のう"
+      ],
+      "readings_kun": [
+        "こ.い"
+      ],
+      "meanings": [
+        "Concentrated",
+        "Thick",
+        "Dark",
+        "Undiluted"
+      ],
+      "freq": 1200
+    },
+    "極": {
+      "strokes": 12,
+      "readings_on": [
+        "きょく",
+        "ごく"
+      ],
+      "readings_kun": [
+        "きわ.める",
+        "きわ.まる",
+        "きわ.まり",
+        "きわ.み",
+        "き.める",
+        "-ぎ.め",
+        "き.まる"
+      ],
+      "meanings": [
+        "Poles",
+        "Settlement",
+        "Conclusion",
+        "End",
+        "Highest Rank",
+        "Electric Poles",
+        "Very",
+        "Extremely",
+        "Most",
+        "Highly",
+        "10**48"
+      ],
+      "freq": 460
+    },
+    "逆": {
+      "strokes": 9,
+      "readings_on": [
+        "ぎゃく",
+        "げき"
+      ],
+      "readings_kun": [
+        "さか",
+        "さか.さ",
+        "さか.らう"
+      ],
+      "meanings": [
+        "Inverted",
+        "Reverse",
+        "Opposite",
+        "Wicked"
+      ],
+      "freq": 683
+    },
+    "巨": {
+      "strokes": 5,
+      "readings_on": [
+        "きょ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Gigantic",
+        "Big",
+        "Large",
+        "Great"
+      ],
+      "freq": 892
+    },
+    "庫": {
+      "strokes": 10,
+      "readings_on": [
+        "こ",
+        "く"
+      ],
+      "readings_kun": [
+        "くら"
+      ],
+      "meanings": [
+        "Warehouse",
+        "Storehouse"
+      ],
+      "freq": 852
+    },
+    "児": {
+      "strokes": 7,
+      "readings_on": [
+        "じ",
+        "に",
+        "げい"
+      ],
+      "readings_kun": [
+        "こ",
+        "-こ",
+        "-っこ"
+      ],
+      "meanings": [
+        "Newborn Babe",
+        "Child",
+        "Young Of Animals"
+      ],
+      "freq": 679
+    },
+    "凍": {
+      "strokes": 10,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "こお.る",
+        "こご.える",
+        "こご.る",
+        "い.てる",
+        "し.みる"
+      ],
+      "meanings": [
+        "Frozen",
+        "Congeal",
+        "Refrigerate"
+      ],
+      "freq": 1284
+    },
+    "幼": {
+      "strokes": 5,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": [
+        "おさな.い"
+      ],
+      "meanings": [
+        "Infancy",
+        "Childhood"
+      ],
+      "freq": 1227
+    },
+    "清": {
+      "strokes": 11,
+      "readings_on": [
+        "せい",
+        "しょう",
+        "しん"
+      ],
+      "readings_kun": [
+        "きよ.い",
+        "きよ.まる",
+        "きよ.める"
+      ],
+      "meanings": [
+        "Pure",
+        "Purify",
+        "Cleanse",
+        "Exorcise",
+        "Manchu Dynasty"
+      ],
+      "freq": 705
+    },
+    "録": {
+      "strokes": 16,
+      "readings_on": [
+        "ろく"
+      ],
+      "readings_kun": [
+        "しる.す",
+        "と.る"
+      ],
+      "meanings": [
+        "Record"
+      ],
+      "freq": 546
+    },
+    "券": {
+      "strokes": 8,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Ticket"
+      ],
+      "freq": 583
+    },
+    "移": {
+      "strokes": 11,
+      "readings_on": [
+        "い"
+      ],
+      "readings_kun": [
+        "うつ.る",
+        "うつ.す"
+      ],
+      "meanings": [
+        "Shift",
+        "Move",
+        "Change",
+        "Drift",
+        "Catch (cold, Fire)",
+        "Pass Into"
+      ],
+      "freq": 448
+    },
+    "並": {
+      "strokes": 8,
+      "readings_on": [
+        "へい",
+        "ほう"
+      ],
+      "readings_kun": [
+        "な.み",
+        "なみ",
+        "なら.べる",
+        "なら.ぶ",
+        "なら.びに"
+      ],
+      "meanings": [
+        "Row",
+        "And",
+        "Besides",
+        "As Well As",
+        "Line Up",
+        "Rank With",
+        "Rival",
+        "Equal"
+      ],
+      "freq": 599
+    },
+    "乾": {
+      "strokes": 11,
+      "readings_on": [
+        "かん",
+        "けん"
+      ],
+      "readings_kun": [
+        "かわ.く",
+        "かわ.かす",
+        "ほ.す",
+        "ひ.る",
+        "いぬい"
+      ],
+      "meanings": [
+        "Drought",
+        "Dry",
+        "Dessicate",
+        "Drink Up",
+        "Heaven",
+        "Emperor"
+      ],
+      "freq": 1453
+    },
+    "欧": {
+      "strokes": 8,
+      "readings_on": [
+        "おう"
+      ],
+      "readings_kun": [
+        "うた.う",
+        "は.く"
+      ],
+      "meanings": [
+        "Europe"
+      ],
+      "freq": 421
+    },
+    "臣": {
+      "strokes": 7,
+      "readings_on": [
+        "しん",
+        "じん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Retainer",
+        "Subject"
+      ],
+      "freq": 1249
+    },
+    "略": {
+      "strokes": 11,
+      "readings_on": [
+        "りゃく"
+      ],
+      "readings_kun": [
+        "ほぼ",
+        "はぶ.く",
+        "おか.す",
+        "おさ.める",
+        "はかりごと",
+        "はか.る"
+      ],
+      "meanings": [
+        "Abbreviation",
+        "Omission",
+        "Outline",
+        "Shorten",
+        "Capture",
+        "Plunder"
+      ],
+      "freq": 774
+    },
+    "航": {
+      "strokes": 10,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Navigate",
+        "Sail",
+        "Cruise",
+        "Fly"
+      ],
+      "freq": 665
+    },
+    "板": {
+      "strokes": 8,
+      "readings_on": [
+        "はん",
+        "ばん"
+      ],
+      "readings_kun": [
+        "いた"
+      ],
+      "meanings": [
+        "Plank",
+        "Board",
+        "Plate",
+        "Stage"
+      ],
+      "freq": 926
+    },
+    "詰": {
+      "strokes": 13,
+      "readings_on": [
+        "きつ",
+        "きち"
+      ],
+      "readings_kun": [
+        "つ.める",
+        "つ.め",
+        "-づ.め",
+        "つ.まる",
+        "つ.む"
+      ],
+      "meanings": [
+        "Packed",
+        "Close",
+        "Pressed",
+        "Reprove",
+        "Rebuke",
+        "Blame"
+      ],
+      "freq": 1020
+    },
+    "照": {
+      "strokes": 13,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "て.る",
+        "て.らす",
+        "て.れる"
+      ],
+      "meanings": [
+        "Illuminate",
+        "Shine",
+        "Compare",
+        "Bashful"
+      ],
+      "freq": 1004
+    },
+    "快": {
+      "strokes": 7,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "こころよ.い"
+      ],
+      "meanings": [
+        "Cheerful",
+        "Pleasant",
+        "Agreeable",
+        "Comfortable"
+      ],
+      "freq": 1074
+    },
+    "版": {
+      "strokes": 8,
+      "readings_on": [
+        "はん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Printing Block",
+        "Printing Plate",
+        "Edition",
+        "Impression",
+        "Label"
+      ],
+      "freq": 802
+    },
+    "預": {
+      "strokes": 13,
+      "readings_on": [
+        "よ"
+      ],
+      "readings_kun": [
+        "あず.ける",
+        "あず.かる"
+      ],
+      "meanings": [
+        "Deposit",
+        "Custody",
+        "Leave With",
+        "Entrust To"
+      ],
+      "freq": 981
+    },
+    "延": {
+      "strokes": 8,
+      "readings_on": [
+        "えん"
+      ],
+      "readings_kun": [
+        "の.びる",
+        "の.べる",
+        "の.べ",
+        "の.ばす"
+      ],
+      "meanings": [
+        "Prolong",
+        "Stretching"
+      ],
+      "freq": 747
+    },
+    "翌": {
+      "strokes": 11,
+      "readings_on": [
+        "よく"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "The Following",
+        "Next"
+      ],
+      "freq": 1070
+    },
+    "符": {
+      "strokes": 11,
+      "readings_on": [
+        "ふ"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Token",
+        "Sign",
+        "Mark",
+        "Tally",
+        "Charm"
+      ],
+      "freq": 1798
+    },
+    "編": {
+      "strokes": 15,
+      "readings_on": [
+        "へん"
+      ],
+      "readings_kun": [
+        "あ.む",
+        "-あ.み"
+      ],
+      "meanings": [
+        "Compilation",
+        "Knit",
+        "Plait",
+        "Braid",
+        "Twist",
+        "Editing",
+        "Completed Poem",
+        "Part Of A Book"
+      ],
+      "freq": 591
+    },
+    "普": {
+      "strokes": 12,
+      "readings_on": [
+        "ふ"
+      ],
+      "readings_kun": [
+        "あまね.く",
+        "あまねし"
+      ],
+      "meanings": [
+        "Universal",
+        "Wide(ly)",
+        "Generally",
+        "Prussia"
+      ],
+      "freq": 757
+    },
+    "掃": {
+      "strokes": 11,
+      "readings_on": [
+        "そう",
+        "しゅ"
+      ],
+      "readings_kun": [
+        "は.く"
+      ],
+      "meanings": [
+        "Sweep",
+        "Brush"
+      ],
+      "freq": 1255
+    },
+    "泥": {
+      "strokes": 8,
+      "readings_on": [
+        "でい",
+        "ない",
+        "で",
+        "に"
+      ],
+      "readings_kun": [
+        "どろ",
+        "なず.む"
+      ],
+      "meanings": [
+        "Mud",
+        "Mire",
+        "Adhere To",
+        "Be Attached To"
+      ],
+      "freq": 1589
+    },
+    "棒": {
+      "strokes": 12,
+      "readings_on": [
+        "ぼう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Rod",
+        "Stick",
+        "Cane",
+        "Pole",
+        "Club",
+        "Line"
+      ],
+      "freq": 1455
+    },
+    "孫": {
+      "strokes": 10,
+      "readings_on": [
+        "そん"
+      ],
+      "readings_kun": [
+        "まご"
+      ],
+      "meanings": [
+        "Grandchild",
+        "Descendants"
+      ],
+      "freq": 1388
+    },
+    "帯": {
+      "strokes": 10,
+      "readings_on": [
+        "たい"
+      ],
+      "readings_kun": [
+        "お.びる",
+        "おび"
+      ],
+      "meanings": [
+        "Sash",
+        "Belt",
+        "Obi",
+        "Zone",
+        "Region"
+      ],
+      "freq": 746
+    },
+    "粉": {
+      "strokes": 10,
+      "readings_on": [
+        "ふん"
+      ],
+      "readings_kun": [
+        "デシメートル",
+        "こ",
+        "こな"
+      ],
+      "meanings": [
+        "Flour",
+        "Powder",
+        "Dust"
+      ],
+      "freq": 1484
+    },
+    "菜": {
+      "strokes": 11,
+      "readings_on": [
+        "さい"
+      ],
+      "readings_kun": [
+        "な"
+      ],
+      "meanings": [
+        "Vegetable",
+        "Side Dish",
+        "Greens"
+      ],
+      "freq": 1327
+    },
+    "貨": {
+      "strokes": 11,
+      "readings_on": [
+        "か"
+      ],
+      "readings_kun": [
+        "たから"
+      ],
+      "meanings": [
+        "Freight",
+        "Goods",
+        "Property"
+      ],
+      "freq": 822
+    },
+    "陸": {
+      "strokes": 11,
+      "readings_on": [
+        "りく",
+        "ろく"
+      ],
+      "readings_kun": [
+        "おか"
+      ],
+      "meanings": [
+        "Land",
+        "Six"
+      ],
+      "freq": 736
+    },
+    "均": {
+      "strokes": 7,
+      "readings_on": [
+        "きん"
+      ],
+      "readings_kun": [
+        "なら.す"
+      ],
+      "meanings": [
+        "Level",
+        "Average"
+      ],
+      "freq": 715
+    },
+    "採": {
+      "strokes": 11,
+      "readings_on": [
+        "さい"
+      ],
+      "readings_kun": [
+        "と.る"
+      ],
+      "meanings": [
+        "Pick",
+        "Take",
+        "Fetch",
+        "Take Up"
+      ],
+      "freq": 607
+    },
+    "永": {
+      "strokes": 5,
+      "readings_on": [
+        "えい"
+      ],
+      "readings_kun": [
+        "なが.い"
+      ],
+      "meanings": [
+        "Eternity",
+        "Long",
+        "Lengthy"
+      ],
+      "freq": 846
+    },
+    "液": {
+      "strokes": 11,
+      "readings_on": [
+        "えき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Fluid",
+        "Liquid",
+        "Juice",
+        "Sap",
+        "Secretion"
+      ],
+      "freq": 1210
+    },
+    "績": {
+      "strokes": 17,
+      "readings_on": [
+        "せき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Exploits",
+        "Achievements",
+        "Unreeling Cocoons"
+      ],
+      "freq": 820
+    },
+    "複": {
+      "strokes": 14,
+      "readings_on": [
+        "ふく"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Duplicate",
+        "Double",
+        "Compound",
+        "Multiple"
+      ],
+      "freq": 915
+    },
+    "党": {
+      "strokes": 10,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "なかま",
+        "むら"
+      ],
+      "meanings": [
+        "Party",
+        "Faction",
+        "Clique"
+      ],
+      "freq": 39
+    },
+    "卵": {
+      "strokes": 7,
+      "readings_on": [
+        "らん"
+      ],
+      "readings_kun": [
+        "たまご"
+      ],
+      "meanings": [
+        "Egg",
+        "Ovum",
+        "Spawn",
+        "Roe"
+      ],
+      "freq": 1342
+    },
+    "捨": {
+      "strokes": 11,
+      "readings_on": [
+        "しゃ"
+      ],
+      "readings_kun": [
+        "す.てる"
+      ],
+      "meanings": [
+        "Discard",
+        "Throw Away",
+        "Abandon",
+        "Resign",
+        "Reject",
+        "Sacrifice"
+      ],
+      "freq": 1266
+    },
+    "汚": {
+      "strokes": 6,
+      "readings_on": [
+        "お"
+      ],
+      "readings_kun": [
+        "けが.す",
+        "けが.れる",
+        "けが.らわしい",
+        "よご.す",
+        "よご.れる",
+        "きたな.い"
+      ],
+      "meanings": [
+        "Dirty",
+        "Pollute",
+        "Disgrace",
+        "Rape",
+        "Defile"
+      ],
+      "freq": 908
+    },
+    "机": {
+      "strokes": 6,
+      "readings_on": [
+        "き"
+      ],
+      "readings_kun": [
+        "つくえ"
+      ],
+      "meanings": [
+        "Desk",
+        "Table"
+      ],
+      "freq": 1671
+    },
+    "簡": {
+      "strokes": 18,
+      "readings_on": [
+        "かん",
+        "けん"
+      ],
+      "readings_kun": [
+        "えら.ぶ",
+        "ふだ"
+      ],
+      "meanings": [
+        "Simplicity",
+        "Brevity"
+      ],
+      "freq": 983
+    },
+    "誌": {
+      "strokes": 14,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Document",
+        "Records"
+      ],
+      "freq": 851
+    },
+    "宝": {
+      "strokes": 8,
+      "readings_on": [
+        "ほう"
+      ],
+      "readings_kun": [
+        "たから"
+      ],
+      "meanings": [
+        "Treasure",
+        "Wealth",
+        "Valuables"
+      ],
+      "freq": 1139
+    },
+    "尊": {
+      "strokes": 12,
+      "readings_on": [
+        "そん"
+      ],
+      "readings_kun": [
+        "たっと.い",
+        "とうと.い",
+        "たっと.ぶ",
+        "とうと.ぶ"
+      ],
+      "meanings": [
+        "Revered",
+        "Valuable",
+        "Precious",
+        "Noble",
+        "Exalted"
+      ],
+      "freq": 1181
+    },
+    "敬": {
+      "strokes": 12,
+      "readings_on": [
+        "けい",
+        "きょう"
+      ],
+      "readings_kun": [
+        "うやま.う"
+      ],
+      "meanings": [
+        "Awe",
+        "Respect",
+        "Honor",
+        "Revere"
+      ],
+      "freq": 1078
+    },
+    "灰": {
+      "strokes": 6,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [
+        "はい"
+      ],
+      "meanings": [
+        "Ashes",
+        "Puckery Juice",
+        "Cremate"
+      ],
+      "freq": 1717
+    },
+    "砂": {
+      "strokes": 9,
+      "readings_on": [
+        "さ",
+        "しゃ"
+      ],
+      "readings_kun": [
+        "すな"
+      ],
+      "meanings": [
+        "Sand"
+      ],
+      "freq": 1146
+    },
+    "著": {
+      "strokes": 11,
+      "readings_on": [
+        "ちょ",
+        "ちゃく"
+      ],
+      "readings_kun": [
+        "あらわ.す",
+        "いちじる.しい"
+      ],
+      "meanings": [
+        "Renowned",
+        "Publish",
+        "Write",
+        "Remarkable",
+        "Phenomenal",
+        "Put On",
+        "Don",
+        "Wear",
+        "Arrival",
+        "Finish (race)",
+        "Counter For Suits Of Clothing",
+        "Literary Work"
+      ],
+      "freq": 849
+    },
+    "蒸": {
+      "strokes": 13,
+      "readings_on": [
+        "じょう",
+        "せい"
+      ],
+      "readings_kun": [
+        "む.す",
+        "む.れる",
+        "む.らす"
+      ],
+      "meanings": [
+        "Steam",
+        "Heat",
+        "Sultry",
+        "Foment",
+        "Get Musty"
+      ],
+      "freq": 1552
+    },
+    "蔵": {
+      "strokes": 15,
+      "readings_on": [
+        "ぞう",
+        "そう"
+      ],
+      "readings_kun": [
+        "くら",
+        "おさ.める",
+        "かく.れる"
+      ],
+      "meanings": [
+        "Storehouse",
+        "Hide",
+        "Own",
+        "Have",
+        "Possess"
+      ],
+      "freq": 468
+    },
+    "装": {
+      "strokes": 12,
+      "readings_on": [
+        "そう",
+        "しょう"
+      ],
+      "readings_kun": [
+        "よそお.う",
+        "よそお.い"
+      ],
+      "meanings": [
+        "Attire",
+        "Dress",
+        "Pretend",
+        "Disguise",
+        "Profess"
+      ],
+      "freq": 657
+    },
+    "裏": {
+      "strokes": 13,
+      "readings_on": [
+        "り"
+      ],
+      "readings_kun": [
+        "うら"
+      ],
+      "meanings": [
+        "Back",
+        "Amidst",
+        "In",
+        "Reverse",
+        "Inside",
+        "Palm",
+        "Sole",
+        "Rear",
+        "Lining",
+        "Wrong Side"
+      ],
+      "freq": 812
+    },
+    "諸": {
+      "strokes": 15,
+      "readings_on": [
+        "しょ"
+      ],
+      "readings_kun": [
+        "もろ"
+      ],
+      "meanings": [
+        "Various",
+        "Many",
+        "Several",
+        "Together"
+      ],
+      "freq": 658
+    },
+    "臓": {
+      "strokes": 19,
+      "readings_on": [
+        "ぞう"
+      ],
+      "readings_kun": [
+        "はらわた"
+      ],
+      "meanings": [
+        "Entrails",
+        "Viscera",
+        "Bowels"
+      ],
+      "freq": 991
+    },
+    "純": {
+      "strokes": 10,
+      "readings_on": [
+        "じゅん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Genuine",
+        "Purity",
+        "Innocence",
+        "Net (profit)"
+      ],
+      "freq": 1044
+    },
+    "紅": {
+      "strokes": 9,
+      "readings_on": [
+        "こう",
+        "く"
+      ],
+      "readings_kun": [
+        "べに",
+        "くれない",
+        "あか.い"
+      ],
+      "meanings": [
+        "Crimson",
+        "Deep Red"
+      ],
+      "freq": 1299
+    },
+    "拝": {
+      "strokes": 8,
+      "readings_on": [
+        "はい"
+      ],
+      "readings_kun": [
+        "おが.む",
+        "おろが.む"
+      ],
+      "meanings": [
+        "Worship",
+        "Adore",
+        "Pray To"
+      ],
+      "freq": 1443
+    },
+    "劇": {
+      "strokes": 15,
+      "readings_on": [
+        "げき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Drama",
+        "Play"
+      ],
+      "freq": 662
+    },
+    "承": {
+      "strokes": 8,
+      "readings_on": [
+        "しょう",
+        "じょう"
+      ],
+      "readings_kun": [
+        "うけたまわ.る",
+        "う.ける"
+      ],
+      "meanings": [
+        "Acquiesce",
+        "Hear",
+        "Listen To",
+        "Be Informed",
+        "Receive"
+      ],
+      "freq": 775
+    },
+    "損": {
+      "strokes": 13,
+      "readings_on": [
+        "そん"
+      ],
+      "readings_kun": [
+        "そこ.なう",
+        "そこな.う",
+        "-そこ.なう",
+        "そこ.ねる",
+        "-そこ.ねる"
+      ],
+      "meanings": [
+        "Damage",
+        "Loss",
+        "Disadvantage",
+        "Hurt",
+        "Injure"
+      ],
+      "freq": 807
+    },
+    "枝": {
+      "strokes": 8,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "えだ"
+      ],
+      "meanings": [
+        "Bough",
+        "Branch",
+        "Twig",
+        "Limb",
+        "Counter For Branches"
+      ],
+      "freq": 1401
+    },
+    "測": {
+      "strokes": 12,
+      "readings_on": [
+        "そく"
+      ],
+      "readings_kun": [
+        "はか.る"
+      ],
+      "meanings": [
+        "Fathom",
+        "Plan",
+        "Scheme",
+        "Measure"
+      ],
+      "freq": 761
+    },
+    "講": {
+      "strokes": 17,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Lecture",
+        "Club",
+        "Association"
+      ],
+      "freq": 653
+    },
+    "紹": {
+      "strokes": 11,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Introduce",
+        "Inherit",
+        "Help"
+      ],
+      "freq": 963
+    },
+    "介": {
+      "strokes": 4,
+      "readings_on": [
+        "かい"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Jammed In",
+        "Shellfish",
+        "Mediate",
+        "Concern Oneself With"
+      ],
+      "freq": 617
+    },
+    "湖": {
+      "strokes": 12,
+      "readings_on": [
+        "こ"
+      ],
+      "readings_kun": [
+        "みずうみ"
+      ],
+      "meanings": [
+        "Lake"
+      ],
+      "freq": 1344
+    },
+    "銅": {
+      "strokes": 14,
+      "readings_on": [
+        "どう"
+      ],
+      "readings_kun": [
+        "あかがね"
+      ],
+      "meanings": [
+        "Copper"
+      ],
+      "freq": 1505
+    },
+    "油": {
+      "strokes": 8,
+      "readings_on": [
+        "ゆ",
+        "ゆう"
+      ],
+      "readings_kun": [
+        "あぶら"
+      ],
+      "meanings": [
+        "Oil",
+        "Fat"
+      ],
+      "freq": 690
+    },
+    "旧": {
+      "strokes": 5,
+      "readings_on": [
+        "きゅう"
+      ],
+      "readings_kun": [
+        "ふる.い",
+        "もと"
+      ],
+      "meanings": [
+        "Old Times",
+        "Old Things",
+        "Old Friend",
+        "Former",
+        "Ex-"
+      ],
+      "freq": 549
+    },
+    "姓": {
+      "strokes": 8,
+      "readings_on": [
+        "せい",
+        "しょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Surname"
+      ],
+      "freq": 1628
+    },
+    "貿": {
+      "strokes": 12,
+      "readings_on": [
+        "ぼう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Trade",
+        "Exchange"
+      ],
+      "freq": 652
+    },
+    "将": {
+      "strokes": 10,
+      "readings_on": [
+        "しょう",
+        "そう"
+      ],
+      "readings_kun": [
+        "まさ.に",
+        "はた",
+        "まさ",
+        "ひきい.る",
+        "もって"
+      ],
+      "meanings": [
+        "Leader",
+        "Commander",
+        "General",
+        "Admiral",
+        "Or",
+        "And Again",
+        "Soon",
+        "From Now On",
+        "Just About"
+      ],
+      "freq": 634
+    },
+    "伸": {
+      "strokes": 7,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "の.びる",
+        "の.ばす",
+        "の.べる",
+        "の.す"
+      ],
+      "meanings": [
+        "Expand",
+        "Stretch",
+        "Extend",
+        "Lengthen",
+        "Increase"
+      ],
+      "freq": 730
+    },
+    "幅": {
+      "strokes": 12,
+      "readings_on": [
+        "ふく"
+      ],
+      "readings_kun": [
+        "はば"
+      ],
+      "meanings": [
+        "Hanging Scroll",
+        "Width"
+      ],
+      "freq": 641
+    },
+    "甘": {
+      "strokes": 5,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "あま.い",
+        "あま.える",
+        "あま.やかす",
+        "うま.い"
+      ],
+      "meanings": [
+        "Sweet",
+        "Coax",
+        "Pamper",
+        "Be Content",
+        "Sugary"
+      ],
+      "freq": 1248
+    },
+    "換": {
+      "strokes": 12,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "か.える",
+        "-か.える",
+        "か.わる"
+      ],
+      "meanings": [
+        "Interchange",
+        "Period",
+        "Change",
+        "Convert",
+        "Replace",
+        "Renew"
+      ],
+      "freq": 687
+    },
+    "療": {
+      "strokes": 17,
+      "readings_on": [
+        "りょう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Heal",
+        "Cure"
+      ],
+      "freq": 600
+    },
+    "般": {
+      "strokes": 10,
+      "readings_on": [
+        "はん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Carrier",
+        "Carry",
+        "All",
+        "General",
+        "Sort",
+        "Kind"
+      ],
+      "freq": 649
+    },
+    "依": {
+      "strokes": 8,
+      "readings_on": [
+        "い",
+        "え"
+      ],
+      "readings_kun": [
+        "よ.る"
+      ],
+      "meanings": [
+        "Reliant",
+        "Depend On",
+        "Consequently",
+        "Therefore",
+        "Due To"
+      ],
+      "freq": 906
+    },
+    "漁": {
+      "strokes": 14,
+      "readings_on": [
+        "ぎょ",
+        "りょう"
+      ],
+      "readings_kun": [
+        "あさ.る"
+      ],
+      "meanings": [
+        "Fishing",
+        "Fishery"
+      ],
+      "freq": 1094
+    },
+    "募": {
+      "strokes": 12,
+      "readings_on": [
+        "ぼ"
+      ],
+      "readings_kun": [
+        "つの.る"
+      ],
+      "meanings": [
+        "Recruit",
+        "Campaign",
+        "Gather (contributions)",
+        "Enlist",
+        "Grow Violent"
+      ],
+      "freq": 809
+    },
+    "患": {
+      "strokes": 11,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "わずら.う"
+      ],
+      "meanings": [
+        "Afflicted",
+        "Disease",
+        "Suffer From",
+        "Be Ill"
+      ],
+      "freq": 796
+    },
+    "湾": {
+      "strokes": 12,
+      "readings_on": [
+        "わん"
+      ],
+      "readings_kun": [
+        "いりえ"
+      ],
+      "meanings": [
+        "Gulf",
+        "Bay",
+        "Inlet"
+      ],
+      "freq": 545
+    },
+    "爆": {
+      "strokes": 19,
+      "readings_on": [
+        "ばく"
+      ],
+      "readings_kun": [
+        "は.ぜる"
+      ],
+      "meanings": [
+        "Bomb",
+        "Burst Open",
+        "Pop",
+        "Split"
+      ],
+      "freq": 735
+    },
+    "跡": {
+      "strokes": 13,
+      "readings_on": [
+        "せき"
+      ],
+      "readings_kun": [
+        "あと"
+      ],
+      "meanings": [
+        "Tracks",
+        "Mark",
+        "Print",
+        "Impression"
+      ],
+      "freq": 953
+    },
+    "香": {
+      "strokes": 9,
+      "readings_on": [
+        "こう",
+        "きょう"
+      ],
+      "readings_kun": [
+        "か",
+        "かお.り",
+        "かお.る"
+      ],
+      "meanings": [
+        "Incense",
+        "Smell",
+        "Perfume"
+      ],
+      "freq": 859
+    },
+    "兆": {
+      "strokes": 6,
+      "readings_on": [
+        "ちょう"
+      ],
+      "readings_kun": [
+        "きざ.す",
+        "きざ.し"
+      ],
+      "meanings": [
+        "Portent",
+        "10**12",
+        "Trillion",
+        "Sign",
+        "Omen",
+        "Symptoms"
+      ],
+      "freq": 1174
+    },
+    "齢": {
+      "strokes": 17,
+      "readings_on": [
+        "れい"
+      ],
+      "readings_kun": [
+        "よわい",
+        "とし"
+      ],
+      "meanings": [
+        "Age"
+      ],
+      "freq": 770
+    },
+    "刊": {
+      "strokes": 5,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Publish",
+        "Carve",
+        "Engrave"
+      ],
+      "freq": 855
+    },
+    "傾": {
+      "strokes": 13,
+      "readings_on": [
+        "けい"
+      ],
+      "readings_kun": [
+        "かたむ.く",
+        "かたむ.ける",
+        "かたぶ.く",
+        "かた.げる",
+        "かし.げる"
+      ],
+      "meanings": [
+        "Lean",
+        "Incline",
+        "Tilt",
+        "Trend",
+        "Wane",
+        "Sink",
+        "Ruin",
+        "Bias"
+      ],
+      "freq": 938
+    },
+    "奥": {
+      "strokes": 12,
+      "readings_on": [
+        "おう"
+      ],
+      "readings_kun": [
+        "おく",
+        "おく.まる",
+        "くま"
+      ],
+      "meanings": [
+        "Heart",
+        "Interior"
+      ],
+      "freq": 1018
+    },
+    "贈": {
+      "strokes": 18,
+      "readings_on": [
+        "ぞう",
+        "そう"
+      ],
+      "readings_kun": [
+        "おく.る"
+      ],
+      "meanings": [
+        "Presents",
+        "Send",
+        "Give To",
+        "Award To",
+        "Confer On",
+        "Presenting Something"
+      ],
+      "freq": 1001
+    },
+    "超": {
+      "strokes": 12,
+      "readings_on": [
+        "ちょう"
+      ],
+      "readings_kun": [
+        "こ.える",
+        "こ.す"
+      ],
+      "meanings": [
+        "Transcend",
+        "Super-",
+        "Ultra-"
+      ],
+      "freq": 597
+    },
+    "雇": {
+      "strokes": 12,
+      "readings_on": [
+        "こ"
+      ],
+      "readings_kun": [
+        "やと.う"
+      ],
+      "meanings": [
+        "Employ",
+        "Hire"
+      ],
+      "freq": 975
+    },
+    "片": {
+      "strokes": 4,
+      "readings_on": [
+        "へん"
+      ],
+      "readings_kun": [
+        "かた-",
+        "かた"
+      ],
+      "meanings": [
+        "One-sided",
+        "Leaf",
+        "Sheet",
+        "Right-side Kata Radical (no. 91)"
+      ],
+      "freq": 1076
+    },
+    "群": {
+      "strokes": 13,
+      "readings_on": [
+        "ぐん"
+      ],
+      "readings_kun": [
+        "む.れる",
+        "む.れ",
+        "むら",
+        "むら.がる"
+      ],
+      "meanings": [
+        "Flock",
+        "Group",
+        "Crowd",
+        "Herd",
+        "Swarm",
+        "Cluster"
+      ],
+      "freq": 1012
+    },
+    "埋": {
+      "strokes": 10,
+      "readings_on": [
+        "まい"
+      ],
+      "readings_kun": [
+        "う.める",
+        "う.まる",
+        "う.もれる",
+        "うず.める",
+        "うず.まる",
+        "い.ける"
+      ],
+      "meanings": [
+        "Bury",
+        "Be Filled Up",
+        "Embedded"
+      ],
+      "freq": 1110
+    },
+    "駐": {
+      "strokes": 15,
+      "readings_on": [
+        "ちゅう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Stop-over",
+        "Reside In",
+        "Resident"
+      ],
+      "freq": 955
+    },
+    "柱": {
+      "strokes": 9,
+      "readings_on": [
+        "ちゅう"
+      ],
+      "readings_kun": [
+        "はしら"
+      ],
+      "meanings": [
+        "Pillar",
+        "Post",
+        "Cylinder",
+        "Support"
+      ],
+      "freq": 1119
+    },
+    "鋭": {
+      "strokes": 15,
+      "readings_on": [
+        "えい"
+      ],
+      "readings_kun": [
+        "するど.い"
+      ],
+      "meanings": [
+        "Pointed",
+        "Sharpness",
+        "Edge",
+        "Weapon",
+        "Sharp",
+        "Violent"
+      ],
+      "freq": 1395
+    },
+    "殿": {
+      "strokes": 13,
+      "readings_on": [
+        "でん",
+        "てん"
+      ],
+      "readings_kun": [
+        "との",
+        "-どの"
+      ],
+      "meanings": [
+        "Mr.",
+        "Hall",
+        "Mansion",
+        "Palace",
+        "Temple",
+        "Lord"
+      ],
+      "freq": 1199
+    },
+    "薄": {
+      "strokes": 16,
+      "readings_on": [
+        "はく"
+      ],
+      "readings_kun": [
+        "うす.い",
+        "うす-",
+        "-うす",
+        "うす.める",
+        "うす.まる",
+        "うす.らぐ",
+        "うす.ら-",
+        "うす.れる",
+        "すすき"
+      ],
+      "meanings": [
+        "Dilute",
+        "Thin",
+        "Weak (tea)",
+        "Pampas Grass"
+      ],
+      "freq": 1009
+    },
+    "伺": {
+      "strokes": 7,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "うかが.う"
+      ],
+      "meanings": [
+        "Pay Respects",
+        "Visit",
+        "Ask",
+        "Inquire",
+        "Question",
+        "Implore"
+      ],
+      "freq": 2209
+    },
+    "炭": {
+      "strokes": 9,
+      "readings_on": [
+        "たん"
+      ],
+      "readings_kun": [
+        "すみ"
+      ],
+      "meanings": [
+        "Charcoal",
+        "Coal"
+      ],
+      "freq": 1307
+    },
+    "包": {
+      "strokes": 5,
+      "readings_on": [
+        "ほう"
+      ],
+      "readings_kun": [
+        "つつ.む",
+        "くる.む"
+      ],
+      "meanings": [
+        "Wrap",
+        "Pack Up",
+        "Cover",
+        "Conceal"
+      ],
+      "freq": 954
+    },
+    "衣": {
+      "strokes": 6,
+      "readings_on": [
+        "い",
+        "え"
+      ],
+      "readings_kun": [
+        "ころも",
+        "きぬ",
+        "-ぎ"
+      ],
+      "meanings": [
+        "Garment",
+        "Clothes",
+        "Dressing"
+      ],
+      "freq": 1214
+    },
+    "鉱": {
+      "strokes": 13,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "あらがね"
+      ],
+      "meanings": [
+        "Mineral",
+        "Ore"
+      ],
+      "freq": 1376
+    },
+    "双": {
+      "strokes": 4,
+      "readings_on": [
+        "そう"
+      ],
+      "readings_kun": [
+        "ふた",
+        "たぐい",
+        "ならぶ",
+        "ふたつ"
+      ],
+      "meanings": [
+        "Pair",
+        "Set",
+        "Comparison",
+        "Counter For Pairs"
+      ],
+      "freq": 1029
+    },
+    "床": {
+      "strokes": 7,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "とこ",
+        "ゆか"
+      ],
+      "meanings": [
+        "Bed",
+        "Counter For Beds",
+        "Floor",
+        "Padding",
+        "Tatami"
+      ],
+      "freq": 1175
+    },
+    "掘": {
+      "strokes": 11,
+      "readings_on": [
+        "くつ"
+      ],
+      "readings_kun": [
+        "ほ.る"
+      ],
+      "meanings": [
+        "Dig",
+        "Delve",
+        "Excavate"
+      ],
+      "freq": 1257
+    },
+    "泊": {
+      "strokes": 8,
+      "readings_on": [
+        "はく"
+      ],
+      "readings_kun": [
+        "と.まる",
+        "と.める"
+      ],
+      "meanings": [
+        "Overnight Stay",
+        "Put Up At",
+        "Ride At Anchor"
+      ],
+      "freq": 1233
+    },
+    "荒": {
+      "strokes": 9,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "あら.い",
+        "あら-",
+        "あ.れる",
+        "あ.らす",
+        "-あ.らし",
+        "すさ.む"
+      ],
+      "meanings": [
+        "Laid Waste",
+        "Rough",
+        "Rude",
+        "Wild"
+      ],
+      "freq": 1099
+    },
+    "袋": {
+      "strokes": 11,
+      "readings_on": [
+        "たい",
+        "だい"
+      ],
+      "readings_kun": [
+        "ふくろ"
+      ],
+      "meanings": [
+        "Sack",
+        "Bag",
+        "Pouch"
+      ],
+      "freq": 1125
+    },
+    "珍": {
+      "strokes": 9,
+      "readings_on": [
+        "ちん"
+      ],
+      "readings_kun": [
+        "めずら.しい",
+        "たから"
+      ],
+      "meanings": [
+        "Rare",
+        "Curious",
+        "Strange"
+      ],
+      "freq": 1330
+    },
+    "籍": {
+      "strokes": 20,
+      "readings_on": [
+        "せき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Enroll",
+        "Domiciliary Register",
+        "Membership"
+      ],
+      "freq": 907
+    },
+    "刷": {
+      "strokes": 8,
+      "readings_on": [
+        "さつ"
+      ],
+      "readings_kun": [
+        "す.る",
+        "-ず.り",
+        "-ずり",
+        "は.く"
+      ],
+      "meanings": [
+        "Printing",
+        "Print",
+        "Brush"
+      ],
+      "freq": 1352
+    },
+    "封": {
+      "strokes": 9,
+      "readings_on": [
+        "ふう",
+        "ほう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Seal",
+        "Closing"
+      ],
+      "freq": 1143
+    },
+    "筒": {
+      "strokes": 12,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "つつ"
+      ],
+      "meanings": [
+        "Cylinder",
+        "Pipe",
+        "Tube",
+        "Gun Barrel",
+        "Sleeve"
+      ],
+      "freq": 1631
+    },
+    "柔": {
+      "strokes": 9,
+      "readings_on": [
+        "じゅう",
+        "にゅう"
+      ],
+      "readings_kun": [
+        "やわ.らか",
+        "やわ.らかい",
+        "やわ",
+        "やわ.ら"
+      ],
+      "meanings": [
+        "Tender",
+        "Weakness",
+        "Gentleness",
+        "Softness"
+      ],
+      "freq": 1187
+    },
+    "沈": {
+      "strokes": 7,
+      "readings_on": [
+        "ちん",
+        "じん"
+      ],
+      "readings_kun": [
+        "しず.む",
+        "しず.める"
+      ],
+      "meanings": [
+        "Sink",
+        "Be Submerged",
+        "Subside",
+        "Be Depressed",
+        "Aloes"
+      ],
+      "freq": 1271
+    },
+    "辛": {
+      "strokes": 7,
+      "readings_on": [
+        "しん"
+      ],
+      "readings_kun": [
+        "から.い",
+        "つら.い",
+        "-づら.い",
+        "かのと"
+      ],
+      "meanings": [
+        "Spicy",
+        "Bitter",
+        "Hot",
+        "Acrid"
+      ],
+      "freq": 1607
+    },
+    "匹": {
+      "strokes": 4,
+      "readings_on": [
+        "ひつ"
+      ],
+      "readings_kun": [
+        "ひき"
+      ],
+      "meanings": [
+        "Equal",
+        "Head",
+        "Counter For Small Animals",
+        "Roll Of Cloth"
+      ],
+      "freq": 1384
+    },
+    "叫": {
+      "strokes": 6,
+      "readings_on": [
+        "きょう"
+      ],
+      "readings_kun": [
+        "さけ.ぶ"
+      ],
+      "meanings": [
+        "Shout",
+        "Exclaim",
+        "Yell"
+      ],
+      "freq": 1426
+    },
+    "涙": {
+      "strokes": 10,
+      "readings_on": [
+        "るい",
+        "れい"
+      ],
+      "readings_kun": [
+        "なみだ"
+      ],
+      "meanings": [
+        "Tears",
+        "Sympathy"
+      ],
+      "freq": 1381
+    },
+    "缶": {
+      "strokes": 6,
+      "readings_on": [
+        "かん"
+      ],
+      "readings_kun": [
+        "かま"
+      ],
+      "meanings": [
+        "Tin Can",
+        "Container",
+        "Jar Radical (no. 121)"
+      ],
+      "freq": 1543
+    },
+    "粒": {
+      "strokes": 11,
+      "readings_on": [
+        "りゅう"
+      ],
+      "readings_kun": [
+        "つぶ"
+      ],
+      "meanings": [
+        "Grains",
+        "Drop",
+        "Counter For Tiny Particles"
+      ],
+      "freq": 1635
+    },
+    "塔": {
+      "strokes": 12,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Pagoda",
+        "Tower",
+        "Steeple"
+      ],
+      "freq": 1708
+    },
+    "肌": {
+      "strokes": 6,
+      "readings_on": [
+        "き"
+      ],
+      "readings_kun": [
+        "はだ"
+      ],
+      "meanings": [
+        "Texture",
+        "Skin",
+        "Body",
+        "Grain"
+      ],
+      "freq": 1559
+    },
+    "舟": {
+      "strokes": 6,
+      "readings_on": [
+        "しゅう"
+      ],
+      "readings_kun": [
+        "ふね",
+        "ふな-",
+        "-ぶね"
+      ],
+      "meanings": [
+        "Boat",
+        "Ship"
+      ],
+      "freq": 1786
+    },
+    "曇": {
+      "strokes": 16,
+      "readings_on": [
+        "どん"
+      ],
+      "readings_kun": [
+        "くも.る"
+      ],
+      "meanings": [
+        "Cloudy Weather",
+        "Cloud Up"
+      ],
+      "freq": 1899
+    },
+    "磨": {
+      "strokes": 16,
+      "readings_on": [
+        "ま"
+      ],
+      "readings_kun": [
+        "みが.く",
+        "す.る"
+      ],
+      "meanings": [
+        "Grind",
+        "Polish",
+        "Scour",
+        "Improve",
+        "Brush (teeth)"
+      ],
+      "freq": 1608
+    },
+    "湿": {
+      "strokes": 12,
+      "readings_on": [
+        "しつ",
+        "しゅう"
+      ],
+      "readings_kun": [
+        "しめ.る",
+        "しめ.す",
+        "うるお.う",
+        "うるお.す"
+      ],
+      "meanings": [
+        "Damp",
+        "Wet",
+        "Moist"
+      ],
+      "freq": 1517
+    },
+    "硬": {
+      "strokes": 12,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "かた.い"
+      ],
+      "meanings": [
+        "Stiff",
+        "Hard"
+      ],
+      "freq": 1101
+    },
+    "鈍": {
+      "strokes": 12,
+      "readings_on": [
+        "どん"
+      ],
+      "readings_kun": [
+        "にぶ.い",
+        "にぶ.る",
+        "にぶ-",
+        "なま.る",
+        "なまく.ら"
+      ],
+      "meanings": [
+        "Dull",
+        "Slow",
+        "Foolish",
+        "Blunt"
+      ],
+      "freq": 1574
+    },
+    "涼": {
+      "strokes": 11,
+      "readings_on": [
+        "りょう"
+      ],
+      "readings_kun": [
+        "すず.しい",
+        "すず.む",
+        "すず.やか",
+        "うす.い",
+        "ひや.す",
+        "まことに"
+      ],
+      "meanings": [
+        "Refreshing",
+        "Nice And Cool"
+      ],
+      "freq": 1783
+    },
+    "零": {
+      "strokes": 13,
+      "readings_on": [
+        "れい"
+      ],
+      "readings_kun": [
+        "ぜろ",
+        "こぼ.す",
+        "こぼ.れる"
+      ],
+      "meanings": [
+        "Zero",
+        "Spill",
+        "Overflow",
+        "Nothing",
+        "Cipher"
+      ],
+      "freq": 1217
+    },
+    "綿": {
+      "strokes": 14,
+      "readings_on": [
+        "めん"
+      ],
+      "readings_kun": [
+        "わた"
+      ],
+      "meanings": [
+        "Cotton"
+      ],
+      "freq": 1495
+    },
+    "帽": {
+      "strokes": 12,
+      "readings_on": [
+        "ぼう",
+        "もう"
+      ],
+      "readings_kun": [
+        "ずきん",
+        "おお.う"
+      ],
+      "meanings": [
+        "Cap",
+        "Headgear"
+      ],
+      "freq": 1742
+    },
+    "憎": {
+      "strokes": 14,
+      "readings_on": [
+        "ぞう"
+      ],
+      "readings_kun": [
+        "にく.む",
+        "にく.い",
+        "にく.らしい",
+        "にく.しみ"
+      ],
+      "meanings": [
+        "Hate",
+        "Detest"
+      ],
+      "freq": 1808
+    },
+    "滴": {
+      "strokes": 14,
+      "readings_on": [
+        "てき"
+      ],
+      "readings_kun": [
+        "しずく",
+        "したた.る"
+      ],
+      "meanings": [
+        "Drip",
+        "Drop"
+      ],
+      "freq": 2019
+    },
+    "畳": {
+      "strokes": 12,
+      "readings_on": [
+        "じょう",
+        "ちょう"
+      ],
+      "readings_kun": [
+        "たた.む",
+        "たたみ",
+        "かさ.なる"
+      ],
+      "meanings": [
+        "Tatami Mat",
+        "Counter For Tatami Mats",
+        "Fold",
+        "Shut Up",
+        "Do Away With"
+      ],
+      "freq": 1665
+    },
+    "畜": {
+      "strokes": 10,
+      "readings_on": [
+        "ちく"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Livestock",
+        "Domestic Fowl And Animals"
+      ],
+      "freq": 1824
+    },
+    "溶": {
+      "strokes": 13,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": [
+        "と.ける",
+        "と.かす",
+        "と.く"
+      ],
+      "meanings": [
+        "Melt",
+        "Dissolve",
+        "Thaw"
+      ],
+      "freq": 1364
+    },
+    "踊": {
+      "strokes": 14,
+      "readings_on": [
+        "よう"
+      ],
+      "readings_kun": [
+        "おど.る"
+      ],
+      "meanings": [
+        "Jump",
+        "Dance",
+        "Leap",
+        "Skip"
+      ],
+      "freq": 1308
+    },
+    "賢": {
+      "strokes": 16,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [
+        "かしこ.い"
+      ],
+      "meanings": [
+        "Intelligent",
+        "Wise",
+        "Wisdom",
+        "Cleverness"
+      ],
+      "freq": 1159
+    },
+    "灯": {
+      "strokes": 6,
+      "readings_on": [
+        "とう"
+      ],
+      "readings_kun": [
+        "ひ",
+        "ほ-",
+        "ともしび",
+        "とも.す",
+        "あかり"
+      ],
+      "meanings": [
+        "Lamp",
+        "A Light",
+        "Light",
+        "Counter For Lights"
+      ],
+      "freq": 1605
+    },
+    "咲": {
+      "strokes": 9,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "さ.く",
+        "-ざき"
+      ],
+      "meanings": [
+        "Blossom",
+        "Bloom"
+      ],
+      "freq": 1534
+    },
+    "塗": {
+      "strokes": 13,
+      "readings_on": [
+        "と"
+      ],
+      "readings_kun": [
+        "ぬ.る",
+        "ぬ.り",
+        "まみ.れる"
+      ],
+      "meanings": [
+        "Paint",
+        "Plaster",
+        "Daub",
+        "Smear",
+        "Coating"
+      ],
+      "freq": 1414
+    },
+    "召": {
+      "strokes": 5,
+      "readings_on": [
+        "しょう"
+      ],
+      "readings_kun": [
+        "め.す"
+      ],
+      "meanings": [
+        "Seduce",
+        "Call",
+        "Send For",
+        "Wear",
+        "Put On",
+        "Ride In",
+        "Buy",
+        "Eat",
+        "Drink",
+        "Catch (cold)"
+      ],
+      "freq": 1540
+    },
+    "挟": {
+      "strokes": 9,
+      "readings_on": [
+        "きょう",
+        "しょう"
+      ],
+      "readings_kun": [
+        "はさ.む",
+        "はさ.まる",
+        "わきばさ.む",
+        "さしはさ.む"
+      ],
+      "meanings": [
+        "Pinch",
+        "Between"
+      ],
+      "freq": 1870
+    },
+    "枯": {
+      "strokes": 9,
+      "readings_on": [
+        "こ"
+      ],
+      "readings_kun": [
+        "か.れる",
+        "か.らす"
+      ],
+      "meanings": [
+        "Wither",
+        "Die",
+        "Dry Up",
+        "Be Seasoned"
+      ],
+      "freq": 1749
+    },
+    "沸": {
+      "strokes": 8,
+      "readings_on": [
+        "ふつ"
+      ],
+      "readings_kun": [
+        "わ.く",
+        "わ.かす"
+      ],
+      "meanings": [
+        "Seethe",
+        "Boil",
+        "Ferment",
+        "Uproar",
+        "Breed"
+      ],
+      "freq": 1709
+    },
+    "濯": {
+      "strokes": 17,
+      "readings_on": [
+        "たく"
+      ],
+      "readings_kun": [
+        "すす.ぐ",
+        "ゆす.ぐ"
+      ],
+      "meanings": [
+        "Laundry",
+        "Wash",
+        "Pour On",
+        "Rinse"
+      ],
+      "freq": 1698
+    },
+    "燥": {
+      "strokes": 17,
+      "readings_on": [
+        "そう"
+      ],
+      "readings_kun": [
+        "はしゃ.ぐ"
+      ],
+      "meanings": [
+        "Parch",
+        "Dry Up"
+      ],
+      "freq": 1819
+    },
+    "瓶": {
+      "strokes": 11,
+      "readings_on": [
+        "びん"
+      ],
+      "readings_kun": [
+        "かめ"
+      ],
+      "meanings": [
+        "Bottle",
+        "Vial",
+        "Jar",
+        "Jug",
+        "Vat",
+        "Urn"
+      ],
+      "freq": 1528
+    },
+    "耕": {
+      "strokes": 10,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "たがや.す"
+      ],
+      "meanings": [
+        "Till",
+        "Plow",
+        "Cultivate"
+      ],
+      "freq": 1568
+    },
+    "肯": {
+      "strokes": 8,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [
+        "がえんじ.る"
+      ],
+      "meanings": [
+        "Agreement",
+        "Consent",
+        "Comply With"
+      ],
+      "freq": 1813
+    },
+    "脂": {
+      "strokes": 10,
+      "readings_on": [
+        "し"
+      ],
+      "readings_kun": [
+        "あぶら"
+      ],
+      "meanings": [
+        "Fat",
+        "Grease",
+        "Tallow",
+        "Lard",
+        "Rosin",
+        "Gum",
+        "Tar"
+      ],
+      "freq": 1548
+    },
+    "膚": {
+      "strokes": 15,
+      "readings_on": [
+        "ふ"
+      ],
+      "readings_kun": [
+        "はだ"
+      ],
+      "meanings": [
+        "Skin",
+        "Body",
+        "Grain",
+        "Texture",
+        "Disposition"
+      ],
+      "freq": 1679
+    },
+    "軒": {
+      "strokes": 10,
+      "readings_on": [
+        "けん"
+      ],
+      "readings_kun": [
+        "のき"
+      ],
+      "meanings": [
+        "Flats",
+        "Counter For Houses",
+        "Eaves"
+      ],
+      "freq": 1416
+    },
+    "軟": {
+      "strokes": 11,
+      "readings_on": [
+        "なん"
+      ],
+      "readings_kun": [
+        "やわ.らか",
+        "やわ.らかい"
+      ],
+      "meanings": [
+        "Soft"
+      ],
+      "freq": 1269
+    },
+    "郊": {
+      "strokes": 9,
+      "readings_on": [
+        "こう"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Outskirts",
+        "Suburbs",
+        "Rural Area"
+      ],
+      "freq": 1304
+    },
+    "隅": {
+      "strokes": 12,
+      "readings_on": [
+        "ぐう"
+      ],
+      "readings_kun": [
+        "すみ"
+      ],
+      "meanings": [
+        "Corner",
+        "Nook"
+      ],
+      "freq": 1601
+    },
+    "隻": {
+      "strokes": 10,
+      "readings_on": [
+        "せき"
+      ],
+      "readings_kun": [],
+      "meanings": [
+        "Vessels",
+        "Counter For Ships",
+        "Fish",
+        "Birds",
+        "Arrows",
+        "One Of A Pair"
+      ],
+      "freq": 1546
+    }
+  },
+  "supplementalWordSource": "Jisho.org API; Japanese headwords, readings, and English glosses attributed to JMdict/EDRDG",
+  "supplementalWords": {
+    "塗": {
+      "word": "塗る",
+      "reading": "ぬる",
+      "meaning": "to paint; to apply",
+      "source": "https://jisho.org/search/%E5%A1%97%E3%82%8B"
+    },
+    "帽": {
+      "word": "帽子",
+      "reading": "ぼうし",
+      "meaning": "hat; cap",
+      "source": "https://jisho.org/search/%E5%B8%BD%E5%AD%90"
+    },
+    "珍": {
+      "word": "珍しい",
+      "reading": "めずらしい",
+      "meaning": "rare; unusual",
+      "source": "https://jisho.org/search/%E7%8F%8D%E3%81%97%E3%81%84"
+    },
+    "翌": {
+      "word": "翌日",
+      "reading": "よくじつ",
+      "meaning": "next day",
+      "source": "https://jisho.org/search/%E7%BF%8C%E6%97%A5"
+    },
+    "誌": {
+      "word": "雑誌",
+      "reading": "ざっし",
+      "meaning": "magazine",
+      "source": "https://jisho.org/search/%E9%9B%91%E8%AA%8C"
+    },
+    "貿": {
+      "word": "貿易",
+      "reading": "ぼうえき",
+      "meaning": "trade; commerce",
+      "source": "https://jisho.org/search/%E8%B2%BF%E6%98%93"
+    },
+    "隻": {
+      "word": "一隻",
+      "reading": "いっせき",
+      "meaning": "one boat; one ship",
+      "source": "https://jisho.org/search/%E4%B8%80%E9%9A%BB"
+    }
+  }
+}

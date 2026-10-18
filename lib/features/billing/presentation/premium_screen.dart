@@ -11,6 +11,8 @@ class PremiumScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(authControllerProvider);
     final billing = ref.watch(billingControllerProvider);
+    final publicPrice = ref.watch(lifetimeDisplayPriceProvider).valueOrNull;
+    final displayPriceIdr = billing.priceIdr ?? publicPrice;
     final controller = ref.read(billingControllerProvider.notifier);
     return Scaffold(
       appBar: AppBar(title: const Text('Lifetime Access')),
@@ -28,7 +30,9 @@ class PremiumScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            billing.product?.price ?? 'Rp99.000',
+            displayPriceIdr == null
+                ? billing.product?.price ?? 'Harga belum tersedia'
+                : _rupiah(displayPriceIdr),
             style: Theme.of(context).textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
@@ -70,8 +74,9 @@ class PremiumScreen extends ConsumerWidget {
             if (billing.premium)
               FilledButton(
                 onPressed: () {
-                  final from =
-                      GoRouterState.of(context).uri.queryParameters['from'];
+                  final from = GoRouterState.of(
+                    context,
+                  ).uri.queryParameters['from'];
                   context.go(
                     from != null &&
                             (from.startsWith('/learn/') ||
@@ -84,7 +89,8 @@ class PremiumScreen extends ConsumerWidget {
               ),
             FilledButton.icon(
               key: const Key('buy-lifetime'),
-              onPressed: billing.ready &&
+              onPressed:
+                  billing.ready &&
                       !billing.busy &&
                       !billing.pending &&
                       !billing.premium
@@ -132,12 +138,24 @@ class PremiumScreen extends ConsumerWidget {
   }
 
   Future<void> _help(BuildContext context, String url) async {
-    final opened =
-        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+    final opened = await launchUrl(
+      Uri.parse(url),
+      mode: LaunchMode.externalApplication,
+    );
     if (!opened && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Tautan bantuan tidak dapat dibuka.')),
       );
     }
   }
+}
+
+String _rupiah(int value) {
+  final digits = value.toString();
+  final result = StringBuffer();
+  for (var index = 0; index < digits.length; index++) {
+    if (index > 0 && (digits.length - index) % 3 == 0) result.write('.');
+    result.write(digits[index]);
+  }
+  return 'Rp$result';
 }

@@ -41,7 +41,7 @@ func TestReadingN2API(t *testing.T) {
 			t.Fatalf("lesson unavailable: %s", w.Body.String())
 		}
 	}
-	if request("GET", "/v1/reading/course?level=N1", token, "").Code != http.StatusBadRequest {
+	if request("GET", "/v1/reading/course?level=N0", token, "").Code != http.StatusBadRequest {
 		t.Fatal("unsupported level accepted")
 	}
 	w = request("POST", "/v1/reading/lessons/reading-n2-01/attempts", token, "")

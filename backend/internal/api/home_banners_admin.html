@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banner Beranda • Nihongo Master</title>
+<style>
+*{box-sizing:border-box}body{font:16px system-ui;background:#f7f8fc;color:#202340;max-width:960px;margin:32px auto;padding:20px}a{color:#323993}h1{margin-bottom:8px}p{line-height:1.6}fieldset,.banner{background:#fff;border:1px solid #d9dcec;border-radius:16px;padding:20px;margin:18px 0}label{display:block;font-weight:600;margin:12px 0 6px}input,textarea,select,button{font:inherit}input:not([type=checkbox]),textarea,select{display:block;width:100%;padding:11px;border:1px solid #b8bfd6;border-radius:8px;margin:6px 0}textarea{resize:vertical}button{border:0;border-radius:9px;background:#30378c;color:#fff;min-height:44px;padding:10px 16px;cursor:pointer;margin:5px 5px 5px 0}button.secondary{background:#e9ebf7;color:#252c72}button.danger{background:#fff0ef;color:#a52d27}button:disabled{opacity:.5;cursor:default}input[type=checkbox]{width:20px;height:20px;vertical-align:middle;margin-right:8px}.row{display:flex;gap:16px;align-items:start}.row>*{flex:1;min-width:0}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:6px}.controls strong{margin-right:auto}.preview{border-radius:12px;overflow:hidden;background:#e9ecf8;border:1px solid #d9dcec;margin:14px 0}.preview img{width:100%;height:170px;object-fit:cover;display:block}.preview div{padding:16px}.preview h3{margin:0 0 8px}.preview p{margin:0 0 10px}.preview span{font-weight:700;color:#30378c}small{display:block;color:#515b75;line-height:1.6}.toolbar{position:sticky;bottom:0;background:#f7f8fcf5;padding:10px 0;border-top:1px solid #d9dcec}#status{white-space:pre-line;font-weight:600;min-height:26px}.error{color:#a52d27}[hidden]{display:none!important}@media(max-width:640px){.row{display:block}body{padding:14px;margin:12px auto}.banner{padding:14px}}
+</style>
+<a href="/admin/">← Admin</a>
+<h1>Banner Beranda</h1>
+<p>Atur carousel di beranda aplikasi. Geser urutan, ubah gambar dan isi, lalu simpan. Gambar dapat diunggah atau memakai URL HTTPS.</p>
+<fieldset>
+  <legend>Akses pengaturan</legend>
+  <label for="token">Kunci admin backend</label>
+  <input id="token" type="password" autocomplete="off" spellcheck="false" required>
+  <small>Memakai kunci admin yang sama dengan branding, kecuali server menetapkan kunci khusus banner. Kunci hanya digunakan selama halaman ini dibuka.</small>
+  <button id="unlock" type="button">Buka pengaturan</button>
+  <button id="lock" type="button" class="secondary" hidden>Kunci halaman</button>
+</fieldset>
+<section id="settings" hidden>
+  <small>Semua banner yang aktif muncul sesuai urutan di bawah. Matikan seluruh banner untuk menyembunyikan carousel. Pintasan SSW dan lowongan tetap ada.</small>
+  <div id="banners"></div>
+  <div class="toolbar"><button id="add" type="button" class="secondary">Tambah banner</button><button id="save" type="button">Simpan semua banner</button></div>
+</section>
+<p id="status" role="status" aria-live="polite"></p>
+<template id="banner-template">
+  <article class="banner">
+    <div class="controls"><strong class="number"></strong><button type="button" class="secondary up" aria-label="Pindahkan ke atas">↑</button><button type="button" class="secondary down" aria-label="Pindahkan ke bawah">↓</button><button type="button" class="danger remove">Hapus</button></div>
+    <label><input class="enabled" type="checkbox">Tampilkan banner ini</label>
+    <div class="row"><div><label>Judul<input class="title" maxlength="80" required></label><label>Deskripsi<textarea class="description" rows="3" maxlength="180"></textarea></label></div><div><label>Tujuan<select class="action"><option value="learn">Materi belajar</option><option value="ssw">SSW / Tokutei Ginou</option><option value="jobs">Lowongan kerja</option></select></label><label>Teks tombol<input class="buttonLabel" maxlength="40" required></label></div></div>
+    <label>Gambar dari URL HTTPS atau hasil unggahan<input class="imageUrl" type="text" maxlength="2048" placeholder="https://contoh.com/banner.jpg"></label>
+    <label>Unggah gambar pengganti<input class="upload" type="file" accept="image/png,image/jpeg"></label>
+    <small>PNG/JPEG maksimal 5 MB dan 12 juta piksel. Gunakan gambar lanskap; judul dan tombol ditampilkan oleh aplikasi di atas gambar. Setelah unggah, klik Simpan semua banner.</small>
+    <div class="preview"><img alt="Pratinjau gambar banner" loading="lazy"><div><h3></h3><p></p><span></span></div></div>
+  </article>
+</template>
+<script>
+'use strict';
+const el=id=>document.getElementById(id);
+let banners=[], loaded=false, busy=false;
+function status(message,error=false){el('status').textContent=message;el('status').className=error?'error':''}
+function headers(){return {Authorization:'Bearer '+el('token').value}}
+async function response(r){let j;try{j=await r.json()}catch{throw new Error('Respons server tidak valid.')}if(!r.ok)throw new Error(r.status===401?'Kunci admin salah atau belum diatur di server.':j.error?.message||'Permintaan gagal.');return j.data}
+function locked(value){loaded=!value;el('settings').hidden=value;el('lock').hidden=value;el('unlock').hidden=!value;el('token').readOnly=!value}
+function setBusy(value){busy=value;el('save').disabled=value;el('add').disabled=value;el('lock').disabled=value;el('banners').querySelectorAll('button,input,textarea,select').forEach(x=>x.disabled=value)}
+function validPreviewURL(url){return /^https:\/\//i.test(url)||/^\/home-banner-images\/[a-f0-9]{64}\.(png|jpg)$/.test(url)||/^\/assets\/images\/(exams\/n5|ssw\/ssw-careers|jobs\/job-category-atlas)\.png$/.test(url)}
+function preview(node,banner){const image=node.querySelector('.preview img');image.hidden=!validPreviewURL(banner.imageUrl);if(!image.hidden)image.src=banner.imageUrl;node.querySelector('.preview h3').textContent=banner.title;node.querySelector('.preview p').textContent=banner.description;node.querySelector('.preview span').textContent=banner.buttonLabel;node.querySelector('.number').textContent=(banners.indexOf(banner)+1)+'. '+(banner.title||'Banner baru')}
+function render(){el('banners').replaceChildren();banners.forEach((banner,index)=>{const node=el('banner-template').content.firstElementChild.cloneNode(true);for(const key of ['title','description','imageUrl','action','buttonLabel']){const field=node.querySelector('.'+key);field.value=banner[key];field.addEventListener('input',()=>{banner[key]=field.value;preview(node,banner)})}node.querySelector('.enabled').checked=banner.enabled;node.querySelector('.enabled').onchange=e=>banner.enabled=e.target.checked;node.querySelector('.up').disabled=index===0;node.querySelector('.down').disabled=index===banners.length-1;function move(delta){[banners[index],banners[index+delta]]=[banners[index+delta],banners[index]];render()}node.querySelector('.up').onclick=()=>move(-1);node.querySelector('.down').onclick=()=>move(1);node.querySelector('.remove').onclick=()=>{banners.splice(index,1);render();status('Banner dihapus dari editor. Simpan untuk menerapkan.')};node.querySelector('.upload').onchange=async e=>{const file=e.target.files[0];if(!file)return;if(file.size>5*1024*1024){status('Ukuran gambar maksimal 5 MB.',true);return}if(!['image/png','image/jpeg'].includes(file.type)){status('Gunakan gambar PNG atau JPEG.',true);return}const form=new FormData();form.append('image',file);setBusy(true);status('Mengunggah gambar…');try{const data=await response(await fetch('/v1/admin/home-banners/images',{method:'POST',headers:headers(),body:form}));banner.imageUrl=data.imageUrl;node.querySelector('.imageUrl').value=banner.imageUrl;preview(node,banner);status('Gambar diunggah. Simpan semua banner untuk menerapkannya.')}catch(error){status(error.message,true)}finally{setBusy(false);render()}};preview(node,banner);el('banners').appendChild(node)});el('add').disabled=banners.length>=12}
+el('unlock').onclick=async()=>{if(!el('token').reportValidity())return;el('unlock').disabled=true;status('Membuka pengaturan…');try{const data=await response(await fetch('/v1/admin/home-banners',{cache:'no-store',headers:headers()}));banners=data.banners.sort((a,b)=>a.order-b.order);locked(false);render();status('Pengaturan terbuka. Perubahan diterapkan setelah disimpan.')}catch(error){status(error.message,true)}finally{el('unlock').disabled=false}};
+el('lock').onclick=()=>{if(busy)return;locked(true);el('token').value='';banners=[];el('banners').replaceChildren();status('Halaman dikunci.')};
+el('add').onclick=()=>{if(banners.length>=12)return;banners.push({id:'banner-'+Date.now().toString(36),title:'Banner baru',description:'',imageUrl:'',action:'learn',buttonLabel:'Mulai belajar',order:banners.length,enabled:false});render();el('banners').lastElementChild.scrollIntoView({behavior:'smooth',block:'start'})};
+el('save').onclick=async()=>{if(!loaded||busy)return;for(const field of el('banners').querySelectorAll('input,textarea,select')){if(!field.reportValidity())return}const payload={banners:banners.map((banner,index)=>({...banner,order:index}))};setBusy(true);status('Menyimpan banner…');try{const data=await response(await fetch('/v1/admin/home-banners',{method:'PUT',headers:{...headers(),'Content-Type':'application/json'},body:JSON.stringify(payload)}));banners=data.banners;status('Banner tersimpan. Tarik beranda aplikasi ke bawah atau buka ulang aplikasi untuk memuat perubahan.')}catch(error){status(error.message,true)}finally{setBusy(false);render()}};
+</script>
+</html>

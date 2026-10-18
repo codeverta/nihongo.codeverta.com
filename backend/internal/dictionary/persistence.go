@@ -11,6 +11,7 @@ import (
 	"gorm.io/gorm/clause"
 	"net/url"
 	"nihongo-master-backend/internal/database"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -18,9 +19,6 @@ import (
 // SQLCache uses the application's MariaDB connection; its owner closes the DB.
 // Responses are shared across users, while entries form a retained source archive.
 type SQLCache struct{ db *gorm.DB }
-
-const persistentTTL = 30 * 24 * time.Hour
-const maxPersistentResponses = 5000
 
 func NewSQLCache(db *gorm.DB) (*SQLCache, error) {
 	if db == nil {
@@ -101,8 +99,35 @@ func (s *SQLCache) save(ctx context.Context, endpoint string, hit cached) error 
 	}
 	return s.db.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
 		response := database.DictionaryResponse{CacheKey: responseKey(endpoint), Source: source, Body: hit.body, FetchedAt: hit.at.UnixMilli()}
+		response.Endpoint = endpoint
+		u, _ := url.Parse(endpoint)
+		if kind == "word" {
+			response.QueryText = u.Query().Get("keyword")
+			response.Page, _ = strconv.Atoi(u.Query().Get("page"))
+			parts := strings.Split(u.Fragment, "|")
+			if len(parts) == 4 {
+				response.Mode = parts[1]
+				response.JLPT = parts[2]
+				response.Common = parts[3] == "true"
+				if response.Common {
+					response.QueryText = strings.TrimSuffix(response.QueryText, " #common")
+				}
+				if response.JLPT != "" {
+					response.QueryText = strings.TrimSuffix(response.QueryText, " #jlpt-"+strings.ToLower(response.JLPT))
+				}
+				if response.Mode == "english" {
+					response.QueryText = strings.Trim(response.QueryText, "\"")
+				}
+			} else {
+				response.Mode = "raw"
+			}
+		} else {
+			response.Mode = "kanji"
+			response.QueryText = strings.TrimPrefix(u.Path, "/v1/kanji/")
+		}
 		upsert := clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"body", "fetched_at"})}
-		if err := tx.Clauses(upsert).Create(&response).Error; err != nil {
+		responseUpsert := clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"body", "fetched_at", "endpoint", "query_text", "mode", "page", "jlpt", "common"})}
+		if err := tx.Clauses(responseUpsert).Create(&response).Error; err != nil {
 			return err
 		}
 		for _, entry := range entries {
@@ -111,7 +136,54 @@ func (s *SQLCache) save(ctx context.Context, endpoint string, hit cached) error 
 				return err
 			}
 		}
-		// MariaDB requires a derived join when deleting a limited selection of this table.
-		return tx.Exec(`DELETE r FROM dictionary_responses AS r JOIN (SELECT cache_key FROM dictionary_responses ORDER BY fetched_at DESC,cache_key LIMIT 18446744073709551615 OFFSET ?) AS stale ON stale.cache_key=r.cache_key`, maxPersistentResponses).Error
+		return nil
 	})
+}
+
+type CacheRecord struct {
+	ID        string `json:"id"`
+	QueryText string `json:"query"`
+	Mode      string `json:"mode"`
+	Page      int    `json:"page"`
+	JLPT      string `json:"jlpt"`
+	Common    bool   `json:"common"`
+	Source    string `json:"source"`
+	FetchedAt int64  `json:"fetchedAt"`
+}
+
+func (s *SQLCache) List(ctx context.Context, page int, query string) ([]CacheRecord, int64, error) {
+	db := s.db.WithContext(ctx).Model(&database.DictionaryResponse{})
+	if query != "" {
+		db = db.Where("query_text LIKE ?", "%"+query+"%")
+	}
+	var total int64
+	if err := db.Count(&total).Error; err != nil {
+		return nil, 0, err
+	}
+	var records []CacheRecord
+	err := db.Select("id, query_text, mode, page, jlpt, common, source, fetched_at").Order("fetched_at DESC, id").Limit(50).Offset((page - 1) * 50).Scan(&records).Error
+	if records == nil {
+		records = []CacheRecord{}
+	}
+	return records, total, err
+}
+
+func (c *Client) Refresh(ctx context.Context, id string) error {
+	if c.Persistence == nil {
+		return ErrUnavailable
+	}
+	var record database.DictionaryResponse
+	err := c.Persistence.db.WithContext(ctx).Select("endpoint").Where("id = ?", id).Take(&record).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return ErrNotFound
+	}
+	if err != nil {
+		return ErrUnavailable
+	}
+	u, err := url.Parse(record.Endpoint)
+	if err != nil || u.Scheme != "https" || u.User != nil || !((u.Host == "jisho.org" && u.Path == "/api/v1/search/words") || (u.Host == "kanjiapi.dev" && strings.HasPrefix(u.Path, "/v1/kanji/"))) {
+		return ErrInvalid
+	}
+	_, err = c.getRequest(ctx, record.Endpoint, true)
+	return err
 }

@@ -1,6 +1,6 @@
 # Lifetime Access dan pembayaran store
 
-Produk sekali bayar **Rp99.000**, bukan subscription berulang. Free mendapatkan materi N5–N4 serta semua tes N5. Premium mendapatkan materi N3–N1 dan seluruh tes yang tersedia. Kuis dalam lesson mengikuti akses materi. Produk tidak menjanjikan konten N1 yang belum tersedia atau materi offline.
+Produk sekali bayar, bukan subscription berulang. Harga tampilan awal Rp99.000 dan dapat diubah melalui halaman Admin → Harga Lifetime Access. Perubahan ini hanya mengatur harga yang ditampilkan aplikasi; nominal transaksi tetap mengikuti Google Play atau App Store dan perlu diperbarui manual di console store. Free mendapatkan materi N5–N4 serta semua tes N5. Premium mendapatkan materi N3–N1 dan seluruh tes yang tersedia. Kuis dalam lesson mengikuti akses materi. Produk tidak menjanjikan konten N1 yang belum tersedia atau materi offline.
 
 Pembelian dan Restore memerlukan akun Google pribadi. Akun demo memakai kredensial bersama sehingga backend menolak pembelian/Restore melalui akun tersebut agar akses dan transaksi tidak dimiliki bersama seluruh pengguna demo.
 
@@ -9,7 +9,7 @@ Package Android sekarang `com.codeverta.nihongomaster`. Product ID default kedua
 ## Google Play
 
 1. Buat aplikasi dengan package tersebut. Atur signing rilis/Play App Signing dan buat ulang client OAuth Android dengan package serta SHA-1 yang tepat; package sebelumnya telah berubah. Jangan publish dengan debug signing.
-2. Buat dan aktifkan one-time product `nihongo_master_lifetime`, opsi **Buy**, harga Indonesia Rp99.000. Jangan consume pembelian lifetime.
+2. Buat dan aktifkan one-time product `nihongo_master_lifetime`, opsi **Buy**, lalu atur harga Indonesia agar cocok dengan harga yang disimpan lewat Admin. Jangan consume pembelian lifetime.
 3. Aktifkan Android Publisher API dan beri service account akses aplikasi, informasi pembelian, serta pengelolaan pesanan yang diperlukan untuk acknowledge. Mount JSON key di server dan isi `GOOGLE_APPLICATION_CREDENTIALS`; alternatif gunakan ADC dengan `GOOGLE_PLAY_USE_ADC=true`. Kredensial tidak masuk APK.
 4. Buat Pub/Sub topic untuk Real-time Developer Notifications, berikan publisher Google Play hak publish, dan arahkan authenticated push ke `https://API/v1/billing/notifications/google`. Isi `GOOGLE_PLAY_PUSH_AUDIENCE` dengan audience JWT push dan `GOOGLE_PLAY_PUSH_EMAIL` dengan email service account push yang diizinkan. Jangan memakai push tanpa autentikasi.
 5. Upload signed build ke internal testing, aktifkan license testers, pasang dari Play Store, dan uji pembelian approved, pending/deferred, declined/canceled, already-owned, restore, uninstall/reinstall, refund, serta login dengan akun aplikasi lain.
@@ -19,7 +19,7 @@ Referensi: [one-time purchase lifecycle](https://developer.android.com/google/pl
 ## App Store
 
 1. Daftarkan bundle ID dan aplikasi di App Store Connect, isi signing team di Xcode, serta aktifkan capability In-App Purchase. Pastikan agreements, tax, dan banking aktif. Build iOS membutuhkan macOS/Xcode.
-2. Buat **Non-Consumable** `nihongo_master_lifetime`; atur harga Indonesia Rp99.000 jika price point itu tersedia dan periksa harga final. Jangan aktifkan Family Sharing: akses di implementasi ini terikat satu akun aplikasi, hanya menerima ownership `PURCHASED`.
+2. Buat **Non-Consumable** `nihongo_master_lifetime`; atur harga Indonesia agar cocok dengan harga yang disimpan lewat Admin dan periksa harga final. Jangan aktifkan Family Sharing: akses di implementasi ini terikat satu akun aplikasi, hanya menerima ownership `PURCHASED`.
 3. Buat In-App Purchase API key; isi `APPLE_ISSUER_ID`, `APPLE_KEY_ID`, `APPLE_BUNDLE_ID`, dan mount `.p8` pada `APPLE_PRIVATE_KEY_PATH` di server.
 4. URL App Store Server Notifications V2: `https://API/v1/billing/notifications/apple`. Server memverifikasi JWS dan membaca status terbaru melalui Get Transaction Info sebelum mengubah entitlement.
 5. Gunakan server terpisah `APPLE_ENVIRONMENT=Sandbox` untuk sandbox/TestFlight, dan `Production` untuk pembelian produksi. Jangan mengaktifkan fallback sandbox di deployment produksi. Local StoreKit configuration/Xcode unsigned purchases sengaja tidak diterima backend produksi.

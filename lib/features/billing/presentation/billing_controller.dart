@@ -41,6 +41,7 @@ class NativePurchaseGateway implements PurchaseGateway {
 class BillingState {
   const BillingState({
     this.product,
+    this.priceIdr,
     this.premium = false,
     this.busy = false,
     this.pending = false,
@@ -48,6 +49,7 @@ class BillingState {
     this.ready = false,
   });
   final ProductDetails? product;
+  final int? priceIdr;
   final bool premium;
   final bool busy;
   final bool pending;
@@ -57,25 +59,30 @@ class BillingState {
 
 final billingControllerProvider =
     StateNotifierProvider<BillingController, BillingState>((ref) {
-  final platform = !kIsWeb && defaultTargetPlatform == TargetPlatform.android
-      ? 'android'
-      : !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS
+      final platform =
+          !kIsWeb && defaultTargetPlatform == TargetPlatform.android
+          ? 'android'
+          : !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS
           ? 'ios'
           : '';
-  final controller = BillingController(
-    repository: BillingRepository(ref.watch(dioProvider)),
-    gateway: platform.isEmpty ? null : NativePurchaseGateway(),
-    platform: platform,
-    onChanged: () async {
-      await ref.read(authControllerProvider.notifier).refreshUser();
-      ref.invalidate(homeDashboardProvider);
-    },
-  );
-  ref.listen(authControllerProvider.select((s) => s.user?.id), (_, id) {
-    unawaited(controller.setUser(id));
-  });
-  unawaited(controller.setUser(ref.read(authControllerProvider).user?.id));
-  return controller;
+      final controller = BillingController(
+        repository: BillingRepository(ref.watch(dioProvider)),
+        gateway: platform.isEmpty ? null : NativePurchaseGateway(),
+        platform: platform,
+        onChanged: () async {
+          await ref.read(authControllerProvider.notifier).refreshUser();
+          ref.invalidate(homeDashboardProvider);
+        },
+      );
+      ref.listen(authControllerProvider.select((s) => s.user?.id), (_, id) {
+        unawaited(controller.setUser(id));
+      });
+      unawaited(controller.setUser(ref.read(authControllerProvider).user?.id));
+      return controller;
+    });
+
+final lifetimeDisplayPriceProvider = FutureProvider.autoDispose<int>((ref) {
+  return BillingRepository(ref.watch(dioProvider)).displayPrice();
 });
 
 class BillingController extends StateNotifier<BillingState>
@@ -114,6 +121,7 @@ class BillingController extends StateNotifier<BillingState>
     if (!busy) checkoutTimeout?.cancel();
     state = BillingState(
       product: state.product,
+      priceIdr: state.priceIdr,
       premium: state.premium,
       ready: state.ready,
       busy: busy,
@@ -162,13 +170,18 @@ class BillingController extends StateNotifier<BillingState>
       final info = await repository.status();
       if (!mounted || user != id) return;
       account = info;
-      state = BillingState(premium: info.premium, busy: true);
+      state = BillingState(
+        premium: info.premium,
+        priceIdr: info.priceIdr,
+        busy: true,
+      );
       if (gateway == null ||
           !info.platforms.contains(platform) ||
           !await gateway!.available()) {
         if (mounted && user == id) {
           state = BillingState(
             premium: info.premium,
+            priceIdr: info.priceIdr,
             message: 'Pembelian store belum tersedia di perangkat ini.',
           );
         }
@@ -183,9 +196,11 @@ class BillingController extends StateNotifier<BillingState>
       state = BillingState(
         premium: info.premium,
         product: found,
+        priceIdr: info.priceIdr,
         ready: found != null,
-        message:
-            found == null ? 'Produk belum tersedia. Coba lagi nanti.' : null,
+        message: found == null
+            ? 'Produk belum tersedia. Coba lagi nanti.'
+            : null,
       );
       await onChanged();
     } on DioException catch (error) {

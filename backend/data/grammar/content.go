@@ -10,3 +10,6 @@ var N3 []byte
 
 //go:embed n2.json
 var N2 []byte
+
+//go:embed n1.json
+var N1 []byte

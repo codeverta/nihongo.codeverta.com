@@ -29,14 +29,19 @@ Panduan build APK kecil: [Android app size](../docs/android-app-size.md).
 Dokumentasi lengkap:
 
 - [Backend Developer Guide](../docs/backend-development.md)
+- [Banner Beranda: carousel dan editor gambar di admin backend](../docs/home-banners.md)
 - [Gamifikasi: XP, streak, achievements, dan database permanen](../docs/gamification.md)
 - [Grammar JLPT N5: kurikulum dan API](../docs/grammar-n5.md)
 - [Grammar JLPT N4: 44 lesson, 88 unit pola, dan 220 soal](../docs/grammar-n4.md)
 - [Grammar JLPT N2: 60 lesson, 120 unit pola, dan 300 soal](../docs/grammar-n2.md)
+- [Grammar JLPT N1: 16 lesson, 32 pola, dan sumber](../docs/grammar-n1.md)
 - [Lifetime Rp99.000, Google Play, App Store, dan penghapusan akun](../docs/lifetime-billing.md)
 - [Kanji N5: 100 kanji, latihan tulis, dan kuis](../docs/kanji-n5.md)
 - [Kanji N4: 166 kanji, 34 lesson, dan progres per level](../docs/kanji-n4.md)
+- [Kanji N2: 367 kanji rujukan, contoh kosakata, dan sumber](../docs/kanji-n2.md)
+- [Kanji JLPT N1: 1.232 kanji dan sumber](../docs/kanji-n1.md)
 - [Reading N5: 12 cerita dan 36 adegan bergambar](../docs/reading-n5.md)
+- [Reading N1: 12 bacaan tingkat lanjut](../docs/reading-n1.md)
 - [Reading N4: 12 cerita baru dan 36 adegan bergambar](../docs/reading-n4.md)
 - [JLPT N5 Diagnostic: 25 soal, timer, hasil dan pembahasan](../docs/jlpt-n5-diagnostic.md)
 - [Authentication and Google OAuth Setup](../docs/authentication.md)
@@ -113,6 +118,8 @@ Lihat [panduan OAuth](../docs/authentication.md).
 | Public | GET | `/v1/exams` | Katalog exam |
 | Auth | POST | `/v1/exam-attempts` | Mulai exam dan cek premium |
 | Public | GET | `/v1/plans` | Free, monthly, yearly, lifetime |
+| Public | GET | `/v1/pricing` | Harga Lifetime Access yang ditampilkan aplikasi |
+| Admin | GET/PUT | `/v1/admin/pricing` | Baca atau ubah harga Lifetime (kunci admin) |
 | Auth | GET/PATCH | `/v1/me/profile` | Profil pengguna |
 | Auth | GET | `/v1/me/progress` | Progress pengguna |
 | Auth | PUT | `/v1/me/progress/{lessonID}` | Simpan progress |
@@ -126,6 +133,8 @@ Lihat [panduan OAuth](../docs/authentication.md).
 
 ## Quality checks
 
+Lowongan Jepang: [cakupan sumber, jadwal, dan operasional](../docs/japan-jobs.md).
+
 Materi Vocabulary N5 bergambar: [panduan konten dan UI](../docs/vocabulary-n5.md).
 
 Materi Reading N3 bergambar: [panduan lesson](../docs/reading-n3.md).
@@ -133,6 +142,8 @@ Materi Reading N3 bergambar: [panduan lesson](../docs/reading-n3.md).
 Materi Grammar N3: [kurikulum dan panduan lesson](../docs/grammar-n3.md).
 
 Materi Kanji N3: [kurikulum, contoh, dan sumber kamus](../docs/kanji-n3.md).
+
+Harga tampilan Lifetime Access: [pengaturan Admin dan sinkronisasi harga store](../docs/lifetime-billing.md).
 
 ```powershell
 go fmt ./...

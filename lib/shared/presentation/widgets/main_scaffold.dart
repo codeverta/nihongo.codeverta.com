@@ -42,6 +42,7 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
     final colorScheme = Theme.of(context).colorScheme;
     final screens = [
       DashboardScreen(
+        active: _selectedIndex == 0,
         openLearn: () => _selectDestination(1),
         openExam: () => _selectDestination(2),
         openProfile: () => _selectDestination(4),

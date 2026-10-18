@@ -12,6 +12,8 @@ services:
       PORT: ${BACKEND_DOCKER_PORT:-18084}
       ASSET_DIRECTORY: /app/assets
       BRANDING_CONFIG_PATH: /app/data/branding.json
+      HOME_BANNERS_CONFIG_PATH: /app/data/home-banners.json
+      PRICING_CONFIG_PATH: /app/data/pricing.json
     volumes:
       # The API reads this file itself so values containing special characters
       # aren't reinterpreted by Compose.

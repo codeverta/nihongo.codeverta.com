@@ -1,0 +1,1610 @@
+[
+  {
+    "ID": "reading-n1-01",
+    "Title": "Layanan publik dan keadilan akses",
+    "JapaneseTitle": "便利さだけでは測れない公共性",
+    "Chapter": "Lembaga dan masyarakat",
+    "Description": "Nilai layanan publik dengan melihat efisiensi sekaligus siapa yang masih kesulitan mengaksesnya.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "公共サービスの利用件数が増えれば、施策は成功したと評価されやすい。しかし、利用しなかった人の事情が集計から抜け落ちているなら、その数字は社会全体の評価とは言いにくい。行政が成果を示すために測りやすい指標を選ぶこと自体は自然だが、指標が目的にすり替わると、支援を必要とする人ほど見えなくなる。効率を高めることと、誰もが利用できる状態を保つことは、同じ物差しで測れない場合がある。\n\n例えば、窓口を予約制にすれば待ち時間は短くなる。一方で、制度を知らない人や、予定を立てにくい人は予約の段階で排除されるかもしれない。利用者アンケートも、実際に窓口まで来た人に限れば、来られなかった人の不便を捉えられない。数字の改善を疑うのではなく、その数字が誰の経験を含み、誰の経験を含んでいないかを確かめる必要がある。",
+        "reading": "こうきょう さーびす の りよう けんすう が ふえ れば 、 しさく は せいこう したと ひょうか されやすい 。 しかし 、 りよう しなかった ひと の じじょう が しゅうけい から ぬけ おち ているなら 、 その すうじ は しゃかいぜんたい の ひょうか とは いい にくい 。 ぎょうせい が せいか を しめす ために はかり やすい しひょう を えらぶ こと じたい は しぜん だが 、 しひょう が もくてき にすり かわ ると 、 しえん を ひつよう とする ひと ほど みえ なくなる 。 こうりつ を たかめ ることと 、 だれも が りよう できる じょうたい を たもつ ことは 、 おなじ ものさし で はかれ ない ばあい がある 。\n\nたとえば 、 まどぐち を よやくせい にすれば まちじかん は みじかく なる 。 いっぽう で 、 せいど を しら ない ひと や 、 よてい を たて にくい ひと は よやく の だんかい で はいじょ されるかもしれない 。 りようしゃ あんけーと も 、 じっさいに まどぐち まで きた ひと に かぎれ ば 、 こら れなかった ひと の ふべん を とらえ られない 。 すうじ の かいぜん を うたがう のではなく 、 その すうじ が だれ の けいけん を ふくみ 、 だれ の けいけん を ふくん でいないかを たしか める ひつよう がある 。",
+        "meaning": "Jumlah pengguna yang meningkat tidak otomatis membuktikan kebijakan berhasil bagi semua orang. Sistem reservasi dapat mengurangi waktu tunggu, tetapi orang yang tidak tahu prosedur atau tak dapat membuat jadwal bisa tersisih. Survei juga harus memperhitungkan orang yang tidak sempat datang.",
+        "vocabulary": [
+          {
+            "japanese": "指標",
+            "reading": "しひょう",
+            "meaning": "ukuran; indikator"
+          },
+          {
+            "japanese": "排除",
+            "reading": "はいじょ",
+            "meaning": "pengecualian; pengucilan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Layanan publik dan keadilan akses, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "制度を利用できるかどうかは、窓口の運用だけで決まるわけではない。説明の言葉が難しすぎないか、相談できる時間が生活の実態に合うか、失敗した場合にやり直せるかといった条件も、利用のしやすさを左右する。こうした条件は統計に表れにくく、担当者の努力に委ねられがちだが、個人の工夫だけで補えるものではない。\n\nしたがって、制度の評価では結果だけでなく、そこへ至る過程も調べるべきだ。利用者数とともに、申請を途中でやめた人や、別の手段を選んだ人の理由を確認する。聞き取りに応じる人だけを代表と見なさず、複数の方法で声を集める。手間は増えるが、その手間を省いたまま公平性を主張することのほうが、長い目で見れば高くつく。",
+        "reading": "せいど を りよう できるかどうかは 、 まどぐち の うんよう だけで きま るわけではない 。 せつめい の ことば が むつかしす ぎないか 、 そうだん できる じかん が せいかつ の じったい に あう か 、 しっぱい した ばあい にやり なおせ るかといった じょうけん も 、 りよう のしやすさを さゆう する 。 こうした じょうけん は とうけい に あらわれ にくく 、 たんとうしゃ の どりょく に ゆだね られがちだが 、 こじん の くふう だけで おぎなえるものではない 。\n\nしたがって 、 せいど の ひょうか では けっか だけでなく 、 そこへ いたる かてい も しらべ るべきだ 。 りようしゃすう とともに 、 しんせい を とちゅう でやめた ひと や 、 べつの しゅだん を えらん だ ひと の りゆう を かくにんす る 。 きき とり に おうじ る ひと だけを だいひょう と みな さず 、 ふくすう の ほうほう で こえ を あつめ る 。 てま は ふえ るが 、 その てま を はぶい たまま こうへいせい を しゅちょう することのほうが 、 ながい めで みれ ば たかく つく 。",
+        "meaning": "Penilaian layanan perlu mengamati proses, termasuk alasan orang menghentikan permohonan atau memilih cara lain. Bahasa petunjuk, waktu konsultasi, dan kesempatan mengulang turut menentukan akses. Mengumpulkan suara yang beragam membutuhkan usaha, tetapi mengabaikannya dapat menimbulkan biaya lebih besar.",
+        "vocabulary": [
+          {
+            "japanese": "指標",
+            "reading": "しひょう",
+            "meaning": "ukuran; indikator"
+          },
+          {
+            "japanese": "排除",
+            "reading": "はいじょ",
+            "meaning": "pengecualian; pengucilan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Layanan publik dan keadilan akses, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "効率化を否定する必要はない。繰り返しの作業を減らせば、職員は個別の相談に時間を使えるようになる。ただし、削減できた時間を何に回すのかが示されなければ、効率化は単なる縮小と区別できない。評価の基準に利用者の選択肢や再相談のしやすさを加えれば、改善の方向も見えやすくなる。\n\n公共サービスの役割は、手続きの速度を競うことではなく、必要な人が必要な支援にたどり着けるようにすることだ。速さはそのための手段であり、目的ではない。数字を読む際に、数字の外側にいる人を想像し、制度の入口から結果までをたどることが、公共性を確かめる第一歩になる。",
+        "reading": "こうりつか を ひてい する ひつよう はない 。 くりかえし の さぎょう を へら せば 、 しょくいん は こべつ の そうだん に じかん を つかえ るようになる 。 ただし 、 さくげん できた じかん を なに に まわす のかが しめさ れなければ 、 こうりつか は たんなる しゅくしょう と くべつ できない 。 ひょうか の きじゅん に りようしゃ の せんたくし や さい そうだん のしやすさを くわえ れば 、 かいぜん の ほうこう も みえ やすくなる 。\n\nこうきょう さーびす の やくわり は 、 てつづき の そくど を きそう ことではなく 、 ひつよう な ひと が ひつよう な しえん にたどり つけ るようにすることだ 。 はやさ はそのための しゅだん であり 、 もくてき ではない 。 すうじ を よむ さいに 、 すうじ の そとがわ にいる ひと を そうぞう し 、 せいど の いりぐち から けっか までをたどることが 、 こうきょうせい を たしか める だいいっぽ になる 。",
+        "meaning": "Efisiensi berguna bila waktu yang dihemat dialihkan untuk konsultasi yang lebih personal. Kecepatan adalah sarana agar orang memperoleh dukungan, bukan tujuan akhir. Untuk menilai layanan publik, periksa siapa yang tercakup dalam angka dan siapa yang belum terjangkau.",
+        "vocabulary": [
+          {
+            "japanese": "指標",
+            "reading": "しひょう",
+            "meaning": "ukuran; indikator"
+          },
+          {
+            "japanese": "排除",
+            "reading": "はいじょ",
+            "meaning": "pengecualian; pengucilan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Layanan publik dan keadilan akses, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "筆者が利用件数とともに確かめるべきだと述べていることは何か。",
+        "Choices": [
+          "誰の経験が集計に含まれていないか",
+          "職員の年齢構成",
+          "施設の建設費",
+          "利用者の国籍"
+        ],
+        "Correct": 0,
+        "Explanation": "利用者数だけでは使わなかった人の事情が見えないため、含まれる経験と含まれない経験を確認します。"
+      },
+      {
+        "Prompt": "予約制の窓口について、本文から言えることは何か。",
+        "Choices": [
+          "利用者調査を不要にする",
+          "制度を知らない人にも自動で案内する",
+          "待ち時間を短くする一方、予約できない人を排除する可能性がある",
+          "必ず公平性を高める"
+        ],
+        "Correct": 2,
+        "Explanation": "予約制は待ち時間を減らし得ますが、予約段階で利用できない人を生む可能性が示されています。"
+      },
+      {
+        "Prompt": "筆者が制度評価で過程も見るべきだとする理由は何か。",
+        "Choices": [
+          "制度の利用者数を減らすため",
+          "結果の数字だけでは利用を断念した人などの経験が分からないから",
+          "過程は結果より常に重要だから",
+          "聞き取り調査は費用がかからないから"
+        ],
+        "Correct": 1,
+        "Explanation": "申請をやめた人や別の手段を選んだ人の理由も確かめる必要があると述べています。"
+      },
+      {
+        "Prompt": "筆者にとって効率化は何として位置づけられているか。",
+        "Choices": [
+          "公共サービスの最終目的",
+          "公平性を判断する唯一の基準",
+          "職員を減らすための目標",
+          "必要な支援へ人が到達するための手段"
+        ],
+        "Correct": 3,
+        "Explanation": "結論は速さを手段、必要な支援への到達を目的としています。"
+      },
+      {
+        "Prompt": "この文章の主張に最も近いものはどれか。",
+        "Choices": [
+          "予約制はどの制度でも禁止すべきだ",
+          "公平性は利用件数だけで十分に測れる",
+          "指標の範囲と限界を確かめ、利用できない人の経験も評価に含めるべきだ",
+          "数字による評価はすべて廃止すべきだ"
+        ],
+        "Correct": 2,
+        "Explanation": "数字を否定せず、誰の経験を含むかを確かめて公平性を評価するのが主旨です。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-02",
+    "Title": "Ingatan dan sejarah lokal",
+    "JapaneseTitle": "記録に残らない経験をどう伝えるか",
+    "Chapter": "Budaya dan ingatan",
+    "Description": "Bandingkan arsip dan kesaksian, lalu pertimbangkan pengalaman yang tidak tercatat.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "地域の歴史を紹介する展示では、古い写真や公文書が中心になりやすい。形として残る資料は年代や出来事を確かめる手がかりになるが、それだけで暮らしの全体像が見えるわけではない。記録を作った人の立場によって、何が重要と判断され、何が書き留められなかったかが異なるからだ。資料が豊富であることと、地域の経験が十分に表されていることは同じではない。\n\n例えば、工場の沿革には生産量や設備の変化が細かく記されていても、そこで働いた人が交代制の生活をどう感じていたかはほとんど残らないことがある。数字は組織の変化を説明する一方、個人の記憶は数字に収まらない感覚や迷いを伝える。どちらか一方を完全な説明とみなすのではなく、異なる種類の資料を照らし合わせることが大切だ。",
+        "reading": "ちいき の れきし を しょうかい する てんじ では 、 ふるい しゃしん や こうぶんしょ が ちゅうしん になりやすい 。 かたち として のこる しりょう は ねんだい や できごと を たしか める てがかり になるが 、 それだけで くらし の ぜんたいぞう が みえ るわけではない 。 きろく を つくっ た ひと の たちば によって 、 なに が じゅうよう と はんだん され 、 なに が かき とどめら れなかったかが ことなる からだ 。 しりょう が ほうふ であることと 、 ちいき の けいけん が じゅうぶん に あらわさ れていることは おなじ ではない 。\n\nたとえば 、 こうじょう の えんかく には せいさんりょう や せつび の へんか が こまかく しるさ れていても 、 そこで はたらい た ひと が こうたい せい の せいかつ をどう かんじ ていたかはほとんど のこら ないことがある 。 すうじ は そしき の へんか を せつめいす る いっぽう 、 こじん の きおく は すうじ に おさま らない かんかく や まよい を つたえ る 。 どちらか いっぽう を かんぜん な せつめい とみなすのではなく 、 ことなる しゅるい の しりょう を てら し あわ せることが たいせつ だ 。",
+        "meaning": "Foto dan dokumen resmi membantu menelusuri kejadian, tetapi tidak mewakili seluruh pengalaman warga. Catatan dibuat dari sudut pandang tertentu; misalnya, sejarah pabrik mungkin memuat angka produksi, tetapi jarang mencatat perasaan pekerja terhadap pola hidup bergilir.",
+        "vocabulary": [
+          {
+            "japanese": "証言",
+            "reading": "しょうげん",
+            "meaning": "kesaksian"
+          },
+          {
+            "japanese": "継承",
+            "reading": "けいしょう",
+            "meaning": "pewarisan; penerusan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Ingatan dan sejarah lokal, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "聞き取りを加えれば、書類に記載されていない経験が明らかになる。しかし、語りもまた過去をそのまま保存するものではない。記憶は現在の関心によって整理され、質問の仕方や聞き手との関係にも影響される。後年に語られた出来事が、当時の記録と食い違うこともある。その違いは誤りの証拠とは限らず、当時の人が何を公に語れたかを示す場合がある。\n\nだからこそ、記録と証言のどちらが正しいかを急いで決めるより、相違が生まれた背景を考えたい。語り手の言葉を編集して分かりやすくする際も、ためらいや曖昧さを消せば、本人が伝えようとした複雑さを損ねるおそれがある。読み手が解釈できる余地を残し、資料の限界も併せて示すことが、誠実な展示につながる。",
+        "reading": "きき とり を くわえ れば 、 しょるい に きさいさ れていない けいけん が あきらか になる 。 しかし 、 かたり もまた かこ をそのまま ほぞん するものではない 。 きおく は げんざい の かんしん によって せいり され 、 しつもん の しかた や ききて との かんけい にも えいきょう される 。 こうねん に かたら れた できごと が 、 とうじ の きろく と くいちがう こともある 。 その ちがい は あやまり の しょうこ とは かぎら ず 、 とうじ の ひと が なにを こう に かたれ たかを しめす ばあい がある 。\n\nだからこそ 、 きろく と しょうげん のどちらが ただしい かを いそい で きめ るより 、 そうい が うまれ た はいけい を かんがえ たい 。 かたり ての ことば を へんしゅう して わか りやすくする きわ も 、 ためらいや あいまい さを けせ ば 、 ほんにん が つたえ ようとした ふくざつさ を そこね るおそれがある 。 よみて が かいしゃく できる よち を のこし 、 しりょう の げんかい も あわせ て しめす ことが 、 せいじつ な てんじ につながる 。",
+        "meaning": "Kesaksian dapat melengkapi arsip, namun ingatan dipengaruhi perhatian masa kini, pertanyaan, dan hubungan dengan pewawancara. Perbedaan kesaksian dan dokumen tidak selalu berarti salah; perbedaan itu bisa menunjukkan hal yang dahulu sulit dibicarakan. Penyuntingan jangan menghapus keraguan yang bermakna.",
+        "vocabulary": [
+          {
+            "japanese": "証言",
+            "reading": "しょうげん",
+            "meaning": "kesaksian"
+          },
+          {
+            "japanese": "継承",
+            "reading": "けいしょう",
+            "meaning": "pewarisan; penerusan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Ingatan dan sejarah lokal, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "記憶を継承するとは、過去の答えを一つに固定することではない。異なる人の経験が同じ出来事を別の角度から照らすことを、次の世代が検討できるようにする営みである。展示の説明に「分かっていること」と「まだ確かめられないこと」を分けて記せば、空白を都合のよい物語で埋めずに済む。\n\n資料を残す作業は、完成した展示を作ることより地味に見える。だが、整理方法や出所を記録しておけば、後の人が別の問いを立てられる。過去を現在の価値観だけで裁かず、同時に懐かしさで覆い隠さず、複数の証拠を読み直せる状態を保つこと。それが地域の記憶を生きたものとして引き継ぐ方法だ。",
+        "reading": "きおく を けいしょう するとは 、 かこ の こたえ を ひとつ に こてい することではない 。 ことなる ひと の けいけん が おなじ できごと を べつの かくど から てら すことを 、 つぎの せだい が けんとう できるようにする いとなみ である 。 てんじ の せつめい に 「 わか っていること 」 と 「 まだ たしか められないこと 」 を わけ て しるせ ば 、 くうはく を つごう のよい ものがたり で うめ ずに すむ 。\n\nしりょう を のこす さぎょう は 、 かんせいし た てんじ を つくる ことより じみ に みえ る 。 だが 、 せいりほうほう や しゅっしょ を きろく しておけば 、 のちの ひと が べつの とい を たて られる 。 かこ を げんざい の かちかん だけで さばか ず 、 どうじに なつかしさ で おおい かくさ ず 、 ふくすう の しょうこ を よみなおせ る じょうたい を たもつ こと 。 それが ちいき の きおく を いき たものとして ひきつぐ ほうほう だ 。",
+        "meaning": "Mewariskan ingatan berarti menyediakan beragam pengalaman agar generasi berikutnya dapat menelitinya, bukan mengunci satu kisah. Jelaskan hal yang diketahui dan yang belum terbukti. Dengan mencatat asal-usul arsip, orang kelak dapat mengajukan pertanyaan baru tanpa mengisi kekosongan secara sewenang-wenang.",
+        "vocabulary": [
+          {
+            "japanese": "証言",
+            "reading": "しょうげん",
+            "meaning": "kesaksian"
+          },
+          {
+            "japanese": "継承",
+            "reading": "けいしょう",
+            "meaning": "pewarisan; penerusan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Ingatan dan sejarah lokal, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "公文書だけでは地域の経験を十分に表せないのはなぜか。",
+        "Choices": [
+          "記録を作った人の立場で書かれる内容が異なるから",
+          "公文書には年代が記されないから",
+          "写真は歴史資料として使えないから",
+          "資料は必ず改ざんされるから"
+        ],
+        "Correct": 0,
+        "Explanation": "何を重要とするか、何が記録されないかは記録者の立場に左右されます。"
+      },
+      {
+        "Prompt": "証言と当時の記録に食い違いがある場合、筆者はどう考えるべきだとしているか。",
+        "Choices": [
+          "証言を展示から削除する",
+          "語り手の記憶力を評価する",
+          "相違が生まれた背景を検討する",
+          "必ず記録のほうを正しいとする"
+        ],
+        "Correct": 2,
+        "Explanation": "違い自体が当時語れたことを示す場合もあり、背景を考えるべきとしています。"
+      },
+      {
+        "Prompt": "証言を編集するときに避けるべきことは何か。",
+        "Choices": [
+          "展示に複数の証拠を使うこと",
+          "ためらいや曖昧さを消して複雑さを損なうこと",
+          "語り手の言葉を記録すること",
+          "資料の出所を示すこと"
+        ],
+        "Correct": 1,
+        "Explanation": "分かりやすさを優先してためらいや曖昧さを消す危険が指摘されています。"
+      },
+      {
+        "Prompt": "筆者が「記憶を継承する」と説明する内容は何か。",
+        "Choices": [
+          "一つの正しい物語に固定すること",
+          "資料の空白を想像で補うこと",
+          "現在の価値観だけで過去を裁くこと",
+          "複数の経験を後世が検討できる状態にすること"
+        ],
+        "Correct": 3,
+        "Explanation": "後世が異なる経験を検討できるようにする営みだと述べています。"
+      },
+      {
+        "Prompt": "資料の限界を示すことの効果として最も適切なものは何か。",
+        "Choices": [
+          "証言の正確さを保証できる",
+          "過去の解釈を一つに統一できる",
+          "不明な部分を都合のよい物語で埋めずに済む",
+          "展示の説明を完全になくせる"
+        ],
+        "Correct": 2,
+        "Explanation": "分かることと不明なことを分けて記すことを提案しています。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-03",
+    "Title": "Tanggung jawab ahli",
+    "JapaneseTitle": "分かりやすさと正確さの両立",
+    "Chapter": "Pengetahuan dan masyarakat",
+    "Description": "Bedakan fakta, tafsiran, dan keputusan nilai dalam penjelasan ahli.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "専門家が複雑な問題を説明するとき、専門用語を避ければ理解が進むとは限らない。言葉を平易に置き換える過程で、例外や条件が省かれ、確実ではない結論が確定事項のように響くこともある。反対に、正確さを優先して細部を並べれば、聞き手は結局何が重要なのかをつかめない。分かりやすさと正確さは単純に反比例するのではなく、説明の組み立て方によって両立の余地がある。\n\nまず、観察された事実、そこから導いた解釈、今後の予測を分けて話すことが有効だ。たとえば、データが示す範囲を明示し、別の条件では結果が変わる可能性を添える。確信の度合いを示すことは、弱気な態度ではない。聞き手が結論の根拠と限界を区別し、自分の判断に必要な情報を選び取るための手がかりとなる。",
+        "reading": "せんもんか が ふくざつ な もんだい を せつめいす るとき 、 せんもんようご を さけ れば りかい が すすむ とは かぎら ない 。 ことば を へいい に おきかえる かてい で 、 れいがい や じょうけん が はぶか れ 、 かくじつ ではない けつろん が かくてい じこう のように ひびく こともある 。 はんたい に 、 せいかく さを ゆうせん して さいぶ を ならべ れば 、 ききて は けっきょく なに が じゅうような のかをつかめない 。 わか りやすさと せいかく さは たんじゅんに はんぴれい するのではなく 、 せつめい の くみたて ほう によって りょうりつ の よち がある 。\n\nまず 、 かんさつ された じじつ 、 そこから みちびい た かいしゃく 、 こんご の よそく を わけ て はなす ことが ゆうこう だ 。 たとえば 、 でーた が しめす はんい を めいじ し 、 べつの じょうけん では けっか が かわ る かのうせい を そえ る 。 かくしん の どあい を しめす ことは 、 よわき な たいど ではない 。 ききて が けつろん の こんきょ と げんかい を くべつ し 、 じぶん の はんだん に ひつよう な じょうほう を えらび とる ための てがかり となる 。",
+        "meaning": "Penyederhanaan istilah dapat menghilangkan pengecualian, sedangkan uraian yang terlalu teknis menyulitkan pembaca menemukan pokoknya. Ahli sebaiknya membedakan fakta, tafsiran, dan prediksi, serta menjelaskan batas bukti dan tingkat kepastian agar pembaca dapat menilai sendiri.",
+        "vocabulary": [
+          {
+            "japanese": "不確実性",
+            "reading": "ふかくじつせい",
+            "meaning": "ketidakpastian"
+          },
+          {
+            "japanese": "反映",
+            "reading": "はんえい",
+            "meaning": "pencerminan; penerapan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Tanggung jawab ahli, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "しかし、説明を工夫すれば専門家と市民の間の問題がすべて解決するわけではない。誰が問いを立て、どの不利益を検討対象に含めるかは、価値判断と結びついている。専門家が技術的に可能な案を提示しても、それを採用すべきかどうかまで自動的に決まるわけではない。専門知は意思決定を支えるが、社会が選ぶ責任を引き受けるものではない。\n\nまた、質問の場が形式上開かれていても、専門用語や時間制限のために発言できない人がいる。質問が出なかったことを、全員が納得した証拠とするのは危うい。事前に資料を配る、質問を匿名でも受け付ける、回答を後から公開するなど、対話への入口を複数用意する必要がある。参加者の数だけでなく、どの声が議論に反映されたかを振り返るべきだ。",
+        "reading": "しかし 、 せつめい を くふう すれば せんもんか と しみん の まの もんだい がすべて かいけつ するわけではない 。 だれが とい を たて 、 どの ふりえき を けんとうたいしょう に ふくめ るかは 、 かちはんだん と むすび ついている 。 せんもんか が ぎじゅつてき に かのうな あん を ていじ しても 、 それを さいよう すべきかどうかまで じどうてき に きま るわけではない 。 せんもん ち は いしけってい を ささえ るが 、 しゃかい が えらぶ せきにん を ひきうけ るものではない 。\n\nまた 、 しつもん の ば が けいしきじょう ひらか れていても 、 せんもんようご や じかんせいげん のために はつげん できない ひと がいる 。 しつもん が でな かったことを 、 ぜんいん が なっとく した しょうこ とするのは あやうい 。 じぜん に しりょう を くばる 、 しつもん を とくめい でも うけつけ る 、 かいとう を のち から こうかい するなど 、 たいわ への いりぐち を ふくすうようい する ひつよう がある 。 さんかしゃ の かず だけでなく 、 どの こえ が ぎろん に はんえい されたかを ふりかえる べきだ 。",
+        "meaning": "Penjelasan ahli tidak menyelesaikan pilihan nilai yang harus dibuat masyarakat. Usulan yang mungkin secara teknis belum tentu patut diterapkan. Forum yang terbuka pun belum cukup jika istilah teknis atau waktu terbatas menghambat partisipasi; sediakan beberapa cara untuk mengajukan pertanyaan dan tindak lanjuti jawabannya.",
+        "vocabulary": [
+          {
+            "japanese": "不確実性",
+            "reading": "ふかくじつせい",
+            "meaning": "ketidakpastian"
+          },
+          {
+            "japanese": "反映",
+            "reading": "はんえい",
+            "meaning": "pencerminan; penerapan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Tanggung jawab ahli, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "専門家に求められるのは、正解を上から教えることでも、責任を避けて「判断は人それぞれ」と退くことでもない。根拠を示し、分からない点を明確にし、価値判断が必要な箇所ではその事実を説明することだ。聞き手もまた、説明を受け取るだけでなく、何を大切にするかを言葉にすることで議論に参加できる。\n\n正確さとは、情報を一切簡略化しないことではない。何を省略したのか、その省略によって結論がどこまで成り立つのかを見えるようにすることだ。説明の目的を合意の演出に置かず、異なる立場の人が共通の事実と残された不確実性を確認できるようにする。その積み重ねが、専門知への信頼を一時的な安心ではなく、検討可能な関係に変えていく。",
+        "reading": "せんもんか に もとめ られるのは 、 せいかい を うえ から おしえ ることでも 、 せきにん を さけ て 「 はんだん は ひと それぞれ 」 と しりぞく ことでもない 。 こんきょ を しめし 、 わか らない てん を めいかく にし 、 かちはんだん が ひつよう な かしょ ではその じじつ を せつめいす ることだ 。 ききて もまた 、 せつめい を うけとる だけでなく 、 なにを たいせつ にするかを ことば にすることで ぎろん に さんか できる 。\n\nせいかく さとは 、 じょうほう を いっさい かんりゃくか しないことではない 。 なにを しょうりゃく したのか 、 その しょうりゃく によって けつろん がどこまで なりたつ のかを みえ るようにすることだ 。 せつめい の もくてき を ごうい の えんしゅつ に おか ず 、 ことなる たちば の ひと が きょうつう の じじつ と のこさ れた ふかくじつせい を かくにん できるようにする 。 その つみかさね が 、 せんもん ち への しんらい を いちじてき な あんしん ではなく 、 けんとう かのうな かんけい に かえ ていく 。",
+        "meaning": "Ahli perlu menguraikan dasar, hal yang belum diketahui, dan bagian yang memerlukan pertimbangan nilai. Akurasi bukan berarti tanpa penyederhanaan, melainkan menjelaskan apa yang disederhanakan dan sejauh mana kesimpulan berlaku. Kepercayaan tumbuh lewat diskusi yang mempertahankan fakta bersama dan ketidakpastian yang tersisa.",
+        "vocabulary": [
+          {
+            "japanese": "不確実性",
+            "reading": "ふかくじつせい",
+            "meaning": "ketidakpastian"
+          },
+          {
+            "japanese": "反映",
+            "reading": "はんえい",
+            "meaning": "pencerminan; penerapan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Tanggung jawab ahli, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "専門家が説明で事実・解釈・予測を分ける理由は何か。",
+        "Choices": [
+          "根拠と結論の限界を聞き手が区別できるようにするため",
+          "専門用語を増やすため",
+          "不確実な結果を隠すため",
+          "市民に判断を任せないため"
+        ],
+        "Correct": 0,
+        "Explanation": "確信度と根拠の限界が聞き手の判断材料になると述べています。"
+      },
+      {
+        "Prompt": "筆者によれば、専門知だけでは決まらないのは何か。",
+        "Choices": [
+          "専門家が扱う用語の定義",
+          "研究の実施時期",
+          "技術的に可能な案を社会として採用すべきか",
+          "観察されたデータの値"
+        ],
+        "Correct": 2,
+        "Explanation": "採用すべきかは価値判断を含み、専門知が自動で決めるものではありません。"
+      },
+      {
+        "Prompt": "質問が出なかったことを納得の証拠にしにくいのはなぜか。",
+        "Choices": [
+          "専門家が回答を拒否するから",
+          "発言できる機会や条件が人によって異なるから",
+          "質問は必ず匿名で行われるから",
+          "説明会の参加者が多すぎるから"
+        ],
+        "Correct": 1,
+        "Explanation": "時間制限や専門用語などにより発言できない人がいる可能性を述べます。"
+      },
+      {
+        "Prompt": "筆者が専門家に求める態度は何か。",
+        "Choices": [
+          "すべての結論を断定する",
+          "社会的判断から完全に退く",
+          "分かりやすさのため条件を省く",
+          "根拠と不明点を明示し、価値判断が必要な箇所を説明する"
+        ],
+        "Correct": 3,
+        "Explanation": "根拠、不明な点、価値判断の必要性を説明することを求めています。"
+      },
+      {
+        "Prompt": "本文がいう正確な説明とはどのようなものか。",
+        "Choices": [
+          "専門用語だけで説明する",
+          "全員の合意を保証する",
+          "省略した内容と結論が成り立つ範囲を見えるようにする",
+          "一切の情報を省かない"
+        ],
+        "Correct": 2,
+        "Explanation": "何を省き、どこまで結論が成り立つかを示すことが正確さだとしています。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-04",
+    "Title": "Mengukur mutu kerja",
+    "JapaneseTitle": "数値目標が変える現場",
+    "Chapter": "Kerja dan organisasi",
+    "Description": "Tafsirkan indikator kerja beserta hal yang luput dari pengukuran angka.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "職場で成果を比べるために数値目標を設けると、基準が明確になり、改善点を共有しやすくなる。だが、数えやすいものだけが評価対象になると、仕事の質より報告しやすさが優先される。相談に乗る時間や、問題を未然に防ぐ工夫は記録に残りにくい。その結果、短期間の件数が増えても、利用者や同僚にとって仕事が良くなったとは限らない。\n\n評価が現場の行動を変えるのは、職員の意識が低いからではない。評価が昇進や予算に結びつく以上、基準に応えようとすることは合理的な反応である。問題は、指標が何を価値ある仕事と見なすかを静かに決めてしまう点にある。目標を導入する際には、それによって増える行動だけでなく、後回しになる作業も予測しなければならない。",
+        "reading": "しょくば で せいか を くらべ るために すうち もくひょう を もうけ ると 、 きじゅん が めいかく になり 、 かいぜんてん を きょうゆう しやすくなる 。 だが 、 かぞえ やすいものだけが ひょうかたいしょう になると 、 しごと の しつ より ほうこく しやすさが ゆうせん される 。 そうだん に のる じかん や 、 もんだい を みぜん に ふせぐ くふう は きろく に のこり にくい 。 その けっか 、 たんきかん の けんすう が ふえ ても 、 りようしゃ や どうりょう にとって しごと が よく なったとは かぎら ない 。\n\nひょうか が げんば の こうどう を かえ るのは 、 しょくいん の いしき が ひくい からではない 。 ひょうか が しょうしん や よさん に むすび つく いじょう 、 きじゅん に こたえ ようとすることは ごうりてき な はんのう である 。 もんだい は 、 しひょう が なにを かち ある しごと と みな すかを しずか に きめ てしまう てん にある 。 もくひょう を どうにゅう する さいに は 、 それによって ふえ る こうどう だけでなく 、 あとまわし になる さぎょう も よそく しなければならない 。",
+        "meaning": "Target angka membuat perbandingan dan evaluasi mudah, tetapi pekerjaan yang mudah dihitung dapat lebih dihargai daripada mutu pekerjaan. Tugas seperti mendengarkan konsultasi atau mencegah masalah sering tidak tercatat. Sistem penilaian juga mendorong orang memprioritaskan apa yang menentukan karier atau anggaran.",
+        "vocabulary": [
+          {
+            "japanese": "誘因",
+            "reading": "ゆういん",
+            "meaning": "insentif; pemicu"
+          },
+          {
+            "japanese": "照合",
+            "reading": "しょうごう",
+            "meaning": "pencocokan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Mengukur mutu kerja, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "数値をなくせば公平になるという考えも現実的ではない。記録がなければ、声の大きい人の印象や、管理者の好みが評価を左右しやすくなる。定量的な指標は比較の土台を提供するが、比較可能な部分と文脈を見ないと評価できない部分を分ける必要がある。複数の指標を組み合わせても、数字の数だけ公平さが増すわけではない。\n\n例えば、相談対応の件数とともに、解決までに必要だった時間や再相談の理由を確認する方法がある。ただし、担当者の工夫を個人の成績だけに結びつければ、難しい案件を避ける誘因を生むかもしれない。部署全体で振り返る仕組みを設け、数字が示す変化を現場の説明と照合することで、指標の読み違いを防ぎやすくなる。",
+        "reading": "すうち をなくせば こうへい になるという かんがえ も げんじつてき ではない 。 きろく がなければ 、 こえ の おおきい ひと の いんしょう や 、 かんりしゃ の このみ が ひょうか を さゆう しやすくなる 。 ていりょうてき な しひょう は ひかく の どだい を ていきょう するが 、 ひかくかのう な ぶぶん と ぶんみゃく を みな いと ひょうか できない ぶぶん を わけ る ひつよう がある 。 ふくすう の しひょう を くみあわせ ても 、 すうじ の かず だけ こうへい さが ます わけではない 。\n\nたとえば 、 そうだん たいおう の けんすう とともに 、 かいけつ までに ひつよう だった じかん や さい そうだん の りゆう を かくにんす る ほうほう がある 。 ただし 、 たんとうしゃ の くふう を こじん の せいせき だけに むすび つければ 、 むずかしい あんけん を さけ る ゆういん を うむ かもしれない 。 ぶしょ ぜんたい で ふりかえる しくみ を もうけ 、 すうじ が しめす へんか を げんば の せつめい と しょうごう することで 、 しひょう の よみ ちがい を ふせぎ やすくなる 。",
+        "meaning": "Menghapus angka bukan solusi karena penilaian bisa kembali bergantung pada kesan pribadi. Indikator kuantitatif berguna, tetapi perlu dibedakan dari bagian yang membutuhkan konteks. Jumlah konsultasi dapat dilengkapi waktu penyelesaian dan alasan kunjungan ulang; penilaian tim membantu mencegah penghindaran kasus sulit.",
+        "vocabulary": [
+          {
+            "japanese": "誘因",
+            "reading": "ゆういん",
+            "meaning": "insentif; pemicu"
+          },
+          {
+            "japanese": "照合",
+            "reading": "しょうごう",
+            "meaning": "pencocokan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Mengukur mutu kerja, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "よい評価制度は、すべての仕事を一つの点数に換算する制度ではない。数値によって見える範囲を明らかにし、見えない部分について質問できる仕組みを併せ持つ制度である。目標を達成したかだけでなく、どのような条件のもとで達成したのか、達成のために何を断念したのかを話し合う必要がある。\n\nその話し合いは、指標を無効にするためではなく、指標を適切に使うために行う。数字は現場を裁く判決ではなく、次に調べるべき場所を示す案内として扱える。評価する側がその限界を認め、働く側が数字の背景を説明できるなら、測定は監視から学習へと近づく。仕事の質を支えるのは、測定と対話のどちらか一方ではない。",
+        "reading": "よい ひょうか せいど は 、 すべての しごと を ひとつ の てんすう に かんさん する せいど ではない 。 すうち によって みえ る はんい を あきらか にし 、 みえ ない ぶぶん について しつもん できる しくみ を あわせ もつ せいど である 。 もくひょう を たっせい したかだけでなく 、 どのような じょうけん のもとで たっせい したのか 、 たっせい のために なにを だんねん したのかを はなしあう ひつよう がある 。\n\nその はなしあい は 、 しひょう を むこう にするためではなく 、 しひょう を てきせつ に つかう ために おこなう 。 すうじ は げんば を さばく はんけつ ではなく 、 つぎに しらべ るべき ばしょ を しめす あんない として あつかえ る 。 ひょうか する がわ がその げんかい を みとめ 、 はたらく がわ が すうじ の はいけい を せつめい できるなら 、 そくてい は かんし から がくしゅう へと ちかづ く 。 しごと の しつ を ささえ るのは 、 そくてい と たいわ のどちらか いっぽう ではない 。",
+        "meaning": "Sistem yang baik menunjukkan apa yang dapat dilihat melalui angka sekaligus menyediakan ruang untuk menanyakan yang tak terukur. Bahas kondisi pencapaian target dan pekerjaan yang terpaksa ditunda. Angka menjadi petunjuk untuk penyelidikan lanjutan, bukan vonis tentang mutu seseorang atau organisasi.",
+        "vocabulary": [
+          {
+            "japanese": "誘因",
+            "reading": "ゆういん",
+            "meaning": "insentif; pemicu"
+          },
+          {
+            "japanese": "照合",
+            "reading": "しょうごう",
+            "meaning": "pencocokan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Mengukur mutu kerja, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "数値目標が現場にもたらす問題として述べられているものは何か。",
+        "Choices": [
+          "数えやすい仕事が優先され、記録に残りにくい仕事が後回しになる",
+          "評価制度が必ずなくなる",
+          "比較の基準が全くなくなる",
+          "職員が合理的に行動できなくなる"
+        ],
+        "Correct": 0,
+        "Explanation": "測定しやすいものが評価対象になり、相談などが後回しになる可能性があります。"
+      },
+      {
+        "Prompt": "筆者は数値をなくせばどうなる可能性があると述べるか。",
+        "Choices": [
+          "仕事の質が測定可能になる",
+          "現場の説明が不要になる",
+          "印象や管理者の好みが評価に影響しやすくなる",
+          "評価が自動的に公平になる"
+        ],
+        "Correct": 2,
+        "Explanation": "数値がなければ印象や好みが左右しやすいと述べています。"
+      },
+      {
+        "Prompt": "相談件数だけを個人の評価に結びつけると何が起こり得るか。",
+        "Choices": [
+          "評価対象がなくなる",
+          "担当者が難しい案件を避ける誘因が生まれる",
+          "部署での振り返りが増える",
+          "全ての案件が早く解決する"
+        ],
+        "Correct": 1,
+        "Explanation": "難しい案件を避ける誘因になり得ると具体例を挙げています。"
+      },
+      {
+        "Prompt": "本文が示す、よい評価制度の特徴は何か。",
+        "Choices": [
+          "すべての仕事を一つの点数に換算する",
+          "評価者だけが数字を解釈する",
+          "達成度以外は話題にしない",
+          "数値で見える範囲を示し、見えない部分を問える"
+        ],
+        "Correct": 3,
+        "Explanation": "数値の可視範囲と、見えない部分を質問できる仕組みの両方を持ちます。"
+      },
+      {
+        "Prompt": "筆者は数字をどのようなものとして扱うべきだとしているか。",
+        "Choices": [
+          "対話を不要にする結論",
+          "働く人の価値そのもの",
+          "次に調べる場所を示す案内",
+          "現場を裁く最終判決"
+        ],
+        "Correct": 2,
+        "Explanation": "数字は次に調べる場所を示す案内と比喩されています。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-05",
+    "Title": "Wisata dan konservasi",
+    "JapaneseTitle": "守ることと利用することの調整",
+    "Chapter": "Lingkungan dan masyarakat",
+    "Description": "Pikirkan pembagian dampak konservasi dan pariwisata pada alam serta warga.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "自然を観光資源として活用する地域では、訪問者の増加が雇用や交通の維持につながる一方、環境への負荷も大きくなる。利用を制限すれば自然を守れるように見えるが、観光収入に依存する住民に費用を負わせることになる。保全か開発かという二択では、誰が利益を得て、誰が制約を引き受けるのかが隠れてしまう。\n\n環境保護の議論では、訪問者の数が注目される。しかし同じ人数でも、滞在時間、移動方法、訪れる季節によって影響は異なる。平均値だけを見ると、特定の場所や時期に集中する負荷が見落とされる。現地の変化を長期的に観察し、住民の生活や生態系の双方にどのような影響が出ているかを把握することが、対策の出発点となる。",
+        "reading": "しぜん を かんこうしげん として かつよう する ちいき では 、 ほうもんしゃ の ぞうか が こよう や こうつう の いじ につながる いっぽう 、 かんきょう への ふか も おおきく なる 。 りよう を せいげん すれば しぜん を まもれ るように みえ るが 、 かんこう しゅうにゅう に いぞん する じゅうみん に ひよう を おわ せることになる 。 ほぜん か かいはつ かという に たく では 、 だれが りえき を えて 、 だれが せいやく を ひきうけ るのかが かくれ てしまう 。\n\nかんきょうほご の ぎろん では 、 ほうもんしゃ の かず が ちゅうもく される 。 しかし おなじ にんずう でも 、 たいざいじかん 、 いどうほうほう 、 おとずれ る きせつ によって えいきょう は ことなる 。 へいきんち だけを みる と 、 とくてい の ばしょ や じき に しゅうちゅう する ふか が みおと される 。 げんち の へんか を ちょうきてき に かんさつ し 、 じゅうみん の せいかつ や せいたいけい の そうほう にどのような えいきょう が でて いるかを はあく することが 、 たいさく の しゅっぱつてん となる 。",
+        "meaning": "Pariwisata mendukung pekerjaan dan transportasi di daerah, tetapi juga membebani lingkungan. Membatasi kunjungan dapat melindungi alam sekaligus memindahkan biaya kepada warga. Jumlah pengunjung saja belum cukup, sebab lokasi, musim, dan lama tinggal memengaruhi dampak.",
+        "vocabulary": [
+          {
+            "japanese": "負荷",
+            "reading": "ふか",
+            "meaning": "beban"
+          },
+          {
+            "japanese": "許容",
+            "reading": "きょよう",
+            "meaning": "toleransi; penerimaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Wisata dan konservasi, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "予約制や入域料は、混雑を分散し、保全費用を確保する方法として検討される。ただし、料金を上げれば訪問者の行動が変わるとは限らず、支払える人だけが自然を利用できる仕組みになる可能性もある。制度の公平性を考えるには、徴収した資金の使い道を公開し、地域にどのような利益が戻るかを示す必要がある。\n\nさらに、地域住民を意思決定に参加させるだけで十分とは言えない。観光事業者、自然保護の専門家、交通機関など、異なる責任を持つ関係者が、同じデータを見て議論できることが重要だ。参加の機会があっても、専門情報にアクセスできず、提案が計画に反映されないなら、合意形成は形式にとどまる。反対意見が残る理由も記録しておくべきだ。",
+        "reading": "よやくせい や にゅういき りょう は 、 こんざつ を ぶんさん し 、 ほぜん ひよう を かくほ する ほうほう として けんとうさ れる 。 ただし 、 りょうきん を あげ れば ほうもんしゃ の こうどう が かわ るとは かぎら ず 、 しはらえる ひと だけが しぜん を りよう できる しくみ になる かのうせい もある 。 せいど の こうへいせい を かんがえ るには 、 ちょうしゅう した しきん の つかいみち を こうかい し 、 ちいき にどのような りえき が もどる かを しめす ひつよう がある 。\n\nさらに 、 ちいきじゅうみん を いしけってい に さんか させるだけで じゅうぶん とは いえ ない 。 かんこうじぎょうしゃ 、 しぜんほご の せんもんか 、 こうつうきかん など 、 ことなる せきにん を もつ かんけいしゃ が 、 おなじ でーた を みて ぎろん できることが じゅうよう だ 。 さんか の きかい があっても 、 せんもん じょうほう に あくせす できず 、 ていあん が けいかく に はんえい されないなら 、 ごういけいせい は けいしき にとどまる 。 はんたいいけん が のこる りゆう も きろく しておくべきだ 。",
+        "meaning": "Biaya masuk dan reservasi dapat mengurangi kepadatan serta membiayai konservasi, tetapi belum tentu mengubah perilaku dan dapat membatasi akses berdasarkan kemampuan membayar. Penggunaan dana perlu terbuka. Warga, pelaku wisata, ahli konservasi, dan transportasi sebaiknya membahas data yang sama secara bermakna.",
+        "vocabulary": [
+          {
+            "japanese": "負荷",
+            "reading": "ふか",
+            "meaning": "beban"
+          },
+          {
+            "japanese": "許容",
+            "reading": "きょよう",
+            "meaning": "toleransi; penerimaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Wisata dan konservasi, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "利用と保全は必ずしも相反しないが、すべての利用が持続可能だという意味でもない。環境の回復に時間が必要な場所では、一時的に利用を減らす判断が求められる。逆に、地域の暮らしを無視した保護策は、長く続かず、結果として自然を守る力を弱めることもある。状況に応じて制限を見直す基準を事前に定めることが大切だ。\n\n目指すべきなのは、観光客を増やし続けることでも、地域を外部から切り離すことでもない。環境の状態と生活の条件を継続して観察し、負荷が許容範囲を超えたときに対応を変えられる仕組みである。成果を一つの数字で示すより、判断の根拠と負担の分配を説明する。自然を守るという言葉に、地域の人々が担う費用まで含めて考える必要がある。",
+        "reading": "りよう と ほぜん は かならずしも あいはんし ないが 、 すべての りよう が じぞく かのう だという いみ でもない 。 かんきょう の かいふく に じかん が ひつよう な ばしょ では 、 いちじてき に りよう を へら す はんだん が もとめ られる 。 ぎゃくに 、 ちいき の くらし を むしし た ほごさく は 、 ながく つづか ず 、 けっか として しぜん を まもる ちから を よわめ ることもある 。 じょうきょう に おうじ て せいげん を みなおす きじゅん を じぜん に さだめ ることが たいせつ だ 。\n\nめざす べきなのは 、 かんこうきゃく を ふやし つづけ ることでも 、 ちいき を がいぶ から きりはなす ことでもない 。 かんきょう の じょうたい と せいかつ の じょうけん を けいぞく して かんさつ し 、 ふか が きょようはんい を こえ たときに たいおう を かえ られる しくみ である 。 せいか を ひとつ の すうじ で しめす より 、 はんだん の こんきょ と ふたん の ぶんぱい を せつめいす る 。 しぜん を まもる という ことば に 、 ちいき の ひとびと が になう ひよう まで ふくめ て かんがえ る ひつよう がある 。",
+        "meaning": "Pemanfaatan dan pelestarian kadang dapat berjalan bersama, tetapi tidak semua penggunaan berkelanjutan. Beberapa kawasan perlu dibatasi sementara, sementara perlindungan yang mengabaikan kehidupan warga sulit bertahan. Pantau kondisi lingkungan dan masyarakat, lalu jelaskan dasar keputusan serta pembagian bebannya.",
+        "vocabulary": [
+          {
+            "japanese": "負荷",
+            "reading": "ふか",
+            "meaning": "beban"
+          },
+          {
+            "japanese": "許容",
+            "reading": "きょよう",
+            "meaning": "toleransi; penerimaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Wisata dan konservasi, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "自然保護をめぐる二択の議論が隠しやすいものは何か。",
+        "Choices": [
+          "利益と制約を誰が引き受けるか",
+          "訪問者が何人いるか",
+          "自然の季節変化",
+          "交通機関の運行時間"
+        ],
+        "Correct": 0,
+        "Explanation": "保全か開発かの二択では利益と負担の分配が隠れると述べています。"
+      },
+      {
+        "Prompt": "訪問者数の平均だけでは分かりにくいことは何か。",
+        "Choices": [
+          "予約制度の有無",
+          "住民の人口",
+          "特定の場所や時期に集中する負荷",
+          "観光収入の存在"
+        ],
+        "Correct": 2,
+        "Explanation": "同じ人数でも季節や場所による集中が平均値に隠れます。"
+      },
+      {
+        "Prompt": "入域料の公平性を考える上で必要とされることは何か。",
+        "Choices": [
+          "訪問者数だけを公表する",
+          "徴収した資金の使途と地域への還元を示す",
+          "料金を一律に高額化する",
+          "住民を議論から外す"
+        ],
+        "Correct": 1,
+        "Explanation": "資金の用途と地域への利益を公開する必要があるとあります。"
+      },
+      {
+        "Prompt": "筆者は利用と保全の関係をどう捉えているか。",
+        "Choices": [
+          "常に両立しない",
+          "利用を増やせば保全も進む",
+          "住民の暮らしは保全と無関係だ",
+          "必ずしも対立しないが、全ての利用が持続可能とは限らない"
+        ],
+        "Correct": 3,
+        "Explanation": "本文で明示された限定を選ぶ問題です。"
+      },
+      {
+        "Prompt": "文章の結論に最も近いものはどれか。",
+        "Choices": [
+          "自然保護の判断を観光客に委ねる",
+          "集客数を唯一の成果にする",
+          "環境と生活を継続観察し、負担の分配と判断根拠を説明する",
+          "観光を全面禁止する"
+        ],
+        "Correct": 2,
+        "Explanation": "環境状態と生活条件の観察、判断根拠や負担の説明を提言します。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-06",
+    "Title": "Koreksi informasi dan kepercayaan",
+    "JapaneseTitle": "誤りを直すことの難しさ",
+    "Chapter": "Media dan informasi",
+    "Description": "Baca strategi koreksi dan alasan kepercayaan tidak pulih otomatis.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "誤った情報が広がった後、訂正を出せば読者の理解も元に戻ると考えがちだ。しかし、最初に受け取った説明は、後の判断の枠組みとして残ることがある。訂正を読んでも、どの部分が誤りで何に置き換わるのかが曖昧なら、以前の印象が維持される。誤情報への対策は、間違いを指摘するだけでなく、正しい説明を理解しやすい形で示すことを含む。\n\n情報を共有する人が必ずしも内容を信じているとは限らない。驚きや怒りを誘う話題を、確認する前に友人へ伝えることもある。発信者を非難するだけでは、共有が生まれた状況や、情報が魅力的に見えた理由を見落とす。拡散の速度を問題にすると同時に、受け手が確かめるために必要な手がかりがどこにあるかを考えるべきだ。",
+        "reading": "あやまっ た じょうほう が ひろが った のち 、 ていせい を だせ ば どくしゃ の りかい も もとに もどる と かんがえ がちだ 。 しかし 、 さいしょ に うけとっ た せつめい は 、 のちの はんだん の わくぐみ として のこる ことがある 。 ていせい を よんで も 、 どの ぶぶん が あやまり で なに に おきかわ るのかが あいまい なら 、 いぜん の いんしょう が いじさ れる 。 ご じょうほう への たいさく は 、 まちがい を してき するだけでなく 、 ただしい せつめい を りかい しやすい かたち で しめす ことを ふくむ 。\n\nじょうほう を きょうゆう する ひと が かならずしも ないよう を しんじ ているとは かぎら ない 。 おどろき や いかり を さそう わだい を 、 かくにんす る まえ に ゆうじん へ つたえ ることもある 。 はっしんしゃ を ひなん するだけでは 、 きょうゆう が うまれ た じょうきょう や 、 じょうほう が みりょくてき に みえ た りゆう を みおと す 。 かくさん の そくど を もんだい にすると どうじに 、 うけて が たしか めるために ひつよう な てがかり がどこにあるかを かんがえ るべきだ 。",
+        "meaning": "Koreksi tidak selalu menghapus kesan awal karena penjelasan pertama dapat membentuk kerangka berpikir. Orang juga membagikan kabar karena mengejutkan atau memicu emosi, tanpa selalu mempercayainya. Menyalahkan pengirim saja tidak menjelaskan mengapa pesan itu menarik dan bagaimana orang bisa memeriksanya.",
+        "vocabulary": [
+          {
+            "japanese": "訂正",
+            "reading": "ていせい",
+            "meaning": "koreksi"
+          },
+          {
+            "japanese": "拡散",
+            "reading": "かくさん",
+            "meaning": "penyebaran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Koreksi informasi dan kepercayaan, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "訂正記事を明確に目立たせることは重要だが、正確な説明を一度掲載すれば責任を果たしたとは言えない。最初の情報に接した人と訂正に接する人が異なるため、訂正は元の情報が届いた範囲にも届ける工夫が必要になる。見出しだけが共有された場合には、訂正も見出しの段階で要点を伝えなければ、本文まで読まれない可能性がある。\n\n一方で、誤りの内容を繰り返すと、訂正のつもりでも誤った主張だけを記憶に残すことがある。何が正しいのかを先に示し、根拠と更新日時を添え、以前の記述をどう変更したかを説明する方法が考えられる。専門家の見解が一致しない場合は、対立を隠さず、どの点に合意があり、どこが検討中かを区別する必要がある。",
+        "reading": "ていせいきじ を めいかく に めだた せることは じゅうよう だが 、 せいかく な せつめい を いちど けいさい すれば せきにん を はた したとは いえ ない 。 さいしょ の じょうほう に せっし た ひと と ていせい に せっす る ひと が ことなる ため 、 ていせい は もとの じょうほう が とどい た はんい にも とどけ る くふう が ひつよう になる 。 みだし だけが きょうゆう された ばあい には 、 ていせい も みだし の だんかい で ようてん を つたえ なければ 、 ほんぶん まで よま れない かのうせい がある 。\n\nいっぽう で 、 あやまり の ないよう を くりかえす と 、 ていせい のつもりでも あやまっ た しゅちょう だけを きおく に のこす ことがある 。 なに が ただしい のかを さきに しめし 、 こんきょ と こうしん にちじ を そえ 、 いぜん の きじゅつ をどう へんこう したかを せつめいす る ほうほう が かんがえ られる 。 せんもんか の けんかい が いっち しない ばあい は 、 たいりつ を かくさ ず 、 どの てん に ごうい があり 、 どこが けんとうちゅう かを くべつ する ひつよう がある 。",
+        "meaning": "Koreksi harus terlihat oleh orang yang menerima informasi semula, menyebutkan hal yang benar, sumbernya, dan waktu pembaruan. Tulis inti koreksi secara jelas. Jika para ahli berbeda pendapat, jelaskan bagian yang disepakati serta hal yang masih diteliti, alih-alih menyembunyikan perbedaan.",
+        "vocabulary": [
+          {
+            "japanese": "訂正",
+            "reading": "ていせい",
+            "meaning": "koreksi"
+          },
+          {
+            "japanese": "拡散",
+            "reading": "かくさん",
+            "meaning": "penyebaran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Koreksi informasi dan kepercayaan, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "信頼は、誤りを一度も犯さない組織にだけ生まれるのではない。誤りを発見したときに、誰がどのように修正し、同じことを防ぐために何を変えたかを読者が確認できることも、信頼を支える。過度に自信のある説明より、根拠の強さと残る不確実性を示す説明のほうが、長期的には判断に役立つ。\n\n読者側にも、情報源を確かめ、別の資料と照らし合わせる習慣が求められる。ただし、すべての人に専門家並みの検証を求めるのは現実的ではない。報道機関や公的機関が出典、訂正履歴、問い合わせ先を見つけやすくすることは、個人の注意を補う環境づくりである。情報の訂正を完了の印ではなく、理解を更新する過程として扱いたい。",
+        "reading": "しんらい は 、 あやまり を いちど も おかさ ない そしき にだけ うまれ るのではない 。 あやまり を はっけん したときに 、 だれが どのように しゅうせい し 、 おなじ ことを ふせぐ ために なにを かえ たかを どくしゃ が かくにん できることも 、 しんらい を ささえ る 。 かど に じしん のある せつめい より 、 こんきょ の つよさ と のこる ふかくじつせい を しめす せつめい のほうが 、 ちょうきてき には はんだん に やくたつ 。\n\nどくしゃがわ にも 、 じょうほうげん を たしか め 、 べつの しりょう と てら し あわ せる しゅうかん が もとめ られる 。 ただし 、 すべての ひと に せんもんか なみ の けんしょう を もとめ るのは げんじつてき ではない 。 ほうどうきかん や こうてききかん が しゅってん 、 ていせい りれき 、 といあわせさき を みつ けやすくすることは 、 こじん の ちゅうい を おぎなう かんきょう づくりである 。 じょうほう の ていせい を かんりょう の いん ではなく 、 りかい を こうしん する かてい として あつかい たい 。",
+        "meaning": "Kepercayaan juga terbentuk ketika organisasi menjelaskan cara memperbaiki kesalahan dan mencegah pengulangannya. Pembaca perlu memeriksa sumber, tetapi lembaga dapat membantu dengan menyediakan referensi, riwayat koreksi, dan kontak yang mudah ditemukan. Anggap koreksi sebagai proses memperbarui pemahaman.",
+        "vocabulary": [
+          {
+            "japanese": "訂正",
+            "reading": "ていせい",
+            "meaning": "koreksi"
+          },
+          {
+            "japanese": "拡散",
+            "reading": "かくさん",
+            "meaning": "penyebaran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Koreksi informasi dan kepercayaan, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "訂正を出しても誤情報の影響が残る理由は何か。",
+        "Choices": [
+          "最初の説明が後の判断の枠組みになることがあるから",
+          "訂正は必ず誤っているから",
+          "読者が情報を共有しないから",
+          "正しい情報は印象に残らないから"
+        ],
+        "Correct": 0,
+        "Explanation": "初めに受け取った説明が判断枠として残る可能性を指摘します。"
+      },
+      {
+        "Prompt": "情報共有者を非難するだけでは不十分なのはなぜか。",
+        "Choices": [
+          "誤情報が広がらなくなるから",
+          "発信元が特定できるから",
+          "共有が起きた状況や情報が魅力的に見えた理由を見落とすから",
+          "共有者は必ず内容を信じているから"
+        ],
+        "Correct": 2,
+        "Explanation": "共有した人が信じていない場合もあり、拡散背景を考えるべきです。"
+      },
+      {
+        "Prompt": "本文で提案される訂正の方法はどれか。",
+        "Choices": [
+          "対立する専門家の見解を隠す",
+          "正しい内容を先に示し、根拠と更新時点を添える",
+          "誤った主張だけを何度も掲載する",
+          "元の説明を黙って削除する"
+        ],
+        "Correct": 1,
+        "Explanation": "訂正では正しい説明、根拠、更新日時を示すことが提案されています。"
+      },
+      {
+        "Prompt": "信頼を支える要素として本文が挙げているものは何か。",
+        "Choices": [
+          "間違いが一度もないことだけ",
+          "情報を短くすること",
+          "読者に検証を任せること",
+          "誤りの修正方法と再発防止策が確認できること"
+        ],
+        "Correct": 3,
+        "Explanation": "修正と再発防止の過程を読者が確認できることも信頼につながります。"
+      },
+      {
+        "Prompt": "情報機関に求められる環境づくりは何か。",
+        "Choices": [
+          "訂正記事を非公開にすること",
+          "確信の度合いを示さないこと",
+          "出典や訂正履歴を見つけやすくすること",
+          "全ての人に専門家並みの検証を要求すること"
+        ],
+        "Correct": 2,
+        "Explanation": "出典、訂正履歴、問い合わせ先を見つけやすくするのが支援になります。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-07",
+    "Title": "Kebisingan kota",
+    "JapaneseTitle": "静けさをめぐる異なる価値",
+    "Chapter": "Kota dan kehidupan",
+    "Description": "Bandingkan pengukuran kebisingan dengan pengalaman sehari-hari warga.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "都市の音をめぐる苦情は、音量を測れば解決できるように思われる。しかし、同じ音でも発生する時間や場所、聞く人の生活によって受け止め方は異なる。昼間の工事音は地域の改善に必要とされる一方、夜勤後に眠る人には休息を妨げる要因となる。測定値は状況を比較する手段になるが、暮らしの支障をすべて表すわけではない。\n\n静けさを求める声を個人的な好みとして退けると、健康や学習への影響が見えなくなる。反対に、音をなくすことだけを目指せば、祭りや子どもの遊びなど、地域の活動まで制限することになりかねない。音の問題は、誰かの権利を認めれば他方の権利が消えるという単純な対立ではなく、時間や場所の使い方を調整する課題である。",
+        "reading": "とし の おと をめぐる くじょう は 、 おんりょう を はかれ ば かいけつ できるように おもわ れる 。 しかし 、 おなじ おと でも はっせい する じかん や ばしょ 、 きく ひと の せいかつ によって うけ とめ かたは ことなる 。 ひるま の こうじ おと は ちいき の かいぜん に ひつよう とされる いっぽう 、 やきん のちに ねむる ひと には きゅうそく を さまたげ る よういん となる 。 そくていち は じょうきょう を ひかく する しゅだん になるが 、 くらし の ししょう をすべて あらわす わけではない 。\n\nしずけさ を もとめ る こえ を こじんてきな このみ として しりぞけ ると 、 けんこう や がくしゅう への えいきょう が みえ なくなる 。 はんたい に 、 おと をなくすことだけを めざせ ば 、 まつり や こども の あそび など 、 ちいき の かつどう まで せいげん することになりかねない 。 おと の もんだい は 、 だれか の けんり を みとめ れば たほう の けんり が きえ るという たんじゅんな たいりつ ではなく 、 じかん や ばしょ の つかいかた を ちょうせい する かだい である 。",
+        "meaning": "Tingkat kebisingan yang sama dapat berdampak berbeda bergantung pada waktu, tempat, dan kehidupan pendengar. Suara proyek siang hari mungkin diperlukan, tetapi mengganggu istirahat pekerja malam. Pengukuran membantu membandingkan keadaan, namun tidak menangkap seluruh gangguan sehari-hari.",
+        "vocabulary": [
+          {
+            "japanese": "断続的",
+            "reading": "だんぞくてき",
+            "meaning": "terputus-putus"
+          },
+          {
+            "japanese": "侵害",
+            "reading": "しんがい",
+            "meaning": "pelanggaran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Kebisingan kota, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "対策として、音の大きさに応じた基準を設ける方法がある。基準は判断の一貫性を保つのに役立つが、基準を満たした音なら苦情が不当だと結論づける根拠にはならない。測定場所や時間の選び方によって結果が変わり、音が断続的に発生する場合には平均値が特徴を隠すこともある。測定方法自体を説明し、住民が結果を確認できるようにする必要がある。\n\n話し合いの場では、音を出す側に説明の機会を与えるだけでなく、影響を受ける側が具体的な困りごとを伝えられるようにする。苦情件数だけで深刻さを判断すると、声を上げにくい人が再び取り残される。作業時間の変更や防音設備など、複数の手段を検討し、実施後に状況を測り直すことも欠かせない。",
+        "reading": "たいさく として 、 おと の おおきさ に おうじ た きじゅん を もうけ る ほうほう がある 。 きじゅん は はんだん の いっかんせい を たもつ のに やくたつ が 、 きじゅん を みた した おと なら くじょう が ふとう だと けつろん づける こんきょ にはならない 。 そくてい ばしょ や じかん の えらびかた によって けっか が かわり 、 おと が だんぞくてき に はっせい する ばあい には へいきんち が とくちょう を かくす こともある 。 そくていほうほう じたい を せつめいし 、 じゅうみん が けっか を かくにん できるようにする ひつよう がある 。\n\nはなしあい の ば では 、 おと を だす がわ に せつめい の きかい を あたえ るだけでなく 、 えいきょう を うける がわ が ぐたいてき な こまり ごとを つたえ られるようにする 。 くじょう けんすう だけで しんこく さを はんだん すると 、 こえ を あげ にくい ひと が ふたたび とりのこさ れる 。 さぎょうじかん の へんこう や ぼうおん せつび など 、 ふくすう の しゅだん を けんとうし 、 じっしご に じょうきょう を はかり なおす ことも かか せない 。",
+        "meaning": "Batas angka memberi konsistensi, tetapi suara yang masih di bawah batas tidak berarti keluhan tidak beralasan. Hasil pengukuran dipengaruhi waktu dan lokasi; nilai rata-rata bisa menyamarkan suara yang muncul sesekali. Gabungkan pengukuran dengan cerita warga dan periksa dampak setelah tindakan dilakukan.",
+        "vocabulary": [
+          {
+            "japanese": "断続的",
+            "reading": "だんぞくてき",
+            "meaning": "terputus-putus"
+          },
+          {
+            "japanese": "侵害",
+            "reading": "しんがい",
+            "meaning": "pelanggaran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Kebisingan kota, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "静けさを一律に定義することは難しい。だからといって、調整を諦める必要はない。どの活動にどの時間帯が必要なのか、避けられない音をどう減らすのか、負担を受ける人にどのような支援ができるのかを具体的に話し合える。合意できない点が残っても、決定の理由と見直しの時期を共有すれば、次の判断につながる。\n\n都市の音は、そこで暮らす人々の活動の痕跡でもある。望ましい環境とは、音が全くない状態というより、異なる生活が互いの休息や活動を過度に侵害しない状態だろう。数値は対話の代わりにはならないが、対話を始めるための共通材料にはなる。測定と聞き取りの両方を使い、静けさを誰のために、どのように確保するのかを問い続けたい。",
+        "reading": "しずけさ を いちりつ に ていぎ することは むずかしい 。 だからといって 、 ちょうせい を あきらめ る ひつよう はない 。 どの かつどう にどの じかんたい が ひつよう なのか 、 さけ られない おと をどう へら すのか 、 ふたん を うける ひと にどのような しえん ができるのかを ぐたいてき に はなしあえ る 。 ごうい できない てん が のこっ ても 、 けってい の りゆう と みなおし の じき を きょうゆう すれば 、 つぎの はんだん につながる 。\n\nとし の おと は 、 そこで くら す ひとびと の かつどう の こんせき でもある 。 のぞましい かんきょう とは 、 おと が まったく ない じょうたい というより 、 ことなる せいかつ が たがい の きゅうそく や かつどう を かど に しんがい しない じょうたい だろう 。 すうち は たいわ の かわり にはならないが 、 たいわ を はじめ るための きょうつう ざいりょう にはなる 。 そくてい と きき とり の りょうほう を つかい 、 しずけさ を だれ のために 、 どのように かくほ するのかを とい つづけ たい 。",
+        "meaning": "Kota yang baik bukan kota tanpa suara, melainkan tempat kegiatan dan waktu istirahat warga tidak saling mengganggu secara berlebihan. Walau kesepakatan penuh sulit, alasan keputusan dan waktu evaluasi dapat dibagikan. Pengukuran menjadi bahan bersama untuk memulai dialog, bukan penggantinya.",
+        "vocabulary": [
+          {
+            "japanese": "断続的",
+            "reading": "だんぞくてき",
+            "meaning": "terputus-putus"
+          },
+          {
+            "japanese": "侵害",
+            "reading": "しんがい",
+            "meaning": "pelanggaran"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Kebisingan kota, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "本文によると、同じ音の受け止め方が異なるのはなぜか。",
+        "Choices": [
+          "時間や場所、聞く人の生活が異なるから",
+          "測定機器が常に故障するから",
+          "都市には音が存在しないから",
+          "住民の意見が同じだから"
+        ],
+        "Correct": 0,
+        "Explanation": "時間・場所・生活による違いが述べられています。"
+      },
+      {
+        "Prompt": "音の基準値を満たすことについて、筆者の考えはどれか。",
+        "Choices": [
+          "測定を不要にする",
+          "住民への説明を省ける",
+          "苦情が不当だと結論づける根拠にはならない",
+          "影響が全くないことを保証する"
+        ],
+        "Correct": 2,
+        "Explanation": "基準内であることは苦情の否定に直結しません。"
+      },
+      {
+        "Prompt": "平均値が音の特徴を隠す場合があるのはどのような音か。",
+        "Choices": [
+          "遠くの音だけ",
+          "断続的に発生する音",
+          "常に無音である場合",
+          "測定されていない音"
+        ],
+        "Correct": 1,
+        "Explanation": "断続的な音は平均値に特徴が反映されないことがあります。"
+      },
+      {
+        "Prompt": "話し合いで件数だけに頼る問題は何か。",
+        "Choices": [
+          "すべての苦情が同じ内容になる",
+          "対策が多すぎる",
+          "測定場所がなくなる",
+          "声を上げにくい人の深刻な影響が見えない"
+        ],
+        "Correct": 3,
+        "Explanation": "苦情件数では声を上げにくい人を取り残す可能性があります。"
+      },
+      {
+        "Prompt": "筆者が望ましい環境として示唆するものは何か。",
+        "Choices": [
+          "基準値だけで苦情を判断する状態",
+          "地域活動を制限する状態",
+          "異なる生活が互いの活動や休息を過度に妨げない状態",
+          "音が一切ない状態"
+        ],
+        "Correct": 2,
+        "Explanation": "望ましいのは無音ではなく、生活が過度に侵害されないことです。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-08",
+    "Title": "Pilihan dalam pendidikan",
+    "JapaneseTitle": "選択肢を増やす教育の条件",
+    "Chapter": "Pendidikan dan belajar",
+    "Description": "Evaluasi manfaat penyesuaian belajar dan pentingnya pengalaman bersama.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "学習者ごとに教材や進度を調整する教育は、つまずきを早く見つけ、得意分野を伸ばす方法として期待されている。端末が学習履歴を記録すれば、教員は一人ずつ異なる課題を提示できる。しかし、記録された正答率が学びの深さを直接示すわけではない。時間をかけて考えた末の誤答が、すぐに答えを選んだ正解より価値ある場合もある。\n\n個別化が進むほど、学習者が何を学ぶかを自分で決める機会が増えるとは限らない。システムが提示した課題の中から選ぶだけなら、選択の範囲は設計者が決めている。選択肢が多いことと、自分の目的に沿って学べることを区別しなければ、技術の導入を主体性の向上と誤認する。",
+        "reading": "がくしゅうしゃ ごとに きょうざい や しんど を ちょうせい する きょういく は 、 つまずきを はやく みつ け 、 とくいぶんや を のば す ほうほう として きたいさ れている 。 たんまつ が がくしゅう りれき を きろく すれば 、 きょういん は ひとり ずつ ことなる かだい を ていじ できる 。 しかし 、 きろく された せいとうりつ が まなび の ふかさ を ちょくせつ しめす わけではない 。 じかん をかけて かんがえ た まつ の ごとう が 、 すぐに こたえ を えらん だ せいかい より かち ある ばあい もある 。\n\nこべつか が すすむ ほど 、 がくしゅうしゃ が なにを まなぶ かを じぶん で きめ る きかい が ふえ るとは かぎら ない 。 しすてむ が ていじ した かだい の なか から えらぶ だけなら 、 せんたく の はんい は せっけいしゃ が きめ ている 。 せんたくし が おおい ことと 、 じぶん の もくてき に そって まなべ ることを くべつ しなければ 、 ぎじゅつ の どうにゅう を しゅたいせい の こうじょう と ごにん する 。",
+        "meaning": "Teknologi dapat menyesuaikan materi, tetapi tingkat jawaban benar tidak langsung menggambarkan kedalaman belajar. Jika siswa hanya memilih dari tugas yang disarankan sistem, banyak pilihan belum tentu memberi kendali atas tujuan belajar. Kita harus membedakan ragam pilihan dengan kesempatan belajar sesuai tujuan sendiri.",
+        "vocabulary": [
+          {
+            "japanese": "進度",
+            "reading": "しんど",
+            "meaning": "kemajuan belajar"
+          },
+          {
+            "japanese": "主体性",
+            "reading": "しゅたいせい",
+            "meaning": "kemandirian"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Pilihan dalam pendidikan, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "共通の教材を使う授業には、異なる背景を持つ人が同じ問いを考え、互いの理解を比べられる利点がある。個別の進度だけを優先すると、学びの経験が分断され、他者の考えに触れる機会が減る可能性がある。協働学習を残しながら個人の違いに対応するには、全員が同じ速さで進むことではなく、共通の目標に複数の道筋を認める設計が必要だ。\n\n教員の役割も、教材を配ることに置き換わるわけではない。記録を見て、誤答が知識不足によるものか、問いの理解の違いによるものかを判断するには、学習者との対話が欠かせない。機器が提示する推奨をそのまま採用せず、なぜその課題が合うのかを説明できることが、学習者の信頼につながる。",
+        "reading": "きょうつう の きょうざい を つかう じゅぎょう には 、 ことなる はいけい を もつ ひと が おなじ とい を かんがえ 、 たがい の りかい を くらべ られる りてん がある 。 こべつ の しんど だけを ゆうせん すると 、 まなび の けいけん が ぶんだん され 、 たしゃ の かんがえ に ふれる きかい が へる かのうせい がある 。 きょうどう がくしゅう を のこし ながら こじん の ちがい に たいおう するには 、 ぜんいん が おなじ はやさ で すすむ ことではなく 、 きょうつう の もくひょう に ふくすう の みちすじ を みとめ る せっけい が ひつよう だ 。\n\nきょういん の やくわり も 、 きょうざい を くばる ことに おきかわ るわけではない 。 きろく を みて 、 ごとう が ちしきぶそく によるものか 、 とい の りかい の ちがい によるものかを はんだん するには 、 がくしゅうしゃ との たいわ が かか せない 。 きき が ていじ する すいしょう をそのまま さいよう せず 、 なぜその かだい が あう のかを せつめい できることが 、 がくしゅうしゃ の しんらい につながる 。",
+        "meaning": "Bahan bersama memungkinkan siswa dari latar berbeda membahas pertanyaan yang sama. Pembelajaran individual sebaiknya tidak menghilangkan kesempatan saling menguji gagasan. Guru tetap perlu berdialog untuk memahami sebab jawaban dan menerangkan mengapa suatu tugas direkomendasikan, bukan hanya menyerahkan keputusan kepada alat.",
+        "vocabulary": [
+          {
+            "japanese": "進度",
+            "reading": "しんど",
+            "meaning": "kemajuan belajar"
+          },
+          {
+            "japanese": "主体性",
+            "reading": "しゅたいせい",
+            "meaning": "kemandirian"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Pilihan dalam pendidikan, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "教育技術を評価するなら、処理速度や利用率だけでなく、学習者が自分の考えを説明できるようになったか、他人の見方を検討する機会が保たれたかも調べるべきだ。データの収集範囲や保存期間を明確にし、学習者が記録を確認し、必要に応じて訂正できる仕組みも求められる。便利さを理由に、学びの記録を際限なく集めてよいわけではない。\n\n一人ひとりに合う教育とは、他者から切り離された学習を提供することではない。自分に必要な支援を受けつつ、異なる考えと出会い、問いそのものを吟味できる状態である。技術はその可能性を広げる道具になり得るが、何を学ぶ価値とするかは人が決める。導入後も授業の実態を観察し、制度を修正できる余白を残すことが重要だ。",
+        "reading": "きょういくぎじゅつ を ひょうか するなら 、 しょりそくど や りようりつ だけでなく 、 がくしゅうしゃ が じぶん の かんがえ を せつめい できるようになったか 、 たにん の みかた を けんとうす る きかい が たもた れたかも しらべ るべきだ 。 でーた の しゅうしゅう はんい や ほぞんきかん を めいかく にし 、 がくしゅうしゃ が きろく を かくにんし 、 ひつよう に おうじ て ていせい できる しくみ も もとめ られる 。 べんり さを りゆう に 、 まなび の きろく を さいげん なく あつめ てよいわけではない 。\n\nひとり ひとりに あう きょういく とは 、 たしゃ から きりはなさ れた がくしゅう を ていきょう することではない 。 じぶん に ひつよう な しえん を うけ つつ 、 ことなる かんがえ と であい 、 とい そのものを ぎんみ できる じょうたい である 。 ぎじゅつ はその かのうせい を ひろげ る どうぐ になり える が 、 なにを まなぶ かち とするかは ひと が きめ る 。 どうにゅう のち も じゅぎょう の じったい を かんさつ し 、 せいど を しゅうせい できる よはく を のこす ことが じゅうよう だ 。",
+        "meaning": "Evaluasi pendidikan berbasis teknologi perlu menilai kemampuan menjelaskan pikiran, bertemu sudut pandang lain, dan melindungi privasi data. Pendidikan yang sesuai kebutuhan tetap memberi kesempatan berinteraksi dan mempertanyakan tujuan belajar. Teknologi memperluas kemungkinan, tetapi manusia menentukan hal yang layak dipelajari.",
+        "vocabulary": [
+          {
+            "japanese": "進度",
+            "reading": "しんど",
+            "meaning": "kemajuan belajar"
+          },
+          {
+            "japanese": "主体性",
+            "reading": "しゅたいせい",
+            "meaning": "kemandirian"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Pilihan dalam pendidikan, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "学習履歴の正答率について、本文が注意を促す点は何か。",
+        "Choices": [
+          "学びの深さを直接示すとは限らない",
+          "必ず誤りを含んでいる",
+          "教員には共有されない",
+          "学習者の主体性を保証する"
+        ],
+        "Correct": 0,
+        "Explanation": "正答率だけでは思考の深さを測れないとしています。"
+      },
+      {
+        "Prompt": "選択肢の数と主体性について筆者が区別していることは何か。",
+        "Choices": [
+          "教材を選ぶ必要はない",
+          "システムは必ず目的を理解する",
+          "選択肢が多くても目的に沿って学べるとは限らない",
+          "選択肢は少ないほどよい"
+        ],
+        "Correct": 2,
+        "Explanation": "システム内の選択肢を選べることと主体性を分けます。"
+      },
+      {
+        "Prompt": "共通教材を使う利点として挙げられるのは何か。",
+        "Choices": [
+          "教員が対話しなくてよい",
+          "異なる背景の人が同じ問いを考え、理解を比べられる",
+          "全員が同じ速さで進める",
+          "データ収集が不要になる"
+        ],
+        "Correct": 1,
+        "Explanation": "共通の問いを通じて理解を比較できることが利点です。"
+      },
+      {
+        "Prompt": "技術を評価する際に調べるべきことは何か。",
+        "Choices": [
+          "端末の台数だけ",
+          "利用率だけ",
+          "記録できる情報の総量",
+          "考えを説明する力や他者の見方に触れる機会"
+        ],
+        "Correct": 3,
+        "Explanation": "学習成果の質や他者との検討機会も評価すべきです。"
+      },
+      {
+        "Prompt": "筆者のいう「一人ひとりに合う教育」とはどのようなものか。",
+        "Choices": [
+          "端末に選択を任せること",
+          "全員に別々の目標を設定すること",
+          "支援を受けながら異なる考えに出会い問いを吟味できる状態",
+          "他者から切り離して学ぶこと"
+        ],
+        "Correct": 2,
+        "Explanation": "個人支援と他者との出会い・問いの吟味を両立します。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-09",
+    "Title": "Menerjemahkan budaya",
+    "JapaneseTitle": "翻訳で失われるもの、見つかるもの",
+    "Chapter": "Bahasa dan budaya",
+    "Description": "Analisis pilihan penerjemah serta batas kesepadanan lintas budaya.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "翻訳では、ある言語の表現を別の言語に置き換えるだけで意味が保たれるとは限らない。敬語や呼びかけ方に含まれる距離感、言葉にしないことへの期待などは、辞書の対応語だけでは移しにくい。訳文を自然に整えれば読者は読み進めやすくなるが、原文の違和感を解消しすぎると、作品が問いかけていた文化の差まで見えなくなることがある。\n\n一方で、逐語的に訳せば原文に忠実になるとも言い切れない。文の形を保っても、読者が受け取る印象が大きく変わる場合があるからだ。翻訳者は常に何かを選び、別の可能性を退けている。その選択を隠すより、どの読者に何を伝えるための訳なのかを考えることが、翻訳を読む手がかりとなる。",
+        "reading": "ほんやく では 、 ある げんご の ひょうげん を べつの げんご に おきかえる だけで いみ が たもた れるとは かぎら ない 。 けいご や よび かけ ほう に ふくま れる きょりかん 、 ことば にしないことへの きたい などは 、 じしょ の たいおう ご だけでは うつし にくい 。 やくぶん を しぜん に ととのえ れば どくしゃ は よみ すすめ やすくなるが 、 げんぶん の いわかん を かいしょう しすぎると 、 さくひん が とい かけていた ぶんか の さ まで みえ なくなることがある 。\n\nいっぽう で 、 ちくごてき に やくせ ば げんぶん に ちゅうじつ になるとも いいきれ ない 。 ぶん の かたち を たもっ ても 、 どくしゃ が うけとる いんしょう が おおきく かわ る ばあい があるからだ 。 ほんやくしゃ は つねに なにか を えらび 、 べつの かのうせい を しりぞけ ている 。 その せんたく を かくす より 、 どの どくしゃ に なにを つたえ るための わけ なのかを かんがえ ることが 、 ほんやく を よむ てがかり となる 。",
+        "meaning": "Menerjemahkan ekspresi antarbahasa tidak selalu mempertahankan jarak sosial atau harapan budaya yang tersirat. Terjemahan yang lancar dapat menghapus kejanggalan penting, sedangkan terjemahan harfiah belum tentu memberi kesan yang sama. Penerjemah membuat pilihan; pembaca perlu mengetahui tujuan dan sasaran pembacaannya.",
+        "vocabulary": [
+          {
+            "japanese": "逐語的",
+            "reading": "ちくごてき",
+            "meaning": "harfiah"
+          },
+          {
+            "japanese": "曖昧さ",
+            "reading": "あいまいさ",
+            "meaning": "ketaksaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Menerjemahkan budaya, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "訳語の注釈を増やせば、文化的な背景を正確に説明できるように思える。しかし、注釈が多いほど読みやすくなるわけではなく、本文より注釈が解釈を先導する危険もある。どの情報を本文に入れ、どの情報を補足に回すかは、作品の読み方に影響する編集上の判断である。注釈が必要な理由を明らかにし、説明しきれない部分を残すことも大切だ。\n\n複数の訳を比べると、翻訳の選択が目に見える。ある訳が曖昧さを残し、別の訳が意味を限定しているなら、違いは単なる優劣ではなく、読者に何を経験させるかの差かもしれない。訳文だけから原文のすべてを推測することはできないが、異なる解釈を並べることで、自分が当然だと思っていた読み方に気づける。",
+        "reading": "やくご の ちゅうしゃく を ふやせ ば 、 ぶんかてき な はいけい を せいかく に せつめい できるように おもえ る 。 しかし 、 ちゅうしゃく が おおい ほど よみ やすくなるわけではなく 、 ほんぶん より ちゅうしゃく が かいしゃく を せんどう する きけん もある 。 どの じょうほう を ほんぶん に いれ 、 どの じょうほう を ほそく に まわす かは 、 さくひん の よみかた に えいきょう する へんしゅうじょう の はんだん である 。 ちゅうしゃく が ひつよう な りゆう を あきらか にし 、 せつめいし きれない ぶぶん を のこす ことも たいせつ だ 。\n\nふくすう の わけ を くらべ ると 、 ほんやく の せんたく が めに みえ る 。 ある わけ が あいまい さを のこし 、 べつの わけ が いみ を げんてい しているなら 、 ちがい は たんなる ゆうれつ ではなく 、 どくしゃ に なにを けいけん させるかの さ かもしれない 。 やくぶん だけから げんぶん のすべてを すいそく することはできないが 、 ことなる かいしゃく を ならべ ることで 、 じぶん が とうぜん だと おもって いた よみかた に きづ ける 。",
+        "meaning": "Catatan penjelas dapat membantu memahami latar budaya, namun terlalu banyak catatan bisa mengarahkan tafsiran. Membandingkan beberapa terjemahan menunjukkan pilihan yang berbeda dan membantu pembaca menyadari asumsi sendiri. Perbedaan itu tidak selalu soal mana yang paling baik, melainkan pengalaman membaca yang ingin disampaikan.",
+        "vocabulary": [
+          {
+            "japanese": "逐語的",
+            "reading": "ちくごてき",
+            "meaning": "harfiah"
+          },
+          {
+            "japanese": "曖昧さ",
+            "reading": "あいまいさ",
+            "meaning": "ketaksaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Menerjemahkan budaya, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "翻訳は異文化を透明な形で運ぶ窓ではなく、読者と作品が出会う場所を作る営みである。そのため、翻訳の質を一つの基準だけで決めるのは難しい。読みやすさ、表現の調子、歴史的背景への配慮など、何を重視するかによって評価は変わる。大切なのは、選択の根拠を説明でき、後から別の読み方と比較できることだ。\n\n翻訳を通じて理解が深まるのは、異なる文化を完全に把握したときではない。自分の言語に移したときに残るずれや、理解できない部分があると認めたときでもある。訳者の工夫と制約を意識して読めば、翻訳は原文の代用品ではなく、他者の考えに近づくための対話の一形態となる。",
+        "reading": "ほんやく は いぶんか を とうめい な かたち で はこぶ まど ではなく 、 どくしゃ と さくひん が であう ばしょ を つくる いとなみ である 。 そのため 、 ほんやく の しつ を ひとつ の きじゅん だけで きめ るのは むずかしい 。 よみ やすさ 、 ひょうげん の ちょうし 、 れきしてきはいけい への はいりょ など 、 なにを じゅうし するかによって ひょうか は かわ る 。 たいせつ なのは 、 せんたく の こんきょ を せつめい でき 、 のち から べつの よみかた と ひかく できることだ 。\n\nほんやく を つうじ て りかい が ふかま るのは 、 ことなる ぶんか を かんぜん に はあく したときではない 。 じぶん の げんご に うつし たときに のこる ずれや 、 りかい できない ぶぶん があると みとめ たときでもある 。 やくしゃ の くふう と せいやく を いしき して よめ ば 、 ほんやく は げんぶん の だいようひん ではなく 、 たしゃ の かんがえ に ちかづ くための たいわ の いちけいたい となる 。",
+        "meaning": "Terjemahan bukan jendela transparan atau pengganti sempurna bagi teks asli; ia membangun tempat pertemuan pembaca dengan karya. Mutunya bergantung pada beberapa hal, seperti kelancaran dan nuansa. Mengakui pilihan serta batas penerjemah justru membantu pembaca mendekati gagasan orang lain.",
+        "vocabulary": [
+          {
+            "japanese": "逐語的",
+            "reading": "ちくごてき",
+            "meaning": "harfiah"
+          },
+          {
+            "japanese": "曖昧さ",
+            "reading": "あいまいさ",
+            "meaning": "ketaksaan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Menerjemahkan budaya, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "逐語訳について本文が指摘する問題は何か。",
+        "Choices": [
+          "文の形を保っても読者の印象が変わることがある",
+          "原文の意味を必ず保つ",
+          "文化差を完全に説明する",
+          "訳者の選択をなくす"
+        ],
+        "Correct": 0,
+        "Explanation": "形を保つことと読者の受ける印象を保つことは別だと述べます。"
+      },
+      {
+        "Prompt": "翻訳者の選択について筆者が提案する姿勢は何か。",
+        "Choices": [
+          "辞書の対応語だけを使う",
+          "曖昧さを全て削除する",
+          "誰に何を伝える訳なのかを考える",
+          "選択を隠して唯一の訳とする"
+        ],
+        "Correct": 2,
+        "Explanation": "訳の対象読者と目的を意識するよう促しています。"
+      },
+      {
+        "Prompt": "注釈を増やすことに関する注意点は何か。",
+        "Choices": [
+          "注釈は常に不要だ",
+          "注釈が多いと読みやすいとは限らず、解釈を先導しうる",
+          "注釈は文化を完全に説明する",
+          "本文への影響はない"
+        ],
+        "Correct": 1,
+        "Explanation": "注釈量と読みやすさは比例せず、解釈を導く危険があります。"
+      },
+      {
+        "Prompt": "複数の訳を比較する効果は何か。",
+        "Choices": [
+          "原文の全てを復元できる",
+          "翻訳の優劣が必ず決まる",
+          "文化差がなくなる",
+          "自分が当然視していた読み方に気づける"
+        ],
+        "Correct": 3,
+        "Explanation": "違う訳を比べて自分の読み方を相対化できます。"
+      },
+      {
+        "Prompt": "筆者が翻訳の価値として示すものは何か。",
+        "Choices": [
+          "読者の解釈を一つにすること",
+          "読みやすさだけを最大化すること",
+          "理解できない部分も認めながら他者に近づく対話",
+          "原文を完全に置き換えること"
+        ],
+        "Correct": 2,
+        "Explanation": "翻訳を他者の考えに近づく対話の一形態とまとめます。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-10",
+    "Title": "Informasi bencana dan tindakan",
+    "JapaneseTitle": "伝えることと行動できること",
+    "Chapter": "Kesiapsiagaan",
+    "Description": "Hubungkan peringatan bencana dengan tindakan yang benar-benar dapat dilakukan.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "災害時に警報が届いても、人がすぐ避難するとは限らない。危険を理解していないからだと説明されがちだが、移動に支援が必要な人、家族と連絡が取れない人、避難先で生活できるか不安な人など、判断の前提は一様ではない。警告を受け取ることと、実際に行動できることの間には、個人の意識だけでは埋められない条件がある。\n\n過去に避難して被害がなかった経験は、次回の判断にも影響する。警報のたびに大きな被害が起きなければ、警告を過大だと感じる人もいる。これは単純な無関心ではなく、限られた情報と経験から危険を見積もる行動と理解できる。発信側が受け手を責めるだけでは、どの情報が判断に使われ、どの支障が残っていたかを把握できない。",
+        "reading": "さいがいじ に けいほう が とどい ても 、 ひと がすぐ ひなん するとは かぎら ない 。 きけん を りかい していないからだと せつめいさ れがちだが 、 いどう に しえん が ひつよう な ひと 、 かぞく と れんらく が とれ ない ひと 、 ひなんさき で せいかつ できるか ふあん な ひと など 、 はんだん の ぜんてい は いちよう ではない 。 けいこく を うけとる ことと 、 じっさいに こうどう できることの まに は 、 こじん の いしき だけでは うめ られない じょうけん がある 。\n\nかこ に ひなん して ひがい がなかった けいけん は 、 じかい の はんだん にも えいきょう する 。 けいほう のたびに おおき な ひがい が おき なければ 、 けいこく を かだい だと かんじ る ひと もいる 。 これは たんじゅんな むかんしん ではなく 、 かぎら れた じょうほう と けいけん から きけん を みつも る こうどう と りかい できる 。 はっしんがわ が うけて を せめ るだけでは 、 どの じょうほう が はんだん に つかわ れ 、 どの ししょう が のこっ ていたかを はあく できない 。",
+        "meaning": "Orang yang menerima peringatan belum tentu langsung mengungsi. Hambatan mobilitas, kekhawatiran terhadap tempat pengungsian, atau sulit menghubungi keluarga dapat menyulitkan tindakan. Pengalaman ketika peringatan terdahulu tidak diikuti bencana besar juga memengaruhi penilaian; jangan langsung menyebutnya sebagai ketidakpedulian.",
+        "vocabulary": [
+          {
+            "japanese": "前提",
+            "reading": "ぜんてい",
+            "meaning": "prasyarat; asumsi"
+          },
+          {
+            "japanese": "代替",
+            "reading": "だいたい",
+            "meaning": "alternatif; pengganti"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Informasi bencana dan tindakan, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "危険度を色や段階で示す表示は、状況を一目で伝えるのに役立つ。しかし、色の意味が地域や媒体によって異なったり、更新時刻が分からなかったりすれば、誤解を招く。警報には、何が起きているのか、どの範囲が対象なのか、次に何をすればよいのかを含める必要がある。避難先や経路が使えない場合の代替手段も、平時から周知しておかなければならない。\n\nまた、全員に同じ文面を送るだけでは、必要な情報が届かない人がいる。音声、文字、複数言語など異なる形式を用意し、通信が途絶えた場合に地域で情報を共有する方法を決めることが求められる。情報量を増やすだけでなく、受け手がその場で使える形にすることが、伝達の質を左右する。",
+        "reading": "きけんど を いろ や だんかい で しめす ひょうじ は 、 じょうきょう を いちもく で つたえ るのに やくたつ 。 しかし 、 いろ の いみ が ちいき や ばいたい によって ことな ったり 、 こうしんじこく が わか らなかったりすれば 、 ごかい を まねく 。 けいほう には 、 なに が おき ているのか 、 どの はんい が たいしょう なのか 、 つぎに なにを すればよいのかを ふくめ る ひつよう がある 。 ひなんさき や けいろ が つかえ ない ばあい の だいたいしゅだん も 、 へいじ から しゅうち しておかなければならない 。\n\nまた 、 ぜんいん に おなじ ぶんめん を おくる だけでは 、 ひつよう な じょうほう が とどか ない ひと がいる 。 おんせい 、 もじ 、 ふくすう げんご など ことなる けいしき を よういし 、 つうしん が とだえ た ばあい に ちいき で じょうほう を きょうゆう する ほうほう を きめ ることが もとめ られる 。 じょうほうりょう を ふやす だけでなく 、 うけて がその ば で つかえ る かたち にすることが 、 でんたつ の しつ を さゆう する 。",
+        "meaning": "Peringatan perlu menjelaskan kejadian, wilayah, dan langkah berikutnya. Warna atau tingkat bahaya saja tidak cukup jika maknanya berbeda atau waktu pembaruan tak jelas. Sediakan berbagai format dan rencana saat komunikasi terputus. Informasi harus dapat dipakai oleh orang yang menerimanya dalam kondisi nyata.",
+        "vocabulary": [
+          {
+            "japanese": "前提",
+            "reading": "ぜんてい",
+            "meaning": "prasyarat; asumsi"
+          },
+          {
+            "japanese": "代替",
+            "reading": "だいたい",
+            "meaning": "alternatif; pengganti"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Informasi bencana dan tindakan, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "避難行動を支えるには、警報の精度を高めるだけでなく、行動を難しくする事情を具体的に減らす必要がある。近隣で声を掛け合う計画、移動支援の担当、避難所で必要な配慮などを定めておけば、判断を個人任せにせずに済む。ただし、計画は作成して終わりではなく、参加できなかった人の意見も取り入れて更新しなければならない。\n\n災害情報の目的は、危険を知らせることだけではない。受け手が状況を理解し、実行可能な選択を取れるようにすることだ。情報が適切だったかを振り返る際には、発信記録だけでなく、届いた人がどう受け止め、なぜ行動できたか、できなかったかを調べたい。警告と支援を一体として設計することが、次の災害への備えとなる。",
+        "reading": "ひなん こうどう を ささえ るには 、 けいほう の せいど を たかめ るだけでなく 、 こうどう を むずかしく する じじょう を ぐたいてき に へら す ひつよう がある 。 きんりん で こえ を かけ あう けいかく 、 いどう しえん の たんとう 、 ひなんじょ で ひつよう な はいりょ などを さだめ ておけば 、 はんだん を こじん まかせ にせずに すむ 。 ただし 、 けいかく は さくせい して おわり ではなく 、 さんか できなかった ひと の いけん も とりいれ て こうしん しなければならない 。\n\nさいがい じょうほう の もくてき は 、 きけん を しらせ ることだけではない 。 うけて が じょうきょう を りかい し 、 じっこうかのう な せんたく を とれ るようにすることだ 。 じょうほう が てきせつ だったかを ふりかえる さいに は 、 はっしん きろく だけでなく 、 とどい た ひと がどう うけ とめ 、 なぜ こうどう できたか 、 できなかったかを しらべ たい 。 けいこく と しえん を いったい として せっけい することが 、 つぎの さいがい への そなえ となる 。",
+        "meaning": "Dukungan perlu mencakup bantuan mobilitas, pembagian peran di lingkungan, dan kebutuhan di tempat pengungsian. Rencana harus diperbarui dengan masukan dari orang yang belum bisa berpartisipasi. Tinjau bukan saja apa yang dikirim, tetapi juga bagaimana informasi dipahami dan tindakan apa yang mungkin dilakukan.",
+        "vocabulary": [
+          {
+            "japanese": "前提",
+            "reading": "ぜんてい",
+            "meaning": "prasyarat; asumsi"
+          },
+          {
+            "japanese": "代替",
+            "reading": "だいたい",
+            "meaning": "alternatif; pengganti"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Informasi bencana dan tindakan, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "避難しない人を理解する際、筆者が考慮すべきだとするものは何か。",
+        "Choices": [
+          "移動支援や避難先への不安など行動の条件",
+          "警報の色だけ",
+          "個人の無関心だけ",
+          "避難所の建築年"
+        ],
+        "Correct": 0,
+        "Explanation": "行動を難しくする個別の条件を複数挙げています。"
+      },
+      {
+        "Prompt": "過去に避難して被害がなかった経験は何につながる可能性があるか。",
+        "Choices": [
+          "避難経路を増やす",
+          "被害を必ず予測する",
+          "次の警報を過大だと感じる",
+          "情報発信を停止する"
+        ],
+        "Correct": 2,
+        "Explanation": "警報後に大きな被害がなかった経験から過大と感じる場合があります。"
+      },
+      {
+        "Prompt": "警報に含める必要がある情報はどれか。",
+        "Choices": [
+          "避難しない人への評価",
+          "状況、対象範囲、次の行動",
+          "発信者の感想",
+          "過去の被害の全記録"
+        ],
+        "Correct": 1,
+        "Explanation": "何が起き、誰が対象で、何をするかを伝えるべきとします。"
+      },
+      {
+        "Prompt": "本文が全員同じ文面だけでは不十分とする理由は何か。",
+        "Choices": [
+          "情報量が必ず多すぎる",
+          "通信手段が全て同じだから",
+          "避難先の情報が不要だから",
+          "必要な情報が届きにくい人がおり、形式を複数用意する必要がある"
+        ],
+        "Correct": 3,
+        "Explanation": "複数形式と通信途絶時の地域共有を準備します。"
+      },
+      {
+        "Prompt": "災害情報の目的として最も適切なものはどれか。",
+        "Choices": [
+          "受け手の行動を評価すること",
+          "発信記録を増やすこと",
+          "理解と実行可能な選択を支え、警告と支援を一体にする",
+          "危険を知らせることだけ"
+        ],
+        "Correct": 2,
+        "Explanation": "最後に情報の目的を、状況理解と実行可能な選択としています。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-11",
+    "Title": "Dua usulan tentang transportasi kota",
+    "JapaneseTitle": "立場の違いから共通課題を探る",
+    "Chapter": "Membandingkan pendapat",
+    "Description": "Bandingkan dua usulan, titik temu, dan data yang masih diperlukan.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "市中心部の混雑を減らすため、私は自家用車の進入を一部制限し、公共交通と歩行者の空間を広げる案を提案する。道路の幅には限りがあり、車を優先すればバスの遅れや歩行者の危険が生じる。移動の選択肢を増やすことは、運転できない人にとっても利益になる。もちろん、荷物の運搬や介助など、車が必要な場合まで一律に制限するのは適切ではない。\n\nそこで、時間帯や用途に応じた例外を設け、配送の拠点を周辺に整備する。効果を判断する際には、車の台数だけでなく、バスの定時性、歩行者の安全、商店へのアクセスを観察する必要がある。混雑が周辺地域へ移っただけなら成功とは言えない。",
+        "reading": "しちゅうしんぶ の こんざつ を へら すため 、 わたし は じかようしゃ の しんにゅう を いちぶ せいげん し 、 こうきょうこうつう と ほこうしゃ の くうかん を ひろげ る あん を ていあん する 。 どうろ の はば には かぎり があり 、 くるま を ゆうせん すれば ばす の おくれ や ほこうしゃ の きけん が しょうじ る 。 いどう の せんたくし を ふやす ことは 、 うんてん できない ひと にとっても りえき になる 。 もちろん 、 にもつ の うんぱん や かいじょ など 、 くるま が ひつよう な ばあい まで いちりつ に せいげん するのは てきせつ ではない 。\n\nそこで 、 じかんたい や ようと に おうじ た れいがい を もうけ 、 はいそう の きょてん を しゅうへん に せいび する 。 こうか を はんだん する さいに は 、 くるま の だいすう だけでなく 、 ばす の ていじ せい 、 ほこうしゃ の あんぜん 、 しょうてん への あくせす を かんさつ する ひつよう がある 。 こんざつ が しゅうへん ちいき へ うつっ ただけなら せいこう とは いえ ない 。",
+        "meaning": "Usulan A membatasi sebagian mobil untuk memberi ruang lebih bagi bus dan pejalan kaki, tetapi tetap mengakui kebutuhan khusus seperti pengantaran dan bantuan. Keberhasilan perlu diukur lewat ketepatan bus, keselamatan, serta akses toko. Jika kemacetan hanya berpindah ke wilayah lain, kebijakan belum berhasil.",
+        "vocabulary": [
+          {
+            "japanese": "再配分",
+            "reading": "さいはいぶん",
+            "meaning": "redistribusi"
+          },
+          {
+            "japanese": "移行",
+            "reading": "いこう",
+            "meaning": "peralihan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Dua usulan tentang transportasi kota, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "提案B：中心部の商店主として、車の進入制限には慎重であるべきだと考える。来店者の移動手段を調べずに制限を始めれば、近隣から来る顧客や仕入れの経路を失い、売上に影響する可能性がある。公共交通が便利な地域とそうでない地域を同じ基準で扱うこともできない。\n\n一方で、現在の道路が歩きにくく、店の前を通る人が少ないという問題は認識している。制限を拒むだけでは、中心部の環境を改善する機会を逃すかもしれない。実施するなら、配送時間を確保し、公共交通の情報を整え、一定期間後に商店の状況を検証することが条件となる。影響を受ける側が事前に計画づくりへ参加できる仕組みも欠かせない。",
+        "reading": "ていあん B ： ちゅうしんぶ の しょうてんしゅ として 、 くるま の しんにゅう せいげん には しんちょう であるべきだと かんがえ る 。 らいてん もの の いどうしゅだん を しらべ ずに せいげん を はじめ れば 、 きんりん から くる こきゃく や しいれ の けいろ を うしない 、 うりあげ に えいきょう する かのうせい がある 。 こうきょうこうつう が べんり な ちいき とそうでない ちいき を おなじ きじゅん で あつかう こともできない 。\n\nいっぽう で 、 げんざい の どうろ が あるき にくく 、 みせ の まえ を とうる ひと が すくない という もんだい は にんしき している 。 せいげん を こばむ だけでは 、 ちゅうしんぶ の かんきょう を かいぜん する きかい を のがす かもしれない 。 じっし するなら 、 はいそう じかん を かくほ し 、 こうきょうこうつう の じょうほう を ととのえ 、 いっていきかん のちに しょうてん の じょうきょう を けんしょう することが じょうけん となる 。 えいきょう を うける がわ が じぜん に けいかく づくりへ さんか できる しくみ も かか せない 。",
+        "meaning": "Usulan B khawatir pembatasan tanpa memahami cara pelanggan dan barang bergerak akan merugikan toko dan wilayah yang minim transportasi umum. Namun, pemilik toko juga melihat trotoar yang tidak nyaman sebagai masalah. Ia bersedia mempertimbangkan perubahan dengan waktu pengiriman dan evaluasi yang jelas.",
+        "vocabulary": [
+          {
+            "japanese": "再配分",
+            "reading": "さいはいぶん",
+            "meaning": "redistribusi"
+          },
+          {
+            "japanese": "移行",
+            "reading": "いこう",
+            "meaning": "peralihan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Dua usulan tentang transportasi kota, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "二つの提案は、車をめぐる価値判断では対立しているが、交通の選択肢と地域への影響を確認すべきだという点では一致している。提案Aは道路空間の再配分を優先し、提案Bは移行に伴う負担と地域差を重視する。どちらかを採用するだけでは、もう一方が指摘した課題は残る。\n\nまず、配送や介助など必要な移動の実態を調べ、公共交通の不足する区域を明らかにする。その上で、限定的な実施と評価を組み合わせ、影響が想定を超えた場合に条件を修正できるようにする。試行期間は合意を自動的に生むものではないが、抽象的な賛否を観察可能な問いに変える。比較読解では、主張の違いだけでなく、両者が共有する前提と、データで確かめるべき点を区別することが重要だ。",
+        "reading": "ふたつ の ていあん は 、 くるま をめぐる かちはんだん では たいりつ しているが 、 こうつう の せんたくし と ちいき への えいきょう を かくにんす べきだという てん では いっち している 。 ていあん A は どうろ くうかん の さいはいぶん を ゆうせん し 、 ていあん B は いこう に ともなう ふたん と ちいきさ を じゅうし する 。 どちらかを さいよう するだけでは 、 もう いっぽう が してき した かだい は のこる 。\n\nまず 、 はいそう や かいじょ など ひつよう な いどう の じったい を しらべ 、 こうきょうこうつう の ふそく する くいき を あきらか にする 。 その うえで 、 げんていてき な じっし と ひょうか を くみあわせ 、 えいきょう が そうてい を こえ た ばあい に じょうけん を しゅうせい できるようにする 。 しこうきかん は ごうい を じどうてき に うむ ものではないが 、 ちゅうしょうてき な さんぴ を かんさつ かのうな とい に かえ る 。 ひかく どくかい では 、 しゅちょう の ちがい だけでなく 、 りょうしゃ が きょうゆう する ぜんてい と 、 でーた で たしか めるべき てん を くべつ することが じゅうよう だ 。",
+        "meaning": "Kedua usulan berbeda dalam prioritas, namun sama-sama menuntut pemahaman dampak dan pilihan transportasi. Data tentang pengiriman, bantuan, dan akses perlu dikumpulkan dahulu. Uji coba terbatas tidak menjamin kesepakatan, tetapi mengubah perdebatan abstrak menjadi pertanyaan yang dapat diamati dan ditinjau.",
+        "vocabulary": [
+          {
+            "japanese": "再配分",
+            "reading": "さいはいぶん",
+            "meaning": "redistribusi"
+          },
+          {
+            "japanese": "移行",
+            "reading": "いこう",
+            "meaning": "peralihan"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Dua usulan tentang transportasi kota, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "提案Aが優先しているのは何か。",
+        "Choices": [
+          "道路空間を再配分し、公共交通や歩行者を支えること",
+          "商店の配送をなくすこと",
+          "車を全面禁止すること",
+          "来店者数だけを測ること"
+        ],
+        "Correct": 0,
+        "Explanation": "Aは進入制限と公共交通・歩行者空間の拡大を提案します。"
+      },
+      {
+        "Prompt": "提案Bが懸念することは何か。",
+        "Choices": [
+          "配送時間を確保すること",
+          "公共交通の情報を整えること",
+          "移動実態を調べず制限すると商店や地域差に影響すること",
+          "歩行者の安全が高まること"
+        ],
+        "Correct": 2,
+        "Explanation": "Bは顧客・仕入れへの影響や地域差を懸念します。"
+      },
+      {
+        "Prompt": "AとBが共通して認めている点は何か。",
+        "Choices": [
+          "商店の状況は関係ない",
+          "現状の道路に歩きにくさなどの問題がある",
+          "制限を無条件で実施すべきだ",
+          "交通の調査は不要だ"
+        ],
+        "Correct": 1,
+        "Explanation": "Bも道路が歩きにくい問題を認識し、Aは改善を目指します。"
+      },
+      {
+        "Prompt": "本文が試行期間を提案する目的は何か。",
+        "Choices": [
+          "合意が自動的に生まれる",
+          "影響を受ける人を排除する",
+          "最終決定を避け続ける",
+          "抽象的な賛否を観察可能な問いに変える"
+        ],
+        "Correct": 3,
+        "Explanation": "限定実施と評価で影響を観察し条件を修正する考えです。"
+      },
+      {
+        "Prompt": "二つの意見を比較する際に筆者が重要とすることは何か。",
+        "Choices": [
+          "意見の違いをなくす",
+          "提案者の属性を比べる",
+          "対立点、共通前提、データで確かめる点を分ける",
+          "一方の主張だけを採用する"
+        ],
+        "Correct": 2,
+        "Explanation": "最終文で比較読解の方法を明確に述べています。"
+      }
+    ]
+  },
+  {
+    "ID": "reading-n1-12",
+    "Title": "Membaca pengumuman program riset",
+    "JapaneseTitle": "条件の優先順位を見つける",
+    "Chapter": "Membaca informasi praktis",
+    "Description": "Cari tenggat, syarat, biaya, dan aturan dalam pengumuman program.",
+    "Minutes": 25,
+    "ImageAsset": "assets/images/reading/story-n3-01.png",
+    "Pages": [
+      {
+        "title": "論点を整理する",
+        "japanese": "市民研究センターは、地域の水辺を調査する「まちの環境記録員」を募集します。対象は高校生以上で、専門知識は問いません。活動期間は六月から九月までの四か月間です。月二回、土曜日の午前に現地で観察を行い、各自が月一回、記録をオンラインで提出します。初回説明会は六月八日、午前十時から正午まで、センター会議室で開かれます。\n\n応募者は五月二十日までに、申込書と参加理由（四百字以内）を提出してください。応募者多数の場合は、参加可能な日程と志望動機をもとに選考します。交通費の支給はありませんが、調査用具と保険はセンターが用意します。選考結果は五月三十一日までに通知します。",
+        "reading": "しみん けんきゅう せんたー は 、 ちいき の すいへん を ちょうさ する 「 まちの かんきょう きろく いん 」 を ぼしゅう します 。 たいしょう は こうこうせい いじょう で 、 せんもんちしき は とい ません 。 かつどう きかん は ろくがつ から くがつ までの し か げっかん です 。 がつ にかい 、 どようび の ごぜん に げんち で かんさつ を おこない 、 かくじ が つきいち かい 、 きろく を おんらいん で ていしゅつ します 。 しょかい せつめいかい は ろくがつ ようか 、 ごぜん ととき から しょうご まで 、 せんたー かいぎしつ で ひらか れます 。\n\nおうぼしゃ は ごがつ はつか までに 、 もうしこみしょ と さんか りゆう （ しひゃく じ いない ） を ていしゅつ してください 。 おうぼしゃたすう の ばあい は 、 さんかかのう な にってい と しぼうどうき をもとに せんこう します 。 こうつうひ の しきゅう はありませんが 、 ちょうさ ようぐ と ほけん は せんたー が よういし ます 。 せんこう けっか は ごがつ さんじゅう ついたち までに つうち します 。",
+        "meaning": "Program berlangsung Juni–September, dua kali sebulan pada Sabtu pagi, dengan laporan daring bulanan. Pendaftar harus mengirim formulir dan alasan maksimal 400 karakter sebelum 20 Mei. Jika pendaftar banyak, ketersediaan jadwal dan alasan mengikuti program dipakai untuk seleksi. Peralatan serta asuransi disediakan, tetapi transportasi tidak ditanggung.",
+        "vocabulary": [
+          {
+            "japanese": "志望動機",
+            "reading": "しぼうどうき",
+            "meaning": "alasan mendaftar"
+          },
+          {
+            "japanese": "貸与",
+            "reading": "たいよ",
+            "meaning": "peminjaman"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 0,
+        "imageDescription": "Ilustrasi konsep Membaca pengumuman program riset, bagian 1."
+      },
+      {
+        "title": "根拠と条件を読む",
+        "japanese": "活動には、全体調査のほか、写真記録、植物の観察、水質測定の三つの班があります。希望する班を申込書に記入できますが、人数の偏りがある場合は第二希望へ移ることがあります。活動日に参加できない場合は、原則として一週間前までに事務局へ連絡してください。雨天時の実施可否は前日の午後五時にウェブサイトへ掲載します。\n\n提出した記録は、個人が特定されない形で年次報告書に掲載することがあります。写真に人物や住宅が写る場合は、提出前に事務局へ確認してください。調査で知った私有地の情報を、許可なく公開することは禁止されています。参加を辞退する場合は、理由を問わず活動開始前までに連絡できます。活動開始後も、やむを得ない事情があれば退会できますが、貸与品を返却する必要があります。",
+        "reading": "かつどう には 、 ぜんたい ちょうさ のほか 、 しゃしん きろく 、 しょくぶつ の かんさつ 、 すいしつ そくてい の みっつ の はん があります 。 きぼう する はん を もうしこみしょ に きにゅう できますが 、 にんずう の かたより がある ばあい は だいにきぼう へ うつる ことがあります 。 かつどう にち に さんか できない ばあい は 、 げんそく として いっしゅうかんまえ までに じむきょく へ れんらく してください 。 うてんじ の じっし かひ は ぜんじつ の ごご ごじ に うぇぶさいと へ けいさい します 。\n\nていしゅつ した きろく は 、 こじん が とくてい されない かたち で ねんじ ほうこくしょ に けいさい することがあります 。 しゃしん に じんぶつ や じゅうたく が うつる ばあい は 、 ていしゅつ まえ に じむきょく へ かくにんし てください 。 ちょうさ で しっ た しゆうち の じょうほう を 、 きょか なく こうかい することは きんし されています 。 さんか を じたい する ばあい は 、 りゆう を とわ ず かつどうかいし まえ までに れんらく できます 。 かつどうかいし のち も 、 やむを えな い じじょう があれば たいかい できますが 、 たいよ ひん を へんきゃく する ひつよう があります 。",
+        "meaning": "Ada tiga kelompok kegiatan dan pilihan utama mungkin berubah bila jumlah peserta tidak seimbang. Hujan diumumkan sehari sebelumnya. Catatan bisa diterbitkan tanpa identitas, tetapi foto orang atau rumah perlu dikonsultasikan; informasi tanah milik pribadi tidak boleh dibuka tanpa izin. Peserta boleh mengundurkan diri, tetapi harus mengembalikan perlengkapan.",
+        "vocabulary": [
+          {
+            "japanese": "志望動機",
+            "reading": "しぼうどうき",
+            "meaning": "alasan mendaftar"
+          },
+          {
+            "japanese": "貸与",
+            "reading": "たいよ",
+            "meaning": "peminjaman"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 1,
+        "imageDescription": "Ilustrasi konsep Membaca pengumuman program riset, bagian 2."
+      },
+      {
+        "title": "筆者の結論を捉える",
+        "japanese": "申込を検討する人は、応募資格だけでなく、活動日、提出頻度、費用、公開条件を合わせて確認する必要があります。たとえば、土曜日に二回参加できても、毎月のオンライン提出が難しい場合は、事務局に相談して対応を確かめるべきです。交通費が支給されない点は明記されていますが、調査用具と保険は用意されます。条件を部分的に読むと、実際の負担を誤って見積もる可能性があります。\n\n募集案内から読み取れないのは、応募者がどれほど多いかや、希望班に必ず入れるかです。選考基準と変更可能性を踏まえ、希望理由を具体的に書き、日程上の制約を事前に問い合わせるとよいでしょう。情報検索では、必要な条件を照合するだけでなく、案内に書かれていない点と、明記された規則を区別することが求められます。",
+        "reading": "もうしこみ を けんとうす る ひと は 、 おうぼしかく だけでなく 、 かつどう にち 、 ていしゅつ ひんど 、 ひよう 、 こうかい じょうけん を あわ せて かくにんす る ひつよう があります 。 たとえば 、 どようび に にかい さんか できても 、 まいつき の おんらいん ていしゅつ が むずかしい ばあい は 、 じむきょく に そうだん して たいおう を たしか めるべきです 。 こうつうひ が しきゅう されない てん は めいき されていますが 、 ちょうさ ようぐ と ほけん は よういさ れます 。 じょうけん を ぶぶんてき に よむ と 、 じっさい の ふたん を あやまっ て みつも る かのうせい があります 。\n\nぼしゅう あんない から よみとれ ないのは 、 おうぼしゃ がどれほど おおい かや 、 きぼう はん に かならず いれ るかです 。 せんこうきじゅん と へんこうかのう せい を ふま え 、 きぼう りゆう を ぐたいてき に かき 、 にってい うえの せいやく を じぜん に といあわせ るとよいでしょう 。 じょうほうけんさく では 、 ひつよう な じょうけん を しょうごう するだけでなく 、 あんない に かか れていない てん と 、 めいき された きそく を くべつ することが もとめ られます 。",
+        "meaning": "Calon peserta perlu mencocokkan jadwal, laporan, biaya, dan ketentuan publikasi; jangan hanya membaca syarat usia atau keahlian. Hal yang tidak tercantum seperti jumlah pesaing atau jaminan kelompok pilihan perlu ditanyakan. Informasi pencarian berarti membedakan aturan eksplisit dengan hal yang belum dijelaskan.",
+        "vocabulary": [
+          {
+            "japanese": "志望動機",
+            "reading": "しぼうどうき",
+            "meaning": "alasan mendaftar"
+          },
+          {
+            "japanese": "貸与",
+            "reading": "たいよ",
+            "meaning": "peminjaman"
+          }
+        ],
+        "imageAsset": "assets/images/reading/story-n3-01.png",
+        "imageUrl": "",
+        "imagePanel": 2,
+        "imageDescription": "Ilustrasi konsep Membaca pengumuman program riset, bagian 3."
+      }
+    ],
+    "Questions": [
+      {
+        "Prompt": "応募書類の締切はいつか。",
+        "Choices": [
+          "五月二十日",
+          "五月三十一日",
+          "六月八日",
+          "九月末日"
+        ],
+        "Correct": 0,
+        "Explanation": "案内には申込書などを五月二十日までに提出とあります。"
+      },
+      {
+        "Prompt": "募集要項によると、応募時点で専門知識は必要か。",
+        "Choices": [
+          "水質測定班だけ必要",
+          "説明会の後に試験がある",
+          "必要ない",
+          "必ず大学で学ぶ必要がある"
+        ],
+        "Correct": 2,
+        "Explanation": "高校生以上が対象で専門知識は問わないと記されています。"
+      },
+      {
+        "Prompt": "応募者多数の場合、選考で考慮されるものは何か。",
+        "Choices": [
+          "過去の研究実績",
+          "参加可能な日程と志望動機",
+          "年齢と交通費",
+          "希望班だけ"
+        ],
+        "Correct": 1,
+        "Explanation": "募集案内には日程と志望動機をもとに選考するとあります。"
+      },
+      {
+        "Prompt": "交通費と調査用具について正しいものはどれか。",
+        "Choices": [
+          "交通費も用具も支給されない",
+          "交通費が出て保険はない",
+          "全て応募者が購入する",
+          "交通費は出ないが調査用具は用意される"
+        ],
+        "Correct": 3,
+        "Explanation": "案内は交通費なし、用具と保険はセンター負担としています。"
+      },
+      {
+        "Prompt": "提出記録の扱いで必要な注意はどれか。",
+        "Choices": [
+          "記録は必ず実名で公開される",
+          "参加開始後は退会できない",
+          "人物や住宅が写る写真は提出前に事務局へ確認する",
+          "私有地情報は自由に公開できる"
+        ],
+        "Correct": 2,
+        "Explanation": "写真に人物・住宅が写る場合は事務局に確認する必要があります。"
+      }
+    ]
+  }
+]

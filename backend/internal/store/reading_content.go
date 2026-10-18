@@ -12,7 +12,8 @@ func seedReading() []readingLessonContent {
 	lessons := seedReadingLevel("N5", reading.N5)
 	lessons = append(lessons, seedReadingLevel("N4", reading.N4)...)
 	lessons = append(lessons, seedReadingLevel("N3", reading.N3)...)
-	return append(lessons, seedReadingLevel("N2", reading.N2)...)
+	lessons = append(lessons, seedReadingLevel("N2", reading.N2)...)
+	return append(lessons, seedReadingLevel("N1", reading.N1)...)
 }
 
 func seedReadingLevel(level string, content []byte) []readingLessonContent {

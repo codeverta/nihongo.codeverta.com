@@ -104,7 +104,9 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
                       Text(
                         widget.level == 'N2'
                             ? 'Latih inferensi, maksud penulis, perbandingan pendapat, dan pencarian informasi. Gunakan bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.'
-                            : widget.level == 'N3'
+                            : widget.level == 'N1'
+                                ? 'Latih membaca argumen abstrak, menilai batas bukti, memahami maksud penulis, membandingkan pendapat, dan mencari syarat dalam pengumuman. Gunakan bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.'
+                                : widget.level == 'N3'
                                 ? 'Pahami alasan, maksud tokoh, dan kesimpulan dalam cerita Hana. Buka bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.'
                                 : 'Ikuti Hana dalam cerita bergambar. Buka bantuan kana dan terjemahan saat diperlukan. Lulus dengan nilai minimal 80% untuk menyelesaikan lesson.',
                         style: const TextStyle(

@@ -32,6 +32,12 @@ void main() {
     expect(dashboard.exams.single.questionCount, 25);
     expect(dashboard.plans.single.billingType, 'lifetime');
     expect(dashboard.achievements.single.target, 1);
+    expect(
+      dashboard.banners[0].imageUrl,
+      'http://localhost:8080/home-banner-images/photo.png',
+    );
+    expect(dashboard.banners[1].imageUrl, 'https://cdn.example.com/ssw.jpg');
+    expect(dashboard.banners[2].imageUrl, '');
   });
 
   test('fetchDashboard rejects an invalid envelope', () async {
@@ -48,15 +54,35 @@ void main() {
         ),
       );
 
-    expect(
-      HomeRepository(dio).fetchDashboard(),
-      throwsA(isA<HomeException>()),
-    );
+    expect(HomeRepository(dio).fetchDashboard(), throwsA(isA<HomeException>()));
   });
 }
 
 const _response = <String, dynamic>{
   'data': <String, dynamic>{
+    'banners': [
+      {
+        'id': 'learn',
+        'title': 'Belajar',
+        'imageUrl': '/home-banner-images/photo.png',
+        'action': 'learn',
+        'buttonLabel': 'Belajar',
+      },
+      {
+        'id': 'ssw',
+        'title': 'SSW',
+        'imageUrl': 'https://cdn.example.com/ssw.jpg',
+        'action': 'ssw',
+        'buttonLabel': 'SSW',
+      },
+      {
+        'id': 'jobs',
+        'title': 'Kerja',
+        'imageUrl': '',
+        'action': 'jobs',
+        'buttonLabel': 'Lowongan',
+      },
+    ],
     'isAuthenticated': true,
     'profile': <String, dynamic>{
       'id': 'api-user',
@@ -66,10 +92,7 @@ const _response = <String, dynamic>{
       'level': 1,
       'xp': 50,
       'streakDays': 2,
-      'entitlement': <String, dynamic>{
-        'tier': 'free',
-        'isLifetime': false,
-      },
+      'entitlement': <String, dynamic>{'tier': 'free', 'isLifetime': false},
     },
     'dailyGoal': <String, dynamic>{
       'minutesLearned': 10,

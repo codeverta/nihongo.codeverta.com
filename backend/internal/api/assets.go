@@ -37,11 +37,18 @@ func (s *Server) registerAssets(mux *http.ServeMux) {
 		parts := strings.Split(key, "/")
 		// Only public learning PNGs; never expose directory listings or config files.
 		isOnboarding := key == "images/onboarding-japanese-journey.png"
+		isHomeBanner := false
+		for _, imageURL := range defaultBannerImages {
+			if "/assets/"+key == imageURL {
+				isHomeBanner = true
+				break
+			}
+		}
 		isLearning := len(parts) == 3 && parts[0] == "images" &&
 			(parts[1] == "reading" || parts[1] == "vocabulary") &&
 			path.Clean(key) == key && !strings.Contains(key, "\\") &&
 			strings.HasSuffix(parts[2], ".png")
-		if !isOnboarding && !isLearning {
+		if !isOnboarding && !isLearning && !isHomeBanner {
 			http.NotFound(w, r)
 			return
 		}

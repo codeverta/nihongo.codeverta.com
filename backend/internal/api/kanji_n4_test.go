@@ -27,7 +27,7 @@ func TestKanjiN4APIContract(t *testing.T) {
 		}
 	}
 	token := login(t, server)
-	for level, count := range map[string]int{"": 20, "N5": 20, "N4": 34} {
+	for level, count := range map[string]int{"": 20, "N5": 20, "N4": 34, "N2": 74, "N1": 247} {
 		w := request("GET", "/v1/kanji/course?level="+level, token, "")
 		var payload struct {
 			Data domain.KanjiCourse `json:"data"`
@@ -36,7 +36,7 @@ func TestKanjiN4APIContract(t *testing.T) {
 			t.Fatalf("invalid catalog: %s %v", w.Body.String(), err)
 		}
 	}
-	for _, level := range []string{"N2", "N1", "n4"} {
+	for _, level := range []string{"n4"} {
 		if request("GET", "/v1/kanji/course?level="+level, token, "").Code != 400 {
 			t.Fatalf("unsupported level %s accepted", level)
 		}

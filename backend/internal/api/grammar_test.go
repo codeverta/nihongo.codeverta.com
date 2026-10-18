@@ -88,7 +88,7 @@ func TestGrammarN2API(t *testing.T) {
 		{"/v1/grammar/course?level=n2", 200},
 		{"/v1/grammar/lessons/grammar-n2-01", 200},
 		{"/v1/grammar/lessons/grammar-n2-60", 200},
-		{"/v1/grammar/course?level=N1", 422},
+		{"/v1/grammar/course?level=N0", 422},
 	} {
 		r := httptest.NewRequest(http.MethodGet, tc.path, nil)
 		r.Header.Set("Authorization", "Bearer "+token)

@@ -82,7 +82,7 @@ func TestDatabaseCacheSurvivesRestartAndArchivesUniqueEntries(t *testing.T) {
 		t.Fatal(err)
 	}
 }
-func TestExpiredDatabaseResponseRefreshesButKeepsCollectedEntries(t *testing.T) {
+func TestOldDatabaseResponseRemainsPermanent(t *testing.T) {
 	c, db := persistentTestClient(t, testdb.DSN(t))
 	calls := 0
 	c.HTTP.Transport = transport(func(*http.Request) (*http.Response, error) { calls++; return response(200, wordFixture), nil })
@@ -97,8 +97,8 @@ func TestExpiredDatabaseResponseRefreshesButKeepsCollectedEntries(t *testing.T) 
 	if _, err := c.Search(context.Background(), "cat", 1, "", false); err != nil {
 		t.Fatal(err)
 	}
-	if calls != 2 {
-		t.Fatal("expired response did not refresh")
+	if calls != 1 {
+		t.Fatal("permanent response unexpectedly refreshed")
 	}
 	var count int
 	db.QueryRow(`SELECT COUNT(*) FROM dictionary_entries`).Scan(&count)
@@ -159,7 +159,7 @@ func TestFilterAndPageCacheKeysDoNotMixResults(t *testing.T) {
 	}
 }
 
-func TestMariaDBCachePruningKeepsLatestResponsesAndArchive(t *testing.T) {
+func TestMariaDBRetainsMoreThanFiveThousandResponses(t *testing.T) {
 	c, db := persistentTestClient(t, testdb.DSN(t))
 	tx, err := db.Begin()
 	if err != nil {
@@ -171,7 +171,7 @@ func TestMariaDBCachePruningKeepsLatestResponsesAndArchive(t *testing.T) {
 		t.Fatal(err)
 	}
 	defer stmt.Close()
-	for i := 0; i < maxPersistentResponses+1; i++ {
+	for i := 0; i < 5001; i++ {
 		if _, err := stmt.Exec(uuid.NewString(), responseKey(fmt.Sprint(i)), "jisho.org", []byte(wordFixture), i); err != nil {
 			t.Fatal(err)
 		}
@@ -183,8 +183,8 @@ func TestMariaDBCachePruningKeepsLatestResponsesAndArchive(t *testing.T) {
 		t.Fatal(err)
 	}
 	var count int
-	if err := db.QueryRow(`SELECT COUNT(*) FROM dictionary_responses`).Scan(&count); err != nil || count != maxPersistentResponses {
-		t.Fatalf("cache pruning: %d %v", count, err)
+	if err := db.QueryRow(`SELECT COUNT(*) FROM dictionary_responses`).Scan(&count); err != nil || count != 5002 {
+		t.Fatalf("permanent cache retention: %d %v", count, err)
 	}
 	if err := db.QueryRow(`SELECT COUNT(*) FROM dictionary_entries WHERE source_entry_id='猫'`).Scan(&count); err != nil || count != 1 {
 		t.Fatalf("archive lost: %d %v", count, err)

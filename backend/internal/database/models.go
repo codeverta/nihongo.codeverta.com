@@ -94,6 +94,12 @@ func (m *DeletedDemo) BeforeCreate(_ *gorm.DB) error {
 }
 
 type DictionaryResponse struct {
+	Endpoint  string `gorm:"type:text"`
+	QueryText string `gorm:"type:varchar(512)"`
+	Mode      string `gorm:"type:varchar(16)"`
+	Page      int
+	JLPT      string `gorm:"type:varchar(2)"`
+	Common    bool
 	ID        string `gorm:"type:char(36);primaryKey"`
 	CacheKey  string `gorm:"column:cache_key;type:char(64);not null;uniqueIndex:dictionary_cache_key"`
 	Source    string `gorm:"type:varchar(64);not null"`

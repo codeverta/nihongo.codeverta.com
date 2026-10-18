@@ -37,7 +37,7 @@ func (s *Server) billingStatus(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	writeData(w, 200, map[string]any{"productId": product, "accountToken": token, "priceIdr": 99000, "billingType": "lifetime", "platforms": platforms, "entitlement": s.store.Profile(userID(r)).Entitlement})
+	writeData(w, 200, map[string]any{"productId": product, "accountToken": token, "priceIdr": s.lifetimePriceIDR(), "billingType": "lifetime", "platforms": platforms, "entitlement": s.store.Profile(userID(r)).Entitlement})
 }
 func (s *Server) verifyPurchase(w http.ResponseWriter, r *http.Request) {
 	if !s.personalBillingAccount(w, r) {

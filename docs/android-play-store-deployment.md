@@ -385,7 +385,7 @@ regional yang berlaku dipenuhi.
 
 Sebelum mengaktifkan tombol pembelian:
 
-1. Buat one-time product `nihongo_master_lifetime`, opsi Buy, harga Indonesia Rp99.000.
+1. Buat one-time product `nihongo_master_lifetime`, opsi Buy. Atur harga Google Play agar sama dengan harga tampilan yang disimpan di Admin → Harga Lifetime Access; harga tampilan awal backend adalah Rp99.000.
 2. Integrasi Flutter dan verifikasi backend sudah tersedia; isi kredensial server dan aktifkan RTDN sesuai [panduan lifetime billing](lifetime-billing.md).
 3. Uji cancel, pending, refund, restore, acknowledgment, pindah akun, dan account deletion memakai license tester serta testing track.
 4. Lifetime tidak mempunyai renewal atau expiry subscription; paket bulanan/tahunan sudah dihapus.

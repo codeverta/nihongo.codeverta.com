@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cache Kamus • Nihongo Master</title>
+<style>body{font:16px system-ui;background:#f7f8fc;color:#202340;max-width:1100px;margin:30px auto;padding:20px}input,button{font:inherit;padding:10px;margin:4px}button{cursor:pointer}table{width:100%;border-collapse:collapse;background:white}td,th{padding:12px;border-bottom:1px solid #ddd;text-align:left}#table{overflow:auto}#status{min-height:24px}small{display:block}button:disabled{cursor:wait}a{color:#4338ca}</style>
+<a href="/admin">← Admin</a><h1>Cache Kamus</h1>
+<p>Hasil pencarian dan hasil kosong disimpan permanen. Refresh mengganti satu pencarian hanya setelah sumber dan database berhasil diperbarui.</p>
+<form id="unlock"><label>Kunci admin <input id="key" type="password" autocomplete="off" required></label><button>Buka</button></form>
+<section id="panel" hidden><button id="lock">Kunci</button><form id="search"><label>Cari query <input id="query" maxlength="100"></label><button>Cari</button></form><p id="stats"></p><p id="count"></p><div id="table"><table><thead><tr><th>Query / mode</th><th>Halaman / filter</th><th>Terakhir diambil</th><th>Tindakan</th></tr></thead><tbody id="rows"></tbody></table></div><button id="prev">Sebelumnya</button><button id="next">Berikutnya</button></section>
+<p id="status" role="status" aria-live="polite"></p>
+<script>
+let token='',page=1,total=0,busy=false;
+const el=id=>document.getElementById(id),status=message=>el('status').textContent=message;
+async function api(path,method='GET'){const response=await fetch(path,{method,headers:{Authorization:'Bearer '+token}});const data=await response.json();if(!response.ok)throw Error(data.error?.message||'Permintaan gagal');return data.data}
+function cell(row,text){const td=document.createElement('td');td.textContent=text;row.append(td);return td}
+async function load(){if(busy)return;busy=true;status('Memuat…');try{const data=await api('/v1/admin/dictionary?page='+page+'&q='+encodeURIComponent(el('query').value));total=data.total;el('rows').replaceChildren();for(const item of data.items){const row=document.createElement('tr');cell(row,(item.query||'Cache lama tanpa metadata')+' / '+(item.mode||'lama'));cell(row,'Hal. '+item.page+' · '+(item.jlpt||'Semua level')+(item.common?' · kata umum':''));cell(row,new Date(item.fetchedAt).toLocaleString('id-ID'));const button=document.createElement('button');button.textContent='Refresh';button.disabled=!item.query;button.addEventListener('click',async()=>{button.disabled=true;status('Memperbarui '+item.query+'…');try{await api('/v1/admin/dictionary/'+encodeURIComponent(item.id)+'/refresh','POST');await load();status('Refresh berhasil.')}catch(error){status(error.message)}finally{button.disabled=false}});cell(row,'').append(button);el('rows').append(row)}el('count').textContent=total+' pencarian · halaman '+page;const stats=data.stats;el('stats').textContent='Proses server ini: memori '+stats.memoryHits+' hit · DB '+stats.databaseHits+' hit · API '+stats.upstreamCalls+' panggilan · memori '+(stats.memoryBytes/1048576).toFixed(2)+' / '+(stats.memoryLimitBytes/1048576)+' MiB';el('prev').disabled=page===1;el('next').disabled=page*50>=total;status('');}catch(error){status(error.message);throw error}finally{busy=false}}
+el('unlock').onsubmit=async event=>{event.preventDefault();token=el('key').value;try{await load();el('key').value='';el('unlock').hidden=true;el('panel').hidden=false}catch{token=''}};
+el('lock').onclick=()=>{token='';el('rows').replaceChildren();el('panel').hidden=true;el('unlock').hidden=false;status('Terkunci.')};
+el('search').onsubmit=event=>{event.preventDefault();page=1;load().catch(()=>{})};el('prev').onclick=()=>{page=Math.max(1,page-1);load().catch(()=>{})};el('next').onclick=()=>{page++;load().catch(()=>{})};
+</script></html>

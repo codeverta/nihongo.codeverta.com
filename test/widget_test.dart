@@ -6,6 +6,8 @@ import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 import 'package:nihongo_master/main.dart';
 import 'package:nihongo_master/shared/presentation/widgets/main_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,8 +25,10 @@ void main() {
           ),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
         ],
-        child:
-            MaterialApp(theme: AppTheme.lightTheme, home: const MainScaffold()),
+        child: MaterialApp(
+          theme: AppTheme.lightTheme,
+          home: const MainScaffold(),
+        ),
       ),
     );
     await tester.pumpAndSettle();
@@ -40,18 +44,13 @@ void main() {
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [
-          sharedPreferencesProvider.overrideWithValue(preferences),
-        ],
+        overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
         child: const NihongoMasterApp(),
       ),
     );
     await tester.pumpAndSettle();
 
-    expect(
-      find.text('Kuasai Bahasa Jepang'),
-      findsOneWidget,
-    );
+    expect(find.text('Kuasai Bahasa Jepang'), findsOneWidget);
   });
 
   testWidgets('main navigation changes the active tab', (tester) async {
@@ -79,23 +78,56 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Mulai belajar'), findsOneWidget);
-    expect(find.text('Vocabulary API'), findsOneWidget);
     expect(find.text('Lifetime dari API'), findsOneWidget);
+    expect(
+      find.ancestor(
+        of: find.text('Lifetime dari API'),
+        matching: find.byType(HomeBannerCarousel),
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('Target harian'), findsNothing);
+    final homeScroll = find
+        .descendant(
+          of: find.byKey(const PageStorageKey('dashboard-scroll')),
+          matching: find.byType(Scrollable),
+        )
+        .first;
+    await tester.scrollUntilVisible(
+      find.text('Kerja di Jepang'),
+      150,
+      scrollable: homeScroll,
+    );
+    expect(find.text('Kerja di Jepang'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Vocabulary API'),
+      150,
+      scrollable: homeScroll,
+    );
+    expect(find.text('Vocabulary API'), findsOneWidget);
 
     await tester.tap(find.text('Belajar'));
     await tester.pumpAndSettle();
 
     expect(find.text('Pilih level JLPT'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('SSW / Tokutei Ginou'),
+      200,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const PageStorageKey('learn-scroll')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
+    expect(find.text('SSW / Tokutei Ginou'), findsOneWidget);
+    expect(find.text('Kerja di Jepang'), findsNothing);
 
     await tester.tap(find.text('Ujian'));
     await tester.pumpAndSettle();
 
     expect(find.text('Latihan Ujian'), findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.text('Lifetime Access').first,
-      150,
-    );
+    await tester.scrollUntilVisible(find.text('Lifetime Access').first, 150);
     expect(find.text('Lifetime Access'), findsWidgets);
 
     await tester.tap(find.text('Profil'));
@@ -103,6 +135,97 @@ void main() {
 
     expect(find.text('Gamification'), findsOneWidget);
   });
+
+  testWidgets('home premium offer is hidden for lifetime subscribers', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          authControllerProvider.overrideWith(
+            (ref) => AuthController.test(
+              const AuthenticationState.authenticated(
+                AuthenticatedUser(
+                  id: 'lifetime-user',
+                  displayName: 'Lifetime User',
+                  email: 'lifetime@example.com',
+                  isLifetime: true,
+                ),
+              ),
+            ),
+          ),
+          homeDashboardProvider.overrideWith((ref) async => _dashboard),
+        ],
+        child: MaterialApp(
+          theme: AppTheme.lightTheme,
+          home: const MainScaffold(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('NIHONGO PREMIUM'), findsNothing);
+    expect(find.text('Lihat paket'), findsNothing);
+  });
+
+  testWidgets(
+    'verified purchase hides home and profile offers without restart',
+    (tester) async {
+      final auth = _PurchaseAuthController();
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            authControllerProvider.overrideWith((ref) => auth),
+            homeDashboardProvider.overrideWith((ref) async => _dashboard),
+            gamificationProvider.overrideWith((ref) async => _gamification),
+          ],
+          child: MaterialApp(
+            theme: AppTheme.lightTheme,
+            home: const MainScaffold(),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      var carousel = tester.widget<HomeBannerCarousel>(
+        find.byType(HomeBannerCarousel),
+      );
+      expect(
+        carousel.banners.where((banner) => banner.action == 'premium'),
+        hasLength(1),
+      );
+      expect(carousel.banners.first.description, contains('Rp1.499.000'));
+      await tester.tap(find.text('Profil'));
+      await tester.pumpAndSettle();
+      final profileScroll = find
+          .descendant(
+            of: find.byKey(const PageStorageKey('profile-scroll')),
+            matching: find.byType(Scrollable),
+          )
+          .first;
+      await tester.scrollUntilVisible(
+        find.text('Lifetime Access'),
+        150,
+        scrollable: profileScroll,
+      );
+      expect(find.text('Lifetime Access'), findsOneWidget);
+
+      auth.subscribe();
+      await tester.pumpAndSettle();
+      expect(find.text('Lifetime Access'), findsNothing);
+      await tester.tap(find.text('Beranda'));
+      await tester.pumpAndSettle();
+      carousel = tester.widget<HomeBannerCarousel>(
+        find.byType(HomeBannerCarousel),
+      );
+      expect(
+        carousel.banners.where((banner) => banner.action == 'premium'),
+        isEmpty,
+      );
+      expect(carousel.banners.map((banner) => banner.id), ['learn']);
+      expect(find.text('Lifetime dari API'), findsNothing);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets('guest is redirected to login after tapping a feature', (
     tester,
@@ -121,7 +244,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Mulai belajar'), findsOneWidget);
+    expect(find.byKey(const Key('home-greeting')), findsOneWidget);
     await tester.tap(find.text('Belajar'));
     await tester.pumpAndSettle();
 
@@ -147,6 +270,16 @@ const _dashboard = HomeDashboard(
     targetMinutes: 20,
     streakDays: 7,
   ),
+  banners: [
+    HomeBanner(
+      id: 'learn',
+      title: 'Materi belajar',
+      description: 'Pelajari bahasa Jepang.',
+      imageUrl: '',
+      action: 'learn',
+      buttonLabel: 'Buka materi',
+    ),
+  ],
   categories: [
     LearningCategory(
       id: 'vocabulary',
@@ -198,4 +331,41 @@ const _dashboard = HomeDashboard(
       target: 1,
     ),
   ],
+);
+
+class _PurchaseAuthController extends AuthController {
+  _PurchaseAuthController()
+    : super.test(
+        const AuthenticationState.authenticated(
+          AuthenticatedUser(
+            id: 'test-user',
+            displayName: 'Test User',
+            email: 'test@example.com',
+          ),
+        ),
+      );
+  void subscribe() {
+    state = const AuthenticationState.authenticated(
+      AuthenticatedUser(
+        id: 'test-user',
+        displayName: 'Test User',
+        email: 'test@example.com',
+        isLifetime: true,
+      ),
+    );
+  }
+}
+
+const _gamification = GamificationSummary(
+  xp: 0,
+  level: 1,
+  levelXp: 0,
+  nextLevelXp: 100,
+  streakDays: 0,
+  bestStreak: 0,
+  lessonsCompleted: 0,
+  examsCompleted: 0,
+  activeDays: 0,
+  minutesToday: 0,
+  achievements: [],
 );

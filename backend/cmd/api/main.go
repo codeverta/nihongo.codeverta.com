@@ -14,6 +14,8 @@ import (
 	"nihongo-master-backend/internal/auth"
 	"nihongo-master-backend/internal/billing"
 	"nihongo-master-backend/internal/config"
+	"nihongo-master-backend/internal/jobfetch"
+	"nihongo-master-backend/internal/jobs"
 	"nihongo-master-backend/internal/notifications"
 	"nihongo-master-backend/internal/store"
 )
@@ -64,6 +66,29 @@ func main() {
 		log.Fatal(err)
 	}
 	apiServer.ConfigureDictionaryCache(dictionaryCache)
+	dictionaryToken := os.Getenv("DICTIONARY_ADMIN_TOKEN")
+	if dictionaryToken == "" {
+		dictionaryToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	apiServer.ConfigureDictionaryAdmin(dictionaryToken)
+	jobDB, err := memoryStore.JobsDatabase()
+	if err != nil {
+		log.Fatal(err)
+	}
+	jobInterval, err := jobs.Interval(os.Getenv("JOBS_SYNC_INTERVAL_HOURS"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	jobRepository, err := jobs.New(jobDB, jobInterval)
+	if err != nil {
+		log.Fatalf("configure Japan jobs: %v", err)
+	}
+	apiServer.ConfigureJobs(jobRepository)
+	jobsContext, stopJobs := context.WithCancel(context.Background())
+	defer stopJobs()
+	if os.Getenv("JOBS_SYNC_ENABLED") != "false" {
+		go jobRepository.Run(jobsContext, jobfetch.NewClient())
+	}
 	billingContext, stopBilling := context.WithCancel(context.Background())
 	defer stopBilling()
 	go func() {
@@ -101,6 +126,28 @@ func main() {
 	}
 	if err := apiServer.ConfigureBranding(brandingPath, os.Getenv("BRANDING_ADMIN_TOKEN")); err != nil {
 		log.Fatal(err)
+	}
+	bannerPath := os.Getenv("HOME_BANNERS_CONFIG_PATH")
+	if bannerPath == "" {
+		bannerPath = "data/home-banners.json"
+	}
+	bannerToken := os.Getenv("HOME_BANNERS_ADMIN_TOKEN")
+	if bannerToken == "" {
+		bannerToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	if err := apiServer.ConfigureHomeBanners(bannerPath, bannerToken); err != nil {
+		log.Fatalf("configure home banners: %v", err)
+	}
+	pricingPath := os.Getenv("PRICING_CONFIG_PATH")
+	if pricingPath == "" {
+		pricingPath = "data/pricing.json"
+	}
+	pricingToken := os.Getenv("PRICING_ADMIN_TOKEN")
+	if pricingToken == "" {
+		pricingToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	if err := apiServer.ConfigurePricing(pricingPath, pricingToken); err != nil {
+		log.Fatalf("configure app pricing: %v", err)
 	}
 	updatePath := os.Getenv("APP_UPDATE_CONFIG_PATH")
 	if updatePath == "" {
@@ -148,6 +195,7 @@ func main() {
 	shutdownDone := make(chan struct{})
 	go func() {
 		<-shutdownSignal.Done()
+		stopJobs()
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
 		if err := server.Shutdown(ctx); err != nil {

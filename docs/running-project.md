@@ -24,15 +24,18 @@ dart run.dart
 Launcher membaca `backend/.env`, menyalakan backend, menunggu endpoint health
 siap, lalu menjalankan Flutter dengan `API_BASE_URL` dan
 `GOOGLE_SERVER_CLIENT_ID` yang benar. Output backend dan Flutter tampil di
-terminal yang sama. Tekan `q` untuk menghentikan Flutter; backend ikut berhenti.
+terminal yang sama. Jika tidak ada perangkat Android aktif, launcher menyalakan
+AVD pertama dan menunggu sampai Flutter mendeteksinya. Tekan `q` untuk
+menghentikan Flutter; backend ikut berhenti.
 
-Pilih emulator bila ada beberapa perangkat:
+Pilih emulator tertentu bila ada beberapa AVD atau perangkat:
 
 ```text
-dart run.dart -d emulator-5554
+dart run.dart -d Pixel_8_API_35
 ```
 
-Ganti `emulator-5554` dengan ID dari `flutter devices`. Alamat API default
+Gunakan ID AVD dari `flutter emulators`. Untuk perangkat yang sudah aktif,
+gunakan ID dari `flutter devices`. Alamat API default
 `http://10.0.2.2:8080/v1` adalah alamat khusus Android Emulator untuk mengakses
 backend di komputer.
 
@@ -60,6 +63,35 @@ Kalau backend memakai port selain `8080`, set `PORT` pada `backend/.env` atau
 environment terminal, lalu berikan port yang sama melalui `--api-base-url`.
 
 ## Troubleshooting
+
+### Emulator tidak mau menyala atau statusnya `offline`
+
+Android Studio dan Android Emulator sudah terpasang, tetapi emulator masih bisa
+macet saat memulihkan snapshot boot sebelumnya. Pilih **Cold Boot Now** dari
+menu ⋮ AVD di Android Studio > Device Manager. Ini memulai ulang Android tanpa
+memakai snapshot yang tersimpan dan tidak menghapus data aplikasi.
+
+Launcher mencoba cold boot otomatis. Untuk cold boot manual, gunakan nama AVD
+dari `flutter emulators`:
+
+```text
+adb -s emulator-5554 emu kill
+emulator -avd Pixel_8_API_35_12GB -no-snapshot-load -gpu swiftshader_indirect
+```
+
+Tunggu sampai layar utama Android muncul, lalu cek dengan `flutter devices`.
+Jika perintah `adb` atau `emulator` tidak ditemukan, jalankan dengan path SDK
+lengkap, di Windows biasanya `$env:ANDROID_SDK_ROOT\platform-tools\adb.exe` dan
+`$env:ANDROID_SDK_ROOT\emulator\emulator.exe`. Di macOS dan Linux biasanya
+`$ANDROID_SDK_ROOT/platform-tools/adb` dan `$ANDROID_SDK_ROOT/emulator/emulator`.
+Pastikan juga akselerasi hardware aktif lewat `emulator -accel-check`.
+
+Jika emulator tetap tidak terdeteksi, jalankan `adb kill-server` lalu
+`adb start-server`, kemudian cek lagi `flutter devices`. Hindari **Wipe Data**
+kecuali cold boot gagal dan Anda siap menghapus data AVD.
+
+Jika build Android melaporkan lisensi SDK belum diterima, jalankan
+`flutter doctor --android-licenses` dan terima lisensi yang diminta.
 
 ### `dart`, `flutter`, atau `go` tidak ditemukan
 

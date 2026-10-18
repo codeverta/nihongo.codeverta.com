@@ -38,13 +38,13 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
     super.dispose();
   }
 
-  Future<void> search(String query) async {
+  Future<void> search(String query, {String? mode}) async {
     FocusScope.of(context).unfocus();
     input.text = query;
     setState(() => savedOnly = false);
     final controller = ref.read(dictionaryControllerProvider.notifier);
     final library = ref.read(dictionaryLibraryProvider.notifier);
-    await controller.search(query);
+    await controller.search(query, mode: mode);
     if (mounted && query.trim().isNotEmpty && query.runes.length <= 100) {
       await library.remember(query);
     }
@@ -71,8 +71,10 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               ),
               child: Text(
                 '辞',
-                style:
-                    TextStyle(fontSize: 28, color: colors.onPrimaryContainer),
+                style: TextStyle(
+                  fontSize: 28,
+                  color: colors.onPrimaryContainer,
+                ),
               ),
             ),
             const SizedBox(width: 12),
@@ -82,10 +84,9 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                 children: [
                   Text(
                     'Kamus Jepang',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineSmall
-                        ?.copyWith(fontWeight: FontWeight.w900),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                   const Text('Cari kata. Pahami maknanya.'),
                 ],
@@ -139,6 +140,26 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
         ),
         if (!savedOnly) ...[
           const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            children: [
+              for (final mode in const {
+                'auto': 'Auto',
+                'japanese': 'Jepang',
+                'english': 'Inggris',
+              }.entries)
+                ChoiceChip(
+                  label: Text(mode.value),
+                  selected: state.mode == mode.key,
+                  onSelected: (_) =>
+                      unawaited(search(input.text, mode: mode.key)),
+                ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          const Text(
+            'Pilih Jepang untuk romaji, atau Inggris untuk mencari arti.',
+          ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -185,10 +206,9 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
           savedOnly
               ? 'Favorit tersimpan di perangkat • ${entries.length}/60'
               : 'Data Jisho.org • Arti dalam bahasa Inggris • Gratis',
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall
-              ?.copyWith(color: colors.onSurfaceVariant),
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceVariant),
         ),
         const SizedBox(height: 16),
         if (!savedOnly && state.query.isEmpty) ...[
@@ -305,8 +325,8 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
             onPressed: state.loadingMore
                 ? null
                 : () => unawaited(
-                      ref.read(dictionaryControllerProvider.notifier).more(),
-                    ),
+                    ref.read(dictionaryControllerProvider.notifier).more(),
+                  ),
             icon: state.loadingMore
                 ? const SizedBox(
                     width: 18,
@@ -355,18 +375,14 @@ class DictionaryWordCard extends StatelessWidget {
                       children: [
                         Text(
                           entry.reading,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge
+                          style: Theme.of(context).textTheme.bodyLarge
                               ?.copyWith(
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                         ),
                         Text(
                           entry.word,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineMedium
+                          style: Theme.of(context).textTheme.headlineMedium
                               ?.copyWith(fontWeight: FontWeight.w800),
                         ),
                       ],
@@ -381,8 +397,9 @@ class DictionaryWordCard extends StatelessWidget {
               if (entry.senses.isNotEmpty) ...[
                 const SizedBox(height: 8),
                 Text(
-                  dictionaryStrings(entry.senses.first['parts_of_speech'])
-                      .join(' • '),
+                  dictionaryStrings(
+                    entry.senses.first['parts_of_speech'],
+                  ).join(' • '),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],
