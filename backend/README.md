@@ -24,6 +24,11 @@ dan tidak dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`,
 backend menyajikannya di `/assets/images/...`; aplikasi memakai origin
 `API_BASE_URL`. Untuk CDN, atur `ASSET_BASE_URL` ke origin CDN dengan object
 prefix `assets`.
+Foto profil diperkecil menjadi JPEG 512 px dan disimpan sebagai objek `public-read`
+di `profile/avatars/`. Upload memakai `COS_BUCKET_URL`, `COS_SECRET_ID`, dan
+`COS_SECRET_KEY` yang sama; URL publik memakai `ASSET_BASE_URL` jika diatur,
+atau `COS_BUCKET_URL` sebagai fallback. Foto lama dibersihkan setelah penggantian
+profil atau saat akun dihapus.
 Panduan build APK kecil: [Android app size](../docs/android-app-size.md).
 
 Dokumentasi lengkap:

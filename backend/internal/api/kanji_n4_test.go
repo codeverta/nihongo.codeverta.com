@@ -11,7 +11,7 @@ import (
 )
 
 func TestKanjiN4APIContract(t *testing.T) {
-	server := newServer()
+	server := newServer(true)
 	request := func(method, path, token, body string) *httptest.ResponseRecorder {
 		r := httptest.NewRequest(method, path, strings.NewReader(body))
 		if token != "" {

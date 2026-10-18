@@ -16,6 +16,7 @@ import (
 	"nihongo-master-backend/internal/config"
 	"nihongo-master-backend/internal/jobfetch"
 	"nihongo-master-backend/internal/jobs"
+	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/notifications"
 	"nihongo-master-backend/internal/store"
 )
@@ -179,6 +180,16 @@ func main() {
 	if err := apiServer.ConfigureNotifications(notificationPath, notificationToken, notificationSender); err != nil {
 		log.Fatalf("configure notifications: %v", err)
 	}
+	profilePhotos, err := media.NewCOSProfilePhotoStorage(
+		os.Getenv("COS_BUCKET_URL"), assetBaseURL,
+		os.Getenv("COS_SECRET_ID"), os.Getenv("COS_SECRET_KEY"),
+	)
+	if err != nil {
+		log.Printf("profile photo uploads disabled: %v", err)
+	} else if profilePhotos == nil {
+		log.Printf("profile photo uploads disabled: COS_BUCKET_URL, public asset URL, and COS credentials are required")
+	}
+	apiServer.ConfigureProfilePhotoStorage(profilePhotos)
 	handler := apiServer.Handler()
 	server := &http.Server{
 		Addr:              ":" + port,

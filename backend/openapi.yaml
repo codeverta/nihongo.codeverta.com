@@ -763,6 +763,27 @@ paths:
       responses:
         '200': {$ref: '#/components/responses/Profile'}
         '401': {$ref: '#/components/responses/Unauthorized'}
+  /me/profile/photo:
+    post:
+      tags: [Profile]
+      summary: Compress and upload the signed-in user's profile photo to Tencent COS
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [photo]
+              properties:
+                photo: {type: string, format: binary, description: 'JPEG, PNG, or GIF; maximum 8 MB'}
+      responses:
+        '200': {description: Profile with updated photoUrl; backend resizes to at most 512 px, re-encodes as JPEG, and strips image metadata before COS upload}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '413': {description: Upload exceeds 8 MB}
+        '422': {description: Invalid or unsupported image}
+        '502': {description: COS upload failed}
+        '503': {description: COS upload credentials or public URL are unavailable}
   /me/progress:
     get:
       tags: [Profile]

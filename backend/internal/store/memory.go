@@ -4,14 +4,18 @@ import (
 	"crypto/rand"
 	"database/sql"
 	"encoding/binary"
+	"encoding/json"
 	"errors"
 	"fmt"
-	"gorm.io/gorm"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
 
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
+
+	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 )
 
@@ -25,12 +29,13 @@ var (
 )
 
 type account struct {
-	ID           string
-	Email        string
-	DisplayName  string
-	PhotoURL     string
-	PasswordHash []byte
-	GoogleSub    string
+	ID             string
+	Email          string
+	DisplayName    string
+	PhotoURL       string
+	CustomPhotoURL string
+	PasswordHash   []byte
+	GoogleSub      string
 }
 
 type MemoryStore struct {
@@ -222,6 +227,43 @@ func (s *MemoryStore) UpdateProfile(userID, displayName, target string) (domain.
 	profile.Entitlement = s.entitlementLocked(userID)
 	s.profiles[userID] = profile
 	return profile, nil
+}
+
+// UpdateProfilePhoto replaces an account's uploaded photo URL. The Google
+// account photo remains available as a fallback if the user later removes it.
+func (s *MemoryStore) UpdateProfilePhoto(userID, photoURL string) (domain.Profile, string, error) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if userID == "" || userID == s.playReviewUserID || strings.TrimSpace(photoURL) == "" {
+		return domain.Profile{}, "", ErrInvalid
+	}
+	var email string
+	var account account
+	for candidateEmail, candidate := range s.accounts {
+		if candidate.ID == userID {
+			email, account = candidateEmail, candidate
+			break
+		}
+	}
+	if email == "" {
+		return domain.Profile{}, "", ErrNotFound
+	}
+	previousPhotoURL := account.CustomPhotoURL
+	account.CustomPhotoURL = strings.TrimSpace(photoURL)
+	if s.billingEnabled {
+		raw, err := json.Marshal(account)
+		if err != nil {
+			return domain.Profile{}, "", err
+		}
+		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.Account{ID: account.ID, Email: email, State: raw}).Error; err != nil {
+			return domain.Profile{}, "", err
+		}
+	}
+	s.accounts[email] = account
+	profile := s.ensureProfileForAccountLocked(account)
+	profile.Entitlement = s.entitlementLocked(userID)
+	s.profiles[userID] = profile
+	return profile, previousPhotoURL, nil
 }
 
 func (s *MemoryStore) Progress(userID string) []domain.LessonProgress {

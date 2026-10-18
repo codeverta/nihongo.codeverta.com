@@ -275,8 +275,23 @@ func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bo
 }
 
 func (s *MemoryStore) DeleteAccount(user string) error {
+	_, err := s.DeleteAccountWithProfilePhoto(user)
+	return err
+}
+
+// DeleteAccountWithProfilePhoto returns the uploaded photo URL while removing
+// the account under the same lock, so callers can clean up COS without racing
+// with another profile update.
+func (s *MemoryStore) DeleteAccountWithProfilePhoto(user string) (string, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
+	var customPhotoURL string
+	for _, account := range s.accounts {
+		if account.ID == user {
+			customPhotoURL = account.CustomPhotoURL
+			break
+		}
+	}
 	detached := map[string]domain.Purchase{}
 	for key, p := range s.purchases {
 		if p.UserID == user {
@@ -315,11 +330,11 @@ func (s *MemoryStore) DeleteAccount(user string) error {
 			}
 			return nil
 		}); err != nil {
-			return err
+			return "", err
 		}
 	} else if s.gamificationDB != nil {
 		if err := s.ormWriter.Where("user_id = ?", user).Delete(&database.GamificationUser{}).Error; err != nil {
-			return err
+			return "", err
 		}
 	}
 
@@ -372,7 +387,7 @@ func (s *MemoryStore) DeleteAccount(user string) error {
 	}
 	s.diagnosticOrder = filterAttemptIDs(s.diagnosticOrder, func(id string) bool { return s.diagnosticAttempts[id] != nil })
 	s.simulationOrder = filterAttemptIDs(s.simulationOrder, func(id string) bool { return s.simulationAttempts[id] != nil })
-	return nil
+	return customPhotoURL, nil
 }
 func filterAttemptIDs(ids []string, keep func(string) bool) []string {
 	result := []string{}
