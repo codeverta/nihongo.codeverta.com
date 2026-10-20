@@ -56,10 +56,6 @@ class NotificationSettingsScreen extends ConsumerWidget {
                 onPressed: state.busy ? null : controller.refresh,
                 child: const Text('Coba sambungkan lagi'),
               ),
-            const SizedBox(height: 16),
-            const Text(
-              'Notifikasi memakai Firebase Cloud Messaging (Google). Izin Android dapat menghentikan semua notifikasi. Jika aplikasi dihentikan paksa, buka aplikasi lagi agar pesan berikutnya dapat diterima.',
-            ),
           ],
         ],
       ),
