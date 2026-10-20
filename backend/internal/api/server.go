@@ -15,11 +15,21 @@ import (
 	"nihongo-master-backend/internal/dictionary"
 	"nihongo-master-backend/internal/domain"
 	"nihongo-master-backend/internal/jobs"
+	"nihongo-master-backend/internal/manga"
 	"nihongo-master-backend/internal/media"
+	"nihongo-master-backend/internal/news"
 	"nihongo-master-backend/internal/store"
 )
 
 type Server struct {
+	manga                *manga.Repository
+	mangaAdminToken      string
+	mangaAccess          MangaAccessChecker
+	news                 *news.Repository
+	newsFetcher          news.Fetcher
+	newsAdminToken       string
+	newsImageDirectory   string
+	newsContext          context.Context
 	jobs                 *jobs.Repository
 	dictionary           *dictionary.Client
 	dictionaryAdminToken string
@@ -45,6 +55,8 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerManga(mux)
+	s.registerNews(mux)
 	s.registerDictionaryAdmin(mux)
 	s.registerJobs(mux)
 	s.registerLegal(mux)

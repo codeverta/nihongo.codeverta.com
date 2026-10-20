@@ -9,6 +9,7 @@ import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
+import 'package:nihongo_master/features/profile/presentation/screens/attributions_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/gamification_widgets.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
 
@@ -32,7 +33,11 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [Text('Masuk untuk melihat profil.'), LegalLinks()],
+            children: [
+              Text('Masuk untuk melihat profil.'),
+              LegalLinks(),
+              AttributionsLink(),
+            ],
           ),
         ),
       );
@@ -126,6 +131,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 ),
                 const SizedBox(height: 16),
                 const LegalLinks(),
+                const AttributionsLink(),
               ],
             ),
           ),

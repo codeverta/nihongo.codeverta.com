@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
+import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
 class HomeBannerCarousel extends StatefulWidget {
   const HomeBannerCarousel({
@@ -25,7 +26,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
   final _pages = PageController();
   Timer? _timer;
   int _index = 0;
-  bool _paused = false;
+  bool _dragging = false;
   bool _hovered = false;
   bool _resumed = true;
   bool _motionAllowed = true;
@@ -74,7 +75,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
         !_resumed ||
         !_routeVisible ||
         !_motionAllowed ||
-        _paused ||
+        _dragging ||
         _hovered ||
         widget.banners.length < 2) {
       return;
@@ -93,11 +94,11 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
 
   void _pause() {
     _timer?.cancel();
-    if (!_paused) setState(() => _paused = true);
   }
 
   void _select(int index) {
     _pause();
+    _schedule();
     if (!_pages.hasClients) return;
     if (_motionAllowed) {
       unawaited(
@@ -155,10 +156,23 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
 
         final height = widget.banners
             .map((banner) {
-              return 48 +
-                  measure(_eyebrow(banner.action), _eyebrowStyle, 1) +
+              final headingWidth = (banner.action == 'premium')
+                  ? math.max<double>(1, textWidth - 102)
+                  : textWidth;
+              final headingHeight =
+                  measure(
+                    _eyebrow(banner.action),
+                    _eyebrowStyle,
+                    1,
+                    headingWidth,
+                  ) +
                   12 +
-                  measure(banner.title, _titleStyle, 3) +
+                  measure(banner.title, _titleStyle, 3, headingWidth);
+              return 48 +
+                  math.max(
+                    (banner.action == 'premium') ? 98 : 0,
+                    headingHeight,
+                  ) +
                   10 +
                   measure(banner.description, _descriptionStyle, 3) +
                   18 +
@@ -190,9 +204,16 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
             children: [
               SizedBox(
                 height: height,
-                child: NotificationListener<ScrollStartNotification>(
+                child: NotificationListener<ScrollNotification>(
                   onNotification: (notification) {
-                    if (notification.dragDetails != null) _pause();
+                    if (notification is ScrollStartNotification &&
+                        notification.dragDetails != null) {
+                      _dragging = true;
+                      _pause();
+                    } else if (notification is ScrollEndNotification) {
+                      _dragging = false;
+                      _schedule();
+                    }
                     return false;
                   },
                   child: PageView.builder(
@@ -236,34 +257,46 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
                             child: Center(
                               child: AnimatedContainer(
                                 duration: const Duration(milliseconds: 180),
-                                width: i == _index ? 24 : 8,
-                                height: 8,
+                                width: i == _index ? 38 : 7,
+                                height: i == _index ? 22 : 7,
+                                alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   color: i == _index
                                       ? Theme.of(context).colorScheme.primary
                                       : Theme.of(
                                           context,
                                         ).colorScheme.outlineVariant,
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(20),
+                                  boxShadow: i == _index
+                                      ? [
+                                          BoxShadow(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary
+                                                .withValues(alpha: .2),
+                                            blurRadius: 8,
+                                            offset: const Offset(0, 3),
+                                          ),
+                                        ]
+                                      : null,
                                 ),
+                                child: i == _index
+                                    ? Text(
+                                        '${i + 1}'.padLeft(2, '0'),
+                                        textScaler: TextScaler.noScaling,
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w800,
+                                          color: Theme.of(
+                                            context,
+                                          ).colorScheme.onPrimary,
+                                        ),
+                                      )
+                                    : null,
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    if (_motionAllowed)
-                      IconButton(
-                        key: const Key('home-banner-toggle'),
-                        tooltip: _paused ? 'Putar banner' : 'Jeda banner',
-                        icon: Icon(
-                          _paused
-                              ? Icons.play_arrow_rounded
-                              : Icons.pause_rounded,
-                        ),
-                        onPressed: () {
-                          setState(() => _paused = !_paused);
-                          _schedule();
-                        },
                       ),
                   ],
                 ),
@@ -301,6 +334,8 @@ const _buttonStyle = TextStyle(
 
 String _eyebrow(String action) => switch (action) {
   'premium' => 'NIHONGO PREMIUM',
+  'manga' => 'PREMIUM · LIFETIME ACCESS',
+  'anki' => 'REVIEW SEDIKIT, INGAT LEBIH LAMA',
   'ssw' => 'KETERAMPILAN UNTUK JEPANG',
   'jobs' => 'PELUANG KARIER',
   _ => 'BELAJAR BAHASA JEPANG',
@@ -319,7 +354,15 @@ class _BannerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (color, asset) = switch (banner.action) {
-      'premium' => (const Color(0xFF292A87), 'assets/images/exams/n5.png'),
+      'premium' => (const Color(0xFF20215F), 'assets/images/exams/n5.png'),
+      'manga' => (
+        const Color(0xFF30265D),
+        'assets/images/explore/manga-reading.png',
+      ),
+      'anki' => (
+        const Color(0xFF145B60),
+        'assets/images/explore/anki-flashcards.png',
+      ),
       'ssw' => (const Color(0xFF124E56), 'assets/images/ssw/ssw-careers.png'),
       'jobs' => (
         const Color(0xFF443060),
@@ -376,6 +419,44 @@ class _BannerCard extends StatelessWidget {
                   ),
                 ),
               ),
+              if (banner.action == 'premium') ...[
+                Positioned(
+                  right: -90,
+                  top: -110,
+                  child: IgnorePointer(
+                    child: Container(
+                      width: 330,
+                      height: 330,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: RadialGradient(
+                          colors: [
+                            const Color(0xFF7D79DC).withValues(alpha: .35),
+                            const Color(0xFF7D79DC).withValues(alpha: 0),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: -65,
+                  bottom: -140,
+                  child: IgnorePointer(
+                    child: Container(
+                      width: 280,
+                      height: 280,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: .09),
+                          width: 22,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
               Padding(
                 padding: const EdgeInsets.all(24),
                 child: Align(
@@ -386,18 +467,42 @@ class _BannerCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          _eyebrow(banner.action),
-                          style: _eyebrowStyle,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        const SizedBox(height: 12),
-                        Text(
-                          banner.title,
-                          style: _titleStyle,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _eyebrow(banner.action),
+                                    style:
+                                        (banner.action == 'premium' ||
+                                            banner.action == 'manga')
+                                        ? _eyebrowStyle.copyWith(
+                                            color: const Color(0xFFFFD784),
+                                          )
+                                        : _eyebrowStyle,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  const SizedBox(height: 12),
+                                  Text(
+                                    banner.title,
+                                    style: _titleStyle,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            if (banner.action == 'premium') ...[
+                              const SizedBox(width: 14),
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 10),
+                                child: BrandEmblem(premium: true),
+                              ),
+                            ],
+                          ],
                         ),
                         const SizedBox(height: 10),
                         Text(
@@ -409,7 +514,11 @@ class _BannerCard extends StatelessWidget {
                         const SizedBox(height: 18),
                         FilledButton.icon(
                           style: FilledButton.styleFrom(
-                            backgroundColor: Colors.white,
+                            backgroundColor:
+                                (banner.action == 'premium' ||
+                                    banner.action == 'manga')
+                                ? const Color(0xFFFFD784)
+                                : Colors.white,
                             foregroundColor: color,
                             minimumSize: const Size(0, 48),
                             textStyle: Theme.of(

@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/screens/dashboard_screen.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
+import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 const banners = [
   HomeBanner(
@@ -66,39 +69,36 @@ Widget carousel({
 );
 
 void main() {
-  testWidgets('auto advances after five seconds; swipe pauses until play', (
-    tester,
-  ) async {
-    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
-    await tester.pumpWidget(carousel());
-    await tester.pumpAndSettle();
-    final view = tester.widget<PageView>(
-      find.byKey(const Key('home-banner-pages')),
-    );
-    expect(view.controller!.page, 0);
-    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
-    await tester.pump(const Duration(seconds: 6));
-    expect(view.controller!.page, 0);
-    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
-    await tester.pump(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    expect(view.controller!.page, 1);
-    await tester.drag(
-      find.byKey(const Key('home-banner-pages')),
-      const Offset(-300, 0),
-    );
-    await tester.pumpAndSettle();
-    expect(view.controller!.page, 2);
-    expect(find.byTooltip('Putar banner'), findsOneWidget);
-    await tester.pump(const Duration(seconds: 6));
-    await tester.pumpAndSettle();
-    expect(view.controller!.page, 2);
-    await tester.tap(find.byKey(const Key('home-banner-toggle')));
-    await tester.pump(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    expect(view.controller!.page, 0);
-    await tester.pumpWidget(const SizedBox.shrink());
-  });
+  testWidgets(
+    'auto advances and resumes after swiping without play or pause controls',
+    (tester) async {
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pumpWidget(carousel());
+      await tester.pumpAndSettle();
+      final view = tester.widget<PageView>(
+        find.byKey(const Key('home-banner-pages')),
+      );
+      expect(view.controller!.page, 0);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+      await tester.pump(const Duration(seconds: 6));
+      expect(view.controller!.page, 0);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pump(const Duration(seconds: 5));
+      await tester.pumpAndSettle();
+      expect(view.controller!.page, 1);
+      await tester.drag(
+        find.byKey(const Key('home-banner-pages')),
+        const Offset(-300, 0),
+      );
+      await tester.pumpAndSettle();
+      expect(view.controller!.page, 2);
+      expect(find.byKey(const Key('home-banner-toggle')), findsNothing);
+      await tester.pump(const Duration(seconds: 5));
+      await tester.pumpAndSettle();
+      expect(view.controller!.page, 0);
+      await tester.pumpWidget(const SizedBox.shrink());
+    },
+  );
 
   testWidgets('inactive home and reduced motion never auto advance', (
     tester,
@@ -237,13 +237,20 @@ void main() {
       ],
       achievements: [],
     );
+    SharedPreferences.setMockInitialValues({});
+    final prefs = await SharedPreferences.getInstance();
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          sharedPreferencesProvider.overrideWithValue(prefs),
           authControllerProvider.overrideWith(
             (ref) => AuthController.test(const AuthenticationState.guest()),
           ),
           homeDashboardProvider.overrideWith((ref) async => data),
+          newsPreviewProvider.overrideWith(
+            (ref) async =>
+                const NewsPage(items: [], total: 0, page: 1, sources: []),
+          ),
         ],
         child: MaterialApp.router(routerConfig: router),
       ),

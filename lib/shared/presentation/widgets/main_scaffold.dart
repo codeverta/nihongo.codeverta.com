@@ -19,6 +19,8 @@ class MainScaffold extends ConsumerStatefulWidget {
 class _MainScaffoldState extends ConsumerState<MainScaffold> {
   int _selectedIndex = 0;
   bool _dictionaryOpened = false;
+  String _examCategory = 'JLPT';
+  int _examNavigation = 0;
 
   Future<bool> _ensureAuthenticated() async {
     if (ref.read(authControllerProvider).isAuthenticated) return true;
@@ -44,11 +46,27 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
       DashboardScreen(
         active: _selectedIndex == 0,
         openLearn: () => _selectDestination(1),
-        openExam: () => _selectDestination(2),
+        openExam: () {
+          setState(() {
+            _examCategory = 'JLPT';
+            _examNavigation++;
+          });
+          _selectDestination(2);
+        },
+        openExamCategory: (category) {
+          setState(() {
+            _examCategory = category;
+            _examNavigation++;
+          });
+          _selectDestination(2);
+        },
         openProfile: () => _selectDestination(4),
       ),
       const LearnHubScreen(),
-      const ExamHubScreen(),
+      ExamHubScreen(
+        key: ValueKey(_examNavigation),
+        initialCategory: _examCategory,
+      ),
       if (_dictionaryOpened)
         const DictionaryScreen(embedded: true)
       else
@@ -88,11 +106,11 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
           labelTextStyle: WidgetStateProperty.resolveWith((states) {
             final isSelected = states.contains(WidgetState.selected);
             return Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: isSelected
-                      ? colorScheme.primary
-                      : colorScheme.onSurfaceVariant,
-                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                );
+              color: isSelected
+                  ? colorScheme.primary
+                  : colorScheme.onSurfaceVariant,
+              fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+            );
           }),
         ),
         child: NavigationBar(

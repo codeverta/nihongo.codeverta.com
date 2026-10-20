@@ -6,6 +6,7 @@ import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -92,6 +93,10 @@ _createContainer({AuthException? failure}) async {
         sharedPreferencesProvider.overrideWithValue(preferences),
         authControllerProvider.overrideWith((ref) => authController),
         homeDashboardProvider.overrideWith((ref) async => _dashboard),
+        newsPreviewProvider.overrideWith(
+          (ref) async =>
+              const NewsPage(items: [], total: 0, page: 1, sources: []),
+        ),
       ],
     ),
     repository: repository,

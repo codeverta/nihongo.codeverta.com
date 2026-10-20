@@ -5,6 +5,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/ssw/data/kaigo_repository.dart';
 import 'package:nihongo_master/features/ssw/domain/kaigo_curriculum.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
+import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String kaigoLessonPath(String id) =>
@@ -33,23 +34,24 @@ class KaigoCurriculumPanel extends ConsumerWidget {
                 ? kaigoProgressProvider
                 : sswProgressProvider(sectorId),
           );
-          final count =
-              course.lessons.where((l) => completed.contains(l.id)).length;
+          final count = course.lessons
+              .where((l) => completed.contains(l.id))
+              .length;
           final next = course.lessons.firstWhere(
             (lesson) => !completed.contains(lesson.id),
             orElse: () => course.lessons.first,
           );
-          final signedIn =
-              ref.watch(authControllerProvider.select((s) => s.user != null));
+          final signedIn = ref.watch(
+            authControllerProvider.select((s) => s.user != null),
+          );
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Kurikulum $label',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontWeight: FontWeight.w800),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 8),
               Text(
@@ -61,8 +63,10 @@ class KaigoCurriculumPanel extends ConsumerWidget {
                   sectorId == 'agriculture'
                       ? 'Dua jalur: Tanaman (20 lesson) dan Peternakan (20 lesson). Pilih modul sesuai pekerjaan yang ingin kamu persiapkan. Simulasi tiap jalur tersedia terpisah di tab Tes.'
                       : 'Dua jalur: Perikanan Tangkap (15 lesson) dan Budi Daya (15 lesson). Pilih modul sesuai jalurmu; paket simulasi Tangkap dan Budi Daya berbeda.',
-                  style:
-                      const TextStyle(height: 1.6, fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                    height: 1.6,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
               const SizedBox(height: 12),
@@ -110,8 +114,8 @@ class KaigoCurriculumPanel extends ConsumerWidget {
                           count == 0
                               ? 'Mulai belajar'
                               : count == course.lessons.length
-                                  ? 'Pelajari kembali'
-                                  : 'Lanjutkan belajar',
+                              ? 'Pelajari kembali'
+                              : 'Lanjutkan belajar',
                         ),
                       ),
                     ],
@@ -184,32 +188,34 @@ class KaigoLessonScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-        appBar: AppBar(
-          title: Text(
-            sectorId == 'nursing-care'
-                ? 'Lesson Kaigo'
-                : 'Lesson ${sswSectorById(sectorId)?.name ?? 'SSW'}',
+    appBar: AppBar(
+      title: Text(
+        sectorId == 'nursing-care'
+            ? 'Lesson Kaigo'
+            : 'Lesson ${sswSectorById(sectorId)?.name ?? 'SSW'}',
+      ),
+    ),
+    body: ref
+        .watch(sswCurriculumProvider(sectorId))
+        .when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (_, __) => _LoadError(
+            onRetry: () => ref.invalidate(sswCurriculumProvider(sectorId)),
           ),
+          data: (course) {
+            final lesson = course.lessonById(lessonId);
+            if (lesson == null) {
+              return const Center(child: Text('Lesson tidak ditemukan.'));
+            }
+            return _LessonReader(
+              key: ValueKey(lesson.id),
+              course: course,
+              sectorId: sectorId,
+              lesson: lesson,
+            );
+          },
         ),
-        body: ref.watch(sswCurriculumProvider(sectorId)).when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (_, __) => _LoadError(
-                onRetry: () => ref.invalidate(sswCurriculumProvider(sectorId)),
-              ),
-              data: (course) {
-                final lesson = course.lessonById(lessonId);
-                if (lesson == null) {
-                  return const Center(child: Text('Lesson tidak ditemukan.'));
-                }
-                return _LessonReader(
-                  key: ValueKey(lesson.id),
-                  course: course,
-                  sectorId: sectorId,
-                  lesson: lesson,
-                );
-              },
-            ),
-      );
+  );
 }
 
 class _LessonReader extends ConsumerStatefulWidget {
@@ -228,6 +234,7 @@ class _LessonReader extends ConsumerStatefulWidget {
 
 class _LessonReaderState extends ConsumerState<_LessonReader> {
   final selections = <int, int>{};
+  bool furigana = true;
   bool submitted = false;
   bool saving = false;
 
@@ -246,8 +253,9 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
       if (ref.read(authControllerProvider).user?.id != account) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content:
-                Text('Akun berubah. Buka kembali materi untuk melanjutkan.'),
+            content: Text(
+              'Akun berubah. Buka kembali materi untuk melanjutkan.',
+            ),
           ),
         );
         return;
@@ -279,7 +287,8 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
     final lesson = widget.lesson;
     final index = widget.course.lessons.indexWhere((l) => l.id == lesson.id);
     final allAnswered = selections.length == lesson.checks.length;
-    final correct = submitted &&
+    final correct =
+        submitted &&
         List.generate(
           lesson.checks.length,
           (i) => selections[i] == lesson.checks[i].answer,
@@ -304,10 +313,9 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
         Text(
           lesson.title,
           key: const Key('kaigo-lesson-title'),
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall
-              ?.copyWith(fontWeight: FontWeight.w800),
+          style: Theme.of(
+            context,
+          ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800),
         ),
         if (completed)
           const Padding(
@@ -317,6 +325,22 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
           ),
+        FilterChip(
+          key: const Key('ssw-furigana-toggle'),
+          label: const Text('Furigana'),
+          selected: furigana,
+          showCheckmark: false,
+          selectedColor: colors.secondary,
+          labelStyle: TextStyle(
+            color: furigana ? colors.onSecondary : colors.onSurface,
+          ),
+          avatar: Icon(
+            Icons.translate_rounded,
+            size: 18,
+            color: furigana ? colors.onSecondary : colors.primary,
+          ),
+          onSelected: (value) => setState(() => furigana = value),
+        ),
         const SizedBox(height: 20),
         _ContentCard(
           title: 'Tujuan belajar',
@@ -328,10 +352,9 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
           const SizedBox(height: 22),
           Text(
             section.title,
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge
-                ?.copyWith(fontWeight: FontWeight.w700),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 10),
           SelectableText(
@@ -378,23 +401,24 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
         _ContentCard(
           title: 'Kosakata bidang',
           children: [
-            for (final word in lesson.vocabulary) _JapaneseLine(word),
+            for (final word in lesson.vocabulary)
+              _JapaneseLine(word, showFurigana: furigana),
           ],
         ),
         const SizedBox(height: 16),
         _ContentCard(
           title: 'Ungkapan di tempat kerja',
           children: [
-            for (final phrase in lesson.dialogue) _JapaneseLine(phrase),
+            for (final phrase in lesson.dialogue)
+              _JapaneseLine(phrase, showFurigana: furigana),
           ],
         ),
         const SizedBox(height: 26),
         Text(
           'Cek pemahaman',
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge
-              ?.copyWith(fontWeight: FontWeight.w800),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 8),
         const Text(
@@ -417,8 +441,9 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
                     style: OutlinedButton.styleFrom(
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.all(12),
-                      backgroundColor:
-                          selections[i] == j ? colors.primaryContainer : null,
+                      backgroundColor: selections[i] == j
+                          ? colors.primaryContainer
+                          : null,
                       foregroundColor: selections[i] == j
                           ? colors.onPrimaryContainer
                           : colors.onSurface,
@@ -468,8 +493,9 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
         if (!submitted)
           FilledButton(
             key: const Key('kaigo-check'),
-            onPressed:
-                allAnswered ? () => setState(() => submitted = true) : null,
+            onPressed: allAnswered
+                ? () => setState(() => submitted = true)
+                : null,
             child: const Text('Periksa jawaban'),
           )
         else if (!correct)
@@ -525,28 +551,28 @@ class _ContentCard extends StatelessWidget {
   final Color? titleColor;
   @override
   Widget build(BuildContext context) => Card(
-        margin: EdgeInsets.zero,
-        color: color,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 17,
-                  height: 1.5,
-                  color: titleColor,
-                ),
-              ),
-              const SizedBox(height: 10),
-              ...children,
-            ],
+    margin: EdgeInsets.zero,
+    color: color,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.w800,
+              fontSize: 17,
+              height: 1.5,
+              color: titleColor,
+            ),
           ),
-        ),
-      );
+          const SizedBox(height: 10),
+          ...children,
+        ],
+      ),
+    ),
+  );
 }
 
 class _Bullet extends StatelessWidget {
@@ -554,54 +580,62 @@ class _Bullet extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: Text('• $text', style: const TextStyle(height: 1.6)),
-      );
+    padding: const EdgeInsets.only(bottom: 8),
+    child: Text('• $text', style: const TextStyle(height: 1.6)),
+  );
 }
 
 class _JapaneseLine extends StatelessWidget {
-  const _JapaneseLine(this.word);
+  const _JapaneseLine(this.word, {required this.showFurigana});
   final KaigoWord word;
+  final bool showFurigana;
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SelectableText(
-              word.japanese,
-              scrollPhysics: const NeverScrollableScrollPhysics(),
-              style: const TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w700,
-                height: 1.7,
-              ),
+    padding: const EdgeInsets.only(bottom: 16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (showFurigana)
+          JapaneseRubyText(
+            text: word.japanese,
+            reading: word.reading,
+            style: const TextStyle(
+              fontSize: 19,
+              fontWeight: FontWeight.w700,
+              height: 1.7,
             ),
-            Text(
-              word.reading,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                height: 1.6,
-              ),
+            rubyStyle: TextStyle(
+              fontSize: 10,
+              color: Theme.of(context).colorScheme.primary,
             ),
-            const SizedBox(height: 3),
-            Text(word.meaning, style: const TextStyle(height: 1.6)),
-          ],
-        ),
-      );
+          )
+        else
+          Text(
+            word.japanese,
+            style: const TextStyle(
+              fontSize: 19,
+              fontWeight: FontWeight.w700,
+              height: 1.7,
+            ),
+          ),
+        const SizedBox(height: 3),
+        Text(word.meaning, style: const TextStyle(height: 1.6)),
+      ],
+    ),
+  );
 }
 
 class _StudyNote extends StatelessWidget {
   const _StudyNote();
   @override
   Widget build(BuildContext context) => Text(
-        'Materi persiapan SSW ditulis untuk Nihongo Master. Keterampilan lapangan memerlukan pelatihan dan supervisi. Ikuti SOP, spesifikasi produk, serta arahan petugas berwenang.',
-        style: TextStyle(
-          height: 1.6,
-          fontSize: 13,
-          color: Theme.of(context).colorScheme.onSurfaceVariant,
-        ),
-      );
+    'Materi persiapan SSW ditulis untuk Nihongo Master. Keterampilan lapangan memerlukan pelatihan dan supervisi. Ikuti SOP, spesifikasi produk, serta arahan petugas berwenang.',
+    style: TextStyle(
+      height: 1.6,
+      fontSize: 13,
+      color: Theme.of(context).colorScheme.onSurfaceVariant,
+    ),
+  );
 }
 
 class _Sources extends StatelessWidget {
@@ -609,40 +643,40 @@ class _Sources extends StatelessWidget {
   final KaigoCurriculum course;
   @override
   Widget build(BuildContext context) => ExpansionTile(
-        title: const Text('Referensi dan cakupan materi'),
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(12),
-            child: Text(
-              'Cakupan disusun berdasarkan referensi di bawah. Materi dan soal aplikasi ditulis mandiri, bukan salinan buku atau bank soal resmi. Pembaruan SSW: 17 Oktober 2026.',
-              style: TextStyle(height: 1.6),
-            ),
-          ),
-          for (final source in course.sources)
-            ListTile(
-              title: Text(source.title),
-              trailing: const Icon(Icons.open_in_new_rounded, size: 18),
-              onTap: () async {
-                var opened = false;
-                try {
-                  opened = await launchUrl(
-                    Uri.parse(source.url),
-                    mode: LaunchMode.externalApplication,
-                  );
-                } on Object {
-                  opened = false;
-                }
-                if (!opened && context.mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Tautan belum dapat dibuka. Coba kembali.'),
-                    ),
-                  );
-                }
-              },
-            ),
-        ],
-      );
+    title: const Text('Referensi dan cakupan materi'),
+    children: [
+      const Padding(
+        padding: EdgeInsets.all(12),
+        child: Text(
+          'Cakupan disusun berdasarkan referensi di bawah. Materi dan soal aplikasi ditulis mandiri, bukan salinan buku atau bank soal resmi. Pembaruan SSW: 17 Oktober 2026.',
+          style: TextStyle(height: 1.6),
+        ),
+      ),
+      for (final source in course.sources)
+        ListTile(
+          title: Text(source.title),
+          trailing: const Icon(Icons.open_in_new_rounded, size: 18),
+          onTap: () async {
+            var opened = false;
+            try {
+              opened = await launchUrl(
+                Uri.parse(source.url),
+                mode: LaunchMode.externalApplication,
+              );
+            } on Object {
+              opened = false;
+            }
+            if (!opened && context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Tautan belum dapat dibuka. Coba kembali.'),
+                ),
+              );
+            }
+          },
+        ),
+    ],
+  );
 }
 
 class _LoadError extends StatelessWidget {
@@ -650,14 +684,14 @@ class _LoadError extends StatelessWidget {
   final VoidCallback onRetry;
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text('Materi SSW belum dapat dimuat.'),
-            const SizedBox(height: 12),
-            OutlinedButton(onPressed: onRetry, child: const Text('Muat ulang')),
-          ],
-        ),
-      );
+    padding: const EdgeInsets.all(24),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Text('Materi SSW belum dapat dimuat.'),
+        const SizedBox(height: 12),
+        OutlinedButton(onPressed: onRetry, child: const Text('Muat ulang')),
+      ],
+    ),
+  );
 }

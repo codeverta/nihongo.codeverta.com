@@ -180,7 +180,7 @@ func normalJob(source jobfetch.Source, j jobfetch.Job, at time.Time) (listingRow
 	if j.ExpiresAt != nil && !j.ExpiresAt.After(at) {
 		status = "expired"
 	}
-	return listingRow{ID: stableID("listing:" + key), CanonicalKey: key, Title: short(j.Title, 512), Company: short(j.Company, 255), Category: CanonicalCategory(j.Category), Sector: sector, Prefecture: prefecture, Location: short(j.Location, 512), Country: "JP", EmploymentType: employment, Remote: remote, Visa: visa, JapaneseLevel: japanese, SalaryMin: j.SalaryMin, SalaryMax: j.SalaryMax, SalaryCurrency: short(strings.ToUpper(j.SalaryCurrency), 8), SalaryPeriod: period, SalaryText: short(j.SalaryText, 1024), Description: short(j.Description, 100000), Qualifications: short(j.Qualifications, 60000), SourceID: source.ID, SourceName: source.Name, SourceURL: j.SourceURL, ApplyURL: j.ApplyURL, PostedAt: j.PublishedAt, ExpiresAt: j.ExpiresAt, FirstSeenAt: at, LastSeenAt: at, SortAt: sortAt, Status: status}, nil
+	return listingRow{ID: stableID("listing:" + key), CanonicalKey: key, Title: short(j.Title, 512), Company: short(j.Company, 255), Category: CanonicalCategory(j.Category), Sector: sector, Prefecture: prefecture, Location: short(j.Location, 512), Country: "JP", EmploymentType: employment, Remote: remote, Visa: visa, JapaneseLevel: japanese, SalaryMin: j.SalaryMin, SalaryMax: j.SalaryMax, SalaryCurrency: short(strings.ToUpper(j.SalaryCurrency), 8), SalaryPeriod: period, SalaryText: short(j.SalaryText, 1024), Description: short(j.Description, 100000), Qualifications: short(j.Qualifications, 60000), Benefits: short(j.Benefits, 30000), SourceID: source.ID, SourceName: source.Name, SourceURL: j.SourceURL, ApplyURL: j.ApplyURL, PostedAt: j.PublishedAt, ExpiresAt: j.ExpiresAt, FirstSeenAt: at, LastSeenAt: at, SortAt: sortAt, Status: status}, nil
 }
 
 type Filter struct {
@@ -274,6 +274,7 @@ func (r *Repository) List(ctx context.Context, f Filter) (Page, error) {
 		j := view(row)
 		j.Description = ""
 		j.Qualifications = ""
+		j.Benefits = ""
 		out.Items = append(out.Items, j)
 	}
 	if out.HasMore && len(rows) > 0 {

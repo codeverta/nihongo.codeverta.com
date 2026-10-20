@@ -1,0 +1,682 @@
+[
+  {
+    "id": "n2-vocabulary-01",
+    "order": 1,
+    "title": "Bisnis dan pekerjaan",
+    "description": "Kosakata N2 bertema bisnis dan pekerjaan dengan contoh kalimat dan penjelasan bahasa Indonesia.",
+    "words": [
+      {
+        "id": "n2-01-01",
+        "term": "会議",
+        "reading": "かいぎ",
+        "meaning": "rapat",
+        "example": "会議の資料を確認します。",
+        "exampleMeaning": "Saya memeriksa bahan rapat.",
+        "note": "Rapat. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "会議の資料を確認します。",
+            "reading": "かいぎのしりょうをかくにんします。",
+            "meaning": "Saya memeriksa bahan rapat."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-02",
+        "term": "提案",
+        "reading": "ていあん",
+        "meaning": "usulan",
+        "example": "新しい提案を発表します。",
+        "exampleMeaning": "Saya mempresentasikan usulan baru.",
+        "note": "Usulan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "新しい提案を発表します。",
+            "reading": "あたらしいていあんをはっぴょうします。",
+            "meaning": "Saya mempresentasikan usulan baru."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-03",
+        "term": "方針",
+        "reading": "ほうしん",
+        "meaning": "kebijakan; arah",
+        "example": "会社の方針を説明します。",
+        "exampleMeaning": "Saya menjelaskan kebijakan perusahaan.",
+        "note": "Kebijakan; arah. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "会社の方針を説明します。",
+            "reading": "かいしゃのほうしんをせつめいします。",
+            "meaning": "Saya menjelaskan kebijakan perusahaan."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-04",
+        "term": "実施",
+        "reading": "じっし",
+        "meaning": "pelaksanaan",
+        "example": "来月、調査を実施します。",
+        "exampleMeaning": "Kami melaksanakan survei bulan depan.",
+        "note": "Pelaksanaan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "来月、調査を実施します。",
+            "reading": "らいげつ、ちょうさをじっしします。",
+            "meaning": "Kami melaksanakan survei bulan depan."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-05",
+        "term": "担当",
+        "reading": "たんとう",
+        "meaning": "penanggung jawab",
+        "example": "田中さんがこの仕事を担当します。",
+        "exampleMeaning": "Tanaka bertanggung jawab atas pekerjaan ini.",
+        "note": "Penanggung jawab. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "田中さんがこの仕事を担当します。",
+            "reading": "たなかさんがこのしごとをたんとうします。",
+            "meaning": "Tanaka bertanggung jawab atas pekerjaan ini."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-06",
+        "term": "責任",
+        "reading": "せきにん",
+        "meaning": "tanggung jawab",
+        "example": "自分の行動に責任を持ちます。",
+        "exampleMeaning": "Saya bertanggung jawab atas tindakan sendiri.",
+        "note": "Tanggung jawab. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "自分の行動に責任を持ちます。",
+            "reading": "じぶんのこうどうにせきにんをもちます。",
+            "meaning": "Saya bertanggung jawab atas tindakan sendiri."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-07",
+        "term": "評価",
+        "reading": "ひょうか",
+        "meaning": "penilaian",
+        "example": "努力が高く評価されました。",
+        "exampleMeaning": "Usaha itu dinilai tinggi.",
+        "note": "Penilaian. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "努力が高く評価されました。",
+            "reading": "どりょくがたかくひょうかされました。",
+            "meaning": "Usaha itu dinilai tinggi."
+          }
+        ]
+      },
+      {
+        "id": "n2-01-08",
+        "term": "成果",
+        "reading": "せいか",
+        "meaning": "hasil; pencapaian",
+        "example": "チームは大きな成果を上げました。",
+        "exampleMeaning": "Tim mencapai hasil yang besar.",
+        "note": "Hasil; pencapaian. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "チームは大きな成果を上げました。",
+            "reading": "ちーむはおおきなせいかをあげました。",
+            "meaning": "Tim mencapai hasil yang besar."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n2-vocabulary-02",
+    "order": 2,
+    "title": "Ekonomi dan organisasi",
+    "description": "Kosakata N2 bertema ekonomi dan organisasi dengan contoh kalimat dan penjelasan bahasa Indonesia.",
+    "words": [
+      {
+        "id": "n2-02-01",
+        "term": "契約",
+        "reading": "けいやく",
+        "meaning": "kontrak",
+        "example": "来週、新しい契約を結びます。",
+        "exampleMeaning": "Kami menandatangani kontrak baru minggu depan.",
+        "note": "Kontrak. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "来週、新しい契約を結びます。",
+            "reading": "らいしゅう、あたらしいけいやくをむすびます。",
+            "meaning": "Kami menandatangani kontrak baru minggu depan."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-02",
+        "term": "手続き",
+        "reading": "てつづき",
+        "meaning": "prosedur",
+        "example": "窓口で手続きをしてください。",
+        "exampleMeaning": "Silakan urus prosedurnya di loket.",
+        "note": "Prosedur. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "窓口で手続きをしてください。",
+            "reading": "まどぐちでてつづきをしてください。",
+            "meaning": "Silakan urus prosedurnya di loket."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-03",
+        "term": "申請",
+        "reading": "しんせい",
+        "meaning": "pengajuan",
+        "example": "休暇を申請しました。",
+        "exampleMeaning": "Saya mengajukan cuti.",
+        "note": "Pengajuan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "休暇を申請しました。",
+            "reading": "きゅうかをしんせいしました。",
+            "meaning": "Saya mengajukan cuti."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-04",
+        "term": "承認",
+        "reading": "しょうにん",
+        "meaning": "persetujuan",
+        "example": "部長の承認を得ました。",
+        "exampleMeaning": "Saya mendapat persetujuan kepala bagian.",
+        "note": "Persetujuan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "部長の承認を得ました。",
+            "reading": "ぶちょうのしょうにんをえました。",
+            "meaning": "Saya mendapat persetujuan kepala bagian."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-05",
+        "term": "交渉",
+        "reading": "こうしょう",
+        "meaning": "negosiasi",
+        "example": "価格について交渉しています。",
+        "exampleMeaning": "Kami sedang bernegosiasi tentang harga.",
+        "note": "Negosiasi. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "価格について交渉しています。",
+            "reading": "かかくについてこうしょうしています。",
+            "meaning": "Kami sedang bernegosiasi tentang harga."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-06",
+        "term": "取引",
+        "reading": "とりひき",
+        "meaning": "transaksi; hubungan dagang",
+        "example": "海外の会社と取引があります。",
+        "exampleMeaning": "Kami bertransaksi dengan perusahaan luar negeri.",
+        "note": "Transaksi; hubungan dagang. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "海外の会社と取引があります。",
+            "reading": "かいがいのかいしゃととりひきがあります。",
+            "meaning": "Kami bertransaksi dengan perusahaan luar negeri."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-07",
+        "term": "利益",
+        "reading": "りえき",
+        "meaning": "keuntungan",
+        "example": "今年は利益が増えました。",
+        "exampleMeaning": "Keuntungan meningkat tahun ini.",
+        "note": "Keuntungan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "今年は利益が増えました。",
+            "reading": "ことしはりえきがふえました。",
+            "meaning": "Keuntungan meningkat tahun ini."
+          }
+        ]
+      },
+      {
+        "id": "n2-02-08",
+        "term": "損失",
+        "reading": "そんしつ",
+        "meaning": "kerugian",
+        "example": "火事で大きな損失が出ました。",
+        "exampleMeaning": "Terjadi kerugian besar akibat kebakaran.",
+        "note": "Kerugian. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "火事で大きな損失が出ました。",
+            "reading": "かじでおおきなそんしつがでました。",
+            "meaning": "Terjadi kerugian besar akibat kebakaran."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n2-vocabulary-03",
+    "order": 3,
+    "title": "Lingkungan dan masyarakat",
+    "description": "Kosakata N2 bertema lingkungan dan masyarakat dengan contoh kalimat dan penjelasan bahasa Indonesia.",
+    "words": [
+      {
+        "id": "n2-03-01",
+        "term": "景気",
+        "reading": "けいき",
+        "meaning": "keadaan ekonomi",
+        "example": "景気が少し回復しています。",
+        "exampleMeaning": "Perekonomian sedikit pulih.",
+        "note": "Keadaan ekonomi. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "景気が少し回復しています。",
+            "reading": "けいきがすこしかいふくしています。",
+            "meaning": "Perekonomian sedikit pulih."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-02",
+        "term": "経営",
+        "reading": "けいえい",
+        "meaning": "manajemen; pengelolaan usaha",
+        "example": "父は小さな店を経営しています。",
+        "exampleMeaning": "Ayah mengelola toko kecil.",
+        "note": "Manajemen; pengelolaan usaha. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "父は小さな店を経営しています。",
+            "reading": "ちちはちいさなみせをけいえいしています。",
+            "meaning": "Ayah mengelola toko kecil."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-03",
+        "term": "雇用",
+        "reading": "こよう",
+        "meaning": "ketenagakerjaan; perekrutan",
+        "example": "地域の雇用を増やす計画です。",
+        "exampleMeaning": "Ini rencana untuk menambah lapangan kerja di daerah.",
+        "note": "Ketenagakerjaan; perekrutan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "地域の雇用を増やす計画です。",
+            "reading": "ちいきのこようをふやすけいかくです。",
+            "meaning": "Ini rencana untuk menambah lapangan kerja di daerah."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-04",
+        "term": "賃金",
+        "reading": "ちんぎん",
+        "meaning": "upah",
+        "example": "来年、賃金が上がるそうです。",
+        "exampleMeaning": "Katanya upah akan naik tahun depan.",
+        "note": "Upah. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "来年、賃金が上がるそうです。",
+            "reading": "らいねん、ちんぎんがあがるそうです。",
+            "meaning": "Katanya upah akan naik tahun depan."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-05",
+        "term": "環境",
+        "reading": "かんきょう",
+        "meaning": "lingkungan",
+        "example": "環境を守る活動に参加します。",
+        "exampleMeaning": "Saya ikut kegiatan untuk melindungi lingkungan.",
+        "note": "Lingkungan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "環境を守る活動に参加します。",
+            "reading": "かんきょうをまもるかつどうにさんかします。",
+            "meaning": "Saya ikut kegiatan untuk melindungi lingkungan."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-06",
+        "term": "資源",
+        "reading": "しげん",
+        "meaning": "sumber daya",
+        "example": "水は大切な資源です。",
+        "exampleMeaning": "Air adalah sumber daya yang penting.",
+        "note": "Sumber daya. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "水は大切な資源です。",
+            "reading": "みずはたいせつなしげんです。",
+            "meaning": "Air adalah sumber daya yang penting."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-07",
+        "term": "汚染",
+        "reading": "おせん",
+        "meaning": "pencemaran",
+        "example": "川の汚染が問題になっています。",
+        "exampleMeaning": "Pencemaran sungai menjadi masalah.",
+        "note": "Pencemaran. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "川の汚染が問題になっています。",
+            "reading": "かわのおせんがもんだいになっています。",
+            "meaning": "Pencemaran sungai menjadi masalah."
+          }
+        ]
+      },
+      {
+        "id": "n2-03-08",
+        "term": "対策",
+        "reading": "たいさく",
+        "meaning": "langkah penanggulangan",
+        "example": "地震への対策を考えます。",
+        "exampleMeaning": "Kami memikirkan langkah menghadapi gempa.",
+        "note": "Langkah penanggulangan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "地震への対策を考えます。",
+            "reading": "じしんへのたいさくをかんがえます。",
+            "meaning": "Kami memikirkan langkah menghadapi gempa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n2-vocabulary-04",
+    "order": 4,
+    "title": "Masalah dan penyelesaian",
+    "description": "Kosakata N2 bertema masalah dan penyelesaian dengan contoh kalimat dan penjelasan bahasa Indonesia.",
+    "words": [
+      {
+        "id": "n2-04-01",
+        "term": "影響",
+        "reading": "えいきょう",
+        "meaning": "pengaruh",
+        "example": "雨の影響で試合が中止です。",
+        "exampleMeaning": "Pertandingan dibatalkan karena pengaruh hujan.",
+        "note": "Pengaruh. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "雨の影響で試合が中止です。",
+            "reading": "あめのえいきょうでしあいがちゅうしです。",
+            "meaning": "Pertandingan dibatalkan karena pengaruh hujan."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-02",
+        "term": "状況",
+        "reading": "じょうきょう",
+        "meaning": "situasi; keadaan",
+        "example": "現場の状況を報告してください。",
+        "exampleMeaning": "Tolong laporkan situasi di lokasi.",
+        "note": "Situasi; keadaan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "現場の状況を報告してください。",
+            "reading": "げんばのじょうきょうをほうこくしてください。",
+            "meaning": "Tolong laporkan situasi di lokasi."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-03",
+        "term": "原因",
+        "reading": "げんいん",
+        "meaning": "penyebab",
+        "example": "事故の原因を調べています。",
+        "exampleMeaning": "Kami sedang menyelidiki penyebab kecelakaan.",
+        "note": "Penyebab. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "事故の原因を調べています。",
+            "reading": "じこのげんいんをしらべています。",
+            "meaning": "Kami sedang menyelidiki penyebab kecelakaan."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-04",
+        "term": "結果",
+        "reading": "けっか",
+        "meaning": "hasil",
+        "example": "検査の結果は明日分かります。",
+        "exampleMeaning": "Hasil pemeriksaan akan diketahui besok.",
+        "note": "Hasil. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "検査の結果は明日分かります。",
+            "reading": "けんさのけっかはあしたわかります。",
+            "meaning": "Hasil pemeriksaan akan diketahui besok."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-05",
+        "term": "対立",
+        "reading": "たいりつ",
+        "meaning": "pertentangan",
+        "example": "二つの意見が対立しています。",
+        "exampleMeaning": "Dua pendapat itu saling bertentangan.",
+        "note": "Pertentangan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "二つの意見が対立しています。",
+            "reading": "ふたつのいけんがたいりつしています。",
+            "meaning": "Dua pendapat itu saling bertentangan."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-06",
+        "term": "解決",
+        "reading": "かいけつ",
+        "meaning": "penyelesaian",
+        "example": "話し合いで問題を解決しました。",
+        "exampleMeaning": "Kami menyelesaikan masalah melalui diskusi.",
+        "note": "Penyelesaian. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "話し合いで問題を解決しました。",
+            "reading": "はなしあいでもんだいをかいけつしました。",
+            "meaning": "Kami menyelesaikan masalah melalui diskusi."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-07",
+        "term": "発生",
+        "reading": "はっせい",
+        "meaning": "terjadi; timbul",
+        "example": "駅の近くで事故が発生しました。",
+        "exampleMeaning": "Kecelakaan terjadi dekat stasiun.",
+        "note": "Terjadi; timbul. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "駅の近くで事故が発生しました。",
+            "reading": "えきのちかくでじこがはっせいしました。",
+            "meaning": "Kecelakaan terjadi dekat stasiun."
+          }
+        ]
+      },
+      {
+        "id": "n2-04-08",
+        "term": "防止",
+        "reading": "ぼうし",
+        "meaning": "pencegahan",
+        "example": "事故防止のために確認します。",
+        "exampleMeaning": "Kami memeriksa demi mencegah kecelakaan.",
+        "note": "Pencegahan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "事故防止のために確認します。",
+            "reading": "じこぼうしのためにかくにんします。",
+            "meaning": "Kami memeriksa demi mencegah kecelakaan."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "n2-vocabulary-05",
+    "order": 5,
+    "title": "Tindakan dan perubahan",
+    "description": "Kosakata N2 bertema tindakan dan perubahan dengan contoh kalimat dan penjelasan bahasa Indonesia.",
+    "words": [
+      {
+        "id": "n2-05-01",
+        "term": "確認",
+        "reading": "かくにん",
+        "meaning": "pemeriksaan; konfirmasi",
+        "example": "出発時間をもう一度確認します。",
+        "exampleMeaning": "Saya memeriksa kembali waktu keberangkatan.",
+        "note": "Pemeriksaan; konfirmasi. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "出発時間をもう一度確認します。",
+            "reading": "しゅっぱつじかんをもういちどかくにんします。",
+            "meaning": "Saya memeriksa kembali waktu keberangkatan."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-02",
+        "term": "判断",
+        "reading": "はんだん",
+        "meaning": "penilaian; keputusan",
+        "example": "情報を集めてから判断します。",
+        "exampleMeaning": "Saya akan memutuskan setelah mengumpulkan informasi.",
+        "note": "Penilaian; keputusan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "情報を集めてから判断します。",
+            "reading": "じょうほうをあつめてからはんだんします。",
+            "meaning": "Saya akan memutuskan setelah mengumpulkan informasi."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-03",
+        "term": "対応",
+        "reading": "たいおう",
+        "meaning": "penanganan; respons",
+        "example": "お客様の質問に丁寧に対応します。",
+        "exampleMeaning": "Saya menanggapi pertanyaan pelanggan dengan sopan.",
+        "note": "Penanganan; respons. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "お客様の質問に丁寧に対応します。",
+            "reading": "おきゃくさまのしつもんにていねいにたいおうします。",
+            "meaning": "Saya menanggapi pertanyaan pelanggan dengan sopan."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-04",
+        "term": "調整",
+        "reading": "ちょうせい",
+        "meaning": "penyesuaian; koordinasi",
+        "example": "会議の日程を調整します。",
+        "exampleMeaning": "Saya menyesuaikan jadwal rapat.",
+        "note": "Penyesuaian; koordinasi. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "会議の日程を調整します。",
+            "reading": "かいぎのにっていをちょうせいします。",
+            "meaning": "Saya menyesuaikan jadwal rapat."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-05",
+        "term": "維持",
+        "reading": "いじ",
+        "meaning": "pemeliharaan; mempertahankan",
+        "example": "健康を維持するために運動します。",
+        "exampleMeaning": "Saya berolahraga untuk menjaga kesehatan.",
+        "note": "Pemeliharaan; mempertahankan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "健康を維持するために運動します。",
+            "reading": "けんこうをいじするためにうんどうします。",
+            "meaning": "Saya berolahraga untuk menjaga kesehatan."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-06",
+        "term": "改善",
+        "reading": "かいぜん",
+        "meaning": "perbaikan",
+        "example": "サービスの質を改善しました。",
+        "exampleMeaning": "Kami memperbaiki mutu layanan.",
+        "note": "Perbaikan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "サービスの質を改善しました。",
+            "reading": "さーびすのしつをかいぜんしました。",
+            "meaning": "Kami memperbaiki mutu layanan."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-07",
+        "term": "増加",
+        "reading": "ぞうか",
+        "meaning": "peningkatan",
+        "example": "観光客が急に増加しました。",
+        "exampleMeaning": "Jumlah wisatawan meningkat tiba-tiba.",
+        "note": "Peningkatan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "観光客が急に増加しました。",
+            "reading": "かんこうきゃくがきゅうにぞうかしました。",
+            "meaning": "Jumlah wisatawan meningkat tiba-tiba."
+          }
+        ]
+      },
+      {
+        "id": "n2-05-08",
+        "term": "減少",
+        "reading": "げんしょう",
+        "meaning": "penurunan",
+        "example": "今年は事故が減少しました。",
+        "exampleMeaning": "Kecelakaan berkurang tahun ini.",
+        "note": "Penurunan. Perhatikan pemakaian kata ini dalam konteks formal dan sehari-hari.",
+        "examples": [
+          {
+            "japanese": "今年は事故が減少しました。",
+            "reading": "ことしはじこがげんしょうしました。",
+            "meaning": "Kecelakaan berkurang tahun ini."
+          }
+        ]
+      }
+    ]
+  }
+]

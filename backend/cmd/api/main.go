@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"strings"
 	"syscall"
 	"time"
@@ -16,7 +17,9 @@ import (
 	"nihongo-master-backend/internal/config"
 	"nihongo-master-backend/internal/jobfetch"
 	"nihongo-master-backend/internal/jobs"
+	"nihongo-master-backend/internal/manga"
 	"nihongo-master-backend/internal/media"
+	"nihongo-master-backend/internal/news"
 	"nihongo-master-backend/internal/notifications"
 	"nihongo-master-backend/internal/store"
 )
@@ -127,6 +130,46 @@ func main() {
 	}
 	if err := apiServer.ConfigureBranding(brandingPath, os.Getenv("BRANDING_ADMIN_TOKEN")); err != nil {
 		log.Fatal(err)
+	}
+	newsRepository, err := news.New(jobDB)
+	if err != nil {
+		log.Fatalf("configure news: %v", err)
+	}
+	newsFetcher := news.NewFetcher(filepath.Join(filepath.Dir(brandingPath), "news-images"))
+	newsToken := os.Getenv("NEWS_ADMIN_TOKEN")
+	if newsToken == "" {
+		newsToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	if newsToken == "" {
+		newsToken = os.Getenv("DICTIONARY_ADMIN_TOKEN")
+	}
+	if err := apiServer.ConfigureNews(newsRepository, newsFetcher, newsToken, filepath.Join(filepath.Dir(brandingPath), "news-images"), jobsContext); err != nil {
+		log.Fatal(err)
+	}
+	if os.Getenv("NEWS_SYNC_ENABLED") != "false" {
+		go newsRepository.Run(jobsContext, newsFetcher)
+	}
+	mangaImages, err := manga.NewCOSStore(os.Getenv("COS_BUCKET_URL"), assetBaseURL, os.Getenv("COS_SECRET_ID"), os.Getenv("COS_SECRET_KEY"))
+	if err != nil {
+		log.Fatalf("configure manga COS: %v", err)
+	}
+	var mangaStorage manga.ImageStore
+	if mangaImages != nil {
+		mangaStorage = mangaImages
+	}
+	mangaRepository, err := manga.New(jobDB, mangaStorage)
+	if err != nil {
+		log.Fatalf("configure manga: %v", err)
+	}
+	mangaToken := os.Getenv("MANGA_ADMIN_TOKEN")
+	if mangaToken == "" {
+		mangaToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	apiServer.ConfigureManga(mangaRepository, mangaToken)
+	if os.Getenv("MANGA_SYNC_ENABLED") != "false" && mangaStorage != nil {
+		go mangaRepository.Run(jobsContext, manga.NewFetcher())
+	} else if mangaStorage == nil {
+		log.Print("manga import disabled: COS storage is not configured")
 	}
 	bannerPath := os.Getenv("HOME_BANNERS_CONFIG_PATH")
 	if bannerPath == "" {

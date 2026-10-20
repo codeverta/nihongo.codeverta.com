@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
+import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
 
 class VocabularyStudyView extends StatefulWidget {
   const VocabularyStudyView({
@@ -20,8 +21,8 @@ class VocabularyStudyView extends StatefulWidget {
 }
 
 class _StudyViewState extends State<VocabularyStudyView> {
-  bool kana = true;
   bool meaning = true;
+  bool furigana = true;
   @override
   Widget build(BuildContext context) {
     final s = widget.state;
@@ -96,26 +97,36 @@ class _StudyViewState extends State<VocabularyStudyView> {
                       padding: const EdgeInsets.all(22),
                       child: Column(
                         children: [
-                          Text(
-                            w.term,
-                            key: Key('word-${w.id}'),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: w.term.length > 5 ? 34 : 44,
-                              height: 1.3,
-                              fontWeight: FontWeight.w900,
-                              color: colors.secondary,
+                          if (furigana)
+                            JapaneseRubyText(
+                              text: w.term,
+                              reading: w.reading,
+                              key: Key('word-${w.id}'),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: w.term.length > 5 ? 34 : 44,
+                                height: 1.3,
+                                fontWeight: FontWeight.w900,
+                                color: colors.secondary,
+                              ),
+                              rubyStyle: TextStyle(
+                                fontSize: 17,
+                                color: colors.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                          else
+                            Text(
+                              w.term,
+                              key: Key('word-${w.id}'),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: w.term.length > 5 ? 34 : 44,
+                                height: 1.3,
+                                fontWeight: FontWeight.w900,
+                                color: colors.secondary,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            w.reading,
-                            style: TextStyle(
-                              fontSize: 19,
-                              color: colors.primary,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
                           const SizedBox(height: 12),
                           Text(
                             w.meaning,
@@ -147,14 +158,15 @@ class _StudyViewState extends State<VocabularyStudyView> {
                 runSpacing: 8,
                 children: [
                   FilterChip(
-                    label: const Text('Bantuan kana'),
-                    selected: kana,
+                    key: const Key('toggle-furigana'),
+                    label: const Text('Furigana'),
+                    selected: furigana,
                     showCheckmark: false,
                     selectedColor: colors.secondary,
                     labelStyle: TextStyle(
-                      color: kana ? colors.onSecondary : colors.onSurface,
+                      color: furigana ? colors.onSecondary : colors.onSurface,
                     ),
-                    onSelected: (v) => setState(() => kana = v),
+                    onSelected: (v) => setState(() => furigana = v),
                   ),
                   FilterChip(
                     label: const Text('Terjemahan'),
@@ -191,33 +203,32 @@ class _StudyViewState extends State<VocabularyStudyView> {
                           ),
                         ),
                         const SizedBox(height: 12),
-                        SelectableText(
-                          e.japanese,
-                          style: const TextStyle(
-                            fontSize: 23,
-                            height: 1.8,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        if (kana && e.reading.isNotEmpty) ...[
-                          const SizedBox(height: 10),
-                          Text(
-                            e.reading,
-                            style: TextStyle(
-                              color: colors.secondary,
-                              fontSize: 16,
+                        if (furigana)
+                          JapaneseRubyText(
+                            text: e.japanese,
+                            reading: e.reading,
+                            key: Key('example-japanese-$i'),
+                            style: const TextStyle(
+                              fontSize: 23,
                               height: 1.8,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
+                        else
+                          Text(
+                            e.japanese,
+                            key: Key('example-japanese-$i'),
+                            style: const TextStyle(
+                              fontSize: 23,
+                              height: 1.8,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
-                        ],
                         if (meaning) ...[
                           const SizedBox(height: 12),
                           Text(
                             e.meaning,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              height: 1.7,
-                            ),
+                            style: const TextStyle(fontSize: 16, height: 1.7),
                           ),
                         ],
                       ],
@@ -274,8 +285,8 @@ class _StudyViewState extends State<VocabularyStudyView> {
                     onPressed: s.submitting
                         ? null
                         : last
-                            ? widget.startQuiz
-                            : widget.next,
+                        ? widget.startQuiz
+                        : widget.next,
                     icon: s.submitting
                         ? const SizedBox(
                             width: 18,
@@ -287,9 +298,7 @@ class _StudyViewState extends State<VocabularyStudyView> {
                                 ? Icons.quiz_outlined
                                 : Icons.arrow_forward_rounded,
                           ),
-                    label: Text(
-                      last ? 'Latihan pemahaman' : 'Kata berikutnya',
-                    ),
+                    label: Text(last ? 'Latihan pemahaman' : 'Kata berikutnya'),
                   ),
                 ),
               ],

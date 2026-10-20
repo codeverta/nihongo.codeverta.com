@@ -7,6 +7,211 @@ servers:
   - url: http://localhost:8080/v1
     description: Local development
 paths:
+  /manga:
+    get:
+      security: [{bearerAuth: []}]
+      description: Requires an active verified lifetime entitlement.
+      summary: Curated Japanese manga catalog read exclusively from MariaDB
+      parameters:
+        - {in: query, name: page, schema: {type: integer, minimum: 1, maximum: 10000, default: 1}}
+        - {in: query, name: limit, schema: {type: integer, minimum: 1, maximum: 40, default: 20}}
+        - {in: query, name: q, schema: {type: string, maxLength: 100}}
+        - {in: query, name: genre, schema: {type: string, maxLength: 50}}
+      responses:
+        '401': {description: Missing, invalid or revoked session}
+        '402': {description: Lifetime Access required}
+        '200': {description: 'Stored items, total, page, pageSize, sourceName, sourceUrl, cacheEnabled. Cover URLs use application COS/CDN.'}
+        '400': {description: Invalid filter or pagination}
+        '503': {description: Database unavailable}
+  /manga/{id}:
+    get:
+      security: [{bearerAuth: []}]
+      description: Requires an active verified lifetime entitlement.
+      summary: Stored series detail and ordered chapter metadata with source attribution
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string}}
+      responses:
+        '401': {description: Missing, invalid or revoked session}
+        '402': {description: Lifetime Access required}
+        '200': {description: 'Series metadata and chapters. Japanese panels are not translated. Does not fetch upstream.'}
+        '404': {description: Missing, disabled or blocked title}
+  /manga/chapters/{id}:
+    get:
+      security: [{bearerAuth: []}]
+      description: Requires an active verified lifetime entitlement.
+      summary: Stored chapter status; COS pages are returned only after complete import
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string}}
+      responses:
+        '401': {description: Missing, invalid or revoked session}
+        '402': {description: Lifetime Access required}
+        '200': {description: 'Chapter with status, sourceUrl, retryAt, fetchedAt and pages [{index,url,width,height}]. Never hotlinks upstream images.'}
+        '404': {description: Chapter missing or parent title hidden}
+  /manga/chapters/{id}/prepare:
+    post:
+      security: [{bearerAuth: []}]
+      description: Requires an active verified lifetime entitlement.
+      summary: Idempotently queue an existing chapter without making an upstream request
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string}}
+      responses:
+        '401': {description: Missing, invalid or revoked session}
+        '402': {description: Lifetime Access required}
+        '200': {description: Already cached or in failed-attempt cooldown}
+        '202': {description: Queued or currently processing; poll stored status after 15 seconds}
+        '404': {description: Missing or hidden chapter}
+        '429': {description: Shared bounded queue is full}
+        '503': {description: MariaDB or COS configuration unavailable}
+  /admin/manga:
+    get:
+      summary: Manga editorial catalog, durable weekly deadlines and COS configuration status
+      security: [{adminBearerAuth: []}]
+      responses:
+        '200': {description: Stored catalog, including hidden titles}
+        '401': {description: Invalid or unconfigured admin key}
+  /admin/manga/series:
+    post:
+      summary: Add a reviewed Rawkuma series or immediately hide it; never bypass fetch deadlines
+      security: [{adminBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [sourceUrl, enabled]
+              properties:
+                sourceUrl: {type: string, format: uri}
+                enabled: {type: boolean}
+                japaneseVerified: {type: boolean}
+                nonAdultReviewed: {type: boolean}
+      responses:
+        '200': {description: Editorial settings persisted}
+        '400': {description: URL is outside the supported source or enabled title lacks editorial review}
+        '401': {description: Invalid or unconfigured admin key}
+  /news:
+    get:
+      summary: Public database-only news catalog; never fetches publishers on reads
+      parameters:
+        - {in: query, name: page, schema: {type: integer, minimum: 1, maximum: 100000, default: 1}}
+        - {in: query, name: limit, schema: {type: integer, minimum: 1, maximum: 50, default: 20}}
+        - {in: query, name: source, schema: {type: string, enum: [global-voices, osaka]}}
+      responses:
+        '200': {description: 'data contains items (metadata and title tokens), total, page, pageSize, sources with synchronization timestamps'}
+        '400': {description: Invalid pagination or source}
+        '503': {description: Database unavailable; no publisher fallback}
+  /news/{id}:
+    get:
+      summary: Public stored article with credits, licensing and UTF-16 paragraph tokens
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+      responses:
+        '200': {description: 'Article with titleTokens and paragraphs [{text, kind, tokens}], credits, references, publishedAt UTC, originalDate in the publisher Japanese calendar, dateType, fetchedAt, license and change notice. Images include backend-local imageUrl, imageCredit, imageLicense, imageSourceUrl and imageLicenseUrl. Tokens contain start/end UTF-16 offsets, surface/base/reading/readingSource.'}
+        '404': {description: Missing, hidden or deleted article}
+        '503': {description: Database unavailable}
+  /admin/news:
+    get:
+      summary: List all stored articles and private source fetch statuses
+      security: [{adminBearerAuth: []}]
+      parameters:
+        - {in: query, name: page, schema: {type: integer, minimum: 1, default: 1}}
+        - {in: query, name: source, schema: {type: string, enum: [global-voices, osaka]}}
+      responses:
+        '200': {description: Includes hidden articles and source errors}
+        '401': {description: Invalid or unconfigured news admin key}
+  /admin/news/{id}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Read stored article including hidden articles for editing
+      security: [{adminBearerAuth: []}]
+      responses:
+        '200': {description: Stored article including editable ruby tokens}
+        '404': {description: Missing or deleted article}
+    put:
+      summary: Save visibility, uploaded image metadata and selected token reading corrections
+      security: [{adminBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hidden: {type: boolean}
+                revision: {type: string, description: Revision from article GET; required when editing readings to reject stale token positions}
+                imageUrl: {type: string, description: Empty or existing /news-images/hash.png or jpg}
+                  imageCredit: {type: string, maxLength: 8000}
+                imageLicense: {type: string, maxLength: 200}
+                readings:
+                  type: array
+                  maxItems: 1000
+                  items:
+                    type: object
+                    required: [paragraph, token, reading]
+                    properties:
+                      paragraph: {type: integer, minimum: -1, description: '-1 for title; otherwise paragraph index'}
+                      token: {type: integer, minimum: 0}
+                      reading: {type: string, maxLength: 100}
+      responses:
+        '200': {description: Saved without modifying source text}
+        '400': {description: Invalid token or image metadata}
+        '409': {description: Source article changed since the editor loaded its token positions}
+        '404': {description: Missing article}
+    delete:
+      summary: Delete article body and retain URL tombstone to prevent reimport
+      security: [{adminBearerAuth: []}]
+      responses:
+        '204': {description: Deleted}
+        '404': {description: Missing article}
+  /admin/news/sources/{id}:
+    put:
+      summary: Persist calendar schedule for a fixed supported source
+      security: [{adminBearerAuth: []}]
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string, enum: [global-voices, osaka]}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [timezone, days, hour, minute, enabled]
+              properties:
+                timezone: {type: string, example: Asia/Jakarta}
+                days: {type: array, minItems: 1, maxItems: 2, uniqueItems: true, items: {type: integer, minimum: 0, maximum: 6}}
+                hour: {type: integer, minimum: 0, maximum: 23}
+                minute: {type: integer, minimum: 0, maximum: 59}
+                enabled: {type: boolean}
+      responses:
+        '200': {description: Schedule saved in MariaDB}
+        '400': {description: Invalid zone or schedule}
+  /admin/news/sources/{id}/fetch:
+    post:
+      summary: Request background import, preserving previous articles on failure
+      security: [{adminBearerAuth: []}]
+      parameters:
+        - {in: path, name: id, required: true, schema: {type: string, enum: [global-voices, osaka]}}
+      responses:
+        '202': {description: Request accepted; inspect source status after completion}
+        '409': {description: Source is running or within the one-minute manual cooldown}
+        '404': {description: Unsupported source}
+  /admin/news/images:
+    post:
+      summary: Upload a licensed or owned PNG/JPEG to persistent backend storage
+      security: [{adminBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file: {type: string, format: binary}
+      responses:
+        '201': {description: Stored /news-images/hash.png or jpg URL; credit/license required when assigning it to an article}
+        '400': {description: Invalid file, over 5 MiB or over 4096 pixels per dimension}
   /admin/notifications:
     get:
       summary: List private announcement drafts/history and sender configuration state (admin bearer key)
@@ -1779,6 +1984,9 @@ components:
         level: {type: string, enum: [N5, N4, N3, N2, N1]}
         title: {type: string}
         description: {type: string}
+        sourceName: {type: string, description: Attribution source when vocabulary data is adapted from an external dataset}
+        sourceUrl: {type: string, format: uri, description: Link to the original vocabulary dataset}
+        sourceLicense: {type: string, description: License and adaptation note for attributed vocabulary data}
         requiredTier: {type: string, enum: [free, premium]}
         progress: {type: integer, minimum: 0, maximum: 100}
         lessons:

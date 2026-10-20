@@ -4,6 +4,7 @@ import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_visuals.dart';
+import 'package:nihongo_master/shared/presentation/widgets/explore_feature_card.dart';
 
 class SswEntryCard extends StatelessWidget {
   const SswEntryCard({super.key, this.exams = false});
@@ -11,27 +12,17 @@ class SswEntryCard extends StatelessWidget {
   final bool exams;
 
   @override
-  Widget build(BuildContext context) => Card(
-        margin: EdgeInsets.zero,
-        child: ListTile(
-          contentPadding: const EdgeInsets.all(16),
-          leading: Icon(
-            Icons.work_outline,
-            color: Theme.of(context).colorScheme.primary,
-          ),
-          title: const Text(
-            'SSW / Tokutei Ginou',
-            style: TextStyle(fontWeight: FontWeight.w800),
-          ),
-          subtitle: Text(
-            exams
-                ? '4 bidang aktif · Materi, latihan & simulasi'
-                : '4 bidang tersedia · 19 bidang',
-          ),
-          trailing: const Icon(Icons.chevron_right),
-          onTap: () => context.push(exams ? '/ssw?tab=test' : '/ssw'),
-        ),
-      );
+  Widget build(BuildContext context) => ExploreFeatureCard(
+    title: 'SSW / Tokutei Ginou',
+    eyebrow: 'KETERAMPILAN & PERSIAPAN UJIAN',
+    description: exams
+        ? 'Latihan soal dan simulasi untuk 4 bidang aktif'
+        : 'Kenali bidangmu, pelajari materi, lalu coba simulasinya',
+    asset: 'assets/images/ssw/ssw-careers.png',
+    color: const Color(0xFF125E60),
+    icon: Icons.school_rounded,
+    onTap: () => context.push(exams ? '/ssw?tab=test' : '/ssw'),
+  );
 }
 
 class SswHubScreen extends StatefulWidget {
@@ -79,10 +70,9 @@ class _SswHubState extends State<SswHubScreen> {
           const SizedBox(height: 8),
           Text(
             'Temukan bidangmu.\nBangun keterampilanmu.',
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall
-                ?.copyWith(fontWeight: FontWeight.w800),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 12),
           Text(
@@ -119,8 +109,9 @@ class _SswHubState extends State<SswHubScreen> {
                 Icons.arrow_forward_rounded,
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
-              onTap: () => context
-                  .push('/ssw/nursing-care${widget.exams ? '?tab=test' : ''}'),
+              onTap: () => context.push(
+                '/ssw/nursing-care${widget.exams ? '?tab=test' : ''}',
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -170,8 +161,10 @@ class _SswHubState extends State<SswHubScreen> {
                         : Theme.of(context).colorScheme.onSecondaryContainer,
                   ),
                 ),
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 10,
+                ),
                 title: Text(
                   sector.name,
                   style: const TextStyle(fontWeight: FontWeight.w700),
@@ -181,9 +174,7 @@ class _SswHubState extends State<SswHubScreen> {
                   children: [
                     Text(sector.japanese),
                     const SizedBox(height: 6),
-                    SswStatusBadge(
-                      available: sswAvailable(sector.id),
-                    ),
+                    SswStatusBadge(available: sswAvailable(sector.id)),
                   ],
                 ),
                 trailing: const Icon(Icons.chevron_right),
@@ -236,10 +227,9 @@ class _SswSectorState extends State<SswSectorScreen> {
               children: [
                 Text(
                   sector.name,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.copyWith(fontWeight: FontWeight.w800),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -249,9 +239,7 @@ class _SswSectorState extends State<SswSectorScreen> {
                 const SizedBox(height: 12),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: SswStatusBadge(
-                    available: sswAvailable(sector.id),
-                  ),
+                  child: SswStatusBadge(available: sswAvailable(sector.id)),
                 ),
                 const SizedBox(height: 24),
                 Wrap(
@@ -317,12 +305,12 @@ class _ComingSoonBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-        'Coming Soon',
-        style: TextStyle(
-          color: Theme.of(context).colorScheme.primary,
-          fontWeight: FontWeight.w700,
-        ),
-      );
+    'Coming Soon',
+    style: TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontWeight: FontWeight.w700,
+    ),
+  );
 }
 
 class _FeaturePreview extends StatelessWidget {
@@ -338,30 +326,30 @@ class _FeaturePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(icon, color: Theme.of(context).colorScheme.onSurfaceVariant),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(fontWeight: FontWeight.w700),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(description),
-                    const SizedBox(height: 8),
-                    const _ComingSoonBadge(),
-                  ],
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: Theme.of(context).colorScheme.onSurfaceVariant),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
-              ),
-            ],
+                const SizedBox(height: 6),
+                Text(description),
+                const SizedBox(height: 8),
+                const _ComingSoonBadge(),
+              ],
+            ),
           ),
-        ),
-      );
+        ],
+      ),
+    ),
+  );
 }

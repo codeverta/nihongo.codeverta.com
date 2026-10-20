@@ -20,9 +20,9 @@ Bantuan kana adalah satu baris bacaan lengkap, bukan furigana di atas setiap kan
 
 - Materi: `backend/data/vocabulary/n5.json`, dimuat dengan Go embed saat backend dibangun.
 - Soal dan penilaian: `backend/internal/store/vocabulary.go`. API tidak mengirim kunci jawaban ketika kuis dimulai.
-- Gambar: `backend/assets/images/vocabulary/n5-theme-01.png` hingga `n5-theme-20.png`, dibuat menggunakan imagegen bawaan. Setiap lembar berisi delapan ilustrasi dalam susunan 4 kolom × 2 baris; aplikasi mengambil panel sesuai kata.
+- Gambar: `backend/assets/images/vocabulary/n5-theme-01.png` hingga `n5-theme-20.png`, dibuat menggunakan imagegen bawaan. Setiap lembar berisi delapan ilustrasi dalam susunan 4 kolom × 2 baris; aplikasi mengambil panel sesuai kata. Berkas ini disajikan backend dan tidak dibundel ke APK.
 - Prompt lengkap dan pemetaan aset: `docs/vocabulary-n5-art.json`.
-- Gambar lokal dibundel dengan aplikasi. URL aset backend, bila dikonfigurasi, memiliki fallback ke gambar lokal.
+- Aplikasi memakai `imageUrl` atau membentuk URL dari `imageAsset` pada origin API. Jika URL CDN gagal, gambar dicoba ulang lewat API; jika keduanya gagal, placeholder ditampilkan per panel agar area gambar tidak kosong.
 
 ## Menjalankan pembaruan
 
@@ -33,7 +33,7 @@ cd backend
 go run ./cmd/api
 ```
 
-Jalankan ulang Flutter untuk menyertakan aset baru:
+Jalankan ulang Flutter untuk memuat perubahan UI terbaru:
 
 ```powershell
 flutter run -d emulator-5556 --dart-define=API_BASE_URL=http://10.0.2.2:8080/v1

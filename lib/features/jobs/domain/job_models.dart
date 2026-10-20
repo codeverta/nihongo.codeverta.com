@@ -18,6 +18,7 @@ class JapanJob {
       salaryText = '${json['salaryText'] ?? ''}',
       description = '${json['description'] ?? ''}',
       qualifications = '${json['qualifications'] ?? ''}',
+      benefits = _jobBenefits(json),
       sourceName = '${json['sourceName'] ?? ''}',
       sourceUrl = '${json['sourceUrl'] ?? ''}',
       applyUrl = '${json['applyUrl'] ?? ''}',
@@ -44,6 +45,7 @@ class JapanJob {
   final String salaryText;
   final String description;
   final String qualifications;
+  final String benefits;
   final String sourceName;
   final String sourceUrl;
   final String applyUrl;
@@ -137,3 +139,27 @@ String jobDate(DateTime? value) => value == null
     : '${value.toLocal().day.toString().padLeft(2, '0')}/'
           '${value.toLocal().month.toString().padLeft(2, '0')}/'
           '${value.toLocal().year}';
+
+// Older cached listings may contain a clearly labeled benefits section in their
+// description. Copy only that section; never infer perks from keywords.
+String _jobBenefits(Map<String, dynamic> json) {
+  final raw = json['benefits'];
+  if (raw is String && raw.trim().isNotEmpty) return raw.trim();
+  if (raw is List) {
+    return raw.whereType<String>().where((v) => v.trim().isNotEmpty).join('\n');
+  }
+  final description = json['description'] as String? ?? '';
+  final blocks = description.split(RegExp(r'\n\s*\n'));
+  final heading = RegExp(
+    r'^(?:benefits(?:\s*(?:&|and)\s*perks)?|perks(?:\s*(?:&|and)\s*benefits)?|福利厚生|待遇[・/／]福利厚生|benefit(?: dan tunjangan)?)[:：]?$',
+    caseSensitive: false,
+  );
+  for (var i = 0; i < blocks.length; i++) {
+    final lines = blocks[i].trim().split('\n');
+    if (lines.isNotEmpty && heading.hasMatch(lines.first.trim())) {
+      if (lines.length > 1) return lines.skip(1).join('\n').trim();
+      // A detached heading is ambiguous; show the honest empty state instead.
+    }
+  }
+  return '';
+}

@@ -35,11 +35,36 @@ class VocabularyArt extends StatelessWidget {
               maxWidth: c.maxWidth * 4,
               minHeight: c.maxWidth * 2,
               maxHeight: c.maxWidth * 2,
-              child: RemoteAssetImage(asset: asset, url: url),
+              child: RemoteAssetImage(
+                asset: asset,
+                url: url,
+                loadingBuilder: (context) =>
+                    _fallbackSheet(context, icon: Icons.image_outlined),
+                errorBuilder: (context) => _fallbackSheet(
+                  context,
+                  icon: Icons.image_not_supported_outlined,
+                ),
+              ),
             ),
           ),
         ),
       ),
     );
   }
+
+  Widget _fallbackSheet(BuildContext context, {required IconData icon}) =>
+      GridView.count(
+        crossAxisCount: 4,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        children: [
+          for (var i = 0; i < 8; i++)
+            ColoredBox(
+              color: Theme.of(context).colorScheme.surfaceContainerLow,
+              child: Center(
+                child: Icon(icon, color: Theme.of(context).colorScheme.outline),
+              ),
+            ),
+        ],
+      );
 }

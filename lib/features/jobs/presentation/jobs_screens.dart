@@ -5,28 +5,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/jobs/data/jobs_repository.dart';
 import 'package:nihongo_master/features/jobs/domain/job_models.dart';
+import 'package:nihongo_master/features/jobs/presentation/job_apply_button.dart';
 import 'package:nihongo_master/features/jobs/presentation/jobs_visuals.dart';
+import 'package:nihongo_master/shared/presentation/widgets/explore_feature_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class JobsEntryCard extends StatelessWidget {
   const JobsEntryCard({super.key});
   @override
-  Widget build(BuildContext context) => Card(
-    child: ListTile(
-      contentPadding: const EdgeInsets.all(18),
-      leading: Icon(
-        Icons.work_outline_rounded,
-        color: Theme.of(context).colorScheme.primary,
-        size: 32,
-      ),
-      title: const Text(
-        'Kerja di Jepang',
-        style: TextStyle(fontWeight: FontWeight.w800),
-      ),
-      subtitle: const Text('Jelajahi lowongan, lokasi, gaji & kualifikasi'),
-      trailing: const Icon(Icons.arrow_forward_rounded),
-      onTap: () => context.push('/jobs'),
-    ),
+  Widget build(BuildContext context) => ExploreFeatureCard(
+    title: 'Kerja di Jepang',
+    eyebrow: 'LANGKAH BERIKUTNYA UNTUK KARIERMU',
+    description:
+        'Temukan peluang sesuai bidang, lokasi, gaji, dan kualifikasimu',
+    asset: 'assets/images/jobs/job-category-atlas.png',
+    color: const Color(0xFF443060),
+    icon: Icons.work_rounded,
+    onTap: () => context.push('/jobs'),
   );
 }
 
@@ -601,6 +596,12 @@ class JobDetailScreen extends ConsumerWidget {
             }),
             _Section('Tentang pekerjaan', job.description),
             _Section('Kualifikasi', job.qualifications),
+            _Section(
+              'Benefit & tunjangan',
+              job.benefits.isEmpty
+                  ? 'Benefit belum dicantumkan oleh sumber lowongan. Konfirmasikan tunjangan, fasilitas, dan ketentuannya kepada perekrut sebelum melamar.'
+                  : job.benefits,
+            ),
             const Divider(height: 32),
             _DetailRow('Sumber', job.sourceName),
             _DetailRow('Tanggal publikasi', jobDate(job.postedAt)),
@@ -611,18 +612,53 @@ class JobDetailScreen extends ConsumerWidget {
               'Informasi mengikuti sumber aslinya dan dapat berubah. Baca persyaratan lengkap di situs penyedia sebelum melamar.',
             ),
             const SizedBox(height: 20),
-            FilledButton.icon(
-              onPressed: job.active && jobExternalUri(job.applyUrl) != null
-                  ? () => _open(context, job.applyUrl)
-                  : null,
-              icon: const Icon(Icons.open_in_new),
-              label: const Text('Lihat & lamar di situs sumber'),
-            ),
-            if (jobExternalUri(job.sourceUrl) != null)
-              TextButton(
-                onPressed: () => _open(context, job.sourceUrl),
-                child: const Text('Buka halaman asli'),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF1F3FC),
+                border: Border.all(color: const Color(0xFFDDE2F4)),
+                borderRadius: BorderRadius.circular(18),
               ),
+              child: const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.workspace_premium_rounded,
+                    color: Color(0xFF232667),
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Lamar dengan Lifetime Access',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xFF232667),
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          'Akses tautan lamaran untuk lowongan yang aktif, sekaligus buka materi lanjutan, simulasi ujian, dan Manga Jepang.',
+                          style: TextStyle(
+                            color: Color(0xFF44496B),
+                            height: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 12),
+            JobApplyButton(job: job),
+            const SizedBox(height: 8),
+            Text(
+              'Lamaran diproses oleh situs sumber. Premium tidak menjamin diterima kerja atau persetujuan visa.',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ],
         ),
       ),

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/home/domain/home_banner_content.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
 import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
+import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
+import 'package:nihongo_master/features/news/data/news_repository.dart';
+import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
@@ -16,6 +21,7 @@ class DashboardScreen extends ConsumerWidget {
     required this.openExam,
     required this.openProfile,
     this.active = true,
+    this.openExamCategory,
     super.key,
   });
 
@@ -23,6 +29,7 @@ class DashboardScreen extends ConsumerWidget {
   final VoidCallback openExam;
   final VoidCallback openProfile;
   final bool active;
+  final ValueChanged<String>? openExamCategory;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,13 +48,25 @@ class DashboardScreen extends ConsumerWidget {
         retry: () => ref.invalidate(homeDashboardProvider),
       ),
       data: (data) => RefreshIndicator(
-        onRefresh: () => ref.refresh(homeDashboardProvider.future),
+        onRefresh: () async {
+          await (ref
+                ..invalidate(newsPreviewProvider)
+                ..invalidate(homeDashboardProvider))
+              .read(homeDashboardProvider.future);
+        },
         child: _DashboardContent(
           data: data,
           active: active,
           accountHasLifetimeAccess: accountHasLifetimeAccess,
           openLearn: () => _authorize(context, openLearn),
           openExam: () => _authorize(context, openExam),
+          openExamCategory: (category) => _authorize(context, () {
+            if (openExamCategory != null) {
+              openExamCategory!(category);
+            } else {
+              openExam();
+            }
+          }),
           openProfile: () => _authorize(context, openProfile),
         ),
       ),
@@ -67,6 +86,7 @@ class _DashboardContent extends StatelessWidget {
     required this.data,
     required this.active,
     required this.accountHasLifetimeAccess,
+    required this.openExamCategory,
     required this.openLearn,
     required this.openExam,
     required this.openProfile,
@@ -74,6 +94,7 @@ class _DashboardContent extends StatelessWidget {
 
   final HomeDashboard data;
   final bool active;
+  final ValueChanged<String> openExamCategory;
   final bool accountHasLifetimeAccess;
   final VoidCallback openLearn;
   final VoidCallback openExam;
@@ -81,33 +102,11 @@ class _DashboardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lifetime = data.plans.where((plan) => plan.billingType == 'lifetime');
-    final premiumPlan = lifetime.isNotEmpty
-        ? lifetime.first
-        : data.plans.where((plan) => plan.recommended).firstOrNull;
     final hasLifetimeAccess =
         accountHasLifetimeAccess ||
         (data.profile?.isLifetime ?? false) ||
         data.profile?.tier == 'premium';
-    final banners = [
-      if (premiumPlan != null && !hasLifetimeAccess)
-        HomeBanner(
-          id: 'lifetime-offer',
-          title: premiumPlan.name,
-          description:
-              '${premiumPlan.features.firstOrNull ?? premiumPlan.name} • ${_rupiah(premiumPlan.priceIdr)}',
-          imageUrl: '',
-          action: 'premium',
-          buttonLabel: 'Lihat paket',
-        ),
-      ...data.banners.where(
-        (banner) => !hasLifetimeAccess || banner.action != 'premium',
-      ),
-    ];
-    final jlptTracks = data.tracks
-        .where((track) => track.system.toUpperCase() == 'JLPT')
-        .toList(growable: false);
-
+    final banners = homeBannersFor(data, lifetime: hasLifetimeAccess);
     return CustomScrollView(
       key: const PageStorageKey('dashboard-scroll'),
       physics: const AlwaysScrollableScrollPhysics(),
@@ -129,6 +128,10 @@ class _DashboardContent extends StatelessWidget {
                         context.push('/premium');
                       case 'learn':
                         openLearn();
+                      case 'anki':
+                        context.push('/anki');
+                      case 'manga':
+                        context.push('/manga');
                       case 'ssw':
                         context.push('/ssw');
                       case 'jobs':
@@ -138,14 +141,26 @@ class _DashboardContent extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
               ],
-              const SswEntryCard(),
-              const SizedBox(height: 12),
-              const JobsEntryCard(),
-              const SizedBox(height: 28),
               _SectionHeader(
                 title: 'Mulai belajar',
                 action: 'Lihat semua',
                 onPressed: openLearn,
+              ),
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  ActionChip(label: const Text('JLPT'), onPressed: openLearn),
+                  ActionChip(
+                    label: const Text('JFT'),
+                    onPressed: () => openExamCategory('JFT Test'),
+                  ),
+                  ActionChip(
+                    label: const Text('NAT'),
+                    onPressed: () => openExamCategory('NAT Test'),
+                  ),
+                ],
               ),
               const SizedBox(height: 14),
               _LearningMenuGrid(
@@ -154,47 +169,49 @@ class _DashboardContent extends StatelessWidget {
                     .toList(growable: false),
                 onPressed: openLearn,
               ),
-              if (jlptTracks.isNotEmpty) ...[
-                const SizedBox(height: 28),
-                _SectionHeader(
-                  title: 'Jalur JLPT',
-                  action: 'Detail level',
-                  onPressed: openLearn,
+              const SizedBox(height: 12),
+              Card(
+                child: ListTile(
+                  leading: const Icon(Icons.quiz_outlined),
+                  title: const Text('Latihan ujian'),
+                  subtitle: const Text('Simulasi JLPT, JFT, dan NAT'),
+                  trailing: const Icon(Icons.chevron_right_rounded),
+                  onTap: openExam,
                 ),
-                const SizedBox(height: 14),
-                _JlptLevelList(tracks: jlptTracks, onPressed: openLearn),
-              ],
-              if (data.exams.isNotEmpty) ...[
-                const SizedBox(height: 28),
-                _SectionHeader(
-                  title: 'Latihan ujian',
-                  action: 'Semua ujian',
-                  onPressed: openExam,
-                ),
-                const SizedBox(height: 14),
-                _ExamQuickList(exams: data.exams, onPressed: openExam),
-              ],
-              if (data.achievements.isNotEmpty) ...[
-                const SizedBox(height: 28),
-                _AchievementPreview(
-                  achievement: _nextAchievement(data.achievements),
-                  onPressed: openProfile,
-                ),
-              ],
+              ),
+              const SizedBox(height: 28),
+              Text(
+                'Jelajahi Jepang',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
+              ),
+              const SizedBox(height: 14),
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  final columns = constraints.maxWidth >= 600 ? 2 : 1;
+                  final width =
+                      (constraints.maxWidth - (columns - 1) * 16) / columns;
+                  return Wrap(
+                    spacing: 16,
+                    runSpacing: 16,
+                    children: [
+                      SizedBox(width: width, child: const MangaEntryCard()),
+                      SizedBox(width: width, child: const AnkiEntryCard()),
+                      SizedBox(width: width, child: const SswEntryCard()),
+                      SizedBox(width: width, child: const JobsEntryCard()),
+                    ],
+                  );
+                },
+              ),
+
+              const SizedBox(height: 24),
+              const NewsPreview(),
             ],
           ),
         ),
       ],
     );
-  }
-
-  Achievement _nextAchievement(List<Achievement> achievements) {
-    final locked = achievements.where((a) => !a.isUnlocked).toList();
-    return (locked.isEmpty ? achievements : locked).reduce((current, next) {
-      final currentRemaining = current.target - current.progress;
-      final nextRemaining = next.target - next.progress;
-      return nextRemaining < currentRemaining ? next : current;
-    });
   }
 }
 
@@ -266,6 +283,9 @@ class _LearningMenuGrid extends StatelessWidget {
       builder: (context, constraints) {
         final columns = constraints.maxWidth >= 650 ? 3 : 2;
         return GridView.builder(
+          // Keep the nested grid's scroll state separate from the dashboard.
+          key: const PageStorageKey('dashboard-learning-grid'),
+          primary: false,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: categories.length,
@@ -346,211 +366,6 @@ class _LearningMenuCard extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _JlptLevelList extends StatelessWidget {
-  const _JlptLevelList({required this.tracks, required this.onPressed});
-
-  final List<LearningTrack> tracks;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final primary = Theme.of(context).colorScheme.primary;
-    return SizedBox(
-      height: 142,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: tracks.length,
-        separatorBuilder: (context, index) => const SizedBox(width: 12),
-        itemBuilder: (context, index) {
-          final track = tracks[index];
-          final color = Color.lerp(
-            primary,
-            const Color(0xFF1D2088),
-            index / tracks.length,
-          )!;
-          return InkWell(
-            onTap: onPressed,
-            borderRadius: BorderRadius.circular(20),
-            child: Container(
-              width: 140,
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: color.withValues(alpha: 0.18)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        track.level,
-                        style: TextStyle(
-                          color: color,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                      if (track.isPremium)
-                        const Icon(
-                          Icons.lock_rounded,
-                          size: 17,
-                          color: Color(0xFFE59E24),
-                        ),
-                    ],
-                  ),
-                  Text(
-                    track.title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                  const Spacer(),
-                  LinearProgressIndicator(
-                    value: track.progress / 100,
-                    borderRadius: BorderRadius.circular(99),
-                    backgroundColor: color.withValues(alpha: 0.1),
-                    color: color,
-                  ),
-                  const SizedBox(height: 7),
-                  Text(
-                    track.isPremium ? 'Premium' : '${track.progress}% selesai',
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class _ExamQuickList extends StatelessWidget {
-  const _ExamQuickList({required this.exams, required this.onPressed});
-
-  final List<HomeExam> exams;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 152,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: exams.length,
-        separatorBuilder: (context, index) => const SizedBox(width: 10),
-        itemBuilder: (context, index) => SizedBox(
-          width: 164,
-          child: Card(
-            child: InkWell(
-              onTap: onPressed,
-              borderRadius: BorderRadius.circular(16),
-              child: Padding(
-                padding: const EdgeInsets.all(13),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.assignment_rounded,
-                          color: _examColor(exams[index].system),
-                        ),
-                        const Spacer(),
-                        if (exams[index].isPremium)
-                          const Icon(
-                            Icons.workspace_premium_rounded,
-                            size: 16,
-                            color: Color(0xFFE59E24),
-                          ),
-                      ],
-                    ),
-                    const SizedBox(height: 9),
-                    Text(
-                      exams[index].title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(fontWeight: FontWeight.w800),
-                    ),
-                    const Spacer(),
-                    Text(
-                      '${exams[index].questionCount} soal • ${exams[index].durationMinutes} menit',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _AchievementPreview extends StatelessWidget {
-  const _AchievementPreview({
-    required this.achievement,
-    required this.onPressed,
-  });
-
-  final Achievement achievement;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    final remaining = (achievement.target - achievement.progress).clamp(
-      0,
-      achievement.target,
-    );
-    return Material(
-      color: colors.primary.withValues(alpha: 0.055),
-      borderRadius: BorderRadius.circular(20),
-      child: InkWell(
-        onTap: onPressed,
-        borderRadius: BorderRadius.circular(20),
-        child: Padding(
-          padding: const EdgeInsets.all(18),
-          child: Row(
-            children: [
-              Icon(Icons.emoji_events_rounded, color: colors.primary, size: 42),
-              const SizedBox(width: 15),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      achievement.name,
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      achievement.isUnlocked
-                          ? 'Terbuka • ${achievement.description}'
-                          : '$remaining langkah lagi • ${achievement.description}',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                  ],
-                ),
-              ),
-              const Icon(Icons.chevron_right_rounded),
             ],
           ),
         ),
@@ -661,19 +476,3 @@ Color _categoryColor(String id) => switch (id) {
   'kanji' => const Color(0xFF9B59B6),
   _ => const Color(0xFF2E86C1),
 };
-
-Color _examColor(String system) => switch (system.toUpperCase()) {
-  'JLPT' => const Color(0xFFE60012),
-  'NAT' => const Color(0xFF1D2088),
-  _ => const Color(0xFF168C72),
-};
-
-String _rupiah(int value) {
-  final digits = value.toString();
-  final result = StringBuffer();
-  for (var index = 0; index < digits.length; index++) {
-    if (index > 0 && (digits.length - index) % 3 == 0) result.write('.');
-    result.write(digits[index]);
-  }
-  return 'Rp$result';
-}

@@ -16,15 +16,16 @@ import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_model
     show QuizOption;
 
 void main() {
-  testWidgets('N2 opens its full catalog and searches Japanese patterns',
-      (tester) async {
+  testWidgets('N2 opens its full catalog and searches Japanese patterns', (
+    tester,
+  ) async {
     tester.view.physicalSize = const Size(360, 640);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
-    final content = jsonDecode(
-      File('backend/data/grammar/n2.json').readAsStringSync(),
-    ) as List<dynamic>;
+    final content =
+        jsonDecode(File('backend/data/grammar/n2.json').readAsStringSync())
+            as List<dynamic>;
     final lessons = content.indexed.map((entry) {
       final data = entry.$2 as Map<String, dynamic>;
       return GrammarLessonSummary(
@@ -80,8 +81,9 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('course displays saved progress and searches lesson titles',
-      (tester) async {
+  testWidgets('course displays saved progress and searches lesson titles', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [grammarCourseProvider.overrideWith((ref) async => _course)],
@@ -105,52 +107,85 @@ void main() {
     expect(find.text('Waktu lampau'), findsOneWidget);
   });
 
-  testWidgets('small phone reads two patterns and completes five-question quiz',
-      (tester) async {
-    tester.view.physicalSize = const Size(360, 640);
-    tester.view.devicePixelRatio = 1;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
-    final repository = _Repository();
-    await tester.pumpWidget(_app(repository));
-    await tester.pumpAndSettle();
-    expect(tester.takeException(), isNull);
-    expect(find.text('Nです'), findsOneWidget);
-    await tester.scrollUntilVisible(find.text('Hindari kesalahan ini'), 200);
-    expect(find.text('Hindari kesalahan ini').hitTestable(), findsOneWidget);
-    expect(
-      find.byKey(const Key('grammar-next-point')).hitTestable(),
-      findsOneWidget,
-    );
-    await tester.tap(find.byKey(const Key('grammar-next-point')));
-    await tester.pumpAndSettle();
-    expect(find.text('Nではありません'), findsOneWidget);
-    await tester.tap(find.byKey(const Key('grammar-start-quiz')));
-    await tester.pumpAndSettle();
-    for (var i = 1; i <= 5; i++) {
-      await tester.tap(find.byKey(Key('grammar-option-q$i-a')));
+  testWidgets(
+    'small phone reads two patterns and completes five-question quiz',
+    (tester) async {
+      tester.view.physicalSize = const Size(360, 640);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final repository = _Repository();
+      await tester.pumpWidget(_app(repository));
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const Key('grammar-submit')));
+      expect(tester.takeException(), isNull);
+      expect(find.text('Nです'), findsOneWidget);
+      final furiganaToggle = find.byKey(const Key('grammar-furigana-toggle'));
+      expect(tester.widget<FilterChip>(furiganaToggle).selected, isTrue);
+      final example = find.byKey(const Key('grammar-example-0-0'));
+      await tester.scrollUntilVisible(
+        example,
+        120,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text('わたし'), findsOneWidget);
+      await tester.ensureVisible(furiganaToggle);
+      await tester.tap(furiganaToggle);
       await tester.pumpAndSettle();
-      expect(find.byKey(const Key('grammar-feedback')), findsOneWidget);
-      await tester.tap(find.byKey(const Key('grammar-submit')));
+      await tester.scrollUntilVisible(
+        example,
+        120,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text('わたし'), findsNothing);
+      await tester.ensureVisible(furiganaToggle);
+      await tester.tap(furiganaToggle);
       await tester.pumpAndSettle();
-    }
-    expect(find.text('Lesson dikuasai!'), findsOneWidget);
-    expect(find.text('100%'), findsOneWidget);
-    expect(repository.completed, 1);
-    expect(tester.takeException(), isNull);
-    await tester.ensureVisible(find.byKey(const Key('grammar-retry')));
-    await tester.tap(find.byKey(const Key('grammar-retry')));
-    await tester.pumpAndSettle();
-    expect(find.text('Pertanyaan 1/5'), findsOneWidget);
-    expect(repository.started, 2);
-  });
+      await tester.scrollUntilVisible(
+        example,
+        120,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text('わたし'), findsOneWidget);
+      await tester.ensureVisible(find.text('Hindari kesalahan ini'));
+      await tester.scrollUntilVisible(find.text('Hindari kesalahan ini'), 200);
+      expect(find.text('Hindari kesalahan ini').hitTestable(), findsOneWidget);
+      expect(
+        find.byKey(const Key('grammar-next-point')).hitTestable(),
+        findsOneWidget,
+      );
+      await tester.tap(find.byKey(const Key('grammar-next-point')));
+      await tester.pumpAndSettle();
+      expect(find.text('Nではありません'), findsOneWidget);
+      await tester.tap(find.byKey(const Key('grammar-start-quiz')));
+      await tester.pumpAndSettle();
+      for (var i = 1; i <= 5; i++) {
+        await tester.tap(find.byKey(Key('grammar-option-q$i-a')));
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const Key('grammar-submit')));
+        await tester.pumpAndSettle();
+        expect(find.byKey(const Key('grammar-feedback')), findsOneWidget);
+        await tester.tap(find.byKey(const Key('grammar-submit')));
+        await tester.pumpAndSettle();
+      }
+      expect(find.text('Lesson dikuasai!'), findsOneWidget);
+      expect(find.text('100%'), findsOneWidget);
+      expect(repository.completed, 1);
+      expect(tester.takeException(), isNull);
+      await tester.ensureVisible(find.byKey(const Key('grammar-retry')));
+      await tester.tap(find.byKey(const Key('grammar-retry')));
+      await tester.pumpAndSettle();
+      expect(find.text('Pertanyaan 1/5'), findsOneWidget);
+      expect(repository.started, 2);
+    },
+  );
 
   test('network errors preserve answer selection and can be retried', () async {
     final repository = _Repository()..failAnswer = true;
-    final controller =
-        GrammarController(repository, 'grammar-n5-01', onProgress: () {});
+    final controller = GrammarController(
+      repository,
+      'grammar-n5-01',
+      onProgress: () {},
+    );
     addTearDown(controller.dispose);
     await controller.load();
     await controller.startQuiz();
@@ -171,8 +206,11 @@ void main() {
 
   test('late lesson response after disposal does not write state', () async {
     final repository = _DelayedRepository();
-    final controller =
-        GrammarController(repository, 'grammar-n5-01', onProgress: () {});
+    final controller = GrammarController(
+      repository,
+      'grammar-n5-01',
+      onProgress: () {},
+    );
     final loading = controller.load();
     controller.dispose();
     repository.response.complete(_lesson);
@@ -181,31 +219,29 @@ void main() {
 }
 
 Widget _app(_Repository repository) => ProviderScope(
-      overrides: [
-        grammarRepositoryProvider.overrideWithValue(repository),
-        authControllerProvider.overrideWith(
-          (ref) => AuthController.test(
-            const AuthenticationState.authenticated(
-              AuthenticatedUser(
-                id: 'user',
-                displayName: 'Learner',
-                email: 'demo@example.com',
-              ),
-            ),
+  overrides: [
+    grammarRepositoryProvider.overrideWithValue(repository),
+    authControllerProvider.overrideWith(
+      (ref) => AuthController.test(
+        const AuthenticationState.authenticated(
+          AuthenticatedUser(
+            id: 'user',
+            displayName: 'Learner',
+            email: 'demo@example.com',
           ),
         ),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          outlinedButtonTheme: OutlinedButtonThemeData(
-            style: OutlinedButton.styleFrom(
-              minimumSize: const Size.fromHeight(52),
-            ),
-          ),
-        ),
-        home: const GrammarLessonScreen(lessonId: 'grammar-n5-01'),
       ),
-    );
+    ),
+  ],
+  child: MaterialApp(
+    theme: ThemeData(
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(52)),
+      ),
+    ),
+    home: const GrammarLessonScreen(lessonId: 'grammar-n5-01'),
+  ),
+);
 
 class _Repository extends GrammarRepository {
   _Repository() : super(Dio());

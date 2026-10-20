@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/controllers/reading_controller.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/widgets/reading_illustration.dart';
+import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
 
 class ReadingLessonScreen extends ConsumerWidget {
   const ReadingLessonScreen({required this.lessonId, super.key});
@@ -41,13 +42,13 @@ class ReadingLessonScreen extends ConsumerWidget {
           ReadingStage.study => _Study(state: s, controller: controller),
           ReadingStage.quiz => _Quiz(state: s, controller: controller),
           ReadingStage.result => _Result(
-              result: s.result!,
-              retry: controller.startQuiz,
-              study: controller.studyAgain,
-              finish: () => context.pop(),
-              busy: s.busy,
-              error: s.error,
-            ),
+            result: s.result!,
+            retry: controller.startQuiz,
+            study: controller.studyAgain,
+            finish: () => context.pop(),
+            busy: s.busy,
+            error: s.error,
+          ),
         },
       ),
     );
@@ -63,7 +64,7 @@ class _Study extends StatefulWidget {
 }
 
 class _StudyState extends State<_Study> {
-  bool _kana = false;
+  bool _furigana = true;
   bool _translation = false;
   @override
   Widget build(BuildContext context) {
@@ -105,8 +106,10 @@ class _StudyState extends State<_Study> {
               const SizedBox(height: 18),
               Text(
                 page.title,
-                style:
-                    const TextStyle(fontSize: 23, fontWeight: FontWeight.w900),
+                style: const TextStyle(
+                  fontSize: 23,
+                  fontWeight: FontWeight.w900,
+                ),
               ),
               const SizedBox(height: 12),
               Wrap(
@@ -114,18 +117,19 @@ class _StudyState extends State<_Study> {
                 runSpacing: 6,
                 children: [
                   FilterChip(
-                    label: const Text('Bantuan kana'),
-                    selected: _kana,
+                    key: const Key('reading-furigana-toggle'),
+                    label: const Text('Furigana'),
+                    selected: _furigana,
                     showCheckmark: false,
                     selectedColor: colors.secondary,
                     labelStyle: TextStyle(
-                      color: _kana ? colors.onSecondary : colors.onSurface,
+                      color: _furigana ? colors.onSecondary : colors.onSurface,
                     ),
-                    onSelected: (v) => setState(() => _kana = v),
+                    onSelected: (v) => setState(() => _furigana = v),
                     avatar: Icon(
                       Icons.translate_rounded,
                       size: 18,
-                      color: _kana ? colors.onSecondary : colors.primary,
+                      color: _furigana ? colors.onSecondary : colors.primary,
                     ),
                   ),
                   FilterChip(
@@ -134,8 +138,9 @@ class _StudyState extends State<_Study> {
                     showCheckmark: false,
                     selectedColor: colors.secondary,
                     labelStyle: TextStyle(
-                      color:
-                          _translation ? colors.onSecondary : colors.onSurface,
+                      color: _translation
+                          ? colors.onSecondary
+                          : colors.onSurface,
                     ),
                     onSelected: (v) => setState(() => _translation = v),
                     avatar: Icon(
@@ -156,35 +161,27 @@ class _StudyState extends State<_Study> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    SelectableText(
-                      page.japanese,
-                      key: const Key('reading-passage'),
-                      style: const TextStyle(
-                        fontSize: 23,
-                        height: 1.9,
-                        letterSpacing: 0.4,
-                      ),
-                    ),
-                    if (_kana) ...[
-                      const SizedBox(height: 16),
+                    if (_furigana)
+                      JapaneseRubyText(
+                        text: page.japanese,
+                        reading: page.reading,
+                        key: const Key('reading-passage'),
+                        style: const TextStyle(
+                          fontSize: 23,
+                          height: 1.9,
+                          letterSpacing: 0.4,
+                        ),
+                      )
+                    else
                       Text(
-                        'Cara baca',
-                        style: TextStyle(
-                          color: colors.primary,
-                          fontWeight: FontWeight.w800,
+                        page.japanese,
+                        key: const Key('reading-passage'),
+                        style: const TextStyle(
+                          fontSize: 23,
+                          height: 1.9,
+                          letterSpacing: 0.4,
                         ),
                       ),
-                      const SizedBox(height: 6),
-                      Text(
-                        page.reading,
-                        key: const Key('reading-kana'),
-                        style: TextStyle(
-                          fontSize: 17,
-                          height: 1.8,
-                          color: colors.secondary,
-                        ),
-                      ),
-                    ],
                     if (_translation) ...[
                       const SizedBox(height: 16),
                       const Text(
@@ -215,18 +212,27 @@ class _StudyState extends State<_Study> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text(
-                          word.japanese,
-                          style: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800,
+                        if (_furigana)
+                          JapaneseRubyText(
+                            text: word.japanese,
+                            reading: word.reading,
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w800,
+                            ),
+                            rubyStyle: TextStyle(
+                              color: colors.primary,
+                              fontSize: 12,
+                            ),
+                          )
+                        else
+                          Text(
+                            word.japanese,
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          word.reading,
-                          style: TextStyle(color: colors.primary),
-                        ),
                         const SizedBox(height: 8),
                         Text(word.meaning),
                       ],
@@ -261,8 +267,8 @@ class _StudyState extends State<_Study> {
                   onPressed: state.busy
                       ? null
                       : last
-                          ? controller.startQuiz
-                          : () => controller.movePage(1),
+                      ? controller.startQuiz
+                      : () => controller.movePage(1),
                   icon: state.busy
                       ? const _Spinner()
                       : Icon(
@@ -342,10 +348,10 @@ class _Quiz extends StatelessWidget {
                     final color = correct
                         ? Colors.green
                         : selected && feedback != null
-                            ? colors.error
-                            : selected
-                                ? colors.primary
-                                : colors.outlineVariant;
+                        ? colors.error
+                        : selected
+                        ? colors.primary
+                        : colors.outlineVariant;
                     return Material(
                       color: color.withValues(
                         alpha: selected || correct ? 0.1 : 0.03,
@@ -382,8 +388,8 @@ class _Quiz extends StatelessWidget {
                                 correct
                                     ? Icons.check_circle_rounded
                                     : selected
-                                        ? Icons.radio_button_checked
-                                        : Icons.radio_button_unchecked,
+                                    ? Icons.radio_button_checked
+                                    : Icons.radio_button_unchecked,
                                 color: color,
                               ),
                             ],
@@ -414,8 +420,9 @@ class _Quiz extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 19,
-                            color:
-                                feedback.correct ? Colors.green : colors.error,
+                            color: feedback.correct
+                                ? Colors.green
+                                : colors.error,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -436,24 +443,22 @@ class _Quiz extends StatelessWidget {
             width: double.infinity,
             child: FilledButton(
               key: const Key('reading-submit'),
-              style: FilledButton.styleFrom(
-                minimumSize: const Size(0, 52),
-              ),
+              style: FilledButton.styleFrom(minimumSize: const Size(0, 52)),
               onPressed: state.busy
                   ? null
                   : feedback != null
-                      ? controller.nextQuestion
-                      : state.selection == null
-                          ? null
-                          : controller.submit,
+                  ? controller.nextQuestion
+                  : state.selection == null
+                  ? null
+                  : controller.submit,
               child: state.busy
                   ? const _Spinner()
                   : Text(
                       feedback == null
                           ? 'Periksa jawaban'
                           : state.questionIndex == attempt.questions.length - 1
-                              ? 'Lihat hasil'
-                              : 'Soal berikutnya',
+                          ? 'Lihat hasil'
+                          : 'Soal berikutnya',
                     ),
             ),
           ),
@@ -559,34 +564,32 @@ class _Footer extends StatelessWidget {
   final String? error;
   @override
   Widget build(BuildContext context) => SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              if (error != null) ...[
-                Text(
-                  error!,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
-                const SizedBox(height: 8),
-              ],
-              child,
-            ],
-          ),
-        ),
-      );
+    top: false,
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (error != null) ...[
+            Text(
+              error!,
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
+            ),
+            const SizedBox(height: 8),
+          ],
+          child,
+        ],
+      ),
+    ),
+  );
 }
 
 class _Spinner extends StatelessWidget {
   const _Spinner();
   @override
   Widget build(BuildContext context) => const SizedBox.square(
-        dimension: 20,
-        child: CircularProgressIndicator(strokeWidth: 2),
-      );
+    dimension: 20,
+    child: CircularProgressIndicator(strokeWidth: 2),
+  );
 }

@@ -285,7 +285,7 @@ func parseJobPosting(source Source, pageURL string, body []byte) (Job, bool) {
 	if jobCategory == "" {
 		jobCategory = category(title, desc, industry, jsonString(posting["occupationalCategory"]))
 	}
-	job := Job{ExternalID: boardExternalID(source.ID, urlValue), Title: bounded(title, 500), Company: bounded(company, 300), Description: bounded(desc, 30000), Qualifications: bounded(qualifications, 12000), Location: bounded(loc, 500), Country: "JP", Prefecture: prefecture(loc), Category: jobCategory, Industry: bounded(industry, 300), EmploymentType: boardEmployment(jsonString(posting["employmentType"])), Remote: "unknown", Visa: "unknown", JapaneseLevel: "unknown", SourceURL: urlValue, ApplyURL: urlValue}
+	job := Job{ExternalID: boardExternalID(source.ID, urlValue), Title: bounded(title, 500), Company: bounded(company, 300), Description: bounded(desc, 30000), Qualifications: bounded(qualifications, 12000), Benefits: postingBenefits(posting["jobBenefits"]), Location: bounded(loc, 500), Country: "JP", Prefecture: prefecture(loc), Category: jobCategory, Industry: bounded(industry, 300), EmploymentType: boardEmployment(jsonString(posting["employmentType"])), Remote: "unknown", Visa: "unknown", JapaneseLevel: "unknown", SourceURL: urlValue, ApplyURL: urlValue}
 	if strings.Contains(strings.ToLower(jsonString(posting["jobLocationType"])), "telecommute") {
 		job.Remote = "remote"
 	}
@@ -582,4 +582,20 @@ func robotPathMatches(pattern, path string) bool {
 	}
 	matched, err := regexp.MatchString(b.String(), path)
 	return err == nil && matched
+}
+
+// Preserve explicit employer benefits only, using the listing HTML cleanup.
+func postingBenefits(value any) string {
+	var sections []string
+	switch v := value.(type) {
+	case string:
+		sections = append(sections, plainHTML(v))
+	case []any:
+		for _, item := range v {
+			if text, ok := item.(string); ok {
+				sections = append(sections, plainHTML(text))
+			}
+		}
+	}
+	return bounded(strings.TrimSpace(strings.Join(sections, "\n")), 30000)
 }

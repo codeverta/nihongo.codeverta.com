@@ -167,7 +167,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(repository.requests.last['q'], 'Tokyo');
     await tester.scrollUntilVisible(
-      find.text('Muat lebih banyak'),
+      find.text('Care worker two'),
       150,
       scrollable: find
           .descendant(
@@ -185,6 +185,7 @@ void main() {
     await tester.tap(find.text('Care worker two'));
     await tester.pumpAndSettle();
     expect(find.text('Detail lowongan'), findsOneWidget);
+    expect(find.text('Buka halaman asli'), findsNothing);
     await tester.scrollUntilVisible(
       find.text('Lihat & lamar di situs sumber'),
       200,

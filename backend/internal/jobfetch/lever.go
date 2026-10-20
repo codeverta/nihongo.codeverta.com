@@ -68,6 +68,7 @@ func normalizeLever(source Source, p leverPosting) (Job, bool, bool) {
 		sections = append(sections, description)
 	}
 	var qualifications []string
+	var benefits []string
 	for _, list := range p.Lists {
 		text := strings.TrimSpace(plainHTML(list.Content))
 		heading := strings.TrimSpace(plainHTML(list.Text))
@@ -77,6 +78,12 @@ func normalizeLever(source Source, p leverPosting) (Job, bool, bool) {
 		section := heading + "\n" + text
 		sections = append(sections, section)
 		lower := strings.ToLower(heading)
+		for _, key := range []string{"benefits", "perks", "福利厚生", "待遇"} {
+			if strings.Contains(lower, key) {
+				benefits = append(benefits, text)
+				break
+			}
+		}
 		for _, key := range []string{"qualif", "require", "skill", "応募", "必須", "歓迎", "求める", "必要"} {
 			if strings.Contains(lower, key) {
 				qualifications = append(qualifications, section)
@@ -93,6 +100,7 @@ func normalizeLever(source Source, p leverPosting) (Job, bool, bool) {
 	}
 	job.Description = bounded(strings.Join(sections, "\n\n"), 80000)
 	job.Qualifications = bounded(strings.Join(qualifications, "\n\n"), 30000)
+	job.Benefits = bounded(strings.Join(benefits, "\n\n"), 30000)
 	switch strings.ToLower(p.WorkplaceType) {
 	case "onsite", "on-site":
 		job.Remote = "onsite"

@@ -37,8 +37,7 @@ void main() {
     expect(find.text('Dikuasai • 80%'), findsOneWidget);
   });
 
-  testWidgets(
-      'lesson stays visible on a small phone and toggles example translation', (
+  testWidgets('N4 course shows its OpenJLPT source and license', (
     tester,
   ) async {
     tester.view.physicalSize = const Size(360, 640);
@@ -52,73 +51,161 @@ void main() {
           authControllerProvider.overrideWith(
             (ref) => AuthController.test(const AuthenticationState.guest()),
           ),
-          vocabularyRepositoryProvider.overrideWithValue(_LessonRepository()),
-        ],
-        child: MaterialApp(
-          theme: ThemeData(
-            outlinedButtonTheme: OutlinedButtonThemeData(
-              style: OutlinedButton.styleFrom(
-                // Match the app theme's full-width button constraint.
-                minimumSize: const Size.fromHeight(52),
+          vocabularyLevelsProvider.overrideWith(
+            (ref) async => const [
+              VocabularyLevel(
+                level: 'N4',
+                title: 'Kosakata N4',
+                description: '630 entri',
+                sourceName: 'OpenJLPT',
+                sourceUrl:
+                    'https://github.com/evanclan/OpenJLPT/blob/main/data/json/vocab/n4.json',
+                sourceLicense: 'CC BY-SA 4.0 • diadaptasi dan diterjemahkan',
+                requiredTier: 'free',
+                progress: 0,
+                lessons: [],
               ),
-            ),
+            ],
           ),
-          home: const VocabularyLessonScreen(lessonId: 'n5-daily'),
+        ],
+        child: const MaterialApp(
+          home: VocabularyCourseScreen(initialLevel: 'N4'),
         ),
       ),
     );
     await tester.pumpAndSettle();
 
+    expect(find.byKey(const Key('vocabulary-source-N4')), findsOneWidget);
+    expect(find.textContaining('Sumber: OpenJLPT'), findsOneWidget);
     expect(tester.takeException(), isNull);
-    expect(find.text('KATA 1 / 1'), findsOneWidget);
-    expect(find.byKey(const Key('word-word-1')), findsOneWidget);
-    expect(find.byKey(const Key('revealed-word-meaning')), findsOneWidget);
-    expect(find.text('saya'), findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.text('Saya adalah pelajar.'),
-      100,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.ensureVisible(find.text('Terjemahan'));
-    expect(find.text('Saya adalah pelajar.'), findsOneWidget);
-    await tester.tap(find.text('Terjemahan'));
-    await tester.pumpAndSettle();
-    expect(find.text('Saya adalah pelajar.'), findsNothing);
-    await tester.tap(find.text('Terjemahan'));
-    await tester.pumpAndSettle();
-    await tester.scrollUntilVisible(
-      find.text('Saya adalah pelajar.'),
-      100,
-      scrollable: find.byType(Scrollable).first,
-    );
-    expect(find.text('Saya adalah pelajar.'), findsOneWidget);
-    await tester.ensureVisible(find.text('私は学生です。'));
-    expect(find.text('私は学生です。'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-
-    await tester.scrollUntilVisible(
-      find.text('Catatan pemakaian'),
-      100,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.ensureVisible(find.text('Catatan pemakaian'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Catatan pemakaian'));
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('Kata ganti netral.'));
-    await tester.pumpAndSettle();
-    expect(find.text('Kata ganti netral.').hitTestable(), findsOneWidget);
-    expect(
-      find.byKey(const Key('start-vocabulary-quiz')).hitTestable(),
-      findsOneWidget,
-    );
-    expect(
-      tester
-          .widget<FilledButton>(find.byKey(const Key('start-vocabulary-quiz')))
-          .onPressed,
-      isNotNull,
-    );
   });
+
+  testWidgets(
+    'lesson stays visible on a small phone and toggles example translation',
+    (tester) async {
+      tester.view.physicalSize = const Size(360, 640);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            authControllerProvider.overrideWith(
+              (ref) => AuthController.test(const AuthenticationState.guest()),
+            ),
+            vocabularyRepositoryProvider.overrideWithValue(_LessonRepository()),
+          ],
+          child: MaterialApp(
+            theme: ThemeData(
+              outlinedButtonTheme: OutlinedButtonThemeData(
+                style: OutlinedButton.styleFrom(
+                  // Match the app theme's full-width button constraint.
+                  minimumSize: const Size.fromHeight(52),
+                ),
+              ),
+            ),
+            home: const VocabularyLessonScreen(lessonId: 'n5-daily'),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(tester.takeException(), isNull);
+      expect(find.text('KATA 1 / 1'), findsOneWidget);
+      expect(find.byKey(const Key('word-word-1')), findsOneWidget);
+      expect(find.byKey(const Key('revealed-word-meaning')), findsOneWidget);
+      expect(find.text('saya'), findsOneWidget);
+      expect(find.text('わたし'), findsOneWidget);
+      expect(
+        tester
+            .widget<FilterChip>(find.byKey(const Key('toggle-furigana')))
+            .selected,
+        isTrue,
+      );
+      await tester.ensureVisible(find.byKey(const Key('toggle-furigana')));
+      await tester.tap(find.byKey(const Key('toggle-furigana')));
+      await tester.pumpAndSettle();
+      expect(find.text('わたし'), findsNothing);
+      await tester.ensureVisible(find.byKey(const Key('toggle-furigana')));
+      await tester.tap(find.byKey(const Key('toggle-furigana')));
+      await tester.pumpAndSettle();
+      expect(find.text('わたし'), findsOneWidget);
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('example-japanese-0')),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.byKey(const Key('example-japanese-0')), findsOneWidget);
+      expect(find.text('わたし'), findsOneWidget);
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('toggle-furigana')),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.tap(find.byKey(const Key('toggle-furigana')));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('example-japanese-0')),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text('わたし'), findsNothing);
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('toggle-furigana')),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.tap(find.byKey(const Key('toggle-furigana')));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(
+        find.text('Saya adalah pelajar.'),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.ensureVisible(find.text('Terjemahan'));
+      expect(find.text('Saya adalah pelajar.'), findsOneWidget);
+      await tester.tap(find.text('Terjemahan'));
+      await tester.pumpAndSettle();
+      expect(find.text('Saya adalah pelajar.'), findsNothing);
+      await tester.tap(find.text('Terjemahan'));
+      await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(
+        find.text('Saya adalah pelajar.'),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text('Saya adalah pelajar.'), findsOneWidget);
+      await tester.ensureVisible(find.byKey(const Key('example-japanese-0')));
+      expect(find.byKey(const Key('example-japanese-0')), findsOneWidget);
+      expect(tester.takeException(), isNull);
+
+      await tester.scrollUntilVisible(
+        find.text('Catatan pemakaian'),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.ensureVisible(find.text('Catatan pemakaian'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Catatan pemakaian'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Kata ganti netral.'));
+      await tester.pumpAndSettle();
+      expect(find.text('Kata ganti netral.').hitTestable(), findsOneWidget);
+      expect(
+        find.byKey(const Key('start-vocabulary-quiz')).hitTestable(),
+        findsOneWidget,
+      );
+      expect(
+        tester
+            .widget<FilledButton>(
+              find.byKey(const Key('start-vocabulary-quiz')),
+            )
+            .onPressed,
+        isNotNull,
+      );
+    },
+  );
 }
 
 class _LessonRepository extends VocabularyRepository {
@@ -143,6 +230,13 @@ class _LessonRepository extends VocabularyRepository {
             example: '私は学生です。',
             exampleMeaning: 'Saya adalah pelajar.',
             note: 'Kata ganti netral.',
+            examples: [
+              VocabularyExample(
+                japanese: '私は学生です。',
+                reading: 'わたしはがくせいです。',
+                meaning: 'Saya adalah pelajar.',
+              ),
+            ],
           ),
         ],
       );

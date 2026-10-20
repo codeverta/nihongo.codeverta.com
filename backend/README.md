@@ -33,7 +33,9 @@ Panduan build APK kecil: [Android app size](../docs/android-app-size.md).
 
 Dokumentasi lengkap:
 
+- [Manga Jepang: katalog, reader, cache mingguan MariaDB/COS, dan admin](../docs/manga.md)
 - [Backend Developer Guide](../docs/backend-development.md)
+- [News Jepang: sumber, jadwal, DB, furigana, dan admin](../docs/news.md)
 - [Banner Beranda: carousel dan editor gambar di admin backend](../docs/home-banners.md)
 - [Gamifikasi: XP, streak, achievements, dan database permanen](../docs/gamification.md)
 - [Grammar JLPT N5: kurikulum dan API](../docs/grammar-n5.md)

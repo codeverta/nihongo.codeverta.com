@@ -6,6 +6,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VocabularyCourseScreen extends ConsumerStatefulWidget {
   const VocabularyCourseScreen({this.initialLevel = 'N5', super.key});
@@ -51,13 +52,14 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
           if (levels.isEmpty) {
             return const Center(child: Text('Materi belum tersedia.'));
           }
-          final level = levels.where((l) => l.level == selected).firstOrNull ??
+          final level =
+              levels.where((l) => l.level == selected).firstOrNull ??
               levels.first;
           final lessons = level.lessons
               .where(
-                (l) => '${l.title} ${l.description}'
-                    .toLowerCase()
-                    .contains(query.trim().toLowerCase()),
+                (l) => '${l.title} ${l.description}'.toLowerCase().contains(
+                  query.trim().toLowerCase(),
+                ),
               )
               .toList();
           final resume = level.lessons.where((l) => !l.completed).firstOrNull;
@@ -87,8 +89,11 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                   : colors.onSurface,
                             ),
                             onSelected: (_) {
-                              if (const ['N3', 'N2', 'N1']
-                                      .contains(item.level) &&
+                              if (const [
+                                    'N3',
+                                    'N2',
+                                    'N1',
+                                  ].contains(item.level) &&
                                   !(ref
                                           .read(authControllerProvider)
                                           .user
@@ -113,10 +118,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(28),
                     gradient: LinearGradient(
-                      colors: [
-                        colors.secondary,
-                        const Color(0xFF51428D),
-                      ],
+                      colors: [colors.secondary, const Color(0xFF51428D)],
                     ),
                   ),
                   child: Column(
@@ -158,6 +160,38 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                           height: 1.7,
                         ),
                       ),
+                      if (level.sourceUrl.isNotEmpty) ...[
+                        const SizedBox(height: 8),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextButton.icon(
+                            key: Key('vocabulary-source-${level.level}'),
+                            onPressed: () async {
+                              final uri = Uri.tryParse(level.sourceUrl);
+                              if (uri == null || !await launchUrl(uri)) {
+                                if (!context.mounted) return;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Sumber tidak dapat dibuka.'),
+                                  ),
+                                );
+                              }
+                            },
+                            style: TextButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              padding: EdgeInsets.zero,
+                            ),
+                            icon: const Icon(
+                              Icons.open_in_new_rounded,
+                              size: 16,
+                            ),
+                            label: Text(
+                              'Sumber: ${level.sourceName} • ${level.sourceLicense}',
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),
@@ -173,9 +207,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                     children: [
                       Text(
                         '${level.lessons.where((l) => l.completed).length}/${level.lessons.length} lesson dikuasai',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w800,
-                        ),
+                        style: const TextStyle(fontWeight: FontWeight.w800),
                       ),
                       const SizedBox(height: 10),
                       LinearProgressIndicator(
@@ -195,9 +227,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                         const SizedBox(height: 12),
                         FilledButton.icon(
                           onPressed: () => open(resume),
-                          icon: const Icon(
-                            Icons.play_arrow_rounded,
-                          ),
+                          icon: const Icon(Icons.play_arrow_rounded),
                           label: Text(
                             resume.bestScore > 0
                                 ? 'Lanjutkan belajar'
@@ -230,9 +260,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                 if (lessons.isEmpty)
                   const Padding(
                     padding: EdgeInsets.all(20),
-                    child: Text(
-                      'Tema belum ditemukan. Coba kata lain.',
-                    ),
+                    child: Text('Tema belum ditemukan. Coba kata lain.'),
                   ),
                 for (final lesson in lessons)
                   Padding(
@@ -248,8 +276,9 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                           padding: const EdgeInsets.all(12),
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color:
-                                  colors.outlineVariant.withValues(alpha: .5),
+                              color: colors.outlineVariant.withValues(
+                                alpha: .5,
+                              ),
                             ),
                             borderRadius: BorderRadius.circular(22),
                           ),
@@ -259,9 +288,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                 width: 88,
                                 height: 88,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(
-                                    16,
-                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                   child: lesson.imageAsset.isNotEmpty
                                       ? VocabularyArt(
                                           asset: lesson.imageAsset,
@@ -306,23 +333,19 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                     const SizedBox(height: 6),
                                     Text(
                                       '${lesson.wordCount} kata • ${lesson.questionCount > 0 ? lesson.questionCount : lesson.wordCount} soal',
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                      ),
+                                      style: const TextStyle(fontSize: 12),
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
                                       lesson.completed
                                           ? 'Dikuasai • ${lesson.bestScore}%'
                                           : lesson.bestScore > 0
-                                              ? 'Terbaik ${lesson.bestScore}%'
-                                              : 'Siap dipelajari',
+                                          ? 'Terbaik ${lesson.bestScore}%'
+                                          : 'Siap dipelajari',
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: lesson.completed
-                                            ? const Color(
-                                                0xFF167C67,
-                                              )
+                                            ? const Color(0xFF167C67)
                                             : colors.onSurfaceVariant,
                                       ),
                                     ),

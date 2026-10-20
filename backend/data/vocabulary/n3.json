@@ -1,0 +1,698 @@
+[
+  {
+    "id": "n3-daily-life",
+    "order": 1,
+    "title": "Kehidupan sehari-hari",
+    "description": "Kata untuk rumah, rutinitas, dan perubahan keseharian.",
+    "words": [
+      {
+        "id": "n3-daily-life-01",
+        "term": "習慣",
+        "reading": "しゅうかん",
+        "meaning": "kebiasaan",
+        "example": "習慣",
+        "exampleMeaning": "kebiasaan",
+        "note": "習慣（しゅうかん）: kebiasaan."
+      },
+      {
+        "id": "n3-daily-life-02",
+        "term": "片付ける",
+        "reading": "かたづける",
+        "meaning": "merapikan",
+        "example": "片付ける",
+        "exampleMeaning": "merapikan",
+        "note": "片付ける（かたづける）: merapikan."
+      },
+      {
+        "id": "n3-daily-life-03",
+        "term": "用意",
+        "reading": "ようい",
+        "meaning": "persiapan",
+        "example": "用意",
+        "exampleMeaning": "persiapan",
+        "note": "用意（ようい）: persiapan."
+      },
+      {
+        "id": "n3-daily-life-04",
+        "term": "準備",
+        "reading": "じゅんび",
+        "meaning": "persiapan",
+        "example": "準備",
+        "exampleMeaning": "persiapan",
+        "note": "準備（じゅんび）: persiapan."
+      },
+      {
+        "id": "n3-daily-life-05",
+        "term": "間に合う",
+        "reading": "まにあう",
+        "meaning": "tepat waktu; sempat",
+        "example": "間に合う",
+        "exampleMeaning": "tepat waktu; sempat",
+        "note": "間に合う（まにあう）: tepat waktu; sempat."
+      },
+      {
+        "id": "n3-daily-life-06",
+        "term": "遅刻",
+        "reading": "ちこく",
+        "meaning": "terlambat",
+        "example": "遅刻",
+        "exampleMeaning": "terlambat",
+        "note": "遅刻（ちこく）: terlambat."
+      },
+      {
+        "id": "n3-daily-life-07",
+        "term": "留守",
+        "reading": "るす",
+        "meaning": "tidak ada di rumah",
+        "example": "留守",
+        "exampleMeaning": "tidak ada di rumah",
+        "note": "留守（るす）: tidak ada di rumah."
+      },
+      {
+        "id": "n3-daily-life-08",
+        "term": "散歩",
+        "reading": "さんぽ",
+        "meaning": "jalan-jalan",
+        "example": "散歩",
+        "exampleMeaning": "jalan-jalan",
+        "note": "散歩（さんぽ）: jalan-jalan."
+      },
+      {
+        "id": "n3-daily-life-09",
+        "term": "洗濯",
+        "reading": "せんたく",
+        "meaning": "mencuci pakaian",
+        "example": "洗濯",
+        "exampleMeaning": "mencuci pakaian",
+        "note": "洗濯（せんたく）: mencuci pakaian."
+      },
+      {
+        "id": "n3-daily-life-10",
+        "term": "壊れる",
+        "reading": "こわれる",
+        "meaning": "rusak",
+        "example": "壊れる",
+        "exampleMeaning": "rusak",
+        "note": "壊れる（こわれる）: rusak."
+      },
+      {
+        "id": "n3-daily-life-11",
+        "term": "直す",
+        "reading": "なおす",
+        "meaning": "memperbaiki",
+        "example": "直す",
+        "exampleMeaning": "memperbaiki",
+        "note": "直す（なおす）: memperbaiki."
+      },
+      {
+        "id": "n3-daily-life-12",
+        "term": "捨てる",
+        "reading": "すてる",
+        "meaning": "membuang",
+        "example": "捨てる",
+        "exampleMeaning": "membuang",
+        "note": "捨てる（すてる）: membuang."
+      }
+    ]
+  },
+  {
+    "id": "n3-people",
+    "order": 2,
+    "title": "Orang dan hubungan",
+    "description": "Kata untuk hubungan, sikap, dan komunikasi antarorang.",
+    "words": [
+      {
+        "id": "n3-people-01",
+        "term": "相手",
+        "reading": "あいて",
+        "meaning": "lawan bicara; pihak lain",
+        "example": "相手",
+        "exampleMeaning": "lawan bicara; pihak lain",
+        "note": "相手（あいて）: lawan bicara; pihak lain."
+      },
+      {
+        "id": "n3-people-02",
+        "term": "仲間",
+        "reading": "なかま",
+        "meaning": "rekan; kelompok",
+        "example": "仲間",
+        "exampleMeaning": "rekan; kelompok",
+        "note": "仲間（なかま）: rekan; kelompok."
+      },
+      {
+        "id": "n3-people-03",
+        "term": "親戚",
+        "reading": "しんせき",
+        "meaning": "kerabat",
+        "example": "親戚",
+        "exampleMeaning": "kerabat",
+        "note": "親戚（しんせき）: kerabat."
+      },
+      {
+        "id": "n3-people-04",
+        "term": "性格",
+        "reading": "せいかく",
+        "meaning": "kepribadian",
+        "example": "性格",
+        "exampleMeaning": "kepribadian",
+        "note": "性格（せいかく）: kepribadian."
+      },
+      {
+        "id": "n3-people-05",
+        "term": "態度",
+        "reading": "たいど",
+        "meaning": "sikap",
+        "example": "態度",
+        "exampleMeaning": "sikap",
+        "note": "態度（たいど）: sikap."
+      },
+      {
+        "id": "n3-people-06",
+        "term": "機嫌",
+        "reading": "きげん",
+        "meaning": "suasana hati",
+        "example": "機嫌",
+        "exampleMeaning": "suasana hati",
+        "note": "機嫌（きげん）: suasana hati."
+      },
+      {
+        "id": "n3-people-07",
+        "term": "遠慮",
+        "reading": "えんりょ",
+        "meaning": "sungkan; menahan diri",
+        "example": "遠慮",
+        "exampleMeaning": "sungkan; menahan diri",
+        "note": "遠慮（えんりょ）: sungkan; menahan diri."
+      },
+      {
+        "id": "n3-people-08",
+        "term": "相談",
+        "reading": "そうだん",
+        "meaning": "konsultasi; berdiskusi",
+        "example": "相談",
+        "exampleMeaning": "konsultasi; berdiskusi",
+        "note": "相談（そうだん）: konsultasi; berdiskusi."
+      },
+      {
+        "id": "n3-people-09",
+        "term": "誘う",
+        "reading": "さそう",
+        "meaning": "mengajak",
+        "example": "誘う",
+        "exampleMeaning": "mengajak",
+        "note": "誘う（さそう）: mengajak."
+      },
+      {
+        "id": "n3-people-10",
+        "term": "断る",
+        "reading": "ことわる",
+        "meaning": "menolak",
+        "example": "断る",
+        "exampleMeaning": "menolak",
+        "note": "断る（ことわる）: menolak."
+      },
+      {
+        "id": "n3-people-11",
+        "term": "伝える",
+        "reading": "つたえる",
+        "meaning": "menyampaikan",
+        "example": "伝える",
+        "exampleMeaning": "menyampaikan",
+        "note": "伝える（つたえる）: menyampaikan."
+      },
+      {
+        "id": "n3-people-12",
+        "term": "謝る",
+        "reading": "あやまる",
+        "meaning": "meminta maaf",
+        "example": "謝る",
+        "exampleMeaning": "meminta maaf",
+        "note": "謝る（あやまる）: meminta maaf."
+      }
+    ]
+  },
+  {
+    "id": "n3-work-study",
+    "order": 3,
+    "title": "Belajar dan pekerjaan",
+    "description": "Kata untuk sekolah, pekerjaan, dan penyelesaian tugas.",
+    "words": [
+      {
+        "id": "n3-work-study-01",
+        "term": "経験",
+        "reading": "けいけん",
+        "meaning": "pengalaman",
+        "example": "経験",
+        "exampleMeaning": "pengalaman",
+        "note": "経験（けいけん）: pengalaman."
+      },
+      {
+        "id": "n3-work-study-02",
+        "term": "予定",
+        "reading": "よてい",
+        "meaning": "rencana; jadwal",
+        "example": "予定",
+        "exampleMeaning": "rencana; jadwal",
+        "note": "予定（よてい）: rencana; jadwal."
+      },
+      {
+        "id": "n3-work-study-03",
+        "term": "連絡",
+        "reading": "れんらく",
+        "meaning": "kontak; menghubungi",
+        "example": "連絡",
+        "exampleMeaning": "kontak; menghubungi",
+        "note": "連絡（れんらく）: kontak; menghubungi."
+      },
+      {
+        "id": "n3-work-study-04",
+        "term": "報告",
+        "reading": "ほうこく",
+        "meaning": "laporan; melaporkan",
+        "example": "報告",
+        "exampleMeaning": "laporan; melaporkan",
+        "note": "報告（ほうこく）: laporan; melaporkan."
+      },
+      {
+        "id": "n3-work-study-05",
+        "term": "確認",
+        "reading": "かくにん",
+        "meaning": "memastikan; pemeriksaan",
+        "example": "確認",
+        "exampleMeaning": "memastikan; pemeriksaan",
+        "note": "確認（かくにん）: memastikan; pemeriksaan."
+      },
+      {
+        "id": "n3-work-study-06",
+        "term": "説明",
+        "reading": "せつめい",
+        "meaning": "penjelasan",
+        "example": "説明",
+        "exampleMeaning": "penjelasan",
+        "note": "説明（せつめい）: penjelasan."
+      },
+      {
+        "id": "n3-work-study-07",
+        "term": "参加",
+        "reading": "さんか",
+        "meaning": "partisipasi; ikut serta",
+        "example": "参加",
+        "exampleMeaning": "partisipasi; ikut serta",
+        "note": "参加（さんか）: partisipasi; ikut serta."
+      },
+      {
+        "id": "n3-work-study-08",
+        "term": "提出",
+        "reading": "ていしゅつ",
+        "meaning": "penyerahan; mengumpulkan",
+        "example": "提出",
+        "exampleMeaning": "penyerahan; mengumpulkan",
+        "note": "提出（ていしゅつ）: penyerahan; mengumpulkan."
+      },
+      {
+        "id": "n3-work-study-09",
+        "term": "卒業",
+        "reading": "そつぎょう",
+        "meaning": "kelulusan",
+        "example": "卒業",
+        "exampleMeaning": "kelulusan",
+        "note": "卒業（そつぎょう）: kelulusan."
+      },
+      {
+        "id": "n3-work-study-10",
+        "term": "会議",
+        "reading": "かいぎ",
+        "meaning": "rapat",
+        "example": "会議",
+        "exampleMeaning": "rapat",
+        "note": "会議（かいぎ）: rapat."
+      },
+      {
+        "id": "n3-work-study-11",
+        "term": "仕事",
+        "reading": "しごと",
+        "meaning": "pekerjaan",
+        "example": "仕事",
+        "exampleMeaning": "pekerjaan",
+        "note": "仕事（しごと）: pekerjaan."
+      },
+      {
+        "id": "n3-work-study-12",
+        "term": "間違い",
+        "reading": "まちがい",
+        "meaning": "kesalahan",
+        "example": "間違い",
+        "exampleMeaning": "kesalahan",
+        "note": "間違い（まちがい）: kesalahan."
+      }
+    ]
+  },
+  {
+    "id": "n3-society",
+    "order": 4,
+    "title": "Masyarakat dan layanan",
+    "description": "Kata untuk layanan, aturan, dan aktivitas publik.",
+    "words": [
+      {
+        "id": "n3-society-01",
+        "term": "案内",
+        "reading": "あんない",
+        "meaning": "panduan; memberi petunjuk",
+        "example": "案内",
+        "exampleMeaning": "panduan; memberi petunjuk",
+        "note": "案内（あんない）: panduan; memberi petunjuk."
+      },
+      {
+        "id": "n3-society-02",
+        "term": "受付",
+        "reading": "うけつけ",
+        "meaning": "resepsionis; loket",
+        "example": "受付",
+        "exampleMeaning": "resepsionis; loket",
+        "note": "受付（うけつけ）: resepsionis; loket."
+      },
+      {
+        "id": "n3-society-03",
+        "term": "規則",
+        "reading": "きそく",
+        "meaning": "peraturan",
+        "example": "規則",
+        "exampleMeaning": "peraturan",
+        "note": "規則（きそく）: peraturan."
+      },
+      {
+        "id": "n3-society-04",
+        "term": "利用",
+        "reading": "りよう",
+        "meaning": "penggunaan; memakai",
+        "example": "利用",
+        "exampleMeaning": "penggunaan; memakai",
+        "note": "利用（りよう）: penggunaan; memakai."
+      },
+      {
+        "id": "n3-society-05",
+        "term": "必要",
+        "reading": "ひつよう",
+        "meaning": "perlu; kebutuhan",
+        "example": "必要",
+        "exampleMeaning": "perlu; kebutuhan",
+        "note": "必要（ひつよう）: perlu; kebutuhan."
+      },
+      {
+        "id": "n3-society-06",
+        "term": "安全",
+        "reading": "あんぜん",
+        "meaning": "aman; keselamatan",
+        "example": "安全",
+        "exampleMeaning": "aman; keselamatan",
+        "note": "安全（あんぜん）: aman; keselamatan."
+      },
+      {
+        "id": "n3-society-07",
+        "term": "危険",
+        "reading": "きけん",
+        "meaning": "bahaya; berbahaya",
+        "example": "危険",
+        "exampleMeaning": "bahaya; berbahaya",
+        "note": "危険（きけん）: bahaya; berbahaya."
+      },
+      {
+        "id": "n3-society-08",
+        "term": "交通",
+        "reading": "こうつう",
+        "meaning": "lalu lintas; transportasi",
+        "example": "交通",
+        "exampleMeaning": "lalu lintas; transportasi",
+        "note": "交通（こうつう）: lalu lintas; transportasi."
+      },
+      {
+        "id": "n3-society-09",
+        "term": "事故",
+        "reading": "じこ",
+        "meaning": "kecelakaan",
+        "example": "事故",
+        "exampleMeaning": "kecelakaan",
+        "note": "事故（じこ）: kecelakaan."
+      },
+      {
+        "id": "n3-society-10",
+        "term": "警察",
+        "reading": "けいさつ",
+        "meaning": "polisi",
+        "example": "警察",
+        "exampleMeaning": "polisi",
+        "note": "警察（けいさつ）: polisi."
+      },
+      {
+        "id": "n3-society-11",
+        "term": "理由",
+        "reading": "りゆう",
+        "meaning": "alasan",
+        "example": "理由",
+        "exampleMeaning": "alasan",
+        "note": "理由（りゆう）: alasan."
+      },
+      {
+        "id": "n3-society-12",
+        "term": "場合",
+        "reading": "ばあい",
+        "meaning": "keadaan; kasus",
+        "example": "場合",
+        "exampleMeaning": "keadaan; kasus",
+        "note": "場合（ばあい）: keadaan; kasus."
+      }
+    ]
+  },
+  {
+    "id": "n3-nature",
+    "order": 5,
+    "title": "Alam dan kesehatan",
+    "description": "Kata untuk cuaca, lingkungan, dan kondisi tubuh.",
+    "words": [
+      {
+        "id": "n3-nature-01",
+        "term": "景色",
+        "reading": "けしき",
+        "meaning": "pemandangan",
+        "example": "景色",
+        "exampleMeaning": "pemandangan",
+        "note": "景色（けしき）: pemandangan."
+      },
+      {
+        "id": "n3-nature-02",
+        "term": "自然",
+        "reading": "しぜん",
+        "meaning": "alam; alami",
+        "example": "自然",
+        "exampleMeaning": "alam; alami",
+        "note": "自然（しぜん）: alam; alami."
+      },
+      {
+        "id": "n3-nature-03",
+        "term": "地震",
+        "reading": "じしん",
+        "meaning": "gempa bumi",
+        "example": "地震",
+        "exampleMeaning": "gempa bumi",
+        "note": "地震（じしん）: gempa bumi."
+      },
+      {
+        "id": "n3-nature-04",
+        "term": "台風",
+        "reading": "たいふう",
+        "meaning": "topan",
+        "example": "台風",
+        "exampleMeaning": "topan",
+        "note": "台風（たいふう）: topan."
+      },
+      {
+        "id": "n3-nature-05",
+        "term": "気温",
+        "reading": "きおん",
+        "meaning": "suhu udara",
+        "example": "気温",
+        "exampleMeaning": "suhu udara",
+        "note": "気温（きおん）: suhu udara."
+      },
+      {
+        "id": "n3-nature-06",
+        "term": "暖房",
+        "reading": "だんぼう",
+        "meaning": "pemanas ruangan",
+        "example": "暖房",
+        "exampleMeaning": "pemanas ruangan",
+        "note": "暖房（だんぼう）: pemanas ruangan."
+      },
+      {
+        "id": "n3-nature-07",
+        "term": "冷房",
+        "reading": "れいぼう",
+        "meaning": "pendingin ruangan",
+        "example": "冷房",
+        "exampleMeaning": "pendingin ruangan",
+        "note": "冷房（れいぼう）: pendingin ruangan."
+      },
+      {
+        "id": "n3-nature-08",
+        "term": "健康",
+        "reading": "けんこう",
+        "meaning": "kesehatan",
+        "example": "健康",
+        "exampleMeaning": "kesehatan",
+        "note": "健康（けんこう）: kesehatan."
+      },
+      {
+        "id": "n3-nature-09",
+        "term": "具合",
+        "reading": "ぐあい",
+        "meaning": "kondisi",
+        "example": "具合",
+        "exampleMeaning": "kondisi",
+        "note": "具合（ぐあい）: kondisi."
+      },
+      {
+        "id": "n3-nature-10",
+        "term": "熱",
+        "reading": "ねつ",
+        "meaning": "demam; panas",
+        "example": "熱",
+        "exampleMeaning": "demam; panas",
+        "note": "熱（ねつ）: demam; panas."
+      },
+      {
+        "id": "n3-nature-11",
+        "term": "咳",
+        "reading": "せき",
+        "meaning": "batuk",
+        "example": "咳",
+        "exampleMeaning": "batuk",
+        "note": "咳（せき）: batuk."
+      },
+      {
+        "id": "n3-nature-12",
+        "term": "治る",
+        "reading": "なおる",
+        "meaning": "sembuh",
+        "example": "治る",
+        "exampleMeaning": "sembuh",
+        "note": "治る（なおる）: sembuh."
+      }
+    ]
+  },
+  {
+    "id": "n3-thought",
+    "order": 6,
+    "title": "Pikiran dan perubahan",
+    "description": "Kata untuk pendapat, sebab-akibat, serta perubahan.",
+    "words": [
+      {
+        "id": "n3-thought-01",
+        "term": "意見",
+        "reading": "いけん",
+        "meaning": "pendapat",
+        "example": "意見",
+        "exampleMeaning": "pendapat",
+        "note": "意見（いけん）: pendapat."
+      },
+      {
+        "id": "n3-thought-02",
+        "term": "考え",
+        "reading": "かんがえ",
+        "meaning": "pikiran; gagasan",
+        "example": "考え",
+        "exampleMeaning": "pikiran; gagasan",
+        "note": "考え（かんがえ）: pikiran; gagasan."
+      },
+      {
+        "id": "n3-thought-03",
+        "term": "気持ち",
+        "reading": "きもち",
+        "meaning": "perasaan",
+        "example": "気持ち",
+        "exampleMeaning": "perasaan",
+        "note": "気持ち（きもち）: perasaan."
+      },
+      {
+        "id": "n3-thought-04",
+        "term": "心配",
+        "reading": "しんぱい",
+        "meaning": "khawatir; kekhawatiran",
+        "example": "心配",
+        "exampleMeaning": "khawatir; kekhawatiran",
+        "note": "心配（しんぱい）: khawatir; kekhawatiran."
+      },
+      {
+        "id": "n3-thought-05",
+        "term": "安心",
+        "reading": "あんしん",
+        "meaning": "lega; merasa tenang",
+        "example": "安心",
+        "exampleMeaning": "lega; merasa tenang",
+        "note": "安心（あんしん）: lega; merasa tenang."
+      },
+      {
+        "id": "n3-thought-06",
+        "term": "残念",
+        "reading": "ざんねん",
+        "meaning": "sayang sekali",
+        "example": "残念",
+        "exampleMeaning": "sayang sekali",
+        "note": "残念（ざんねん）: sayang sekali."
+      },
+      {
+        "id": "n3-thought-07",
+        "term": "十分",
+        "reading": "じゅうぶん",
+        "meaning": "cukup",
+        "example": "十分",
+        "exampleMeaning": "cukup",
+        "note": "十分（じゅうぶん）: cukup."
+      },
+      {
+        "id": "n3-thought-08",
+        "term": "特別",
+        "reading": "とくべつ",
+        "meaning": "khusus",
+        "example": "特別",
+        "exampleMeaning": "khusus",
+        "note": "特別（とくべつ）: khusus."
+      },
+      {
+        "id": "n3-thought-09",
+        "term": "急に",
+        "reading": "きゅうに",
+        "meaning": "tiba-tiba",
+        "example": "急に",
+        "exampleMeaning": "tiba-tiba",
+        "note": "急に（きゅうに）: tiba-tiba."
+      },
+      {
+        "id": "n3-thought-10",
+        "term": "例えば",
+        "reading": "たとえば",
+        "meaning": "misalnya",
+        "example": "例えば",
+        "exampleMeaning": "misalnya",
+        "note": "例えば（たとえば）: misalnya."
+      },
+      {
+        "id": "n3-thought-11",
+        "term": "増える",
+        "reading": "ふえる",
+        "meaning": "bertambah",
+        "example": "増える",
+        "exampleMeaning": "bertambah",
+        "note": "増える（ふえる）: bertambah."
+      },
+      {
+        "id": "n3-thought-12",
+        "term": "減る",
+        "reading": "へる",
+        "meaning": "berkurang",
+        "example": "減る",
+        "exampleMeaning": "berkurang",
+        "note": "減る（へる）: berkurang."
+      }
+    ]
+  }
+]

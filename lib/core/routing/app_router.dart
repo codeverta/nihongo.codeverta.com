@@ -22,8 +22,11 @@ import 'package:nihongo_master/features/learn/reading/presentation/screens/readi
 import 'package:nihongo_master/features/learn/reading/presentation/screens/reading_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_course_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
+import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
+import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
+import 'package:nihongo_master/features/profile/presentation/screens/attributions_screen.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
@@ -74,7 +77,7 @@ const _firstTimeKey = 'is_first_time';
 /// Menyimpan status onboarding dan menyinkronkannya ke SharedPreferences.
 class FirstTimeNotifier extends StateNotifier<bool> {
   FirstTimeNotifier(this._preferences)
-      : super(_preferences.getBool(_firstTimeKey) ?? true);
+    : super(_preferences.getBool(_firstTimeKey) ?? true);
 
   final SharedPreferences _preferences;
 
@@ -100,6 +103,35 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   final router = GoRouter(
     initialLocation: AppRoutes.splashPath,
     routes: [
+      GoRoute(
+        path: '/attributions',
+        builder: (context, state) => const AttributionsScreen(),
+      ),
+      GoRoute(
+        path: '/manga',
+        builder: (context, state) => const MangaCatalogScreen(),
+      ),
+      GoRoute(
+        path: '/manga/chapters/:id',
+        builder: (context, state) => MangaReaderScreen(
+          id: state.pathParameters['id']!,
+          key: ValueKey(state.pathParameters['id']),
+        ),
+      ),
+      GoRoute(
+        path: '/manga/:id',
+        builder: (context, state) =>
+            MangaDetailScreen(id: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: '/news',
+        builder: (context, state) => const NewsListScreen(),
+      ),
+      GoRoute(
+        path: '/news/:id',
+        builder: (context, state) =>
+            NewsReaderScreen(id: state.pathParameters['id']!),
+      ),
       GoRoute(path: '/jobs', builder: (context, state) => const JobsScreen()),
       GoRoute(
         path: '/jobs/sources',
@@ -151,8 +183,9 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) =>
             SswPracticeScreen(sector: state.pathParameters['sectorId']!),
       ),
-      for (final level
-          in sswAssessmentLevels.values.expand((levels) => levels)) ...[
+      for (final level in sswAssessmentLevels.values.expand(
+        (levels) => levels,
+      )) ...[
         GoRoute(
           path: '/exams/${level.toLowerCase()}/simulation',
           builder: (context, state) => SswSimulationIntroScreen(level: level),
@@ -329,6 +362,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       }
 
       final user = ref.read(authControllerProvider).user;
+      if ((location == '/manga' || location.startsWith('/manga/')) &&
+          !(user?.isLifetime ?? false)) {
+        return '/premium?from=${Uri.encodeQueryComponent(state.uri.toString())}';
+      }
       if (requiresPremium(state.uri) && !(user?.isPremium ?? false)) {
         return '/premium?from=${Uri.encodeQueryComponent(state.uri.toString())}';
       }
@@ -342,6 +379,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   // GoRouter perlu diberi tahu saat state yang dipakai redirect berubah.
   ref
     ..listen<bool>(isFirstTimeProvider, (previous, next) => router.refresh())
+    ..listen<bool>(
+      authControllerProvider.select((s) => s.user?.isLifetime ?? false),
+      (previous, next) => router.refresh(),
+    )
     ..listen<bool>(
       authControllerProvider.select((s) => s.user?.isPremium ?? false),
       (previous, next) => router.refresh(),

@@ -17,6 +17,10 @@ void main() {
       resolveAssetImageUrl(api, 'https://cdn.example.com/$asset', asset),
       'https://cdn.example.com/$asset',
     );
+    expect(
+      resolveAssetImageFallbackUrl(api, asset),
+      'https://api.example.com/$asset',
+    );
     expect(resolveAssetImageUrl(api, '', ''), isEmpty);
   });
 }

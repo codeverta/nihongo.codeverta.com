@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_writing_pad.dart';
+import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
 
 class KanjiLessonScreen extends ConsumerWidget {
   const KanjiLessonScreen({required this.lessonId, super.key});
@@ -15,9 +16,7 @@ class KanjiLessonScreen extends ConsumerWidget {
     final controller = ref.read(provider.notifier);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          lesson.valueOrNull?.lesson.summary.title ?? 'Lesson Kanji',
-        ),
+        title: Text(lesson.valueOrNull?.lesson.summary.title ?? 'Lesson Kanji'),
       ),
       body: lesson.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -41,25 +40,35 @@ class KanjiLessonScreen extends ConsumerWidget {
           KanjiStage.study => _Study(state: s, controller: controller),
           KanjiStage.quiz => _Quiz(state: s, controller: controller),
           KanjiStage.result => _Result(
-              result: s.result!,
-              retry: controller.startQuiz,
-              study: controller.studyAgain,
-              finish: () => context.pop(),
-              busy: s.busy,
-              error: s.error,
-            ),
+            result: s.result!,
+            retry: controller.startQuiz,
+            study: controller.studyAgain,
+            finish: () => context.pop(),
+            busy: s.busy,
+            error: s.error,
+          ),
         },
       ),
     );
   }
 }
 
-class _Study extends StatelessWidget {
+class _Study extends StatefulWidget {
   const _Study({required this.state, required this.controller});
   final KanjiState state;
   final KanjiController controller;
+
+  @override
+  State<_Study> createState() => _StudyState();
+}
+
+class _StudyState extends State<_Study> {
+  bool _furigana = true;
+
   @override
   Widget build(BuildContext context) {
+    final state = widget.state;
+    final controller = widget.controller;
     final point = state.lesson.characters[state.characterIndex];
     final last = state.characterIndex == state.lesson.characters.length - 1;
     final colors = Theme.of(context).colorScheme;
@@ -93,15 +102,34 @@ class _Study extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      point.character,
-                      key: const Key('kanji-pattern'),
-                      style: TextStyle(
-                        fontSize: 80,
-                        fontWeight: FontWeight.w800,
-                        color: colors.secondary,
+                    if (_furigana)
+                      JapaneseRubyText(
+                        text: point.character,
+                        reading: _kanjiCardReading(point),
+                        key: const Key('kanji-pattern'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 80,
+                          fontWeight: FontWeight.w800,
+                          color: colors.secondary,
+                        ),
+                        rubyStyle: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: colors.primary,
+                        ),
+                      )
+                    else
+                      Text(
+                        point.character,
+                        key: const Key('kanji-pattern'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 80,
+                          fontWeight: FontWeight.w800,
+                          color: colors.secondary,
+                        ),
                       ),
-                    ),
                     const SizedBox(height: 10),
                     Text(
                       point.meaning,
@@ -124,34 +152,60 @@ class _Study extends StatelessWidget {
                 icon: Icons.menu_book_rounded,
               ),
               const SizedBox(height: 22),
+              FilterChip(
+                key: const Key('kanji-furigana-toggle'),
+                label: const Text('Furigana'),
+                selected: _furigana,
+                showCheckmark: false,
+                selectedColor: colors.secondary,
+                labelStyle: TextStyle(
+                  color: _furigana ? colors.onSecondary : colors.onSurface,
+                ),
+                avatar: Icon(
+                  Icons.translate_rounded,
+                  size: 18,
+                  color: _furigana ? colors.onSecondary : colors.primary,
+                ),
+                onSelected: (value) => setState(() => _furigana = value),
+              ),
+              const SizedBox(height: 12),
               const Text(
                 'Contoh kata dan pemakaian',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 12),
-              for (final example in point.examples) ...[
+              for (final (index, example) in point.examples.indexed) ...[
                 Card(
                   child: Padding(
                     padding: const EdgeInsets.all(18),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text(
-                          example.japanese,
-                          style: const TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700,
-                            height: 1.5,
+                        if (_furigana)
+                          JapaneseRubyText(
+                            text: example.japanese,
+                            reading: example.reading,
+                            key: Key('kanji-example-$index'),
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                              height: 1.5,
+                            ),
+                            rubyStyle: TextStyle(
+                              color: colors.primary,
+                              fontSize: 11,
+                            ),
+                          )
+                        else
+                          Text(
+                            example.japanese,
+                            key: Key('kanji-example-$index'),
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                              height: 1.5,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          example.reading,
-                          style: TextStyle(
-                            color: colors.primary,
-                            height: 1.5,
-                          ),
-                        ),
                         const SizedBox(height: 10),
                         Text(example.meaning),
                       ],
@@ -192,14 +246,12 @@ class _Study extends StatelessWidget {
               Expanded(
                 child: FilledButton.icon(
                   key: Key(last ? 'kanji-start-quiz' : 'kanji-next-point'),
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size(0, 52),
-                  ),
+                  style: FilledButton.styleFrom(minimumSize: const Size(0, 52)),
                   onPressed: state.busy
                       ? null
                       : last
-                          ? controller.startQuiz
-                          : () => controller.moveCharacter(1),
+                      ? controller.startQuiz
+                      : () => controller.moveCharacter(1),
                   icon: state.busy
                       ? const _Spinner()
                       : Icon(
@@ -225,28 +277,24 @@ class _Section extends StatelessWidget {
   final IconData icon;
   @override
   Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Row(
         children: [
-          Row(
-            children: [
-              Icon(
-                icon,
-                size: 20,
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(fontWeight: FontWeight.w800),
-                ),
-              ),
-            ],
+          Icon(icon, size: 20, color: Theme.of(context).colorScheme.primary),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.w800),
+            ),
           ),
-          const SizedBox(height: 8),
-          Text(body, style: const TextStyle(height: 1.65)),
         ],
-      );
+      ),
+      const SizedBox(height: 8),
+      Text(body, style: const TextStyle(height: 1.65)),
+    ],
+  );
 }
 
 class _Quiz extends StatelessWidget {
@@ -298,10 +346,10 @@ class _Quiz extends StatelessWidget {
                     final color = correct
                         ? Colors.green
                         : selected && feedback != null
-                            ? colors.error
-                            : selected
-                                ? colors.primary
-                                : colors.outlineVariant;
+                        ? colors.error
+                        : selected
+                        ? colors.primary
+                        : colors.outlineVariant;
                     return Material(
                       color: color.withValues(
                         alpha: selected || correct ? 0.1 : 0.03,
@@ -338,8 +386,8 @@ class _Quiz extends StatelessWidget {
                                 correct
                                     ? Icons.check_circle_rounded
                                     : selected
-                                        ? Icons.radio_button_checked
-                                        : Icons.radio_button_unchecked,
+                                    ? Icons.radio_button_checked
+                                    : Icons.radio_button_unchecked,
                                 color: color,
                               ),
                             ],
@@ -370,8 +418,9 @@ class _Quiz extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 19,
-                            color:
-                                feedback.correct ? Colors.green : colors.error,
+                            color: feedback.correct
+                                ? Colors.green
+                                : colors.error,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -392,24 +441,22 @@ class _Quiz extends StatelessWidget {
             width: double.infinity,
             child: FilledButton(
               key: const Key('kanji-submit'),
-              style: FilledButton.styleFrom(
-                minimumSize: const Size(0, 52),
-              ),
+              style: FilledButton.styleFrom(minimumSize: const Size(0, 52)),
               onPressed: state.busy
                   ? null
                   : feedback != null
-                      ? controller.nextQuestion
-                      : state.selection == null
-                          ? null
-                          : controller.submit,
+                  ? controller.nextQuestion
+                  : state.selection == null
+                  ? null
+                  : controller.submit,
               child: state.busy
                   ? const _Spinner()
                   : Text(
                       feedback == null
                           ? 'Periksa jawaban'
                           : state.questionIndex == attempt.questions.length - 1
-                              ? 'Lihat hasil'
-                              : 'Soal berikutnya',
+                          ? 'Lihat hasil'
+                          : 'Soal berikutnya',
                     ),
             ),
           ),
@@ -515,34 +562,43 @@ class _Footer extends StatelessWidget {
   final String? error;
   @override
   Widget build(BuildContext context) => SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              if (error != null) ...[
-                Text(
-                  error!,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
-                const SizedBox(height: 8),
-              ],
-              child,
-            ],
-          ),
-        ),
-      );
+    top: false,
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (error != null) ...[
+            Text(
+              error!,
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
+            ),
+            const SizedBox(height: 8),
+          ],
+          child,
+        ],
+      ),
+    ),
+  );
 }
 
 class _Spinner extends StatelessWidget {
   const _Spinner();
   @override
   Widget build(BuildContext context) => const SizedBox.square(
-        dimension: 20,
-        child: CircularProgressIndicator(strokeWidth: 2),
-      );
+    dimension: 20,
+    child: CircularProgressIndicator(strokeWidth: 2),
+  );
+}
+
+String _kanjiCardReading(KanjiCharacter point) {
+  for (final example in point.examples) {
+    if (example.japanese == point.character && example.reading.isNotEmpty) {
+      return example.reading;
+    }
+  }
+  final kun = point.kunReading.split('、').first.split('.').first.trim();
+  if (kun.isNotEmpty && kun != '—') return kun;
+  return point.onReading.split('、').first.trim();
 }

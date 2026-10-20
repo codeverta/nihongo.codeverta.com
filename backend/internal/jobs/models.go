@@ -24,6 +24,7 @@ type listingRow struct {
 	SalaryText     string     `gorm:"type:varchar(1024)"`
 	Description    string     `gorm:"type:longtext"`
 	Qualifications string     `gorm:"type:longtext"`
+	Benefits       string     `gorm:"type:longtext"`
 	SourceID       string     `gorm:"type:varchar(80);not null;index"`
 	SourceName     string     `gorm:"type:varchar(255)"`
 	SourceURL      string     `gorm:"type:text"`
@@ -108,6 +109,7 @@ type Job struct {
 	SalaryText     string     `json:"salaryText"`
 	Description    string     `json:"description"`
 	Qualifications string     `json:"qualifications"`
+	Benefits       string     `json:"benefits"`
 	SourceID       string     `json:"sourceId"`
 	SourceName     string     `json:"sourceName"`
 	SourceURL      string     `json:"sourceUrl"`
@@ -119,7 +121,7 @@ type Job struct {
 }
 
 func view(r listingRow) Job {
-	return Job{r.ID, r.Title, r.Company, r.Category, r.Sector, r.Prefecture, r.Location, r.Country, r.EmploymentType, r.Remote, r.Visa, r.JapaneseLevel, r.SalaryMin, r.SalaryMax, r.SalaryCurrency, r.SalaryPeriod, r.SalaryText, r.Description, r.Qualifications, r.SourceID, r.SourceName, r.SourceURL, r.ApplyURL, r.PostedAt, r.ExpiresAt, r.LastSeenAt, r.Status}
+	return Job{r.ID, r.Title, r.Company, r.Category, r.Sector, r.Prefecture, r.Location, r.Country, r.EmploymentType, r.Remote, r.Visa, r.JapaneseLevel, r.SalaryMin, r.SalaryMax, r.SalaryCurrency, r.SalaryPeriod, r.SalaryText, r.Description, r.Qualifications, r.Benefits, r.SourceID, r.SourceName, r.SourceURL, r.ApplyURL, r.PostedAt, r.ExpiresAt, r.LastSeenAt, r.Status}
 }
 
 type Option struct {

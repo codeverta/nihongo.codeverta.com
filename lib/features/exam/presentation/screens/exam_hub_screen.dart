@@ -7,14 +7,24 @@ import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_wid
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 
 class ExamHubScreen extends ConsumerStatefulWidget {
-  const ExamHubScreen({super.key});
+  const ExamHubScreen({this.initialCategory = 'JLPT', super.key});
+
+  final String initialCategory;
 
   @override
   ConsumerState<ExamHubScreen> createState() => _ExamHubScreenState();
 }
 
 class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
-  String category = 'JLPT';
+  late String category = widget.initialCategory;
+
+  @override
+  void didUpdateWidget(covariant ExamHubScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.initialCategory != widget.initialCategory) {
+      category = widget.initialCategory;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +73,8 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
               description: 'Kosakata, kanji, grammar & reading',
               note: 'Latihan tertulis · Tanpa listening',
               locked: !premium,
-              onTap: () => context.push(
-                premium ? '/exams/nat/simulation' : '/premium',
-              ),
+              onTap: () =>
+                  context.push(premium ? '/exams/nat/simulation' : '/premium'),
             ),
           ],
           if (category == 'JFT Test') ...[
@@ -78,9 +87,8 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
               description: 'Kosakata, percakapan & reading',
               note: 'Latihan tertulis · Tanpa listening',
               locked: !premium,
-              onTap: () => context.push(
-                premium ? '/exams/jft/exam-1' : '/premium',
-              ),
+              onTap: () =>
+                  context.push(premium ? '/exams/jft/exam-1' : '/premium'),
             ),
           ],
           if (category == 'JLPT') ...[
@@ -160,8 +168,9 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                           title: const Text('Lanjutkan diagnostic N5'),
                           subtitle: const Text('Jawabanmu sudah tersimpan.'),
                           trailing: const Icon(Icons.chevron_right),
-                          onTap: () => context
-                              .push('/exams/n5/attempt/$activeAttemptId'),
+                          onTap: () => context.push(
+                            '/exams/n5/attempt/$activeAttemptId',
+                          ),
                         ),
                       ),
                       const SizedBox(height: 12),
@@ -220,9 +229,9 @@ class _SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-        text,
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-      );
+    text,
+    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+  );
 }
 
 class _ExamRow extends StatelessWidget {

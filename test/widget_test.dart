@@ -7,6 +7,7 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
+import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 import 'package:nihongo_master/main.dart';
 import 'package:nihongo_master/shared/presentation/widgets/main_scaffold.dart';
@@ -24,6 +25,10 @@ void main() {
             (ref) => AuthController.test(const AuthenticationState.guest()),
           ),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
+          newsPreviewProvider.overrideWith(
+            (ref) async =>
+                const NewsPage(items: [], total: 0, page: 1, sources: []),
+          ),
         ],
         child: MaterialApp(
           theme: AppTheme.lightTheme,
@@ -54,9 +59,12 @@ void main() {
   });
 
   testWidgets('main navigation changes the active tab', (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    final preferences = await SharedPreferences.getInstance();
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          sharedPreferencesProvider.overrideWithValue(preferences),
           authControllerProvider.overrideWith(
             (ref) => AuthController.test(
               const AuthenticationState.authenticated(
@@ -69,6 +77,10 @@ void main() {
             ),
           ),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
+          newsPreviewProvider.overrideWith(
+            (ref) async =>
+                const NewsPage(items: [], total: 0, page: 1, sources: []),
+          ),
         ],
         child: MaterialApp(
           theme: AppTheme.lightTheme,
@@ -94,33 +106,25 @@ void main() {
         )
         .first;
     await tester.scrollUntilVisible(
-      find.text('Kerja di Jepang'),
-      150,
-      scrollable: homeScroll,
-    );
-    expect(find.text('Kerja di Jepang'), findsOneWidget);
-    await tester.scrollUntilVisible(
       find.text('Vocabulary API'),
       150,
       scrollable: homeScroll,
     );
     expect(find.text('Vocabulary API'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Kerja di Jepang'),
+      150,
+      scrollable: homeScroll,
+    );
+    expect(find.text('Kerja di Jepang'), findsOneWidget);
 
     await tester.tap(find.text('Belajar'));
     await tester.pumpAndSettle();
 
     expect(find.text('Pilih level JLPT'), findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.text('SSW / Tokutei Ginou'),
-      200,
-      scrollable: find
-          .descendant(
-            of: find.byKey(const PageStorageKey('learn-scroll')),
-            matching: find.byType(Scrollable),
-          )
-          .first,
-    );
-    expect(find.text('SSW / Tokutei Ginou'), findsOneWidget);
+    expect(find.byKey(const Key('open-manga')), findsNothing);
+    expect(find.text('Anki · Flashcards'), findsNothing);
+    expect(find.text('SSW / Tokutei Ginou'), findsNothing);
     expect(find.text('Kerja di Jepang'), findsNothing);
 
     await tester.tap(find.text('Ujian'));
@@ -139,9 +143,12 @@ void main() {
   testWidgets('home premium offer is hidden for lifetime subscribers', (
     tester,
   ) async {
+    SharedPreferences.setMockInitialValues({});
+    final preferences = await SharedPreferences.getInstance();
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          sharedPreferencesProvider.overrideWithValue(preferences),
           authControllerProvider.overrideWith(
             (ref) => AuthController.test(
               const AuthenticationState.authenticated(
@@ -155,6 +162,10 @@ void main() {
             ),
           ),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
+          newsPreviewProvider.overrideWith(
+            (ref) async =>
+                const NewsPage(items: [], total: 0, page: 1, sources: []),
+          ),
         ],
         child: MaterialApp(
           theme: AppTheme.lightTheme,
@@ -171,12 +182,19 @@ void main() {
   testWidgets(
     'verified purchase hides home and profile offers without restart',
     (tester) async {
+      SharedPreferences.setMockInitialValues({});
+      final preferences = await SharedPreferences.getInstance();
       final auth = _PurchaseAuthController();
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
+            sharedPreferencesProvider.overrideWithValue(preferences),
             authControllerProvider.overrideWith((ref) => auth),
             homeDashboardProvider.overrideWith((ref) async => _dashboard),
+            newsPreviewProvider.overrideWith(
+              (ref) async =>
+                  const NewsPage(items: [], total: 0, page: 1, sources: []),
+            ),
             gamificationProvider.overrideWith((ref) async => _gamification),
           ],
           child: MaterialApp(
@@ -221,7 +239,13 @@ void main() {
         carousel.banners.where((banner) => banner.action == 'premium'),
         isEmpty,
       );
-      expect(carousel.banners.map((banner) => banner.id), ['learn']);
+      expect(carousel.banners.map((banner) => banner.id), [
+        'learn',
+        'ssw',
+        'jobs',
+        'anki',
+        'manga-reading',
+      ]);
       expect(find.text('Lifetime dari API'), findsNothing);
       expect(tester.takeException(), isNull);
     },
@@ -238,6 +262,10 @@ void main() {
         overrides: [
           sharedPreferencesProvider.overrideWithValue(preferences),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
+          newsPreviewProvider.overrideWith(
+            (ref) async =>
+                const NewsPage(items: [], total: 0, page: 1, sources: []),
+          ),
         ],
         child: const NihongoMasterApp(),
       ),

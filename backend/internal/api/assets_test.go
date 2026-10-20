@@ -56,6 +56,22 @@ func TestLearningAssets(t *testing.T) {
 	}
 }
 
+func TestN5VocabularyArtworkIsServedByAssetRoute(t *testing.T) {
+	root := filepath.Join("..", "..", "assets")
+	server := NewServer(store.NewMemoryStore(), nil)
+	if err := server.ConfigureAssets(root); err != nil {
+		t.Fatal(err)
+	}
+	response := httptest.NewRecorder()
+	server.Handler().ServeHTTP(response, httptest.NewRequest(http.MethodGet, "/assets/images/vocabulary/n5-theme-01.png", nil))
+	if response.Code != http.StatusOK {
+		t.Fatalf("N5 artwork status = %d, want %d", response.Code, http.StatusOK)
+	}
+	if response.Header().Get("Content-Type") != "image/png" || response.Body.Len() < 100_000 {
+		t.Fatalf("N5 artwork response did not contain a real PNG: type=%q bytes=%d", response.Header().Get("Content-Type"), response.Body.Len())
+	}
+}
+
 func TestCDNAssetsWithoutLocalDirectory(t *testing.T) {
 	memory := store.NewMemoryStore()
 	s := NewServer(memory, nil)

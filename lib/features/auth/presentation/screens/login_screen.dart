@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -80,23 +81,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Container(
-                      width: 70,
-                      height: 70,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: colorScheme.primary.withValues(alpha: 0.10),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Text(
-                        '日',
-                        style: TextStyle(
-                          color: colorScheme.primary,
-                          fontSize: 31,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
+                    const LoginArtwork(),
                     const SizedBox(height: 22),
                     Text(
                       'Masuk untuk mulai belajar',

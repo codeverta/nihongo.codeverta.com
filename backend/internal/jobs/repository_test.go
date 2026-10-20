@@ -114,6 +114,7 @@ func TestCapturedMetadataRepairDoesNotRollBackNewerData(t *testing.T) {
 	source := r.sources[0]
 	now := time.Now().UTC()
 	newer := sample("repair")
+	newer.Benefits = "Paid leave and commuting allowance"
 	newer.Category = "general"
 	newer.Prefecture = ""
 	f := &fakeFetcher{results: map[string]jobfetch.Result{source.ID: {Jobs: []jobfetch.Job{newer}, Complete: true}}, errors: map[string]error{}}
@@ -138,7 +139,7 @@ func TestCapturedMetadataRepairDoesNotRollBackNewerData(t *testing.T) {
 	if after.Category != "engineering" || after.Prefecture != "13" {
 		t.Fatal("missing normalized metadata", after.Category, after.Prefecture)
 	}
-	if after.Description != before.Description || !after.LastSeenAt.Equal(before.LastSeenAt) || after.Status != before.Status {
+	if before.Benefits != newer.Benefits || after.Benefits != before.Benefits || after.Description != before.Description || !after.LastSeenAt.Equal(before.LastSeenAt) || after.Status != before.Status {
 		t.Fatal("older response rolled back fresh data")
 	}
 	var afterDeadline domainRow

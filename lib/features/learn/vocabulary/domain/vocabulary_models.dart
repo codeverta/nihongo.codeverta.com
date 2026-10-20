@@ -9,6 +9,9 @@ class VocabularyLevel {
     required this.requiredTier,
     required this.progress,
     required this.lessons,
+    this.sourceName = '',
+    this.sourceUrl = '',
+    this.sourceLicense = '',
   });
 
   factory VocabularyLevel.fromJson(Map<String, dynamic> json) =>
@@ -16,6 +19,9 @@ class VocabularyLevel {
         level: json['level'] as String? ?? '',
         title: json['title'] as String? ?? '',
         description: json['description'] as String? ?? '',
+        sourceName: json['sourceName'] as String? ?? '',
+        sourceUrl: json['sourceUrl'] as String? ?? '',
+        sourceLicense: json['sourceLicense'] as String? ?? '',
         requiredTier: json['requiredTier'] as String? ?? 'free',
         progress: json['progress'] as int? ?? 0,
         lessons: _list(json['lessons'], VocabularyLessonSummary.fromJson),
@@ -24,6 +30,9 @@ class VocabularyLevel {
   final String level;
   final String title;
   final String description;
+  final String sourceName;
+  final String sourceUrl;
+  final String sourceLicense;
   final String requiredTier;
   final int progress;
   final List<VocabularyLessonSummary> lessons;
@@ -123,19 +132,19 @@ class VocabularyWord {
   });
 
   factory VocabularyWord.fromJson(Map<String, dynamic> json) => VocabularyWord(
-        examples: _list(json['examples'], VocabularyExample.fromJson),
-        imageAsset: json['imageAsset'] as String? ?? '',
-        imageUrl: json['imageUrl'] as String? ?? '',
-        imagePanel: json['imagePanel'] as int? ?? 0,
-        imageDescription: json['imageDescription'] as String? ?? '',
-        id: json['id'] as String? ?? '',
-        term: json['term'] as String? ?? '',
-        reading: json['reading'] as String? ?? '',
-        meaning: json['meaning'] as String? ?? '',
-        example: json['example'] as String? ?? '',
-        exampleMeaning: json['exampleMeaning'] as String? ?? '',
-        note: json['note'] as String? ?? '',
-      );
+    examples: _list(json['examples'], VocabularyExample.fromJson),
+    imageAsset: json['imageAsset'] as String? ?? '',
+    imageUrl: json['imageUrl'] as String? ?? '',
+    imagePanel: json['imagePanel'] as int? ?? 0,
+    imageDescription: json['imageDescription'] as String? ?? '',
+    id: json['id'] as String? ?? '',
+    term: json['term'] as String? ?? '',
+    reading: json['reading'] as String? ?? '',
+    meaning: json['meaning'] as String? ?? '',
+    example: json['example'] as String? ?? '',
+    exampleMeaning: json['exampleMeaning'] as String? ?? '',
+    note: json['note'] as String? ?? '',
+  );
 
   final String id;
   final String term;
@@ -232,9 +241,9 @@ class QuizOption {
   const QuizOption({required this.id, required this.text});
 
   factory QuizOption.fromJson(Map<String, dynamic> json) => QuizOption(
-        id: json['id'] as String? ?? '',
-        text: json['text'] as String? ?? '',
-      );
+    id: json['id'] as String? ?? '',
+    text: json['text'] as String? ?? '',
+  );
 
   final String id;
   final String text;
@@ -250,11 +259,11 @@ class AnswerFeedback {
   });
 
   factory AnswerFeedback.fromJson(Map<String, dynamic> json) => AnswerFeedback(
-        questionId: json['questionId'] as String? ?? '',
-        correct: json['correct'] as bool? ?? false,
-        correctOptionId: json['correctOptionId'] as String? ?? '',
-        explanation: json['explanation'] as String? ?? '',
-      );
+    questionId: json['questionId'] as String? ?? '',
+    correct: json['correct'] as bool? ?? false,
+    correctOptionId: json['correctOptionId'] as String? ?? '',
+    explanation: json['explanation'] as String? ?? '',
+  );
 
   final String questionId;
   final bool correct;

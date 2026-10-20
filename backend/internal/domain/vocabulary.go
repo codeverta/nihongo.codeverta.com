@@ -32,11 +32,14 @@ type VocabularyLessonContent struct {
 }
 
 type VocabularyLevelContent struct {
-	Level        string                    `json:"level"`
-	Title        string                    `json:"title"`
-	Description  string                    `json:"description"`
-	RequiredTier AccessTier                `json:"requiredTier"`
-	Lessons      []VocabularyLessonContent `json:"lessons"`
+	Level         string                    `json:"level"`
+	Title         string                    `json:"title"`
+	Description   string                    `json:"description"`
+	SourceName    string                    `json:"sourceName,omitempty"`
+	SourceURL     string                    `json:"sourceUrl,omitempty"`
+	SourceLicense string                    `json:"sourceLicense,omitempty"`
+	RequiredTier  AccessTier                `json:"requiredTier"`
+	Lessons       []VocabularyLessonContent `json:"lessons"`
 }
 
 type VocabularyLessonSummary struct {
@@ -53,12 +56,15 @@ type VocabularyLessonSummary struct {
 }
 
 type VocabularyLevel struct {
-	Level        string                    `json:"level"`
-	Title        string                    `json:"title"`
-	Description  string                    `json:"description"`
-	RequiredTier AccessTier                `json:"requiredTier"`
-	Progress     int                       `json:"progress"`
-	Lessons      []VocabularyLessonSummary `json:"lessons"`
+	Level         string                    `json:"level"`
+	Title         string                    `json:"title"`
+	Description   string                    `json:"description"`
+	SourceName    string                    `json:"sourceName,omitempty"`
+	SourceURL     string                    `json:"sourceUrl,omitempty"`
+	SourceLicense string                    `json:"sourceLicense,omitempty"`
+	RequiredTier  AccessTier                `json:"requiredTier"`
+	Progress      int                       `json:"progress"`
+	Lessons       []VocabularyLessonSummary `json:"lessons"`
 }
 
 type VocabularyLesson struct {

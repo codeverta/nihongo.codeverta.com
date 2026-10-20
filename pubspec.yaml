@@ -44,5 +44,6 @@ flutter:
     - assets/images/exams/
     - assets/images/ssw/
     - assets/images/jobs/
+    - assets/images/explore/
     - assets/content/ssw/
     - assets/images/app-icon-small.png

@@ -53,6 +53,7 @@ func (s *MemoryStore) VocabularyLevels(userID string) []domain.VocabularyLevel {
 		}
 		result = append(result, domain.VocabularyLevel{
 			Level: level.Level, Title: level.Title, Description: level.Description,
+			SourceName: level.SourceName, SourceURL: level.SourceURL, SourceLicense: level.SourceLicense,
 			RequiredTier: level.RequiredTier, Progress: percentage, Lessons: lessons,
 		})
 	}
@@ -313,6 +314,95 @@ func seedVocabulary() []domain.VocabularyLevelContent {
 	}
 	levels[0].Lessons = n5
 	levels[0].Description = "20 tema bergambar, 160 entri kosakata, dua contoh per kata, dan tiga jenis latihan."
+	var n4 []domain.VocabularyLessonContent
+	if err := json.Unmarshal(vocabularyData.N4, &n4); err != nil {
+		panic("invalid vocabulary N4: " + err.Error())
+	}
+	if len(n4) != 34 {
+		panic("incomplete vocabulary N4")
+	}
+	n4WordCount := 0
+	for _, lesson := range n4 {
+		if lesson.ID == "" || len(lesson.Words) == 0 {
+			panic("invalid vocabulary N4 lesson: " + lesson.ID)
+		}
+		n4WordCount += len(lesson.Words)
+		for _, w := range lesson.Words {
+			if w.ID == "" || w.Term == "" || w.Reading == "" || w.Meaning == "" || w.Example == "" || w.ExampleMeaning == "" || len(w.Examples) == 0 {
+				panic("invalid vocabulary N4 word: " + w.ID)
+			}
+			for _, example := range w.Examples {
+				if example.Japanese == "" || example.Reading == "" || example.Meaning == "" {
+					panic("invalid vocabulary N4 example: " + w.ID)
+				}
+			}
+		}
+	}
+	if n4WordCount != 630 {
+		panic("incomplete vocabulary N4 words")
+	}
+	levels[1].Lessons = n4
+	levels[1].Description = "34 tema dan 630 kosakata N4 dengan cara baca, arti Indonesia, dan contoh pemakaian."
+	levels[1].SourceName = "OpenJLPT"
+	levels[1].SourceURL = "https://github.com/evanclan/OpenJLPT/blob/main/data/json/vocab/n4.json"
+	levels[1].SourceLicense = "CC BY-SA 4.0 • diadaptasi dan diterjemahkan"
+	var n2 []domain.VocabularyLessonContent
+	if err := json.Unmarshal(vocabularyData.N2, &n2); err != nil {
+		panic("invalid vocabulary N2: " + err.Error())
+	}
+	if len(n2) != 5 {
+		panic("incomplete vocabulary N2")
+	}
+	for _, lesson := range n2 {
+		if len(lesson.Words) != 8 {
+			panic("invalid vocabulary lesson: " + lesson.ID)
+		}
+	}
+	levels[3].Lessons = n2
+	levels[3].Description = "5 tema, 40 entri kosakata N2 dengan bacaan, arti Indonesia, dan contoh kalimat."
+	var n3 []domain.VocabularyLessonContent
+	if err := json.Unmarshal(vocabularyData.N3, &n3); err != nil {
+		panic("invalid vocabulary N3: " + err.Error())
+	}
+	if len(n3) != 6 {
+		panic("incomplete vocabulary N3")
+	}
+	for _, lesson := range n3 {
+		if len(lesson.Words) != 12 {
+			panic("invalid vocabulary N3 lesson: " + lesson.ID)
+		}
+		for _, w := range lesson.Words {
+			if w.ID == "" || w.Term == "" || w.Reading == "" || w.Meaning == "" {
+				panic("invalid vocabulary N3 word: " + w.ID)
+			}
+		}
+	}
+	levels[2].Lessons = n3
+	levels[2].Description = "6 tema, 72 kosakata tingkat menengah dengan arti dan cara baca."
+	var n1 []domain.VocabularyLessonContent
+	if err := json.Unmarshal(vocabularyData.N1, &n1); err != nil {
+		panic("invalid vocabulary N1: " + err.Error())
+	}
+	if len(n1) != 8 {
+		panic("incomplete vocabulary N1")
+	}
+	n1WordCount := 0
+	for _, lesson := range n1 {
+		if lesson.ID == "" || len(lesson.Words) != 8 {
+			panic("invalid vocabulary N1 lesson: " + lesson.ID)
+		}
+		n1WordCount += len(lesson.Words)
+		for _, w := range lesson.Words {
+			if w.ID == "" || w.Term == "" || w.Reading == "" || w.Meaning == "" || w.Example == "" || w.ExampleMeaning == "" {
+				panic("invalid vocabulary N1 word: " + w.ID)
+			}
+		}
+	}
+	if n1WordCount != 64 {
+		panic("incomplete vocabulary N1 words")
+	}
+	levels[4].Lessons = n1
+	levels[4].Description = "8 tema dan 64 kosakata tingkat lanjut dengan cara baca, arti Indonesia, serta contoh."
 	return levels
 }
 

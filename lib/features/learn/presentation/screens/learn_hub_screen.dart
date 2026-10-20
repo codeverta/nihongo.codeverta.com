@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
-import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
-import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 
 class LearnHubScreen extends ConsumerStatefulWidget {
   const LearnHubScreen({super.key});
@@ -21,25 +19,26 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
     (
       'Vocabulary',
       'Kosakata, contoh, kuis & progress',
-      Icons.translate_rounded
+      Icons.translate_rounded,
     ),
     (
       'Grammar',
       'Pola, contoh kalimat, kuis & progress',
-      Icons.menu_book_rounded
+      Icons.menu_book_rounded,
     ),
     ('Kanji', 'Arti, bacaan, contoh kata & kuis', Icons.brush_rounded),
     (
       'Reading',
       'Cerita bergambar, kosakata & kuis',
-      Icons.auto_stories_rounded
+      Icons.auto_stories_rounded,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    final locked = _selectedLevel >= 2 &&
+    final locked =
+        _selectedLevel >= 2 &&
         !(ref.watch(authControllerProvider).user?.isPremium ?? false);
     return CustomScrollView(
       key: const PageStorageKey('learn-scroll'),
@@ -50,10 +49,9 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
             children: [
               Text(
                 'Belajar',
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium
-                    ?.copyWith(fontWeight: FontWeight.w900),
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.w900,
+                ),
               ),
               const SizedBox(height: 8),
               const Text(
@@ -62,10 +60,9 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
               const SizedBox(height: 24),
               Text(
                 'Pilih level JLPT',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontWeight: FontWeight.w800),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 12),
               SingleChildScrollView(
@@ -105,10 +102,9 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
               const SizedBox(height: 20),
               Text(
                 'Materi ${_levels[_selectedLevel]}',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontWeight: FontWeight.w800),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
               ),
               const SizedBox(height: 14),
               for (final (index, subject) in _subjects.indexed)
@@ -116,37 +112,34 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                   padding: const EdgeInsets.only(bottom: 12),
                   child: _SubjectTile(
                     title: subject.$1,
-                    subtitle:
-                        locked ? 'Lifetime Access diperlukan' : subject.$2,
+                    subtitle: locked
+                        ? 'Lifetime Access diperlukan'
+                        : subject.$2,
                     icon: subject.$3,
                     locked: locked,
                     onTap: locked
                         ? () => context.push('/premium')
                         : index == 0
-                            ? () => context.push(
-                                  '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
-                                )
-                            : index == 1 && _selectedLevel <= 3
-                                ? () => context.push(
-                                      '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
-                                    )
-                                : index == 2 && _selectedLevel <= 2
-                                    ? () => context.push(
-                                          '${AppRoutes.kanjiPath}?level=${_levels[_selectedLevel]}',
-                                        )
-                                    : index == 3 && _selectedLevel <= 3
-                                        ? () => context.push(
-                                              AppRoutes.readingCoursePath(
-                                                _levels[_selectedLevel],
-                                              ),
-                                            )
-                                        : null,
+                        ? () => context.push(
+                            '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
+                          )
+                        : index == 1 && _selectedLevel <= 3
+                        ? () => context.push(
+                            '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
+                          )
+                        : index == 2 && _selectedLevel <= 2
+                        ? () => context.push(
+                            '${AppRoutes.kanjiPath}?level=${_levels[_selectedLevel]}',
+                          )
+                        : index == 3 && _selectedLevel <= 3
+                        ? () => context.push(
+                            AppRoutes.readingCoursePath(
+                              _levels[_selectedLevel],
+                            ),
+                          )
+                        : null,
                   ),
                 ),
-              const SizedBox(height: 20),
-              const AnkiEntryCard(),
-              const SizedBox(height: 16),
-              const SswEntryCard(),
             ],
           ),
         ),
@@ -201,9 +194,7 @@ class _VocabularyCallout extends StatelessWidget {
                 const SizedBox(height: 5),
                 Text(
                   'Pelajari kata, contoh, lalu uji pemahamanmu',
-                  style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.76),
-                  ),
+                  style: TextStyle(color: Colors.white.withValues(alpha: 0.76)),
                 ),
               ],
             ),
@@ -259,8 +250,8 @@ class _SubjectTile extends StatelessWidget {
         trailing: locked
             ? const Icon(Icons.lock_outline)
             : onTap == null
-                ? const Chip(label: Text('Segera'))
-                : const Icon(Icons.chevron_right_rounded),
+            ? const Chip(label: Text('Segera'))
+            : const Icon(Icons.chevron_right_rounded),
       ),
     );
   }
