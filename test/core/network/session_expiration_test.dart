@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
+import 'package:nihongo_master/core/branding/app_branding.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
@@ -26,6 +27,7 @@ void main() {
         overrides: [
           sharedPreferencesProvider.overrideWithValue(preferences),
           apiBaseUrlProvider.overrideWithValue('https://api.example.com/v1'),
+          appBrandingProvider.overrideWith((ref) async => const AppBranding()),
         ],
       );
       addTearDown(container.dispose);
