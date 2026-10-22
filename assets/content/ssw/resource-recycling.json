@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "receiving",
+      "title": "Penerimaan, identifikasi, dan keselamatan area",
+      "description": "Mempelajari pekerjaan antara: menerima limbah, mencocokkan dokumen dan lot, memeriksa kondisi, serta menjaga keselamatan saat bongkar. Per 22 Oktober 2026, Kementerian Lingkungan Hidup Jepang menargetkan penerimaan sektor dimulai pada 2027 dan menyatakan rincian ujian keterampilan belum diputuskan; materi ini tetap tersedia sebagai pembelajaran dasar.",
+      "lessons": [
+        {
+          "id": "rr-01",
+          "title": "Penerimaan limbah dan pencatatan lot",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan asal, jenis, berat atau jumlah, waktu, dan identitas kelompok dengan catatan penerimaan fasilitas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Sektor ini berfokus pada pemrosesan antara limbah untuk daur ulang atau pengolahan yang tepat, bukan semua jenis pekerjaan pengumpulan. Tiap fasilitas memiliki kriteria penerimaan dan format catatan sendiri. Identitas lot membantu menghubungkan bahan yang datang dengan pemilahan, proses, dan keluaran berikutnya."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum bongkar, cocokkan dokumen, nomor kendaraan atau wadah, jenis yang dinyatakan, dan berat sesuai alat timbang. Catat hasil aktual serta waktu. Jika jenis atau jumlah berbeda, tahan penerimaan atau pindahkan ke area tunggu yang ditetapkan dan minta penanggung jawab memutuskan.\n\nKasus latihan: Dokumen menyebut logam bersih, tetapi muatan tampak bercampur dengan wadah tertutup tanpa label.\nRespons yang dianjurkan: Jangan lanjutkan bongkar biasa. Tahan kendaraan di lokasi aman, catat perbedaan, dan minta pemeriksaan penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Baca dokumen serta kriteria penerimaan fasilitas",
+            "Cocokkan identitas kendaraan, wadah, dan lot",
+            "Timbang atau hitung sesuai prosedur dan catat hasil aktual",
+            "Tahan selisih dan minta keputusan penanggung jawab"
+          ],
+          "caution": "Jangan menerima atau mencampur lot yang identitasnya tidak cocok dengan kriteria fasilitas.",
+          "scenario": "Dokumen menyebut logam bersih, tetapi muatan tampak bercampur dengan wadah tertutup tanpa label.",
+          "response": "Jangan lanjutkan bongkar biasa. Tahan kendaraan di lokasi aman, catat perbedaan, dan minta pemeriksaan penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "受入れ",
+              "reading": "うけいれ",
+              "meaning": "penerimaan"
+            },
+            {
+              "japanese": "廃棄物",
+              "reading": "はいきぶつ",
+              "meaning": "limbah"
+            },
+            {
+              "japanese": "計量",
+              "reading": "けいりょう",
+              "meaning": "penimbangan"
+            },
+            {
+              "japanese": "ロット",
+              "reading": "ろっと",
+              "meaning": "lot atau kelompok"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "書類と荷物の種類が違います。",
+              "reading": "しょるいとにもつのしゅるいがちがいます。",
+              "meaning": "Jenis muatan berbeda dari dokumen."
+            },
+            {
+              "japanese": "安全な場所で止めて、責任者に報告します。",
+              "reading": "あんぜんなばしょでとめて、せきにんしゃにほうこくします。",
+              "meaning": "Saya berhenti di tempat aman dan melapor kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa identitas lot dicatat pada saat penerimaan?",
+              "options": [
+                "Agar bahan dapat ditelusuri melalui pemilahan dan pengolahan",
+                "Agar semua muatan dapat dicampur",
+                "Untuk menggantikan kriteria penerimaan",
+                "Supaya catatan berat tidak diperlukan"
+              ],
+              "answer": 0,
+              "explanation": "Identitas menghubungkan bahan datang dengan catatan proses dan hasil yang keluar.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Dokumen menyebut logam bersih, tetapi muatan tampak bercampur dengan wadah tertutup tanpa label. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Jangan lanjutkan bongkar biasa. Tahan kendaraan di lokasi aman, catat perbedaan, dan minta pemeriksaan penanggung jawab.",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 2,
+              "explanation": "Muatan berbeda dari keterangan dan berisi wadah tak berlabel; tahan dan minta penilaian.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penerimaan limbah dan pencatatan lot», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca dokumen serta kriteria penerimaan fasilitas",
+                "Cocokkan identitas kendaraan, wadah, dan lot",
+                "Timbang atau hitung sesuai prosedur dan catat hasil aktual",
+                "Tahan selisih dan minta keputusan penanggung jawab"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Baca dokumen serta kriteria penerimaan fasilitas → Cocokkan identitas kendaraan, wadah, dan lot → Timbang atau hitung sesuai prosedur dan catat hasil aktual → Tahan selisih dan minta keputusan penanggung jawab.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-02",
+          "title": "Pemeriksaan bahan tidak dikenal dan bahaya tersembunyi",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali muatan yang mencurigakan atau tidak sesuai dan menjaga jarak sambil menghubungi petugas berwenang.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Muatan dapat mengandung benda tajam, baterai, tabung, cairan, bahan kimia, atau benda tertutup yang tidak sesuai dengan keterangan awal. Bahan tidak dikenal tidak aman untuk dibuka atau dipilah dengan tangan. Kriteria dan jalur penanganan ditetapkan fasilitas; pekerja menghentikan pekerjaan, menjaga orang lain menjauh, dan meminta petugas yang terlatih menilai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Amati dari posisi aman tanpa mengguncang atau membuka wadah. Beri tanda atau batas sesuai prosedur, sampaikan lokasi, bentuk, tulisan, dan bau yang teramati, lalu tunggu instruksi. Jangan menyentuh cairan, baterai rusak, tabung, atau bahan berdebu tanpa penugasan dan perlindungan yang sesuai.\n\nKasus latihan: Pada ban berjalan terlihat baterai menggembung dan mengeluarkan bau, sementara pekerja lain akan mengambilnya.\nRespons yang dianjurkan: Berikan tanda berhenti sesuai aturan, jaga jarak, peringatkan kru, dan laporkan segera agar petugas terlatih menentukan penanganan."
+            }
+          ],
+          "steps": [
+            "Hentikan kontak dengan benda yang tidak dikenal",
+            "Jauhkan orang dari area sesuai aturan fasilitas",
+            "Catat ciri yang terlihat tanpa membuka atau memindahkan",
+            "Hubungi penanggung jawab dan tunggu arahan"
+          ],
+          "caution": "Jangan membuka wadah, mencium dekat, atau memilah benda yang tidak dikenal dengan tangan.",
+          "scenario": "Pada ban berjalan terlihat baterai menggembung dan mengeluarkan bau, sementara pekerja lain akan mengambilnya.",
+          "response": "Berikan tanda berhenti sesuai aturan, jaga jarak, peringatkan kru, dan laporkan segera agar petugas terlatih menentukan penanganan.",
+          "vocabulary": [
+            {
+              "japanese": "危険",
+              "reading": "きけん",
+              "meaning": "bahaya"
+            },
+            {
+              "japanese": "異物",
+              "reading": "いぶつ",
+              "meaning": "benda asing"
+            },
+            {
+              "japanese": "電池",
+              "reading": "でんち",
+              "meaning": "baterai"
+            },
+            {
+              "japanese": "立入禁止",
+              "reading": "たちいりきんし",
+              "meaning": "dilarang masuk"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この電池がふくらんでいます。触らないでください。",
+              "reading": "このでんちがふくらんでいます。さわらないでください。",
+              "meaning": "Baterai ini menggembung. Jangan sentuh."
+            },
+            {
+              "japanese": "作業を止めて、責任者を呼びます。",
+              "reading": "さぎょうをとめて、せきにんしゃをよびます。",
+              "meaning": "Saya menghentikan pekerjaan dan memanggil penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tindakan awal saat menemukan benda yang tidak dikenal atau rusak?",
+              "options": [
+                "Hentikan kontak, jaga jarak, dan laporkan kepada petugas berwenang",
+                "Buka wadah untuk mencari tahu isinya",
+                "Pindahkan ke tempat sampah umum",
+                "Ambil dengan tangan agar lini tidak berhenti"
+              ],
+              "answer": 0,
+              "explanation": "Benda tersebut dapat menyimpan bahaya yang tidak tampak; penanganan dilakukan petugas yang ditunjuk.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pada ban berjalan terlihat baterai menggembung dan mengeluarkan bau, sementara pekerja lain akan mengambilnya. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain",
+                "Berikan tanda berhenti sesuai aturan, jaga jarak, peringatkan kru, dan laporkan segera agar petugas terlatih menentukan penanganan."
+              ],
+              "answer": 3,
+              "explanation": "Baterai menggembung berbahaya; pekerja menjaga jarak dan memanggil petugas terlatih.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan bahan tidak dikenal dan bahaya tersembunyi», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Hentikan kontak dengan benda yang tidak dikenal",
+                "Catat ciri yang terlihat tanpa membuka atau memindahkan",
+                "Jauhkan orang dari area sesuai aturan fasilitas",
+                "Hubungi penanggung jawab dan tunggu arahan"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Hentikan kontak dengan benda yang tidak dikenal → Jauhkan orang dari area sesuai aturan fasilitas → Catat ciri yang terlihat tanpa membuka atau memindahkan → Hubungi penanggung jawab dan tunggu arahan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-03",
+          "title": "Bongkar muatan dan jalur kendaraan",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jarak dari kendaraan serta memastikan zona bongkar dan komunikasi dengan operator aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Area bongkar memiliki kendaraan bergerak, bak yang naik, muatan yang dapat jatuh, dan titik buta. Pemisahan jalur pejalan kaki, pemberi isyarat, dan operator mengurangi risiko tertabrak atau tertimpa. Pekerja tidak mendekati bak atau muatan sampai operator memberi tanda aman sesuai tata tertib fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan jalur pejalan kaki dan zona tunggu yang ditetapkan. Pastikan operator melihat pemberi isyarat; jangan melintas di belakang kendaraan atau berdiri di bawah bagian yang terangkat. Jika orang masuk zona bongkar, hentikan pekerjaan dengan cara yang diajarkan dan beri tahu operator.\n\nKasus latihan: Seorang pengemudi mulai membuka bak, sementara pekerja masih berada di belakang truk untuk membaca label.\nRespons yang dianjurkan: Hentikan bongkar sesuai prosedur, minta pekerja mundur ke zona aman, dan lanjutkan hanya setelah operator melihat area kosong."
+            }
+          ],
+          "steps": [
+            "Periksa tanda jalur dan zona tunggu",
+            "Pastikan pemberi isyarat serta operator siap",
+            "Jaga jarak dari kendaraan dan muatan saat bergerak",
+            "Hentikan proses dan laporkan orang atau muatan di zona berbahaya"
+          ],
+          "caution": "Jangan berdiri di belakang truk atau di bawah bak yang sedang terangkat.",
+          "scenario": "Seorang pengemudi mulai membuka bak, sementara pekerja masih berada di belakang truk untuk membaca label.",
+          "response": "Hentikan bongkar sesuai prosedur, minta pekerja mundur ke zona aman, dan lanjutkan hanya setelah operator melihat area kosong.",
+          "vocabulary": [
+            {
+              "japanese": "荷下ろし",
+              "reading": "におろし",
+              "meaning": "bongkar muatan"
+            },
+            {
+              "japanese": "車両",
+              "reading": "しゃりょう",
+              "meaning": "kendaraan"
+            },
+            {
+              "japanese": "合図",
+              "reading": "あいず",
+              "meaning": "isyarat"
+            },
+            {
+              "japanese": "安全区域",
+              "reading": "あんぜんくいき",
+              "meaning": "zona aman"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "後ろに人がいます。車を止めてください。",
+              "reading": "うしろにひとがいます。くるまをとめてください。",
+              "meaning": "Ada orang di belakang. Mohon hentikan kendaraan."
+            },
+            {
+              "japanese": "安全区域まで下がります。",
+              "reading": "あんぜんくいきまでさがります。",
+              "meaning": "Saya mundur ke zona aman."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Di mana pekerja seharusnya berada selama kendaraan membongkar muatan?",
+              "options": [
+                "Di zona aman di luar jalur kendaraan dan muatan",
+                "Di belakang bak agar label terlihat",
+                "Di bawah bak untuk mengikat sampah",
+                "Di titik buta dekat roda"
+              ],
+              "answer": 0,
+              "explanation": "Zona aman menjauhkan pekerja dari gerak kendaraan, bak, dan muatan jatuh.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Seorang pengemudi mulai membuka bak, sementara pekerja masih berada di belakang truk untuk membaca label. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Hentikan bongkar sesuai prosedur, minta pekerja mundur ke zona aman, dan lanjutkan hanya setelah operator melihat area kosong.",
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 0,
+              "explanation": "Hentikan proses sampai orang meninggalkan area belakang kendaraan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Bongkar muatan dan jalur kendaraan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa tanda jalur dan zona tunggu",
+                "Jaga jarak dari kendaraan dan muatan saat bergerak",
+                "Hentikan proses dan laporkan orang atau muatan di zona berbahaya",
+                "Pastikan pemberi isyarat serta operator siap"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Periksa tanda jalur dan zona tunggu → Pastikan pemberi isyarat serta operator siap → Jaga jarak dari kendaraan dan muatan saat bergerak → Hentikan proses dan laporkan orang atau muatan di zona berbahaya.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sorting",
+      "title": "Pemilahan dan persiapan bahan",
+      "description": "Memilah sesuai kriteria penerimaan dan tujuan proses, menjaga fraksi tetap terpisah, serta melaporkan benda yang salah atau tercampur.",
+      "lessons": [
+        {
+          "id": "rr-04",
+          "title": "Memilah berdasarkan kriteria dan tujuan",
+          "minutes": 25,
+          "objectives": [
+            "Memisahkan material sesuai label aliran dan kriteria fasilitas, serta menjaga bahan yang belum dikenali tetap tertahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemilahan mengarahkan bahan ke proses yang sesuai dan mencegah kontaminasi antarfraksi. Kategori tidak ditentukan hanya dari warna atau bentuk; label, daftar penerimaan, contoh, dan instruksi lini menjadi rujukan. Bahan campuran yang belum dapat dipilah dengan aman tetap diberi identitas dan ditangani menurut aturan tempat kerja."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Baca tanda wadah sebelum memasukkan material. Periksa barang yang tampak berbeda dan jangan meletakkan baterai, wadah tertutup, atau bahan asing ke aliran biasa. Jika label tidak terbaca atau kategori tidak jelas, hentikan dan minta konfirmasi; catat lokasi dan jenis yang terlihat.\n\nKasus latihan: Pada aliran plastik terlihat satu wadah aerosol tertutup yang tidak tercantum di kriteria pemilahan.\nRespons yang dianjurkan: Jangan masukkan ke fraksi plastik. Hentikan kontak, pisahkan area sesuai aturan, dan laporkan benda tersebut kepada penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Baca label aliran dan kriteria yang berlaku",
+            "Amati material sebelum memasukkannya",
+            "Tempatkan pada wadah atau jalur yang ditetapkan",
+            "Tahan dan laporkan bahan yang tidak dikenali"
+          ],
+          "caution": "Jangan memilah berdasarkan tebakan atau mencampur fraksi untuk mengosongkan wadah.",
+          "scenario": "Pada aliran plastik terlihat satu wadah aerosol tertutup yang tidak tercantum di kriteria pemilahan.",
+          "response": "Jangan masukkan ke fraksi plastik. Hentikan kontak, pisahkan area sesuai aturan, dan laporkan benda tersebut kepada penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "選別",
+              "reading": "せんべつ",
+              "meaning": "pemilahan"
+            },
+            {
+              "japanese": "種類",
+              "reading": "しゅるい",
+              "meaning": "jenis"
+            },
+            {
+              "japanese": "分別",
+              "reading": "ぶんべつ",
+              "meaning": "pemisahan kategori"
+            },
+            {
+              "japanese": "基準",
+              "reading": "きじゅん",
+              "meaning": "kriteria"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この容器は選別基準にありません。",
+              "reading": "このようきはせんべつきじゅんにありません。",
+              "meaning": "Wadah ini tidak ada dalam kriteria pemilahan."
+            },
+            {
+              "japanese": "分けて、責任者に確認します。",
+              "reading": "わけて、せきにんしゃにかくにんします。",
+              "meaning": "Saya pisahkan dan meminta konfirmasi penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa rujukan untuk memutuskan wadah pemilahan?",
+              "options": [
+                "Label aliran dan kriteria fasilitas yang berlaku",
+                "Warna benda saja",
+                "Tempat kosong yang paling dekat",
+                "Perkiraan pekerja dari bentuknya"
+              ],
+              "answer": 0,
+              "explanation": "Kriteria fasilitas mengatur tujuan proses dan mengurangi kesalahan pencampuran.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pada aliran plastik terlihat satu wadah aerosol tertutup yang tidak tercantum di kriteria pemilahan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Jangan masukkan ke fraksi plastik. Hentikan kontak, pisahkan area sesuai aturan, dan laporkan benda tersebut kepada penanggung jawab.",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 1,
+              "explanation": "Wadah tertutup tidak tercantum dalam kriteria; jangan masukkan ke fraksi plastik.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Memilah berdasarkan kriteria dan tujuan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Amati material sebelum memasukkannya",
+                "Baca label aliran dan kriteria yang berlaku",
+                "Tempatkan pada wadah atau jalur yang ditetapkan",
+                "Tahan dan laporkan bahan yang tidak dikenali"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca label aliran dan kriteria yang berlaku → Amati material sebelum memasukkannya → Tempatkan pada wadah atau jalur yang ditetapkan → Tahan dan laporkan bahan yang tidak dikenali.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-05",
+          "title": "Keselamatan ban berjalan dan jalur pemilahan",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga posisi tubuh serta alat jauh dari titik jepit dan menghentikan pekerjaan saat kondisi lini tidak aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Ban berjalan, rol, pemotong, dan alat pemilah dapat menarik pakaian atau menjepit tangan. Area kerja harus bebas orang yang tidak ditugaskan, dan alat bantu hanya digunakan sesuai instruksi. Pekerja tidak meraih benda di antara rol saat mesin bergerak; penghentian dan isolasi mengikuti prosedur fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Berdiri di posisi yang ditandai, gunakan alat bantu resmi, dan jaga lengan serta pakaian dari bagian bergerak. Bila material tersangkut, pelindung terbuka, atau tangan pekerja masuk ke zona bahaya, hentikan sesuai prosedur darurat lalu panggil operator. Jangan menarik sumbatan sebelum mesin aman.\n\nKasus latihan: Potongan kain tersangkut di antara rol dan pekerja hendak menariknya dengan tangan saat mesin berjalan lambat.\nRespons yang dianjurkan: Jangan meraih. Hentikan lini dengan cara yang diajarkan, jaga orang menjauh, dan minta operator menangani setelah mesin aman."
+            }
+          ],
+          "steps": [
+            "Periksa posisi kerja dan pelindung sebelum lini berjalan",
+            "Gunakan alat bantu yang disediakan",
+            "Jaga jarak dari rol dan titik jepit",
+            "Hentikan serta laporkan sumbatan atau bahaya"
+          ],
+          "caution": "Jangan meraih ke dalam ban berjalan atau rol yang masih bergerak.",
+          "scenario": "Potongan kain tersangkut di antara rol dan pekerja hendak menariknya dengan tangan saat mesin berjalan lambat.",
+          "response": "Jangan meraih. Hentikan lini dengan cara yang diajarkan, jaga orang menjauh, dan minta operator menangani setelah mesin aman.",
+          "vocabulary": [
+            {
+              "japanese": "ベルトコンベヤー",
+              "reading": "べるとこんべやー",
+              "meaning": "ban berjalan"
+            },
+            {
+              "japanese": "巻き込まれ",
+              "reading": "まきこまれ",
+              "meaning": "tertarik masuk mesin"
+            },
+            {
+              "japanese": "停止",
+              "reading": "ていし",
+              "meaning": "berhenti"
+            },
+            {
+              "japanese": "点検",
+              "reading": "てんけん",
+              "meaning": "pemeriksaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "布がローラーに挟まっています。",
+              "reading": "ぬのがろーらーにはさまっています。",
+              "meaning": "Kain tersangkut di rol."
+            },
+            {
+              "japanese": "手を入れないでください。機械を止めます。",
+              "reading": "てをいれないでください。きかいをとめます。",
+              "meaning": "Jangan masukkan tangan. Saya menghentikan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan ketika material tersangkut di rol?",
+              "options": [
+                "Hentikan lini sesuai prosedur dan panggil operator",
+                "Tarik dengan tangan saat rol melambat",
+                "Gunakan tongkat apa saja tanpa menghentikan mesin",
+                "Biarkan rekan lain menekan material"
+              ],
+              "answer": 0,
+              "explanation": "Rol tetap dapat menarik tangan saat bergerak; sumbatan ditangani setelah mesin dibuat aman.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Potongan kain tersangkut di antara rol dan pekerja hendak menariknya dengan tangan saat mesin berjalan lambat. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Jangan meraih. Hentikan lini dengan cara yang diajarkan, jaga orang menjauh, dan minta operator menangani setelah mesin aman.",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 2,
+              "explanation": "Jangan meraih ke rol. Hentikan dan serahkan penanganan kepada operator sesuai prosedur.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Keselamatan ban berjalan dan jalur pemilahan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa posisi kerja dan pelindung sebelum lini berjalan",
+                "Gunakan alat bantu yang disediakan",
+                "Jaga jarak dari rol dan titik jepit",
+                "Hentikan serta laporkan sumbatan atau bahaya"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Periksa posisi kerja dan pelindung sebelum lini berjalan → Gunakan alat bantu yang disediakan → Jaga jarak dari rol dan titik jepit → Hentikan serta laporkan sumbatan atau bahaya.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-06",
+          "title": "Penyiapan fraksi, wadah, dan tanda tujuan",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga fraksi yang telah dipilah tetap terpisah serta memberi tanda kelompok dan tujuan sebelum tahap berikutnya.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Material hasil pemilahan dapat dipadatkan, dibungkus, atau disiapkan untuk tahap pengolahan berikutnya. Wadah dan label menjaga identitas fraksi, jumlah, dan proses tujuan. Bila fraksi bercampur atau tanda hilang, kelompok perlu ditahan agar tidak salah masuk ke mesin atau tertukar saat pengiriman internal."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa wadah kosong, label, dan tujuan sebelum mengisinya. Catat waktu dan lot sesuai format fasilitas, jaga tutup atau ikatan yang ditentukan, dan pindahkan menggunakan jalur aman. Jika material salah masuk, jangan menuang balik tanpa persetujuan; tandai wadah dan laporkan jumlah perkiraan serta jenis campuran.\n\nKasus latihan: Wadah logam berisi sejumlah kecil kaca yang masuk dari aliran sebelah; label masih menunjukkan logam bersih.\nRespons yang dianjurkan: Hentikan pengisian dan tahan wadah; catat campuran serta minta keputusan apakah perlu sortir ulang atau penanganan lain."
+            }
+          ],
+          "steps": [
+            "Siapkan wadah dan label tujuan yang benar",
+            "Isi hanya dengan fraksi yang telah dikonfirmasi",
+            "Catat lot, jumlah, dan lokasi wadah",
+            "Tahan serta laporkan fraksi yang tercampur"
+          ],
+          "caution": "Jangan memindahkan atau mengganti label wadah tanpa pembaruan catatan.",
+          "scenario": "Wadah logam berisi sejumlah kecil kaca yang masuk dari aliran sebelah; label masih menunjukkan logam bersih.",
+          "response": "Hentikan pengisian dan tahan wadah; catat campuran serta minta keputusan apakah perlu sortir ulang atau penanganan lain.",
+          "vocabulary": [
+            {
+              "japanese": "容器",
+              "reading": "ようき",
+              "meaning": "wadah"
+            },
+            {
+              "japanese": "表示",
+              "reading": "ひょうじ",
+              "meaning": "label atau tanda"
+            },
+            {
+              "japanese": "搬送",
+              "reading": "はんそう",
+              "meaning": "pemindahan material"
+            },
+            {
+              "japanese": "混入",
+              "reading": "こんにゅう",
+              "meaning": "pencampuran yang tidak diinginkan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ガラスが混ざっています。容器を保留します。",
+              "reading": "がらすがまざっています。ようきをほりゅうします。",
+              "meaning": "Ada kaca yang tercampur. Saya menahan wadah ini."
+            },
+            {
+              "japanese": "ラベルを直す前に、責任者に確認します。",
+              "reading": "らべるをなおすまえに、せきにんしゃにかくにんします。",
+              "meaning": "Saya akan bertanya kepada penanggung jawab sebelum memperbaiki label."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan jika wadah fraksi ternyata tercampur?",
+              "options": [
+                "Hentikan pengisian, tahan wadah, dan catat campurannya",
+                "Ubah label menjadi fraksi yang lebih banyak",
+                "Tuang kembali ke ban berjalan tanpa izin",
+                "Kirim karena label lama masih terbaca"
+              ],
+              "answer": 0,
+              "explanation": "Wadah tercampur perlu dinilai; label lama tidak lagi menggambarkan isi sebenarnya.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Wadah logam berisi sejumlah kecil kaca yang masuk dari aliran sebelah; label masih menunjukkan logam bersih. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain",
+                "Hentikan pengisian dan tahan wadah; catat campuran serta minta keputusan apakah perlu sortir ulang atau penanganan lain."
+              ],
+              "answer": 3,
+              "explanation": "Tahan dan laporkan agar pemimpin menentukan sortir ulang atau tindakan lain.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penyiapan fraksi, wadah, dan tanda tujuan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Siapkan wadah dan label tujuan yang benar",
+                "Catat lot, jumlah, dan lokasi wadah",
+                "Isi hanya dengan fraksi yang telah dikonfirmasi",
+                "Tahan serta laporkan fraksi yang tercampur"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Siapkan wadah dan label tujuan yang benar → Isi hanya dengan fraksi yang telah dikonfirmasi → Catat lot, jumlah, dan lokasi wadah → Tahan serta laporkan fraksi yang tercampur.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treatment",
+      "title": "Pengolahan antara dan perawatan fasilitas",
+      "description": "Mengikuti instruksi pengoperasian proses dan menjaga peralatan sesuai batas tugas, termasuk menghentikan serta melaporkan kondisi tidak normal.",
+      "lessons": [
+        {
+          "id": "rr-07",
+          "title": "Pemeriksaan awal peralatan pengolahan",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa kondisi mesin, pelindung, jalur, dan tombol keselamatan sebelum menjalankan proses yang ditugaskan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Peralatan pengolahan dapat memotong, menghancurkan, memadatkan, atau memisahkan material. Pemeriksaan awal memastikan pelindung terpasang, area tidak terhalang, dan alat ukur atau indikator berada dalam kondisi kerja. Pekerja menjalankan hanya peralatan yang telah diajarkan; pembersihan, perbaikan, dan isolasi energi mengikuti prosedur dan kewenangan fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan daftar pemeriksaan sebelum mulai dan laporkan kebocoran, bunyi, getaran, atau lampu peringatan yang tidak normal. Jangan menghidupkan mesin jika pelindung terbuka. Jangan memasukkan tangan untuk membersihkan sumbatan atau membuka panel listrik.\n\nKasus latihan: Lampu peringatan mesin pemadat menyala dan pintu pelindung belum terkunci penuh.\nRespons yang dianjurkan: Jangan jalankan mesin. Jauhkan orang dari area, beri tahu operator atau pemimpin, dan tunggu pemeriksaan sebelum proses dimulai."
+            }
+          ],
+          "steps": [
+            "Baca instruksi dan tugas operator hari ini",
+            "Periksa pelindung, lantai, dan indikator yang ditetapkan",
+            "Laporkan kerusakan atau tanda tidak normal",
+            "Jalankan hanya setelah pemeriksaan dinyatakan siap"
+          ],
+          "caution": "Jangan melepas pelindung atau memperbaiki mesin tanpa pelatihan serta prosedur isolasi.",
+          "scenario": "Lampu peringatan mesin pemadat menyala dan pintu pelindung belum terkunci penuh.",
+          "response": "Jangan jalankan mesin. Jauhkan orang dari area, beri tahu operator atau pemimpin, dan tunggu pemeriksaan sebelum proses dimulai.",
+          "vocabulary": [
+            {
+              "japanese": "設備",
+              "reading": "せつび",
+              "meaning": "peralatan"
+            },
+            {
+              "japanese": "保護カバー",
+              "reading": "ほごかばー",
+              "meaning": "pelindung mesin"
+            },
+            {
+              "japanese": "警報",
+              "reading": "けいほう",
+              "meaning": "alarm"
+            },
+            {
+              "japanese": "運転",
+              "reading": "うんてん",
+              "meaning": "pengoperasian"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "警報が出ています。機械を動かしません。",
+              "reading": "けいほうがでています。きかいをうごかしません。",
+              "meaning": "Alarm muncul. Saya tidak menjalankan mesin."
+            },
+            {
+              "japanese": "点検が終わるまで待ってください。",
+              "reading": "てんけんがおわるまでまってください。",
+              "meaning": "Mohon tunggu sampai pemeriksaan selesai."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan jika alarm muncul sebelum mesin dijalankan?",
+              "options": [
+                "Jangan jalankan dan minta pemeriksaan sesuai prosedur",
+                "Matikan lampu alarm lalu mulai proses",
+                "Buka pelindung untuk melihat bagian dalam",
+                "Minta pekerja lain menahan pintu"
+              ],
+              "answer": 0,
+              "explanation": "Alarm atau pelindung terbuka menunjukkan kondisi yang harus dinilai sebelum operasi.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Lampu peringatan mesin pemadat menyala dan pintu pelindung belum terkunci penuh. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Jangan jalankan mesin. Jauhkan orang dari area, beri tahu operator atau pemimpin, dan tunggu pemeriksaan sebelum proses dimulai.",
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 0,
+              "explanation": "Peralatan belum dinyatakan aman; hentikan persiapan dan eskalasikan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan awal peralatan pengolahan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca instruksi dan tugas operator hari ini",
+                "Laporkan kerusakan atau tanda tidak normal",
+                "Jalankan hanya setelah pemeriksaan dinyatakan siap",
+                "Periksa pelindung, lantai, dan indikator yang ditetapkan"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Baca instruksi dan tugas operator hari ini → Periksa pelindung, lantai, dan indikator yang ditetapkan → Laporkan kerusakan atau tanda tidak normal → Jalankan hanya setelah pemeriksaan dinyatakan siap.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-08",
+          "title": "Mengikuti urutan proses dan mencatat hasil",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti urutan pengolahan yang ditetapkan serta mencatat lot, waktu, dan hasil sesuai format fasilitas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pengolahan antara mengubah bentuk atau kondisi bahan agar dapat dipulihkan atau diproses selanjutnya. Setiap fasilitas menetapkan jalur dan parameter untuk mesin tertentu, termasuk urutan material masuk dan keluaran. Catatan aktual membantu menghubungkan lot penerimaan dengan fraksi hasil dan menemukan penyimpangan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan identitas bahan dengan instruksi sebelum memasukkan material, periksa indikator yang diminta, dan catat perubahan lot atau hasil timbang. Bila keluaran terlihat berbeda, mesin berhenti, atau identitas hilang, tahan produk dan laporkan. Jangan mencampur keluaran dua proses untuk menutup selisih berat.\n\nKasus latihan: Keluaran dari satu proses memiliki tanda lot yang tidak sama dengan catatan bahan masuk.\nRespons yang dianjurkan: Tahan keluaran, catat tanda yang terlihat, dan minta penanggung jawab menelusuri lot sebelum dipindahkan ke proses berikutnya."
+            }
+          ],
+          "steps": [
+            "Cocokkan lot bahan dengan instruksi proses",
+            "Ikuti urutan dan batas tugas operator",
+            "Catat waktu, hasil, dan identitas keluaran",
+            "Tahan hasil yang menyimpang dan minta pemeriksaan"
+          ],
+          "caution": "Jangan mengubah urutan atau mencampur lot untuk mengejar jumlah produksi.",
+          "scenario": "Keluaran dari satu proses memiliki tanda lot yang tidak sama dengan catatan bahan masuk.",
+          "response": "Tahan keluaran, catat tanda yang terlihat, dan minta penanggung jawab menelusuri lot sebelum dipindahkan ke proses berikutnya.",
+          "vocabulary": [
+            {
+              "japanese": "中間処理",
+              "reading": "ちゅうかんしょり",
+              "meaning": "pengolahan antara"
+            },
+            {
+              "japanese": "工程",
+              "reading": "こうてい",
+              "meaning": "tahap proses"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            },
+            {
+              "japanese": "搬出",
+              "reading": "はんしゅつ",
+              "meaning": "pengeluaran atau pemindahan keluar"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ロット番号が記録と違います。",
+              "reading": "ろっとばんごうがきろくとちがいます。",
+              "meaning": "Nomor lot berbeda dari catatan."
+            },
+            {
+              "japanese": "出力を保留して、担当者に確認します。",
+              "reading": "しゅつりょくをほりゅうして、たんとうしゃにかくにんします。",
+              "meaning": "Saya menahan keluaran dan meminta konfirmasi petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa identitas lot perlu dicatat pada keluaran proses?",
+              "options": [
+                "Agar keluaran dapat ditautkan kembali ke bahan dan proses",
+                "Agar bahan dari semua sumber mudah dicampur",
+                "Untuk menghilangkan kebutuhan timbang",
+                "Supaya alat dapat berjalan tanpa operator"
+              ],
+              "answer": 0,
+              "explanation": "Pencatatan lot mempertahankan ketertelusuran dari penerimaan hingga keluaran.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Keluaran dari satu proses memiliki tanda lot yang tidak sama dengan catatan bahan masuk. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Tahan keluaran, catat tanda yang terlihat, dan minta penanggung jawab menelusuri lot sebelum dipindahkan ke proses berikutnya.",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 1,
+              "explanation": "Nomor lot tidak cocok; tahan hasil dan telusuri sebelum diteruskan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Mengikuti urutan proses dan mencatat hasil», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Ikuti urutan dan batas tugas operator",
+                "Cocokkan lot bahan dengan instruksi proses",
+                "Catat waktu, hasil, dan identitas keluaran",
+                "Tahan hasil yang menyimpang dan minta pemeriksaan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan lot bahan dengan instruksi proses → Ikuti urutan dan batas tugas operator → Catat waktu, hasil, dan identitas keluaran → Tahan hasil yang menyimpang dan minta pemeriksaan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-09",
+          "title": "Kondisi tidak normal dan perawatan peralatan",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali kebocoran, getaran, bunyi, panas, atau kerusakan dan melaporkannya tanpa melakukan perbaikan di luar wewenang.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Peralatan dapat mengalami keausan, sumbatan, kebocoran, atau kerusakan listrik. Pekerja mengamati tanda yang ditetapkan dan menghentikan penggunaan bila ada bahaya, lalu memberi tahu petugas perawatan. Pembersihan, pelumasan, penggantian bagian, dan isolasi energi hanya dilakukan oleh orang yang berwenang mengikuti aturan fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat nomor mesin, waktu, lokasi masalah, bunyi atau indikator yang terlihat, dan langkah sementara yang diambil. Jauhkan rekan dari area bila perlu dan pasang tanda sesuai prosedur. Jangan membuka panel, memasukkan alat, atau mencoba menyalakan ulang beberapa kali untuk menghilangkan alarm.\n\nKasus latihan: Pompa pada lini mengeluarkan bau terbakar dan getaran bertambah saat berjalan.\nRespons yang dianjurkan: Hentikan peralatan sesuai prosedur darurat, menjauh dari area, dan laporkan nomor mesin serta gejalanya kepada pemimpin."
+            }
+          ],
+          "steps": [
+            "Amati tanda kerusakan dari posisi aman",
+            "Hentikan alat sesuai instruksi bila kondisi berbahaya",
+            "Catat mesin, waktu, dan gejala yang terlihat",
+            "Laporkan kepada petugas perawatan atau pemimpin"
+          ],
+          "caution": "Jangan membuka panel listrik atau membersihkan sumbatan tanpa isolasi dan kewenangan.",
+          "scenario": "Pompa pada lini mengeluarkan bau terbakar dan getaran bertambah saat berjalan.",
+          "response": "Hentikan peralatan sesuai prosedur darurat, menjauh dari area, dan laporkan nomor mesin serta gejalanya kepada pemimpin.",
+          "vocabulary": [
+            {
+              "japanese": "故障",
+              "reading": "こしょう",
+              "meaning": "kerusakan"
+            },
+            {
+              "japanese": "保全",
+              "reading": "ほぜん",
+              "meaning": "perawatan"
+            },
+            {
+              "japanese": "振動",
+              "reading": "しんどう",
+              "meaning": "getaran"
+            },
+            {
+              "japanese": "漏れ",
+              "reading": "もれ",
+              "meaning": "kebocoran"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ポンプから焦げたにおいがします。",
+              "reading": "ぽんぷからこげたにおいがします。",
+              "meaning": "Pompa mengeluarkan bau terbakar."
+            },
+            {
+              "japanese": "運転を止めて、保全担当者に連絡します。",
+              "reading": "うんてんをとめて、ほぜんたんとうしゃにれんらくします。",
+              "meaning": "Saya menghentikan operasi dan menghubungi petugas perawatan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Informasi apa yang membantu petugas menilai kerusakan mesin?",
+              "options": [
+                "Nomor mesin, waktu, dan gejala yang diamati",
+                "Perkiraan penyebab tanpa tanda",
+                "Nama pelanggan yang menunggu",
+                "Warna seragam operator"
+              ],
+              "answer": 0,
+              "explanation": "Detail yang diamati membantu petugas menemukan lokasi dan kondisi tanpa menebak.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pompa pada lini mengeluarkan bau terbakar dan getaran bertambah saat berjalan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Hentikan peralatan sesuai prosedur darurat, menjauh dari area, dan laporkan nomor mesin serta gejalanya kepada pemimpin.",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 2,
+              "explanation": "Bau terbakar dan getaran adalah tanda serius; hentikan dan laporkan segera.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Kondisi tidak normal dan perawatan peralatan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Amati tanda kerusakan dari posisi aman",
+                "Hentikan alat sesuai instruksi bila kondisi berbahaya",
+                "Catat mesin, waktu, dan gejala yang terlihat",
+                "Laporkan kepada petugas perawatan atau pemimpin"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Amati tanda kerusakan dari posisi aman → Hentikan alat sesuai instruksi bila kondisi berbahaya → Catat mesin, waktu, dan gejala yang terlihat → Laporkan kepada petugas perawatan atau pemimpin.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "traceability",
+      "title": "Penyimpanan, keluaran, dan serah terima",
+      "description": "Menjaga identitas hasil, area penyimpanan, keselamatan pemindahan, serta catatan dan serah terima antarproses.",
+      "lessons": [
+        {
+          "id": "rr-10",
+          "title": "Pencatatan keluaran dan tujuan berikutnya",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan hasil olahan, berat atau jumlah, nomor lot, dan tujuan proses sebelum pemindahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Hasil proses dapat menjadi bahan baku untuk tahap lain, produk yang dapat digunakan kembali, atau residu yang memerlukan jalur berbeda. Catatan fasilitas menghubungkan berat dan identitas bahan masuk dengan hasil serta tujuan berikutnya. Format dan data yang dicatat mengikuti prosedur setempat; pekerja tidak menebak kategori atau tujuan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa label dan kartu proses sebelum pemindahan, timbang atau hitung sesuai instruksi, lalu catat hasil aktual. Bila jumlah tidak cocok atau tanda tujuan hilang, tahan hasil di lokasi yang ditetapkan. Jangan mengisi dokumen dengan angka target atau memindahkan bahan ke area lain tanpa izin.\n\nKasus latihan: Berat keluaran pada alat timbang berbeda dari catatan, dan label tujuan pada wadah terlepas.\nRespons yang dianjurkan: Tahan wadah, catat hasil timbang aktual dan informasi yang masih ada, lalu minta penanggung jawab memulihkan tujuan sebelum pengiriman internal."
+            }
+          ],
+          "steps": [
+            "Cocokkan label hasil dengan kartu proses",
+            "Ukur atau hitung hasil sesuai satuan fasilitas",
+            "Catat berat, waktu, lot, dan tujuan aktual",
+            "Tahan selisih serta minta konfirmasi sebelum pindah"
+          ],
+          "caution": "Jangan mengirim keluaran tanpa identitas dan tujuan yang dapat diverifikasi.",
+          "scenario": "Berat keluaran pada alat timbang berbeda dari catatan, dan label tujuan pada wadah terlepas.",
+          "response": "Tahan wadah, catat hasil timbang aktual dan informasi yang masih ada, lalu minta penanggung jawab memulihkan tujuan sebelum pengiriman internal.",
+          "vocabulary": [
+            {
+              "japanese": "搬出",
+              "reading": "はんしゅつ",
+              "meaning": "pemindahan keluar"
+            },
+            {
+              "japanese": "重量",
+              "reading": "じゅうりょう",
+              "meaning": "berat"
+            },
+            {
+              "japanese": "行き先",
+              "reading": "いきさき",
+              "meaning": "tujuan"
+            },
+            {
+              "japanese": "照合",
+              "reading": "しょうごう",
+              "meaning": "pencocokan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "重量が記録と違います。",
+              "reading": "じゅうりょうがきろくとちがいます。",
+              "meaning": "Berat berbeda dari catatan."
+            },
+            {
+              "japanese": "行き先が分かるまで移動しません。",
+              "reading": "いきさきがわかるまでいどうしません。",
+              "meaning": "Saya tidak memindahkannya sampai tujuannya diketahui."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan jika berat dan label tujuan tidak cocok?",
+              "options": [
+                "Tahan keluaran, catat hasil aktual, dan verifikasi tujuan",
+                "Gunakan berat target dan lanjutkan",
+                "Pindahkan ke wadah terdekat",
+                "Tempel label dari keluaran sebelumnya"
+              ],
+              "answer": 0,
+              "explanation": "Hasil harus memiliki angka aktual dan tujuan yang jelas agar tetap dapat ditelusuri.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Berat keluaran pada alat timbang berbeda dari catatan, dan label tujuan pada wadah terlepas. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain",
+                "Tahan wadah, catat hasil timbang aktual dan informasi yang masih ada, lalu minta penanggung jawab memulihkan tujuan sebelum pengiriman internal."
+              ],
+              "answer": 3,
+              "explanation": "Tanda tujuan terlepas dan berat berbeda; tahan sebelum pemindahan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pencatatan keluaran dan tujuan berikutnya», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Cocokkan label hasil dengan kartu proses",
+                "Catat berat, waktu, lot, dan tujuan aktual",
+                "Ukur atau hitung hasil sesuai satuan fasilitas",
+                "Tahan selisih serta minta konfirmasi sebelum pindah"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Cocokkan label hasil dengan kartu proses → Ukur atau hitung hasil sesuai satuan fasilitas → Catat berat, waktu, lot, dan tujuan aktual → Tahan selisih serta minta konfirmasi sebelum pindah.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-11",
+          "title": "Penyimpanan aman dan pengendalian debu atau tumpahan",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga area simpan tertata dan melaporkan debu, tumpahan, bau, atau bahan yang dapat mencemari lingkungan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Area simpan dapat memiliki material berbeda dengan batas tumpukan, penutup, dan rute kendaraan tersendiri. Debu, cairan, atau serpihan dapat menyebabkan gangguan pernapasan, lantai licin, atau pencemaran. Pengendalian mengikuti perlengkapan dan prosedur fasilitas; pekerja tidak menyapu, menyiram, atau memindahkan tumpahan berbahaya tanpa arahan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Letakkan wadah pada area bertanda, jaga jalur keluar tetap kosong, dan periksa penutup serta kebocoran. Bila debu berlebihan atau cairan keluar dari wadah, beri peringatan, jaga jarak, dan laporkan lokasi serta jenis yang diketahui. Gunakan alat pelindung dan prosedur hanya jika tugas itu diberikan kepada Anda.\n\nKasus latihan: Cairan keluar dari drum penyimpanan di dekat saluran lantai dan pekerja tidak mengetahui isi drum.\nRespons yang dianjurkan: Jangan menyentuh atau menyiram cairan. Jauhkan orang, tandai area sesuai aturan, dan hubungi petugas berwenang."
+            }
+          ],
+          "steps": [
+            "Pastikan material berada pada zona simpan yang benar",
+            "Jaga jalur kendaraan dan evakuasi tetap terbuka",
+            "Amati penutup, kebocoran, debu, dan tumpahan",
+            "Batasi area serta laporkan kondisi yang tidak aman"
+          ],
+          "caution": "Jangan menyiram atau menyapu bahan tidak dikenal ke saluran air.",
+          "scenario": "Cairan keluar dari drum penyimpanan di dekat saluran lantai dan pekerja tidak mengetahui isi drum.",
+          "response": "Jangan menyentuh atau menyiram cairan. Jauhkan orang, tandai area sesuai aturan, dan hubungi petugas berwenang.",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "粉じん",
+              "reading": "ふんじん",
+              "meaning": "debu"
+            },
+            {
+              "japanese": "漏えい",
+              "reading": "ろうえい",
+              "meaning": "kebocoran atau pelepasan"
+            },
+            {
+              "japanese": "排水口",
+              "reading": "はいすいこう",
+              "meaning": "saluran pembuangan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ドラムから液体が漏れています。",
+              "reading": "どらむからえきたいがもれています。",
+              "meaning": "Cairan bocor dari drum."
+            },
+            {
+              "japanese": "触らずに、担当者へ連絡してください。",
+              "reading": "さわらずに、たんとうしゃへれんらくしてください。",
+              "meaning": "Jangan sentuh, hubungi petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tindakan awal terhadap tumpahan dengan isi yang tidak diketahui?",
+              "options": [
+                "Jaga jarak, batasi area, dan hubungi petugas berwenang",
+                "Siram ke saluran agar lantai bersih",
+                "Serap dengan kain pribadi",
+                "Pindahkan drum tanpa alat pelindung"
+              ],
+              "answer": 0,
+              "explanation": "Isi yang tidak diketahui dapat berbahaya dan tidak boleh dilepas ke saluran atau disentuh sembarangan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Cairan keluar dari drum penyimpanan di dekat saluran lantai dan pekerja tidak mengetahui isi drum. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Jangan menyentuh atau menyiram cairan. Jauhkan orang, tandai area sesuai aturan, dan hubungi petugas berwenang.",
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 0,
+              "explanation": "Tumpahan belum dikenal; amankan jarak dan serahkan penanganan kepada petugas berwenang.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penyimpanan aman dan pengendalian debu atau tumpahan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Pastikan material berada pada zona simpan yang benar",
+                "Amati penutup, kebocoran, debu, dan tumpahan",
+                "Batasi area serta laporkan kondisi yang tidak aman",
+                "Jaga jalur kendaraan dan evakuasi tetap terbuka"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Pastikan material berada pada zona simpan yang benar → Jaga jalur kendaraan dan evakuasi tetap terbuka → Amati penutup, kebocoran, debu, dan tumpahan → Batasi area serta laporkan kondisi yang tidak aman.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rr-12",
+          "title": "Pemeriksaan akhir dan serah terima giliran",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan area, alat, dan lot pada akhir giliran serta menyerahkan status pekerjaan yang masih terbuka.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerjaan fasilitas berlangsung lintas proses dan giliran. Serah terima yang jelas menyebut lokasi, nomor lot, status mesin, jumlah yang dicatat, serta tindakan berikutnya. Catatan faktual membantu melanjutkan pekerjaan tanpa mencampur keluaran atau mengulang langkah yang sudah selesai. Bahaya yang masih aktif harus diserahkan langsung."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa daftar akhir, kembalikan alat pada lokasi, dan tandai lot yang masih menunggu hasil. Beri tahu penerima tentang kerusakan, tanda yang hilang, atau area yang dibatasi. Jangan menulis pekerjaan selesai jika belum dilakukan; minta penerima mengulang informasi penting untuk memastikan pemahaman.\n\nKasus latihan: Pada akhir giliran, satu wadah hasil masih menunggu verifikasi lot dan jalur di dekat mesin diberi tanda batas.\nRespons yang dianjurkan: Pertahankan tanda tahan dan batas jalur, catat nomor wadah serta alasan, lalu serahkan langsung kepada penerima giliran dan pemimpin."
+            }
+          ],
+          "steps": [
+            "Periksa daftar penutupan dan kelengkapan alat",
+            "Pastikan lot serta mesin memiliki status yang terbaca",
+            "Catat fakta, tindakan, dan pekerjaan yang belum selesai",
+            "Serahkan informasi kepada pemimpin atau giliran berikutnya"
+          ],
+          "caution": "Jangan melepas tanda tahan atau meninggalkan area berbahaya tanpa serah terima.",
+          "scenario": "Pada akhir giliran, satu wadah hasil masih menunggu verifikasi lot dan jalur di dekat mesin diberi tanda batas.",
+          "response": "Pertahankan tanda tahan dan batas jalur, catat nomor wadah serta alasan, lalu serahkan langsung kepada penerima giliran dan pemimpin.",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            },
+            {
+              "japanese": "状況",
+              "reading": "じょうきょう",
+              "meaning": "status"
+            },
+            {
+              "japanese": "未完了",
+              "reading": "みかんりょう",
+              "meaning": "belum selesai"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この容器はロット確認中です。",
+              "reading": "このようきはろっとかくにんちゅうです。",
+              "meaning": "Wadah ini sedang menunggu pemeriksaan lot."
+            },
+            {
+              "japanese": "立入禁止の場所も引き継ぎます。",
+              "reading": "たちいりきんしのばしょもひきつぎます。",
+              "meaning": "Saya juga menyerahkan informasi area terlarang."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang perlu disampaikan dalam serah terima giliran?",
+              "options": [
+                "Lot, lokasi, status mesin, bahaya, dan tindak lanjut",
+                "Hanya jumlah yang selesai hari ini",
+                "Dugaan penyebab tanpa data",
+                "Bahwa semua aman tanpa memeriksa"
+              ],
+              "answer": 0,
+              "explanation": "Fakta dan status pekerjaan terbuka membantu giliran berikutnya bekerja dengan aman dan menelusuri lot.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pada akhir giliran, satu wadah hasil masih menunggu verifikasi lot dan jalur di dekat mesin diberi tanda batas. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sentuh atau buka bahan yang belum dikenal",
+                "Pertahankan tanda tahan dan batas jalur, catat nomor wadah serta alasan, lalu serahkan langsung kepada penerima giliran dan pemimpin.",
+                "Campur wadah agar cepat dikosongkan",
+                "Lewati pencatatan lalu pindahkan ke area lain"
+              ],
+              "answer": 1,
+              "explanation": "Verifikasi lot dan batas jalur belum selesai; pertahankan tanda dan serahkan status dengan jelas.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan akhir dan serah terima giliran», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Pastikan lot serta mesin memiliki status yang terbaca",
+                "Periksa daftar penutupan dan kelengkapan alat",
+                "Catat fakta, tindakan, dan pekerjaan yang belum selesai",
+                "Serahkan informasi kepada pemimpin atau giliran berikutnya"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa daftar penutupan dan kelengkapan alat → Pastikan lot serta mesin memiliki status yang terbaca → Catat fakta, tindakan, dan pekerjaan yang belum selesai → Serahkan informasi kepada pemimpin atau giliran berikutnya.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA Jepang — pekerjaan SSW(i) sektor resource recycling",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "Ministry of the Environment — sektor resource recycling, scope and official test status",
+      "url": "https://www.env.go.jp/recycle/waste/foreigner.html"
+    },
+    {
+      "title": "Ministry of the Environment — official overview of resource-recycling intake preparation",
+      "url": "https://www.env.go.jp/content/000378447.pdf"
+    },
+    {
+      "title": "ISA — sector-specific policy pages, including Resource Recycling",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri01_00132.html"
+    }
+  ]
+}

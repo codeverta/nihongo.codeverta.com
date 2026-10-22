@@ -11,8 +11,32 @@ def bank(course, sector):
     for module in course['modules']:
         for lesson in module['lessons']:
             for i, q in enumerate(lesson['checks']):
-                result.append(dict(id=f'{lesson["id"]}-{i+1}', moduleId=module['id'], group=module['title'], lessonId=lesson['id'], prompt=q['prompt'], options=q['options'], answer=q['answer'], explanation=q['explanation'], scenario=lesson['scenario'], track=module.get('track',''), kind=q.get('kind','knowledge')))
+                kind = q.get('kind', 'knowledge')
+                section = 'grammar' if kind in ('case', 'workflow') else 'vocabulary'
+                passage = lesson['scenario'] if kind in ('case', 'workflow') else ''
+                result.append(dict(id=f'{lesson["id"]}-{i+1}', moduleId=module['id'], group=module['title'], lessonId=lesson['id'], prompt=q['prompt'], options=q['options'], answer=q['answer'], explanation=q['explanation'], section=section, passage=passage, track=module.get('track',''), kind=kind))
     return result
+
+def validate_new_course(sector, course):
+    modules = course['modules']
+    lessons = [lesson for module in modules for lesson in module['lessons']]
+    assert len(modules) == 4, f'{sector}: expected four modules'
+    assert len(lessons) == 12, f'{sector}: expected twelve lessons'
+    assert len({lesson['id'] for lesson in lessons}) == len(lessons), f'{sector}: duplicate lesson IDs'
+    sources = course.get('sources', [])
+    assert sources, f'{sector}: source attribution is required'
+    assert all(source.get('title') and source.get('url', '').startswith('https://') for source in sources), f'{sector}: invalid source attribution'
+    for lesson in lessons:
+        assert len(lesson['sections']) >= 2, f'{sector}/{lesson["id"]}: add substantive lesson sections'
+        assert len(lesson['steps']) >= 4, f'{sector}/{lesson["id"]}: add work steps'
+        assert len(lesson['vocabulary']) >= 4, f'{sector}/{lesson["id"]}: add vocabulary with readings'
+        assert all(word['japanese'] and word['reading'] and word['meaning'] for word in lesson['vocabulary']), f'{sector}/{lesson["id"]}: incomplete vocabulary reading'
+        assert lesson['dialogue'] and all(phrase['japanese'] and phrase['reading'] and phrase['meaning'] for phrase in lesson['dialogue']), f'{sector}/{lesson["id"]}: incomplete dialogue reading'
+        assert {check['kind'] for check in lesson['checks']} == {'knowledge', 'case', 'workflow'}, f'{sector}/{lesson["id"]}: expected knowledge, case and workflow checks'
+        for check in lesson['checks']:
+            assert len(check['options']) == 4 and len(set(check['options'])) == 4, f'{sector}/{lesson["id"]}: checks need four unique options'
+            assert isinstance(check['answer'], int) and 0 <= check['answer'] < 4, f'{sector}/{lesson["id"]}: invalid answer index'
+            assert check['prompt'] and check['explanation'], f'{sector}/{lesson["id"]}: incomplete check'
 
 kaigo = load('kaigo')
 cleaning = load('building-cleaning')
@@ -58,7 +82,7 @@ items=[]
 for group,n,pool in categories:
     for q in select(pool,n,used):
         item=dict(q, section='vocabulary',group=group)
-        if group.startswith('Keputusan'): item['passage']=q['scenario']
+        if group.startswith('Keputusan'): item['passage']=q.get('passage', q.get('scenario', ''))
         items.append(item)
 papers['SSW-KAIGO']=dict(title='Kaigo · Simulasi Keterampilan 1',minutes=60,sections=[dict(id='vocabulary',name='Keterampilan Kaigo · 45 soal',durationSeconds=3600,questionCount=45)],items=items)
 papers['SSW-KAIGO-JP']=dict(title='Kaigo · Simulasi Bahasa Jepang 1',minutes=30,sections=[dict(id='vocabulary',name='Bahasa Jepang Kaigo · 15 soal',durationSeconds=1800,questionCount=15)],items=[dict(q,section='vocabulary') for q in banks['nursing-care'][72:]])
@@ -68,10 +92,72 @@ theory_lessons=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,19,22,23,24]
 theory=[next(q for q in pool if q['id']==f'cleaning-{n:02}-1') for n in theory_lessons]
 used={q['id'] for q in theory}
 practical=select(pool,30,used)
-papers['SSW-CLEANING']=dict(title='Pembersihan Gedung · Simulasi 1',minutes=50,sections=[dict(id='vocabulary',name='Teori · 学科',durationSeconds=1200,questionCount=20),dict(id='grammar',name='Penilaian praktik · 実技',durationSeconds=1800,questionCount=30)],items=[dict(q,section='vocabulary') for q in theory]+[dict(q,section='grammar',passage=q['scenario']) for q in practical])
+papers['SSW-CLEANING']=dict(title='Pembersihan Gedung · Simulasi 1',minutes=50,sections=[dict(id='vocabulary',name='Teori · 学科',durationSeconds=1200,questionCount=20),dict(id='grammar',name='Penilaian praktik · 実技',durationSeconds=1800,questionCount=30)],items=[dict(q,section='vocabulary') for q in theory]+[dict(q,section='grammar',passage=q.get('passage', q.get('scenario', ''))) for q in practical])
 
 for sector in ['agriculture','fishery']:
     banks[sector]=bank(load(sector),sector)
+
+# Newly authored sectors use the same lesson-check schema. Their paper is a
+# learning simulation built from original questions, not a claim to duplicate
+# the official test format or practical assessment.
+new_sector_titles = {
+    'linen-supply': ('SSW-LINEN-SUPPLY', 'Pengolahan linen · latihan belajar orisinal',
+        ['Blueprint, silabus rinci, dan format ujian resmi belum dipublikasikan pada sumber yang ditinjau', 'Penilaian praktik langsung dan format resmi apa pun tidak direplikasi dalam simulasi teks']),
+    'industrial-manufacturing': ('SSW-INDUSTRIAL-MANUFACTURING', 'Manufaktur industri · latihan orisinal lintas kategori',
+        ['Standar teknis spesifik tiap kategori dan tiap fasilitas', 'Demonstrasi alat, gambar kerja, dan CBT resmi tidak direplikasi']),
+    'construction': ('SSW-CONSTRUCTION', 'Konstruksi · simulasi belajar orisinal',
+        ['Tugas praktik lapangan, gambar teknik khusus proyek, dan visual alat', 'Format dan distribusi resmi tidak direplikasi satu per satu']),
+    'shipbuilding': ('SSW-SHIPBUILDING', 'Shipbuilding · latihan pengetahuan & skenario orisinal',
+        ['Tugas keterampilan praktik langsung di lokasi dan trade-specific tools/material', 'Demonstrasi, pemeriksaan langsung, dan format praktik resmi']),
+    'automobile-maintenance': ('SSW-AUTOMOBILE-MAINTENANCE', 'Perawatan dan perbaikan mobil · simulasi belajar orisinal',
+        ['Pemeriksaan dan perbaikan langsung pada kendaraan', 'Kualifikasi profesi, manual kendaraan, dan SOP bengkel']),
+    'aviation': ('SSW-AVIATION', 'Penerbangan · simulasi belajar orisinal',
+        ['Praktik berizin di apron atau hanggar', 'Prosedur operator, komunikasi operasional, dan demonstrasi peralatan']),
+    'accommodation': ('SSW-ACCOMMODATION', 'Perhotelan · simulasi belajar orisinal',
+        ['Simulasi layanan langsung kepada tamu', 'SOP, sistem reservasi, dan kebijakan spesifik hotel']),
+    'road-transport': ('SSW-ROAD-TRANSPORT', 'Transportasi kendaraan bermotor · simulasi belajar orisinal',
+        ['Praktik mengemudi dan evaluasi di jalan', 'Prosedur yang memerlukan lisensi kendaraan dan pelatihan operator']),
+    'railway': ('SSW-RAILWAY', 'Perkeretaapian · simulasi belajar orisinal',
+        ['Operasi sistem, sarana, jalur, dan fasilitas perkeretaapian', 'Kualifikasi dan demonstrasi kerja sesuai penugasan']),
+    'logistics-warehouse': ('SSW-LOGISTICS-WAREHOUSE', 'Gudang logistik · simulasi belajar orisinal',
+        ['Rincian format resmi masih disiapkan pemerintah', 'Praktik alat angkat dan SOP masing-masing gudang']),
+    'food-manufacturing': ('SSW-FOOD-MANUFACTURING', 'Produksi makanan dan minuman · simulasi belajar orisinal',
+        ['Praktik langsung produksi dan inspeksi produk', 'Batas kendali yang mengikuti jenis produk dan SOP fasilitas']),
+    'food-service': ('SSW-FOOD-SERVICE', 'Layanan makanan/restoran · simulasi belajar orisinal',
+        ['Praktik layanan langsung dan standar perusahaan', 'Status penerimaan SSW(i) saat ini; periksa pengumuman resmi']),
+    'forestry': ('SSW-FORESTRY', 'Kehutanan · simulasi belajar orisinal',
+        ['Pengoperasian mesin dan pekerjaan lapangan terawasi', 'Izin kerja, kondisi hutan, dan aturan lokasi']),
+    'wood-industry': ('SSW-WOOD-INDUSTRY', 'Industri kayu · simulasi belajar orisinal',
+        ['Pengoperasian mesin pemrosesan kayu dan praktik bengkel', 'Toleransi gambar kerja dan spesifikasi produk masing-masing fasilitas']),
+    'resource-recycling': ('SSW-RESOURCE-RECYCLING', 'Daur ulang sumber daya · simulasi belajar orisinal',
+        ['Pemeriksaan dan pengoperasian fasilitas secara langsung', 'Identifikasi/penanganan material berbahaya sesuai izin dan SOP']),
+}
+expanded_sector_ids = {
+    'automobile-maintenance', 'aviation', 'accommodation', 'road-transport',
+    'railway', 'logistics-warehouse', 'food-manufacturing', 'food-service',
+    'forestry', 'wood-industry', 'resource-recycling',
+}
+for sector, (level, title, omitted) in new_sector_titles.items():
+    course = load(sector)
+    if sector in expanded_sector_ids:
+        validate_new_course(sector, course)
+    questions = bank(course, sector)
+    banks[sector] = questions
+    concepts = [q for q in questions if q['kind'] == 'knowledge']
+    scenarios = [q for q in questions if q['kind'] == 'case']
+    lesson_count = sum(len(module['lessons']) for module in course['modules'])
+    assert len(concepts) == lesson_count and len(scenarios) == lesson_count
+    papers[level] = dict(
+        title=title,
+        minutes=35,
+        omitted=omitted,
+        sections=[
+            dict(id='vocabulary', name='Konsep, proses & kosakata · latihan belajar', durationSeconds=900, questionCount=lesson_count),
+            dict(id='grammar', name='Keputusan skenario kerja · latihan berbasis teks', durationSeconds=1200, questionCount=lesson_count),
+        ],
+        items=[dict(q, section='vocabulary') for q in concepts]
+            + [dict(q, section='grammar', passage=q.get('passage', '')) for q in scenarios],
+    )
 
 for track,level,title in [
     ('crop','SSW-AGRICULTURE-CROP','Pertanian · Tanaman'),
@@ -111,6 +197,19 @@ for questions in banks.values():
         shift=i%len(q['options'])
         q['options']=q['options'][shift:]+q['options'][:shift]
         q['answer']=(q['answer']-shift)%len(q['options'])
+
+# Papers must use the exact same rotated choices and answer indexes as practice.
+# Paper-specific section and passage metadata stays attached to the selected item.
+bank_by_id = {q['id']: q for questions in banks.values() for q in questions}
+for paper in papers.values():
+    refreshed = []
+    for item in paper['items']:
+        source = bank_by_id[item['id']]
+        refreshed.append(dict(source,
+            section=item.get('section', source.get('section', 'vocabulary')),
+            group=item.get('group', source.get('group', '')),
+            passage=item.get('passage') or source.get('passage', '')))
+    paper['items'] = refreshed
 
 if __name__ == '__main__':
     out=ROOT/'backend/internal/store/ssw_resources'

@@ -1,0 +1,1272 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "site",
+      "title": "Persiapan lokasi dan keselamatan lapangan",
+      "description": "Membaca rencana kerja, mengenali kondisi lokasi, dan memastikan komunikasi, perlindungan diri, serta batas tugas sebelum bekerja di hutan.",
+      "lessons": [
+        {
+          "id": "fo-01",
+          "title": "Rencana kerja, lokasi, dan komunikasi darurat",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa lokasi kerja, tugas, rute, kondisi cuaca, dan cara meminta bantuan sebelum masuk ke area hutan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerjaan kehutanan mencakup pemeliharaan hutan dan produksi kayu; tugas harian berbeda menurut lokasi dan rencana. Kru perlu mengetahui titik kerja, jalur keluar, cara menghubungi pemimpin, dan tempat berkumpul bila terjadi bahaya. Cuaca, medan, dan jarak dari jalan dapat mengubah kondisi; pekerja tidak mengubah rute atau tugas sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum berangkat, dengarkan arahan, ulangi lokasi dan tugas, periksa alat komunikasi, dan pastikan siapa yang menjadi kontak. Beri tahu kru jika baterai radio lemah atau jalur tidak dapat dilalui. Bila cuaca memburuk atau rencana tidak jelas, hentikan persiapan dan minta konfirmasi.\n\nKasus latihan: Pekerja menerima peta dengan titik kerja baru, tetapi radio tidak dapat tersambung dengan pemimpin.\nRespons yang dianjurkan: Jangan masuk ke lokasi. Periksa alat sesuai instruksi dan laporkan gangguan komunikasi agar jalur kontak dipastikan."
+            }
+          ],
+          "steps": [
+            "Baca atau dengarkan rencana kerja hari ini",
+            "Pastikan lokasi, tugas, dan rute masuk-keluar",
+            "Periksa alat komunikasi dan kontak darurat",
+            "Ulangi instruksi yang belum dipahami sebelum berangkat"
+          ],
+          "caution": "Jangan memasuki lokasi kerja sendiri atau berpindah area tanpa memberi tahu kru.",
+          "scenario": "Pekerja menerima peta dengan titik kerja baru, tetapi radio tidak dapat tersambung dengan pemimpin.",
+          "response": "Jangan masuk ke lokasi. Periksa alat sesuai instruksi dan laporkan gangguan komunikasi agar jalur kontak dipastikan.",
+          "vocabulary": [
+            {
+              "japanese": "作業計画",
+              "reading": "さぎょうけいかく",
+              "meaning": "rencana kerja"
+            },
+            {
+              "japanese": "現場",
+              "reading": "げんば",
+              "meaning": "lokasi kerja"
+            },
+            {
+              "japanese": "連絡",
+              "reading": "れんらく",
+              "meaning": "komunikasi"
+            },
+            {
+              "japanese": "退避場所",
+              "reading": "たいひばしょ",
+              "meaning": "tempat evakuasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日の作業場所をもう一度教えてください。",
+              "reading": "きょうのさぎょうばしょをもういちどおしえてください。",
+              "meaning": "Mohon beri tahu sekali lagi lokasi kerja hari ini."
+            },
+            {
+              "japanese": "無線がつながりません。責任者に報告します。",
+              "reading": "むせんがつながりません。せきにんしゃにほうこくします。",
+              "meaning": "Radio tidak tersambung. Saya akan melapor kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang perlu dipastikan sebelum kru masuk ke lokasi hutan?",
+              "options": [
+                "Lokasi, tugas, rute, dan cara menghubungi bantuan",
+                "Hanya jumlah alat yang dibawa",
+                "Lokasi kendaraan pribadi pekerja",
+                "Perkiraan hasil kayu hari ini"
+              ],
+              "answer": 0,
+              "explanation": "Lokasi dan komunikasi yang dipahami bersama membantu kru bekerja dan meminta bantuan dengan cepat.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pekerja menerima peta dengan titik kerja baru, tetapi radio tidak dapat tersambung dengan pemimpin. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Jangan masuk ke lokasi. Periksa alat sesuai instruksi dan laporkan gangguan komunikasi agar jalur kontak dipastikan.",
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 0,
+              "explanation": "Gangguan komunikasi membuat kontak tidak pasti; jangan masuk sebelum pemimpin menentukan tindakan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Rencana kerja, lokasi, dan komunikasi darurat», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca atau dengarkan rencana kerja hari ini",
+                "Periksa alat komunikasi dan kontak darurat",
+                "Ulangi instruksi yang belum dipahami sebelum berangkat",
+                "Pastikan lokasi, tugas, dan rute masuk-keluar"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Baca atau dengarkan rencana kerja hari ini → Pastikan lokasi, tugas, dan rute masuk-keluar → Periksa alat komunikasi dan kontak darurat → Ulangi instruksi yang belum dipahami sebelum berangkat.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-02",
+          "title": "Membaca medan dan mengenali bahaya",
+          "minutes": 25,
+          "objectives": [
+            "Mengamati lereng, pijakan, pohon rusak, batu, cabang jatuh, dan perubahan cuaca sebelum bergerak.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Medan hutan dapat memiliki lereng licin, akar, lubang, batu lepas, pohon mati, dan cabang menggantung. Pekerja memperhatikan area di atas dan di bawah, menjaga jarak, serta mengikuti jalur yang disetujui. Hujan, angin, kabut, atau kondisi gelap dapat mengubah risiko; penilaian ulang dilakukan bersama pemimpin."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Berjalan dengan kecepatan yang memungkinkan melihat pijakan, jangan melewati bawah pohon atau cabang yang tampak tidak stabil, dan tandai bahaya sesuai aturan kru. Jika tanah bergerak atau jarak pandang turun, beri tahu tim dan tunggu arahan. Jangan mencoba memindahkan pohon atau batu berat sendirian.\n\nKasus latihan: Setelah hujan, jalur ke titik kerja memiliki tanah yang ambles dan satu cabang besar menggantung di atas lintasan.\nRespons yang dianjurkan: Jangan melewati titik itu. Beri tanda atau jarak aman sesuai aturan kru dan laporkan agar pemimpin memilih jalur atau tindakan aman."
+            }
+          ],
+          "steps": [
+            "Amati medan dan cuaca dari titik aman",
+            "Kenali bahaya di atas, bawah, dan sepanjang jalur",
+            "Tandai atau laporkan bahaya kepada kru",
+            "Gunakan jalur yang disetujui dan tinjau ulang bila kondisi berubah"
+          ],
+          "caution": "Jangan berjalan di bawah cabang menggantung atau melintas pada lereng yang dinilai tidak aman.",
+          "scenario": "Setelah hujan, jalur ke titik kerja memiliki tanah yang ambles dan satu cabang besar menggantung di atas lintasan.",
+          "response": "Jangan melewati titik itu. Beri tanda atau jarak aman sesuai aturan kru dan laporkan agar pemimpin memilih jalur atau tindakan aman.",
+          "vocabulary": [
+            {
+              "japanese": "斜面",
+              "reading": "しゃめん",
+              "meaning": "lereng"
+            },
+            {
+              "japanese": "足場",
+              "reading": "あしば",
+              "meaning": "pijakan"
+            },
+            {
+              "japanese": "落枝",
+              "reading": "らくし",
+              "meaning": "cabang jatuh"
+            },
+            {
+              "japanese": "危険",
+              "reading": "きけん",
+              "meaning": "bahaya"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ここは地面が崩れています。通らないでください。",
+              "reading": "ここはじめんがくずれています。とおらないでください。",
+              "meaning": "Tanah di sini longsor. Jangan lewat."
+            },
+            {
+              "japanese": "安全な道を責任者に確認します。",
+              "reading": "あんぜんなみちをせきにんしゃにかくにんします。",
+              "meaning": "Saya akan memastikan jalur aman kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus dilakukan saat kondisi medan berubah setelah hujan?",
+              "options": [
+                "Nilai ulang bahaya dan laporkan sebelum melewati jalur",
+                "Tetap lewat karena jalur kemarin aman",
+                "Lari cepat agar tidak lama di lereng",
+                "Minta pekerja lain berjalan di bawah cabang dahulu"
+              ],
+              "answer": 0,
+              "explanation": "Kondisi tanah dan cabang dapat berubah; kru menilai ulang dan memakai jalur yang disetujui.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Setelah hujan, jalur ke titik kerja memiliki tanah yang ambles dan satu cabang besar menggantung di atas lintasan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Jangan melewati titik itu. Beri tanda atau jarak aman sesuai aturan kru dan laporkan agar pemimpin memilih jalur atau tindakan aman.",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 1,
+              "explanation": "Jalur ambles dan cabang menggantung harus dihindari dan dilaporkan sebelum pekerjaan lanjut.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Membaca medan dan mengenali bahaya», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Kenali bahaya di atas, bawah, dan sepanjang jalur",
+                "Amati medan dan cuaca dari titik aman",
+                "Tandai atau laporkan bahaya kepada kru",
+                "Gunakan jalur yang disetujui dan tinjau ulang bila kondisi berubah"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Amati medan dan cuaca dari titik aman → Kenali bahaya di atas, bawah, dan sepanjang jalur → Tandai atau laporkan bahaya kepada kru → Gunakan jalur yang disetujui dan tinjau ulang bila kondisi berubah.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-03",
+          "title": "Perlengkapan pelindung dan batas tugas",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa perlengkapan pelindung dan hanya melakukan pekerjaan yang sesuai pelatihan serta arahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerjaan kehutanan memiliki bahaya dari benda jatuh, alat tajam, mesin, kebisingan, cuaca, dan medan. Perlengkapan seperti helm, pelindung mata atau wajah, pelindung pendengaran, sarung tangan, sepatu kerja, dan pakaian pelindung dipilih menurut tugas dan aturan perusahaan. Tugas dengan gergaji mesin memerlukan pelatihan dan penetapan tugas yang sesuai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum bekerja, periksa kerusakan, ukuran, pengencang, dan kecocokan perlengkapan. Bila helm retak, tali rusak, atau pelindung tidak sesuai, jangan mulai; minta penggantian. Jangan meminjam atau mengoperasikan alat yang belum diajarkan kepada Anda, sekalipun rekan meminta bantuan cepat.\n\nKasus latihan: Rekan meminta pekerja baru menggunakan gergaji mesin, tetapi ia belum mengikuti pelatihan yang diwajibkan.\nRespons yang dianjurkan: Tolak dengan sopan, jangan menyalakan gergaji, dan beri tahu pemimpin agar pekerjaan diberikan kepada orang yang berwenang."
+            }
+          ],
+          "steps": [
+            "Baca jenis tugas dan perlengkapan yang diwajibkan",
+            "Periksa kondisi serta kecocokan perlengkapan",
+            "Laporkan kerusakan dan ganti sebelum bekerja",
+            "Pastikan tugas sesuai pelatihan dan arahan"
+          ],
+          "caution": "Jangan mengoperasikan gergaji mesin atau alat berbahaya di luar pelatihan dan penugasan.",
+          "scenario": "Rekan meminta pekerja baru menggunakan gergaji mesin, tetapi ia belum mengikuti pelatihan yang diwajibkan.",
+          "response": "Tolak dengan sopan, jangan menyalakan gergaji, dan beri tahu pemimpin agar pekerjaan diberikan kepada orang yang berwenang.",
+          "vocabulary": [
+            {
+              "japanese": "保護具",
+              "reading": "ほごぐ",
+              "meaning": "alat pelindung"
+            },
+            {
+              "japanese": "点検",
+              "reading": "てんけん",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "訓練",
+              "reading": "くんれん",
+              "meaning": "pelatihan"
+            },
+            {
+              "japanese": "資格",
+              "reading": "しかく",
+              "meaning": "kualifikasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このヘルメットにひびがあります。交換してください。",
+              "reading": "このへるめっとにひびがあります。こうかんしてください。",
+              "meaning": "Helm ini retak. Mohon ganti."
+            },
+            {
+              "japanese": "まだ訓練を受けていません。操作できません。",
+              "reading": "まだくんれんをうけていません。そうさできません。",
+              "meaning": "Saya belum mengikuti pelatihan. Saya belum dapat mengoperasikannya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan jika perlengkapan pelindung rusak sebelum kerja?",
+              "options": [
+                "Hentikan persiapan dan minta penggantian sebelum mulai",
+                "Pakai saja selama kerusakan kecil",
+                "Tutup retakan dengan kain lalu lanjut",
+                "Pinjam alat orang lain tanpa memberi tahu"
+              ],
+              "answer": 0,
+              "explanation": "Perlengkapan rusak dapat gagal melindungi; kondisi harus dilaporkan dan diperbaiki sebelum tugas.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Rekan meminta pekerja baru menggunakan gergaji mesin, tetapi ia belum mengikuti pelatihan yang diwajibkan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Tolak dengan sopan, jangan menyalakan gergaji, dan beri tahu pemimpin agar pekerjaan diberikan kepada orang yang berwenang.",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 2,
+              "explanation": "Pekerja belum terlatih untuk tugas tersebut; jangan mengoperasikan gergaji dan minta pemimpin mengatur tugas.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Perlengkapan pelindung dan batas tugas», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca jenis tugas dan perlengkapan yang diwajibkan",
+                "Periksa kondisi serta kecocokan perlengkapan",
+                "Laporkan kerusakan dan ganti sebelum bekerja",
+                "Pastikan tugas sesuai pelatihan dan arahan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Baca jenis tugas dan perlengkapan yang diwajibkan → Periksa kondisi serta kecocokan perlengkapan → Laporkan kerusakan dan ganti sebelum bekerja → Pastikan tugas sesuai pelatihan dan arahan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "silviculture",
+      "title": "Penanaman dan pemeliharaan hutan",
+      "description": "Mengenali pekerjaan penanaman dan pemeliharaan hutan, menjaga bibit serta tanah, dan mengikuti instruksi pada tiap petak.",
+      "lessons": [
+        {
+          "id": "fo-04",
+          "title": "Persiapan petak tanam dan perlindungan tanah",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan petak tanam sesuai rencana dan menjaga jalur kerja agar tidak merusak tanah atau saluran air.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Sebelum menanam, kru memastikan batas petak, jenis pekerjaan, jarak, alat, serta titik yang harus dihindari. Tanah dan vegetasi menjaga fungsi hutan; jalur yang tidak direncanakan dapat menyebabkan erosi atau kerusakan akar. Peta dan tanda lapangan harus dicocokkan sebelum area dibuka."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ikuti tanda petak dan jalur yang telah ditunjukkan. Letakkan alat dengan aman, jaga saluran air dan area yang ditandai, lalu laporkan batas yang tidak terlihat atau berbeda dari peta. Jangan memperlebar jalur atau memindahkan tanda sendiri demi mempercepat pekerjaan.\n\nKasus latihan: Tanda batas petak tidak terlihat di satu sisi dan jalur kerja mengarah ke dekat aliran air.\nRespons yang dianjurkan: Berhenti sebelum batas yang diragukan, hindari memasuki area dekat aliran, dan minta pemimpin mengonfirmasi peta serta tanda."
+            }
+          ],
+          "steps": [
+            "Cocokkan peta dan tanda batas petak",
+            "Pastikan jalur dan area yang harus dilindungi",
+            "Siapkan alat pada tempat yang aman",
+            "Laporkan batas atau tanda yang tidak jelas"
+          ],
+          "caution": "Jangan membuka petak atau jalur di luar batas rencana.",
+          "scenario": "Tanda batas petak tidak terlihat di satu sisi dan jalur kerja mengarah ke dekat aliran air.",
+          "response": "Berhenti sebelum batas yang diragukan, hindari memasuki area dekat aliran, dan minta pemimpin mengonfirmasi peta serta tanda.",
+          "vocabulary": [
+            {
+              "japanese": "植栽地",
+              "reading": "しょくさいち",
+              "meaning": "petak tanam"
+            },
+            {
+              "japanese": "境界",
+              "reading": "きょうかい",
+              "meaning": "batas"
+            },
+            {
+              "japanese": "土壌",
+              "reading": "どじょう",
+              "meaning": "tanah"
+            },
+            {
+              "japanese": "水路",
+              "reading": "すいろ",
+              "meaning": "saluran air"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この境界が見えません。地図を確認してください。",
+              "reading": "このきょうかいがみえません。ちずをかくにんしてください。",
+              "meaning": "Batas ini tidak terlihat. Mohon periksa peta."
+            },
+            {
+              "japanese": "水の近くには入らず、責任者に聞きます。",
+              "reading": "みずのちかくにはいらず、せきにんしゃにききます。",
+              "meaning": "Saya tidak masuk dekat air dan akan bertanya kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa batas petak dan jalur kerja diperiksa sebelum persiapan lahan?",
+              "options": [
+                "Agar pekerjaan tetap pada area rencana dan mengurangi kerusakan tanah atau air",
+                "Agar pekerja dapat mengabaikan tanda lama",
+                "Untuk menghindari pencatatan petak",
+                "Supaya seluruh vegetasi dibersihkan"
+              ],
+              "answer": 0,
+              "explanation": "Peta dan tanda menjaga pekerjaan dalam batas yang ditetapkan serta melindungi area sensitif.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Tanda batas petak tidak terlihat di satu sisi dan jalur kerja mengarah ke dekat aliran air. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah",
+                "Berhenti sebelum batas yang diragukan, hindari memasuki area dekat aliran, dan minta pemimpin mengonfirmasi peta serta tanda."
+              ],
+              "answer": 3,
+              "explanation": "Batas dan jalur dekat air belum pasti; hentikan dan minta konfirmasi sebelum masuk.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Persiapan petak tanam dan perlindungan tanah», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Cocokkan peta dan tanda batas petak",
+                "Siapkan alat pada tempat yang aman",
+                "Pastikan jalur dan area yang harus dilindungi",
+                "Laporkan batas atau tanda yang tidak jelas"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Cocokkan peta dan tanda batas petak → Pastikan jalur dan area yang harus dilindungi → Siapkan alat pada tempat yang aman → Laporkan batas atau tanda yang tidak jelas.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-05",
+          "title": "Pemilihan bibit dan penanaman",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa jenis, jumlah, serta kondisi bibit dan menanam mengikuti jarak serta cara yang ditunjukkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Bibit yang sehat dan sesuai petak membantu tegakan tumbuh merata. Pekerja memeriksa jenis dan jumlah menurut catatan, menjaga akar tetap terlindung, serta mengikuti jarak atau tanda penanaman. Cara tanam mengikuti arahan teknis setempat; pekerja pemula tidak mengubah posisi, kedalaman, atau jenis tanpa bertanya."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pisahkan bibit yang kering, patah, atau tidak sesuai catatan lalu laporkan jumlahnya. Bawa bibit dengan cara yang tidak merusak akar, tanam pada titik yang ditandai, dan pastikan tanah menutup sesuai instruksi. Jika titik tertutup batu atau genangan, jangan memilih posisi baru sendiri; minta arahan.\n\nKasus latihan: Di satu bundel terdapat bibit dengan label jenis berbeda dari petak yang sedang ditanami.\nRespons yang dianjurkan: Pisahkan bundel itu, jangan tanam, dan minta pemimpin memastikan jenis bibit sebelum pekerjaan dilanjutkan."
+            }
+          ],
+          "steps": [
+            "Cocokkan jenis dan jumlah bibit dengan catatan",
+            "Periksa kondisi bibit sebelum dibawa",
+            "Tanam pada titik dan jarak yang ditunjukkan",
+            "Catat bibit rusak atau titik yang tidak dapat ditanami"
+          ],
+          "caution": "Jangan mencampur jenis bibit atau mengubah pola tanam tanpa persetujuan.",
+          "scenario": "Di satu bundel terdapat bibit dengan label jenis berbeda dari petak yang sedang ditanami.",
+          "response": "Pisahkan bundel itu, jangan tanam, dan minta pemimpin memastikan jenis bibit sebelum pekerjaan dilanjutkan.",
+          "vocabulary": [
+            {
+              "japanese": "苗木",
+              "reading": "なえぎ",
+              "meaning": "bibit pohon"
+            },
+            {
+              "japanese": "植栽",
+              "reading": "しょくさい",
+              "meaning": "penanaman"
+            },
+            {
+              "japanese": "根",
+              "reading": "ね",
+              "meaning": "akar"
+            },
+            {
+              "japanese": "本数",
+              "reading": "ほんすう",
+              "meaning": "jumlah batang"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "苗木の種類が違うようです。確認してください。",
+              "reading": "なえぎのしゅるいがちがうようです。かくにんしてください。",
+              "meaning": "Jenis bibit ini tampaknya berbeda. Mohon periksa."
+            },
+            {
+              "japanese": "この場所に植えてもいいですか。",
+              "reading": "このばしょにうえてもいいですか。",
+              "meaning": "Bolehkah saya menanam di tempat ini?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus diperiksa sebelum menanam bibit?",
+              "options": [
+                "Jenis, jumlah, kondisi, dan tanda titik tanam",
+                "Warna daun saja",
+                "Jarak dari jalan raya saja",
+                "Bundel mana yang paling dekat"
+              ],
+              "answer": 0,
+              "explanation": "Pencocokan jenis dan kondisi mencegah bibit salah masuk ke petak.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Di satu bundel terdapat bibit dengan label jenis berbeda dari petak yang sedang ditanami. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Pisahkan bundel itu, jangan tanam, dan minta pemimpin memastikan jenis bibit sebelum pekerjaan dilanjutkan.",
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 0,
+              "explanation": "Label jenis berbeda dari rencana; tahan bundel dan minta konfirmasi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemilihan bibit dan penanaman», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Cocokkan jenis dan jumlah bibit dengan catatan",
+                "Tanam pada titik dan jarak yang ditunjukkan",
+                "Catat bibit rusak atau titik yang tidak dapat ditanami",
+                "Periksa kondisi bibit sebelum dibawa"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Cocokkan jenis dan jumlah bibit dengan catatan → Periksa kondisi bibit sebelum dibawa → Tanam pada titik dan jarak yang ditunjukkan → Catat bibit rusak atau titik yang tidak dapat ditanami.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-06",
+          "title": "Pemeliharaan vegetasi dan keselamatan rekan",
+          "minutes": 25,
+          "objectives": [
+            "Melakukan pemeliharaan vegetasi sesuai tanda petak sambil menjaga jarak dan menghindari bibit yang dipertahankan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemeliharaan dapat meliputi membersihkan vegetasi pengganggu atau merawat tegakan sesuai rencana. Tanda petak dan instruksi menentukan tanaman mana yang dipertahankan; pekerja menjaga jarak aman dari rekan yang menggunakan alat. Pergerakan alat, lereng, dan vegetasi rapat memerlukan komunikasi sebelum mulai atau berpindah."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum membersihkan, identifikasi tanaman sasaran dan yang harus dibiarkan. Pastikan rekan mengetahui posisi Anda, gunakan alat sesuai pelatihan, dan berhenti jika seseorang masuk ke zona kerja. Bila tanda tidak jelas atau ada bibit yang rusak, tandai lokasi dan laporkan, jangan meneruskan berdasarkan tebakan.\n\nKasus latihan: Tanda tanaman sasaran tertutup semak, sementara seorang rekan bergerak di sisi lereng yang sama.\nRespons yang dianjurkan: Hentikan alat, panggil rekan dan pemimpin, lalu pastikan batas sasaran serta jarak aman sebelum bekerja lagi."
+            }
+          ],
+          "steps": [
+            "Baca tanda tanaman dan sasaran pemeliharaan",
+            "Pastikan jarak aman serta komunikasi dengan rekan",
+            "Kerjakan hanya vegetasi yang ditetapkan",
+            "Hentikan alat dan laporkan bila tanda atau posisi tidak jelas"
+          ],
+          "caution": "Jangan menggunakan alat saat rekan berada terlalu dekat atau target pemeliharaan belum pasti.",
+          "scenario": "Tanda tanaman sasaran tertutup semak, sementara seorang rekan bergerak di sisi lereng yang sama.",
+          "response": "Hentikan alat, panggil rekan dan pemimpin, lalu pastikan batas sasaran serta jarak aman sebelum bekerja lagi.",
+          "vocabulary": [
+            {
+              "japanese": "下刈り",
+              "reading": "したがり",
+              "meaning": "pembersihan vegetasi bawah"
+            },
+            {
+              "japanese": "間隔",
+              "reading": "かんかく",
+              "meaning": "jarak"
+            },
+            {
+              "japanese": "目印",
+              "reading": "めじるし",
+              "meaning": "tanda"
+            },
+            {
+              "japanese": "停止",
+              "reading": "ていし",
+              "meaning": "berhenti"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "目印が見えません。作業を止めます。",
+              "reading": "めじるしがみえません。さぎょうをとめます。",
+              "meaning": "Tanda tidak terlihat. Saya menghentikan pekerjaan."
+            },
+            {
+              "japanese": "仲間との距離を確認してから始めます。",
+              "reading": "なかまとのきょりをかくにんしてからはじめます。",
+              "meaning": "Saya mulai setelah memastikan jarak dari rekan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan saat tanda tanaman sasaran tidak terlihat jelas?",
+              "options": [
+                "Hentikan pekerjaan dan konfirmasi sasaran sebelum memakai alat",
+                "Bersihkan semua tanaman di sekitar",
+                "Ikuti dugaan rekan tanpa memeriksa",
+                "Lanjutkan lebih cepat sebelum tanda hilang"
+              ],
+              "answer": 0,
+              "explanation": "Tanaman yang harus dipertahankan dapat rusak bila sasaran ditebak; konfirmasi dulu.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Tanda tanaman sasaran tertutup semak, sementara seorang rekan bergerak di sisi lereng yang sama. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Hentikan alat, panggil rekan dan pemimpin, lalu pastikan batas sasaran serta jarak aman sebelum bekerja lagi.",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 1,
+              "explanation": "Alat harus berhenti sampai posisi rekan dan sasaran pemeliharaan dipastikan aman.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeliharaan vegetasi dan keselamatan rekan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Pastikan jarak aman serta komunikasi dengan rekan",
+                "Baca tanda tanaman dan sasaran pemeliharaan",
+                "Kerjakan hanya vegetasi yang ditetapkan",
+                "Hentikan alat dan laporkan bila tanda atau posisi tidak jelas"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca tanda tanaman dan sasaran pemeliharaan → Pastikan jarak aman serta komunikasi dengan rekan → Kerjakan hanya vegetasi yang ditetapkan → Hentikan alat dan laporkan bila tanda atau posisi tidak jelas.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "production",
+      "title": "Produksi dan penanganan kayu",
+      "description": "Memahami zona kerja produksi kayu, tanda komunikasi, dan pemindahan hasil hanya sesuai peran serta prosedur keselamatan.",
+      "lessons": [
+        {
+          "id": "fo-07",
+          "title": "Zona kerja penebangan dan tanda komunikasi",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali batas zona berbahaya, mengikuti tanda kru, dan tidak masuk ke area penebangan tanpa izin.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Penebangan dan pengolahan kayu melibatkan pohon yang dapat jatuh, dahan, dan alat bertenaga. Rencana kerja dan pengaturan zona menentukan siapa boleh berada di mana; pekerja menjaga jarak sesuai arahan dan memakai komunikasi yang disepakati. Metode penebangan hanya dilakukan oleh orang dengan pelatihan dan penugasan yang sesuai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum mendekati lokasi, pastikan kru memberi tanda bahwa area aman untuk lewat. Bila tidak melihat pekerja atau tidak menerima isyarat yang dipahami, berhenti di batas dan hubungi pemimpin. Jangan mencoba menilai arah jatuh atau mendekati pohon yang masih bergerak.\n\nKasus latihan: Pekerja perlu mengambil alat di sisi lain zona, tetapi tidak melihat kru dan tidak mendengar tanda aman.\nRespons yang dianjurkan: Tetap di luar batas, hubungi pemimpin melalui cara yang ditetapkan, dan masuk hanya setelah menerima izin yang jelas."
+            }
+          ],
+          "steps": [
+            "Identifikasi batas zona kerja dari tanda kru",
+            "Pastikan komunikasi dua arah dan izin lewat",
+            "Jaga jarak dari pekerjaan berbahaya",
+            "Laporkan tanda yang hilang atau orang masuk zona"
+          ],
+          "caution": "Jangan memasuki zona penebangan atau mendekati pohon yang belum dinyatakan aman.",
+          "scenario": "Pekerja perlu mengambil alat di sisi lain zona, tetapi tidak melihat kru dan tidak mendengar tanda aman.",
+          "response": "Tetap di luar batas, hubungi pemimpin melalui cara yang ditetapkan, dan masuk hanya setelah menerima izin yang jelas.",
+          "vocabulary": [
+            {
+              "japanese": "伐倒",
+              "reading": "ばっとう",
+              "meaning": "penebangan pohon"
+            },
+            {
+              "japanese": "作業区域",
+              "reading": "さぎょうくいき",
+              "meaning": "zona kerja"
+            },
+            {
+              "japanese": "合図",
+              "reading": "あいず",
+              "meaning": "isyarat"
+            },
+            {
+              "japanese": "退避",
+              "reading": "たいひ",
+              "meaning": "menjauh atau evakuasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業区域に入ってもいいですか。",
+              "reading": "さぎょうくいきにはいってもいいですか。",
+              "meaning": "Bolehkah saya masuk ke zona kerja?"
+            },
+            {
+              "japanese": "まだ入らないでください。安全の合図を待ちます。",
+              "reading": "まだはいらないでください。あんぜんのあいずをまちます。",
+              "meaning": "Jangan masuk dulu. Tunggu isyarat aman."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan sebelum melewati zona penebangan?",
+              "options": [
+                "Menunggu tanda dan izin yang jelas dari kru",
+                "Masuk cepat saat tidak melihat orang",
+                "Mengambil alat tanpa memberi kabar",
+                "Berdiri di bawah pohon untuk bertanya"
+              ],
+              "answer": 0,
+              "explanation": "Tanda yang dipahami bersama mengendalikan orang yang boleh berada di zona berbahaya.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pekerja perlu mengambil alat di sisi lain zona, tetapi tidak melihat kru dan tidak mendengar tanda aman. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Tetap di luar batas, hubungi pemimpin melalui cara yang ditetapkan, dan masuk hanya setelah menerima izin yang jelas.",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 2,
+              "explanation": "Tidak ada tanda aman; pekerja tetap di luar dan menghubungi pemimpin.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Zona kerja penebangan dan tanda komunikasi», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Identifikasi batas zona kerja dari tanda kru",
+                "Pastikan komunikasi dua arah dan izin lewat",
+                "Jaga jarak dari pekerjaan berbahaya",
+                "Laporkan tanda yang hilang atau orang masuk zona"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Identifikasi batas zona kerja dari tanda kru → Pastikan komunikasi dua arah dan izin lewat → Jaga jarak dari pekerjaan berbahaya → Laporkan tanda yang hilang atau orang masuk zona.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-08",
+          "title": "Pengenalan kayu dan penandaan hasil",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga identitas kayu hasil kerja dengan membaca tanda, ukuran atau kelompok yang dicatat, serta melaporkan kerusakan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Hasil produksi perlu dikenali menurut petak, jenis, ukuran, atau tujuan sesuai sistem perusahaan. Penandaan menghubungkan kayu dengan catatan dan membantu pemindahan berikutnya. Pekerja hanya mengukur atau memberi tanda menggunakan cara yang diajarkan; perubahan grade atau tujuan tidak boleh dibuat sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan label atau tanda pada kayu dengan catatan kerja sebelum memindahkan. Pisahkan hasil tanpa tanda atau dengan identitas tidak cocok di lokasi yang ditentukan. Catat jumlah aktual dan kondisi yang terlihat, lalu minta pemimpin memastikan kelompok tujuan; jangan menggabungkan kayu dari petak berbeda tanpa instruksi.\n\nKasus latihan: Satu batang kayu di tempat pengumpulan tidak memiliki tanda petak, sementara dua kelompok dari petak berbeda sedang disiapkan.\nRespons yang dianjurkan: Pisahkan batang itu di tempat tahan, catat lokasi dan kondisi, lalu minta pemimpin menelusuri identitas sebelum dimuat."
+            }
+          ],
+          "steps": [
+            "Baca tanda petak dan kelompok kayu",
+            "Cocokkan label dengan catatan kerja",
+            "Pisahkan kayu tanpa identitas atau rusak",
+            "Catat jumlah serta laporkan selisih"
+          ],
+          "caution": "Jangan mengubah tanda kayu atau mencampur kelompok tanpa otorisasi.",
+          "scenario": "Satu batang kayu di tempat pengumpulan tidak memiliki tanda petak, sementara dua kelompok dari petak berbeda sedang disiapkan.",
+          "response": "Pisahkan batang itu di tempat tahan, catat lokasi dan kondisi, lalu minta pemimpin menelusuri identitas sebelum dimuat.",
+          "vocabulary": [
+            {
+              "japanese": "丸太",
+              "reading": "まるた",
+              "meaning": "kayu gelondongan"
+            },
+            {
+              "japanese": "表示",
+              "reading": "ひょうじ",
+              "meaning": "tanda atau label"
+            },
+            {
+              "japanese": "数量",
+              "reading": "すうりょう",
+              "meaning": "jumlah"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この丸太に表示がありません。",
+              "reading": "このまるたにひょうじがありません。",
+              "meaning": "Kayu gelondong ini tidak memiliki tanda."
+            },
+            {
+              "japanese": "場所を記録して、責任者に確認します。",
+              "reading": "ばしょをきろくして、せきにんしゃにかくにんします。",
+              "meaning": "Saya mencatat lokasinya dan meminta konfirmasi penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa hasil kayu diberi tanda yang terkait dengan petak atau kelompok?",
+              "options": [
+                "Agar asal dan tujuan kayu dapat ditelusuri",
+                "Agar kayu terlihat lebih kering",
+                "Supaya kelompok dapat dicampur tanpa catatan",
+                "Untuk mengganti pemeriksaan keselamatan"
+              ],
+              "answer": 0,
+              "explanation": "Identitas membantu menghubungkan hasil dengan petak, jumlah, dan catatan pemindahan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Satu batang kayu di tempat pengumpulan tidak memiliki tanda petak, sementara dua kelompok dari petak berbeda sedang disiapkan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah",
+                "Pisahkan batang itu di tempat tahan, catat lokasi dan kondisi, lalu minta pemimpin menelusuri identitas sebelum dimuat."
+              ],
+              "answer": 3,
+              "explanation": "Identitas batang belum diketahui; pisahkan dan telusuri sebelum dimuat.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pengenalan kayu dan penandaan hasil», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca tanda petak dan kelompok kayu",
+                "Pisahkan kayu tanpa identitas atau rusak",
+                "Cocokkan label dengan catatan kerja",
+                "Catat jumlah serta laporkan selisih"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Baca tanda petak dan kelompok kayu → Cocokkan label dengan catatan kerja → Pisahkan kayu tanpa identitas atau rusak → Catat jumlah serta laporkan selisih.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-09",
+          "title": "Pemindahan kayu dan keselamatan alat berat",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jarak dari mesin pemindah, mengikuti arahan operator, serta memastikan area muat aman sebelum mendekat.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Kendaraan dan alat pemindah kayu memiliki titik buta, beban yang dapat bergeser, dan area putar. Pekerja tidak berdiri di bawah beban atau di jalur kendaraan, dan hanya operator berwenang yang mengendalikan alat. Isyarat, batas jalur, dan zona tunggu harus dipahami sebelum kru bergerak atau melakukan pemuatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Tetap di lokasi tunggu yang ditentukan, jaga kontak visual dengan pemberi isyarat, dan jangan melintas di belakang alat bergerak. Bila beban bergeser, suara peringatan terdengar, atau orang masuk ke jalur, beri tanda berhenti sesuai prosedur dan menjauh ke tempat aman. Laporkan kerusakan atau kondisi jalan.\n\nKasus latihan: Satu batang bergeser pada muatan alat berat, sedangkan pekerja berdiri di jalur samping untuk memberi isyarat.\nRespons yang dianjurkan: Berikan tanda berhenti sesuai prosedur dan pindah ke zona aman; beri tahu operator serta pemimpin tentang batang yang bergeser."
+            }
+          ],
+          "steps": [
+            "Kenali jalur kendaraan dan titik buta",
+            "Tunggu di zona aman dan pastikan isyarat dipahami",
+            "Jangan mendekati atau berdiri di bawah beban",
+            "Laporkan pergeseran beban atau bahaya lintasan"
+          ],
+          "caution": "Jangan berjalan di jalur alat berat atau di bawah kayu yang sedang terangkat.",
+          "scenario": "Satu batang bergeser pada muatan alat berat, sedangkan pekerja berdiri di jalur samping untuk memberi isyarat.",
+          "response": "Berikan tanda berhenti sesuai prosedur dan pindah ke zona aman; beri tahu operator serta pemimpin tentang batang yang bergeser.",
+          "vocabulary": [
+            {
+              "japanese": "集材",
+              "reading": "しゅうざい",
+              "meaning": "pengumpulan kayu"
+            },
+            {
+              "japanese": "重機",
+              "reading": "じゅうき",
+              "meaning": "alat berat"
+            },
+            {
+              "japanese": "荷物",
+              "reading": "にもつ",
+              "meaning": "muatan"
+            },
+            {
+              "japanese": "合図",
+              "reading": "あいず",
+              "meaning": "isyarat"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "丸太が動きました。作業を止めてください。",
+              "reading": "まるたがうごきました。さぎょうをとめてください。",
+              "meaning": "Kayu gelondong bergerak. Mohon hentikan pekerjaan."
+            },
+            {
+              "japanese": "安全な場所へ下がります。",
+              "reading": "あんぜんなばしょへさがります。",
+              "meaning": "Saya mundur ke tempat aman."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Di mana pekerja sebaiknya menunggu saat kayu dipindahkan dengan alat berat?",
+              "options": [
+                "Di zona aman di luar jalur dan titik buta",
+                "Di bawah muatan agar mudah mengikat",
+                "Tepat di belakang kendaraan",
+                "Di antara roda dan tumpukan kayu"
+              ],
+              "answer": 0,
+              "explanation": "Zona tunggu menjauhkan pekerja dari titik buta, jalur kendaraan, dan beban yang dapat bergeser.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Satu batang bergeser pada muatan alat berat, sedangkan pekerja berdiri di jalur samping untuk memberi isyarat. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Berikan tanda berhenti sesuai prosedur dan pindah ke zona aman; beri tahu operator serta pemimpin tentang batang yang bergeser.",
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 0,
+              "explanation": "Muatan bergeser dan posisi pemberi isyarat berbahaya; hentikan dan menjauh ke area aman.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemindahan kayu dan keselamatan alat berat», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Kenali jalur kendaraan dan titik buta",
+                "Jangan mendekati atau berdiri di bawah beban",
+                "Laporkan pergeseran beban atau bahaya lintasan",
+                "Tunggu di zona aman dan pastikan isyarat dipahami"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Kenali jalur kendaraan dan titik buta → Tunggu di zona aman dan pastikan isyarat dipahami → Jangan mendekati atau berdiri di bawah beban → Laporkan pergeseran beban atau bahaya lintasan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "environment",
+      "title": "Perlindungan hutan dan serah terima",
+      "description": "Menjaga tanah, air, dan lingkungan sekitar serta melaporkan kondisi yang mengganggu pekerjaan atau pemulihan petak.",
+      "lessons": [
+        {
+          "id": "fo-10",
+          "title": "Melindungi tanah dan aliran air",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti jalur yang ditetapkan, menjaga tepi aliran dan area sensitif, serta melaporkan erosi atau kebocoran.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tanah hutan menahan air dan mendukung pertumbuhan; lintasan alat dan pekerjaan yang tidak sesuai dapat menggerus permukaan atau membawa sedimen ke aliran. Petak dan rute yang ditandai membantu mengurangi gangguan. Bila pekerja menemukan genangan, tanah tergerus, atau kebocoran bahan, ia melapor dan tidak memindahkan material sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan jalur dan tempat simpan yang ditunjukkan, jangan mencuci alat atau membuang cairan ke aliran. Bila melihat lumpur masuk ke parit atau tanah retak, hentikan pergerakan di titik itu dan beri tahu pemimpin. Ikuti arahan untuk mengamankan area tanpa menutup saluran atau merusak vegetasi.\n\nKasus latihan: Roda kendaraan meninggalkan alur dalam yang mengarah ke saluran air setelah hujan.\nRespons yang dianjurkan: Hentikan kendaraan di tempat aman, laporkan alur dan arah aliran, lalu tunggu keputusan pemimpin mengenai rute berikutnya."
+            }
+          ],
+          "steps": [
+            "Periksa tanda jalur dan area sensitif",
+            "Gunakan rute yang ditentukan untuk orang dan alat",
+            "Amati perubahan tanah atau aliran",
+            "Laporkan erosi, tumpahan, atau gangguan yang terlihat"
+          ],
+          "caution": "Jangan membuang bahan atau mengalihkan aliran air tanpa instruksi.",
+          "scenario": "Roda kendaraan meninggalkan alur dalam yang mengarah ke saluran air setelah hujan.",
+          "response": "Hentikan kendaraan di tempat aman, laporkan alur dan arah aliran, lalu tunggu keputusan pemimpin mengenai rute berikutnya.",
+          "vocabulary": [
+            {
+              "japanese": "水源",
+              "reading": "すいげん",
+              "meaning": "sumber air"
+            },
+            {
+              "japanese": "土壌",
+              "reading": "どじょう",
+              "meaning": "tanah"
+            },
+            {
+              "japanese": "侵食",
+              "reading": "しんしょく",
+              "meaning": "erosi"
+            },
+            {
+              "japanese": "保護",
+              "reading": "ほご",
+              "meaning": "perlindungan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "土が水路に流れています。",
+              "reading": "つちがすいろにながれています。",
+              "meaning": "Tanah mengalir ke saluran air."
+            },
+            {
+              "japanese": "この道を使わず、責任者に報告します。",
+              "reading": "このみちをつかわず、せきにんしゃにほうこくします。",
+              "meaning": "Saya tidak memakai jalur ini dan akan melapor kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa respons yang tepat saat jalur kendaraan menimbulkan alur menuju saluran air?",
+              "options": [
+                "Hentikan di tempat aman dan laporkan sebelum memakai rute lagi",
+                "Terus melaju agar alur menjadi rata",
+                "Tutup saluran dengan sampah",
+                "Arahkan air ke petak lain sendiri"
+              ],
+              "answer": 0,
+              "explanation": "Perubahan jalur dapat memperburuk erosi; pemimpin perlu menentukan cara kerja dan rute aman.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Roda kendaraan meninggalkan alur dalam yang mengarah ke saluran air setelah hujan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Hentikan kendaraan di tempat aman, laporkan alur dan arah aliran, lalu tunggu keputusan pemimpin mengenai rute berikutnya.",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 1,
+              "explanation": "Alur menuju saluran perlu dilaporkan sebelum kendaraan bergerak lagi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Melindungi tanah dan aliran air», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Gunakan rute yang ditentukan untuk orang dan alat",
+                "Periksa tanda jalur dan area sensitif",
+                "Amati perubahan tanah atau aliran",
+                "Laporkan erosi, tumpahan, atau gangguan yang terlihat"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa tanda jalur dan area sensitif → Gunakan rute yang ditentukan untuk orang dan alat → Amati perubahan tanah atau aliran → Laporkan erosi, tumpahan, atau gangguan yang terlihat.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-11",
+          "title": "Melaporkan pohon sakit, api, dan limbah",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali tanda lingkungan yang tidak biasa dan melaporkannya tanpa menyentuh atau memindahkan sumber bahaya.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerja lapangan dapat menemukan pohon rusak, serangan hama, asap, api, sampah, atau wadah bahan yang bocor. Tindakan awal adalah menjaga jarak, memberi peringatan kepada kru, dan melaporkan lokasi serta ciri yang terlihat. Pengendalian hama, api, atau bahan berbahaya dilakukan oleh orang yang ditunjuk dan sesuai rencana."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat petak, waktu, arah, dan tanda yang dapat diamati; jangan menyebut penyebab jika belum diketahui. Bila ada asap atau api, beri tahu kru melalui saluran darurat dan ikuti rute evakuasi. Jangan menyentuh wadah bocor atau mengangkut limbah menggunakan kendaraan tanpa arahan.\n\nKasus latihan: Pekerja melihat asap tipis dan bau hangus dari area yang belum diperiksa.\nRespons yang dianjurkan: Jauhi area, beri tahu kru dan pemimpin melalui jalur darurat, lalu ikuti rute evakuasi yang ditentukan."
+            }
+          ],
+          "steps": [
+            "Amati tanda tidak biasa dari jarak aman",
+            "Catat lokasi, waktu, dan ciri yang terlihat",
+            "Peringatkan kru melalui cara komunikasi yang ditetapkan",
+            "Jauhi area dan ikuti arahan penanggung jawab"
+          ],
+          "caution": "Jangan mendekati api, wadah bocor, atau pohon berbahaya untuk mengambil foto atau sampel.",
+          "scenario": "Pekerja melihat asap tipis dan bau hangus dari area yang belum diperiksa.",
+          "response": "Jauhi area, beri tahu kru dan pemimpin melalui jalur darurat, lalu ikuti rute evakuasi yang ditentukan.",
+          "vocabulary": [
+            {
+              "japanese": "煙",
+              "reading": "けむり",
+              "meaning": "asap"
+            },
+            {
+              "japanese": "火災",
+              "reading": "かさい",
+              "meaning": "kebakaran"
+            },
+            {
+              "japanese": "被害",
+              "reading": "ひがい",
+              "meaning": "kerusakan atau dampak"
+            },
+            {
+              "japanese": "通報",
+              "reading": "つうほう",
+              "meaning": "laporan darurat"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "煙が見えます。場所は北の斜面です。",
+              "reading": "けむりがみえます。ばしょはきたのしゃめんです。",
+              "meaning": "Saya melihat asap. Lokasinya di lereng utara."
+            },
+            {
+              "japanese": "近づかずに、責任者へ連絡してください。",
+              "reading": "ちかづかずに、せきにんしゃへれんらくしてください。",
+              "meaning": "Jangan mendekat, hubungi penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa informasi yang paling berguna saat melaporkan asap atau api?",
+              "options": [
+                "Lokasi, waktu, dan kondisi yang terlihat",
+                "Tebakan penyebab kebakaran",
+                "Foto yang diambil dengan mendekati api",
+                "Nama pekerja yang paling dekat saja"
+              ],
+              "answer": 0,
+              "explanation": "Lokasi dan kondisi faktual membantu kru merespons tanpa menunda untuk mencari sumber laporan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pekerja melihat asap tipis dan bau hangus dari area yang belum diperiksa. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Jauhi area, beri tahu kru dan pemimpin melalui jalur darurat, lalu ikuti rute evakuasi yang ditentukan.",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah"
+              ],
+              "answer": 2,
+              "explanation": "Asap dapat menunjukkan bahaya; jaga jarak dan gunakan jalur komunikasi darurat.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Melaporkan pohon sakit, api, dan limbah», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Amati tanda tidak biasa dari jarak aman",
+                "Catat lokasi, waktu, dan ciri yang terlihat",
+                "Peringatkan kru melalui cara komunikasi yang ditetapkan",
+                "Jauhi area dan ikuti arahan penanggung jawab"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Amati tanda tidak biasa dari jarak aman → Catat lokasi, waktu, dan ciri yang terlihat → Peringatkan kru melalui cara komunikasi yang ditetapkan → Jauhi area dan ikuti arahan penanggung jawab.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fo-12",
+          "title": "Pemeriksaan akhir petak dan laporan pekerjaan",
+          "minutes": 25,
+          "objectives": [
+            "Menghitung hasil, mengumpulkan alat, mencatat bahaya atau pekerjaan tertunda, dan menyerahkannya kepada pemimpin.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pada akhir pekerjaan, kru memastikan orang dan alat lengkap, meninjau petak, dan mencatat hasil sesuai satuan perusahaan. Laporan harus membedakan jumlah yang selesai, kerusakan, material tertahan, dan tugas yang belum dilakukan. Penutupan memastikan masalah lapangan tidak hilang saat kru meninggalkan lokasi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa area yang menjadi tanggung jawab, bawa alat kembali sesuai daftar, dan cocokkan jumlah hasil dengan catatan. Sampaikan lokasi serta status tanda, jalur, atau bahaya yang masih perlu tindak lanjut. Jangan menyatakan area aman bila belum diperiksa atau mengubah jumlah agar sesuai target.\n\nKasus latihan: Di akhir hari, satu alat komunikasi belum kembali dan terdapat jalur berlumpur yang perlu ditinjau ulang.\nRespons yang dianjurkan: Beri tahu pemimpin sebelum meninggalkan petak, cari alat sesuai prosedur, dan catat jalur yang belum dinyatakan aman."
+            }
+          ],
+          "steps": [
+            "Kumpulkan dan cocokkan alat dengan daftar",
+            "Periksa petak serta pastikan kru lengkap",
+            "Catat hasil aktual dan masalah yang belum selesai",
+            "Serahkan laporan kepada pemimpin sebelum meninggalkan lokasi"
+          ],
+          "caution": "Jangan meninggalkan alat atau masalah terbuka tanpa tanda dan laporan.",
+          "scenario": "Di akhir hari, satu alat komunikasi belum kembali dan terdapat jalur berlumpur yang perlu ditinjau ulang.",
+          "response": "Beri tahu pemimpin sebelum meninggalkan petak, cari alat sesuai prosedur, dan catat jalur yang belum dinyatakan aman.",
+          "vocabulary": [
+            {
+              "japanese": "作業記録",
+              "reading": "さぎょうきろく",
+              "meaning": "catatan kerja"
+            },
+            {
+              "japanese": "点検",
+              "reading": "てんけん",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "未完了",
+              "reading": "みかんりょう",
+              "meaning": "belum selesai"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "無線機が一台足りません。",
+              "reading": "むせんきがいちだいたりません。",
+              "meaning": "Satu radio kurang."
+            },
+            {
+              "japanese": "未確認の道を責任者に引き継ぎます。",
+              "reading": "みかくにんのみちをせきにんしゃにひきつぎます。",
+              "meaning": "Saya menyerahkan jalur yang belum diperiksa kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus masuk ke laporan akhir kerja?",
+              "options": [
+                "Hasil aktual, alat, bahaya, dan pekerjaan yang belum selesai",
+                "Hanya target yang ditetapkan di awal",
+                "Perkiraan jumlah tanpa pemeriksaan",
+                "Informasi bahwa semua selesai walau alat hilang"
+              ],
+              "answer": 0,
+              "explanation": "Laporan akhir memungkinkan pemimpin menutup pekerjaan dan menindaklanjuti risiko yang masih ada.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Di akhir hari, satu alat komunikasi belum kembali dan terdapat jalur berlumpur yang perlu ditinjau ulang. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masuk ke area berbahaya sebelum ada tanda aman",
+                "Menebak instruksi atau mengganti prosedur sendiri",
+                "Meneruskan pekerjaan walau alat atau komunikasi bermasalah",
+                "Beri tahu pemimpin sebelum meninggalkan petak, cari alat sesuai prosedur, dan catat jalur yang belum dinyatakan aman."
+              ],
+              "answer": 3,
+              "explanation": "Alat hilang dan jalur belum diperiksa; keduanya harus dilaporkan sebelum kru meninggalkan lokasi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan akhir petak dan laporan pekerjaan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Kumpulkan dan cocokkan alat dengan daftar",
+                "Catat hasil aktual dan masalah yang belum selesai",
+                "Periksa petak serta pastikan kru lengkap",
+                "Serahkan laporan kepada pemimpin sebelum meninggalkan lokasi"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Kumpulkan dan cocokkan alat dengan daftar → Periksa petak serta pastikan kru lengkap → Catat hasil aktual dan masalah yang belum selesai → Serahkan laporan kepada pemimpin sebelum meninggalkan lokasi.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA Jepang — ringkasan pekerjaan SSW(i)",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "Forestry Agency — penerimaan tenaga asing sektor kehutanan dan ujian",
+      "url": "https://www.rinya.maff.go.jp/j/routai/gaikoku.html"
+    },
+    {
+      "title": "Forestry Agency — informasi 林業技能測定試験",
+      "url": "https://www.rinya.maff.go.jp/j/routai/attach/pdf/gaikoku-26.pdf"
+    },
+    {
+      "title": "林業技能向上センター — badan pelaksana dan informasi ujian",
+      "url": "https://ringyou-gino.org/"
+    },
+    {
+      "title": "MHLW — keselamatan kerja penebangan dan kehutanan",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000207439_00003.html"
+    },
+    {
+      "title": "Forestry Agency — materi pelatihan kehutanan bagi pekerja asing",
+      "url": "https://www.rinya.maff.go.jp/j/routai/attach/pdf/gaikoku-28.pdf"
+    }
+  ]
+}

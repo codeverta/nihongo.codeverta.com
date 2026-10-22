@@ -65,31 +65,43 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
           if (category == 'SSW') const SswEntryCard(exams: true),
           if (category == 'NAT Test') ...[
             const _SectionTitle('NAT-TEST 5Q'),
-            _ExamRow(
-              badge: '5Q',
-              imageAsset: 'assets/images/exams/nat.webp',
-              title: 'NAT 5Q Exam 1',
-              metadata: '43 soal · 60 menit',
-              description: 'Kosakata, kanji, grammar & reading',
-              note: 'Latihan tertulis · Tanpa listening',
-              locked: !premium,
-              onTap: () =>
-                  context.push(premium ? '/exams/nat/simulation' : '/premium'),
-            ),
+            for (var paper = 1; paper <= 5; paper++) ...[
+              if (paper > 1) const Divider(height: 1),
+              _ExamRow(
+                badge: '5Q',
+                imageAsset: 'assets/images/exams/nat.webp',
+                title: 'NAT 5Q Exam $paper',
+                metadata: '43 soal · 60 menit',
+                description: 'Kosakata, kanji, grammar & reading',
+                note: 'Latihan tertulis · Tanpa listening',
+                locked: !premium,
+                onTap: () => context.push(
+                  premium
+                      ? paper == 1
+                            ? '/exams/nat/simulation'
+                            : '/exams/nat-$paper/simulation'
+                      : '/premium',
+                ),
+              ),
+            ],
           ],
           if (category == 'JFT Test') ...[
             const _SectionTitle('JFT-Basic'),
-            _ExamRow(
-              badge: 'JFT',
-              imageAsset: 'assets/images/exams/jft.webp',
-              title: 'JFT Exam 1',
-              metadata: '36 soal · 45 menit',
-              description: 'Kosakata, percakapan & reading',
-              note: 'Latihan tertulis · Tanpa listening',
-              locked: !premium,
-              onTap: () =>
-                  context.push(premium ? '/exams/jft/exam-1' : '/premium'),
-            ),
+            for (final paperNo in [1, 2, 3, 4, 5]) ...[
+              if (paperNo > 1) const Divider(height: 1),
+              _ExamRow(
+                badge: 'JFT',
+                imageAsset: 'assets/images/exams/jft.webp',
+                title: 'JFT Exam $paperNo',
+                metadata: '36 soal · 45 menit',
+                description: 'Kosakata, percakapan & reading',
+                note: 'Soal orisinal · Tanpa listening',
+                locked: !premium,
+                onTap: () => context.push(
+                  premium ? '/exams/jft/exam-$paperNo' : '/premium',
+                ),
+              ),
+            ],
           ],
           if (category == 'JLPT') ...[
             const _SectionTitle('Simulasi JLPT'),
@@ -126,6 +138,30 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
               locked: !premium,
               onTap: () =>
                   context.push(premium ? '/exams/n3/simulation' : '/premium'),
+            ),
+            const Divider(height: 1),
+            _ExamRow(
+              badge: 'N2',
+              imageAsset: 'assets/images/exams/n3.webp',
+              title: 'Simulasi N2',
+              metadata: '64 soal · 105 menit',
+              description: 'Kosakata, grammar & reading tingkat lanjut',
+              note: 'Bagian tertulis · Tanpa listening',
+              locked: !premium,
+              onTap: () =>
+                  context.push(premium ? '/exams/n2/simulation' : '/premium'),
+            ),
+            const Divider(height: 1),
+            _ExamRow(
+              badge: 'N1',
+              imageAsset: 'assets/images/exams/n3.webp',
+              title: 'Simulasi N1',
+              metadata: '64 soal · 110 menit',
+              description: 'Kosakata, grammar & reading tingkat mahir',
+              note: 'Bagian tertulis · Tanpa listening',
+              locked: !premium,
+              onTap: () =>
+                  context.push(premium ? '/exams/n1/simulation' : '/premium'),
             ),
             const SizedBox(height: 20),
             const _SectionTitle('Cek kemampuan awal'),

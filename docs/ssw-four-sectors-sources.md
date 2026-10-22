@@ -1,0 +1,41 @@
+# SSW source notes: linen supply, industrial products, construction, shipbuilding
+
+Accessed 2026-10-22. This note summarizes Japanese primary sources (government pages, ministerial test standards, and designated test operators). English labels below are concise translations of the Japanese source terminology. It does not reproduce sample questions or textbook passages.
+
+## Linen supply (リネンサプライ)
+
+The Immigration Services Agency (ISA) and Ministry of Health, Labour and Welfare (MHLW) define one Specified Skilled Worker No. 1 work category: the end-to-end processing of used linen from hotels, hospitals, etc.—receipt, sorting, washing, drying, finishing, inspection, bundling, and dispatch. The required skill credential is the “Linen Supply Field Specified Skilled Worker No. 1 Evaluation Test.” MHLW’s field rules also state that the relevant Technical Intern Training No. 2 completion route is cleaning occupation / linen supply finishing task. The official field page lists Japanese ability at JFT-Basic A2.2 or JLPT N4; linen supply is currently a No. 1 field.
+
+**Test coverage status:** The official policy names the test but, in the MHLW/ISA material reviewed, I found no published test procedure, exam format, detailed syllabus, or schedule as of this access date. Do not infer the SSW test blueprint from the older Technical Intern Training evaluation test for linen finishing. MHLW says SSW No. 1 applications in this field became possible on 2026-06-01; eligible technical-intern completers may use the exemption route.
+
+Sources: [ISA linen-supply field page](https://www.moj.go.jp/isa/policies/ssw/buildingcleaning_00003.html) (field status dated 2026-06-01); [MHLW linen-supply field overview and SSW operational guideline](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/seikatsu-eisei/linen_supply2.html), especially [the guideline PDF](https://www.mhlw.go.jp/content/11130500/001706942.pdf); [MHLW field launch notices](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/seikatsu-eisei/linen_supply1.html).
+
+## Industrial product manufacturing (工業製品製造業)
+
+The Ministry of Economy, Trade and Industry (METI) and designated operator JAIM show 17 No. 1 test/work categories: machine-metal processing; electrical/electronic equipment assembly; metal surface treatment; paperboard/box manufacture; concrete products; RPF; ceramics; printing/bookbinding; textile products; sewing; wire/cable; prefabricated housing products; furniture; refractory products; ready-mixed concrete; rubber products; and bags. JAIM/METI also publish which industrial tasks and establishment classifications are eligible; “manufacturing” is not a blanket authorization for every factory or task.
+
+JAIM’s No. 1 exam is in Japanese and CBT: a 40-minute academic section (true/false) and a 40-minute practical section (choose answers from work-process/material scenarios), with pass marks of 65% and 60% respectively. The detailed standard is category-specific. For example, the machine-metal standard covers safety/health, quality, general workplace knowledge, inspection, measurement, drawings, machine operation/management, and metal materials/processes. No. 2 assessment is limited to machine-metal processing, electrical/electronic equipment assembly, and metal surface treatment; JAIM describes an 80-minute CBT practical assessment, with a separate Business Career Test requirement on the specified route.
+
+Sources: [METI eligible establishment and work-category list](https://www.meti.go.jp/policy/mono_info_service/gaikokujinzai/ukeiretaisyou.html); [JAIM exam hub](https://www.jaim-skill.or.jp/exam/), [No. 1 overview](https://www.jaim-skill.or.jp/exam/about-ssw1/), [No. 2 overview](https://www.jaim-skill.or.jp/exam/about-ssw2/), and [official detailed subject/range standard PDF](https://www.jaim-skill.or.jp/assets/files/exam/top/exam_criteria.pdf). JAIM is the test operator for 2026 onward per METI’s exam page.
+
+## Construction (建設)
+
+The authorized work divisions are civil engineering (土木), building/construction (建築), and lifeline/equipment (ライフライン・設備). No. 1 workers perform relevant new-build, alteration, maintenance, or repair work under a supervisor’s direction; No. 2 workers also direct multiple construction workers and manage the work process.
+
+JAC’s current exam information covers academic and practical sections for each of the three divisions. Both are CBT selected-response tests (true/false and 2–4 choices), so “practical” questions assess work judgments rather than being a live construction task. No. 1: 30 academic questions / 60 minutes and 20 practical questions / 40 minutes; 65% pass mark in each. No. 2: 40 / 60 minutes and 25 / 40 minutes; 75% in each. JAC’s published scope materials are divided into civil, building, and lifeline/equipment texts; the No. 2 academic section additionally uses a shared foreman text. The ministry’s No. 1 standard places the level around Japanese Skill Test Grade 3 and emphasizes reading drawings, understanding safety, and working appropriately under supervision.
+
+Sources: [ISA construction field page](https://www.moj.go.jp/isa/applications/ssw/construction.html); [JAC exam overview and current scope](https://jac-skill.or.jp/exam/); [JAC official study texts/scope materials](https://global.jac-skill.or.jp/examination/documents.php); [MLIT No. 1 exam standard](https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/content/001519991.pdf) and [No. 2 exam standard](https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/content/001708857.pdf).
+
+## Shipbuilding and marine equipment (造船・舶用工業)
+
+Since the 2024 work-category revision, the SSW field’s job divisions are shipbuilding (造船), marine machinery (舶用機械), and marine electrical/electronic equipment (舶用電気電子機器). Their defined manufacturing-process work includes, respectively, such processes as welding, painting, ironwork, outfitting/finishing, machining, piping, casting, electrical/electronic assembly, and equipment maintenance. This **three-division work scope is distinct from the test’s trade categories**: No. 1 tests are offered in six trades (welding, painting, ironwork, finishing, machining, electrical-equipment assembly); No. 2 tests are in welding, painting, and ironwork.
+
+For No. 1, the MLIT standard sets a Japanese paper academic test of 30 true/false questions in 60 minutes, testing safety/health and work-wide knowledge for the chosen trade; academic passing is 60%. The trade-specific practical test checks the required skill and has a trade-specific pass criterion. In the usual arrangement ClassNK sends an examiner to a site prepared by the applicant, which must provide suitable equipment/materials; therefore the practical assessment is a real task, not a generic CBT quiz. For No. 2, the test combines the skill task with a safety/health knowledge check; painting and ironwork also have a management-ability knowledge check. No. 2 eligibility additionally requires two years’ supervisory experience. The 2026 ClassNK page stated that 2026 applications had closed and the 2027 reopening would be announced there.
+
+Sources: [MLIT shipbuilding and marine-equipment field page](https://www.mlit.go.jp/maritime/maritime_fr5_000006.html), including current field rules and test links; [ISA No. 2 job-description page](https://www.moj.go.jp/isa/applications/ssw/10_00180.html) (three work divisions and process examples); [MLIT No. 1 exam standard](https://www.mlit.go.jp/common/001341301.pdf); [MLIT No. 2 exam standard](https://www.mlit.go.jp/common/001589573.pdf); [ClassNK designated-operator test page](https://www.classnk.or.jp/hp/ja/authentication/evaluation/index.html) and trade-specific notices/material links.
+
+## Scope cautions
+
+- Check the newest ministry and test-operator pages before preparing schedules, fees, or exam banks; those details change independently of the field rules.
+- In particular, keep the linen-supply test’s announced name separate from a verified exam syllabus, and keep shipbuilding work divisions separate from shipbuilding test trades.
+- Published sample questions and learning texts are source material only; this note paraphrases coverage and should not be used to reproduce them.

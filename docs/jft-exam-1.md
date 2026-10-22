@@ -25,6 +25,22 @@ Lingkup: **listening belum termasuk**. [JFT-Basic resmi](https://www.jpf.go.jp/j
 - Entitlement diperiksa server untuk overview, start, dan operasi attempt. Free diarahkan ke premium; ownership tetap diperiksa.
 - Attempt dan riwayat simulasi tetap berada di MemoryStore seperti paket JLPT, sehingga hilang saat restart backend. Ledger gamifikasi memakai MariaDB.
 
+## Exam 2–5
+
+Ujian → JFT Test menyediakan lima paket latihan tertulis yang dapat dipilih secara terpisah. Exam 1 tetap memakai ID, route, dan riwayat lama agar sesi yang sudah ada dapat dilanjutkan. Exam 2–5 masing-masing memiliki 36 soal orisinal, satu timer 45 menit, riwayat dan hasil sendiri, serta persyaratan Lifetime Access yang sama.
+
+| Paket | Exam ID | Overview API | Route |
+| --- | --- | --- | --- |
+| Exam 1 | `jft-a2-full-1` | `/v1/simulation/jft` | `/exams/jft/exam-1` |
+| Exam 2 | `jft-a2-full-2` | `/v1/simulation/jft-2` | `/exams/jft/exam-2` |
+| Exam 3 | `jft-a2-full-3` | `/v1/simulation/jft-3` | `/exams/jft/exam-3` |
+| Exam 4 | `jft-a2-full-4` | `/v1/simulation/jft-4` | `/exams/jft/exam-4` |
+| Exam 5 | `jft-a2-full-5` | `/v1/simulation/jft-5` | `/exams/jft/exam-5` |
+
+Semua paket berisi tiga bagian tertulis: 文字と語彙, 会話と表現, dan 読解. Listening belum tersedia. JFT-Basic resmi saat ini menjelaskan empat bagian, sekitar 50 soal, dan waktu 60 menit; latihan aplikasi ini bukan replika ujian resmi, tidak menggunakan soal resmi, dan skornya bukan hasil berskala atau keputusan kelulusan.
+
+Panduan format dan topik publik: [struktur resmi JFT-Basic](https://www.jpf.go.jp/jft-basic/e/about/index.html), [contoh soal resmi](https://www.jpf.go.jp/jft-basic/sample/q01.html), dan [petunjuk belajar JFT-Basic](https://www.jpf.go.jp/jft-basic/e/support/index.html). [FAQ resmi Irodori](https://www.irodori.jpf.go.jp/en/faq.html) menyebut materi Irodori dapat membantu persiapan JFT-Basic; materi Irodori hanya dipakai sebagai rujukan umum untuk ranah komunikasi sehari-hari dan kerja. Teks, contoh, jawaban, audio, dan ilustrasi seluruh soal di aplikasi ditulis terpisah dan orisinal.
+
 ## Thumbnail
 
 Asset bundel: `assets/images/exams/jft.webp`. Dibuat dengan built-in image generation; tidak memerlukan fetch gambar eksternal.

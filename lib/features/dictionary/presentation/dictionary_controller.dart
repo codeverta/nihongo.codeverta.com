@@ -111,13 +111,18 @@ class DictionaryController extends StateNotifier<DictionaryState> {
 
   Future<void> setMode(String mode) => search(state.query, mode: mode);
 
-  Future<void> filter(String? jlpt, {required bool common}) async {
-    final query = state.query;
+  Future<void> filter(
+    String? jlpt, {
+    required bool common,
+    String? mode,
+    String? text,
+  }) async {
+    final query = text ?? state.query;
     state = DictionaryState(
       query: query,
       jlpt: jlpt,
       common: common,
-      mode: state.mode,
+      mode: mode ?? state.mode,
     );
     await search(query, common: common);
   }

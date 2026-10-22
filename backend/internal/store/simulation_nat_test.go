@@ -129,7 +129,7 @@ func TestSimulationNATDeadlinesAndIsolation(t *testing.T) {
 	if overview["questionCount"] != 43 || overview["durationMinutes"] != 60 || len(overview["history"].([]map[string]any)) != 1 {
 		t.Fatal("incorrect NAT overview")
 	}
-	if _, err = s.StartSimulation("user", "N2"); !errors.Is(err, ErrInvalid) {
+	if _, err = s.StartSimulation("user", "N6"); !errors.Is(err, ErrInvalid) {
 		t.Fatal("unsupported level accepted")
 	}
 }

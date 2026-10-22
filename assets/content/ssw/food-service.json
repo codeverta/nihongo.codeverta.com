@@ -1,0 +1,1280 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "hygiene",
+      "title": "Higiene dan keamanan pangan",
+      "description": "Menerapkan kebersihan diri, pemisahan bahan, serta kendali waktu dan suhu sesuai rencana kerja restoran. Status program per 22 Oktober 2026: halaman resmi pemerintah menandai penerimaan baru SSW(i) bidang Food Service tidak tersedia; OTAFF juga menghentikan pemesanan ujian SSW(i). Materi belajar tetap dapat dipelajari dan status perlu dicek kembali pada sumber resmi.",
+      "lessons": [
+        {
+          "id": "fs-01",
+          "title": "Kondisi tubuh dan persiapan sebelum giliran",
+          "minutes": 25,
+          "objectives": [
+            "Melaporkan gejala sakit dan menyiapkan seragam, rambut, kuku, serta perlengkapan sebelum menangani makanan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerja restoran menyentuh bahan, alat, piring, dan permukaan yang digunakan pelanggan. Gejala seperti demam, diare, atau muntah serta luka pada tangan dapat meningkatkan risiko cemaran. Setiap tempat memiliki aturan pelaporan dan penugasan; pekerja memberi tahu pemimpin agar tugas aman ditentukan sebelum mulai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum giliran, ganti seragam, tutup rambut, simpan barang pribadi, dan periksa tangan serta kondisi tubuh. Bila merasa sakit saat bekerja, berhenti menangani makanan dan beri tahu pemimpin. Jangan menyembunyikan gejala atau hanya memakai sarung tangan untuk meneruskan tugas yang berisiko.\n\nKasus latihan: Sebelum menyiapkan salad, seorang pekerja merasa mual dan muntah sejak pagi, tetapi restoran sedang ramai.\nRespons yang dianjurkan: Beri tahu pemimpin, jangan menyiapkan makanan, dan tunggu penetapan tugas sesuai prosedur restoran."
+            }
+          ],
+          "steps": [
+            "Ganti pakaian dan perlengkapan sesuai aturan restoran",
+            "Periksa kondisi tubuh dan tangan",
+            "Laporkan gejala atau luka kepada pemimpin",
+            "Mulai tugas setelah mendapat arahan"
+          ],
+          "caution": "Jangan menangani makanan saat gejala sakit belum dilaporkan.",
+          "scenario": "Sebelum menyiapkan salad, seorang pekerja merasa mual dan muntah sejak pagi, tetapi restoran sedang ramai.",
+          "response": "Beri tahu pemimpin, jangan menyiapkan makanan, dan tunggu penetapan tugas sesuai prosedur restoran.",
+          "vocabulary": [
+            {
+              "japanese": "体調",
+              "reading": "たいちょう",
+              "meaning": "kondisi tubuh"
+            },
+            {
+              "japanese": "制服",
+              "reading": "せいふく",
+              "meaning": "seragam"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            },
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "気分が悪いです。責任者に報告します。",
+              "reading": "きぶんがわるいです。せきにんしゃにほうこくします。",
+              "meaning": "Saya merasa tidak enak badan. Saya akan melapor kepada penanggung jawab."
+            },
+            {
+              "japanese": "食品を扱う前に、手と服を確認してください。",
+              "reading": "しょくひんをあつかうまえに、てとふくをかくにんしてください。",
+              "meaning": "Sebelum menangani makanan, periksa tangan dan pakaian."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus dilakukan pekerja bila mengalami gejala sakit sebelum giliran?",
+              "options": [
+                "Melapor kepada pemimpin sebelum menangani makanan",
+                "Memakai dua lapis sarung tangan lalu bekerja",
+                "Menunggu sampai pelanggan bertanya",
+                "Menyimpan gejala sampai giliran selesai"
+              ],
+              "answer": 0,
+              "explanation": "Pemimpin perlu mengetahui gejala agar dapat menentukan tugas dan mencegah makanan terpapar.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Sebelum menyiapkan salad, seorang pekerja merasa mual dan muntah sejak pagi, tetapi restoran sedang ramai. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Beri tahu pemimpin, jangan menyiapkan makanan, dan tunggu penetapan tugas sesuai prosedur restoran.",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 1,
+              "explanation": "Gejala harus dilaporkan. Jangan menyiapkan makanan sampai pemimpin memberi arahan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Kondisi tubuh dan persiapan sebelum giliran», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa kondisi tubuh dan tangan",
+                "Ganti pakaian dan perlengkapan sesuai aturan restoran",
+                "Laporkan gejala atau luka kepada pemimpin",
+                "Mulai tugas setelah mendapat arahan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Ganti pakaian dan perlengkapan sesuai aturan restoran → Periksa kondisi tubuh dan tangan → Laporkan gejala atau luka kepada pemimpin → Mulai tugas setelah mendapat arahan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-02",
+          "title": "Cuci tangan dan pisahkan bahan mentah",
+          "minutes": 25,
+          "objectives": [
+            "Mencuci tangan pada saat yang tepat dan mencegah alat atau tangan memindahkan cemaran ke makanan siap makan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tangan, pisau, talenan, dan meja dapat memindahkan cemaran dari bahan mentah ke makanan yang tidak dimasak lagi. Cuci tangan setelah menyentuh daging mentah, sampah, toilet, uang, telepon, atau tugas pembersihan. Sarung tangan yang sama juga dapat memindahkan cemaran; ikuti aturan pergantian dan pemisahan alat restoran."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Simpan bahan dan talenan sesuai label atau warna yang ditetapkan restoran. Setelah menyiapkan daging mentah, hentikan tugas, cuci tangan, ganti sarung tangan jika digunakan, dan gunakan permukaan yang telah dibersihkan untuk makanan siap makan. Jika alat bersih terkena cairan mentah, pisahkan dan minta pencucian ulang.\n\nKasus latihan: Setelah memotong ayam mentah, pekerja mengambil irisan tomat dengan sarung tangan yang sama untuk salad.\nRespons yang dianjurkan: Hentikan penyajian salad, pisahkan alat dan bahan yang mungkin terkena, cuci tangan, lalu beri tahu pemimpin untuk penanganan ulang."
+            }
+          ],
+          "steps": [
+            "Kenali label atau kode alat untuk tiap jenis bahan",
+            "Pisahkan bahan mentah dari makanan siap makan",
+            "Cuci tangan setelah kontak dengan bahan mentah atau tugas kotor",
+            "Bersihkan atau ganti alat sebelum berpindah tugas"
+          ],
+          "caution": "Jangan memakai pisau atau sarung tangan yang sama untuk bahan mentah dan makanan siap makan.",
+          "scenario": "Setelah memotong ayam mentah, pekerja mengambil irisan tomat dengan sarung tangan yang sama untuk salad.",
+          "response": "Hentikan penyajian salad, pisahkan alat dan bahan yang mungkin terkena, cuci tangan, lalu beri tahu pemimpin untuk penanganan ulang.",
+          "vocabulary": [
+            {
+              "japanese": "生肉",
+              "reading": "なまにく",
+              "meaning": "daging mentah"
+            },
+            {
+              "japanese": "まな板",
+              "reading": "まないた",
+              "meaning": "talenan"
+            },
+            {
+              "japanese": "交差汚染",
+              "reading": "こうさおせん",
+              "meaning": "kontaminasi silang"
+            },
+            {
+              "japanese": "手洗い",
+              "reading": "てあらい",
+              "meaning": "cuci tangan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このまな板は生肉用です。",
+              "reading": "このまないたはなまにくようです。",
+              "meaning": "Talenan ini untuk daging mentah."
+            },
+            {
+              "japanese": "サラダ用の器具に替えます。",
+              "reading": "さらだようのきぐにかえます。",
+              "meaning": "Saya ganti dengan alat untuk salad."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa alat untuk bahan mentah dipisahkan dari alat makanan siap makan?",
+              "options": [
+                "Untuk mencegah cemaran berpindah ke makanan yang tidak dimasak lagi",
+                "Agar alat lebih cepat habis dipakai",
+                "Supaya pekerja tidak perlu mencuci tangan",
+                "Untuk menyamakan rasa setiap hidangan"
+              ],
+              "answer": 0,
+              "explanation": "Pemisahan mengurangi kemungkinan cemaran dari bahan mentah berpindah ke hidangan siap makan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Setelah memotong ayam mentah, pekerja mengambil irisan tomat dengan sarung tangan yang sama untuk salad. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Hentikan penyajian salad, pisahkan alat dan bahan yang mungkin terkena, cuci tangan, lalu beri tahu pemimpin untuk penanganan ulang.",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 2,
+              "explanation": "Alat dan bahan yang mungkin terkena harus dihentikan, dipisahkan, dan ditangani ulang sesuai arahan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Cuci tangan dan pisahkan bahan mentah», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Kenali label atau kode alat untuk tiap jenis bahan",
+                "Pisahkan bahan mentah dari makanan siap makan",
+                "Cuci tangan setelah kontak dengan bahan mentah atau tugas kotor",
+                "Bersihkan atau ganti alat sebelum berpindah tugas"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Kenali label atau kode alat untuk tiap jenis bahan → Pisahkan bahan mentah dari makanan siap makan → Cuci tangan setelah kontak dengan bahan mentah atau tugas kotor → Bersihkan atau ganti alat sebelum berpindah tugas.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-03",
+          "title": "Waktu, suhu, dan penyimpanan bahan",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa kondisi simpan serta mencatat waktu atau suhu sesuai batas pada label dan prosedur restoran.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Bahan dingin, panas, dan makanan siap saji memiliki syarat penyimpanan sesuai produk dan rencana restoran. Pekerja menggunakan termometer dan batas yang ditulis untuk bahan tersebut, bukan mengandalkan sentuhan atau angka hafalan. Penutup wadah, label waktu, dan pemisahan bahan membantu menjaga keamanan dan mutu selama giliran."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa suhu dengan alat yang ditetapkan, bersihkan probe sesuai prosedur, lalu catat waktu dan hasil. Simpan wadah tertutup dengan identitas yang terbaca. Bila suhu atau waktu melewati batas restoran, label hilang, atau alat tidak berfungsi, tahan bahan dan minta pemimpin menentukan langkah berikutnya.\n\nKasus latihan: Sup yang akan disajikan tidak memiliki label waktu, dan termometer stasiun sedang menunjukkan pesan kesalahan.\nRespons yang dianjurkan: Jangan sajikan sup. Tahan wadah, laporkan label dan alat yang bermasalah, lalu tunggu pemeriksaan sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Baca label waktu dan syarat penyimpanan",
+            "Gunakan alat ukur sesuai instruksi",
+            "Catat waktu dan suhu aktual",
+            "Tahan bahan yang menyimpang dan laporkan"
+          ],
+          "caution": "Jangan menilai keamanan makanan hanya dengan mencium, menyentuh, atau melihatnya.",
+          "scenario": "Sup yang akan disajikan tidak memiliki label waktu, dan termometer stasiun sedang menunjukkan pesan kesalahan.",
+          "response": "Jangan sajikan sup. Tahan wadah, laporkan label dan alat yang bermasalah, lalu tunggu pemeriksaan sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "温度",
+              "reading": "おんど",
+              "meaning": "suhu"
+            },
+            {
+              "japanese": "温度計",
+              "reading": "おんどけい",
+              "meaning": "termometer"
+            },
+            {
+              "japanese": "保存",
+              "reading": "ほぞん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "時間",
+              "reading": "じかん",
+              "meaning": "waktu"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "温度計にエラーが出ています。",
+              "reading": "おんどけいにえらーがでています。",
+              "meaning": "Termometer menampilkan pesan kesalahan."
+            },
+            {
+              "japanese": "このスープを保留して、責任者に確認します。",
+              "reading": "このすーぷをほりゅうして、せきにんしゃにかくにんします。",
+              "meaning": "Saya menahan sup ini dan meminta pemeriksaan penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Bagaimana pekerja menentukan batas waktu atau suhu untuk bahan?",
+              "options": [
+                "Membaca label dan prosedur restoran yang berlaku",
+                "Memakai angka yang sama untuk semua hidangan",
+                "Menebak dari warna dan aroma makanan",
+                "Menanyakan pelanggan yang memesan"
+              ],
+              "answer": 0,
+              "explanation": "Batas mengikuti syarat bahan dan rencana restoran; ukur serta catat hasil aktual.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Sup yang akan disajikan tidak memiliki label waktu, dan termometer stasiun sedang menunjukkan pesan kesalahan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa",
+                "Jangan sajikan sup. Tahan wadah, laporkan label dan alat yang bermasalah, lalu tunggu pemeriksaan sesuai prosedur."
+              ],
+              "answer": 3,
+              "explanation": "Tanpa waktu yang dapat ditelusuri dan alat yang berfungsi, bahan tidak boleh langsung disajikan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Waktu, suhu, dan penyimpanan bahan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca label waktu dan syarat penyimpanan",
+                "Catat waktu dan suhu aktual",
+                "Gunakan alat ukur sesuai instruksi",
+                "Tahan bahan yang menyimpang dan laporkan"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Baca label waktu dan syarat penyimpanan → Gunakan alat ukur sesuai instruksi → Catat waktu dan suhu aktual → Tahan bahan yang menyimpang dan laporkan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preparation",
+      "title": "Persiapan hidangan dan permintaan alergi",
+      "description": "Menyiapkan stasiun kerja, menangani permintaan khusus dengan konfirmasi yang jujur, dan mencegah kontak silang di dapur.",
+      "lessons": [
+        {
+          "id": "fs-04",
+          "title": "Persiapan bahan dan stasiun kerja",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan bahan, alat, porsi, dan urutan kerja berdasarkan resep serta tiket pesanan yang benar.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Persiapan yang rapi mengurangi salah bahan, menunggu, dan gerak berulang saat layanan sibuk. Pekerja memeriksa resep, porsi, alat, dan kondisi bahan sebelum menyiapkan stasiun. Makanan siap makan dipisahkan dari bahan mentah; pisau, panas, dan alat listrik digunakan hanya sesuai pelatihan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Susun bahan dalam wadah berlabel, ambil secukupnya untuk giliran, dan simpan sisanya sesuai syaratnya. Baca tiket dengan teliti; bila ada catatan yang tidak terbaca, konfirmasi sebelum memasak. Bersihkan tumpahan segera dengan cara yang tidak mencemari bahan atau membuat lantai licin.\n\nKasus latihan: Tiket memesan sup sayur, tetapi wadah di stasiun tidak berlabel dan isinya tidak dapat dikenali.\nRespons yang dianjurkan: Jangan gunakan isi wadah. Pisahkan dan minta identifikasi dari pemimpin sebelum menyiapkan pesanan."
+            }
+          ],
+          "steps": [
+            "Baca resep dan kebutuhan pesanan",
+            "Periksa bahan, label, dan alat yang diperlukan",
+            "Siapkan bahan dalam wadah terpisah dan beridentitas",
+            "Rapikan stasiun dan konfirmasi hal yang tidak jelas"
+          ],
+          "caution": "Jangan menebak bahan atau porsi ketika tiket dan label tidak cocok.",
+          "scenario": "Tiket memesan sup sayur, tetapi wadah di stasiun tidak berlabel dan isinya tidak dapat dikenali.",
+          "response": "Jangan gunakan isi wadah. Pisahkan dan minta identifikasi dari pemimpin sebelum menyiapkan pesanan.",
+          "vocabulary": [
+            {
+              "japanese": "仕込み",
+              "reading": "しこみ",
+              "meaning": "persiapan bahan"
+            },
+            {
+              "japanese": "注文票",
+              "reading": "ちゅうもんひょう",
+              "meaning": "tiket pesanan"
+            },
+            {
+              "japanese": "分量",
+              "reading": "ぶんりょう",
+              "meaning": "takaran"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "konfirmasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この材料の名前を確認してください。",
+              "reading": "このざいりょうのなまえをかくにんしてください。",
+              "meaning": "Mohon konfirmasi nama bahan ini."
+            },
+            {
+              "japanese": "注文票を見てから、準備します。",
+              "reading": "ちゅうもんひょうをみてから、じゅんびします。",
+              "meaning": "Saya akan menyiapkan setelah membaca tiket pesanan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa langkah yang benar saat bahan di stasiun tidak berlabel?",
+              "options": [
+                "Tahan bahan dan minta identifikasi sebelum dipakai",
+                "Cicipi sedikit untuk mengenali bahan",
+                "Gunakan hanya jika warnanya mirip resep",
+                "Campur dengan bahan lain lalu tanyakan belakangan"
+              ],
+              "answer": 0,
+              "explanation": "Identitas bahan harus pasti agar resep, keamanan, dan informasi alergi tetap benar.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Tiket memesan sup sayur, tetapi wadah di stasiun tidak berlabel dan isinya tidak dapat dikenali. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Jangan gunakan isi wadah. Pisahkan dan minta identifikasi dari pemimpin sebelum menyiapkan pesanan.",
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 0,
+              "explanation": "Bahan tanpa identitas tidak dipakai; pisahkan dan konfirmasi kepada pemimpin.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Persiapan bahan dan stasiun kerja», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca resep dan kebutuhan pesanan",
+                "Siapkan bahan dalam wadah terpisah dan beridentitas",
+                "Rapikan stasiun dan konfirmasi hal yang tidak jelas",
+                "Periksa bahan, label, dan alat yang diperlukan"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Baca resep dan kebutuhan pesanan → Periksa bahan, label, dan alat yang diperlukan → Siapkan bahan dalam wadah terpisah dan beridentitas → Rapikan stasiun dan konfirmasi hal yang tidak jelas.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-05",
+          "title": "Menerima pertanyaan alergi pelanggan",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan permintaan alergi, memeriksa informasi menu, dan menghubungi dapur atau pemimpin tanpa membuat janji yang tidak pasti.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Alergi makanan dapat menimbulkan reaksi serius. Informasi bahan dan risiko kontak silang dapat berbeda menurut menu, pemasok, serta cara memasak. Pelayan memakai panduan alergi restoran yang terbaru dan bertanya kepada pihak berwenang bila jawaban tidak jelas; jangan menebak dari nama hidangan atau menjamin bahwa hidangan bebas alergen tanpa dasar."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Dengarkan nama bahan yang dihindari, ulangi untuk memastikan, lalu periksa panduan atau sistem menu. Sampaikan jawaban yang diketahui dengan jelas; bila informasi tidak cukup, beri tahu pelanggan bahwa Anda akan memastikan dan segera hubungi pemimpin atau dapur. Jangan mengubah resep atau menyuruh dapur mengabaikan prosedur.\n\nKasus latihan: Pelanggan bertanya apakah saus mengandung kacang, tetapi daftar bahan di stasiun belum diperbarui.\nRespons yang dianjurkan: Jangan menebak. Katakan akan memeriksa, tahan rekomendasi hidangan, dan minta pemimpin memverifikasi informasi terbaru."
+            }
+          ],
+          "steps": [
+            "Dengarkan permintaan dan catat bahan yang dihindari",
+            "Ulangi permintaan untuk memastikan maksud pelanggan",
+            "Periksa panduan dan konfirmasi dengan pihak berwenang",
+            "Sampaikan informasi yang terverifikasi atau pilihan aman"
+          ],
+          "caution": "Jangan menjawab “aman” berdasarkan perkiraan atau hanya karena bahan tidak terlihat di piring.",
+          "scenario": "Pelanggan bertanya apakah saus mengandung kacang, tetapi daftar bahan di stasiun belum diperbarui.",
+          "response": "Jangan menebak. Katakan akan memeriksa, tahan rekomendasi hidangan, dan minta pemimpin memverifikasi informasi terbaru.",
+          "vocabulary": [
+            {
+              "japanese": "アレルギー",
+              "reading": "あれるぎー",
+              "meaning": "alergi"
+            },
+            {
+              "japanese": "原材料",
+              "reading": "げんざいりょう",
+              "meaning": "bahan"
+            },
+            {
+              "japanese": "確認します",
+              "reading": "かくにんします",
+              "meaning": "saya akan memeriksa"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このソースにナッツが入っていますか。",
+              "reading": "このそーすになっつがはいっていますか。",
+              "meaning": "Apakah saus ini mengandung kacang?"
+            },
+            {
+              "japanese": "確認しますので、少しお待ちください。",
+              "reading": "かくにんしますので、すこしおまちください。",
+              "meaning": "Saya akan memeriksanya, mohon tunggu sebentar."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa respons yang tepat bila informasi alergen di menu tidak lengkap?",
+              "options": [
+                "Jelaskan bahwa Anda akan memeriksa lalu konfirmasi kepada pemimpin",
+                "Menjawab aman karena bahan tidak terlihat",
+                "Meminta pelanggan mencoba sedikit",
+                "Mengganti saus diam-diam tanpa memberi tahu"
+              ],
+              "answer": 0,
+              "explanation": "Informasi yang belum terverifikasi tidak boleh disampaikan sebagai kepastian; eskalasikan ke pihak yang punya data.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pelanggan bertanya apakah saus mengandung kacang, tetapi daftar bahan di stasiun belum diperbarui. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Jangan menebak. Katakan akan memeriksa, tahan rekomendasi hidangan, dan minta pemimpin memverifikasi informasi terbaru.",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 1,
+              "explanation": "Daftar belum diperbarui, jadi hentikan tebakan dan verifikasi dengan penanggung jawab.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Menerima pertanyaan alergi pelanggan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Ulangi permintaan untuk memastikan maksud pelanggan",
+                "Dengarkan permintaan dan catat bahan yang dihindari",
+                "Periksa panduan dan konfirmasi dengan pihak berwenang",
+                "Sampaikan informasi yang terverifikasi atau pilihan aman"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Dengarkan permintaan dan catat bahan yang dihindari → Ulangi permintaan untuk memastikan maksud pelanggan → Periksa panduan dan konfirmasi dengan pihak berwenang → Sampaikan informasi yang terverifikasi atau pilihan aman.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-06",
+          "title": "Perubahan pesanan dan pencegahan kontak silang",
+          "minutes": 25,
+          "objectives": [
+            "Meneruskan perubahan pesanan ke dapur dengan jelas dan memastikan alat serta alur kerja sesuai permintaan terverifikasi.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Catatan seperti tanpa telur atau pisahkan saus mengubah cara dapur menyiapkan dan menyajikan hidangan. Tiket harus memuat perubahan dengan jelas dan terhubung ke meja atau nomor pesanan yang benar. Jika permintaan berkaitan dengan alergi, dapur memakai prosedur kontak silang yang sudah ditetapkan; perubahan kecil tidak boleh dianggap sepele."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ulangi perubahan kepada pelanggan, masukkan pada sistem atau tiket, lalu pastikan dapur menerima versi yang benar. Bila tiket tertukar atau modifikasi belum dikonfirmasi, tahan hidangan sebelum dibawa. Gunakan piring dan alat yang ditentukan untuk pesanan tersebut; jangan sekadar mengikis bahan dari hidangan jadi.\n\nKasus latihan: Pelanggan meminta hidangan tanpa telur karena alergi; tiket lama sudah masuk dapur tanpa catatan itu.\nRespons yang dianjurkan: Jangan bawa hidangan lama. Hentikan penyajian, beri tahu dapur dan pemimpin, lalu buat tiket yang benar dan ikuti prosedur alergi."
+            }
+          ],
+          "steps": [
+            "Ulangi perubahan pesanan kepada pelanggan",
+            "Masukkan catatan pada tiket yang benar",
+            "Konfirmasi penerimaan perubahan oleh dapur",
+            "Periksa hidangan dan alat sebelum disajikan"
+          ],
+          "caution": "Jangan menghapus bahan dari hidangan yang sudah jadi untuk memenuhi permintaan alergi.",
+          "scenario": "Pelanggan meminta hidangan tanpa telur karena alergi; tiket lama sudah masuk dapur tanpa catatan itu.",
+          "response": "Jangan bawa hidangan lama. Hentikan penyajian, beri tahu dapur dan pemimpin, lalu buat tiket yang benar dan ikuti prosedur alergi.",
+          "vocabulary": [
+            {
+              "japanese": "変更",
+              "reading": "へんこう",
+              "meaning": "perubahan"
+            },
+            {
+              "japanese": "注文",
+              "reading": "ちゅうもん",
+              "meaning": "pesanan"
+            },
+            {
+              "japanese": "伝票",
+              "reading": "でんぴょう",
+              "meaning": "tiket"
+            },
+            {
+              "japanese": "別々",
+              "reading": "べつべつ",
+              "meaning": "terpisah"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "卵なしの注文に変更します。",
+              "reading": "たまごなしのちゅうもんにへんこうします。",
+              "meaning": "Saya akan mengubah pesanan menjadi tanpa telur."
+            },
+            {
+              "japanese": "新しい伝票を確認してください。",
+              "reading": "あたらしいでんぴょうをかくにんしてください。",
+              "meaning": "Mohon periksa tiket yang baru."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa cara memastikan perubahan pesanan sampai ke dapur dengan benar?",
+              "options": [
+                "Catat pada tiket yang tepat dan konfirmasi dapur menerimanya",
+                "Sampaikan hanya kepada rekan tanpa memperbarui tiket",
+                "Ubah piring setelah masakan siap",
+                "Biarkan dapur membaca pikiran pelanggan"
+              ],
+              "answer": 0,
+              "explanation": "Tiket yang benar dan konfirmasi menghubungkan permintaan dengan hidangan yang disiapkan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pelanggan meminta hidangan tanpa telur karena alergi; tiket lama sudah masuk dapur tanpa catatan itu. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Jangan bawa hidangan lama. Hentikan penyajian, beri tahu dapur dan pemimpin, lalu buat tiket yang benar dan ikuti prosedur alergi.",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 2,
+              "explanation": "Hidangan dibuat sebelum permintaan alergi dicatat; tahan dan buat alur pesanan yang benar.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Perubahan pesanan dan pencegahan kontak silang», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Ulangi perubahan pesanan kepada pelanggan",
+                "Masukkan catatan pada tiket yang benar",
+                "Konfirmasi penerimaan perubahan oleh dapur",
+                "Periksa hidangan dan alat sebelum disajikan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Ulangi perubahan pesanan kepada pelanggan → Masukkan catatan pada tiket yang benar → Konfirmasi penerimaan perubahan oleh dapur → Periksa hidangan dan alat sebelum disajikan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hospitality",
+      "title": "Penerimaan tamu dan pelayanan meja",
+      "description": "Menggunakan bahasa sopan dan konfirmasi sederhana saat menyambut, mencatat pesanan, serta mengantarkan hidangan.",
+      "lessons": [
+        {
+          "id": "fs-07",
+          "title": "Menyambut tamu dan mengantar ke meja",
+          "minutes": 25,
+          "objectives": [
+            "Menyapa tamu, memastikan jumlah orang atau reservasi, dan mengantar ke meja yang sesuai.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Sambutan awal membantu tamu merasa diterima dan mengatur alur meja. Pekerja memakai salam sopan, menanyakan jumlah orang bila diperlukan, dan memastikan reservasi tanpa menyebut informasi pribadi dengan suara keras. Jalur pelayanan harus bebas dari kereta, barang, dan tumpahan agar tamu maupun staf dapat lewat dengan aman."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sapa tamu, dengarkan jawaban, lalu ulangi informasi penting seperti nama reservasi atau jumlah orang. Bila meja belum siap, jelaskan perkiraan hanya setelah memeriksa keadaan dan minta mereka menunggu di tempat yang ditentukan. Jangan menjanjikan meja tertentu tanpa konfirmasi sistem.\n\nKasus latihan: Tamu datang tanpa reservasi, dan meja yang baru dikosongkan belum dibersihkan.\nRespons yang dianjurkan: Sapa tamu, jelaskan bahwa meja sedang disiapkan, dan minta mereka menunggu di area yang ditentukan sampai meja dikonfirmasi siap."
+            }
+          ],
+          "steps": [
+            "Sapa tamu dengan ungkapan yang sopan",
+            "Tanyakan reservasi atau jumlah orang bila perlu",
+            "Periksa meja dan jalur berjalan",
+            "Antar tamu dan sampaikan menu"
+          ],
+          "caution": "Jangan menyebut data reservasi pribadi dengan suara keras di depan orang lain.",
+          "scenario": "Tamu datang tanpa reservasi, dan meja yang baru dikosongkan belum dibersihkan.",
+          "response": "Sapa tamu, jelaskan bahwa meja sedang disiapkan, dan minta mereka menunggu di area yang ditentukan sampai meja dikonfirmasi siap.",
+          "vocabulary": [
+            {
+              "japanese": "いらっしゃいませ",
+              "reading": "いらっしゃいませ",
+              "meaning": "selamat datang"
+            },
+            {
+              "japanese": "予約",
+              "reading": "よやく",
+              "meaning": "reservasi"
+            },
+            {
+              "japanese": "席",
+              "reading": "せき",
+              "meaning": "tempat duduk"
+            },
+            {
+              "japanese": "案内",
+              "reading": "あんない",
+              "meaning": "mengantar atau memberi petunjuk"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いらっしゃいませ。何名様ですか。",
+              "reading": "いらっしゃいませ。なんめいさまですか。",
+              "meaning": "Selamat datang. Untuk berapa orang?"
+            },
+            {
+              "japanese": "こちらの席へご案内します。",
+              "reading": "こちらのせきへごあんないします。",
+              "meaning": "Saya antar ke tempat duduk ini."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan sebelum mengantar tamu ke meja yang baru kosong?",
+              "options": [
+                "Pastikan meja telah dibersihkan dan siap dipakai",
+                "Minta tamu membersihkannya sendiri",
+                "Antar tamu lalu bersihkan saat mereka makan",
+                "Pindahkan peralatan dari meja sebelah tanpa izin"
+              ],
+              "answer": 0,
+              "explanation": "Meja perlu dipastikan siap dan jalurnya aman sebelum dipakai tamu.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Tamu datang tanpa reservasi, dan meja yang baru dikosongkan belum dibersihkan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa",
+                "Sapa tamu, jelaskan bahwa meja sedang disiapkan, dan minta mereka menunggu di area yang ditentukan sampai meja dikonfirmasi siap."
+              ],
+              "answer": 3,
+              "explanation": "Meja belum dibersihkan; beri informasi dan tunggu konfirmasi sebelum mengantar tamu.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Menyambut tamu dan mengantar ke meja», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Sapa tamu dengan ungkapan yang sopan",
+                "Periksa meja dan jalur berjalan",
+                "Tanyakan reservasi atau jumlah orang bila perlu",
+                "Antar tamu dan sampaikan menu"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Sapa tamu dengan ungkapan yang sopan → Tanyakan reservasi atau jumlah orang bila perlu → Periksa meja dan jalur berjalan → Antar tamu dan sampaikan menu.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-08",
+          "title": "Mencatat pesanan dan mengulang konfirmasi",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan pesanan, mencatat jumlah serta pilihan dengan benar, dan mengulang poin penting kepada tamu.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pesanan mencakup hidangan, jumlah, pilihan ukuran, tingkat kematangan bila berlaku, dan permintaan khusus. Mengulang pesanan membantu menemukan salah dengar sebelum tiket dikirim. Bila kata atau pilihan tidak dipahami, pekerja bertanya dengan sopan dan menggunakan gambar menu atau nomor hidangan sebagai bantuan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat pesanan segera pada sistem atau tiket untuk meja yang benar. Ulangi item dan jumlah, tanyakan kembali pilihan yang belum jelas, lalu kirim tiket ke dapur. Jangan memasukkan catatan alergi sebagai pilihan biasa; sampaikan kepada pemimpin dan ikuti alur khusus restoran.\n\nKasus latihan: Pelanggan memesan dua hidangan dan menyebut satu tanpa bawang, tetapi pekerja hanya mencatat nama hidangannya.\nRespons yang dianjurkan: Konfirmasi kembali permintaan tanpa bawang, perbarui tiket meja yang benar, lalu pastikan dapur menerima catatan itu."
+            }
+          ],
+          "steps": [
+            "Dengarkan pesanan sampai selesai",
+            "Catat item dan jumlah pada meja yang benar",
+            "Ulangi pilihan utama untuk konfirmasi",
+            "Kirim tiket dan sampaikan permintaan khusus"
+          ],
+          "caution": "Jangan mengirim tiket ketika jumlah atau pilihan pelanggan masih belum jelas.",
+          "scenario": "Pelanggan memesan dua hidangan dan menyebut satu tanpa bawang, tetapi pekerja hanya mencatat nama hidangannya.",
+          "response": "Konfirmasi kembali permintaan tanpa bawang, perbarui tiket meja yang benar, lalu pastikan dapur menerima catatan itu.",
+          "vocabulary": [
+            {
+              "japanese": "注文",
+              "reading": "ちゅうもん",
+              "meaning": "pesanan"
+            },
+            {
+              "japanese": "個数",
+              "reading": "こすう",
+              "meaning": "jumlah unit"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "konfirmasi"
+            },
+            {
+              "japanese": "伝票",
+              "reading": "でんぴょう",
+              "meaning": "tiket pesanan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご注文はカレー二つですね。",
+              "reading": "ごちゅうもんはかれーふたつですね。",
+              "meaning": "Pesanannya dua kari, benar?"
+            },
+            {
+              "japanese": "玉ねぎなしで、よろしいですか。",
+              "reading": "たまねぎなしで、よろしいですか。",
+              "meaning": "Tanpa bawang bombai, betul?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa pekerja mengulang pesanan sebelum mengirim tiket?",
+              "options": [
+                "Untuk memastikan item, jumlah, dan permintaan khusus benar",
+                "Agar tamu mengubah pesanannya",
+                "Untuk menunda pekerjaan dapur",
+                "Supaya tiket tidak perlu dibaca"
+              ],
+              "answer": 0,
+              "explanation": "Pengulangan memberi kesempatan memperbaiki salah dengar sebelum dapur menyiapkan makanan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pelanggan memesan dua hidangan dan menyebut satu tanpa bawang, tetapi pekerja hanya mencatat nama hidangannya. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Konfirmasi kembali permintaan tanpa bawang, perbarui tiket meja yang benar, lalu pastikan dapur menerima catatan itu.",
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 0,
+              "explanation": "Permintaan belum tertulis; konfirmasi dan perbarui tiket sebelum dapur mulai.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Mencatat pesanan dan mengulang konfirmasi», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Dengarkan pesanan sampai selesai",
+                "Ulangi pilihan utama untuk konfirmasi",
+                "Kirim tiket dan sampaikan permintaan khusus",
+                "Catat item dan jumlah pada meja yang benar"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Dengarkan pesanan sampai selesai → Catat item dan jumlah pada meja yang benar → Ulangi pilihan utama untuk konfirmasi → Kirim tiket dan sampaikan permintaan khusus.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-09",
+          "title": "Mengantar hidangan dan memeriksa meja",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan hidangan dengan tiket dan meja serta membawa nampan dengan aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Piring yang benar harus sampai ke meja dan pelanggan yang memesan. Sebelum berangkat, pekerja membaca nama atau nomor hidangan pada tiket, memeriksa jumlah dan modifikasi, serta memastikan piring dan nampan stabil. Jalur antarmeja dapat sempit; utamakan pandangan dan keseimbangan, bukan kecepatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Angkat nampan dengan posisi stabil dan gunakan jalur yang tidak licin. Di meja, sebut nama hidangan secara singkat dan letakkan tanpa menyentuh permukaan makan. Jika satu item tidak cocok dengan tiket atau pelanggan mengatakan hidangan bukan pesanannya, jangan tinggalkan; tahan dan bawa kembali ke titik pemeriksaan.\n\nKasus latihan: Di lorong, pekerja mendapati tiket di nampan tertulis meja 8, tetapi rekan memanggilnya ke meja 6.\nRespons yang dianjurkan: Berhenti di tempat aman dan cocokkan tiket dengan nomor meja; jangan menyerahkan hidangan sampai tujuan dipastikan."
+            }
+          ],
+          "steps": [
+            "Cocokkan hidangan dan jumlah dengan tiket",
+            "Periksa modifikasi serta kestabilan nampan",
+            "Bawa melalui jalur yang aman",
+            "Sebutkan hidangan dan pastikan meja yang benar"
+          ],
+          "caution": "Jangan menyerahkan piring yang identitas meja atau pesannya belum pasti.",
+          "scenario": "Di lorong, pekerja mendapati tiket di nampan tertulis meja 8, tetapi rekan memanggilnya ke meja 6.",
+          "response": "Berhenti di tempat aman dan cocokkan tiket dengan nomor meja; jangan menyerahkan hidangan sampai tujuan dipastikan.",
+          "vocabulary": [
+            {
+              "japanese": "配膳",
+              "reading": "はいぜん",
+              "meaning": "mengantar hidangan"
+            },
+            {
+              "japanese": "料理",
+              "reading": "りょうり",
+              "meaning": "hidangan"
+            },
+            {
+              "japanese": "皿",
+              "reading": "さら",
+              "meaning": "piring"
+            },
+            {
+              "japanese": "通路",
+              "reading": "つうろ",
+              "meaning": "jalur"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは焼き魚でございます。",
+              "reading": "こちらはやきざかなでございます。",
+              "meaning": "Ini ikan panggang Anda."
+            },
+            {
+              "japanese": "テーブル番号を確認します。",
+              "reading": "てーぶるばんごうをかくにんします。",
+              "meaning": "Saya akan memastikan nomor meja."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang diperiksa sebelum hidangan dibawa ke meja?",
+              "options": [
+                "Nama hidangan, jumlah, modifikasi, dan nomor meja",
+                "Warna seragam pelanggan",
+                "Meja yang paling dekat dengan dapur",
+                "Jumlah nampan yang tersedia saja"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan tiket mengurangi risiko salah hidangan dan salah meja.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Di lorong, pekerja mendapati tiket di nampan tertulis meja 8, tetapi rekan memanggilnya ke meja 6. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Berhenti di tempat aman dan cocokkan tiket dengan nomor meja; jangan menyerahkan hidangan sampai tujuan dipastikan.",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 1,
+              "explanation": "Ada dua nomor meja berbeda; berhenti dengan aman dan cocokkan tiket sebelum menyerahkan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Mengantar hidangan dan memeriksa meja», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa modifikasi serta kestabilan nampan",
+                "Cocokkan hidangan dan jumlah dengan tiket",
+                "Bawa melalui jalur yang aman",
+                "Sebutkan hidangan dan pastikan meja yang benar"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan hidangan dan jumlah dengan tiket → Periksa modifikasi serta kestabilan nampan → Bawa melalui jalur yang aman → Sebutkan hidangan dan pastikan meja yang benar.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "title": "Tanggapan masalah, pembayaran, dan penutupan",
+      "description": "Menangani keluhan dengan tenang, menjaga ketepatan transaksi, serta membersihkan dan menyerahkan status restoran pada akhir giliran.",
+      "lessons": [
+        {
+          "id": "fs-10",
+          "title": "Menangani keluhan pelanggan",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan keluhan, mengulangi masalah dengan sopan, dan meminta bantuan pemimpin untuk keputusan atau risiko keselamatan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Keluhan dapat berkaitan dengan hidangan salah, keterlambatan, mutu, alergi, atau keselamatan. Pekerja tetap tenang, mendengarkan tanpa berdebat, meminta maaf atas ketidaknyamanan, dan mengumpulkan fakta. Penggantian, pengembalian uang, atau penanganan insiden mengikuti wewenang restoran; masalah kesehatan segera diserahkan kepada pemimpin."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ucapkan bahwa Anda akan memeriksa, ulangi masalah agar pelanggan merasa didengar, lalu hubungi pemimpin. Jangan menyalahkan dapur atau menjanjikan kompensasi yang tidak Anda berwenang berikan. Jika pelanggan merasa sakit atau ada kemungkinan bahaya makanan, hentikan penjualan hidangan terkait dan laporkan segera.\n\nKasus latihan: Pelanggan mengatakan setelah mencicipi hidangan, ia merasa tidak sehat dan ingin tahu siapa yang bertanggung jawab.\nRespons yang dianjurkan: Tanggapi dengan tenang, hentikan penyajian hidangan terkait, panggil pemimpin, dan catat waktu serta hidangan tanpa berspekulasi."
+            }
+          ],
+          "steps": [
+            "Dengarkan pelanggan tanpa menyela",
+            "Ulangi inti masalah dan minta maaf dengan sopan",
+            "Hubungi pemimpin untuk keputusan sesuai wewenang",
+            "Catat fakta dan tindak lanjut yang diperlukan"
+          ],
+          "caution": "Jangan berdebat, menyalahkan pelanggan, atau menjanjikan tindakan di luar wewenang.",
+          "scenario": "Pelanggan mengatakan setelah mencicipi hidangan, ia merasa tidak sehat dan ingin tahu siapa yang bertanggung jawab.",
+          "response": "Tanggapi dengan tenang, hentikan penyajian hidangan terkait, panggil pemimpin, dan catat waktu serta hidangan tanpa berspekulasi.",
+          "vocabulary": [
+            {
+              "japanese": "苦情",
+              "reading": "くじょう",
+              "meaning": "keluhan"
+            },
+            {
+              "japanese": "確認します",
+              "reading": "かくにんします",
+              "meaning": "saya akan memeriksa"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            },
+            {
+              "japanese": "状況",
+              "reading": "じょうきょう",
+              "meaning": "keadaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "申し訳ございません。すぐに確認します。",
+              "reading": "もうしわけございません。すぐにかくにんします。",
+              "meaning": "Mohon maaf. Saya akan segera memeriksanya."
+            },
+            {
+              "japanese": "責任者をお呼びします。",
+              "reading": "せきにんしゃをおよびします。",
+              "meaning": "Saya akan memanggil penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Bagaimana cara awal yang baik saat menerima keluhan?",
+              "options": [
+                "Dengarkan, ulangi masalah, dan beri tahu bahwa Anda akan memeriksa",
+                "Menyalahkan pelanggan karena salah memilih",
+                "Menjanjikan pengembalian uang sebelum bertanya",
+                "Mengabaikan keluhan sampai pelanggan pergi"
+              ],
+              "answer": 0,
+              "explanation": "Mendengarkan dan memeriksa fakta membantu menentukan tindak lanjut yang tepat.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pelanggan mengatakan setelah mencicipi hidangan, ia merasa tidak sehat dan ingin tahu siapa yang bertanggung jawab. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Tanggapi dengan tenang, hentikan penyajian hidangan terkait, panggil pemimpin, dan catat waktu serta hidangan tanpa berspekulasi.",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 2,
+              "explanation": "Kemungkinan masalah kesehatan harus dieskalasikan; jangan berdebat atau berspekulasi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Menangani keluhan pelanggan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Dengarkan pelanggan tanpa menyela",
+                "Ulangi inti masalah dan minta maaf dengan sopan",
+                "Hubungi pemimpin untuk keputusan sesuai wewenang",
+                "Catat fakta dan tindak lanjut yang diperlukan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Dengarkan pelanggan tanpa menyela → Ulangi inti masalah dan minta maaf dengan sopan → Hubungi pemimpin untuk keputusan sesuai wewenang → Catat fakta dan tindak lanjut yang diperlukan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-11",
+          "title": "Pembayaran dan pemeriksaan tagihan",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan tagihan dengan pesanan, menerima pembayaran sesuai prosedur, dan menjaga informasi pelanggan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pembayaran yang tepat bergantung pada tagihan meja, jumlah, metode pembayaran, dan aturan kasir. Pekerja memeriksa total pada sistem dan menjelaskan biaya dengan jelas bila pelanggan bertanya. Uang tunai, kartu, dan aplikasi pembayaran ditangani sesuai petunjuk; jangan menyimpan kata sandi, nomor kartu, atau data pribadi pelanggan di luar sistem resmi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum menutup transaksi, cocokkan nomor meja dan item pada tagihan. Sebut jumlah yang harus dibayar, proses metode yang dipilih pelanggan, lalu berikan bukti pembayaran bila sistem memintanya. Jika pembayaran ditolak atau jumlah berbeda, jangan mengulang transaksi tanpa memastikan status pertama; panggil pemimpin atau ikuti alur kasir.\n\nKasus latihan: Terminal pembayaran menampilkan pesan menunggu setelah kartu pelanggan disentuhkan, dan pelanggan meminta pekerja mencoba lagi.\nRespons yang dianjurkan: Periksa status transaksi pada sistem atau minta bantuan pemimpin sebelum mengulang, agar pelanggan tidak tertagih dua kali."
+            }
+          ],
+          "steps": [
+            "Cocokkan meja dan item pada tagihan",
+            "Sampaikan jumlah pembayaran dengan jelas",
+            "Proses metode pembayaran sesuai sistem",
+            "Konfirmasi hasil transaksi dan serahkan bukti"
+          ],
+          "caution": "Jangan mencatat atau menyimpan data pembayaran pelanggan di tempat pribadi.",
+          "scenario": "Terminal pembayaran menampilkan pesan menunggu setelah kartu pelanggan disentuhkan, dan pelanggan meminta pekerja mencoba lagi.",
+          "response": "Periksa status transaksi pada sistem atau minta bantuan pemimpin sebelum mengulang, agar pelanggan tidak tertagih dua kali.",
+          "vocabulary": [
+            {
+              "japanese": "会計",
+              "reading": "かいけい",
+              "meaning": "pembayaran atau kasir"
+            },
+            {
+              "japanese": "伝票",
+              "reading": "でんぴょう",
+              "meaning": "tagihan"
+            },
+            {
+              "japanese": "支払い",
+              "reading": "しはらい",
+              "meaning": "pembayaran"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "konfirmasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お会計は三千円でございます。",
+              "reading": "おかいけいはさんぜんえんでございます。",
+              "meaning": "Total pembayaran tiga ribu yen."
+            },
+            {
+              "japanese": "決済の状態を確認いたします。",
+              "reading": "けっさいのじょうたいをかくにんいたします。",
+              "meaning": "Saya akan memeriksa status transaksi."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan saat terminal belum menunjukkan status pembayaran yang jelas?",
+              "options": [
+                "Periksa status transaksi sebelum mencoba lagi",
+                "Minta pelanggan membayar tunai tanpa cek",
+                "Ulangi transaksi beberapa kali dengan cepat",
+                "Simpan data kartu pelanggan untuk nanti"
+              ],
+              "answer": 0,
+              "explanation": "Memeriksa transaksi mencegah pembayaran ganda dan menjaga data pelanggan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Terminal pembayaran menampilkan pesan menunggu setelah kartu pelanggan disentuhkan, dan pelanggan meminta pekerja mencoba lagi. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa",
+                "Periksa status transaksi pada sistem atau minta bantuan pemimpin sebelum mengulang, agar pelanggan tidak tertagih dua kali."
+              ],
+              "answer": 3,
+              "explanation": "Status pembayaran belum jelas; cek sistem atau panggil pemimpin sebelum mengulang.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pembayaran dan pemeriksaan tagihan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Cocokkan meja dan item pada tagihan",
+                "Proses metode pembayaran sesuai sistem",
+                "Sampaikan jumlah pembayaran dengan jelas",
+                "Konfirmasi hasil transaksi dan serahkan bukti"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Cocokkan meja dan item pada tagihan → Sampaikan jumlah pembayaran dengan jelas → Proses metode pembayaran sesuai sistem → Konfirmasi hasil transaksi dan serahkan bukti.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "fs-12",
+          "title": "Pembersihan, pengisian ulang, dan serah terima",
+          "minutes": 25,
+          "objectives": [
+            "Membersihkan stasiun, memilah limbah, mengisi kebutuhan giliran berikutnya, dan melaporkan pekerjaan yang belum selesai.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Penutupan restoran mencakup pembersihan alat dan meja, penyimpanan bahan, pembuangan limbah, dan pemeriksaan tugas yang tersisa. Bahan disimpan menurut label serta kondisi yang berlaku; bahan kimia pembersih disimpan terpisah. Catatan pergantian giliran perlu menjelaskan stok rendah, alat rusak, bahan ditahan, atau tugas yang belum selesai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ikuti daftar penutupan dari area bersih ke area kotor dengan alat pembersih yang sesuai. Pastikan bahan dikemas, diberi identitas, dan ditempatkan di lokasi simpan yang benar. Sebelum pulang, sampaikan kekurangan stok atau masalah peralatan kepada penerima giliran; jangan menulis pekerjaan selesai bila belum dilakukan.\n\nKasus latihan: Pada akhir giliran, wadah bahan terbuka belum diberi label waktu dan pembersihan lemari pendingin belum dicatat.\nRespons yang dianjurkan: Pisahkan wadah untuk penilaian sesuai aturan, catat pembersihan yang belum selesai, dan serahkan kedua hal itu kepada pemimpin."
+            }
+          ],
+          "steps": [
+            "Periksa daftar tugas penutupan",
+            "Bersihkan dan simpan alat sesuai aturan area",
+            "Tandai bahan, stok, atau pekerjaan yang masih terbuka",
+            "Serahkan informasi kepada pemimpin atau giliran berikutnya"
+          ],
+          "caution": "Jangan mencampur bahan kimia pembersih dengan pangan atau menyembunyikan tugas yang belum selesai.",
+          "scenario": "Pada akhir giliran, wadah bahan terbuka belum diberi label waktu dan pembersihan lemari pendingin belum dicatat.",
+          "response": "Pisahkan wadah untuk penilaian sesuai aturan, catat pembersihan yang belum selesai, dan serahkan kedua hal itu kepada pemimpin.",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "reading": "せいそう",
+              "meaning": "pembersihan"
+            },
+            {
+              "japanese": "補充",
+              "reading": "ほじゅう",
+              "meaning": "pengisian ulang"
+            },
+            {
+              "japanese": "廃棄物",
+              "reading": "はいきぶつ",
+              "meaning": "limbah"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "冷蔵庫の清掃記録がまだです。",
+              "reading": "れいぞうこのせいそうきろくがまだです。",
+              "meaning": "Catatan pembersihan lemari pendingin belum selesai."
+            },
+            {
+              "japanese": "残った作業を次の人に伝えます。",
+              "reading": "のこったさぎょうをつぎのひとにつたえます。",
+              "meaning": "Saya akan meneruskan pekerjaan yang tersisa kepada giliran berikutnya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang disampaikan saat serah terima akhir giliran?",
+              "options": [
+                "Stok rendah, alat rusak, bahan ditahan, dan tugas terbuka",
+                "Hanya jumlah pelanggan yang datang",
+                "Dugaan tanpa lokasi atau status",
+                "Bahwa semua selesai walau belum dicatat"
+              ],
+              "answer": 0,
+              "explanation": "Status yang jelas membantu giliran berikutnya mengelola bahan dan menuntaskan tugas.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pada akhir giliran, wadah bahan terbuka belum diberi label waktu dan pembersihan lemari pendingin belum dicatat. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Pisahkan wadah untuk penilaian sesuai aturan, catat pembersihan yang belum selesai, dan serahkan kedua hal itu kepada pemimpin.",
+                "Tebak isi atau alergi dari nama hidangan",
+                "Pakai alat yang sama karena pelanggan sedang menunggu",
+                "Abaikan tiket lalu lanjutkan pesanan biasa"
+              ],
+              "answer": 0,
+              "explanation": "Wadah dan pembersihan belum memiliki catatan lengkap; laporkan dan serahkan statusnya.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pembersihan, pengisian ulang, dan serah terima», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa daftar tugas penutupan",
+                "Tandai bahan, stok, atau pekerjaan yang masih terbuka",
+                "Serahkan informasi kepada pemimpin atau giliran berikutnya",
+                "Bersihkan dan simpan alat sesuai aturan area"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Periksa daftar tugas penutupan → Bersihkan dan simpan alat sesuai aturan area → Tandai bahan, stok, atau pekerjaan yang masih terbuka → Serahkan informasi kepada pemimpin atau giliran berikutnya.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA Jepang — informasi dan status sektor Food Service untuk SSW",
+      "url": "https://www.ssw.go.jp/en/about/visa/"
+    },
+    {
+      "title": "ISA Jepang — ringkasan pekerjaan SSW(i)",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "MAFF — penerimaan tenaga asing di sektor Food Service",
+      "url": "https://www.maff.go.jp/j/shokusan/gaisyoku/gaikokujinzai.html"
+    },
+    {
+      "title": "OTAFF — ujian SSW(i) Food Service dan panduan ujian",
+      "url": "https://otaff.or.jp/tokutei/gaisyoku-1/"
+    },
+    {
+      "title": "OTAFF — pemberitahuan penghentian pemesanan ujian Food Service SSW(i)",
+      "url": "https://otaff.or.jp/tokutei/news/cat5/1894/"
+    },
+    {
+      "title": "Japan Food Service Association — materi belajar ujian SSW Food Service",
+      "url": "https://www.jfnet.or.jp/"
+    },
+    {
+      "title": "MHLW — panduan HACCP dan kebersihan pangan",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/haccp/01_00020.html"
+    },
+    {
+      "title": "Consumer Affairs Agency — informasi label alergen pangan",
+      "url": "https://www.caa.go.jp/policies/policy/food_labeling/food_sanitation/allergy/"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"runtime/debug"
 	"strings"
 	"time"
 	_ "time/tzdata"
@@ -34,8 +35,17 @@ type Fetcher interface {
 	Fetch(context.Context, Source, time.Time) (FetchResult, error)
 }
 type Repository struct {
-	db  *gorm.DB
-	now func() time.Time
+	db           *gorm.DB
+	now          func() time.Time
+	errorHandler func(error)
+}
+
+func (r *Repository) SetErrorHandler(handler func(error)) { r.errorHandler = handler }
+
+func (r *Repository) reportError(err error) {
+	if err != nil && r.errorHandler != nil {
+		r.errorHandler(err)
+	}
 }
 
 func New(db *gorm.DB) (*Repository, error) {
@@ -235,17 +245,29 @@ func (r *Repository) Delete(ctx context.Context, id string) error {
 	return nil
 }
 func (r *Repository) Run(ctx context.Context, f Fetcher) {
+	defer func() {
+		if recovered := recover(); recovered != nil {
+			if r.errorHandler == nil {
+				panic(recovered)
+			}
+			r.reportError(fmt.Errorf("panic: %v\n%s", recovered, debug.Stack()))
+		}
+	}()
 	ticker := time.NewTicker(time.Minute)
 	defer ticker.Stop()
 	for {
 		sources, err := r.Sources(ctx)
 		if err != nil {
-			log.Printf("news scheduler: %v", err)
+			if ctx.Err() == nil {
+				log.Printf("news scheduler: %v", err)
+				r.reportError(err)
+			}
 		} else {
 			for _, s := range sources {
 				if s.Enabled && !s.NextFetchAt.After(r.now()) {
-					if _, err := r.Sync(ctx, f, s.ID, false); err != nil && !errors.Is(err, ErrBusy) {
+					if _, err := r.Sync(ctx, f, s.ID, false); err != nil && !errors.Is(err, ErrBusy) && ctx.Err() == nil {
 						log.Printf("news %s: %v", s.ID, err)
+						r.reportError(fmt.Errorf("news source %s: %w", s.ID, err))
 					}
 				}
 			}

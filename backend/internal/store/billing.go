@@ -197,7 +197,7 @@ func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bo
 		if IsSSWLevel(level) {
 			return true
 		}
-		return strings.ToUpper(level) == "N4" || strings.ToUpper(level) == "N3" || strings.ToUpper(level) == "JFT" || strings.ToUpper(level) == "NAT"
+		return strings.ToUpper(level) == "N4" || strings.ToUpper(level) == "N3" || IsJFTLevel(level) || strings.ToUpper(level) == "NAT"
 	}
 	if strings.Contains(path, "/ssw/") {
 		return true

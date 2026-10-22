@@ -307,11 +307,23 @@ func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, erro
 			return s.StartSimulation(userID, level)
 		}
 	}
-	if examID == "nat-5q-full-1" {
-		return s.StartSimulation(userID, "NAT")
+	if strings.HasPrefix(examID, "nat-5q-full-") && len(examID) == len("nat-5q-full-1") {
+		paperNo := strings.TrimPrefix(examID, "nat-5q-full-")
+		if paperNo < "1" || paperNo > "5" {
+			return domain.ExamAttempt{}, ErrNotFound
+		}
+		if paperNo == "1" {
+			return s.StartSimulation(userID, "NAT")
+		}
+		return s.StartSimulation(userID, "NAT-"+paperNo)
 	}
 	if examID == "jft-a2-full-1" {
 		return s.StartSimulation(userID, "JFT")
+	}
+	for paperNo := 2; paperNo <= 5; paperNo++ {
+		if examID == fmt.Sprintf("jft-a2-full-%d", paperNo) {
+			return s.StartSimulation(userID, fmt.Sprintf("JFT-%d", paperNo))
+		}
 	}
 	// Older clients used this ID for the premium N5 catalog placeholder.
 	if examID == "jlpt-n5-full-1" {
@@ -319,6 +331,12 @@ func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, erro
 	}
 	if examID == "jlpt-n3-simulation-1" {
 		return s.StartSimulation(userID, "N3")
+	}
+	if examID == "jlpt-n2-simulation-1" {
+		return s.StartSimulation(userID, "N2")
+	}
+	if examID == "jlpt-n1-simulation-1" {
+		return s.StartSimulation(userID, "N1")
 	}
 	if examID == "jlpt-n4-simulation-1" {
 		return s.StartSimulation(userID, "N4")
@@ -418,11 +436,21 @@ func seedExams() []domain.Exam {
 		{ID: "ssw-kaigo-jp-simulation-1", System: "SSW", Level: "Kaigo", Title: "Kaigo · Simulasi Bahasa Jepang 1", QuestionCount: 15, DurationMin: 30, RequiredTier: domain.TierPremium},
 		{ID: "ssw-cleaning-simulation-1", System: "SSW", Level: "Building cleaning", Title: "Pembersihan Gedung · Simulasi 1", QuestionCount: 50, DurationMin: 50, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n3-simulation-1", System: "JLPT", Level: "N3", Title: "JLPT N3 Simulation · Kosakata, Grammar & Reading", QuestionCount: 74, DurationMin: 100, RequiredTier: domain.TierPremium},
+		{ID: "jlpt-n2-simulation-1", System: "JLPT", Level: "N2", Title: "JLPT N2 Simulation · Kosakata, Grammar & Reading", QuestionCount: 64, DurationMin: 105, RequiredTier: domain.TierPremium},
+		{ID: "jlpt-n1-simulation-1", System: "JLPT", Level: "N1", Title: "JLPT N1 Simulation · Kosakata, Grammar & Reading", QuestionCount: 64, DurationMin: 110, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-simulation-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
 		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 1 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "nat-5q-full-2", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 2 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "nat-5q-full-3", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 3 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "nat-5q-full-4", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 4 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
+		{ID: "nat-5q-full-5", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 5 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
 		{ID: "jft-a2-full-1", System: "JFT", Level: "A2", Title: "JFT Exam 1 · Latihan tertulis", QuestionCount: 36, DurationMin: 45, RequiredTier: domain.TierPremium},
+		{ID: "jft-a2-full-2", System: "JFT", Level: "A2", Title: "JFT Exam 2 · Latihan tertulis orisinal", QuestionCount: 36, DurationMin: 45, RequiredTier: domain.TierPremium},
+		{ID: "jft-a2-full-3", System: "JFT", Level: "A2", Title: "JFT Exam 3 · Latihan tertulis orisinal", QuestionCount: 36, DurationMin: 45, RequiredTier: domain.TierPremium},
+		{ID: "jft-a2-full-4", System: "JFT", Level: "A2", Title: "JFT Exam 4 · Latihan tertulis orisinal", QuestionCount: 36, DurationMin: 45, RequiredTier: domain.TierPremium},
+		{ID: "jft-a2-full-5", System: "JFT", Level: "A2", Title: "JFT Exam 5 · Latihan tertulis orisinal", QuestionCount: 36, DurationMin: 45, RequiredTier: domain.TierPremium},
 	}
 }
 

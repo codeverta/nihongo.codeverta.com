@@ -112,7 +112,7 @@ Jawaban dipilih sebelum pembahasan ditampilkan. Jika belum tepat, pengguna dapat
 
 Materi berupa asset offline `assets/content/ssw/kaigo.json`. Pembuka referensi membutuhkan browser/jaringan. Progress menggunakan SharedPreferences dengan key per akun `ssw_kaigo_completed_v1_{userId}`, tersimpan pada perangkat yang sama, tidak disinkronkan ke server, dan dibersihkan setelah penghapusan akun berhasil. Tamu dapat belajar dengan progress sesi saja. Menyelesaikan lesson tidak memberi XP atau achievement palsu.
 
-Materi Kaigo dapat dibaca tanpa pembelian. Ini tidak mengubah entitlement JLPT atau ujian yang sudah ada. Latihan dan simulasi Kaigo serta materi, latihan, dan simulasi Pembersihan Gedung kini aktif; lihat [latihan SSW](ssw-assessments.md). Pertanian serta Perikanan dan Budi Daya juga aktif; lihat [bidang baru](ssw-agriculture-fishery.md). Materi 15 bidang lain masih Coming Soon.
+Materi Kaigo dapat dibaca tanpa pembelian. Ini tidak mengubah entitlement JLPT atau ujian yang sudah ada. Semua 19 bidang SSW kini memiliki materi dan latihan; latihan serta simulasi memerlukan Lifetime Access. Lihat [ringkasan bidang dan materi](ssw-section.md) serta [detail latihan dan simulasi](ssw-assessments.md).
 
 ## Referensi
 

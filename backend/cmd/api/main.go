@@ -2,11 +2,13 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 	"syscall"
 	"time"
@@ -15,6 +17,7 @@ import (
 	"nihongo-master-backend/internal/auth"
 	"nihongo-master-backend/internal/billing"
 	"nihongo-master-backend/internal/config"
+	"nihongo-master-backend/internal/diagnostics"
 	"nihongo-master-backend/internal/jobfetch"
 	"nihongo-master-backend/internal/jobs"
 	"nihongo-master-backend/internal/manga"
@@ -79,6 +82,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	diagnosticRepository, err := diagnostics.New(jobDB)
+	if err != nil {
+		log.Fatalf("configure error diagnostics: %v", err)
+	}
+	diagnosticToken := os.Getenv("DIAGNOSTICS_ADMIN_TOKEN")
+	if diagnosticToken == "" {
+		diagnosticToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	apiServer.ConfigureDiagnostics(diagnosticRepository, diagnosticToken)
 	jobInterval, err := jobs.Interval(os.Getenv("JOBS_SYNC_INTERVAL_HOURS"))
 	if err != nil {
 		log.Fatal(err)
@@ -87,6 +99,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("configure Japan jobs: %v", err)
 	}
+	jobRepository.SetErrorHandler(func(err error) { apiServer.ReportBackendWorkerError("jobs-sync", err) })
 	apiServer.ConfigureJobs(jobRepository)
 	jobsContext, stopJobs := context.WithCancel(context.Background())
 	defer stopJobs()
@@ -96,12 +109,18 @@ func main() {
 	billingContext, stopBilling := context.WithCancel(context.Background())
 	defer stopBilling()
 	go func() {
+		defer func() {
+			if recovered := recover(); recovered != nil {
+				apiServer.ReportBackendWorkerError("billing-reconciliation", fmt.Errorf("panic: %v\n%s", recovered, debug.Stack()))
+			}
+		}()
 		ticker := time.NewTicker(5 * time.Minute)
 		defer ticker.Stop()
 		for {
 			ctx, cancel := context.WithTimeout(billingContext, 4*time.Minute)
 			if err := billingService.Reconcile(ctx); err != nil {
 				log.Printf("billing reconciliation: %v", err)
+				apiServer.ReportBackendWorkerError("billing-reconciliation", err)
 			}
 			cancel()
 			select {
@@ -146,6 +165,7 @@ func main() {
 	if err := apiServer.ConfigureNews(newsRepository, newsFetcher, newsToken, filepath.Join(filepath.Dir(brandingPath), "news-images"), jobsContext); err != nil {
 		log.Fatal(err)
 	}
+	newsRepository.SetErrorHandler(func(err error) { apiServer.ReportBackendWorkerError("news-sync", err) })
 	if os.Getenv("NEWS_SYNC_ENABLED") != "false" {
 		go newsRepository.Run(jobsContext, newsFetcher)
 	}
@@ -166,6 +186,7 @@ func main() {
 		mangaToken = os.Getenv("BRANDING_ADMIN_TOKEN")
 	}
 	apiServer.ConfigureManga(mangaRepository, mangaToken)
+	mangaRepository.SetErrorHandler(func(err error) { apiServer.ReportBackendWorkerError("manga-sync", err) })
 	if os.Getenv("MANGA_SYNC_ENABLED") != "false" && mangaStorage != nil {
 		go mangaRepository.Run(jobsContext, manga.NewFetcher())
 	} else if mangaStorage == nil {

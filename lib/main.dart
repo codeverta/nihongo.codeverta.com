@@ -1,8 +1,12 @@
+import 'dart:async';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/app_update/app_update_controller.dart';
 import 'package:nihongo_master/core/app_update/app_update_gate.dart';
 import 'package:nihongo_master/core/branding/app_branding.dart';
+import 'package:nihongo_master/core/diagnostics/error_reporter.dart';
 import 'package:nihongo_master/core/notifications/notification_lifecycle.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
@@ -10,15 +14,36 @@ import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/billing/presentation/billing_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final preferences = await SharedPreferences.getInstance();
+void main() {
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      FlutterError.onError = (details) {
+        FlutterError.presentError(details);
+        unawaited(
+          ErrorReporter.capture(
+            details.exception,
+            details.stack ?? StackTrace.current,
+          ),
+        );
+      };
+      PlatformDispatcher.instance.onError = (error, stackTrace) {
+        unawaited(ErrorReporter.capture(error, stackTrace, severity: 'fatal'));
+        return false;
+      };
 
-  runApp(
-    ProviderScope(
-      overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
-      child: const NihongoMasterApp(),
-    ),
+      final preferences = await SharedPreferences.getInstance();
+      ErrorReporter.initialize(preferences);
+      runApp(
+        ProviderScope(
+          overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
+          child: const NihongoMasterApp(),
+        ),
+      );
+    },
+    (error, stackTrace) {
+      unawaited(ErrorReporter.capture(error, stackTrace, severity: 'fatal'));
+    },
   );
 }
 

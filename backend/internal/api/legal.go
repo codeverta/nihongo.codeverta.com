@@ -36,9 +36,6 @@ func (s *Server) registerLegal(mux *http.ServeMux) {
 			w.Write(body)
 		}
 		mux.HandleFunc("GET "+page.path, handler)
-		if page.name == "index" {
-			mux.HandleFunc("GET /{$}", handler)
-		}
 	}
 	for alias, target := range map[string]string{"/privacy": "/privacy-policy", "/terms": "/terms-of-service", "/refunds": "/refund-policy", "/account-deletion": "/delete-account"} {
 		destination := target

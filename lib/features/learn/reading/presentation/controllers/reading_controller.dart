@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/reading/data/reading_repository.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
@@ -12,13 +13,13 @@ import 'package:nihongo_master/features/profile/data/gamification_repository.dar
 final readingRepositoryProvider = Provider<ReadingRepository>(
   (ref) => ReadingRepository(ref.watch(dioProvider)),
 );
-final readingCourseProvider =
-    FutureProvider.autoDispose.family<ReadingCourse, String>((ref, level) {
-  ref
-    ..watch(authControllerProvider.select((s) => s.status))
-    ..watch(authControllerProvider.select((s) => s.user?.id));
-  return ref.watch(readingRepositoryProvider).getCourse(level: level);
-});
+final readingCourseProvider = FutureProvider.autoDispose
+    .family<ReadingCourse, String>((ref, level) {
+      ref
+        ..watch(authControllerProvider.select((s) => s.status))
+        ..watch(authControllerProvider.select((s) => s.user?.id));
+      return ref.watch(readingRepositoryProvider).getCourse(level: level);
+    });
 
 enum ReadingStage { study, quiz, result }
 
@@ -57,45 +58,55 @@ class ReadingState {
     bool? busy,
     String? error,
     bool clearAnswer = false,
-  }) =>
-      ReadingState(
-        lesson: lesson,
-        stage: stage ?? this.stage,
-        pageIndex: pageIndex ?? this.pageIndex,
-        questionIndex: questionIndex ?? this.questionIndex,
-        attempt: attempt ?? this.attempt,
-        selection: clearAnswer ? null : selection ?? this.selection,
-        feedback: clearAnswer ? null : feedback ?? this.feedback,
-        result: result ?? this.result,
-        busy: busy ?? this.busy,
-        error: error,
-      );
+  }) => ReadingState(
+    lesson: lesson,
+    stage: stage ?? this.stage,
+    pageIndex: pageIndex ?? this.pageIndex,
+    questionIndex: questionIndex ?? this.questionIndex,
+    attempt: attempt ?? this.attempt,
+    selection: clearAnswer ? null : selection ?? this.selection,
+    feedback: clearAnswer ? null : feedback ?? this.feedback,
+    result: result ?? this.result,
+    busy: busy ?? this.busy,
+    error: error,
+  );
 }
 
 final readingLessonProvider = StateNotifierProvider.autoDispose
     .family<ReadingController, AsyncValue<ReadingState>, String>((ref, id) {
-  // Recreate the controller when the signed-in account changes.
-  ref.watch(authControllerProvider.select((s) => s.user?.id));
-  final c = ReadingController(
-    ref.watch(readingRepositoryProvider),
-    id,
-    onProgress: () {
-      ref
-        ..invalidate(readingCourseProvider)
-        ..invalidate(homeDashboardProvider)
-        ..invalidate(gamificationProvider);
-    },
-  );
-  unawaited(c.load());
-  return c;
-});
+      // Recreate the controller when the signed-in account changes.
+      final userId = ref.watch(
+        authControllerProvider.select((s) => s.user?.id),
+      );
+      final c = ReadingController(
+        ref.watch(readingRepositoryProvider),
+        id,
+        history: userId == null
+            ? null
+            : ref.watch(learningHistoryProvider.notifier),
+        onProgress: () {
+          ref
+            ..invalidate(readingCourseProvider)
+            ..invalidate(homeDashboardProvider)
+            ..invalidate(gamificationProvider);
+        },
+      );
+      unawaited(c.load());
+      return c;
+    });
 
 class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
-  ReadingController(this.repository, this.lessonId, {required this.onProgress})
-      : super(const AsyncValue.loading());
+  ReadingController(
+    this.repository,
+    this.lessonId, {
+    required this.onProgress,
+    this.history,
+  }) : super(const AsyncValue.loading());
   final ReadingRepository repository;
   final String lessonId;
   final VoidCallback onProgress;
+  final LearningHistoryController? history;
+
   Future<void> load() async {
     state = const AsyncValue.loading();
     final loaded = await AsyncValue.guard(() async {
@@ -103,7 +114,17 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
       if (lesson.pages.isEmpty) {
         throw const ReadingException('Lesson ini belum memiliki materi.');
       }
-      return ReadingState(lesson: lesson);
+      final savedPosition = mounted
+          ? await history?.open(
+              kind: 'reading',
+              isActive: () => mounted,
+              lessonId: lesson.summary.id,
+              title: lesson.summary.title,
+              total: lesson.pages.length,
+              completed: lesson.summary.completed,
+            )
+          : null;
+      return ReadingState(lesson: lesson, pageIndex: savedPosition ?? 0);
     });
     if (mounted) state = loaded;
   }
@@ -114,6 +135,7 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
     final index = s.pageIndex + delta;
     if (index >= 0 && index < s.lesson.pages.length) {
       state = AsyncValue.data(s.copyWith(pageIndex: index));
+      history?.position('reading', lessonId, index);
     }
   }
 
@@ -191,14 +213,11 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
     state = AsyncValue.data(s.copyWith(busy: true));
     try {
       final result = await repository.complete(s.attempt!.id);
+      if (mounted && result.passed) history?.complete('reading', lessonId);
       if (mounted) {
         onProgress();
         state = AsyncValue.data(
-          s.copyWith(
-            stage: ReadingStage.result,
-            result: result,
-            busy: false,
-          ),
+          s.copyWith(stage: ReadingStage.result, result: result, busy: false),
         );
       }
     } on Object catch (e) {
@@ -212,6 +231,7 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
     final s = state.valueOrNull;
     if (s != null && !s.busy) {
       state = AsyncValue.data(ReadingState(lesson: s.lesson));
+      history?.position('reading', lessonId, 0);
     }
   }
 }

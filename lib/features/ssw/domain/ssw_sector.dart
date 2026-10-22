@@ -7,7 +7,7 @@ class SswSector {
   final String keywords;
 }
 
-// SSW (i) fields, checked against ssw.go.jp/id/about/visa/ on 2026-10-11.
+// SSW (i) fields, checked against ssw.go.jp/id/about/visa/ on 2026-10-22.
 const sswSectors = [
   SswSector(
     'nursing-care',
@@ -102,6 +102,21 @@ const sswActiveSectorIds = {
   'building-cleaning',
   'agriculture',
   'fishery',
+  'linen-supply',
+  'industrial-manufacturing',
+  'construction',
+  'shipbuilding',
+  'automobile-maintenance',
+  'aviation',
+  'accommodation',
+  'road-transport',
+  'railway',
+  'logistics-warehouse',
+  'food-manufacturing',
+  'food-service',
+  'forestry',
+  'wood-industry',
+  'resource-recycling',
 };
 
 const sswAssessmentLevels = <String, List<String>>{
@@ -109,4 +124,19 @@ const sswAssessmentLevels = <String, List<String>>{
   'building-cleaning': ['SSW-CLEANING'],
   'agriculture': ['SSW-AGRICULTURE-CROP', 'SSW-AGRICULTURE-LIVESTOCK'],
   'fishery': ['SSW-FISHERY-CAPTURE', 'SSW-FISHERY-AQUACULTURE'],
+  'linen-supply': ['SSW-LINEN-SUPPLY'],
+  'industrial-manufacturing': ['SSW-INDUSTRIAL-MANUFACTURING'],
+  'construction': ['SSW-CONSTRUCTION'],
+  'shipbuilding': ['SSW-SHIPBUILDING'],
+  'automobile-maintenance': ['SSW-AUTOMOBILE-MAINTENANCE'],
+  'aviation': ['SSW-AVIATION'],
+  'accommodation': ['SSW-ACCOMMODATION'],
+  'road-transport': ['SSW-ROAD-TRANSPORT'],
+  'railway': ['SSW-RAILWAY'],
+  'logistics-warehouse': ['SSW-LOGISTICS-WAREHOUSE'],
+  'food-manufacturing': ['SSW-FOOD-MANUFACTURING'],
+  'food-service': ['SSW-FOOD-SERVICE'],
+  'forestry': ['SSW-FORESTRY'],
+  'wood-industry': ['SSW-WOOD-INDUSTRY'],
+  'resource-recycling': ['SSW-RESOURCE-RECYCLING'],
 };

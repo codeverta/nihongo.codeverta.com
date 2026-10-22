@@ -8,6 +8,8 @@ import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
 import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
+import 'package:nihongo_master/features/learn/activity/continue_learning_section.dart';
+import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/features/news/presentation/news_screens.dart';
@@ -42,13 +44,29 @@ class DashboardScreen extends ConsumerWidget {
       ),
     );
     return dashboard.when(
-      loading: () => const _LoadingView(),
-      error: (error, stackTrace) => _ErrorView(
-        message: error.toString(),
-        retry: () => ref.invalidate(homeDashboardProvider),
+      loading: () => ListView(
+        padding: const EdgeInsets.all(20),
+        children: const [
+          ContinueLearningSection(),
+          SizedBox(height: 240, child: _LoadingView()),
+        ],
+      ),
+      error: (error, stackTrace) => ListView(
+        padding: const EdgeInsets.all(20),
+        children: [
+          const ContinueLearningSection(),
+          _ErrorView(
+            message: error.toString(),
+            retry: () {
+              ref.invalidate(homeDashboardProvider);
+              ref.read(learningHistoryProvider.notifier).refresh();
+            },
+          ),
+        ],
       ),
       data: (data) => RefreshIndicator(
         onRefresh: () async {
+          await ref.read(learningHistoryProvider.notifier).refresh();
           await (ref
                 ..invalidate(newsPreviewProvider)
                 ..invalidate(homeDashboardProvider))
@@ -141,6 +159,7 @@ class _DashboardContent extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
               ],
+              const ContinueLearningSection(),
               _SectionHeader(
                 title: 'Mulai belajar',
                 action: 'Lihat semua',

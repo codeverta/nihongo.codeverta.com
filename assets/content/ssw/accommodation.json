@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "frontdesk",
+      "title": "Resepsionis dan kedatangan tamu",
+      "description": "Melaksanakan alur layanan depan, menjaga identitas tamu, dan meneruskan permintaan yang perlu persetujuan petugas.",
+      "lessons": [
+        {
+          "id": "accommodation-01",
+          "title": "Menyambut tamu dan memeriksa reservasi",
+          "minutes": 25,
+          "objectives": [
+            "Menyapa tamu serta mencocokkan nama, tanggal, jumlah tamu, dan nomor konfirmasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Layanan resepsionis dimulai dengan sapaan, pencarian reservasi, dan konfirmasi jumlah tamu serta lama menginap. Gunakan sistem dan aturan properti. Jika nama atau tanggal tidak cocok, periksa ejaan dan nomor konfirmasi dengan tenang. Jangan menyebutkan data tamu lain atau mengubah reservasi tanpa akses."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ulangi informasi penting dan minta tamu mengonfirmasi. Bila reservasi tidak ditemukan, jangan menyalahkan tamu atau menjanjikan kamar. Hubungi petugas senior, periksa sistem alternatif yang disetujui, dan berikan tempat menunggu yang sesuai."
+            }
+          ],
+          "steps": [
+            "Sapa tamu dan tanyakan nama reservasi",
+            "Cocokkan tanggal, jumlah tamu, dan nomor konfirmasi",
+            "Jelaskan hasil pemeriksaan dengan sopan",
+            "Eskalasi ketidakcocokan sebelum mengubah data"
+          ],
+          "caution": "Jangan membacakan nama atau detail reservasi orang lain di area umum.",
+          "scenario": "Tamu menunjukkan konfirmasi reservasi tetapi namanya tidak muncul pada layar resepsionis.",
+          "response": "Periksa ejaan dan tanggal bersama tamu, jangan menjanjikan kamar, lalu minta petugas senior menelusuri sistem reservasi.",
+          "vocabulary": [
+            {
+              "japanese": "予約",
+              "reading": "よやく",
+              "meaning": "reservasi"
+            },
+            {
+              "japanese": "宿泊日",
+              "reading": "しゅくはくび",
+              "meaning": "tanggal menginap"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "konfirmasi"
+            },
+            {
+              "japanese": "受付",
+              "reading": "うけつけ",
+              "meaning": "penerimaan/resepsionis"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご予約のお名前をお願いします。",
+              "reading": "ごよやくのおなまえをおねがいします。",
+              "meaning": "Mohon nama pada reservasi."
+            },
+            {
+              "japanese": "確認しますので、少々お待ちください。",
+              "reading": "かくにんしますので、しょうしょうおまちください。",
+              "meaning": "Mohon tunggu sebentar, saya akan memeriksanya."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Data apa yang dicocokkan saat mencari reservasi?",
+              "options": [
+                "Nama, tanggal, jumlah tamu, dan nomor konfirmasi bila ada",
+                "Nomor kamar tamu lain",
+                "Alamat semua tamu",
+                "Warna koper"
+              ],
+              "answer": 0,
+              "explanation": "Mencocokkan beberapa data membantu menemukan reservasi dan mencegah kesalahan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Konfirmasi reservasi ada tetapi nama tak ditemukan di sistem. Apa tindakan tepat?",
+              "options": [
+                "Janji kamar tanpa memeriksa",
+                "Periksa ejaan/tanggal dan minta petugas senior menelusuri sistem",
+                "Hapus konfirmasi tamu",
+                "Tampilkan data tamu lain"
+              ],
+              "answer": 1,
+              "explanation": "Perbedaan perlu diverifikasi sebelum menjanjikan kamar atau mengubah data."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Menyambut tamu dan memeriksa reservasi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Cocokkan tanggal, jumlah tamu, dan nomor konfirmasi",
+                "Sapa tamu dan tanyakan nama reservasi",
+                "Jelaskan hasil pemeriksaan dengan sopan",
+                "Eskalasi ketidakcocokan sebelum mengubah data"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Sapa tamu dan tanyakan nama reservasi → Cocokkan tanggal, jumlah tamu, dan nomor konfirmasi → Jelaskan hasil pemeriksaan dengan sopan → Eskalasi ketidakcocokan sebelum mengubah data."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-02",
+          "title": "Check-in, identitas, dan privasi",
+          "minutes": 25,
+          "objectives": [
+            "Memverifikasi data tamu dan memberikan kunci melalui prosedur yang menjaga kerahasiaan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Saat check-in, ikuti aturan properti untuk informasi identitas dan data menginap. Pastikan orang yang menerima kunci berhak atas kamar. Jangan menyebut nomor kamar keras-keras atau memperlihatkan data pada layar. Dokumen dan data tamu hanya digunakan untuk tujuan kerja yang diizinkan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Minta dokumen dengan sopan, cocokkan nama dengan reservasi, jelaskan formulir, dan pastikan kunci diberikan kepada orang yang benar. Jika identitas, jumlah tamu, atau status pembayaran tidak cocok, jangan berikan kunci; minta petugas senior membantu dan simpan dokumen di tempat yang ditentukan."
+            }
+          ],
+          "steps": [
+            "Verifikasi reservasi dan identitas sesuai prosedur",
+            "Jelaskan formulir atau data yang perlu dikonfirmasi",
+            "Pastikan penerima kunci berhak atas kamar",
+            "Simpan data dan serahkan masalah kepada senior"
+          ],
+          "caution": "Jangan memperlihatkan layar, dokumen, atau nomor kamar kepada orang yang tidak berhak.",
+          "scenario": "Seseorang meminta kunci kamar atas nama temannya, tetapi namanya tidak tercantum dalam reservasi.",
+          "response": "Jangan berikan kunci atau nomor kamar. Hubungi tamu terdaftar atau petugas senior untuk memverifikasi izin.",
+          "vocabulary": [
+            {
+              "japanese": "本人確認",
+              "reading": "ほんにんかくにん",
+              "meaning": "verifikasi identitas"
+            },
+            {
+              "japanese": "鍵",
+              "reading": "かぎ",
+              "meaning": "kunci"
+            },
+            {
+              "japanese": "個人情報",
+              "reading": "こじんじょうほう",
+              "meaning": "informasi pribadi"
+            },
+            {
+              "japanese": "宿泊者",
+              "reading": "しゅくはくしゃ",
+              "meaning": "tamu yang menginap"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご本人様を確認します。",
+              "reading": "ごほんにんさまをかくにんします。",
+              "meaning": "Saya akan memverifikasi identitas Anda."
+            },
+            {
+              "japanese": "確認が終わるまで鍵を渡せません。",
+              "reading": "かくにんがおわるまでかぎをわたせません。",
+              "meaning": "Saya belum dapat memberikan kunci sebelum verifikasi selesai."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa nomor kamar tidak disebut keras-keras di area umum?",
+              "options": [
+                "Untuk melindungi privasi dan keselamatan tamu",
+                "Agar tamu tidak perlu mengingat kunci",
+                "Agar resepsionis tidak perlu memakai sistem",
+                "Agar semua orang tahu kamar kosong"
+              ],
+              "answer": 0,
+              "explanation": "Nomor kamar dapat memengaruhi keamanan dan privasi."
+            },
+            {
+              "kind": "case",
+              "prompt": "Orang yang tidak tercantum meminta kunci kamar temannya. Apa tindakan tepat?",
+              "options": [
+                "Berikan kunci setelah mendengar nama teman",
+                "Jangan berikan kunci atau nomor; verifikasi melalui tamu/petugas senior",
+                "Tulis nomor kamar di kertas",
+                "Tampilkan daftar tamu"
+              ],
+              "answer": 1,
+              "explanation": "Hak menerima kunci harus dikonfirmasi untuk mencegah akses tanpa izin."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Check-in, identitas, dan privasi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Jelaskan formulir atau data yang perlu dikonfirmasi",
+                "Verifikasi reservasi dan identitas sesuai prosedur",
+                "Pastikan penerima kunci berhak atas kamar",
+                "Simpan data dan serahkan masalah kepada senior"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Verifikasi reservasi dan identitas sesuai prosedur → Jelaskan formulir atau data yang perlu dikonfirmasi → Pastikan penerima kunci berhak atas kamar → Simpan data dan serahkan masalah kepada senior."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-03",
+          "title": "Perubahan jadwal dan status kamar",
+          "minutes": 25,
+          "objectives": [
+            "Menangani permintaan perpanjangan atau pindah kamar tanpa memperbarui sistem secara sepihak.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Reservasi, kebersihan, pembayaran, dan ketersediaan harus sesuai sebelum perubahan. Perpanjangan atau pindah kamar dapat memengaruhi tarif, pembersihan, serta tamu berikutnya. Petugas mencatat permintaan dan memeriksa aturan properti; hanya orang berwenang mengesahkan perubahan tertentu."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ulangi permintaan dan catat waktu serta kamar terkait. Periksa sistem, lalu jelaskan bahwa perubahan menunggu konfirmasi jika belum disetujui. Jangan memindahkan barang atau memberi kunci kamar lain sebelum status kamar, kebersihan, pembayaran, dan izin dipastikan."
+            }
+          ],
+          "steps": [
+            "Ulangi permintaan beserta tanggal atau kamar",
+            "Periksa ketersediaan dan aturan pada sistem",
+            "Minta persetujuan petugas berwenang bila perlu",
+            "Perbarui catatan dan beri tahu bagian terkait"
+          ],
+          "caution": "Jangan menjanjikan kamar atau mengubah tanggal sebelum sistem dan petugas mengonfirmasi.",
+          "scenario": "Tamu ingin pindah karena suara bising, tetapi kamar pengganti berstatus belum diperiksa.",
+          "response": "Minta maaf dan catat keluhan. Jangan berikan kunci kamar yang belum siap; minta senior dan housekeeping memeriksa pilihan.",
+          "vocabulary": [
+            {
+              "japanese": "変更",
+              "reading": "へんこう",
+              "meaning": "perubahan"
+            },
+            {
+              "japanese": "空室",
+              "reading": "くうしつ",
+              "meaning": "kamar kosong"
+            },
+            {
+              "japanese": "延長",
+              "reading": "えんちょう",
+              "meaning": "perpanjangan"
+            },
+            {
+              "japanese": "清掃状況",
+              "reading": "せいそうじょうきょう",
+              "meaning": "status kebersihan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "部屋を変更できますか。",
+              "reading": "へやをへんこうできますか。",
+              "meaning": "Apakah saya bisa pindah kamar?"
+            },
+            {
+              "japanese": "空室と清掃状況を確認します。",
+              "reading": "くうしつとせいそうじょうきょうをかくにんします。",
+              "meaning": "Saya memeriksa ketersediaan dan kebersihannya."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang perlu dipastikan sebelum memberikan kamar pengganti?",
+              "options": [
+                "Ketersediaan, status bersih, dan persetujuan sesuai sistem",
+                "Hanya apakah pintu terbuka",
+                "Kamar yang paling dekat",
+                "Keinginan petugas shift"
+              ],
+              "answer": 0,
+              "explanation": "Kamar harus tersedia, siap, dan dipindahkan melalui prosedur."
+            },
+            {
+              "kind": "case",
+              "prompt": "Kamar pengganti berstatus belum diperiksa. Apa yang dilakukan?",
+              "options": [
+                "Berikan kunci agar cepat",
+                "Minta senior dan housekeeping memastikan kesiapan sebelum memberi kunci",
+                "Pindahkan barang ke lorong",
+                "Ubah status sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Kamar yang kebersihannya belum dipastikan tidak boleh diberikan begitu saja."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Perubahan jadwal dan status kamar», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa ketersediaan dan aturan pada sistem",
+                "Ulangi permintaan beserta tanggal atau kamar",
+                "Minta persetujuan petugas berwenang bila perlu",
+                "Perbarui catatan dan beri tahu bagian terkait"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Ulangi permintaan beserta tanggal atau kamar → Periksa ketersediaan dan aturan pada sistem → Minta persetujuan petugas berwenang bila perlu → Perbarui catatan dan beri tahu bagian terkait."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guestservice",
+      "title": "Pelayanan, permintaan, dan keluhan",
+      "description": "Mendengar kebutuhan tamu, memberi panduan akurat, dan meneruskan masalah dengan tenang sesuai kewenangan.",
+      "lessons": [
+        {
+          "id": "accommodation-04",
+          "title": "Memberi arah dan informasi fasilitas",
+          "minutes": 25,
+          "objectives": [
+            "Memberi petunjuk singkat yang akurat dengan memakai informasi properti terbaru.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tamu menanyakan jam sarapan, lokasi lift, akses kamar, transportasi, dan layanan. Periksa papan informasi atau sumber properti yang terbaru. Gunakan arah sederhana dan peta bila ada. Jika belum tahu, tanyakan kepada rekan daripada menebak jadwal, lokasi, atau fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebutkan lokasi serta patokan yang mudah, lalu tawarkan menunjukkan arah bila sesuai tugas. Untuk jadwal transportasi atau informasi di luar properti, gunakan sumber yang disetujui. Jangan mengandalkan jadwal kedaluwarsa atau membagikan data pribadi staf dan tamu."
+            }
+          ],
+          "steps": [
+            "Tanyakan informasi yang dibutuhkan tamu",
+            "Periksa papan, peta, atau sumber properti",
+            "Jelaskan lokasi atau jadwal dengan singkat",
+            "Pastikan pemahaman dan eskalasi jika belum pasti"
+          ],
+          "caution": "Jangan memberi arah atau waktu yang belum diperiksa hanya agar cepat menjawab.",
+          "scenario": "Tamu bertanya jadwal bus bandara, tetapi papan yang ada telah melewati tanggal berlaku.",
+          "response": "Jangan menebak jadwal. Katakan akan memeriksa informasi terbaru, lalu hubungi sumber transportasi atau petugas yang ditunjuk.",
+          "vocabulary": [
+            {
+              "japanese": "案内",
+              "reading": "あんない",
+              "meaning": "panduan"
+            },
+            {
+              "japanese": "館内",
+              "reading": "かんない",
+              "meaning": "di dalam gedung"
+            },
+            {
+              "japanese": "地図",
+              "reading": "ちず",
+              "meaning": "peta"
+            },
+            {
+              "japanese": "時刻表",
+              "reading": "じこくひょう",
+              "meaning": "jadwal waktu"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "朝食会場はどこですか。",
+              "reading": "ちょうしょくかいじょうはどこですか。",
+              "meaning": "Di mana ruang sarapan?"
+            },
+            {
+              "japanese": "エレベーターの隣です。",
+              "reading": "えれべーたーのとなりです。",
+              "meaning": "Di sebelah lift."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang sebaiknya dilakukan ketika jadwal yang tersedia sudah kedaluwarsa?",
+              "options": [
+                "Periksa sumber terbaru atau tanyakan petugas yang ditunjuk",
+                "Gunakan jadwal lama karena mudah",
+                "Sebut perkiraan tanpa menjelaskan",
+                "Abaikan pertanyaan"
+              ],
+              "answer": 0,
+              "explanation": "Informasi yang berubah perlu diperiksa sebelum diberikan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Jadwal bus di papan sudah kedaluwarsa. Apa tindakan tepat?",
+              "options": [
+                "Sebut waktu lama sebagai jadwal berikutnya",
+                "Katakan akan memeriksa lalu gunakan sumber terbaru",
+                "Suruh tamu menunggu tanpa informasi",
+                "Tulis perkiraan sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Sumber kedaluwarsa tidak mendukung jawaban akurat."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Memberi arah dan informasi fasilitas», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa papan, peta, atau sumber properti",
+                "Tanyakan informasi yang dibutuhkan tamu",
+                "Jelaskan lokasi atau jadwal dengan singkat",
+                "Pastikan pemahaman dan eskalasi jika belum pasti"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Tanyakan informasi yang dibutuhkan tamu → Periksa papan, peta, atau sumber properti → Jelaskan lokasi atau jadwal dengan singkat → Pastikan pemahaman dan eskalasi jika belum pasti."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-05",
+          "title": "Menerima keluhan dan mengatur tindak lanjut",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan keluhan, meminta maaf atas ketidaknyamanan, mencatat fakta, dan meneruskan tindakan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Keluhan dapat menyangkut kebisingan, suhu, kebersihan, makanan, atau layanan. Dengarkan tanpa menyela, minta maaf atas ketidaknyamanan, dan ulangi masalah. Jangan menyalahkan rekan atau menjanjikan kompensasi maupun waktu perbaikan yang belum disetujui. Teruskan kepada bagian yang dapat bertindak."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat waktu, masalah yang dilaporkan, dan tindakan awal pada sistem yang aman. Untuk bahaya seperti bau gas, kabel panas, atau tamu sakit, gunakan jalur darurat properti. Setelah serah terima, jelaskan siapa yang menindaklanjuti dan kapan informasi akan diperbarui."
+            }
+          ],
+          "steps": [
+            "Dengarkan dan minta maaf dengan sopan",
+            "Ulangi masalah serta catat fakta dan waktu",
+            "Hubungi bagian terkait sesuai tingkat risiko",
+            "Jelaskan tindak lanjut yang sudah dikonfirmasi dan cek status"
+          ],
+          "caution": "Jangan menyalahkan tamu atau menjanjikan solusi yang belum disetujui.",
+          "scenario": "Tamu mencium bau tajam di kamar dan merasa pusing; sumber bau belum diketahui.",
+          "response": "Bantu tamu pindah ke tempat aman, segera laporkan kemungkinan bahaya, dan ikuti prosedur darurat; jangan menyuruhnya menunggu di kamar.",
+          "vocabulary": [
+            {
+              "japanese": "苦情",
+              "reading": "くじょう",
+              "meaning": "keluhan"
+            },
+            {
+              "japanese": "不便",
+              "reading": "ふべん",
+              "meaning": "ketidaknyamanan"
+            },
+            {
+              "japanese": "担当部署",
+              "reading": "たんとうぶしょ",
+              "meaning": "bagian terkait"
+            },
+            {
+              "japanese": "対応状況",
+              "reading": "たいおうじょうきょう",
+              "meaning": "status penanganan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご不便をおかけして申し訳ありません。",
+              "reading": "ごふべんをおかけしてもうしわけありません。",
+              "meaning": "Mohon maaf atas ketidaknyamanan ini."
+            },
+            {
+              "japanese": "すぐに担当者へ連絡します。",
+              "reading": "すぐにたんとうしゃへれんらくします。",
+              "meaning": "Saya segera menghubungi petugas terkait."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang sebaiknya dilakukan sebelum menjanjikan penyelesaian keluhan?",
+              "options": [
+                "Pastikan tindakan dan waktu dengan bagian yang bertanggung jawab",
+                "Tebak kapan masalah selesai",
+                "Tawarkan kompensasi tanpa izin",
+                "Salahkan bagian lain"
+              ],
+              "answer": 0,
+              "explanation": "Janji harus didasarkan pada informasi dan persetujuan yang pasti."
+            },
+            {
+              "kind": "case",
+              "prompt": "Tamu merasa pusing dan mencium bau tajam. Apa tindakan tepat?",
+              "options": [
+                "Suruh menunggu di kamar",
+                "Bantu ke tempat aman dan segera jalankan prosedur pelaporan bahaya",
+                "Semprot pengharum",
+                "Tutup pintu dan lanjut bekerja"
+              ],
+              "answer": 1,
+              "explanation": "Kemungkinan bahaya kesehatan ditangani segera melalui prosedur keselamatan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Menerima keluhan dan mengatur tindak lanjut», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Ulangi masalah serta catat fakta dan waktu",
+                "Dengarkan dan minta maaf dengan sopan",
+                "Hubungi bagian terkait sesuai tingkat risiko",
+                "Jelaskan tindak lanjut yang sudah dikonfirmasi dan cek status"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Dengarkan dan minta maaf dengan sopan → Ulangi masalah serta catat fakta dan waktu → Hubungi bagian terkait sesuai tingkat risiko → Jelaskan tindak lanjut yang sudah dikonfirmasi dan cek status."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-06",
+          "title": "Permintaan khusus dan kebutuhan akses",
+          "minutes": 25,
+          "objectives": [
+            "Mengonfirmasi kebutuhan akses atau layanan khusus dan meneruskannya tanpa membuat janji yang belum pasti.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tamu mungkin meminta kamar aksesibel, bantuan barang, pilihan makanan, tempat tidur bayi, atau dukungan kesehatan. Tanyakan secukupnya dengan hormat dan jangan meminta detail pribadi yang tak diperlukan. Periksa fasilitas dan batas layanan properti. Permintaan terkait keselamatan atau kesehatan diteruskan kepada petugas terlatih."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat kebutuhan dengan istilah yang disetujui tamu pada sistem aman. Ulangi hal yang dapat dilakukan dan yang masih menunggu konfirmasi. Jangan memberi saran medis atau menjanjikan fasilitas yang belum tersedia. Saat darurat, ikuti jalur bantuan properti."
+            }
+          ],
+          "steps": [
+            "Tanyakan kebutuhan dengan sopan dan secukupnya",
+            "Periksa fasilitas serta layanan yang tersedia",
+            "Konfirmasi atau eskalasi kepada petugas tepat",
+            "Catat permintaan secara aman dan pastikan serah terima"
+          ],
+          "caution": "Jangan membuat asumsi tentang disabilitas atau kondisi kesehatan tamu.",
+          "scenario": "Tamu meminta kamar tanpa anak tangga, tetapi kamar yang tercatat tersedia belum dikonfirmasi kebersihannya.",
+          "response": "Jelaskan bahwa kamar sedang diperiksa, hubungi housekeeping atau senior untuk memastikan akses dan kesiapan, lalu beri pilihan terkonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "特別な希望",
+              "reading": "とくべつなきぼう",
+              "meaning": "permintaan khusus"
+            },
+            {
+              "japanese": "段差",
+              "reading": "だんさ",
+              "meaning": "anak tangga/perbedaan tinggi"
+            },
+            {
+              "japanese": "設備",
+              "reading": "せつび",
+              "meaning": "fasilitas"
+            },
+            {
+              "japanese": "確認します",
+              "reading": "かくにんします",
+              "meaning": "akan memeriksa"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "段差のない部屋をお願いします。",
+              "reading": "だんさのないへやをおねがいします。",
+              "meaning": "Mohon kamar tanpa anak tangga."
+            },
+            {
+              "japanese": "空室と設備を確認します。",
+              "reading": "くうしつとせつびをかくにんします。",
+              "meaning": "Saya memeriksa kamar dan fasilitasnya."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Bagaimana menanyakan kebutuhan khusus dengan baik?",
+              "options": [
+                "Tanyakan secukupnya dengan sopan dan istilah yang disetujui tamu",
+                "Minta seluruh rincian medis di lobi",
+                "Anggap tamu tak butuh bantuan",
+                "Ceritakan kepada tamu lain"
+              ],
+              "answer": 0,
+              "explanation": "Pertanyaan yang hormat membantu layanan sekaligus menjaga privasi."
+            },
+            {
+              "kind": "case",
+              "prompt": "Kamar aksesibel tersedia tetapi status bersihnya belum jelas. Apa tindakan tepat?",
+              "options": [
+                "Berikan kunci segera",
+                "Jelaskan menunggu konfirmasi lalu minta housekeeping/senior memeriksa",
+                "Pindahkan tamu tanpa persetujuan",
+                "Catat siap walau belum diperiksa"
+              ],
+              "answer": 1,
+              "explanation": "Kebutuhan akses dan kesiapan kamar perlu dipastikan sebelum penyerahan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Permintaan khusus dan kebutuhan akses», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa fasilitas serta layanan yang tersedia",
+                "Tanyakan kebutuhan dengan sopan dan secukupnya",
+                "Konfirmasi atau eskalasi kepada petugas tepat",
+                "Catat permintaan secara aman dan pastikan serah terima"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Tanyakan kebutuhan dengan sopan dan secukupnya → Periksa fasilitas serta layanan yang tersedia → Konfirmasi atau eskalasi kepada petugas tepat → Catat permintaan secara aman dan pastikan serah terima."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "restaurant",
+      "title": "Layanan restoran dan keselamatan pangan",
+      "description": "Menyiapkan meja, mengonfirmasi pesanan makanan, dan menjaga kebersihan sesuai prosedur properti.",
+      "lessons": [
+        {
+          "id": "accommodation-07",
+          "title": "Menyiapkan meja dan mengantar hidangan",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti urutan pelayanan dan memastikan hidangan diserahkan kepada meja yang tepat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Layanan restoran dimulai dari kebersihan meja, penataan alat sesuai standar, dan konfirmasi jumlah tamu. Cocokkan pesanan dengan nomor meja atau kamar pada sistem. Bawa baki dengan aman, sebutkan hidangan bila perlu, dan jangan memindahkan makanan antar meja berdasarkan perkiraan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa meja, alat makan, dan jalur berjalan. Ulangi pesanan penting kepada dapur. Jika label atau meja tidak jelas, berhenti di tempat aman dan konfirmasi. Tumpahan atau pecahan dilaporkan dan dibersihkan sesuai prosedur agar jalur tamu aman."
+            }
+          ],
+          "steps": [
+            "Periksa kebersihan meja dan perlengkapan",
+            "Cocokkan pesanan dengan nomor meja/tamu",
+            "Bawa dan sajikan melalui jalur aman",
+            "Konfirmasi tiket tak jelas dan laporkan tumpahan"
+          ],
+          "caution": "Jangan membawa hidangan dengan label yang tidak cocok dengan pesanan.",
+          "scenario": "Dua meja memesan hidangan serupa, tetapi tiket dapur tidak mencantumkan nomor meja dengan jelas.",
+          "response": "Jangan menebak meja. Tahan hidangan di tempat aman dan konfirmasikan tiket dengan dapur atau rekan.",
+          "vocabulary": [
+            {
+              "japanese": "配膳",
+              "reading": "はいぜん",
+              "meaning": "penyajian makanan"
+            },
+            {
+              "japanese": "食器",
+              "reading": "しょっき",
+              "meaning": "peralatan makan"
+            },
+            {
+              "japanese": "注文",
+              "reading": "ちゅうもん",
+              "meaning": "pesanan"
+            },
+            {
+              "japanese": "席",
+              "reading": "せき",
+              "meaning": "tempat duduk/meja"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご注文を確認します。",
+              "reading": "ごちゅうもんをかくにんします。",
+              "meaning": "Saya mengonfirmasi pesanan."
+            },
+            {
+              "japanese": "こちらのお料理でよろしいですか。",
+              "reading": "こちらのおりょうりでよろしいですか。",
+              "meaning": "Apakah ini hidangan yang Anda pesan?"
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang dicocokkan sebelum hidangan disajikan?",
+              "options": [
+                "Pesanan, nomor meja atau tamu, dan label hidangan",
+                "Warna piring",
+                "Meja dekat dapur",
+                "Urutan datang pekerja"
+              ],
+              "answer": 0,
+              "explanation": "Pencocokan mencegah salah penyajian."
+            },
+            {
+              "kind": "case",
+              "prompt": "Tiket hidangan tidak jelas dan dua meja memesan menu serupa. Apa tindakan tepat?",
+              "options": [
+                "Letakkan di meja mana saja",
+                "Tahan aman dan konfirmasi tiket dengan dapur/rekan",
+                "Tanya tamu lain",
+                "Ubah tiket sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Pesanan yang tidak jelas perlu dikonfirmasi sebelum disajikan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Menyiapkan meja dan mengantar hidangan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Cocokkan pesanan dengan nomor meja/tamu",
+                "Periksa kebersihan meja dan perlengkapan",
+                "Bawa dan sajikan melalui jalur aman",
+                "Konfirmasi tiket tak jelas dan laporkan tumpahan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa kebersihan meja dan perlengkapan → Cocokkan pesanan dengan nomor meja/tamu → Bawa dan sajikan melalui jalur aman → Konfirmasi tiket tak jelas dan laporkan tumpahan."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-08",
+          "title": "Mengonfirmasi alergi dan pantangan makanan",
+          "minutes": 25,
+          "objectives": [
+            "Meneruskan informasi alergi dengan tepat dan mencegah penyajian sebelum dapur mengonfirmasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Alergi makanan dapat menimbulkan reaksi berat. Dengarkan bahan yang disebut tamu dan catat dengan akurat. Jangan menyimpulkan hidangan aman karena bahan tidak tampak; bahan campuran dan kontak silang mungkin terjadi. Dapur atau penanggung jawab harus memeriksa resep dan cara penyiapan sesuai kebijakan properti."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Teruskan permintaan langsung ke dapur melalui saluran kerja, lalu tunggu jawaban jelas. Bila keamanan tidak dapat dipastikan, jelaskan melalui petugas berwenang dan tawarkan pilihan yang sudah diverifikasi. Jangan menjanjikan “bebas” atau mengubah resep sendiri."
+            }
+          ],
+          "steps": [
+            "Dengarkan dan catat bahan yang harus dihindari",
+            "Tandai pesanan dan teruskan ke dapur",
+            "Tunggu konfirmasi bahan serta kontak silang",
+            "Sajikan hanya pilihan yang dinyatakan aman oleh petugas"
+          ],
+          "caution": "Jangan menyatakan makanan aman sebelum bahan dan cara penyiapan diperiksa.",
+          "scenario": "Tamu alergi kacang meminta saus terpisah, tetapi label saus tidak memuat rincian bahan.",
+          "response": "Jangan sajikan saus atau menjanjikan aman. Tandai pesanan, minta dapur memeriksa bahan dan kontak silang, lalu sampaikan hasil terkonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "アレルギー",
+              "reading": "あれるぎー",
+              "meaning": "alergi"
+            },
+            {
+              "japanese": "原材料",
+              "reading": "げんざいりょう",
+              "meaning": "bahan baku"
+            },
+            {
+              "japanese": "別添え",
+              "reading": "べつぞえ",
+              "meaning": "disajikan terpisah"
+            },
+            {
+              "japanese": "厨房",
+              "reading": "ちゅうぼう",
+              "meaning": "dapur"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ナッツのアレルギーがあります。",
+              "reading": "なっつのあれるぎーがあります。",
+              "meaning": "Saya memiliki alergi kacang."
+            },
+            {
+              "japanese": "厨房に確認しますので、お待ちください。",
+              "reading": "ちゅうぼうにかくにんしますので、おまちください。",
+              "meaning": "Mohon tunggu, saya akan mengonfirmasi ke dapur."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Siapa yang mengonfirmasi apakah hidangan aman untuk tamu alergi?",
+              "options": [
+                "Dapur atau penanggung jawab melalui pemeriksaan bahan dan penyiapan",
+                "Pelayan dari penampilan makanan",
+                "Tamu lain",
+                "Pekerja yang belum melihat resep"
+              ],
+              "answer": 0,
+              "explanation": "Dapur memeriksa bahan dan kemungkinan kontak silang sebelum jawaban diberikan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Label saus tak merinci bahan dan tamu alergi kacang. Apa tindakan tepat?",
+              "options": [
+                "Sajikan sedikit untuk dicoba",
+                "Tahan saus dan minta dapur memeriksa bahan serta kontak silang",
+                "Katakan aman karena kacang tak terlihat",
+                "Campur dengan saus lain"
+              ],
+              "answer": 1,
+              "explanation": "Tanpa informasi bahan yang memadai, keamanan tidak boleh dijanjikan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Mengonfirmasi alergi dan pantangan makanan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Tandai pesanan dan teruskan ke dapur",
+                "Dengarkan dan catat bahan yang harus dihindari",
+                "Tunggu konfirmasi bahan serta kontak silang",
+                "Sajikan hanya pilihan yang dinyatakan aman oleh petugas"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Dengarkan dan catat bahan yang harus dihindari → Tandai pesanan dan teruskan ke dapur → Tunggu konfirmasi bahan serta kontak silang → Sajikan hanya pilihan yang dinyatakan aman oleh petugas."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-09",
+          "title": "Kebersihan makanan dan peralatan",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga tangan, alat, dan area layanan serta menghentikan penyajian bila terjadi kontaminasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tangan, peralatan, dan permukaan dapat memindahkan kotoran atau alergen. Ikuti waktu cuci tangan, penggunaan sarung tangan bila ditetapkan, serta pemisahan alat bersih dan bekas. Makanan yang jatuh, terkena cairan pembersih, atau tidak dijaga sesuai prosedur tidak disajikan begitu saja."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cuci tangan dan ganti alat atau sarung tangan saat tugas berubah sesuai aturan. Jika ada pecahan kaca atau tumpahan, hentikan layanan area tersebut, jauhkan makanan, lalu minta pembersihan. Makanan yang jatuh tidak dikembalikan ke piring; catat dan minta pengganti aman."
+            }
+          ],
+          "steps": [
+            "Cuci tangan dan siapkan alat bersih",
+            "Pisahkan makanan dari permukaan kotor",
+            "Hentikan layanan dekat tumpahan atau pecahan",
+            "Laporkan kontaminasi dan ikuti penggantian"
+          ],
+          "caution": "Jangan menyajikan kembali makanan yang jatuh, terkena kotoran, atau tidak dijaga sesuai prosedur.",
+          "scenario": "Gelas pecah di dekat meja persiapan dan makanan terbuka berada di sebelahnya.",
+          "response": "Hentikan penyajian, jauhkan makanan dan orang dari pecahan, tandai area, lalu laporkan untuk pembersihan dan penggantian sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "衛生",
+              "reading": "えいせい",
+              "meaning": "kebersihan/higiene"
+            },
+            {
+              "japanese": "手洗い",
+              "reading": "てあらい",
+              "meaning": "cuci tangan"
+            },
+            {
+              "japanese": "清潔な器具",
+              "reading": "せいけつなきぐ",
+              "meaning": "peralatan bersih"
+            },
+            {
+              "japanese": "汚染",
+              "reading": "おせん",
+              "meaning": "kontaminasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ガラスが割れました。",
+              "reading": "がらすがわれました。",
+              "meaning": "Gelas pecah."
+            },
+            {
+              "japanese": "料理を離して、すぐに報告します。",
+              "reading": "りょうりをはなして、すぐにほうこくします。",
+              "meaning": "Saya menjauhkan makanan dan segera melapor."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang dilakukan dengan makanan terbuka dekat pecahan kaca?",
+              "options": [
+                "Jauhkan dan tahan penyajian, lalu ikuti pembersihan/penggantian",
+                "Tiup pecahan kecil dan sajikan",
+                "Tutup dengan serbet kotor",
+                "Pindah piring tanpa laporan"
+              ],
+              "answer": 0,
+              "explanation": "Pecahan dapat mencemari makanan; area dan makanan harus dikendalikan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pecahan gelas jatuh dekat makanan terbuka. Apa tindakan tepat?",
+              "options": [
+                "Biarkan makanan lalu ambil pecahan",
+                "Hentikan layanan, jauhkan makanan/orang, tandai area, dan laporkan",
+                "Sapu ke bawah meja",
+                "Sajikan setelah membuang pecahan terlihat"
+              ],
+              "answer": 1,
+              "explanation": "Pembersihan dan penilaian makanan dilakukan sesuai prosedur untuk mencegah kontaminasi."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Kebersihan makanan dan peralatan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pisahkan makanan dari permukaan kotor",
+                "Cuci tangan dan siapkan alat bersih",
+                "Hentikan layanan dekat tumpahan atau pecahan",
+                "Laporkan kontaminasi dan ikuti penggantian"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cuci tangan dan siapkan alat bersih → Pisahkan makanan dari permukaan kotor → Hentikan layanan dekat tumpahan atau pecahan → Laporkan kontaminasi dan ikuti penggantian."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operasi kamar, keselamatan, dan komunikasi",
+      "description": "Menjaga status kamar dan barang temuan, memahami laporan keselamatan, serta membantu perencanaan dan serah terima layanan.",
+      "lessons": [
+        {
+          "id": "accommodation-10",
+          "title": "Status kamar dan pelaporan kerusakan",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan status kamar pada sistem serta melaporkan kerusakan sebelum kamar diberikan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Status kamar dapat berubah antara ditempati, perlu dibersihkan, sedang dibersihkan, diperiksa, dan siap. Gunakan istilah properti. Pemeriksaan mengikuti daftar tugas; staf hanya melakukan pekerjaan dalam kewenangannya. Kerusakan dicatat agar kamar tidak ditawarkan sebelum dinyatakan siap."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan nomor kamar dan status sistem, lalu ikuti urutan pemeriksaan. Jika ada kebocoran, kabel rusak, kaca pecah, atau barang tertinggal, jangan tandai siap. Beri tahu housekeeping atau teknisi dan perbarui sistem setelah pemeriksaan selesai."
+            }
+          ],
+          "steps": [
+            "Cocokkan kamar dengan daftar dan status sistem",
+            "Periksa kebersihan serta fasilitas sesuai tugas",
+            "Tandai dan laporkan kerusakan atau barang tertinggal",
+            "Perbarui status setelah pemeriksaan selesai"
+          ],
+          "caution": "Jangan mengubah status menjadi siap hanya karena kamar tampak rapi atau menerima pesan lisan.",
+          "scenario": "Kamar tampak bersih, tetapi lampu kamar mandi berkedip dan sistem menyatakan menunggu pemeriksaan.",
+          "response": "Jangan ubah status menjadi siap. Laporkan lampu kepada teknisi/housekeeping dan tunggu konfirmasi pemeriksaan.",
+          "vocabulary": [
+            {
+              "japanese": "客室",
+              "reading": "きゃくしつ",
+              "meaning": "kamar tamu"
+            },
+            {
+              "japanese": "清掃済み",
+              "reading": "せいそうずみ",
+              "meaning": "sudah dibersihkan"
+            },
+            {
+              "japanese": "点検",
+              "reading": "てんけん",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "故障",
+              "reading": "こしょう",
+              "meaning": "kerusakan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この部屋はまだ点検中です。",
+              "reading": "このへやはまだてんけんちゅうです。",
+              "meaning": "Kamar ini masih diperiksa."
+            },
+            {
+              "japanese": "確認後に状態を更新します。",
+              "reading": "かくにんごにじょうたいをこうしんします。",
+              "meaning": "Saya memperbarui status setelah pemeriksaan."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Kapan status kamar dapat diubah menjadi siap?",
+              "options": [
+                "Setelah pembersihan dan pemeriksaan yang diwajibkan selesai",
+                "Saat tampak rapi dari lorong",
+                "Saat tamu bertanya",
+                "Saat sistem terlambat"
+              ],
+              "answer": 0,
+              "explanation": "Status harus mencerminkan kondisi yang telah benar-benar diperiksa."
+            },
+            {
+              "kind": "case",
+              "prompt": "Kamar bersih tetapi lampu berkedip dan status menunggu pemeriksaan. Apa tindakan tepat?",
+              "options": [
+                "Ubah menjadi siap",
+                "Laporkan kerusakan dan tunggu pemeriksaan",
+                "Abaikan lampu",
+                "Beri kunci tanpa memberi tahu"
+              ],
+              "answer": 1,
+              "explanation": "Kerusakan perlu dinilai sebelum kamar dinyatakan siap."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Status kamar dan pelaporan kerusakan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa kebersihan serta fasilitas sesuai tugas",
+                "Cocokkan kamar dengan daftar dan status sistem",
+                "Tandai dan laporkan kerusakan atau barang tertinggal",
+                "Perbarui status setelah pemeriksaan selesai"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan kamar dengan daftar dan status sistem → Periksa kebersihan serta fasilitas sesuai tugas → Tandai dan laporkan kerusakan atau barang tertinggal → Perbarui status setelah pemeriksaan selesai."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-11",
+          "title": "Barang tertinggal dan keadaan darurat",
+          "minutes": 25,
+          "objectives": [
+            "Mengamankan barang temuan atau bahaya serta segera memakai jalur laporan properti.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Barang tertinggal dicatat beserta lokasi, waktu, dan deskripsi, lalu disimpan resmi; jangan membuka atau menggunakannya. Keadaan darurat dapat berupa kebakaran, gempa, kebocoran, kecelakaan, atau tamu sakit. Ikuti rencana evakuasi, laporkan kondisi, dan jangan menghalangi petugas darurat."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika melihat asap, bau gas, air mengalir deras, atau orang membutuhkan bantuan, utamakan keselamatan dan aktifkan prosedur alarm/panggilan. Barang mencurigakan tidak disentuh. Bantu arahkan orang ke tempat aman hanya dalam batas pelatihan Anda."
+            }
+          ],
+          "steps": [
+            "Amati kondisi dan pastikan keselamatan",
+            "Aktifkan pelaporan atau bantuan sesuai kejadian",
+            "Jaga barang temuan tanpa membuka atau menggunakannya",
+            "Catat lokasi dan serahkan kepada petugas berwenang"
+          ],
+          "caution": "Jangan menyentuh barang mencurigakan atau menyelidiki bahaya yang belum aman.",
+          "scenario": "Asap keluar dari ruang servis dan tas tak dikenal berada dekat pintu.",
+          "response": "Jangan masuk atau memindahkan tas. Jauhkan orang, aktifkan prosedur pelaporan, dan berikan lokasi asap kepada petugas.",
+          "vocabulary": [
+            {
+              "japanese": "落とし物",
+              "reading": "おとしもの",
+              "meaning": "barang tertinggal"
+            },
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "火災",
+              "reading": "かさい",
+              "meaning": "kebakaran"
+            },
+            {
+              "japanese": "避難",
+              "reading": "ひなん",
+              "meaning": "evakuasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "煙が見えます。",
+              "reading": "けむりがみえます。",
+              "meaning": "Saya melihat asap."
+            },
+            {
+              "japanese": "安全な場所へ案内します。",
+              "reading": "あんぜんなばしょへあんないします。",
+              "meaning": "Saya mengarahkan ke tempat aman."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa tindakan tepat untuk barang tertinggal?",
+              "options": [
+                "Catat dan serahkan ke tempat penyimpanan resmi tanpa membuka",
+                "Buka untuk mencari nama",
+                "Bawa pulang",
+                "Umumkan isi tas di lobi"
+              ],
+              "answer": 0,
+              "explanation": "Penyimpanan resmi menjaga keamanan dan membantu pemilik memverifikasi barang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Ada asap dari ruang servis dan tas tak dikenal dekat pintu. Apa yang dilakukan?",
+              "options": [
+                "Masuk mengambil tas",
+                "Jangan masuk/menyentuh; jauhkan orang dan aktifkan pelaporan",
+                "Buka tas",
+                "Tinggalkan tanpa melapor"
+              ],
+              "answer": 1,
+              "explanation": "Asap dan benda tak dikenal ditangani petugas berwenang dengan prioritas keselamatan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Barang tertinggal dan keadaan darurat», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Aktifkan pelaporan atau bantuan sesuai kejadian",
+                "Amati kondisi dan pastikan keselamatan",
+                "Jaga barang temuan tanpa membuka atau menggunakannya",
+                "Catat lokasi dan serahkan kepada petugas berwenang"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Amati kondisi dan pastikan keselamatan → Aktifkan pelaporan atau bantuan sesuai kejadian → Jaga barang temuan tanpa membuka atau menggunakannya → Catat lokasi dan serahkan kepada petugas berwenang."
+            }
+          ]
+        },
+        {
+          "id": "accommodation-12",
+          "title": "Informasi promosi dan serah terima shift",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan penawaran yang disahkan dan menyerahkan pekerjaan terbuka dengan waktu serta status yang jelas.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Perencanaan dan publikasi dapat meliputi fasilitas, acara, paket, atau layanan sekitar. Gunakan materi yang disetujui karena tanggal, harga, dan syarat berubah. Saat shift berganti, teruskan keluhan, status kamar, permintaan, waktu, pihak yang dihubungi, dan langkah berikutnya. Jangan mengandalkan ingatan atau status lama."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum menjawab tentang promosi, cek materi resmi atau petugas penanggung jawab. Saat handover, catat kamar/pesanan terkait, fakta, tindakan, status, dan tindak lanjut. Serahkan langsung serta minta penerima mengulang informasi penting."
+            }
+          ],
+          "steps": [
+            "Periksa materi resmi dan masa berlakunya",
+            "Jelaskan penawaran yang telah disahkan",
+            "Catat permintaan dan pekerjaan terbuka",
+            "Serahkan langsung dan pastikan penerima memahami"
+          ],
+          "caution": "Jangan menjanjikan harga, fasilitas, atau status kamar yang belum disahkan.",
+          "scenario": "Tamu menanyakan harga promosi pada poster lama, sedangkan sistem menyebut periode telah berakhir.",
+          "response": "Jangan menjanjikan harga dari poster lama. Periksa dengan penanggung jawab dan jelaskan bahwa harga sedang dikonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "企画",
+              "reading": "きかく",
+              "meaning": "perencanaan"
+            },
+            {
+              "japanese": "広報",
+              "reading": "こうほう",
+              "meaning": "publikasi/informasi"
+            },
+            {
+              "japanese": "有効期間",
+              "reading": "ゆうこうきかん",
+              "meaning": "masa berlaku"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このプランは今も有効ですか。",
+              "reading": "このぷらんはいまもゆうこうですか。",
+              "meaning": "Apakah paket ini masih berlaku?"
+            },
+            {
+              "japanese": "新しい情報を確認します。",
+              "reading": "あたらしいじょうほうをかくにんします。",
+              "meaning": "Saya akan memeriksa informasi terbaru."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang diperiksa sebelum menjelaskan harga promosi?",
+              "options": [
+                "Materi resmi, syarat, tanggal, dan masa berlaku",
+                "Poster lama apa saja",
+                "Harga yang diingat",
+                "Harga hotel lain"
+              ],
+              "answer": 0,
+              "explanation": "Harga dan periode dapat berubah, jadi gunakan informasi terbaru yang disahkan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Poster lama menunjukkan promosi, tetapi sistem menyebut periode berakhir. Apa tindakan tepat?",
+              "options": [
+                "Tetap janjikan harga poster",
+                "Tunda janji, konfirmasi ke penanggung jawab, lalu jelaskan hasil terbaru",
+                "Hapus poster sendiri",
+                "Minta tamu memilih harga"
+              ],
+              "answer": 1,
+              "explanation": "Informasi yang kedaluwarsa diverifikasi sebelum janji harga diberikan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Informasi promosi dan serah terima shift», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Jelaskan penawaran yang telah disahkan",
+                "Periksa materi resmi dan masa berlakunya",
+                "Catat permintaan dan pekerjaan terbuka",
+                "Serahkan langsung dan pastikan penerima memahami"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa materi resmi dan masa berlakunya → Jelaskan penawaran yang telah disahkan → Catat permintaan dan pekerjaan terbuka → Serahkan langsung dan pastikan penerima memahami."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA — sektor akomodasi: lingkup pekerjaan, tes keterampilan, dan bahasa",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/accommodation.html"
+    },
+    {
+      "title": "ISA — deskripsi pekerjaan SSW No. 1 menurut sektor",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "Japan Tourism Agency — kebijakan dan pedoman ujian sektor akomodasi",
+      "url": "https://www.mlit.go.jp/kankocho/seisaku_seido/kihonkeikaku/jizoku_kankochi/kankojinzai/ninaitekakuho/tokutei_gino.html"
+    },
+    {
+      "title": "CAIPT — ruang lingkup, syarat, dan informasi ujian SSW sektor akomodasi",
+      "url": "https://caipt.or.jp/tokuteiginou"
+    }
+  ]
+}

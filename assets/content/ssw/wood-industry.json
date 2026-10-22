@@ -1,0 +1,1268 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "materials",
+      "title": "Kayu, bahan baku, dan penyimpanan",
+      "description": "Mengenali asal, jenis, sifat, kondisi, dan identitas bahan kayu sebelum bahan masuk ke lini produksi.",
+      "lessons": [
+        {
+          "id": "wi-01",
+          "title": "Penerimaan kayu dan pencocokan identitas",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan tanda petak atau pemasok, jenis bahan, jumlah, dan kondisi kayu dengan dokumen penerimaan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Bahan yang datang dapat berupa kayu gelondongan, papan, lembaran venir, atau bahan lain sesuai proses. Nomor lot dan tanda asal menghubungkan bahan dengan rencana produksi. Saat menerima, pekerja memeriksa jumlah, ukuran, kerusakan yang terlihat, serta dokumen; bahan tanpa identitas tidak dicampur dengan kelompok yang sudah terverifikasi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan area penerimaan yang ditandai dan cocokkan setiap tanda dengan dokumen kerja. Bila jumlah berbeda, label hilang, atau kayu pecah, catat apa yang terlihat dan pisahkan sesuai arahan. Jangan menebak jenis atau menyalin nomor dari tumpukan sebelah.\n\nKasus latihan: Satu tumpukan papan tidak memiliki label, tetapi pekerja diminta memindahkannya ke area bahan produksi.\nRespons yang dianjurkan: Pisahkan tumpukan, catat lokasinya, dan minta penanggung jawab menelusuri identitas sebelum pemindahan."
+            }
+          ],
+          "steps": [
+            "Baca dokumen dan identitas kelompok kayu",
+            "Periksa jumlah serta kondisi yang terlihat",
+            "Catat selisih atau kerusakan aktual",
+            "Pisahkan bahan yang meragukan dan minta konfirmasi"
+          ],
+          "caution": "Jangan menggabungkan bahan tanpa identitas dengan lot yang sudah diperiksa.",
+          "scenario": "Satu tumpukan papan tidak memiliki label, tetapi pekerja diminta memindahkannya ke area bahan produksi.",
+          "response": "Pisahkan tumpukan, catat lokasinya, dan minta penanggung jawab menelusuri identitas sebelum pemindahan.",
+          "vocabulary": [
+            {
+              "japanese": "木材",
+              "reading": "もくざい",
+              "meaning": "kayu"
+            },
+            {
+              "japanese": "原木",
+              "reading": "げんぼく",
+              "meaning": "kayu gelondongan"
+            },
+            {
+              "japanese": "受入れ",
+              "reading": "うけいれ",
+              "meaning": "penerimaan"
+            },
+            {
+              "japanese": "ロット",
+              "reading": "ろっと",
+              "meaning": "lot atau kelompok produksi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この木材にロット表示がありません。",
+              "reading": "このもくざいにろっとひょうじがありません。",
+              "meaning": "Kayu ini tidak memiliki tanda lot."
+            },
+            {
+              "japanese": "移動する前に、責任者へ確認します。",
+              "reading": "いどうするまえに、せきにんしゃへかくにんします。",
+              "meaning": "Saya akan bertanya kepada penanggung jawab sebelum memindahkannya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa identitas lot diperiksa saat menerima kayu?",
+              "options": [
+                "Agar bahan dapat ditelusuri ke kelompok dan pekerjaan yang benar",
+                "Agar kayu terlihat lebih rata",
+                "Untuk mengganti pemeriksaan jumlah",
+                "Supaya semua jenis kayu dapat dicampur"
+              ],
+              "answer": 0,
+              "explanation": "Identitas mempertahankan hubungan antara bahan masuk, rencana produksi, dan hasil kayu.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Satu tumpukan papan tidak memiliki label, tetapi pekerja diminta memindahkannya ke area bahan produksi. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas",
+                "Pisahkan tumpukan, catat lokasinya, dan minta penanggung jawab menelusuri identitas sebelum pemindahan."
+              ],
+              "answer": 3,
+              "explanation": "Tumpukan tanpa label harus dipisahkan sampai identitasnya ditelusuri.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penerimaan kayu dan pencocokan identitas», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca dokumen dan identitas kelompok kayu",
+                "Catat selisih atau kerusakan aktual",
+                "Periksa jumlah serta kondisi yang terlihat",
+                "Pisahkan bahan yang meragukan dan minta konfirmasi"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Baca dokumen dan identitas kelompok kayu → Periksa jumlah serta kondisi yang terlihat → Catat selisih atau kerusakan aktual → Pisahkan bahan yang meragukan dan minta konfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-02",
+          "title": "Sifat kayu, arah serat, dan cacat terlihat",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali serat, mata kayu, retak, perubahan bentuk, dan kondisi lain yang memengaruhi pemakaian bahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Kayu memiliki pola serat, lingkaran tahun, kadar air, dan variasi alami. Retak, mata kayu lepas, bengkok, atau perubahan permukaan dapat memengaruhi proses dan mutu. Pekerja memeriksa berdasarkan contoh dan kriteria produk; penilaian grade atau kegunaan akhir dilakukan sesuai prosedur dan peran yang ditetapkan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa permukaan dan ujung bahan sebelum memasukkannya ke proses, lalu tandai atau pisahkan cacat yang terlihat. Bila serat atau ukuran membuat pemotongan tidak sesuai instruksi, hentikan dan minta arahan. Jangan menyembunyikan cacat dengan menumpuk sisi bermasalah ke arah dalam.\n\nKasus latihan: Papan yang akan diproses memiliki retak panjang di ujung, tetapi dokumen tidak menjelaskan apakah retak itu dapat diterima.\nRespons yang dianjurkan: Pisahkan papan dan minta petugas mutu memeriksa sesuai kriteria sebelum diproses."
+            }
+          ],
+          "steps": [
+            "Baca spesifikasi produk dan contoh penerimaan",
+            "Amati serat, retak, mata kayu, dan bentuk",
+            "Tandai atau pisahkan bagian yang tidak sesuai",
+            "Laporkan keadaan yang memerlukan penilaian"
+          ],
+          "caution": "Jangan menetapkan kelas mutu sendiri di luar kriteria dan kewenangan.",
+          "scenario": "Papan yang akan diproses memiliki retak panjang di ujung, tetapi dokumen tidak menjelaskan apakah retak itu dapat diterima.",
+          "response": "Pisahkan papan dan minta petugas mutu memeriksa sesuai kriteria sebelum diproses.",
+          "vocabulary": [
+            {
+              "japanese": "木目",
+              "reading": "もくめ",
+              "meaning": "pola serat kayu"
+            },
+            {
+              "japanese": "年輪",
+              "reading": "ねんりん",
+              "meaning": "lingkaran tahun"
+            },
+            {
+              "japanese": "節",
+              "reading": "ふし",
+              "meaning": "mata kayu"
+            },
+            {
+              "japanese": "割れ",
+              "reading": "われ",
+              "meaning": "retak"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この板に長い割れがあります。",
+              "reading": "このいたにながいわれがあります。",
+              "meaning": "Papan ini memiliki retak yang panjang."
+            },
+            {
+              "japanese": "品質の担当者に見てもらいます。",
+              "reading": "ひんしつのたんとうしゃにみてもらいます。",
+              "meaning": "Saya minta petugas mutu memeriksanya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tindakan tepat saat menemukan cacat yang kriterianya belum jelas?",
+              "options": [
+                "Pisahkan dan minta petugas mutu menilai",
+                "Tutup cacat lalu lanjutkan proses",
+                "Pilih grade berdasarkan perkiraan",
+                "Campur dengan papan tanpa cacat"
+              ],
+              "answer": 0,
+              "explanation": "Cacat perlu dinilai berdasarkan kriteria produk dan kewenangan yang berlaku.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Papan yang akan diproses memiliki retak panjang di ujung, tetapi dokumen tidak menjelaskan apakah retak itu dapat diterima. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Pisahkan papan dan minta petugas mutu memeriksa sesuai kriteria sebelum diproses.",
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 0,
+              "explanation": "Retak belum memiliki penilaian; tahan papan untuk pemeriksaan mutu.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Sifat kayu, arah serat, dan cacat terlihat», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca spesifikasi produk dan contoh penerimaan",
+                "Tandai atau pisahkan bagian yang tidak sesuai",
+                "Laporkan keadaan yang memerlukan penilaian",
+                "Amati serat, retak, mata kayu, dan bentuk"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Baca spesifikasi produk dan contoh penerimaan → Amati serat, retak, mata kayu, dan bentuk → Tandai atau pisahkan bagian yang tidak sesuai → Laporkan keadaan yang memerlukan penilaian.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-03",
+          "title": "Kadar air, pengeringan, dan penyimpanan kayu",
+          "minutes": 25,
+          "objectives": [
+            "Membaca target kadar air atau kondisi pengeringan yang diberikan dan menyimpan kayu agar tidak berubah bentuk.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Kadar air memengaruhi berat, stabilitas dimensi, pemrosesan, dan mutu kayu. Pengeringan mengikuti jadwal serta target untuk jenis dan produk tertentu; pekerja tidak memakai satu angka untuk semua kayu. Cara menumpuk, sirkulasi udara, pelindung dari air, dan pencatatan lokasi ikut membantu menjaga kondisi bahan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa label tumpukan dan instruksi pengeringan, gunakan alat ukur sesuai pelatihan, lalu catat hasil aktual dan waktu. Susun spacer atau penyangga seperti yang ditunjukkan agar tumpukan stabil dan udara dapat bergerak. Bila hasil di luar target atau tumpukan basah dan miring, tandai serta laporkan.\n\nKasus latihan: Alat ukur menunjukkan hasil yang berbeda jauh dari kartu target pada satu tumpukan papan.\nRespons yang dianjurkan: Ulangi pemeriksaan hanya sesuai instruksi, catat pembacaan, dan tahan pemindahan sampai penanggung jawab menilai hasilnya."
+            }
+          ],
+          "steps": [
+            "Cocokkan identitas tumpukan dengan target pengeringan",
+            "Periksa alat ukur dan posisi pengukuran yang ditetapkan",
+            "Catat hasil kadar air dan waktu aktual",
+            "Simpan atau tahan tumpukan sesuai keputusan pemimpin"
+          ],
+          "caution": "Jangan mencampur catatan atau target kadar air dari jenis dan lot berbeda.",
+          "scenario": "Alat ukur menunjukkan hasil yang berbeda jauh dari kartu target pada satu tumpukan papan.",
+          "response": "Ulangi pemeriksaan hanya sesuai instruksi, catat pembacaan, dan tahan pemindahan sampai penanggung jawab menilai hasilnya.",
+          "vocabulary": [
+            {
+              "japanese": "含水率",
+              "reading": "がんすいりつ",
+              "meaning": "kadar air"
+            },
+            {
+              "japanese": "乾燥",
+              "reading": "かんそう",
+              "meaning": "pengeringan"
+            },
+            {
+              "japanese": "積み重ね",
+              "reading": "つみかさね",
+              "meaning": "penumpukan"
+            },
+            {
+              "japanese": "測定",
+              "reading": "そくてい",
+              "meaning": "pengukuran"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このロットの含水率を記録します。",
+              "reading": "このろっとのがんすいりつをきろくします。",
+              "meaning": "Saya akan mencatat kadar air lot ini."
+            },
+            {
+              "japanese": "目標と違います。責任者に報告します。",
+              "reading": "もくひょうとちがいます。せきにんしゃにほうこくします。",
+              "meaning": "Hasilnya berbeda dari target. Saya akan melapor kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa target kadar air tidak boleh dianggap sama untuk semua kayu?",
+              "options": [
+                "Target mengikuti jenis kayu, produk, dan instruksi proses",
+                "Kadar air hanya bergantung pada cuaca luar",
+                "Semua kayu harus memiliki angka yang sama",
+                "Target dapat diubah berdasarkan warna papan"
+              ],
+              "answer": 0,
+              "explanation": "Sifat bahan dan tujuan produk berbeda; pekerja menggunakan target yang ditetapkan untuk lot itu.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Alat ukur menunjukkan hasil yang berbeda jauh dari kartu target pada satu tumpukan papan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Ulangi pemeriksaan hanya sesuai instruksi, catat pembacaan, dan tahan pemindahan sampai penanggung jawab menilai hasilnya.",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 1,
+              "explanation": "Pembacaan berbeda dari kartu target; catat dan minta penilaian sebelum memindahkan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Kadar air, pengeringan, dan penyimpanan kayu», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa alat ukur dan posisi pengukuran yang ditetapkan",
+                "Cocokkan identitas tumpukan dengan target pengeringan",
+                "Catat hasil kadar air dan waktu aktual",
+                "Simpan atau tahan tumpukan sesuai keputusan pemimpin"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan identitas tumpukan dengan target pengeringan → Periksa alat ukur dan posisi pengukuran yang ditetapkan → Catat hasil kadar air dan waktu aktual → Simpan atau tahan tumpukan sesuai keputusan pemimpin.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "processing",
+      "title": "Proses produksi dan kendali mesin",
+      "description": "Mengikuti instruksi pada lini penggergajian, pemotongan, venir, panel, atau produk kayu lain tanpa melewati pelindung dan batas tugas.",
+      "lessons": [
+        {
+          "id": "wi-04",
+          "title": "Pemeriksaan awal mesin dan pelindung",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa pelindung, tombol berhenti, area lintasan, serta kondisi mesin sebelum menjalankan alat sesuai tugas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Mesin penggergajian dan pemrosesan kayu memiliki mata potong, rol, konveyor, dan titik jepit yang berbahaya. Pemeriksaan awal memastikan pelindung terpasang, area bebas benda lepas, dan kontrol berfungsi sesuai daftar. Hanya operator yang telah dilatih menjalankan, membersihkan, atau menangani sumbatan sesuai prosedur fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum menyalakan, cocokkan mesin dan tugas pada instruksi, periksa pelindung serta tanda peringatan, dan pastikan pekerja lain di posisi aman. Bila suara, getaran, atau pelindung tidak normal, jangan hidupkan mesin. Jangan mencapai ke bagian dalam untuk membersihkan serbuk saat mesin masih bergerak.\n\nKasus latihan: Pelindung konveyor tidak menutup penuh, tetapi operator berikutnya sudah menyiapkan kayu untuk masuk.\nRespons yang dianjurkan: Tunda pengumpanan, jauhkan orang dari titik bahaya, dan laporkan pelindung agar diperiksa sebelum mesin dipakai."
+            }
+          ],
+          "steps": [
+            "Baca instruksi operasi dan batas tugas",
+            "Periksa pelindung, kontrol, dan area sekitar",
+            "Laporkan kondisi tidak normal sebelum menyalakan",
+            "Jalankan hanya setelah pemeriksaan dan izin selesai"
+          ],
+          "caution": "Jangan melepas pelindung atau membersihkan mesin yang masih bergerak.",
+          "scenario": "Pelindung konveyor tidak menutup penuh, tetapi operator berikutnya sudah menyiapkan kayu untuk masuk.",
+          "response": "Tunda pengumpanan, jauhkan orang dari titik bahaya, dan laporkan pelindung agar diperiksa sebelum mesin dipakai.",
+          "vocabulary": [
+            {
+              "japanese": "機械",
+              "reading": "きかい",
+              "meaning": "mesin"
+            },
+            {
+              "japanese": "安全カバー",
+              "reading": "あんぜんかばー",
+              "meaning": "pelindung keselamatan"
+            },
+            {
+              "japanese": "非常停止",
+              "reading": "ひじょうていし",
+              "meaning": "berhenti darurat"
+            },
+            {
+              "japanese": "異常",
+              "reading": "いじょう",
+              "meaning": "keadaan tidak normal"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "カバーが閉まりません。運転を止めます。",
+              "reading": "かばーがしまりません。うんてんをとめます。",
+              "meaning": "Pelindung tidak bisa menutup. Saya menghentikan pengoperasian."
+            },
+            {
+              "japanese": "機械を確認してから再開します。",
+              "reading": "きかいをかくにんしてからさいかいします。",
+              "meaning": "Kita lanjut setelah mesin diperiksa."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan bila pelindung mesin tidak menutup penuh?",
+              "options": [
+                "Jangan jalankan mesin dan laporkan untuk pemeriksaan",
+                "Pegang kayu agar tangan menjauh dari pisau",
+                "Lepas pelindung agar kayu dapat masuk",
+                "Minta pekerja lain berdiri dekat tombol"
+              ],
+              "answer": 0,
+              "explanation": "Pelindung yang tidak bekerja meningkatkan risiko kontak dengan bagian bergerak; hentikan sebelum operasi.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pelindung konveyor tidak menutup penuh, tetapi operator berikutnya sudah menyiapkan kayu untuk masuk. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Tunda pengumpanan, jauhkan orang dari titik bahaya, dan laporkan pelindung agar diperiksa sebelum mesin dipakai.",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 2,
+              "explanation": "Mesin tidak digunakan sampai pelindung diperiksa dan dinyatakan siap.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan awal mesin dan pelindung», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca instruksi operasi dan batas tugas",
+                "Periksa pelindung, kontrol, dan area sekitar",
+                "Laporkan kondisi tidak normal sebelum menyalakan",
+                "Jalankan hanya setelah pemeriksaan dan izin selesai"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Baca instruksi operasi dan batas tugas → Periksa pelindung, kontrol, dan area sekitar → Laporkan kondisi tidak normal sebelum menyalakan → Jalankan hanya setelah pemeriksaan dan izin selesai.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-05",
+          "title": "Penggergajian dan instruksi ukuran",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan bahan serta instruksi ukuran sebelum pemotongan dan menghentikan proses bila data tidak jelas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Penggergajian mengubah bahan mentah menjadi ukuran produk yang direncanakan. Instruksi dapat menyebut panjang, lebar, ketebalan, orientasi, dan jumlah; angka perlu dibaca bersama satuannya. Toleransi dan cara ukur mengikuti spesifikasi produk, bukan perkiraan operator. Perubahan ukuran harus disetujui agar bahan tidak terbuang atau menjadi tidak sesuai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan kode produk dan bahan dengan lembar kerja sebelum mengumpan kayu. Gunakan alat ukur dan pembatas mesin yang diajarkan, lalu periksa sampel awal sesuai aturan. Bila angka atau satuan berbeda, hentikan sebelum memotong dan minta pemeriksaan kedua; jangan mengubah setelan diam-diam.\n\nKasus latihan: Lembar kerja menunjukkan ketebalan berbeda dari label pada tumpukan, dan pemotongan belum dimulai.\nRespons yang dianjurkan: Jangan memasukkan bahan. Tahan setelan, cocokkan kedua dokumen, dan minta penanggung jawab memastikan instruksi yang berlaku."
+            }
+          ],
+          "steps": [
+            "Cocokkan bahan, kode produk, dan lembar ukuran",
+            "Pastikan satuan serta arah kerja dipahami",
+            "Atur mesin hanya menurut instruksi yang disetujui",
+            "Periksa sampel awal dan laporkan selisih"
+          ],
+          "caution": "Jangan menebak satuan atau ukuran dari produk yang pernah dikerjakan.",
+          "scenario": "Lembar kerja menunjukkan ketebalan berbeda dari label pada tumpukan, dan pemotongan belum dimulai.",
+          "response": "Jangan memasukkan bahan. Tahan setelan, cocokkan kedua dokumen, dan minta penanggung jawab memastikan instruksi yang berlaku.",
+          "vocabulary": [
+            {
+              "japanese": "製材",
+              "reading": "せいざい",
+              "meaning": "penggergajian kayu"
+            },
+            {
+              "japanese": "寸法",
+              "reading": "すんぽう",
+              "meaning": "ukuran"
+            },
+            {
+              "japanese": "厚さ",
+              "reading": "あつさ",
+              "meaning": "ketebalan"
+            },
+            {
+              "japanese": "単位",
+              "reading": "たんい",
+              "meaning": "satuan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "厚さの表示が違います。",
+              "reading": "あつさのひょうじがちがいます。",
+              "meaning": "Tanda ketebalannya berbeda."
+            },
+            {
+              "japanese": "切る前に指示を確認してください。",
+              "reading": "きるまえにしじをかくにんしてください。",
+              "meaning": "Mohon pastikan instruksi sebelum memotong."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus dicocokkan sebelum memulai pemotongan?",
+              "options": [
+                "Kode produk, bahan, ukuran, dan satuan instruksi",
+                "Hanya panjang bahan",
+                "Setelan dari pekerjaan sebelumnya",
+                "Jumlah papan di dekat mesin"
+              ],
+              "answer": 0,
+              "explanation": "Pencocokan mencegah pemotongan bahan yang salah atau pada ukuran yang keliru.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Lembar kerja menunjukkan ketebalan berbeda dari label pada tumpukan, dan pemotongan belum dimulai. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas",
+                "Jangan memasukkan bahan. Tahan setelan, cocokkan kedua dokumen, dan minta penanggung jawab memastikan instruksi yang berlaku."
+              ],
+              "answer": 3,
+              "explanation": "Instruksi dan label tidak cocok; hentikan persiapan dan konfirmasi sebelum memotong.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penggergajian dan instruksi ukuran», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Cocokkan bahan, kode produk, dan lembar ukuran",
+                "Atur mesin hanya menurut instruksi yang disetujui",
+                "Pastikan satuan serta arah kerja dipahami",
+                "Periksa sampel awal dan laporkan selisih"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Cocokkan bahan, kode produk, dan lembar ukuran → Pastikan satuan serta arah kerja dipahami → Atur mesin hanya menurut instruksi yang disetujui → Periksa sampel awal dan laporkan selisih.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-06",
+          "title": "Produk panel: venir, kayu lapis, dan kayu laminasi",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali alur umum bahan panel dan mengikuti identitas, urutan, serta petunjuk kerja pada produk yang dibuat.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Industri kayu dapat mengolah lembaran venir, kayu lapis, LVL, atau kayu laminasi. Produk berbeda dalam susunan lapisan, orientasi, dan tujuan; urutan bahan serta identitas lembar penting untuk hasil dan ketertelusuran. Perekat dan tekanan ditangani sesuai instruksi serta pelatihan, dan hanya pekerja yang ditugaskan mengoperasikan alat terkait."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa tanda sisi, nomor lot, dan urutan tumpukan sebelum memasukkan lapisan. Jika lembar terbalik, rusak, atau tanda hilang, pisahkan untuk pemeriksaan. Jangan mengubah jenis perekat, jumlah lapisan, atau setelan mesin berdasarkan dugaan; laporkan perbedaan sebelum menekan atau merekatkan bahan.\n\nKasus latihan: Satu lembar venir memiliki tanda arah berbeda dari lembar lain dalam kelompok panel.\nRespons yang dianjurkan: Hentikan penyusunan lapisan dan pisahkan lembar tersebut; minta operator atau pemimpin memastikan orientasi sebelum proses berlanjut."
+            }
+          ],
+          "steps": [
+            "Baca jenis panel dan identitas setiap bahan",
+            "Cocokkan urutan serta arah lapisan dengan instruksi",
+            "Periksa kondisi bahan dan perekat yang ditetapkan",
+            "Jalankan atau serahkan proses sesuai batas tugas"
+          ],
+          "caution": "Jangan mengganti perekat atau urutan lapisan tanpa persetujuan proses.",
+          "scenario": "Satu lembar venir memiliki tanda arah berbeda dari lembar lain dalam kelompok panel.",
+          "response": "Hentikan penyusunan lapisan dan pisahkan lembar tersebut; minta operator atau pemimpin memastikan orientasi sebelum proses berlanjut.",
+          "vocabulary": [
+            {
+              "japanese": "単板",
+              "reading": "たんぱん",
+              "meaning": "lembar venir"
+            },
+            {
+              "japanese": "合板",
+              "reading": "ごうはん",
+              "meaning": "kayu lapis"
+            },
+            {
+              "japanese": "集成材",
+              "reading": "しゅうせいざい",
+              "meaning": "kayu laminasi"
+            },
+            {
+              "japanese": "接着剤",
+              "reading": "せっちゃくざい",
+              "meaning": "perekat"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この単板の向きを確認してください。",
+              "reading": "このたんぱんのむきをかくにんしてください。",
+              "meaning": "Mohon periksa arah lembar venir ini."
+            },
+            {
+              "japanese": "接着剤は指示どおりに使います。",
+              "reading": "せっちゃくざいはしじどおりにつかいます。",
+              "meaning": "Perekat digunakan sesuai instruksi."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa urutan dan arah lapisan panel perlu dicocokkan?",
+              "options": [
+                "Agar susunan sesuai spesifikasi dan hasil dapat ditelusuri",
+                "Agar semua panel terlihat sama dari luar",
+                "Supaya perekat dapat diganti sesuai stok",
+                "Untuk menghilangkan kebutuhan tanda lot"
+              ],
+              "answer": 0,
+              "explanation": "Urutan serta orientasi bahan merupakan bagian dari instruksi produk dan mutu.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Satu lembar venir memiliki tanda arah berbeda dari lembar lain dalam kelompok panel. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Hentikan penyusunan lapisan dan pisahkan lembar tersebut; minta operator atau pemimpin memastikan orientasi sebelum proses berlanjut.",
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 0,
+              "explanation": "Arah lembar berbeda; tahan untuk konfirmasi sebelum perekat atau tekanan digunakan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Produk panel: venir, kayu lapis, dan kayu laminasi», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca jenis panel dan identitas setiap bahan",
+                "Periksa kondisi bahan dan perekat yang ditetapkan",
+                "Jalankan atau serahkan proses sesuai batas tugas",
+                "Cocokkan urutan serta arah lapisan dengan instruksi"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Baca jenis panel dan identitas setiap bahan → Cocokkan urutan serta arah lapisan dengan instruksi → Periksa kondisi bahan dan perekat yang ditetapkan → Jalankan atau serahkan proses sesuai batas tugas.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Pemeriksaan mutu dan identitas produk",
+      "description": "Memeriksa dimensi, bentuk, permukaan, dan penandaan hasil sesuai kriteria produk sebelum dilepas ke tahap berikutnya.",
+      "lessons": [
+        {
+          "id": "wi-07",
+          "title": "Pengukuran dimensi dan pemeriksaan sampel",
+          "minutes": 25,
+          "objectives": [
+            "Mengukur produk dengan alat serta titik ukur yang ditentukan dan mencatat hasil aktual.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Panjang, lebar, ketebalan, dan bentuk memengaruhi kecocokan produk pada penggunaan berikutnya. Setiap pekerjaan memiliki toleransi dan titik ukur sendiri; pekerja membaca lembar mutu dan menggunakan alat yang telah diperiksa. Sampel awal atau berkala membantu menemukan perubahan sebelum banyak bahan diproses."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pastikan alat ukur bersih dan sesuai satuan, lalu ukur pada posisi yang dijelaskan. Catat hasil, waktu, mesin, dan kelompok produk. Bila hasil di luar toleransi atau alat ukur jatuh, hentikan pelepasan sampel terkait dan minta pemeriksaan; jangan menyesuaikan angka agar produk lulus.\n\nKasus latihan: Sampel pertama menunjukkan ketebalan di luar toleransi yang tercantum pada lembar kerja.\nRespons yang dianjurkan: Tahan produk sejak pemeriksaan terakhir, catat hasil sebenarnya, dan panggil petugas mutu atau pemimpin lini."
+            }
+          ],
+          "steps": [
+            "Baca toleransi dan titik ukur pada lembar mutu",
+            "Periksa alat ukur serta satuannya",
+            "Ukur sampel dan catat hasil aktual",
+            "Tahan produk terkait dan laporkan hasil di luar batas"
+          ],
+          "caution": "Jangan menggunakan alat ukur rusak atau mengubah catatan hasil pengukuran.",
+          "scenario": "Sampel pertama menunjukkan ketebalan di luar toleransi yang tercantum pada lembar kerja.",
+          "response": "Tahan produk sejak pemeriksaan terakhir, catat hasil sebenarnya, dan panggil petugas mutu atau pemimpin lini.",
+          "vocabulary": [
+            {
+              "japanese": "寸法",
+              "reading": "すんぽう",
+              "meaning": "dimensi"
+            },
+            {
+              "japanese": "測定",
+              "reading": "そくてい",
+              "meaning": "pengukuran"
+            },
+            {
+              "japanese": "許容差",
+              "reading": "きょようさ",
+              "meaning": "toleransi"
+            },
+            {
+              "japanese": "検査",
+              "reading": "けんさ",
+              "meaning": "pemeriksaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "測定値が許容差の外です。",
+              "reading": "そくていちがきょようさのそとです。",
+              "meaning": "Hasil ukur berada di luar toleransi."
+            },
+            {
+              "japanese": "この製品を保留して、担当者に報告します。",
+              "reading": "このせいひんをほりゅうして、たんとうしゃにほうこくします。",
+              "meaning": "Saya menahan produk ini dan melapor kepada petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan saat hasil sampel berada di luar toleransi?",
+              "options": [
+                "Tahan produk terkait, catat hasil, dan laporkan",
+                "Ukur ulang sampai muncul angka yang diinginkan",
+                "Ubah catatan tanpa memeriksa alat",
+                "Kirim sampel lalu tunggu keluhan"
+              ],
+              "answer": 0,
+              "explanation": "Hasil di luar batas dapat menunjukkan proses berubah; produk perlu ditahan dan dinilai.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Sampel pertama menunjukkan ketebalan di luar toleransi yang tercantum pada lembar kerja. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Tahan produk sejak pemeriksaan terakhir, catat hasil sebenarnya, dan panggil petugas mutu atau pemimpin lini.",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 1,
+              "explanation": "Catat nilai yang benar dan eskalasikan sebelum produk berikutnya dilepas.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pengukuran dimensi dan pemeriksaan sampel», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa alat ukur serta satuannya",
+                "Baca toleransi dan titik ukur pada lembar mutu",
+                "Ukur sampel dan catat hasil aktual",
+                "Tahan produk terkait dan laporkan hasil di luar batas"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca toleransi dan titik ukur pada lembar mutu → Periksa alat ukur serta satuannya → Ukur sampel dan catat hasil aktual → Tahan produk terkait dan laporkan hasil di luar batas.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-08",
+          "title": "Permukaan, tepi, dan cacat pemrosesan",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali serpihan, retak, permukaan kasar, atau cacat hasil proses serta memisahkannya sesuai kriteria.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemrosesan dapat menghasilkan cacat seperti tepi pecah, permukaan bergelombang, bekas pisau, atau serpihan. Pemeriksaan mengikuti sampel yang disetujui dan jenis penggunaan produk. Pekerja tidak menutup atau menghaluskan cacat di luar prosedur; bila tidak tahu apakah produk dapat diterima, ia meminta pemeriksaan petugas mutu."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa sampel di area yang terang dengan cara aman, hindari menyentuh tepi tajam tanpa perlindungan, dan letakkan produk tidak sesuai pada area tahan. Catat letak cacat dan kode produk agar proses dapat ditinjau. Jangan memasukkan papan cacat kembali ke lini tanpa izin.\n\nKasus latihan: Beberapa papan memiliki serpihan tajam di tepi setelah proses planing, tetapi pekerja belum tahu apakah boleh dihaluskan sendiri.\nRespons yang dianjurkan: Pisahkan papan dan minta petugas mutu menentukan perbaikan atau penolakan sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Bandingkan produk dengan sampel atau kriteria mutu",
+            "Periksa permukaan, tepi, dan ujung dengan aman",
+            "Pisahkan produk yang tampak tidak sesuai",
+            "Catat lokasi cacat dan laporkan"
+          ],
+          "caution": "Jangan menyamarkan cacat dengan menumpuknya di sisi tersembunyi.",
+          "scenario": "Beberapa papan memiliki serpihan tajam di tepi setelah proses planing, tetapi pekerja belum tahu apakah boleh dihaluskan sendiri.",
+          "response": "Pisahkan papan dan minta petugas mutu menentukan perbaikan atau penolakan sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "表面",
+              "reading": "ひょうめん",
+              "meaning": "permukaan"
+            },
+            {
+              "japanese": "端",
+              "reading": "はし",
+              "meaning": "tepi"
+            },
+            {
+              "japanese": "ささくれ",
+              "reading": "ささくれ",
+              "meaning": "serpihan kayu"
+            },
+            {
+              "japanese": "不良",
+              "reading": "ふりょう",
+              "meaning": "ketidaksesuaian"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "端にささくれがあります。",
+              "reading": "はしにささくれがあります。",
+              "meaning": "Ada serpihan kayu di tepinya."
+            },
+            {
+              "japanese": "品質担当者に確認してもらいます。",
+              "reading": "ひんしつたんとうしゃにかくにんしてもらいます。",
+              "meaning": "Saya minta petugas mutu memeriksanya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tujuan memisahkan produk yang memiliki cacat belum dinilai?",
+              "options": [
+                "Mencegah produk tidak sesuai bercampur dan menunggu keputusan mutu",
+                "Agar cacat tersembunyi di bawah tumpukan",
+                "Supaya pekerja bisa mengirimnya lebih cepat",
+                "Untuk mengurangi kebutuhan pemeriksaan"
+              ],
+              "answer": 0,
+              "explanation": "Pemisahan menjaga produk tertahan tetap dapat dikenali dan diperiksa.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Beberapa papan memiliki serpihan tajam di tepi setelah proses planing, tetapi pekerja belum tahu apakah boleh dihaluskan sendiri. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Pisahkan papan dan minta petugas mutu menentukan perbaikan atau penolakan sesuai prosedur.",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 2,
+              "explanation": "Jangan memperbaiki sendiri di luar kewenangan; pisahkan lalu minta penilaian.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Permukaan, tepi, dan cacat pemrosesan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Bandingkan produk dengan sampel atau kriteria mutu",
+                "Periksa permukaan, tepi, dan ujung dengan aman",
+                "Pisahkan produk yang tampak tidak sesuai",
+                "Catat lokasi cacat dan laporkan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Bandingkan produk dengan sampel atau kriteria mutu → Periksa permukaan, tepi, dan ujung dengan aman → Pisahkan produk yang tampak tidak sesuai → Catat lokasi cacat dan laporkan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-09",
+          "title": "Label mutu, kelompok produk, dan ketertelusuran",
+          "minutes": 25,
+          "objectives": [
+            "Memastikan tanda produk, spesifikasi, grade yang telah ditetapkan, dan jumlah cocok sebelum hasil dipindahkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tanda produk dapat memuat jenis, ukuran, grade, lot, atau tujuan pelanggan. Kriteria grade berasal dari spesifikasi dan pemeriksaan yang ditetapkan; pekerja tidak menebak grade dari penampilan saja. Identitas harus tetap pada kelompok kayu saat berpindah dari proses ke pemeriksaan, penyimpanan, atau pengiriman."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan label dengan dokumen setelah proses dan sebelum pemindahan. Bila tanda lepas, rusak, atau jumlah tidak cocok, tahan kelompok dan tulis lokasi serta informasi yang masih terbaca. Jangan mencetak ulang atau mengubah grade tanpa izin petugas yang berwenang.\n\nKasus latihan: Label grade pada satu bundel basah dan tulisannya tidak dapat dibaca sebelum masuk ke area pengiriman.\nRespons yang dianjurkan: Tahan bundel di area pemeriksaan, catat nomor lot yang masih terlihat, dan minta petugas mutu memulihkan identitasnya."
+            }
+          ],
+          "steps": [
+            "Baca spesifikasi dan tanda kelompok produk",
+            "Cocokkan label, jumlah, serta tujuan",
+            "Tahan kelompok bila identitas atau grade meragukan",
+            "Catat selisih dan minta pengesahan"
+          ],
+          "caution": "Jangan mengganti label atau grade berdasarkan dugaan.",
+          "scenario": "Label grade pada satu bundel basah dan tulisannya tidak dapat dibaca sebelum masuk ke area pengiriman.",
+          "response": "Tahan bundel di area pemeriksaan, catat nomor lot yang masih terlihat, dan minta petugas mutu memulihkan identitasnya.",
+          "vocabulary": [
+            {
+              "japanese": "等級",
+              "reading": "とうきゅう",
+              "meaning": "kelas atau grade"
+            },
+            {
+              "japanese": "製品番号",
+              "reading": "せいひんばんごう",
+              "meaning": "nomor produk"
+            },
+            {
+              "japanese": "照合",
+              "reading": "しょうごう",
+              "meaning": "pencocokan"
+            },
+            {
+              "japanese": "追跡",
+              "reading": "ついせき",
+              "meaning": "penelusuran"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このラベルが読めません。",
+              "reading": "このらべるがよめません。",
+              "meaning": "Label ini tidak dapat dibaca."
+            },
+            {
+              "japanese": "出荷前に製品番号を確認します。",
+              "reading": "しゅっかまえにせいひんばんごうをかくにんします。",
+              "meaning": "Saya akan memeriksa nomor produk sebelum pengiriman."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan saat label mutu tidak dapat dibaca?",
+              "options": [
+                "Tahan bundel dan pulihkan identitas melalui catatan resmi",
+                "Pilih grade berdasarkan tampilan",
+                "Tempel label dari bundel terdekat",
+                "Kirim tanpa label agar tidak tertunda"
+              ],
+              "answer": 0,
+              "explanation": "Label harus terkait dengan lot dan spesifikasi yang benar untuk menjaga penelusuran.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Label grade pada satu bundel basah dan tulisannya tidak dapat dibaca sebelum masuk ke area pengiriman. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas",
+                "Tahan bundel di area pemeriksaan, catat nomor lot yang masih terlihat, dan minta petugas mutu memulihkan identitasnya."
+              ],
+              "answer": 3,
+              "explanation": "Identitas belum terbaca; jangan mengirim sampai petugas memastikan nomor dan grade.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Label mutu, kelompok produk, dan ketertelusuran», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca spesifikasi dan tanda kelompok produk",
+                "Tahan kelompok bila identitas atau grade meragukan",
+                "Cocokkan label, jumlah, serta tujuan",
+                "Catat selisih dan minta pengesahan"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Baca spesifikasi dan tanda kelompok produk → Cocokkan label, jumlah, serta tujuan → Tahan kelompok bila identitas atau grade meragukan → Catat selisih dan minta pengesahan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dispatch",
+      "title": "Penumpukan, pengiriman, dan serah terima",
+      "description": "Menjaga hasil kayu tetap stabil dan beridentitas selama disimpan, dipindahkan, atau diserahkan ke proses berikutnya.",
+      "lessons": [
+        {
+          "id": "wi-10",
+          "title": "Penumpukan dan kestabilan bundel",
+          "minutes": 25,
+          "objectives": [
+            "Menyusun kayu sesuai batas tumpukan dan menggunakan penyangga serta area simpan yang ditetapkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tumpukan kayu dapat roboh atau bergeser bila permukaan tidak rata, penyangga tidak sejajar, atau tinggi berlebihan. Batas tumpukan dan cara pengikatan mengikuti instruksi tempat kerja. Pekerja menjaga tangan dan kaki dari titik jepit serta tidak memanjat tumpukan; pemindahan memakai alat yang sesuai dan operator yang berwenang."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa lantai, penyangga, label, dan arah susunan sebelum menambah kayu. Jika bundel miring, tali rusak, atau kayu bergeser, jauhkan orang dan laporkan. Jangan mencoba menahan bundel berat dengan tubuh atau mengatur ulang tumpukan sambil alat bergerak.\n\nKasus latihan: Tumpukan papan mulai miring setelah satu penyangga bergeser, sementara pekerja hendak menaruh papan baru di atasnya.\nRespons yang dianjurkan: Hentikan penambahan, jauhkan orang dari arah roboh, dan minta operator atau pemimpin menstabilkan tumpukan dengan prosedur yang sesuai."
+            }
+          ],
+          "steps": [
+            "Periksa lantai dan penyangga tumpukan",
+            "Pastikan identitas serta arah susunan benar",
+            "Susun hanya pada batas tinggi yang ditetapkan",
+            "Jauhkan orang dan laporkan bundel tidak stabil"
+          ],
+          "caution": "Jangan berdiri atau bekerja di bawah tumpukan yang tampak bergeser.",
+          "scenario": "Tumpukan papan mulai miring setelah satu penyangga bergeser, sementara pekerja hendak menaruh papan baru di atasnya.",
+          "response": "Hentikan penambahan, jauhkan orang dari arah roboh, dan minta operator atau pemimpin menstabilkan tumpukan dengan prosedur yang sesuai.",
+          "vocabulary": [
+            {
+              "japanese": "積み重ね",
+              "reading": "つみかさね",
+              "meaning": "penumpukan"
+            },
+            {
+              "japanese": "荷崩れ",
+              "reading": "にくずれ",
+              "meaning": "muatan roboh"
+            },
+            {
+              "japanese": "支え",
+              "reading": "ささえ",
+              "meaning": "penyangga"
+            },
+            {
+              "japanese": "安定",
+              "reading": "あんてい",
+              "meaning": "stabil"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この束が傾いています。近づかないでください。",
+              "reading": "このたばがかたむいています。ちかづかないでください。",
+              "meaning": "Bundel ini miring. Jangan mendekat."
+            },
+            {
+              "japanese": "作業を止めて、責任者を呼びます。",
+              "reading": "さぎょうをとめて、せきにんしゃをよびます。",
+              "meaning": "Saya menghentikan pekerjaan dan memanggil penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa respons yang aman terhadap tumpukan kayu yang miring?",
+              "options": [
+                "Hentikan penambahan dan jauhkan orang dari area roboh",
+                "Tahan tumpukan dengan bahu",
+                "Naik ke atas untuk menarik papan",
+                "Terus menambah kayu agar seimbang"
+              ],
+              "answer": 0,
+              "explanation": "Bundel tidak stabil dapat roboh; area harus dijauhkan dan penanganan dilakukan oleh orang yang ditugaskan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Tumpukan papan mulai miring setelah satu penyangga bergeser, sementara pekerja hendak menaruh papan baru di atasnya. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Hentikan penambahan, jauhkan orang dari arah roboh, dan minta operator atau pemimpin menstabilkan tumpukan dengan prosedur yang sesuai.",
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 0,
+              "explanation": "Jangan menopang dengan tubuh; hentikan kerja, amankan jarak, lalu panggil bantuan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penumpukan dan kestabilan bundel», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Periksa lantai dan penyangga tumpukan",
+                "Susun hanya pada batas tinggi yang ditetapkan",
+                "Jauhkan orang dan laporkan bundel tidak stabil",
+                "Pastikan identitas serta arah susunan benar"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Periksa lantai dan penyangga tumpukan → Pastikan identitas serta arah susunan benar → Susun hanya pada batas tinggi yang ditetapkan → Jauhkan orang dan laporkan bundel tidak stabil.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-11",
+          "title": "Pengemasan dan pemeriksaan tujuan",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan jumlah, ukuran, label pelanggan, dan kondisi ikatan sebelum kayu dikirim.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Produk kayu disusun dan diikat sesuai ukuran pesanan, metode angkut, dan aturan fasilitas. Label tujuan harus tetap terbaca setelah kemasan selesai. Pemeriksaan jumlah dan kondisi ikatan mencegah salah kirim atau kayu jatuh selama pemindahan; kayu dengan identitas tidak cocok perlu ditahan sebelum dimuat."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan daftar pesanan, cocokkan jumlah dan nomor bundel, periksa ikatan serta pelindung tepi, lalu tempatkan di jalur pengiriman yang benar. Jangan memindahkan produk ke kendaraan sebelum tujuan dikonfirmasi. Bila satu bundel kurang atau label pelanggan tertukar, tahan di area pengiriman dan laporkan.\n\nKasus latihan: Satu bundel memiliki ukuran benar, tetapi labelnya menunjukkan pelanggan berbeda dari daftar muat.\nRespons yang dianjurkan: Tahan bundel dan cocokkan nomor lot dengan pesanan serta catatan produksi sebelum pemuatan."
+            }
+          ],
+          "steps": [
+            "Baca pesanan dan identitas tujuan",
+            "Hitung bundel serta cocokkan ukuran produk",
+            "Periksa ikatan dan label setelah dikemas",
+            "Konfirmasi tujuan sebelum memuat"
+          ],
+          "caution": "Jangan mengubah label tujuan untuk menutup kekurangan pesanan.",
+          "scenario": "Satu bundel memiliki ukuran benar, tetapi labelnya menunjukkan pelanggan berbeda dari daftar muat.",
+          "response": "Tahan bundel dan cocokkan nomor lot dengan pesanan serta catatan produksi sebelum pemuatan.",
+          "vocabulary": [
+            {
+              "japanese": "包装",
+              "reading": "ほうそう",
+              "meaning": "pengemasan"
+            },
+            {
+              "japanese": "結束",
+              "reading": "けっそく",
+              "meaning": "pengikatan"
+            },
+            {
+              "japanese": "出荷",
+              "reading": "しゅっか",
+              "meaning": "pengiriman"
+            },
+            {
+              "japanese": "納品先",
+              "reading": "のうひんさき",
+              "meaning": "tujuan pengiriman"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "納品先の表示が違います。",
+              "reading": "のうひんさきのひょうじがちがいます。",
+              "meaning": "Tanda tujuan pengiriman berbeda."
+            },
+            {
+              "japanese": "積み込む前に注文書と照合します。",
+              "reading": "つみこむまえにちゅうもんしょとしょうごうします。",
+              "meaning": "Saya akan mencocokkan pesanan sebelum memuat."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dicocokkan sebelum kayu dimuat ke kendaraan?",
+              "options": [
+                "Jumlah bundel, ukuran, label, ikatan, dan tujuan",
+                "Warna kendaraan saja",
+                "Nama pengemudi tanpa daftar pesanan",
+                "Tumpukan yang paling mudah dijangkau"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan ini memastikan kelompok benar, aman diangkut, dan menuju pelanggan yang tepat.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Satu bundel memiliki ukuran benar, tetapi labelnya menunjukkan pelanggan berbeda dari daftar muat. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Tahan bundel dan cocokkan nomor lot dengan pesanan serta catatan produksi sebelum pemuatan.",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 1,
+              "explanation": "Label tujuan berbeda; tahan bundel dan telusuri sebelum kendaraan dimuat.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pengemasan dan pemeriksaan tujuan», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Hitung bundel serta cocokkan ukuran produk",
+                "Baca pesanan dan identitas tujuan",
+                "Periksa ikatan dan label setelah dikemas",
+                "Konfirmasi tujuan sebelum memuat"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca pesanan dan identitas tujuan → Hitung bundel serta cocokkan ukuran produk → Periksa ikatan dan label setelah dikemas → Konfirmasi tujuan sebelum memuat.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "wi-12",
+          "title": "Pembersihan, perawatan rutin, dan laporan giliran",
+          "minutes": 25,
+          "objectives": [
+            "Membersihkan area sesuai tugas, melaporkan keausan alat atau kebocoran, dan menyerahkan status mesin serta lot.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Serbuk kayu, potongan sisa, dan debu perlu ditangani sesuai jadwal dan cara yang ditetapkan untuk menjaga jalur serta peralatan. Pembersihan mesin dilakukan hanya dalam kondisi dan wewenang yang sesuai, mengikuti prosedur isolasi bila diperlukan. Laporan giliran mencatat mesin yang perlu perhatian, bahan tertahan, dan tugas yang belum selesai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan alat pembersih yang ditetapkan dan jangan meniup serbuk dengan cara yang menyebarkannya ke area kerja. Bila pelindung, mata potong, atau kabel tampak rusak, pasang tanda sesuai aturan dan beri tahu pemimpin. Sebelum pulang, serahkan status serta lokasi masalah dengan nomor mesin dan lot.\n\nKasus latihan: Pada akhir giliran, pekerja melihat kebocoran kecil dekat mesin dan belum tahu apakah lini harus dihentikan.\nRespons yang dianjurkan: Jaga jarak dari area berisiko, ikuti prosedur penghentian atau tanda fasilitas, dan segera beri tahu pemimpin sebelum serah terima."
+            }
+          ],
+          "steps": [
+            "Baca daftar kebersihan dan perawatan rutin",
+            "Bersihkan area dengan alat serta urutan yang disetujui",
+            "Tandai dan laporkan kondisi mesin tidak normal",
+            "Serahkan status mesin, lot, dan pekerjaan terbuka"
+          ],
+          "caution": "Jangan membersihkan bagian bergerak atau memperbaiki mesin tanpa isolasi dan kewenangan.",
+          "scenario": "Pada akhir giliran, pekerja melihat kebocoran kecil dekat mesin dan belum tahu apakah lini harus dihentikan.",
+          "response": "Jaga jarak dari area berisiko, ikuti prosedur penghentian atau tanda fasilitas, dan segera beri tahu pemimpin sebelum serah terima.",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "reading": "せいそう",
+              "meaning": "pembersihan"
+            },
+            {
+              "japanese": "保全",
+              "reading": "ほぜん",
+              "meaning": "perawatan"
+            },
+            {
+              "japanese": "漏れ",
+              "reading": "もれ",
+              "meaning": "kebocoran"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "機械の近くに漏れがあります。",
+              "reading": "きかいのちかくにもれがあります。",
+              "meaning": "Ada kebocoran di dekat mesin."
+            },
+            {
+              "japanese": "場所と時間を記録して、責任者に伝えます。",
+              "reading": "ばしょとじかんをきろくして、せきにんしゃにつたえます。",
+              "meaning": "Saya mencatat lokasi dan waktu, lalu memberi tahu penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang disertakan saat melaporkan kondisi mesin pada pergantian giliran?",
+              "options": [
+                "Nomor mesin, lokasi, waktu, kondisi, dan tindakan sementara",
+                "Dugaan penyebab saja",
+                "Pernyataan bahwa mesin aman tanpa diperiksa",
+                "Hanya nama pekerja berikutnya"
+              ],
+              "answer": 0,
+              "explanation": "Fakta dan status membantu penerima menindaklanjuti masalah tanpa mengulang pencarian.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Di tempat kerja, situasinya: Pada akhir giliran, pekerja melihat kebocoran kecil dekat mesin dan belum tahu apakah lini harus dihentikan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Bypass pelindung atau memasukkan tangan ke mesin bergerak",
+                "Menebak ukuran, grade, atau tujuan dari produk lain",
+                "Jaga jarak dari area berisiko, ikuti prosedur penghentian atau tanda fasilitas, dan segera beri tahu pemimpin sebelum serah terima.",
+                "Meneruskan proses walau identitas bahan tidak jelas"
+              ],
+              "answer": 2,
+              "explanation": "Kebocoran dilaporkan segera dan masuk dalam serah terima sebelum giliran berakhir.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pembersihan, perawatan rutin, dan laporan giliran», setelah langkah pertama selesai, apa tindakan berikutnya?",
+              "options": [
+                "Baca daftar kebersihan dan perawatan rutin",
+                "Bersihkan area dengan alat serta urutan yang disetujui",
+                "Tandai dan laporkan kondisi mesin tidak normal",
+                "Serahkan status mesin, lot, dan pekerjaan terbuka"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Baca daftar kebersihan dan perawatan rutin → Bersihkan area dengan alat serta urutan yang disetujui → Tandai dan laporkan kondisi mesin tidak normal → Serahkan status mesin, lot, dan pekerjaan terbuka.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Forestry Agency — penerimaan tenaga asing di sektor industri kayu",
+      "url": "https://www.rinya.maff.go.jp/j/mokusan/seisankakou/foreigner.html"
+    },
+    {
+      "title": "Forestry Agency — teks belajar Wood Industry SSW(i), termasuk versi Indonesia",
+      "url": "https://www.rinya.maff.go.jp/j/mokusan/seisankakou/foreigner.html"
+    },
+    {
+      "title": "全国木材組合連合会 — situs resmi ujian sektor industri kayu",
+      "url": "https://zenmokuren.jp/foreigner/"
+    },
+    {
+      "title": "Prometric — informasi ujian Wood Industry SSW(i)",
+      "url": "https://www.prometric-jp.com/ssw/test_list/archives/26"
+    },
+    {
+      "title": "ISA Jepang — ringkasan pekerjaan SSW(i)",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    }
+  ]
+}

@@ -41,6 +41,15 @@ type Repository struct {
 	sources        []jobfetch.Source
 	directory      []Source
 	requestSpacing time.Duration
+	errorHandler   func(error)
+}
+
+func (r *Repository) SetErrorHandler(handler func(error)) { r.errorHandler = handler }
+
+func (r *Repository) reportError(err error) {
+	if err != nil && r.errorHandler != nil {
+		r.errorHandler(err)
+	}
 }
 
 func New(db *gorm.DB, interval time.Duration) (*Repository, error) {

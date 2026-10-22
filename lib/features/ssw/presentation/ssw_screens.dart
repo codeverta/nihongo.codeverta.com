@@ -16,7 +16,7 @@ class SswEntryCard extends StatelessWidget {
     title: 'SSW / Tokutei Ginou',
     eyebrow: 'KETERAMPILAN & PERSIAPAN UJIAN',
     description: exams
-        ? 'Latihan soal dan simulasi untuk 4 bidang aktif'
+        ? 'Latihan soal dan simulasi untuk ${sswSectors.length} bidang SSW'
         : 'Kenali bidangmu, pelajari materi, lalu coba simulasinya',
     asset: 'assets/images/ssw/ssw-careers.webp',
     color: const Color(0xFF125E60),
@@ -40,15 +40,20 @@ class _SswHubState extends State<SswHubScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final hasComingSoon = sswSectors.any((sector) => !sswAvailable(sector.id));
+    final activeFilter = !hasComingSoon && filter == 'Segera hadir'
+        ? 'Semua'
+        : filter;
     final filtered = sswSectors
         .where(
           (sector) =>
               '${sector.name} ${sector.japanese} ${sector.keywords}'
                   .toLowerCase()
                   .contains(query.trim().toLowerCase()) &&
-              (filter == 'Semua' ||
-                  (filter == 'Tersedia' && sswAvailable(sector.id)) ||
-                  (filter == 'Segera hadir' && (!sswAvailable(sector.id)))),
+              (activeFilter == 'Semua' ||
+                  (activeFilter == 'Tersedia' && sswAvailable(sector.id)) ||
+                  (activeFilter == 'Segera hadir' &&
+                      (!sswAvailable(sector.id)))),
         )
         .toList();
     return Scaffold(
@@ -77,8 +82,8 @@ class _SswHubState extends State<SswHubScreen> {
           const SizedBox(height: 12),
           Text(
             widget.exams
-                ? 'Latihan dan simulasi tersedia untuk Kaigo, Pembersihan Gedung, Pertanian, serta Perikanan dan Budi Daya. Pilih jalur yang ingin kamu pelajari.'
-                : 'Empat bidang aktif dengan kurikulum, kasus kerja, serta bahasa Jepang. Mulai dari materi, lalu lanjutkan ke latihan per topik dan simulasi.',
+                ? 'Latihan per topik dan simulasi belajar tersedia untuk ${sswSectors.length} bidang SSW. Paket aplikasi memakai soal orisinal dan dapat berbeda dari format tes resmi.'
+                : 'Kurikulum, kasus kerja, latihan per topik, dan simulasi belajar tersedia untuk ${sswSectors.length} bidang SSW. Mulai dari materi, lalu lanjutkan ke latihan dan simulasi.',
             style: const TextStyle(height: 1.5),
           ),
           const SizedBox(height: 20),
@@ -119,7 +124,7 @@ class _SswHubState extends State<SswHubScreen> {
             onChanged: (value) => setState(() => query = value),
             decoration: const InputDecoration(
               labelText: 'Cari bidang SSW',
-              hintText: 'Kaigo, restoran, pertanian...',
+              hintText: 'Kaigo, linen, manufaktur, konstruksi...',
               prefixIcon: Icon(Icons.search),
             ),
           ),
@@ -128,10 +133,14 @@ class _SswHubState extends State<SswHubScreen> {
             spacing: 8,
             runSpacing: 8,
             children: [
-              for (final value in ['Semua', 'Tersedia', 'Segera hadir'])
+              for (final value in [
+                'Semua',
+                'Tersedia',
+                if (hasComingSoon) 'Segera hadir',
+              ])
                 ChoiceChip(
                   label: Text(value),
-                  selected: filter == value,
+                  selected: activeFilter == value,
                   onSelected: (_) => setState(() => filter = value),
                 ),
             ],

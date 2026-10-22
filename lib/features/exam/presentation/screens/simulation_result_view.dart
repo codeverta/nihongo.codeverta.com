@@ -25,13 +25,22 @@ class _ResultState extends State<SimulationResultView> {
   Widget build(BuildContext context) {
     final result = widget.result;
     final reviews = diagnosticList(result['reviews']);
+    final jftExamNumber = widget.level == 'JFT'
+        ? 1
+        : int.tryParse(widget.level.replaceFirst('JFT-', '')) ?? 1;
     return ListView(
       padding: const EdgeInsets.all(20),
       children: [
         DiagnosticHero(
           title: 'Simulasi selesai.',
           subtitle:
-              '${widget.level.startsWith('SSW-') ? sswExamTitle(widget.level) : widget.level == 'JFT' ? 'JFT Exam 1 · Kosakata, Percakapan & Reading' : widget.level == 'NAT' ? 'NAT 5Q Exam 1 · Kosakata, Grammar & Reading' : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
+              '${widget.level.startsWith('SSW-')
+                  ? sswExamTitle(widget.level)
+                  : widget.level == 'JFT' || widget.level.startsWith('JFT-')
+                  ? 'JFT Exam $jftExamNumber · Kosakata, Percakapan & Reading'
+                  : widget.level.startsWith('NAT')
+                  ? 'NAT 5Q Exam ${widget.level == 'NAT' ? 1 : widget.level.substring(4)} · Kosakata, Grammar & Reading'
+                  : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
           child: Text(
             '${result['answered']} dijawab · ${(result['total'] as int) - (result['answered'] as int)} kosong\n'
             'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik',
@@ -84,8 +93,9 @@ class _ResultState extends State<SimulationResultView> {
             onSelected: (value) => setState(() => wrongOnly = value),
           ),
         ),
-        for (final review
-            in reviews.where((r) => !wrongOnly || r['correct'] == false))
+        for (final review in reviews.where(
+          (r) => !wrongOnly || r['correct'] == false,
+        ))
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: ExamPanel(

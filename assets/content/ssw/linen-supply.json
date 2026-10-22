@@ -1,0 +1,1408 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "flow",
+      "title": "Alur layanan dan kendali kebersihan",
+      "description": "Memahami siklus layanan, penerimaan, pemilahan, dan pencatatan yang menjaga identitas serta pemisahan linen kotor dan bersih. Materi dan simulasi ini adalah latihan belajar orisinal. Sumber resmi yang ditinjau menyebut nama ujian linen supply, tetapi belum memublikasikan blueprint, silabus rinci, atau format ujian; jangan menganggap paket app sebagai format resmi.",
+      "lessons": [
+        {
+          "id": "linen-01",
+          "title": "Siklus linen dan batas peran",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan perjalanan linen dari pemakaian pelanggan hingga pemrosesan dan pengiriman kembali.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Layanan linen berulang: hotel, rumah sakit, atau pelanggan lain menggunakan barang yang disediakan; setelah dipakai barang dikumpulkan, diproses, diperiksa, lalu dikirim kembali. Produk dapat berupa seprai, sarung bantal, handuk, pakaian pasien, seragam, dan tekstil meja. Pekerja mengikuti lingkup serta standar fasilitas tempat kerjanya.\n\nBatas informasi ujian: sumber resmi yang ditinjau belum memublikasikan blueprint, silabus rinci, atau format ujian linen supply. Konten dan simulasi aplikasi merupakan latihan belajar orisinal, bukan klaim tentang bentuk ujian resmi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat kelompok sesuai identitas pelanggan. Pisahkan wadah barang belum diproses dari zona produk bersih. Jangan mengganti label atau urutan proses berdasarkan perkiraan; bila identitas hilang, tahan kelompok dan minta konfirmasi agar penelusuran tetap mungkin.\n\nKasus latihan: Sebuah keranjang seprai tidak memiliki label pelanggan dan keranjang lain berisi linen bersih.\nRespons yang dianjurkan: Pisahkan kedua keranjang, jangan menebak pemilik seprai, lalu laporkan agar identitas dan jalur barang dikonfirmasi."
+            }
+          ],
+          "steps": [
+            "Baca identitas pelanggan dan kelompok linen",
+            "Pisahkan barang sesuai alur kotor dan bersih",
+            "Ikuti proses yang ditetapkan untuk kelompok itu",
+            "Catat perpindahan dan serahkan ke tahap berikutnya"
+          ],
+          "caution": "Jangan mencampur linen kotor dengan barang selesai atau mengubah alur tanpa persetujuan.",
+          "scenario": "Sebuah keranjang seprai tidak memiliki label pelanggan dan keranjang lain berisi linen bersih.",
+          "response": "Pisahkan kedua keranjang, jangan menebak pemilik seprai, lalu laporkan agar identitas dan jalur barang dikonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "リネン類",
+              "reading": "りねんるい",
+              "meaning": "berbagai linen"
+            },
+            {
+              "japanese": "入荷",
+              "reading": "にゅうか",
+              "meaning": "penerimaan barang"
+            },
+            {
+              "japanese": "回収",
+              "reading": "かいしゅう",
+              "meaning": "pengumpulan kembali"
+            },
+            {
+              "japanese": "清潔",
+              "reading": "せいけつ",
+              "meaning": "bersih dan higienis"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは未処理のリネンです。",
+              "reading": "こちらはみしょりのりねんです。",
+              "meaning": "Ini linen yang belum diproses."
+            },
+            {
+              "japanese": "品種ごとに分けます。",
+              "reading": "ひんしゅごとにわけます。",
+              "meaning": "Saya akan memilah menurut jenis."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa identitas pelanggan perlu dipertahankan sepanjang siklus linen?",
+              "options": [
+                "Agar barang dan jumlahnya tetap dapat ditelusuri serta dikirim ke tujuan yang benar",
+                "Agar pencucian dapat dilewati",
+                "Agar semua pelanggan menerima jenis linen yang sama",
+                "Agar label dapat dihapus lebih awal"
+              ],
+              "answer": 0,
+              "explanation": "Identitas dan catatan menghubungkan barang, pelanggan, proses, serta pengiriman.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Sebuah keranjang seprai tidak memiliki label pelanggan dan keranjang lain berisi linen bersih. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Campurkan ke kelompok yang paling banyak",
+                "Tahan, pisahkan, dan minta konfirmasi identitas",
+                "Kirim ke pelanggan yang paling dekat",
+                "Hapus label keranjang lain agar seimbang"
+              ],
+              "answer": 1,
+              "explanation": "Tanpa identitas yang dapat dipercaya, pencampuran berisiko menyebabkan salah proses dan salah kirim.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Siklus linen dan batas peran, apa arti 清潔（せいけつ）?",
+              "options": [
+                "penerimaan barang",
+                "pengumpulan kembali",
+                "bersih dan higienis",
+                "berbagai linen"
+              ],
+              "answer": 2,
+              "explanation": "清潔 dibaca せいけつ dan berarti bersih dan higienis.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Siklus linen dan batas peran», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pisahkan barang sesuai alur kotor dan bersih",
+                "Ikuti proses yang ditetapkan untuk kelompok itu",
+                "Catat perpindahan dan serahkan ke tahap berikutnya",
+                "Baca identitas pelanggan dan kelompok linen"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca identitas pelanggan dan kelompok linen → Pisahkan barang sesuai alur kotor dan bersih → Ikuti proses yang ditetapkan untuk kelompok itu → Catat perpindahan dan serahkan ke tahap berikutnya.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-02",
+          "title": "Penerimaan dan pencatatan jumlah",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa dokumen, kondisi, dan jumlah linen yang masuk sebelum pemrosesan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Penerimaan adalah titik kendali pertama. Cocokkan identitas wadah, kode pelanggan, jenis barang, dan jumlah menurut prosedur. Segel atau kondisi linen yang tidak biasa perlu dicatat agar perbedaan dapat ditelusuri ke tahap sebelumnya. Hitungan yang tepat membantu perencanaan beban dan pemenuhan pesanan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan satuan dan formulir fasilitas; jangan memperkirakan ketika data dokumen tidak cocok. Laporkan selisih, kerusakan, benda asing, atau label yang tidak terbaca. Ikuti petunjuk pemisahan untuk penanganan khusus.\n\nKasus latihan: Dokumen menyebut 40 sarung bantal, tetapi hitungan aktual kurang dan segel wadah tampak rusak.\nRespons yang dianjurkan: Catat jumlah yang benar-benar ditemukan beserta kondisi segel dan waktu pemeriksaan; laporkan sebelum kelompok diteruskan."
+            }
+          ],
+          "steps": [
+            "Cocokkan dokumen dengan tanda wadah",
+            "Hitung barang menurut satuan yang ditetapkan",
+            "Catat selisih atau kondisi tidak biasa",
+            "Serahkan kelompok yang sudah terverifikasi"
+          ],
+          "caution": "Jangan mengubah catatan agar cocok dengan angka target atau mengabaikan selisih kecil.",
+          "scenario": "Dokumen menyebut 40 sarung bantal, tetapi hitungan aktual kurang dan segel wadah tampak rusak.",
+          "response": "Catat jumlah yang benar-benar ditemukan beserta kondisi segel dan waktu pemeriksaan; laporkan sebelum kelompok diteruskan.",
+          "vocabulary": [
+            {
+              "japanese": "数量",
+              "reading": "すうりょう",
+              "meaning": "jumlah"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "pemeriksaan atau konfirmasi"
+            },
+            {
+              "japanese": "差異",
+              "reading": "さい",
+              "meaning": "selisih"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは未処理のリネンです。",
+              "reading": "こちらはみしょりのりねんです。",
+              "meaning": "Ini linen yang belum diproses."
+            },
+            {
+              "japanese": "品種ごとに分けます。",
+              "reading": "ひんしゅごとにわけます。",
+              "meaning": "Saya akan memilah menurut jenis."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dicatat ketika jumlah aktual berbeda dari dokumen?",
+              "options": [
+                "Hanya angka target pada dokumen",
+                "Jumlah aktual dan keadaan selisih sesuai prosedur",
+                "Angka rata-rata dari dua catatan",
+                "Tidak perlu catatan jika selisih sedikit"
+              ],
+              "answer": 1,
+              "explanation": "Catatan faktual membantu penelusuran dan mencegah selisih diteruskan tanpa penanganan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Dokumen menyebut 40 sarung bantal, tetapi hitungan aktual kurang dan segel wadah tampak rusak. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sesuaikan angka aktual tanpa memberi tahu siapa pun",
+                "Catat jumlah dan segel yang rusak, lalu laporkan",
+                "Sembunyikan barang yang kurang",
+                "Pindahkan barang dari pelanggan lain"
+              ],
+              "answer": 1,
+              "explanation": "Selisih jumlah dan segel rusak harus dicatat dan dieskalasikan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Penerimaan dan pencatatan jumlah, apa arti 確認（かくにん）?",
+              "options": [
+                "pemeriksaan atau konfirmasi",
+                "selisih",
+                "jumlah",
+                "catatan"
+              ],
+              "answer": 0,
+              "explanation": "確認 dibaca かくにん dan berarti pemeriksaan atau konfirmasi.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Penerimaan dan pencatatan jumlah», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Catat selisih atau kondisi tidak biasa",
+                "Serahkan kelompok yang sudah terverifikasi",
+                "Cocokkan dokumen dengan tanda wadah",
+                "Hitung barang menurut satuan yang ditetapkan"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Cocokkan dokumen dengan tanda wadah → Hitung barang menurut satuan yang ditetapkan → Catat selisih atau kondisi tidak biasa → Serahkan kelompok yang sudah terverifikasi.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-03",
+          "title": "Pemilahan menurut jenis dan kondisi",
+          "minutes": 25,
+          "objectives": [
+            "Memilah linen menurut jenis, pelanggan, dan instruksi penanganan tanpa mencampur kelompok yang tidak sesuai.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemilahan membantu memilih mesin dan program yang sesuai. Seprai, handuk, pakaian, dan tekstil lain dapat berbeda ukuran, bahan, tujuan, atau kondisi kotor. Identitas pelanggan juga penting karena spesifikasi dan jumlah akhir tidak selalu sama. Gunakan tempat serta tanda pemilahan resmi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa label dan panduan, lalu letakkan kelompok pada wadah yang ditentukan. Ikuti aturan fasilitas untuk barang bernoda atau rusak; jangan menganggap semua noda ditangani dengan cara sama. Pertahankan pemisahan zona dan kebersihan alat ketika berpindah area.\n\nKasus latihan: Sebuah pakaian pasien memiliki label jenis yang luntur dan berada dekat wadah handuk hotel.\nRespons yang dianjurkan: Jangan masukkan ke wadah handuk. Tahan pada tempat yang ditetapkan dan minta petugas berwenang mengidentifikasi barang tersebut."
+            }
+          ],
+          "steps": [
+            "Periksa label jenis dan pelanggan",
+            "Kenali kondisi yang membutuhkan pemisahan khusus",
+            "Tempatkan pada wadah beridentitas sesuai aturan",
+            "Konfirmasi kategori yang tidak jelas sebelum proses"
+          ],
+          "caution": "Jangan mencampur kelompok hanya karena warna, ukuran, atau bentuknya tampak serupa.",
+          "scenario": "Sebuah pakaian pasien memiliki label jenis yang luntur dan berada dekat wadah handuk hotel.",
+          "response": "Jangan masukkan ke wadah handuk. Tahan pada tempat yang ditetapkan dan minta petugas berwenang mengidentifikasi barang tersebut.",
+          "vocabulary": [
+            {
+              "japanese": "仕分け",
+              "reading": "しわけ",
+              "meaning": "pemilahan"
+            },
+            {
+              "japanese": "種類",
+              "reading": "しゅるい",
+              "meaning": "jenis"
+            },
+            {
+              "japanese": "汚れ",
+              "reading": "よごれ",
+              "meaning": "kotoran atau noda"
+            },
+            {
+              "japanese": "分ける",
+              "reading": "わける",
+              "meaning": "memisahkan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは未処理のリネンです。",
+              "reading": "こちらはみしょりのりねんです。",
+              "meaning": "Ini linen yang belum diproses."
+            },
+            {
+              "japanese": "品種ごとに分けます。",
+              "reading": "ひんしゅごとにわけます。",
+              "meaning": "Saya akan memilah menurut jenis."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa dasar yang tepat untuk memilah linen?",
+              "options": [
+                "Jenis, identitas pelanggan, dan aturan penanganan",
+                "Warna saja",
+                "Wadah yang paling dekat",
+                "Urutan kedatangan tanpa membaca tanda"
+              ],
+              "answer": 0,
+              "explanation": "Pemilahan mengikuti karakter barang dan instruksi, bukan kemudahan sesaat.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Sebuah pakaian pasien memiliki label jenis yang luntur dan berada dekat wadah handuk hotel. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Masukkan bersama handuk hotel",
+                "Pindahkan ke area bersih untuk diperiksa",
+                "Tahan dan minta identifikasi sesuai prosedur",
+                "Buang label dan proses sebagai pakaian biasa"
+              ],
+              "answer": 2,
+              "explanation": "Barang tanpa identitas tidak boleh dikelompokkan berdasarkan tebakan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Pemilahan menurut jenis dan kondisi, apa arti 種類（しゅるい）?",
+              "options": [
+                "memisahkan",
+                "pemilahan",
+                "jenis",
+                "kotoran atau noda"
+              ],
+              "answer": 2,
+              "explanation": "種類 dibaca しゅるい dan berarti jenis.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Pemilahan menurut jenis dan kondisi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Konfirmasi kategori yang tidak jelas sebelum proses",
+                "Periksa label jenis dan pelanggan",
+                "Kenali kondisi yang membutuhkan pemisahan khusus",
+                "Tempatkan pada wadah beridentitas sesuai aturan"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Periksa label jenis dan pelanggan → Kenali kondisi yang membutuhkan pemisahan khusus → Tempatkan pada wadah beridentitas sesuai aturan → Konfirmasi kategori yang tidak jelas sebelum proses.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laundry",
+      "title": "Pencucian dan kendali proses",
+      "description": "Menjaga urutan pencucian dan pengeringan, mengikuti setelan fasilitas, serta mengenali penyimpangan dan bahaya bahan.",
+      "lessons": [
+        {
+          "id": "linen-04",
+          "title": "Pencucian dan pemisahan aliran",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti pencucian sesuai jenis linen, prosedur, dan pengendalian kebersihan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pencucian berada di sisi proses barang kotor. Jenis barang, mesin, bahan proses, dan program yang disahkan fasilitas menentukan cara kerja. Setelan suhu, waktu, bahan, dan beban bukan angka universal; gunakan instruksi lokasi serta menu yang ditetapkan. Pemisahan aliran mencegah barang selesai bersentuhan kembali dengan barang belum diproses."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum mulai, pastikan identitas kelompok dan program sesuai. Jangan menambah bahan kimia atau mengubah menu berdasarkan bau atau dugaan. Untuk tumpahan, label tak jelas, kebocoran, atau alarm mesin, amankan area dan laporkan kepada petugas berwenang.\n\nKasus latihan: Label pada wadah bahan pencuci tidak terbaca dan seorang rekan meminta menambahkan cairan berdasarkan warnanya.\nRespons yang dianjurkan: Jangan gunakan cairan itu. Amankan wadah, ikuti prosedur identifikasi bahan, dan hubungi penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Pastikan identitas dan pemisahan kelompok",
+            "Pilih program proses yang ditetapkan",
+            "Jalankan mesin sesuai prosedur dan pengaman",
+            "Catat alarm atau kondisi tidak biasa"
+          ],
+          "caution": "Jangan menebak dosis bahan atau menyentuh bahan kimia tanpa pelatihan dan perlindungan yang dipersyaratkan.",
+          "scenario": "Label pada wadah bahan pencuci tidak terbaca dan seorang rekan meminta menambahkan cairan berdasarkan warnanya.",
+          "response": "Jangan gunakan cairan itu. Amankan wadah, ikuti prosedur identifikasi bahan, dan hubungi penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "洗濯",
+              "reading": "せんたく",
+              "meaning": "pencucian"
+            },
+            {
+              "japanese": "洗剤",
+              "reading": "せんざい",
+              "meaning": "deterjen"
+            },
+            {
+              "japanese": "工程",
+              "reading": "こうてい",
+              "meaning": "tahap proses"
+            },
+            {
+              "japanese": "表示",
+              "reading": "ひょうじ",
+              "meaning": "label atau penandaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "薬剤のラベルを確認します。",
+              "reading": "やくざいのらべるをかくにんします。",
+              "meaning": "Saya akan memeriksa label bahan."
+            },
+            {
+              "japanese": "機械の異常を報告します。",
+              "reading": "きかいのいじょうをほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa dasar memilih program pencucian?",
+              "options": [
+                "Menu yang ditetapkan untuk jenis linen dan instruksi fasilitas",
+                "Perkiraan pekerja berdasarkan warna noda",
+                "Program tercepat untuk semua barang",
+                "Program terakhir tanpa pemeriksaan"
+              ],
+              "answer": 0,
+              "explanation": "Program mengikuti jenis linen dan standar fasilitas; materi ini tidak menetapkan resep kimia atau angka universal.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Label pada wadah bahan pencuci tidak terbaca dan seorang rekan meminta menambahkan cairan berdasarkan warnanya. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tambahkan cairan yang terlihat paling mirip",
+                "Tanyakan kepada rekan lalu tuangkan sedikit",
+                "Hentikan penggunaan wadah dan minta identifikasi petugas berwenang",
+                "Campurkan dengan deterjen lain"
+              ],
+              "answer": 2,
+              "explanation": "Bahan tanpa label tidak boleh digunakan berdasarkan tebakan atau dicampur.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Pencucian dan pemisahan aliran, apa arti 洗濯（せんたく）?",
+              "options": [
+                "pencucian",
+                "deterjen",
+                "tahap proses",
+                "label atau penandaan"
+              ],
+              "answer": 0,
+              "explanation": "洗濯 dibaca せんたく dan berarti pencucian.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Pencucian dan pemisahan aliran», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pastikan identitas dan pemisahan kelompok",
+                "Pilih program proses yang ditetapkan",
+                "Jalankan mesin sesuai prosedur dan pengaman",
+                "Catat alarm atau kondisi tidak biasa"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Pastikan identitas dan pemisahan kelompok → Pilih program proses yang ditetapkan → Jalankan mesin sesuai prosedur dan pengaman → Catat alarm atau kondisi tidak biasa.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-05",
+          "title": "Pengeringan dan perpindahan ke zona bersih",
+          "minutes": 25,
+          "objectives": [
+            "Mengawasi pengeringan menurut prosedur dan menjaga pemisahan setelah proses selesai.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Setelah pencucian dan pemerasan, pengeringan dilakukan sesuai jenis linen serta prosedur fasilitas. Kondisi terlalu lembap atau terlalu panas dapat memengaruhi mutu, sementara pemindahan yang tidak higienis dapat mencemari kembali hasil. Arahkan keluaran ke wadah atau zona bersih yang benar."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ikuti indikator dan batas mesin yang telah dilatih. Jangan menjangkau bagian bergerak, membuka pelindung saat alat berjalan, atau melewati interlock. Bila hasil tidak memenuhi syarat untuk lanjut ke finishing, tahan di tempat yang ditetapkan dan minta arahan.\n\nKasus latihan: Satu kelompok terasa masih lembap setelah siklus dan alarm mesin muncul.\nRespons yang dianjurkan: Jangan kirim ke area finishing sebagai hasil siap. Tahan kelompok, catat alarm, lalu minta pemeriksaan sesuai prosedur mesin."
+            }
+          ],
+          "steps": [
+            "Periksa program dan kondisi mesin",
+            "Amati indikator tanpa membuka pelindung",
+            "Pindahkan keluaran ke wadah bersih yang benar",
+            "Tahan dan laporkan hasil yang menyimpang"
+          ],
+          "caution": "Hindari permukaan panas, uap, dan bagian bergerak; gunakan perlindungan serta prosedur fasilitas.",
+          "scenario": "Satu kelompok terasa masih lembap setelah siklus dan alarm mesin muncul.",
+          "response": "Jangan kirim ke area finishing sebagai hasil siap. Tahan kelompok, catat alarm, lalu minta pemeriksaan sesuai prosedur mesin.",
+          "vocabulary": [
+            {
+              "japanese": "脱水",
+              "reading": "だっすい",
+              "meaning": "pemerasan air"
+            },
+            {
+              "japanese": "乾燥",
+              "reading": "かんそう",
+              "meaning": "pengeringan"
+            },
+            {
+              "japanese": "湿る",
+              "reading": "しめる",
+              "meaning": "menjadi lembap"
+            },
+            {
+              "japanese": "警報",
+              "reading": "けいほう",
+              "meaning": "alarm atau peringatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "薬剤のラベルを確認します。",
+              "reading": "やくざいのらべるをかくにんします。",
+              "meaning": "Saya akan memeriksa label bahan."
+            },
+            {
+              "japanese": "機械の異常を報告します。",
+              "reading": "きかいのいじょうをほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dilakukan bila hasil belum memenuhi kondisi untuk tahap berikutnya?",
+              "options": [
+                "Tahan dan minta penilaian sesuai prosedur",
+                "Campur dengan linen kering",
+                "Kirim dan berharap pemeriksaan akhir menemukan masalah",
+                "Ubah setelan tanpa wewenang"
+              ],
+              "answer": 0,
+              "explanation": "Kelompok yang menyimpang harus ditahan dan dinilai, bukan disamarkan atau diteruskan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Satu kelompok terasa masih lembap setelah siklus dan alarm mesin muncul. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Sembunyikan alarm lalu jalankan lagi tanpa memeriksa",
+                "Tahan kelompok, catat alarm, dan laporkan",
+                "Campur dengan hasil mesin lain",
+                "Pindahkan ke area pengemasan"
+              ],
+              "answer": 1,
+              "explanation": "Alarm dan kondisi lembap memerlukan tindak lanjut menurut instruksi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Pengeringan dan perpindahan ke zona bersih, apa arti 警報（けいほう）?",
+              "options": [
+                "pengeringan",
+                "menjadi lembap",
+                "alarm atau peringatan",
+                "pemerasan air"
+              ],
+              "answer": 2,
+              "explanation": "警報 dibaca けいほう dan berarti alarm atau peringatan.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Pengeringan dan perpindahan ke zona bersih», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Amati indikator tanpa membuka pelindung",
+                "Pindahkan keluaran ke wadah bersih yang benar",
+                "Tahan dan laporkan hasil yang menyimpang",
+                "Periksa program dan kondisi mesin"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa program dan kondisi mesin → Amati indikator tanpa membuka pelindung → Pindahkan keluaran ke wadah bersih yang benar → Tahan dan laporkan hasil yang menyimpang.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-06",
+          "title": "Bahan proses dan kebersihan area",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali aturan bahan proses dan menjaga area kerja tetap bersih serta terkendali.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Bahan pencuci dan bahan bantu hanya digunakan sesuai label, lembar instruksi, dan pelatihan. Identitas serta bahaya harus tetap terbaca; tempat penyimpanan dan takaran ditentukan prosedur fasilitas. Alat yang bersentuhan dengan barang kotor tidak dibawa ke zona bersih tanpa pembersihan yang ditetapkan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan wadah tertutup dan bertanda, simpan pada lokasi resmi, dan jangan mencampur produk. Untuk tumpahan, ikuti prosedur bahan, tandai area, dan panggil petugas terlatih. Catat pemakaian atau ketidaknormalan bila aturan fasilitas meminta.\n\nKasus latihan: Bahan bantu tumpah dekat jalur pekerja; label wadah menyebut perlunya prosedur khusus.\nRespons yang dianjurkan: Batasi orang masuk dan beri tahu petugas berwenang. Ikuti prosedur bahan; jangan membersihkan tanpa pelatihan dan perlindungan yang sesuai."
+            }
+          ],
+          "steps": [
+            "Baca label dan instruksi bahan",
+            "Kenakan perlindungan yang ditetapkan",
+            "Gunakan serta simpan bahan pada tempat resmi",
+            "Laporkan tumpahan atau label yang tidak jelas"
+          ],
+          "caution": "Jangan mencampur bahan kimia atau memindahkannya ke botol tanpa label.",
+          "scenario": "Bahan bantu tumpah dekat jalur pekerja; label wadah menyebut perlunya prosedur khusus.",
+          "response": "Batasi orang masuk dan beri tahu petugas berwenang. Ikuti prosedur bahan; jangan membersihkan tanpa pelatihan dan perlindungan yang sesuai.",
+          "vocabulary": [
+            {
+              "japanese": "薬剤",
+              "reading": "やくざい",
+              "meaning": "bahan kimia"
+            },
+            {
+              "japanese": "保護具",
+              "reading": "ほごぐ",
+              "meaning": "alat pelindung"
+            },
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "清掃",
+              "reading": "せいそう",
+              "meaning": "pembersihan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "薬剤のラベルを確認します。",
+              "reading": "やくざいのらべるをかくにんします。",
+              "meaning": "Saya akan memeriksa label bahan."
+            },
+            {
+              "japanese": "機械の異常を報告します。",
+              "reading": "きかいのいじょうをほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa bahan kimia tidak boleh dipindahkan ke wadah tanpa label?",
+              "options": [
+                "Agar pekerja dapat mengenali isi dan bahayanya",
+                "Agar lebih mudah dicampur",
+                "Agar takaran tidak perlu dicatat",
+                "Agar warnanya terlihat jelas"
+              ],
+              "answer": 0,
+              "explanation": "Identitas dan bahaya bahan harus tetap diketahui oleh orang yang menggunakannya.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Bahan bantu tumpah dekat jalur pekerja; label wadah menyebut perlunya prosedur khusus. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Lap dengan tangan kosong",
+                "Tuang air dan lanjutkan kerja",
+                "Batasi area dan panggil petugas terlatih sesuai prosedur",
+                "Tutup tumpahan dengan linen bersih"
+              ],
+              "answer": 2,
+              "explanation": "Tumpahan ditangani sesuai identifikasi bahaya, pelatihan, dan prosedur fasilitas.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Bahan proses dan kebersihan area, apa arti 保管（ほかん）?",
+              "options": [
+                "penyimpanan",
+                "pembersihan",
+                "bahan kimia",
+                "alat pelindung"
+              ],
+              "answer": 0,
+              "explanation": "保管 dibaca ほかん dan berarti penyimpanan.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Bahan proses dan kebersihan area», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Gunakan serta simpan bahan pada tempat resmi",
+                "Laporkan tumpahan atau label yang tidak jelas",
+                "Baca label dan instruksi bahan",
+                "Kenakan perlindungan yang ditetapkan"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Baca label dan instruksi bahan → Kenakan perlindungan yang ditetapkan → Gunakan serta simpan bahan pada tempat resmi → Laporkan tumpahan atau label yang tidak jelas.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finishing",
+      "title": "Penyelesaian dan pemeriksaan mutu",
+      "description": "Mencocokkan jenis linen dengan jalur finishing, menjaga keselamatan mesin, dan memisahkan hasil yang tidak sesuai.",
+      "lessons": [
+        {
+          "id": "linen-07",
+          "title": "Jalur finishing dan persiapan mesin",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan jenis linen dengan mesin finishing dan memeriksa alat sebelum proses.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Finishing dapat menggunakan feeder, mesin rol, folder, atau tunnel finisher untuk memasukkan, merapikan, melipat, atau menggantung linen. Pilihan mesin dan cara masukan bergantung pada jenis serta ukuran produk dan aturan fasilitas. Pelindung, tombol henti, dan wadah keluaran diperiksa sebelum lini dimulai."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan identitas produk dengan menu, periksa jalur kosong, lalu ikuti instruksi operator. Jangan mengubah pengaturan atau melepas pelindung. Hentikan sesuai prosedur dan laporkan bila muncul suara, getaran, atau gerak tidak biasa.\n\nKasus latihan: Jalur folder siap berjalan, tetapi jenis linen pada keranjang tidak cocok dengan program yang terpasang.\nRespons yang dianjurkan: Tunda masukan dan konfirmasikan program serta jalur yang benar kepada pemimpin lini."
+            }
+          ],
+          "steps": [
+            "Cocokkan jenis linen dengan jalur dan program",
+            "Periksa area, pelindung, dan wadah keluaran",
+            "Masukkan barang sesuai pelatihan alat",
+            "Amati hasil awal dan laporkan penyimpangan"
+          ],
+          "caution": "Pemasukan ke mesin dilakukan setelah pelatihan alat; jangan menjangkau sabuk atau bagian bergerak.",
+          "scenario": "Jalur folder siap berjalan, tetapi jenis linen pada keranjang tidak cocok dengan program yang terpasang.",
+          "response": "Tunda masukan dan konfirmasikan program serta jalur yang benar kepada pemimpin lini.",
+          "vocabulary": [
+            {
+              "japanese": "仕上げ",
+              "reading": "しあげ",
+              "meaning": "finishing atau penyelesaian"
+            },
+            {
+              "japanese": "投入",
+              "reading": "とうにゅう",
+              "meaning": "pemasukan bahan"
+            },
+            {
+              "japanese": "機械",
+              "reading": "きかい",
+              "meaning": "mesin"
+            },
+            {
+              "japanese": "設定",
+              "reading": "せってい",
+              "meaning": "pengaturan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "品種に合う機械を確認します。",
+              "reading": "ひんしゅにあうきかいをかくにんします。",
+              "meaning": "Saya akan memeriksa mesin yang sesuai dengan jenis linen."
+            },
+            {
+              "japanese": "危険があれば、機械を止めます。",
+              "reading": "きけんがあれば、きかいをとめます。",
+              "meaning": "Jika ada bahaya, saya akan menghentikan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus dipastikan sebelum memasukkan linen ke mesin finishing?",
+              "options": [
+                "Jenis linen dan kecocokan jalur/program yang ditetapkan",
+                "Bahwa mesin tercepat selalu digunakan",
+                "Bahwa pelindung dilepas",
+                "Bahwa semua kelompok dicampur"
+              ],
+              "answer": 0,
+              "explanation": "Kecocokan produk dan program mendahului operasi, dengan pengaman tetap digunakan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Jalur folder siap berjalan, tetapi jenis linen pada keranjang tidak cocok dengan program yang terpasang. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Coba satu barang untuk melihat apakah mesin cocok",
+                "Masukkan semua linen sebelum pemimpin datang",
+                "Tahan proses dan konfirmasikan program serta jalur",
+                "Lepas pelindung mesin"
+              ],
+              "answer": 2,
+              "explanation": "Ketidakcocokan antara menu dan jenis linen diselesaikan sebelum proses.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Jalur finishing dan persiapan mesin, apa arti 投入（とうにゅう）?",
+              "options": [
+                "pengaturan",
+                "finishing atau penyelesaian",
+                "pemasukan bahan",
+                "mesin"
+              ],
+              "answer": 2,
+              "explanation": "投入 dibaca とうにゅう dan berarti pemasukan bahan.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Jalur finishing dan persiapan mesin», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Amati hasil awal dan laporkan penyimpangan",
+                "Cocokkan jenis linen dengan jalur dan program",
+                "Periksa area, pelindung, dan wadah keluaran",
+                "Masukkan barang sesuai pelatihan alat"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Cocokkan jenis linen dengan jalur dan program → Periksa area, pelindung, dan wadah keluaran → Masukkan barang sesuai pelatihan alat → Amati hasil awal dan laporkan penyimpangan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-08",
+          "title": "Gangguan mesin dan keselamatan",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti cara kerja aman ketika aliran finishing terganggu dan mengetahui batas kewenangan perbaikan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Feeder, ironer, folder, dan peralatan gantung memiliki titik jepit serta bagian bergerak. Pekerja menggunakan teknik yang diajarkan untuk tiap mesin, serta tidak membersihkan atau mengurai kemacetan ketika alat aktif. Henti darurat digunakan sesuai pelatihan; perbaikan di luar tugas yang diizinkan dilakukan teknisi atau personel berwenang."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Bila linen tersangkut, tombol gangguan muncul, atau pelindung bergeser, hentikan aliran menurut prosedur. Jangan menarik barang sampai alat berhenti dan kondisi aman dinyatakan oleh personel kompeten. Sampaikan lokasi, indikator, dan waktu gangguan.\n\nKasus latihan: Handuk tersangkut di sisi folder yang masih bergerak.\nRespons yang dianjurkan: Gunakan prosedur penghentian jika ada bahaya langsung, jauhkan pekerja lain, dan panggil petugas berwenang; jangan menarik handuk dari alat aktif."
+            }
+          ],
+          "steps": [
+            "Kenali pelindung dan tombol henti",
+            "Jalankan alat sesuai instruksi",
+            "Hentikan aliran saat gangguan terlihat",
+            "Laporkan sebelum pembersihan atau perbaikan"
+          ],
+          "caution": "Jangan menjangkau mesin aktif, menonaktifkan interlock, atau memperbaiki bagian listrik tanpa kewenangan.",
+          "scenario": "Handuk tersangkut di sisi folder yang masih bergerak.",
+          "response": "Gunakan prosedur penghentian jika ada bahaya langsung, jauhkan pekerja lain, dan panggil petugas berwenang; jangan menarik handuk dari alat aktif.",
+          "vocabulary": [
+            {
+              "japanese": "非常停止",
+              "reading": "ひじょうていし",
+              "meaning": "henti darurat"
+            },
+            {
+              "japanese": "安全装置",
+              "reading": "あんぜんそうち",
+              "meaning": "perangkat keselamatan"
+            },
+            {
+              "japanese": "故障",
+              "reading": "こしょう",
+              "meaning": "kerusakan mesin"
+            },
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "品種に合う機械を確認します。",
+              "reading": "ひんしゅにあうきかいをかくにんします。",
+              "meaning": "Saya akan memeriksa mesin yang sesuai dengan jenis linen."
+            },
+            {
+              "japanese": "危険があれば、機械を止めます。",
+              "reading": "きけんがあれば、きかいをとめます。",
+              "meaning": "Jika ada bahaya, saya akan menghentikan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Ketika linen tersangkut pada mesin yang bergerak, prinsip pertama adalah…",
+              "options": [
+                "Mengambilnya cepat dengan tangan",
+                "Mengikuti prosedur penghentian dan meminta personel berwenang",
+                "Melepas pelindung",
+                "Menambah kecepatan mesin"
+              ],
+              "answer": 1,
+              "explanation": "Menghentikan risiko dan mengamankan alat lebih penting daripada mempertahankan produksi.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Handuk tersangkut di sisi folder yang masih bergerak. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tarik handuk dengan sarung tangan",
+                "Hentikan sesuai prosedur dan panggil petugas berwenang",
+                "Minta rekan menahan tombol sambil kamu menjangkau ke dalam",
+                "Bypass interlock"
+              ],
+              "answer": 1,
+              "explanation": "Jangan menjangkau mesin aktif atau mengganti fungsi pengaman.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Gangguan mesin dan keselamatan, apa arti 非常停止（ひじょうていし）?",
+              "options": [
+                "henti darurat",
+                "perangkat keselamatan",
+                "kerusakan mesin",
+                "laporan"
+              ],
+              "answer": 0,
+              "explanation": "非常停止 dibaca ひじょうていし dan berarti henti darurat.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Gangguan mesin dan keselamatan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kenali pelindung dan tombol henti",
+                "Jalankan alat sesuai instruksi",
+                "Hentikan aliran saat gangguan terlihat",
+                "Laporkan sebelum pembersihan atau perbaikan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Kenali pelindung dan tombol henti → Jalankan alat sesuai instruksi → Hentikan aliran saat gangguan terlihat → Laporkan sebelum pembersihan atau perbaikan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-09",
+          "title": "Pemeriksaan hasil finishing",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa hasil lipatan atau penyelesaian dan memisahkan linen yang tidak memenuhi kriteria.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Amati apakah produk bersih, cukup kering untuk jalur berikutnya, rapi, tidak robek, tidak berubah bentuk, dan cocok dengan jenis yang diharapkan. Pemeriksaan visual atau alat inspeksi mendukung mutu, tetapi kriteria mengikuti fasilitas. Produk cacat dipisahkan dengan tanda yang benar; jangan menyembunyikan cacat lewat lipatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Lakukan pemeriksaan pada titik yang ditentukan, termasuk setelah pergantian program. Bila menemukan noda, lubang, lipatan salah, bau, atau ukuran yang mencurigakan, pisahkan dan catat cirinya. Beri tahu lini terkait agar penyebab proses dapat ditinjau.\n\nKasus latihan: Noda ditemukan pada beberapa seprai yang keluar dari lini yang sama.\nRespons yang dianjurkan: Pisahkan seprai, catat jenis cacat dan lini asal, lalu laporkan agar tahap sebelumnya diperiksa."
+            }
+          ],
+          "steps": [
+            "Periksa hasil berdasarkan kriteria produk",
+            "Pisahkan barang yang tidak sesuai",
+            "Catat jenis dan lokasi cacat",
+            "Laporkan kepada lini terkait untuk tindak lanjut"
+          ],
+          "caution": "Jangan mengubah kriteria mutu sendiri atau melewatkan pemeriksaan saat lini sibuk.",
+          "scenario": "Noda ditemukan pada beberapa seprai yang keluar dari lini yang sama.",
+          "response": "Pisahkan seprai, catat jenis cacat dan lini asal, lalu laporkan agar tahap sebelumnya diperiksa.",
+          "vocabulary": [
+            {
+              "japanese": "検品",
+              "reading": "けんぴん",
+              "meaning": "pemeriksaan mutu"
+            },
+            {
+              "japanese": "不良",
+              "reading": "ふりょう",
+              "meaning": "cacat atau tidak sesuai"
+            },
+            {
+              "japanese": "汚れ",
+              "reading": "よごれ",
+              "meaning": "noda atau kotoran"
+            },
+            {
+              "japanese": "分類",
+              "reading": "ぶんるい",
+              "meaning": "pengelompokan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "品種に合う機械を確認します。",
+              "reading": "ひんしゅにあうきかいをかくにんします。",
+              "meaning": "Saya akan memeriksa mesin yang sesuai dengan jenis linen."
+            },
+            {
+              "japanese": "危険があれば、機械を止めます。",
+              "reading": "きけんがあれば、きかいをとめます。",
+              "meaning": "Jika ada bahaya, saya akan menghentikan mesin."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tujuan memisahkan linen yang tidak memenuhi kriteria?",
+              "options": [
+                "Agar cacat ditangani dan tidak terkirim sebagai barang layak",
+                "Agar jumlah pengiriman terlihat besar",
+                "Agar penyebab proses tidak diketahui",
+                "Agar pemeriksaan akhir dilewati"
+              ],
+              "answer": 0,
+              "explanation": "Pemisahan serta catatan menjaga mutu pengiriman dan membantu penelusuran penyebab.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Noda ditemukan pada beberapa seprai yang keluar dari lini yang sama. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Lipat noda ke bagian dalam",
+                "Campurkan dengan seprai tanpa noda",
+                "Pisahkan dan catat kelompok serta jenis cacat",
+                "Kirim dahulu lalu tunggu keluhan"
+              ],
+              "answer": 2,
+              "explanation": "Barang cacat perlu dipisahkan serta dilaporkan agar tindak lanjut dapat ditelusuri.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Pemeriksaan hasil finishing, apa arti 分類（ぶんるい）?",
+              "options": [
+                "cacat atau tidak sesuai",
+                "noda atau kotoran",
+                "pengelompokan",
+                "pemeriksaan mutu"
+              ],
+              "answer": 2,
+              "explanation": "分類 dibaca ぶんるい dan berarti pengelompokan.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan hasil finishing», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pisahkan barang yang tidak sesuai",
+                "Catat jenis dan lokasi cacat",
+                "Laporkan kepada lini terkait untuk tindak lanjut",
+                "Periksa hasil berdasarkan kriteria produk"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa hasil berdasarkan kriteria produk → Pisahkan barang yang tidak sesuai → Catat jenis dan lokasi cacat → Laporkan kepada lini terkait untuk tindak lanjut.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery",
+      "title": "Penyusunan pesanan dan kesiapan pengiriman",
+      "description": "Menjaga kelompok, jumlah, zona bersih, dan komunikasi antar-giliran hingga linen siap dikirim.",
+      "lessons": [
+        {
+          "id": "linen-10",
+          "title": "Jumlah dan pengikatan per pesanan",
+          "minutes": 25,
+          "objectives": [
+            "Mengelompokkan linen selesai menurut jenis dan pelanggan serta memenuhi jumlah yang dipesan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Linen yang lulus pemeriksaan dikelompokkan menurut jenis, ukuran, dan pelanggan. Jumlah per bundel serta cara pengikatan atau kemasan mengikuti pesanan dan standar fasilitas; jumlahnya tidak selalu sama. Label pelanggan harus tetap terbaca. Penghitungan akhir mencegah kekurangan, kelebihan, atau pertukaran pesanan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan meja dan bahan kemasan untuk produk bersih. Hitung sesuai satuan kerja, cocokkan lembar pesanan, lalu verifikasi label sebelum barang dipindah. Bila jumlah tidak cocok, tahan kelompok dan minta arahan; jangan mengimbangi dengan mengambil milik pesanan lain.\n\nKasus latihan: Pesanan satu pelanggan kurang dua handuk, sedangkan kelebihan handuk pelanggan berbeda tersedia.\nRespons yang dianjurkan: Jangan menukar handuk antar-pelanggan. Catat selisih, tahan penyelesaian pesanan, dan minta penanggung jawab menelusuri jumlah."
+            }
+          ],
+          "steps": [
+            "Pisahkan hasil menurut pelanggan dan jenis",
+            "Hitung sesuai satuan pada pesanan",
+            "Ikat atau kemas dengan cara yang ditetapkan",
+            "Cocokkan label dan jumlah sebelum dipindahkan"
+          ],
+          "caution": "Jangan mengubah jumlah bundel atau label untuk menutup kekurangan barang.",
+          "scenario": "Pesanan satu pelanggan kurang dua handuk, sedangkan kelebihan handuk pelanggan berbeda tersedia.",
+          "response": "Jangan menukar handuk antar-pelanggan. Catat selisih, tahan penyelesaian pesanan, dan minta penanggung jawab menelusuri jumlah.",
+          "vocabulary": [
+            {
+              "japanese": "結束",
+              "reading": "けっそく",
+              "meaning": "pengikatan bundel"
+            },
+            {
+              "japanese": "包装",
+              "reading": "ほうそう",
+              "meaning": "pengemasan"
+            },
+            {
+              "japanese": "枚数",
+              "reading": "まいすう",
+              "meaning": "jumlah lembar atau barang"
+            },
+            {
+              "japanese": "注文",
+              "reading": "ちゅうもん",
+              "meaning": "pesanan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文書と数量を照合します。",
+              "reading": "ちゅうもんしょとすうりょうをしょうごうします。",
+              "meaning": "Saya akan mencocokkan pesanan dan jumlah."
+            },
+            {
+              "japanese": "未処理の内容を次の人に伝えます。",
+              "reading": "みしょりのないようをつぎのひとにつたえます。",
+              "meaning": "Saya akan meneruskan pekerjaan yang belum selesai."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Sebelum bundel dibawa ke pengiriman, apa yang perlu dicocokkan?",
+              "options": [
+                "Label pelanggan dan jumlah dengan pesanan",
+                "Warna bundel saja",
+                "Lokasi kendaraan saja",
+                "Nama pekerja yang menghitung"
+              ],
+              "answer": 0,
+              "explanation": "Verifikasi identitas dan jumlah menjaga pesanan tetap utuh.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Pesanan satu pelanggan kurang dua handuk, sedangkan kelebihan handuk pelanggan berbeda tersedia. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Ambil dua handuk dari pelanggan lain",
+                "Ubah label agar sama dengan stok lebih",
+                "Tahan, catat selisih, dan minta penelusuran",
+                "Kirim jumlah kurang tanpa memberi tahu"
+              ],
+              "answer": 2,
+              "explanation": "Barang tidak boleh ditukar antar-pelanggan tanpa otorisasi dan catatan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Jumlah dan pengikatan per pesanan, apa arti 枚数（まいすう）?",
+              "options": [
+                "jumlah lembar atau barang",
+                "pesanan",
+                "pengikatan bundel",
+                "pengemasan"
+              ],
+              "answer": 0,
+              "explanation": "枚数 dibaca まいすう dan berarti jumlah lembar atau barang.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Jumlah dan pengikatan per pesanan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Ikat atau kemas dengan cara yang ditetapkan",
+                "Cocokkan label dan jumlah sebelum dipindahkan",
+                "Pisahkan hasil menurut pelanggan dan jenis",
+                "Hitung sesuai satuan pada pesanan"
+              ],
+              "answer": 3,
+              "explanation": "Urutan yang diajarkan: Pisahkan hasil menurut pelanggan dan jenis → Hitung sesuai satuan pada pesanan → Ikat atau kemas dengan cara yang ditetapkan → Cocokkan label dan jumlah sebelum dipindahkan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-11",
+          "title": "Area bersih, penyimpanan, dan pemindahan",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga produk selesai terlindung saat disimpan dan dipindahkan menuju pengiriman.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Produk bersih dilindungi dari lantai, debu, air, dan barang kotor. Wadah, kereta, atau kontainer digunakan berdasarkan aturan fasilitas serta identitas pesanan. Jalur perpindahan diatur agar barang tidak jatuh atau bercampur. Kondisi penyimpanan dan kendaraan mengikuti standar setempat."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pastikan kereta tidak rusak, lintasan lapang, dan label terlihat. Jangan menumpuk melewati batas aman atau meletakkan produk di lantai. Bila kemasan basah, robek, atau jatuh ke area tidak bersih, tahan dan ikuti prosedur penilaian ulang.\n\nKasus latihan: Kontainer pengiriman berisi sisa cairan dan satu bundel bersih akan segera dimasukkan.\nRespons yang dianjurkan: Tunda pemuatan dan minta kontainer dibersihkan serta dikeringkan sesuai prosedur sebelum produk bersih dimasukkan."
+            }
+          ],
+          "steps": [
+            "Periksa kebersihan dan kondisi wadah",
+            "Pastikan jalur pemindahan aman",
+            "Pindahkan pesanan tanpa merusak label atau kemasan",
+            "Tahan produk yang terkena kotoran atau air"
+          ],
+          "caution": "Jangan menaruh linen bersih pada wadah yang belum dinyatakan bersih.",
+          "scenario": "Kontainer pengiriman berisi sisa cairan dan satu bundel bersih akan segera dimasukkan.",
+          "response": "Tunda pemuatan dan minta kontainer dibersihkan serta dikeringkan sesuai prosedur sebelum produk bersih dimasukkan.",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "容器",
+              "reading": "ようき",
+              "meaning": "wadah"
+            },
+            {
+              "japanese": "清潔区域",
+              "reading": "せいけつくいき",
+              "meaning": "zona bersih"
+            },
+            {
+              "japanese": "運搬",
+              "reading": "うんぱん",
+              "meaning": "pemindahan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文書と数量を照合します。",
+              "reading": "ちゅうもんしょとすうりょうをしょうごうします。",
+              "meaning": "Saya akan mencocokkan pesanan dan jumlah."
+            },
+            {
+              "japanese": "未処理の内容を次の人に伝えます。",
+              "reading": "みしょりのないようをつぎのひとにつたえます。",
+              "meaning": "Saya akan meneruskan pekerjaan yang belum selesai."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa risiko memakai kontainer yang belum bersih untuk produk selesai?",
+              "options": [
+                "Produk dapat tercemar kembali atau kemasannya rusak",
+                "Jumlah barang otomatis bertambah",
+                "Label berubah lebih jelas",
+                "Tidak ada risiko bila kontainer tertutup"
+              ],
+              "answer": 0,
+              "explanation": "Perlindungan produk tetap diperlukan sampai barang diterima pelanggan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Kontainer pengiriman berisi sisa cairan dan satu bundel bersih akan segera dimasukkan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Lap cairan dengan linen yang akan dikirim",
+                "Tutup kontainer dan lanjutkan muat",
+                "Tunda dan bersihkan/keringkan kontainer sesuai prosedur",
+                "Pindahkan barang ke lantai"
+              ],
+              "answer": 2,
+              "explanation": "Produk selesai tetap berada di alur bersih; wadah kotor ditangani dulu.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Area bersih, penyimpanan, dan pemindahan, apa arti 容器（ようき）?",
+              "options": [
+                "pemindahan",
+                "penyimpanan",
+                "wadah",
+                "zona bersih"
+              ],
+              "answer": 2,
+              "explanation": "容器 dibaca ようき dan berarti wadah.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Area bersih, penyimpanan, dan pemindahan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Tahan produk yang terkena kotoran atau air",
+                "Periksa kebersihan dan kondisi wadah",
+                "Pastikan jalur pemindahan aman",
+                "Pindahkan pesanan tanpa merusak label atau kemasan"
+              ],
+              "answer": 2,
+              "explanation": "Urutan yang diajarkan: Periksa kebersihan dan kondisi wadah → Pastikan jalur pemindahan aman → Pindahkan pesanan tanpa merusak label atau kemasan → Tahan produk yang terkena kotoran atau air.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "linen-12",
+          "title": "Serah terima dan laporan ketidaksesuaian",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan status pekerjaan, hambatan, dan tindak lanjut dengan catatan yang jelas.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Produksi melintasi beberapa tahap dan giliran. Handover yang berguna menyebut nomor kelompok, lokasi, waktu, kondisi yang diamati, tindakan yang telah dilakukan, dan pihak yang diberi tahu. Catatan faktual mencegah pengulangan pemeriksaan dan membantu penelusuran. Hindari istilah samar tanpa rincian yang dapat diamati."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Selesaikan catatan pada sistem perusahaan, tandai barang yang ditahan, lalu serahkan langsung isu berisiko. Penerima giliran mengulang informasi penting bila belum jelas. Jangan menandai tugas selesai sebelum pemeriksaan atau perbaikan benar-benar dilakukan.\n\nKasus latihan: Pada pergantian giliran, satu lini masih berhenti dan penyebabnya belum ditemukan.\nRespons yang dianjurkan: Tulis waktu, indikator yang terlihat, langkah aman yang telah dilakukan, dan status menunggu pemeriksaan; serahkan kepada pemimpin giliran berikutnya."
+            }
+          ],
+          "steps": [
+            "Tandai kelompok atau mesin terkait",
+            "Catat waktu dan kondisi yang diamati",
+            "Jelaskan tindakan dan status yang masih terbuka",
+            "Serahkan informasi kepada penanggung jawab berikutnya"
+          ],
+          "caution": "Jangan menghapus tanda tahan atau melaporkan pekerjaan selesai tanpa konfirmasi.",
+          "scenario": "Pada pergantian giliran, satu lini masih berhenti dan penyebabnya belum ditemukan.",
+          "response": "Tulis waktu, indikator yang terlihat, langkah aman yang telah dilakukan, dan status menunggu pemeriksaan; serahkan kepada pemimpin giliran berikutnya.",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            },
+            {
+              "japanese": "状況",
+              "reading": "じょうきょう",
+              "meaning": "keadaan atau status"
+            },
+            {
+              "japanese": "未対応",
+              "reading": "みたいおう",
+              "meaning": "belum ditangani"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文書と数量を照合します。",
+              "reading": "ちゅうもんしょとすうりょうをしょうごうします。",
+              "meaning": "Saya akan mencocokkan pesanan dan jumlah."
+            },
+            {
+              "japanese": "未処理の内容を次の人に伝えます。",
+              "reading": "みしょりのないようをつぎのひとにつたえます。",
+              "meaning": "Saya akan meneruskan pekerjaan yang belum selesai."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Catatan serah terima yang paling berguna menyebut…",
+              "options": [
+                "Fakta yang diamati, lokasi, waktu, tindakan, dan status lanjut",
+                "Dugaan penyebab tanpa bukti",
+                "Kesan umum bahwa semua sudah selesai",
+                "Hanya nama giliran"
+              ],
+              "answer": 0,
+              "explanation": "Informasi terperinci membuat tindak lanjut dan penelusuran lebih akurat.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Pada pergantian giliran, satu lini masih berhenti dan penyebabnya belum ditemukan. Tindakan yang paling tepat adalah…",
+              "options": [
+                "Tulis “sudah diperbaiki” agar pekerjaan tampak selesai",
+                "Hapus tanda tahan saat giliran berganti",
+                "Catat fakta serta status menunggu teknisi dan serahkan langsung",
+                "Biarkan pekerja berikutnya mencari sendiri"
+              ],
+              "answer": 2,
+              "explanation": "Status terbuka harus terlihat dan diserahkan secara faktual.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam konteks Serah terima dan laporan ketidaksesuaian, apa arti 引継ぎ（ひきつぎ）?",
+              "options": [
+                "serah terima",
+                "keadaan atau status",
+                "belum ditangani",
+                "penanggung jawab"
+              ],
+              "answer": 0,
+              "explanation": "引継ぎ dibaca ひきつぎ dan berarti serah terima.",
+              "kind": "vocabulary"
+            },
+            {
+              "prompt": "Dalam alur «Serah terima dan laporan ketidaksesuaian», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Tandai kelompok atau mesin terkait",
+                "Catat waktu dan kondisi yang diamati",
+                "Jelaskan tindakan dan status yang masih terbuka",
+                "Serahkan informasi kepada penanggung jawab berikutnya"
+              ],
+              "answer": 1,
+              "explanation": "Urutan yang diajarkan: Tandai kelompok atau mesin terkait → Catat waktu dan kondisi yang diamati → Jelaskan tindakan dan status yang masih terbuka → Serahkan informasi kepada penanggung jawab berikutnya.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA Jepang — ruang lingkup pekerjaan linen supply untuk SSW",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/buildingcleaning_00003.html"
+    },
+    {
+      "title": "MHLW — informasi resmi SSW sektor linen supply",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/seikatsu-eisei/linen_supply2.html"
+    },
+    {
+      "title": "MHLW — alur kerja dan pengembangan keterampilan linen supply",
+      "url": "https://www.mhlw.go.jp/content/11130500/001686966.pdf"
+    },
+    {
+      "title": "MHLW — standar resmi kerja terkait linen supply",
+      "url": "https://www.mhlw.go.jp/content/11800000/000395460.pdf"
+    }
+  ]
+}

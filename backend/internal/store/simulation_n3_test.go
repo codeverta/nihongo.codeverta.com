@@ -129,7 +129,7 @@ func TestSimulationN3DeadlinesAndIsolation(t *testing.T) {
 	if overview["questionCount"] != 74 || overview["durationMinutes"] != 100 || len(overview["history"].([]map[string]any)) != 1 {
 		t.Fatal("incorrect N3 overview")
 	}
-	if _, err = s.StartSimulation("user", "N2"); !errors.Is(err, ErrInvalid) {
+	if _, err = s.StartSimulation("user", "N6"); !errors.Is(err, ErrInvalid) {
 		t.Fatal("unsupported level accepted")
 	}
 }

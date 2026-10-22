@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/grammar/data/grammar_repository.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
@@ -17,12 +18,12 @@ final grammarCourseProvider = FutureProvider.autoDispose<GrammarCourse>((ref) {
   return ref.watch(grammarRepositoryProvider).getCourse();
 });
 
-final grammarCourseLevelProvider =
-    FutureProvider.autoDispose.family<GrammarCourse, String>((ref, level) {
-  if (level == 'N5') return ref.watch(grammarCourseProvider.future);
-  ref.watch(authControllerProvider.select((s) => s.user?.id));
-  return ref.watch(grammarRepositoryProvider).getCourse(level: level);
-});
+final grammarCourseLevelProvider = FutureProvider.autoDispose
+    .family<GrammarCourse, String>((ref, level) {
+      if (level == 'N5') return ref.watch(grammarCourseProvider.future);
+      ref.watch(authControllerProvider.select((s) => s.user?.id));
+      return ref.watch(grammarRepositoryProvider).getCourse(level: level);
+    });
 
 enum GrammarStage { study, quiz, result }
 
@@ -61,46 +62,56 @@ class GrammarState {
     bool? busy,
     String? error,
     bool clearAnswer = false,
-  }) =>
-      GrammarState(
-        lesson: lesson,
-        stage: stage ?? this.stage,
-        pointIndex: pointIndex ?? this.pointIndex,
-        questionIndex: questionIndex ?? this.questionIndex,
-        attempt: attempt ?? this.attempt,
-        selection: clearAnswer ? null : selection ?? this.selection,
-        feedback: clearAnswer ? null : feedback ?? this.feedback,
-        result: result ?? this.result,
-        busy: busy ?? this.busy,
-        error: error,
-      );
+  }) => GrammarState(
+    lesson: lesson,
+    stage: stage ?? this.stage,
+    pointIndex: pointIndex ?? this.pointIndex,
+    questionIndex: questionIndex ?? this.questionIndex,
+    attempt: attempt ?? this.attempt,
+    selection: clearAnswer ? null : selection ?? this.selection,
+    feedback: clearAnswer ? null : feedback ?? this.feedback,
+    result: result ?? this.result,
+    busy: busy ?? this.busy,
+    error: error,
+  );
 }
 
 final grammarLessonProvider = StateNotifierProvider.autoDispose
     .family<GrammarController, AsyncValue<GrammarState>, String>((ref, id) {
-  // Recreate the controller when the signed-in account changes.
-  ref.watch(authControllerProvider.select((s) => s.user?.id));
-  final c = GrammarController(
-    ref.watch(grammarRepositoryProvider),
-    id,
-    onProgress: () {
-      ref
-        ..invalidate(grammarCourseProvider)
-        ..invalidate(grammarCourseLevelProvider)
-        ..invalidate(homeDashboardProvider)
-        ..invalidate(gamificationProvider);
-    },
-  );
-  unawaited(c.load());
-  return c;
-});
+      // Recreate the controller when the signed-in account changes.
+      final userId = ref.watch(
+        authControllerProvider.select((s) => s.user?.id),
+      );
+      final c = GrammarController(
+        ref.watch(grammarRepositoryProvider),
+        id,
+        history: userId == null
+            ? null
+            : ref.watch(learningHistoryProvider.notifier),
+        onProgress: () {
+          ref
+            ..invalidate(grammarCourseProvider)
+            ..invalidate(grammarCourseLevelProvider)
+            ..invalidate(homeDashboardProvider)
+            ..invalidate(gamificationProvider);
+        },
+      );
+      unawaited(c.load());
+      return c;
+    });
 
 class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
-  GrammarController(this.repository, this.lessonId, {required this.onProgress})
-      : super(const AsyncValue.loading());
+  GrammarController(
+    this.repository,
+    this.lessonId, {
+    required this.onProgress,
+    this.history,
+  }) : super(const AsyncValue.loading());
   final GrammarRepository repository;
   final String lessonId;
   final VoidCallback onProgress;
+  final LearningHistoryController? history;
+
   Future<void> load() async {
     state = const AsyncValue.loading();
     final loaded = await AsyncValue.guard(() async {
@@ -108,7 +119,18 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
       if (lesson.points.isEmpty) {
         throw const GrammarException('Lesson ini belum memiliki materi.');
       }
-      return GrammarState(lesson: lesson);
+      final savedPosition = mounted
+          ? await history?.open(
+              kind: 'grammar',
+              isActive: () => mounted,
+              lessonId: lesson.summary.id,
+              title: lesson.summary.title,
+              level: lesson.summary.level,
+              total: lesson.points.length,
+              completed: lesson.summary.completed,
+            )
+          : null;
+      return GrammarState(lesson: lesson, pointIndex: savedPosition ?? 0);
     });
     if (mounted) state = loaded;
   }
@@ -119,6 +141,7 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
     final index = s.pointIndex + delta;
     if (index >= 0 && index < s.lesson.points.length) {
       state = AsyncValue.data(s.copyWith(pointIndex: index));
+      history?.position('grammar', lessonId, index);
     }
   }
 
@@ -196,14 +219,11 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
     state = AsyncValue.data(s.copyWith(busy: true));
     try {
       final result = await repository.complete(s.attempt!.id);
+      if (mounted && result.passed) history?.complete('grammar', lessonId);
       if (mounted) {
         onProgress();
         state = AsyncValue.data(
-          s.copyWith(
-            stage: GrammarStage.result,
-            result: result,
-            busy: false,
-          ),
+          s.copyWith(stage: GrammarStage.result, result: result, busy: false),
         );
       }
     } on Object catch (e) {
@@ -217,6 +237,7 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
     final s = state.valueOrNull;
     if (s != null && !s.busy) {
       state = AsyncValue.data(GrammarState(lesson: s.lesson));
+      history?.position('grammar', lessonId, 0);
     }
   }
 }

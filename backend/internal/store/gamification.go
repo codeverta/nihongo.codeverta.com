@@ -27,6 +27,7 @@ type studyEvent struct {
 	SSWAttempt                          *SSWAttemptRecord
 }
 type gamificationState struct {
+	LearningActivity map[string]LearningActivity `json:",omitempty"`
 	SSWAttempts map[string]SSWAttemptRecord
 	Anki        map[string]*AnkiDeckState
 	XP          int

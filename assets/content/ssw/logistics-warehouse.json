@@ -1,0 +1,1260 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "receiving",
+      "title": "Penerimaan dan identifikasi barang",
+      "description": "Latihan kerja gudang orisinal berdasarkan ruang lingkup resmi: serah terima barang masuk, pemeriksaan, pemindahan, penyimpanan, picking, dan proses distribusi. Semua pencatatan dan keputusan mengikuti tata kerja fasilitas.",
+      "lessons": [
+        {
+          "id": "warehouse-01",
+          "title": "Mencocokkan barang masuk dan dokumen",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan identitas barang, jumlah, dan dokumen saat penerimaan.",
+            "Mencatat fakta penerimaan pada sistem atau formulir fasilitas.",
+            "Menahan kelompok yang belum dapat dikenali agar tetap terlacak."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Penerimaan adalah awal penelusuran barang. Cocokkan nomor pesanan atau tanda kirim, nama barang, satuan hitung, jumlah, dan penerima dengan dokumen. Barang dapat diterima dalam kotak, palet, atau wadah lain. Sistem setiap gudang berbeda, sehingga nama kolom dan langkah pencatatan mengikuti instruksi kerja yang berlaku."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa satu kelompok pada satu waktu agar barang dua pesanan tidak tercampur. Pindai label atau catat nomor secara benar, lalu tandai status masuk sesuai prosedur. Jika label tidak terbaca atau dokumen belum ada, letakkan di area tahan yang ditetapkan dan minta petugas memeriksa. Kasus: nomor pesanan di label berbeda dari lembar penerimaan. Respons: jangan menerima ke stok aktif sampai ketidaksesuaian dikonfirmasi."
+            }
+          ],
+          "steps": [
+            "Terima dokumen dan barang pada area yang ditetapkan",
+            "Cocokkan nomor, jenis, dan jumlah",
+            "Catat hasil pada sistem atau formulir",
+            "Pisahkan selisih dan minta konfirmasi"
+          ],
+          "caution": "Jangan memasukkan barang tanpa identitas ke stok tersedia atau mengubah angka agar sama dengan pesanan.",
+          "scenario": "Nomor pesanan pada label kotak berbeda dari lembar penerimaan.",
+          "response": "Tahan kotak pada area pemeriksaan, catat nomor yang terlihat dan dokumen terkait, lalu minta petugas mengonfirmasi pesanan sebelum barang masuk stok aktif.",
+          "vocabulary": [
+            {
+              "japanese": "入荷",
+              "reading": "にゅうか",
+              "meaning": "barang masuk/penerimaan"
+            },
+            {
+              "japanese": "伝票",
+              "reading": "でんぴょう",
+              "meaning": "dokumen atau slip"
+            },
+            {
+              "japanese": "数量",
+              "reading": "すうりょう",
+              "meaning": "jumlah"
+            },
+            {
+              "japanese": "照合",
+              "reading": "しょうごう",
+              "meaning": "pencocokan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "伝票の番号と箱の番号が違います。",
+              "reading": "でんぴょうのばんごうとはこのばんごうがちがいます。",
+              "meaning": "Nomor pada dokumen dan kotak berbeda."
+            },
+            {
+              "japanese": "確認するまで、ここに置いてください。",
+              "reading": "かくにんするまで、ここにおいてください。",
+              "meaning": "Tolong letakkan di sini sampai dikonfirmasi."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang perlu dicocokkan ketika barang masuk?",
+              "options": [
+                "Identitas barang, jumlah, dan dokumen yang menyertainya",
+                "Warna kotak saja",
+                "Nama pengemudi saja",
+                "Nomor lorong penyimpanan"
+              ],
+              "answer": 0,
+              "explanation": "Pencocokan membantu menghubungkan barang yang diterima dengan pesanan dan pemiliknya.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Nomor pada label kotak berbeda dari lembar penerimaan. Apa tindakan yang tepat?",
+              "options": [
+                "Ubah label supaya cocok",
+                "Masukkan ke stok tersedia",
+                "Tahan barang dan minta konfirmasi berdasarkan nomor yang terlihat",
+                "Buang dokumen"
+              ],
+              "answer": 2,
+              "explanation": "Perbedaan harus dicatat dan diperiksa sebelum barang ditempatkan sebagai stok yang dapat dipilih.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Mencocokkan barang masuk dan dokumen», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Terima dokumen dan barang pada area yang ditetapkan",
+                "Cocokkan nomor, jenis, dan jumlah",
+                "Catat hasil pada sistem atau formulir",
+                "Pisahkan selisih dan minta konfirmasi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Terima dokumen dan barang pada area yang ditetapkan → Cocokkan nomor, jenis, dan jumlah → Catat hasil pada sistem atau formulir → Pisahkan selisih dan minta konfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-02",
+          "title": "Pemeriksaan jumlah dan kondisi kemasan",
+          "minutes": 25,
+          "objectives": [
+            "Menghitung satuan sesuai cara hitung yang ditentukan fasilitas.",
+            "Membedakan kerusakan yang terlihat dari perkiraan penyebabnya.",
+            "Memisahkan dan melaporkan barang rusak atau kurang."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Petugas memeriksa jumlah dan kondisi luar barang masuk dengan cara yang ditetapkan: per kotak, unit, atau palet. Robekan, penyok, basah, segel rusak, atau jumlah kurang dicatat sebagai keadaan yang terlihat. Pemeriksaan saat penerimaan membantu menemukan kapan suatu masalah terjadi, tetapi pekerja tidak boleh menyimpulkan siapa penyebabnya tanpa bukti."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan tanda tahan atau area karantina sesuai aturan gudang. Ambil foto hanya bila instruksi mengizinkan. Jangan membuka kemasan khusus atau membuang label sebelum ada arahan. Kasus: satu dari enam kotak basah dan segelnya terbuka. Respons: pisahkan kotak itu, catat kondisi serta jumlah, beri tahu penanggung jawab, dan tunggu keputusan tentang pemeriksaan lanjutan."
+            }
+          ],
+          "steps": [
+            "Hitung barang menurut satuan kerja",
+            "Periksa kondisi kemasan dan tanda luar",
+            "Pisahkan barang yang rusak atau kurang",
+            "Catat dan laporkan sebelum penempatan"
+          ],
+          "caution": "Jangan menyembunyikan kerusakan atau mencampur barang tahan ke stok baik.",
+          "scenario": "Satu kotak dari satu kelompok terlihat basah dan segelnya terbuka.",
+          "response": "Pisahkan kotak dari stok yang siap disimpan, catat jumlah dan kondisi yang terlihat, lalu laporkan agar petugas menentukan tindak lanjut.",
+          "vocabulary": [
+            {
+              "japanese": "破損",
+              "reading": "はそん",
+              "meaning": "kerusakan"
+            },
+            {
+              "japanese": "不足",
+              "reading": "ふそく",
+              "meaning": "kekurangan"
+            },
+            {
+              "japanese": "外装",
+              "reading": "がいそう",
+              "meaning": "kemasan luar"
+            },
+            {
+              "japanese": "保留",
+              "reading": "ほりゅう",
+              "meaning": "ditahan sementara"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "箱がぬれて、封が開いています。",
+              "reading": "はこがぬれて、ふうがあいています。",
+              "meaning": "Kotaknya basah dan segelnya terbuka."
+            },
+            {
+              "japanese": "分けて、数量と状態を記録します。",
+              "reading": "わけて、すうりょうとじょうたいをきろくします。",
+              "meaning": "Pisahkan dan catat jumlah serta kondisinya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa barang rusak dipisahkan dari barang yang siap disimpan?",
+              "options": [
+                "Agar tidak terambil sebagai stok baik dan masalahnya bisa ditindaklanjuti",
+                "Agar jumlah total tidak perlu dicatat",
+                "Agar label barang lain dapat dipakai",
+                "Agar barang rusak otomatis hilang dari sistem"
+              ],
+              "answer": 0,
+              "explanation": "Pemisahan menjaga status barang tetap jelas sampai penanggung jawab menentukan langkah berikutnya.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Satu kotak basah dan segelnya terbuka. Apa tindakan yang tepat?",
+              "options": [
+                "Simpan di rak barang baik",
+                "Keringkan diam-diam lalu hapus tandanya",
+                "Pisahkan, catat kondisi, dan laporkan",
+                "Pindahkan isinya ke kotak lain tanpa catatan"
+              ],
+              "answer": 2,
+              "explanation": "Barang dengan kondisi tidak normal harus tetap teridentifikasi; keputusan pemeriksaan atau penggunaan dilakukan sesuai prosedur.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan jumlah dan kondisi kemasan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Hitung barang menurut satuan kerja",
+                "Periksa kondisi kemasan dan tanda luar",
+                "Pisahkan barang yang rusak atau kurang",
+                "Catat dan laporkan sebelum penempatan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Hitung barang menurut satuan kerja → Periksa kondisi kemasan dan tanda luar → Pisahkan barang yang rusak atau kurang → Catat dan laporkan sebelum penempatan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-03",
+          "title": "Pencatatan penerimaan dan lokasi penyimpanan",
+          "minutes": 25,
+          "objectives": [
+            "Memilih lokasi simpan yang sesuai petunjuk sistem dan label barang.",
+            "Mencatat perpindahan dari area penerimaan ke lokasi stok.",
+            "Mencegah barang tanpa lokasi jelas tertinggal di lantai atau jalur kerja."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Setelah diterima, barang diarahkan ke lokasi yang ditentukan oleh sistem atau instruksi kerja. Setiap lokasi dapat mempunyai kode zona, lorong, rak, atau tingkat. Barang yang tampak serupa bisa memiliki nomor produk, ukuran, lot, atau batas penggunaan berbeda, jadi lokasi tidak dipilih hanya berdasarkan ruang kosong."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pindai atau catat barang dan lokasi pada saat pemindahan sesuai prosedur. Pastikan jumlah pada sistem berpindah bersama barang secara tepat. Bila lokasi tidak cocok, penuh, atau label tidak bisa dibaca, tahan pemindahan dan minta instruksi. Kasus: aplikasi mengarahkan ke rak yang sudah berisi barang dengan label berbeda. Respons: jangan menaruh barang di sela rak; laporkan lokasi penuh dan minta lokasi yang disahkan."
+            }
+          ],
+          "steps": [
+            "Baca lokasi yang ditunjuk sistem",
+            "Periksa kode lokasi dan batas penempatan",
+            "Pindahkan barang dengan cara yang diizinkan",
+            "Catat lokasi akhir dan jumlah yang ditempatkan"
+          ],
+          "caution": "Jangan menggunakan ruang kosong yang tidak terdaftar sebagai lokasi simpan.",
+          "scenario": "Lokasi yang ditunjuk penuh dan barang di rak memiliki label berbeda.",
+          "response": "Jangan menaruh barang di lokasi lain tanpa pencatatan. Tandai hambatan, laporkan kepada petugas, dan tunggu lokasi pengganti yang dicatat.",
+          "vocabulary": [
+            {
+              "japanese": "保管場所",
+              "reading": "ほかんばしょ",
+              "meaning": "lokasi penyimpanan"
+            },
+            {
+              "japanese": "棚",
+              "reading": "たな",
+              "meaning": "rak"
+            },
+            {
+              "japanese": "格納",
+              "reading": "かくのう",
+              "meaning": "menempatkan ke penyimpanan"
+            },
+            {
+              "japanese": "在庫",
+              "reading": "ざいこ",
+              "meaning": "stok/persediaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指定された棚がいっぱいです。",
+              "reading": "していされたたながいっぱいです。",
+              "meaning": "Rak yang ditentukan sudah penuh."
+            },
+            {
+              "japanese": "別の場所を確認してください。",
+              "reading": "べつのばしょをかくにんしてください。",
+              "meaning": "Tolong pastikan lokasi lain."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tujuan mencatat lokasi setelah barang dipindahkan?",
+              "options": [
+                "Agar pekerja berikutnya dapat menemukan dan menelusuri barang",
+                "Agar lokasi kosong tidak diketahui",
+                "Agar barang dapat dipindahkan tanpa izin",
+                "Agar label barang tak perlu dibaca"
+              ],
+              "answer": 0,
+              "explanation": "Lokasi dan jumlah yang akurat menjaga barang dapat ditemukan saat stok atau pesanan diperiksa.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Lokasi sistem penuh dan label barang di sana berbeda. Apa tindakan benar?",
+              "options": [
+                "Letakkan barang di lorong",
+                "Tumpuk di rak tanpa memindai",
+                "Laporkan hambatan dan minta lokasi pengganti yang dicatat",
+                "Hapus lokasi dari sistem"
+              ],
+              "answer": 2,
+              "explanation": "Penempatan harus sesuai lokasi yang tercatat, supaya persediaan tidak hilang dari penelusuran.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pencatatan penerimaan dan lokasi penyimpanan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca lokasi yang ditunjuk sistem",
+                "Periksa kode lokasi dan batas penempatan",
+                "Pindahkan barang dengan cara yang diizinkan",
+                "Catat lokasi akhir dan jumlah yang ditempatkan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca lokasi yang ditunjuk sistem → Periksa kode lokasi dan batas penempatan → Pindahkan barang dengan cara yang diizinkan → Catat lokasi akhir dan jumlah yang ditempatkan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "Penyimpanan, pergerakan, dan persediaan",
+      "description": "Latihan orisinal untuk menjaga identitas barang selama penyimpanan. Urutan rotasi, batas susun, peralatan, dan kondisi khusus mengikuti ketentuan fasilitas dan karakter barang.",
+      "lessons": [
+        {
+          "id": "warehouse-04",
+          "title": "Menempatkan barang sesuai zona dan petunjuk",
+          "minutes": 25,
+          "objectives": [
+            "Menggunakan lokasi yang ditetapkan bagi jenis atau kondisi barang.",
+            "Menjaga label dan identitas terlihat selama barang disimpan.",
+            "Meminta arahan jika ketentuan barang atau lokasi tidak jelas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Gudang dapat memisahkan barang menurut pemilik, jenis, ukuran, lot, suhu, atau instruksi penanganan. Zona pada layar atau label menjadi petunjuk operasional. Jangan menganggap dua barang boleh disimpan bersama karena bentuk kemasannya mirip. Barang yang punya syarat khusus memerlukan lokasi dan pengawasan sesuai petunjuk fasilitas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan kode barang dan lokasi sebelum menaruh. Pastikan label menghadap atau ditempatkan agar terbaca dan jalur pemeriksaan tidak tertutup. Jika ada tanda kondisi khusus yang tidak Anda pahami, hentikan penempatan dan tanyakan kepada penanggung jawab. Kasus: dua kotak produk serupa memiliki label lot berbeda. Respons: pertahankan pemisahan lot dan catat lokasi masing-masing sesuai sistem."
+            }
+          ],
+          "steps": [
+            "Periksa kode dan petunjuk penyimpanan",
+            "Pilih hanya lokasi yang ditetapkan",
+            "Tempatkan barang sambil menjaga label terbaca",
+            "Catat lokasi dan pemisahan yang dibutuhkan"
+          ],
+          "caution": "Jangan mencampur lot, pemilik, atau zona berdasarkan kesamaan bentuk kemasan.",
+          "scenario": "Dua kotak terlihat sama tetapi mencantumkan nomor lot berbeda.",
+          "response": "Simpan pada lokasi yang terpisah atau ditetapkan untuk masing-masing lot, lalu catat lokasi setiap kelompok agar penelusurannya tetap jelas.",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "場所",
+              "reading": "ばしょ",
+              "meaning": "lokasi"
+            },
+            {
+              "japanese": "ロット",
+              "reading": "ろっと",
+              "meaning": "kelompok produksi/lot"
+            },
+            {
+              "japanese": "表示",
+              "reading": "ひょうじ",
+              "meaning": "label atau tampilan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この二つはロットが違います。",
+              "reading": "このふたつはろっとがちがいます。",
+              "meaning": "Dua barang ini lotnya berbeda."
+            },
+            {
+              "japanese": "表示を確認して分けます。",
+              "reading": "ひょうじをかくにんしてわけます。",
+              "meaning": "Saya periksa label lalu memisahkannya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa barang dengan lot berbeda perlu tetap dapat dibedakan?",
+              "options": [
+                "Agar jumlah dan riwayat kelompok yang benar dapat ditelusuri",
+                "Agar label dapat dilepas",
+                "Agar semua barang tampak sama",
+                "Agar stok dapat dihitung lebih cepat tanpa catatan"
+              ],
+              "answer": 0,
+              "explanation": "Informasi lot dapat penting untuk pemeriksaan dan pemenuhan pesanan, sehingga tidak boleh hilang.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Dua kotak serupa mempunyai nomor lot berbeda. Bagaimana menyimpannya?",
+              "options": [
+                "Campur dan gunakan satu label",
+                "Hapus salah satu nomor lot",
+                "Pisahkan atau gunakan lokasi yang ditentukan dan catat masing-masing",
+                "Pilih nomor yang lebih baru tanpa mengecek"
+              ],
+              "answer": 2,
+              "explanation": "Pemisahan dan pencatatan mempertahankan jejak masing-masing kelompok barang.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Menempatkan barang sesuai zona dan petunjuk», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa kode dan petunjuk penyimpanan",
+                "Pilih hanya lokasi yang ditetapkan",
+                "Tempatkan barang sambil menjaga label terbaca",
+                "Catat lokasi dan pemisahan yang dibutuhkan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Periksa kode dan petunjuk penyimpanan → Pilih hanya lokasi yang ditetapkan → Tempatkan barang sambil menjaga label terbaca → Catat lokasi dan pemisahan yang dibutuhkan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-05",
+          "title": "Pemindahan aman dan jalur gudang",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jalur pergerakan barang tetap tertata dan bebas penghalang.",
+            "Menggunakan alat pemindahan hanya sesuai pelatihan dan izin.",
+            "Melaporkan tumpahan, barang jatuh, atau kerusakan rak."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Barang berpindah dengan tangan atau alat yang sesuai di fasilitas. Jalur pejalan kaki, area alat, dan tempat tunggu perlu dijaga agar pekerja tidak saling menghalangi. Tumpukan, palet, dan rak mengikuti batas serta petunjuk gudang; tidak ada satu cara susun yang berlaku untuk semua jenis barang. Hanya pekerja terlatih dan berwenang yang menggunakan mesin pemindah."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum mendorong atau membawa, periksa rute, kondisi wadah, dan apakah bantuan diperlukan. Jangan meletakkan barang di depan pintu, alat pemadam, jalur keluar, atau jalur alat. Bila barang jatuh atau rak tampak berubah, jangan mencoba mengangkat atau memperbaiki sendiri jika berisiko; batasi dari posisi aman dan laporkan. Kasus: palet retak ditemukan di jalur pemindahan. Respons: jangan memindahkannya dengan alat tanpa persetujuan; minta bantuan petugas."
+            }
+          ],
+          "steps": [
+            "Periksa barang, wadah, dan rute",
+            "Pastikan alat dan penggunaannya sesuai izin",
+            "Pindahkan barang menurut petunjuk fasilitas",
+            "Rapikan jalur dan laporkan kondisi tidak aman"
+          ],
+          "caution": "Jangan mengoperasikan alat angkat tanpa pelatihan atau memblokir jalur dengan barang.",
+          "scenario": "Palet retak membawa barang dan berada di jalur pemindahan.",
+          "response": "Jaga jarak dan beri tahu penanggung jawab. Minta petugas terlatih menentukan cara memindahkan palet serta lindungi jalur dari lalu lintas lain.",
+          "vocabulary": [
+            {
+              "japanese": "運搬",
+              "reading": "うんぱん",
+              "meaning": "pemindahan barang"
+            },
+            {
+              "japanese": "通路",
+              "reading": "つうろ",
+              "meaning": "jalur"
+            },
+            {
+              "japanese": "台車",
+              "reading": "だいしゃ",
+              "meaning": "troli"
+            },
+            {
+              "japanese": "整理",
+              "reading": "せいり",
+              "meaning": "penataan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "通路に壊れたパレットがあります。",
+              "reading": "つうろにこわれたぱれっとがあります。",
+              "meaning": "Ada palet rusak di jalur."
+            },
+            {
+              "japanese": "近くを通らないで、担当者に知らせます。",
+              "reading": "ちかくをとおらないで、たんとうしゃにしらせます。",
+              "meaning": "Jangan lewat dekat situ dan beri tahu petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Siapa yang boleh mengoperasikan alat angkat atau pemindah khusus?",
+              "options": [
+                "Pekerja yang telah dilatih dan diberi izin untuk alat tersebut",
+                "Siapa pun yang sedang bebas",
+                "Penerima barang",
+                "Pengunjung gudang"
+              ],
+              "answer": 0,
+              "explanation": "Alat tertentu memerlukan pelatihan dan izin fasilitas; pekerja mengikuti pembagian tugas.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Palet retak ada di jalur. Apa tindakan tepat?",
+              "options": [
+                "Pindahkan sendiri dengan forklift tanpa izin",
+                "Tinggalkan tanpa memberi tahu",
+                "Jaga jarak, laporkan, dan minta petugas terlatih menangani",
+                "Tumpuk palet lain di atasnya"
+              ],
+              "answer": 2,
+              "explanation": "Palet rusak dapat gagal ketika dipindahkan; petugas harus mengatur penanganan aman dan jalurnya.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemindahan aman dan jalur gudang», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa barang, wadah, dan rute",
+                "Pastikan alat dan penggunaannya sesuai izin",
+                "Pindahkan barang menurut petunjuk fasilitas",
+                "Rapikan jalur dan laporkan kondisi tidak aman"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Periksa barang, wadah, dan rute → Pastikan alat dan penggunaannya sesuai izin → Pindahkan barang menurut petunjuk fasilitas → Rapikan jalur dan laporkan kondisi tidak aman.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-06",
+          "title": "Hitung stok dan selisih persediaan",
+          "minutes": 25,
+          "objectives": [
+            "Membandingkan jumlah fisik dengan catatan sistem secara berurutan.",
+            "Tidak memperbarui stok sebelum selisih diperiksa.",
+            "Mencatat temuan dan menjaga kelompok terkait tetap dapat ditelusuri."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Penghitungan stok memeriksa jumlah barang di lokasi terhadap catatan. Perbedaan dapat muncul akibat transaksi belum tercatat, salah lokasi, salah hitung, atau barang rusak. Penghitung mengulang sesuai instruksi, memeriksa label dan satuan, lalu melaporkan hasil. Sistem tidak boleh diubah hanya untuk menyamakan angka."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Berhenti memindahkan barang dari lokasi yang sedang dihitung jika prosedur memintanya. Periksa satuan, nomor, dan transaksi yang baru terjadi; minta petugas yang berwenang menyetujui koreksi. Kasus: sistem mencatat 30 unit tetapi rak berisi 28. Respons: hitung ulang, periksa lokasi sekitar sesuai arahan, catat selisih, lalu tunggu pemeriksaan sebelum koreksi stok."
+            }
+          ],
+          "steps": [
+            "Pilih lokasi dan barang sesuai daftar hitung",
+            "Cocokkan nomor serta satuan",
+            "Hitung ulang dan periksa transaksi terkait",
+            "Catat selisih dan tunggu persetujuan koreksi"
+          ],
+          "caution": "Jangan mengubah angka sistem atau mengambil barang untuk menutup selisih tanpa izin.",
+          "scenario": "Catatan menunjukkan 30 unit, tetapi hitungan rak hanya 28.",
+          "response": "Hitung ulang dengan satuan yang benar, periksa apakah transaksi terbaru belum dicatat, lalu dokumentasikan 28 unit dan laporkan untuk pemeriksaan.",
+          "vocabulary": [
+            {
+              "japanese": "棚卸し",
+              "reading": "たなおろし",
+              "meaning": "penghitungan stok"
+            },
+            {
+              "japanese": "差異",
+              "reading": "さい",
+              "meaning": "selisih"
+            },
+            {
+              "japanese": "実数",
+              "reading": "じっすう",
+              "meaning": "jumlah fisik"
+            },
+            {
+              "japanese": "修正",
+              "reading": "しゅうせい",
+              "meaning": "koreksi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "記録は三十個ですが、実数は二十八個です。",
+              "reading": "きろくはさんじゅっこですが、じっすうはにじゅうはっこです。",
+              "meaning": "Catatan 30 buah, tetapi jumlah fisiknya 28."
+            },
+            {
+              "japanese": "もう一度数えて、差異を報告してください。",
+              "reading": "もういちどかぞえて、さいをほうこくしてください。",
+              "meaning": "Hitung sekali lagi dan laporkan selisihnya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tindakan yang tepat sebelum koreksi stok dilakukan?",
+              "options": [
+                "Periksa ulang jumlah dan transaksi, lalu minta persetujuan petugas",
+                "Ubah angka sistem langsung",
+                "Pindahkan barang dari rak lain",
+                "Hapus seluruh catatan"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan dan persetujuan menjaga data stok dapat dipercaya dan mencegah kesalahan baru.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Sistem menunjukkan 30 tetapi fisik 28. Bagaimana melanjutkan?",
+              "options": [
+                "Ubah menjadi 30 tanpa memeriksa",
+                "Ambil 2 dari barang lain",
+                "Hitung ulang, catat selisih, dan laporkan untuk persetujuan",
+                "Sembunyikan 28 unit"
+              ],
+              "answer": 2,
+              "explanation": "Selisih perlu dipastikan dan ditindaklanjuti melalui prosedur, bukan disamarkan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Hitung stok dan selisih persediaan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pilih lokasi dan barang sesuai daftar hitung",
+                "Cocokkan nomor serta satuan",
+                "Hitung ulang dan periksa transaksi terkait",
+                "Catat selisih dan tunggu persetujuan koreksi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Pilih lokasi dan barang sesuai daftar hitung → Cocokkan nomor serta satuan → Hitung ulang dan periksa transaksi terkait → Catat selisih dan tunggu persetujuan koreksi.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "picking-shipping",
+      "title": "Picking, pengemasan, dan pengiriman",
+      "description": "Latihan orisinal untuk memilih barang sesuai pesanan, memeriksa hasil picking, mengemas, dan menempatkannya pada alur pengiriman. Identitas pesanan dan jejak perpindahan dipertahankan sampai serah terima.",
+      "lessons": [
+        {
+          "id": "warehouse-07",
+          "title": "Picking berdasarkan pesanan dan lokasi",
+          "minutes": 25,
+          "objectives": [
+            "Membaca kode barang, jumlah, serta lokasi pada daftar picking.",
+            "Mengambil barang dari lokasi yang cocok dan memindai transaksi.",
+            "Meminta bantuan ketika barang tidak ada atau label berbeda."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Picking mengambil barang dari stok untuk memenuhi pesanan. Daftar atau alat pemindai menunjukkan produk, jumlah, lokasi, dan aturan pilihan yang berlaku. Barang yang namanya mirip belum tentu sama. Prinsip rotasi seperti lot atau tanggal hanya dipakai bila instruksi sistem atau fasilitas menetapkannya; pekerja tidak mengubah aturan urutan berdasarkan kebiasaan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan kode barang dan lokasi sebelum mengambil, hitung sesuai satuan, lalu konfirmasi transaksi dengan alat kerja. Jika jumlah kurang, lokasi kosong, atau label berbeda, jangan mengganti barang dengan produk serupa. Kasus: rak memiliki dua ukuran produk dan pesanan meminta ukuran tertentu. Respons: cocokkan kode lengkap, ambil ukuran yang benar, dan laporkan kekurangan bila jumlah tidak cukup."
+            }
+          ],
+          "steps": [
+            "Baca kode, jumlah, dan lokasi pesanan",
+            "Cocokkan label barang pada lokasi",
+            "Ambil dan pindai jumlah yang diminta",
+            "Laporkan lokasi kosong atau ketidakcocokan"
+          ],
+          "caution": "Jangan mengganti jenis, ukuran, lot, atau jumlah tanpa persetujuan.",
+          "scenario": "Pesanan meminta ukuran kecil, tetapi lokasi berisi kotak ukuran kecil dan besar.",
+          "response": "Cocokkan kode produk lengkap dengan pesanan sebelum mengambil. Jika jumlah ukuran kecil kurang, catat kekurangannya dan hubungi petugas, bukan mengganti dengan ukuran besar.",
+          "vocabulary": [
+            {
+              "japanese": "ピッキング",
+              "reading": "ぴっきんぐ",
+              "meaning": "pengambilan barang pesanan"
+            },
+            {
+              "japanese": "注文",
+              "reading": "ちゅうもん",
+              "meaning": "pesanan"
+            },
+            {
+              "japanese": "商品コード",
+              "reading": "しょうひんこーど",
+              "meaning": "kode produk"
+            },
+            {
+              "japanese": "欠品",
+              "reading": "けっぴん",
+              "meaning": "stok tidak tersedia"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文は小さいサイズです。",
+              "reading": "ちゅうもんはちいさいさいずです。",
+              "meaning": "Pesanan meminta ukuran kecil."
+            },
+            {
+              "japanese": "コードを見てから取ります。",
+              "reading": "こーどをみてからとります。",
+              "meaning": "Saya mengambil setelah melihat kodenya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang dicocokkan sebelum mengambil barang?",
+              "options": [
+                "Kode barang, lokasi, dan jumlah pada pesanan",
+                "Warna rak saja",
+                "Nama pengemudi",
+                "Ukuran palet yang tersedia"
+              ],
+              "answer": 0,
+              "explanation": "Pencocokan menghindari salah produk, salah lokasi, dan salah jumlah.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Pesanan meminta ukuran kecil tetapi ada barang ukuran besar yang mirip. Apa tindakan tepat?",
+              "options": [
+                "Ambil ukuran besar karena hampir sama",
+                "Ubah pesanan sendiri",
+                "Cocokkan kode; laporkan kekurangan jika ukuran yang diminta tidak cukup",
+                "Hapus pesanan"
+              ],
+              "answer": 2,
+              "explanation": "Produk serupa bukan pengganti otomatis; kekurangan harus dilaporkan dan disetujui penanggung jawab.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Picking berdasarkan pesanan dan lokasi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca kode, jumlah, dan lokasi pesanan",
+                "Cocokkan label barang pada lokasi",
+                "Ambil dan pindai jumlah yang diminta",
+                "Laporkan lokasi kosong atau ketidakcocokan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca kode, jumlah, dan lokasi pesanan → Cocokkan label barang pada lokasi → Ambil dan pindai jumlah yang diminta → Laporkan lokasi kosong atau ketidakcocokan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-08",
+          "title": "Pemeriksaan hasil picking dan pengelolaan lot",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa hasil pengambilan terhadap daftar sebelum dikemas.",
+            "Menjaga nomor lot, tanggal, dan identitas pesanan sesuai aturan fasilitas.",
+            "Memisahkan barang salah atau rusak agar tidak terkirim."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Sebelum pengepakan, hasil picking diperiksa sekali lagi: kode, jumlah, lot atau tanggal bila diminta, serta kondisi barang. Beberapa fasilitas menggunakan pemindaian untuk mengurangi salah kirim. Sistem menunjukkan cara rotasi dan pemilihan lot untuk produk tertentu. Pekerja tidak menganggap selalu berlaku satu urutan untuk semua barang."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Bandingkan produk yang terkumpul dengan pesanan dan pindai sesuai instruksi. Jika barang salah, rusak, atau lot tidak cocok, pisahkan dari pesanan siap kirim, beri status sesuai prosedur, dan minta penggantian yang benar. Kasus: pada rak pengemasan ditemukan satu produk dengan label berbeda dari daftar. Respons: jangan mengemasnya; tahan dan periksa kembali lokasi asal serta transaksi."
+            }
+          ],
+          "steps": [
+            "Kumpulkan hasil picking pada area pesanan",
+            "Cocokkan kode, jumlah, dan lot yang diminta",
+            "Periksa kondisi barang dan label",
+            "Pisahkan kesalahan lalu catat penggantinya"
+          ],
+          "caution": "Jangan mengemas barang yang identitas atau statusnya belum cocok.",
+          "scenario": "Satu barang pada area pengepakan memiliki label lot berbeda dari daftar pesanan.",
+          "response": "Tahan barang itu, cocokkan pesanan dan transaksi picking, lalu laporkan agar lot yang benar dipilih sebelum pengemasan.",
+          "vocabulary": [
+            {
+              "japanese": "検品",
+              "reading": "けんぴん",
+              "meaning": "pemeriksaan barang"
+            },
+            {
+              "japanese": "品番",
+              "reading": "ひんばん",
+              "meaning": "nomor/kode barang"
+            },
+            {
+              "japanese": "期限",
+              "reading": "きげん",
+              "meaning": "tanggal batas"
+            },
+            {
+              "japanese": "一致",
+              "reading": "いっち",
+              "meaning": "cocok"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この番号は注文と違います。",
+              "reading": "このばんごうはちゅうもんとちがいます。",
+              "meaning": "Nomor ini berbeda dari pesanan."
+            },
+            {
+              "japanese": "梱包する前に確認しましょう。",
+              "reading": "こんぽうするまえにかくにんしましょう。",
+              "meaning": "Mari pastikan sebelum mengemas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kapan hasil picking siap dikemas?",
+              "options": [
+                "Setelah identitas, jumlah, kondisi, dan informasi yang diminta cocok",
+                "Setelah seluruh barang terkumpul tanpa pemeriksaan",
+                "Saat label terlihat dari jauh",
+                "Ketika ruang pengepakan kosong"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan sebelum pengepakan mencegah barang salah atau rusak masuk ke kiriman.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Label lot pada satu barang berbeda dari daftar. Apa tindakan benar?",
+              "options": [
+                "Tetap kemas karena kode utama mirip",
+                "Ganti label tanpa catatan",
+                "Tahan, cocokkan transaksi, dan pilih lot sesuai instruksi",
+                "Kirim ke pelanggan lain"
+              ],
+              "answer": 2,
+              "explanation": "Perbedaan lot harus diselesaikan dan dicatat sebelum barang meninggalkan gudang.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan hasil picking dan pengelolaan lot», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kumpulkan hasil picking pada area pesanan",
+                "Cocokkan kode, jumlah, dan lot yang diminta",
+                "Periksa kondisi barang dan label",
+                "Pisahkan kesalahan lalu catat penggantinya"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Kumpulkan hasil picking pada area pesanan → Cocokkan kode, jumlah, dan lot yang diminta → Periksa kondisi barang dan label → Pisahkan kesalahan lalu catat penggantinya.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-09",
+          "title": "Pengemasan, pelabelan, dan area kirim",
+          "minutes": 25,
+          "objectives": [
+            "Mengemas barang dengan bahan dan cara yang ditetapkan untuk pesanan.",
+            "Memastikan label pengiriman dapat dibaca dan terkait dengan pesanan yang benar.",
+            "Menata kiriman pada area tunggu yang sesuai tujuan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pengemasan melindungi barang dan mempertahankan identitas pesanan selama perpindahan. Cara kemas, bahan pengisi, segel, dan label tergantung produk serta aturan pelanggan. Label yang benar menghubungkan nomor pesanan, jumlah, tujuan, dan informasi penanganan yang diperlukan. Area kirim diatur agar kiriman berbeda tidak tertukar saat diambil pengangkut."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pilih kemasan sesuai instruksi, periksa label sebelum ditempel, lalu cocokkan kembali dengan pesanan. Jika label buram, dobel, atau tujuan berbeda, tahan paket dan cetak ulang melalui prosedur. Letakkan di zona tujuan yang benar dan jangan menaruh paket di jalur lewat. Kasus: label salah tujuan menempel pada paket yang sudah tertutup. Respons: tahan, minta koreksi label, dan catat paket belum siap kirim."
+            }
+          ],
+          "steps": [
+            "Pilih kemasan sesuai barang dan instruksi",
+            "Lindungi barang dan tutup kemasan",
+            "Cocokkan label dengan nomor pesanan dan tujuan",
+            "Tempatkan pada zona kirim yang benar"
+          ],
+          "caution": "Jangan mengirim paket berlabel ganda, tidak terbaca, atau berbeda tujuan.",
+          "scenario": "Paket tertutup tetapi labelnya menunjukkan tujuan pelanggan lain.",
+          "response": "Tahan paket di area pemeriksaan, jangan menutupinya dengan label baru tanpa prosedur, dan minta label dikoreksi serta diverifikasi terhadap pesanan.",
+          "vocabulary": [
+            {
+              "japanese": "梱包",
+              "reading": "こんぽう",
+              "meaning": "pengemasan"
+            },
+            {
+              "japanese": "ラベル",
+              "reading": "らべる",
+              "meaning": "label"
+            },
+            {
+              "japanese": "出荷",
+              "reading": "しゅっか",
+              "meaning": "pengiriman keluar"
+            },
+            {
+              "japanese": "配送先",
+              "reading": "はいそうさき",
+              "meaning": "tujuan kirim"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ラベルの配送先が違います。",
+              "reading": "らべるのはいそうさきがちがいます。",
+              "meaning": "Tujuan pada label berbeda."
+            },
+            {
+              "japanese": "出荷を止めて、伝票と確認します。",
+              "reading": "しゅっかをとめて、でんぴょうとかくにんします。",
+              "meaning": "Hentikan pengiriman dan periksa dengan dokumen."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus dicocokkan sebelum paket diletakkan di zona kirim?",
+              "options": [
+                "Label, nomor pesanan, jumlah, dan tujuan",
+                "Warna kemasan saja",
+                "Nama petugas yang mengemas",
+                "Ukuran area tunggu"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan menghubungkan paket dengan tujuan dan pesanan yang benar.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Paket tertutup memiliki label tujuan pelanggan lain. Apa yang dilakukan?",
+              "options": [
+                "Kirim karena kotaknya sudah ditutup",
+                "Tempel label baru di atasnya tanpa mencatat",
+                "Tahan dan koreksi label dengan pemeriksaan pesanan",
+                "Pindahkan ke zona kirim yang ramai"
+              ],
+              "answer": 2,
+              "explanation": "Paket tidak boleh dikirim sampai identitas dan labelnya benar serta tercatat.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pengemasan, pelabelan, dan area kirim», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pilih kemasan sesuai barang dan instruksi",
+                "Lindungi barang dan tutup kemasan",
+                "Cocokkan label dengan nomor pesanan dan tujuan",
+                "Tempatkan pada zona kirim yang benar"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Pilih kemasan sesuai barang dan instruksi → Lindungi barang dan tutup kemasan → Cocokkan label dengan nomor pesanan dan tujuan → Tempatkan pada zona kirim yang benar.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "traceability-flow",
+      "title": "Traceabilitas, proses distribusi, dan serah terima",
+      "description": "Latihan orisinal untuk menjaga jejak barang dan menangani aktivitas pendukung gudang, termasuk pelaporan, penataan, pembersihan, dan persiapan cuaca buruk. Ini berfokus pada kerja gudang, bukan proses manufaktur produk.",
+      "lessons": [
+        {
+          "id": "warehouse-10",
+          "title": "Serah barang keluar dan bukti pengiriman",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan kiriman, tujuan, dan jumlah sebelum serah terima.",
+            "Mencatat siapa atau bagian mana yang menerima kiriman sesuai prosedur.",
+            "Menjaga status tetap terbuka ketika bukti serah belum tersedia."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Tahap keluar memastikan barang yang sudah dipilih dan dikemas diserahkan kepada pengangkut atau proses berikutnya dengan tujuan yang benar. Dokumen serah terima, jumlah koli, nomor kiriman, dan waktu menjadi bagian jejak barang. Nama dokumen dan metode tanda tangan berbeda tiap fasilitas; gunakan sistem yang ditentukan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan paket dan daftar sebelum serah. Catat perbedaan jumlah atau kerusakan sebelum kendaraan meninggalkan area. Jangan menandai barang diterima bila belum ada konfirmasi. Kasus: daftar menunjukkan 8 paket, tetapi pengangkut hanya mengambil 7. Respons: tahan status selesai, hitung ulang, dan minta pengangkut serta petugas memastikan paket yang tertinggal."
+            }
+          ],
+          "steps": [
+            "Kumpulkan kiriman menurut tujuan",
+            "Cocokkan nomor dan jumlah dengan daftar",
+            "Serahkan dan catat penerima serta waktu",
+            "Laporkan paket yang tertinggal atau berbeda"
+          ],
+          "caution": "Jangan menutup pengiriman atau membubuhkan tanda terima sebelum jumlah aktual dipastikan.",
+          "scenario": "Daftar memuat delapan paket, tetapi pengangkut akan membawa tujuh.",
+          "response": "Hentikan penutupan transaksi, hitung ulang, catat satu paket yang tertinggal, lalu koordinasikan apakah paket itu dikirim terpisah atau ditahan.",
+          "vocabulary": [
+            {
+              "japanese": "出荷",
+              "reading": "しゅっか",
+              "meaning": "pengiriman keluar"
+            },
+            {
+              "japanese": "受け渡し",
+              "reading": "うけわたし",
+              "meaning": "serah terima"
+            },
+            {
+              "japanese": "配送",
+              "reading": "はいそう",
+              "meaning": "distribusi"
+            },
+            {
+              "japanese": "受取人",
+              "reading": "うけとりにん",
+              "meaning": "penerima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "リストは八個ですが、七個だけです。",
+              "reading": "りすとははっこですが、ななこだけです。",
+              "meaning": "Daftar ada delapan, tetapi hanya tujuh."
+            },
+            {
+              "japanese": "数を確認して、記録してください。",
+              "reading": "かずをかくにんして、きろくしてください。",
+              "meaning": "Pastikan jumlahnya dan catat."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kapan status kiriman dapat ditandai selesai?",
+              "options": [
+                "Setelah jumlah dan serah terima benar-benar dikonfirmasi",
+                "Saat pengangkut tiba di pintu",
+                "Ketika semua paket ditutup",
+                "Setelah label dicetak"
+              ],
+              "answer": 0,
+              "explanation": "Pencatatan harus menggambarkan barang yang benar-benar diserahkan dan diterima.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Daftar menunjukkan 8 paket tetapi pengangkut membawa 7. Apa tindakan tepat?",
+              "options": [
+                "Tandai semua 8 diterima",
+                "Ubah daftar menjadi 7 tanpa laporan",
+                "Hitung ulang, catat paket tertinggal, dan koordinasikan",
+                "Letakkan paket kedelapan di kendaraan lain"
+              ],
+              "answer": 2,
+              "explanation": "Selisih harus tetap terlihat supaya paket yang belum dikirim tidak hilang dari penelusuran.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Serah barang keluar dan bukti pengiriman», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kumpulkan kiriman menurut tujuan",
+                "Cocokkan nomor dan jumlah dengan daftar",
+                "Serahkan dan catat penerima serta waktu",
+                "Laporkan paket yang tertinggal atau berbeda"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Kumpulkan kiriman menurut tujuan → Cocokkan nomor dan jumlah dengan daftar → Serahkan dan catat penerima serta waktu → Laporkan paket yang tertinggal atau berbeda.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-11",
+          "title": "Label ulang dan proses distribusi ringan",
+          "minutes": 25,
+          "objectives": [
+            "Membedakan proses distribusi ringan dari pembuatan atau perubahan fungsi produk.",
+            "Mengikuti instruksi untuk pelabelan, set, atau pengemasan ulang.",
+            "Mempertahankan identitas barang dan catatan sebelum serta setelah proses."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pekerjaan gudang dapat mencakup kegiatan distribusi ringan seperti membagi jumlah ke kemasan lebih kecil, menempel label, atau menyusun beberapa barang menjadi satu set sesuai pesanan. Tujuannya menyiapkan barang untuk aliran distribusi. Perubahan yang membuat atau meningkatkan fungsi produk termasuk kegiatan manufaktur dan berada di luar latihan gudang ini."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum mulai, pastikan instruksi, nomor barang, jumlah tiap kemasan, bahan, dan label yang akan digunakan. Jaga agar produk dan label lama tetap dapat ditelusuri sesuai prosedur. Jangan mengubah isi, spesifikasi, atau keterangan produk sendiri. Kasus: instruksi meminta set tiga barang, tetapi hanya dua jenis tersedia. Respons: jangan mengganti jenis ketiga; tahan pesanan dan laporkan kekurangan."
+            }
+          ],
+          "steps": [
+            "Baca instruksi proses dan identitas pesanan",
+            "Cocokkan isi serta jumlah yang tersedia",
+            "Lakukan hanya proses distribusi yang ditetapkan",
+            "Periksa label dan catat hasil proses"
+          ],
+          "caution": "Jangan mengubah fungsi atau spesifikasi produk atau mengganti isi set tanpa izin.",
+          "scenario": "Instruksi meminta satu set tiga produk, tetapi jenis ketiga tidak ditemukan.",
+          "response": "Tahan pembuatan set, catat produk yang ada dan yang kurang, lalu minta petugas menentukan apakah stok dicari atau pesanan ditunda.",
+          "vocabulary": [
+            {
+              "japanese": "流通加工",
+              "reading": "りゅうつうかこう",
+              "meaning": "proses distribusi ringan"
+            },
+            {
+              "japanese": "小分け",
+              "reading": "こわけ",
+              "meaning": "membagi ke kemasan kecil"
+            },
+            {
+              "japanese": "詰め合わせ",
+              "reading": "つめあわせ",
+              "meaning": "menyusun beberapa barang menjadi set"
+            },
+            {
+              "japanese": "貼付",
+              "reading": "ちょうふ",
+              "meaning": "penempelan label"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "三つの品物を一組にします。",
+              "reading": "みっつのしなものをひとくみにします。",
+              "meaning": "Tiga barang disusun menjadi satu set."
+            },
+            {
+              "japanese": "一つ足りません。確認をお願いします。",
+              "reading": "ひとつたりません。かくにんをおねがいします。",
+              "meaning": "Satu barang kurang. Mohon diperiksa."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa contoh proses distribusi ringan di gudang?",
+              "options": [
+                "Menempel label atau menyusun set sesuai instruksi",
+                "Mengubah kemampuan atau fungsi produk",
+                "Memperbaiki mesin produk",
+                "Mengubah isi produk berdasarkan perkiraan"
+              ],
+              "answer": 0,
+              "explanation": "Gudang dapat menyiapkan barang untuk distribusi, tetapi tidak mengubah fungsi atau spesifikasi produk.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Satu dari tiga jenis untuk set tidak tersedia. Apa yang dilakukan?",
+              "options": [
+                "Ganti dengan barang serupa tanpa bertanya",
+                "Tulis bahwa set lengkap",
+                "Tahan pesanan dan laporkan kekurangan untuk keputusan petugas",
+                "Ambil dari pesanan lain"
+              ],
+              "answer": 2,
+              "explanation": "Komposisi set harus sesuai instruksi; penggantian perlu keputusan yang berwenang dan catatan yang benar.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Label ulang dan proses distribusi ringan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca instruksi proses dan identitas pesanan",
+                "Cocokkan isi serta jumlah yang tersedia",
+                "Lakukan hanya proses distribusi yang ditetapkan",
+                "Periksa label dan catat hasil proses"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca instruksi proses dan identitas pesanan → Cocokkan isi serta jumlah yang tersedia → Lakukan hanya proses distribusi yang ditetapkan → Periksa label dan catat hasil proses.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "warehouse-12",
+          "title": "Pencatatan pengecualian, cuaca, dan serah terima",
+          "minutes": 25,
+          "objectives": [
+            "Melaporkan kerusakan, lokasi, dan transaksi yang belum selesai dengan jelas.",
+            "Membantu penataan dan perlindungan barang sesuai arahan saat cuaca buruk.",
+            "Menyerahkan status persediaan dan hambatan kepada giliran berikutnya."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Gudang mengandalkan laporan agar barang tetap dapat ditelusuri sepanjang penerimaan, penyimpanan, picking, dan pengiriman. Tumpahan, air masuk, atap bocor, label hilang, atau sistem tidak tersedia harus dicatat bersama lokasi dan tindakan aman yang telah dilakukan. Saat cuaca buruk mendekat, rencana fasilitas dapat memindahkan barang atau melindungi area dari hujan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ikuti instruksi penanggung jawab dan jangan memindahkan barang sensitif tanpa mencatat lokasi baru. Laporkan kejadian segera, lalu pada serah terima jelaskan lot, rak, jumlah, status, waktu, dan tindakan yang masih diperlukan. Kasus: air mulai masuk dekat rak barang. Respons: beri tahu pengawas, lindungi diri, dan pindahkan barang hanya bila diarahkan melalui prosedur yang aman; catat lokasi perpindahan."
+            }
+          ],
+          "steps": [
+            "Kenali dan laporkan pengecualian beserta lokasinya",
+            "Ikuti tindakan perlindungan yang diperintahkan",
+            "Catat perpindahan, jumlah, dan status barang",
+            "Serahkan masalah terbuka kepada petugas berikutnya"
+          ],
+          "caution": "Jangan memindahkan atau menandai barang tanpa memperbarui lokasi dan statusnya.",
+          "scenario": "Air mulai masuk di dekat rak dan beberapa kotak berada di lantai rendah.",
+          "response": "Laporkan lokasi dan keadaan kepada pengawas, ikuti rencana perlindungan gudang, serta catat setiap kotak yang dipindahkan dan lokasi barunya.",
+          "vocabulary": [
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            },
+            {
+              "japanese": "水漏れ",
+              "reading": "みずもれ",
+              "meaning": "kebocoran air"
+            },
+            {
+              "japanese": "移動",
+              "reading": "いどう",
+              "meaning": "pemindahan"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "棚の近くに水が入っています。",
+              "reading": "たなのちかくにみずがはいっています。",
+              "meaning": "Air masuk di dekat rak."
+            },
+            {
+              "japanese": "担当者に報告して、指示を待ちます。",
+              "reading": "たんとうしゃにほうこくして、しじをまちます。",
+              "meaning": "Saya melaporkan kepada petugas dan menunggu instruksi."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Informasi apa yang harus disampaikan saat barang dipindahkan karena perlindungan cuaca?",
+              "options": [
+                "Identitas barang, jumlah, lokasi asal dan baru, serta alasan/status",
+                "Hanya nama pekerja",
+                "Perkiraan tanpa catatan",
+                "Tidak perlu mencatat jika sementara"
+              ],
+              "answer": 0,
+              "explanation": "Lokasi dan status perlu diperbarui agar barang tetap ditemukan dan dapat ditelusuri.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Air mulai masuk dekat rak. Apa tindakan tepat?",
+              "options": [
+                "Pindahkan semua barang ke lorong tanpa catatan",
+                "Tutup area dan diam saja",
+                "Laporkan kepada pengawas dan ikuti rencana, catat barang yang dipindah",
+                "Gunakan karton basah untuk menutupnya"
+              ],
+              "answer": 2,
+              "explanation": "Perlindungan harus mengikuti arahan keselamatan dan setiap perpindahan dicatat untuk menjaga ketertelusuran.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pencatatan pengecualian, cuaca, dan serah terima», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kenali dan laporkan pengecualian beserta lokasinya",
+                "Ikuti tindakan perlindungan yang diperintahkan",
+                "Catat perpindahan, jumlah, dan status barang",
+                "Serahkan masalah terbuka kepada petugas berikutnya"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Kenali dan laporkan pengecualian beserta lokasinya → Ikuti tindakan perlindungan yang diperintahkan → Catat perpindahan, jumlah, dan status barang → Serahkan masalah terbuka kepada petugas berikutnya.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "国土交通省 — 物流倉庫分野における特定技能外国人・育成就労外国人の受入れ",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/warehousing_ssw.html"
+    },
+    {
+      "title": "出入国在留管理庁 — 特定技能制度（物流倉庫分野を含む制度全般）",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/index.html"
+    },
+    {
+      "title": "国土交通省 — 物流倉庫分野別運用方針（2026年1月23日閣議決定、掲載ページ）",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/warehousing_ssw.html"
+    }
+  ]
+}

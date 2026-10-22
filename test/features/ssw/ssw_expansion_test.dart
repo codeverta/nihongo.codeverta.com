@@ -16,6 +16,7 @@ import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
 import 'package:nihongo_master/features/ssw/data/kaigo_repository.dart';
 import 'package:nihongo_master/features/ssw/domain/kaigo_curriculum.dart';
+import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
@@ -63,6 +64,77 @@ void main() {
       ),
       isFalse,
     );
+  });
+
+  test('all expanded SSW fields have sourced, readable curricula', () async {
+    const sectors = [
+      'automobile-maintenance',
+      'aviation',
+      'accommodation',
+      'road-transport',
+      'railway',
+      'logistics-warehouse',
+      'food-manufacturing',
+      'food-service',
+      'forestry',
+      'wood-industry',
+      'resource-recycling',
+    ];
+    final japaneseText = RegExp(r'[\u3040-\u30ff\u3400-\u9fff]');
+    expect(
+      sswActiveSectorIds,
+      equals(sswSectors.map((sector) => sector.id).toSet()),
+    );
+
+    for (final sector in sectors) {
+      expect(sswActiveSectorIds, contains(sector));
+      final raw = jsonDecode(
+        await rootBundle.loadString('assets/content/ssw/$sector.json'),
+      ) as Json;
+      final course = KaigoCurriculum.fromJson(raw);
+      expect(course.modules, hasLength(4), reason: sector);
+      expect(course.lessons, hasLength(12), reason: sector);
+      expect(raw['sources'], isNotEmpty, reason: '$sector source attribution');
+      for (final module in course.modules) {
+        expect(
+          japaneseText.hasMatch('${module.title} ${module.description}'),
+          isFalse,
+          reason: '$sector/${module.id}: headings are plain text',
+        );
+      }
+      for (final source in raw['sources'] as List) {
+        final url = (source as Json)['url'] as String;
+        expect(Uri.parse(url).scheme, 'https', reason: sector);
+      }
+
+      for (final lesson in course.lessons) {
+        expect(lesson.checks, hasLength(3), reason: '$sector/${lesson.id}');
+        expect(lesson.vocabulary, isNotEmpty, reason: '$sector/${lesson.id}');
+        expect(lesson.dialogue, isNotEmpty, reason: '$sector/${lesson.id}');
+        for (final word in [...lesson.vocabulary, ...lesson.dialogue]) {
+          expect(word.reading, isNotEmpty, reason: '$sector/${lesson.id}');
+        }
+
+        final plainText = [
+          lesson.title,
+          ...lesson.objectives,
+          lesson.scenario,
+          lesson.response,
+          lesson.caution,
+          ...lesson.steps,
+          ...lesson.sections.map((section) => section.body),
+          ...lesson.checks.expand(
+            (check) => [check.prompt, check.explanation, ...check.options],
+          ),
+        ].join(' ');
+        expect(
+          japaneseText.hasMatch(plainText),
+          isFalse,
+          reason:
+              '$sector/${lesson.id}: Japanese text belongs in vocabulary/dialogue',
+        );
+      }
+    }
   });
 
   test('SSW repositories send the correct distinct exam IDs', () async {

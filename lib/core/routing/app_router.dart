@@ -263,6 +263,20 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           attemptId: state.pathParameters['attemptId']!,
         ),
       ),
+      for (final paper in [2, 3, 4, 5]) ...[
+        GoRoute(
+          path: '/exams/nat-$paper/simulation',
+          builder: (context, state) =>
+              SimulationIntroScreen(level: 'NAT-$paper'),
+        ),
+        GoRoute(
+          path: '/exams/nat-$paper/simulation/:attemptId',
+          builder: (context, state) => SimulationAttemptScreen(
+            level: 'NAT-$paper',
+            attemptId: state.pathParameters['attemptId']!,
+          ),
+        ),
+      ],
       GoRoute(
         path: '/exams/jft/exam-1',
         builder: (context, state) => const JftIntroScreen(),
@@ -274,6 +288,19 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           attemptId: state.pathParameters['attemptId']!,
         ),
       ),
+      for (final examNumber in [2, 3, 4, 5]) ...[
+        GoRoute(
+          path: '/exams/jft/exam-$examNumber',
+          builder: (context, state) => JftIntroScreen(examNumber: examNumber),
+        ),
+        GoRoute(
+          path: '/exams/jft/exam-$examNumber/:attemptId',
+          builder: (context, state) => SimulationAttemptScreen(
+            level: 'JFT-$examNumber',
+            attemptId: state.pathParameters['attemptId']!,
+          ),
+        ),
+      ],
       GoRoute(
         path: '/exams/n5/simulation',
         builder: (context, state) => const SimulationIntroScreen(),
@@ -303,6 +330,28 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/exams/n3/simulation/:attemptId',
         builder: (context, state) => SimulationAttemptScreen(
           level: 'N3',
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/exams/n2/simulation',
+        builder: (context, state) => const SimulationIntroScreen(level: 'N2'),
+      ),
+      GoRoute(
+        path: '/exams/n2/simulation/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          level: 'N2',
+          attemptId: state.pathParameters['attemptId']!,
+        ),
+      ),
+      GoRoute(
+        path: '/exams/n1/simulation',
+        builder: (context, state) => const SimulationIntroScreen(level: 'N1'),
+      ),
+      GoRoute(
+        path: '/exams/n1/simulation/:attemptId',
+        builder: (context, state) => SimulationAttemptScreen(
+          level: 'N1',
           attemptId: state.pathParameters['attemptId']!,
         ),
       ),

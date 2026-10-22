@@ -11,19 +11,23 @@ class SimulationRepository extends DiagnosticRepository {
   Future<Json> overview() => request('/simulation/${level.toLowerCase()}');
 
   @override
-  Future<String> start() async => (await request(
-        '/exam-attempts',
-        method: 'POST',
-        body: {
-          'examId': level.startsWith('SSW-')
-              ? '${level.toLowerCase()}-simulation-1'
-              : level == 'JFT'
+  Future<String> start() async =>
+      (await request(
+            '/exam-attempts',
+            method: 'POST',
+            body: {
+              'examId': level.startsWith('SSW-')
+                  ? '${level.toLowerCase()}-simulation-1'
+                  : level == 'JFT'
                   ? 'jft-a2-full-1'
-                  : level == 'NAT'
-                      ? 'nat-5q-full-1'
-                      : 'jlpt-${level.toLowerCase()}-simulation-1',
-        },
-      ))['id'] as String;
+                  : level.startsWith('JFT-')
+                  ? 'jft-a2-full-${level.substring(4)}'
+                  : level.startsWith('NAT')
+                  ? 'nat-5q-full-${level == 'NAT' ? '1' : level.substring(4)}'
+                  : 'jlpt-${level.toLowerCase()}-simulation-1',
+            },
+          ))['id']
+          as String;
 
   @override
   Future<Json> session(String id) =>
@@ -43,10 +47,10 @@ class SimulationRepository extends DiagnosticRepository {
   }
 
   Future<Json> submitSection(String id, String section) => request(
-        '/simulation/attempts/${Uri.encodeComponent(id)}/submit-section',
-        method: 'POST',
-        body: {'section': section},
-      );
+    '/simulation/attempts/${Uri.encodeComponent(id)}/submit-section',
+    method: 'POST',
+    body: {'section': section},
+  );
 }
 
 final simulationRepositoryProvider = Provider(
@@ -60,11 +64,11 @@ final simulationOverviewProvider = FutureProvider.autoDispose<Json>((ref) {
 
 final simulationLevelRepositoryProvider =
     Provider.family<SimulationRepository, String>((ref, level) {
-  if (level == 'N5') return ref.watch(simulationRepositoryProvider);
-  return SimulationRepository(ref.watch(dioProvider), level: level);
-});
-final simulationLevelOverviewProvider =
-    FutureProvider.autoDispose.family<Json, String>((ref, level) {
-  ref.watch(authControllerProvider.select((s) => s.user?.id));
-  return ref.watch(simulationLevelRepositoryProvider(level)).overview();
-});
+      if (level == 'N5') return ref.watch(simulationRepositoryProvider);
+      return SimulationRepository(ref.watch(dioProvider), level: level);
+    });
+final simulationLevelOverviewProvider = FutureProvider.autoDispose
+    .family<Json, String>((ref, level) {
+      ref.watch(authControllerProvider.select((s) => s.user?.id));
+      return ref.watch(simulationLevelRepositoryProvider(level)).overview();
+    });

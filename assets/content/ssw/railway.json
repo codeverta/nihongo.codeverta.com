@@ -1,0 +1,1278 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "station-service",
+      "title": "Stasiun, penumpang, dan kebersihan",
+      "description": "Latihan orisinal untuk lingkungan stasiun dan layanan penumpang, termasuk keselamatan peron, informasi saat perubahan layanan, serta pembersihan stasiun dan kereta. Pekerja mengikuti pembagian tugas, batas area, dan instruksi keselamatan operator.",
+      "lessons": [
+        {
+          "id": "rail-01",
+          "title": "Pengamatan peron dan arahan penumpang",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jarak aman dan memperhatikan keadaan peron selama bertugas.",
+            "Memberikan arah sederhana tanpa menghalangi arus penumpang.",
+            "Segera melaporkan benda atau keadaan yang berisiko."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Petugas stasiun membantu penumpang menemukan peron, pintu keluar, atau fasilitas. Area dekat tepi peron dan pintu kereta memerlukan perhatian khusus. Posisi tubuh, penggunaan jalur pejalan kaki, dan komunikasi harus mengikuti prosedur operator. Pengamatan dilakukan sambil menjaga diri sendiri dan tidak masuk ke area terbatas tanpa kewenangan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jawab pertanyaan dengan petunjuk singkat seperti nama peron atau arah tangga yang sudah dipastikan. Bila melihat barang tertinggal, penumpang terjatuh, atau kerumunan mendekati area berbahaya, beri tahu petugas yang bertanggung jawab. Jangan mengejar barang ke jalur atau menahan kereta dengan tindakan di luar prosedur. Kasus: tas tertinggal dekat garis peringatan. Respons: jaga jarak, beri tahu petugas, dan ikuti cara pengamanan setempat."
+            }
+          ],
+          "steps": [
+            "Amati penumpang dan keadaan peron dari posisi aman",
+            "Berikan arahan yang sudah dipastikan",
+            "Laporkan risiko atau keadaan tidak biasa",
+            "Ikuti instruksi petugas penanggung jawab"
+          ],
+          "caution": "Jangan memasuki jalur atau area terbatas untuk mengambil benda tanpa prosedur dan izin.",
+          "scenario": "Sebuah tas tertinggal dekat garis peringatan di peron.",
+          "response": "Jangan mendekati area berisiko untuk mengambil tas. Beri tahu petugas yang berwenang, tunjukkan lokasi, dan ikuti prosedur pengamanan.",
+          "vocabulary": [
+            {
+              "japanese": "ホーム",
+              "reading": "ほーむ",
+              "meaning": "peron"
+            },
+            {
+              "japanese": "乗客",
+              "reading": "じょうきゃく",
+              "meaning": "penumpang"
+            },
+            {
+              "japanese": "危険",
+              "reading": "きけん",
+              "meaning": "bahaya"
+            },
+            {
+              "japanese": "案内",
+              "reading": "あんない",
+              "meaning": "petunjuk atau informasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "三番線はどこですか。",
+              "reading": "さんばんせんはどこですか。",
+              "meaning": "Di mana jalur tiga?"
+            },
+            {
+              "japanese": "この階段を上がってください。",
+              "reading": "このかいだんをあがってください。",
+              "meaning": "Silakan naik tangga ini."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang harus dilakukan ketika melihat risiko di dekat tepi peron?",
+              "options": [
+                "Menjaga jarak aman dan memberi tahu petugas yang bertanggung jawab",
+                "Mengambil benda dengan berlari ke jalur",
+                "Memindahkan pembatas tanpa izin",
+                "Mengabaikannya selama kereta belum tiba"
+              ],
+              "answer": 0,
+              "explanation": "Lapor dari posisi aman agar petugas dapat mengendalikan risiko sesuai prosedur.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Tas tertinggal dekat garis peringatan. Apa tindakan tepat?",
+              "options": [
+                "Masuk ke jalur untuk mengambilnya",
+                "Melemparkannya ke ruang petugas",
+                "Menjaga jarak, melaporkan lokasi, dan mengikuti prosedur",
+                "Meminta penumpang lain mengambilnya"
+              ],
+              "answer": 2,
+              "explanation": "Benda di area berisiko ditangani petugas berwenang; pekerja tidak boleh membahayakan diri atau orang lain.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pengamatan peron dan arahan penumpang», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Amati penumpang dan keadaan peron dari posisi aman",
+                "Berikan arahan yang sudah dipastikan",
+                "Laporkan risiko atau keadaan tidak biasa",
+                "Ikuti instruksi petugas penanggung jawab"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Amati penumpang dan keadaan peron dari posisi aman → Berikan arahan yang sudah dipastikan → Laporkan risiko atau keadaan tidak biasa → Ikuti instruksi petugas penanggung jawab.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-02",
+          "title": "Informasi saat keterlambatan atau perubahan layanan",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan informasi layanan yang telah dikonfirmasi.",
+            "Melaporkan pertanyaan yang tidak dapat dijawab kepada petugas operasi.",
+            "Menjaga penumpang tetap berada di area yang aman."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Keterlambatan, perubahan jalur, atau pengalihan dapat membingungkan penumpang. Petugas memberi pengumuman sesuai informasi resmi operator. Gunakan kata sederhana: nama layanan, peron atau arah yang benar, dan tempat bertanya bila informasi belum tersedia. Jangan membuat perkiraan sendiri tentang waktu berangkat atau menyuruh penumpang berpindah ke jalur lain tanpa konfirmasi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Bila menerima kabar yang belum pasti, sampaikan bahwa informasi sedang diperiksa dan segera hubungi atasan atau pusat informasi. Saat mengarahkan kelompok, tunjukkan jalur pejalan kaki dan hindari membuat orang berlari. Kasus: penumpang bertanya kereta berikutnya setelah pengumuman gangguan yang belum menyebut waktu. Respons: jelaskan bahwa waktunya belum dikonfirmasi dan arahkan ke sumber informasi operator."
+            }
+          ],
+          "steps": [
+            "Dengarkan pengumuman atau pesan resmi",
+            "Periksa rute, peron, dan waktu yang tersedia",
+            "Laporkan informasi yang belum jelas",
+            "Sampaikan pembaruan yang sudah dikonfirmasi"
+          ],
+          "caution": "Jangan menyampaikan perkiraan pribadi sebagai jadwal resmi.",
+          "scenario": "Gangguan diumumkan, tetapi waktu keberangkatan berikutnya belum diberikan.",
+          "response": "Jelaskan bahwa waktu masih diperiksa, tunjukkan sumber informasi resmi, lalu perbarui setelah petugas mengonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "遅延",
+              "reading": "ちえん",
+              "meaning": "keterlambatan"
+            },
+            {
+              "japanese": "運休",
+              "reading": "うんきゅう",
+              "meaning": "pembatalan layanan"
+            },
+            {
+              "japanese": "変更",
+              "reading": "へんこう",
+              "meaning": "perubahan"
+            },
+            {
+              "japanese": "確認中",
+              "reading": "かくにんちゅう",
+              "meaning": "sedang diperiksa"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "次の電車は何時ですか。",
+              "reading": "つぎのでんしゃはなんじですか。",
+              "meaning": "Kereta berikutnya pukul berapa?"
+            },
+            {
+              "japanese": "今、確認しています。分かり次第お知らせします。",
+              "reading": "いま、かくにんしています。わかりしだいおしらせします。",
+              "meaning": "Sedang kami periksa. Kami memberi tahu setelah informasinya diketahui."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa cara yang benar saat waktu kereta berikutnya belum dikonfirmasi?",
+              "options": [
+                "Katakan bahwa informasi sedang diperiksa dan gunakan pemberitahuan resmi",
+                "Tebak waktu berdasarkan jadwal hari sebelumnya",
+                "Minta penumpang menunggu di jalur mana pun",
+                "Pastikan kereta akan datang sebentar lagi"
+              ],
+              "answer": 0,
+              "explanation": "Informasi yang belum pasti harus disebut sebagai belum pasti, lalu diperbarui setelah konfirmasi.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Penumpang meminta waktu kereta setelah ada gangguan, tetapi belum ada jadwal baru. Apa jawaban tepat?",
+              "options": [
+                "Sebut waktu perkiraan sendiri",
+                "Katakan tidak ada masalah dan pergi",
+                "Jelaskan bahwa masih diperiksa dan arahkan ke sumber resmi",
+                "Arahkan penumpang ke peron lain tanpa mengecek"
+              ],
+              "answer": 2,
+              "explanation": "Memberi keterangan jujur dan mengarahkan ke kanal resmi mencegah salah informasi serta perpindahan yang keliru.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Informasi saat keterlambatan atau perubahan layanan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Dengarkan pengumuman atau pesan resmi",
+                "Periksa rute, peron, dan waktu yang tersedia",
+                "Laporkan informasi yang belum jelas",
+                "Sampaikan pembaruan yang sudah dikonfirmasi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Dengarkan pengumuman atau pesan resmi → Periksa rute, peron, dan waktu yang tersedia → Laporkan informasi yang belum jelas → Sampaikan pembaruan yang sudah dikonfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-03",
+          "title": "Pemeriksaan kebersihan area stasiun dan kereta",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan alat dan bahan kebersihan sesuai area yang ditugaskan.",
+            "Mencegah alat atau cairan mengganggu pergerakan penumpang.",
+            "Melaporkan kerusakan atau kontaminasi yang membutuhkan petugas lain."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pekerjaan pembersihan mencakup bagian dalam dan luar kereta, peron, concourse, serta fasilitas stasiun sesuai penugasan. Pekerja membedakan area yang sedang dibersihkan dan area yang masih digunakan penumpang. Alat, bahan, sarung tangan, tanda peringatan, dan metode kerja mengikuti petunjuk fasilitas; bahan yang berbeda tidak boleh dicampur atau digunakan berdasarkan dugaan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Simpan alat agar tidak masuk jalur berjalan atau menjadi penghalang. Gunakan tanda peringatan sesuai prosedur jika lantai basah. Jika menemukan benda tajam, cairan tidak dikenal, fasilitas rusak, atau kerusakan di dekat jalur kereta, jangan menyentuhnya; batasi area dari posisi aman dan laporkan. Kasus: lantai concourse basah saat ramai. Respons: ikuti cara penandaan, jaga jalur lewat yang aman, dan minta bantuan bila area tidak dapat diamankan."
+            }
+          ],
+          "steps": [
+            "Pastikan area dan tugas pembersihan yang ditetapkan",
+            "Siapkan alat serta tanda sesuai instruksi",
+            "Bersihkan sambil menjaga jalur pengguna tetap aman",
+            "Laporkan benda berbahaya atau fasilitas rusak"
+          ],
+          "caution": "Jangan mencampur cairan, meninggalkan alat di jalur penumpang, atau menyentuh benda tak dikenal.",
+          "scenario": "Saat pembersihan, ditemukan cairan tanpa identitas di lantai concourse yang ramai.",
+          "response": "Jangan menyentuh atau mencampur bahan. Beri tahu penanggung jawab, ikuti prosedur pembatasan area, dan gunakan bahan pembersih hanya setelah dipastikan.",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "reading": "せいそう",
+              "meaning": "pembersihan"
+            },
+            {
+              "japanese": "道具",
+              "reading": "どうぐ",
+              "meaning": "alat"
+            },
+            {
+              "japanese": "床",
+              "reading": "ゆか",
+              "meaning": "lantai"
+            },
+            {
+              "japanese": "立入禁止",
+              "reading": "たちいりきんし",
+              "meaning": "dilarang masuk"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "床がぬれています。",
+              "reading": "ゆかがぬれています。",
+              "meaning": "Lantainya basah."
+            },
+            {
+              "japanese": "道具を置き、責任者に連絡します。",
+              "reading": "どうぐをおき、せきにんしゃにれんらくします。",
+              "meaning": "Saya meletakkan alat dan menghubungi penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa alat dan tanda pembersihan harus ditata dengan benar di area publik?",
+              "options": [
+                "Agar penumpang tidak tersandung atau melewati area yang belum aman",
+                "Agar pekerja dapat meninggalkan alat saat istirahat",
+                "Agar area terlihat sibuk",
+                "Agar bahan pembersih cepat habis"
+              ],
+              "answer": 0,
+              "explanation": "Peralatan yang tertata dan tanda yang jelas membantu memisahkan area kerja dari jalur pengguna.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Ada cairan tanpa identitas di lantai ramai. Apa tindakan yang tepat?",
+              "options": [
+                "Sentuh untuk mengetahui jenis cairannya",
+                "Campur dengan bahan yang paling kuat",
+                "Jangan sentuh; laporkan dan amankan sesuai prosedur",
+                "Arahkan penumpang melewatinya"
+              ],
+              "answer": 2,
+              "explanation": "Cairan tak dikenal perlu ditangani sesuai prosedur agar pekerja dan penumpang tidak terpapar atau terpeleset.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan kebersihan area stasiun dan kereta», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pastikan area dan tugas pembersihan yang ditetapkan",
+                "Siapkan alat serta tanda sesuai instruksi",
+                "Bersihkan sambil menjaga jalur pengguna tetap aman",
+                "Laporkan benda berbahaya atau fasilitas rusak"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Pastikan area dan tugas pembersihan yang ditetapkan → Siapkan alat serta tanda sesuai instruksi → Bersihkan sambil menjaga jalur pengguna tetap aman → Laporkan benda berbahaya atau fasilitas rusak.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "movement-control",
+      "title": "Pergerakan kereta dan koordinasi operasi",
+      "description": "Latihan orisinal untuk komunikasi dan kontrol pergerakan kereta. Perubahan jalur, isyarat, peralatan operasi, serta pengaturan lalu lintas hanya dilakukan petugas berwenang dengan prosedur dan kompetensi yang ditetapkan operator.",
+      "lessons": [
+        {
+          "id": "rail-04",
+          "title": "Perubahan jalur dan peralatan operasi",
+          "minutes": 25,
+          "objectives": [
+            "Memahami bahwa pengaturan jalur dan isyarat mempunyai urutan resmi.",
+            "Menggunakan komunikasi ulang untuk memastikan instruksi operasi.",
+            "Menghentikan tindakan dan meminta bantuan saat informasi tidak jelas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Dalam operasi kereta, jalur, wesel, sinyal, dan peralatan terkait menentukan arah gerak. Salah memahami instruksi dapat berdampak besar, maka hanya pekerja yang ditugaskan dan berkualifikasi yang menangani alat operasi. Pekerja lain menjaga jarak dan menyampaikan pengamatan; aturan perusahaan, sinyal resmi, dan arahan petugas operasi selalu menjadi rujukan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum tindakan yang menjadi kewenangan Anda, konfirmasi identitas jalur, maksud perintah, dan komunikasi yang diwajibkan operator. Gunakan pengulangan kembali bila prosedur memintanya. Jika indikator alat tidak sesuai atau pesan tidak terdengar jelas, jangan melanjutkan dengan tebakan; tahan dan laporkan. Kasus: lampu penunjuk tidak sama dengan instruksi lisan. Respons: hentikan tindakan di tempat aman dan minta konfirmasi petugas pengendali."
+            }
+          ],
+          "steps": [
+            "Terima instruksi dari sumber yang berwenang",
+            "Ulangi atau cocokkan instruksi sesuai prosedur",
+            "Periksa indikator yang menjadi bagian tugas",
+            "Lakukan atau tahan tindakan sesuai konfirmasi"
+          ],
+          "caution": "Jangan mengoperasikan wesel, sinyal, atau perangkat jalur tanpa penugasan dan izin.",
+          "scenario": "Petunjuk lisan meminta satu jalur, tetapi indikator peralatan menunjukkan jalur berbeda.",
+          "response": "Jangan menggerakkan peralatan. Laporkan ketidaksesuaian dari posisi aman dan minta petugas berwenang memastikan instruksi serta status alat.",
+          "vocabulary": [
+            {
+              "japanese": "線路",
+              "reading": "せんろ",
+              "meaning": "jalur kereta"
+            },
+            {
+              "japanese": "信号",
+              "reading": "しんごう",
+              "meaning": "sinyal"
+            },
+            {
+              "japanese": "転てつ器",
+              "reading": "てんてつき",
+              "meaning": "wesel"
+            },
+            {
+              "japanese": "指示",
+              "reading": "しじ",
+              "meaning": "instruksi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示と表示が違います。",
+              "reading": "しじとひょうじがちがいます。",
+              "meaning": "Instruksi dan tampilan berbeda."
+            },
+            {
+              "japanese": "操作を止めて、確認してください。",
+              "reading": "そうさをとめて、かくにんしてください。",
+              "meaning": "Hentikan pengoperasian dan pastikan dulu."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Siapa yang boleh mengoperasikan peralatan jalur atau sinyal?",
+              "options": [
+                "Petugas yang ditugaskan dan memiliki kewenangan/kompetensi sesuai aturan operator",
+                "Siapa pun yang dapat melihat alat",
+                "Penumpang yang menawarkan bantuan",
+                "Pekerja dari bagian lain tanpa arahan"
+              ],
+              "answer": 0,
+              "explanation": "Peralatan operasi hanya ditangani petugas yang berwenang karena berdampak pada keselamatan perjalanan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Instruksi dan indikator wesel berbeda. Apa yang dilakukan?",
+              "options": [
+                "Pilih indikator yang tampak lebih mudah",
+                "Ubah wesel untuk mencoba",
+                "Tahan tindakan dan minta konfirmasi petugas operasi",
+                "Minta penumpang memilih jalur"
+              ],
+              "answer": 2,
+              "explanation": "Perbedaan sinyal dan instruksi tidak boleh diselesaikan dengan dugaan; tindakan ditahan dan dilaporkan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Perubahan jalur dan peralatan operasi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Terima instruksi dari sumber yang berwenang",
+                "Ulangi atau cocokkan instruksi sesuai prosedur",
+                "Periksa indikator yang menjadi bagian tugas",
+                "Lakukan atau tahan tindakan sesuai konfirmasi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Terima instruksi dari sumber yang berwenang → Ulangi atau cocokkan instruksi sesuai prosedur → Periksa indikator yang menjadi bagian tugas → Lakukan atau tahan tindakan sesuai konfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-05",
+          "title": "Isyarat dan keselamatan saat langsir",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali pentingnya isyarat yang jelas saat pemindahan kendaraan di area kerja.",
+            "Menjaga posisi aman dan komunikasi dengan anggota tim.",
+            "Melaporkan instruksi yang tidak terlihat atau tidak dipahami."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pemindahan atau langsir kendaraan dapat melibatkan petugas pemberi isyarat, pengemudi, dan pengawas. Setiap operator memiliki kode, posisi berdiri, dan cara komunikasi resmi. Pekerja harus tahu tugasnya sebelum gerak dimulai. Ketika isyarat hilang, terhalang, atau berbeda dengan yang disepakati, pergerakan dihentikan sesuai prosedur dan dilaporkan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jangan berdiri di antara kendaraan atau masuk ke lintasan gerak. Gunakan alat komunikasi dan isyarat hanya sebagaimana dilatih. Pastikan jalur kerja serta orang yang terlibat sesuai daftar pemeriksaan. Kasus: petugas isyarat tidak terlihat saat pemindahan hendak dimulai. Respons: jangan memberi tanda maju atau bergerak; tunggu sampai komunikasi kembali jelas dan pengawas mengonfirmasi."
+            }
+          ],
+          "steps": [
+            "Konfirmasi peran dan isyarat yang ditetapkan",
+            "Pastikan posisi kerja aman dan jalur terkendali",
+            "Mulai komunikasi/pergerakan sesuai instruksi",
+            "Hentikan dan laporkan bila isyarat hilang"
+          ],
+          "caution": "Jangan menebak arti isyarat atau melanjutkan gerak ketika komunikasi terputus.",
+          "scenario": "Saat langsir, petugas pemberi isyarat tidak terlihat oleh anggota tim.",
+          "response": "Hentikan pergerakan sesuai prosedur, tetap di posisi aman, dan minta pengawas mengatur kembali komunikasi sebelum kegiatan dilanjutkan.",
+          "vocabulary": [
+            {
+              "japanese": "合図",
+              "reading": "あいず",
+              "meaning": "isyarat"
+            },
+            {
+              "japanese": "入換え",
+              "reading": "いれかえ",
+              "meaning": "langsir atau pemindahan kendaraan"
+            },
+            {
+              "japanese": "停止",
+              "reading": "ていし",
+              "meaning": "berhenti"
+            },
+            {
+              "japanese": "連携",
+              "reading": "れんけい",
+              "meaning": "koordinasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "合図が見えません。",
+              "reading": "あいずがみえません。",
+              "meaning": "Saya tidak melihat isyarat."
+            },
+            {
+              "japanese": "停止して、もう一度確認します。",
+              "reading": "ていしして、もういちどかくにんします。",
+              "meaning": "Kita berhenti dan memastikan sekali lagi."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tindakan yang tepat ketika isyarat langsir tidak terlihat?",
+              "options": [
+                "Hentikan gerak sesuai prosedur dan pulihkan komunikasi",
+                "Lanjutkan dengan perkiraan sendiri",
+                "Panggil penumpang untuk memberi tanda",
+                "Berjalan mendekati kendaraan untuk memeriksa"
+              ],
+              "answer": 0,
+              "explanation": "Gerak harus mengikuti komunikasi yang jelas; kehilangan isyarat memerlukan penghentian dan pelaporan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Petugas pemberi isyarat hilang dari pandangan. Apa respons tepat?",
+              "options": [
+                "Teruskan dengan kecepatan rendah",
+                "Berikan isyarat baru tanpa koordinasi",
+                "Hentikan gerak dari posisi aman dan hubungi pengawas",
+                "Berdiri di antara kendaraan"
+              ],
+              "answer": 2,
+              "explanation": "Menghentikan kegiatan mencegah salah tafsir dan paparan pada area gerak.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Isyarat dan keselamatan saat langsir», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Konfirmasi peran dan isyarat yang ditetapkan",
+                "Pastikan posisi kerja aman dan jalur terkendali",
+                "Mulai komunikasi/pergerakan sesuai instruksi",
+                "Hentikan dan laporkan bila isyarat hilang"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Konfirmasi peran dan isyarat yang ditetapkan → Pastikan posisi kerja aman dan jalur terkendali → Mulai komunikasi/pergerakan sesuai instruksi → Hentikan dan laporkan bila isyarat hilang.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-06",
+          "title": "Laporan perjalanan dan koordinasi gangguan",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan lokasi dan fakta gangguan kepada pusat atau atasan.",
+            "Mengikuti perubahan layanan hanya setelah dikonfirmasi.",
+            "Meneruskan status yang belum selesai pada pergantian tugas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Petugas pengendali dan petugas lapangan perlu menggunakan nama stasiun, nomor perjalanan atau jalur yang benar. Pada gangguan, informasi yang cepat dan tepat membantu operator mengatur layanan, keselamatan penumpang, serta bantuan teknis. Catat hal yang terlihat, waktu, tindakan yang sudah dilakukan, dan status yang menunggu keputusan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan komunikasi kerja yang ringkas: siapa Anda, di mana, layanan/peralatan mana, apa yang diamati, dan bantuan apa yang diperlukan. Jangan mencoba memperbaiki alat atau mengumumkan rute baru tanpa tugas. Kasus: pintu alat stasiun tidak merespons dan ada antrean. Respons: jaga penumpang tetap di tempat aman, beri tahu petugas operasi, dan arahkan sesuai instruksi yang terkonfirmasi."
+            }
+          ],
+          "steps": [
+            "Amati lokasi dan gangguan",
+            "Sampaikan identitas layanan, lokasi, dan gejala",
+            "Tunggu keputusan atau bantuan teknis",
+            "Catat serta serahkan status yang masih terbuka"
+          ],
+          "caution": "Jangan melaporkan dugaan penyebab sebagai fakta atau menjanjikan waktu pemulihan.",
+          "scenario": "Gerbang tiket tidak merespons dan antrean mulai menumpuk.",
+          "response": "Jangan membongkar alat. Hubungi petugas operasi dengan lokasi dan gejala, jaga jalur penumpang aman, dan berikan arah setelah ada konfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "運行状況",
+              "reading": "うんこうじょうきょう",
+              "meaning": "status operasi"
+            },
+            {
+              "japanese": "故障",
+              "reading": "こしょう",
+              "meaning": "kerusakan"
+            },
+            {
+              "japanese": "連絡",
+              "reading": "れんらく",
+              "meaning": "komunikasi"
+            },
+            {
+              "japanese": "対応中",
+              "reading": "たいおうちゅう",
+              "meaning": "sedang ditangani"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "改札機が動きません。",
+              "reading": "かいさつきがうごきません。",
+              "meaning": "Gerbang tiket tidak berfungsi."
+            },
+            {
+              "japanese": "駅の担当者に連絡します。",
+              "reading": "えきのたんとうしゃにれんらくします。",
+              "meaning": "Saya akan menghubungi petugas stasiun."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa unsur penting dalam laporan gangguan kepada pusat operasi?",
+              "options": [
+                "Lokasi, alat/layanan, gejala yang diamati, dan bantuan yang diperlukan",
+                "Perkiraan pribadi tentang siapa yang salah",
+                "Hanya kata “rusak” tanpa lokasi",
+                "Janji waktu selesai"
+              ],
+              "answer": 0,
+              "explanation": "Rincian yang teramati membuat bantuan tepat dapat dikirim dan mencegah kebingungan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Gerbang tiket rusak dan antrean terbentuk. Apa langkah yang tepat?",
+              "options": [
+                "Membongkar gerbang tanpa izin",
+                "Membiarkan antrean dekat area sempit",
+                "Melaporkan lokasi/gejala dan mengarahkan penumpang sesuai instruksi",
+                "Menjanjikan waktu perbaikan"
+              ],
+              "answer": 2,
+              "explanation": "Laporkan dan ikuti arahan; pekerjaan teknis bukan dilakukan oleh petugas tanpa penugasan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Laporan perjalanan dan koordinasi gangguan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Amati lokasi dan gangguan",
+                "Sampaikan identitas layanan, lokasi, dan gejala",
+                "Tunggu keputusan atau bantuan teknis",
+                "Catat serta serahkan status yang masih terbuka"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Amati lokasi dan gangguan → Sampaikan identitas layanan, lokasi, dan gejala → Tunggu keputusan atau bantuan teknis → Catat serta serahkan status yang masih terbuka.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "title": "Jalur, listrik, dan area kerja",
+      "description": "Latihan orisinal untuk kegiatan pemeliharaan jalur dan fasilitas listrik/perkeretaapian. Pekerjaan meliputi pemeriksaan, perawatan, serta laporan; akses dan tindakan teknis diatur melalui sistem keselamatan operator dan pengawasan tenaga yang berwenang.",
+      "lessons": [
+        {
+          "id": "rail-07",
+          "title": "Pemeriksaan jalur dan pencatatan temuan",
+          "minutes": 25,
+          "objectives": [
+            "Mengamati kondisi jalur sesuai area dan daftar tugas.",
+            "Menyampaikan perubahan atau kerusakan dengan lokasi yang dapat dikenali.",
+            "Menjaga diri di luar area bahaya sampai ada pengaturan kerja."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pekerjaan jalur mencakup pengukuran kondisi lintasan, penggantian komponen, penanganan balas, dan pemeriksaan peralatan keselamatan. Pemeriksaan dilakukan oleh tim yang memahami batas lokasi, jadwal perlindungan, dan alat yang digunakan. Pekerja baru tidak memasuki jalur atau menggunakan alat kerja tanpa arahan dan pengawasan sesuai prosedur operator."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Catat titik lokasi, jenis temuan, waktu, dan foto atau kode yang diizinkan oleh aturan perusahaan. Jangan menyentuh rel, pengikat, atau kabel untuk menguji kekuatannya. Bila temuan tampak mendesak, segera beri tahu pengawas dari posisi aman. Kasus: ditemukan komponen lepas di jalur inspeksi. Respons: berhenti di area aman, tandai lokasi hanya dengan cara yang diizinkan, dan lapor kepada pengawas."
+            }
+          ],
+          "steps": [
+            "Terima batas area dan instruksi tim",
+            "Amati jalur dari posisi yang diizinkan",
+            "Catat lokasi serta kondisi yang terlihat",
+            "Laporkan temuan dan tunggu arahan"
+          ],
+          "caution": "Jangan memasuki jalur aktif atau memperbaiki komponen tanpa perlindungan dan izin kerja.",
+          "scenario": "Saat pemeriksaan, terlihat satu komponen jalur tampak bergeser dari posisi biasanya.",
+          "response": "Jangan menarik atau mengetuk komponen. Catat titiknya, beri tahu pengawas segera, dan ikuti arahan tentang pembatasan area atau pemeriksaan lanjutan.",
+          "vocabulary": [
+            {
+              "japanese": "軌道",
+              "reading": "きどう",
+              "meaning": "jalur rel"
+            },
+            {
+              "japanese": "線路",
+              "reading": "せんろ",
+              "meaning": "lintasan kereta"
+            },
+            {
+              "japanese": "検査",
+              "reading": "けんさ",
+              "meaning": "inspeksi"
+            },
+            {
+              "japanese": "まくらぎ",
+              "reading": "まくらぎ",
+              "meaning": "bantalan rel"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この部品の位置が違います。",
+              "reading": "このぶひんのいちがちがいます。",
+              "meaning": "Posisi komponen ini berbeda."
+            },
+            {
+              "japanese": "場所を記録して、責任者に報告してください。",
+              "reading": "ばしょをきろくして、せきにんしゃにほうこくしてください。",
+              "meaning": "Catat lokasinya dan laporkan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang sebaiknya dicatat saat menemukan kondisi jalur yang tidak biasa?",
+              "options": [
+                "Lokasi dan kondisi yang terlihat, lalu laporkan kepada pengawas",
+                "Penyebab yang ditebak",
+                "Nama orang yang paling dekat",
+                "Tidak ada catatan bila belum rusak total"
+              ],
+              "answer": 0,
+              "explanation": "Lokasi dan fakta membantu pengawas menentukan tingkat risiko serta pemeriksaan berikutnya.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Komponen jalur tampak bergeser. Apa tindakan yang benar?",
+              "options": [
+                "Membetulkannya dengan kaki",
+                "Mengambilnya dan membawa pulang",
+                "Jangan menyentuh; laporkan lokasi kepada pengawas",
+                "Menunggu kereta untuk menguji"
+              ],
+              "answer": 2,
+              "explanation": "Pekerja yang belum diberi tugas tidak melakukan perbaikan atau pengujian yang dapat menimbulkan bahaya.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan jalur dan pencatatan temuan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Terima batas area dan instruksi tim",
+                "Amati jalur dari posisi yang diizinkan",
+                "Catat lokasi serta kondisi yang terlihat",
+                "Laporkan temuan dan tunggu arahan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Terima batas area dan instruksi tim → Amati jalur dari posisi yang diizinkan → Catat lokasi serta kondisi yang terlihat → Laporkan temuan dan tunggu arahan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-08",
+          "title": "Gangguan listrik, sinyal, atau perlintasan",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali alat listrik dan sinyal sebagai fasilitas yang hanya ditangani petugas berwenang.",
+            "Melaporkan alarm atau kerusakan tanpa menyentuh perangkat.",
+            "Mengikuti pembatasan area dan arahan pengawas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Fasilitas listrik rel meliputi kabel, gardu, peralatan listrik, sinyal, komunikasi, dan perangkat keselamatan perlintasan. Sebagian peralatan tetap berbahaya meskipun terlihat tidak aktif. Pekerja harus memakai otorisasi, pemisahan sumber energi, dan metode pemeriksaan yang berlaku di lokasi; pelajaran ini tidak memberi izin atau petunjuk teknis untuk mengerjakan alat."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika melihat kabel putus, sinyal gelap, alarm, percikan, atau pagar perlintasan rusak, jangan mendekati atau mengoperasikan alat. Jaga jarak dari posisi aman dan laporkan lokasi serta gejalanya kepada penanggung jawab yang ditetapkan. Kasus: alarm perlintasan berbunyi terus dan palang terlihat tidak bergerak. Respons: jangan mencoba mengangkat palang; segera laporkan dan ikuti arahan pengamanan."
+            }
+          ],
+          "steps": [
+            "Kenali tanda gangguan dari posisi aman",
+            "Jangan menyentuh atau mengoperasikan alat",
+            "Laporkan lokasi dan gejala kepada petugas berwenang",
+            "Tunggu pengamanan dan arahan lanjutan"
+          ],
+          "caution": "Jangan menganggap kabel atau alat aman karena tampak mati atau tidak bergerak.",
+          "scenario": "Palang perlintasan tidak bergerak seperti biasa sementara alarm tetap berbunyi.",
+          "response": "Tetap di tempat aman, jangan menyentuh palang atau alat, lalu laporkan keadaan kepada petugas operasi agar pengamanan dilakukan.",
+          "vocabulary": [
+            {
+              "japanese": "電気設備",
+              "reading": "でんきせつび",
+              "meaning": "peralatan listrik"
+            },
+            {
+              "japanese": "踏切",
+              "reading": "ふみきり",
+              "meaning": "perlintasan kereta"
+            },
+            {
+              "japanese": "警報",
+              "reading": "けいほう",
+              "meaning": "alarm/peringatan"
+            },
+            {
+              "japanese": "故障",
+              "reading": "こしょう",
+              "meaning": "kerusakan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "踏切の警報が続いています。",
+              "reading": "ふみきりのけいほうがつづいています。",
+              "meaning": "Alarm perlintasan terus berbunyi."
+            },
+            {
+              "japanese": "近づかないで、係員に連絡してください。",
+              "reading": "ちかづかないで、かかりいんにれんらくしてください。",
+              "meaning": "Jangan mendekat dan hubungi petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa pekerja tidak boleh menyentuh peralatan yang tampak mati?",
+              "options": [
+                "Peralatan dapat tetap berbahaya atau berada di bawah kendali sistem",
+                "Semua kabel hanya mengandung air",
+                "Alat selalu aman jika tidak berbunyi",
+                "Agar laporan tidak dibuat"
+              ],
+              "answer": 0,
+              "explanation": "Status aman harus dipastikan dengan prosedur dan petugas berwenang, bukan dari tampilan saja.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Alarm perlintasan terus berbunyi dan palang tidak bergerak. Apa respons terbaik?",
+              "options": [
+                "Angkat palang sendiri",
+                "Matikan alarm dari kotak terdekat",
+                "Jaga jarak, laporkan gejala dan ikuti pengamanan",
+                "Minta pengendara menerobos"
+              ],
+              "answer": 2,
+              "explanation": "Jangan mengoperasikan alat keselamatan; petugas berwenang perlu menerima laporan dan mengamankan situasi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Gangguan listrik, sinyal, atau perlintasan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kenali tanda gangguan dari posisi aman",
+                "Jangan menyentuh atau mengoperasikan alat",
+                "Laporkan lokasi dan gejala kepada petugas berwenang",
+                "Tunggu pengamanan dan arahan lanjutan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Kenali tanda gangguan dari posisi aman → Jangan menyentuh atau mengoperasikan alat → Laporkan lokasi dan gejala kepada petugas berwenang → Tunggu pengamanan dan arahan lanjutan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-09",
+          "title": "Koordinasi kerja lapangan dan penutupan area",
+          "minutes": 25,
+          "objectives": [
+            "Mengonfirmasi batas kerja, anggota tim, dan cara komunikasi sebelum mulai.",
+            "Menghentikan pekerjaan saat perlindungan atau komunikasi berubah.",
+            "Memastikan alat dan personel diperiksa sebelum area dikembalikan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pemeliharaan jalur atau listrik dilakukan dengan tim dan sistem perlindungan operator. Sebelum bekerja, anggota memahami siapa pengawasnya, lokasi aman, batas akses, alat komunikasi, serta cara berhenti. Kembalinya area ke layanan juga mengikuti pemeriksaan dan izin yang ditetapkan. Satu pekerja tidak boleh menganggap pekerjaan selesai hanya karena tugas pribadinya telah rampung."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ikuti pengarahan sebelum kerja dan ulangi instruksi yang belum dipahami. Jika komunikasi terputus, batas berubah, atau ada orang di area yang salah, berhenti sesuai prosedur dan beri tahu pengawas. Pada akhir kerja, serahkan alat, sisa material, dan status temuan; jangan melepas pembatas atau memberi izin jalur dibuka. Kasus: ada alat tertinggal ketika tim hendak menutup pekerjaan. Respons: laporkan dan periksa kembali bersama tim sebelum penanggung jawab menyatakan area siap."
+            }
+          ],
+          "steps": [
+            "Dengarkan pengarahan dan pastikan peran",
+            "Periksa komunikasi serta batas kerja",
+            "Lakukan tugas hanya sesuai arahan",
+            "Hitung alat dan serahkan status sebelum penutupan"
+          ],
+          "caution": "Jangan membuka kembali area atau melepas perlindungan tanpa izin pengawas.",
+          "scenario": "Satu alat kerja belum ditemukan saat tim bersiap meninggalkan area.",
+          "response": "Tahan penutupan, beri tahu pengawas, lalu cari dan hitung alat sesuai prosedur sebelum area dinyatakan siap.",
+          "vocabulary": [
+            {
+              "japanese": "作業区域",
+              "reading": "さぎょうくいき",
+              "meaning": "area kerja"
+            },
+            {
+              "japanese": "監督者",
+              "reading": "かんとくしゃ",
+              "meaning": "pengawas"
+            },
+            {
+              "japanese": "工具",
+              "reading": "こうぐ",
+              "meaning": "alat kerja"
+            },
+            {
+              "japanese": "終了確認",
+              "reading": "しゅうりょうかくにん",
+              "meaning": "konfirmasi penyelesaian"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "工具が一つ見つかりません。",
+              "reading": "こうぐがひとつみつかりません。",
+              "meaning": "Satu alat belum ditemukan."
+            },
+            {
+              "japanese": "作業を止めて、監督者に報告します。",
+              "reading": "さぎょうをとめて、かんとくしゃにほうこくします。",
+              "meaning": "Hentikan pekerjaan dan laporkan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kapan area kerja dapat dikembalikan ke layanan?",
+              "options": [
+                "Setelah pemeriksaan akhir dan izin sesuai prosedur dari penanggung jawab",
+                "Saat seorang pekerja merasa pekerjaannya selesai",
+                "Ketika alat utama sudah digunakan",
+                "Segera setelah jadwal menunjukkan waktu selesai"
+              ],
+              "answer": 0,
+              "explanation": "Pengembalian area memerlukan koordinasi dan pemeriksaan sesuai aturan operator.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Alat belum ditemukan ketika tim bersiap menutup pekerjaan. Apa langkah benar?",
+              "options": [
+                "Tinggalkan area karena semua orang sudah pulang",
+                "Hapus alat dari daftar",
+                "Laporkan dan cari/hitung sesuai prosedur sebelum penutupan",
+                "Minta kereta berikutnya memeriksa"
+              ],
+              "answer": 2,
+              "explanation": "Alat tertinggal dapat menjadi bahaya; status harus diselesaikan dan diserahkan sebelum area dibuka.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Koordinasi kerja lapangan dan penutupan area», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Dengarkan pengarahan dan pastikan peran",
+                "Periksa komunikasi serta batas kerja",
+                "Lakukan tugas hanya sesuai arahan",
+                "Hitung alat dan serahkan status sebelum penutupan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Dengarkan pengarahan dan pastikan peran → Periksa komunikasi serta batas kerja → Lakukan tugas hanya sesuai arahan → Hitung alat dan serahkan status sebelum penutupan.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rolling-stock",
+      "title": "Kendaraan rel, suku cadang, dan pembersihan",
+      "description": "Latihan orisinal untuk pemeriksaan kendaraan rel, pengelolaan suku cadang, produksi kendaraan, serta pembersihan stasiun dan kereta. Pemeriksaan teknis, perakitan, dan pengoperasian alat memerlukan pelatihan dan pengawasan khusus.",
+      "lessons": [
+        {
+          "id": "rail-10",
+          "title": "Pemeriksaan kendaraan dan laporan gejala",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti daftar inspeksi kendaraan dan tidak melewati butir yang belum pasti.",
+            "Mencatat gejala sebagai fakta, bukan langsung menyimpulkan penyebab.",
+            "Menyerahkan temuan kepada petugas teknis atau pengawas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pekerjaan kendaraan dapat meliputi inspeksi terjadwal atau insidental pada rem, pintu, perangkat listrik, pendingin udara, roda, dan bagian lain. Prosedur perusahaan menentukan siapa yang memeriksa, alat apa yang digunakan, serta keputusan apakah kendaraan siap. Pekerja baru mempelajari batas kewenangan dan tidak mengubah komponen tanpa instruksi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Tandai nomor kendaraan atau bagian, kondisi yang terlihat atau terdengar, waktu pemeriksaan, dan langkah yang sudah dilakukan. Jika ada tanda yang berbeda dari daftar, tahan item terkait dan laporkan. Kasus: terdengar bunyi tidak biasa ketika pintu diuji. Respons: jangan melanjutkan penggunaan kendaraan tanpa konfirmasi dari petugas yang berwenang."
+            }
+          ],
+          "steps": [
+            "Baca daftar dan nomor kendaraan",
+            "Periksa bagian sesuai tugas serta prosedur",
+            "Catat gejala dan hasil yang benar-benar dilihat",
+            "Laporkan dan tunggu keputusan kesiapan"
+          ],
+          "caution": "Jangan menekan, membuka, atau menyetel komponen yang tidak termasuk tugas Anda.",
+          "scenario": "Saat pemeriksaan, pintu kendaraan mengeluarkan bunyi yang berbeda dari biasanya.",
+          "response": "Catat kendaraan dan gejalanya, jangan menyetel sendiri, lalu minta petugas teknis memeriksa sebelum kendaraan digunakan.",
+          "vocabulary": [
+            {
+              "japanese": "車両",
+              "reading": "しゃりょう",
+              "meaning": "kendaraan rel"
+            },
+            {
+              "japanese": "検査",
+              "reading": "けんさ",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "扉",
+              "reading": "とびら",
+              "meaning": "pintu"
+            },
+            {
+              "japanese": "異音",
+              "reading": "いおん",
+              "meaning": "bunyi tidak biasa"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "扉から変な音がします。",
+              "reading": "とびらからへんなおとがします。",
+              "meaning": "Ada bunyi aneh dari pintu."
+            },
+            {
+              "japanese": "車両番号を伝えて、検査をお願いします。",
+              "reading": "しゃりょうばんごうをつたえて、けんさをおねがいします。",
+              "meaning": "Sampaikan nomor kendaraan dan minta pemeriksaan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa informasi yang paling membantu saat melaporkan gejala kendaraan?",
+              "options": [
+                "Nomor kendaraan, bagian, waktu, dan gejala yang diamati",
+                "Penyebab yang ditebak",
+                "Pendapat penumpang saja",
+                "Tanda bahwa pekerjaan sudah selesai"
+              ],
+              "answer": 0,
+              "explanation": "Rincian yang dapat diperiksa membantu teknisi menemukan sumber masalah dengan aman.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Pintu kendaraan mengeluarkan bunyi tidak biasa saat pemeriksaan. Apa langkah terbaik?",
+              "options": [
+                "Melumasi sendiri dengan bahan yang ada",
+                "Mengabaikan bila pintu masih bergerak",
+                "Catat gejala dan minta petugas teknis memeriksa",
+                "Menutup catatan inspeksi"
+              ],
+              "answer": 2,
+              "explanation": "Pekerja melaporkan gejala dan mengikuti prosedur; perbaikan dilakukan oleh petugas yang ditugaskan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan kendaraan dan laporan gejala», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca daftar dan nomor kendaraan",
+                "Periksa bagian sesuai tugas serta prosedur",
+                "Catat gejala dan hasil yang benar-benar dilihat",
+                "Laporkan dan tunggu keputusan kesiapan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca daftar dan nomor kendaraan → Periksa bagian sesuai tugas serta prosedur → Catat gejala dan hasil yang benar-benar dilihat → Laporkan dan tunggu keputusan kesiapan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-11",
+          "title": "Penerimaan komponen, perakitan, dan ketertelusuran",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan nomor dan kelompok bahan dengan instruksi kerja produksi.",
+            "Mengikuti penugasan perakitan serta melaporkan bahan yang rusak atau tidak cocok.",
+            "Mencatat hasil kerja agar bahan dan kendaraan yang dibuat dapat ditelusuri."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Bengkel dan pabrik kereta menerima bahan, memasang atau merakit komponen, lalu memeriksa hasil kerja sesuai perintah produksi. Setiap komponen dapat mempunyai nomor, kelompok bahan, gambar kerja, dan posisi pemasangan tertentu. Komponen yang terlihat serupa belum tentu dapat saling menggantikan. Alat, bahan, perakitan, dan pemeriksaan hanya dilakukan sesuai tugas, pelatihan, dan pengawasan perusahaan. Catatan bahan yang digunakan serta hasil pemeriksaan menjaga riwayat kendaraan tetap dapat ditelusuri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum mulai, cocokkan nomor bagian dan kelompok bahan dengan perintah kerja. Ikuti gambar atau urutan yang diberikan, gunakan hanya alat yang menjadi tugas Anda, dan catat pemeriksaan yang benar-benar dilakukan. Bila nomor tidak cocok, bahan rusak, atau hasil rakitan terlihat berbeda dari instruksi, hentikan tahap itu dan beri tahu pengawas. Kasus: label kotak menyebut model berbeda dari daftar kerja. Respons: jangan berikan ke jalur perakitan, laporkan selisih, dan tunggu konfirmasi."
+            }
+          ],
+          "steps": [
+            "Baca perintah kerja dan nomor komponen",
+            "Cocokkan kelompok bahan, jumlah, dan kondisi",
+            "Lakukan tugas perakitan yang ditugaskan",
+            "Catat hasil pemeriksaan dan laporkan selisih"
+          ],
+          "caution": "Jangan memakai bahan atau melanjutkan perakitan ketika identitasnya berbeda dari perintah kerja.",
+          "scenario": "Kotak komponen di jalur produksi berlabel nomor berbeda dari perintah kerja.",
+          "response": "Hentikan tahap perakitan yang terkait, pisahkan kotak sesuai prosedur, catat nomor pada kotak dan perintah kerja, lalu minta pengawas memastikan kecocokannya.",
+          "vocabulary": [
+            {
+              "japanese": "部品",
+              "reading": "ぶひん",
+              "meaning": "komponen"
+            },
+            {
+              "japanese": "在庫",
+              "reading": "ざいこ",
+              "meaning": "persediaan"
+            },
+            {
+              "japanese": "番号",
+              "reading": "ばんごう",
+              "meaning": "nomor"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            },
+            {
+              "japanese": "組立て",
+              "reading": "くみたて",
+              "meaning": "perakitan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "組立てる前に、部品番号を確認します。",
+              "reading": "くみたてるまえに、ぶひんばんごうをかくにんします。",
+              "meaning": "Sebelum merakit, saya memeriksa nomor komponen."
+            },
+            {
+              "japanese": "番号が作業表と違います。",
+              "reading": "ばんごうがさぎょうひょうとちがいます。",
+              "meaning": "Nomornya berbeda dari lembar kerja."
+            },
+            {
+              "japanese": "使わずに、担当者へ確認します。",
+              "reading": "つかわずに、たんとうしゃへかくにんします。",
+              "meaning": "Saya tidak menggunakannya dan akan memastikan dengan petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa nomor komponen dicocokkan dengan perintah kerja sebelum perakitan?",
+              "options": [
+                "Agar bagian yang tepat dipasang dan hasil produksi dapat ditelusuri",
+                "Agar stok dapat dicampur",
+                "Agar label dapat dibuang",
+                "Agar pekerjaan selesai tanpa pemeriksaan"
+              ],
+              "answer": 0,
+              "explanation": "Nomor dan catatan menghubungkan bahan yang digunakan dengan perintah kerja dan kendaraan yang dibuat.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Kotak komponen di jalur produksi tidak cocok dengan perintah kerja. Apa tindakan yang tepat?",
+              "options": [
+                "Pasang karena bentuknya mirip",
+                "Tukar dengan stok lain diam-diam",
+                "Tahan, catat selisih, dan minta konfirmasi",
+                "Buang daftar kerja"
+              ],
+              "answer": 2,
+              "explanation": "Bahan tidak boleh masuk ke perakitan sampai pengawas memastikan kecocokan nomor dan kelompoknya.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penerimaan komponen, perakitan, dan ketertelusuran», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca perintah kerja dan nomor komponen",
+                "Cocokkan kelompok bahan, jumlah, dan kondisi",
+                "Lakukan tugas perakitan yang ditugaskan",
+                "Catat hasil pemeriksaan dan laporkan selisih"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca perintah kerja dan nomor komponen → Cocokkan kelompok bahan, jumlah, dan kondisi → Lakukan tugas perakitan yang ditugaskan → Catat hasil pemeriksaan dan laporkan selisih.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "rail-12",
+          "title": "Penyelesaian pekerjaan, kebersihan, dan serah terima",
+          "minutes": 25,
+          "objectives": [
+            "Menyelesaikan pembersihan sesuai area, urutan, dan perlindungan yang ditetapkan.",
+            "Memastikan alat, bahan, serta barang tertinggal ditangani sebelum serah terima.",
+            "Meneruskan status pekerjaan yang belum selesai dengan catatan yang jelas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Kebersihan stasiun dan kereta meliputi area publik maupun ruang kerja sesuai penugasan. Setelah dibersihkan atau diperiksa, pekerja mengembalikan alat dan mencatat bagian yang belum selesai. Dalam bengkel atau pabrik, bahan, komponen, dan benda uji tetap terpisah dari alur penumpang. Keadaan bersih tidak berarti kendaraan atau fasilitas telah lulus pemeriksaan teknis."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan pemeriksaan akhir sesuai daftar: alat kembali, tanda lantai basah diurus, area bebas benda tertinggal, serta kerusakan dilaporkan. Jangan mencabut tanda pembatas bila kondisi belum dinyatakan aman. Kasus: pembersihan kabin selesai tetapi ada kursi rusak. Respons: catat nomor kendaraan dan lokasi kursi, beri tahu penanggung jawab, dan tandai sesuai prosedur sebelum kendaraan dikembalikan."
+            }
+          ],
+          "steps": [
+            "Periksa pekerjaan yang selesai dan tertunda",
+            "Kembalikan alat dan bahan ke tempatnya",
+            "Catat kerusakan atau area yang belum aman",
+            "Serahkan status kepada penanggung jawab berikutnya"
+          ],
+          "caution": "Jangan menganggap pembersihan sebagai persetujuan teknis untuk mengoperasikan kendaraan.",
+          "scenario": "Kabin selesai dibersihkan tetapi satu kursi tampak rusak.",
+          "response": "Jangan menutup temuan hanya karena kabin bersih. Catat kendaraan dan lokasi kursi, beri tahu penanggung jawab, dan biarkan pemeriksaan kesiapan dilakukan oleh petugas yang berwenang.",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "reading": "せいそう",
+              "meaning": "pembersihan"
+            },
+            {
+              "japanese": "座席",
+              "reading": "ざせき",
+              "meaning": "kursi"
+            },
+            {
+              "japanese": "破損",
+              "reading": "はそん",
+              "meaning": "kerusakan"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "車内の清掃が終わりました。",
+              "reading": "しゃないのせいそうがおわりました。",
+              "meaning": "Pembersihan bagian dalam kereta sudah selesai."
+            },
+            {
+              "japanese": "座席が壊れています。確認をお願いします。",
+              "reading": "ざせきがこわれています。かくにんをおねがいします。",
+              "meaning": "Kursinya rusak. Mohon diperiksa."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa yang perlu dipastikan saat menyerahkan pekerjaan pembersihan?",
+              "options": [
+                "Alat kembali, area aman, dan kerusakan atau tugas tertunda dicatat",
+                "Bahwa kendaraan pasti siap operasi",
+                "Bahwa tanda peringatan dibiarkan di mana saja",
+                "Bahwa semua komponen telah diperbaiki"
+              ],
+              "answer": 0,
+              "explanation": "Serah terima mencatat kebersihan dan kondisi; keputusan kesiapan teknis tetap pada pihak berwenang.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Kabin bersih tetapi satu kursi rusak. Apa langkah tepat?",
+              "options": [
+                "Tutup laporan karena pembersihan selesai",
+                "Perbaiki tanpa izin",
+                "Catat lokasi kerusakan dan laporkan sebelum area diserahkan",
+                "Keluarkan kursi saat kereta berjalan"
+              ],
+              "answer": 2,
+              "explanation": "Laporan kerusakan harus tetap diteruskan walau tugas pembersihan selesai; jangan menyatakan kendaraan siap tanpa pemeriksaan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penyelesaian pekerjaan, kebersihan, dan serah terima», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa pekerjaan yang selesai dan tertunda",
+                "Kembalikan alat dan bahan ke tempatnya",
+                "Catat kerusakan atau area yang belum aman",
+                "Serahkan status kepada penanggung jawab berikutnya"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Periksa pekerjaan yang selesai dan tertunda → Kembalikan alat dan bahan ke tempatnya → Catat kerusakan atau area yang belum aman → Serahkan status kepada penanggung jawab berikutnya.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "国土交通省 — 鉄道分野における外国人材の受入れ（特定技能・育成就労）",
+      "url": "https://www.mlit.go.jp/tetudo/tetudo_fr7_000056.html"
+    },
+    {
+      "title": "国土交通省 — 鉄道分野の業務区分（業務内容の詳細）",
+      "url": "https://www.mlit.go.jp/tetudo/content/001769018.pdf"
+    },
+    {
+      "title": "国土交通省 — 鉄道分野における特定技能・育成就労の運用方針（2026年1月23日）",
+      "url": "https://www.mlit.go.jp/tetudo/content/001978642.pdf"
+    },
+    {
+      "title": "一般社団法人日本鉄道運転協会 — 運輸係員区分の試験案内",
+      "url": "https://www.jtoa.or.jp/ssw/index.html"
+    },
+    {
+      "title": "一般社団法人日本鉄道施設協会 — 軌道整備区分の特定技能",
+      "url": "https://www.jrcea.or.jp/tokuteiginou"
+    }
+  ]
+}

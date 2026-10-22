@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "scope-safety",
+      "title": "Lingkup kerja dan keselamatan galangan",
+      "description": "Bedakan tiga divisi kerja SSW: 造船, 舶用機械, dan 舶用電気電子機器. Praktik langsung dalam ujian keterampilan dilakukan di tempat dan tidak dapat digantikan kuis aplikasi.",
+      "lessons": [
+        {
+          "id": "shipbuilding-01",
+          "title": "Tiga divisi kerja bidang shipbuilding",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip tiga divisi kerja bidang shipbuilding untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Bidang 造船・舶用工業 mencakup pembuatan kapal (造船), mesin kapal (舶用機械), dan peralatan listrik/elektronik kapal (舶用電気電子機器). Contoh proses bergantung pada divisi: kerja lambung, mesin, perpipaan, pengecatan, perakitan listrik, atau pemeliharaan sesuai lingkup resmi."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Cocokkan tugas, produk, lokasi, dan instruksi dengan pekerjaan yang ditugaskan. Bila komponen atau divisi tidak jelas, minta arahan. Jangan menganggap semua aktivitas di galangan punya prosedur yang sama.\n\nSkenario latihan: Anda ditugaskan ke perakitan peralatan listrik kapal, tetapi hanya menerima instruksi untuk pekerjaan lambung.\nRespons: Tahan pekerjaan sampai penanggung jawab mengonfirmasi lingkup, dokumen, dan kompetensi yang diperlukan."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan menyimpulkan bahwa kategori kerja sama dengan daftar trade ujian atau kualifikasi yang sama.",
+          "scenario": "Anda ditugaskan ke perakitan peralatan listrik kapal, tetapi hanya menerima instruksi untuk pekerjaan lambung.",
+          "response": "Tahan pekerjaan sampai penanggung jawab mengonfirmasi lingkup, dokumen, dan kompetensi yang diperlukan.",
+          "vocabulary": [
+            {
+              "japanese": "造船",
+              "reading": "ぞうせん",
+              "meaning": "pembuatan kapal"
+            },
+            {
+              "japanese": "舶用機械",
+              "reading": "はくようきかい",
+              "meaning": "mesin kapal"
+            },
+            {
+              "japanese": "電気電子機器",
+              "reading": "でんきでんしきき",
+              "meaning": "peralatan listrik/elektronik"
+            },
+            {
+              "japanese": "工程",
+              "reading": "こうてい",
+              "meaning": "proses/tahapan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Tiga divisi kerja di bidang ini meliputi…",
+              "options": [
+                "Pembuatan kapal, mesin kapal, dan peralatan listrik/elektronik kapal",
+                "Welding, painting, dan ironwork saja",
+                "Transportasi, penangkapan ikan, dan perawatan kapal",
+                "Pembuatan lambung saja"
+              ],
+              "answer": 0,
+              "explanation": "Divisi bidang kerja adalah tiga kelompok: kapal, mesin kapal, dan peralatan listrik/elektronik kapal."
+            },
+            {
+              "kind": "case",
+              "prompt": "Anda menerima tugas perakitan listrik, tetapi dokumen hanya menjelaskan pekerjaan lambung. Apa tindakan tepat?",
+              "options": [
+                "Minta konfirmasi lingkup dan instruksi sebelum mulai",
+                "Gunakan dokumen lambung karena sama-sama di kapal",
+                "Mulai pada komponen yang terlihat cocok",
+                "Tanya pekerja lain lalu lanjut tanpa persetujuan"
+              ],
+              "answer": 0,
+              "explanation": "Pekerjaan berbeda perlu arahan, metode, dan kompetensi yang sesuai."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「造船（ぞうせん）」 dalam konteks galangan kapal?",
+              "options": [
+                "proses/tahapan",
+                "pembuatan kapal",
+                "mesin kapal",
+                "peralatan listrik/elektronik"
+              ],
+              "answer": 1,
+              "explanation": "「造船」dibaca ぞうせん dan berarti pembuatan kapal."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-02",
+          "title": "Bidang kerja dan trade ujian",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip bidang kerja dan trade ujian untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Divisi pekerjaan SSW berbeda dari trade yang dipakai untuk ujian keterampilan. Untuk No. 1, ujian trade yang dipublikasikan meliputi pengelasan, pengecatan, pekerjaan besi, finishing, permesinan, dan perakitan peralatan listrik. No. 2 memiliki kelompok trade berbeda."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Gunakan keterangan resmi yang sesuai dengan divisi, level, dan tahun saat mencari persyaratan. Dalam belajar, jangan menerjemahkan satu daftar trade sebagai daftar lengkap pekerjaan bidang atau sebaliknya.\n\nSkenario latihan: Rekan menyatakan perakitan listrik adalah divisi kerja tersendiri karena tercantum pada daftar trade ujian.\nRespons: Jelaskan bahwa divisi kerja dan trade ujian merupakan pengelompokan berbeda; cek dokumen resmi."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan menyamakan enam trade ujian No. 1 dengan tiga divisi kerja resmi.",
+          "scenario": "Rekan menyatakan perakitan listrik adalah divisi kerja tersendiri karena tercantum pada daftar trade ujian.",
+          "response": "Jelaskan bahwa divisi kerja dan trade ujian merupakan pengelompokan berbeda; cek dokumen resmi.",
+          "vocabulary": [
+            {
+              "japanese": "技能評価試験",
+              "reading": "ぎのうひょうかしけん",
+              "meaning": "ujian evaluasi keterampilan"
+            },
+            {
+              "japanese": "溶接",
+              "reading": "ようせつ",
+              "meaning": "pengelasan"
+            },
+            {
+              "japanese": "塗装",
+              "reading": "とそう",
+              "meaning": "pengecatan"
+            },
+            {
+              "japanese": "職種",
+              "reading": "しょくしゅ",
+              "meaning": "jenis pekerjaan/trade"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Pernyataan yang tepat tentang divisi kerja dan trade ujian adalah…",
+              "options": [
+                "Keduanya menggunakan pengelompokan yang berbeda",
+                "Setiap divisi hanya memiliki satu trade ujian",
+                "Daftar trade ujian mencakup seluruh kegiatan galangan",
+                "Daftar divisi berubah sesuai nama ujian"
+              ],
+              "answer": 0,
+              "explanation": "Pembedaan ini penting; ada tiga divisi kerja dan daftar trade ujian dengan cakupan berbeda."
+            },
+            {
+              "kind": "case",
+              "prompt": "Seseorang memakai daftar enam trade No. 1 untuk menjelaskan tiga divisi kerja. Bagaimana meluruskan?",
+              "options": [
+                "Pisahkan daftar divisi bidang dari daftar trade ujian dan periksa sumber masing-masing",
+                "Nyatakan keenam trade sebagai divisi resmi",
+                "Abaikan perbedaan karena semua pekerjaan di kapal",
+                "Gunakan daftar No. 2 untuk mengganti daftar divisi"
+              ],
+              "answer": 0,
+              "explanation": "Divisi SSW dan kategori ujian mendeskripsikan hal berbeda."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「技能評価試験（ぎのうひょうかしけん）」 dalam konteks galangan kapal?",
+              "options": [
+                "pengecatan",
+                "jenis pekerjaan/trade",
+                "ujian evaluasi keterampilan",
+                "pengelasan"
+              ],
+              "answer": 2,
+              "explanation": "「技能評価試験」dibaca ぎのうひょうかしけん dan berarti ujian evaluasi keterampilan."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-03",
+          "title": "Briefing galangan dan koordinasi tim",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip briefing galangan dan koordinasi tim untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Galangan memiliki pekerjaan bersamaan: fabrikasi, pengangkatan, pengecatan, pemasangan mesin, dan pekerjaan listrik. Briefing harian mengomunikasikan urutan, zona, sinyal, perubahan cuaca, dan konflik antarpekerjaan. Tim mengikuti rencana serta prosedur lokasi."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Kenali batas area, rute aman, metode komunikasi, dan pekerjaan berdekatan. Jika rencana pengangkatan atau urutan berubah, beri tahu tim dan hentikan aktivitas yang dapat berkonflik sampai koordinasi ulang.\n\nSkenario latihan: Pekerjaan pemindahan blok kapal dimulai di area yang juga dipakai tim Anda.\nRespons: Hentikan tugas yang memasuki zona terdampak dan koordinasikan kembali akses dengan penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan melewati barikade atau mengandalkan isyarat dari orang yang tidak ditunjuk.",
+          "scenario": "Pekerjaan pemindahan blok kapal dimulai di area yang juga dipakai tim Anda.",
+          "response": "Hentikan tugas yang memasuki zona terdampak dan koordinasikan kembali akses dengan penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "造船所",
+              "reading": "ぞうせんじょ",
+              "meaning": "galangan kapal"
+            },
+            {
+              "japanese": "合図",
+              "reading": "あいず",
+              "meaning": "isyarat"
+            },
+            {
+              "japanese": "作業区域",
+              "reading": "さぎょうくいき",
+              "meaning": "zona kerja"
+            },
+            {
+              "japanese": "調整",
+              "reading": "ちょうせい",
+              "meaning": "koordinasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Briefing galangan terutama menyelaraskan…",
+              "options": [
+                "Urutan, zona, bahaya, sinyal, dan pekerjaan antar-tim",
+                "Hanya target produksi pribadi",
+                "Cara melewati pembatas",
+                "Penggantian semua gambar kerja"
+              ],
+              "answer": 0,
+              "explanation": "Pekerjaan paralel perlu koordinasi agar tidak saling menimbulkan bahaya."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pemindahan blok kapal dimulai pada area yang ditempati tim Anda. Apa tindakan aman?",
+              "options": [
+                "Hentikan aktivitas yang terdampak dan koordinasikan ulang zona kerja",
+                "Lanjutkan sambil memberi aba-aba sendiri",
+                "Lewati zona dengan cepat",
+                "Minta rekan tetap bekerja di sisi lain tanpa memberi tahu pengawas"
+              ],
+              "answer": 0,
+              "explanation": "Zona dan urutan yang berubah harus dikomunikasikan sebelum pekerjaan terdampak dilanjutkan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「造船所（ぞうせんじょ）」 dalam konteks galangan kapal?",
+              "options": [
+                "isyarat",
+                "zona kerja",
+                "koordinasi",
+                "galangan kapal"
+              ],
+              "answer": 3,
+              "explanation": "「造船所」dibaca ぞうせんじょ dan berarti galangan kapal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hull-work",
+      "title": "Lambung, logam, dan pekerjaan panas",
+      "description": "Materi memperkenalkan kendali dan koordinasi pada fabrikasi serta penyambungan. Pelaksanaan teknik hanya mengikuti prosedur galangan, izin, kompetensi, dan arahan pengawas.",
+      "lessons": [
+        {
+          "id": "shipbuilding-04",
+          "title": "Persiapan material dan fabrikasi lambung",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip persiapan material dan fabrikasi lambung untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Fabrikasi lambung melibatkan pelat dan profil logam dengan identitas, dimensi, tanda, dan revisi gambar. Orientasi serta nomor komponen perlu tetap terlacak sepanjang pemotongan, pembentukan, dan perakitan. Metode aktual mengikuti standar galangan dan kompetensi."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Periksa nomor komponen, grade/material, dimensi, serta tanda referensi sebelum diproses. Laporkan kerusakan, deformasi, atau identitas hilang; gunakan area penyimpanan dan pengangkatan yang disetujui.\n\nSkenario latihan: Pelat yang akan diproses tidak memiliki nomor identifikasi yang terbaca.\nRespons: Tahan pemrosesan dan minta penelusuran ulang berdasarkan catatan penerimaan."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan menyalin nomor dari pelat di sebelahnya atau mengandalkan bentuk material.",
+          "scenario": "Pelat yang akan diproses tidak memiliki nomor identifikasi yang terbaca.",
+          "response": "Tahan pemrosesan dan minta penelusuran ulang berdasarkan catatan penerimaan.",
+          "vocabulary": [
+            {
+              "japanese": "鋼板",
+              "reading": "こうはん",
+              "meaning": "pelat baja"
+            },
+            {
+              "japanese": "識別番号",
+              "reading": "しきべつばんごう",
+              "meaning": "nomor identifikasi"
+            },
+            {
+              "japanese": "加工",
+              "reading": "かこう",
+              "meaning": "pemrosesan"
+            },
+            {
+              "japanese": "寸法",
+              "reading": "すんぽう",
+              "meaning": "dimensi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Sebelum memproses pelat, pekerja perlu memeriksa…",
+              "options": [
+                "Identitas, spesifikasi, dimensi, dan instruksi kerja",
+                "Warna permukaan saja",
+                "Kecepatan mesin yang tersedia",
+                "Tanda pada material lain"
+              ],
+              "answer": 0,
+              "explanation": "Komponen kapal harus sesuai spesifikasi dan tetap dapat ditelusuri."
+            },
+            {
+              "kind": "case",
+              "prompt": "Nomor pelat tak terbaca sebelum pemrosesan. Apa langkah tepat?",
+              "options": [
+                "Tahan pekerjaan dan telusuri identitas melalui catatan penerimaan",
+                "Salin nomor dari pelat terdekat",
+                "Proses dahulu agar ukuran dapat diketahui",
+                "Buang material tanpa melapor"
+              ],
+              "answer": 0,
+              "explanation": "Identitas yang hilang perlu dipastikan sebelum proses mengubah kondisi material."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「鋼板（こうはん）」 dalam konteks galangan kapal?",
+              "options": [
+                "pelat baja",
+                "nomor identifikasi",
+                "pemrosesan",
+                "dimensi"
+              ],
+              "answer": 0,
+              "explanation": "「鋼板」dibaca こうはん dan berarti pelat baja."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-05",
+          "title": "Pengelasan dan pekerjaan panas",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengelasan dan pekerjaan panas untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Pengelasan adalah proses panas yang dapat menimbulkan luka bakar, kebakaran, asap, dan kerusakan pada material/struktur. Izin kerja, pemeriksaan area, pengendalian sumber api, ventilasi, APD, serta kompetensi ditetapkan oleh aturan galangan. Kuis tidak melatih kemampuan praktik pengelasan."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Periksa izin dan kondisi lokasi sebelum tugas. Pastikan bahan mudah terbakar, pekerja lain, ventilasi, dan perlengkapan darurat dikendalikan sesuai prosedur. Setelah pekerjaan, lakukan pemeriksaan yang diwajibkan sebelum area dinyatakan aman.\n\nSkenario latihan: Izin pekerjaan panas belum tersedia, tetapi pekerjaan perlu segera dimulai.\nRespons: Jangan menyalakan alat; minta izin dan pengendalian keselamatan diselesaikan dahulu."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan memindahkan tabung gas, mengubah setelan, atau melakukan pengelasan tanpa kewenangan/kompetensi.",
+          "scenario": "Izin pekerjaan panas belum tersedia, tetapi pekerjaan perlu segera dimulai.",
+          "response": "Jangan menyalakan alat; minta izin dan pengendalian keselamatan diselesaikan dahulu.",
+          "vocabulary": [
+            {
+              "japanese": "火気作業",
+              "reading": "かきさぎょう",
+              "meaning": "pekerjaan panas"
+            },
+            {
+              "japanese": "溶接",
+              "reading": "ようせつ",
+              "meaning": "pengelasan"
+            },
+            {
+              "japanese": "許可",
+              "reading": "きょか",
+              "meaning": "izin"
+            },
+            {
+              "japanese": "換気",
+              "reading": "かんき",
+              "meaning": "ventilasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Pekerjaan panas dimulai setelah…",
+              "options": [
+                "Izin dan kontrol bahaya sesuai prosedur galangan terpenuhi",
+                "Area terlihat kosong",
+                "Target produksi disetujui pelanggan",
+                "Pekerja membawa alat sendiri"
+              ],
+              "answer": 0,
+              "explanation": "Pekerjaan panas memerlukan izin serta perlindungan yang ditentukan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pekerjaan harus cepat dimulai tetapi izin panas belum ada. Apa tindakan tepat?",
+              "options": [
+                "Tahan pekerjaan sampai izin dan kontrol keselamatan tersedia",
+                "Mulai singkat dengan pelindung mata",
+                "Minta rekan berjaga tanpa mengurus izin",
+                "Pindahkan pekerjaan tanpa memberi tahu penanggung jawab"
+              ],
+              "answer": 0,
+              "explanation": "Batas izin tidak boleh dilewati untuk mengejar jadwal."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「火気作業（かきさぎょう）」 dalam konteks galangan kapal?",
+              "options": [
+                "ventilasi",
+                "pekerjaan panas",
+                "pengelasan",
+                "izin"
+              ],
+              "answer": 1,
+              "explanation": "「火気作業」dibaca かきさぎょう dan berarti pekerjaan panas."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-06",
+          "title": "Pengecatan dan pengendalian kontaminasi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengecatan dan pengendalian kontaminasi untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Pengecatan kapal melindungi permukaan dan memberi hasil akhir sesuai spesifikasi. Persiapan permukaan, kondisi lingkungan, sistem lapis, waktu pengeringan, dan pemeriksaan harus mengikuti instruksi produk serta prosedur galangan. Debu, minyak, kelembapan, dan lapisan yang salah dapat menurunkan mutu."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Cocokkan area, sistem cat, nomor batch, masa guna, dan persyaratan kondisi kerja. Pisahkan bahan dan jaga ventilasi/APD sesuai aturan. Lindungi hasil yang belum kering dari debu atau aktivitas lain dan catat kondisi yang diwajibkan.\n\nSkenario latihan: Cat yang dibawa ke area tidak cocok dengan kode sistem lapis pada gambar.\nRespons: Jangan mencampur atau mengaplikasikannya; tahan dan konfirmasi material yang benar."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan memakai pelarut atau mencampur bahan tanpa instruksi dan perlindungan yang ditentukan.",
+          "scenario": "Cat yang dibawa ke area tidak cocok dengan kode sistem lapis pada gambar.",
+          "response": "Jangan mencampur atau mengaplikasikannya; tahan dan konfirmasi material yang benar.",
+          "vocabulary": [
+            {
+              "japanese": "塗料",
+              "reading": "とりょう",
+              "meaning": "cat/bahan pelapis"
+            },
+            {
+              "japanese": "塗装",
+              "reading": "とそう",
+              "meaning": "pengecatan"
+            },
+            {
+              "japanese": "乾燥",
+              "reading": "かんそう",
+              "meaning": "pengeringan"
+            },
+            {
+              "japanese": "表面",
+              "reading": "ひょうめん",
+              "meaning": "permukaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mutu lapisan cat bergantung antara lain pada…",
+              "options": [
+                "Sistem bahan, persiapan permukaan, kondisi, dan waktu proses",
+                "Warna yang disukai pekerja",
+                "Jumlah lapisan yang dipilih sendiri",
+                "Kecepatan menyelesaikan area"
+              ],
+              "answer": 0,
+              "explanation": "Penerapan cat harus sesuai spesifikasi dan kondisi yang ditentukan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Kode bahan cat berbeda dari sistem lapis pada dokumen. Apa yang dilakukan?",
+              "options": [
+                "Tahan aplikasi dan konfirmasi bahan yang sesuai",
+                "Campurkan dengan cat lama agar warnanya sama",
+                "Aplikasikan pada area tersembunyi dahulu",
+                "Gunakan karena ukuran wadah sesuai"
+              ],
+              "answer": 0,
+              "explanation": "Bahan harus cocok dengan sistem yang ditentukan; jangan bereksperimen di produk."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「塗料（とりょう）」 dalam konteks galangan kapal?",
+              "options": [
+                "pengeringan",
+                "permukaan",
+                "cat/bahan pelapis",
+                "pengecatan"
+              ],
+              "answer": 2,
+              "explanation": "「塗料」dibaca とりょう dan berarti cat/bahan pelapis."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systems-fitout",
+      "title": "Mesin, perlengkapan, dan sistem listrik",
+      "description": "Kapal menggabungkan mesin bantu, perpipaan, outfitting, kabel, dan peralatan listrik/elektronik. Identifikasi, urutan, isolasi, dan pemeriksaan mengikuti dokumen serta otorisasi.",
+      "lessons": [
+        {
+          "id": "shipbuilding-07",
+          "title": "Mesin kapal dan pemipaan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip mesin kapal dan pemipaan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Pemasangan mesin dan sistem pipa menghubungkan komponen, dudukan, sambungan, serta utilitas. Posisi, kebersihan, alignment, tipe sambungan, dan status tekanan/energi dikontrol menurut gambar dan urutan. Pengujian dan pemeliharaan dilakukan oleh personel yang ditunjuk."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Cocokkan label komponen dan jalur dengan gambar terbaru. Pastikan sistem aman/terisolasi sebelum pekerjaan yang membukanya, jaga benda asing tidak masuk, dan laporkan ketidaksesuaian. Jangan melakukan uji atau penyetelan di luar tugas.\n\nSkenario latihan: Pipa yang tampak cocok memiliki label media dan arah aliran berbeda.\nRespons: Jangan sambungkan; tahan dan minta pemeriksaan gambar, identitas, serta status isolasi."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan memakai warna atau bentuk saja untuk mengenali isi sistem.",
+          "scenario": "Pipa yang tampak cocok memiliki label media dan arah aliran berbeda.",
+          "response": "Jangan sambungkan; tahan dan minta pemeriksaan gambar, identitas, serta status isolasi.",
+          "vocabulary": [
+            {
+              "japanese": "配管",
+              "reading": "はいかん",
+              "meaning": "pemipaan"
+            },
+            {
+              "japanese": "機関",
+              "reading": "きかん",
+              "meaning": "mesin kapal"
+            },
+            {
+              "japanese": "接続",
+              "reading": "せつぞく",
+              "meaning": "sambungan"
+            },
+            {
+              "japanese": "異物",
+              "reading": "いぶつ",
+              "meaning": "benda asing"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Sebelum menyambungkan pipa kapal, pekerja harus memastikan…",
+              "options": [
+                "Identitas, arah/alur, gambar, dan kondisi sistem yang aman",
+                "Warna luarnya menyerupai sambungan lama",
+                "Tekanan dengan menyentuh pipa",
+                "Komponen dari kapal lain dapat dipakai"
+              ],
+              "answer": 0,
+              "explanation": "Kesalahan sambungan dapat memengaruhi fungsi dan keselamatan sistem kapal."
+            },
+            {
+              "kind": "case",
+              "prompt": "Label media atau arah aliran berbeda dari gambar. Apa respons terbaik?",
+              "options": [
+                "Tahan sambungan dan minta verifikasi sebelum bekerja",
+                "Pasang lalu lakukan uji sendiri",
+                "Ikuti warna meskipun label berbeda",
+                "Minta teknisi lain memperbaiki setelah pemasangan"
+              ],
+              "answer": 0,
+              "explanation": "Perbedaan identitas harus diselesaikan sebelum sistem disambungkan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「配管（はいかん）」 dalam konteks galangan kapal?",
+              "options": [
+                "mesin kapal",
+                "sambungan",
+                "benda asing",
+                "pemipaan"
+              ],
+              "answer": 3,
+              "explanation": "「配管」dibaca はいかん dan berarti pemipaan."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-08",
+          "title": "Perakitan listrik dan elektronik kapal",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip perakitan listrik dan elektronik kapal untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Pekerjaan kelistrikan kapal mencakup kabel, panel, sensor, serta peralatan listrik/elektronik sesuai desain. Identifikasi kabel, polaritas, perlindungan, pengencangan, jalur, dan pengujian harus dilakukan personel kompeten memakai dokumen terkendali. Risiko energi tersimpan dan kontak listrik tetap ada."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Cocokkan kabel/terminal dengan diagram dan label. Pastikan isolasi serta verifikasi bebas energi dilakukan oleh petugas yang berwenang sebelum pekerjaan. Lindungi konektor dari kelembapan dan kontaminasi. Catat uji yang ditugaskan.\n\nSkenario latihan: Label dua kabel pada panel tidak sesuai dengan diagram.\nRespons: Jangan menyambung atau mengubah label; hentikan tugas dan minta verifikasi diagram serta isolasi."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan mengetes tegangan, membuka panel, atau mengubah sirkuit di luar kewenangan.",
+          "scenario": "Label dua kabel pada panel tidak sesuai dengan diagram.",
+          "response": "Jangan menyambung atau mengubah label; hentikan tugas dan minta verifikasi diagram serta isolasi.",
+          "vocabulary": [
+            {
+              "japanese": "配線",
+              "reading": "はいせん",
+              "meaning": "pengawatan"
+            },
+            {
+              "japanese": "端子",
+              "reading": "たんし",
+              "meaning": "terminal"
+            },
+            {
+              "japanese": "電源",
+              "reading": "でんげん",
+              "meaning": "sumber listrik"
+            },
+            {
+              "japanese": "回路図",
+              "reading": "かいろず",
+              "meaning": "diagram sirkuit"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Diagram sirkuit digunakan untuk…",
+              "options": [
+                "Mengidentifikasi hubungan serta komponen sistem sesuai desain",
+                "Menentukan warna kabel dari perkiraan",
+                "Menggantikan isolasi energi",
+                "Mengubah fungsi sistem tanpa persetujuan"
+              ],
+              "answer": 0,
+              "explanation": "Dokumen sirkuit mendukung pemasangan dan pemeriksaan yang benar."
+            },
+            {
+              "kind": "case",
+              "prompt": "Label kabel berbeda dari diagram panel. Apa langkah aman?",
+              "options": [
+                "Tahan sambungan dan minta verifikasi oleh petugas berwenang",
+                "Tukar label sendiri berdasarkan warna",
+                "Sambungkan satu kabel untuk menguji",
+                "Buka panel saat sistem bekerja"
+              ],
+              "answer": 0,
+              "explanation": "Identitas kabel dan isolasi harus dipastikan sebelum pekerjaan kelistrikan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「配線（はいせん）」 dalam konteks galangan kapal?",
+              "options": [
+                "pengawatan",
+                "terminal",
+                "sumber listrik",
+                "diagram sirkuit"
+              ],
+              "answer": 0,
+              "explanation": "「配線」dibaca はいせん dan berarti pengawatan."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-09",
+          "title": "Outfitting dan koordinasi antarpekerjaan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip outfitting dan koordinasi antarpekerjaan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Outfitting memasang perangkat dan komponen interior/eksterior kapal setelah koordinasi dengan struktur dan sistem lain. Ruang terbatas, jalur evakuasi, permukaan terlindungi, akses inspeksi, serta urutan kerja harus dipertimbangkan. Perubahan posisi memerlukan persetujuan gambar."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Periksa titik pemasangan, ruang bebas, akses perawatan, serta pekerjaan tersembunyi sebelum memasang. Lindungi permukaan dan komponen. Laporkan benturan dengan pipa/kabel atau perubahan struktur sebelum menggeser unit.\n\nSkenario latihan: Bracket peralatan menutupi akses pemeriksaan pipa yang ditetapkan.\nRespons: Tahan pemasangan dan minta koordinasi perubahan dengan tim sistem serta pengawas."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan mengebor struktur atau memindahkan pipa tanpa gambar dan persetujuan.",
+          "scenario": "Bracket peralatan menutupi akses pemeriksaan pipa yang ditetapkan.",
+          "response": "Tahan pemasangan dan minta koordinasi perubahan dengan tim sistem serta pengawas.",
+          "vocabulary": [
+            {
+              "japanese": "艤装",
+              "reading": "ぎそう",
+              "meaning": "outfitting/perlengkapan kapal"
+            },
+            {
+              "japanese": "取付",
+              "reading": "とりつけ",
+              "meaning": "pemasangan"
+            },
+            {
+              "japanese": "干渉",
+              "reading": "かんしょう",
+              "meaning": "benturan/interferensi"
+            },
+            {
+              "japanese": "点検口",
+              "reading": "てんけんこう",
+              "meaning": "akses pemeriksaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Sebelum memasang outfitting, pekerja perlu memastikan…",
+              "options": [
+                "Posisi, ruang akses, serta interferensi dengan sistem lain",
+                "Komponen dapat dipasang dengan cara tercepat",
+                "Akses perawatan boleh ditutup setelah uji",
+                "Struktur kapal dapat dibor tanpa persetujuan"
+              ],
+              "answer": 0,
+              "explanation": "Pemasangan harus mendukung fungsi dan akses sistem lain."
+            },
+            {
+              "kind": "case",
+              "prompt": "Bracket akan menutup akses pemeriksaan pipa. Apa tindakan yang tepat?",
+              "options": [
+                "Tahan pemasangan dan koordinasikan solusi melalui pengawas",
+                "Pasang lalu tutupi titik akses",
+                "Geser pipa tanpa meminta izin",
+                "Potong bracket agar pas tanpa pemeriksaan"
+              ],
+              "answer": 0,
+              "explanation": "Interferensi harus diselesaikan melalui koordinasi sebelum pemasangan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「艤装（ぎそう）」 dalam konteks galangan kapal?",
+              "options": [
+                "akses pemeriksaan",
+                "outfitting/perlengkapan kapal",
+                "pemasangan",
+                "benturan/interferensi"
+              ],
+              "answer": 1,
+              "explanation": "「艤装」dibaca ぎそう dan berarti outfitting/perlengkapan kapal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inspection-handover",
+      "title": "Inspeksi, perlindungan, dan serah-terima",
+      "description": "Menjaga kualitas produk kapal, menelusuri status pekerjaan, dan mengomunikasikan temuan lintas tim.",
+      "lessons": [
+        {
+          "id": "shipbuilding-10",
+          "title": "Inspeksi, pengujian, dan cacat",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip inspeksi, pengujian, dan cacat untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Pemeriksaan dan pengujian kapal dilakukan sesuai titik tahan/inspeksi, kriteria, personel, alat, dan catatan yang ditetapkan. Hasil meragukan, cacat, atau uji gagal harus diidentifikasi, dipisahkan, dan dilaporkan. Perbaikan serta pengujian ulang menunggu keputusan dan metode yang disetujui."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Cocokkan identitas bagian, alat ukur dan prosedur. Catat nilai/hasil aktual, kondisi, serta saksi bila diperlukan. Tandai area yang tertahan agar tidak tertutup atau diserahkan sebelum keputusan mutu.\n\nSkenario latihan: Hasil uji sambungan menunjukkan kebocoran tetapi pekerjaan lanjutan menunggu.\nRespons: Tahan sistem dan laporkan hasil; jangan menutup, memberi tekanan ulang, atau menyatakan lulus sendiri."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan mengubah data uji atau mengulang sampai lulus tanpa merekam hasil pertama.",
+          "scenario": "Hasil uji sambungan menunjukkan kebocoran tetapi pekerjaan lanjutan menunggu.",
+          "response": "Tahan sistem dan laporkan hasil; jangan menutup, memberi tekanan ulang, atau menyatakan lulus sendiri.",
+          "vocabulary": [
+            {
+              "japanese": "試験",
+              "reading": "しけん",
+              "meaning": "pengujian"
+            },
+            {
+              "japanese": "漏れ",
+              "reading": "もれ",
+              "meaning": "kebocoran"
+            },
+            {
+              "japanese": "合格",
+              "reading": "ごうかく",
+              "meaning": "lulus"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Hasil pengujian gagal harus…",
+              "options": [
+                "Dicatat, ditahan, dan dievaluasi sebelum proses lanjutan",
+                "Dihapus setelah perbaikan",
+                "Dilaporkan hanya bila pelanggan bertanya",
+                "Diganti dengan perkiraan hasil lulus"
+              ],
+              "answer": 0,
+              "explanation": "Hasil aktual menjaga integritas keputusan mutu dan perlu ditindaklanjuti."
+            },
+            {
+              "kind": "case",
+              "prompt": "Uji menunjukkan kebocoran sebelum bagian akan ditutup. Apa langkah tepat?",
+              "options": [
+                "Tahan sistem, catat dan laporkan sebelum menutup atau melanjutkan",
+                "Tutup kebocoran dengan bahan apa pun",
+                "Ulangi uji tanpa menyimpan hasil pertama",
+                "Nyatakan lulus karena hanya satu titik"
+              ],
+              "answer": 0,
+              "explanation": "Kegagalan harus terdokumentasi dan ditangani dengan metode resmi."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「試験（しけん）」 dalam konteks galangan kapal?",
+              "options": [
+                "lulus",
+                "catatan",
+                "pengujian",
+                "kebocoran"
+              ],
+              "answer": 2,
+              "explanation": "「試験」dibaca しけん dan berarti pengujian."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-11",
+          "title": "Pengangkatan, penyimpanan, dan perlindungan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengangkatan, penyimpanan, dan perlindungan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Bagian kapal dan peralatan dapat berat, memiliki titik angkat khusus, atau mudah rusak. Rencana rigging, alat terinspeksi, kapasitas, komunikasi, zona bebas orang, dan kondisi cuaca wajib mengikuti prosedur lokasi. Permukaan dan komponen perlu dilindungi selama penyimpanan."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Periksa penandaan berat/titik angkat dan rencana yang disetujui. Jangan memasuki beban tergantung atau mengarahkan operasi tanpa ditunjuk. Amankan komponen dalam penyangga yang tepat dan lindungi dari air, korosi, atau benturan.\n\nSkenario latihan: Komponen menggantung dan pekerja meminta Anda melintas di bawahnya untuk mengambil alat.\nRespons: Jangan melintas; tunggu beban diletakkan di posisi aman dan gunakan rute alternatif yang disetujui."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan memindahkan sling atau pengunci beban tanpa penunjukan dan pelatihan.",
+          "scenario": "Komponen menggantung dan pekerja meminta Anda melintas di bawahnya untuk mengambil alat.",
+          "response": "Jangan melintas; tunggu beban diletakkan di posisi aman dan gunakan rute alternatif yang disetujui.",
+          "vocabulary": [
+            {
+              "japanese": "吊り荷",
+              "reading": "つりに",
+              "meaning": "beban tergantung"
+            },
+            {
+              "japanese": "玉掛け",
+              "reading": "たまがけ",
+              "meaning": "rigging/pengikatan beban"
+            },
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "防錆",
+              "reading": "ぼうせい",
+              "meaning": "perlindungan karat"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Area di bawah beban yang sedang diangkat harus…",
+              "options": [
+                "Dikosongkan dan dikendalikan sesuai rencana pengangkatan",
+                "Dipakai untuk mengambil alat dengan cepat",
+                "Dilewati jika pekerja memakai helm",
+                "Menjadi tempat menaruh komponen lain"
+              ],
+              "answer": 0,
+              "explanation": "Beban dapat bergerak atau jatuh; tidak boleh ada orang di zona bahaya."
+            },
+            {
+              "kind": "case",
+              "prompt": "Anda diminta melintas di bawah komponen yang tergantung. Apa respons aman?",
+              "options": [
+                "Jangan melintas dan tunggu beban aman serta rute dibuka",
+                "Lewat cepat sambil memberi tanda",
+                "Dorong beban agar ruang terbuka",
+                "Minta rekan menahan beban dengan tangan"
+              ],
+              "answer": 0,
+              "explanation": "Jangan berada di bawah beban; gunakan rute aman setelah operasi dikendalikan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「吊り荷（つりに）」 dalam konteks galangan kapal?",
+              "options": [
+                "rigging/pengikatan beban",
+                "penyimpanan",
+                "perlindungan karat",
+                "beban tergantung"
+              ],
+              "answer": 3,
+              "explanation": "「吊り荷」dibaca つりに dan berarti beban tergantung."
+            }
+          ]
+        },
+        {
+          "id": "shipbuilding-12",
+          "title": "Serah-terima lintas divisi dan catatan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip serah-terima lintas divisi dan catatan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas materi",
+              "body": "Pekerjaan kapal berpindah antar-tim struktur, mesin, outfitting, listrik, dan inspeksi. Serah-terima mencantumkan nomor kapal/area, sistem, revisi, hasil pemeriksaan, status energi/isolasi, pekerjaan tertahan, dan batas akses. Catatan harus sesuai fakta agar tim berikutnya tidak mengandalkan asumsi."
+            },
+            {
+              "title": "Penerapan proses kerja",
+              "body": "Pastikan label area dan status cocok dengan catatan. Sampaikan langsung isu keselamatan, bagian yang belum dilepas, dan izin yang masih berlaku. Minta penerima mengulang informasi kritis. Perbarui catatan melalui prosedur resmi.\n\nSkenario latihan: Shift Anda berakhir saat panel masih diisolasi dan pekerjaan belum selesai.\nRespons: Pertahankan label isolasi sesuai prosedur dan serahkan kondisi kepada petugas penerus yang berwenang."
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "caution": "Jangan melepas lock/tag atau mengubah status sistem hanya demi menutup catatan shift.",
+          "scenario": "Shift Anda berakhir saat panel masih diisolasi dan pekerjaan belum selesai.",
+          "response": "Pertahankan label isolasi sesuai prosedur dan serahkan kondisi kepada petugas penerus yang berwenang.",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah-terima"
+            },
+            {
+              "japanese": "隔離",
+              "reading": "かくり",
+              "meaning": "isolasi/pemisahan"
+            },
+            {
+              "japanese": "船内",
+              "reading": "せんない",
+              "meaning": "di dalam kapal"
+            },
+            {
+              "japanese": "担当",
+              "reading": "たんとう",
+              "meaning": "penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "reading": "ずめんとさぎょうはんいをかくにんします。",
+              "meaning": "Saya akan memeriksa gambar dan lingkup pekerjaan."
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "reading": "いじょうをかんとくしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Serah-terima pekerjaan kapal harus menyampaikan…",
+              "options": [
+                "Lokasi/sistem, hasil, status isolasi, dan pekerjaan yang tertahan",
+                "Hanya daftar pekerjaan yang sudah selesai",
+                "Kode panel tanpa status",
+                "Catatan lisan tanpa identitas area"
+              ],
+              "answer": 0,
+              "explanation": "Informasi yang tepat mencegah tim lain memasuki pekerjaan yang belum aman."
+            },
+            {
+              "kind": "case",
+              "prompt": "Panel masih diisolasi ketika shift selesai. Apa tindakan tepat?",
+              "options": [
+                "Pertahankan label dan serahkan status kepada petugas berwenang",
+                "Lepas isolasi karena Anda selesai",
+                "Biarkan label tanpa memberi tahu siapa pun",
+                "Minta petugas yang tidak ditunjuk melepasnya"
+              ],
+              "answer": 0,
+              "explanation": "Isolasi hanya diubah oleh petugas dan prosedur yang berwenang."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「引継ぎ（ひきつぎ）」 dalam konteks galangan kapal?",
+              "options": [
+                "serah-terima",
+                "isolasi/pemisahan",
+                "di dalam kapal",
+                "penanggung jawab"
+              ],
+              "answer": 0,
+              "explanation": "「引継ぎ」dibaca ひきつぎ dan berarti serah-terima."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "MLIT: lingkup bidang dan ujian shipbuilding/marine equipment",
+      "url": "https://www.mlit.go.jp/maritime/maritime_fr5_000006.html"
+    },
+    {
+      "title": "ISA: uraian kerja SSW No. 2 untuk tiga divisi",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00180.html"
+    },
+    {
+      "title": "MLIT: standar ujian keterampilan No. 1",
+      "url": "https://www.mlit.go.jp/common/001341301.pdf"
+    },
+    {
+      "title": "ClassNK: operator ujian dan informasi trade",
+      "url": "https://www.classnk.or.jp/hp/ja/authentication/evaluation/index.html"
+    }
+  ]
+}

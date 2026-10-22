@@ -6,7 +6,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/grammar/data/grammar_repository.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
@@ -14,8 +16,43 @@ import 'package:nihongo_master/features/learn/grammar/presentation/screens/gramm
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart'
     show QuizOption;
+import 'package:shared_preferences/shared_preferences.dart';
+
+late SharedPreferences _preferences;
 
 void main() {
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+    _preferences = await SharedPreferences.getInstance();
+  });
+  test('lesson reopens at the last studied grammar point', () async {
+    final history = LearningHistoryController(
+      _preferences,
+      _HistoryRepository(),
+      'user',
+    );
+    addTearDown(history.dispose);
+    final first = GrammarController(
+      _UnfinishedRepository(),
+      'grammar-n5-02',
+      onProgress: () {},
+      history: history,
+    );
+    await first.load();
+    first.movePoint(1);
+    expect(history.state.single.position, 1);
+    first.dispose();
+    final reopened = GrammarController(
+      _UnfinishedRepository(),
+      'grammar-n5-02',
+      onProgress: () {},
+      history: history,
+    );
+    addTearDown(reopened.dispose);
+    await reopened.load();
+    expect(reopened.state.valueOrNull!.pointIndex, 1);
+    expect(history.state.length, 1);
+  });
   testWidgets('N2 opens its full catalog and searches Japanese patterns', (
     tester,
   ) async {
@@ -220,6 +257,10 @@ void main() {
 
 Widget _app(_Repository repository) => ProviderScope(
   overrides: [
+    sharedPreferencesProvider.overrideWithValue(_preferences),
+    learningHistoryRepositoryProvider.overrideWith(
+      (ref) => _HistoryRepository(),
+    ),
     grammarRepositoryProvider.overrideWithValue(repository),
     authControllerProvider.overrideWith(
       (ref) => AuthController.test(
@@ -379,3 +420,22 @@ const _lesson = GrammarLesson(
     ),
   ],
 );
+
+class _HistoryRepository extends LearningHistoryRepository {
+  _HistoryRepository() : super(Dio());
+  final items = <String, LearningActivity>{};
+  @override
+  Future<List<LearningActivity>> fetch() async => items.values.toList();
+  @override
+  Future<LearningActivity> save(LearningActivity item) async {
+    final saved = item.copy(pending: false);
+    items[item.key] = saved;
+    return saved;
+  }
+}
+
+class _UnfinishedRepository extends _Repository {
+  @override
+  Future<GrammarLesson> getLesson(String id) async =>
+      GrammarLesson(summary: _course.lessons[1], points: _lesson.points);
+}

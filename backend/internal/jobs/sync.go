@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"runtime/debug"
 	"sort"
 	"strings"
 	"time"
@@ -363,6 +364,14 @@ func (r *Repository) ingest(ctx context.Context, s jobfetch.Source, domain, owne
 
 // The timer only checks database deadlines. Opening the app never starts a crawl.
 func (r *Repository) Run(ctx context.Context, fetcher Fetcher) {
+	defer func() {
+		if recovered := recover(); recovered != nil {
+			if r.errorHandler == nil {
+				panic(recovered)
+			}
+			r.reportError(fmt.Errorf("panic: %v\n%s", recovered, debug.Stack()))
+		}
+	}()
 	ticker := time.NewTicker(30 * time.Minute)
 	defer ticker.Stop()
 	for {
@@ -371,6 +380,9 @@ func (r *Repository) Run(ctx context.Context, fetcher Fetcher) {
 		cancel()
 		if err != nil && !errors.Is(err, context.Canceled) {
 			log.Printf("jobs sync failed: %v", err)
+			r.reportError(err)
+		} else if len(report.Errors) > 0 {
+			r.reportError(errors.New(strings.Join(report.Errors, "; ")))
 		} else if report.Requests > 0 {
 			log.Printf("jobs sync: domains=%d requests=%d jobs=%d errors=%d", report.Domains, report.Requests, report.JobsSeen, len(report.Errors))
 		}

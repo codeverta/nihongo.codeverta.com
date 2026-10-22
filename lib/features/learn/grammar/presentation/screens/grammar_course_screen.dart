@@ -17,7 +17,8 @@ class GrammarCourseScreen extends ConsumerStatefulWidget {
 class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
   String query = '';
   String chapter = 'Semua';
-  late String level = ['N5', 'N4', 'N3', 'N2'].contains(widget.initialLevel)
+  late String level =
+      ['N5', 'N4', 'N3', 'N2', 'N1'].contains(widget.initialLevel)
       ? widget.initialLevel
       : 'N5';
   void invalidateCourse() {
@@ -83,7 +84,7 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
               children: [
                 Row(
                   children: [
-                    for (final item in ['N5', 'N4', 'N3', 'N2'])
+                    for (final item in ['N5', 'N4', 'N3', 'N2', 'N1'])
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: ChoiceChip(
@@ -128,13 +129,15 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                       ),
                       const SizedBox(height: 14),
                       Text(
-                        level == 'N2'
-                            ? 'Kuasai nuansa dan hubungan gagasan yang kompleks'
-                            : level == 'N3'
-                                ? 'Pahami nuansa, hubungan, dan maksud kalimat'
-                                : level == 'N4'
-                                    ? 'Ungkapkan rencana, alasan, dan pendapat'
-                                    : 'Bangun kalimat Jepang dari dasar',
+                        level == 'N1'
+                            ? 'Kuasai pola tingkat lanjut untuk memahami nuansa dan maksud tersirat'
+                            : level == 'N2'
+                                ? 'Kuasai nuansa dan hubungan gagasan yang kompleks'
+                                : level == 'N3'
+                                    ? 'Pahami nuansa, hubungan, dan maksud kalimat'
+                                    : level == 'N4'
+                                        ? 'Ungkapkan rencana, alasan, dan pendapat'
+                                        : 'Bangun kalimat Jepang dari dasar',
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,

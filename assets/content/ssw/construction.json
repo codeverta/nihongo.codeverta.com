@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "site-safety",
+      "title": "Keselamatan dan kerja di lokasi",
+      "description": "Kerja pada bidang 土木, 建築, atau ライフライン・設備 dilakukan menurut penugasan, rencana, dan pengawasan yang berlaku.",
+      "lessons": [
+        {
+          "id": "construction-01",
+          "title": "Ruang lingkup dan peran pekerja",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip ruang lingkup dan peran pekerja sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "SSW No.1 bekerja pada pekerjaan konstruksi yang termasuk penugasannya dan melakukan tugas di bawah arahan yang ditetapkan. Bidang resminya ialah 土木 (teknik sipil), 建築 (bangunan), dan ライフライン・設備 (utilitas/fasilitas). Penugasan tidak otomatis mencakup setiap kerja di lokasi."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Pastikan bidang, lokasi, gambar, urutan, dan orang yang memberi arahan sebelum mulai. No.1 meminta klarifikasi jika batas tugas, kondisi, atau kompetensi tidak jelas; tugas pengawasan pekerja lain bukan diasumsikan dari status pekerja.\n\nSkenario latihan: Anda diminta berpindah dari tim sipil ke pekerjaan utilitas tanpa penjelasan gambar.\nRespons: Tunda bagian yang belum jelas dan konfirmasi lingkup serta arahan kepada pengawas."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan menganggap izin masuk lokasi sama dengan kewenangan melakukan semua pekerjaan konstruksi.",
+          "scenario": "Anda diminta berpindah dari tim sipil ke pekerjaan utilitas tanpa penjelasan gambar.",
+          "response": "Tunda bagian yang belum jelas dan konfirmasi lingkup serta arahan kepada pengawas.",
+          "vocabulary": [
+            {
+              "japanese": "建設",
+              "reading": "けんせつ",
+              "meaning": "konstruksi"
+            },
+            {
+              "japanese": "土木",
+              "reading": "どぼく",
+              "meaning": "teknik sipil"
+            },
+            {
+              "japanese": "建築",
+              "reading": "けんちく",
+              "meaning": "bangunan/arsitektur"
+            },
+            {
+              "japanese": "設備",
+              "reading": "せつび",
+              "meaning": "fasilitas/utilitas"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Pekerja perlu memastikan lingkup tugas karena…",
+              "options": [
+                "Pembagian bidang, rencana, dan arahan menentukan pekerjaan yang boleh dilakukan",
+                "Semua tugas dalam satu lokasi memiliki risiko yang sama",
+                "Pekerja dapat memilih tugas dari gambar lama",
+                "Pengawas hanya diperlukan setelah pekerjaan selesai"
+              ],
+              "answer": 0,
+              "explanation": "Pekerjaan harus sesuai klasifikasi, penugasan, dan arahan yang berlaku."
+            },
+            {
+              "kind": "case",
+              "prompt": "Anda dipindahkan ke pekerjaan utilitas tanpa gambar atau pengarahan. Apa tindakan tepat?",
+              "options": [
+                "Konfirmasi lingkup dan arahan sebelum memulai bagian yang belum jelas",
+                "Ikuti pekerja lain tanpa bertanya",
+                "Gunakan gambar yang pernah dilihat pada proyek lain",
+                "Mulai hanya pada bagian yang tampak mudah"
+              ],
+              "answer": 0,
+              "explanation": "Perbedaan lokasi/proyek mengubah gambar dan kondisi; pekerjaan belum jelas harus diklarifikasi."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「建設（けんせつ）」 dalam konteks konstruksi?",
+              "options": [
+                "fasilitas/utilitas",
+                "konstruksi",
+                "teknik sipil",
+                "bangunan/arsitektur"
+              ],
+              "answer": 1,
+              "explanation": "「建設」dibaca けんせつ dan berarti konstruksi."
+            }
+          ]
+        },
+        {
+          "id": "construction-02",
+          "title": "Rencana kerja harian dan komunikasi bahaya",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip rencana kerja harian dan komunikasi bahaya sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Sebelum kerja, tim meninjau metode, urutan, bahaya yang diperkirakan, penanggung jawab, dan perubahan kondisi. Rencana harus sesuai dokumen proyek dan pengarahan. Komunikasi ringkas membantu semua pekerja memahami batas dan tindakan saat bahaya muncul."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Ikuti briefing dan konfirmasi jika informasi tidak terdengar. Laporkan perubahan cuaca, akses, kondisi tanah, atau pekerjaan tim lain sebelum melanjutkan tahap yang terdampak. Pastikan sinyal darurat dipahami.\n\nSkenario latihan: Setelah briefing, area kerja berubah karena kendaraan pengangkut dialihkan melalui jalur tim Anda.\nRespons: Hentikan aktivitas yang terganggu, beri tahu pengawas dan koordinasikan ulang rute serta pembatasan."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan meneruskan pekerjaan dengan asumsi rencana lama tetap aman.",
+          "scenario": "Setelah briefing, area kerja berubah karena kendaraan pengangkut dialihkan melalui jalur tim Anda.",
+          "response": "Hentikan aktivitas yang terganggu, beri tahu pengawas dan koordinasikan ulang rute serta pembatasan.",
+          "vocabulary": [
+            {
+              "japanese": "作業計画",
+              "reading": "さぎょうけいかく",
+              "meaning": "rencana kerja"
+            },
+            {
+              "japanese": "朝礼",
+              "reading": "ちょうれい",
+              "meaning": "briefing pagi"
+            },
+            {
+              "japanese": "危険予知",
+              "reading": "きけんよち",
+              "meaning": "prediksi bahaya"
+            },
+            {
+              "japanese": "連絡",
+              "reading": "れんらく",
+              "meaning": "komunikasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Briefing sebelum pekerjaan membantu tim untuk…",
+              "options": [
+                "Menyamakan metode, bahaya, peran, dan respons perubahan",
+                "Menggantikan gambar dan instruksi proyek",
+                "Membolehkan setiap orang mengubah urutan kerja",
+                "Menghindari pencatatan kejadian"
+              ],
+              "answer": 0,
+              "explanation": "Briefing menyatukan pemahaman tim dengan rencana dan risiko yang relevan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Jalur kendaraan berubah dan bersinggungan dengan area kerja setelah briefing. Apa yang dilakukan?",
+              "options": [
+                "Tahan pekerjaan terdampak dan koordinasikan perubahan dengan pengawas",
+                "Lanjutkan sambil berharap pengemudi melihat pekerja",
+                "Pindahkan pembatas tanpa memberi tahu tim",
+                "Minta satu pekerja mengawasi sambil pekerjaan terus berlangsung"
+              ],
+              "answer": 0,
+              "explanation": "Perubahan kondisi memerlukan penilaian ulang dan komunikasi sebelum tugas terdampak diteruskan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「作業計画（さぎょうけいかく）」 dalam konteks konstruksi?",
+              "options": [
+                "prediksi bahaya",
+                "komunikasi",
+                "rencana kerja",
+                "briefing pagi"
+              ],
+              "answer": 2,
+              "explanation": "「作業計画」dibaca さぎょうけいかく dan berarti rencana kerja."
+            }
+          ]
+        },
+        {
+          "id": "construction-03",
+          "title": "Pembatas area dan akses aman",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pembatas area dan akses aman sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Lokasi konstruksi dapat memiliki alat bergerak, tepi terbuka, lubang, beda elevasi, material, dan akses publik. Barikade, tanda, penerangan, jalur pejalan kaki, serta pengendalian akses dipasang sesuai rencana lokasi dan diperiksa."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Kenali batas area, jalur keluar, titik kumpul, dan jalur alat. Jangan memindahkan pembatas tanpa otorisasi. Bila akses terhalang atau ada orang di zona berbahaya, hentikan pekerjaan yang terdampak dan laporkan.\n\nSkenario latihan: Pembatas dekat lubang bergeser dan pejalan kaki bisa masuk.\nRespons: Amankan diri, beri peringatan dari lokasi aman, tahan pekerjaan yang menimbulkan paparan, lalu laporkan untuk pemasangan ulang."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan masuk ke lubang atau zona alat untuk memperbaiki pembatas tanpa rencana aman.",
+          "scenario": "Pembatas dekat lubang bergeser dan pejalan kaki bisa masuk.",
+          "response": "Amankan diri, beri peringatan dari lokasi aman, tahan pekerjaan yang menimbulkan paparan, lalu laporkan untuk pemasangan ulang.",
+          "vocabulary": [
+            {
+              "japanese": "立入禁止",
+              "reading": "たちいりきんし",
+              "meaning": "dilarang masuk"
+            },
+            {
+              "japanese": "通路",
+              "reading": "つうろ",
+              "meaning": "jalur"
+            },
+            {
+              "japanese": "掘削",
+              "reading": "くっさく",
+              "meaning": "penggalian"
+            },
+            {
+              "japanese": "標識",
+              "reading": "ひょうしき",
+              "meaning": "tanda/rambu"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Fungsi pembatas area adalah…",
+              "options": [
+                "Mencegah akses ke zona berbahaya sesuai rencana lokasi",
+                "Menandai area sebagai tempat menyimpan semua material",
+                "Menggantikan pemeriksaan kondisi lokasi",
+                "Membolehkan pekerja melintasi zona kerja"
+              ],
+              "answer": 0,
+              "explanation": "Pembatas dan tanda memberi kendali akses; kondisinya harus dijaga."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pembatas di dekat lubang bergeser ke jalur pejalan kaki. Apa respons tepat?",
+              "options": [
+                "Berikan peringatan dari posisi aman dan laporkan agar area diamankan",
+                "Lewati pembatas lalu masuk ke lubang untuk memeriksa",
+                "Biarkan sampai akhir shift",
+                "Pindahkan sendiri tanpa mengoordinasikan tim"
+              ],
+              "answer": 0,
+              "explanation": "Jaga diri dan hentikan paparan; perbaikan mengikuti rencana dan komunikasi lokasi."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「立入禁止（たちいりきんし）」 dalam konteks konstruksi?",
+              "options": [
+                "jalur",
+                "penggalian",
+                "tanda/rambu",
+                "dilarang masuk"
+              ],
+              "answer": 3,
+              "explanation": "「立入禁止」dibaca たちいりきんし dan berarti dilarang masuk."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drawings-layout",
+      "title": "Gambar, pengukuran, dan persiapan",
+      "description": "Membaca informasi kerja terkendali, mengidentifikasi lokasi, dan menyiapkan pekerjaan sesuai bidang serta instruksi.",
+      "lessons": [
+        {
+          "id": "construction-04",
+          "title": "Membaca gambar dan revisi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip membaca gambar dan revisi sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Gambar kerja memberi informasi lokasi, dimensi, simbol, level, detail, dan hubungan antarbagian. Versi/revisi harus dipastikan karena perubahan desain dapat mengubah koordinasi atau keselamatan. Bila simbol atau ukuran tak terbaca, pekerja meminta penjelasan."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Cocokkan nomor gambar dan revisi dengan paket yang berlaku. Tinjau tampak/rencana dan detail yang terkait sebelum menandai atau menempatkan komponen. Jangan mengukur dari gambar lama atau menebak skala cetak.\n\nSkenario latihan: Gambar kerja lapangan memiliki revisi lebih lama dari dokumen pada papan informasi.\nRespons: Tahan pekerjaan terkait dan minta pengawas mengonfirmasi gambar terkini."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan menggabungkan dimensi dari revisi berbeda.",
+          "scenario": "Gambar kerja lapangan memiliki revisi lebih lama dari dokumen pada papan informasi.",
+          "response": "Tahan pekerjaan terkait dan minta pengawas mengonfirmasi gambar terkini.",
+          "vocabulary": [
+            {
+              "japanese": "図面",
+              "reading": "ずめん",
+              "meaning": "gambar teknik"
+            },
+            {
+              "japanese": "寸法",
+              "reading": "すんぽう",
+              "meaning": "dimensi"
+            },
+            {
+              "japanese": "縮尺",
+              "reading": "しゅくしゃく",
+              "meaning": "skala"
+            },
+            {
+              "japanese": "改訂",
+              "reading": "かいてい",
+              "meaning": "revisi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Sebelum membuat penandaan dari gambar, pastikan…",
+              "options": [
+                "Nomor dan revisi gambar yang berlaku",
+                "Ukuran cetak paling besar",
+                "Gambar yang paling mudah dibaca meski lama",
+                "Dimensi dari bagian proyek lain"
+              ],
+              "answer": 0,
+              "explanation": "Informasi terkendali harus konsisten dengan kondisi dan dokumen yang disetujui."
+            },
+            {
+              "kind": "case",
+              "prompt": "Dokumen di lapangan menunjukkan revisi berbeda. Bagaimana bertindak?",
+              "options": [
+                "Konfirmasi versi berlaku dan hentikan pekerjaan yang terdampak",
+                "Pilih gambar yang paling baru tanggal cetaknya tanpa bertanya",
+                "Gabungkan detail keduanya",
+                "Lanjutkan lalu laporkan setelah selesai"
+              ],
+              "answer": 0,
+              "explanation": "Revisi perlu dikendalikan sebelum pekerjaan yang bergantung padanya berjalan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「図面（ずめん）」 dalam konteks konstruksi?",
+              "options": [
+                "gambar teknik",
+                "dimensi",
+                "skala",
+                "revisi"
+              ],
+              "answer": 0,
+              "explanation": "「図面」dibaca ずめん dan berarti gambar teknik."
+            }
+          ]
+        },
+        {
+          "id": "construction-05",
+          "title": "Pengukuran, elevasi, dan penandaan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengukuran, elevasi, dan penandaan sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Pengukuran lapangan menerjemahkan koordinat, garis acuan, dimensi, dan elevasi dari dokumen ke lokasi. Titik acuan dan alat ukur harus sesuai instruksi, stabil, serta diperiksa. Pengukuran ulang membantu menemukan kesalahan sebelum pekerjaan tertutup."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Identifikasi patok/benchmark yang ditetapkan, periksa alat, ukur sesuai titik dan unit, lalu bandingkan hasil dengan toleransi proyek. Tandai titik dengan jelas dan catat perubahan atau ketidaksesuaian. Minta pemeriksaan bila hasil meragukan.\n\nSkenario latihan: Tanda elevasi di lapangan berbeda dari hasil pengukuran rekan.\nRespons: Jangan memilih salah satu berdasarkan perkiraan; verifikasi titik acuan dan ulangi pemeriksaan bersama petugas berwenang."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan menggeser patok acuan atau menghapus tanda sebelum konfirmasi.",
+          "scenario": "Tanda elevasi di lapangan berbeda dari hasil pengukuran rekan.",
+          "response": "Jangan memilih salah satu berdasarkan perkiraan; verifikasi titik acuan dan ulangi pemeriksaan bersama petugas berwenang.",
+          "vocabulary": [
+            {
+              "japanese": "測量",
+              "reading": "そくりょう",
+              "meaning": "survei/pengukuran"
+            },
+            {
+              "japanese": "基準点",
+              "reading": "きじゅんてん",
+              "meaning": "titik acuan"
+            },
+            {
+              "japanese": "高さ",
+              "reading": "たかさ",
+              "meaning": "ketinggian"
+            },
+            {
+              "japanese": "墨出し",
+              "reading": "すみだし",
+              "meaning": "penandaan garis"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Titik acuan diperlukan agar…",
+              "options": [
+                "Pengukuran dan penandaan merujuk ke dasar yang sama",
+                "Setiap pekerja menggunakan titik pilihannya",
+                "Pemeriksaan ulang tidak diperlukan",
+                "Dimensi proyek bisa diubah di lapangan"
+              ],
+              "answer": 0,
+              "explanation": "Hasil ukur hanya sebanding jika titik referensinya konsisten dan sah."
+            },
+            {
+              "kind": "case",
+              "prompt": "Dua hasil elevasi berbeda. Apa langkah berikutnya?",
+              "options": [
+                "Periksa titik acuan dan ulangi pengukuran bersama sesuai prosedur",
+                "Gunakan nilai yang paling dekat dengan target",
+                "Geser patok agar kedua nilai sama",
+                "Tutup area tanpa mencatat perbedaan"
+              ],
+              "answer": 0,
+              "explanation": "Ketidaksesuaian harus diperiksa pada sumber referensi sebelum menetapkan posisi."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「測量（そくりょう）」 dalam konteks konstruksi?",
+              "options": [
+                "penandaan garis",
+                "survei/pengukuran",
+                "titik acuan",
+                "ketinggian"
+              ],
+              "answer": 1,
+              "explanation": "「測量」dibaca そくりょう dan berarti survei/pengukuran."
+            }
+          ]
+        },
+        {
+          "id": "construction-06",
+          "title": "Material dan penerimaan di lokasi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip material dan penerimaan di lokasi sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Material dan komponen di lokasi harus cocok dengan jenis, mutu, ukuran, kuantitas, serta tujuan pada dokumen. Penumpukan dan perlindungan perlu mengikuti rencana untuk mencegah pergeseran, kerusakan, kontaminasi, atau hambatan jalur."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Verifikasi identitas dan kondisi pada penerimaan. Simpan di tempat yang disetujui dan jaga akses. Material yang rusak atau tak cocok dipisahkan serta dilaporkan sebelum dipasang.\n\nSkenario latihan: Besi tulangan tiba tanpa label lot yang dibutuhkan untuk penelusuran.\nRespons: Tahan dari pemasangan, lindungi, dan minta verifikasi dokumen serta identitas."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan memasang material yang identitas atau kesesuaiannya belum terkonfirmasi.",
+          "scenario": "Besi tulangan tiba tanpa label lot yang dibutuhkan untuk penelusuran.",
+          "response": "Tahan dari pemasangan, lindungi, dan minta verifikasi dokumen serta identitas.",
+          "vocabulary": [
+            {
+              "japanese": "資材",
+              "reading": "しざい",
+              "meaning": "material konstruksi"
+            },
+            {
+              "japanese": "受入検査",
+              "reading": "うけいれけんさ",
+              "meaning": "pemeriksaan penerimaan"
+            },
+            {
+              "japanese": "保管",
+              "reading": "ほかん",
+              "meaning": "penyimpanan"
+            },
+            {
+              "japanese": "数量",
+              "reading": "すうりょう",
+              "meaning": "jumlah"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Pemeriksaan penerimaan berguna untuk memastikan…",
+              "options": [
+                "Identitas, kondisi, jumlah, dan kesesuaian terhadap dokumen",
+                "Material dapat langsung dipasang tanpa inspeksi",
+                "Label dapat dibuang setelah barang tiba",
+                "Jalur evakuasi boleh dipakai sebagai tempat simpan"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan menjaga kesesuaian dan mencegah material tidak sesuai terpasang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Material tidak memiliki identitas lot yang diwajibkan. Apa tindakan tepat?",
+              "options": [
+                "Pisahkan dan konfirmasi identitas sebelum pemasangan",
+                "Pasang di bagian yang tidak terlihat",
+                "Tulis nomor lot dari material terdekat",
+                "Buang label kebutuhan agar proses lebih cepat"
+              ],
+              "answer": 0,
+              "explanation": "Keterlacakan perlu dipastikan sebelum material digunakan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「資材（しざい）」 dalam konteks konstruksi?",
+              "options": [
+                "penyimpanan",
+                "jumlah",
+                "material konstruksi",
+                "pemeriksaan penerimaan"
+              ],
+              "answer": 2,
+              "explanation": "「資材」dibaca しざい dan berarti material konstruksi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "execution",
+      "title": "Pelaksanaan dan koordinasi proses",
+      "description": "Prinsip penerapan lintas pekerjaan konstruksi. Cara teknis dan kewenangan mengikuti metode resmi, gambar, serta pengawasan.",
+      "lessons": [
+        {
+          "id": "construction-07",
+          "title": "Penggalian dan kondisi bawah tanah",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip penggalian dan kondisi bawah tanah sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Penggalian berhubungan dengan utilitas tertanam, kestabilan tanah, air, tepi, dan akses. Peta utilitas, izin, rencana penyangga/lereng, pengawasan, serta pemantauan kondisi ditentukan oleh pihak kompeten. Pekerja mengikuti instruksi dan tidak memasuki galian tidak aman."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Sebelum tahap penggalian, cek batas area, izin dan penandaan utilitas, alat yang ditugaskan, serta jalur masuk/keluar. Laporkan perubahan tanah, kebocoran, retakan, atau utilitas tak dikenal dan tunggu arahan.\n\nSkenario latihan: Tanda utilitas bawah tanah tak sesuai dengan posisi yang terlihat saat penggalian.\nRespons: Hentikan aktivitas terdampak, jaga jarak aman, dan segera beri tahu pengawas sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan menyentuh, memindahkan, atau melanjutkan galian di dekat utilitas yang belum teridentifikasi.",
+          "scenario": "Tanda utilitas bawah tanah tak sesuai dengan posisi yang terlihat saat penggalian.",
+          "response": "Hentikan aktivitas terdampak, jaga jarak aman, dan segera beri tahu pengawas sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "地中埋設物",
+              "reading": "ちちゅうまいせつぶつ",
+              "meaning": "utilitas tertanam"
+            },
+            {
+              "japanese": "土砂",
+              "reading": "どしゃ",
+              "meaning": "tanah/urugan"
+            },
+            {
+              "japanese": "崩壊",
+              "reading": "ほうかい",
+              "meaning": "runtuh"
+            },
+            {
+              "japanese": "退避",
+              "reading": "たいひ",
+              "meaning": "evakuasi/menjauh"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Saat kondisi utilitas atau tanah menyimpang dari rencana, pekerja harus…",
+              "options": [
+                "Menghentikan bagian terdampak dan menunggu arahan pengawas",
+                "Menggali lebih cepat agar utilitas terlihat",
+                "Memindahkan tanda utilitas sendiri",
+                "Membiarkan rekan bekerja sambil mencari peta"
+              ],
+              "answer": 0,
+              "explanation": "Penyimpangan dapat menimbulkan bahaya serius dan perlu ditangani terkoordinasi."
+            },
+            {
+              "kind": "case",
+              "prompt": "Posisi utilitas di lapangan berbeda dengan tanda rencana. Apa tindakan aman?",
+              "options": [
+                "Jauhkan pekerja, hentikan aktivitas terdampak, dan laporkan segera",
+                "Terus menggali perlahan menggunakan alat apa pun",
+                "Tarik utilitas agar tidak menghalangi",
+                "Minta rekan berdiri dekat titik untuk melihat"
+              ],
+              "answer": 0,
+              "explanation": "Jangan mendekati atau mengubah utilitas yang belum diketahui."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「地中埋設物（ちちゅうまいせつぶつ）」 dalam konteks konstruksi?",
+              "options": [
+                "tanah/urugan",
+                "runtuh",
+                "evakuasi/menjauh",
+                "utilitas tertanam"
+              ],
+              "answer": 3,
+              "explanation": "「地中埋設物」dibaca ちちゅうまいせつぶつ dan berarti utilitas tertanam."
+            }
+          ]
+        },
+        {
+          "id": "construction-08",
+          "title": "Pekerjaan struktur dan komponen bangunan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pekerjaan struktur dan komponen bangunan sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Pekerjaan bangunan dapat meliputi penyiapan komponen, pembesian, bekisting, pengecoran, pemasangan, atau finishing sesuai tugas. Urutan, dukungan sementara, pemeriksaan sebelum pekerjaan tertutup, dan koordinasi tim menjaga mutu serta kestabilan."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Cocokkan komponen dengan gambar dan posisi. Periksa kondisi bekisting/dukungan atau pengikat hanya sesuai checklist dan kewenangan. Minta pemeriksaan yang diwajibkan sebelum pengecoran atau menutup bagian struktur.\n\nSkenario latihan: Bekisting menunjukkan celah dan dukungan tampak bergeser sebelum pengecoran.\nRespons: Jangan meneruskan pengecoran; tahan area dan minta pemeriksaan serta arahan pengawas."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan mengganjal atau mengubah dukungan sementara tanpa instruksi kompeten.",
+          "scenario": "Bekisting menunjukkan celah dan dukungan tampak bergeser sebelum pengecoran.",
+          "response": "Jangan meneruskan pengecoran; tahan area dan minta pemeriksaan serta arahan pengawas.",
+          "vocabulary": [
+            {
+              "japanese": "型枠",
+              "reading": "かたわく",
+              "meaning": "bekisting"
+            },
+            {
+              "japanese": "鉄筋",
+              "reading": "てっきん",
+              "meaning": "tulangan baja"
+            },
+            {
+              "japanese": "コンクリート",
+              "reading": "こんくりーと",
+              "meaning": "beton"
+            },
+            {
+              "japanese": "支持",
+              "reading": "しじ",
+              "meaning": "penyangga"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa pemeriksaan sebelum bagian tertutup atau pengecoran penting?",
+              "options": [
+                "Kondisi yang kelak tersembunyi masih dapat diperiksa dan dikoreksi",
+                "Agar checklist tidak perlu diisi",
+                "Karena gambar tidak berlaku setelah pemasangan",
+                "Supaya material dapat ditinggalkan di area"
+              ],
+              "answer": 0,
+              "explanation": "Tahapan pemeriksaan harus terjadi pada titik yang ditetapkan sebelum akses visual hilang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Dukungan bekisting bergeser sebelum pengecoran. Apa tindakan tepat?",
+              "options": [
+                "Hentikan pengecoran dan minta pemeriksaan resmi",
+                "Tambahkan potongan kayu tanpa arahan",
+                "Lanjutkan sedikit demi sedikit",
+                "Minta pekerja berdiri di bawah untuk menahan"
+              ],
+              "answer": 0,
+              "explanation": "Dukungan sementara harus dinilai dan diperbaiki oleh pihak berwenang sebelum beban diterapkan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「型枠（かたわく）」 dalam konteks konstruksi?",
+              "options": [
+                "bekisting",
+                "tulangan baja",
+                "beton",
+                "penyangga"
+              ],
+              "answer": 0,
+              "explanation": "「型枠」dibaca かたわく dan berarti bekisting."
+            }
+          ]
+        },
+        {
+          "id": "construction-09",
+          "title": "Pekerjaan utilitas dan fasilitas",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pekerjaan utilitas dan fasilitas sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Pekerjaan ライフライン・設備 mencakup infrastruktur/fasilitas seperti jaringan pipa atau kabel sesuai proyek. Identifikasi jalur, isolasi, akses, uji, serta koordinasi dengan sistem yang sudah beroperasi harus mengikuti dokumen dan kewenangan."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Periksa label, rute, titik sambungan, dan izin sebelum bekerja. Jangan memotong, menyambung, atau membuka sistem berenergi/bertekanan tanpa prosedur isolasi serta otorisasi. Laporkan perbedaan antara kondisi nyata dan gambar.\n\nSkenario latihan: Pipa yang akan dikerjakan tidak memiliki label media dan jalurnya belum terkonfirmasi.\nRespons: Jangan membuka atau memotongnya; tahan pekerjaan dan minta identifikasi serta prosedur dari pengawas."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan menebak isi pipa dari warna atau lokasinya.",
+          "scenario": "Pipa yang akan dikerjakan tidak memiliki label media dan jalurnya belum terkonfirmasi.",
+          "response": "Jangan membuka atau memotongnya; tahan pekerjaan dan minta identifikasi serta prosedur dari pengawas.",
+          "vocabulary": [
+            {
+              "japanese": "配管",
+              "reading": "はいかん",
+              "meaning": "pemipaan"
+            },
+            {
+              "japanese": "配線",
+              "reading": "はいせん",
+              "meaning": "pemasangan kabel"
+            },
+            {
+              "japanese": "接続",
+              "reading": "せつぞく",
+              "meaning": "sambungan"
+            },
+            {
+              "japanese": "遮断",
+              "reading": "しゃだん",
+              "meaning": "isolasi/pemutusan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Sebelum membuka atau menyambung utilitas, pekerja perlu…",
+              "options": [
+                "Memastikan identitas, gambar, isolasi, dan otorisasi",
+                "Menggunakan warna pipa sebagai satu-satunya bukti",
+                "Menganggap jaringan tidak berenergi saat proyek baru",
+                "Meminta rekan menguji dengan menyentuhnya"
+              ],
+              "answer": 0,
+              "explanation": "Sistem utilitas harus diidentifikasi dan dikendalikan sesuai prosedur keselamatan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pipa tanpa identitas akan dipotong sesuai tugas. Apa respons aman?",
+              "options": [
+                "Hentikan dan minta identifikasi serta isolasi yang berlaku",
+                "Potong sedikit untuk melihat isi",
+                "Pakai kacamata dan lanjutkan",
+                "Tanya pekerja lain yang belum memeriksa"
+              ],
+              "answer": 0,
+              "explanation": "Identitas dan keadaan energi/tekanan harus dipastikan sebelum intervensi."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「配管（はいかん）」 dalam konteks konstruksi?",
+              "options": [
+                "isolasi/pemutusan",
+                "pemipaan",
+                "pemasangan kabel",
+                "sambungan"
+              ],
+              "answer": 1,
+              "explanation": "「配管」dibaca はいかん dan berarti pemipaan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quality-handover",
+      "title": "Mutu, lingkungan, dan serah-terima",
+      "description": "Pemeriksaan, pengendalian material, pencatatan, dan pengalihan status pekerjaan secara bertanggung jawab.",
+      "lessons": [
+        {
+          "id": "construction-10",
+          "title": "Pemeriksaan pekerjaan dan ketidaksesuaian",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemeriksaan pekerjaan dan ketidaksesuaian sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Pemeriksaan membandingkan hasil dengan gambar, spesifikasi, titik pemeriksaan, dan metode yang disepakati. Ketidaksesuaian harus dilindungi dari tertutup atau dilanjutkan tanpa keputusan. Catatan lokasi, ukuran, foto bila diizinkan, dan lot memudahkan tindak lanjut."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Periksa titik yang ditentukan sebelum pekerjaan berikutnya menutup akses. Catat hasil aktual dan status. Laporkan deviasi untuk evaluasi; lakukan perbaikan hanya setelah metode dan persetujuan ditetapkan.\n\nSkenario latihan: Sebuah sambungan utilitas akan tertutup sebelum pemeriksaan yang diwajibkan.\nRespons: Tunda penutupan dan minta pemeriksaan sesuai rencana mutu."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan menyembunyikan deviasi dengan penutup atau finishing.",
+          "scenario": "Sebuah sambungan utilitas akan tertutup sebelum pemeriksaan yang diwajibkan.",
+          "response": "Tunda penutupan dan minta pemeriksaan sesuai rencana mutu.",
+          "vocabulary": [
+            {
+              "japanese": "施工",
+              "reading": "せこう",
+              "meaning": "pelaksanaan konstruksi"
+            },
+            {
+              "japanese": "検査",
+              "reading": "けんさ",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "不適合",
+              "reading": "ふてきごう",
+              "meaning": "ketidaksesuaian"
+            },
+            {
+              "japanese": "是正",
+              "reading": "ぜせい",
+              "meaning": "koreksi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Jika hasil lapangan berbeda dari spesifikasi, pekerja sebaiknya…",
+              "options": [
+                "Mencatat dan melaporkan deviasi sebelum melanjutkan tahap terkait",
+                "Mengubah spesifikasi agar cocok dengan hasil",
+                "Menutup bagian agar tampilan rapi",
+                "Meneruskan dan memberi tahu setelah proyek selesai"
+              ],
+              "answer": 0,
+              "explanation": "Deviasi memerlukan evaluasi dan keputusan sebelum tahap lanjutan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Sambungan akan tertutup sebelum titik inspeksi diwajibkan. Apa tindakan tepat?",
+              "options": [
+                "Tunda penutupan dan minta pemeriksaan yang disyaratkan",
+                "Tutup lalu buat catatan dari ingatan",
+                "Ambil foto tanpa memberi tahu tim mutu",
+                "Minta pekerja berikutnya memeriksa setelah tertutup"
+              ],
+              "answer": 0,
+              "explanation": "Titik inspeksi harus diselesaikan ketika bagian masih dapat diperiksa."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「施工（せこう）」 dalam konteks konstruksi?",
+              "options": [
+                "ketidaksesuaian",
+                "koreksi",
+                "pelaksanaan konstruksi",
+                "pemeriksaan"
+              ],
+              "answer": 2,
+              "explanation": "「施工」dibaca せこう dan berarti pelaksanaan konstruksi."
+            }
+          ]
+        },
+        {
+          "id": "construction-11",
+          "title": "Lingkungan dan pengelolaan material sisa",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip lingkungan dan pengelolaan material sisa sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Penyimpanan dan pemilahan material sisa, debu, air, serta bahan berbahaya mengikuti ketentuan proyek dan kebijakan fasilitas. Jalur, drainase, dan lingkungan sekitar perlu dilindungi. Pekerja tidak membuang atau mencampur material berdasarkan dugaan."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Kenali tempat penampungan yang ditandai dan jenis pemisahan yang diwajibkan. Tahan bahan yang tidak dikenal, gunakan APD sesuai arahan, dan minta petunjuk penanganan. Jaga jalur serta saluran air tetap tidak terhalang.\n\nSkenario latihan: Wadah sisa bahan tak berlabel berada di dekat saluran air hujan.\nRespons: Jangan menuang atau memindahkan isinya; cegah akses dari posisi aman dan laporkan segera."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan membuang cairan atau residu ke tanah, saluran, atau wadah umum tanpa identifikasi.",
+          "scenario": "Wadah sisa bahan tak berlabel berada di dekat saluran air hujan.",
+          "response": "Jangan menuang atau memindahkan isinya; cegah akses dari posisi aman dan laporkan segera.",
+          "vocabulary": [
+            {
+              "japanese": "廃材",
+              "reading": "はいざい",
+              "meaning": "material sisa"
+            },
+            {
+              "japanese": "分別",
+              "reading": "ぶんべつ",
+              "meaning": "pemilahan"
+            },
+            {
+              "japanese": "排水",
+              "reading": "はいすい",
+              "meaning": "drainase"
+            },
+            {
+              "japanese": "環境",
+              "reading": "かんきょう",
+              "meaning": "lingkungan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Material sisa yang tak diketahui harus…",
+              "options": [
+                "Diidentifikasi dan ditangani menurut prosedur proyek",
+                "Dicampur dengan sampah umum",
+                "Dibuang di saluran terdekat",
+                "Dipindahkan tanpa label ke lokasi lain"
+              ],
+              "answer": 0,
+              "explanation": "Klasifikasi dan penanganan harus sesuai aturan; jangan menebak sifat bahan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Wadah tak berlabel ada dekat saluran hujan. Apa tindakan terbaik?",
+              "options": [
+                "Jauhkan diri, cegah paparan dari posisi aman, dan laporkan untuk identifikasi",
+                "Tuangkan sedikit ke saluran untuk mengecek",
+                "Pindahkan wadah terbuka ke area umum",
+                "Campur dengan sisa material yang sudah diketahui"
+              ],
+              "answer": 0,
+              "explanation": "Bahan tidak dikenal tidak boleh dipindah atau dibuang tanpa penilaian dan kewenangan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「廃材（はいざい）」 dalam konteks konstruksi?",
+              "options": [
+                "pemilahan",
+                "drainase",
+                "lingkungan",
+                "material sisa"
+              ],
+              "answer": 3,
+              "explanation": "「廃材」dibaca はいざい dan berarti material sisa."
+            }
+          ]
+        },
+        {
+          "id": "construction-12",
+          "title": "Catatan harian dan serah-terima",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip catatan harian dan serah-terima sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan lingkup",
+              "body": "Catatan harian menghubungkan pekerjaan dengan lokasi, gambar/revisi, tenaga, alat, material, inspeksi, kondisi, dan hambatan. Pergantian shift/proses harus menyampaikan status terbuka dan pembatasan area secara jelas agar pekerjaan berikutnya tidak bertindak berdasarkan asumsi."
+            },
+            {
+              "title": "Penerapan kerja",
+              "body": "Catat fakta, waktu, lokasi dan nomor dokumen; lampirkan bukti hanya sesuai kebijakan. Serahkan pekerjaan tertahan, izin, hasil ukur, dan perubahan kondisi kepada pengawas serta tim berikutnya. Minta konfirmasi penerimaan informasi penting.\n\nSkenario latihan: Shift Anda berakhir dengan area yang masih dibatasi karena hasil ukur menyimpang.\nRespons: Pastikan pembatas tetap terlihat, catat lokasi serta status, dan sampaikan langsung kepada petugas berikutnya."
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "caution": "Jangan melepas tanda hanya karena pekerjaan Anda selesai.",
+          "scenario": "Shift Anda berakhir dengan area yang masih dibatasi karena hasil ukur menyimpang.",
+          "response": "Pastikan pembatas tetap terlihat, catat lokasi serta status, dan sampaikan langsung kepada petugas berikutnya.",
+          "vocabulary": [
+            {
+              "japanese": "日報",
+              "reading": "にっぽう",
+              "meaning": "laporan harian"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah-terima"
+            },
+            {
+              "japanese": "現場",
+              "reading": "げんば",
+              "meaning": "lokasi kerja"
+            },
+            {
+              "japanese": "工事記録",
+              "reading": "こうじきろく",
+              "meaning": "catatan konstruksi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "reading": "さぎょうないようとずめんをかくにんします。",
+              "meaning": "Saya akan memeriksa tugas dan gambar kerja."
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。",
+              "meaning": "Jika ada ketidaknormalan, saya akan melapor kepada pengawas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Catatan pekerjaan yang baik terutama harus…",
+              "options": [
+                "Faktual, terkait lokasi/dokumen, dan dapat ditelusuri",
+                "Hanya mencatat hal yang selesai",
+                "Menghapus penyimpangan setelah diperbaiki",
+                "Menggunakan istilah umum tanpa nomor lokasi"
+              ],
+              "answer": 0,
+              "explanation": "Catatan yang terhubung dengan lokasi dan dokumen mendukung koordinasi dan pemeriksaan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Area masih dibatasi saat shift berakhir. Apa langkah tepat?",
+              "options": [
+                "Pertahankan tanda, rekam status, dan serahkan secara langsung",
+                "Lepas tanda supaya lokasi tampak selesai",
+                "Tinggalkan tanpa pesan karena ada rambu",
+                "Pindahkan pekerjaan ke area lain tanpa arahan"
+              ],
+              "answer": 0,
+              "explanation": "Status dan batas area perlu diteruskan supaya shift berikutnya tetap aman."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「日報（にっぽう）」 dalam konteks konstruksi?",
+              "options": [
+                "laporan harian",
+                "serah-terima",
+                "lokasi kerja",
+                "catatan konstruksi"
+              ],
+              "answer": 0,
+              "explanation": "「日報」dibaca にっぽう dan berarti laporan harian."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA: bidang SSW konstruksi dan jenis pekerjaan",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/construction.html"
+    },
+    {
+      "title": "JAC: ujian dan lingkup bahan belajar per bidang",
+      "url": "https://jac-skill.or.jp/exam/"
+    },
+    {
+      "title": "JAC: bahan resmi dan lingkup ujian",
+      "url": "https://global.jac-skill.or.jp/examination/documents.php"
+    },
+    {
+      "title": "MLIT: standar evaluasi keterampilan konstruksi SSW No. 1",
+      "url": "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/content/001519991.pdf"
+    }
+  ]
+}

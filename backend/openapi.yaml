@@ -141,7 +141,7 @@ paths:
                 hidden: {type: boolean}
                 revision: {type: string, description: Revision from article GET; required when editing readings to reject stale token positions}
                 imageUrl: {type: string, description: Empty or existing /news-images/hash.png or jpg}
-                  imageCredit: {type: string, maxLength: 8000}
+                imageCredit: {type: string, maxLength: 8000}
                 imageLicense: {type: string, maxLength: 200}
                 readings:
                   type: array
@@ -572,6 +572,107 @@ paths:
                       history: {type: array, items: {type: object}}
         '402': {description: Lifetime Access required}
         '401': {$ref: '#/components/responses/Unauthorized'}
+  /simulation/{level}:
+    get:
+      tags: [Simulation]
+      summary: Simulation overview for a supported exam level, including NAT/JFT Exam 2–5 and data-driven SSW papers
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: level, in: path, required: true, description: Use NAT-2 through NAT-5 for additional NAT 5Q papers, or JFT, JFT-2, JFT-3, JFT-4 or JFT-5 for original written practice papers., schema: {type: string, example: NAT-2}}
+      responses:
+        '200':
+          description: Paper overview with section timers, question count, active attempt, history, and omitted content. Each NAT 5Q paper has 43 original written questions and a 60-minute timer; each JFT paper has 36 original written questions and a shared 45-minute timer. Listening is omitted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      paperId: {type: string}
+                      title: {type: string, description: SSW titles identify original learning simulations and scope limits}
+                      questionCount: {type: integer}
+                      durationMinutes: {type: integer}
+                      sections: {type: array, items: {$ref: '#/components/schemas/SimulationSection'}}
+                      activeAttemptId: {type: string}
+                      omittedSections: {type: array, items: {type: string}}
+                      history: {type: array, items: {type: object}}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '402': {description: Premium access required for simulation}
+        '404': {description: Unsupported level}
+  /ssw/{sector}/practice:
+    get:
+      tags: [SSW]
+      summary: Original SSW study questions for a sector and optional module
+      description: Requires premium access. Question keys and explanations are withheld until answer checking.
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: sector, in: path, required: true, schema: {type: string}}
+        - {name: module, in: query, required: false, schema: {type: string}}
+      responses:
+        '200':
+          description: Practice questions for the requested sector/module
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      questions:
+                        type: array
+                        items:
+                          type: object
+                          required: [id, moduleId, group, lessonId, prompt, options]
+                          properties:
+                            id: {type: string}
+                            moduleId: {type: string}
+                            group: {type: string}
+                            lessonId: {type: string}
+                            prompt: {type: string}
+                            options: {type: array, minItems: 4, maxItems: 4, items: {type: string}}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '402': {description: Premium access required for practice}
+        '404': {description: Sector or module not found}
+  /ssw/{sector}/practice/check:
+    post:
+      tags: [SSW]
+      summary: Check a response and return feedback for an original SSW practice question
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: sector, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [questionId, answer]
+              properties:
+                questionId: {type: string}
+                answer: {type: integer, minimum: 0, maximum: 3}
+      responses:
+        '200':
+          description: Correctness, answer index, explanation, and related lesson
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    required: [correct, answer, explanation, lessonId]
+                    properties:
+                      correct: {type: boolean}
+                      answer: {type: integer, minimum: 0, maximum: 3}
+                      explanation: {type: string}
+                      lessonId: {type: string}
+        '400': {description: Invalid input}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '402': {description: Premium access required for practice}
+        '404': {description: Sector or question not found}
   /simulation/jft:
     get:
       tags: [Simulation]
@@ -856,7 +957,7 @@ paths:
               type: object
               required: [examId]
               properties:
-                examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1 and jlpt-n3-simulation-1, jft-a2-full-1 and nat-5q-full-1"}
+                examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
       responses:
         '201': {description: Exam attempt created}
         '401': {$ref: '#/components/responses/Unauthorized'}
@@ -989,6 +1090,46 @@ paths:
         '422': {description: Invalid or unsupported image}
         '502': {description: COS upload failed}
         '503': {description: COS upload credentials or public URL are unavailable}
+  /me/learning-history:
+    get:
+      tags: [Learning]
+      summary: Recently opened learning materials, newest first, isolated per account
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: 'data.items contains kind, lessonId, title, level, zero-based position, total, completed, locked, available, and accessedAt (UTC). Metadata and completion are server-derived. Cache-Control is no-store.'
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /me/learning-history/{kind}/{lessonId}:
+    put:
+      tags: [Learning]
+      summary: Save the last successfully opened material position without awarding quiz progress or XP
+      security: [{bearerAuth: []}]
+      parameters:
+        - in: path
+          name: kind
+          required: true
+          schema: {type: string, enum: [vocabulary, grammar, kanji, reading]}
+        - in: path
+          name: lessonId
+          required: true
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [position, accessedAt]
+              properties:
+                position: {type: integer, minimum: 0, description: Must be less than the current material count}
+                accessedAt: {type: string, format: date-time, description: UTC access time; timestamps over five minutes in the future are rejected. Older updates cannot replace a newer position.}
+      responses:
+        '200': {description: Canonical saved activity; stale retries return the newer stored activity}
+        '400': {description: Invalid position or timestamp}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '403': {description: Premium material requires an active entitlement}
+        '404': {description: Material or learning category not found}
   /me/progress:
     get:
       tags: [Profile]
@@ -1562,7 +1703,7 @@ components:
           type: object
           properties:
             id: {type: string}
-            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1 and jlpt-n3-simulation-1, jft-a2-full-1 and nat-5q-full-1"}
+            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
             userId: {type: string}
             status: {type: string, enum: [in_progress, completed]}
             startedAt: {type: string, format: date-time}
@@ -1643,7 +1784,7 @@ components:
           type: object
           properties:
             id: {type: string}
-            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1 and jlpt-n3-simulation-1, jft-a2-full-1 and nat-5q-full-1"}
+            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
             userId: {type: string}
             status: {type: string, enum: [in_progress, completed]}
             startedAt: {type: string, format: date-time}

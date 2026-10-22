@@ -1,0 +1,1269 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "truck",
+      "title": "Operasi truk dan keselamatan muatan",
+      "description": "Latihan orisinal untuk pekerjaan pengemudi truk: pemeriksaan kendaraan dan instruksi angkut, penanganan muatan, serta komunikasi perjalanan. Cakupan kerja resmi mencakup pengangkutan barang dengan kendaraan niaga dan tugas terkait; prosedur rinci tetap mengikuti aturan perusahaan dan penanggung jawab.",
+      "lessons": [
+        {
+          "id": "road-01",
+          "title": "Persiapan perjalanan dan pemeriksaan truk",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan pemeriksaan dasar truk sebelum dan sesudah perjalanan sesuai daftar perusahaan.",
+            "Melaporkan tanda yang tidak normal sebelum kendaraan digunakan.",
+            "Memahami instruksi kerja sederhana dalam bahasa Jepang."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pengemudi memulai giliran dengan membaca tujuan, jadwal, jenis muatan, dan pesan dari pengatur kendaraan. Periksa kendaraan memakai daftar yang berlaku di perusahaan: lihat kondisi luar, lampu, ban, kaca, pintu muatan, dan tanda peringatan pada panel. Pemeriksaan ini membantu menemukan masalah lebih awal; daftar latihan ini tidak menggantikan pemeriksaan yang diwajibkan atau pelatihan resmi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Lakukan pemeriksaan di tempat yang aman dan ikuti urutan perusahaan. Jangan membuka atau memperbaiki bagian kendaraan jika tidak berwenang. Bila ada lampu peringatan, kebocoran, kerusakan, atau catatan yang belum jelas, jangan berangkat dengan menebak bahwa kendaraan baik; beri tahu penanggung jawab dan tunggu keputusan. Kasus: lampu peringatan menyala saat pemeriksaan. Respons: catat tandanya, sampaikan kepada pengatur, dan gunakan kendaraan hanya setelah mendapat izin sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Baca tujuan dan instruksi perjalanan",
+            "Periksa truk menurut daftar kerja",
+            "Catat dan laporkan tanda tidak normal",
+            "Pastikan kendaraan siap menurut arahan penanggung jawab"
+          ],
+          "caution": "Jangan melewati tanda kerusakan atau menyentuh peralatan yang belum diizinkan.",
+          "scenario": "Sebelum berangkat, lampu peringatan pada panel menyala dan jadwal mulai segera.",
+          "response": "Tahan keberangkatan, catat lampu yang terlihat, dan segera laporkan kepada pengatur. Ikuti keputusan pemeriksaan; jangan menghapus peringatan sendiri.",
+          "vocabulary": [
+            {
+              "japanese": "車両",
+              "reading": "しゃりょう",
+              "meaning": "kendaraan"
+            },
+            {
+              "japanese": "点検",
+              "reading": "てんけん",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "警告灯",
+              "reading": "けいこくとう",
+              "meaning": "lampu peringatan"
+            },
+            {
+              "japanese": "運行管理者",
+              "reading": "うんこうかんりしゃ",
+              "meaning": "penanggung jawab pengaturan perjalanan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "出発前に車両を点検します。",
+              "reading": "しゅっぱつまえにしゃりょうをてんけんします。",
+              "meaning": "Saya memeriksa kendaraan sebelum berangkat."
+            },
+            {
+              "japanese": "警告灯がついています。確認をお願いします。",
+              "reading": "けいこくとうがついています。かくにんをおねがいします。",
+              "meaning": "Lampu peringatan menyala. Mohon diperiksa."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa pengemudi memakai daftar pemeriksaan sebelum menggunakan truk?",
+              "options": [
+                "Untuk mengetahui kondisi kendaraan dan melaporkan masalah sebelum perjalanan",
+                "Agar tidak perlu membaca instruksi muatan",
+                "Untuk mengganti pemeriksaan bengkel",
+                "Agar jadwal dapat diubah tanpa izin"
+              ],
+              "answer": 0,
+              "explanation": "Daftar membantu memeriksa kondisi secara teratur, tetapi masalah tetap perlu dilaporkan dan ditangani oleh pihak yang berwenang.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Lampu peringatan menyala saat pemeriksaan dan waktu berangkat sudah dekat. Apa tindakan yang tepat?",
+              "options": [
+                "Berangkat pelan tanpa memberi tahu siapa pun",
+                "Mematikan panel lalu mengabaikannya",
+                "Melaporkan tanda itu dan menunggu arahan pemeriksaan",
+                "Menutupinya dengan label"
+              ],
+              "answer": 2,
+              "explanation": "Peringatan dapat menunjukkan kondisi yang perlu dinilai. Pengemudi harus melaporkan fakta dan mengikuti keputusan penanggung jawab.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Persiapan perjalanan dan pemeriksaan truk», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca tujuan dan instruksi perjalanan",
+                "Periksa truk menurut daftar kerja",
+                "Catat dan laporkan tanda tidak normal",
+                "Pastikan kendaraan siap menurut arahan penanggung jawab"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca tujuan dan instruksi perjalanan → Periksa truk menurut daftar kerja → Catat dan laporkan tanda tidak normal → Pastikan kendaraan siap menurut arahan penanggung jawab.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-02",
+          "title": "Penerimaan dan pengamanan muatan truk",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan identitas dan jumlah barang dengan dokumen pengiriman.",
+            "Menjaga susunan serta pengamanan barang sesuai petunjuk dan kewenangan.",
+            "Menyampaikan selisih atau risiko muatan sebelum kendaraan berjalan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Tugas truk berpusat pada barang. Cocokkan nama atau nomor tujuan, jumlah koli, dan tanda penanganan pada barang dengan dokumen. Susunan muatan dan alat pengikat harus mengikuti pelatihan, batas kendaraan, serta petunjuk perusahaan agar barang tidak bergeser atau jatuh. Kertas yang terlihat cocok belum membuktikan bahwa jumlah dan kondisi fisik sudah benar."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa jenis dan kondisi kemasan bersama petugas muat. Gunakan alat hanya jika sudah dilatih dan diberi izin; jangan berdiri di area gerak alat. Bila jumlah berbeda, tanda barang rapuh tidak terlihat, atau pengikat tampak longgar, hentikan tahap itu dan minta koreksi. Kasus: dokumen menunjukkan 12 kotak tetapi hitungan ada 11. Respons: pisahkan muatan, catat selisih, dan minta konfirmasi sebelum berangkat."
+            }
+          ],
+          "steps": [
+            "Cocokkan barang dan dokumen",
+            "Hitung serta periksa kemasan",
+            "Pastikan susunan dan pengikat sesuai arahan",
+            "Catat selisih lalu minta persetujuan muat"
+          ],
+          "caution": "Jangan mengubah jumlah, label, atau cara pengikatan berdasarkan perkiraan.",
+          "scenario": "Dokumen mencatat 12 kotak, tetapi di area muat hanya ada 11 kotak berlabel tujuan yang sama.",
+          "response": "Jangan menyatakan muatan lengkap. Pisahkan kelompok itu, catat jumlah yang ditemukan, lalu minta petugas memastikan kotak yang kurang sebelum truk berangkat.",
+          "vocabulary": [
+            {
+              "japanese": "荷物",
+              "reading": "にもつ",
+              "meaning": "barang muatan"
+            },
+            {
+              "japanese": "積み込み",
+              "reading": "つみこみ",
+              "meaning": "pemuatan"
+            },
+            {
+              "japanese": "個数",
+              "reading": "こすう",
+              "meaning": "jumlah satuan"
+            },
+            {
+              "japanese": "固定",
+              "reading": "こてい",
+              "meaning": "pengamanan atau pengikatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "伝票では十二個です。",
+              "reading": "でんぴょうではじゅうにこです。",
+              "meaning": "Di dokumen tertulis dua belas buah."
+            },
+            {
+              "japanese": "今は十一個です。担当者に確認します。",
+              "reading": "いまはじゅういっこです。たんとうしゃにかくにんします。",
+              "meaning": "Sekarang ada sebelas. Saya akan memastikan dengan petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Informasi apa yang perlu dicocokkan sebelum muatan dinyatakan siap?",
+              "options": [
+                "Identitas tujuan, jumlah, dan kondisi/tanda barang dengan dokumen",
+                "Warna truk saja",
+                "Nama pengemudi saja",
+                "Perkiraan waktu istirahat"
+              ],
+              "answer": 0,
+              "explanation": "Pemeriksaan mencocokkan barang nyata dengan dokumen agar kesalahan tujuan, jumlah, atau penanganan dapat diketahui.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Dokumen menunjukkan 12 kotak tetapi hanya 11 yang ditemukan. Bagaimana melanjutkan?",
+              "options": [
+                "Ubah dokumen menjadi 11 tanpa laporan",
+                "Ambil kotak dari pesanan lain",
+                "Catat selisih dan minta konfirmasi sebelum keberangkatan",
+                "Tulis 12 karena itu angka pesanan"
+              ],
+              "answer": 2,
+              "explanation": "Jumlah aktual harus dilaporkan, lalu petugas mengonfirmasi apakah ada barang tertinggal atau kesalahan pencatatan.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penerimaan dan pengamanan muatan truk», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Cocokkan barang dan dokumen",
+                "Hitung serta periksa kemasan",
+                "Pastikan susunan dan pengikat sesuai arahan",
+                "Catat selisih lalu minta persetujuan muat"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Cocokkan barang dan dokumen → Hitung serta periksa kemasan → Pastikan susunan dan pengikat sesuai arahan → Catat selisih lalu minta persetujuan muat.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-03",
+          "title": "Perubahan rute, keterlambatan, dan bukti serah",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan mengapa perubahan kondisi perjalanan perlu disampaikan kepada pengatur.",
+            "Mencatat waktu, keadaan barang, dan penerima sesuai formulir perusahaan.",
+            "Menjaga komunikasi singkat dan jelas ketika tujuan belum dapat dicapai."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Dalam perjalanan, kemacetan, cuaca, penutupan jalan, atau alamat yang sulit ditemukan dapat mengubah rencana. Pengemudi memberi tahu pengatur sesuai kanal perusahaan agar jadwal dan penerima dapat dikoordinasikan. Untuk serah barang, ikuti cara verifikasi penerima dan bukti serah yang ditentukan perusahaan; jangan meninggalkan barang di tempat lain atas keputusan sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Saat berhenti di lokasi aman, sampaikan nomor perjalanan, posisi atau tujuan, masalah yang diamati, dan perkiraan yang dapat dipastikan. Catat waktu tiba, jumlah yang diserahkan, kondisi kemasan, serta penerima sesuai prosedur. Kasus: alamat tujuan tutup dan tidak ada petugas. Respons: lindungi muatan, laporkan keadaan, lalu tunggu instruksi untuk pengantaran ulang atau lokasi lain."
+            }
+          ],
+          "steps": [
+            "Kenali hambatan dan berhenti di lokasi aman bila perlu",
+            "Sampaikan perjalanan dan keadaan faktual",
+            "Tunggu keputusan pengatur atau penerima",
+            "Catat hasil serah dan status barang"
+          ],
+          "caution": "Jangan mengalihkan tujuan atau meninggalkan muatan tanpa instruksi dan catatan.",
+          "scenario": "Truk tiba tetapi gudang penerima tutup; telepon kontak belum dijawab.",
+          "response": "Amankan kendaraan dan muatan di lokasi yang sesuai, hubungi pengatur sesuai prosedur, catat waktu dan upaya kontak, lalu tunggu keputusan.",
+          "vocabulary": [
+            {
+              "japanese": "遅延",
+              "reading": "ちえん",
+              "meaning": "keterlambatan"
+            },
+            {
+              "japanese": "連絡",
+              "reading": "れんらく",
+              "meaning": "menghubungi"
+            },
+            {
+              "japanese": "届け先",
+              "reading": "とどけさき",
+              "meaning": "alamat atau tujuan pengiriman"
+            },
+            {
+              "japanese": "受領",
+              "reading": "じゅりょう",
+              "meaning": "penerimaan barang"
+            },
+            {
+              "japanese": "受領印",
+              "reading": "じゅりょういん",
+              "meaning": "cap/tanda terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "届け先が閉まっています。",
+              "reading": "とどけさきがしまっています。",
+              "meaning": "Tempat tujuan sedang tutup."
+            },
+            {
+              "japanese": "安全な場所で待ち、運行管理者に連絡します。",
+              "reading": "あんぜんなばしょでまち、うんこうかんりしゃにれんらくします。",
+              "meaning": "Saya menunggu di tempat aman dan menghubungi pengatur perjalanan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Saat alamat penerima tidak dapat melayani, mengapa pengemudi perlu menghubungi pengatur?",
+              "options": [
+                "Agar perubahan tujuan atau waktu diputuskan dan dicatat dengan benar",
+                "Agar muatan dapat ditinggalkan di tepi jalan",
+                "Agar dokumen tidak perlu diisi",
+                "Agar pengemudi mengubah tarif sendiri"
+              ],
+              "answer": 0,
+              "explanation": "Pengatur membantu koordinasi penerima dan rencana pengiriman, sementara jejak informasi tetap terpelihara.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Gudang penerima tutup dan kontak belum menjawab. Apa tindakan pertama yang sesuai?",
+              "options": [
+                "Meninggalkan semua barang di pintu",
+                "Mengalihkan muatan ke pelanggan lain",
+                "Mengamankan muatan, menghubungi pengatur, dan mencatat keadaan",
+                "Menulis bahwa barang sudah diterima"
+              ],
+              "answer": 2,
+              "explanation": "Jangan membuat serah fiktif atau mengubah tujuan sendiri; catat keadaan yang benar dan tunggu instruksi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Perubahan rute, keterlambatan, dan bukti serah», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kenali hambatan dan berhenti di lokasi aman bila perlu",
+                "Sampaikan perjalanan dan keadaan faktual",
+                "Tunggu keputusan pengatur atau penerima",
+                "Catat hasil serah dan status barang"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Kenali hambatan dan berhenti di lokasi aman bila perlu → Sampaikan perjalanan dan keadaan faktual → Tunggu keputusan pengatur atau penerima → Catat hasil serah dan status barang.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "title": "Layanan bus dan keselamatan penumpang",
+      "description": "Latihan orisinal untuk pekerjaan pengemudi bus: persiapan kendaraan, keberangkatan dan layanan penumpang, serta respons awal saat gangguan. Cakupan resmi memadukan operasi angkut penumpang dan pelayanan; pelaksanaan tetap mengikuti pelatihan pengemudi baru, aturan perusahaan, dan petunjuk layanan.",
+      "lessons": [
+        {
+          "id": "road-04",
+          "title": "Pemeriksaan bus dan persiapan rute",
+          "minutes": 25,
+          "objectives": [
+            "Membaca rute, jadwal, dan informasi layanan sebelum bertugas.",
+            "Memeriksa bus menurut daftar kerja serta melaporkan kondisi tidak normal.",
+            "Membedakan tugas bus penumpang dari pengiriman barang."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Bus mengangkut penumpang pada layanan yang telah ditetapkan. Sebelum berangkat, pengemudi membaca rute, jadwal, pemberitahuan gangguan, dan catatan kendaraan. Pemeriksaan sebelum serta sesudah operasi dilakukan menurut daftar perusahaan, termasuk area pintu, kabin, lampu, serta tanda peringatan. Pengemudi mengikuti batas tugas dan arahan petugas operasi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika ada masalah kendaraan atau informasi rute tidak cocok, laporkan sebelum mengangkut penumpang. Jangan mengubah urutan pemberhentian, mematikan sistem peringatan, atau membawa bus yang belum dinyatakan siap. Kasus: pemberitahuan di terminal menyebut perubahan rute, tetapi lembar tugas masih menunjukkan rute lama. Respons: minta konfirmasi dan gunakan informasi yang sudah disahkan."
+            }
+          ],
+          "steps": [
+            "Periksa lembar rute dan pemberitahuan",
+            "Periksa bus menurut daftar perusahaan",
+            "Sampaikan perbedaan atau masalah",
+            "Berangkat setelah kesiapan dikonfirmasi"
+          ],
+          "caution": "Jangan berasumsi bahwa jadwal lama masih berlaku ketika ada pemberitahuan baru.",
+          "scenario": "Lembar tugas menunjukkan rute biasa, tetapi layar informasi terminal menampilkan pengalihan.",
+          "response": "Jangan memilih sendiri salah satunya. Hubungi petugas operasi, ulangi informasi yang berbeda, dan tunggu rute yang dikonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "路線",
+              "reading": "ろせん",
+              "meaning": "rute"
+            },
+            {
+              "japanese": "時刻表",
+              "reading": "じこくひょう",
+              "meaning": "jadwal waktu"
+            },
+            {
+              "japanese": "運行",
+              "reading": "うんこう",
+              "meaning": "operasi perjalanan"
+            },
+            {
+              "japanese": "乗務員",
+              "reading": "じょうむいん",
+              "meaning": "awak kendaraan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "表示と運行表が違います。",
+              "reading": "ひょうじとうんこうひょうがちがいます。",
+              "meaning": "Tampilan dan daftar operasi berbeda."
+            },
+            {
+              "japanese": "確認してから出発します。",
+              "reading": "かくにんしてからしゅっぱつします。",
+              "meaning": "Saya berangkat setelah memastikan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa fungsi utama pemeriksaan rute sebelum bus membawa penumpang?",
+              "options": [
+                "Memastikan tugas, jadwal, dan informasi layanan yang berlaku",
+                "Mengubah semua pemberhentian menjadi pilihan pengemudi",
+                "Mengganti pemeriksaan kendaraan",
+                "Menghapus catatan gangguan"
+              ],
+              "answer": 0,
+              "explanation": "Bus bekerja mengikuti layanan yang dikoordinasikan; perbedaan informasi harus dipastikan sebelum keberangkatan.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Papan terminal menampilkan pengalihan tetapi lembar tugas menunjukkan rute lama. Apa respons tepat?",
+              "options": [
+                "Pilih rute yang terlihat lebih singkat",
+                "Abaikan layar karena lembar tugas sudah dicetak",
+                "Minta konfirmasi petugas operasi sebelum berangkat",
+                "Minta penumpang memilih rute"
+              ],
+              "answer": 2,
+              "explanation": "Rute yang dipakai perlu dikonfirmasi oleh petugas yang berwenang agar layanan dan keselamatan terkoordinasi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pemeriksaan bus dan persiapan rute», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa lembar rute dan pemberitahuan",
+                "Periksa bus menurut daftar perusahaan",
+                "Sampaikan perbedaan atau masalah",
+                "Berangkat setelah kesiapan dikonfirmasi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Periksa lembar rute dan pemberitahuan → Periksa bus menurut daftar perusahaan → Sampaikan perbedaan atau masalah → Berangkat setelah kesiapan dikonfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-05",
+          "title": "Naik turun penumpang dan bantuan yang jelas",
+          "minutes": 25,
+          "objectives": [
+            "Menggunakan komunikasi sopan saat penumpang bertanya tentang tujuan dan pemberhentian.",
+            "Menjaga perhatian pada naik-turun penumpang sesuai prosedur bus.",
+            "Meminta bantuan saat kebutuhan penumpang tidak dapat ditangani dengan aman."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pada bus, keselamatan penumpang berlaku saat mereka menunggu, naik, duduk, dan turun. Pengemudi berhenti pada tempat layanan yang ditetapkan, mengikuti prosedur pintu, dan mengamati keadaan sebelum bergerak. Pertanyaan tentang tujuan atau pemberhentian dijawab dengan bahasa sederhana. Kebutuhan khusus atau masalah yang tidak jelas diteruskan kepada petugas yang dapat membantu."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sampaikan informasi tanpa mengganggu perhatian saat kendaraan bergerak. Beri waktu penumpang naik atau turun sesuai prosedur dan jangan menutup pintu ketika ada orang di area pintu. Bila penumpang jatuh, sakit, atau meminta bantuan yang tidak dapat diberikan saat mengemudi, hentikan layanan sesuai prosedur aman dan hubungi pihak terkait. Kasus: penumpang lanjut usia belum duduk. Respons: tunggu sampai aman sebelum melanjutkan."
+            }
+          ],
+          "steps": [
+            "Berhenti di tempat layanan yang ditentukan",
+            "Buka pintu dan amati proses naik-turun",
+            "Pastikan area pintu aman menurut prosedur",
+            "Berangkat dan jawab pertanyaan saat aman"
+          ],
+          "caution": "Jangan mulai bergerak ketika penumpang masih berada di area pintu atau belum siap menurut prosedur.",
+          "scenario": "Seorang penumpang naik perlahan dan masih berdiri dekat pintu ketika bus akan berangkat.",
+          "response": "Tunggu sampai penumpang berada pada keadaan aman sesuai prosedur, amati area pintu, lalu berangkat setelah aman.",
+          "vocabulary": [
+            {
+              "japanese": "乗客",
+              "reading": "じょうきゃく",
+              "meaning": "penumpang"
+            },
+            {
+              "japanese": "乗車",
+              "reading": "じょうしゃ",
+              "meaning": "naik kendaraan"
+            },
+            {
+              "japanese": "降車",
+              "reading": "こうしゃ",
+              "meaning": "turun kendaraan"
+            },
+            {
+              "japanese": "停留所",
+              "reading": "ていりゅうじょ",
+              "meaning": "halte"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "次の停留所で降りますか。",
+              "reading": "つぎのていりゅうじょでおりますか。",
+              "meaning": "Apakah Anda turun di halte berikutnya?"
+            },
+            {
+              "japanese": "はい、安全を確認してから出発します。",
+              "reading": "はい、あんぜんをかくにんしてからしゅっぱつします。",
+              "meaning": "Baik, saya berangkat setelah memastikan aman."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Kapan pengemudi melanjutkan perjalanan setelah penumpang naik?",
+              "options": [
+                "Setelah area pintu dan keadaan penumpang aman sesuai prosedur",
+                "Segera setelah satu penumpang naik",
+                "Saat penumpang lain memberi tanda",
+                "Sebelum pintu ditutup"
+              ],
+              "answer": 0,
+              "explanation": "Pengemudi mengamati naik-turun dan area pintu sesuai prosedur sebelum bus bergerak.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Seorang penumpang masih berdiri dekat pintu saat bus akan berangkat. Apa yang dilakukan?",
+              "options": [
+                "Berangkat perlahan agar cepat",
+                "Tutup pintu tanpa memeriksa",
+                "Tunggu hingga kondisi aman menurut prosedur",
+                "Minta penumpang berdiri di tangga"
+              ],
+              "answer": 2,
+              "explanation": "Menunggu dan memeriksa kembali mencegah penumpang berada dalam bahaya ketika bus mulai bergerak.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Naik turun penumpang dan bantuan yang jelas», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Berhenti di tempat layanan yang ditentukan",
+                "Buka pintu dan amati proses naik-turun",
+                "Pastikan area pintu aman menurut prosedur",
+                "Berangkat dan jawab pertanyaan saat aman"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Berhenti di tempat layanan yang ditentukan → Buka pintu dan amati proses naik-turun → Pastikan area pintu aman menurut prosedur → Berangkat dan jawab pertanyaan saat aman.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-06",
+          "title": "Gangguan layanan dan laporan bus",
+          "minutes": 25,
+          "objectives": [
+            "Memberi tahu penumpang tentang perubahan yang sudah dikonfirmasi.",
+            "Melaporkan gangguan kepada petugas operasi dengan fakta yang dapat diamati.",
+            "Menjaga penumpang tetap tertib sambil menunggu arahan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Gangguan dapat berupa keterlambatan, kendaraan berhenti, atau perubahan layanan. Petugas operasi mengoordinasikan layanan; pengemudi memberi informasi yang telah dikonfirmasi dan tidak menjanjikan waktu atau rute yang belum pasti. Jika terjadi keadaan yang mengancam keselamatan, ikuti prosedur darurat perusahaan dan petunjuk petugas. Catat waktu, tempat, kondisi, serta tindakan yang dilakukan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan kalimat pendek dan jelas. Saat aman, hubungi petugas operasi dan sampaikan lokasi, nomor layanan, gejala, serta keadaan penumpang. Jangan menyebarkan dugaan sebagai fakta. Kasus: bus berhenti karena indikator menunjukkan gangguan dan penumpang bertanya kapan berangkat. Respons: amankan situasi, laporkan gejala, dan sampaikan bahwa waktu keberangkatan akan diumumkan setelah ada konfirmasi."
+            }
+          ],
+          "steps": [
+            "Amankan keadaan sesuai prosedur",
+            "Laporkan lokasi dan tanda gangguan",
+            "Tunggu instruksi petugas operasi",
+            "Sampaikan pembaruan yang sudah dikonfirmasi"
+          ],
+          "caution": "Jangan menjanjikan waktu berangkat atau memulai kembali sebelum mendapat arahan.",
+          "scenario": "Bus berhenti karena ada tanda gangguan; penumpang meminta kepastian waktu berangkat.",
+          "response": "Ikuti prosedur, hubungi petugas operasi, dan beri tahu penumpang bahwa informasi waktu akan disampaikan setelah dikonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "遅れ",
+              "reading": "おくれ",
+              "meaning": "keterlambatan"
+            },
+            {
+              "japanese": "異常",
+              "reading": "いじょう",
+              "meaning": "keadaan tidak normal"
+            },
+            {
+              "japanese": "案内",
+              "reading": "あんない",
+              "meaning": "informasi atau panduan"
+            },
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "バスが止まりました。異常を報告します。",
+              "reading": "ばすがとまりました。いじょうをほうこくします。",
+              "meaning": "Bus berhenti. Saya melaporkan gangguan."
+            },
+            {
+              "japanese": "確認後にお客様へ案内します。",
+              "reading": "かくにんごにおきゃくさまへあんないします。",
+              "meaning": "Saya akan memberi informasi kepada penumpang setelah ada konfirmasi."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Informasi apa yang berguna saat melaporkan gangguan bus?",
+              "options": [
+                "Lokasi, nomor layanan, gejala yang terlihat, dan keadaan penumpang",
+                "Dugaan penyebab yang belum diperiksa",
+                "Janji waktu yang belum diketahui",
+                "Komentar tentang penumpang"
+              ],
+              "answer": 0,
+              "explanation": "Fakta yang jelas membantu petugas mengambil keputusan dan menyiapkan pembaruan yang benar.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Bus berhenti karena tanda gangguan dan penumpang meminta waktu berangkat. Apa respons tepat?",
+              "options": [
+                "Berjanji berangkat lima menit lagi",
+                "Mengabaikan penumpang",
+                "Melaporkan gejala dan menyampaikan bahwa waktu akan dikonfirmasi",
+                "Memulai lagi tanpa arahan"
+              ],
+              "answer": 2,
+              "explanation": "Pengemudi menyampaikan informasi yang telah dipastikan, lalu mengikuti prosedur dan instruksi operasi.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Gangguan layanan dan laporan bus», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Amankan keadaan sesuai prosedur",
+                "Laporkan lokasi dan tanda gangguan",
+                "Tunggu instruksi petugas operasi",
+                "Sampaikan pembaruan yang sudah dikonfirmasi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Amankan keadaan sesuai prosedur → Laporkan lokasi dan tanda gangguan → Tunggu instruksi petugas operasi → Sampaikan pembaruan yang sudah dikonfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taxi",
+      "title": "Layanan taksi dan komunikasi pelanggan",
+      "description": "Latihan orisinal untuk pekerjaan pengemudi taksi: persiapan kendaraan, konfirmasi penjemputan dan tujuan, layanan penumpang, serta laporan perjalanan. Cakupan resmi memadukan operasi angkut penumpang dan pelayanan; prosedur tarif, pembayaran, navigasi, dan respons darurat mengikuti aturan perusahaan dan pelatihan.",
+      "lessons": [
+        {
+          "id": "road-07",
+          "title": "Penjemputan dan konfirmasi tujuan taksi",
+          "minutes": 25,
+          "objectives": [
+            "Memastikan identitas pesanan dan tujuan dengan cara yang sopan.",
+            "Mengulang informasi tujuan untuk mengurangi salah paham.",
+            "Mengikuti kebijakan perusahaan saat informasi penumpang belum jelas."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Taksi melayani perjalanan penumpang berdasarkan permintaan atau pesanan. Sebelum mulai, cocokkan informasi pemesanan yang boleh diperiksa: nama atau tanda pengenal pesanan, titik jemput, dan tujuan. Tanyakan tujuan dengan jelas dan ulangi kembali. Bila penumpang ingin mengubah tujuan, pastikan bahwa perubahan dipahami dan ikuti proses perusahaan untuk tarif atau pencatatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jaga privasi penumpang dan hindari menyebut data pribadi dengan suara keras di tempat umum. Jika nama, lokasi, atau tujuan berbeda, jangan menebak; konfirmasikan dengan penumpang atau pusat layanan. Kasus: aplikasi menunjukkan alamat berbeda dari yang diucapkan penumpang. Respons: ulangi kedua alamat dan minta penumpang memastikan sebelum perjalanan dimulai."
+            }
+          ],
+          "steps": [
+            "Baca informasi pemesanan",
+            "Sapa penumpang dan konfirmasi tujuan",
+            "Ulangi tujuan dan kebutuhan khusus",
+            "Mulai perjalanan setelah informasi dipahami"
+          ],
+          "caution": "Jangan menganggap alamat pada layar benar bila penumpang menyebut tujuan lain.",
+          "scenario": "Layar pesanan menunjukkan satu alamat, tetapi penumpang menyebut alamat yang berbeda.",
+          "response": "Ulangi alamat pada layar dan alamat yang diucapkan, lalu minta penumpang memastikan tujuan yang benar sebelum berangkat.",
+          "vocabulary": [
+            {
+              "japanese": "予約",
+              "reading": "よやく",
+              "meaning": "pemesanan"
+            },
+            {
+              "japanese": "迎え",
+              "reading": "むかえ",
+              "meaning": "penjemputan"
+            },
+            {
+              "japanese": "目的地",
+              "reading": "もくてきち",
+              "meaning": "tujuan"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "memastikan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "目的地は駅の北口ですね。",
+              "reading": "もくてきちはえきのきたぐちですね。",
+              "meaning": "Tujuannya pintu utara stasiun, benar?"
+            },
+            {
+              "japanese": "はい。確認してから出発します。",
+              "reading": "はい。かくにんしてからしゅっぱつします。",
+              "meaning": "Ya. Saya berangkat setelah memastikan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa pengemudi mengulang tujuan kepada penumpang?",
+              "options": [
+                "Untuk memastikan kedua pihak memahami tujuan yang sama",
+                "Untuk memilih tujuan yang lebih jauh",
+                "Untuk mengubah pesanan tanpa izin",
+                "Untuk menghindari pencatatan"
+              ],
+              "answer": 0,
+              "explanation": "Mengulang tujuan mencegah salah alamat dan memberi kesempatan kepada penumpang untuk mengoreksi.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Alamat pada layar berbeda dari tujuan yang diucapkan penumpang. Apa tindakan terbaik?",
+              "options": [
+                "Pilih alamat pada layar tanpa bertanya",
+                "Pilih alamat yang lebih mudah dicapai",
+                "Ulangi kedua informasi dan minta penumpang memastikan",
+                "Mulai berkendara sambil mencari tahu"
+              ],
+              "answer": 2,
+              "explanation": "Klarifikasi sebelum bergerak menghindari salah tujuan dan perjalanan yang tidak disepakati.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penjemputan dan konfirmasi tujuan taksi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca informasi pemesanan",
+                "Sapa penumpang dan konfirmasi tujuan",
+                "Ulangi tujuan dan kebutuhan khusus",
+                "Mulai perjalanan setelah informasi dipahami"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca informasi pemesanan → Sapa penumpang dan konfirmasi tujuan → Ulangi tujuan dan kebutuhan khusus → Mulai perjalanan setelah informasi dipahami.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-08",
+          "title": "Pelayanan perjalanan dan pembayaran taksi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan informasi layanan dengan kata-kata sederhana dan sopan.",
+            "Mengikuti prosedur perusahaan untuk rute, tarif, dan pembayaran.",
+            "Menyerahkan pertanyaan yang tidak dapat dipastikan kepada petugas yang tepat."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Pengemudi taksi menjalankan operasi dan pelayanan penumpang. Pastikan penumpang dapat mendengar penjelasan tentang tujuan atau pilihan rute. Gunakan alat navigasi sesuai aturan perusahaan dan tetap fokus pada jalan. Tarif, metode pembayaran, serta tanda terima ditangani menurut perangkat dan prosedur setempat; jangan menjanjikan harga yang tidak tercatat atau mengubahnya sendiri."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika penumpang meminta rute tertentu, dengarkan saat aman dan ulangi permintaannya. Bila ada perbedaan antara navigasi dan arahan penumpang, berhenti di tempat aman bila perlu untuk mengklarifikasi. Untuk kesalahan alat pembayaran, ikuti prosedur dan hubungi pusat layanan. Kasus: perangkat pembayaran tidak merespons. Respons: jelaskan singkat, jangan mengulang penagihan tanpa pemeriksaan, lalu minta bantuan sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Dengarkan permintaan penumpang saat aman",
+            "Pastikan rute atau layanan yang disepakati",
+            "Jalankan navigasi tanpa mengalihkan perhatian",
+            "Selesaikan pembayaran dan bukti transaksi sesuai prosedur"
+          ],
+          "caution": "Jangan melihat atau mengetik perangkat saat perhatian harus tertuju pada jalan.",
+          "scenario": "Setelah perjalanan, terminal pembayaran tidak menampilkan konfirmasi dan penumpang bertanya apakah sudah dibayar.",
+          "response": "Periksa status transaksi sesuai prosedur perusahaan, jelaskan bahwa Anda sedang memastikan, dan hubungi petugas bila hasilnya belum jelas.",
+          "vocabulary": [
+            {
+              "japanese": "運賃",
+              "reading": "うんちん",
+              "meaning": "tarif perjalanan"
+            },
+            {
+              "japanese": "支払い",
+              "reading": "しはらい",
+              "meaning": "pembayaran"
+            },
+            {
+              "japanese": "領収書",
+              "reading": "りょうしゅうしょ",
+              "meaning": "tanda terima"
+            },
+            {
+              "japanese": "経路",
+              "reading": "けいろ",
+              "meaning": "rute"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お支払いを確認します。",
+              "reading": "おしはらいをかくにんします。",
+              "meaning": "Saya akan memastikan pembayarannya."
+            },
+            {
+              "japanese": "領収書をお願いします。",
+              "reading": "りょうしゅうしょをおねがいします。",
+              "meaning": "Mohon tanda terimanya."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa prinsip aman saat menggunakan navigasi atau perangkat pembayaran?",
+              "options": [
+                "Gunakan hanya saat aman dan ikuti prosedur perusahaan",
+                "Ketik sambil kendaraan bergerak",
+                "Biarkan penumpang mengubah perangkat",
+                "Lewati pemeriksaan jika layar lambat"
+              ],
+              "answer": 0,
+              "explanation": "Perhatian pengemudi harus tetap pada operasi kendaraan; perangkat digunakan dengan cara yang aman sesuai prosedur.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Terminal pembayaran belum menunjukkan hasil tetapi penumpang bertanya apakah transaksi selesai. Apa yang dilakukan?",
+              "options": [
+                "Menyatakan sudah dibayar tanpa memeriksa",
+                "Menagih lagi dengan jumlah yang sama",
+                "Periksa status sesuai prosedur dan minta bantuan bila belum jelas",
+                "Menghapus transaksi di perangkat"
+              ],
+              "answer": 2,
+              "explanation": "Status harus dipastikan agar tidak terjadi tagihan ganda atau catatan yang keliru.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Pelayanan perjalanan dan pembayaran taksi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Dengarkan permintaan penumpang saat aman",
+                "Pastikan rute atau layanan yang disepakati",
+                "Jalankan navigasi tanpa mengalihkan perhatian",
+                "Selesaikan pembayaran dan bukti transaksi sesuai prosedur"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Dengarkan permintaan penumpang saat aman → Pastikan rute atau layanan yang disepakati → Jalankan navigasi tanpa mengalihkan perhatian → Selesaikan pembayaran dan bukti transaksi sesuai prosedur.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-09",
+          "title": "Kebutuhan penumpang dan keadaan mendesak",
+          "minutes": 25,
+          "objectives": [
+            "Mendengar permintaan penumpang tanpa menjanjikan bantuan yang belum dipastikan.",
+            "Mengambil langkah awal yang aman dan menghubungi petugas saat terjadi keadaan mendesak.",
+            "Menjaga kerahasiaan informasi penumpang."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Penumpang mungkin membutuhkan bantuan karena sakit, barang tertinggal, atau kesulitan memahami informasi. Pengemudi berbicara dengan tenang, menilai apakah kendaraan dapat berhenti di tempat aman, dan mengikuti panduan perusahaan. Dalam keadaan darurat, hubungi layanan atau petugas yang ditetapkan; pengemudi tidak menggantikan tenaga medis atau memaksakan pertolongan di luar kemampuannya."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Tanyakan kebutuhan dengan kalimat sederhana. Jika penumpang sakit atau ada bahaya, hentikan kendaraan di tempat aman sesuai keadaan, hubungi pihak yang berwenang, dan sampaikan lokasi serta kondisi yang terlihat. Jangan mempublikasikan identitas atau keadaan penumpang. Kasus: penumpang mengeluh pusing mendadak. Respons: berhenti aman bila memungkinkan, tanyakan apakah perlu bantuan, dan segera hubungi sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Dengarkan dan kenali masalah",
+            "Pindahkan kendaraan ke keadaan aman jika diperlukan",
+            "Hubungi petugas atau layanan sesuai prosedur",
+            "Catat serta serahkan informasi penting"
+          ],
+          "caution": "Jangan menjanjikan diagnosis atau meninggalkan penumpang tanpa arahan yang sesuai.",
+          "scenario": "Penumpang tiba-tiba mengeluh pusing dan meminta kendaraan berhenti.",
+          "response": "Hentikan kendaraan di tempat aman bila dapat dilakukan, tanyakan kebutuhan bantuan, dan hubungi pihak yang ditentukan oleh prosedur perusahaan.",
+          "vocabulary": [
+            {
+              "japanese": "体調",
+              "reading": "たいちょう",
+              "meaning": "kondisi tubuh"
+            },
+            {
+              "japanese": "気分",
+              "reading": "きぶん",
+              "meaning": "perasaan atau keadaan badan"
+            },
+            {
+              "japanese": "救急",
+              "reading": "きゅうきゅう",
+              "meaning": "pertolongan darurat"
+            },
+            {
+              "japanese": "忘れ物",
+              "reading": "わすれもの",
+              "meaning": "barang tertinggal"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "気分が悪いです。",
+              "reading": "きぶんがわるいです。",
+              "meaning": "Saya merasa tidak enak badan."
+            },
+            {
+              "japanese": "安全な場所に止めます。助けを呼びますか。",
+              "reading": "あんぜんなばしょにとめます。たすけをよびますか。",
+              "meaning": "Saya berhenti di tempat aman. Apakah perlu bantuan?"
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Informasi awal apa yang perlu diberikan saat meminta bantuan untuk penumpang yang sakit?",
+              "options": [
+                "Lokasi kendaraan dan keadaan yang terlihat",
+                "Dugaan diagnosis yang belum diketahui",
+                "Informasi pribadi kepada orang yang tidak terkait",
+                "Pendapat tentang penyebab sakit"
+              ],
+              "answer": 0,
+              "explanation": "Petugas bantuan membutuhkan lokasi dan fakta yang dapat diamati untuk menentukan tindak lanjut.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Penumpang mendadak pusing dan meminta berhenti. Apa respons yang paling tepat?",
+              "options": [
+                "Teruskan perjalanan tanpa bertanya",
+                "Minta penumpang turun di pinggir jalan",
+                "Berhenti aman bila memungkinkan dan hubungi bantuan sesuai prosedur",
+                "Memberi obat pribadi tanpa arahan"
+              ],
+              "answer": 2,
+              "explanation": "Keselamatan didahulukan; pengemudi berhenti dengan aman dan meminta bantuan yang sesuai, bukan membuat diagnosis sendiri.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Kebutuhan penumpang dan keadaan mendesak», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Dengarkan dan kenali masalah",
+                "Pindahkan kendaraan ke keadaan aman jika diperlukan",
+                "Hubungi petugas atau layanan sesuai prosedur",
+                "Catat serta serahkan informasi penting"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Dengarkan dan kenali masalah → Pindahkan kendaraan ke keadaan aman jika diperlukan → Hubungi petugas atau layanan sesuai prosedur → Catat serta serahkan informasi penting.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shared",
+      "title": "Kesehatan kerja, pencatatan, dan serah terima",
+      "description": "Latihan lintas jenis kendaraan untuk menjaga kesehatan pengemudi, mencatat pekerjaan, dan meneruskan status. Pengemudi tetap bekerja di bawah aturan, pelatihan, dan pengawasan perusahaan; konten ini tidak menggantikan lisensi atau pelatihan pengemudi.",
+      "lessons": [
+        {
+          "id": "road-10",
+          "title": "Penyelesaian perjalanan dan catatan kendaraan",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat hasil pekerjaan setelah perjalanan dengan data yang dapat dibuktikan.",
+            "Memeriksa keadaan kendaraan kembali dan meneruskan temuan.",
+            "Membedakan bukti serah barang dengan catatan layanan penumpang."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Sesudah perjalanan, truk mencatat status barang dan serah terima; bus dan taksi mencatat perjalanan serta urusan penumpang menurut formulir masing-masing. Pengemudi juga melakukan pemeriksaan setelah operasi sesuai daftar. Catatan waktu, jarak, kendala, kerusakan, dan barang yang belum selesai membantu penanggung jawab giliran berikutnya."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Isi catatan dekat dengan waktu kejadian dan gunakan fakta: apa yang terjadi, kapan, di mana, dan tindakan apa yang dilakukan. Jangan memakai tanda tangan atau bukti penerimaan yang belum benar-benar diterima. Kasus: pada tugas truk, satu paket tetap di kendaraan karena penerima tidak ada. Respons: tandai status belum terkirim, cantumkan lokasi penyimpanan sementara yang disetujui, dan serahkan informasi."
+            }
+          ],
+          "steps": [
+            "Periksa tugas yang selesai dan yang tertunda",
+            "Periksa kendaraan setelah operasi",
+            "Isi catatan sesuai jenis layanan",
+            "Serahkan status kepada penanggung jawab"
+          ],
+          "caution": "Jangan menandai pengiriman atau layanan selesai jika masih ada barang atau masalah terbuka.",
+          "scenario": "Satu paket belum diserahkan karena penerima tidak tersedia saat pengantaran.",
+          "response": "Catat paket sebagai belum terkirim, ikuti tempat penyimpanan yang disetujui, dan serahkan status kepada pengatur untuk penjadwalan berikutnya.",
+          "vocabulary": [
+            {
+              "japanese": "乗務記録",
+              "reading": "じょうむきろく",
+              "meaning": "catatan perjalanan/bertugas"
+            },
+            {
+              "japanese": "未配達",
+              "reading": "みはいたつ",
+              "meaning": "belum terkirim"
+            },
+            {
+              "japanese": "点呼",
+              "reading": "てんこ",
+              "meaning": "pemeriksaan/komunikasi tugas"
+            },
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah terima"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この荷物は未配達です。",
+              "reading": "このにもつはみはいたつです。",
+              "meaning": "Barang ini belum terkirim."
+            },
+            {
+              "japanese": "記録して担当者に引き継ぎます。",
+              "reading": "きろくしてたんとうしゃにひきつぎます。",
+              "meaning": "Saya mencatat dan menyerahkannya kepada petugas."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Mengapa catatan setelah perjalanan harus menunjukkan status yang sebenarnya?",
+              "options": [
+                "Agar barang atau masalah yang tertunda dapat ditindaklanjuti",
+                "Agar semua jenis perjalanan memakai formulir yang sama",
+                "Agar pekerjaan yang belum selesai tidak terlihat",
+                "Agar pengemudi dapat mengubah jadwal"
+              ],
+              "answer": 0,
+              "explanation": "Catatan faktual menjaga kesinambungan tugas dan menghindari laporan selesai yang keliru.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Satu paket belum diserahkan karena penerima tidak ada. Apa isi catatan yang benar?",
+              "options": [
+                "Tulis semua barang sudah diterima",
+                "Hapus paket dari daftar",
+                "Catat sebagai belum terkirim dan teruskan statusnya",
+                "Masukkan ke kendaraan lain tanpa izin"
+              ],
+              "answer": 2,
+              "explanation": "Status paket harus tetap dapat ditelusuri sampai penanggung jawab memutuskan pengiriman berikutnya.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Penyelesaian perjalanan dan catatan kendaraan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa tugas yang selesai dan yang tertunda",
+                "Periksa kendaraan setelah operasi",
+                "Isi catatan sesuai jenis layanan",
+                "Serahkan status kepada penanggung jawab"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Periksa tugas yang selesai dan yang tertunda → Periksa kendaraan setelah operasi → Isi catatan sesuai jenis layanan → Serahkan status kepada penanggung jawab.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-11",
+          "title": "Kelelahan, gangguan perhatian, dan pelaporan",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali keadaan diri yang dapat mengganggu perhatian saat mengemudi.",
+            "Menghubungi pengatur jika tidak aman melanjutkan tugas.",
+            "Mengikuti aturan istirahat dan kesehatan kerja yang berlaku di perusahaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Kelelahan, sakit, emosi kuat, atau gangguan perhatian dapat memengaruhi pengemudian. Pengemudi memperhatikan kondisi diri dan mengikuti jadwal serta prosedur istirahat yang ditetapkan. Tidak ada satu perkiraan pribadi yang dapat menggantikan aturan kerja atau arahan medis. Keselamatan penumpang, barang, dan pengguna jalan lain harus menjadi prioritas."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika mulai mengantuk atau merasa kondisi menurun, jangan menyembunyikannya untuk mengejar jadwal. Berhenti atau minta bantuan hanya dengan cara yang aman dan di tempat yang sesuai; hubungi pengatur dan ikuti instruksi. Kasus: mata terasa berat sebelum menyelesaikan rute. Respons: sampaikan kondisi dan lokasi aman, lalu minta arahan tentang istirahat atau penggantian."
+            }
+          ],
+          "steps": [
+            "Perhatikan kondisi tubuh dan perhatian",
+            "Hentikan kegiatan dengan cara aman bila perlu",
+            "Hubungi pengatur dan sampaikan keadaan",
+            "Ikuti rencana istirahat atau penggantian yang disahkan"
+          ],
+          "caution": "Jangan melanjutkan dengan mengandalkan kopi atau perkiraan sendiri bila merasa tidak aman.",
+          "scenario": "Pengemudi merasa mengantuk saat masih ada sisa rute.",
+          "response": "Cari cara berhenti yang aman sesuai situasi, hubungi pengatur, dan ikuti arahan untuk istirahat atau penggantian sebelum melanjutkan.",
+          "vocabulary": [
+            {
+              "japanese": "疲れ",
+              "reading": "つかれ",
+              "meaning": "kelelahan"
+            },
+            {
+              "japanese": "休憩",
+              "reading": "きゅうけい",
+              "meaning": "istirahat"
+            },
+            {
+              "japanese": "健康",
+              "reading": "けんこう",
+              "meaning": "kesehatan"
+            },
+            {
+              "japanese": "安全",
+              "reading": "あんぜん",
+              "meaning": "keselamatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "眠くて、安全に運転できません。",
+              "reading": "ねむくて、あんぜんにうんてんできません。",
+              "meaning": "Saya mengantuk dan tidak dapat mengemudi dengan aman."
+            },
+            {
+              "japanese": "安全な場所で止まり、運行管理者に連絡します。",
+              "reading": "あんぜんなばしょでとまり、うんこうかんりしゃにれんらくします。",
+              "meaning": "Saya berhenti di tempat aman dan menghubungi pengatur perjalanan."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Apa tindakan yang tepat bila pengemudi merasa tidak aman untuk melanjutkan?",
+              "options": [
+                "Berhenti dengan aman, memberi tahu pengatur, dan mengikuti arahan",
+                "Menyembunyikan kondisi dan mengejar jadwal",
+                "Meminta penumpang mengemudi",
+                "Mengabaikan gejala sampai giliran berakhir"
+              ],
+              "answer": 0,
+              "explanation": "Kondisi tidak aman harus disampaikan agar pengatur dapat mengatur langkah yang sesuai.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Pengemudi mengantuk sebelum rute selesai. Bagaimana ia harus bertindak?",
+              "options": [
+                "Menaikkan kecepatan agar cepat selesai",
+                "Membuka jendela lalu terus berkendara tanpa laporan",
+                "Berhenti aman dan menghubungi pengatur untuk arahan",
+                "Mematikan catatan perjalanan"
+              ],
+              "answer": 2,
+              "explanation": "Mengurangi risiko berarti tidak memaksakan diri, lalu berkoordinasi melalui prosedur yang berlaku.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Kelelahan, gangguan perhatian, dan pelaporan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Perhatikan kondisi tubuh dan perhatian",
+                "Hentikan kegiatan dengan cara aman bila perlu",
+                "Hubungi pengatur dan sampaikan keadaan",
+                "Ikuti rencana istirahat atau penggantian yang disahkan"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Perhatikan kondisi tubuh dan perhatian → Hentikan kegiatan dengan cara aman bila perlu → Hubungi pengatur dan sampaikan keadaan → Ikuti rencana istirahat atau penggantian yang disahkan.",
+              "kind": "workflow"
+            }
+          ]
+        },
+        {
+          "id": "road-12",
+          "title": "Memilih tugas sesuai jenis kendaraan",
+          "minutes": 25,
+          "objectives": [
+            "Membedakan fokus pekerjaan truk, bus, dan taksi.",
+            "Mengarahkan pertanyaan tentang tugas di luar peran kepada penanggung jawab.",
+            "Menggunakan istilah kerja sederhana saat serah terima."
+          ],
+          "sections": [
+            {
+              "title": "Konsep kerja",
+              "body": "Ketiga kelompok sama-sama menuntut operasi aman dan komunikasi, tetapi tugas utamanya berbeda. Truk membawa barang dan menangani muatan serta bukti serah barang. Bus membawa penumpang pada layanan dan rute yang dijadwalkan. Taksi melayani perjalanan penumpang per permintaan dengan konfirmasi tujuan dan layanan. Persyaratan lisensi dan pelatihan tiap kategori juga tidak sama."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Baca jadwal dan penugasan sebelum giliran, lalu minta koreksi jika nama kendaraan atau jenis layanan tidak sesuai kompetensi dan lisensi. Jangan menganggap pengalaman pada satu jenis kendaraan otomatis memberi kewenangan pada jenis lain. Kasus: daftar menyebut bus, tetapi kunci dan instruksi yang diterima untuk truk. Respons: tahan keberangkatan dan minta penanggung jawab mengoreksi penugasan."
+            }
+          ],
+          "steps": [
+            "Baca jenis kendaraan dan tugas pada jadwal",
+            "Cocokkan penugasan dengan kendaraan dan kompetensi",
+            "Laporkan perbedaan kepada penanggung jawab",
+            "Mulai setelah tugas dikonfirmasi"
+          ],
+          "caution": "Jangan mengambil alih kategori kendaraan atau tugas yang belum menjadi penugasan Anda.",
+          "scenario": "Jadwal menunjukkan layanan bus tetapi kendaraan dan kunci yang diserahkan adalah truk.",
+          "response": "Jangan berangkat. Tunjukkan perbedaan itu kepada pengatur, minta penugasan dan kendaraan dicocokkan, lalu pastikan kembali sebelum bekerja.",
+          "vocabulary": [
+            {
+              "japanese": "トラック",
+              "reading": "とらっく",
+              "meaning": "truk"
+            },
+            {
+              "japanese": "バス",
+              "reading": "ばす",
+              "meaning": "bus"
+            },
+            {
+              "japanese": "タクシー",
+              "reading": "たくしー",
+              "meaning": "taksi"
+            },
+            {
+              "japanese": "担当",
+              "reading": "たんとう",
+              "meaning": "tugas atau penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "予定はバスですが、これはトラックです。",
+              "reading": "よていはばすですが、これはとらっくです。",
+              "meaning": "Jadwalnya bus, tetapi ini truk."
+            },
+            {
+              "japanese": "担当者に確認してから出発します。",
+              "reading": "たんとうしゃにかくにんしてからしゅっぱつします。",
+              "meaning": "Saya berangkat setelah memastikan dengan penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "prompt": "Pasangan tugas dan fokus utama mana yang benar?",
+              "options": [
+                "Truk—barang dan muatan; bus—penumpang pada rute; taksi—penumpang dengan tujuan yang dikonfirmasi",
+                "Truk—pengumuman halte; bus—bukti muatan; taksi—penyimpanan gudang",
+                "Semua tugas sama dan lisensinya dapat saling menggantikan",
+                "Bus hanya mengangkut barang"
+              ],
+              "answer": 0,
+              "explanation": "Jenis kendaraan memiliki pekerjaan utama yang berbeda dan memerlukan penugasan serta persyaratan yang sesuai.",
+              "kind": "knowledge"
+            },
+            {
+              "prompt": "Jadwal bus tetapi kendaraan yang diserahkan truk. Apa tindakan terbaik?",
+              "options": [
+                "Gunakan truk karena sudah tersedia",
+                "Minta penumpang memilih kendaraan",
+                "Tahan keberangkatan dan minta penanggung jawab mengonfirmasi penugasan",
+                "Ubah jadwal sendiri"
+              ],
+              "answer": 2,
+              "explanation": "Perbedaan kendaraan dan tugas harus diselesaikan oleh penanggung jawab sebelum perjalanan dimulai.",
+              "kind": "case"
+            },
+            {
+              "prompt": "Dalam alur «Memilih tugas sesuai jenis kendaraan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca jenis kendaraan dan tugas pada jadwal",
+                "Cocokkan penugasan dengan kendaraan dan kompetensi",
+                "Laporkan perbedaan kepada penanggung jawab",
+                "Mulai setelah tugas dikonfirmasi"
+              ],
+              "answer": 1,
+              "explanation": "Urutan kerja yang dipelajari: Baca jenis kendaraan dan tugas pada jadwal → Cocokkan penugasan dengan kendaraan dan kompetensi → Laporkan perbedaan kepada penanggung jawab → Mulai setelah tugas dikonfirmasi.",
+              "kind": "workflow"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "出入国在留管理庁 — 特定技能１号の各分野の仕事内容（Job Description）",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "出入国在留管理庁 — 自動車運送業分野",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/automobiletransportation.html"
+    },
+    {
+      "title": "国土交通省 — 自動車運送業分野における特定技能外国人の受入れについて",
+      "url": "https://www.mlit.go.jp/jidosha/jidosha_tk1_000038.html"
+    },
+    {
+      "title": "国土交通省 — 自動車運送業分野特定技能１号評価試験実施要領",
+      "url": "https://www.mlit.go.jp/jidosha/content/001851696.pdf"
+    }
+  ]
+}

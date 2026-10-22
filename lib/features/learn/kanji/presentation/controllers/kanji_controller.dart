@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/kanji/data/kanji_repository.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
@@ -12,13 +13,13 @@ import 'package:nihongo_master/features/profile/data/gamification_repository.dar
 final kanjiRepositoryProvider = Provider<KanjiRepository>(
   (ref) => KanjiRepository(ref.watch(dioProvider)),
 );
-final kanjiCourseProvider =
-    FutureProvider.autoDispose.family<KanjiCourse, String>((ref, level) {
-  ref
-    ..watch(authControllerProvider.select((s) => s.status))
-    ..watch(authControllerProvider.select((s) => s.user?.id));
-  return ref.watch(kanjiRepositoryProvider).getCourse(level: level);
-});
+final kanjiCourseProvider = FutureProvider.autoDispose
+    .family<KanjiCourse, String>((ref, level) {
+      ref
+        ..watch(authControllerProvider.select((s) => s.status))
+        ..watch(authControllerProvider.select((s) => s.user?.id));
+      return ref.watch(kanjiRepositoryProvider).getCourse(level: level);
+    });
 
 enum KanjiStage { study, quiz, result }
 
@@ -57,45 +58,55 @@ class KanjiState {
     bool? busy,
     String? error,
     bool clearAnswer = false,
-  }) =>
-      KanjiState(
-        lesson: lesson,
-        stage: stage ?? this.stage,
-        characterIndex: characterIndex ?? this.characterIndex,
-        questionIndex: questionIndex ?? this.questionIndex,
-        attempt: attempt ?? this.attempt,
-        selection: clearAnswer ? null : selection ?? this.selection,
-        feedback: clearAnswer ? null : feedback ?? this.feedback,
-        result: result ?? this.result,
-        busy: busy ?? this.busy,
-        error: error,
-      );
+  }) => KanjiState(
+    lesson: lesson,
+    stage: stage ?? this.stage,
+    characterIndex: characterIndex ?? this.characterIndex,
+    questionIndex: questionIndex ?? this.questionIndex,
+    attempt: attempt ?? this.attempt,
+    selection: clearAnswer ? null : selection ?? this.selection,
+    feedback: clearAnswer ? null : feedback ?? this.feedback,
+    result: result ?? this.result,
+    busy: busy ?? this.busy,
+    error: error,
+  );
 }
 
 final kanjiLessonProvider = StateNotifierProvider.autoDispose
     .family<KanjiController, AsyncValue<KanjiState>, String>((ref, id) {
-  // Recreate the controller when the signed-in account changes.
-  ref.watch(authControllerProvider.select((s) => s.user?.id));
-  final c = KanjiController(
-    ref.watch(kanjiRepositoryProvider),
-    id,
-    onProgress: () {
-      ref
-        ..invalidate(kanjiCourseProvider)
-        ..invalidate(homeDashboardProvider)
-        ..invalidate(gamificationProvider);
-    },
-  );
-  unawaited(c.load());
-  return c;
-});
+      // Recreate the controller when the signed-in account changes.
+      final userId = ref.watch(
+        authControllerProvider.select((s) => s.user?.id),
+      );
+      final c = KanjiController(
+        ref.watch(kanjiRepositoryProvider),
+        id,
+        history: userId == null
+            ? null
+            : ref.watch(learningHistoryProvider.notifier),
+        onProgress: () {
+          ref
+            ..invalidate(kanjiCourseProvider)
+            ..invalidate(homeDashboardProvider)
+            ..invalidate(gamificationProvider);
+        },
+      );
+      unawaited(c.load());
+      return c;
+    });
 
 class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
-  KanjiController(this.repository, this.lessonId, {required this.onProgress})
-      : super(const AsyncValue.loading());
+  KanjiController(
+    this.repository,
+    this.lessonId, {
+    required this.onProgress,
+    this.history,
+  }) : super(const AsyncValue.loading());
   final KanjiRepository repository;
   final String lessonId;
   final VoidCallback onProgress;
+  final LearningHistoryController? history;
+
   Future<void> load() async {
     state = const AsyncValue.loading();
     final loaded = await AsyncValue.guard(() async {
@@ -103,7 +114,17 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
       if (lesson.characters.isEmpty) {
         throw const KanjiException('Lesson ini belum memiliki materi.');
       }
-      return KanjiState(lesson: lesson);
+      final savedPosition = mounted
+          ? await history?.open(
+              kind: 'kanji',
+              isActive: () => mounted,
+              lessonId: lesson.summary.id,
+              title: lesson.summary.title,
+              total: lesson.characters.length,
+              completed: lesson.summary.completed,
+            )
+          : null;
+      return KanjiState(lesson: lesson, characterIndex: savedPosition ?? 0);
     });
     if (mounted) state = loaded;
   }
@@ -114,6 +135,7 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
     final index = s.characterIndex + delta;
     if (index >= 0 && index < s.lesson.characters.length) {
       state = AsyncValue.data(s.copyWith(characterIndex: index));
+      history?.position('kanji', lessonId, index);
     }
   }
 
@@ -191,14 +213,11 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
     state = AsyncValue.data(s.copyWith(busy: true));
     try {
       final result = await repository.complete(s.attempt!.id);
+      if (mounted && result.passed) history?.complete('kanji', lessonId);
       if (mounted) {
         onProgress();
         state = AsyncValue.data(
-          s.copyWith(
-            stage: KanjiStage.result,
-            result: result,
-            busy: false,
-          ),
+          s.copyWith(stage: KanjiStage.result, result: result, busy: false),
         );
       }
     } on Object catch (e) {
@@ -212,6 +231,7 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
     final s = state.valueOrNull;
     if (s != null && !s.busy) {
       state = AsyncValue.data(KanjiState(lesson: s.lesson));
+      history?.position('kanji', lessonId, 0);
     }
   }
 }

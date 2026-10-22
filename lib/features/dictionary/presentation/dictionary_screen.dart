@@ -50,6 +50,36 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
     }
   }
 
+  int filterCount(DictionaryState state) =>
+      (state.mode == 'auto' ? 0 : 1) +
+      (state.jlpt == null ? 0 : 1) +
+      (state.common ? 1 : 0);
+
+  Future<void> showFilters(DictionaryState state) async {
+    FocusScope.of(context).unfocus();
+    final result = await showModalBottomSheet<DictionaryState>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+      builder: (_) => _DictionaryFilters(initial: state),
+    );
+    if (result == null || !mounted) return;
+    final query = input.text;
+    final library = ref.read(dictionaryLibraryProvider.notifier);
+    await ref
+        .read(dictionaryControllerProvider.notifier)
+        .filter(
+          result.jlpt,
+          common: result.common,
+          mode: result.mode,
+          text: query,
+        );
+    if (mounted && query.trim().isNotEmpty && query.runes.length <= 100) {
+      await library.remember(query);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(dictionaryControllerProvider);
@@ -107,13 +137,20 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
           onSubmitted: (value) => unawaited(search(value)),
           decoration: InputDecoration(
             hintText: '猫, ねこ, neko, cat…',
-            labelText: 'Jepang, romaji, atau Inggris',
+            helperText: 'Cari dengan Jepang, romaji, atau Inggris',
+            filled: true,
+            fillColor: colors.surface,
             counterText: '',
             prefixIcon: const Icon(Icons.search),
-            suffixIcon: IconButton(
-              tooltip: 'Bersihkan pencarian',
-              icon: const Icon(Icons.close),
-              onPressed: () => unawaited(search('')),
+            suffixIcon: ValueListenableBuilder<TextEditingValue>(
+              valueListenable: input,
+              builder: (context, value, _) => value.text.isEmpty
+                  ? const SizedBox.shrink()
+                  : IconButton(
+                      tooltip: 'Bersihkan pencarian',
+                      icon: const Icon(Icons.close),
+                      onPressed: () => unawaited(search('')),
+                    ),
             ),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
           ),
@@ -139,66 +176,38 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
           ],
         ),
         if (!savedOnly) ...[
-          const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
+          const SizedBox(height: 12),
+          Row(
             children: [
-              for (final mode in const {
-                'auto': 'Auto',
-                'japanese': 'Jepang',
-                'english': 'Inggris',
-              }.entries)
-                ChoiceChip(
-                  label: Text(mode.value),
-                  selected: state.mode == mode.key,
-                  onSelected: (_) =>
-                      unawaited(search(input.text, mode: mode.key)),
+              OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size(0, 44),
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
                 ),
-            ],
-          ),
-          const SizedBox(height: 6),
-          const Text(
-            'Pilih Jepang untuk romaji, atau Inggris untuk mencari arti.',
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                ChoiceChip(
-                  label: const Text('Semua'),
-                  selected: state.jlpt == null,
-                  onSelected: (_) => unawaited(
-                    ref
-                        .read(dictionaryControllerProvider.notifier)
-                        .filter(null, common: state.common),
-                  ),
+                onPressed: () => unawaited(showFilters(state)),
+                icon: const Icon(Icons.tune_rounded, size: 18),
+                label: Text(
+                  'Filter${filterCount(state) == 0 ? '' : ' · ${filterCount(state)}'}',
                 ),
-                for (final level in ['N5', 'N4', 'N3', 'N2', 'N1']) ...[
-                  const SizedBox(width: 6),
-                  ChoiceChip(
-                    label: Text(level),
-                    selected: state.jlpt == level,
-                    onSelected: (_) => unawaited(
-                      ref
-                          .read(dictionaryControllerProvider.notifier)
-                          .filter(level, common: state.common),
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: FilterChip(
-              label: const Text('Kata umum saja'),
-              selected: state.common,
-              onSelected: (value) => unawaited(
-                ref
-                    .read(dictionaryControllerProvider.notifier)
-                    .filter(state.jlpt, common: value),
               ),
-            ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  [
+                    switch (state.mode) {
+                      'japanese' => 'Jepang / romaji',
+                      'english' => 'Inggris',
+                      _ => 'Bahasa otomatis',
+                    },
+                    if (state.jlpt != null) state.jlpt!,
+                    if (state.common) 'Kata umum',
+                  ].join(' · '),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: colors.onSurfaceVariant,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
         const SizedBox(height: 12),
@@ -212,17 +221,75 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
         ),
         const SizedBox(height: 16),
         if (!savedOnly && state.query.isEmpty) ...[
-          const Text('Mulai dari kata yang ingin kamu pahami.'),
           const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            children: [
-              for (final example in ['猫', '食べる', '学校', 'ありがとう'])
-                ActionChip(
-                  label: Text(example),
-                  onPressed: () => unawaited(search(example)),
-                ),
-            ],
+          Text(
+            'Mau cari kata apa hari ini?',
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Coba salah satu kata untuk mulai menjelajah.',
+            style: TextStyle(color: colors.onSurfaceVariant, fontSize: 13),
+          ),
+          const SizedBox(height: 14),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final width = constraints.maxWidth < 260
+                  ? constraints.maxWidth
+                  : (constraints.maxWidth - 12) / 2;
+              return Wrap(
+                spacing: 12,
+                runSpacing: 12,
+                children: [
+                  for (final example in const [
+                    ('猫', 'ねこ · cat'),
+                    ('食べる', 'たべる · to eat'),
+                    ('学校', 'がっこう · school'),
+                    ('ありがとう', 'thank you'),
+                  ])
+                    SizedBox(
+                      width: width,
+                      child: Material(
+                        color: colors.surface,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                          side: BorderSide(color: colors.outlineVariant),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: InkWell(
+                          onTap: () => unawaited(search(example.$1)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(14),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  example.$1,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: colors.secondary,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  example.$2,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: colors.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
           ),
           if (library.recent.isNotEmpty) ...[
             const SizedBox(height: 24),
@@ -411,6 +478,133 @@ class DictionaryWordCard extends StatelessWidget {
                 ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _DictionaryFilters extends StatefulWidget {
+  const _DictionaryFilters({required this.initial});
+  final DictionaryState initial;
+
+  @override
+  State<_DictionaryFilters> createState() => _DictionaryFiltersState();
+}
+
+class _DictionaryFiltersState extends State<_DictionaryFilters> {
+  late String mode = widget.initial.mode;
+  late String? jlpt = widget.initial.jlpt;
+  late bool common = widget.initial.common;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return SafeArea(
+      top: false,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Filter pencarian',
+                    style: theme.textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  tooltip: 'Tutup filter',
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.close),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Text('Bahasa pencarian', style: theme.textTheme.titleSmall),
+            const SizedBox(height: 8),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final item in const {
+                  'auto': 'Auto',
+                  'japanese': 'Jepang',
+                  'english': 'Inggris',
+                }.entries)
+                  ChoiceChip(
+                    label: Text(item.value),
+                    selected: mode == item.key,
+                    onSelected: (_) => setState(() => mode = item.key),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Pilih Jepang untuk romaji, atau Inggris untuk mencari arti.',
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 24),
+            DropdownButtonFormField<String>(
+              isExpanded: true,
+              initialValue: jlpt ?? 'all',
+              decoration: const InputDecoration(
+                labelText: 'Level JLPT',
+                border: OutlineInputBorder(),
+              ),
+              items: [
+                const DropdownMenuItem(
+                  value: 'all',
+                  child: Text('Semua level'),
+                ),
+                for (final level in ['N5', 'N4', 'N3', 'N2', 'N1'])
+                  DropdownMenuItem(value: level, child: Text(level)),
+              ],
+              onChanged: (value) =>
+                  setState(() => jlpt = value == 'all' ? null : value),
+              // Recreate the field when Reset changes its initial selection.
+              key: ValueKey(jlpt),
+            ),
+            const SizedBox(height: 16),
+            SwitchListTile.adaptive(
+              contentPadding: EdgeInsets.zero,
+              title: const Text('Kata umum saja'),
+              subtitle: const Text('Tampilkan kata yang sering digunakan.'),
+              value: common,
+              onChanged: (value) => setState(() => common = value),
+            ),
+            const SizedBox(height: 20),
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                TextButton(
+                  onPressed: () => setState(() {
+                    mode = 'auto';
+                    jlpt = null;
+                    common = false;
+                  }),
+                  child: const Text('Reset filter'),
+                ),
+                FilledButton.icon(
+                  onPressed: () => Navigator.pop(
+                    context,
+                    DictionaryState(mode: mode, jlpt: jlpt, common: common),
+                  ),
+                  icon: const Icon(Icons.check_rounded, size: 18),
+                  label: const Text('Terapkan filter'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

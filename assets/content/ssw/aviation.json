@@ -1,0 +1,1276 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "apron",
+      "title": "Keselamatan apron dan pergerakan pesawat",
+      "description": "Menggunakan briefing, zona aman, komunikasi tim, dan kontrol benda asing dalam pekerjaan sisi udara.",
+      "lessons": [
+        {
+          "id": "aviation-01",
+          "title": "Briefing keselamatan dan benda asing",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti briefing, memakai APD yang ditetapkan, serta melaporkan benda asing di area operasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerjaan sisi udara mengikuti aturan bandara dan instruksi perusahaan. Gunakan pakaian kerja, pelindung telinga, rompi, dan APD lain sesuai tugas. Benda kecil seperti baut atau plastik dapat merusak pesawat atau melukai orang. Jangan memungut benda tidak aman di luar prosedur."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Dengarkan briefing tentang penerbangan, cuaca, jalur kendaraan, zona bahaya, dan perubahan tugas. Jika menemukan benda asing, hentikan pekerjaan sekitar, laporkan lewat saluran yang ditentukan, dan amankan hanya bila berwenang. Catat lokasi agar tim dapat memeriksa area."
+            }
+          ],
+          "steps": [
+            "Hadiri briefing dan ulangi instruksi penting",
+            "Pakai APD serta periksa kondisinya",
+            "Periksa area kerja untuk benda asing dan bahaya",
+            "Hentikan pekerjaan sekitar temuan dan laporkan"
+          ],
+          "caution": "Jangan memasuki zona pesawat atau mengambil benda berbahaya tanpa izin.",
+          "scenario": "Potongan logam terlihat dekat jalur kendaraan ketika tim bersiap mendekati pesawat.",
+          "response": "Hentikan kendaraan dan pekerjaan sekitar temuan, laporkan lokasinya, dan tunggu area dinyatakan aman.",
+          "vocabulary": [
+            {
+              "japanese": "制限区域",
+              "reading": "せいげんくいき",
+              "meaning": "area terbatas"
+            },
+            {
+              "japanese": "保護具",
+              "reading": "ほごぐ",
+              "meaning": "alat pelindung diri"
+            },
+            {
+              "japanese": "異物",
+              "reading": "いぶつ",
+              "meaning": "benda asing"
+            },
+            {
+              "japanese": "危険予知",
+              "reading": "きけんよち",
+              "meaning": "prediksi bahaya"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "前方に異物があります。",
+              "reading": "ぜんぽうにいぶつがあります。",
+              "meaning": "Ada benda asing di depan."
+            },
+            {
+              "japanese": "作業を止めて、報告します。",
+              "reading": "さぎょうをとめて、ほうこくします。",
+              "meaning": "Saya menghentikan pekerjaan dan melapor."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa benda asing harus segera dilaporkan di area pesawat?",
+              "options": [
+                "Benda kecil dapat merusak pesawat, alat, atau melukai orang",
+                "Agar area bagus untuk foto",
+                "Karena selalu milik penumpang",
+                "Agar briefing tidak diperlukan"
+              ],
+              "answer": 0,
+              "explanation": "Benda asing di area operasi merupakan bahaya keselamatan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Ada potongan logam dekat jalur kendaraan. Apa tindakan tepat?",
+              "options": [
+                "Lewati perlahan",
+                "Hentikan aktivitas sekitar, laporkan, dan tunggu area aman",
+                "Sembunyikan di dekat roda",
+                "Ambil dengan tangan tanpa memberi tahu"
+              ],
+              "answer": 1,
+              "explanation": "Area harus dikomunikasikan dan diamankan sebelum operasi berlanjut."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Briefing keselamatan dan benda asing», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pakai APD serta periksa kondisinya",
+                "Hadiri briefing dan ulangi instruksi penting",
+                "Periksa area kerja untuk benda asing dan bahaya",
+                "Hentikan pekerjaan sekitar temuan dan laporkan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Hadiri briefing dan ulangi instruksi penting → Pakai APD serta periksa kondisinya → Periksa area kerja untuk benda asing dan bahaya → Hentikan pekerjaan sekitar temuan dan laporkan."
+            }
+          ]
+        },
+        {
+          "id": "aviation-02",
+          "title": "Dukungan pergerakan pesawat di darat",
+          "minutes": 25,
+          "objectives": [
+            "Berkoordinasi saat pesawat atau kendaraan bergerak dan menjaga jalur steril sesuai instruksi bandara.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pergerakan pesawat di apron mengikuti rute, prioritas, dan komunikasi yang dikendalikan petugas berwenang. Dukungan dapat mencakup pengaturan kendaraan atau pemindahan pesawat sesuai pembagian tugas. Hanya petugas terlatih dan berizin boleh memberi isyarat, mengoperasikan alat khusus, atau memimpin pergerakan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Sebelum masuk jalur, pastikan izin dan komunikasi jelas. Gunakan isyarat baku di tempat kerja; jangan berimprovisasi. Jika pandangan terhalang, radio mati, atau kontak visual hilang, hentikan gerakan pada posisi aman dan laporkan agar pemimpin mengatur ulang."
+            }
+          ],
+          "steps": [
+            "Periksa izin masuk, rute, dan pemimpin pergerakan",
+            "Pastikan komunikasi serta posisi petugas",
+            "Lakukan tugas dengan isyarat dan alat yang disetujui",
+            "Hentikan gerakan bila komunikasi terputus"
+          ],
+          "caution": "Jangan mengisyaratkan atau menggerakkan pesawat tanpa pelatihan, otorisasi, dan komunikasi.",
+          "scenario": "Saat membantu pergerakan pesawat, Anda kehilangan pandangan pemandu dan radio tidak terdengar.",
+          "response": "Hentikan gerakan sesuai prosedur pada posisi aman. Jangan meneruskan berdasarkan perkiraan; hubungi pengendali atau pemimpin tim.",
+          "vocabulary": [
+            {
+              "japanese": "誘導",
+              "reading": "ゆうどう",
+              "meaning": "pemanduan"
+            },
+            {
+              "japanese": "地上走行",
+              "reading": "ちじょうそうこう",
+              "meaning": "pergerakan di darat"
+            },
+            {
+              "japanese": "合図",
+              "reading": "あいず",
+              "meaning": "isyarat"
+            },
+            {
+              "japanese": "無線",
+              "reading": "むせん",
+              "meaning": "radio komunikasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "合図が見えません。",
+              "reading": "あいずがみえません。",
+              "meaning": "Saya tidak melihat isyarat."
+            },
+            {
+              "japanese": "安全な場所で止まります。",
+              "reading": "あんぜんなばしょでとまります。",
+              "meaning": "Saya berhenti di tempat aman."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Siapa yang boleh memberi isyarat dalam pergerakan pesawat?",
+              "options": [
+                "Petugas terlatih dan diberi otorisasi",
+                "Siapa pun yang melihat pesawat",
+                "Penumpang terdekat",
+                "Pekerja yang lewat"
+              ],
+              "answer": 0,
+              "explanation": "Gerakan pesawat harus dikendalikan petugas berwenang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pandangan terhadap pemandu hilang dan radio tidak terdengar. Apa yang tepat?",
+              "options": [
+                "Terus mengikuti kendaraan depan",
+                "Berhenti dengan aman dan hubungi pemimpin tim",
+                "Beri isyarat sendiri",
+                "Mundur tanpa melihat"
+              ],
+              "answer": 1,
+              "explanation": "Kehilangan komunikasi berarti operasi perlu dihentikan dan dikonfirmasi ulang."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Dukungan pergerakan pesawat di darat», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pastikan komunikasi serta posisi petugas",
+                "Periksa izin masuk, rute, dan pemimpin pergerakan",
+                "Lakukan tugas dengan isyarat dan alat yang disetujui",
+                "Hentikan gerakan bila komunikasi terputus"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa izin masuk, rute, dan pemimpin pergerakan → Pastikan komunikasi serta posisi petugas → Lakukan tugas dengan isyarat dan alat yang disetujui → Hentikan gerakan bila komunikasi terputus."
+            }
+          ]
+        },
+        {
+          "id": "aviation-03",
+          "title": "Peralatan layanan darat dan cuaca",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa alat, izin operator, cuaca, dan jalur sebelum memakai kendaraan atau peralatan layanan darat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tangga, traktor bagasi, dan kendaraan layanan bergerak di ruang sempit bersama pesawat serta pekerja. Periksa rem, kebocoran, alarm, dan pengaman sesuai daftar. Hujan, angin, petir, permukaan licin, dan jarak pandang dapat mengubah risiko; ikuti batas operasi bandara."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan jalur dan kecepatan yang ditetapkan, jaga jarak dari pesawat, dan amankan alat sebelum meninggalkannya. Jangan mengoperasikan jenis alat tanpa izin. Jika rusak atau cuaca berubah, hentikan, parkir aman bila memungkinkan, beri tanda, dan laporkan."
+            }
+          ],
+          "steps": [
+            "Periksa izin operator dan alat",
+            "Nilai cuaca, permukaan, serta jalur",
+            "Gunakan peralatan sesuai batas dan instruksi",
+            "Amankan alat dan laporkan perubahan atau kerusakan"
+          ],
+          "caution": "Jangan memakai alat rusak atau meneruskan operasi saat batas cuaca terlampaui.",
+          "scenario": "Hujan membuat apron licin dan rem kendaraan penarik terasa tidak normal.",
+          "response": "Jangan menarik bagasi. Parkir di tempat aman, tandai kendaraan sesuai aturan, dan laporkan rem serta kondisi apron.",
+          "vocabulary": [
+            {
+              "japanese": "地上支援機材",
+              "reading": "ちじょうしえんきざい",
+              "meaning": "peralatan layanan darat"
+            },
+            {
+              "japanese": "ブレーキ",
+              "reading": "ぶれーき",
+              "meaning": "rem"
+            },
+            {
+              "japanese": "天候",
+              "reading": "てんこう",
+              "meaning": "cuaca"
+            },
+            {
+              "japanese": "運転資格",
+              "reading": "うんてんしかく",
+              "meaning": "izin mengoperasikan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ブレーキに異常があります。",
+              "reading": "ぶれーきにいじょうがあります。",
+              "meaning": "Ada masalah pada rem."
+            },
+            {
+              "japanese": "この車両を使わず、報告します。",
+              "reading": "このしゃりょうをつかわず、ほうこくします。",
+              "meaning": "Saya tidak memakai kendaraan ini dan melapor."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang harus diperiksa sebelum kendaraan layanan darat dipakai?",
+              "options": [
+                "Izin operator, keadaan alat, cuaca, dan jalur kerja",
+                "Warna kendaraan saja",
+                "Jadwal penerbangan saja",
+                "Jumlah koper"
+              ],
+              "answer": 0,
+              "explanation": "Keselamatan bergantung pada izin, kondisi teknis, lingkungan, dan rute."
+            },
+            {
+              "kind": "case",
+              "prompt": "Rem kendaraan penarik bermasalah saat apron licin. Apa tindakan tepat?",
+              "options": [
+                "Lanjut perlahan",
+                "Jangan gunakan, parkir aman, tandai, dan laporkan",
+                "Minta pekerja mendorong",
+                "Matikan lampu lalu berangkat"
+              ],
+              "answer": 1,
+              "explanation": "Kendaraan bermasalah tidak boleh digunakan, terutama pada permukaan licin."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Peralatan layanan darat dan cuaca», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Nilai cuaca, permukaan, serta jalur",
+                "Periksa izin operator dan alat",
+                "Gunakan peralatan sesuai batas dan instruksi",
+                "Amankan alat dan laporkan perubahan atau kerusakan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Periksa izin operator dan alat → Nilai cuaca, permukaan, serta jalur → Gunakan peralatan sesuai batas dan instruksi → Amankan alat dan laporkan perubahan atau kerusakan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baggage",
+      "title": "Bagasi, kargo, dan pemuatan",
+      "description": "Menjaga identitas, tujuan, kondisi, dan penempatan barang sesuai dokumen serta instruksi pemuatan yang disahkan.",
+      "lessons": [
+        {
+          "id": "aviation-04",
+          "title": "Menyortir bagasi menurut label dan tujuan",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan label bagasi dengan penerbangan dan tujuan sebelum dipindahkan ke alur muat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Setiap bagasi harus tetap terhubung dengan label, penerbangan, dan tujuan. Cocokkan informasi pada label dengan daftar atau sistem yang disetujui. Bagasi salah rute, tanpa label, rusak, atau bertanda khusus dipisahkan melalui prosedur penelusuran, bukan ditebak."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Baca atau pindai label, lalu letakkan barang pada troli bertanda benar. Periksa lagi sebelum pemindahan berikutnya. Jika label tidak terbaca, jangan menulis kode dari ingatan; tahan bagasi dan minta petugas memverifikasi tujuan."
+            }
+          ],
+          "steps": [
+            "Baca label dan instruksi khusus",
+            "Cocokkan penerbangan serta tujuan pada sistem",
+            "Tempatkan bagasi pada jalur yang benar",
+            "Tahan bagasi tanpa identitas dan minta verifikasi"
+          ],
+          "caution": "Jangan mencampur penerbangan atau mengubah label tanpa persetujuan.",
+          "scenario": "Label koper basah dan tujuan tidak terbaca, sedangkan troli untuk penerbangan lain hampir penuh.",
+          "response": "Pisahkan koper dari troli, jangan menebak tujuan, dan minta petugas memverifikasi melalui prosedur penelusuran.",
+          "vocabulary": [
+            {
+              "japanese": "手荷物",
+              "reading": "てにもつ",
+              "meaning": "bagasi"
+            },
+            {
+              "japanese": "行先",
+              "reading": "いきさき",
+              "meaning": "tujuan"
+            },
+            {
+              "japanese": "搭乗便",
+              "reading": "とうじょうびん",
+              "meaning": "penerbangan"
+            },
+            {
+              "japanese": "仕分け",
+              "reading": "しわけ",
+              "meaning": "penyortiran"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "荷物の行先が読めません。",
+              "reading": "にもつのいきさきがよめません。",
+              "meaning": "Tujuan bagasi ini tidak terbaca."
+            },
+            {
+              "japanese": "確認するまで分けておきます。",
+              "reading": "かくにんするまでわけておきます。",
+              "meaning": "Saya memisahkannya sampai dikonfirmasi."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa bagasi tanpa label terbaca harus dipisahkan?",
+              "options": [
+                "Agar tidak salah rute dan identitas dapat diverifikasi",
+                "Agar semua bagasi masuk satu troli",
+                "Agar label dibuang",
+                "Agar lebih cepat dimuat"
+              ],
+              "answer": 0,
+              "explanation": "Identitas tidak jelas meningkatkan risiko salah muat sehingga perlu ditelusuri."
+            },
+            {
+              "kind": "case",
+              "prompt": "Tujuan bagasi tidak terbaca dan troli lain hampir penuh. Apa tindakan tepat?",
+              "options": [
+                "Masukkan ke troli yang tersedia",
+                "Pisahkan dan minta petugas memverifikasi tujuan",
+                "Tulis tujuan paling umum",
+                "Buang label"
+              ],
+              "answer": 1,
+              "explanation": "Jangan menebak tujuan; bagasi ditahan sampai identitasnya dikonfirmasi."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Menyortir bagasi menurut label dan tujuan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Cocokkan penerbangan serta tujuan pada sistem",
+                "Baca label dan instruksi khusus",
+                "Tempatkan bagasi pada jalur yang benar",
+                "Tahan bagasi tanpa identitas dan minta verifikasi"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca label dan instruksi khusus → Cocokkan penerbangan serta tujuan pada sistem → Tempatkan bagasi pada jalur yang benar → Tahan bagasi tanpa identitas dan minta verifikasi."
+            }
+          ]
+        },
+        {
+          "id": "aviation-05",
+          "title": "Menangani dan memuat kargo",
+          "minutes": 25,
+          "objectives": [
+            "Menangani kargo sesuai berat, tanda, instruksi pemuatan, dan pembagian tugas tim.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Kargo berbeda berat, bentuk, perlindungan, dan batas penempatannya. Periksa label, dokumen, kondisi kemasan, serta instruksi petugas berwenang. Perhitungan keseimbangan dan rencana muat tidak dibuat sendiri. Gunakan alat atau bantuan tim yang tepat agar orang dan barang tidak cedera atau rusak."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan kargo dengan daftar penerbangan dan posisi yang ditetapkan. Gunakan alat pemindah sesuai prosedur dan kunci muatan mengikuti instruksi. Jika berat atau posisi berbeda dari dokumen, tahan kargo dan minta perhitungan atau instruksi ulang."
+            }
+          ],
+          "steps": [
+            "Cocokkan kargo dengan daftar dan tanda penanganan",
+            "Periksa kemasan serta alat pemindah",
+            "Pindahkan dan muat sesuai rencana yang disahkan",
+            "Konfirmasi penguncian dan laporkan perbedaan"
+          ],
+          "caution": "Jangan mengubah posisi atau jumlah muatan di luar rencana yang disetujui.",
+          "scenario": "Label kargo berbeda dari daftar muat dan posisi pemuatan yang tersedia tidak cocok.",
+          "response": "Jangan memuat ke posisi lain. Tahan kargo, laporkan ketidaksesuaian, dan tunggu dokumen atau instruksi terkonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "貨物",
+              "reading": "かもつ",
+              "meaning": "kargo"
+            },
+            {
+              "japanese": "搭載",
+              "reading": "とうさい",
+              "meaning": "pemuatan"
+            },
+            {
+              "japanese": "荷札",
+              "reading": "にふだ",
+              "meaning": "label barang"
+            },
+            {
+              "japanese": "積付け",
+              "reading": "つみつけ",
+              "meaning": "penempatan muatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この貨物はリストと違います。",
+              "reading": "このかもつはりすととちがいます。",
+              "meaning": "Kargo ini berbeda dari daftar."
+            },
+            {
+              "japanese": "指示を確認してから積みます。",
+              "reading": "しじをかくにんしてからつみます。",
+              "meaning": "Saya memuat setelah memeriksa instruksi."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Siapa yang menetapkan posisi muatan dan keseimbangan pesawat?",
+              "options": [
+                "Petugas berwenang melalui rencana muat yang disahkan",
+                "Pekerja terdekat dengan pintu",
+                "Pengemudi troli",
+                "Penumpang"
+              ],
+              "answer": 0,
+              "explanation": "Muatan mengikuti perhitungan dan rencana yang disahkan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Label kargo berbeda dan posisi tidak cocok. Apa tindakan tepat?",
+              "options": [
+                "Muat ke posisi lain",
+                "Tahan, laporkan, dan tunggu instruksi yang dikonfirmasi",
+                "Buka kemasan tanpa izin",
+                "Ubah daftar sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Perbedaan dokumen atau posisi harus diselesaikan sebelum pemuatan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Menangani dan memuat kargo», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa kemasan serta alat pemindah",
+                "Cocokkan kargo dengan daftar dan tanda penanganan",
+                "Pindahkan dan muat sesuai rencana yang disahkan",
+                "Konfirmasi penguncian dan laporkan perbedaan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan kargo dengan daftar dan tanda penanganan → Periksa kemasan serta alat pemindah → Pindahkan dan muat sesuai rencana yang disahkan → Konfirmasi penguncian dan laporkan perbedaan."
+            }
+          ]
+        },
+        {
+          "id": "aviation-06",
+          "title": "Pemeriksaan barang rusak atau salah rute",
+          "minutes": 25,
+          "objectives": [
+            "Menghentikan alur saat menemukan bagasi/kargo rusak, salah identitas, atau jumlah yang tidak cocok.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Periksa jumlah dan identitas saat barang berpindah dari sortir ke troli lalu ke pesawat. Perhatikan kerusakan kemasan, cairan bocor, dan tanda khusus. Laporan sebaiknya memuat penerbangan, nomor barang bila ada, lokasi, waktu, kondisi, serta tindakan sementara."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika barang jatuh, bocor, rusak, atau milik penerbangan lain, pisahkan dan beri tahu pengawas. Jangan menutup kerusakan tanpa otorisasi. Saat jumlah berbeda atau bagasi hilang, ikuti proses penelusuran dan teruskan status ke giliran berikutnya."
+            }
+          ],
+          "steps": [
+            "Cocokkan jumlah dan identitas saat menerima",
+            "Periksa kondisi sebelum dipindahkan",
+            "Pisahkan barang bermasalah dan tandai",
+            "Laporkan fakta serta teruskan status kepada pengawas"
+          ],
+          "caution": "Jangan memuat barang rusak atau salah identitas sebelum diputuskan petugas berwenang.",
+          "scenario": "Koper bocor cairan di troli dan nomor penerbangannya berbeda dari barang lain.",
+          "response": "Hentikan pemindahan koper, pisahkan troli dari alur muat, dan laporkan kebocoran serta perbedaan penerbangan.",
+          "vocabulary": [
+            {
+              "japanese": "破損",
+              "reading": "はそん",
+              "meaning": "kerusakan"
+            },
+            {
+              "japanese": "個数",
+              "reading": "こすう",
+              "meaning": "jumlah barang"
+            },
+            {
+              "japanese": "漏れ",
+              "reading": "もれ",
+              "meaning": "kebocoran"
+            },
+            {
+              "japanese": "追跡",
+              "reading": "ついせき",
+              "meaning": "penelusuran"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この荷物が壊れています。",
+              "reading": "このにもつがこわれています。",
+              "meaning": "Bagasi ini rusak."
+            },
+            {
+              "japanese": "作業を止めて、担当者に伝えます。",
+              "reading": "さぎょうをとめて、たんとうしゃにつたえます。",
+              "meaning": "Saya menghentikan pekerjaan dan memberi tahu petugas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa informasi penting dalam laporan barang bermasalah?",
+              "options": [
+                "Penerbangan/barang, lokasi, waktu, kondisi, dan tindakan sementara",
+                "Dugaan pemilik",
+                "Nama orang lewat",
+                "Kata 'rusak' saja"
+              ],
+              "answer": 0,
+              "explanation": "Rincian mendukung penelusuran dan tindak lanjut."
+            },
+            {
+              "kind": "case",
+              "prompt": "Koper bocor dan berbeda penerbangan dari troli. Apa respons tepat?",
+              "options": [
+                "Pindahkan ke bagasi terdekat",
+                "Hentikan, pisahkan dari alur, dan laporkan",
+                "Bungkus ulang diam-diam",
+                "Muat agar kebocoran tidak terlihat"
+              ],
+              "answer": 1,
+              "explanation": "Kebocoran dan identitas berbeda perlu dipisahkan dan diperiksa."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Pemeriksaan barang rusak atau salah rute», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa kondisi sebelum dipindahkan",
+                "Cocokkan jumlah dan identitas saat menerima",
+                "Pisahkan barang bermasalah dan tandai",
+                "Laporkan fakta serta teruskan status kepada pengawas"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan jumlah dan identitas saat menerima → Periksa kondisi sebelum dipindahkan → Pisahkan barang bermasalah dan tandai → Laporkan fakta serta teruskan status kepada pengawas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "title": "Penumpang, katering, dan bahan bakar",
+      "description": "Mengenal pekerjaan ground handling yang diperluas sejak revisi 2026, beserta batas komunikasi dan keselamatannya.",
+      "lessons": [
+        {
+          "id": "aviation-07",
+          "title": "Penanganan penumpang dan informasi penerbangan",
+          "minutes": 25,
+          "objectives": [
+            "Memberi informasi yang sudah dikonfirmasi dan meneruskan permintaan khusus kepada petugas yang tepat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Layanan penumpang mencakup antrean, informasi, bantuan naik pesawat, dan koordinasi saat jadwal berubah. Gunakan data dari sistem atau petugas resmi, jaga privasi dokumen, dan jangan menjanjikan kursi atau keberangkatan yang belum diverifikasi. Perhatikan kebutuhan akses dan keselamatan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Dengarkan pertanyaan, ulangi informasi penting, dan jawab dengan sederhana. Untuk bantuan kursi roda, kondisi kesehatan, dokumen hilang, atau kesulitan memahami instruksi, hubungi petugas layanan penumpang. Pastikan orang yang membutuhkan bantuan benar-benar diserahterimakan."
+            }
+          ],
+          "steps": [
+            "Tanyakan kebutuhan dengan sopan",
+            "Periksa informasi pada sumber resmi",
+            "Berikan jawaban singkat yang terkonfirmasi",
+            "Serahkan permintaan khusus dan pastikan diterima"
+          ],
+          "caution": "Jangan membagikan data perjalanan atau memberi kepastian yang belum diperiksa.",
+          "scenario": "Penumpang bertanya apakah masih sempat naik, tetapi layar menunjukkan status belum diperbarui.",
+          "response": "Jangan menjanjikan bahwa ia bisa naik. Jelaskan status sedang diperiksa dan segera hubungi petugas gerbang.",
+          "vocabulary": [
+            {
+              "japanese": "旅客",
+              "reading": "りょかく",
+              "meaning": "penumpang"
+            },
+            {
+              "japanese": "搭乗口",
+              "reading": "とうじょうぐち",
+              "meaning": "gerbang naik pesawat"
+            },
+            {
+              "japanese": "案内",
+              "reading": "あんない",
+              "meaning": "panduan"
+            },
+            {
+              "japanese": "確認中",
+              "reading": "かくにんちゅう",
+              "meaning": "sedang dikonfirmasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "搭乗の状況を確認します。",
+              "reading": "とうじょうのじょうきょうをかくにんします。",
+              "meaning": "Saya memeriksa status naik pesawat."
+            },
+            {
+              "japanese": "担当者におつなぎします。",
+              "reading": "たんとうしゃにおつなぎします。",
+              "meaning": "Saya menghubungkan Anda dengan petugas terkait."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Informasi apa yang aman diberikan kepada penumpang?",
+              "options": [
+                "Informasi yang diperiksa pada sistem atau dikonfirmasi petugas",
+                "Perkiraan keberangkatan",
+                "Data penumpang lain",
+                "Janji semua permintaan dipenuhi"
+              ],
+              "answer": 0,
+              "explanation": "Gunakan informasi resmi yang sudah dikonfirmasi."
+            },
+            {
+              "kind": "case",
+              "prompt": "Status boarding belum diperbarui. Apa tindakan tepat?",
+              "options": [
+                "Pastikan penumpang masih bisa naik tanpa mengecek",
+                "Jelaskan sedang dikonfirmasi lalu hubungi petugas gerbang",
+                "Minta penumpang mencoba sendiri",
+                "Tunjukkan layar orang lain"
+              ],
+              "answer": 1,
+              "explanation": "Petugas gerbang dapat memberi status yang sah dan bantuan tindak lanjut."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Penanganan penumpang dan informasi penerbangan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa informasi pada sumber resmi",
+                "Tanyakan kebutuhan dengan sopan",
+                "Berikan jawaban singkat yang terkonfirmasi",
+                "Serahkan permintaan khusus dan pastikan diterima"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Tanyakan kebutuhan dengan sopan → Periksa informasi pada sumber resmi → Berikan jawaban singkat yang terkonfirmasi → Serahkan permintaan khusus dan pastikan diterima."
+            }
+          ]
+        },
+        {
+          "id": "aviation-08",
+          "title": "Transportasi dan pemuatan makanan pesawat",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga kebersihan troli katering, kecocokan penerbangan, serta penguncian sebelum diangkut atau dimuat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Layanan makanan pesawat memiliki waktu dan tujuan khusus. Cocokkan jumlah troli, penerbangan, instruksi, dan segel menurut dokumen. Troli dan makanan dijaga bersih. Barang salah label atau segel rusak tidak dicampur. Pemuatan dilakukan petugas terlatih dengan alat yang disetujui."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa kebersihan, roda, pengunci, dan tanda sebelum berangkat. Ikuti rute serta arahan pengawas ketika mendekati pesawat. Pastikan troli terkunci setelah dimuat. Jika jumlah atau label tidak cocok, jangan ubah isi; minta katering memverifikasi."
+            }
+          ],
+          "steps": [
+            "Cocokkan penerbangan dan jumlah troli",
+            "Periksa kebersihan, segel, roda, dan pengunci",
+            "Angkut serta muat melalui rute yang disetujui",
+            "Pastikan penguncian dan laporkan selisih"
+          ],
+          "caution": "Jangan memuat troli yang kotor, salah penerbangan, segelnya rusak, atau penguncinya tidak berfungsi.",
+          "scenario": "Troli makanan memiliki segel rusak dan jumlah berbeda dari daftar penerbangan.",
+          "response": "Pisahkan troli, jangan ubah isi atau segel sendiri, lalu minta petugas katering memeriksa sebelum keputusan muat.",
+          "vocabulary": [
+            {
+              "japanese": "機内食",
+              "reading": "きないしょく",
+              "meaning": "makanan pesawat"
+            },
+            {
+              "japanese": "台車",
+              "reading": "だいしゃ",
+              "meaning": "troli"
+            },
+            {
+              "japanese": "封印",
+              "reading": "ふういん",
+              "meaning": "segel"
+            },
+            {
+              "japanese": "搭載前",
+              "reading": "とうさいまえ",
+              "meaning": "sebelum dimuat"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "台車の封印が壊れています。",
+              "reading": "だいしゃのふういんがこわれています。",
+              "meaning": "Segel troli ini rusak."
+            },
+            {
+              "japanese": "搭載せず、確認をお願いします。",
+              "reading": "とうさいせず、かくにんをおねがいします。",
+              "meaning": "Mohon periksa sebelum dimuat."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang perlu dipastikan sebelum troli makanan dimuat?",
+              "options": [
+                "Penerbangan, jumlah, kebersihan, segel, roda, dan pengunci",
+                "Warna troli saja",
+                "Jadwal pekerja",
+                "Nama penumpang dekat dapur"
+              ],
+              "answer": 0,
+              "explanation": "Identitas, kebersihan, dan kondisi troli melindungi layanan serta keselamatan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Segel troli rusak dan jumlah berbeda. Apa tindakan tepat?",
+              "options": [
+                "Ganti segel sendiri lalu muat",
+                "Pisahkan dan minta katering memeriksa isi serta kelayakan",
+                "Campur ke penerbangan lain",
+                "Abaikan jika tampak baik"
+              ],
+              "answer": 1,
+              "explanation": "Perbedaan perlu diklarifikasi oleh petugas berwenang sebelum pemuatan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Transportasi dan pemuatan makanan pesawat», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa kebersihan, segel, roda, dan pengunci",
+                "Cocokkan penerbangan dan jumlah troli",
+                "Angkut serta muat melalui rute yang disetujui",
+                "Pastikan penguncian dan laporkan selisih"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan penerbangan dan jumlah troli → Periksa kebersihan, segel, roda, dan pengunci → Angkut serta muat melalui rute yang disetujui → Pastikan penguncian dan laporkan selisih."
+            }
+          ]
+        },
+        {
+          "id": "aviation-09",
+          "title": "Batas aman penanganan bahan bakar",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali bahaya bahan bakar dan menghentikan serta melaporkan keadaan sesuai zona dan prosedur.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Penanganan bahan bakar pesawat hanya untuk petugas terlatih dan berwenang. Pekerja lain memahami zona terlarang, larangan api atau percikan, jalur aman, dan cara memberi peringatan. Pengisian dan pemeriksaan mengikuti prosedur operator; materi ini tidak memberi kewenangan mengisi bahan bakar."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Di sekitar operasi bahan bakar, patuhi tanda, jarak, dan instruksi pengawas. Jika melihat bau kuat, tumpahan, selang rusak, atau sumber api, jangan menyentuh atau membersihkan. Jauhi area melalui jalur aman dan beri tahu petugas bahan bakar serta pengawas."
+            }
+          ],
+          "steps": [
+            "Kenali zona dan pastikan peran serta otorisasi",
+            "Jaga jarak dan patuhi larangan sumber api",
+            "Menjauh sesuai instruksi bila ada kebocoran",
+            "Laporkan lokasi dan tanda bahaya ke petugas khusus"
+          ],
+          "caution": "Jangan menyambung selang atau membersihkan tumpahan tanpa kewenangan.",
+          "scenario": "Tercium bau bahan bakar dan terlihat cairan dekat selang saat persiapan.",
+          "response": "Jangan mendekat atau menyentuh selang. Beri peringatan, menjauh melalui jalur aman, dan segera laporkan ke petugas bahan bakar.",
+          "vocabulary": [
+            {
+              "japanese": "燃料",
+              "reading": "ねんりょう",
+              "meaning": "bahan bakar"
+            },
+            {
+              "japanese": "漏えい",
+              "reading": "ろうえい",
+              "meaning": "kebocoran"
+            },
+            {
+              "japanese": "火気厳禁",
+              "reading": "かきげんきん",
+              "meaning": "dilarang sumber api"
+            },
+            {
+              "japanese": "退避",
+              "reading": "たいひ",
+              "meaning": "menjauh/evakuasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "燃料のにおいがします。",
+              "reading": "ねんりょうのにおいがします。",
+              "meaning": "Tercium bau bahan bakar."
+            },
+            {
+              "japanese": "近づかずに、担当者へ連絡します。",
+              "reading": "ちかづかずに、たんとうしゃへれんらくします。",
+              "meaning": "Saya tidak mendekat dan menghubungi petugas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Siapa yang boleh mengoperasikan peralatan bahan bakar pesawat?",
+              "options": [
+                "Petugas terlatih dan berotorisasi khusus",
+                "Semua pekerja apron",
+                "Penumpang",
+                "Pengemudi bagasi tanpa pelatihan"
+              ],
+              "answer": 0,
+              "explanation": "Pengisian bahan bakar adalah pekerjaan khusus berisiko yang perlu kompetensi dan izin."
+            },
+            {
+              "kind": "case",
+              "prompt": "Ada bau bahan bakar dan cairan dekat selang. Apa yang dilakukan?",
+              "options": [
+                "Sentuh selang mencari bocor",
+                "Menjauh aman, beri peringatan, dan lapor ke petugas khusus",
+                "Nyalakan lampu untuk melihat",
+                "Bersihkan dengan kain sendiri"
+              ],
+              "answer": 1,
+              "explanation": "Jangan sentuh atau mendekati tumpahan; jauhi dan panggil petugas khusus."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Batas aman penanganan bahan bakar», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Jaga jarak dan patuhi larangan sumber api",
+                "Kenali zona dan pastikan peran serta otorisasi",
+                "Menjauh sesuai instruksi bila ada kebocoran",
+                "Laporkan lokasi dan tanda bahaya ke petugas khusus"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Kenali zona dan pastikan peran serta otorisasi → Jaga jarak dan patuhi larangan sumber api → Menjauh sesuai instruksi bila ada kebocoran → Laporkan lokasi dan tanda bahaya ke petugas khusus."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Perawatan pesawat dan kendali mutu",
+      "description": "Mengenal instruksi kerja, teknik dasar, keselamatan dan pencatatan. Tugas teknis dilakukan hanya dalam kompetensi dan otorisasi yang berlaku.",
+      "lessons": [
+        {
+          "id": "aviation-10",
+          "title": "Kartu kerja dan keterlacakan perawatan",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan identitas pesawat, tugas, komponen, dan status sebelum memulai atau menutup pekerjaan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Perawatan pesawat mencakup pemeriksaan operasi, perawatan berkala, serta perbaikan komponen sesuai kewenangan organisasi. Kartu kerja menetapkan langkah, alat, material, batas, dan pencatatan. Teknisi tidak mengganti metode berdasarkan kebiasaan. Catatan lengkap mendukung penelusuran dan keputusan pelepasan oleh petugas berwenang."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan nomor pesawat dan komponen dengan dokumen, termasuk revisi instruksi. Pastikan alat serta bahan tersedia. Jika dokumen tidak cocok atau tahap wajib belum ditandatangani, hentikan dan klarifikasi; jangan menutup pekerjaan atau menyatakan pesawat siap."
+            }
+          ],
+          "steps": [
+            "Cocokkan identitas pesawat dan nomor tugas",
+            "Pastikan instruksi berlaku dan terbaca",
+            "Lakukan hanya langkah dalam otorisasi",
+            "Catat hasil dan serahkan untuk verifikasi"
+          ],
+          "caution": "Jangan melengkapi tanda tangan untuk pekerjaan yang tidak Anda lakukan.",
+          "scenario": "Nomor komponen pada kartu kerja berbeda dari komponen terpasang dan revisi kartu tidak jelas.",
+          "response": "Hentikan pekerjaan tanpa mengubah catatan. Hubungi pengawas untuk mencocokkan identitas komponen serta revisi instruksi.",
+          "vocabulary": [
+            {
+              "japanese": "作業カード",
+              "reading": "さぎょうかーど",
+              "meaning": "kartu kerja"
+            },
+            {
+              "japanese": "機体番号",
+              "reading": "きたいばんごう",
+              "meaning": "nomor pesawat"
+            },
+            {
+              "japanese": "部品番号",
+              "reading": "ぶひんばんごう",
+              "meaning": "nomor komponen"
+            },
+            {
+              "japanese": "署名",
+              "reading": "しょめい",
+              "meaning": "tanda tangan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "部品番号が違います。",
+              "reading": "ぶひんばんごうがちがいます。",
+              "meaning": "Nomor komponennya berbeda."
+            },
+            {
+              "japanese": "作業を止めて、確認します。",
+              "reading": "さぎょうをとめて、かくにんします。",
+              "meaning": "Saya menghentikan pekerjaan dan mengonfirmasi."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang harus cocok sebelum perawatan dimulai?",
+              "options": [
+                "Identitas pesawat/komponen, tugas, revisi instruksi, dan otorisasi",
+                "Warna pesawat",
+                "Jam keberangkatan saja",
+                "Tanda tangan pekerja sebelumnya"
+              ],
+              "answer": 0,
+              "explanation": "Keterlacakan memerlukan dokumen dan komponen yang benar serta kewenangan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Nomor komponen berbeda dari kartu kerja. Apa tindakan tepat?",
+              "options": [
+                "Pakai kartu lama",
+                "Hentikan dan minta pengawas memeriksa identitas serta revisi",
+                "Ubah nomor sendiri",
+                "Lanjutkan dan catat nanti"
+              ],
+              "answer": 1,
+              "explanation": "Perbedaan dokumen harus diselesaikan sebelum pekerjaan diteruskan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Kartu kerja dan keterlacakan perawatan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pastikan instruksi berlaku dan terbaca",
+                "Cocokkan identitas pesawat dan nomor tugas",
+                "Lakukan hanya langkah dalam otorisasi",
+                "Catat hasil dan serahkan untuk verifikasi"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan identitas pesawat dan nomor tugas → Pastikan instruksi berlaku dan terbaca → Lakukan hanya langkah dalam otorisasi → Catat hasil dan serahkan untuk verifikasi."
+            }
+          ]
+        },
+        {
+          "id": "aviation-11",
+          "title": "Pengencangan dan pengukuran mekanis",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga komponen kecil serta memakai alat dan nilai yang ditetapkan dalam instruksi kerja.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pekerjaan dasar dapat melibatkan baut, sekrup, mur, pengunci, dan pengukuran mekanis. Kebersihan, urutan, ukuran alat, serta metode penguncian mengikuti instruksi yang berlaku. Nilai batas dan torsi bergantung pada tugas. Jangan menganggap komponen yang tampak serupa memiliki spesifikasi sama."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Siapkan wadah agar benda kecil tidak tertinggal di pesawat. Ikuti urutan, alat, dan nilai dokumen. Jika ulir rusak, alat tidak layak, atau hasil ukur di luar batas, jangan memperbaiki di luar tugas. Tandai dan laporkan kepada teknisi senior."
+            }
+          ],
+          "steps": [
+            "Baca metode dan batas pada instruksi kerja",
+            "Siapkan alat serta hitung kelengkapannya",
+            "Kerjakan sesuai urutan, nilai, dan teknik",
+            "Catat hasil dan laporkan masalah"
+          ],
+          "caution": "Jangan meninggalkan benda kecil atau memakai nilai yang tidak tercantum untuk tugas itu.",
+          "scenario": "Satu sekrup jatuh ke area sempit dan belum ditemukan setelah pemeriksaan awal.",
+          "response": "Hentikan pekerjaan di area tersebut, beri tahu pengawas, dan ikuti prosedur pencarian benda asing sebelum pekerjaan dibuka kembali.",
+          "vocabulary": [
+            {
+              "japanese": "締結",
+              "reading": "ていけつ",
+              "meaning": "pengikatan/pengencangan"
+            },
+            {
+              "japanese": "ねじ",
+              "reading": "ねじ",
+              "meaning": "sekrup"
+            },
+            {
+              "japanese": "計測器",
+              "reading": "けいそくき",
+              "meaning": "alat ukur"
+            },
+            {
+              "japanese": "異物残留",
+              "reading": "いぶつざんりゅう",
+              "meaning": "benda asing tertinggal"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ねじが見つかりません。",
+              "reading": "ねじがみつかりません。",
+              "meaning": "Sekrupnya tidak ditemukan."
+            },
+            {
+              "japanese": "作業を止めて、報告します。",
+              "reading": "さぎょうをとめて、ほうこくします。",
+              "meaning": "Saya menghentikan pekerjaan dan melapor."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa tindakan jika komponen kecil yang digunakan hilang?",
+              "options": [
+                "Hentikan pekerjaan dan ikuti prosedur pencarian/pelaporan",
+                "Anggap sudah keluar dari pesawat",
+                "Lanjutkan jika mesin mati",
+                "Ganti tanpa catatan"
+              ],
+              "answer": 0,
+              "explanation": "Benda asing tertinggal dapat membahayakan pesawat dan harus ditelusuri."
+            },
+            {
+              "kind": "case",
+              "prompt": "Sekrup jatuh dan belum ditemukan. Apa tindakan tepat?",
+              "options": [
+                "Lanjutkan setelah mengambil sekrup lain",
+                "Hentikan area kerja dan laporkan untuk pencarian",
+                "Tutup panel agar tak terlihat",
+                "Tandai selesai"
+              ],
+              "answer": 1,
+              "explanation": "Komponen hilang perlu dikendalikan dan dicari sebelum pekerjaan diteruskan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Pengencangan dan pengukuran mekanis», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Siapkan alat serta hitung kelengkapannya",
+                "Baca metode dan batas pada instruksi kerja",
+                "Kerjakan sesuai urutan, nilai, dan teknik",
+                "Catat hasil dan laporkan masalah"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca metode dan batas pada instruksi kerja → Siapkan alat serta hitung kelengkapannya → Kerjakan sesuai urutan, nilai, dan teknik → Catat hasil dan laporkan masalah."
+            }
+          ]
+        },
+        {
+          "id": "aviation-12",
+          "title": "Pengukuran listrik dan serah terima anomali",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat hasil pengukuran listrik dan meneruskan anomali tanpa menebak penyebab.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pengukuran listrik pada pesawat mengikuti instruksi, titik ukur, alat, serta kondisi rangkaian yang ditentukan. Isolasi atau pemeriksaan sistem dilakukan petugas kompeten. Catat nilai dan satuan. Indikasi tidak normal, kabel aus, bau terbakar, atau konektor longgar memerlukan penghentian; jangan mengubah sambungan agar hasil tampak baik."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa identitas rangkaian pada kartu kerja, pastikan kondisi aman, dan ukur hanya dalam lingkup tugas. Bila pembacaan tidak stabil atau di luar batas, hentikan serta catat fakta. Serahkan kepada teknisi senior untuk evaluasi dan keputusan perbaikan."
+            }
+          ],
+          "steps": [
+            "Cocokkan rangkaian dan titik ukur dengan kartu kerja",
+            "Pastikan alat, kondisi aman, dan otorisasi",
+            "Catat hasil dan tanda tidak normal",
+            "Hentikan serta laporkan kepada teknisi berwenang"
+          ],
+          "caution": "Jangan mengukur rangkaian yang belum aman atau mengubah konektor untuk menghilangkan alarm.",
+          "scenario": "Pembacaan listrik tidak stabil dan tercium bau terbakar dekat konektor.",
+          "response": "Hentikan pengukuran, jangan sentuh konektor, dan laporkan bau serta hasil kepada pengawas perawatan.",
+          "vocabulary": [
+            {
+              "japanese": "電気計測",
+              "reading": "でんきけいそく",
+              "meaning": "pengukuran listrik"
+            },
+            {
+              "japanese": "配線",
+              "reading": "はいせん",
+              "meaning": "kabel/rangkaian"
+            },
+            {
+              "japanese": "端子",
+              "reading": "たんし",
+              "meaning": "terminal/konektor"
+            },
+            {
+              "japanese": "測定結果",
+              "reading": "そくていけっか",
+              "meaning": "hasil pengukuran"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "値が安定しません。",
+              "reading": "あたいがあんていしません。",
+              "meaning": "Nilainya tidak stabil."
+            },
+            {
+              "japanese": "触らずに、責任者へ報告します。",
+              "reading": "さわらずに、せきにんしゃへほうこくします。",
+              "meaning": "Saya tidak menyentuhnya dan melapor."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang dilakukan dengan hasil pengukuran listrik yang tidak normal?",
+              "options": [
+                "Catat dan serahkan kepada teknisi berwenang",
+                "Ubah sambungan hingga angka normal",
+                "Hapus nilai",
+                "Nyatakan siap terbang"
+              ],
+              "answer": 0,
+              "explanation": "Hasil harus dicatat faktual dan dinilai personel berwenang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Nilai tidak stabil dan ada bau terbakar. Apa tindakan tepat?",
+              "options": [
+                "Sentuh konektor untuk mencari panas",
+                "Hentikan, jangan sentuh, dan laporkan kepada pengawas",
+                "Semprot cairan pembersih",
+                "Tutup kartu kerja"
+              ],
+              "answer": 1,
+              "explanation": "Bau terbakar adalah tanda bahaya yang harus diamankan dan diperiksa."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Pengukuran listrik dan serah terima anomali», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pastikan alat, kondisi aman, dan otorisasi",
+                "Cocokkan rangkaian dan titik ukur dengan kartu kerja",
+                "Catat hasil dan tanda tidak normal",
+                "Hentikan serta laporkan kepada teknisi berwenang"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan rangkaian dan titik ukur dengan kartu kerja → Pastikan alat, kondisi aman, dan otorisasi → Catat hasil dan tanda tidak normal → Hentikan serta laporkan kepada teknisi berwenang."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA — sektor penerbangan: ruang lingkup pekerjaan, keterampilan, dan bahasa",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/aviation.html"
+    },
+    {
+      "title": "ISA — deskripsi pekerjaan SSW No. 2, ground handling dan perawatan pesawat",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/10_00180.html"
+    },
+    {
+      "title": "MLIT — kebijakan, persyaratan, dan informasi ujian sektor penerbangan",
+      "url": "https://www.mlit.go.jp/koku/koku_fr19_000011.html"
+    },
+    {
+      "title": "MLIT — pedoman ujian ground handling berlaku 1 Agustus 2026",
+      "url": "https://www.mlit.go.jp/koku/content/002001685.pdf"
+    },
+    {
+      "title": "JAEA — revisi 2026 dan bahan belajar ground handling",
+      "url": "https://exam.jaea.or.jp/?page_id=51378"
+    },
+    {
+      "title": "JAEA — bahan belajar dan materi ujian perawatan pesawat",
+      "url": "https://exam.jaea.or.jp/?page_id=389"
+    },
+    {
+      "title": "MLIT — pedoman ujian SSW No. 2 untuk perawatan pesawat",
+      "url": "https://www.mlit.go.jp/koku/content/001872766.pdf"
+    }
+  ]
+}

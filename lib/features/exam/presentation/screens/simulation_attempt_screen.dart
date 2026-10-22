@@ -44,8 +44,13 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
 
   SimulationRepository get repository =>
       ref.read(simulationLevelRepositoryProvider(widget.level));
-  bool get isJft => widget.level == 'JFT';
-  bool get isNat => widget.level == 'NAT';
+  bool get isJft => widget.level == 'JFT' || widget.level.startsWith('JFT-');
+  int get jftExamNumber => widget.level == 'JFT'
+      ? 1
+      : int.tryParse(widget.level.substring('JFT-'.length)) ?? 1;
+  bool get isNat => widget.level.startsWith('NAT');
+  int get natPaper =>
+      widget.level == 'NAT' ? 1 : int.tryParse(widget.level.substring(4)) ?? 1;
   bool get isSsw => widget.level.startsWith('SSW-');
   String get sswSectionLabel =>
       diagnosticList(session?['sections'])
@@ -54,11 +59,11 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
           .firstOrNull ??
       'Selesai';
   String get jftSectionLabel => switch (section) {
-        'vocabulary' => 'Bagian 1 · 文字と語彙',
-        'conversation' => 'Bagian 2 · 会話と表現',
-        'reading' => 'Bagian 3 · 読解',
-        _ => 'Selesai',
-      };
+    'vocabulary' => 'Bagian 1 · 文字と語彙',
+    'conversation' => 'Bagian 2 · 会話と表現',
+    'reading' => 'Bagian 3 · 読解',
+    _ => 'Selesai',
+  };
   List<Json> get questions => diagnosticList(session!['questions']);
   Map<String, dynamic> get answers => session!['answers'] as Json;
   Set<String> get marked => (session!['marked'] as List).cast<String>().toSet();
@@ -102,7 +107,8 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
   void applySession(Json data, {int networkMillis = 0}) {
     final previousSection = section;
     final previousResult = result;
-    millisecondsAtSync = DateTime.parse(data['expiresAt'] as String)
+    millisecondsAtSync =
+        DateTime.parse(data['expiresAt'] as String)
             .difference(DateTime.parse(data['serverTime'] as String))
             .inMilliseconds -
         networkMillis;
@@ -116,16 +122,16 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
         notice = isSsw && result == null
             ? 'Bagian sebelumnya dikunci. $sswSectionLabel dimulai dengan timer bagian baru.'
             : isJft && result == null
-                ? 'Bagian sebelumnya dikunci. $jftSectionLabel dimulai; timer total terus berjalan.'
-                : section == 'grammar'
-                    ? isNat
-                        ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
-                        : widget.level == 'N3'
-                            ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
-                            : widget.level != 'N5'
-                                ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
-                                : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
-                    : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.';
+            ? 'Bagian sebelumnya dikunci. $jftSectionLabel dimulai; timer total terus berjalan.'
+            : section == 'grammar'
+            ? isNat
+                  ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
+                  : widget.level == 'N3'
+                  ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
+                  : widget.level != 'N5'
+                  ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
+                  : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
+            : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.';
       }
     });
     if (previousSection != section && scroll.hasClients) scroll.jumpTo(0);
@@ -218,16 +224,24 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
           isSsw
               ? 'Kirim $sswSectionLabel?'
               : isJft
-                  ? 'Kirim $jftSectionLabel?'
-                  : expected == 'vocabulary'
-                      ? 'Kunci bagian kosakata?'
-                      : widget.level != 'N5'
-                          ? 'Kirim grammar dan reading?'
-                          : 'Kirim bagian grammar?',
+              ? 'Kirim $jftSectionLabel?'
+              : expected == 'vocabulary'
+              ? 'Kunci bagian kosakata?'
+              : widget.level != 'N5'
+              ? 'Kirim grammar dan reading?'
+              : 'Kirim bagian grammar?',
         ),
         content: Text(
           '${unanswered > 0 ? 'Masih ada $unanswered soal kosong; soal kosong dihitung salah.\n\n' : ''}'
-          '${isSsw ? (diagnosticList(session!['sections']).last['id'] == expected ? 'Jawaban dikunci dan hasil ditampilkan.' : 'Bagian ini dikunci. Timer bagian berikutnya langsung dimulai.') : isJft ? expected == 'reading' ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.' : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.' : expected == 'vocabulary' ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.' : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
+          '${isSsw
+              ? (diagnosticList(session!['sections']).last['id'] == expected ? 'Jawaban dikunci dan hasil ditampilkan.' : 'Bagian ini dikunci. Timer bagian berikutnya langsung dimulai.')
+              : isJft
+              ? expected == 'reading'
+                    ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'
+                    : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.'
+              : expected == 'vocabulary'
+              ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.'
+              : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
         ),
         actions: [
           TextButton(
@@ -326,14 +340,14 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                         onPressed: () => Navigator.pop(c, i),
                         style: FilledButton.styleFrom(
                           padding: EdgeInsets.zero,
-                          backgroundColor: answers
-                                  .containsKey(questions[i]['id'])
+                          backgroundColor:
+                              answers.containsKey(questions[i]['id'])
                               ? examInk
                               : Theme.of(c).colorScheme.surfaceContainerHighest,
                           foregroundColor:
                               answers.containsKey(questions[i]['id'])
-                                  ? Colors.white
-                                  : examInk,
+                              ? Colors.white
+                              : examInk,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -383,16 +397,16 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
             isSsw
                 ? '${result != null ? 'Hasil' : 'Simulasi'} ${sswExamTitle(widget.level)}'
                 : isJft
-                    ? result != null
-                        ? 'Hasil JFT Exam 1'
-                        : 'JFT Exam 1'
-                    : isNat
-                        ? result != null
-                            ? 'Hasil NAT 5Q Exam 1'
-                            : 'NAT 5Q Exam 1'
-                        : result != null
-                            ? 'Hasil simulasi ${widget.level}'
-                            : 'JLPT ${widget.level} Simulation',
+                ? result != null
+                      ? 'Hasil JFT Exam $jftExamNumber'
+                      : 'JFT Exam $jftExamNumber'
+                : isNat
+                ? result != null
+                      ? 'Hasil NAT 5Q Exam $natPaper'
+                      : 'NAT 5Q Exam $natPaper'
+                : result != null
+                ? 'Hasil simulasi ${widget.level}'
+                : 'JLPT ${widget.level} Simulation',
           ),
           actions: [
             if (data != null && result == null)
@@ -415,285 +429,277 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
         ),
         body: data == null
             ? error != null
-                ? Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: ExamMessage(message: error!, retry: load),
-                  )
-                : const Center(child: CircularProgressIndicator())
+                  ? Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: ExamMessage(message: error!, retry: load),
+                    )
+                  : const Center(child: CircularProgressIndicator())
             : result != null
-                ? SimulationResultView(result: result!, level: widget.level)
-                : Column(
-                    children: [
-                      if (busy || fetching)
-                        const LinearProgressIndicator(minHeight: 2),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 10, 20, 12),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
+            ? SimulationResultView(result: result!, level: widget.level)
+            : Column(
+                children: [
+                  if (busy || fetching)
+                    const LinearProgressIndicator(minHeight: 2),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    isSsw
-                                        ? sswSectionLabel
-                                        : isJft
-                                            ? jftSectionLabel
-                                            : section == 'vocabulary'
-                                                ? 'Bagian 1 · 文字・語彙'
-                                                : widget.level != 'N5'
-                                                    ? 'Bagian 2 · 文法・読解'
-                                                    : 'Bagian 2 · 文法',
-                                    style: const TextStyle(
-                                      color: examInk,
-                                      fontWeight: FontWeight.w800,
-                                    ),
-                                  ),
+                            Expanded(
+                              child: Text(
+                                isSsw
+                                    ? sswSectionLabel
+                                    : isJft
+                                    ? jftSectionLabel
+                                    : section == 'vocabulary'
+                                    ? 'Bagian 1 · 文字・語彙'
+                                    : widget.level != 'N5'
+                                    ? 'Bagian 2 · 文法・読解'
+                                    : 'Bagian 2 · 文法',
+                                style: const TextStyle(
+                                  color: examInk,
+                                  fontWeight: FontWeight.w800,
                                 ),
-                                IconButton(
-                                  onPressed: busy || fetching ? null : map,
-                                  icon: const Icon(Icons.grid_view_rounded),
-                                  tooltip: 'Peta soal',
-                                ),
-                              ],
+                              ),
                             ),
-                            Text(
-                              'Soal ${q!['number']} · ${index + 1}/${questions.length} bagian ini · ${answers.length} dijawab',
-                            ),
-                            const SizedBox(height: 8),
-                            LinearProgressIndicator(
-                              value: answers.length / questions.length,
-                              color: examInk,
-                              minHeight: 5,
+                            IconButton(
+                              onPressed: busy || fetching ? null : map,
+                              icon: const Icon(Icons.grid_view_rounded),
+                              tooltip: 'Peta soal',
                             ),
                           ],
                         ),
-                      ),
-                      Expanded(
-                        child: ListView(
-                          controller: scroll,
-                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-                          children: [
-                            if (notice != null)
-                              _message(notice!, dismissible: true),
-                            if (remaining == 0)
-                              _message(
-                                'Waktu bagian habis. Menyinkronkan bagian berikutnya; jawaban terkunci.',
-                              ),
-                            if (error != null)
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  _message(error!),
-                                  TextButton.icon(
-                                    onPressed: fetching || busy ? null : load,
-                                    icon: const Icon(Icons.refresh),
-                                    label: const Text(
-                                      'Periksa jawaban tersimpan',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            Text(
-                              q['group'] as String,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w800,
-                                color: examInk,
-                              ),
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              q['instructions'] as String,
-                              style: const TextStyle(fontSize: 15, height: 1.8),
-                            ),
-                            const SizedBox(height: 20),
-                            if ((q['passage'] as String? ?? '').isNotEmpty) ...[
-                              ExamPanel(
-                                child: Text(
-                                  q['passage'] as String,
-                                  style: const TextStyle(
-                                    fontSize: 19,
-                                    height: 2,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 20),
-                            ],
-                            SimulationText(
-                              q['prompt'] as String,
-                              style: const TextStyle(
-                                fontSize: 23,
-                                height: 1.9,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            for (final (i, option)
-                                in diagnosticList(q['options']).indexed)
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
-                                child: Semantics(
-                                  selected: answers[q['id']] == option['id'],
-                                  button: true,
-                                  child: OutlinedButton(
-                                    key: ValueKey(
-                                      'simulation-option-${option['id']}',
-                                    ),
-                                    onPressed: enabled
-                                        ? () => save(
-                                              q,
-                                              option['id'] as String,
-                                              flag: marked.contains(q['id']),
-                                            )
-                                        : null,
-                                    style: OutlinedButton.styleFrom(
-                                      alignment: Alignment.centerLeft,
-                                      padding: const EdgeInsets.all(16),
-                                      backgroundColor:
-                                          answers[q['id']] == option['id']
-                                              ? examInk.withValues(alpha: .08)
-                                              : null,
-                                      side: BorderSide(
-                                        color: answers[q['id']] == option['id']
-                                            ? examInk
-                                            : Theme.of(context)
-                                                .colorScheme
-                                                .outlineVariant,
-                                        width: answers[q['id']] == option['id']
-                                            ? 2
-                                            : 1,
-                                      ),
-                                    ),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          '${i + 1}',
-                                          style: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w800,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 16),
-                                        Expanded(
-                                          child: Text(
-                                            option['text'] as String,
-                                            style: const TextStyle(
-                                              fontSize: 20,
-                                              height: 1.6,
-                                            ),
-                                          ),
-                                        ),
-                                        if (answers[q['id']] == option['id'])
-                                          const Icon(
-                                            Icons.check_circle_outline,
-                                            size: 20,
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: TextButton.icon(
-                                    onPressed: enabled
-                                        ? () => save(
-                                              q,
-                                              answers[q['id']] as String? ?? '',
-                                              flag: !marked.contains(q['id']),
-                                            )
-                                        : null,
-                                    icon: Icon(
-                                      marked.contains(q['id'])
-                                          ? Icons.flag_rounded
-                                          : Icons.outlined_flag,
-                                    ),
-                                    label: Text(
-                                      marked.contains(q['id'])
-                                          ? 'Ragu ditandai'
-                                          : 'Tandai ragu',
-                                    ),
-                                  ),
-                                ),
-                                TextButton(
-                                  onPressed:
-                                      enabled && answers.containsKey(q['id'])
-                                          ? () => save(
-                                                q,
-                                                '',
-                                                flag: marked.contains(q['id']),
-                                              )
-                                          : null,
-                                  child: const Text('Hapus pilihan'),
-                                ),
-                              ],
-                            ),
-                          ],
+                        Text(
+                          'Soal ${q!['number']} · ${index + 1}/${questions.length} bagian ini · ${answers.length} dijawab',
                         ),
-                      ),
-                      SafeArea(
-                        top: false,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 10, 16, 16),
-                          child: Row(
+                        const SizedBox(height: 8),
+                        LinearProgressIndicator(
+                          value: answers.length / questions.length,
+                          color: examInk,
+                          minHeight: 5,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: ListView(
+                      controller: scroll,
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+                      children: [
+                        if (notice != null)
+                          _message(notice!, dismissible: true),
+                        if (remaining == 0)
+                          _message(
+                            'Waktu bagian habis. Menyinkronkan bagian berikutnya; jawaban terkunci.',
+                          ),
+                        if (error != null)
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              IconButton(
-                                onPressed: index > 0 && !busy && !fetching
-                                    ? () => jump(index - 1)
-                                    : null,
-                                icon: const Icon(Icons.arrow_back),
-                                tooltip: 'Soal sebelumnya',
-                              ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: index < questions.length - 1
-                                    ? FilledButton.icon(
-                                        onPressed: busy || fetching
-                                            ? null
-                                            : () => jump(index + 1),
-                                        icon: const Icon(Icons.arrow_forward),
-                                        label: const Text('Berikutnya'),
-                                      )
-                                    : FilledButton.icon(
-                                        onPressed: enabled ? submit : null,
-                                        icon: const Icon(Icons.lock_outline),
-                                        label: const Text('Kirim bagian'),
-                                      ),
+                              _message(error!),
+                              TextButton.icon(
+                                onPressed: fetching || busy ? null : load,
+                                icon: const Icon(Icons.refresh),
+                                label: const Text('Periksa jawaban tersimpan'),
                               ),
                             ],
                           ),
+                        Text(
+                          q['group'] as String,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w800,
+                            color: examInk,
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 12),
+                        Text(
+                          q['instructions'] as String,
+                          style: const TextStyle(fontSize: 15, height: 1.8),
+                        ),
+                        const SizedBox(height: 20),
+                        if ((q['passage'] as String? ?? '').isNotEmpty) ...[
+                          ExamPanel(
+                            child: Text(
+                              q['passage'] as String,
+                              style: const TextStyle(fontSize: 19, height: 2),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                        ],
+                        SimulationText(
+                          q['prompt'] as String,
+                          style: const TextStyle(
+                            fontSize: 23,
+                            height: 1.9,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        for (final (i, option) in diagnosticList(
+                          q['options'],
+                        ).indexed)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Semantics(
+                              selected: answers[q['id']] == option['id'],
+                              button: true,
+                              child: OutlinedButton(
+                                key: ValueKey(
+                                  'simulation-option-${option['id']}',
+                                ),
+                                onPressed: enabled
+                                    ? () => save(
+                                        q,
+                                        option['id'] as String,
+                                        flag: marked.contains(q['id']),
+                                      )
+                                    : null,
+                                style: OutlinedButton.styleFrom(
+                                  alignment: Alignment.centerLeft,
+                                  padding: const EdgeInsets.all(16),
+                                  backgroundColor:
+                                      answers[q['id']] == option['id']
+                                      ? examInk.withValues(alpha: .08)
+                                      : null,
+                                  side: BorderSide(
+                                    color: answers[q['id']] == option['id']
+                                        ? examInk
+                                        : Theme.of(
+                                            context,
+                                          ).colorScheme.outlineVariant,
+                                    width: answers[q['id']] == option['id']
+                                        ? 2
+                                        : 1,
+                                  ),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '${i + 1}',
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: Text(
+                                        option['text'] as String,
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          height: 1.6,
+                                        ),
+                                      ),
+                                    ),
+                                    if (answers[q['id']] == option['id'])
+                                      const Icon(
+                                        Icons.check_circle_outline,
+                                        size: 20,
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: TextButton.icon(
+                                onPressed: enabled
+                                    ? () => save(
+                                        q,
+                                        answers[q['id']] as String? ?? '',
+                                        flag: !marked.contains(q['id']),
+                                      )
+                                    : null,
+                                icon: Icon(
+                                  marked.contains(q['id'])
+                                      ? Icons.flag_rounded
+                                      : Icons.outlined_flag,
+                                ),
+                                label: Text(
+                                  marked.contains(q['id'])
+                                      ? 'Ragu ditandai'
+                                      : 'Tandai ragu',
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: enabled && answers.containsKey(q['id'])
+                                  ? () => save(
+                                      q,
+                                      '',
+                                      flag: marked.contains(q['id']),
+                                    )
+                                  : null,
+                              child: const Text('Hapus pilihan'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
+                  SafeArea(
+                    top: false,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 10, 16, 16),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: index > 0 && !busy && !fetching
+                                ? () => jump(index - 1)
+                                : null,
+                            icon: const Icon(Icons.arrow_back),
+                            tooltip: 'Soal sebelumnya',
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: index < questions.length - 1
+                                ? FilledButton.icon(
+                                    onPressed: busy || fetching
+                                        ? null
+                                        : () => jump(index + 1),
+                                    icon: const Icon(Icons.arrow_forward),
+                                    label: const Text('Berikutnya'),
+                                  )
+                                : FilledButton.icon(
+                                    onPressed: enabled ? submit : null,
+                                    icon: const Icon(Icons.lock_outline),
+                                    label: const Text('Kirim bagian'),
+                                  ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
       ),
     );
   }
 
   Widget _message(String text, {bool dismissible = false}) => Padding(
-        padding: const EdgeInsets.only(bottom: 14),
-        child: Material(
-          color: examInk.withValues(alpha: .06),
-          borderRadius: BorderRadius.circular(12),
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(text, style: const TextStyle(height: 1.5)),
-                ),
-                if (dismissible)
-                  IconButton(
-                    onPressed: () => setState(() => notice = null),
-                    icon: const Icon(Icons.close),
-                    tooltip: 'Tutup pemberitahuan',
-                  ),
-              ],
-            ),
-          ),
+    padding: const EdgeInsets.only(bottom: 14),
+    child: Material(
+      color: examInk.withValues(alpha: .06),
+      borderRadius: BorderRadius.circular(12),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Row(
+          children: [
+            Expanded(child: Text(text, style: const TextStyle(height: 1.5))),
+            if (dismissible)
+              IconButton(
+                onPressed: () => setState(() => notice = null),
+                icon: const Icon(Icons.close),
+                tooltip: 'Tutup pemberitahuan',
+              ),
+          ],
         ),
-      );
+      ),
+    ),
+  );
 }

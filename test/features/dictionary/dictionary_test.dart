@@ -258,6 +258,29 @@ void main() {
   });
 
   test(
+    'applying filters uses one request and can clear the JLPT level',
+    () async {
+      final repository = FakeDictionary();
+      final controller = DictionaryController(repository);
+      addTearDown(controller.dispose);
+      await controller.search('cat');
+      final before = repository.calls.length;
+      await controller.filter(
+        'N5',
+        common: true,
+        mode: 'japanese',
+        text: 'neko',
+      );
+      expect(repository.calls.length, before + 1);
+      expect(repository.calls.last, ('neko', 1, 'N5', true));
+      expect(repository.modes.last, 'japanese');
+      await controller.filter(null, common: false, mode: 'auto');
+      expect(repository.calls.last, ('neko', 1, null, false));
+      expect(repository.modes.last, 'auto');
+    },
+  );
+
+  test(
     'favorites persist offline, concurrent saves survive, accounts are isolated',
     () async {
       SharedPreferences.setMockInitialValues({});
@@ -302,6 +325,80 @@ void main() {
   );
 
   testWidgets(
+    'filter sheet cancels drafts and resets applied filters on a narrow phone',
+    (tester) async {
+      tester.view.physicalSize = const Size(320, 740);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      SharedPreferences.setMockInitialValues({});
+      final preferences = await SharedPreferences.getInstance();
+      final repository = FakeDictionary();
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sharedPreferencesProvider.overrideWithValue(preferences),
+            dictionaryRepositoryProvider.overrideWithValue(repository),
+            authControllerProvider.overrideWith(
+              (ref) => AuthController.test(const AuthenticationState.guest()),
+            ),
+          ],
+          child: MaterialApp(
+            builder: (context, child) => MediaQuery(
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: const TextScaler.linear(1.4)),
+              child: child!,
+            ),
+            home: const DictionaryScreen(),
+          ),
+        ),
+      );
+      await tester.enterText(find.byType(TextField), 'neko');
+      await tester.tap(find.text('Filter'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.widgetWithText(ChoiceChip, 'Inggris'));
+      await tester.tap(find.byTooltip('Tutup filter'));
+      await tester.pumpAndSettle();
+      expect(repository.calls, isEmpty);
+      expect(find.text('Bahasa otomatis'), findsOneWidget);
+      await tester.tap(find.text('Filter'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byType(DropdownButtonFormField<String>));
+      await tester.tap(find.byType(DropdownButtonFormField<String>));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('N5').last);
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Kata umum saja'));
+      await tester.tap(find.text('Kata umum saja'));
+      await tester.ensureVisible(find.text('Terapkan filter'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Terapkan filter'));
+      await tester.pumpAndSettle();
+      expect(repository.calls.single, ('neko', 1, 'N5', true));
+      expect(find.text('Filter · 2'), findsOneWidget);
+      await tester.ensureVisible(find.text('Filter · 2'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Filter · 2'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Reset filter'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Reset filter'));
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('Terapkan filter'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Terapkan filter'));
+      await tester.pumpAndSettle();
+      expect(repository.calls.length, 2);
+      expect(repository.calls.last, ('neko', 1, null, false));
+      await tester.scrollUntilVisible(find.text('Filter'), -100);
+      await tester.pumpAndSettle();
+      expect(find.text('Filter'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
     'phone searches real-shaped entries, saves and reads all senses',
     (tester) async {
       tester.view.physicalSize = const Size(360, 800);
@@ -329,11 +426,20 @@ void main() {
       await tester.enterText(find.byType(TextField), 'neko');
       await tester.tap(find.text('Cari di kamus'));
       await tester.pumpAndSettle();
+      expect(find.byType(ChoiceChip), findsNothing);
+      await tester.tap(find.text('Filter'));
+      await tester.pumpAndSettle();
       await tester.tap(find.widgetWithText(ChoiceChip, 'Inggris'));
+      // Editing is a draft; it must not search until Apply is pressed.
+      expect(repository.modes.last, 'auto');
+      await tester.tap(find.text('Terapkan filter'));
       await tester.pumpAndSettle();
       expect(repository.modes.last, 'english');
       await tester.enterText(find.byType(TextField), 'konnichiwa');
+      await tester.tap(find.text('Filter · 1'));
+      await tester.pumpAndSettle();
       await tester.tap(find.widgetWithText(ChoiceChip, 'Jepang'));
+      await tester.tap(find.text('Terapkan filter'));
       await tester.pumpAndSettle();
       expect(repository.modes.last, 'japanese');
       expect(repository.calls.last.$1, 'konnichiwa');

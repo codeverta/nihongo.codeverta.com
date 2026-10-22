@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"runtime/debug"
 	"strings"
 	"time"
 
@@ -16,9 +17,18 @@ import (
 )
 
 type Repository struct {
-	db     *gorm.DB
-	now    func() time.Time
-	images ImageStore
+	db           *gorm.DB
+	now          func() time.Time
+	images       ImageStore
+	errorHandler func(error)
+}
+
+func (r *Repository) SetErrorHandler(handler func(error)) { r.errorHandler = handler }
+
+func (r *Repository) reportError(err error) {
+	if err != nil && r.errorHandler != nil {
+		r.errorHandler(err)
+	}
 }
 
 // Seed only editorially selected non-ecchi titles, never the upstream homepage.
@@ -179,12 +189,21 @@ func notFound(err error) error {
 }
 
 func (r *Repository) Run(ctx context.Context, f Fetcher) {
+	defer func() {
+		if recovered := recover(); recovered != nil {
+			if r.errorHandler == nil {
+				panic(recovered)
+			}
+			r.reportError(fmt.Errorf("panic: %v\n%s", recovered, debug.Stack()))
+		}
+	}()
 	ticker := time.NewTicker(time.Minute)
 	defer ticker.Stop()
 	for {
 		work, cancel := context.WithTimeout(ctx, 15*time.Minute)
 		if err := r.Sync(work, f); err != nil && !errors.Is(err, ErrBusy) && ctx.Err() == nil {
 			log.Printf("manga sync: %v", err)
+			r.reportError(err)
 		}
 		cancel()
 		select {

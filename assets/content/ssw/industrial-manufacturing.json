@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "safe-work",
+      "title": "Keselamatan dan organisasi kerja",
+      "description": "Prinsip lintas kategori untuk memulai kerja, melindungi orang, dan berkomunikasi. Materi ini tidak menggantikan standar mesin, kategori, atau fasilitas tertentu.",
+      "lessons": [
+        {
+          "id": "manufacturing-01",
+          "title": "Lingkup kerja di manufaktur",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip lingkup kerja di manufaktur sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Pekerjaan manufaktur berbeda menurut kategori, produk, mesin, serta klasifikasi tempat usaha yang memenuhi syarat. Daftar resmi bidang工業製品製造業 mencakup 17 kategori; bahan ini mengajarkan kebiasaan umum, bukan kewenangan untuk semua pabrik atau semua proses. Ikuti penempatan dan instruksi yang berlaku."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Sebelum tugas dimulai, cocokkan produk, tahap proses, dan instruksi kerja. Minta penjelasan bila tugas di luar kompetensi atau batas kategori. Sampaikan perubahan kondisi kepada pemimpin kerja.\n\nSkenario latihan: Anda dipindah sementara ke mesin yang belum pernah digunakan.\nRespons: Jangan mulai atau mengaktifkan mesin; minta pengarahan dan otorisasi sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan menganggap semua lini produksi, mesin, atau produk tercakup oleh satu kualifikasi.",
+          "scenario": "Anda dipindah sementara ke mesin yang belum pernah digunakan.",
+          "response": "Jangan mulai atau mengaktifkan mesin; minta pengarahan dan otorisasi sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "製造",
+              "reading": "せいぞう",
+              "meaning": "manufaktur"
+            },
+            {
+              "japanese": "作業範囲",
+              "reading": "さぎょうはんい",
+              "meaning": "lingkup pekerjaan"
+            },
+            {
+              "japanese": "指示",
+              "reading": "しじ",
+              "meaning": "instruksi"
+            },
+            {
+              "japanese": "製品",
+              "reading": "せいひん",
+              "meaning": "produk"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa pekerja perlu memastikan lingkup tugas dan kategori tempat kerja?",
+              "options": [
+                "Karena tugas dan kelayakan fasilitas bergantung pada kategori serta instruksi",
+                "Karena semua mesin pabrik memiliki prosedur yang sama",
+                "Karena pekerja boleh memilih tahap tanpa koordinasi",
+                "Karena nama produk menentukan bahwa semua pekerjaan aman"
+              ],
+              "answer": 0,
+              "explanation": "Kategori dan pekerjaan yang memenuhi syarat terbatas; ikuti penugasan serta prosedur fasilitas."
+            },
+            {
+              "kind": "case",
+              "prompt": "Mesin baru untuk Anda sedang kosong dan seorang rekan berkata agar langsung mencoba. Apa tindakan terbaik?",
+              "options": [
+                "Minta pelatihan dan izin sebelum mengoperasikan",
+                "Nyalakan mesin agar bisa belajar sambil bekerja",
+                "Minta rekan melihat dari jauh tanpa membaca instruksi",
+                "Gunakan mesin dengan kecepatan paling rendah"
+              ],
+              "answer": 0,
+              "explanation": "Pengoperasian memerlukan kompetensi, pengarahan, dan otorisasi yang sesuai."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「製造（せいぞう）」 dalam konteks kerja?",
+              "options": [
+                "manufaktur",
+                "lingkup pekerjaan",
+                "instruksi",
+                "produk"
+              ],
+              "answer": 0,
+              "explanation": "「製造」dibaca せいぞう dan berarti manufaktur."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-02",
+          "title": "PPE dan pemeriksaan awal",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip ppe dan pemeriksaan awal sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "APD dipilih menurut bahaya dan aturan tempat kerja. Sepatu keselamatan, pelindung mata, sarung tangan, pelindung pendengaran, atau respirator tidak saling menggantikan. APD harus cocok, utuh, dan dipakai sebagaimana diarahkan."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Periksa APD sebelum masuk area. Pastikan pelindung mesin dan jalur berjalan tampak normal tanpa menyentuh bagian berbahaya. Hentikan persiapan dan laporkan jika APD rusak atau pelindung tidak terpasang.\n\nSkenario latihan: Pelindung mata Anda retak sebelum pekerjaan pemotongan dimulai.\nRespons: Jangan bekerja dengan pelindung retak; ganti sesuai prosedur dan beri tahu penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "APD mengurangi paparan tetapi tidak menggantikan pelindung mesin atau pengendalian bahaya.",
+          "scenario": "Pelindung mata Anda retak sebelum pekerjaan pemotongan dimulai.",
+          "response": "Jangan bekerja dengan pelindung retak; ganti sesuai prosedur dan beri tahu penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "保護具",
+              "reading": "ほごぐ",
+              "meaning": "alat pelindung"
+            },
+            {
+              "japanese": "保護眼鏡",
+              "reading": "ほごめがね",
+              "meaning": "kacamata pelindung"
+            },
+            {
+              "japanese": "点検",
+              "reading": "てんけん",
+              "meaning": "pemeriksaan"
+            },
+            {
+              "japanese": "危険",
+              "reading": "きけん",
+              "meaning": "bahaya"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Fungsi pemeriksaan APD sebelum memasuki area kerja adalah…",
+              "options": [
+                "Memastikan perlengkapan cocok dan tidak rusak",
+                "Menggantikan semua pemeriksaan mesin",
+                "Membolehkan pekerja mengubah prosedur",
+                "Membuktikan target produksi telah tercapai"
+              ],
+              "answer": 0,
+              "explanation": "APD yang sesuai dan layak pakai adalah bagian dari pengendalian risiko, bukan pengganti prosedur lain."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pelindung mata retak pada pekerjaan yang memerlukan kacamata. Apa yang dilakukan?",
+              "options": [
+                "Hentikan persiapan, ganti, dan laporkan sesuai prosedur",
+                "Pakai retakan menghadap ke samping",
+                "Lepas kacamata agar pandangan lebih jelas",
+                "Lanjutkan jika pekerjaan diperkirakan singkat"
+              ],
+              "answer": 0,
+              "explanation": "Pelindung rusak tidak dapat diandalkan; pekerjaan berisiko ditunda sampai perlengkapan aman tersedia."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「保護具（ほごぐ）」 dalam konteks kerja?",
+              "options": [
+                "bahaya",
+                "alat pelindung",
+                "kacamata pelindung",
+                "pemeriksaan"
+              ],
+              "answer": 1,
+              "explanation": "「保護具」dibaca ほごぐ dan berarti alat pelindung."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-03",
+          "title": "Komunikasi dan stop-work",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip komunikasi dan stop-work sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Tanda tangan, isyarat, dan kata peringatan harus dipahami bersama. Pekerja perlu melaporkan bahaya, near miss, cedera, atau instruksi yang tidak jelas dengan cepat dan faktual. Menghentikan pekerjaan berbahaya dan meminta bantuan merupakan bagian dari keselamatan."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Gunakan nama mesin/lokasi, kondisi yang terlihat, waktu, dan tindakan sementara saat melapor. Pastikan penerima memahami pesan. Jangan mencoba memperbaiki kegagalan mekanis atau listrik tanpa kewenangan.\n\nSkenario latihan: Anda mendengar suara tidak biasa dan melihat serpihan keluar dari mesin.\nRespons: Jauhkan diri dari bahaya, hentikan proses hanya jika tombol darurat aman dijangkau dan prosedur mengizinkan, lalu panggil penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan memasukkan tangan atau membuka pelindung untuk mencari penyebab.",
+          "scenario": "Anda mendengar suara tidak biasa dan melihat serpihan keluar dari mesin.",
+          "response": "Jauhkan diri dari bahaya, hentikan proses hanya jika tombol darurat aman dijangkau dan prosedur mengizinkan, lalu panggil penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            },
+            {
+              "japanese": "異常",
+              "reading": "いじょう",
+              "meaning": "ketidaknormalan"
+            },
+            {
+              "japanese": "停止",
+              "reading": "ていし",
+              "meaning": "penghentian"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Laporan bahaya yang berguna sebaiknya memuat…",
+              "options": [
+                "Lokasi dan kondisi faktual yang diamati",
+                "Dugaan penyebab tanpa pemeriksaan",
+                "Nama rekan yang dianggap salah",
+                "Perkiraan target produksi saja"
+              ],
+              "answer": 0,
+              "explanation": "Fakta yang jelas membantu penanggung jawab memilih respons yang aman."
+            },
+            {
+              "kind": "case",
+              "prompt": "Serpihan muncul dari mesin saat terdengar suara abnormal. Respons awal yang tepat adalah…",
+              "options": [
+                "Menjauh, gunakan penghentian aman sesuai prosedur, lalu laporkan",
+                "Membuka penutup dan mengambil serpihan dengan tangan",
+                "Menaikkan kecepatan untuk mengeluarkan serpihan",
+                "Menyuruh rekan berdiri dekat mesin untuk melihat"
+              ],
+              "answer": 0,
+              "explanation": "Lindungi diri, gunakan kendali aman yang diketahui, lalu minta penanganan berwenang."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「報告（ほうこく）」 dalam konteks kerja?",
+              "options": [
+                "penghentian",
+                "penanggung jawab",
+                "laporan",
+                "ketidaknormalan"
+              ],
+              "answer": 2,
+              "explanation": "「報告」dibaca ほうこく dan berarti laporan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quality-process",
+      "title": "Proses, mutu, dan pencatatan",
+      "description": "Membaca standar kerja, mengendalikan mutu proses, mengukur, dan menjaga keterlacakan.",
+      "lessons": [
+        {
+          "id": "manufacturing-04",
+          "title": "Standar kerja dan urutan proses",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip standar kerja dan urutan proses sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Instruksi kerja menetapkan bahan, urutan, kondisi proses, pemeriksaan, dan kriteria penerimaan. Variasi tanpa izin bisa menghasilkan produk tidak sesuai dan membuat catatan tidak dapat ditelusuri. Versi dokumen dan lot harus diperiksa."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Sebelum memulai, cocokkan kode produk, revisi instruksi, dan material. Ikuti urutan kerja; jika instruksi bertentangan dengan kondisi nyata, tahan pekerjaan dan minta klarifikasi sebelum menghasilkan unit tambahan.\n\nSkenario latihan: Lembar kerja pada area produksi berbeda revisi dengan salinan yang Anda bawa.\nRespons: Tunda proses yang terdampak dan konfirmasikan revisi aktif kepada penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan memilih versi yang paling mudah atau menggabungkan instruksi lama dan baru.",
+          "scenario": "Lembar kerja pada area produksi berbeda revisi dengan salinan yang Anda bawa.",
+          "response": "Tunda proses yang terdampak dan konfirmasikan revisi aktif kepada penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "標準作業",
+              "reading": "ひょうじゅんさぎょう",
+              "meaning": "pekerjaan standar"
+            },
+            {
+              "japanese": "手順",
+              "reading": "てじゅん",
+              "meaning": "urutan kerja"
+            },
+            {
+              "japanese": "改訂",
+              "reading": "かいてい",
+              "meaning": "revisi"
+            },
+            {
+              "japanese": "確認",
+              "reading": "かくにん",
+              "meaning": "konfirmasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Ketika dua salinan instruksi menunjukkan revisi berbeda, pekerja sebaiknya…",
+              "options": [
+                "Mengonfirmasi versi yang berlaku sebelum proses",
+                "Mengikuti salinan yang lebih pendek",
+                "Memilih instruksi lama karena lebih dikenal",
+                "Mencampur langkah yang tampak cocok"
+              ],
+              "answer": 0,
+              "explanation": "Versi aktif harus dipastikan agar proses terkendali dan hasil dapat ditelusuri."
+            },
+            {
+              "kind": "case",
+              "prompt": "Lembar kerja di area tidak sama revisinya dengan salinan Anda. Apa tindakan tepat?",
+              "options": [
+                "Tahan proses terdampak dan tanyakan revisi aktif",
+                "Pakai keduanya secara bergantian",
+                "Tulis ulang langkah berdasarkan ingatan",
+                "Meneruskan produksi sampai ada yang mengeluh"
+              ],
+              "answer": 0,
+              "explanation": "Ketidakjelasan dokumen perlu diselesaikan sebelum proses dilanjutkan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「標準作業（ひょうじゅんさぎょう）」 dalam konteks kerja?",
+              "options": [
+                "pekerjaan standar",
+                "urutan kerja",
+                "revisi",
+                "konfirmasi"
+              ],
+              "answer": 0,
+              "explanation": "「標準作業」dibaca ひょうじゅんさぎょう dan berarti pekerjaan standar."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-05",
+          "title": "Cacat, pemisahan, dan eskalasi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip cacat, pemisahan, dan eskalasi sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Cacat atau hasil meragukan harus dipisahkan agar tidak tercampur dengan produk yang diterima. Label status, lokasi penahanan, jumlah, dan lot membantu mencegah pengiriman yang tidak disengaja. Hanya pihak berwenang menentukan disposisi sesuai sistem mutu."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Hentikan aliran produk terdampak sesuai aturan, identifikasi lot/kuantitas, dan beri tanda status yang ditetapkan. Catat temuan serta beri tahu pemeriksa. Jangan mengubah, memperbaiki, atau membuang produk sendiri tanpa prosedur.\n\nSkenario latihan: Anda menemukan retak pada satu komponen, tetapi kotak di sebelahnya belum diperiksa.\nRespons: Pisahkan komponen dan tahan kelompok yang mungkin terdampak untuk pemeriksaan sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan menyembunyikan cacat, menghapus tanda, atau memasukkan kembali produk ke aliran normal.",
+          "scenario": "Anda menemukan retak pada satu komponen, tetapi kotak di sebelahnya belum diperiksa.",
+          "response": "Pisahkan komponen dan tahan kelompok yang mungkin terdampak untuk pemeriksaan sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "不良品",
+              "reading": "ふりょうひん",
+              "meaning": "produk cacat"
+            },
+            {
+              "japanese": "隔離",
+              "reading": "かくり",
+              "meaning": "pemisahan"
+            },
+            {
+              "japanese": "ロット",
+              "reading": "ろっと",
+              "meaning": "lot produksi"
+            },
+            {
+              "japanese": "処置",
+              "reading": "しょち",
+              "meaning": "tindakan penanganan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa produk yang tidak sesuai perlu dipisahkan dan diberi status?",
+              "options": [
+                "Agar tidak tertukar dengan produk yang telah diterima",
+                "Agar catatan lot tidak perlu dibuat",
+                "Agar cacat tidak terlihat dalam pemeriksaan",
+                "Agar pekerja bebas menentukan perbaikan"
+              ],
+              "answer": 0,
+              "explanation": "Identifikasi dan pemisahan mencegah produk bermasalah lanjut atau terkirim tanpa keputusan resmi."
+            },
+            {
+              "kind": "case",
+              "prompt": "Satu komponen retak dan kotak di dekatnya belum diperiksa. Apa langkah yang aman?",
+              "options": [
+                "Pisahkan komponen dan tahan lot terdampak untuk pemeriksaan",
+                "Campur komponen dengan produk baik setelah dibersihkan",
+                "Buang semua barang tanpa pencatatan",
+                "Kirim dahulu karena hanya satu retak terlihat"
+              ],
+              "answer": 0,
+              "explanation": "Jangkauan masalah perlu diperiksa dan dicatat; jangan membuat keputusan disposisi sendiri."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「不良品（ふりょうひん）」 dalam konteks kerja?",
+              "options": [
+                "tindakan penanganan",
+                "produk cacat",
+                "pemisahan",
+                "lot produksi"
+              ],
+              "answer": 1,
+              "explanation": "「不良品」dibaca ふりょうひん dan berarti produk cacat."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-06",
+          "title": "Pengukuran dan alat ukur",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengukuran dan alat ukur sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Alat ukur dipilih berdasarkan spesifikasi dan rentang yang sesuai. Kebersihan, kondisi, resolusi, dan status kalibrasi/pengecekan memengaruhi keandalan hasil. Teknik pengukuran harus konsisten dengan instruksi dan unit yang benar."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Cocokkan alat dengan toleransi dan titik ukur. Pastikan alat teridentifikasi dan layak digunakan; lakukan pemeriksaan nol atau fungsi sesuai petunjuk. Catat hasil dan unit. Jika hasil di luar batas atau alat meragukan, tahan produk serta laporkan.\n\nSkenario latihan: Pengukur yang diperlukan menunjukkan tanda kalibrasi kedaluwarsa.\nRespons: Jangan mengandalkan hasilnya; minta alat yang statusnya valid dan ikuti proses evaluasi produk yang sudah diukur."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan mengubah atau mengkalibrasi alat sendiri kecuali Anda ditugaskan dan berwenang.",
+          "scenario": "Pengukur yang diperlukan menunjukkan tanda kalibrasi kedaluwarsa.",
+          "response": "Jangan mengandalkan hasilnya; minta alat yang statusnya valid dan ikuti proses evaluasi produk yang sudah diukur.",
+          "vocabulary": [
+            {
+              "japanese": "測定",
+              "reading": "そくてい",
+              "meaning": "pengukuran"
+            },
+            {
+              "japanese": "測定器",
+              "reading": "そくていき",
+              "meaning": "alat ukur"
+            },
+            {
+              "japanese": "寸法",
+              "reading": "すんぽう",
+              "meaning": "dimensi"
+            },
+            {
+              "japanese": "校正",
+              "reading": "こうせい",
+              "meaning": "kalibrasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Status kalibrasi alat ukur penting karena…",
+              "options": [
+                "Keandalan hasil harus sesuai tujuan dan toleransi pemeriksaan",
+                "Alat yang lama selalu lebih tepat",
+                "Kalibrasi menggantikan pencatatan hasil",
+                "Semua alat dapat mengukur semua rentang"
+              ],
+              "answer": 0,
+              "explanation": "Status alat yang sesuai mendukung keputusan mutu berdasarkan ukuran yang dapat dipercaya."
+            },
+            {
+              "kind": "case",
+              "prompt": "Tanda kalibrasi alat yang diperlukan sudah kedaluwarsa. Apa tindakan tepat?",
+              "options": [
+                "Gunakan alat valid dan evaluasi pengukuran terdampak",
+                "Tetap gunakan bila angkanya terlihat stabil",
+                "Atur skala sendiri agar sesuai produk",
+                "Lewati pengukuran tanpa memberi tahu siapa pun"
+              ],
+              "answer": 0,
+              "explanation": "Alat dengan status meragukan tidak boleh menjadi dasar pelepasan produk."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「測定（そくてい）」 dalam konteks kerja?",
+              "options": [
+                "dimensi",
+                "kalibrasi",
+                "pengukuran",
+                "alat ukur"
+              ],
+              "answer": 2,
+              "explanation": "「測定」dibaca そくてい dan berarti pengukuran."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "equipment-material",
+      "title": "Peralatan, bahan, dan aliran kerja",
+      "description": "Memilih peralatan sesuai instruksi, mengenali bahaya umum, dan menangani bahan dengan aman.",
+      "lessons": [
+        {
+          "id": "manufacturing-07",
+          "title": "Material, label, dan identifikasi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip material, label, dan identifikasi sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Material dapat terlihat serupa tetapi berbeda jenis, ukuran, lot, atau spesifikasi. Identitas pada label dan dokumen penerimaan menghubungkan material dengan instruksi serta hasil produk. Kesalahan material dapat berdampak ke keselamatan maupun mutu."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Sebelum digunakan, cocokkan nama/kode, lot, jumlah, dan kondisi fisik dengan perintah produksi. Pisahkan material tanpa identitas atau rusak, dan minta verifikasi. Simpan label dan catatan sesuai aturan.\n\nSkenario latihan: Dua gulungan kawat terlihat mirip, tetapi kode labelnya berbeda.\nRespons: Jangan memilih berdasarkan warna atau bentuk saja; cocokkan spesifikasi dengan instruksi dan tanyakan bila ada ketidakcocokan."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan memindahkan label antar wadah atau menggabungkan sisa material berbeda lot.",
+          "scenario": "Dua gulungan kawat terlihat mirip, tetapi kode labelnya berbeda.",
+          "response": "Jangan memilih berdasarkan warna atau bentuk saja; cocokkan spesifikasi dengan instruksi dan tanyakan bila ada ketidakcocokan.",
+          "vocabulary": [
+            {
+              "japanese": "材料",
+              "reading": "ざいりょう",
+              "meaning": "bahan"
+            },
+            {
+              "japanese": "識別",
+              "reading": "しきべつ",
+              "meaning": "identifikasi"
+            },
+            {
+              "japanese": "表示",
+              "reading": "ひょうじ",
+              "meaning": "label/penandaan"
+            },
+            {
+              "japanese": "受入",
+              "reading": "うけいれ",
+              "meaning": "penerimaan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Dasar memilih material produksi adalah…",
+              "options": [
+                "Kode dan spesifikasi pada instruksi serta identitas lot",
+                "Warna yang paling dekat",
+                "Kebiasaan pada pesanan sebelumnya",
+                "Material yang paling mudah dijangkau"
+              ],
+              "answer": 0,
+              "explanation": "Material harus dicocokkan dengan informasi terkendali, bukan kesamaan visual."
+            },
+            {
+              "kind": "case",
+              "prompt": "Dua gulungan kawat tampak serupa dengan label berbeda. Apa yang dilakukan?",
+              "options": [
+                "Cocokkan kode dengan instruksi dan minta verifikasi jika berbeda",
+                "Gunakan gulungan yang lebih dekat",
+                "Pindahkan label dari gulungan lain",
+                "Gabungkan keduanya agar tidak tersisa"
+              ],
+              "answer": 0,
+              "explanation": "Identitas dan lot harus dipertahankan; perbedaan yang tidak terjelaskan memerlukan klarifikasi."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「材料（ざいりょう）」 dalam konteks kerja?",
+              "options": [
+                "bahan",
+                "identifikasi",
+                "label/penandaan",
+                "penerimaan"
+              ],
+              "answer": 0,
+              "explanation": "「材料」dibaca ざいりょう dan berarti bahan."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-08",
+          "title": "Pelindung mesin dan energi berbahaya",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pelindung mesin dan energi berbahaya sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Pelindung, interlock, dan kendali keselamatan melindungi pekerja dari bagian bergerak serta energi berbahaya. Hanya personel yang ditunjuk boleh melakukan penguncian, isolasi, penyetelan, atau perbaikan sesuai prosedur fasilitas."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Periksa keberadaan pelindung tanpa menonaktifkan sistem. Jika pelindung hilang atau interlock tidak bekerja, jangan jalankan mesin dan segera laporkan. Perawatan dilakukan setelah proses pengamanan resmi oleh petugas kompeten.\n\nSkenario latihan: Mesin berhenti karena penutup pengaman tidak terkunci.\nRespons: Jangan menahan sakelar atau melewati interlock; beri tahu teknisi/penanggung jawab sesuai prosedur."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan membersihkan bagian dalam atau memasukkan tangan ke mesin sebelum isolasi energi oleh personel berwenang.",
+          "scenario": "Mesin berhenti karena penutup pengaman tidak terkunci.",
+          "response": "Jangan menahan sakelar atau melewati interlock; beri tahu teknisi/penanggung jawab sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "安全装置",
+              "reading": "あんぜんそうち",
+              "meaning": "perangkat keselamatan"
+            },
+            {
+              "japanese": "保護カバー",
+              "reading": "ほごかばー",
+              "meaning": "pelindung mesin"
+            },
+            {
+              "japanese": "電源",
+              "reading": "でんげん",
+              "meaning": "sumber listrik"
+            },
+            {
+              "japanese": "修理",
+              "reading": "しゅうり",
+              "meaning": "perbaikan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Ketika interlock keselamatan menghalangi mesin untuk berjalan, pekerja perlu…",
+              "options": [
+                "Mempertahankan pengaman dan meminta pemeriksaan berwenang",
+                "Menahan sakelar dengan benda",
+                "Melepas pelindung agar produksi lanjut",
+                "Menjangkau bagian mesin dari sisi lain"
+              ],
+              "answer": 0,
+              "explanation": "Interlock tidak boleh dilewati; gangguan harus ditangani sesuai kewenangan dan prosedur energi."
+            },
+            {
+              "kind": "case",
+              "prompt": "Mesin tidak berjalan karena penutup pengaman tak terkunci. Apa respons tepat?",
+              "options": [
+                "Hentikan penggunaan dan laporkan untuk pemeriksaan resmi",
+                "Mengganjal penutup agar sensor aktif",
+                "Mencoba mengoperasikan dengan tangan di dekat bagian bergerak",
+                "Mematikan alarm dan melanjutkan"
+              ],
+              "answer": 0,
+              "explanation": "Pengaman yang gagal adalah kondisi bahaya; jangan menonaktifkan atau mengakalinya."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「安全装置（あんぜんそうち）」 dalam konteks kerja?",
+              "options": [
+                "perbaikan",
+                "perangkat keselamatan",
+                "pelindung mesin",
+                "sumber listrik"
+              ],
+              "answer": 1,
+              "explanation": "「安全装置」dibaca あんぜんそうち dan berarti perangkat keselamatan."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-09",
+          "title": "Pemindahan material dan ergonomi",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemindahan material dan ergonomi sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Beban dapat mencederai pekerja atau jatuh saat diangkat dan dipindahkan. Rute, berat, bentuk, pusat gravitasi, alat bantu, serta komunikasi tim perlu dipertimbangkan. Gunakan alat angkat hanya jika berwenang dan terlatih."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Periksa jalur dan tujuan sebelum memindah. Gunakan troli atau bantuan tim sesuai aturan; jaga postur dan jangan membawa beban yang menutup pandangan. Amankan material agar tidak bergeser, lalu letakkan pada posisi yang ditentukan.\n\nSkenario latihan: Kotak berat menghalangi pandangan dan harus dibawa melewati lantai yang basah.\nRespons: Jangan mengangkat sendiri; amankan jalur, gunakan alat bantu atau bantuan rekan, dan bersihkan/laporkan kondisi lantai."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan bergerak cepat atau membawa beban dengan pandangan tertutup.",
+          "scenario": "Kotak berat menghalangi pandangan dan harus dibawa melewati lantai yang basah.",
+          "response": "Jangan mengangkat sendiri; amankan jalur, gunakan alat bantu atau bantuan rekan, dan bersihkan/laporkan kondisi lantai.",
+          "vocabulary": [
+            {
+              "japanese": "運搬",
+              "reading": "うんぱん",
+              "meaning": "pemindahan barang"
+            },
+            {
+              "japanese": "重量",
+              "reading": "じゅうりょう",
+              "meaning": "berat"
+            },
+            {
+              "japanese": "台車",
+              "reading": "だいしゃ",
+              "meaning": "troli"
+            },
+            {
+              "japanese": "通路",
+              "reading": "つうろ",
+              "meaning": "jalur"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Sebelum memindahkan beban, yang perlu dipastikan adalah…",
+              "options": [
+                "Berat, rute, alat bantu, dan kondisi tujuan",
+                "Kecepatan membawa beban",
+                "Apakah orang lain melihat",
+                "Apakah label dapat dibaca sambil berjalan"
+              ],
+              "answer": 0,
+              "explanation": "Perencanaan jalur dan alat bantu mencegah cedera serta jatuhnya barang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Kotak berat menutup pandangan dan jalur licin. Apa tindakan aman?",
+              "options": [
+                "Tunda angkat sendiri, amankan jalur, lalu gunakan bantuan/alat sesuai aturan",
+                "Bawa cepat agar cepat sampai",
+                "Seret kotak melewati jalur licin",
+                "Minta orang berjalan di depan tanpa memberi tahu tujuan"
+              ],
+              "answer": 0,
+              "explanation": "Jangan memindahkan beban saat pandangan atau pijakan tidak aman."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「運搬（うんぱん）」 dalam konteks kerja?",
+              "options": [
+                "troli",
+                "jalur",
+                "pemindahan barang",
+                "berat"
+              ],
+              "answer": 2,
+              "explanation": "「運搬」dibaca うんぱん dan berarti pemindahan barang."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "handover",
+      "title": "Pemeriksaan, pengepakan, dan perbaikan",
+      "description": "Memastikan produk, identitas, catatan, dan serah-terima sesuai prosedur fasilitas.",
+      "lessons": [
+        {
+          "id": "manufacturing-10",
+          "title": "Pemeriksaan produk dan kriteria penerimaan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemeriksaan produk dan kriteria penerimaan sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Pemeriksaan akhir membandingkan karakteristik produk dengan kriteria yang terdokumentasi, seperti dimensi, tampilan, fungsi, atau jumlah—sesuai kategori dan instruksi. Hasil lulus tidak ditentukan oleh kesan pribadi. Alat serta metode inspeksi mengikuti prosedur."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Identifikasi produk dan lot, periksa titik yang ditentukan, catat hasil dengan unit/status, dan pisahkan hasil yang gagal atau meragukan. Minta pemeriksa berwenang menilai penyimpangan sebelum produk pindah proses.\n\nSkenario latihan: Hasil produk tampak baik, tetapi satu nilai ukur berada di luar toleransi.\nRespons: Tandai dan tahan produk menurut prosedur; laporkan nilai aktual, jangan mengubah catatan atau menyetujui sendiri."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan mengabaikan angka di luar batas karena tampilan produk baik.",
+          "scenario": "Hasil produk tampak baik, tetapi satu nilai ukur berada di luar toleransi.",
+          "response": "Tandai dan tahan produk menurut prosedur; laporkan nilai aktual, jangan mengubah catatan atau menyetujui sendiri.",
+          "vocabulary": [
+            {
+              "japanese": "検査",
+              "reading": "けんさ",
+              "meaning": "inspeksi"
+            },
+            {
+              "japanese": "合格",
+              "reading": "ごうかく",
+              "meaning": "lulus"
+            },
+            {
+              "japanese": "基準",
+              "reading": "きじゅん",
+              "meaning": "kriteria"
+            },
+            {
+              "japanese": "記録",
+              "reading": "きろく",
+              "meaning": "catatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Keputusan penerimaan harus berdasar…",
+              "options": [
+                "Kriteria dan metode pemeriksaan yang ditetapkan",
+                "Perkiraan pekerja tentang tampilan",
+                "Target jumlah yang harus selesai",
+                "Perbandingan dengan produk dari lot lain"
+              ],
+              "answer": 0,
+              "explanation": "Kriteria terdokumentasi menjaga keputusan konsisten dan dapat ditelusuri."
+            },
+            {
+              "kind": "case",
+              "prompt": "Produk terlihat baik tetapi satu ukuran di luar toleransi. Apa tindakan tepat?",
+              "options": [
+                "Tahan dan laporkan hasil aktual untuk keputusan berwenang",
+                "Catat ukuran yang mendekati nominal",
+                "Teruskan karena tampilannya baik",
+                "Ukur ulang sampai keluar angka yang lulus"
+              ],
+              "answer": 0,
+              "explanation": "Hasil di luar batas perlu dikendalikan dan dievaluasi; catatan harus tetap akurat."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「検査（けんさ）」 dalam konteks kerja?",
+              "options": [
+                "inspeksi",
+                "lulus",
+                "kriteria",
+                "catatan"
+              ],
+              "answer": 0,
+              "explanation": "「検査」dibaca けんさ dan berarti inspeksi."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-11",
+          "title": "Pengepakan dan keterlacakan",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengepakan dan keterlacakan sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Pengepakan melindungi produk dari kerusakan dan kontaminasi selama penyimpanan maupun pengiriman. Label harus menghubungkan produk dengan kode, lot, kuantitas, status inspeksi, serta tujuan sesuai prosedur. Pemisahan status mencegah tertukarnya barang."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Cocokkan identitas sebelum mengemas, gunakan bahan dan metode yang ditentukan, lalu pastikan jumlah dan label terbaca. Pisahkan barang yang belum dilepas dari barang yang siap dikirim. Catat perpindahan.\n\nSkenario latihan: Label pada dua kotak tertukar setelah inspeksi.\nRespons: Tahan pengiriman, verifikasi identitas dari catatan yang dapat dipercaya, perbaiki label hanya melalui prosedur, lalu dokumentasikan."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan menebak label dari tampilan isi atau mengganti label tanpa jejak.",
+          "scenario": "Label pada dua kotak tertukar setelah inspeksi.",
+          "response": "Tahan pengiriman, verifikasi identitas dari catatan yang dapat dipercaya, perbaiki label hanya melalui prosedur, lalu dokumentasikan.",
+          "vocabulary": [
+            {
+              "japanese": "梱包",
+              "reading": "こんぽう",
+              "meaning": "pengepakan"
+            },
+            {
+              "japanese": "出荷",
+              "reading": "しゅっか",
+              "meaning": "pengiriman"
+            },
+            {
+              "japanese": "数量",
+              "reading": "すうりょう",
+              "meaning": "jumlah"
+            },
+            {
+              "japanese": "追跡",
+              "reading": "ついせき",
+              "meaning": "pelacakan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Fungsi informasi lot dan label yang terbaca adalah…",
+              "options": [
+                "Menjaga identitas dan keterlacakan produk",
+                "Menggantikan inspeksi mutu",
+                "Membolehkan produk tanpa status dikirim",
+                "Mengurangi kebutuhan pencatatan"
+              ],
+              "answer": 0,
+              "explanation": "Label dan catatan menghubungkan produk dengan status, lot, serta tujuan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Dua kotak memiliki label tertukar. Apa tindakan aman?",
+              "options": [
+                "Tahan pengiriman dan cocokkan kembali berdasarkan catatan terverifikasi",
+                "Pilih label berdasarkan bentuk isi",
+                "Ganti label tanpa mencatat agar cepat selesai",
+                "Kirim lalu jelaskan bila pelanggan bertanya"
+              ],
+              "answer": 0,
+              "explanation": "Identitas yang tidak pasti harus diselesaikan sebelum pelepasan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「梱包（こんぽう）」 dalam konteks kerja?",
+              "options": [
+                "pelacakan",
+                "pengepakan",
+                "pengiriman",
+                "jumlah"
+              ],
+              "answer": 1,
+              "explanation": "「梱包」dibaca こんぽう dan berarti pengepakan."
+            }
+          ]
+        },
+        {
+          "id": "manufacturing-12",
+          "title": "Serah-terima dan catatan shift",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip serah-terima dan catatan shift sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan batas penerapan",
+              "body": "Catatan shift menyampaikan status produk, jumlah, masalah, mesin yang ditahan, serta pekerjaan lanjutan. Informasi objektif dan tepat waktu membantu shift berikutnya menjaga keselamatan serta mutu. Serah-terima lisan tidak menggantikan pencatatan yang diwajibkan."
+            },
+            {
+              "title": "Alur penerapan",
+              "body": "Sebelum meninggalkan area, pastikan barang dan alat berada pada status yang jelas. Catat nomor lot/mesin, fakta, tindakan sementara, serta siapa yang sudah diberi tahu. Terima kembali instruksi dan tanyakan bagian yang belum dipahami.\n\nSkenario latihan: Shift Anda berakhir sementara lot tertentu sedang ditahan karena cacat.\nRespons: Catat identitas lot, temuan, lokasi penahanan, dan penanggung jawab; sampaikan langsung pada petugas berikutnya."
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "caution": "Jangan meninggalkan produk tertahan tanpa tanda atau menghapus catatan agar area tampak selesai.",
+          "scenario": "Shift Anda berakhir sementara lot tertentu sedang ditahan karena cacat.",
+          "response": "Catat identitas lot, temuan, lokasi penahanan, dan penanggung jawab; sampaikan langsung pada petugas berikutnya.",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "reading": "ひきつぎ",
+              "meaning": "serah-terima"
+            },
+            {
+              "japanese": "申し送り",
+              "reading": "もうしおくり",
+              "meaning": "pesan lanjutan"
+            },
+            {
+              "japanese": "担当者",
+              "reading": "たんとうしゃ",
+              "meaning": "petugas penanggung jawab"
+            },
+            {
+              "japanese": "記録簿",
+              "reading": "きろくぼ",
+              "meaning": "buku catatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "reading": "さぎょうてじゅんをかくにんします。",
+              "meaning": "Saya akan memeriksa urutan kerja."
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "reading": "いじょうをせきにんしゃにほうこくします。",
+              "meaning": "Saya akan melaporkan ketidaknormalan kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Serah-terima yang aman harus menyampaikan…",
+              "options": [
+                "Status pekerjaan, temuan, tindakan, dan identitas lot/mesin",
+                "Hanya target produksi berikutnya",
+                "Kesimpulan tanpa fakta atau catatan",
+                "Informasi masalah setelah produk dikirim"
+              ],
+              "answer": 0,
+              "explanation": "Petugas berikutnya membutuhkan informasi faktual untuk mengelola pekerjaan yang belum selesai."
+            },
+            {
+              "kind": "case",
+              "prompt": "Lot masih ditahan saat shift berakhir. Apa yang harus Anda lakukan?",
+              "options": [
+                "Tandai dan catat status, lalu serahkan informasi kepada petugas berikutnya",
+                "Biarkan kotak di area tanpa pemberitahuan",
+                "Ubah status menjadi lulus agar shift selesai",
+                "Bawa lot ke jalur kirim"
+              ],
+              "answer": 0,
+              "explanation": "Status penahanan harus tetap terlihat, tercatat, dan diteruskan."
+            },
+            {
+              "kind": "vocabulary",
+              "prompt": "Apa arti 「引継ぎ（ひきつぎ）」 dalam konteks kerja?",
+              "options": [
+                "petugas penanggung jawab",
+                "buku catatan",
+                "serah-terima",
+                "pesan lanjutan"
+              ],
+              "answer": 2,
+              "explanation": "「引継ぎ」dibaca ひきつぎ dan berarti serah-terima."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "METI: kategori tempat usaha dan pekerjaan yang memenuhi syarat",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/gaikokujinzai/ukeiretaisyou.html"
+    },
+    {
+      "title": "JAIM: gambaran ujian SSW No. 1 dan No. 2",
+      "url": "https://www.jaim-skill.or.jp/exam/"
+    },
+    {
+      "title": "JAIM: standar rinci ujian kategori industri",
+      "url": "https://www.jaim-skill.or.jp/assets/files/exam/top/exam_criteria.pdf"
+    },
+    {
+      "title": "METI: kebijakan penerimaan tenaga kerja manufaktur",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/gaikokujinzai/sswm-exam.html"
+    }
+  ]
+}

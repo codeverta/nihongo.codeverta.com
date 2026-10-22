@@ -36,10 +36,10 @@ Setiap lesson berisi tujuan, dua bagian penjelasan, empat langkah, perhatian kes
 
 ## API dan persistensi
 
-- `GET /v1/ssw/{sector}/practice?module={moduleId}` → `{questions:[...]}` tanpa kunci/pembahasan. Sector `nursing-care` atau `building-cleaning`.
+- `GET /v1/ssw/{sector}/practice?module={moduleId}` → `{questions:[...]}` tanpa kunci/pembahasan. `sector` adalah ID bidang yang tersedia di `sswSectors`; bank latihan mencakup 19 bidang.
 - `POST /v1/ssw/{sector}/practice/check` → `{questionId,answer:<index>}`; respons `{correct,answer,explanation,lessonId}`. Tanpa attempt/reward; feedback memang dapat diulang. Pilihan wajib integer dengan indeks valid.
-- `GET /v1/simulation/{level}` memakai `ssw-kaigo`, `ssw-kaigo-jp`, atau `ssw-cleaning` untuk overview dan riwayat.
-- `POST /v1/exam-attempts` dengan `examId` masing-masing `ssw-kaigo-simulation-1`, `ssw-kaigo-jp-simulation-1`, `ssw-cleaning-simulation-1`.
+- `GET /v1/simulation/{level}` menerima seluruh level yang dibangun di `backend/internal/store/ssw_resources/assessments.json`, termasuk latihan/simulasi untuk 19 bidang.
+- `POST /v1/exam-attempts` memakai `examId` dengan pola `{lowercase-level}-simulation-1`, misalnya `ssw-kaigo-simulation-1` atau `ssw-resource-recycling-simulation-1`.
 - Session/save/submit memakai API simulasi yang sudah ada. Pengguna hanya boleh mengakses attempt miliknya. Kunci dan pembahasan muncul setelah seluruh bagian selesai. Pilihan kosong dinilai salah.
 
 Semua endpoint latihan dan simulasi SSW membutuhkan autentikasi dan entitlement Lifetime yang masih valid, termasuk akses langsung serta attempt berjalan. Refund/revocation ditangani middleware billing yang sudah ada. Materi offline tidak memerlukan pembelian. Latihan menampilkan kegagalan jaringan dan dapat diulang tanpa menambah skor sebelum respons berhasil. Simulasi menerbitkan pilihan di UI setelah server mengonfirmasi simpan.
@@ -58,5 +58,7 @@ python scripts/build_ssw_assessments.py
 ```
 
 Materi adalah asset Flutter `assets/content/ssw/building-cleaning.json`. Resource backend `backend/internal/store/ssw_resources/assessments.json` di-embed oleh Go; tidak membutuhkan API eksternal. Perubahan key/pertanyaan saat deployment tidak memutasi snapshot attempt berjalan.
+
+Sebelas bidang yang baru dilengkapi masing-masing memiliki 36 cek materi/latihan dari 12 lesson dan simulasi belajar orisinal 24 soal / 35 menit. Simulasi memilih 12 pertanyaan pengetahuan dan 12 skenario kasus; cek alur kerja tetap tersedia pada latihan per lesson. Materi Jepang di kosakata/dialog memakai bacaan kana yang dapat ditampilkan dengan furigana. Materi dan simulasi ditulis berdasarkan sumber pada `docs/ssw-sources-*.md`, bukan salinan bank soal resmi. Status dan format resmi dapat berbeda: rincian ujian gudang belum diumumkan pada halaman MLIT yang ditinjau, dan penerimaan/ujian layanan makanan sedang dihentikan sementara menurut pengumuman resmi. Lihat [ringkasan 19 bidang](ssw-section.md).
 
 Tes meliputi kelengkapan konten, jumlah/bagian/waktu soal, key tidak bocor, opsi valid, login/premium/revocation, isolasi akun, submit idempoten, penguncian bagian, timeout, penghapusan akun, restart MariaDB, kegagalan write, alur reader ponsel 320 px dengan teks 140%, feedback latihan/network retry, serta timer Kaigo 60 menit.

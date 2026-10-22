@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-22",
+  "modules": [
+    {
+      "id": "intake",
+      "title": "Penerimaan dan pemeriksaan awal",
+      "description": "Mencatat keluhan serta memeriksa kendaraan mengikuti daftar kerja, petunjuk model, dan batas kewenangan bengkel.",
+      "lessons": [
+        {
+          "id": "auto-01",
+          "title": "Keluhan pelanggan dan perintah kerja",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat gejala, waktu, dan kondisi saat muncul tanpa mengubah laporan menjadi diagnosis.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Dengarkan gejala pelanggan: kapan terjadi, saat kendaraan diam atau berjalan, dan apakah lampu peringatan menyala. Pisahkan ucapan pelanggan dari dugaan teknisi. Cocokkan nomor kendaraan serta instruksi agar masalah tidak tertukar dengan kendaraan lain."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Ulangi inti keluhan dan minta konfirmasi. Jangan menjanjikan penyebab atau biaya sebelum pemeriksaan. Keluhan tentang rem, kemudi, ban, asap, atau lampu peringatan harus diteruskan segera kepada penanggung jawab."
+            }
+          ],
+          "steps": [
+            "Cocokkan identitas kendaraan dan dokumen",
+            "Dengarkan waktu dan kondisi munculnya gejala",
+            "Catat ucapan faktual serta tanda yang dilaporkan",
+            "Konfirmasi catatan dan teruskan risiko keselamatan"
+          ],
+          "caution": "Jangan menulis dugaan sebagai diagnosis pasti atau menghapus informasi yang belum jelas.",
+          "scenario": "Pelanggan melaporkan bunyi gesek saat mengerem pagi ini. Seorang teknisi lain menduga kampas rem aus sebelum memeriksa kendaraan.",
+          "response": "Catat bunyi gesek saat pengereman pagi ini sebagai gejala dan minta pemeriksaan rem diprioritaskan; jangan menyatakan kampas pasti aus.",
+          "vocabulary": [
+            {
+              "japanese": "症状",
+              "reading": "しょうじょう",
+              "meaning": "gejala"
+            },
+            {
+              "japanese": "受付",
+              "reading": "うけつけ",
+              "meaning": "penerimaan"
+            },
+            {
+              "japanese": "整備記録",
+              "reading": "せいびきろく",
+              "meaning": "catatan servis"
+            },
+            {
+              "japanese": "警告灯",
+              "reading": "けいこくとう",
+              "meaning": "lampu peringatan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いつ音がしましたか。",
+              "reading": "いつおとがしましたか。",
+              "meaning": "Kapan bunyi itu terdengar?"
+            },
+            {
+              "japanese": "ブレーキをかける時です。",
+              "reading": "ぶれーきをかけるときです。",
+              "meaning": "Saat saya mengerem."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa gejala perlu dicatat terpisah dari diagnosis?",
+              "options": [
+                "Agar teknisi dapat memeriksa fakta tanpa terikat dugaan",
+                "Agar pelanggan tidak perlu mendapat jawaban",
+                "Agar kendaraan langsung dibongkar",
+                "Agar catatan dapat dihapus"
+              ],
+              "answer": 0,
+              "explanation": "Catatan faktual membedakan laporan pelanggan dari hasil pemeriksaan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pelanggan melaporkan bunyi gesek saat pengereman, tetapi belum diperiksa. Apa tindakan tepat?",
+              "options": [
+                "Tulis kampas rem pasti habis",
+                "Catat gejala dan minta pemeriksaan rem",
+                "Hapus keluhan karena bunyi tidak terdengar sekarang",
+                "Kembalikan kendaraan tanpa catatan"
+              ],
+              "answer": 1,
+              "explanation": "Gejala harus dicatat apa adanya dan diperiksa sebelum menjadi diagnosis."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Keluhan pelanggan dan perintah kerja», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Dengarkan waktu dan kondisi munculnya gejala",
+                "Cocokkan identitas kendaraan dan dokumen",
+                "Catat ucapan faktual serta tanda yang dilaporkan",
+                "Konfirmasi catatan dan teruskan risiko keselamatan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan identitas kendaraan dan dokumen → Dengarkan waktu dan kondisi munculnya gejala → Catat ucapan faktual serta tanda yang dilaporkan → Konfirmasi catatan dan teruskan risiko keselamatan."
+            }
+          ]
+        },
+        {
+          "id": "auto-02",
+          "title": "Pemeriksaan rutin sebelum kendaraan digunakan",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa bagian yang terlihat sesuai daftar harian dan melaporkan kondisi berisiko.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemeriksaan rutin dapat mencakup kondisi ban, lampu, wiper, kebocoran yang terlihat, indikator, dan cairan yang ditentukan pada prosedur. Gunakan daftar kendaraan dan petunjuk pabrikan. Pemeriksaan visual tidak menggantikan pengukuran atau diagnosis yang memerlukan alat dan kewenangan khusus."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pastikan kendaraan berada di tempat pemeriksaan aman dan mesinnya pada kondisi yang ditentukan. Periksa satu per satu dan catat hasil. Jika ban kempis, lampu gagal, cairan bocor, atau indikator menyala, tahan kendaraan dari penggunaan dan minta arahan; jangan menyetel komponen tanpa otorisasi."
+            }
+          ],
+          "steps": [
+            "Pastikan kendaraan berada di area aman",
+            "Baca daftar periksa dan manual model",
+            "Periksa ban, lampu, wiper, kebocoran, dan indikator",
+            "Catat temuan serta tahan kendaraan berisiko"
+          ],
+          "caution": "Jangan menyentuh bagian panas, bergerak, atau bertegangan dan jangan mengabaikan indikator.",
+          "scenario": "Terlihat cairan menetes di bawah kendaraan dan lampu peringatan masih menyala.",
+          "response": "Jangan keluarkan kendaraan untuk digunakan. Catat lokasi tetesan dan indikator, beri tanda sesuai prosedur, lalu panggil penanggung jawab.",
+          "vocabulary": [
+            {
+              "japanese": "日常点検",
+              "reading": "にちじょうてんけん",
+              "meaning": "pemeriksaan rutin"
+            },
+            {
+              "japanese": "漏れ",
+              "reading": "もれ",
+              "meaning": "kebocoran"
+            },
+            {
+              "japanese": "灯火",
+              "reading": "とうか",
+              "meaning": "lampu kendaraan"
+            },
+            {
+              "japanese": "点検表",
+              "reading": "てんけんひょう",
+              "meaning": "daftar periksa"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "警告灯を確認してください。",
+              "reading": "けいこくとうをかくにんしてください。",
+              "meaning": "Tolong periksa lampu peringatan ini."
+            },
+            {
+              "japanese": "責任者に報告します。",
+              "reading": "せきにんしゃにほうこくします。",
+              "meaning": "Saya melapor kepada penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa fungsi daftar periksa harian?",
+              "options": [
+                "Memastikan butir yang ditentukan diperiksa dan dicatat konsisten",
+                "Menggantikan seluruh manual",
+                "Menetapkan diagnosis tanpa pemeriksaan",
+                "Mengizinkan kendaraan terus dipakai"
+              ],
+              "answer": 0,
+              "explanation": "Daftar periksa mendukung pemeriksaan teratur, tetapi tidak menggantikan petunjuk atau diagnosis."
+            },
+            {
+              "kind": "case",
+              "prompt": "Ada kebocoran dan lampu peringatan menyala. Apa tindakan tepat?",
+              "options": [
+                "Bersihkan lalu serahkan kunci",
+                "Tahan kendaraan, catat temuan, dan laporkan",
+                "Lepas baterai agar lampu mati",
+                "Isi cairan apa saja lalu lanjutkan"
+              ],
+              "answer": 1,
+              "explanation": "Kebocoran dan indikator perlu dinilai oleh penanggung jawab sebelum kendaraan digunakan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Pemeriksaan rutin sebelum kendaraan digunakan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Baca daftar periksa dan manual model",
+                "Pastikan kendaraan berada di area aman",
+                "Periksa ban, lampu, wiper, kebocoran, dan indikator",
+                "Catat temuan serta tahan kendaraan berisiko"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Pastikan kendaraan berada di area aman → Baca daftar periksa dan manual model → Periksa ban, lampu, wiper, kebocoran, dan indikator → Catat temuan serta tahan kendaraan berisiko."
+            }
+          ]
+        },
+        {
+          "id": "auto-03",
+          "title": "Pemeriksaan berkala dan urutan kerja",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti daftar pemeriksaan berkala serta mencatat hasil setiap butir sebelum pekerjaan diteruskan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemeriksaan berkala mengikuti jadwal dan daftar yang sesuai dengan kendaraan. Perintah kerja menyebut identitas, pekerjaan, dan butir pemeriksaan. Manual pabrikan menentukan metode dan batas; nilai dapat berbeda menurut model. Tandai hasil sebagai selesai, perlu tindak lanjut, atau belum diperiksa secara jujur."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Cocokkan manual, siapkan alat, lalu kerjakan butir dalam urutan yang ditetapkan. Jangan menandai selesai hanya karena komponen tampak baik. Jika nilai ukur melewati batas atau manual belum tersedia, tahan butir itu dan minta arahan teknisi berwenang."
+            }
+          ],
+          "steps": [
+            "Cocokkan model dan daftar kerja",
+            "Siapkan alat serta manual yang sesuai",
+            "Periksa tiap butir dan catat hasil sebenarnya",
+            "Tandai bagian terbuka dan minta arahan"
+          ],
+          "caution": "Jangan memakai batas dari model lain atau mengisi hasil yang tidak pernah diperiksa.",
+          "scenario": "Manual model kendaraan belum ditemukan dan rekan meminta memakai angka toleransi dari ingatan.",
+          "response": "Jangan menebak batas ukur. Tahan pekerjaan yang membutuhkan nilai itu, cari manual yang sesuai, lalu lanjutkan setelah penanggung jawab mengonfirmasi.",
+          "vocabulary": [
+            {
+              "japanese": "定期点検",
+              "reading": "ていきてんけん",
+              "meaning": "pemeriksaan berkala"
+            },
+            {
+              "japanese": "基準値",
+              "reading": "きじゅんち",
+              "meaning": "nilai standar"
+            },
+            {
+              "japanese": "作業指示書",
+              "reading": "さぎょうしじしょ",
+              "meaning": "instruksi kerja"
+            },
+            {
+              "japanese": "未確認",
+              "reading": "みかくにん",
+              "meaning": "belum dikonfirmasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この車の整備書はありますか。",
+              "reading": "このくるまのせいびしょはありますか。",
+              "meaning": "Apakah manual servis mobil ini tersedia?"
+            },
+            {
+              "japanese": "確認してから作業します。",
+              "reading": "かくにんしてからさぎょうします。",
+              "meaning": "Saya bekerja setelah memastikan."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa batas ukur dicocokkan dengan manual model?",
+              "options": [
+                "Metode dan batas dapat berbeda menurut kendaraan",
+                "Manual hanya diperlukan setelah pekerjaan",
+                "Semua kendaraan memakai angka sama",
+                "Pemeriksaan berkala tidak perlu catatan"
+              ],
+              "answer": 0,
+              "explanation": "Manual yang cocok mengarahkan pemeriksaan sesuai spesifikasi kendaraan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Manual belum ditemukan dan diminta memakai angka dari ingatan. Apa respons tepat?",
+              "options": [
+                "Gunakan angka model yang mirip",
+                "Tahan butir itu dan cari manual atau minta arahan",
+                "Tandai seluruh hasil normal",
+                "Lewati tanpa mencatat"
+              ],
+              "answer": 1,
+              "explanation": "Pekerjaan yang membutuhkan spesifikasi menunggu informasi yang dapat dipercaya."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Pemeriksaan berkala dan urutan kerja», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Siapkan alat serta manual yang sesuai",
+                "Cocokkan model dan daftar kerja",
+                "Periksa tiap butir dan catat hasil sebenarnya",
+                "Tandai bagian terbuka dan minta arahan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan model dan daftar kerja → Siapkan alat serta manual yang sesuai → Periksa tiap butir dan catat hasil sebenarnya → Tandai bagian terbuka dan minta arahan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inspection",
+      "title": "Komponen dan alat ukur",
+      "description": "Mengenali pemeriksaan ban, roda, mesin, cairan, baterai, dan alat ukur; selalu mengikuti spesifikasi kendaraan.",
+      "lessons": [
+        {
+          "id": "auto-04",
+          "title": "Ban, roda, dan tanda gangguan rem",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali kerusakan ban dan tanda gangguan roda atau rem tanpa mengambil keputusan di luar kompetensi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Amati keausan, retak, benjol, benda asing, dan tekanan menurut alat serta nilai kendaraan. Dengarkan laporan getaran atau bunyi. Pemeriksaan visual membantu menemukan tanda awal, tetapi diagnosis rem dan keputusan kelayakan harus dibuat petugas berwenang."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan pengukur ban sesuai pelatihan dan catat hasil pada posisi yang ditentukan. Jangan melepas roda atau masuk ke bawah kendaraan tanpa pengamanan dan izin. Jika ban benjol, retak, tertancap benda, atau ada kebocoran rem, beri tanda dan laporkan."
+            }
+          ],
+          "steps": [
+            "Cocokkan roda dengan butir pemeriksaan",
+            "Periksa visual ban, pelek, dan area rem",
+            "Ukur hanya bagian yang ditugaskan dengan alat sesuai",
+            "Catat kelainan dan minta teknisi menilai"
+          ],
+          "caution": "Jangan menyatakan kendaraan aman atau memperbaiki ban tanpa perintah dan pemeriksaan yang sesuai.",
+          "scenario": "Ban depan tampak benjol pada dinding samping dan pelanggan menunggu kendaraannya.",
+          "response": "Jangan serahkan kendaraan. Catat lokasi benjol, tahan kendaraan dari penggunaan, dan laporkan kepada teknisi.",
+          "vocabulary": [
+            {
+              "japanese": "タイヤ",
+              "reading": "たいや",
+              "meaning": "ban"
+            },
+            {
+              "japanese": "摩耗",
+              "reading": "まもう",
+              "meaning": "keausan"
+            },
+            {
+              "japanese": "空気圧",
+              "reading": "くうきあつ",
+              "meaning": "tekanan udara"
+            },
+            {
+              "japanese": "制動装置",
+              "reading": "せいどうそうち",
+              "meaning": "perangkat pengereman"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "タイヤにふくらみがあります。",
+              "reading": "たいやにふくらみがあります。",
+              "meaning": "Ada tonjolan pada ban."
+            },
+            {
+              "japanese": "車を動かさず、責任者を呼びます。",
+              "reading": "くるまをうごかさず、せきにんしゃをよびます。",
+              "meaning": "Saya tidak menggerakkan mobil dan memanggil penanggung jawab."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa tindakan saat menemukan tonjolan pada dinding ban?",
+              "options": [
+                "Catat dan minta teknisi menilai sebelum kendaraan dipakai",
+                "Kurangi tekanan sampai tonjolan hilang",
+                "Tutup dengan cat",
+                "Nyatakan aman jika tapak tebal"
+              ],
+              "answer": 0,
+              "explanation": "Tonjolan perlu dinilai; ketebalan tapak tidak menghilangkan risiko."
+            },
+            {
+              "kind": "case",
+              "prompt": "Ban benjol dan pelanggan meminta kendaraan segera. Apa tindakan tepat?",
+              "options": [
+                "Serahkan dengan pesan lisan",
+                "Tandai, tahan penggunaan, dan laporkan",
+                "Pindahkan ban tanpa izin",
+                "Hapus catatan"
+              ],
+              "answer": 1,
+              "explanation": "Kondisi ban berisiko harus dinilai sebelum kendaraan diserahkan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Ban, roda, dan tanda gangguan rem», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa visual ban, pelek, dan area rem",
+                "Cocokkan roda dengan butir pemeriksaan",
+                "Ukur hanya bagian yang ditugaskan dengan alat sesuai",
+                "Catat kelainan dan minta teknisi menilai"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan roda dengan butir pemeriksaan → Periksa visual ban, pelek, dan area rem → Ukur hanya bagian yang ditugaskan dengan alat sesuai → Catat kelainan dan minta teknisi menilai."
+            }
+          ]
+        },
+        {
+          "id": "auto-05",
+          "title": "Oli, pendingin, dan baterai",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa cairan dan baterai hanya dalam kondisi aman serta melaporkan tanda tidak normal.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemeriksaan oli dan pendingin mengikuti kondisi mesin, metode, dan tanda batas pada manual. Mesin panas dapat melukai. Cairan tidak boleh dicampur sembarangan. Baterai memiliki terminal bertegangan; hindari hubungan pendek dan gunakan pelindung sesuai prosedur."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Pastikan mesin sudah pada kondisi yang disyaratkan sebelum membuka titik pemeriksaan. Periksa level atau kebocoran sesuai tugas. Jangan membuka tutup pendingin saat panas atau menuang cairan yang tidak teridentifikasi. Catat tanda kerusakan dan minta teknisi menentukan tindak lanjut."
+            }
+          ],
+          "steps": [
+            "Pastikan kondisi mesin aman dan gunakan APD",
+            "Kenali titik pemeriksaan pada manual",
+            "Periksa level dan keadaan luar tanpa membuka bagian berbahaya",
+            "Catat kebocoran atau panas dan laporkan"
+          ],
+          "caution": "Jangan membuka tutup pendingin saat panas atau menyentuhkan alat antara terminal baterai.",
+          "scenario": "Mesin baru digunakan dan uap tampak dekat tutup pendingin; seseorang meminta Anda membukanya.",
+          "response": "Jangan buka tutup. Menjauh dari uap, beri tahu penanggung jawab, dan tunggu prosedur menyatakan mesin aman.",
+          "vocabulary": [
+            {
+              "japanese": "エンジンオイル",
+              "reading": "えんじんおいる",
+              "meaning": "oli mesin"
+            },
+            {
+              "japanese": "冷却水",
+              "reading": "れいきゃくすい",
+              "meaning": "cairan pendingin"
+            },
+            {
+              "japanese": "バッテリー",
+              "reading": "ばってりー",
+              "meaning": "baterai"
+            },
+            {
+              "japanese": "高温",
+              "reading": "こうおん",
+              "meaning": "suhu tinggi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "エンジンが熱いです。",
+              "reading": "えんじんがあついです。",
+              "meaning": "Mesinnya panas."
+            },
+            {
+              "japanese": "冷えるまで開けません。",
+              "reading": "ひえるまであけません。",
+              "meaning": "Saya tidak membukanya sampai dingin."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa tutup pendingin tidak boleh dibuka saat mesin panas?",
+              "options": [
+                "Cairan atau uap panas dapat menyembur dan melukai",
+                "Cairan berubah menjadi oli",
+                "Level selalu bertambah",
+                "Manual tidak berlaku"
+              ],
+              "answer": 0,
+              "explanation": "Panas dan tekanan dapat membuat cairan atau uap menyembur."
+            },
+            {
+              "kind": "case",
+              "prompt": "Uap terlihat dekat tutup pendingin. Apa tindakan tepat?",
+              "options": [
+                "Buka sedikit dengan kain",
+                "Jangan buka, menjauh, dan laporkan sampai aman",
+                "Tuang air lalu buka",
+                "Minta pelanggan memeriksa"
+              ],
+              "answer": 1,
+              "explanation": "Bagian panas perlu ditangani sesuai prosedur aman dan arahan penanggung jawab."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Oli, pendingin, dan baterai», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Kenali titik pemeriksaan pada manual",
+                "Pastikan kondisi mesin aman dan gunakan APD",
+                "Periksa level dan keadaan luar tanpa membuka bagian berbahaya",
+                "Catat kebocoran atau panas dan laporkan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Pastikan kondisi mesin aman dan gunakan APD → Kenali titik pemeriksaan pada manual → Periksa level dan keadaan luar tanpa membuka bagian berbahaya → Catat kebocoran atau panas dan laporkan."
+            }
+          ]
+        },
+        {
+          "id": "auto-06",
+          "title": "Memilih alat ukur dan mencatat hasil",
+          "minutes": 25,
+          "objectives": [
+            "Memilih alat sesuai pengukuran, memeriksa satuan, dan membandingkan hasil dengan spesifikasi tepat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pengukur tekanan, jangka sorong, multimeter, dan kunci torsi memiliki fungsi serta batas berbeda. Periksa kondisi, satuan, rentang, dan status pemeriksaan atau kalibrasi alat menurut aturan bengkel. Hasil bermakna jika teknik, titik ukur, alat, dan spesifikasi kendaraan cocok."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Baca petunjuk alat. Catat angka, satuan, dan lokasi pengukuran, lalu bandingkan dengan manual. Bila angka berubah-ubah, satuan tidak jelas, atau alat rusak, jangan memilih hasil yang mudah. Hentikan pengukuran dan minta verifikasi."
+            }
+          ],
+          "steps": [
+            "Tentukan jenis pengukuran dari perintah kerja",
+            "Pilih alat dengan rentang dan satuan sesuai",
+            "Periksa alat dan ukur pada titik yang ditentukan",
+            "Catat nilai dan minta verifikasi jika meragukan"
+          ],
+          "caution": "Jangan memakai alat rusak atau mengubah satuan agar hasil terlihat normal.",
+          "scenario": "Multimeter menunjukkan angka yang berubah-ubah, tetapi formulir meminta nilai stabil.",
+          "response": "Hentikan pengukuran; minta petugas memeriksa alat dan sambungan, lalu ukur kembali hanya dengan alat yang layak.",
+          "vocabulary": [
+            {
+              "japanese": "測定器",
+              "reading": "そくていき",
+              "meaning": "alat ukur"
+            },
+            {
+              "japanese": "単位",
+              "reading": "たんい",
+              "meaning": "satuan"
+            },
+            {
+              "japanese": "測定値",
+              "reading": "そくていち",
+              "meaning": "nilai pengukuran"
+            },
+            {
+              "japanese": "校正",
+              "reading": "こうせい",
+              "meaning": "kalibrasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この測定器は使えますか。",
+              "reading": "このそくていきはつかえますか。",
+              "meaning": "Apakah alat ukur ini boleh digunakan?"
+            },
+            {
+              "japanese": "点検してから測ります。",
+              "reading": "てんけんしてからはかります。",
+              "meaning": "Saya memeriksa alat sebelum mengukur."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang perlu cocok sebelum membandingkan hasil ukur?",
+              "options": [
+                "Alat, satuan, titik ukur, dan spesifikasi kendaraan",
+                "Warna alat dan nama pelanggan",
+                "Angka kendaraan lain saja",
+                "Lama antrean"
+              ],
+              "answer": 0,
+              "explanation": "Hasil dapat dibandingkan jika alat dan kondisi pengukuran sesuai."
+            },
+            {
+              "kind": "case",
+              "prompt": "Angka multimeter berubah-ubah. Apa yang dilakukan?",
+              "options": [
+                "Pilih angka terbesar",
+                "Hentikan dan minta alat atau sambungan diperiksa",
+                "Tulis nilai paling dekat standar",
+                "Pinjam alat tanpa memeriksa"
+              ],
+              "answer": 1,
+              "explanation": "Pengukuran tidak stabil tidak dapat dipercaya sampai alat atau metodenya diverifikasi."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Memilih alat ukur dan mencatat hasil», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Pilih alat dengan rentang dan satuan sesuai",
+                "Tentukan jenis pengukuran dari perintah kerja",
+                "Periksa alat dan ukur pada titik yang ditentukan",
+                "Catat nilai dan minta verifikasi jika meragukan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Tentukan jenis pengukuran dari perintah kerja → Pilih alat dengan rentang dan satuan sesuai → Periksa alat dan ukur pada titik yang ditentukan → Catat nilai dan minta verifikasi jika meragukan."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "title": "Pekerjaan perbaikan dan pengendalian energi",
+      "description": "Menyiapkan area, mengamankan kendaraan, dan mengikuti instruksi pabrikan dalam pekerjaan dasar yang diotorisasi.",
+      "lessons": [
+        {
+          "id": "auto-07",
+          "title": "Mengangkat kendaraan dengan aman",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan lift atau dongkrak sesuai prosedur dan menjaga orang keluar dari area berbahaya.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Sebelum mengangkat kendaraan, pastikan lantai, kapasitas alat, titik tumpu model, dan kondisi lift sesuai instruksi bengkel. Kendaraan harus stabil dan rem parkir atau transmisi disiapkan menurut prosedur. Posisi yang salah dapat membuat kendaraan tergelincir atau merusak bodi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Bersihkan area, pasang pengaman roda bila diperlukan, dan minta pemeriksaan kedua bila ditetapkan. Jangan masuk ke bawah kendaraan sampai lift terkunci dan penanggung jawab menyatakan aman. Jika titik tumpu tidak jelas, jangan menebak."
+            }
+          ],
+          "steps": [
+            "Cocokkan titik tumpu dengan manual",
+            "Periksa lift dan kosongkan area",
+            "Posisikan alat serta pengaman roda sesuai prosedur",
+            "Angkat, kunci, dan pastikan aman sebelum bekerja"
+          ],
+          "caution": "Jangan masuk ke bawah kendaraan yang hanya ditahan dongkrak atau lift yang belum terkunci.",
+          "scenario": "Titik tumpu kendaraan tidak jelas, tetapi rekan bersiap masuk ke bawahnya.",
+          "response": "Hentikan pengangkatan, minta rekan menjauh, cari titik tumpu di manual, lalu lanjutkan setelah posisi diperiksa.",
+          "vocabulary": [
+            {
+              "japanese": "リフト",
+              "reading": "りふと",
+              "meaning": "lift kendaraan"
+            },
+            {
+              "japanese": "ジャッキ",
+              "reading": "じゃっき",
+              "meaning": "dongkrak"
+            },
+            {
+              "japanese": "支持点",
+              "reading": "しじてん",
+              "meaning": "titik tumpu"
+            },
+            {
+              "japanese": "輪止め",
+              "reading": "わどめ",
+              "meaning": "ganjal roda"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "車の支持点を確認します。",
+              "reading": "くるまのしじてんをかくにんします。",
+              "meaning": "Saya memeriksa titik tumpu kendaraan."
+            },
+            {
+              "japanese": "ロックを確認してから入ります。",
+              "reading": "ろっくをかくにんしてからはいります。",
+              "meaning": "Saya masuk setelah memeriksa kunci pengaman."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Kapan pekerja boleh berada di bawah kendaraan terangkat?",
+              "options": [
+                "Setelah pengaman terkunci dan posisi dinyatakan aman",
+                "Saat kendaraan mulai naik",
+                "Jika rekan memegang bodi",
+                "Setelah lift dimatikan tanpa pengaman"
+              ],
+              "answer": 0,
+              "explanation": "Pengaman dan kestabilan harus dipastikan sebelum berada di bawah kendaraan."
+            },
+            {
+              "kind": "case",
+              "prompt": "Titik angkat belum jelas dan rekan akan masuk ke bawah kendaraan. Apa yang tepat?",
+              "options": [
+                "Tebak lalu lanjut perlahan",
+                "Hentikan, minta rekan menjauh, dan cocokkan manual",
+                "Tambah tekanan lift",
+                "Angkat satu sisi saja"
+              ],
+              "answer": 1,
+              "explanation": "Area diamankan dan titik angkat harus diketahui sebelum pengangkatan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Mengangkat kendaraan dengan aman», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa lift dan kosongkan area",
+                "Cocokkan titik tumpu dengan manual",
+                "Posisikan alat serta pengaman roda sesuai prosedur",
+                "Angkat, kunci, dan pastikan aman sebelum bekerja"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan titik tumpu dengan manual → Periksa lift dan kosongkan area → Posisikan alat serta pengaman roda sesuai prosedur → Angkat, kunci, dan pastikan aman sebelum bekerja."
+            }
+          ]
+        },
+        {
+          "id": "auto-08",
+          "title": "Kendaraan hibrida dan tegangan tinggi",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali tanda bahaya kendaraan hibrida dan membatasi pekerjaan pada pelatihan serta otorisasi yang dimiliki.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Label peringatan atau kabel tegangan tinggi menandai bagian yang tidak boleh disentuh tanpa kompetensi dan prosedur khusus. Kendaraan yang tampak mati belum tentu bebas energi. Isolasi dan pemeriksaan sistem hanya dilakukan petugas terlatih dengan alat pelindung yang ditentukan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Identifikasi jenis kendaraan dan baca instruksi model. Jangan memotong atau melepas konektor bila tugas tidak mencakupnya. Jika kabel rusak, baterai penyok, bau terbakar, atau ada cairan, jauhkan orang, jangan sentuh, dan aktifkan jalur laporan fasilitas."
+            }
+          ],
+          "steps": [
+            "Identifikasi kendaraan dan tanda tegangan tinggi",
+            "Cocokkan tugas dengan pelatihan dan otorisasi",
+            "Amankan area dan ikuti prosedur isolasi yang disetujui",
+            "Hentikan serta laporkan kabel atau baterai yang rusak"
+          ],
+          "caution": "Jangan menganggap kendaraan aman karena mesin tidak berbunyi atau indikator mati.",
+          "scenario": "Kabel berlabel tegangan tinggi tampak terkelupas dan Anda belum dilatih untuk sistem itu.",
+          "response": "Jangan sentuh kabel atau penutup. Jauhkan orang dan hubungi teknisi berwenang sesuai prosedur.",
+          "vocabulary": [
+            {
+              "japanese": "高電圧",
+              "reading": "こうでんあつ",
+              "meaning": "tegangan tinggi"
+            },
+            {
+              "japanese": "感電",
+              "reading": "かんでん",
+              "meaning": "sengatan listrik"
+            },
+            {
+              "japanese": "絶縁手袋",
+              "reading": "ぜつえんてぶくろ",
+              "meaning": "sarung tangan isolasi"
+            },
+            {
+              "japanese": "資格者",
+              "reading": "しかくしゃ",
+              "meaning": "petugas berkualifikasi"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "高電圧の線が見えます。",
+              "reading": "こうでんあつのせんがみえます。",
+              "meaning": "Saya melihat kabel tegangan tinggi."
+            },
+            {
+              "japanese": "触らずに、担当者を呼びます。",
+              "reading": "さわらずに、たんとうしゃをよびます。",
+              "meaning": "Saya tidak menyentuhnya dan memanggil petugas."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa kendaraan yang tampak mati tetap harus diperlakukan sebagai bertegangan tinggi?",
+              "options": [
+                "Energi dapat tersimpan meskipun mesin atau indikator mati",
+                "Semua kabel hibrida tidak berbahaya",
+                "Tegangan hilang saat kap dibuka",
+                "Label hanya hiasan"
+              ],
+              "answer": 0,
+              "explanation": "Sistem dapat menyimpan energi sehingga perlu isolasi dan petugas berwenang."
+            },
+            {
+              "kind": "case",
+              "prompt": "Kabel bertegangan tinggi rusak dan Anda belum dilatih. Apa tindakan tepat?",
+              "options": [
+                "Tutup dengan tangan kosong",
+                "Jangan sentuh, jauhkan orang, dan panggil teknisi",
+                "Ukur dengan alat apa saja",
+                "Nyalakan kendaraan"
+              ],
+              "answer": 1,
+              "explanation": "Kabel rusak berisiko sengatan atau kebakaran dan harus ditangani ahli."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Kendaraan hibrida dan tegangan tinggi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Cocokkan tugas dengan pelatihan dan otorisasi",
+                "Identifikasi kendaraan dan tanda tegangan tinggi",
+                "Amankan area dan ikuti prosedur isolasi yang disetujui",
+                "Hentikan serta laporkan kabel atau baterai yang rusak"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Identifikasi kendaraan dan tanda tegangan tinggi → Cocokkan tugas dengan pelatihan dan otorisasi → Amankan area dan ikuti prosedur isolasi yang disetujui → Hentikan serta laporkan kabel atau baterai yang rusak."
+            }
+          ]
+        },
+        {
+          "id": "auto-09",
+          "title": "Membongkar dan memasang komponen",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga urutan bongkar-pasang, identitas komponen, dan nilai pengencangan sesuai instruksi kendaraan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pembongkaran dan pemasangan mengikuti urutan manual atau lembar kerja. Tandai lokasi dan simpan baut atau konektor dalam wadah agar tidak tertukar. Torsi, pelumas, pengunci, dan penggunaan kembali komponen mengikuti spesifikasi pekerjaan; jangan memakai nilai dari model lain."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Gunakan kunci torsi pada rentang dan nilai manual. Hitung komponen sebelum menutup area kerja. Jika ulir rusak, bagian tertinggal, atau spesifikasi tidak tersedia, hentikan pemasangan dan laporkan agar pekerjaan tidak dianggap lengkap."
+            }
+          ],
+          "steps": [
+            "Baca urutan dan nilai pada manual",
+            "Tandai posisi serta simpan komponen berlabel",
+            "Pasang dengan alat dan spesifikasi tepat",
+            "Hitung komponen dan minta verifikasi"
+          ],
+          "caution": "Jangan menebak torsi, mencampur baut, atau menggunakan kembali bagian yang ditetapkan sekali pakai.",
+          "scenario": "Dua baut mirip tertukar dan nilai torsi belum dicantumkan pada lembar kerja.",
+          "response": "Tahan pemasangan, pisahkan baut yang dapat diidentifikasi, dan minta manual atau klarifikasi sebelum mengencangkan.",
+          "vocabulary": [
+            {
+              "japanese": "分解",
+              "reading": "ぶんかい",
+              "meaning": "pembongkaran"
+            },
+            {
+              "japanese": "組立て",
+              "reading": "くみたて",
+              "meaning": "perakitan"
+            },
+            {
+              "japanese": "締付けトルク",
+              "reading": "しめつけとるく",
+              "meaning": "torsi pengencangan"
+            },
+            {
+              "japanese": "部品番号",
+              "reading": "ぶひんばんごう",
+              "meaning": "nomor komponen"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このボルトの位置はどこですか。",
+              "reading": "このぼるとのいちはどこですか。",
+              "meaning": "Di mana posisi baut ini?"
+            },
+            {
+              "japanese": "整備書を確認してから締めます。",
+              "reading": "せいびしょをかくにんしてからしめます。",
+              "meaning": "Saya mengencangkan setelah memeriksa manual."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa dasar menentukan nilai pengencangan?",
+              "options": [
+                "Nilai manual atau lembar kerja untuk model itu",
+                "Kekuatan tangan",
+                "Nilai kendaraan sebelumnya",
+                "Perkiraan rasa kencang"
+              ],
+              "answer": 0,
+              "explanation": "Pengencangan mengikuti spesifikasi kendaraan; perkiraan tidak menggantikannya."
+            },
+            {
+              "kind": "case",
+              "prompt": "Baut tertukar dan nilai torsi belum tersedia. Apa tindakan tepat?",
+              "options": [
+                "Kencangkan sekuat mungkin",
+                "Tahan dan pastikan identitas serta spesifikasi",
+                "Pakai nilai baut besar",
+                "Lewati pemeriksaan"
+              ],
+              "answer": 1,
+              "explanation": "Identitas dan nilai harus dipastikan sebelum pemasangan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Membongkar dan memasang komponen», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Tandai posisi serta simpan komponen berlabel",
+                "Baca urutan dan nilai pada manual",
+                "Pasang dengan alat dan spesifikasi tepat",
+                "Hitung komponen dan minta verifikasi"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Baca urutan dan nilai pada manual → Tandai posisi serta simpan komponen berlabel → Pasang dengan alat dan spesifikasi tepat → Hitung komponen dan minta verifikasi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Mutu, pelaporan, dan serah terima",
+      "description": "Memeriksa hasil, menahan ketidaksesuaian, dan meneruskan catatan secara jujur kepada tim serta petugas layanan.",
+      "lessons": [
+        {
+          "id": "auto-10",
+          "title": "Pemeriksaan akhir dan uji fungsi",
+          "minutes": 25,
+          "objectives": [
+            "Memastikan semua butir perintah kerja selesai atau ditahan sebelum kendaraan diserahkan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Pemeriksaan akhir mencocokkan pekerjaan dengan catatan, alat yang dikembalikan, dan kondisi kendaraan. Uji fungsi hanya dilakukan jika ditugaskan dan diizinkan. Uji jalan memerlukan prosedur bengkel serta pengemudi dengan surat izin mengemudi yang sesuai dan berlaku. Materi belajar ini tidak memberi izin mengemudi."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Periksa bagian yang dikerjakan, pastikan alat tidak tertinggal, dan cek indikator terkait. Catat pekerjaan belum selesai. Jangan mengemudi kendaraan pelanggan jika tidak ditugaskan atau tidak memiliki izin yang sesuai; minta petugas berwenang mengatur uji fungsi."
+            }
+          ],
+          "steps": [
+            "Cocokkan daftar kerja dengan pekerjaan",
+            "Periksa alat dan area terkait",
+            "Lakukan uji fungsi yang ditugaskan sesuai prosedur",
+            "Catat hasil dan minta pemeriksaan akhir"
+          ],
+          "caution": "Jangan menandai selesai atau melakukan uji jalan tanpa kewenangan dan izin mengemudi yang berlaku.",
+          "scenario": "Semua pekerjaan tampak selesai, tetapi satu lampu peringatan belum diperiksa dan Anda diminta uji jalan.",
+          "response": "Jangan menandai selesai atau mengemudi. Catat butir belum diperiksa dan minta petugas berwenang menentukan tindak lanjut.",
+          "vocabulary": [
+            {
+              "japanese": "完成検査",
+              "reading": "かんせいけんさ",
+              "meaning": "pemeriksaan akhir"
+            },
+            {
+              "japanese": "試運転",
+              "reading": "しうんてん",
+              "meaning": "uji fungsi/jalan"
+            },
+            {
+              "japanese": "運転免許",
+              "reading": "うんてんめんきょ",
+              "meaning": "surat izin mengemudi"
+            },
+            {
+              "japanese": "引渡し",
+              "reading": "ひきわたし",
+              "meaning": "penyerahan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この項目はまだ確認していません。",
+              "reading": "このこうもくはまだかくにんしていません。",
+              "meaning": "Butir ini belum saya periksa."
+            },
+            {
+              "japanese": "責任者に確認をお願いします。",
+              "reading": "せきにんしゃにかくにんをおねがいします。",
+              "meaning": "Mohon penanggung jawab memeriksanya."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Kapan uji jalan boleh dilakukan?",
+              "options": [
+                "Setelah ditugaskan dan diizinkan, dengan pengemudi berizin dan prosedur aman",
+                "Setiap teknisi boleh kapan saja",
+                "Sebelum memeriksa kendaraan",
+                "Jika pelanggan meminta lisan"
+              ],
+              "answer": 0,
+              "explanation": "Uji jalan memerlukan otorisasi, izin mengemudi, dan kondisi aman."
+            },
+            {
+              "kind": "case",
+              "prompt": "Lampu peringatan belum diperiksa dan Anda diminta uji jalan. Apa respons tepat?",
+              "options": [
+                "Tandai selesai lalu berkendara",
+                "Catat butir terbuka dan minta petugas berwenang menindaklanjuti",
+                "Cabut lampu",
+                "Tinggalkan kunci tanpa laporan"
+              ],
+              "answer": 1,
+              "explanation": "Pemeriksaan belum lengkap dan uji jalan di luar kewenangan tidak boleh dilakukan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Pemeriksaan akhir dan uji fungsi», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Periksa alat dan area terkait",
+                "Cocokkan daftar kerja dengan pekerjaan",
+                "Lakukan uji fungsi yang ditugaskan sesuai prosedur",
+                "Catat hasil dan minta pemeriksaan akhir"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan daftar kerja dengan pekerjaan → Periksa alat dan area terkait → Lakukan uji fungsi yang ditugaskan sesuai prosedur → Catat hasil dan minta pemeriksaan akhir."
+            }
+          ]
+        },
+        {
+          "id": "auto-11",
+          "title": "Menahan kendaraan dan melaporkan anomali",
+          "minutes": 25,
+          "objectives": [
+            "Menghentikan pekerjaan atau penggunaan kendaraan saat menemukan risiko, hasil di luar batas, atau kondisi yang belum dipahami.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Tanda tahan mencegah kendaraan digunakan sebelum risiko dinilai. Laporan yang berguna mencantumkan kendaraan, lokasi, kondisi yang terlihat, waktu, hasil ukur bila ada, dan tindakan sementara. Laporkan fakta, bukan dugaan. Penanggung jawab memutuskan perbaikan, pemeriksaan ulang, dan siapa yang boleh meneruskan."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Jika ada kebocoran, kabel rusak, bunyi tidak normal, bagian hilang, atau hasil di luar manual, hentikan tahap terkait dan beri tanda. Sampaikan langsung kepada pemimpin bengkel. Jangan menghapus tanda atau menutup catatan sebelum ada keputusan dan pemeriksaan."
+            }
+          ],
+          "steps": [
+            "Hentikan tahap berisiko dan amankan kendaraan",
+            "Beri tanda tahan menurut prosedur",
+            "Catat fakta, lokasi, waktu, dan tindakan sementara",
+            "Laporkan dan tunggu keputusan penanggung jawab"
+          ],
+          "caution": "Jangan menyembunyikan ketidaksesuaian agar kendaraan cepat keluar atau pekerjaan tampak selesai.",
+          "scenario": "Setelah penggantian komponen terdengar bunyi baru, sementara pelanggan akan segera mengambil kendaraan.",
+          "response": "Tahan penyerahan, catat waktu dan lokasi bunyi, lalu panggil teknisi penanggung jawab untuk pemeriksaan ulang.",
+          "vocabulary": [
+            {
+              "japanese": "異常",
+              "reading": "いじょう",
+              "meaning": "ketidaknormalan"
+            },
+            {
+              "japanese": "報告",
+              "reading": "ほうこく",
+              "meaning": "laporan"
+            },
+            {
+              "japanese": "保留",
+              "reading": "ほりゅう",
+              "meaning": "ditahan sementara"
+            },
+            {
+              "japanese": "責任者",
+              "reading": "せきにんしゃ",
+              "meaning": "penanggung jawab"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業後に音が聞こえます。",
+              "reading": "さぎょうごにおとがきこえます。",
+              "meaning": "Ada bunyi setelah pekerjaan."
+            },
+            {
+              "japanese": "車を渡さず、報告します。",
+              "reading": "くるまをわたさず、ほうこくします。",
+              "meaning": "Saya tidak menyerahkan mobil dan melapor."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Apa yang membuat laporan anomali dapat ditindaklanjuti?",
+              "options": [
+                "Kendaraan, lokasi, waktu, fakta, hasil, dan tindakan",
+                "Dugaan penyebab saja",
+                "Nama pelanggan tanpa temuan",
+                "Kesan umum"
+              ],
+              "answer": 0,
+              "explanation": "Rincian yang diamati membantu pemeriksaan dan penelusuran."
+            },
+            {
+              "kind": "case",
+              "prompt": "Bunyi baru muncul setelah perbaikan dan pelanggan akan mengambil mobil. Apa tindakan tepat?",
+              "options": [
+                "Serahkan dan tunggu keluhan",
+                "Tahan penyerahan, catat bunyi, dan minta pemeriksaan ulang",
+                "Hapus catatan",
+                "Minta pelanggan mencari sumbernya"
+              ],
+              "answer": 1,
+              "explanation": "Bunyi baru perlu diperiksa sebelum kendaraan dikembalikan."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Menahan kendaraan dan melaporkan anomali», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Beri tanda tahan menurut prosedur",
+                "Hentikan tahap berisiko dan amankan kendaraan",
+                "Catat fakta, lokasi, waktu, dan tindakan sementara",
+                "Laporkan dan tunggu keputusan penanggung jawab"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Hentikan tahap berisiko dan amankan kendaraan → Beri tanda tahan menurut prosedur → Catat fakta, lokasi, waktu, dan tindakan sementara → Laporkan dan tunggu keputusan penanggung jawab."
+            }
+          ]
+        },
+        {
+          "id": "auto-12",
+          "title": "Catatan servis, suku cadang, dan penjelasan",
+          "minutes": 25,
+          "objectives": [
+            "Menyelesaikan catatan perbaikan dan meneruskan status dengan informasi yang dapat ditelusuri.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "sections": [
+            {
+              "title": "Konsep dan standar kerja",
+              "body": "Catatan menghubungkan kendaraan, keluhan, pemeriksaan, komponen, hasil, dan tindak lanjut. Gunakan nomor komponen serta jumlah aktual; pisahkan suku cadang bekas, baru, atau menunggu pemeriksaan. Informasi pelanggan dijaga kerahasiaannya dan hanya disampaikan kepada pihak yang berhak."
+            },
+            {
+              "title": "Penerapan di tempat kerja",
+              "body": "Lengkapi kolom tugas Anda dan serahkan status kepada petugas layanan atau teknisi berikutnya. Jika pelanggan bertanya tentang diagnosis atau biaya yang belum disahkan, jangan menebak atau menjanjikan. Arahkan ke petugas berwenang dan jelaskan pekerjaan yang sudah dikonfirmasi."
+            }
+          ],
+          "steps": [
+            "Cocokkan catatan dengan kendaraan dan perintah kerja",
+            "Catat komponen, jumlah, hasil, dan bagian terbuka",
+            "Pisahkan suku cadang serta dokumen menurut prosedur",
+            "Serahkan catatan dan arahkan pertanyaan pelanggan"
+          ],
+          "caution": "Jangan membagikan data pelanggan atau menjanjikan diagnosis dan biaya yang belum disahkan.",
+          "scenario": "Pelanggan meminta foto catatan perbaikan dan perkiraan biaya tambahan yang belum disetujui.",
+          "response": "Jangan mengirim catatan atau menebak biaya. Arahkan pelanggan ke petugas layanan setelah informasinya diperiksa dan disahkan.",
+          "vocabulary": [
+            {
+              "japanese": "交換部品",
+              "reading": "こうかんぶひん",
+              "meaning": "suku cadang pengganti"
+            },
+            {
+              "japanese": "数量",
+              "reading": "すうりょう",
+              "meaning": "jumlah"
+            },
+            {
+              "japanese": "個人情報",
+              "reading": "こじんじょうほう",
+              "meaning": "informasi pribadi"
+            },
+            {
+              "japanese": "説明",
+              "reading": "せつめい",
+              "meaning": "penjelasan"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "費用はまだ確認していません。",
+              "reading": "ひようはまだかくにんしていません。",
+              "meaning": "Biaya belum saya periksa."
+            },
+            {
+              "japanese": "担当者から説明します。",
+              "reading": "たんとうしゃからせつめいします。",
+              "meaning": "Petugas terkait akan menjelaskannya."
+            }
+          ],
+          "checks": [
+            {
+              "kind": "knowledge",
+              "prompt": "Mengapa nomor dan jumlah suku cadang dicatat?",
+              "options": [
+                "Agar komponen serta pekerjaan dapat ditelusuri",
+                "Agar data pelanggan dibagikan",
+                "Agar sisa barang tidak dihitung",
+                "Agar pemeriksaan tidak perlu"
+              ],
+              "answer": 0,
+              "explanation": "Catatan suku cadang mendukung penelusuran dan penjelasan servis."
+            },
+            {
+              "kind": "case",
+              "prompt": "Pelanggan meminta foto catatan dan biaya yang belum disetujui. Apa tindakan tepat?",
+              "options": [
+                "Kirim ke pesan pribadi dan tebak biaya",
+                "Jaga catatan dan arahkan ke petugas layanan",
+                "Tolak dengan marah",
+                "Hapus data pelanggan"
+              ],
+              "answer": 1,
+              "explanation": "Data pelanggan dilindungi dan informasi belum disahkan dijelaskan petugas berwenang."
+            },
+            {
+              "kind": "workflow",
+              "prompt": "Dalam alur «Catatan servis, suku cadang, dan penjelasan», setelah langkah pertama selesai, apa langkah berikutnya?",
+              "options": [
+                "Catat komponen, jumlah, hasil, dan bagian terbuka",
+                "Cocokkan catatan dengan kendaraan dan perintah kerja",
+                "Pisahkan suku cadang serta dokumen menurut prosedur",
+                "Serahkan catatan dan arahkan pertanyaan pelanggan"
+              ],
+              "answer": 0,
+              "explanation": "Urutan yang diajarkan: Cocokkan catatan dengan kendaraan dan perintah kerja → Catat komponen, jumlah, hasil, dan bagian terbuka → Pisahkan suku cadang serta dokumen menurut prosedur → Serahkan catatan dan arahkan pertanyaan pelanggan."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "ISA — sektor perawatan kendaraan bermotor: pekerjaan, tes keterampilan dan bahasa",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/automobilerepair.html"
+    },
+    {
+      "title": "ISA — deskripsi pekerjaan SSW No. 1 menurut sektor",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "MLIT — penerimaan pekerja SSW di sektor perawatan kendaraan bermotor",
+      "url": "https://www.mlit.go.jp/jidosha/jidosha_SSW.html"
+    },
+    {
+      "title": "JASPA — ruang lingkup dan informasi ujian evaluasi perawatan kendaraan bermotor",
+      "url": "https://www.jaspa.or.jp/mechanic/specific-skill/index.html"
+    }
+  ]
+}

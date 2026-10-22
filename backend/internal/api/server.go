@@ -4,14 +4,17 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
+	"runtime/debug"
 	"strings"
 	"time"
 
 	backendAuth "nihongo-master-backend/internal/auth"
 	"nihongo-master-backend/internal/billing"
+	"nihongo-master-backend/internal/diagnostics"
 	"nihongo-master-backend/internal/dictionary"
 	"nihongo-master-backend/internal/domain"
 	"nihongo-master-backend/internal/jobs"
@@ -22,29 +25,32 @@ import (
 )
 
 type Server struct {
-	manga                *manga.Repository
-	mangaAdminToken      string
-	mangaAccess          MangaAccessChecker
-	news                 *news.Repository
-	newsFetcher          news.Fetcher
-	newsAdminToken       string
-	newsImageDirectory   string
-	newsContext          context.Context
-	jobs                 *jobs.Repository
-	dictionary           *dictionary.Client
-	dictionaryAdminToken string
-	billing              *billing.Service
-	billingPushAudience  string
-	billingPushEmail     string
-	assetDirectory       string
-	store                *store.MemoryStore
-	googleVerifier       backendAuth.GoogleVerifier
-	branding             *BrandingStore
-	homeBanners          *HomeBannerStore
-	appUpdates           *AppUpdateStore
-	notifications        *NotificationStore
-	pricing              *PricingStore
-	profilePhotos        *media.ProfilePhotoStorage
+	manga                 *manga.Repository
+	mangaAdminToken       string
+	mangaAccess           MangaAccessChecker
+	news                  *news.Repository
+	newsFetcher           news.Fetcher
+	newsAdminToken        string
+	newsImageDirectory    string
+	newsContext           context.Context
+	jobs                  *jobs.Repository
+	dictionary            *dictionary.Client
+	dictionaryAdminToken  string
+	billing               *billing.Service
+	billingPushAudience   string
+	billingPushEmail      string
+	assetDirectory        string
+	store                 *store.MemoryStore
+	googleVerifier        backendAuth.GoogleVerifier
+	branding              *BrandingStore
+	homeBanners           *HomeBannerStore
+	appUpdates            *AppUpdateStore
+	notifications         *NotificationStore
+	pricing               *PricingStore
+	profilePhotos         *media.ProfilePhotoStorage
+	diagnostics           *diagnostics.Repository
+	diagnosticsAdminToken string
+	diagnosticLimiter     diagnosticRateLimiter
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
@@ -55,11 +61,13 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerDiagnostics(mux)
 	s.registerManga(mux)
 	s.registerNews(mux)
 	s.registerDictionaryAdmin(mux)
 	s.registerJobs(mux)
 	s.registerLegal(mux)
+	s.registerLanding(mux)
 	s.registerAnki(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
@@ -99,6 +107,8 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("PATCH /v1/me/profile", s.requireAuth(s.updateProfile))
 	mux.HandleFunc("POST /v1/me/profile/photo", s.requireAuth(s.uploadProfilePhoto))
 	mux.HandleFunc("GET /v1/me/progress", s.requireAuth(s.progress))
+	mux.HandleFunc("GET /v1/me/learning-history", s.requireAuth(s.learningHistory))
+	mux.HandleFunc("PUT /v1/me/learning-history/{kind}/{lessonID}", s.requireAuth(s.saveLearningActivity))
 	mux.HandleFunc("PUT /v1/me/progress/{lessonID}", s.requireAuth(s.saveProgress))
 	mux.HandleFunc("GET /v1/me/gamification", s.requireAuth(s.gamification))
 	mux.HandleFunc("GET /v1/me/achievements", s.requireAuth(s.achievements))
@@ -393,15 +403,65 @@ func (s *Server) middleware(next http.Handler) http.Handler {
 			w.WriteHeader(http.StatusNoContent)
 			return
 		}
+		recorder := &diagnosticResponseWriter{ResponseWriter: w}
 		defer func() {
 			if recovered := recover(); recovered != nil {
-				log.Printf("panic recovered: %v", recovered)
-				writeError(w, http.StatusInternalServerError, "internal_error", "unexpected server error")
+				message := sanitizeDiagnosticText(fmt.Sprint(recovered))
+				log.Printf("panic recovered on %s %s", r.Method, diagnosticRoute(r.URL.Path))
+				s.recordBackendDiagnostic(r, diagnostics.Event{
+					Severity: "crash", ErrorType: "panic", Message: message,
+					StackTrace: sanitizeDiagnosticText(string(debug.Stack())), StatusCode: http.StatusInternalServerError,
+				})
+				if recorder.status == 0 {
+					writeError(recorder, http.StatusInternalServerError, "internal_error", "unexpected server error")
+				}
+			} else if recorder.status >= http.StatusInternalServerError {
+				s.recordBackendDiagnostic(r, diagnostics.Event{
+					Severity: "error", ErrorType: "http_5xx",
+					Message: fmt.Sprintf("HTTP %d response", recorder.status), StatusCode: recorder.status,
+				})
 			}
 			log.Printf("%s %s %s", r.Method, r.URL.Path, time.Since(started))
 		}()
-		next.ServeHTTP(w, r)
+		next.ServeHTTP(recorder, r)
 	})
+}
+
+type diagnosticResponseWriter struct {
+	http.ResponseWriter
+	status int
+}
+
+func (w *diagnosticResponseWriter) WriteHeader(status int) {
+	if w.status != 0 {
+		return
+	}
+	w.status = status
+	w.ResponseWriter.WriteHeader(status)
+}
+
+func (w *diagnosticResponseWriter) Write(body []byte) (int, error) {
+	if w.status == 0 {
+		w.WriteHeader(http.StatusOK)
+	}
+	return w.ResponseWriter.Write(body)
+}
+
+func (w *diagnosticResponseWriter) Unwrap() http.ResponseWriter { return w.ResponseWriter }
+
+func (s *Server) recordBackendDiagnostic(r *http.Request, event diagnostics.Event) {
+	if s.diagnostics == nil {
+		return
+	}
+	event.Source = "backend"
+	event.Platform = "server"
+	event.Method = r.Method
+	event.Route = diagnosticRoute(r.URL.Path)
+	ctx, cancel := context.WithTimeout(context.WithoutCancel(r.Context()), 2*time.Second)
+	defer cancel()
+	if err := s.diagnostics.Record(ctx, event); err != nil {
+		log.Printf("store backend diagnostic: %v", err)
+	}
 }
 
 func userID(r *http.Request) string {

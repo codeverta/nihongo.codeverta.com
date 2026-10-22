@@ -9,7 +9,7 @@ import (
 
 func TestPublicLegalPages(t *testing.T) {
 	server := newServer()
-	for _, path := range []string{"/", "/legal", "/privacy-policy", "/terms-of-service", "/refund-policy", "/delete-account", "/support", "/data-safety"} {
+	for _, path := range []string{"/legal", "/privacy-policy", "/terms-of-service", "/refund-policy", "/delete-account", "/support", "/data-safety"} {
 		t.Run(path, func(t *testing.T) {
 			response := httptest.NewRecorder()
 			server.ServeHTTP(response, httptest.NewRequest("GET", path, nil))

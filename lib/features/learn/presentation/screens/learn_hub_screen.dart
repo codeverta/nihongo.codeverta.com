@@ -123,15 +123,15 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                         ? () => context.push(
                             '${AppRoutes.vocabularyPath}?level=${_levels[_selectedLevel]}',
                           )
-                        : index == 1 && _selectedLevel <= 3
+                        : index == 1 && _selectedLevel <= 4
                         ? () => context.push(
                             '${AppRoutes.grammarPath}?level=${_levels[_selectedLevel]}',
                           )
-                        : index == 2 && _selectedLevel <= 2
+                        : index == 2 && _selectedLevel <= 4
                         ? () => context.push(
                             '${AppRoutes.kanjiPath}?level=${_levels[_selectedLevel]}',
                           )
-                        : index == 3 && _selectedLevel <= 3
+                        : index == 3 && _selectedLevel <= 4
                         ? () => context.push(
                             AppRoutes.readingCoursePath(
                               _levels[_selectedLevel],

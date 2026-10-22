@@ -244,7 +244,11 @@ class BillingController extends StateNotifier<BillingState>
           applicationUserName: account!.accountToken,
         ),
       );
-      if (!started) showMessage('Pembayaran tidak dimulai. Silakan coba lagi.');
+      if (!started) {
+        showMessage(
+          'Google Play tidak melanjutkan pembayaran. Jika dialog tadi ditutup, tidak ada biaya yang dikenakan dan akses tetap sama.',
+        );
+      }
     } on Object {
       showMessage(
         'Pembayaran tidak dapat dimulai. Coba Restore jika sudah membeli.',
@@ -296,6 +300,29 @@ class BillingController extends StateNotifier<BillingState>
 
   Future<void> _handle(List<PurchaseDetails> items) async {
     for (final purchase in items) {
+      // Google Play can report a canceled or failed billing launch without a
+      // PurchaseWrapper, so the plugin emits a PurchaseDetails with an empty
+      // product ID. Handle those results before filtering by product ID.
+      if (purchase.productID.isEmpty &&
+          purchase.status == PurchaseStatus.canceled) {
+        showMessage(
+          'Pembayaran dibatalkan. Tidak ada biaya yang dikenakan dan akses tidak berubah.',
+        );
+        if (purchase.pendingCompletePurchase) {
+          await gateway!.complete(purchase);
+        }
+        continue;
+      }
+      if (purchase.productID.isEmpty &&
+          purchase.status == PurchaseStatus.error) {
+        showMessage(
+          'Google Play tidak dapat memulai pembayaran. Akses tidak berubah; silakan coba lagi.',
+        );
+        if (purchase.pendingCompletePurchase) {
+          await gateway!.complete(purchase);
+        }
+        continue;
+      }
       if (account == null || user == null) {
         waitingForLogin['${purchase.productID}:${purchase.purchaseID}'] =
             purchase;

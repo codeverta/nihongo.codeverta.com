@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
+import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/vocabulary/data/vocabulary_repository.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
@@ -15,9 +16,9 @@ final vocabularyRepositoryProvider = Provider<VocabularyRepository>((ref) {
 
 final vocabularyLevelsProvider =
     FutureProvider.autoDispose<List<VocabularyLevel>>((ref) {
-  ref.watch(authControllerProvider.select((state) => state.status));
-  return ref.watch(vocabularyRepositoryProvider).getLevels();
-});
+      ref.watch(authControllerProvider.select((state) => state.status));
+      return ref.watch(vocabularyRepositoryProvider).getLevels();
+    });
 
 enum VocabularyStage { study, quiz, result }
 
@@ -71,8 +72,9 @@ class VocabularyLessonState {
       wordIndex: wordIndex ?? this.wordIndex,
       questionIndex: questionIndex ?? this.questionIndex,
       attempt: attempt ?? this.attempt,
-      selectedOptionId:
-          clearSelection ? null : selectedOptionId ?? this.selectedOptionId,
+      selectedOptionId: clearSelection
+          ? null
+          : selectedOptionId ?? this.selectedOptionId,
       feedback: clearFeedback ? null : feedback ?? this.feedback,
       result: clearResult ? null : result ?? this.result,
       submitting: submitting ?? this.submitting,
@@ -82,22 +84,30 @@ class VocabularyLessonState {
 }
 
 final vocabularyLessonControllerProvider = StateNotifierProvider.autoDispose
-    .family<VocabularyLessonController, AsyncValue<VocabularyLessonState>,
-        String>((ref, lessonId) {
-  ref.watch(authControllerProvider.select((s) => s.user?.id));
-  final controller = VocabularyLessonController(
-    ref.watch(vocabularyRepositoryProvider),
-    lessonId,
-    onProgressChanged: () {
-      ref
-        ..invalidate(vocabularyLevelsProvider)
-        ..invalidate(homeDashboardProvider)
-        ..invalidate(gamificationProvider);
-    },
-  );
-  unawaited(controller.load());
-  return controller;
-});
+    .family<
+      VocabularyLessonController,
+      AsyncValue<VocabularyLessonState>,
+      String
+    >((ref, lessonId) {
+      final userId = ref.watch(
+        authControllerProvider.select((s) => s.user?.id),
+      );
+      final controller = VocabularyLessonController(
+        ref.watch(vocabularyRepositoryProvider),
+        lessonId,
+        history: userId == null
+            ? null
+            : ref.watch(learningHistoryProvider.notifier),
+        onProgressChanged: () {
+          ref
+            ..invalidate(vocabularyLevelsProvider)
+            ..invalidate(homeDashboardProvider)
+            ..invalidate(gamificationProvider);
+        },
+      );
+      unawaited(controller.load());
+      return controller;
+    });
 
 class VocabularyLessonController
     extends StateNotifier<AsyncValue<VocabularyLessonState>> {
@@ -105,11 +115,14 @@ class VocabularyLessonController
     this._repository,
     this._lessonId, {
     required this.onProgressChanged,
+    this.history,
   }) : super(const AsyncValue.loading());
 
   final VocabularyRepository _repository;
   final String _lessonId;
   final VoidCallback onProgressChanged;
+
+  final LearningHistoryController? history;
 
   Future<void> load() async {
     final loaded = await AsyncValue.guard(() async {
@@ -117,7 +130,21 @@ class VocabularyLessonController
       if (lesson.words.isEmpty) {
         throw const VocabularyException('Lesson ini belum memiliki kosakata.');
       }
-      return VocabularyLessonState(lesson: lesson);
+      final savedPosition = mounted
+          ? await history?.open(
+              kind: 'vocabulary',
+              isActive: () => mounted,
+              lessonId: lesson.id,
+              title: lesson.title,
+              level: lesson.level,
+              total: lesson.words.length,
+              completed: lesson.completed,
+            )
+          : null;
+      return VocabularyLessonState(
+        lesson: lesson,
+        wordIndex: savedPosition ?? 0,
+      );
     });
     if (mounted) state = loaded;
   }
@@ -131,6 +158,7 @@ class VocabularyLessonController
         meaningRevealed: false,
       ),
     );
+    history?.position('vocabulary', _lessonId, current.wordIndex + (-1));
   }
 
   void nextWord() {
@@ -145,6 +173,7 @@ class VocabularyLessonController
         meaningRevealed: false,
       ),
     );
+    history?.position('vocabulary', _lessonId, current.wordIndex + 1);
   }
 
   void revealMeaning() {
@@ -241,6 +270,7 @@ class VocabularyLessonController
     state = AsyncValue.data(current.copyWith(submitting: true));
     try {
       final result = await _repository.complete(attempt.id);
+      if (mounted && result.passed) history?.complete('vocabulary', _lessonId);
       if (!mounted) return;
       onProgressChanged();
       state = AsyncValue.data(
