@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
@@ -14,9 +15,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test(
+  testWidgets(
     'revoked bearer token is cleared and routes the user to login',
-    () async {
+    (tester) async {
       SharedPreferences.setMockInitialValues({
         authTokenStorageKey: 'expired-token',
         'is_first_time': false,
@@ -31,56 +32,53 @@ void main() {
       addTearDown(container.dispose);
 
       final adapter = _RevokedSessionAdapter();
-      final dio = container.read(dioProvider)..httpClientAdapter = adapter;
+      container.read(dioProvider).httpClientAdapter = adapter;
       final authSubscription = container.listen(
         authControllerProvider,
         (_, _) {},
       );
       addTearDown(authSubscription.close);
+      await tester.runAsync(
+        () => _waitFor(
+          () => container.read(authControllerProvider).isAuthenticated,
+          description: 'session restore',
+        ),
+      );
       final router = container.read(appRouterProvider)
         ..go(AppRoutes.vocabularyLessonPath('n5-daily'));
 
-      await _waitFor(
-        () => container.read(authControllerProvider).isAuthenticated,
-        description: 'session restore',
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: container,
+          child: MaterialApp.router(routerConfig: router),
+        ),
       );
-      expect(container.read(authControllerProvider).isAuthenticated, isTrue);
-
-      late DioException failure;
-      try {
-        await dio.get<Map<String, dynamic>>('/vocabulary/levels');
-        fail('Expected the API request to be rejected.');
-      } on DioException catch (error) {
-        failure = error;
-      }
-
-      expect(adapter.authorizationHeaders.last, 'Bearer expired-token');
-      expect(container.read(sessionExpirationEventProvider), 1);
-      await _waitFor(() {
-        return container.read(authControllerProvider).status ==
-            AuthenticationStatus.guest;
-      }, description: 'session expiration');
-      await _waitFor(
-        () => router.routerDelegate.currentConfiguration.uri.path ==
-            AppRoutes.loginPath,
-        description: 'login route redirect',
+      await tester.runAsync(
+        () => _waitFor(
+          () => container.read(authControllerProvider).status ==
+              AuthenticationStatus.guest,
+          description: 'session expiration',
+        ),
       );
+      await tester.pumpAndSettle();
 
       expect(preferences.getString(authTokenStorageKey), isNull);
+      expect(adapter.authorizationHeaders.last, 'Bearer expired-token');
       expect(
         container.read(authControllerProvider).errorMessage,
         sessionExpiredMessage,
       );
-      final responseBody = failure.response!.data as Map<String, dynamic>;
-      final errorDetails = responseBody['error'] as Map<String, dynamic>;
-      expect(errorDetails['message'] as String, sessionExpiredMessage);
+      expect(find.text('Masuk untuk mulai belajar'), findsOneWidget);
+      expect(find.text(sessionExpiredMessage), findsOneWidget);
+      expect(find.textContaining('Bearer token tidak valid'), findsNothing);
       expect(
         router.routerDelegate.currentConfiguration.uri.path,
         AppRoutes.loginPath,
       );
 
-      container.read(authControllerProvider.notifier).continueAsGuest();
-      router.go(AppRoutes.homePath);
+      await tester.ensureVisible(find.text('Lanjut sebagai tamu'));
+      await tester.tap(find.text('Lanjut sebagai tamu'));
+      await tester.pumpAndSettle();
       expect(
         router.routerDelegate.currentConfiguration.uri.path,
         AppRoutes.homePath,
