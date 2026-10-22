@@ -85,7 +85,7 @@ func TestSimulationN4API(t *testing.T) {
 	if overview.Code != 200 || !strings.Contains(overview.Body.String(), `"questionCount":57`) || !strings.Contains(overview.Body.String(), `"durationMinutes":80`) {
 		t.Fatal(overview.Body.String())
 	}
-	if w := request("GET", "/v1/simulation/n2", ""); w.Code != 400 {
+	if w := request("GET", "/v1/simulation/unsupported", ""); w.Code != 400 {
 		t.Fatal("unsupported level accepted")
 	}
 	w := request("POST", "/v1/exam-attempts", `{"examId":"jlpt-n4-simulation-1"}`)
@@ -142,7 +142,7 @@ func TestSimulationN3API(t *testing.T) {
 	if overview.Code != 200 || !strings.Contains(overview.Body.String(), `"questionCount":74`) || !strings.Contains(overview.Body.String(), `"durationMinutes":100`) {
 		t.Fatal(overview.Body.String())
 	}
-	if w := request("GET", "/v1/simulation/n2", ""); w.Code != 400 {
+	if w := request("GET", "/v1/simulation/unsupported", ""); w.Code != 400 {
 		t.Fatal("unsupported level accepted")
 	}
 	w := request("POST", "/v1/exam-attempts", `{"examId":"jlpt-n3-simulation-1"}`)
@@ -199,7 +199,7 @@ func TestJFTAPI(t *testing.T) {
 	if overview.Code != 200 || !strings.Contains(overview.Body.String(), `"questionCount":36`) || !strings.Contains(overview.Body.String(), `"durationMinutes":45`) {
 		t.Fatal(overview.Body.String())
 	}
-	if w := request("GET", "/v1/simulation/n2", ""); w.Code != 400 {
+	if w := request("GET", "/v1/simulation/unsupported", ""); w.Code != 400 {
 		t.Fatal("unsupported level accepted")
 	}
 	w := request("POST", "/v1/exam-attempts", `{"examId":"jft-a2-full-1"}`)
@@ -263,7 +263,7 @@ func TestSimulationNATAPI(t *testing.T) {
 	if overview.Code != 200 || !strings.Contains(overview.Body.String(), `"questionCount":43`) || !strings.Contains(overview.Body.String(), `"durationMinutes":60`) {
 		t.Fatal(overview.Body.String())
 	}
-	if w := request("GET", "/v1/simulation/n2", ""); w.Code != 400 {
+	if w := request("GET", "/v1/simulation/unsupported", ""); w.Code != 400 {
 		t.Fatal("unsupported level accepted")
 	}
 	w := request("POST", "/v1/exam-attempts", `{"examId":"nat-5q-full-1"}`)
