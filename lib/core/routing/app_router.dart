@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/core/notifications/notification_settings_screen.dart';
 import 'package:nihongo_master/core/settings/display_settings_screen.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
@@ -415,7 +416,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         return AppRoutes.homePath;
       }
 
-      final user = ref.read(authControllerProvider).user;
+      final authState = ref.read(authControllerProvider);
+      if (authState.errorMessage == sessionExpiredMessage &&
+          location != AppRoutes.loginPath) {
+        return AppRoutes.loginPath;
+      }
+
+      final user = authState.user;
       if ((location == '/manga' || location.startsWith('/manga/')) &&
           !(user?.isLifetime ?? false)) {
         return '/premium?from=${Uri.encodeQueryComponent(state.uri.toString())}';
@@ -433,6 +440,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   // GoRouter perlu diberi tahu saat state yang dipakai redirect berubah.
   ref
     ..listen<bool>(isFirstTimeProvider, (previous, next) => router.refresh())
+    ..listen<AuthenticationStatus>(
+      authControllerProvider.select((s) => s.status),
+      (previous, next) => router.refresh(),
+    )
+    ..listen<String?>(
+      authControllerProvider.select((s) => s.errorMessage),
+      (previous, next) => router.refresh(),
+    )
     ..listen<bool>(
       authControllerProvider.select((s) => s.user?.isLifetime ?? false),
       (previous, next) => router.refresh(),

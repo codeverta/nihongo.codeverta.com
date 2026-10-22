@@ -5,8 +5,14 @@ on:
     branches: [main]
     paths:
       - 'lib/core/app_update/**'
+      - 'lib/core/auth/**'
       - 'lib/core/notifications/**'
+      - 'lib/core/network/**'
+      - 'lib/core/routing/**'
+      - 'lib/features/auth/**'
       - 'test/core/notifications/**'
+      - 'test/core/network/**'
+      - 'test/features/auth/**'
       - 'pubspec.*'
       - 'android/**/*.kts'
       - 'android/app/google-services.json'
@@ -20,8 +26,14 @@ on:
   pull_request:
     paths:
       - 'lib/core/app_update/**'
+      - 'lib/core/auth/**'
       - 'lib/core/notifications/**'
+      - 'lib/core/network/**'
+      - 'lib/core/routing/**'
+      - 'lib/features/auth/**'
       - 'test/core/notifications/**'
+      - 'test/core/network/**'
+      - 'test/features/auth/**'
       - 'pubspec.*'
       - 'android/**/*.kts'
       - 'android/app/google-services.json'
@@ -49,8 +61,8 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter analyze lib/core/app_update lib/core/notifications lib/core/routing/app_router.dart lib/main.dart test/core/app_update test/core/notifications
-      - run: flutter test test/core/app_update test/core/notifications test/widget_test.dart test/core/branding_test.dart
+      - run: flutter analyze lib/core/app_update lib/core/auth lib/core/network lib/core/notifications lib/core/routing lib/features/auth lib/main.dart test/core/app_update test/core/network test/core/notifications test/features/auth
+      - run: flutter test test/core/app_update test/core/network test/core/notifications test/features/auth test/widget_test.dart test/core/branding_test.dart
   ios-host:
     runs-on: macos-26
     timeout-minutes: 30

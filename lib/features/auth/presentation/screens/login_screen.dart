@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
@@ -44,6 +45,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     // return to a premium gate or another stale route and leave the user
     // feeling like login did not finish.
     if (authenticated) {
+      context.go('/home');
+      return;
+    }
+
+    if (ref.read(authControllerProvider).errorMessage ==
+        sessionExpiredMessage) {
+      ref.read(authControllerProvider.notifier).continueAsGuest();
       context.go('/home');
       return;
     }

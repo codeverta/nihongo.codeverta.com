@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -77,6 +78,11 @@ final authControllerProvider =
         ),
         GoogleAuthenticationService(),
       );
+      ref.listen<int>(sessionExpirationEventProvider, (previous, next) {
+        if (next > (previous ?? 0)) {
+          controller.expireSession();
+        }
+      });
       unawaited(controller.restoreSession());
       return controller;
     });
@@ -100,6 +106,11 @@ class AuthController extends StateNotifier<AuthenticationState> {
     }
     try {
       state = AuthenticationState.authenticated(await repository.currentUser());
+    } on AuthException catch (error) {
+      await repository.clearSession();
+      state = AuthenticationState.guest(
+        errorMessage: error.statusCode == 401 ? sessionExpiredMessage : null,
+      );
     } on Object {
       await repository.clearSession();
       state = const AuthenticationState.guest();
@@ -157,6 +168,18 @@ class AuthController extends StateNotifier<AuthenticationState> {
       }
       state = const AuthenticationState.guest();
     }
+  }
+
+  void expireSession() {
+    if (!mounted) return;
+    state = const AuthenticationState.guest(
+      errorMessage: sessionExpiredMessage,
+    );
+  }
+
+  void continueAsGuest() {
+    if (!mounted || state.errorMessage != sessionExpiredMessage) return;
+    state = const AuthenticationState.guest();
   }
 
   Future<void> refreshUser() async {
