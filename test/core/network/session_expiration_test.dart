@@ -42,6 +42,7 @@ void main() {
 
       await _waitFor(
         () => container.read(authControllerProvider).isAuthenticated,
+        description: 'session restore',
       );
       expect(container.read(authControllerProvider).isAuthenticated, isTrue);
 
@@ -58,10 +59,11 @@ void main() {
       await _waitFor(() {
         return container.read(authControllerProvider).status ==
             AuthenticationStatus.guest;
-      });
+      }, description: 'session expiration');
       await _waitFor(
-        () => router.routeInformationProvider.value.uri.path ==
+        () => router.routerDelegate.currentConfiguration.uri.path ==
             AppRoutes.loginPath,
+        description: 'login route redirect',
       );
 
       expect(preferences.getString(authTokenStorageKey), isNull);
@@ -73,14 +75,14 @@ void main() {
       final errorDetails = responseBody['error'] as Map<String, dynamic>;
       expect(errorDetails['message'] as String, sessionExpiredMessage);
       expect(
-        router.routeInformationProvider.value.uri.path,
+        router.routerDelegate.currentConfiguration.uri.path,
         AppRoutes.loginPath,
       );
 
       container.read(authControllerProvider.notifier).continueAsGuest();
       router.go(AppRoutes.homePath);
       expect(
-        router.routeInformationProvider.value.uri.path,
+        router.routerDelegate.currentConfiguration.uri.path,
         AppRoutes.homePath,
       );
       expect(container.read(authControllerProvider).errorMessage, isNull);
@@ -88,12 +90,15 @@ void main() {
   );
 }
 
-Future<void> _waitFor(bool Function() condition) async {
+Future<void> _waitFor(
+  bool Function() condition, {
+  required String description,
+}) async {
   for (var attempt = 0; attempt < 50; attempt++) {
     if (condition()) return;
     await Future<void>.delayed(const Duration(milliseconds: 10));
   }
-  fail('Condition did not become true in time.');
+  fail('$description did not complete in time.');
 }
 
 class _RevokedSessionAdapter implements HttpClientAdapter {
