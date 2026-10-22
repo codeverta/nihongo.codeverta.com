@@ -38,8 +38,7 @@ void main() {
       );
       final router = container.read(appRouterProvider)
         ..go('/attributions');
-      addTearDown(() async {
-        await tester.pumpWidget(const SizedBox.shrink());
+      addTearDown(() {
         authSubscription.close();
         container.dispose();
         dio.close(force: true);
@@ -89,6 +88,7 @@ void main() {
         router.routerDelegate.currentConfiguration.uri.path,
         AppRoutes.loginPath,
       );
+      await tester.pumpWidget(const SizedBox.shrink());
     },
   );
 }
