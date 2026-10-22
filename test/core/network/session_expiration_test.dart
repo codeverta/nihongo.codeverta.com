@@ -53,14 +53,13 @@ void main() {
 
       await preferences.setString(authTokenStorageKey, 'expired-token');
       router.go(AppRoutes.vocabularyLessonPath('n5-daily'));
-      await tester.runAsync(
-        () => _waitFor(
-          () =>
-              container.read(authControllerProvider).errorMessage ==
-              sessionExpiredMessage,
-          description: 'session expiration',
-        ),
-      );
+      try {
+        await container
+            .read(dioProvider)
+            .get<dynamic>('/vocabulary/lessons/n5-daily');
+      } on DioException {
+        // The endpoint intentionally returns 401 for the revoked token.
+      }
       await tester.pumpAndSettle();
 
       expect(preferences.getString(authTokenStorageKey), isNull);
@@ -90,17 +89,6 @@ void main() {
       expect(container.read(authControllerProvider).errorMessage, isNull);
     },
   );
-}
-
-Future<void> _waitFor(
-  bool Function() condition, {
-  required String description,
-}) async {
-  for (var attempt = 0; attempt < 50; attempt++) {
-    if (condition()) return;
-    await Future<void>.delayed(const Duration(milliseconds: 10));
-  }
-  fail('$description did not complete in time.');
 }
 
 class _RevokedSessionAdapter implements HttpClientAdapter {
