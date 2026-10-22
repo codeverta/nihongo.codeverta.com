@@ -30,17 +30,20 @@ void main() {
           appBrandingProvider.overrideWith((ref) async => const AppBranding()),
         ],
       );
-      addTearDown(container.dispose);
-
       final adapter = _RevokedSessionAdapter();
-      container.read(dioProvider).httpClientAdapter = adapter;
+      final dio = container.read(dioProvider)..httpClientAdapter = adapter;
       final authSubscription = container.listen(
         authControllerProvider,
         (_, _) {},
       );
-      addTearDown(authSubscription.close);
       final router = container.read(appRouterProvider)
         ..go('/attributions');
+      addTearDown(() async {
+        await tester.pumpWidget(const SizedBox.shrink());
+        authSubscription.close();
+        container.dispose();
+        dio.close(force: true);
+      });
 
       await tester.pumpWidget(
         UncontrolledProviderScope(
