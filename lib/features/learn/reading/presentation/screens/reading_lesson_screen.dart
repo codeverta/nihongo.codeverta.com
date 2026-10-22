@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/controllers/reading_controller.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/widgets/reading_illustration.dart';
@@ -55,19 +56,20 @@ class ReadingLessonScreen extends ConsumerWidget {
   }
 }
 
-class _Study extends StatefulWidget {
+class _Study extends ConsumerStatefulWidget {
   const _Study({required this.state, required this.controller});
   final ReadingState state;
   final ReadingController controller;
   @override
-  State<_Study> createState() => _StudyState();
+  ConsumerState<_Study> createState() => _StudyState();
 }
 
-class _StudyState extends State<_Study> {
-  bool _furigana = true;
-  bool _translation = false;
+class _StudyState extends ConsumerState<_Study> {
   @override
   Widget build(BuildContext context) {
+    final displayPreferences = ref.watch(displayPreferencesProvider);
+    final furigana = displayPreferences.furigana;
+    final translation = displayPreferences.translation;
     final state = widget.state;
     final controller = widget.controller;
     final page = state.lesson.pages[state.pageIndex];
@@ -119,34 +121,38 @@ class _StudyState extends State<_Study> {
                   FilterChip(
                     key: const Key('reading-furigana-toggle'),
                     label: const Text('Furigana'),
-                    selected: _furigana,
+                    selected: furigana,
                     showCheckmark: false,
                     selectedColor: colors.secondary,
                     labelStyle: TextStyle(
-                      color: _furigana ? colors.onSecondary : colors.onSurface,
+                      color: furigana ? colors.onSecondary : colors.onSurface,
                     ),
-                    onSelected: (v) => setState(() => _furigana = v),
+                    onSelected: (enabled) => ref
+                        .read(displayPreferencesProvider.notifier)
+                        .setFurigana(enabled: enabled),
                     avatar: Icon(
                       Icons.translate_rounded,
                       size: 18,
-                      color: _furigana ? colors.onSecondary : colors.primary,
+                      color: furigana ? colors.onSecondary : colors.primary,
                     ),
                   ),
                   FilterChip(
                     label: const Text('Terjemahan'),
-                    selected: _translation,
+                    selected: translation,
                     showCheckmark: false,
                     selectedColor: colors.secondary,
                     labelStyle: TextStyle(
-                      color: _translation
+                      color: translation
                           ? colors.onSecondary
                           : colors.onSurface,
                     ),
-                    onSelected: (v) => setState(() => _translation = v),
+                    onSelected: (enabled) => ref
+                        .read(displayPreferencesProvider.notifier)
+                        .setTranslation(enabled: enabled),
                     avatar: Icon(
                       Icons.language_rounded,
                       size: 18,
-                      color: _translation ? colors.onSecondary : colors.primary,
+                      color: translation ? colors.onSecondary : colors.primary,
                     ),
                   ),
                 ],
@@ -161,7 +167,7 @@ class _StudyState extends State<_Study> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    if (_furigana)
+                    if (furigana)
                       JapaneseRubyText(
                         text: page.japanese,
                         reading: page.reading,
@@ -182,7 +188,7 @@ class _StudyState extends State<_Study> {
                           letterSpacing: 0.4,
                         ),
                       ),
-                    if (_translation) ...[
+                    if (translation) ...[
                       const SizedBox(height: 16),
                       const Text(
                         'Arti cerita',
@@ -212,7 +218,7 @@ class _StudyState extends State<_Study> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        if (_furigana)
+                        if (furigana)
                           JapaneseRubyText(
                             text: word.japanese,
                             reading: word.reading,

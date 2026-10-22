@@ -47,7 +47,7 @@ kurikulum latihan aplikasi, bukan salinan atau checklist resmi ujian JLPT.
 ## Ilustrasi AI
 
 Ilustrasi dibuat dengan **tool imagegen bawaan**, bukan CLI. Seluruh hasil
-akhir disalin ke `backend/assets/images/reading/story-01.png` sampai `story-12.png`.
+akhir disalin ke `backend/assets/images/reading/story-01.webp` sampai `story-12.webp`.
 Setiap berkas merupakan tiga panel persegi berjajar; widget
 `ReadingIllustration` menampilkan panel sesuai halaman tanpa membuat salinan
 gambar. Totalnya 12 lembar ilustrasi dengan **36 adegan berbeda**.

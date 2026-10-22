@@ -18,7 +18,7 @@ class JobsEntryCard extends StatelessWidget {
     eyebrow: 'LANGKAH BERIKUTNYA UNTUK KARIERMU',
     description:
         'Temukan peluang sesuai bidang, lokasi, gaji, dan kualifikasimu',
-    asset: 'assets/images/jobs/job-category-atlas.png',
+    asset: 'assets/images/jobs/job-category-atlas.webp',
     color: const Color(0xFF443060),
     icon: Icons.work_rounded,
     onTap: () => context.push('/jobs'),

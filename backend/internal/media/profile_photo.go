@@ -9,7 +9,7 @@ import (
 	"image/color"
 	"image/draw"
 	_ "image/gif"
-	"image/jpeg"
+	_ "image/jpeg"
 	_ "image/png"
 	"net/http"
 	"net/url"
@@ -19,6 +19,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/tencentyun/cos-go-sdk-v5"
 	xdraw "golang.org/x/image/draw"
+	"nihongo-master-backend/internal/imageopt"
 )
 
 const (
@@ -142,9 +143,9 @@ func OptimizeProfilePhoto(input []byte) ([]byte, error) {
 	output := image.NewRGBA(image.Rect(0, 0, width, height))
 	draw.Draw(output, output.Bounds(), image.NewUniform(color.White), image.Point{}, draw.Src)
 	xdraw.CatmullRom.Scale(output, output.Bounds(), source, source.Bounds(), draw.Over, nil)
-	var result bytes.Buffer
-	if err := jpeg.Encode(&result, output, &jpeg.Options{Quality: 82}); err != nil {
+	result, err := imageopt.JPEG(output)
+	if err != nil {
 		return nil, fmt.Errorf("gagal mengompres foto")
 	}
-	return result.Bytes(), nil
+	return result, nil
 }

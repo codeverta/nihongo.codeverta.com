@@ -319,7 +319,7 @@ class _JourneyArtwork extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(31),
         child: const RemoteAssetImage(
-          asset: 'assets/images/onboarding-japanese-journey.png',
+          asset: 'assets/images/onboarding-japanese-journey.webp',
           url: '',
           fit: BoxFit.cover,
           alignment: Alignment(0, 0.22),

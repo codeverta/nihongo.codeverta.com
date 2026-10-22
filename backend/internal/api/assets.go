@@ -35,11 +35,12 @@ func (s *Server) registerAssets(mux *http.ServeMux) {
 	mux.Handle("GET /assets/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		key := strings.TrimPrefix(r.URL.Path, "/assets/")
 		parts := strings.Split(key, "/")
-		// Only public learning PNGs; never expose directory listings or config files.
-		isOnboarding := key == "images/onboarding-japanese-journey.png"
+		// Only public learning images; never expose directory listings or config files.
+		isOnboarding := key == "images/onboarding-japanese-journey.webp" || key == "images/onboarding-japanese-journey.png"
 		isHomeBanner := false
 		for _, imageURL := range defaultBannerImages {
-			if "/assets/"+key == imageURL {
+			legacyPNG := strings.TrimSuffix(imageURL, ".webp") + ".png"
+			if "/assets/"+key == imageURL || "/assets/"+key == legacyPNG {
 				isHomeBanner = true
 				break
 			}
@@ -47,7 +48,7 @@ func (s *Server) registerAssets(mux *http.ServeMux) {
 		isLearning := len(parts) == 3 && parts[0] == "images" &&
 			(parts[1] == "reading" || parts[1] == "vocabulary") &&
 			path.Clean(key) == key && !strings.Contains(key, "\\") &&
-			strings.HasSuffix(parts[2], ".png")
+			(strings.HasSuffix(parts[2], ".webp") || strings.HasSuffix(parts[2], ".png"))
 		if !isOnboarding && !isLearning && !isHomeBanner {
 			http.NotFound(w, r)
 			return
@@ -55,7 +56,11 @@ func (s *Server) registerAssets(mux *http.ServeMux) {
 		w.Header().Set("Cache-Control", "public, max-age=86400")
 		w.Header().Del("Content-Type")
 		if files == nil {
-			remote := s.store.AssetURL("assets/" + key)
+			cdnKey := key
+			if strings.HasSuffix(cdnKey, ".png") {
+				cdnKey = strings.TrimSuffix(cdnKey, ".png") + ".webp"
+			}
+			remote := s.store.AssetURL("assets/" + cdnKey)
 			parsed, err := url.Parse(remote)
 			if err == nil && parsed.Host != "" && (parsed.Scheme == "https" || parsed.Scheme == "http") {
 				http.Redirect(w, r, remote, http.StatusFound)
@@ -63,6 +68,13 @@ func (s *Server) registerAssets(mux *http.ServeMux) {
 			}
 			http.NotFound(w, r)
 			return
+		}
+		if strings.HasSuffix(key, ".png") {
+			webpKey := strings.TrimSuffix(key, ".png") + ".webp"
+			if _, err := os.Stat(filepath.Join(s.assetDirectory, filepath.FromSlash(webpKey))); err == nil {
+				r = r.Clone(r.Context())
+				r.URL.Path = "/assets/" + webpKey
+			}
 		}
 		files.ServeHTTP(w, r)
 	}))

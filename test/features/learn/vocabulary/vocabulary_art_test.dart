@@ -16,7 +16,7 @@ void main() {
                 width: 88,
                 height: 88,
                 child: VocabularyArt(
-                  asset: 'assets/images/vocabulary/n5-theme-01.png',
+                  asset: 'assets/images/vocabulary/n5-theme-01.webp',
                 ),
               ),
             ),

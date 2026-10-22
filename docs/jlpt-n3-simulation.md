@@ -30,10 +30,10 @@ Distribusi jumlah merupakan rancangan latihan; listening belum termasuk. Skor ad
 
 Empat ilustrasi asli dibuat melalui built-in image generation, satu gambar per ujian. File dibundel bersama Flutter sehingga tidak perlu fetch gambar eksternal:
 
-- `assets/images/exams/n5.png`: stasiun musim semi.
-- `assets/images/exams/n4.png`: toko buku dan sepeda.
-- `assets/images/exams/n3.png`: perpustakaan dan skyline.
-- `assets/images/exams/diagnostic-n5.png`: meja belajar dengan kaca pembesar.
+- `assets/images/exams/n5.webp`: stasiun musim semi.
+- `assets/images/exams/n4.webp`: toko buku dan sepeda.
+- `assets/images/exams/n3.webp`: perpustakaan dan skyline.
+- `assets/images/exams/diagnostic-n5.webp`: meja belajar dengan kaca pembesar.
 
 Prompt bersama: square thumbnail for a Japanese learning mobile app exam card; refined editorial illustration, soft gouache paper texture, clean friendly shapes, tasteful depth; one coherent scene readable at 96 pixels, centered subject, edge-safe full bleed crop; calm and inviting; no words, letters, numbers, logos, watermark, collage or panels; opaque background.
 

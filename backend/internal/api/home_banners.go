@@ -22,6 +22,7 @@ import (
 	"sync"
 
 	"nihongo-master-backend/internal/domain"
+	"nihongo-master-backend/internal/imageopt"
 )
 
 const maxBannerImageBytes = 5 << 20
@@ -32,9 +33,9 @@ var (
 )
 
 var defaultBannerImages = map[string]string{
-	"learn": "/assets/images/exams/n5.png",
-	"ssw":   "/assets/images/ssw/ssw-careers.png",
-	"jobs":  "/assets/images/jobs/job-category-atlas.png",
+	"learn": "/assets/images/exams/n5.webp",
+	"ssw":   "/assets/images/ssw/ssw-careers.webp",
+	"jobs":  "/assets/images/jobs/job-category-atlas.webp",
 }
 
 type homeBannerConfig struct {
@@ -70,14 +71,53 @@ func (s *Server) ConfigureHomeBanners(path, token string) error {
 		if err = json.Unmarshal(data, &b.value); err != nil {
 			return fmt.Errorf("invalid home banner config: %w", err)
 		}
+		migrated := migrateDefaultBannerImages(&b.value)
 		if err = b.validate(b.value); err != nil {
 			return err
+		}
+		for i := range b.value.Banners {
+			imageURL := b.value.Banners[i].ImageURL
+			if !strings.HasPrefix(imageURL, "/home-banner-images/") {
+				continue
+			}
+			name := strings.TrimPrefix(imageURL, "/home-banner-images/")
+			optimizedName, changed, optimizeErr := optimizeStoredImage(b.imageDirectory, name)
+			if optimizeErr != nil {
+				return fmt.Errorf("failed to optimize saved home banner: %w", optimizeErr)
+			}
+			if changed {
+				b.value.Banners[i].ImageURL = "/home-banner-images/" + optimizedName
+				migrated = true
+			}
+		}
+		if migrated {
+			data, err = json.MarshalIndent(b.value, "", "  ")
+			if err == nil {
+				err = atomicBannerWrite(absolute, data, 0600)
+			}
+			if err != nil {
+				return fmt.Errorf("failed to save optimized home banner config: %w", err)
+			}
 		}
 	} else if !os.IsNotExist(err) {
 		return err
 	}
 	s.homeBanners = b
 	return nil
+}
+
+func migrateDefaultBannerImages(config *homeBannerConfig) bool {
+	changed := false
+	for i := range config.Banners {
+		for _, imageURL := range defaultBannerImages {
+			if config.Banners[i].ImageURL == strings.TrimSuffix(imageURL, ".webp")+".png" {
+				config.Banners[i].ImageURL = imageURL
+				changed = true
+				break
+			}
+		}
+	}
+	return changed
 }
 
 func (b *HomeBannerStore) publicBanners() []domain.HomeBanner {
@@ -268,17 +308,19 @@ func (s *Server) uploadHomeBannerImage(w http.ResponseWriter, r *http.Request) {
 		writeError(w, 422, "invalid_image", "gunakan PNG/JPEG valid dengan maksimal 12 juta piksel")
 		return
 	}
-	if _, _, err = image.Decode(bytes.NewReader(data)); err != nil {
+	decoded, _, err := image.Decode(bytes.NewReader(data))
+	if err != nil {
 		writeError(w, 422, "invalid_image", "berkas gambar rusak atau tidak lengkap")
 		return
 	}
-	ext := ".png"
-	if format == "jpeg" {
-		ext = ".jpg"
+	optimized, err := imageopt.JPEG(decoded)
+	if err != nil {
+		writeError(w, 422, "invalid_image", "gambar tidak dapat dikompresi di bawah 200 KB")
+		return
 	}
-	hash := sha256.Sum256(data)
-	name := hex.EncodeToString(hash[:]) + ext
-	if err := atomicBannerWrite(filepath.Join(b.imageDirectory, name), data, 0644); err != nil {
+	hash := sha256.Sum256(optimized)
+	name := hex.EncodeToString(hash[:]) + ".jpg"
+	if err := atomicBannerWrite(filepath.Join(b.imageDirectory, name), optimized, 0644); err != nil {
 		writeError(w, 500, "upload_failed", "gagal menyimpan gambar")
 		return
 	}
@@ -303,9 +345,17 @@ func (s *Server) serveHomeBannerImage(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
+	if filepath.Ext(name) == ".png" || info.Size() > 200*1024 {
+		optimizedName, changed, optimizeErr := optimizeStoredImage(b.imageDirectory, name)
+		if optimizeErr == nil && changed {
+			w.Header().Set("Cache-Control", "public, max-age=86400")
+			http.Redirect(w, r, "/home-banner-images/"+optimizedName, http.StatusMovedPermanently)
+			return
+		}
+	}
 	w.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
 	w.Header().Set("X-Content-Type-Options", "nosniff")
-	if strings.HasSuffix(name, ".png") {
+	if filepath.Ext(name) == ".png" {
 		w.Header().Set("Content-Type", "image/png")
 	} else {
 		w.Header().Set("Content-Type", "image/jpeg")

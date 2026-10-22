@@ -162,7 +162,7 @@ func TestHomeBannerUploadPersistsServesImageAndRejectsNonImages(t *testing.T) {
 	if err := json.Unmarshal(w.Body.Bytes(), &result); err != nil {
 		t.Fatal(err)
 	}
-	if !strings.HasPrefix(result.Data.ImageURL, "/home-banner-images/") || !strings.HasSuffix(result.Data.ImageURL, ".png") {
+	if !strings.HasPrefix(result.Data.ImageURL, "/home-banner-images/") || !strings.HasSuffix(result.Data.ImageURL, ".jpg") {
 		t.Fatal(result.Data.ImageURL)
 	}
 	config := defaultHomeBanners()
@@ -176,7 +176,7 @@ func TestHomeBannerUploadPersistsServesImageAndRejectsNonImages(t *testing.T) {
 		t.Fatal(err)
 	}
 	w = bannerRequest(restored.Handler(), "GET", result.Data.ImageURL, "", nil)
-	if w.Code != 200 || !bytes.Equal(w.Body.Bytes(), picture.Bytes()) || w.Header().Get("Content-Type") != "image/png" || w.Header().Get("X-Content-Type-Options") != "nosniff" {
+	if w.Code != 200 || w.Body.Len() == 0 || w.Body.Len() > 200*1024 || w.Header().Get("Content-Type") != "image/jpeg" || w.Header().Get("X-Content-Type-Options") != "nosniff" {
 		t.Fatalf("image after restart: %d %v", w.Code, w.Header())
 	}
 	for _, invalid := range [][]byte{[]byte(`<svg onload="alert(1)"></svg>`), picture.Bytes()[:40]} {
@@ -200,7 +200,7 @@ func TestDefaultBannerAssetsAreServed(t *testing.T) {
 	h := s.Handler()
 	for _, imageURL := range defaultBannerImages {
 		w := bannerRequest(h, "HEAD", imageURL, "", nil)
-		if w.Code != 200 || w.Header().Get("Content-Type") != "image/png" {
+		if w.Code != 200 || w.Header().Get("Content-Type") != "image/webp" {
 			t.Fatalf("missing banner asset %s: %d %v", imageURL, w.Code, w.Header())
 		}
 	}

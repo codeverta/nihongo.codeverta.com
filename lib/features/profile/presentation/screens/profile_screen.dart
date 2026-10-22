@@ -29,14 +29,20 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final colorScheme = Theme.of(context).colorScheme;
     final user = ref.watch(authControllerProvider).user;
     if (user == null) {
-      return const Center(
+      return Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Masuk untuk melihat profil.'),
-              LegalLinks(),
-              AttributionsLink(),
+              OutlinedButton.icon(
+                onPressed: () => context.push('/settings/display'),
+                icon: const Icon(Icons.text_fields_rounded),
+                label: const Text('Pengaturan tampilan'),
+              ),
+              const SizedBox(height: 12),
+              const Text('Masuk untuk melihat profil.'),
+              const LegalLinks(),
+              const AttributionsLink(),
             ],
           ),
         ),
@@ -455,6 +461,12 @@ class _ProfileMenu extends StatelessWidget {
     return Card(
       child: Column(
         children: [
+          _ProfileMenuTile(
+            icon: Icons.text_fields_rounded,
+            title: 'Pengaturan tampilan',
+            onTap: () => context.push('/settings/display'),
+          ),
+          const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
             icon: Icons.bar_chart_rounded,
             title: 'Statistik pembelajaran',

@@ -6,7 +6,7 @@
     "Chapter": "Keseharian",
     "Description": "Ikuti Hana dari bangun tidur hingga berangkat sekolah.",
     "Minutes": 6,
-    "ImageAsset": "assets/images/reading/story-01.png",
+    "ImageAsset": "assets/images/reading/story-01.webp",
     "Pages": [
       {
         "title": "Selamat pagi",
@@ -26,7 +26,7 @@
             "meaning": "bangun"
           }
         ],
-        "imageAsset": "assets/images/reading/story-01.png",
+        "imageAsset": "assets/images/reading/story-01.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -48,7 +48,7 @@
             "meaning": "susu"
           }
         ],
-        "imageAsset": "assets/images/reading/story-01.png",
+        "imageAsset": "assets/images/reading/story-01.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -70,7 +70,7 @@
             "meaning": "dengan berjalan kaki"
           }
         ],
-        "imageAsset": "assets/images/reading/story-01.png",
+        "imageAsset": "assets/images/reading/story-01.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -140,7 +140,7 @@
     "Chapter": "Sekolah",
     "Description": "Kenali pelajaran, guru, dan makan siang Hana bersama Yui.",
     "Minutes": 6,
-    "ImageAsset": "assets/images/reading/story-02.png",
+    "ImageAsset": "assets/images/reading/story-02.webp",
     "Pages": [
       {
         "title": "Bertemu teman",
@@ -160,7 +160,7 @@
             "meaning": "sama"
           }
         ],
-        "imageAsset": "assets/images/reading/story-02.png",
+        "imageAsset": "assets/images/reading/story-02.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -182,7 +182,7 @@
             "meaning": "kata"
           }
         ],
-        "imageAsset": "assets/images/reading/story-02.png",
+        "imageAsset": "assets/images/reading/story-02.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -204,7 +204,7 @@
             "meaning": "sayuran"
           }
         ],
-        "imageAsset": "assets/images/reading/story-02.png",
+        "imageAsset": "assets/images/reading/story-02.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -274,7 +274,7 @@
     "Chapter": "Keseharian",
     "Description": "Pilih buah, singgah di toko roti, lalu pulang bersama ibu.",
     "Minutes": 6,
-    "ImageAsset": "assets/images/reading/story-03.png",
+    "ImageAsset": "assets/images/reading/story-03.webp",
     "Pages": [
       {
         "title": "Di pasar buah",
@@ -294,7 +294,7 @@
             "meaning": "tiga benda"
           }
         ],
-        "imageAsset": "assets/images/reading/story-03.png",
+        "imageAsset": "assets/images/reading/story-03.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -316,7 +316,7 @@
             "meaning": "kantong"
           }
         ],
-        "imageAsset": "assets/images/reading/story-03.png",
+        "imageAsset": "assets/images/reading/story-03.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -338,7 +338,7 @@
             "meaning": "besok"
           }
         ],
-        "imageAsset": "assets/images/reading/story-03.png",
+        "imageAsset": "assets/images/reading/story-03.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -408,7 +408,7 @@
     "Chapter": "Teman dan keluarga",
     "Description": "Nikmati sore santai bersama teman di kafe dekat stasiun.",
     "Minutes": 7,
-    "ImageAsset": "assets/images/reading/story-04.png",
+    "ImageAsset": "assets/images/reading/story-04.webp",
     "Pages": [
       {
         "title": "Bertemu Yui",
@@ -428,7 +428,7 @@
             "meaning": "dekat"
           }
         ],
-        "imageAsset": "assets/images/reading/story-04.png",
+        "imageAsset": "assets/images/reading/story-04.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -450,7 +450,7 @@
             "meaning": "suka"
           }
         ],
-        "imageAsset": "assets/images/reading/story-04.png",
+        "imageAsset": "assets/images/reading/story-04.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -472,7 +472,7 @@
             "meaning": "keluar"
           }
         ],
-        "imageAsset": "assets/images/reading/story-04.png",
+        "imageAsset": "assets/images/reading/story-04.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -542,7 +542,7 @@
     "Chapter": "Teman dan keluarga",
     "Description": "Baca tentang piknik keluarga dan anjing putih yang ceria.",
     "Minutes": 7,
-    "ImageAsset": "assets/images/reading/story-05.png",
+    "ImageAsset": "assets/images/reading/story-05.webp",
     "Pages": [
       {
         "title": "Hari Minggu cerah",
@@ -562,7 +562,7 @@
             "meaning": "banyak"
           }
         ],
-        "imageAsset": "assets/images/reading/story-05.png",
+        "imageAsset": "assets/images/reading/story-05.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -584,7 +584,7 @@
             "meaning": "telah membuat"
           }
         ],
-        "imageAsset": "assets/images/reading/story-05.png",
+        "imageAsset": "assets/images/reading/story-05.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -606,7 +606,7 @@
             "meaning": "bermain"
           }
         ],
-        "imageAsset": "assets/images/reading/story-05.png",
+        "imageAsset": "assets/images/reading/story-05.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -676,7 +676,7 @@
     "Chapter": "Perjalanan",
     "Description": "Ikuti perjalanan Hana dan adiknya dari stasiun ke perpustakaan.",
     "Minutes": 7,
-    "ImageAsset": "assets/images/reading/story-06.png",
+    "ImageAsset": "assets/images/reading/story-06.webp",
     "Pages": [
       {
         "title": "Membeli tiket",
@@ -696,7 +696,7 @@
             "meaning": "tiket"
           }
         ],
-        "imageAsset": "assets/images/reading/story-06.png",
+        "imageAsset": "assets/images/reading/story-06.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -718,7 +718,7 @@
             "meaning": "jendela"
           }
         ],
-        "imageAsset": "assets/images/reading/story-06.png",
+        "imageAsset": "assets/images/reading/story-06.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -740,7 +740,7 @@
             "meaning": "baru"
           }
         ],
-        "imageAsset": "assets/images/reading/story-06.png",
+        "imageAsset": "assets/images/reading/story-06.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -810,7 +810,7 @@
     "Chapter": "Keseharian",
     "Description": "Temani Hana saat hujan mengubah cara berangkat ke sekolah.",
     "Minutes": 7,
-    "ImageAsset": "assets/images/reading/story-07.png",
+    "ImageAsset": "assets/images/reading/story-07.webp",
     "Pages": [
       {
         "title": "Hujan sejak pagi",
@@ -830,7 +830,7 @@
             "meaning": "payung"
           }
         ],
-        "imageAsset": "assets/images/reading/story-07.png",
+        "imageAsset": "assets/images/reading/story-07.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -852,7 +852,7 @@
             "meaning": "menunggu"
           }
         ],
-        "imageAsset": "assets/images/reading/story-07.png",
+        "imageAsset": "assets/images/reading/story-07.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -874,7 +874,7 @@
             "meaning": "masih"
           }
         ],
-        "imageAsset": "assets/images/reading/story-07.png",
+        "imageAsset": "assets/images/reading/story-07.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -944,7 +944,7 @@
     "Chapter": "Sekolah",
     "Description": "Cari buku, membaca dengan tenang, dan meminjamnya untuk rumah.",
     "Minutes": 8,
-    "ImageAsset": "assets/images/reading/story-08.png",
+    "ImageAsset": "assets/images/reading/story-08.webp",
     "Pages": [
       {
         "title": "Memilih buku",
@@ -964,7 +964,7 @@
             "meaning": "hewan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-08.png",
+        "imageAsset": "assets/images/reading/story-08.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -986,7 +986,7 @@
             "meaning": "tenang"
           }
         ],
-        "imageAsset": "assets/images/reading/story-08.png",
+        "imageAsset": "assets/images/reading/story-08.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1008,7 +1008,7 @@
             "meaning": "meminjam"
           }
         ],
-        "imageAsset": "assets/images/reading/story-08.png",
+        "imageAsset": "assets/images/reading/story-08.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1078,7 +1078,7 @@
     "Chapter": "Teman dan keluarga",
     "Description": "Siapkan hadiah kecil dan rayakan ulang tahun bersama teman.",
     "Minutes": 8,
-    "ImageAsset": "assets/images/reading/story-09.png",
+    "ImageAsset": "assets/images/reading/story-09.webp",
     "Pages": [
       {
         "title": "Menyiapkan hadiah",
@@ -1098,7 +1098,7 @@
             "meaning": "tahun; untuk usia"
           }
         ],
-        "imageAsset": "assets/images/reading/story-09.png",
+        "imageAsset": "assets/images/reading/story-09.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1120,7 +1120,7 @@
             "meaning": "semua orang"
           }
         ],
-        "imageAsset": "assets/images/reading/story-09.png",
+        "imageAsset": "assets/images/reading/story-09.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1142,7 +1142,7 @@
             "meaning": "pulang"
           }
         ],
-        "imageAsset": "assets/images/reading/story-09.png",
+        "imageAsset": "assets/images/reading/story-09.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1212,7 +1212,7 @@
     "Chapter": "Teman dan keluarga",
     "Description": "Kenali Momo, kucing putih yang menjadi teman baru Hana.",
     "Minutes": 8,
-    "ImageAsset": "assets/images/reading/story-10.png",
+    "ImageAsset": "assets/images/reading/story-10.webp",
     "Pages": [
       {
         "title": "Momo di taman",
@@ -1232,7 +1232,7 @@
             "meaning": "nama"
           }
         ],
-        "imageAsset": "assets/images/reading/story-10.png",
+        "imageAsset": "assets/images/reading/story-10.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1254,7 +1254,7 @@
             "meaning": "membawa pulang"
           }
         ],
-        "imageAsset": "assets/images/reading/story-10.png",
+        "imageAsset": "assets/images/reading/story-10.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1276,7 +1276,7 @@
             "meaning": "tidur"
           }
         ],
-        "imageAsset": "assets/images/reading/story-10.png",
+        "imageAsset": "assets/images/reading/story-10.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1346,7 +1346,7 @@
     "Chapter": "Perjalanan",
     "Description": "Habiskan hari musim panas dengan bermain dan makan di pantai.",
     "Minutes": 8,
-    "ImageAsset": "assets/images/reading/story-11.png",
+    "ImageAsset": "assets/images/reading/story-11.webp",
     "Pages": [
       {
         "title": "Berangkat bersama keluarga",
@@ -1366,7 +1366,7 @@
             "meaning": "laut; pantai"
           }
         ],
-        "imageAsset": "assets/images/reading/story-11.png",
+        "imageAsset": "assets/images/reading/story-11.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1388,7 +1388,7 @@
             "meaning": "mengambil foto"
           }
         ],
-        "imageAsset": "assets/images/reading/story-11.png",
+        "imageAsset": "assets/images/reading/story-11.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1410,7 +1410,7 @@
             "meaning": "nasi kepal"
           }
         ],
-        "imageAsset": "assets/images/reading/story-11.png",
+        "imageAsset": "assets/images/reading/story-11.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1480,7 +1480,7 @@
     "Chapter": "Keseharian",
     "Description": "Susun urutan kegiatan Hana selama Sabtu dan Minggu.",
     "Minutes": 9,
-    "ImageAsset": "assets/images/reading/story-12.png",
+    "ImageAsset": "assets/images/reading/story-12.webp",
     "Pages": [
       {
         "title": "Sabtu pagi",
@@ -1500,7 +1500,7 @@
             "meaning": "merapikan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-12.png",
+        "imageAsset": "assets/images/reading/story-12.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1522,7 +1522,7 @@
             "meaning": "meletakkan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-12.png",
+        "imageAsset": "assets/images/reading/story-12.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1544,7 +1544,7 @@
             "meaning": "ingin membaca"
           }
         ],
-        "imageAsset": "assets/images/reading/story-12.png",
+        "imageAsset": "assets/images/reading/story-12.webp",
         "imageUrl": "",
         "imagePanel": 2
       }

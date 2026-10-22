@@ -4,7 +4,7 @@ import "testing"
 
 func TestAssetURLs(t *testing.T) {
 	s := NewMemoryStore()
-	key := "assets/images/reading/story-01.png"
+	key := "assets/images/reading/story-01.webp"
 	if got := s.assetURLLocked(key); got != "/"+key {
 		t.Fatalf("local URL = %q", got)
 	}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
@@ -54,20 +55,19 @@ class GrammarLessonScreen extends ConsumerWidget {
   }
 }
 
-class _Study extends StatefulWidget {
+class _Study extends ConsumerStatefulWidget {
   const _Study({required this.state, required this.controller});
   final GrammarState state;
   final GrammarController controller;
 
   @override
-  State<_Study> createState() => _StudyState();
+  ConsumerState<_Study> createState() => _StudyState();
 }
 
-class _StudyState extends State<_Study> {
-  bool _furigana = true;
-
+class _StudyState extends ConsumerState<_Study> {
   @override
   Widget build(BuildContext context) {
+    final furigana = ref.watch(displayPreferencesProvider).furigana;
     final state = widget.state;
     final controller = widget.controller;
     final point = state.lesson.points[state.pointIndex];
@@ -135,18 +135,20 @@ class _StudyState extends State<_Study> {
               FilterChip(
                 key: const Key('grammar-furigana-toggle'),
                 label: const Text('Furigana'),
-                selected: _furigana,
+                selected: furigana,
                 showCheckmark: false,
                 selectedColor: colors.secondary,
                 labelStyle: TextStyle(
-                  color: _furigana ? colors.onSecondary : colors.onSurface,
+                  color: furigana ? colors.onSecondary : colors.onSurface,
                 ),
                 avatar: Icon(
                   Icons.translate_rounded,
                   size: 18,
-                  color: _furigana ? colors.onSecondary : colors.primary,
+                  color: furigana ? colors.onSecondary : colors.primary,
                 ),
-                onSelected: (value) => setState(() => _furigana = value),
+                onSelected: (enabled) => ref
+                    .read(displayPreferencesProvider.notifier)
+                    .setFurigana(enabled: enabled),
               ),
               const SizedBox(height: 12),
               const Text(
@@ -161,7 +163,7 @@ class _StudyState extends State<_Study> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        if (_furigana)
+                        if (furigana)
                           JapaneseRubyText(
                             text: example.japanese,
                             reading: example.reading,

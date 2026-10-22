@@ -28,7 +28,7 @@ class JobBoardHero extends StatelessWidget {
           right: 0,
           width: MediaQuery.sizeOf(context).width * .39,
           child: Image.asset(
-            'assets/images/ssw/ssw-careers.png',
+            'assets/images/ssw/ssw-careers.webp',
             fit: BoxFit.cover,
             alignment: const Alignment(.78, .5),
             semanticLabel: 'Ilustrasi pekerja dari berbagai bidang di Jepang',
@@ -285,7 +285,7 @@ class _JobCategoryArtworkState extends State<_JobCategoryArtwork> {
     super.didChangeDependencies();
     if (_stream != null) return;
     _stream = const AssetImage(
-      'assets/images/jobs/job-category-atlas.png',
+      'assets/images/jobs/job-category-atlas.webp',
     ).resolve(createLocalImageConfiguration(context));
     _listener = ImageStreamListener((info, _) {
       if (mounted) setState(() => _image = info.image);

@@ -9,8 +9,8 @@ import (
 	"encoding/hex"
 	"errors"
 	"image"
-	"image/jpeg"
-	"image/png"
+	_ "image/jpeg"
+	_ "image/png"
 	"io"
 	"log"
 	"net/http"
@@ -20,6 +20,7 @@ import (
 	"strconv"
 	"time"
 
+	"nihongo-master-backend/internal/imageopt"
 	"nihongo-master-backend/internal/news"
 )
 
@@ -239,27 +240,20 @@ func (s *Server) uploadNewsImage(w http.ResponseWriter, r *http.Request) {
 		newsError(w, news.ErrInvalid)
 		return
 	}
-	var normalized bytes.Buffer
-	suffix := ".png"
-	if format == "png" {
-		err = png.Encode(&normalized, decoded)
-	} else {
-		suffix = ".jpg"
-		err = jpeg.Encode(&normalized, decoded, &jpeg.Options{Quality: 90})
-	}
+	optimized, err := imageopt.JPEG(decoded)
 	if err != nil {
 		newsError(w, err)
 		return
 	}
-	sum := sha256.Sum256(normalized.Bytes())
-	name := hex.EncodeToString(sum[:]) + suffix
+	sum := sha256.Sum256(optimized)
+	name := hex.EncodeToString(sum[:]) + ".jpg"
 	temp, err := os.CreateTemp(s.newsImageDirectory, ".upload-*")
 	if err != nil {
 		newsError(w, err)
 		return
 	}
 	defer os.Remove(temp.Name())
-	_, err = temp.Write(normalized.Bytes())
+	_, err = temp.Write(optimized)
 	closeErr := temp.Close()
 	if err == nil {
 		err = closeErr
@@ -289,6 +283,20 @@ func (s *Server) newsImage(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
+	path := filepath.Join(s.newsImageDirectory, name)
+	info, err := os.Stat(path)
+	if err != nil || !info.Mode().IsRegular() {
+		http.NotFound(w, r)
+		return
+	}
+	if filepath.Ext(name) == ".png" || info.Size() > 200*1024 {
+		optimizedName, changed, optimizeErr := optimizeStoredImage(s.newsImageDirectory, name)
+		if optimizeErr == nil && changed {
+			w.Header().Set("Cache-Control", "public, max-age=86400")
+			http.Redirect(w, r, "/news-images/"+optimizedName, http.StatusMovedPermanently)
+			return
+		}
+	}
 	w.Header().Set("Cache-Control", "public, max-age=31536000, immutable")
 	w.Header().Set("X-Content-Type-Options", "nosniff")
 	if filepath.Ext(name) == ".png" {
@@ -296,5 +304,5 @@ func (s *Server) newsImage(w http.ResponseWriter, r *http.Request) {
 	} else {
 		w.Header().Set("Content-Type", "image/jpeg")
 	}
-	http.ServeFile(w, r, filepath.Join(s.newsImageDirectory, name))
+	http.ServeFile(w, r, path)
 }

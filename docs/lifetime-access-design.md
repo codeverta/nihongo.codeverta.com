@@ -22,7 +22,7 @@ display estimate when a store product is available.
 ## Generated illustration
 
 Built-in image_gen tool, saved as
-`assets/images/explore/lifetime-access.png` (1536 × 1024), bundled with Flutter.
+`assets/images/explore/lifetime-access.webp` (1536 × 1024), bundled with Flutter.
 
 Final prompt:
 

@@ -22,8 +22,8 @@ void main() {
           .widgetList<ExploreFeatureCard>(find.byType(ExploreFeatureCard))
           .toList();
       expect(cards.map((c) => c.asset), [
-        'assets/images/explore/manga-reading.png',
-        'assets/images/explore/anki-flashcards.png',
+        'assets/images/explore/manga-reading.webp',
+        'assets/images/explore/anki-flashcards.webp',
       ]);
       expect(cards.first.premium, isTrue);
       expect(find.text('Premium'), findsOneWidget);

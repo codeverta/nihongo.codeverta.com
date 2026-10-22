@@ -44,9 +44,9 @@ Docker Compose memakai `/app/data` yang sudah dipasang sebagai volume permanen.
 Kunci admin tidak pernah dikirim lewat API publik maupun disimpan oleh halaman
 admin ke penyimpanan browser. Jika kunci admin kosong, API perubahan dinonaktifkan.
 
-Gambar awal berada di `backend/assets/images/exams/n5.png`,
-`backend/assets/images/ssw/ssw-careers.png`, dan
-`backend/assets/images/jobs/job-category-atlas.png`. Ketiga jalur ini boleh
+Gambar awal berada di `backend/assets/images/exams/n5.webp`,
+`backend/assets/images/ssw/ssw-careers.webp`, dan
+`backend/assets/images/jobs/job-category-atlas.webp`. Ketiga jalur ini boleh
 diakses melalui handler aset publik. Gambar unggahan disajikan lewat
 `/home-banner-images/{hash}.png` atau `.jpg`, dengan tipe konten gambar dan cache
 immutable. JSON pengaturan dan berkas lain tidak disajikan lewat jalur itu.

@@ -27,6 +27,6 @@ Waktu dan jumlah soal tertulis mengikuti [format NAT-TEST 5Q](https://nat-test.j
 
 ## Thumbnail
 
-File bundel `assets/images/exams/nat.png`, dibuat melalui built-in image generation. Gambar tidak membutuhkan fetch eksternal.
+File bundel `assets/images/exams/nat.webp`, dibuat melalui built-in image generation. Gambar tidak membutuhkan fetch eksternal.
 
 Prompt: Square thumbnail for a Japanese beginner NAT language exam in a learning mobile app. A peaceful Japanese school courtyard with a school building, a maple tree and an open Japanese study notebook with a pencil on a wooden bench in the foreground. Friendly refined editorial gouache illustration with soft paper texture, deep blue, warm cream and soft gold palette. Calm focused learning mood. Large clear shapes readable at 96 pixels, centered coherent scene, edge safe full bleed square, opaque background. No writing, letters, numbers, logos, watermarks or collage.

@@ -4,9 +4,9 @@ Generated with the built-in image_gen tool. Final images are bundled Flutter
 assets, so the home cards and Manga banner do not depend on an external image
 server. The Manga feature remains gated by Lifetime Access.
 
-- `assets/images/explore/manga-reading.png`: original 1536 × 1024 illustration;
+- `assets/images/explore/manga-reading.webp`: original 1536 × 1024 illustration;
   used by the Manga home card and carousel fallback.
-- `assets/images/explore/anki-flashcards.png`: original 1536 × 1024 illustration;
+- `assets/images/explore/anki-flashcards.webp`: original 1536 × 1024 illustration;
   used by the Anki home card and subscriber carousel.
 
 ## Manga prompt

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/ssw/data/kaigo_repository.dart';
 import 'package:nihongo_master/features/ssw/domain/kaigo_curriculum.dart';
@@ -234,7 +235,6 @@ class _LessonReader extends ConsumerStatefulWidget {
 
 class _LessonReaderState extends ConsumerState<_LessonReader> {
   final selections = <int, int>{};
-  bool furigana = true;
   bool submitted = false;
   bool saving = false;
 
@@ -284,6 +284,7 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
 
   @override
   Widget build(BuildContext context) {
+    final furigana = ref.watch(displayPreferencesProvider).furigana;
     final lesson = widget.lesson;
     final index = widget.course.lessons.indexWhere((l) => l.id == lesson.id);
     final allAnswered = selections.length == lesson.checks.length;
@@ -339,7 +340,9 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
             size: 18,
             color: furigana ? colors.onSecondary : colors.primary,
           ),
-          onSelected: (value) => setState(() => furigana = value),
+          onSelected: (enabled) => ref
+              .read(displayPreferencesProvider.notifier)
+              .setFurigana(enabled: enabled),
         ),
         const SizedBox(height: 20),
         _ContentCard(

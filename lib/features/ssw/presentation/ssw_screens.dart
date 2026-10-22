@@ -18,7 +18,7 @@ class SswEntryCard extends StatelessWidget {
     description: exams
         ? 'Latihan soal dan simulasi untuk 4 bidang aktif'
         : 'Kenali bidangmu, pelajari materi, lalu coba simulasinya',
-    asset: 'assets/images/ssw/ssw-careers.png',
+    asset: 'assets/images/ssw/ssw-careers.webp',
     color: const Color(0xFF125E60),
     icon: Icons.school_rounded,
     onTap: () => context.push(exams ? '/ssw?tab=test' : '/ssw'),

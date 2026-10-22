@@ -9,7 +9,7 @@ class SswArtwork extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 1.5,
           child: Image.asset(
-            'assets/images/ssw/ssw-careers.png',
+            'assets/images/ssw/ssw-careers.webp',
             fit: BoxFit.cover,
             semanticLabel:
                 'Caregiver dan lansia bersama pekerja berbagai bidang di Jepang',

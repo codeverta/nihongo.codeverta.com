@@ -21,7 +21,7 @@ class AnkiEntryCard extends StatelessWidget {
     title: 'Anki · Flashcards',
     eyebrow: 'REVIEW SEDIKIT, INGAT LEBIH LAMA',
     description: 'Pilih deck favorit dan bangun kebiasaan review kosakata',
-    asset: 'assets/images/explore/anki-flashcards.png',
+    asset: 'assets/images/explore/anki-flashcards.webp',
     color: const Color(0xFF145B60),
     icon: Icons.style_rounded,
     onTap: () => context.push('/anki'),

@@ -117,7 +117,7 @@ func TestNewsGuestReadsAdminAndImages(t *testing.T) {
 	if err := json.Unmarshal(w.Body.Bytes(), &payload); err != nil {
 		t.Fatal(err)
 	}
-	if w := request("GET", payload.Data.URL, "", ""); w.Code != 200 || w.Header().Get("Content-Type") != "image/png" {
+	if w := request("GET", payload.Data.URL, "", ""); w.Code != 200 || w.Header().Get("Content-Type") != "image/jpeg" || w.Body.Len() > 200*1024 {
 		t.Fatal("uploaded image not served", w.Code)
 	}
 	if w := request("DELETE", "/v1/admin/news/"+id, "", "test-key"); w.Code != 204 {

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
-import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
+import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/dictionary/data/dictionary_repository.dart';
 import 'package:nihongo_master/features/dictionary/domain/dictionary_models.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_details.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/features/news/presentation/furigana_text.dart';
 
-const newsFuriganaPreferenceKey = 'news_furigana_enabled';
+const newsFuriganaPreferenceKey = legacyNewsFuriganaPreferenceKey;
 
 String newsDate(DateTime date, {bool time = false}) {
   final d = date.toUtc().add(const Duration(hours: 7));
@@ -223,7 +223,9 @@ class _NewsImage extends ConsumerWidget {
       child: image.isEmpty
           ? placeholder
           : Image.network(
-              Uri.parse(ref.watch(apiBaseUrlProvider)).resolve(image).toString(),
+              Uri.parse(
+                ref.watch(apiBaseUrlProvider),
+              ).resolve(image).toString(),
               fit: BoxFit.cover,
               cacheWidth: cacheWidth,
               loadingBuilder: (_, child, progress) =>
@@ -905,9 +907,14 @@ class _NewsListScreenState extends ConsumerState<NewsListScreen> {
           if (featured != null)
             _FadeIn(index: 0, child: _FeaturedNewsCard(article: featured)),
           if (rest.isNotEmpty)
-            _SectionLabel(featured == null ? 'Daftar berita' : 'Berita lainnya'),
+            _SectionLabel(
+              featured == null ? 'Daftar berita' : 'Berita lainnya',
+            ),
           for (final (i, article) in rest.indexed)
-            _FadeIn(index: i + 1, child: NewsArticleCard(article: article)),
+            _FadeIn(
+              index: i + 1,
+              child: NewsArticleCard(article: article),
+            ),
           if (pages > 1)
             _NewsPager(page: _page, pages: pages, onChange: _changePage),
           const SizedBox(height: 14),
@@ -992,19 +999,12 @@ class NewsReaderScreen extends ConsumerStatefulWidget {
 }
 
 class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
-  late bool _furigana;
-  @override
-  void initState() {
-    super.initState();
-    _furigana =
-        ref
-            .read(sharedPreferencesProvider)
-            .getBool(newsFuriganaPreferenceKey) ??
-        true;
-  }
-
   @override
   Widget build(BuildContext context) {
+    final furigana = ref.watch(displayPreferencesProvider).furigana;
+    final displayPreferencesController = ref.read(
+      displayPreferencesProvider.notifier,
+    );
     final provider = newsArticleProvider(widget.id);
     return Scaffold(
       appBar: AppBar(
@@ -1012,14 +1012,10 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
         actions: [
           IconButton(
             key: const Key('news-furigana-toggle'),
-            tooltip: _furigana ? 'Matikan furigana' : 'Tampilkan furigana',
-            isSelected: _furigana,
-            onPressed: () async {
-              setState(() => _furigana = !_furigana);
-              await ref
-                  .read(sharedPreferencesProvider)
-                  .setBool(newsFuriganaPreferenceKey, _furigana);
-            },
+            tooltip: furigana ? 'Matikan furigana' : 'Tampilkan furigana',
+            isSelected: furigana,
+            onPressed: () =>
+                displayPreferencesController.setFurigana(enabled: !furigana),
             icon: const Icon(Icons.text_format_rounded),
             selectedIcon: const Icon(Icons.text_fields_rounded),
           ),
@@ -1044,7 +1040,7 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                 FuriganaText(
                   text: article.title,
                   tokens: article.titleTokens,
-                  showFurigana: _furigana,
+                  showFurigana: furigana,
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w800,
@@ -1075,7 +1071,7 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                 ],
                 const SizedBox(height: 14),
                 const Text('Pilih kata atau kalimat, lalu tekan “Cari arti”.'),
-                if (_furigana)
+                if (furigana)
                   Text(
                     'Furigana dapat dibuat otomatis dan bisa keliru, terutama pada nama.',
                     style: Theme.of(context).textTheme.bodySmall,
@@ -1087,7 +1083,7 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                     child: FuriganaText(
                       text: paragraph.text,
                       tokens: paragraph.tokens,
-                      showFurigana: _furigana,
+                      showFurigana: furigana,
                       style: TextStyle(
                         fontSize: paragraph.kind == 'heading' ? 22 : 20,
                         fontWeight: paragraph.kind == 'heading'

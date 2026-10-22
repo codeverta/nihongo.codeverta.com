@@ -27,6 +27,6 @@ Lingkup: **listening belum termasuk**. [JFT-Basic resmi](https://www.jpf.go.jp/j
 
 ## Thumbnail
 
-Asset bundel: `assets/images/exams/jft.png`. Dibuat dengan built-in image generation; tidak memerlukan fetch gambar eksternal.
+Asset bundel: `assets/images/exams/jft.webp`. Dibuat dengan built-in image generation; tidak memerlukan fetch gambar eksternal.
 
 Prompt: Square thumbnail for JFT-Basic Japanese daily-life exam in a learning mobile app. A friendly Japanese neighborhood shopping street, a small grocery store and bus stop, an open study notebook on a cafe table in foreground. Refined editorial gouache illustration, soft paper texture, teal and warm cream with coral accents, inviting calm daylight, centered readable shapes suitable for a 96 pixel thumbnail, edge-safe full bleed. No words, letters, numbers, logos or watermark. One coherent scene, no collage. Opaque background.

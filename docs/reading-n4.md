@@ -36,7 +36,7 @@ Jawaban kuis mengikuti teks; gambar membantu konteks cerita.
 ## Konten dan ilustrasi
 
 - Konten: `backend/data/reading/n4.json`, di-embed ketika backend dibuild.
-- Gambar baru: `backend/assets/images/reading/story-n4-01.png` sampai
+- Gambar baru: `backend/assets/images/reading/story-n4-01.webp` sampai
   `story-n4-12.png`, dibuat dengan **imagegen bawaan**, tanpa CLI.
 - Setiap gambar terdiri dari tiga panel persegi berdampingan. Widget yang
   sama dengan N5 menampilkan panel yang sesuai pada tiap halaman.

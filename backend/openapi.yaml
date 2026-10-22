@@ -434,7 +434,7 @@ paths:
         '204': {description: Account deleted and sessions revoked; does not request store refund}
         '401': {$ref: '#/components/responses/Unauthorized'}
         '422': {description: Missing explicit confirmation}
-  /assets/images/onboarding-japanese-journey.png:
+  /assets/images/onboarding-japanese-journey.webp:
     servers:
       - url: http://localhost:8080
     get:
@@ -442,9 +442,9 @@ paths:
       summary: Public onboarding artwork
       responses:
         '200':
-          description: PNG image; cached for one day
+          description: WebP image; cached for one day
           content:
-            image/png:
+            image/webp:
               schema: {type: string, format: binary}
         '404':
           description: Image unavailable
@@ -462,10 +462,10 @@ paths:
         - in: path
           name: filename
           required: true
-          schema: {type: string, pattern: '\.png$'}
+          schema: {type: string, pattern: '\.webp$'}
       responses:
         '200':
-          description: PNG image; cached for one day
+          description: WebP image; cached for one day
           content:
             image/png:
               schema: {type: string, format: binary}

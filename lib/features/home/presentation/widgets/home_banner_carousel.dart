@@ -354,21 +354,21 @@ class _BannerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (color, asset) = switch (banner.action) {
-      'premium' => (const Color(0xFF20215F), 'assets/images/exams/n5.png'),
+      'premium' => (const Color(0xFF20215F), 'assets/images/exams/n5.webp'),
       'manga' => (
         const Color(0xFF30265D),
-        'assets/images/explore/manga-reading.png',
+        'assets/images/explore/manga-reading.webp',
       ),
       'anki' => (
         const Color(0xFF145B60),
-        'assets/images/explore/anki-flashcards.png',
+        'assets/images/explore/anki-flashcards.webp',
       ),
-      'ssw' => (const Color(0xFF124E56), 'assets/images/ssw/ssw-careers.png'),
+      'ssw' => (const Color(0xFF124E56), 'assets/images/ssw/ssw-careers.webp'),
       'jobs' => (
         const Color(0xFF443060),
-        'assets/images/jobs/job-category-atlas.png',
+        'assets/images/jobs/job-category-atlas.webp',
       ),
-      _ => (const Color(0xFF272C75), 'assets/images/exams/n5.png'),
+      _ => (const Color(0xFF272C75), 'assets/images/exams/n5.webp'),
     };
     final logicalWidth = MediaQuery.sizeOf(context).width;
     final width =

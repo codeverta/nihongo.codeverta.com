@@ -6,7 +6,7 @@
     "Chapter": "Keseharian",
     "Description": "Hana pindah rumah dan mulai mengenal lingkungan baru. Latih ～たばかり, ～てくれる, dan ～ようになる.",
     "Minutes": 10,
-    "ImageAsset": "assets/images/reading/story-n4-01.png",
+    "ImageAsset": "assets/images/reading/story-n4-01.webp",
     "Pages": [
       {
         "title": "Hari pertama",
@@ -26,7 +26,7 @@
             "meaning": "membereskan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-01.png",
+        "imageAsset": "assets/images/reading/story-n4-01.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -48,7 +48,7 @@
             "meaning": "menyeberang"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-01.png",
+        "imageAsset": "assets/images/reading/story-n4-01.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -70,7 +70,7 @@
             "meaning": "kehidupan sehari-hari"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-01.png",
+        "imageAsset": "assets/images/reading/story-n4-01.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -140,7 +140,7 @@
     "Chapter": "Kerja dan belajar",
     "Description": "Belajar aturan kerja, menerima bantuan, dan berkembang. Latih ～なければならない dan ～ようになる.",
     "Minutes": 10,
-    "ImageAsset": "assets/images/reading/story-n4-02.png",
+    "ImageAsset": "assets/images/reading/story-n4-02.webp",
     "Pages": [
       {
         "title": "Belajar aturan",
@@ -160,7 +160,7 @@
             "meaning": "pesanan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-02.png",
+        "imageAsset": "assets/images/reading/story-n4-02.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -182,7 +182,7 @@
             "meaning": "membantu"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-02.png",
+        "imageAsset": "assets/images/reading/story-n4-02.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -204,7 +204,7 @@
             "meaning": "berusaha keras"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-02.png",
+        "imageAsset": "assets/images/reading/story-n4-02.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -274,7 +274,7 @@
     "Chapter": "Perjalanan",
     "Description": "Cari solusi ketika rencana perjalanan berubah. Latih ～てしまう, ～たら, dan ～ことにする.",
     "Minutes": 10,
-    "ImageAsset": "assets/images/reading/story-n4-03.png",
+    "ImageAsset": "assets/images/reading/story-n4-03.webp",
     "Pages": [
       {
         "title": "Terlambat tiba",
@@ -294,7 +294,7 @@
             "meaning": "sempat; tepat waktu"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-03.png",
+        "imageAsset": "assets/images/reading/story-n4-03.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -316,7 +316,7 @@
             "meaning": "tiket"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-03.png",
+        "imageAsset": "assets/images/reading/story-n4-03.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -338,7 +338,7 @@
             "meaning": "menjadi cerah"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-03.png",
+        "imageAsset": "assets/images/reading/story-n4-03.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -408,7 +408,7 @@
     "Chapter": "Budaya dan hobi",
     "Description": "Nikmati festival sambil memahami urutan kegiatan. Latih ～てみる, ～そう, dan ～前に.",
     "Minutes": 11,
-    "ImageAsset": "assets/images/reading/story-n4-04.png",
+    "ImageAsset": "assets/images/reading/story-n4-04.webp",
     "Pages": [
       {
         "title": "Mencoba yukata",
@@ -428,7 +428,7 @@
             "meaning": "lokasi acara"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-04.png",
+        "imageAsset": "assets/images/reading/story-n4-04.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -450,7 +450,7 @@
             "meaning": "setengah"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-04.png",
+        "imageAsset": "assets/images/reading/story-n4-04.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -472,7 +472,7 @@
             "meaning": "sekitar"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-04.png",
+        "imageAsset": "assets/images/reading/story-n4-04.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -542,7 +542,7 @@
     "Chapter": "Budaya dan hobi",
     "Description": "Temukan inspirasi saat rencana piknik berubah. Latih ～ので, ～ことがある, dan ～かもしれない.",
     "Minutes": 11,
-    "ImageAsset": "assets/images/reading/story-n4-05.png",
+    "ImageAsset": "assets/images/reading/story-n4-05.webp",
     "Pages": [
       {
         "title": "Rencana baru",
@@ -562,7 +562,7 @@
             "meaning": "pergi keluar"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-05.png",
+        "imageAsset": "assets/images/reading/story-n4-05.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -584,7 +584,7 @@
             "meaning": "desa"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-05.png",
+        "imageAsset": "assets/images/reading/story-n4-05.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -606,7 +606,7 @@
             "meaning": "terkejut"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-05.png",
+        "imageAsset": "assets/images/reading/story-n4-05.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -676,7 +676,7 @@
     "Chapter": "Keseharian",
     "Description": "Ikuti resep dan persiapan makan malam. Latih ～ておく, ～すぎる, dan ～ながら.",
     "Minutes": 11,
-    "ImageAsset": "assets/images/reading/story-n4-06.png",
+    "ImageAsset": "assets/images/reading/story-n4-06.webp",
     "Pages": [
       {
         "title": "Belanja lebih dahulu",
@@ -696,7 +696,7 @@
             "meaning": "beras"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-06.png",
+        "imageAsset": "assets/images/reading/story-n4-06.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -718,7 +718,7 @@
             "meaning": "memasak nasi"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-06.png",
+        "imageAsset": "assets/images/reading/story-n4-06.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -740,7 +740,7 @@
             "meaning": "menjelaskan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-06.png",
+        "imageAsset": "assets/images/reading/story-n4-06.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -810,7 +810,7 @@
     "Chapter": "Budaya dan hobi",
     "Description": "Mulai hobi baru dan belajar bersama teman. Latih bentuk potensial, ～ても, dan ～ようになる.",
     "Minutes": 11,
-    "ImageAsset": "assets/images/reading/story-n4-07.png",
+    "ImageAsset": "assets/images/reading/story-n4-07.webp",
     "Pages": [
       {
         "title": "Ragu untuk masuk",
@@ -830,7 +830,7 @@
             "meaning": "sepatu olahraga"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-07.png",
+        "imageAsset": "assets/images/reading/story-n4-07.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -852,7 +852,7 @@
             "meaning": "kegagalan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-07.png",
+        "imageAsset": "assets/images/reading/story-n4-07.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -874,7 +874,7 @@
             "meaning": "kalah"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-07.png",
+        "imageAsset": "assets/images/reading/story-n4-07.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -944,7 +944,7 @@
     "Chapter": "Perjalanan",
     "Description": "Persiapkan perjalanan dan ubah rencana sesuai cuaca. Latih ～かもしれない, ～ておく, dan ～まで.",
     "Minutes": 12,
-    "ImageAsset": "assets/images/reading/story-n4-08.png",
+    "ImageAsset": "assets/images/reading/story-n4-08.webp",
     "Pages": [
       {
         "title": "Menyiapkan tas",
@@ -964,7 +964,7 @@
             "meaning": "perlengkapan hujan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-08.png",
+        "imageAsset": "assets/images/reading/story-n4-08.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -986,7 +986,7 @@
             "meaning": "berhenti, untuk hujan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-08.png",
+        "imageAsset": "assets/images/reading/story-n4-08.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1008,7 +1008,7 @@
             "meaning": "turun"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-08.png",
+        "imageAsset": "assets/images/reading/story-n4-08.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1078,7 +1078,7 @@
     "Chapter": "Masyarakat",
     "Description": "Bekerja sama dengan tetangga dan melihat hasilnya. Latih ～ために, ～ずつ, dan ～ようになる.",
     "Minutes": 12,
-    "ImageAsset": "assets/images/reading/story-n4-09.png",
+    "ImageAsset": "assets/images/reading/story-n4-09.webp",
     "Pages": [
       {
         "title": "Bergabung dengan warga",
@@ -1098,7 +1098,7 @@
             "meaning": "sarung tangan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-09.png",
+        "imageAsset": "assets/images/reading/story-n4-09.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1120,7 +1120,7 @@
             "meaning": "kaleng"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-09.png",
+        "imageAsset": "assets/images/reading/story-n4-09.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1142,7 +1142,7 @@
             "meaning": "secara alami"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-09.png",
+        "imageAsset": "assets/images/reading/story-n4-09.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1212,7 +1212,7 @@
     "Chapter": "Masyarakat",
     "Description": "Telusuri petunjuk dan bantu teman menemukan barang. Latih ～かどうか, ～てしまう, dan ～てあげる.",
     "Minutes": 12,
-    "ImageAsset": "assets/images/reading/story-n4-10.png",
+    "ImageAsset": "assets/images/reading/story-n4-10.webp",
     "Pages": [
       {
         "title": "Dompet tidak ada",
@@ -1232,7 +1232,7 @@
             "meaning": "menyadari"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-10.png",
+        "imageAsset": "assets/images/reading/story-n4-10.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1254,7 +1254,7 @@
             "meaning": "mengantarkan; menyerahkan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-10.png",
+        "imageAsset": "assets/images/reading/story-n4-10.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1276,7 +1276,7 @@
             "meaning": "barang bawaan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-10.png",
+        "imageAsset": "assets/images/reading/story-n4-10.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1346,7 +1346,7 @@
     "Chapter": "Perjalanan",
     "Description": "Nikmati pengalaman penginapan Jepang. Latih ～てある, ～前に, dan ～ことにする.",
     "Minutes": 12,
-    "ImageAsset": "assets/images/reading/story-n4-11.png",
+    "ImageAsset": "assets/images/reading/story-n4-11.webp",
     "Pages": [
       {
         "title": "Tiba di penginapan",
@@ -1366,7 +1366,7 @@
             "meaning": "reservasi"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-11.png",
+        "imageAsset": "assets/images/reading/story-n4-11.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1388,7 +1388,7 @@
             "meaning": "berjajar"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-11.png",
+        "imageAsset": "assets/images/reading/story-n4-11.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1410,7 +1410,7 @@
             "meaning": "janji"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-11.png",
+        "imageAsset": "assets/images/reading/story-n4-11.webp",
         "imageUrl": "",
         "imagePanel": 2
       }
@@ -1480,7 +1480,7 @@
     "Chapter": "Kerja dan belajar",
     "Description": "Siapkan acara, hadapi kesalahan, dan rayakan kerja sama. Latih ～ておく, ～てしまう, dan ～おかげで.",
     "Minutes": 13,
-    "ImageAsset": "assets/images/reading/story-n4-12.png",
+    "ImageAsset": "assets/images/reading/story-n4-12.webp",
     "Pages": [
       {
         "title": "Persiapan sehari sebelumnya",
@@ -1500,7 +1500,7 @@
             "meaning": "menyiapkan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-12.png",
+        "imageAsset": "assets/images/reading/story-n4-12.webp",
         "imageUrl": "",
         "imagePanel": 0
       },
@@ -1522,7 +1522,7 @@
             "meaning": "meminta maaf"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-12.png",
+        "imageAsset": "assets/images/reading/story-n4-12.webp",
         "imageUrl": "",
         "imagePanel": 1
       },
@@ -1544,7 +1544,7 @@
             "meaning": "persiapan"
           }
         ],
-        "imageAsset": "assets/images/reading/story-n4-12.png",
+        "imageAsset": "assets/images/reading/story-n4-12.webp",
         "imageUrl": "",
         "imagePanel": 2
       }

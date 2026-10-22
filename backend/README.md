@@ -19,12 +19,14 @@ Secara default object asset diberi ACL `public-read` agar dapat ditampilkan oleh
 mobile app. Gunakan `-public-read=false` untuk bucket yang dilayani melalui URL
 bertanda tangan atau CDN private.
 
-Gambar reading, vocabulary, dan onboarding berada di `backend/assets/images/`
-dan tidak dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`,
+Gambar reading dan vocabulary berada di `backend/assets/images/` sebagai WebP
+maksimal 1.200 px dan 200 KiB; onboarding dilayani dengan cara yang sama dan
+tidak dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`,
 backend menyajikannya di `/assets/images/...`; aplikasi memakai origin
 `API_BASE_URL`. Untuk CDN, atur `ASSET_BASE_URL` ke origin CDN dengan object
-prefix `assets`.
-Foto profil diperkecil menjadi JPEG 512 px dan disimpan sebagai objek `public-read`
+prefix `assets`. News dan gambar yang diunggah admin juga dikompresi sebagai
+JPEG maksimal 200 KiB.
+Foto profil diperkecil menjadi JPEG maksimal 512 px/200 KiB dan disimpan sebagai objek `public-read`
 di `profile/avatars/`. Upload memakai `COS_BUCKET_URL`, `COS_SECRET_ID`, dan
 `COS_SECRET_KEY` yang sama; URL publik memakai `ASSET_BASE_URL` jika diatur,
 atau `COS_BUCKET_URL` sebagai fallback. Foto lama dibersihkan setelah penggantian

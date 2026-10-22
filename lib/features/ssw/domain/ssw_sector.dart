@@ -23,7 +23,7 @@ const sswSectors = [
   ),
   SswSector(
     'linen-supply',
-    'Pasokan linen',
+    'Pengolahan linen',
     'リネンサプライ',
     'laundry seprai handuk',
   ),

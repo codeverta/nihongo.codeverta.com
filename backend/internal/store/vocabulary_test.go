@@ -42,10 +42,10 @@ func TestVocabularySeedIncludesAllJLPTLevels(t *testing.T) {
 func TestN5LessonSummariesKeepImageAssetURLs(t *testing.T) {
 	store := NewMemoryStore()
 	levels := store.VocabularyLevels("vocabulary-test-user")
-	if got := levels[0].Lessons[0].ImageAsset; got != "assets/images/vocabulary/n5-theme-01.png" {
+	if got := levels[0].Lessons[0].ImageAsset; got != "assets/images/vocabulary/n5-theme-01.webp" {
 		t.Fatalf("N5 thumbnail asset = %q", got)
 	}
-	if got := levels[0].Lessons[0].ImageURL; got != "/assets/images/vocabulary/n5-theme-01.png" {
+	if got := levels[0].Lessons[0].ImageURL; got != "/assets/images/vocabulary/n5-theme-01.webp" {
 		t.Fatalf("N5 thumbnail URL = %q", got)
 	}
 }

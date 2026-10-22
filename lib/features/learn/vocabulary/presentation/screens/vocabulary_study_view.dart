@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
 import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
 
-class VocabularyStudyView extends StatefulWidget {
+class VocabularyStudyView extends ConsumerStatefulWidget {
   const VocabularyStudyView({
     required this.state,
     required this.previous,
@@ -17,14 +19,15 @@ class VocabularyStudyView extends StatefulWidget {
   final VoidCallback next;
   final VoidCallback startQuiz;
   @override
-  State<VocabularyStudyView> createState() => _StudyViewState();
+  ConsumerState<VocabularyStudyView> createState() => _StudyViewState();
 }
 
-class _StudyViewState extends State<VocabularyStudyView> {
-  bool meaning = true;
-  bool furigana = true;
+class _StudyViewState extends ConsumerState<VocabularyStudyView> {
   @override
   Widget build(BuildContext context) {
+    final displayPreferences = ref.watch(displayPreferencesProvider);
+    final meaning = displayPreferences.translation;
+    final furigana = displayPreferences.furigana;
     final s = widget.state;
     final w = s.lesson.words[s.wordIndex];
     final last = s.wordIndex == s.lesson.words.length - 1;
@@ -166,7 +169,9 @@ class _StudyViewState extends State<VocabularyStudyView> {
                     labelStyle: TextStyle(
                       color: furigana ? colors.onSecondary : colors.onSurface,
                     ),
-                    onSelected: (v) => setState(() => furigana = v),
+                    onSelected: (enabled) => ref
+                        .read(displayPreferencesProvider.notifier)
+                        .setFurigana(enabled: enabled),
                   ),
                   FilterChip(
                     label: const Text('Terjemahan'),
@@ -176,7 +181,9 @@ class _StudyViewState extends State<VocabularyStudyView> {
                     labelStyle: TextStyle(
                       color: meaning ? colors.onSecondary : colors.onSurface,
                     ),
-                    onSelected: (v) => setState(() => meaning = v),
+                    onSelected: (enabled) => ref
+                        .read(displayPreferencesProvider.notifier)
+                        .setTranslation(enabled: enabled),
                   ),
                 ],
               ),

@@ -63,19 +63,19 @@ func TestN5VocabularyArtworkIsServedByAssetRoute(t *testing.T) {
 		t.Fatal(err)
 	}
 	response := httptest.NewRecorder()
-	server.Handler().ServeHTTP(response, httptest.NewRequest(http.MethodGet, "/assets/images/vocabulary/n5-theme-01.png", nil))
+	server.Handler().ServeHTTP(response, httptest.NewRequest(http.MethodGet, "/assets/images/vocabulary/n5-theme-01.webp", nil))
 	if response.Code != http.StatusOK {
 		t.Fatalf("N5 artwork status = %d, want %d", response.Code, http.StatusOK)
 	}
-	if response.Header().Get("Content-Type") != "image/png" || response.Body.Len() < 100_000 {
-		t.Fatalf("N5 artwork response did not contain a real PNG: type=%q bytes=%d", response.Header().Get("Content-Type"), response.Body.Len())
+	if response.Header().Get("Content-Type") != "image/webp" || response.Body.Len() == 0 || response.Body.Len() > 200*1024 {
+		t.Fatalf("N5 artwork response was not optimized WebP: type=%q bytes=%d", response.Header().Get("Content-Type"), response.Body.Len())
 	}
 }
 
 func TestCDNAssetsWithoutLocalDirectory(t *testing.T) {
 	memory := store.NewMemoryStore()
 	s := NewServer(memory, nil)
-	request := httptest.NewRequest(http.MethodGet, "/assets/images/onboarding-japanese-journey.png", nil)
+	request := httptest.NewRequest(http.MethodGet, "/assets/images/onboarding-japanese-journey.webp", nil)
 	w := httptest.NewRecorder()
 	s.Handler().ServeHTTP(w, request)
 	if w.Code != http.StatusNotFound {
@@ -84,7 +84,7 @@ func TestCDNAssetsWithoutLocalDirectory(t *testing.T) {
 	memory.SetAssetBaseURL("https://cdn.example.com")
 	w = httptest.NewRecorder()
 	s.Handler().ServeHTTP(w, request)
-	if w.Code != http.StatusFound || w.Header().Get("Location") != "https://cdn.example.com/assets/images/onboarding-japanese-journey.png" {
+	if w.Code != http.StatusFound || w.Header().Get("Location") != "https://cdn.example.com/assets/images/onboarding-japanese-journey.webp" {
 		t.Fatalf("CDN redirect = %d %v", w.Code, w.Header())
 	}
 }

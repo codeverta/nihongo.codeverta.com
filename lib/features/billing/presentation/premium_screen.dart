@@ -265,7 +265,7 @@ class _LifetimeHero extends StatelessWidget {
         AspectRatio(
           aspectRatio: 1.9,
           child: Image.asset(
-            'assets/images/explore/lifetime-access.png',
+            'assets/images/explore/lifetime-access.webp',
             key: const Key('lifetime-illustration'),
             fit: BoxFit.cover,
             cacheWidth: 1200,

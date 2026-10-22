@@ -78,7 +78,7 @@ func (s *MemoryStore) VocabularyLesson(userID, lessonID string) (domain.Vocabula
 		ID: lesson.ID, Level: level.Level, Title: lesson.Title,
 		Description: lesson.Description, BestScore: progress.Completion,
 		Completed: progress.Completed,
-		ImageURL:  s.assetURLLocked("assets/images/vocabulary/study-journey.png"),
+		ImageURL:  s.assetURLLocked("assets/images/vocabulary/study-journey.webp"),
 		Words:     words,
 	}, nil
 }
@@ -113,7 +113,7 @@ func (s *MemoryStore) StartVocabularyAttempt(userID, lessonID string) (domain.Vo
 	id := fmt.Sprintf("vocab-attempt-%d", s.attemptID.Add(1))
 	attempt := domain.VocabularyAttempt{
 		ID: id, LessonID: lessonID, Questions: questions,
-		ImageURL:  s.assetURLLocked("assets/images/vocabulary/quiz-mastery.png"),
+		ImageURL:  s.assetURLLocked("assets/images/vocabulary/quiz-mastery.webp"),
 		StartedAt: time.Now().UTC(),
 	}
 	s.vocabAttempts[id] = &vocabularyAttemptState{
@@ -133,7 +133,11 @@ func (s *MemoryStore) assetURLLocked(key string) string {
 	if key == "" {
 		return ""
 	}
-	return s.assetBaseURL + "/" + strings.TrimLeft(key, "/")
+	key = strings.TrimLeft(key, "/")
+	if strings.HasPrefix(key, "assets/images/") && strings.HasSuffix(key, ".png") {
+		key = strings.TrimSuffix(key, ".png") + ".webp"
+	}
+	return s.assetBaseURL + "/" + key
 }
 
 func (s *MemoryStore) AnswerVocabularyQuestion(userID, attemptID, questionID, optionID string) (domain.VocabularyAnswerFeedback, error) {

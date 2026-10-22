@@ -25,7 +25,7 @@
             "meaning": "Saya belajar bahasa Jepang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 私: saya"
@@ -50,7 +50,7 @@
             "meaning": "Pelajar belajar di perpustakaan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 学生: pelajar"
@@ -75,7 +75,7 @@
             "meaning": "Saya menyebutkan nama kepada guru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 先生: guru"
@@ -100,7 +100,7 @@
             "meaning": "Teman saya ada di taman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 友達: teman"
@@ -125,7 +125,7 @@
             "meaning": "Anak makan roti."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 子供: anak"
@@ -150,7 +150,7 @@
             "meaning": "Nama gurunya Tanaka."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 名前: nama"
@@ -175,7 +175,7 @@
             "meaning": "Saya suka makanan Jepang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 日本: Jepang"
@@ -200,7 +200,7 @@
             "meaning": "Saya punya teman dari luar negeri."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-01.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-01.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 外国: luar negeri"
@@ -233,7 +233,7 @@
             "meaning": "Saya menonton film bersama ayah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 父: ayah saya"
@@ -258,7 +258,7 @@
             "meaning": "Saya menelepon ibu."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 母: ibu saya"
@@ -283,7 +283,7 @@
             "meaning": "Saya mendengarkan musik bersama kakak laki-laki."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 兄: kakak laki-laki saya"
@@ -308,7 +308,7 @@
             "meaning": "Saya pergi ke taman bersama adik laki-laki."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 弟: adik laki-laki saya"
@@ -333,7 +333,7 @@
             "meaning": "Saya pergi berbelanja bersama kakak perempuan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 姉: kakak perempuan saya"
@@ -358,7 +358,7 @@
             "meaning": "Adik perempuan saya suka kucing."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 妹: adik perempuan saya"
@@ -383,7 +383,7 @@
             "meaning": "Saya minum teh bersama kakek."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 祖父: kakek saya"
@@ -408,7 +408,7 @@
             "meaning": "Saya pergi ke rumah nenek."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-02.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-02.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 祖母: nenek saya"
@@ -441,7 +441,7 @@
             "meaning": "Ada buku di atas meja."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 本: buku"
@@ -466,7 +466,7 @@
             "meaning": "Saya membeli buku catatan baru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata ノート: buku catatan"
@@ -491,7 +491,7 @@
             "meaning": "Pensil ini panjang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 鉛筆: pensil"
@@ -516,7 +516,7 @@
             "meaning": "Ada penghapus di dalam tas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 消しゴム: penghapus"
@@ -541,7 +541,7 @@
             "meaning": "Tas ini biru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata かばん: tas"
@@ -566,7 +566,7 @@
             "meaning": "Meja ada di kamar."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 机: meja"
@@ -591,7 +591,7 @@
             "meaning": "Kursi ini kecil."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 椅子: kursi"
@@ -616,7 +616,7 @@
             "meaning": "Ada jam di dinding."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-03.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-03.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 時計: jam"
@@ -649,7 +649,7 @@
             "meaning": "Rumah saya dekat stasiun."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 家: rumah"
@@ -674,7 +674,7 @@
             "meaning": "Kamar ini luas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 部屋: kamar"
@@ -699,7 +699,7 @@
             "meaning": "Gunung terlihat dari jendela."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 窓: jendela"
@@ -724,7 +724,7 @@
             "meaning": "Ada kucing di depan pintu."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata ドア: pintu"
@@ -749,7 +749,7 @@
             "meaning": "Saya memasak di dapur."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 台所: dapur"
@@ -774,7 +774,7 @@
             "meaning": "Air di bak mandi hangat."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata お風呂: bak mandi; mandi"
@@ -799,7 +799,7 @@
             "meaning": "Saya bermain dengan anjing di halaman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 庭: halaman; taman rumah"
@@ -824,7 +824,7 @@
             "meaning": "Ada tas di bawah tempat tidur."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-04.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-04.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata ベッド: tempat tidur"
@@ -857,7 +857,7 @@
             "meaning": "Saya menyiapkan makanan setiap pagi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata ご飯: nasi; makanan"
@@ -882,7 +882,7 @@
             "meaning": "Saya makan roti untuk sarapan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata パン: roti"
@@ -907,7 +907,7 @@
             "meaning": "Ada telur di kulkas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 卵: telur"
@@ -932,7 +932,7 @@
             "meaning": "Ikan ini enak."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 魚: ikan"
@@ -957,7 +957,7 @@
             "meaning": "Ibu memasak daging."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 肉: daging"
@@ -982,7 +982,7 @@
             "meaning": "Saya membeli sayur di supermarket."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 野菜: sayuran"
@@ -1007,7 +1007,7 @@
             "meaning": "Sup ini enak."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata スープ: sup"
@@ -1032,7 +1032,7 @@
             "meaning": "Saya makan bekal di taman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-05.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-05.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata お弁当: bekal makan"
@@ -1065,7 +1065,7 @@
             "meaning": "Tolong beri saya air."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 水: air"
@@ -1090,7 +1090,7 @@
             "meaning": "Tehnya hangat."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata お茶: teh"
@@ -1115,7 +1115,7 @@
             "meaning": "Apakah Anda suka kopi?"
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata コーヒー: kopi"
@@ -1140,7 +1140,7 @@
             "meaning": "Ada susu di kulkas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 牛乳: susu"
@@ -1165,7 +1165,7 @@
             "meaning": "Saya minum jus dingin."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata ジュース: minuman sari buah"
@@ -1190,7 +1190,7 @@
             "meaning": "Saya membeli apel merah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata りんご: apel"
@@ -1215,7 +1215,7 @@
             "meaning": "Jeruk mandarin ini manis."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata みかん: jeruk mandarin"
@@ -1240,7 +1240,7 @@
             "meaning": "Pisang berwarna kuning."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-06.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-06.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata バナナ: pisang"
@@ -1273,7 +1273,7 @@
             "meaning": "Besok saya bangun pagi-pagi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 起きる: bangun tidur"
@@ -1298,7 +1298,7 @@
             "meaning": "Tolong tidur lebih awal."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 寝る: tidur"
@@ -1323,7 +1323,7 @@
             "meaning": "Saya makan siang bersama teman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 食べる: makan"
@@ -1348,7 +1348,7 @@
             "meaning": "Maukah Anda minum teh?"
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 飲む: minum"
@@ -1373,7 +1373,7 @@
             "meaning": "Besok saya pergi ke Jepang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 行く: pergi"
@@ -1398,7 +1398,7 @@
             "meaning": "Tolong datang ke sini."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 来る: datang"
@@ -1423,7 +1423,7 @@
             "meaning": "Ayah pulang pukul enam."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 帰る: pulang"
@@ -1448,7 +1448,7 @@
             "meaning": "Saya melihat gunung dari jendela."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-07.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-07.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 見る: melihat; menonton"
@@ -1481,7 +1481,7 @@
             "meaning": "Saya membaca koran setiap pagi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 読む: membaca"
@@ -1506,7 +1506,7 @@
             "meaning": "Saya menulis surat dengan pensil."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 書く: menulis"
@@ -1531,7 +1531,7 @@
             "meaning": "Saya bertanya kepada guru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 聞く: mendengar; bertanya"
@@ -1556,7 +1556,7 @@
             "meaning": "Saya berbicara dalam bahasa Jepang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 話す: berbicara"
@@ -1581,7 +1581,7 @@
             "meaning": "Saya belajar di perpustakaan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 勉強する: belajar"
@@ -1606,7 +1606,7 @@
             "meaning": "Ayah bekerja setiap hari."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 働く: bekerja"
@@ -1631,7 +1631,7 @@
             "meaning": "Saya membeli buku baru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 買う: membeli"
@@ -1656,7 +1656,7 @@
             "meaning": "Saya membuat bekal."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-08.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-08.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 作る: membuat"
@@ -1689,7 +1689,7 @@
             "meaning": "Saya bertemu teman di sekolah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 学校: sekolah"
@@ -1714,7 +1714,7 @@
             "meaning": "Perpustakaannya tenang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 図書館: perpustakaan"
@@ -1739,7 +1739,7 @@
             "meaning": "Rumah sakitnya dekat stasiun."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 病院: rumah sakit"
@@ -1764,7 +1764,7 @@
             "meaning": "Bank buka pukul sembilan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 銀行: bank"
@@ -1789,7 +1789,7 @@
             "meaning": "Kantor pos ada di sebelah bank."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 郵便局: kantor pos"
@@ -1814,7 +1814,7 @@
             "meaning": "Saya berjalan ke stasiun."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 駅: stasiun"
@@ -1839,7 +1839,7 @@
             "meaning": "Supermarketnya dekat."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata スーパー: supermarket"
@@ -1864,7 +1864,7 @@
             "meaning": "Ada pohon di taman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-09.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-09.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 公園: taman umum"
@@ -1897,7 +1897,7 @@
             "meaning": "Saya pergi ke sekolah dengan kereta."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 電車: kereta"
@@ -1922,7 +1922,7 @@
             "meaning": "Saya pulang dengan bus."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata バス: bus"
@@ -1947,7 +1947,7 @@
             "meaning": "Saya pergi ke rumah sakit dengan mobil."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 車: mobil"
@@ -1972,7 +1972,7 @@
             "meaning": "Sepeda ini baru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 自転車: sepeda"
@@ -1997,7 +1997,7 @@
             "meaning": "Pesawatnya besar."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 飛行機: pesawat"
@@ -2022,7 +2022,7 @@
             "meaning": "Saya pergi ke stasiun dengan taksi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata タクシー: taksi"
@@ -2047,7 +2047,7 @@
             "meaning": "Tolong tunjukkan tiket Anda."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 切符: tiket"
@@ -2072,7 +2072,7 @@
             "meaning": "Saya berjalan di taman setiap pagi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-10.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-10.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 歩く: berjalan"
@@ -2105,7 +2105,7 @@
             "meaning": "Pagi hari sejuk."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 朝: pagi"
@@ -2130,7 +2130,7 @@
             "meaning": "Siang hari panas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 昼: siang"
@@ -2155,7 +2155,7 @@
             "meaning": "Saya berbelanja pada sore hari."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 夕方: sore"
@@ -2180,7 +2180,7 @@
             "meaning": "Malam hari tenang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 夜: malam"
@@ -2205,7 +2205,7 @@
             "meaning": "Cuaca hari ini bagus."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 今日: hari ini"
@@ -2230,7 +2230,7 @@
             "meaning": "Kemarin hujan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 昨日: kemarin"
@@ -2255,7 +2255,7 @@
             "meaning": "Besok hari Minggu."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 明日: besok"
@@ -2280,7 +2280,7 @@
             "meaning": "Anda bangun pukul berapa?"
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-11.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-11.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 何時: pukul berapa"
@@ -2313,7 +2313,7 @@
             "meaning": "Hari Senin sibuk."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 月曜日: Senin"
@@ -2338,7 +2338,7 @@
             "meaning": "Teman saya datang pada hari Selasa."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 火曜日: Selasa"
@@ -2363,7 +2363,7 @@
             "meaning": "Hari Rabu adalah hari libur."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 水曜日: Rabu"
@@ -2388,7 +2388,7 @@
             "meaning": "Saya berbicara dengan guru pada hari Kamis."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 木曜日: Kamis"
@@ -2413,7 +2413,7 @@
             "meaning": "Saya menonton film pada hari Jumat."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 金曜日: Jumat"
@@ -2438,7 +2438,7 @@
             "meaning": "Saya tidak pergi ke sekolah pada hari Sabtu."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 土曜日: Sabtu"
@@ -2463,7 +2463,7 @@
             "meaning": "Saya bertemu keluarga pada hari Minggu."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 日曜日: Minggu"
@@ -2488,7 +2488,7 @@
             "meaning": "Saya bepergian saat libur."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-12.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-12.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 休み: libur; istirahat"
@@ -2521,7 +2521,7 @@
             "meaning": "Saya membawa payung pada hari hujan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 雨: hujan"
@@ -2546,7 +2546,7 @@
             "meaning": "Salju berwarna putih."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 雪: salju"
@@ -2571,7 +2571,7 @@
             "meaning": "Saya pergi ke taman pada hari cerah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 晴れ: cerah"
@@ -2596,7 +2596,7 @@
             "meaning": "Besok juga berawan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 曇り: berawan"
@@ -2621,7 +2621,7 @@
             "meaning": "Saya pergi ke gunung bersama teman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 山: gunung"
@@ -2646,7 +2646,7 @@
             "meaning": "Air sungai dingin."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 川: sungai"
@@ -2671,7 +2671,7 @@
             "meaning": "Laut berwarna biru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 海: laut"
@@ -2696,7 +2696,7 @@
             "meaning": "Saya memberikan bunga kepada ibu."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-13.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-13.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 花: bunga"
@@ -2729,7 +2729,7 @@
             "meaning": "Saya bermain dengan anjing."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 犬: anjing"
@@ -2754,7 +2754,7 @@
             "meaning": "Kucingnya kecil."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 猫: kucing"
@@ -2779,7 +2779,7 @@
             "meaning": "Saya mendengar suara burung."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 鳥: burung"
@@ -2804,7 +2804,7 @@
             "meaning": "Saya melihat ikan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 魚: ikan hidup"
@@ -2829,7 +2829,7 @@
             "meaning": "Ada dua kelinci."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata うさぎ: kelinci"
@@ -2854,7 +2854,7 @@
             "meaning": "Saya melihat kuda."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 馬: kuda"
@@ -2879,7 +2879,7 @@
             "meaning": "Sapi makan rumput."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 牛: sapi"
@@ -2904,7 +2904,7 @@
             "meaning": "Anak-anak suka panda."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-14.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-14.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata パンダ: panda"
@@ -2937,7 +2937,7 @@
             "meaning": "Saya mengenakan topi di kepala."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 頭: kepala"
@@ -2962,7 +2962,7 @@
             "meaning": "Mata saya hitam."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 目: mata"
@@ -2987,7 +2987,7 @@
             "meaning": "Saya mendengar bunyi dengan telinga."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 耳: telinga"
@@ -3012,7 +3012,7 @@
             "meaning": "Saya mencium aroma bunga dengan hidung."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 鼻: hidung"
@@ -3037,7 +3037,7 @@
             "meaning": "Saya menutup mulut."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 口: mulut"
@@ -3062,7 +3062,7 @@
             "meaning": "Saya mengangkat tangan kanan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 手: tangan"
@@ -3087,7 +3087,7 @@
             "meaning": "Saya mencuci kaki."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 足: kaki"
@@ -3112,7 +3112,7 @@
             "meaning": "Perut saya sakit."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-15.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-15.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata お腹: perut"
@@ -3145,7 +3145,7 @@
             "meaning": "Saya memakai pakaian baru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 服: pakaian"
@@ -3170,7 +3170,7 @@
             "meaning": "Saya mencuci kemeja."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata シャツ: kemeja"
@@ -3195,7 +3195,7 @@
             "meaning": "Saya melepas jaket."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 上着: jaket; pakaian luar"
@@ -3220,7 +3220,7 @@
             "meaning": "Celana ini panjang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata ズボン: celana panjang"
@@ -3245,7 +3245,7 @@
             "meaning": "Saya membeli rok biru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata スカート: rok"
@@ -3270,7 +3270,7 @@
             "meaning": "Saya membeli sepatu baru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 靴: sepatu"
@@ -3295,7 +3295,7 @@
             "meaning": "Saya mencuci kaus kaki putih."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 靴下: kaus kaki"
@@ -3320,7 +3320,7 @@
             "meaning": "Topi ini merah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-16.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-16.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 帽子: topi"
@@ -3353,7 +3353,7 @@
             "meaning": "Bunga ini merah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 赤い: merah"
@@ -3378,7 +3378,7 @@
             "meaning": "Laut berwarna biru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 青い: biru"
@@ -3403,7 +3403,7 @@
             "meaning": "Salju berwarna putih."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 白い: putih"
@@ -3428,7 +3428,7 @@
             "meaning": "Sepatu ini hitam."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 黒い: hitam"
@@ -3453,7 +3453,7 @@
             "meaning": "Pisang berwarna kuning."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 黄色い: kuning"
@@ -3478,7 +3478,7 @@
             "meaning": "Daun ini hijau."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 緑: hijau"
@@ -3503,7 +3503,7 @@
             "meaning": "Meja ini cokelat."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 茶色: cokelat"
@@ -3528,7 +3528,7 @@
             "meaning": "Adik perempuan saya suka warna merah muda."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-17.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-17.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata ピンク: merah muda"
@@ -3561,7 +3561,7 @@
             "meaning": "Ada anjing besar."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 大きい: besar"
@@ -3586,7 +3586,7 @@
             "meaning": "Kamar ini kecil."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 小さい: kecil"
@@ -3611,7 +3611,7 @@
             "meaning": "Buku ini baru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 新しい: baru"
@@ -3636,7 +3636,7 @@
             "meaning": "Rumah ini sudah tua."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 古い: lama; tua, untuk benda"
@@ -3661,7 +3661,7 @@
             "meaning": "Gunung itu tinggi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 高い: mahal; tinggi"
@@ -3686,7 +3686,7 @@
             "meaning": "Saya membeli sepatu murah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 安い: murah"
@@ -3711,7 +3711,7 @@
             "meaning": "Musim panas panas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 暑い: panas, untuk cuaca"
@@ -3736,7 +3736,7 @@
             "meaning": "Saya memakai jaket pada hari dingin."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-18.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-18.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 寒い: dingin, untuk cuaca"
@@ -3769,7 +3769,7 @@
             "meaning": "Ada kucing di atas kursi."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 上: atas"
@@ -3794,7 +3794,7 @@
             "meaning": "Ada sepatu di bawah tempat tidur."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 下: bawah"
@@ -3819,7 +3819,7 @@
             "meaning": "Ada buku di dalam tas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 中: dalam"
@@ -3844,7 +3844,7 @@
             "meaning": "Di luar dingin."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 外: luar"
@@ -3869,7 +3869,7 @@
             "meaning": "Saya bertemu di depan sekolah."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata 前: depan; sebelum"
@@ -3894,7 +3894,7 @@
             "meaning": "Ada pelajar di belakang guru."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 後ろ: belakang"
@@ -3919,7 +3919,7 @@
             "meaning": "Ada bank di sebelah kanan."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 右: kanan"
@@ -3944,7 +3944,7 @@
             "meaning": "Ada taman di sebelah kiri."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-19.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-19.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 左: kiri"
@@ -3977,7 +3977,7 @@
             "meaning": "Saya suka musik Jepang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 0,
         "imageDescription": "Ilustrasi kosakata 音楽: musik"
@@ -4002,7 +4002,7 @@
             "meaning": "Saya menonton film bersama teman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 1,
         "imageDescription": "Ilustrasi kosakata 映画: film"
@@ -4027,7 +4027,7 @@
             "meaning": "Tolong lihat foto ini."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 2,
         "imageDescription": "Ilustrasi kosakata 写真: foto"
@@ -4052,7 +4052,7 @@
             "meaning": "Saya ingin berwisata bersama keluarga."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 3,
         "imageDescription": "Ilustrasi kosakata 旅行: perjalanan wisata"
@@ -4077,7 +4077,7 @@
             "meaning": "Saya bermain tenis bersama teman."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 4,
         "imageDescription": "Ilustrasi kosakata テニス: tenis"
@@ -4102,7 +4102,7 @@
             "meaning": "Saya berenang pada musim panas."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 5,
         "imageDescription": "Ilustrasi kosakata 泳ぐ: berenang"
@@ -4127,7 +4127,7 @@
             "meaning": "Saya makan masakan Jepang."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 6,
         "imageDescription": "Ilustrasi kosakata 料理: masakan; memasak"
@@ -4152,7 +4152,7 @@
             "meaning": "Saya suka lagu ini."
           }
         ],
-        "imageAsset": "assets/images/vocabulary/n5-theme-20.png",
+        "imageAsset": "assets/images/vocabulary/n5-theme-20.webp",
         "imageUrl": "",
         "imagePanel": 7,
         "imageDescription": "Ilustrasi kosakata 歌: lagu"

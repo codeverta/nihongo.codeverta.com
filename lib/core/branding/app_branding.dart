@@ -87,7 +87,7 @@ class BrandIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget fallback() => Image.asset(
-          'assets/images/app-icon-small.png',
+          'assets/images/app-icon-small.webp',
           width: size,
           height: size,
           fit: BoxFit.contain,

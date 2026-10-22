@@ -36,7 +36,7 @@ Jawaban kuis mengikuti teks; ilustrasi membantu memahami konteks.
 ## Konten dan gambar
 
 - Sumber materi backend: `backend/data/reading/n3.json`, di-embed saat build.
-- 12 gambar baru: `backend/assets/images/reading/story-n3-01.png` sampai
+- 12 gambar baru: `backend/assets/images/reading/story-n3-01.webp` sampai
   `story-n3-12.png`, dibuat dengan **imagegen bawaan** (mode generate).
 - Setiap gambar memuat tiga panel persegi dari kiri ke kanan. Aplikasi
   menampilkan panel sesuai halaman, sehingga tersedia 36 adegan.

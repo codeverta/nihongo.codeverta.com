@@ -17,6 +17,7 @@ import (
 
 	"github.com/tencentyun/cos-go-sdk-v5"
 	_ "golang.org/x/image/webp"
+	"nihongo-master-backend/internal/imageopt"
 )
 
 const MaxImageBytes = 12 << 20
@@ -58,22 +59,30 @@ func inspectImage(body []byte) (image.Config, string, error) {
 }
 
 func (s *COSStore) Put(ctx context.Context, body []byte) (Asset, error) {
-	cfg, format, err := inspectImage(body)
+	_, _, err := inspectImage(body)
 	if err != nil {
 		return Asset{}, err
 	}
-	ext := format
-	if ext == "jpeg" {
-		ext = "jpg"
+	decoded, _, err := image.Decode(bytes.NewReader(body))
+	if err != nil {
+		return Asset{}, errors.New("invalid manga image")
 	}
-	h := sha256.Sum256(body)
-	key := "manga/pages/" + hex.EncodeToString(h[:]) + "." + ext
-	_, err = s.client.Object.Put(ctx, key, bytes.NewReader(body), &cos.ObjectPutOptions{
+	optimized, err := imageopt.JPEG(decoded)
+	if err != nil {
+		return Asset{}, fmt.Errorf("optimize manga image: %w", err)
+	}
+	cfg, _, err := image.DecodeConfig(bytes.NewReader(optimized))
+	if err != nil {
+		return Asset{}, fmt.Errorf("read optimized manga image: %w", err)
+	}
+	h := sha256.Sum256(optimized)
+	key := "manga/pages/" + hex.EncodeToString(h[:]) + ".jpg"
+	_, err = s.client.Object.Put(ctx, key, bytes.NewReader(optimized), &cos.ObjectPutOptions{
 		ACLHeaderOptions:       &cos.ACLHeaderOptions{XCosACL: "public-read"},
-		ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{ContentType: "image/" + format, CacheControl: "public, max-age=31536000, immutable"},
+		ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{ContentType: "image/jpeg", CacheControl: "public, max-age=31536000, immutable"},
 	})
 	if err != nil {
 		return Asset{}, fmt.Errorf("manga COS upload: %w", err)
 	}
-	return Asset{URL: s.publicBase + "/" + key, ObjectKey: key, Width: cfg.Width, Height: cfg.Height, Bytes: len(body), CreatedAt: time.Now().UTC()}, nil
+	return Asset{URL: s.publicBase + "/" + key, ObjectKey: key, Width: cfg.Width, Height: cfg.Height, Bytes: len(optimized), CreatedAt: time.Now().UTC()}, nil
 }

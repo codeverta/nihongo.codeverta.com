@@ -67,7 +67,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             const _SectionTitle('NAT-TEST 5Q'),
             _ExamRow(
               badge: '5Q',
-              imageAsset: 'assets/images/exams/nat.png',
+              imageAsset: 'assets/images/exams/nat.webp',
               title: 'NAT 5Q Exam 1',
               metadata: '43 soal · 60 menit',
               description: 'Kosakata, kanji, grammar & reading',
@@ -81,7 +81,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             const _SectionTitle('JFT-Basic'),
             _ExamRow(
               badge: 'JFT',
-              imageAsset: 'assets/images/exams/jft.png',
+              imageAsset: 'assets/images/exams/jft.webp',
               title: 'JFT Exam 1',
               metadata: '36 soal · 45 menit',
               description: 'Kosakata, percakapan & reading',
@@ -96,7 +96,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             const SizedBox(height: 4),
             _ExamRow(
               badge: 'N5',
-              imageAsset: 'assets/images/exams/n5.png',
+              imageAsset: 'assets/images/exams/n5.webp',
               title: 'Simulasi N5',
               metadata: '38 soal · 40 menit',
               description: 'Kosakata, kanji & grammar',
@@ -106,7 +106,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             const Divider(height: 1),
             _ExamRow(
               badge: 'N4',
-              imageAsset: 'assets/images/exams/n4.png',
+              imageAsset: 'assets/images/exams/n4.webp',
               title: 'Simulasi N4',
               metadata: '57 soal · 80 menit',
               description: 'Kosakata, kanji, grammar & reading',
@@ -118,7 +118,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             const Divider(height: 1),
             _ExamRow(
               badge: 'N3',
-              imageAsset: 'assets/images/exams/n3.png',
+              imageAsset: 'assets/images/exams/n3.webp',
               title: 'Simulasi N3',
               metadata: '74 soal · 100 menit',
               description: 'Kosakata, kanji, grammar & reading',
@@ -132,7 +132,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             const SizedBox(height: 4),
             _ExamRow(
               icon: Icons.insights_outlined,
-              imageAsset: 'assets/images/exams/diagnostic-n5.png',
+              imageAsset: 'assets/images/exams/diagnostic-n5.webp',
               title: 'Diagnostic N5',
               description: 'Temukan bagian yang perlu kamu latih.',
               onTap: () => context.push('/exams/n5'),

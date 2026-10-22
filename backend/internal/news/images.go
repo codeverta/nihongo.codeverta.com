@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"image"
-	"image/jpeg"
+	_ "image/jpeg"
 	_ "image/png"
 	"log"
 	"net/url"
@@ -16,7 +16,8 @@ import (
 	"regexp"
 	"strings"
 
-	"golang.org/x/image/draw"
+	"nihongo-master-backend/internal/imageopt"
+
 	_ "golang.org/x/image/webp"
 	"golang.org/x/net/html"
 )
@@ -213,22 +214,11 @@ func (f *HTTPFetcher) downloadImage(ctx context.Context, remote string) (string,
 	if err != nil {
 		return "", err
 	}
-	if config.Width > 1280 || config.Height > 1280 {
-		w, h := config.Width, config.Height
-		if w >= h {
-			h, w = max(1, h*1280/w), 1280
-		} else {
-			w, h = max(1, w*1280/h), 1280
-		}
-		scaled := image.NewRGBA(image.Rect(0, 0, w, h))
-		draw.CatmullRom.Scale(scaled, scaled.Bounds(), decoded, decoded.Bounds(), draw.Src, nil)
-		decoded = scaled
-	}
-	var encoded bytes.Buffer
-	if err := jpeg.Encode(&encoded, decoded, &jpeg.Options{Quality: 85}); err != nil {
+	encoded, err := imageopt.JPEG(decoded)
+	if err != nil {
 		return "", err
 	}
-	name := fmt.Sprintf("%x.jpg", sha256.Sum256(encoded.Bytes()))
+	name := fmt.Sprintf("%x.jpg", sha256.Sum256(encoded))
 	if err := os.MkdirAll(f.imageDirectory, 0755); err != nil {
 		return "", err
 	}
@@ -241,7 +231,7 @@ func (f *HTTPFetcher) downloadImage(ctx context.Context, remote string) (string,
 		return "", err
 	}
 	defer os.Remove(temp.Name())
-	_, err = temp.Write(encoded.Bytes())
+	_, err = temp.Write(encoded)
 	if err == nil {
 		err = temp.Sync()
 	}

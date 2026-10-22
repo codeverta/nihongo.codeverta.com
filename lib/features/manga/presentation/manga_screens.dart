@@ -42,7 +42,7 @@ class MangaEntryCard extends StatelessWidget {
     title: 'Manga Jepang',
     eyebrow: 'PREMIUM · LIFETIME ACCESS',
     description: 'Nikmati cerita dan latih membaca Jepang lewat panel aslinya',
-    asset: 'assets/images/explore/manga-reading.png',
+    asset: 'assets/images/explore/manga-reading.webp',
     color: const Color(0xFF30265D),
     icon: Icons.auto_stories_rounded,
     premium: true,
