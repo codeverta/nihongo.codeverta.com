@@ -417,10 +417,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       }
 
       final authState = ref.read(authControllerProvider);
-      if (authState.errorMessage == sessionExpiredMessage &&
-          location != AppRoutes.loginPath) {
-        return AppRoutes.loginPath;
-      }
+      final sessionRedirect = redirectToLoginIfSessionExpired(
+        location,
+        authState.errorMessage,
+      );
+      if (sessionRedirect != null) return sessionRedirect;
 
       final user = authState.user;
       if ((location == '/manga' || location.startsWith('/manga/')) &&
