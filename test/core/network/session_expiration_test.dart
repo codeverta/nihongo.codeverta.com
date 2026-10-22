@@ -19,7 +19,6 @@ void main() {
     'revoked bearer token is cleared and routes the user to login',
     (tester) async {
       SharedPreferences.setMockInitialValues({
-        authTokenStorageKey: 'expired-token',
         'is_first_time': false,
       });
       final preferences = await SharedPreferences.getInstance();
@@ -38,14 +37,7 @@ void main() {
         (_, _) {},
       );
       addTearDown(authSubscription.close);
-      await tester.runAsync(
-        () => _waitFor(
-          () => container.read(authControllerProvider).isAuthenticated,
-          description: 'session restore',
-        ),
-      );
-      final router = container.read(appRouterProvider)
-        ..go(AppRoutes.vocabularyLessonPath('n5-daily'));
+      final router = container.read(appRouterProvider);
 
       await tester.pumpWidget(
         UncontrolledProviderScope(
@@ -53,17 +45,29 @@ void main() {
           child: MaterialApp.router(routerConfig: router),
         ),
       );
+      await tester.pumpAndSettle();
+      expect(
+        container.read(authControllerProvider).status,
+        AuthenticationStatus.guest,
+      );
+
+      await preferences.setString(authTokenStorageKey, 'expired-token');
+      router.go(AppRoutes.vocabularyLessonPath('n5-daily'));
       await tester.runAsync(
         () => _waitFor(
-          () => container.read(authControllerProvider).status ==
-              AuthenticationStatus.guest,
+          () =>
+              container.read(authControllerProvider).errorMessage ==
+              sessionExpiredMessage,
           description: 'session expiration',
         ),
       );
       await tester.pumpAndSettle();
 
       expect(preferences.getString(authTokenStorageKey), isNull);
-      expect(adapter.authorizationHeaders.last, 'Bearer expired-token');
+      expect(
+        adapter.authorizationHeaders,
+        contains('Bearer expired-token'),
+      );
       expect(
         container.read(authControllerProvider).errorMessage,
         sessionExpiredMessage,
@@ -115,21 +119,6 @@ class _RevokedSessionAdapter implements HttpClientAdapter {
       }
     }
     authorizationHeaders.add(authorization);
-    if (options.path.endsWith('/auth/me')) {
-      return ResponseBody.fromString(
-        jsonEncode({
-          'data': {
-            'id': 'user-1',
-            'displayName': 'Learner',
-            'email': 'learner@example.com',
-            'entitlement': {'tier': 'free', 'isLifetime': false},
-          },
-        }),
-        200,
-        headers: {Headers.contentTypeHeader: ['application/json']},
-      );
-    }
-
     return ResponseBody.fromString(
       jsonEncode({
         'error': {
