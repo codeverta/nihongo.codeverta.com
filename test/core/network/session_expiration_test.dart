@@ -38,7 +38,7 @@ void main() {
       );
       addTearDown(authSubscription.close);
       final router = container.read(appRouterProvider)
-        ..go(AppRoutes.loginPath);
+        ..go('/attributions');
 
       await tester.pumpWidget(
         UncontrolledProviderScope(
@@ -48,12 +48,15 @@ void main() {
       );
       await tester.pump();
       expect(
+        router.routerDelegate.currentConfiguration.uri.path,
+        '/attributions',
+      );
+      expect(
         container.read(authControllerProvider).status,
         AuthenticationStatus.guest,
       );
 
       await preferences.setString(authTokenStorageKey, 'expired-token');
-      router.go(AppRoutes.vocabularyLessonPath('n5-daily'));
       try {
         await container
             .read(dioProvider)
@@ -81,7 +84,6 @@ void main() {
         router.routerDelegate.currentConfiguration.uri.path,
         AppRoutes.loginPath,
       );
-
     },
   );
 }
