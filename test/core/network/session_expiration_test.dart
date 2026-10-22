@@ -30,8 +30,8 @@ void main() {
       );
       addTearDown(container.dispose);
 
-      final dio = container.read(dioProvider)
-        ..httpClientAdapter = _RevokedSessionAdapter();
+      final adapter = _RevokedSessionAdapter();
+      final dio = container.read(dioProvider)..httpClientAdapter = adapter;
       final authSubscription = container.listen(
         authControllerProvider,
         (_, _) {},
@@ -53,6 +53,8 @@ void main() {
         failure = error;
       }
 
+      expect(adapter.authorizationHeaders.last, 'Bearer expired-token');
+      expect(container.read(sessionExpirationEventProvider), 1);
       await _waitFor(() {
         return container.read(authControllerProvider).status ==
             AuthenticationStatus.guest;
@@ -70,7 +72,6 @@ void main() {
       final responseBody = failure.response!.data as Map<String, dynamic>;
       final errorDetails = responseBody['error'] as Map<String, dynamic>;
       expect(errorDetails['message'] as String, sessionExpiredMessage);
-      expect(container.read(sessionExpirationEventProvider), 1);
       expect(
         router.routeInformationProvider.value.uri.path,
         AppRoutes.loginPath,
@@ -96,12 +97,21 @@ Future<void> _waitFor(bool Function() condition) async {
 }
 
 class _RevokedSessionAdapter implements HttpClientAdapter {
+  final authorizationHeaders = <String?>[];
+
   @override
   Future<ResponseBody> fetch(
     RequestOptions options,
     Stream<Uint8List>? requestStream,
     Future<void>? cancelFuture,
   ) async {
+    String? authorization;
+    for (final entry in options.headers.entries) {
+      if (entry.key.toLowerCase() == 'authorization') {
+        authorization = entry.value as String?;
+      }
+    }
+    authorizationHeaders.add(authorization);
     if (options.path.endsWith('/auth/me')) {
       return ResponseBody.fromString(
         jsonEncode({

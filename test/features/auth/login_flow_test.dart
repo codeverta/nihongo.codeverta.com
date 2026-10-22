@@ -36,6 +36,9 @@ void main() {
       'user@example.com',
     );
     await tester.enterText(find.byType(TextFormField).at(1), 'password123');
+    await tester.ensureVisible(
+      find.widgetWithText(ElevatedButton, 'Masuk'),
+    );
     await tester.tap(find.widgetWithText(ElevatedButton, 'Masuk'));
     await tester.pumpAndSettle();
 
@@ -70,6 +73,9 @@ void main() {
       'user@example.com',
     );
     await tester.enterText(find.byType(TextFormField).at(1), 'wrongpass');
+    await tester.ensureVisible(
+      find.widgetWithText(ElevatedButton, 'Masuk'),
+    );
     await tester.tap(find.widgetWithText(ElevatedButton, 'Masuk'));
     await tester.pumpAndSettle();
 
