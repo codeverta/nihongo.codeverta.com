@@ -67,10 +67,9 @@ void main() {
         container.read(authControllerProvider).errorMessage,
         sessionExpiredMessage,
       );
-      expect(
-        (failure.response!.data as Map<String, dynamic>)['error']['message'],
-        sessionExpiredMessage,
-      );
+      final responseBody = failure.response!.data as Map<String, dynamic>;
+      final errorDetails = responseBody['error'] as Map<String, dynamic>;
+      expect(errorDetails['message'] as String, sessionExpiredMessage);
       expect(container.read(sessionExpirationEventProvider), 1);
       expect(
         router.routeInformationProvider.value.uri.path,
