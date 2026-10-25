@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/dictionary/domain/dictionary_models.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_controller.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_details.dart';
@@ -113,17 +114,17 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Kamus Jepang',
+                    'Kamus Jepang'.localized(context),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.w900,
                     ),
                   ),
-                  const Text('Cari kata. Pahami maknanya.'),
+                  Text('Cari kata. Pahami maknanya.'.localized(context)),
                 ],
               ),
             ),
             IconButton(
-              tooltip: 'Sumber dan bantuan',
+              tooltip: 'Sumber dan bantuan'.localized(context),
               icon: const Icon(Icons.info_outline),
               onPressed: () => showDictionarySources(context),
             ),
@@ -137,7 +138,9 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
           onSubmitted: (value) => unawaited(search(value)),
           decoration: InputDecoration(
             hintText: '猫, ねこ, neko, cat…',
-            helperText: 'Cari dengan Jepang, romaji, atau Inggris',
+            helperText: 'Cari dengan Jepang, romaji, atau Inggris'.localized(
+              context,
+            ),
             filled: true,
             fillColor: colors.surface,
             counterText: '',
@@ -147,7 +150,7 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               builder: (context, value, _) => value.text.isEmpty
                   ? const SizedBox.shrink()
                   : IconButton(
-                      tooltip: 'Bersihkan pencarian',
+                      tooltip: 'Bersihkan pencarian'.localized(context),
                       icon: const Icon(Icons.close),
                       onPressed: () => unawaited(search('')),
                     ),
@@ -162,12 +165,14 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               child: FilledButton.icon(
                 onPressed: () => unawaited(search(input.text)),
                 icon: const Icon(Icons.search),
-                label: const Text('Cari di kamus'),
+                label: Text('Cari di kamus'.localized(context)),
               ),
             ),
             const SizedBox(width: 10),
             IconButton.filledTonal(
-              tooltip: savedOnly ? 'Kembali ke hasil' : 'Kata tersimpan',
+              tooltip: savedOnly
+                  ? 'Kembali ke hasil'.localized(context)
+                  : 'Kata tersimpan'.localized(context),
               isSelected: savedOnly,
               onPressed: () => setState(() => savedOnly = !savedOnly),
               icon: const Icon(Icons.bookmark_outline),
@@ -187,7 +192,8 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                 onPressed: () => unawaited(showFilters(state)),
                 icon: const Icon(Icons.tune_rounded, size: 18),
                 label: Text(
-                  'Filter${filterCount(state) == 0 ? '' : ' · ${filterCount(state)}'}',
+                  'Filter${filterCount(state) == 0 ? '' : ' · ${filterCount(state)}'}'
+                      .localized(context),
                 ),
               ),
               const SizedBox(width: 12),
@@ -195,12 +201,12 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                 child: Text(
                   [
                     switch (state.mode) {
-                      'japanese' => 'Jepang / romaji',
-                      'english' => 'Inggris',
-                      _ => 'Bahasa otomatis',
+                      'japanese' => 'Jepang / romaji'.localized(context),
+                      'english' => 'Inggris'.localized(context),
+                      _ => 'Bahasa otomatis'.localized(context),
                     },
                     if (state.jlpt != null) state.jlpt!,
-                    if (state.common) 'Kata umum',
+                    if (state.common) 'Kata umum'.localized(context),
                   ].join(' · '),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: colors.onSurfaceVariant,
@@ -214,7 +220,10 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
         Text(
           savedOnly
               ? 'Favorit tersimpan di perangkat • ${entries.length}/60'
-              : 'Data Jisho.org • Arti dalam bahasa Inggris • Gratis',
+                    .localized(context)
+              : 'Data Jisho.org • Arti dalam bahasa Inggris • Gratis'.localized(
+                  context,
+                ),
           style: Theme.of(
             context,
           ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceVariant),
@@ -223,14 +232,14 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
         if (!savedOnly && state.query.isEmpty) ...[
           const SizedBox(height: 8),
           Text(
-            'Mau cari kata apa hari ini?',
+            'Mau cari kata apa hari ini?'.localized(context),
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 4),
           Text(
-            'Coba salah satu kata untuk mulai menjelajah.',
+            'Coba salah satu kata untuk mulai menjelajah.'.localized(context),
             style: TextStyle(color: colors.onSurfaceVariant, fontSize: 13),
           ),
           const SizedBox(height: 14),
@@ -295,17 +304,20 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
             const SizedBox(height: 24),
             Row(
               children: [
-                const Expanded(child: Text('Pencarian terakhir')),
+                Expanded(child: Text('Pencarian terakhir'.localized(context))),
                 TextButton(
                   onPressed: () async {
                     final ok = await ref
                         .read(dictionaryLibraryProvider.notifier)
                         .clearHistory();
                     if (!ok && context.mounted) {
-                      dictionaryNotice(context, 'Riwayat belum dapat dihapus.');
+                      dictionaryNotice(
+                        context,
+                        'Riwayat belum dapat dihapus.'.localized(context),
+                      );
                     }
                   },
-                  child: const Text('Hapus'),
+                  child: Text('Hapus'.localized(context)),
                 ),
               ],
             ),
@@ -328,7 +340,10 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
             child: Center(child: CircularProgressIndicator()),
           ),
         if (!savedOnly && state.error != null) ...[
-          Text(state.error!, style: TextStyle(color: colors.error)),
+          Text(
+            state.error!.localized(context),
+            style: TextStyle(color: colors.error),
+          ),
           Wrap(
             spacing: 8,
             children: [
@@ -339,21 +354,22 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                       : ref.read(dictionaryControllerProvider.notifier).more(),
                 ),
                 icon: const Icon(Icons.refresh),
-                label: const Text('Coba lagi'),
+                label: Text('Coba lagi'.localized(context)),
               ),
               TextButton(
                 onPressed: () =>
                     openDictionaryUrl(context, jishoSearchUri(state.query)),
-                child: const Text('Buka Jisho'),
+                child: Text('Buka Jisho'.localized(context)),
               ),
             ],
           ),
         ],
         if (savedOnly && entries.isEmpty)
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 24),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24),
             child: Text(
-              'Belum ada kata tersimpan. Ketuk ikon bookmark pada hasil pencarian.',
+              'Belum ada kata tersimpan. Ketuk ikon bookmark pada hasil pencarian.'
+                  .localized(context),
             ),
           ),
         if (!savedOnly &&
@@ -361,7 +377,9 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
             state.error == null &&
             state.query.isNotEmpty) ...[
           Text(
-            '${entries.length} kata dimuat untuk “${state.query}”',
+            '${entries.length} kata dimuat untuk “${state.query}”'.localized(
+              context,
+            ),
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 10),
@@ -370,15 +388,16 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
             Align(
               alignment: Alignment.centerLeft,
               child: ActionChip(
-                label: Text('Detail kanji ${state.query}'),
+                label: Text('Detail kanji ${state.query}'.localized(context)),
                 onPressed: () => showKanjiDetails(context, state.query),
               ),
             ),
           if (entries.isEmpty)
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
-                'Kata belum ditemukan. Coba bentuk dasar, kana, romaji, atau kata Inggris; ubah juga filter JLPT.',
+                'Kata belum ditemukan. Coba bentuk dasar, kana, romaji, atau kata Inggris; ubah juga filter JLPT.'
+                    .localized(context),
               ),
             ),
         ],
@@ -401,18 +420,21 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                     child: CircularProgressIndicator(strokeWidth: 2),
                   )
                 : const Icon(Icons.expand_more),
-            label: Text(state.loadingMore ? 'Memuat…' : 'Muat kata berikutnya'),
+            label: Text(
+              (state.loadingMore ? 'Memuat…' : 'Muat kata berikutnya')
+                  .localized(context),
+            ),
           ),
         const SizedBox(height: 20),
         TextButton(
           onPressed: () => showDictionarySources(context),
-          child: const Text('Sumber data & lisensi'),
+          child: Text('Sumber data & lisensi'.localized(context)),
         ),
       ],
     );
     if (widget.embedded) return body;
     return Scaffold(
-      appBar: AppBar(title: const Text('Kamus')),
+      appBar: AppBar(title: Text('Kamus'.localized(context))),
       body: SafeArea(child: body),
     );
   }
@@ -473,7 +495,9 @@ class DictionaryWordCard extends StatelessWidget {
               Text(entry.summary),
               if (entry.senses.length > 1)
                 Text(
-                  '+${entry.senses.length - 1} makna lainnya',
+                  '+${entry.senses.length - 1} makna lainnya'.localized(
+                    context,
+                  ),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
             ],
@@ -512,21 +536,24 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
               children: [
                 Expanded(
                   child: Text(
-                    'Filter pencarian',
+                    'Filter pencarian'.localized(context),
                     style: theme.textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
                 IconButton(
-                  tooltip: 'Tutup filter',
+                  tooltip: 'Tutup filter'.localized(context),
                   onPressed: () => Navigator.pop(context),
                   icon: const Icon(Icons.close),
                 ),
               ],
             ),
             const SizedBox(height: 16),
-            Text('Bahasa pencarian', style: theme.textTheme.titleSmall),
+            Text(
+              'Bahasa pencarian'.localized(context),
+              style: theme.textTheme.titleSmall,
+            ),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
@@ -538,7 +565,7 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
                   'english': 'Inggris',
                 }.entries)
                   ChoiceChip(
-                    label: Text(item.value),
+                    label: Text(item.value.localized(context)),
                     selected: mode == item.key,
                     onSelected: (_) => setState(() => mode = item.key),
                   ),
@@ -546,7 +573,8 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
             ),
             const SizedBox(height: 8),
             Text(
-              'Pilih Jepang untuk romaji, atau Inggris untuk mencari arti.',
+              'Pilih Jepang untuk romaji, atau Inggris untuk mencari arti.'
+                  .localized(context),
               style: theme.textTheme.bodySmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),
@@ -555,14 +583,14 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
             DropdownButtonFormField<String>(
               isExpanded: true,
               initialValue: jlpt ?? 'all',
-              decoration: const InputDecoration(
-                labelText: 'Level JLPT',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: 'Level JLPT'.localized(context),
+                border: const OutlineInputBorder(),
               ),
               items: [
-                const DropdownMenuItem(
+                DropdownMenuItem(
                   value: 'all',
-                  child: Text('Semua level'),
+                  child: Text('Semua level'.localized(context)),
                 ),
                 for (final level in ['N5', 'N4', 'N3', 'N2', 'N1'])
                   DropdownMenuItem(value: level, child: Text(level)),
@@ -575,8 +603,10 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
             const SizedBox(height: 16),
             SwitchListTile.adaptive(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Kata umum saja'),
-              subtitle: const Text('Tampilkan kata yang sering digunakan.'),
+              title: Text('Kata umum saja'.localized(context)),
+              subtitle: Text(
+                'Tampilkan kata yang sering digunakan.'.localized(context),
+              ),
               value: common,
               onChanged: (value) => setState(() => common = value),
             ),
@@ -592,7 +622,7 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
                     jlpt = null;
                     common = false;
                   }),
-                  child: const Text('Reset filter'),
+                  child: Text('Reset filter'.localized(context)),
                 ),
                 FilledButton.icon(
                   onPressed: () => Navigator.pop(
@@ -600,7 +630,7 @@ class _DictionaryFiltersState extends State<_DictionaryFilters> {
                     DictionaryState(mode: mode, jlpt: jlpt, common: common),
                   ),
                   icon: const Icon(Icons.check_rounded, size: 18),
-                  label: const Text('Terapkan filter'),
+                  label: Text('Terapkan filter'.localized(context)),
                 ),
               ],
             ),

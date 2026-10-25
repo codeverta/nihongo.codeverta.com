@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AttributionsLink extends StatelessWidget {
@@ -8,7 +9,10 @@ class AttributionsLink extends StatelessWidget {
   Widget build(BuildContext context) => ListTile(
     key: const Key('open-attributions'),
     leading: const Icon(Icons.source_outlined, size: 21),
-    title: const Text('Sumber data & atribusi', style: TextStyle(fontSize: 13)),
+    title: Text(
+      'Sumber data & atribusi'.localized(context),
+      style: const TextStyle(fontSize: 13),
+    ),
     trailing: const Icon(Icons.chevron_right_rounded, size: 20),
     onTap: () => context.push('/attributions'),
   );
@@ -18,22 +22,23 @@ class AttributionsScreen extends StatelessWidget {
   const AttributionsScreen({super.key});
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Sumber data & atribusi')),
+    appBar: AppBar(title: Text('Sumber data & atribusi'.localized(context))),
     body: ListView(
       padding: const EdgeInsets.all(20),
       children: [
         Text(
-          'Dibangun bersama banyak sumber',
+          'Dibangun bersama banyak sumber'.localized(context),
           style: Theme.of(
             context,
           ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 10),
-        const Text(
-          'Terima kasih kepada penerbit, pembuat dataset, dan komunitas yang menjadi sumber konten Nihongo Master. Hak cipta tetap milik masing-masing pemilik.',
+        Text(
+          'Terima kasih kepada penerbit, pembuat dataset, dan komunitas yang menjadi sumber konten Nihongo Master. Hak cipta tetap milik masing-masing pemilik.'
+              .localized(context),
         ),
         const SizedBox(height: 24),
-        const _SourceGroup(
+        _SourceGroup(
           title: 'Manga Jepang',
           sources: [
             (
@@ -43,7 +48,7 @@ class AttributionsScreen extends StatelessWidget {
             ),
           ],
         ),
-        const _SourceGroup(
+        _SourceGroup(
           title: 'Berita & informasi Jepang',
           sources: [
             (
@@ -58,7 +63,7 @@ class AttributionsScreen extends StatelessWidget {
             ),
           ],
         ),
-        const _SourceGroup(
+        _SourceGroup(
           title: 'Kamus Jepang',
           sources: [
             (
@@ -73,7 +78,7 @@ class AttributionsScreen extends StatelessWidget {
             ),
           ],
         ),
-        const _SourceGroup(
+        _SourceGroup(
           title: 'Kosakata JLPT',
           sources: [
             (
@@ -83,7 +88,7 @@ class AttributionsScreen extends StatelessWidget {
             ),
           ],
         ),
-        const _SourceGroup(
+        _SourceGroup(
           title: 'Anki & flashcards',
           sources: [
             (
@@ -96,9 +101,10 @@ class AttributionsScreen extends StatelessWidget {
         Card(
           child: ListTile(
             leading: const Icon(Icons.work_outline_rounded),
-            title: const Text('Sumber lowongan kerja'),
-            subtitle: const Text(
-              'Daftar portal dan penyedia lowongan. Sumber asli juga dicantumkan pada setiap lowongan.',
+            title: Text('Sumber lowongan kerja'.localized(context)),
+            subtitle: Text(
+              'Daftar portal dan penyedia lowongan. Sumber asli juga dicantumkan pada setiap lowongan.'
+                  .localized(context),
             ),
             trailing: const Icon(Icons.chevron_right_rounded),
             onTap: () => context.push('/jobs/sources'),
@@ -111,7 +117,7 @@ class AttributionsScreen extends StatelessWidget {
             applicationName: 'Nihongo Master',
           ),
           icon: const Icon(Icons.code_rounded),
-          label: const Text('Lisensi perangkat lunak open source'),
+          label: Text('Lisensi perangkat lunak open source'.localized(context)),
         ),
       ],
     ),
@@ -129,7 +135,7 @@ class _SourceGroup extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          title.localized(context),
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
@@ -142,10 +148,10 @@ class _SourceGroup extends StatelessWidget {
                 horizontal: 16,
                 vertical: 10,
               ),
-              title: Text(name),
+              title: Text(name.localized(context)),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 6),
-                child: Text(description),
+                child: Text(description.localized(context)),
               ),
               trailing: const Icon(Icons.open_in_new_rounded, size: 18),
               onTap: () async {
@@ -160,9 +166,10 @@ class _SourceGroup extends StatelessWidget {
                 }
                 if (!opened && context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
+                    SnackBar(
                       content: Text(
-                        'Tautan sumber belum dapat dibuka. Coba lagi.',
+                        'Tautan sumber belum dapat dibuka. Coba lagi.'
+                            .localized(context),
                       ),
                     ),
                   );

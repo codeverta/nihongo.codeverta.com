@@ -6,12 +6,16 @@ import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
+import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/learn/vocabulary/data/vocabulary_repository.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final vocabularyRepositoryProvider = Provider<VocabularyRepository>((ref) {
-  return VocabularyRepository(ref.watch(dioProvider));
+  return VocabularyRepository(
+    ref.watch(dioProvider),
+    offlinePractice: ref.watch(offlinePracticeServiceProvider),
+  );
 });
 
 final vocabularyLevelsProvider =
@@ -116,13 +120,31 @@ class VocabularyLessonController
     this._lessonId, {
     required this.onProgressChanged,
     this.history,
-  }) : super(const AsyncValue.loading());
+  }) : super(const AsyncValue.loading()) {
+    _syncSubscription = _repository.syncEvents.listen(_onPracticeSync);
+  }
 
   final VocabularyRepository _repository;
   final String _lessonId;
   final VoidCallback onProgressChanged;
 
   final LearningHistoryController? history;
+  StreamSubscription<OfflinePracticeSyncEvent>? _syncSubscription;
+
+  void _onPracticeSync(OfflinePracticeSyncEvent event) {
+    final current = state.valueOrNull;
+    if (!mounted ||
+        current?.attempt?.id != event.attemptId ||
+        current?.result == null) {
+      return;
+    }
+    final result = VocabularyResult.fromJson(event.result);
+    if (result.verified && result.passed) {
+      history?.complete('vocabulary', _lessonId);
+    }
+    onProgressChanged();
+    state = AsyncValue.data(current!.copyWith(result: result));
+  }
 
   Future<void> load() async {
     final loaded = await AsyncValue.guard(() async {
@@ -270,9 +292,11 @@ class VocabularyLessonController
     state = AsyncValue.data(current.copyWith(submitting: true));
     try {
       final result = await _repository.complete(attempt.id);
-      if (mounted && result.passed) history?.complete('vocabulary', _lessonId);
+      if (mounted && result.verified && result.passed) {
+        history?.complete('vocabulary', _lessonId);
+      }
       if (!mounted) return;
-      onProgressChanged();
+      if (result.verified) onProgressChanged();
       state = AsyncValue.data(
         current.copyWith(
           stage: VocabularyStage.result,
@@ -290,4 +314,10 @@ class VocabularyLessonController
   }
 
   Future<void> retry() => startQuiz();
+
+  @override
+  void dispose() {
+    unawaited(_syncSubscription?.cancel());
+    super.dispose();
+  }
 }

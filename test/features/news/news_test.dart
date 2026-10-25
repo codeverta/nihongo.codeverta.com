@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/dictionary/data/dictionary_repository.dart';
@@ -172,6 +173,8 @@ class NewsDictionary extends DictionaryRepository {
 }
 
 void main() {
+  setUpAll(() async => initializeDateFormatting());
+
   test('publisher calendar date stays intact across JST and WIB', () {
     final a = NewsArticle({
       ...article.json,
@@ -185,6 +188,25 @@ void main() {
     });
     expect(newsDate(cached.sourceDate), '14 Okt 2026');
   });
+  test(
+    'news dates use the selected locale while preserving source calendar day',
+    () {
+      final sourceDate = DateTime.utc(2026, 10, 14);
+      expect(newsDate(sourceDate, localeName: 'en_US'), 'Oct 14, 2026');
+      expect(
+        newsRelativeDate(
+          sourceDate,
+          localeName: 'en_US',
+          now: DateTime(2026, 10, 15, 12),
+        ),
+        'Yesterday',
+      );
+      expect(
+        newsRelativeDate(sourceDate, now: DateTime(2026, 10, 15, 12)),
+        'Kemarin',
+      );
+    },
+  );
   var clipboard = '';
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger

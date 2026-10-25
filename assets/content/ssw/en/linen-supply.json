@@ -1,0 +1,1408 @@
+{
+  "modules": [
+    {
+      "description": "Understand the service cycle, receiving, sorting, and recordkeeping that preserve linen identity and keep soiled and clean linen separate. This material and its simulations are original study practice. The official source reviewed names the linen-supply examination but has not published a blueprint, detailed syllabus, or exam format; do not treat the app's practice set as an official format.",
+      "id": "flow",
+      "lessons": [
+        {
+          "caution": "Do not mix soiled linen with finished items or change the flow without approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Identification and records link goods, customers, processes, and shipments.",
+              "kind": "knowledge",
+              "options": [
+                "So the goods and their quantity remain traceable and are sent to the correct destination",
+                "So washing can be skipped",
+                "So all customers receive the same type of linen",
+                "So the label can be removed sooner"
+              ],
+              "prompt": "Why must customer identity be maintained throughout the linen cycle?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Without a reliable identity, mixing creates a risk of processing or shipping the wrong item.",
+              "kind": "case",
+              "options": [
+                "Add it to the largest batch",
+                "Hold it, separate it, and request identity confirmation",
+                "Send it to the nearest customer",
+                "Remove the other cart's label to balance things out"
+              ],
+              "prompt": "A sheet cart has no customer label, and another cart contains clean linen. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "清潔 is read せいけつ and means “clean” or “hygienic.”",
+              "kind": "vocabulary",
+              "options": [
+                "receiving goods",
+                "collection",
+                "clean and hygienic",
+                "various types of linen"
+              ],
+              "prompt": "In the context of the linen cycle and role boundaries, what does 清潔（せいけつ）mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the customer identity and linen group → Separate items by dirty and clean flows → Follow the process assigned to that group → Record the movement and hand it over to the next stage.",
+              "kind": "workflow",
+              "options": [
+                "Separate items according to dirty and clean flows",
+                "Follow the process specified for that batch",
+                "Record the movement and hand it over to the next stage",
+                "Read the customer identity and linen batch"
+              ],
+              "prompt": "In the “Linen cycle and role boundaries” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは未処理のリネンです。",
+              "meaning": "This linen has not been processed yet.",
+              "reading": "こちらはみしょりのりねんです。"
+            },
+            {
+              "japanese": "品種ごとに分けます。",
+              "meaning": "I will sort by type.",
+              "reading": "ひんしゅごとにわけます。"
+            }
+          ],
+          "id": "linen-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan perjalanan linen dari pemakaian pelanggan hingga pemrosesan dan pengiriman kembali.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Separate the two baskets, do not guess who owns the sheets, and report the issue so their identity and routing can be confirmed.",
+          "scenario": "A basket of sheets has no customer label, while another basket contains clean linen.",
+          "sections": [
+            {
+              "body": "Linen services are cyclical: hotels, hospitals, and other customers use supplied items; after use, the items are collected, processed, inspected, and returned. Products may include sheets, pillowcases, towels, patient garments, uniforms, and table linens. Workers follow the scope and standards of their facility.\n\nExam-information limit: the official source reviewed has not published a blueprint, detailed syllabus, or exam format for the linen-supply examination. The app's content and simulations are original study practice, not claims about the official exam format.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Record each lot under the customer's identity. Keep containers of unprocessed items separate from clean-product zones. Do not change labels or processing order based on a guess; if identity is missing, hold the lot and request confirmation so it remains traceable.\n\nPractice case: A basket of sheets has no customer label, while another basket contains clean linen.\nRecommended response: Separate the two baskets, do not guess who owns the sheets, and report the issue so their identity and routing can be confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca identitas pelanggan dan kelompok linen",
+            "Pisahkan barang sesuai alur kotor dan bersih",
+            "Ikuti proses yang ditetapkan untuk kelompok itu",
+            "Catat perpindahan dan serahkan ke tahap berikutnya"
+          ],
+          "title": "The Linen Cycle and Role Boundaries",
+          "vocabulary": [
+            {
+              "japanese": "リネン類",
+              "meaning": "various linen items",
+              "reading": "りねんるい"
+            },
+            {
+              "japanese": "入荷",
+              "meaning": "receipt of goods",
+              "reading": "にゅうか"
+            },
+            {
+              "japanese": "回収",
+              "meaning": "collection for return processing",
+              "reading": "かいしゅう"
+            },
+            {
+              "japanese": "清潔",
+              "meaning": "clean and hygienic",
+              "reading": "せいけつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not alter records to match a target figure or disregard a small discrepancy.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Factual records support traceability and prevent discrepancies from being passed on without handling.",
+              "kind": "knowledge",
+              "options": [
+                "Only the target figure in the document",
+                "The actual quantity and discrepancy, according to procedure",
+                "The average of the two recorded values",
+                "No record is needed if the discrepancy is small"
+              ],
+              "prompt": "What should be recorded when the actual quantity differs from the document?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The quantity discrepancy and damaged seal must be recorded and escalated.",
+              "kind": "case",
+              "options": [
+                "Adjust the actual figure without telling anyone",
+                "Record the quantity and damaged seal, then report it",
+                "Hide the missing goods",
+                "Move goods from another customer"
+              ],
+              "prompt": "The document lists 40 pillowcases, but the actual count is short and the container seal appears damaged. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "確認 is read かくにん and means “check” or “confirmation.”",
+              "kind": "vocabulary",
+              "options": [
+                "inspection or confirmation",
+                "discrepancy",
+                "quantity",
+                "record"
+              ],
+              "prompt": "In the context of receiving and recording quantities, what does 確認（かくにん）mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Check the documents against the container mark → Count items using the specified unit → Record discrepancies or unusual conditions → Hand over the verified batch.",
+              "kind": "workflow",
+              "options": [
+                "Record discrepancies or unusual conditions",
+                "Hand over the verified batch",
+                "Check the documents against the container mark",
+                "Count the goods using the specified unit"
+              ],
+              "prompt": "In the “Receiving and recording quantities” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは未処理のリネンです。",
+              "meaning": "This linen has not been processed yet.",
+              "reading": "こちらはみしょりのりねんです。"
+            },
+            {
+              "japanese": "品種ごとに分けます。",
+              "meaning": "I will sort by type.",
+              "reading": "ひんしゅごとにわけます。"
+            }
+          ],
+          "id": "linen-02",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa dokumen, kondisi, dan jumlah linen yang masuk sebelum pemrosesan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Record the actual count, seal condition, and inspection time; report the discrepancy before passing the lot on.",
+          "scenario": "The documents list 40 pillowcases, but the count is short and the container seal appears damaged.",
+          "sections": [
+            {
+              "body": "Receiving is the first control point. Match container identity, customer code, item type, and quantity under procedure. Record unusual seals or linen conditions so discrepancies can be traced to an earlier stage. Accurate counts support load planning and order fulfillment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use facility units and forms; do not estimate when the documents do not match. Report discrepancies, damage, foreign objects, or unreadable labels. Follow separation instructions for special handling.\n\nPractice case: The documents list 40 pillowcases, but the actual count is short and the container seal appears damaged.\nRecommended response: Record the actual count, seal condition, and inspection time; report the discrepancy before passing the lot on.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan dokumen dengan tanda wadah",
+            "Hitung barang menurut satuan yang ditetapkan",
+            "Catat selisih atau kondisi tidak biasa",
+            "Serahkan kelompok yang sudah terverifikasi"
+          ],
+          "title": "Receiving and Quantity Records",
+          "vocabulary": [
+            {
+              "japanese": "数量",
+              "meaning": "quantity",
+              "reading": "すうりょう"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "inspection or confirmation",
+              "reading": "かくにん"
+            },
+            {
+              "japanese": "差異",
+              "meaning": "discrepancy; difference",
+              "reading": "さい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix lots just because their color, size, or shape looks similar.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Sorting follows the item's properties and instructions, not momentary convenience.",
+              "kind": "knowledge",
+              "options": [
+                "The type, customer identity, and handling rules",
+                "Color only",
+                "The nearest container",
+                "Arrival order without reading the marks"
+              ],
+              "prompt": "What is the proper basis for sorting linen?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Goods without identification must not be grouped by guesswork.",
+              "kind": "case",
+              "options": [
+                "Put it in with the hotel towels",
+                "Move it to the clean area for inspection",
+                "Hold it and request identification according to procedure",
+                "Discard the label and process it as ordinary clothing"
+              ],
+              "prompt": "A patient's garment has a faded type label and is near a hotel-towel container. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "種類 is read しゅるい and means “type.”",
+              "kind": "vocabulary",
+              "options": [
+                "separate",
+                "sorting",
+                "type",
+                "dirt or stains"
+              ],
+              "prompt": "In the context of sorting by type and condition, what does 種類（しゅるい）mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Check the type and customer labels → Identify conditions that require special separation → Place items in an identified container according to the rules → Confirm unclear categories before processing.",
+              "kind": "workflow",
+              "options": [
+                "Confirm any unclear category before processing",
+                "Check the type and customer labels",
+                "Identify conditions that require special separation",
+                "Place it in an identified container according to the rules"
+              ],
+              "prompt": "In the “Sorting by type and condition” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは未処理のリネンです。",
+              "meaning": "This linen has not been processed yet.",
+              "reading": "こちらはみしょりのりねんです。"
+            },
+            {
+              "japanese": "品種ごとに分けます。",
+              "meaning": "I will sort by type.",
+              "reading": "ひんしゅごとにわけます。"
+            }
+          ],
+          "id": "linen-03",
+          "minutes": 25,
+          "objectives": [
+            "Memilah linen menurut jenis, pelanggan, dan instruksi penanganan tanpa mencampur kelompok yang tidak sesuai.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Do not put it in the towel container. Hold it in the designated place and ask authorized staff to identify the item.",
+          "scenario": "A patient's garment has a faded type label and is near a container of hotel towels.",
+          "sections": [
+            {
+              "body": "Sorting helps determine the suitable machine and program. Sheets, towels, garments, and other textiles may differ in size, material, destination, or soiling. Customer identity also matters because specifications and final quantities vary. Use designated sorting locations and labels.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check labels and guidance, then place each lot in its designated container. Follow facility rules for stained or damaged items; do not assume every stain is handled the same way. Maintain zone separation and equipment cleanliness when moving between areas.\n\nPractice case: A patient's garment has a faded type label and is near a container of hotel towels.\nRecommended response: Do not put it in the towel container. Hold it in the designated place and ask authorized staff to identify the item.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa label jenis dan pelanggan",
+            "Kenali kondisi yang membutuhkan pemisahan khusus",
+            "Tempatkan pada wadah beridentitas sesuai aturan",
+            "Konfirmasi kategori yang tidak jelas sebelum proses"
+          ],
+          "title": "Sorting by Type and Condition",
+          "vocabulary": [
+            {
+              "japanese": "仕分け",
+              "meaning": "sorting",
+              "reading": "しわけ"
+            },
+            {
+              "japanese": "種類",
+              "meaning": "type",
+              "reading": "しゅるい"
+            },
+            {
+              "japanese": "汚れ",
+              "meaning": "dirt or stains",
+              "reading": "よごれ"
+            },
+            {
+              "japanese": "分ける",
+              "meaning": "to separate",
+              "reading": "わける"
+            }
+          ]
+        }
+      ],
+      "title": "Service Workflow and Hygiene Control"
+    },
+    {
+      "description": "Maintain washing and drying sequences, follow facility settings, and recognize deviations and chemical hazards.",
+      "id": "laundry",
+      "lessons": [
+        {
+          "caution": "Do not guess chemical doses or handle chemicals without the required training and protective equipment.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The program depends on the linen type and facility standards; this material does not prescribe a chemical formula or universal setting.",
+              "kind": "knowledge",
+              "options": [
+                "The program specified for the linen type and facility instructions",
+                "A worker's estimate based on stain color",
+                "The fastest program for all items",
+                "The last program used, without checking"
+              ],
+              "prompt": "What is the basis for choosing a wash program?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Unlabeled material must not be used based on a guess or mixed with other material.",
+              "kind": "case",
+              "options": [
+                "Add the liquid that looks most similar",
+                "Ask a coworker, then pour in a little",
+                "Stop using the container and ask authorized staff to identify it",
+                "Mix it with another detergent"
+              ],
+              "prompt": "The label on a cleaning-agent container is unreadable, and a coworker asks you to add liquid based on its color. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "洗濯 is read せんたく and means “washing.”",
+              "kind": "vocabulary",
+              "options": [
+                "washing",
+                "detergent",
+                "process stage",
+                "label or marking"
+              ],
+              "prompt": "In the context of washing and separating flows, what does 洗濯（せんたく）mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Confirm identity and batch separation → Select the designated process program → Operate the machine according to procedure and safeguards → Record alarms or unusual conditions.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the identity and separation of the batch",
+                "Select the designated process program",
+                "Operate the machine according to procedure and safeguards",
+                "Record the alarm or unusual condition"
+              ],
+              "prompt": "In the “Washing and separating flows” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "薬剤のラベルを確認します。",
+              "meaning": "I will check the chemical label.",
+              "reading": "やくざいのらべるをかくにんします。"
+            },
+            {
+              "japanese": "機械の異常を報告します。",
+              "meaning": "I will report a machine abnormality.",
+              "reading": "きかいのいじょうをほうこくします。"
+            }
+          ],
+          "id": "linen-04",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti pencucian sesuai jenis linen, prosedur, dan pengendalian kebersihan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Do not use the liquid. Secure the container, follow the chemical-identification procedure, and contact the person in charge.",
+          "scenario": "The label on a washing-chemical container is unreadable, and a coworker asks to add liquid based on its color.",
+          "sections": [
+            {
+              "body": "Washing is on the soiled side of the process. Work methods depend on item type, machine, process chemicals, and facility-approved programs. Temperature, time, chemical, and load settings are not universal; follow site instructions and the designated program. Keeping flows separate prevents finished goods from contacting unprocessed items again.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before starting, confirm that the lot identity and program match. Do not add chemicals or change the program based on odor or guesswork. For spills, unclear labels, leaks, or machine alarms, secure the area and report to authorized staff.\n\nPractice case: The label on a washing-chemical container is unreadable, and a coworker asks to add liquid based on its color.\nRecommended response: Do not use the liquid. Secure the container, follow the chemical-identification procedure, and contact the person in charge.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan identitas dan pemisahan kelompok",
+            "Pilih program proses yang ditetapkan",
+            "Jalankan mesin sesuai prosedur dan pengaman",
+            "Catat alarm atau kondisi tidak biasa"
+          ],
+          "title": "Washing and Keeping Flows Separate",
+          "vocabulary": [
+            {
+              "japanese": "洗濯",
+              "meaning": "washing",
+              "reading": "せんたく"
+            },
+            {
+              "japanese": "洗剤",
+              "meaning": "detergent",
+              "reading": "せんざい"
+            },
+            {
+              "japanese": "工程",
+              "meaning": "process stage",
+              "reading": "こうてい"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "label or marking",
+              "reading": "ひょうじ"
+            }
+          ]
+        },
+        {
+          "caution": "Keep clear of hot surfaces, steam, and moving parts; use the required protective equipment and facility procedures.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Hold and assess a nonconforming batch; do not conceal it or pass it on.",
+              "kind": "knowledge",
+              "options": [
+                "Hold it and request an assessment according to procedure",
+                "Mix it with dry linen",
+                "Ship it and hope the final inspection finds the problem",
+                "Change the setting without authorization"
+              ],
+              "prompt": "What should be done when the result does not yet meet the conditions for the next stage?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The alarm and damp condition require follow-up according to instructions.",
+              "kind": "case",
+              "options": [
+                "Hide the alarm and restart without checking",
+                "Hold the batch, record the alarm, and report it",
+                "Mix it with output from another machine",
+                "Move it to the packing area"
+              ],
+              "prompt": "A batch still feels damp after the cycle, and the machine alarm has appeared. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "警報 is read けいほう and means “alarm” or “warning.”",
+              "kind": "vocabulary",
+              "options": [
+                "drying",
+                "become damp",
+                "alarm or warning",
+                "water extraction"
+              ],
+              "prompt": "In the context of drying and transfer to the clean zone, what does 警報（けいほう）mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Check the program and machine condition → Observe indicators without opening the guard → Move output to the correct clean container → Hold and report any abnormal result.",
+              "kind": "workflow",
+              "options": [
+                "Observe the indicator without opening the guard",
+                "Move the output to the correct clean container",
+                "Hold and report abnormal results",
+                "Check the program and machine condition"
+              ],
+              "prompt": "In the “Drying and transfer to the clean zone” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "薬剤のラベルを確認します。",
+              "meaning": "I will check the chemical label.",
+              "reading": "やくざいのらべるをかくにんします。"
+            },
+            {
+              "japanese": "機械の異常を報告します。",
+              "meaning": "I will report a machine abnormality.",
+              "reading": "きかいのいじょうをほうこくします。"
+            }
+          ],
+          "id": "linen-05",
+          "minutes": 25,
+          "objectives": [
+            "Mengawasi pengeringan menurut prosedur dan menjaga pemisahan setelah proses selesai.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Do not send the lot to finishing as ready output. Hold it, record the alarm, and request an inspection under the machine procedure.",
+          "scenario": "A lot still feels damp after the cycle, and a machine alarm has appeared.",
+          "sections": [
+            {
+              "body": "After washing and extraction, dry linen according to its type and facility procedures. Excess moisture or heat can affect quality, while unhygienic transfer can recontaminate the output. Direct finished linen into the correct container or clean zone.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Follow trained procedures for machine indicators and limits. Never reach into moving parts, open a guard while equipment is running, or bypass an interlock. If output is not ready for finishing, hold it in the designated place and ask for direction.\n\nPractice case: A lot still feels damp after the cycle, and a machine alarm has appeared.\nRecommended response: Do not send it to finishing as ready output. Hold the lot, record the alarm, and request an inspection under the machine procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa program dan kondisi mesin",
+            "Amati indikator tanpa membuka pelindung",
+            "Pindahkan keluaran ke wadah bersih yang benar",
+            "Tahan dan laporkan hasil yang menyimpang"
+          ],
+          "title": "Drying and Transfer to the Clean Zone",
+          "vocabulary": [
+            {
+              "japanese": "脱水",
+              "meaning": "water extraction",
+              "reading": "だっすい"
+            },
+            {
+              "japanese": "乾燥",
+              "meaning": "drying",
+              "reading": "かんそう"
+            },
+            {
+              "japanese": "湿る",
+              "meaning": "to become damp",
+              "reading": "しめる"
+            },
+            {
+              "japanese": "警報",
+              "meaning": "alarm or warning",
+              "reading": "けいほう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix chemicals or transfer them to an unlabeled bottle.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The identity and hazards of a material must remain clear to the people using it.",
+              "kind": "knowledge",
+              "options": [
+                "So workers can identify the contents and their hazards",
+                "So it is easier to mix",
+                "So the measured amount does not need to be recorded",
+                "So its color is clearly visible"
+              ],
+              "prompt": "Why must chemicals not be transferred into an unlabeled container?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Handle spills according to hazard identification, training, and facility procedures.",
+              "kind": "case",
+              "options": [
+                "Wipe it up with bare hands",
+                "Pour water on it and continue working",
+                "Restrict the area and call trained staff according to procedure",
+                "Cover the spill with clean linen"
+              ],
+              "prompt": "A processing aid has spilled near a worker route, and the container label indicates that a special procedure is required. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "保管 is read ほかん and means “storage.”",
+              "kind": "vocabulary",
+              "options": [
+                "storage",
+                "cleaning",
+                "chemical",
+                "protective equipment"
+              ],
+              "prompt": "In the context of process materials and area cleanliness, what does 保管（ほかん）mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Read the material label and instructions → Wear the specified protection → Use and store the material only in approved locations → Report spills or unclear labels.",
+              "kind": "workflow",
+              "options": [
+                "Use and store the material only in approved locations",
+                "Report a spill or unclear label",
+                "Read the material label and instructions",
+                "Wear the specified protective equipment"
+              ],
+              "prompt": "In the “Process materials and area cleanliness” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "薬剤のラベルを確認します。",
+              "meaning": "I will check the chemical label.",
+              "reading": "やくざいのらべるをかくにんします。"
+            },
+            {
+              "japanese": "機械の異常を報告します。",
+              "meaning": "I will report a machine abnormality.",
+              "reading": "きかいのいじょうをほうこくします。"
+            }
+          ],
+          "id": "linen-06",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali aturan bahan proses dan menjaga area kerja tetap bersih serta terkendali.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Keep people out and notify authorized staff. Follow the chemical procedure; do not clean the spill without training and suitable protection.",
+          "scenario": "A process chemical spills near a worker walkway; the container label indicates special procedures are required.",
+          "sections": [
+            {
+              "body": "Use detergents and process aids only as directed by the label, instruction sheet, and training. Keep product identity and hazard information legible; facility procedures determine storage and dosage. Do not bring equipment that has contacted soiled items into a clean zone without the required cleaning.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use closed, labeled containers, store them in designated locations, and do not mix products. For spills, follow the chemical procedure, mark off the area, and call trained staff. Record use or irregularities when facility rules require it.\n\nPractice case: A process aid spills near a worker walkway; the container label indicates special procedures are required.\nRecommended response: Keep people out and notify authorized staff. Follow the chemical procedure; do not clean the spill without training and suitable protection.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca label dan instruksi bahan",
+            "Kenakan perlindungan yang ditetapkan",
+            "Gunakan serta simpan bahan pada tempat resmi",
+            "Laporkan tumpahan atau label yang tidak jelas"
+          ],
+          "title": "Process Chemicals and Area Hygiene",
+          "vocabulary": [
+            {
+              "japanese": "薬剤",
+              "meaning": "chemicals",
+              "reading": "やくざい"
+            },
+            {
+              "japanese": "保護具",
+              "meaning": "protective equipment",
+              "reading": "ほごぐ"
+            },
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "清掃",
+              "meaning": "cleaning",
+              "reading": "せいそう"
+            }
+          ]
+        }
+      ],
+      "title": "Washing and Process Control"
+    },
+    {
+      "description": "Match linen types to the finishing line, operate safely around machinery, and separate nonconforming items.",
+      "id": "finishing",
+      "lessons": [
+        {
+          "caution": "Feed items into the machine only after equipment training; never reach toward belts or moving parts.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The product and program must be matched before operation, with safeguards kept in place.",
+              "kind": "knowledge",
+              "options": [
+                "The linen type and its match with the designated line or program",
+                "That the fastest machine is always used",
+                "That the guard has been removed",
+                "That all batches are mixed together"
+              ],
+              "prompt": "What must be confirmed before feeding linen into the finishing machine?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Resolve a mismatch between the selected program and linen type before processing.",
+              "kind": "case",
+              "options": [
+                "Try one item to see whether it fits the machine",
+                "Load all the linen before the supervisor arrives",
+                "Hold the process and confirm the program and line",
+                "Remove the machine guard"
+              ],
+              "prompt": "The folder line is ready to run, but the linen type in the cart does not match the selected program. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "投入 is read とうにゅう and means “feeding material into a process.”",
+              "kind": "vocabulary",
+              "options": [
+                "adjustment",
+                "finishing",
+                "material feeding",
+                "machine"
+              ],
+              "prompt": "In the context of finishing lines and machine setup, what does 投入（とうにゅう）mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Match the linen type to the line and program → Check the area, guards, and output container → Feed items according to equipment training → Observe the initial result and report deviations.",
+              "kind": "workflow",
+              "options": [
+                "Observe the initial result and report deviations",
+                "Match the linen type to the line and program",
+                "Check the area, guards, and output container",
+                "Feed items in according to equipment training"
+              ],
+              "prompt": "In the “Finishing line and machine setup” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "品種に合う機械を確認します。",
+              "meaning": "I will check the machine suitable for this type of linen.",
+              "reading": "ひんしゅにあうきかいをかくにんします。"
+            },
+            {
+              "japanese": "危険があれば、機械を止めます。",
+              "meaning": "If there is a hazard, I will stop the machine.",
+              "reading": "きけんがあれば、きかいをとめます。"
+            }
+          ],
+          "id": "linen-07",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan jenis linen dengan mesin finishing dan memeriksa alat sebelum proses.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Hold the input and confirm the correct program and route with the line lead.",
+          "scenario": "The folder line is ready to run, but the linen in the basket does not match the selected program.",
+          "sections": [
+            {
+              "body": "Finishing may use feeders, roller machines, folders, or tunnel finishers to feed, smooth, fold, or hang linen. Machine choice and feeding method depend on product type and size and facility rules. Check guards, stop buttons, and output containers before starting the line.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Match the product identity to the program, check that the line is clear, and follow the operator's instructions. Do not change settings or remove guards. Stop under procedure and report unusual sounds, vibration, or movement.\n\nPractice case: The folder line is ready to run, but the linen in the basket does not match the selected program.\nRecommended response: Hold the input and confirm the correct program and route with the line lead.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan jenis linen dengan jalur dan program",
+            "Periksa area, pelindung, dan wadah keluaran",
+            "Masukkan barang sesuai pelatihan alat",
+            "Amati hasil awal dan laporkan penyimpangan"
+          ],
+          "title": "Finishing Line and Machine Preparation",
+          "vocabulary": [
+            {
+              "japanese": "仕上げ",
+              "meaning": "finishing",
+              "reading": "しあげ"
+            },
+            {
+              "japanese": "投入",
+              "meaning": "feeding items into the machine",
+              "reading": "とうにゅう"
+            },
+            {
+              "japanese": "機械",
+              "meaning": "machine",
+              "reading": "きかい"
+            },
+            {
+              "japanese": "設定",
+              "meaning": "setting or adjustment",
+              "reading": "せってい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not reach into a running machine, disable an interlock, or repair electrical parts without authorization.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Removing the hazard and securing the equipment matters more than keeping production running.",
+              "kind": "knowledge",
+              "options": [
+                "Grab it quickly by hand",
+                "Follow the stopping procedure and request authorized personnel",
+                "Remove the guard",
+                "Increase the machine speed"
+              ],
+              "prompt": "When linen gets caught in a moving machine, the first principle is…"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not reach into a running machine or alter a safety function.",
+              "kind": "case",
+              "options": [
+                "Pull the towel with gloves",
+                "Stop according to procedure and call authorized staff",
+                "Ask a coworker to hold the button while you reach inside",
+                "Bypass the interlock"
+              ],
+              "prompt": "A towel is caught at the side of a folder that is still moving. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "非常停止 is read ひじょうていし and means “emergency stop.”",
+              "kind": "vocabulary",
+              "options": [
+                "emergency stop",
+                "safety device",
+                "machine failure",
+                "report"
+              ],
+              "prompt": "In the context of machine trouble and safety, what does 非常停止（ひじょうていし）mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Identify the guards and stop button → Operate the equipment as instructed → Stop the flow when a fault appears → Report it before cleaning or repair.",
+              "kind": "workflow",
+              "options": [
+                "Identify the guards and stop button",
+                "Operate the equipment as instructed",
+                "Stop the flow when a fault appears",
+                "Report it before cleaning or repair"
+              ],
+              "prompt": "In the “Machine trouble and safety” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "品種に合う機械を確認します。",
+              "meaning": "I will check the machine suitable for this type of linen.",
+              "reading": "ひんしゅにあうきかいをかくにんします。"
+            },
+            {
+              "japanese": "危険があれば、機械を止めます。",
+              "meaning": "If there is a hazard, I will stop the machine.",
+              "reading": "きけんがあれば、きかいをとめます。"
+            }
+          ],
+          "id": "linen-08",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti cara kerja aman ketika aliran finishing terganggu dan mengetahui batas kewenangan perbaikan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Use the stop procedure if there is immediate danger, keep other workers away, and call authorized staff; do not pull a towel from active equipment.",
+          "scenario": "A towel is caught at the side of a folder that is still moving.",
+          "sections": [
+            {
+              "body": "Feeders, ironers, folders, and hanging equipment have pinch points and moving parts. Use the techniques taught for each machine; never clean or clear a jam while equipment is active. Use emergency stops as trained. Repairs outside your assigned duties must be handled by technicians or authorized personnel.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "If linen becomes caught, a fault indicator appears, or a guard moves out of place, stop the line according to procedure. Do not pull out an item until the equipment has stopped and a competent person has confirmed that it is safe. Report the location, indicator, and time of the problem.\n\nPractice case: A towel is caught at the side of a folder that is still moving.\nRecommended response: Use the stop procedure if there is immediate danger, keep other workers away, and call authorized staff; do not pull a towel from active equipment.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali pelindung dan tombol henti",
+            "Jalankan alat sesuai instruksi",
+            "Hentikan aliran saat gangguan terlihat",
+            "Laporkan sebelum pembersihan atau perbaikan"
+          ],
+          "title": "Machine Problems and Safety",
+          "vocabulary": [
+            {
+              "japanese": "非常停止",
+              "meaning": "emergency stop",
+              "reading": "ひじょうていし"
+            },
+            {
+              "japanese": "安全装置",
+              "meaning": "safety device",
+              "reading": "あんぜんそうち"
+            },
+            {
+              "japanese": "故障",
+              "meaning": "machine malfunction",
+              "reading": "こしょう"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change quality criteria on your own or skip an inspection when the line is busy.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Separation and records protect shipment quality and help trace the cause of a problem.",
+              "kind": "knowledge",
+              "options": [
+                "So the defect is handled and the item is not shipped as acceptable",
+                "So the shipment quantity looks large",
+                "So the cause of the process is not known",
+                "So the final inspection can be skipped"
+              ],
+              "prompt": "What is the purpose of separating linen that does not meet the criteria?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Defective items must be separated and reported so follow-up can be traced.",
+              "kind": "case",
+              "options": [
+                "Fold the stain to the inside",
+                "Mix it with unstained sheets",
+                "Separate the batch and record the type of defect",
+                "Ship it first and wait for a complaint"
+              ],
+              "prompt": "Stains are found on several sheets from the same line. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "分類 is read ぶんるい and means “classification.”",
+              "kind": "vocabulary",
+              "options": [
+                "defect or nonconformity",
+                "stains or dirt",
+                "classification",
+                "quality inspection"
+              ],
+              "prompt": "In the context of inspecting finishing results, what does 分類（ぶんるい）mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Check the result against product criteria → Separate nonconforming items → Record the type and location of the defect → Report it to the relevant line for follow-up.",
+              "kind": "workflow",
+              "options": [
+                "Separate nonconforming goods",
+                "Record the type and location of the defect",
+                "Report it to the relevant line for follow-up",
+                "Check the result against the product criteria"
+              ],
+              "prompt": "In the “Finishing-result inspection” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "品種に合う機械を確認します。",
+              "meaning": "I will check the machine suitable for this type of linen.",
+              "reading": "ひんしゅにあうきかいをかくにんします。"
+            },
+            {
+              "japanese": "危険があれば、機械を止めます。",
+              "meaning": "If there is a hazard, I will stop the machine.",
+              "reading": "きけんがあれば、きかいをとめます。"
+            }
+          ],
+          "id": "linen-09",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa hasil lipatan atau penyelesaian dan memisahkan linen yang tidak memenuhi kriteria.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Separate the sheets, record the defect and originating line, and report it so the preceding stage can be checked.",
+          "scenario": "Stains are found on several sheets from the same line.",
+          "sections": [
+            {
+              "body": "Check whether the product is clean, dry enough for the next stage, neat, free of tears or distortion, and the expected type. Visual checks or inspection tools support quality control, but criteria are set by the facility. Separate defective items with the correct status; do not hide a defect in a fold.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Inspect at designated checkpoints, including after a program change. If you find stains, holes, incorrect folds, odor, or a questionable size, separate the item and record its characteristics. Notify the relevant line so the process can be reviewed.\n\nPractice case: Stains are found on several sheets from the same line.\nRecommended response: Separate the sheets, record the defect and originating line, and report it so the preceding stage can be checked.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa hasil berdasarkan kriteria produk",
+            "Pisahkan barang yang tidak sesuai",
+            "Catat jenis dan lokasi cacat",
+            "Laporkan kepada lini terkait untuk tindak lanjut"
+          ],
+          "title": "Checking Finished Linen",
+          "vocabulary": [
+            {
+              "japanese": "検品",
+              "meaning": "quality inspection",
+              "reading": "けんぴん"
+            },
+            {
+              "japanese": "不良",
+              "meaning": "defective or nonconforming",
+              "reading": "ふりょう"
+            },
+            {
+              "japanese": "汚れ",
+              "meaning": "stain or dirt",
+              "reading": "よごれ"
+            },
+            {
+              "japanese": "分類",
+              "meaning": "grouping",
+              "reading": "ぶんるい"
+            }
+          ]
+        }
+      ],
+      "title": "Finishing and Quality Inspection"
+    },
+    {
+      "description": "Maintain lot identity and counts, protect clean zones, and communicate across shifts until linen is ready to ship.",
+      "id": "delivery",
+      "lessons": [
+        {
+          "caution": "Do not change bundle counts or labels to conceal a shortage.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Verifying identity and quantity keeps the order complete.",
+              "kind": "knowledge",
+              "options": [
+                "The customer label and quantity against the order",
+                "The bundle's color only",
+                "The vehicle location only",
+                "The name of the worker who counted"
+              ],
+              "prompt": "What should be checked before a bundle is sent for dispatch?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not exchange goods between customers without authorization and a record.",
+              "kind": "case",
+              "options": [
+                "Take two towels from another customer",
+                "Change the label to match the excess stock",
+                "Hold it, record the discrepancy, and request tracing",
+                "Ship the short quantity without telling anyone"
+              ],
+              "prompt": "One customer's order is short two towels, while extra towels belonging to another customer are available. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "枚数 is read まいすう and means “number of sheets or items.”",
+              "kind": "vocabulary",
+              "options": [
+                "number of sheets or items",
+                "order",
+                "bundle strapping",
+                "packing"
+              ],
+              "prompt": "In the context of quantity and strapping by order, what does 枚数（まいすう）mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Separate output by customer and type → Count using the unit on the order → Tie or pack it as specified → Check the label and quantity before moving it.",
+              "kind": "workflow",
+              "options": [
+                "Tie or pack it using the specified method",
+                "Check the label and quantity before moving it",
+                "Separate output by customer and type",
+                "Count using the unit specified on the order"
+              ],
+              "prompt": "In the “Quantity and strapping by order” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文書と数量を照合します。",
+              "meaning": "I will match the order and quantity.",
+              "reading": "ちゅうもんしょとすうりょうをしょうごうします。"
+            },
+            {
+              "japanese": "未処理の内容を次の人に伝えます。",
+              "meaning": "I will hand over the unfinished work.",
+              "reading": "みしょりのないようをつぎのひとにつたえます。"
+            }
+          ],
+          "id": "linen-10",
+          "minutes": 25,
+          "objectives": [
+            "Mengelompokkan linen selesai menurut jenis dan pelanggan serta memenuhi jumlah yang dipesan.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Do not substitute towels between customers. Record the discrepancy, hold order completion, and ask the person in charge to trace the quantities.",
+          "scenario": "One customer's order is short two towels, while extra towels belonging to another customer are available.",
+          "sections": [
+            {
+              "body": "Group linen that passes inspection by type, size, and customer. Bundle quantities and tying or packaging methods follow the order and facility standards; quantities are not always the same. Keep customer labels readable. A final count prevents shortages, excess, or order mix-ups.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use a table and packaging materials reserved for clean products. Count using the work unit, compare with the order sheet, and verify labels before moving items. If quantities do not match, hold the lot and ask for direction; do not make up the difference with another customer's items.\n\nPractice case: One customer's order is short two towels, while extra towels belonging to another customer are available.\nRecommended response: Do not substitute towels between customers. Record the discrepancy, hold order completion, and ask the person in charge to trace the quantities.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pisahkan hasil menurut pelanggan dan jenis",
+            "Hitung sesuai satuan pada pesanan",
+            "Ikat atau kemas dengan cara yang ditetapkan",
+            "Cocokkan label dan jumlah sebelum dipindahkan"
+          ],
+          "title": "Order Quantities and Bundling",
+          "vocabulary": [
+            {
+              "japanese": "結束",
+              "meaning": "bundling",
+              "reading": "けっそく"
+            },
+            {
+              "japanese": "包装",
+              "meaning": "packaging",
+              "reading": "ほうそう"
+            },
+            {
+              "japanese": "枚数",
+              "meaning": "number of pieces",
+              "reading": "まいすう"
+            },
+            {
+              "japanese": "注文",
+              "meaning": "order",
+              "reading": "ちゅうもん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not place clean linen in a container that has not been confirmed clean.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The product must remain protected until the customer receives it.",
+              "kind": "knowledge",
+              "options": [
+                "The product may be recontaminated or its packaging may be damaged",
+                "The quantity automatically increases",
+                "The label becomes clearer",
+                "There is no risk if the container is closed"
+              ],
+              "prompt": "What is the risk of using a container that has not been cleaned for finished products?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Finished products stay in the clean flow; handle a dirty container first.",
+              "kind": "case",
+              "options": [
+                "Wipe up the liquid with linen that is to be shipped",
+                "Close the container and continue loading",
+                "Delay loading and clean or dry the container according to procedure",
+                "Move the goods to the floor"
+              ],
+              "prompt": "A shipping container has residual liquid inside, and a clean bundle is about to be loaded. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "容器 is read ようき and means “container.”",
+              "kind": "vocabulary",
+              "options": [
+                "movement",
+                "storage",
+                "container",
+                "clean zone"
+              ],
+              "prompt": "In the context of clean areas, storage, and movement, what does 容器（ようき）mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Check the container's cleanliness and condition → Confirm the transfer route is safe → Move the order without damaging its label or packaging → Hold any product exposed to dirt or water.",
+              "kind": "workflow",
+              "options": [
+                "Hold any product exposed to dirt or water",
+                "Check the container's cleanliness and condition",
+                "Confirm the transfer route is safe",
+                "Move the order without damaging its label or packaging"
+              ],
+              "prompt": "In the “Clean area, storage, and movement” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文書と数量を照合します。",
+              "meaning": "I will match the order and quantity.",
+              "reading": "ちゅうもんしょとすうりょうをしょうごうします。"
+            },
+            {
+              "japanese": "未処理の内容を次の人に伝えます。",
+              "meaning": "I will hand over the unfinished work.",
+              "reading": "みしょりのないようをつぎのひとにつたえます。"
+            }
+          ],
+          "id": "linen-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga produk selesai terlindung saat disimpan dan dipindahkan menuju pengiriman.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Delay loading and have the container cleaned and dried under procedure before placing clean products inside.",
+          "scenario": "A shipping container has liquid residue, and a bundle of clean linen is about to be loaded.",
+          "sections": [
+            {
+              "body": "Protect clean products from floors, dust, water, and soiled items. Use containers, carts, and shipping units according to facility rules and order identity. Organize routes to prevent goods from falling or becoming mixed. Storage and vehicle conditions must meet local standards.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check that carts are undamaged, routes are clear, and labels are visible. Do not stack above safe limits or put products on the floor. If packaging is wet, torn, or falls into an unclean area, hold it and follow the reassessment procedure.\n\nPractice case: A shipping container has liquid residue, and a bundle of clean linen is about to be loaded.\nRecommended response: Delay loading and have the container cleaned and dried under procedure before placing clean products inside.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa kebersihan dan kondisi wadah",
+            "Pastikan jalur pemindahan aman",
+            "Pindahkan pesanan tanpa merusak label atau kemasan",
+            "Tahan produk yang terkena kotoran atau air"
+          ],
+          "title": "Clean Areas, Storage, and Movement",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "容器",
+              "meaning": "container",
+              "reading": "ようき"
+            },
+            {
+              "japanese": "清潔区域",
+              "meaning": "clean zone",
+              "reading": "せいけつくいき"
+            },
+            {
+              "japanese": "運搬",
+              "meaning": "movement",
+              "reading": "うんぱん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not remove a hold label or report a task complete without confirmation.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Detailed information makes follow-up and tracing more accurate.",
+              "kind": "knowledge",
+              "options": [
+                "Observed facts, location, time, actions, and follow-up status",
+                "A suspected cause without evidence",
+                "A general impression that everything is finished",
+                "Only the shift name"
+              ],
+              "prompt": "The most useful handover record states…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Open statuses must remain visible and be handed over factually.",
+              "kind": "case",
+              "options": [
+                "Write “repaired” so the work appears complete",
+                "Remove the hold sign at shift change",
+                "Record the facts and that the item is awaiting a technician, then hand the status over directly",
+                "Leave the next worker to look for it"
+              ],
+              "prompt": "At shift change, one line is still stopped and the cause has not been found. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "引継ぎ is read ひきつぎ and means “handover.”",
+              "kind": "vocabulary",
+              "options": [
+                "handover",
+                "condition or status",
+                "not yet handled",
+                "person in charge"
+              ],
+              "prompt": "In the context of handover and reporting discrepancies, what does 引継ぎ（ひきつぎ）mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Identify the relevant batch or machine → Record the time and observed condition → Explain the actions taken and any open status → Hand the information over to the next person in charge.",
+              "kind": "workflow",
+              "options": [
+                "Identify the relevant batch or machine",
+                "Record the time and observed condition",
+                "Explain the actions taken and any open status",
+                "Hand the information over to the next person in charge"
+              ],
+              "prompt": "In the “Handover and reporting discrepancies” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文書と数量を照合します。",
+              "meaning": "I will match the order and quantity.",
+              "reading": "ちゅうもんしょとすうりょうをしょうごうします。"
+            },
+            {
+              "japanese": "未処理の内容を次の人に伝えます。",
+              "meaning": "I will hand over the unfinished work.",
+              "reading": "みしょりのないようをつぎのひとにつたえます。"
+            }
+          ],
+          "id": "linen-12",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan status pekerjaan, hambatan, dan tindak lanjut dengan catatan yang jelas.",
+            "Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.",
+            "Menggunakan kosakata Jepang yang terkait dengan tugas ini."
+          ],
+          "response": "Record the time, visible indicator, safe actions taken, and pending-inspection status; hand this information to the next shift lead.",
+          "scenario": "At shift change, one line is still stopped and the cause has not been identified.",
+          "sections": [
+            {
+              "body": "Production spans several stages and shifts. A useful handover gives the lot number, location, time, observed condition, actions taken, and people notified. Factual records prevent repeated checks and support traceability. Avoid vague terms without observable detail.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Complete records in the company system, mark held goods, and directly hand over risky issues. The receiving shift should repeat key information when anything is unclear. Do not mark a task complete until inspection or repair has actually taken place.\n\nPractice case: At shift change, one line is still stopped and the cause has not been identified.\nRecommended response: Record the time, visible indicator, safe actions taken, and pending-inspection status; hand this information to the next shift lead.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tandai kelompok atau mesin terkait",
+            "Catat waktu dan kondisi yang diamati",
+            "Jelaskan tindakan dan status yang masih terbuka",
+            "Serahkan informasi kepada penanggung jawab berikutnya"
+          ],
+          "title": "Handover and Discrepancy Reports",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "状況",
+              "meaning": "condition or status",
+              "reading": "じょうきょう"
+            },
+            {
+              "japanese": "未対応",
+              "meaning": "not yet handled",
+              "reading": "みたいおう"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            }
+          ]
+        }
+      ],
+      "title": "Order Picking and Dispatch Readiness"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "Japan Immigration Services Agency — SSW linen-supply job scope",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/buildingcleaning_00003.html"
+    },
+    {
+      "title": "MHLW — Official information on the SSW linen-supply sector",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/seikatsu-eisei/linen_supply2.html"
+    },
+    {
+      "title": "MHLW — Linen-supply workflows and skills development",
+      "url": "https://www.mhlw.go.jp/content/11130500/001686966.pdf"
+    },
+    {
+      "title": "MHLW — Official standards for linen-supply work",
+      "url": "https://www.mhlw.go.jp/content/11800000/000395460.pdf"
+    }
+  ],
+  "version": 1
+}

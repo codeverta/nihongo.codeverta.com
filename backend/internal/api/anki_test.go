@@ -48,7 +48,8 @@ func TestAnkiAPIResourceDetailsAuthAndReviewContract(t *testing.T) {
 	w := request("GET", "/v1/anki/decks/wakayama/study?limit=1", "", true)
 	var session struct {
 		Data struct {
-			Cards []struct {
+			RequiredTier string `json:"requiredTier"`
+			Cards        []struct {
 				Index   int `json:"index"`
 				Version int `json:"version"`
 			} `json:"cards"`
@@ -56,6 +57,9 @@ func TestAnkiAPIResourceDetailsAuthAndReviewContract(t *testing.T) {
 	}
 	if err := json.Unmarshal(w.Body.Bytes(), &session); err != nil || len(session.Data.Cards) != 1 {
 		t.Fatal(err, w.Body.String())
+	}
+	if session.Data.RequiredTier != "free" {
+		t.Fatal("study session lacks authoritative free classification", w.Body.String())
 	}
 	body := `{"index":0,"version":0,"rating":"good","requestId":"` + uuid.NewString() + `"}`
 	for i := 0; i < 2; i++ {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
@@ -39,10 +41,13 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
               children: [
                 const Icon(Icons.cloud_off_rounded, size: 40),
                 const SizedBox(height: 12),
-                Text(e.toString(), textAlign: TextAlign.center),
+                Text(
+                  e.toString().localized(context),
+                  textAlign: TextAlign.center,
+                ),
                 TextButton(
                   onPressed: () => ref.invalidate(vocabularyLevelsProvider),
-                  child: const Text('Muat ulang'),
+                  child: Text('Muat ulang'.localized(context)),
                 ),
               ],
             ),
@@ -50,7 +55,9 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
         ),
         data: (levels) {
           if (levels.isEmpty) {
-            return const Center(child: Text('Materi belum tersedia.'));
+            return Center(
+              child: Text('Materi belum tersedia.'.localized(context)),
+            );
           }
           final level =
               levels.where((l) => l.level == selected).firstOrNull ??
@@ -70,6 +77,12 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.all(20),
               children: [
+                CourseOfflineStatus(
+                  type: 'vocabulary',
+                  level: level.level,
+                  lessonIds: level.lessons.map((l) => l.id).toList(),
+                  activeLessonId: resume?.id,
+                ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -135,7 +148,9 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                       const SizedBox(height: 14),
                       Text(
                         level.level == 'N5'
-                            ? 'Lihat gambarnya.\nIngat kata-katanya.'
+                            ? 'Lihat gambarnya.\nIngat kata-katanya.'.localized(
+                                context,
+                              )
                             : level.title,
                         style: const TextStyle(
                           color: Colors.white,
@@ -146,7 +161,8 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        '${level.lessons.length} lesson • $count entri kosakata',
+                        '${level.lessons.length} lesson • $count entri kosakata'
+                            .localized(context),
                         style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
@@ -171,8 +187,12 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                               if (uri == null || !await launchUrl(uri)) {
                                 if (!context.mounted) return;
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Sumber tidak dapat dibuka.'),
+                                  SnackBar(
+                                    content: Text(
+                                      'Sumber tidak dapat dibuka.'.localized(
+                                        context,
+                                      ),
+                                    ),
                                   ),
                                 );
                               }
@@ -186,7 +206,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                               size: 16,
                             ),
                             label: Text(
-                              'Sumber: ${level.sourceName} • ${level.sourceLicense}',
+                              '${'Sumber:'.localized(context)} ${level.sourceName} • ${level.sourceLicense}',
                               style: const TextStyle(fontSize: 12),
                             ),
                           ),
@@ -206,7 +226,8 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        '${level.lessons.where((l) => l.completed).length}/${level.lessons.length} lesson dikuasai',
+                        '${level.lessons.where((l) => l.completed).length}/${level.lessons.length} lesson dikuasai'
+                            .localized(context),
                         style: const TextStyle(fontWeight: FontWeight.w800),
                       ),
                       const SizedBox(height: 10),
@@ -220,7 +241,8 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                       ),
                       const SizedBox(height: 14),
                       Text(
-                        'Progres latihan ${level.progress}% • lulus lesson minimal 80%',
+                        'Progres latihan ${level.progress}% • lulus lesson minimal 80%'
+                            .localized(context),
                         style: const TextStyle(fontSize: 12),
                       ),
                       if (resume != null) ...[
@@ -230,8 +252,8 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                           icon: const Icon(Icons.play_arrow_rounded),
                           label: Text(
                             resume.bestScore > 0
-                                ? 'Lanjutkan belajar'
-                                : 'Mulai belajar',
+                                ? 'Lanjutkan belajar'.localized(context)
+                                : 'Mulai belajar'.localized(context),
                           ),
                         ),
                       ],
@@ -240,7 +262,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  'Jelajahi tema ${level.level}',
+                  'Jelajahi tema ${level.level}'.localized(context),
                   style: const TextStyle(
                     fontSize: 21,
                     fontWeight: FontWeight.w800,
@@ -251,16 +273,20 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                   key: ValueKey(level.level),
                   initialValue: query,
                   onChanged: (v) => setState(() => query = v),
-                  decoration: const InputDecoration(
-                    hintText: 'Cari tema, misalnya makanan',
+                  decoration: InputDecoration(
+                    hintText: 'Cari tema, misalnya makanan'.localized(context),
                     prefixIcon: Icon(Icons.search_rounded),
                   ),
                 ),
                 const SizedBox(height: 18),
                 if (lessons.isEmpty)
-                  const Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Text('Tema belum ditemukan. Coba kata lain.'),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      'Tema belum ditemukan. Coba kata lain.'.localized(
+                        context,
+                      ),
+                    ),
                   ),
                 for (final lesson in lessons)
                   Padding(
@@ -294,7 +320,8 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                           asset: lesson.imageAsset,
                                           url: lesson.imageUrl,
                                           description:
-                                              'Ilustrasi tema ${lesson.title}',
+                                              'Ilustrasi tema ${lesson.title}'
+                                                  .localized(context),
                                         )
                                       : ColoredBox(
                                           color: colors.secondary.withValues(
@@ -314,7 +341,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'LESSON ${lesson.order.toString().padLeft(2, '0')}',
+                                      '${'LESSON'.localized(context)} ${lesson.order.toString().padLeft(2, '0')}',
                                       style: TextStyle(
                                         color: colors.secondary,
                                         fontSize: 10,
@@ -332,16 +359,21 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                     ),
                                     const SizedBox(height: 6),
                                     Text(
-                                      '${lesson.wordCount} kata • ${lesson.questionCount > 0 ? lesson.questionCount : lesson.wordCount} soal',
+                                      '${lesson.wordCount} kata • ${lesson.questionCount > 0 ? lesson.questionCount : lesson.wordCount} soal'
+                                          .localized(context),
                                       style: const TextStyle(fontSize: 12),
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
                                       lesson.completed
                                           ? 'Dikuasai • ${lesson.bestScore}%'
+                                                .localized(context)
                                           : lesson.bestScore > 0
                                           ? 'Terbaik ${lesson.bestScore}%'
-                                          : 'Siap dipelajari',
+                                                .localized(context)
+                                          : 'Siap dipelajari'.localized(
+                                              context,
+                                            ),
                                       style: TextStyle(
                                         fontSize: 12,
                                         color: lesson.completed

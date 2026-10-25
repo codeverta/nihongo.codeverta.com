@@ -60,12 +60,12 @@ class ReadingCourse {
     required this.lessons,
   });
   factory ReadingCourse.fromJson(Map<String, dynamic> j) => ReadingCourse(
-        level: j['level'] as String,
-        title: j['title'] as String,
-        progress: j['progress'] as int,
-        completedLessons: j['completedLessons'] as int,
-        lessons: _items(j['lessons'], ReadingLessonSummary.fromJson),
-      );
+    level: j['level'] as String,
+    title: j['title'] as String,
+    progress: j['progress'] as int,
+    completedLessons: j['completedLessons'] as int,
+    lessons: _items(j['lessons'], ReadingLessonSummary.fromJson),
+  );
   final String level;
   final String title;
   final int progress;
@@ -81,10 +81,10 @@ class ReadingWord {
     required this.meaning,
   });
   factory ReadingWord.fromJson(Map<String, dynamic> j) => ReadingWord(
-        japanese: j['japanese'] as String,
-        reading: j['reading'] as String,
-        meaning: j['meaning'] as String,
-      );
+    japanese: j['japanese'] as String,
+    reading: j['reading'] as String,
+    meaning: j['meaning'] as String,
+  );
   final String japanese;
   final String reading;
   final String meaning;
@@ -104,16 +104,16 @@ class ReadingPage {
     required this.vocabulary,
   });
   factory ReadingPage.fromJson(Map<String, dynamic> j) => ReadingPage(
-        title: j['title'] as String,
-        japanese: j['japanese'] as String,
-        reading: j['reading'] as String,
-        meaning: j['meaning'] as String,
-        imageAsset: j['imageAsset'] as String,
-        imageUrl: j['imageUrl'] as String,
-        imagePanel: j['imagePanel'] as int,
-        imageDescription: j['imageDescription'] as String,
-        vocabulary: _items(j['vocabulary'], ReadingWord.fromJson),
-      );
+    title: j['title'] as String,
+    japanese: j['japanese'] as String,
+    reading: j['reading'] as String,
+    meaning: j['meaning'] as String,
+    imageAsset: j['imageAsset'] as String,
+    imageUrl: j['imageUrl'] as String,
+    imagePanel: j['imagePanel'] as int,
+    imageDescription: j['imageDescription'] as String,
+    vocabulary: _items(j['vocabulary'], ReadingWord.fromJson),
+  );
   final String title;
   final String japanese;
   final String reading;
@@ -129,9 +129,9 @@ class ReadingPage {
 class ReadingLesson {
   const ReadingLesson({required this.summary, required this.pages});
   factory ReadingLesson.fromJson(Map<String, dynamic> j) => ReadingLesson(
-        summary: ReadingLessonSummary.fromJson(j),
-        pages: _items(j['pages'], ReadingPage.fromJson),
-      );
+    summary: ReadingLessonSummary.fromJson(j),
+    pages: _items(j['pages'], ReadingPage.fromJson),
+  );
   final ReadingLessonSummary summary;
   final List<ReadingPage> pages;
 }
@@ -144,10 +144,10 @@ class ReadingQuestion {
     required this.options,
   });
   factory ReadingQuestion.fromJson(Map<String, dynamic> j) => ReadingQuestion(
-        id: j['id'] as String,
-        prompt: j['prompt'] as String,
-        options: _items(j['options'], QuizOption.fromJson),
-      );
+    id: j['id'] as String,
+    prompt: j['prompt'] as String,
+    options: _items(j['options'], QuizOption.fromJson),
+  );
   final String id;
   final String prompt;
   final List<QuizOption> options;
@@ -157,9 +157,9 @@ class ReadingQuestion {
 class ReadingAttempt {
   const ReadingAttempt({required this.id, required this.questions});
   factory ReadingAttempt.fromJson(Map<String, dynamic> j) => ReadingAttempt(
-        id: j['id'] as String,
-        questions: _items(j['questions'], ReadingQuestion.fromJson),
-      );
+    id: j['id'] as String,
+    questions: _items(j['questions'], ReadingQuestion.fromJson),
+  );
   final String id;
   final List<ReadingQuestion> questions;
 }
@@ -173,21 +173,25 @@ class ReadingResult {
     required this.passed,
     required this.bestScore,
     required this.progress,
+    this.verified = true,
   });
   factory ReadingResult.fromJson(Map<String, dynamic> j) => ReadingResult(
-        score: j['score'] as int,
-        correct: j['correctAnswers'] as int,
-        total: j['totalQuestions'] as int,
-        passed: j['passed'] as bool,
-        bestScore: j['bestScore'] as int,
-        progress: j['progress'] as int,
-      );
+    score: j['score'] as int,
+    correct: j['correctAnswers'] as int,
+    total: j['totalQuestions'] as int,
+    passed: j['passed'] as bool,
+    bestScore: j['bestScore'] as int,
+    progress: j['progress'] as int,
+    verified: j['verified'] != false,
+  );
   final int score;
   final int correct;
   final int total;
   final int bestScore;
   final int progress;
   final bool passed;
+  final bool verified;
+  bool get pendingSync => !verified;
 }
 
 typedef ReadingFeedback = AnswerFeedback;

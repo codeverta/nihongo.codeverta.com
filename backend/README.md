@@ -20,8 +20,10 @@ mobile app. Gunakan `-public-read=false` untuk bucket yang dilayani melalui URL
 bertanda tangan atau CDN private.
 
 Gambar reading dan vocabulary berada di `backend/assets/images/` sebagai WebP
-maksimal 1.200 px dan 200 KiB; onboarding dilayani dengan cara yang sama dan
-tidak dibundel dalam APK. Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`,
+maksimal 1.200 px dan 200 KiB; onboarding dilayani dengan cara yang sama.
+Folder vocabulary juga dibundel sebagai cadangan ilustrasi N5 saat jaringan
+gagal atau offline; gambar reading dan onboarding tetap dimuat dari backend.
+Tanpa `ASSET_BASE_URL` atau `COS_BUCKET_URL`,
 backend menyajikannya di `/assets/images/...`; aplikasi memakai origin
 `API_BASE_URL`. Untuk CDN, atur `ASSET_BASE_URL` ke origin CDN dengan object
 prefix `assets`. News dan gambar yang diunggah admin juga dikompresi sebagai
@@ -35,6 +37,7 @@ Panduan build APK kecil: [Android app size](../docs/android-app-size.md).
 
 Dokumentasi lengkap:
 
+- [Panduan mengirim push notification: panel admin, setup Firebase, dan troubleshooting](../docs/panduan-kirim-push-notification.md)
 - [Manga Jepang: katalog, reader, cache mingguan MariaDB/COS, dan admin](../docs/manga.md)
 - [Backend Developer Guide](../docs/backend-development.md)
 - [News Jepang: sumber, jadwal, DB, furigana, dan admin](../docs/news.md)
@@ -54,6 +57,7 @@ Dokumentasi lengkap:
 - [Reading N4: 12 cerita baru dan 36 adegan bergambar](../docs/reading-n4.md)
 - [JLPT N5 Diagnostic: 25 soal, timer, hasil dan pembahasan](../docs/jlpt-n5-diagnostic.md)
 - [Authentication and Google OAuth Setup](../docs/authentication.md)
+- [Offline account and premium recovery](../docs/offline-access.md)
 
 ## Requirements
 
@@ -165,3 +169,7 @@ Simulasi ujian N4: [struktur, timer, dan penilaian](../docs/jlpt-n4-simulation.m
 ## Google Play: halaman kebijakan publik
 
 Backend menyediakan HTML publik `/privacy-policy`, `/terms-of-service`, `/refund-policy`, `/delete-account`, `/support`, `/data-safety`, dan indeks `/legal`. Semua template dibundel dalam binary; tidak perlu server frontend tambahan. Kontak pengguna adalah `contact@codeverta.com`. Panduan URL dan pengisian Console ada di [Google Play setup](../docs/google-play-setup.md).
+
+## Transfer deck Anki
+
+Impor/ekspor APKG, CSV, dan JSON beserta media pribadi: lihat [panduan import/export](../docs/anki-import-export.md). Route transfer memerlukan autentikasi; persistence otomatis menambahkan tabel deck dan media pada MariaDB.

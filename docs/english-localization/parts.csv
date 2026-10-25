@@ -1,0 +1,104 @@
+﻿part_id,part_name,question_count,display_occurrences,mapped_questions,questions_needing_translation,shared_text_needing_translation,materials_needing_translation,coverage_status,source_file_count
+PART-001,JLPT lesson quiz / Vocabulary / N5 / Part 01,192,192,192,0,0,0,Mapped,1
+PART-002,JLPT lesson quiz / Vocabulary / N5 / Part 02,192,192,192,0,0,0,Mapped,1
+PART-003,JLPT lesson quiz / Vocabulary / N5 / Part 03,96,96,96,0,0,0,Mapped,1
+PART-004,JLPT lesson quiz / Vocabulary / N4 / Part 01,190,190,190,0,0,0,Mapped,1
+PART-005,JLPT lesson quiz / Vocabulary / N4 / Part 02,183,183,183,0,0,0,Mapped,1
+PART-006,JLPT lesson quiz / Vocabulary / N4 / Part 03,180,180,180,0,0,0,Mapped,1
+PART-007,JLPT lesson quiz / Vocabulary / N4 / Part 04,77,77,77,0,0,0,Mapped,1
+PART-008,JLPT lesson quiz / Vocabulary / N3 / Part 01,72,72,72,0,0,0,Mapped,1
+PART-009,JLPT lesson quiz / Vocabulary / N2 / Part 01,40,40,40,0,0,0,Mapped,1
+PART-010,JLPT lesson quiz / Vocabulary / N1 / Part 01,64,64,64,0,0,0,Mapped,1
+PART-011,JLPT lesson quiz / Grammar / N5 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-012,JLPT lesson quiz / Grammar / N4 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-013,JLPT lesson quiz / Grammar / N4 / Part 02,20,20,20,0,0,0,Mapped,1
+PART-014,JLPT lesson quiz / Grammar / N3 / Part 01,180,180,180,0,0,0,Mapped,1
+PART-015,JLPT lesson quiz / Grammar / N2 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-016,JLPT lesson quiz / Grammar / N2 / Part 02,100,100,100,0,0,0,Mapped,1
+PART-017,JLPT lesson quiz / Grammar / N1 / Part 01,80,80,80,0,0,0,Mapped,1
+PART-018,JLPT lesson quiz / Kanji / N5 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-019,JLPT lesson quiz / Kanji / N4 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-020,JLPT lesson quiz / Kanji / N4 / Part 02,132,132,132,0,0,0,Mapped,1
+PART-021,JLPT lesson quiz / Kanji / N3 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-022,JLPT lesson quiz / Kanji / N3 / Part 02,196,196,196,0,0,0,Mapped,1
+PART-023,JLPT lesson quiz / Kanji / N3 / Part 03,196,196,196,0,0,0,Mapped,1
+PART-024,JLPT lesson quiz / Kanji / N3 / Part 04,142,142,142,0,0,0,Mapped,1
+PART-025,JLPT lesson quiz / Kanji / N2 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-026,JLPT lesson quiz / Kanji / N2 / Part 02,200,200,200,0,0,0,Mapped,1
+PART-027,JLPT lesson quiz / Kanji / N2 / Part 03,200,200,200,0,0,0,Mapped,1
+PART-028,JLPT lesson quiz / Kanji / N2 / Part 04,134,134,134,0,0,0,Mapped,1
+PART-029,JLPT lesson quiz / Kanji / N1 / Part 01,200,200,200,0,0,0,Mapped,1
+PART-030,JLPT lesson quiz / Kanji / N1 / Part 02,200,200,200,0,0,0,Mapped,1
+PART-031,JLPT lesson quiz / Kanji / N1 / Part 03,200,200,200,0,0,0,Mapped,1
+PART-032,JLPT lesson quiz / Kanji / N1 / Part 04,200,200,200,0,0,0,Mapped,1
+PART-033,JLPT lesson quiz / Kanji / N1 / Part 05,200,200,200,0,0,0,Mapped,1
+PART-034,JLPT lesson quiz / Kanji / N1 / Part 06,200,200,200,0,0,0,Mapped,1
+PART-035,JLPT lesson quiz / Kanji / N1 / Part 07,200,200,200,0,0,0,Mapped,1
+PART-036,JLPT lesson quiz / Kanji / N1 / Part 08,200,200,200,0,0,0,Mapped,1
+PART-037,JLPT lesson quiz / Kanji / N1 / Part 09,200,200,200,0,0,0,Mapped,1
+PART-038,JLPT lesson quiz / Kanji / N1 / Part 10,200,200,200,0,0,0,Mapped,1
+PART-039,JLPT lesson quiz / Kanji / N1 / Part 11,200,200,200,0,0,0,Mapped,1
+PART-040,JLPT lesson quiz / Kanji / N1 / Part 12,200,200,200,0,0,0,Mapped,1
+PART-041,JLPT lesson quiz / Kanji / N1 / Part 13,64,64,64,0,0,0,Mapped,1
+PART-042,JLPT lesson quiz / Reading / N5 / Part 01,60,60,60,0,0,0,Mapped,1
+PART-043,JLPT lesson quiz / Reading / N4 / Part 01,60,60,60,0,0,0,Mapped,1
+PART-044,JLPT lesson quiz / Reading / N3 / Part 01,60,60,60,0,0,0,Mapped,1
+PART-045,JLPT lesson quiz / Reading / N2 / Part 01,60,60,60,0,0,0,Mapped,1
+PART-046,JLPT lesson quiz / Reading / N1 / Part 01,60,60,60,0,0,0,Mapped,1
+PART-047,Diagnostic / Kosakata / N5 / Part 01,7,7,7,0,0,0,Mapped,1
+PART-048,Diagnostic / Kanji / N5 / Part 01,5,5,5,0,0,0,Mapped,1
+PART-049,Diagnostic / Grammar / N5 / Part 01,8,8,8,0,0,0,Mapped,1
+PART-050,Diagnostic / Reading / N5 / Part 01,5,5,5,0,0,0,Mapped,1
+PART-051,Simulation / Simulation / N5 / n5-language-01 / Part 01,38,38,38,0,0,0,Mapped,1
+PART-052,Simulation / Simulation / N4 / n4-language-01 / Part 01,57,57,57,0,0,0,Mapped,1
+PART-053,Simulation / Simulation / N3 / n3-language-01 / Part 01,74,74,74,0,0,0,Mapped,1
+PART-054,Simulation / Simulation / N2 / n2-language-01 / Part 01,64,64,64,0,0,0,Mapped,1
+PART-055,Simulation / Simulation / N1 / n1-language-01 / Part 01,64,64,64,0,0,0,Mapped,1
+PART-056,Simulation / Simulation / NAT-1 / nat-5q-written-01 / Part 01,43,43,43,0,0,0,Mapped,1
+PART-057,Simulation / Simulation / NAT-2 / nat-5q-written-02 / Part 01,43,43,43,0,0,0,Mapped,1
+PART-058,Simulation / Simulation / NAT-3 / nat-5q-written-03 / Part 01,43,43,43,0,0,0,Mapped,1
+PART-059,Simulation / Simulation / NAT-4 / nat-5q-written-04 / Part 01,43,43,43,0,0,0,Mapped,1
+PART-060,Simulation / Simulation / NAT-5 / nat-5q-written-05 / Part 01,43,43,43,0,0,0,Mapped,1
+PART-061,Simulation / Simulation / JFT / jft-written-01 / Part 01,36,36,36,0,0,0,Mapped,1
+PART-062,Simulation / Simulation / JFT-2 / jft-written-02 / Part 01,36,36,36,0,0,0,Mapped,1
+PART-063,Simulation / Simulation / JFT-3 / jft-written-03 / Part 01,36,36,36,0,0,0,Mapped,1
+PART-064,Simulation / Simulation / JFT-4 / jft-written-04 / Part 01,36,36,36,0,0,0,Mapped,1
+PART-065,Simulation / Simulation / JFT-5 / jft-written-05 / Part 01,36,36,36,0,0,0,Mapped,1
+PART-066,SSW practice bank / SSW practice / accommodation / Part 01,36,63,36,0,0,0,Mapped,1
+PART-067,SSW practice bank / SSW practice / agriculture / Part 01,160,340,160,0,0,0,Mapped,1
+PART-068,SSW practice bank / SSW practice / automobile-maintenance / Part 01,36,63,36,0,0,0,Mapped,1
+PART-069,SSW practice bank / SSW practice / aviation / Part 01,36,63,36,0,0,0,Mapped,1
+PART-070,SSW practice bank / SSW practice / building-cleaning / Part 01,60,125,60,0,0,0,Mapped,1
+PART-071,SSW practice bank / SSW practice / construction / Part 01,36,66,36,0,0,0,Mapped,1
+PART-072,SSW practice bank / SSW practice / fishery / Part 01,120,255,120,0,0,0,Mapped,1
+PART-073,SSW practice bank / SSW practice / food-manufacturing / Part 01,36,63,36,0,0,0,Mapped,1
+PART-074,SSW practice bank / SSW practice / food-service / Part 01,36,63,36,0,0,0,Mapped,1
+PART-075,SSW practice bank / SSW practice / forestry / Part 01,36,63,36,0,0,0,Mapped,1
+PART-076,SSW practice bank / SSW practice / industrial-manufacturing / Part 01,36,66,36,0,0,0,Mapped,1
+PART-077,SSW practice bank / SSW practice / linen-supply / Part 01,48,84,48,0,0,0,Mapped,1
+PART-078,SSW practice bank / SSW practice / logistics-warehouse / Part 01,36,63,36,0,0,0,Mapped,1
+PART-079,SSW practice bank / SSW practice / nursing-care / Part 01,87,171,87,0,0,0,Mapped,1
+PART-080,SSW practice bank / SSW practice / railway / Part 01,36,63,36,0,0,0,Mapped,1
+PART-081,SSW practice bank / SSW practice / resource-recycling / Part 01,36,63,36,0,0,0,Mapped,1
+PART-082,SSW practice bank / SSW practice / road-transport / Part 01,36,63,36,0,0,0,Mapped,1
+PART-083,SSW practice bank / SSW practice / shipbuilding / Part 01,36,66,36,0,0,0,Mapped,1
+PART-084,SSW practice bank / SSW practice / wood-industry / Part 01,36,63,36,0,0,0,Mapped,1
+PART-085,SSW curriculum check / SSW curriculum / accommodation / Part 01,33,33,33,0,0,0,Mapped,1
+PART-086,SSW curriculum check / SSW curriculum / agriculture / Part 01,120,120,120,0,0,0,Mapped,1
+PART-087,SSW curriculum check / SSW curriculum / automobile-maintenance / Part 01,33,33,33,0,0,0,Mapped,1
+PART-088,SSW curriculum check / SSW curriculum / aviation / Part 01,33,33,33,0,0,0,Mapped,1
+PART-089,SSW curriculum check / SSW curriculum / building-cleaning / Part 01,45,45,45,0,0,0,Mapped,1
+PART-090,SSW curriculum check / SSW curriculum / construction / Part 01,30,30,30,0,0,0,Mapped,1
+PART-091,SSW curriculum check / SSW curriculum / fishery / Part 01,90,90,90,0,0,0,Mapped,1
+PART-092,SSW curriculum check / SSW curriculum / food-manufacturing / Part 01,33,33,33,0,0,0,Mapped,1
+PART-093,SSW curriculum check / SSW curriculum / food-service / Part 01,33,33,33,0,0,0,Mapped,1
+PART-094,SSW curriculum check / SSW curriculum / forestry / Part 01,33,33,33,0,0,0,Mapped,1
+PART-095,SSW curriculum check / SSW curriculum / industrial-manufacturing / Part 01,30,30,30,0,0,0,Mapped,1
+PART-096,SSW curriculum check / SSW curriculum / kaigo / Part 01,48,48,48,0,0,0,Mapped,1
+PART-097,SSW curriculum check / SSW curriculum / linen-supply / Part 01,36,36,36,0,0,0,Mapped,1
+PART-098,SSW curriculum check / SSW curriculum / logistics-warehouse / Part 01,33,33,33,0,0,0,Mapped,1
+PART-099,SSW curriculum check / SSW curriculum / railway / Part 01,33,33,33,0,0,0,Mapped,1
+PART-100,SSW curriculum check / SSW curriculum / resource-recycling / Part 01,33,33,33,0,0,0,Mapped,1
+PART-101,SSW curriculum check / SSW curriculum / road-transport / Part 01,33,33,33,0,0,0,Mapped,1
+PART-102,SSW curriculum check / SSW curriculum / shipbuilding / Part 01,30,30,30,0,0,0,Mapped,1
+PART-103,SSW curriculum check / SSW curriculum / wood-industry / Part 01,33,33,33,0,0,0,Mapped,1

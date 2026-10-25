@@ -57,7 +57,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	billingService := &billing.Service{Store: memoryStore, Verifier: verifier, ProductID: verifier.ProductID}
+	offlineSigner, err := billing.NewOfflineLeaseSignerFromEnv()
+	if err != nil {
+		log.Fatal(err)
+	}
+	billingService := &billing.Service{Store: memoryStore, Verifier: verifier, ProductID: verifier.ProductID, OfflineSigner: offlineSigner}
+	if offlineSigner == nil {
+		log.Print("offline premium access disabled: OFFLINE_ACCESS_PRIVATE_KEY is not configured")
+	} else {
+		log.Printf("offline premium access signing enabled (public key for mobile build: %s)", offlineSigner.PublicKeyBase64())
+	}
 	assetBaseURL := strings.TrimSpace(os.Getenv("ASSET_BASE_URL"))
 	if assetBaseURL == "" {
 		assetBaseURL = os.Getenv("COS_BUCKET_URL")

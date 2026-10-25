@@ -1,0 +1,3492 @@
+{
+  "modules": [
+    {
+      "description": "Fishery types, resources, operation planning, weather, and communication.",
+      "id": "capture-general",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Vessel and equipment operations require appropriate responsibility and training.",
+              "kind": "knowledge",
+              "options": [
+                "A desire to try every piece of equipment",
+                "Clothing color",
+                "The number of fish alone",
+                "The captain's instructions and the crew member's competence and authority"
+              ],
+              "prompt": "What determines how crew duties are assigned?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Explain the limits of your abilities and ask for training and guidance. Vessel and equipment operations require appropriate responsibility and training.",
+              "kind": "case",
+              "options": [
+                "Remove the safety device to make it easier",
+                "Hand it over to a visitor",
+                "Explain the limits of your abilities and ask for training and guidance",
+                "Keep trying until you can do it while the vessel is underway"
+              ],
+              "prompt": "Scenario: A new crew member is asked to operate equipment they have never been trained on. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "漁船 is read ぎょせん and means fishing vessel. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "crew member",
+                "capture fisheries",
+                "fishing vessel",
+                "captain"
+              ],
+              "prompt": "In this lesson, what does 漁船（ぎょせん） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by reading the vessel plan and duty assignments. Then: Check the equipment and personal gear → Follow operations within your authority → Record results and deviations. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Read the vessel plan and duty assignments",
+                "Check the equipment and personal gear",
+                "Follow operations within your authority",
+                "Record results and deviations"
+              ],
+              "prompt": "In the workflow “Capture fisheries and crew responsibilities” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "漁業を確認します。",
+              "meaning": "I will check the capture-fishing operation.",
+              "reading": "ぎょぎょうをかくにんします。"
+            }
+          ],
+          "id": "fish-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip perikanan tangkap dan tanggung jawab awak.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Explain the limits of your competence and request training and direction.",
+          "scenario": "A new crew member is asked to operate equipment they have never been trained on.",
+          "sections": [
+            {
+              "body": "Capture fisheries harvest organisms from the water using permitted gear and methods. Knowing species, seasons, operating areas, sizes, and local rules helps protect product quality and resources. Crew duties are assigned according to the captain's instructions and each person's competence; written material does not authorize anyone to pilot a vessel or operate every type of gear. Before departure, learn the vessel identity, assembly point, communication methods, and emergency equipment. Do not change location or fishing gear without authorized approval.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A new crew member is asked to operate equipment they have never learned to use. Recommended decision: explain the limits of your competence and request training and direction. Follow an orderly process: read the plan and vessel duty assignments; inspect the equipment and personal protective gear; take part only within your authority; record results and deviations. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Baca rencana dan pembagian tugas kapal",
+            "Periksa alat serta perlengkapan pribadi",
+            "Ikuti operasi sesuai kewenangan",
+            "Catat hasil dan penyimpangan"
+          ],
+          "title": "Capture Fisheries and Crew Responsibilities",
+          "vocabulary": [
+            {
+              "japanese": "漁業",
+              "meaning": "capture fisheries",
+              "reading": "ぎょぎょう"
+            },
+            {
+              "japanese": "漁船",
+              "meaning": "fishing vessel",
+              "reading": "ぎょせん"
+            },
+            {
+              "japanese": "船長",
+              "meaning": "captain",
+              "reading": "せんちょう"
+            },
+            {
+              "japanese": "乗組員",
+              "meaning": "crew member",
+              "reading": "のりくみいん"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Whether a catch may be kept depends on applicable rules, not merely on its presence in the gear.",
+              "kind": "knowledge",
+              "options": [
+                "Yes, if it is small",
+                "Yes, if there are no other buyers",
+                "There is no need to follow rules on species, size, or area",
+                "Yes, because it has already been caught"
+              ],
+              "prompt": "Can every caught organism automatically be sold?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Confirm the organism's identity and the procedure with the person in charge. Whether a catch may be kept depends on applicable rules, not merely on its presence in the gear.",
+              "kind": "case",
+              "options": [
+                "Throw the fishing gear into the sea",
+                "Confirm the identity and procedure with the person in charge",
+                "Hide it in another box",
+                "Sell it without identifying it"
+              ],
+              "prompt": "Scenario: A caught organism's protected status is unknown. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "禁漁 is read きんりょう and means a fishing ban. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "resources",
+                "bycatch",
+                "fishing ban",
+                "fishing area"
+              ],
+              "prompt": "In this lesson, what does 禁漁（きんりょう） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by checking operating rules and species. Then: Identify the catch and bycatch → Follow the directed handling procedure → Record and report any special findings. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Identify the catch and bycatch",
+                "Follow the directed handling procedure",
+                "Record and report any special findings",
+                "Check operating rules and species"
+              ],
+              "prompt": "In the workflow “Resources, bycatch, and fishing regulations” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "資源を確認します。",
+              "meaning": "I will check the resource information.",
+              "reading": "しげんをかくにんします。"
+            }
+          ],
+          "id": "fish-02",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip sumber daya, hasil samping, dan aturan tangkap.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Confirm the identity and procedure with the person in charge.",
+          "scenario": "The catch contains an organism whose protected status is not yet known.",
+          "sections": [
+            {
+              "body": "Fishing rules may regulate species, size, season, area, quotas, and gear. Do not assume every catch may be kept just because it entered the net. Handle bycatch and protected species under regulations and vessel instructions, with human safety as the priority. Confirm uncertain information instead of guessing from an old photograph. Recording catch and location supports traceability and resource management. Do not discard fishing-gear waste at sea to save space.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The catch contains an organism whose protected status is unknown. Recommended decision: confirm its identity and handling procedure with the person in charge. Follow an orderly process: check operating rules and species; identify the catch and bycatch; follow the directed handling method; record and report unusual findings. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa ketentuan operasi dan spesies",
+            "Identifikasi hasil serta hasil samping",
+            "Ikuti penanganan yang diperintahkan",
+            "Catat dan laporkan temuan khusus"
+          ],
+          "title": "Resources, Bycatch, and Fishing Rules",
+          "vocabulary": [
+            {
+              "japanese": "資源",
+              "meaning": "resources",
+              "reading": "しげん"
+            },
+            {
+              "japanese": "混獲",
+              "meaning": "bycatch",
+              "reading": "こんかく"
+            },
+            {
+              "japanese": "禁漁",
+              "meaning": "fishing ban",
+              "reading": "きんりょう"
+            },
+            {
+              "japanese": "海域",
+              "meaning": "fishing waters",
+              "reading": "かいいき"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Safety decisions must be based on operational judgment and actual conditions.",
+              "kind": "knowledge",
+              "options": [
+                "A buyer through a private message",
+                "The captain and authorized personnel according to procedure",
+                "Sales targets alone",
+                "The crew based on a guess"
+              ],
+              "prompt": "Who directs vessel-operation decisions when conditions deteriorate?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Follow the stop-work and securing instructions. Safety decisions must be based on operational judgment and actual conditions.",
+              "kind": "case",
+              "options": [
+                "Follow the stop-work and securing instructions",
+                "Continue to meet the target",
+                "Ignore communications",
+                "Remove the equipment to save time"
+              ],
+              "prompt": "Scenario: The wind strengthens and the captain orders operations to stop. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "潮流 is read ちょうりゅう and means ocean current. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "waves",
+                "wind",
+                "ocean current",
+                "weather"
+              ],
+              "prompt": "In this lesson, what does 潮流（ちょうりゅう） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by checking the forecast and the captain's instructions. Then: Confirm communications and equipment → Monitor changes during operations → Follow decisions to delay or stop. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Monitor changes during operations",
+                "Follow decisions to delay or stop",
+                "Check the forecast and the captain's instructions",
+                "Confirm communications and equipment"
+              ],
+              "prompt": "In the workflow “Weather, waves, and departure decisions” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "天候を確認します。",
+              "meaning": "I will check the weather.",
+              "reading": "てんこうをかくにんします。"
+            }
+          ],
+          "id": "fish-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip cuaca, gelombang, dan keputusan keberangkatan.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Follow the instructions to stop and secure the operation.",
+          "scenario": "The wind is strengthening, and the captain orders operations to stop.",
+          "sections": [
+            {
+              "body": "Sea weather, wind, waves, currents, and tides can change operational risks. Conditions at departure do not guarantee that the work will remain safe. Use official information and the captain's assessment, monitor changes, and report hazards from a safe position. Catch targets are never a reason to ignore a stop-work decision. Crew members should know evacuation routes, equipment locations, and how to receive emergency instructions. Workers must not set a universal wave limit from study material because vessels and activities differ.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The wind is strengthening, and the captain orders operations to stop. Recommended decision: follow the stop-work and securing instructions. Follow an orderly process: check the forecast and the captain's directions; confirm communications and equipment; monitor conditions during operations; follow decisions to delay or stop. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa prakiraan serta arahan nakhoda",
+            "Pastikan komunikasi dan perlengkapan",
+            "Pantau perubahan selama operasi",
+            "Patuhi keputusan menunda atau menghentikan"
+          ],
+          "title": "Weather, Waves, and Departure Decisions",
+          "vocabulary": [
+            {
+              "japanese": "天候",
+              "meaning": "weather",
+              "reading": "てんこう"
+            },
+            {
+              "japanese": "波",
+              "meaning": "wave",
+              "reading": "なみ"
+            },
+            {
+              "japanese": "風",
+              "meaning": "wind",
+              "reading": "かぜ"
+            },
+            {
+              "japanese": "潮流",
+              "meaning": "ocean current",
+              "reading": "ちょうりゅう"
+            }
+          ]
+        }
+      ],
+      "title": "Capture Fisheries · Foundations and Operating Environment",
+      "track": "capture"
+    },
+    {
+      "description": "Life jackets, man-overboard response, fire, and enclosed spaces.",
+      "id": "capture-safety",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Equipment functions as intended only when it is in good condition, fits properly, and is worn correctly.",
+              "kind": "knowledge",
+              "options": [
+                "Before work, according to vessel rules",
+                "Only after falling overboard",
+                "Only when it is severely damaged",
+                "There is no need if one is available in a locker"
+              ],
+              "prompt": "When should a life jacket's suitability be checked?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Report it and replace it with suitable equipment according to procedure. Equipment functions as intended only when it is in good condition, fits properly, and is worn correctly.",
+              "kind": "case",
+              "options": [
+                "Wear it without fastening it",
+                "Just store it in the cabin",
+                "Borrow one that does not fit",
+                "Report it and replace it with suitable equipment according to procedure"
+              ],
+              "prompt": "Scenario: A life jacket has a damaged fastener before deck duty. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "救命胴衣 is read きゅうめいどうい and means life jacket. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "handhold",
+                "fall from a height",
+                "life jacket",
+                "deck"
+              ],
+              "prompt": "In this lesson, what does 救命胴衣（きゅうめいどうい） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by checking the life jacket's type, size, and condition. Then: Put it on and fasten it as instructed → Use safe routes and handholds → Report damage or deck hazards. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Report damage or deck hazards",
+                "Check the life jacket's type, size, and condition",
+                "Put it on and fasten it as instructed",
+                "Use safe routes and handholds"
+              ],
+              "prompt": "In the workflow “Life jackets and moving around on deck” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "救命胴衣を確認します。",
+              "meaning": "I will inspect the life jacket.",
+              "reading": "きゅうめいどういをかくにんします。"
+            }
+          ],
+          "id": "fish-04",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pelampung dan bergerak di geladak.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Report it and replace the item with suitable equipment under procedure.",
+          "scenario": "A life jacket has a damaged strap before a deck assignment.",
+          "sections": [
+            {
+              "body": "Select, wear, and inspect life jackets or personal flotation devices according to the task and vessel rules. Equipment stored in a locker cannot protect someone who is required to wear it but does not. Wet decks, fish, ice, and vessel movement increase slip and fall risks. Maintain secure footing, clear routes, and safe handholds. Do not pass along a hazardous edge or sit on a rail. Protective gear must not interfere with moving equipment; check fit and size before operations.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A life jacket has a damaged strap before a deck assignment. Recommended decision: report it and replace it with suitable equipment under procedure. Follow an orderly process: check the life jacket type, size, and condition; wear and fasten it as directed; use safe routes and handholds; report damage or deck hazards. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa jenis ukuran dan kondisi pelampung",
+            "Pakai serta kencangkan sesuai petunjuk",
+            "Gunakan jalur dan pegangan aman",
+            "Laporkan kerusakan atau bahaya geladak"
+          ],
+          "title": "Life Jackets and Moving Around the Deck",
+          "vocabulary": [
+            {
+              "japanese": "救命胴衣",
+              "meaning": "life jacket",
+              "reading": "きゅうめいどうい"
+            },
+            {
+              "japanese": "甲板",
+              "meaning": "deck",
+              "reading": "かんぱん"
+            },
+            {
+              "japanese": "手すり",
+              "meaning": "handrail",
+              "reading": "てすり"
+            },
+            {
+              "japanese": "転落",
+              "meaning": "fall from height",
+              "reading": "てんらく"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Rescue requires the vessel's procedures and responders with appropriate protection.",
+              "kind": "knowledge",
+              "options": [
+                "Seawater is always shallow",
+                "The person does not need help",
+                "Life jackets are never useful",
+                "It could create another casualty and disrupt a coordinated response"
+              ],
+              "prompt": "Why should you not jump in spontaneously when you see someone in trouble?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Raise the alarm and report the location while keeping watch from a safe position. Rescue requires the vessel's procedures and responders with appropriate protection.",
+              "kind": "case",
+              "options": [
+                "Continue hauling the net",
+                "Turn off communications",
+                "Raise the alarm and report the location while keeping watch from a safe position",
+                "Jump in immediately by yourself"
+              ],
+              "prompt": "Scenario: A coworker falls overboard and you are the first witness. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "救助 is read as きゅうじょ and means “rescue.” Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "position",
+                "fall into the water",
+                "rescue",
+                "alarm"
+              ],
+              "prompt": "In this lesson, what does 救助（きゅうじょ） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by raising the alarm according to the vessel's procedure. Then: Report the location and keep watch from a safe position → Use rescue equipment as instructed → Follow crew coordination and recording procedures. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Raise the alarm according to the vessel's procedure",
+                "Report the location and keep watch from a safe position",
+                "Use rescue equipment as instructed",
+                "Follow crew coordination and recording procedures"
+              ],
+              "prompt": "In the workflow “Man overboard and emergency communication” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "落水を確認します。",
+              "meaning": "I will check the man-overboard procedure.",
+              "reading": "らくすいをかくにんします。"
+            }
+          ],
+          "id": "fish-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip orang jatuh ke laut dan komunikasi darurat.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Raise the alarm and report the location while observing from a safe position.",
+          "scenario": "A coworker falls overboard, and you are the first witness.",
+          "sections": [
+            {
+              "body": "Respond to a person overboard according to vessel drills: raise the alarm, report the location, maintain visual contact if safe, and carry out your assigned role. Do not jump in spontaneously, which could create another casualty and leave no observer. Throw or operate rescue equipment only under procedure and from a safe position. Keep communications brief and clear; repeat important instructions. Know the assembly point and how to report a missing person. Direct rescue requires the captain's control and trained personnel.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A coworker falls overboard, and you are the first witness. Recommended decision: raise the alarm and report the location while observing from a safe position. Follow an orderly process: raise the alarm under vessel procedure; report the location and maintain visual contact if safe; use rescue equipment as directed; follow crew coordination and recordkeeping. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Beri alarm sesuai prosedur kapal",
+            "Laporkan lokasi dan pertahankan pengamatan aman",
+            "Gunakan alat bantuan sesuai instruksi",
+            "Ikuti koordinasi serta pencatatan awak"
+          ],
+          "title": "Man Overboard and Emergency Communication",
+          "vocabulary": [
+            {
+              "japanese": "落水",
+              "meaning": "fall into the water",
+              "reading": "らくすい"
+            },
+            {
+              "japanese": "救助",
+              "meaning": "rescue",
+              "reading": "きゅうじょ"
+            },
+            {
+              "japanese": "警報",
+              "meaning": "alarm",
+              "reading": "けいほう"
+            },
+            {
+              "japanese": "位置",
+              "meaning": "position",
+              "reading": "いち"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Air hazards cannot be assessed by smell or by how briefly someone plans to enter.",
+              "kind": "knowledge",
+              "options": [
+                "Yes, if entering only briefly",
+                "Yes, if wearing boots",
+                "No; gases and oxygen levels require assessment according to procedure",
+                "Yes, if the doorway is small"
+              ],
+              "prompt": "Is an enclosed space definitely safe if it has no smell?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not allow entry without the proper procedure and authorized assessment; report the situation. Air hazards cannot be assessed by smell or by how briefly someone plans to enter.",
+              "kind": "case",
+              "options": [
+                "Light a fire to see",
+                "Do not allow entry without proper procedure and authorized assessment; report it",
+                "Test it by smelling more closely",
+                "Enter while holding your breath"
+              ],
+              "prompt": "Scenario: An unusual smell comes from an enclosed space, and a coworker wants to enter and check. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "酸素 is read さんそ and means oxygen. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "fire",
+                "fire extinguisher",
+                "oxygen",
+                "evacuation"
+              ],
+              "prompt": "In this lesson, what does 酸素（さんそ） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by identifying hazards and locating emergency equipment. Then: Raise the alarm from a safe position → Follow isolation or evacuation instructions for your role → Leave specialized actions to trained responders. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Raise the alarm from a safe position",
+                "Follow isolation or evacuation instructions for your role",
+                "Leave specialized actions to trained responders",
+                "Identify hazards and locate emergency equipment"
+              ],
+              "prompt": "In the workflow “Fire, enclosed spaces, and emergency equipment” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "火災を確認します。",
+              "meaning": "I will check fire-safety arrangements.",
+              "reading": "かさいをかくにんします。"
+            }
+          ],
+          "id": "fish-06",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kebakaran, ruang tertutup, dan alat darurat.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Do not enter without an approved procedure and assessment; report the hazard.",
+          "scenario": "An unusual odor comes from an enclosed space, and a coworker wants to enter and inspect it.",
+          "sections": [
+            {
+              "body": "Fuel, electricity, hot machinery, and certain tasks can cause fires. Select and use fire extinguishers according to training and the type of hazard; never use water on energized electrical equipment. Enclosed spaces and tanks may contain hazardous gases or lack oxygen. Odor does not prove the air is safe. Do not enter or attempt a spontaneous rescue without the confined-space procedure. Know how to raise the alarm, contact the captain, and leave by the designated route.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: An unusual odor comes from an enclosed space, and a coworker wants to enter and inspect it. Recommended decision: do not allow entry without an approved procedure and qualified assessment; report the hazard. Follow an orderly process: identify the danger and emergency-equipment locations; raise the alarm from a safe position; follow isolation or evacuation instructions for your role; wait for trained personnel to handle specialized tasks. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Kenali bahaya dan lokasi alat darurat",
+            "Beri alarm dari posisi aman",
+            "Ikuti isolasi atau evakuasi sesuai tugas",
+            "Tunggu petugas terlatih untuk tindakan khusus"
+          ],
+          "title": "Fire, Enclosed Spaces, and Emergency Equipment",
+          "vocabulary": [
+            {
+              "japanese": "火災",
+              "meaning": "fire",
+              "reading": "かさい"
+            },
+            {
+              "japanese": "消火器",
+              "meaning": "fire extinguisher",
+              "reading": "しょうかき"
+            },
+            {
+              "japanese": "酸素",
+              "meaning": "oxygen",
+              "reading": "さんそ"
+            },
+            {
+              "japanese": "避難",
+              "meaning": "evacuation",
+              "reading": "ひなん"
+            }
+          ]
+        }
+      ],
+      "title": "Capture Fisheries · Vessel Safety and Emergencies",
+      "track": "capture"
+    },
+    {
+      "description": "Pinch points, tensioned lines, winches, and gill-net principles.",
+      "id": "capture-equipment",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "A moving rope can suddenly entangle or drag someone.",
+              "kind": "knowledge",
+              "options": [
+                "Behind the safety barrier",
+                "Inside a rope loop or the path of a taut rope",
+                "In the designated safe zone",
+                "At the designated observation point"
+              ],
+              "prompt": "Where should you stay clear of when a rope is about to be hauled?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Warn others and stop operations according to procedure until everyone is in a safe position. A moving rope can suddenly entangle or drag someone.",
+              "kind": "case",
+              "options": [
+                "Warn others and stop operations according to procedure until everyone is in a safe position",
+                "Start hauling slowly",
+                "Tie your foot to the rope",
+                "Assume it is safe because you are wearing boots"
+              ],
+              "prompt": "Scenario: A crew member's foot is inside a rope loop before hauling. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "輪 is read わ and means a loop. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "how to tie a knot",
+                "tension",
+                "loop",
+                "rope"
+              ],
+              "prompt": "In this lesson, what does 輪（わ） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by checking the rope's condition and hauling path. Then: Position yourself outside the danger zone → Use knots only for tasks you are trained to perform → Stow the rope and report damage. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Use knots only for tasks you are trained to perform",
+                "Stow the rope and report damage",
+                "Check the rope's condition and hauling path",
+                "Position yourself outside the danger zone"
+              ],
+              "prompt": "In the workflow “Ropes, knots, and hauling zones” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "ロープを確認します。",
+              "meaning": "I will inspect the rope.",
+              "reading": "ろーぷをかくにんします。"
+            }
+          ],
+          "id": "fish-07",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip tali, simpul, dan zona tarikan.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Warn others and stop operations under procedure until the area is safe.",
+          "scenario": "A crew member's foot is inside a loop of rope before hauling begins.",
+          "sections": [
+            {
+              "body": "Ropes can move suddenly, trap a foot, or whip when tensioned or broken. Identify coils, rope loops, the direction of pull, and restricted zones. Never stand inside a rope loop or in the path of a tensioned line. Choose knots for the task and practice them with safe equipment before using them in operations. Report ropes that are worn, cut, or unsuitable for the load. Organized storage helps prevent trips and misuse; do not assume every knot is safe for every load.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A crew member's foot is inside a rope loop before hauling. Recommended decision: warn the crew and stop operations under procedure until the person is in a safe position. Follow an orderly process: check the rope and line of pull; move outside the hazard zone; use knots appropriate to the trained task; tidy the area and report damage. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa kondisi tali dan jalur tarikan",
+            "Tentukan posisi di luar zona bahaya",
+            "Gunakan simpul sesuai tugas terlatih",
+            "Rapikan serta laporkan kerusakan"
+          ],
+          "title": "Ropes, Knots, and Line-of-Pull Zones",
+          "vocabulary": [
+            {
+              "japanese": "ロープ",
+              "meaning": "rope",
+              "reading": "ろーぷ"
+            },
+            {
+              "japanese": "結び方",
+              "meaning": "knot-tying method",
+              "reading": "むすびかた"
+            },
+            {
+              "japanese": "張力",
+              "meaning": "line tension",
+              "reading": "ちょうりょく"
+            },
+            {
+              "japanese": "輪",
+              "meaning": "loop",
+              "reading": "わ"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Moving parts and stored energy can cause serious injury.",
+              "kind": "knowledge",
+              "options": [
+                "Shutdown and energy isolation according to the SOP",
+                "Gloves alone",
+                "Keep the motor running",
+                "Have a coworker hold the taut rope"
+              ],
+              "prompt": "What is required before clearing a roller jam?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Stop the equipment and isolate its energy according to procedure before handling the jam. Moving parts and stored energy can cause serious injury.",
+              "kind": "case",
+              "options": [
+                "Pull it out by hand",
+                "Remove the guard while it is running",
+                "Stand beneath the load",
+                "Stop the equipment and isolate its energy according to procedure before handling the jam"
+              ],
+              "prompt": "Scenario: A net is caught near a roller that is still turning. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "巻揚機 is read まきあげき and means winch. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "caught between objects",
+                "shutdown",
+                "winch",
+                "rotating part"
+              ],
+              "prompt": "In this lesson, what does 巻揚機（まきあげき） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by checking the equipment operator and safe zone. Then: Confirm start and stop signals → Operate with all guards in place → Isolate energy before clearing a jam. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Isolate energy before clearing a blockage",
+                "Check the equipment operator and safe zone",
+                "Confirm start and stop signals",
+                "Operate with all guards in place"
+              ],
+              "prompt": "In the workflow “Winches, rollers, and equipment isolation” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "巻揚機を確認します。",
+              "meaning": "I will inspect the winch.",
+              "reading": "まきあげきをかくにんします。"
+            }
+          ],
+          "id": "fish-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip winch, roller, dan isolasi alat.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Stop the equipment and isolate its energy under procedure before handling it.",
+          "scenario": "The net is caught near a roller that is still turning.",
+          "sections": [
+            {
+              "body": "Winches and rollers have moving parts that can catch clothing, gloves, or a person's body. Guards and emergency-stop buttons do not replace safe positioning and training. Everyone involved must understand the start command. Do not touch a blockage or repair equipment until its energy is isolated under procedure. Loads and lifting equipment must stay within capacity. Do not walk beneath a suspended load or stand on it. Stop and report unusual noise, movement, or leaks.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The net is caught near a roller that is still turning. Recommended decision: stop the equipment and isolate its energy under procedure before handling the blockage. Follow an orderly process: check the equipment operator and safe zone; confirm start and stop signals; operate with all guards in place; isolate energy before clearing a blockage. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa operator alat dan zona aman",
+            "Konfirmasikan sinyal mulai dan berhenti",
+            "Operasikan dengan pengaman lengkap",
+            "Isolasi energi sebelum penanganan sumbatan"
+          ],
+          "title": "Winches, Rollers, and Equipment Isolation",
+          "vocabulary": [
+            {
+              "japanese": "巻揚機",
+              "meaning": "winch",
+              "reading": "まきあげき"
+            },
+            {
+              "japanese": "回転部",
+              "meaning": "rotating part",
+              "reading": "かいてんぶ"
+            },
+            {
+              "japanese": "挟まれ",
+              "meaning": "caught; pinched",
+              "reading": "はさまれ"
+            },
+            {
+              "japanese": "停止",
+              "meaning": "shutdown",
+              "reading": "ていし"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Gear must comply with the fishing plan and applicable rules.",
+              "kind": "knowledge",
+              "options": [
+                "Determine fish color",
+                "Replace machine guards",
+                "Eliminate all bycatch",
+                "Affect selectivity and fishing-gear requirements"
+              ],
+              "prompt": "Why are net mesh specifications important?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Report the damage and repair or replace the gear as authorized. Gear must comply with the fishing plan and applicable rules.",
+              "kind": "case",
+              "options": [
+                "Cover it with waste",
+                "Change the gear size without authorization",
+                "Report the damage and repair or replace the gear as authorized",
+                "Set the net without reporting it"
+              ],
+              "prompt": "Scenario: A tear and a weak rope connection are found before setting the net. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "網目 is read あみめ and means mesh opening. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "gear weight",
+                "gill net",
+                "mesh opening",
+                "gear float"
+              ],
+              "prompt": "In this lesson, what does 網目（あみめ） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by checking the net's specifications and condition. Then: Prepare crew positions and the gear path → Set or haul the net on command → Remove the catch and record any damage. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Check the net's specifications and condition",
+                "Prepare crew positions and the gear path",
+                "Set or haul the net on command",
+                "Remove the catch and record any damage"
+              ],
+              "prompt": "In the workflow “Gill nets and fishing-gear inspection” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "刺網を確認します。",
+              "meaning": "I will inspect the gill net.",
+              "reading": "さしあみをかくにんします。"
+            }
+          ],
+          "id": "fish-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip jaring insang dan pemeriksaan alat tangkap.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Report the issue and repair or replace the item as authorized.",
+          "scenario": "A tear and a weak rope connection are found before stocking.",
+          "sections": [
+            {
+              "body": "Gill nets catch fish when their bodies become entangled in the mesh, making gear specifications and rules important. Inspect the headline, weights, floats, and net before use. Damage can reduce the catch or cause gear to be lost. Set and haul nets on command; do not stand on a net or rope that will move. Remove the catch in a way that protects hands and product quality. Report lost gear and bycatch as required; do not conceal them.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A tear and a weak rope connection are found before deployment. Recommended decision: report the damage and repair or replace it as authorized. Follow an orderly process: inspect net specifications and condition; position crew and equipment routes; deploy or haul as ordered; release the catch and record damage. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa spesifikasi serta kondisi jaring",
+            "Siapkan posisi awak dan jalur alat",
+            "Tebar atau angkat sesuai komando",
+            "Lepaskan hasil dan catat kerusakan"
+          ],
+          "title": "Gill Nets and Fishing-Gear Inspection",
+          "vocabulary": [
+            {
+              "japanese": "刺網",
+              "meaning": "gill net",
+              "reading": "さしあみ"
+            },
+            {
+              "japanese": "網目",
+              "meaning": "net mesh",
+              "reading": "あみめ"
+            },
+            {
+              "japanese": "浮子",
+              "meaning": "gear float",
+              "reading": "うき"
+            },
+            {
+              "japanese": "沈子",
+              "meaning": "gear weight",
+              "reading": "おもり"
+            }
+          ]
+        }
+      ],
+      "title": "Capture Fisheries · Ropes, Lifting Gear, and Nets",
+      "track": "capture"
+    },
+    {
+      "description": "Purse seines, trawls, longlines, and hook handling.",
+      "id": "capture-methods",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Operations are interconnected; a wrong signal can put someone in a hazardous path.",
+              "kind": "knowledge",
+              "options": [
+                "Step on the net to keep it still",
+                "Ignore vessel conditions",
+                "Clear commands and coordination of equipment and crew movements",
+                "Everyone acts independently"
+              ],
+              "prompt": "What is important in purse-seine operations?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Stop when commands are unclear and confirm one command everyone understands. Operations are interconnected; a wrong signal can put someone in a hazardous path.",
+              "kind": "case",
+              "options": [
+                "Haul the rope by yourself",
+                "Stop when commands are unclear and confirm one command everyone understands",
+                "Start based on each person's guess",
+                "Turn off the radio"
+              ],
+              "prompt": "Scenario: Two crew members receive different start commands as the net is about to be hauled. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "合図 is read あいず and means signal. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "purse seine",
+                "school of fish",
+                "signal",
+                "coordination"
+              ],
+              "prompt": "In this lesson, what does 合図（あいず） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by listening to the plan and operating signals. Then: Keep crew clear of the net and ropes → Follow the closing sequence on command → Check the equipment and report changes. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Keep crew clear of the net and ropes",
+                "Follow the closing sequence on command",
+                "Check the equipment and report changes",
+                "Listen to the plan and operating signals"
+              ],
+              "prompt": "In the workflow “Purse seining and crew coordination” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "まき網を確認します。",
+              "meaning": "I will inspect the purse seine.",
+              "reading": "まきあみをかくにんします。"
+            }
+          ],
+          "id": "fish-10",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pukat cincin dan koordinasi awak.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Pause when instructions conflict and confirm one clear command.",
+          "scenario": "Two crew members receive conflicting orders to start as the net is about to be hauled.",
+          "sections": [
+            {
+              "body": "A purse seine encircles a school of fish and closes below using a rope system designed for the gear. The operation involves coordinated vessel movement, nets, ropes, and auxiliary equipment. Crew members must not change position or step on the net to speed things up. Make sure signals and hauling routes are understood. Loads and fish movement can change quickly, so continue checking safe positions. The captain decides whether to pursue a school or stop operations according to conditions.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: Two crew members receive conflicting orders to start as the net is about to be hauled. Recommended decision: stop and clarify until there is one understood command. Follow an orderly process: listen to the operation plan and signals; keep the crew clear of the net and ropes; follow the closing sequence on command; check the equipment and report changes. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Dengarkan rencana dan sinyal operasi",
+            "Pastikan zona awak aman dari jaring tali",
+            "Ikuti urutan penutupan sesuai komando",
+            "Periksa alat serta laporkan perubahan"
+          ],
+          "title": "Purse Seines and Crew Coordination",
+          "vocabulary": [
+            {
+              "japanese": "まき網",
+              "meaning": "purse seine",
+              "reading": "まきあみ"
+            },
+            {
+              "japanese": "魚群",
+              "meaning": "school of fish",
+              "reading": "ぎょぐん"
+            },
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            },
+            {
+              "japanese": "連携",
+              "meaning": "coordination",
+              "reading": "れんけい"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "A load can move or fall; PPE does not eliminate the danger zone.",
+              "kind": "knowledge",
+              "options": [
+                "Yes, if you are wearing only a helmet",
+                "No; use the designated safe route",
+                "Yes, as long as you move quickly",
+                "Yes, if the catch is small"
+              ],
+              "prompt": "May you pass underneath suspended equipment or catch?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Prevent anyone from passing underneath and use the safe route as directed. A load can move or fall; PPE does not eliminate the danger zone.",
+              "kind": "case",
+              "options": [
+                "Prevent anyone from passing underneath and use the safe route as directed",
+                "Pass quickly beneath the load",
+                "Stand underneath and guide it with your head",
+                "Release the fastener without authorization"
+              ],
+              "prompt": "Scenario: A catch bag is suspended, and a crew member is about to walk beneath it. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "吊り荷 is read つりに and means a suspended load. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "net hauling",
+                "load",
+                "suspended load",
+                "bottom trawl"
+              ],
+              "prompt": "In this lesson, what does 吊り荷（つりに） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by checking the plan, specifications, and gear position. Then: Secure the load zone and communications → Follow hauling commands → Inspect the catch and gear for damage. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Follow hauling commands",
+                "Inspect the catch and gear for damage",
+                "Check the plan, specifications, and gear position",
+                "Secure the load zone and communications"
+              ],
+              "prompt": "In the workflow “Trawling and control of gear loads” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "底びき網を確認します。",
+              "meaning": "I will inspect the bottom trawl.",
+              "reading": "そこびきあみをかくにんします。"
+            }
+          ],
+          "id": "fish-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip trawl dan kendali muatan alat.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Prevent passage and use a safe route as directed.",
+          "scenario": "A catch bag is suspended overhead, and a crew member is about to pass beneath it.",
+          "sections": [
+            {
+              "body": "A trawl tows a net through the water according to the gear design and operating rules. Cables, otter boards, nets, and catch bags present risks from loads, swinging gear, and pinch points. Do not stand in the line of movement or beneath suspended equipment. Check gear, capacity, and signals before handling. Do not change basic specifications, operating areas, or fishing methods without approval. After hauling, inspect the catch and equipment, watching for hazardous fish or foreign objects.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A catch bag is suspended, and a crew member is about to pass beneath it. Recommended decision: prevent passage and use a safe route as directed. Follow an orderly process: check the gear specifications and equipment position; secure the suspended-load zone and communications; haul on command; inspect the catch and equipment for damage. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa rencana spesifikasi dan posisi alat",
+            "Amankan zona beban serta komunikasi",
+            "Ikuti penarikan sesuai komando",
+            "Periksa hasil dan kerusakan alat"
+          ],
+          "title": "Trawling and Gear-Load Control",
+          "vocabulary": [
+            {
+              "japanese": "底びき網",
+              "meaning": "bottom trawl",
+              "reading": "そこびきあみ"
+            },
+            {
+              "japanese": "曳網",
+              "meaning": "net hauling",
+              "reading": "えいもう"
+            },
+            {
+              "japanese": "荷重",
+              "meaning": "load",
+              "reading": "かじゅう"
+            },
+            {
+              "japanese": "吊り荷",
+              "meaning": "suspended load",
+              "reading": "つりに"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Sharp gear and moving lines must be controlled through safe positioning and procedures.",
+              "kind": "knowledge",
+              "options": [
+                "Punctures and pulling forces that can drag someone",
+                "Make fish always safe to eat",
+                "Replace the need for a life jacket",
+                "There is no risk if the line is small"
+              ],
+              "prompt": "What is the main risk from hooks and moving lines?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Stop nearby hazards and request assistance according to the injury procedure. Sharp gear and moving lines must be controlled through safe positioning and procedures.",
+              "kind": "case",
+              "options": [
+                "Pull it out forcefully with a line",
+                "Let the work continue",
+                "Cut your own skin",
+                "Stop nearby hazards and request assistance according to the injury procedure"
+              ],
+              "prompt": "Scenario: A hook becomes caught in a coworker's hand. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "延縄 is read はえなわ and means longline. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "bait",
+                "main longline",
+                "longline",
+                "hook"
+              ],
+              "prompt": "In this lesson, what does 延縄（はえなわ） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by checking hook lines and crew duties. Then: Prepare bait and safe positions → Set or haul on command → Secure used hooks and record injuries. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Secure used hooks and record injuries",
+                "Check hook lines and crew duties",
+                "Prepare bait and safe positions",
+                "Set or haul on command"
+              ],
+              "prompt": "In the workflow “Longlines, fishing lines, and hook hazards” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "延縄を確認します。",
+              "meaning": "I will inspect the longline.",
+              "reading": "はえなわをかくにんします。"
+            }
+          ],
+          "id": "fish-12",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip rawai, pancing, dan risiko kail.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Stop nearby hazards and request assistance under the injury procedure.",
+          "scenario": "A hook is caught in a coworker's hand.",
+          "sections": [
+            {
+              "body": "Longlines use a main line, branch lines, and many hooks; other fishing lines have different designs and operating methods. Sharp hooks and moving line create risks of puncture and entanglement. Prepare bait using suitable tools, positioning, and hygiene. Do not handle hooks or hazardous fish except with trained methods. Set and haul on command, keeping line clear of feet and clothing. Report hook injuries and provide the taught first aid; do not forcefully pull a hook out without assessment.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A hook is caught in a coworker's hand. Recommended decision: stop nearby hazards and request assistance under the injury procedure. Follow an orderly process: check the hook line and crew duties; prepare bait and a safe working position; cast or haul on command; secure used hooks and record the injury. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa tali kail dan tugas awak",
+            "Siapkan umpan serta posisi aman",
+            "Tebar atau tarik mengikuti komando",
+            "Amankan kail bekas dan catat cedera"
+          ],
+          "title": "Longlines, Fishing Lines, and Hook Hazards",
+          "vocabulary": [
+            {
+              "japanese": "延縄",
+              "meaning": "longline",
+              "reading": "はえなわ"
+            },
+            {
+              "japanese": "釣針",
+              "meaning": "hook",
+              "reading": "つりばり"
+            },
+            {
+              "japanese": "餌",
+              "meaning": "bait; feed",
+              "reading": "えさ"
+            },
+            {
+              "japanese": "幹縄",
+              "meaning": "longline mainline",
+              "reading": "みきなわ"
+            }
+          ]
+        }
+      ],
+      "title": "Capture Fisheries · Net and Line Fishing Methods",
+      "track": "capture"
+    },
+    {
+      "description": "Cooling, records, hazardous fish, and operating instructions.",
+      "id": "capture-products",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Low temperatures do not automatically remove chemical contaminants.",
+              "kind": "knowledge",
+              "options": [
+                "Yes, if there is plenty of ice",
+                "Yes, if the fish looks fresh",
+                "Yes, after changing the label",
+                "No; the affected product must be separated and assessed"
+              ],
+              "prompt": "Can chilling replace controls for fuel contamination?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Separate the affected catch and report it for a decision about the product. Low temperatures do not automatically remove chemical contaminants.",
+              "kind": "case",
+              "options": [
+                "Cover the smell with ice",
+                "Move the container label",
+                "Separate the affected catch and report it for a decision about the product",
+                "Wash it and mix it in without assessment"
+              ],
+              "prompt": "Scenario: A catch container is exposed to a fuel spill. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "氷 is read こおり and means ice. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "contamination",
+                "freshness",
+                "ice",
+                "cooling"
+              ],
+              "prompt": "In this lesson, what does 氷（こおり） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by checking the catch identity and using a clean container. Then: Handle it gently according to species → Chill it according to product procedures → Record the time and any deviations. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Check the catch identity and use a clean container",
+                "Handle it gently according to species",
+                "Chill it according to product procedures",
+                "Record the time and any deviations"
+              ],
+              "prompt": "In the workflow “Catch freshness, ice, and hygiene” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "鮮度を確認します。",
+              "meaning": "I will check freshness.",
+              "reading": "せんどをかくにんします。"
+            }
+          ],
+          "id": "fish-13",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kesegaran, es, dan kebersihan hasil tangkap.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Isolate the affected catch and report it for a product-safety decision.",
+          "scenario": "A catch container has been contaminated by a fuel spill.",
+          "sections": [
+            {
+              "body": "Freshness is affected by time, temperature, physical damage, and contamination. Use containers and ice suitable for their intended use; keep clean products away from fuel, waste, and dirty equipment. Cool products according to the species and facility method; one ice ratio does not fit every condition. A normal smell does not prove a product is safe. Spiny or hazardous fish require special handling. Isolate damaged or questionable catch for an authorized assessment before shipment.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A catch container has been contaminated by a fuel spill. Recommended decision: isolate the affected catch and report it for a product-safety decision. Follow an orderly process: verify the catch identity and clean container; handle gently according to species; cool according to product procedure; record the time and deviation. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa identitas hasil dan wadah bersih",
+            "Tangani lembut sesuai spesies",
+            "Dinginkan menurut prosedur produk",
+            "Catat waktu serta penyimpangan"
+          ],
+          "title": "Catch Freshness, Ice, and Hygiene",
+          "vocabulary": [
+            {
+              "japanese": "鮮度",
+              "meaning": "freshness",
+              "reading": "せんど"
+            },
+            {
+              "japanese": "氷",
+              "meaning": "ice",
+              "reading": "こおり"
+            },
+            {
+              "japanese": "冷却",
+              "meaning": "cooling",
+              "reading": "れいきゃく"
+            },
+            {
+              "japanese": "汚染",
+              "meaning": "contamination",
+              "reading": "おせん"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Net weight = 25 minus 5 = 20 kg in this calculation example.",
+              "kind": "knowledge",
+              "options": [
+                "125 kg",
+                "5 kg",
+                "20 kg",
+                "30 kg"
+              ],
+              "prompt": "What is the net weight when the gross weight is 25 kg and the container weighs 5 kg?"
+            },
+            {
+              "answer": 1,
+              "explanation": "After checking the data, record a net weight of 20 kg. Net weight = 25 minus 5 = 20 kg in this calculation example.",
+              "kind": "case",
+              "options": [
+                "Change the lot so the weight is higher",
+                "After checking the data, record a net weight of 20 kg",
+                "Record a net weight of 30 kg",
+                "Ignore the box"
+              ],
+              "prompt": "Scenario: The catch and its box weigh 25 kg gross, and the empty box weighs 5 kg. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "重量 is read じゅうりょう and means weight. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "sorting",
+                "landing of catch",
+                "weight",
+                "record"
+              ],
+              "prompt": "In this lesson, what does 重量（じゅうりょう） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by checking the sorting standard and lot. Then: Separate by species and grade → Weigh while accounting for the container → Label the catch and hand over complete records. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Separate by species and grade",
+                "Weigh while accounting for the container",
+                "Label the catch and hand over complete records",
+                "Check the sorting standard and lot"
+              ],
+              "prompt": "In the workflow “Sorting, net catch, and vessel traceability” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "選別を確認します。",
+              "meaning": "I will check the grading.",
+              "reading": "せんべつをかくにんします。"
+            }
+          ],
+          "id": "fish-14",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip sortasi, hasil bersih, dan keterlacakan kapal.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Record a net weight of 20 kg after checking the figures.",
+          "scenario": "The catch and its container weigh 25 kg gross; the empty container weighs 5 kg.",
+          "sections": [
+            {
+              "body": "Sort products by species, quality, size, and destination according to requirements. Weigh them using checked equipment and distinguish container weight from product weight. Lot identification links the vessel, time, area, and required handling. Do not mix questionable lots or change dates to meet a standard. Record bycatch and damage factually. Accurate information makes tracing easier if there is a complaint or product hold and supports handover to shore staff.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The catch and its container weigh 25 kg gross, and the empty container weighs 5 kg. Recommended decision: record a net weight of 20 kg after checking the figures. Follow an orderly process: check grading standards and lot; separate species and grades; weigh while accounting for the container; label the product and submit complete records. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa standar sortasi serta lot",
+            "Pisahkan jenis dan mutu",
+            "Timbang dengan memperhitungkan wadah",
+            "Labeli dan serahkan catatan lengkap"
+          ],
+          "title": "Sorting, Clean Products, and Vessel Traceability",
+          "vocabulary": [
+            {
+              "japanese": "選別",
+              "meaning": "grading",
+              "reading": "せんべつ"
+            },
+            {
+              "japanese": "水揚げ",
+              "meaning": "landing the catch",
+              "reading": "みずあげ"
+            },
+            {
+              "japanese": "重量",
+              "meaning": "weight",
+              "reading": "じゅうりょう"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "止まって means “stop”; carry it out using the equipment's safe shutdown procedure.",
+              "kind": "knowledge",
+              "options": [
+                "Discard the catch",
+                "Please stop",
+                "Increase speed",
+                "Start eating"
+              ],
+              "prompt": "What does 「止まってください」 mean as a work instruction?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Stop the equipment according to procedure and confirm the hazard. 止まって means “stop”; carry it out using the equipment's safe shutdown procedure.",
+              "kind": "case",
+              "options": [
+                "Stop the equipment according to procedure and confirm the hazard",
+                "Increase speed",
+                "Ignore it because no one was named",
+                "Turn off all equipment without coordinating"
+              ],
+              "prompt": "Scenario: You hear 「止まってください」 while equipment is operating. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "報告 is read ほうこく and means report. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "shutdown",
+                "hazard",
+                "report",
+                "instruction"
+              ],
+              "prompt": "In this lesson, what does 報告（ほうこく） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by listening to the command and identifying the task. Then: Repeat any unclear part → Proceed only after you understand it → Report results and hazardous conditions. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Proceed only after you understand it",
+                "Report results and hazardous conditions",
+                "Listen to the command and identify the task",
+                "Repeat any unclear part"
+              ],
+              "prompt": "In the workflow “Japanese instructions and reporting capture operations” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "指示を確認します。",
+              "meaning": "I will check the instructions.",
+              "reading": "しじをかくにんします。"
+            }
+          ],
+          "id": "fish-15",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip instruksi jepang dan laporan operasi tangkap.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Stop the operation under procedure and confirm the hazard.",
+          "scenario": "You hear 「止まってください」 (“Please stop”) while equipment is operating.",
+          "sections": [
+            {
+              "body": "Communication aboard a vessel should be brief and understood, especially commands to stop, warnings, directions, and crew locations. 止まって means “stop,” and 危険 means “danger.” If you do not hear an instruction, ask for it to be repeated; do not assume every shout means “speed up.” Reports include equipment condition, location, time, and actions taken. Learn Japanese alongside safe demonstrations and vessel drills; it does not replace navigation or radio training. Japanese is an important part of understanding questions in the official fisheries examination.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: You hear 「止まってください」 (“Please stop”) while equipment is operating. Recommended decision: stop under procedure and confirm the hazard. Follow an orderly process: listen to the command and identify the task; repeat any part that is unclear; act only once you understand; report the outcome and hazardous conditions. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Dengarkan perintah dan identifikasi tugas",
+            "Ulangi bagian yang belum jelas",
+            "Laksanakan hanya setelah dipahami",
+            "Laporkan hasil serta kondisi berbahaya"
+          ],
+          "title": "Japanese Instructions and Catch-Operation Reports",
+          "vocabulary": [
+            {
+              "japanese": "指示",
+              "meaning": "instruction",
+              "reading": "しじ"
+            },
+            {
+              "japanese": "停止",
+              "meaning": "shutdown",
+              "reading": "ていし"
+            },
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            }
+          ]
+        }
+      ],
+      "title": "Capture Fisheries · Catch Quality and Workplace Language",
+      "track": "capture"
+    },
+    {
+      "description": "Fed and unfed aquaculture, site selection, water parameters, and oxygen.",
+      "id": "aqua-general",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Shellfish and seaweed still require suitable environmental conditions and monitoring for their system.",
+              "kind": "knowledge",
+              "options": [
+                "No supplementary feed is given, but care is still required",
+                "It does not need water",
+                "It has no disease risk",
+                "No records are needed"
+              ],
+              "prompt": "What does a system without feeding mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Continue checking the environment, the organisms' condition, and the facilities. Shellfish and seaweed still require suitable environmental conditions and monitoring for their system.",
+              "kind": "case",
+              "options": [
+                "Stop all monitoring",
+                "Add fish feed indiscriminately",
+                "Remove the group identification",
+                "Continue checking the environment, the organisms' condition, and the facilities"
+              ],
+              "prompt": "Scenario: A coworker assumes shellfish do not need inspection because they are not fed. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "養殖 is read ようしょく and means aquaculture. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "without feeding",
+                "production",
+                "aquaculture",
+                "feeding"
+              ],
+              "prompt": "In this lesson, what does 養殖（ようしょく） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by identifying the species, system, and group. Then: Read the production-cycle plan → Carry out the scheduled care → Record changes and results. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Record changes and results",
+                "Identify the species, system, and group",
+                "Read the production-cycle plan",
+                "Carry out the scheduled care"
+              ],
+              "prompt": "In the workflow “Aquaculture systems and production cycles” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "養殖を確認します。",
+              "meaning": "I will check the aquaculture operation.",
+              "reading": "ようしょくをかくにんします。"
+            }
+          ],
+          "id": "fish-16",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip sistem budi daya dan siklus produksi.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Continue checking the environment, organisms, and facilities.",
+          "scenario": "A coworker assumes shellfish need no checks because they are not fed.",
+          "sections": [
+            {
+              "body": "Aquaculture raises organisms through management of stock, environment, maintenance, harvesting, and production records. Fed systems, as used for many fish, differ from systems without feed, such as seaweed and some shellfish. No supplemental feed does not mean no monitoring or risk. The organism and site conditions determine the method; one procedure cannot be applied to every species. Before making changes, workers must understand the rearing unit, lot identity, equipment, and limits of their authority.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A coworker assumes shellfish need no checks because they are not fed. Recommended decision: continue checking the environment, organisms, and facilities. Follow an orderly process: identify the species, system, and lot; review the production-cycle plan; maintain stock according to the designated procedure; record changes and results. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Identifikasi spesies sistem dan kelompok",
+            "Baca rencana siklus produksi",
+            "Kerjakan pemeliharaan sesuai jalur",
+            "Catat perubahan dan hasil"
+          ],
+          "title": "Aquaculture Systems and the Production Cycle",
+          "vocabulary": [
+            {
+              "japanese": "養殖",
+              "meaning": "aquaculture",
+              "reading": "ようしょく"
+            },
+            {
+              "japanese": "給餌",
+              "meaning": "feeding",
+              "reading": "きゅうじ"
+            },
+            {
+              "japanese": "無給餌",
+              "meaning": "without supplemental feeding",
+              "reading": "むきゅうじ"
+            },
+            {
+              "japanese": "生産",
+              "meaning": "production",
+              "reading": "せいさん"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Swimming ability does not replace the risk controls required for work in or under water.",
+              "kind": "knowledge",
+              "options": [
+                "Yes, if the worker is a good swimmer",
+                "Yes, if it is only for a short time",
+                "Yes, without emergency equipment",
+                "No; specific training, authorization, and procedures are required"
+              ],
+              "prompt": "May a worker dive spontaneously to repair equipment?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Restrict risky activity and report the issue for coordinated handling. Swimming ability does not replace the risk controls required for work in or under water.",
+              "kind": "case",
+              "options": [
+                "Tie yourself to the fish cage",
+                "Ignore it until the stem breaks",
+                "Restrict risky activity and report the issue for coordinated handling",
+                "Enter the water alone"
+              ],
+              "prompt": "Scenario: A fish-cage fastening is damaged and the current is strengthening. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "生簀 is read いけす and means fish cage. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "mooring",
+                "facility",
+                "fish cage",
+                "ocean current"
+              ],
+              "prompt": "In this lesson, what does 生簀（いけす） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by checking access equipment and weather. Then: Inspect the facilities and water routes → Report damage before risky operations → Follow repairs by authorized personnel. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Check access equipment and weather",
+                "Inspect the facilities and water routes",
+                "Report damage before risky operations",
+                "Follow repairs by authorized personnel"
+              ],
+              "prompt": "In the workflow “Sites, facilities, currents, and safe access” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "施設を確認します。",
+              "meaning": "I will inspect the facilities.",
+              "reading": "しせつをかくにんします。"
+            }
+          ],
+          "id": "fish-17",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip lokasi, sarana, arus, dan keamanan akses.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Restrict risky activity and report the issue for coordinated handling.",
+          "scenario": "A cage mooring is damaged as the current strengthens.",
+          "sections": [
+            {
+              "body": "The location of a pond, tank, or cage affects water exchange, work access, exposure to contaminants, and weather risks. Inspect facilities according to their design, including walkways, barriers, floats, moorings, and emergency equipment. Do not enter the water or dive to repair equipment without authorization and a specific procedure. A small-looking defect can worsen under current or load. Record the affected unit and report it before continuing work that could expose people or stock to danger.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A cage mooring is damaged as the current strengthens. Recommended decision: restrict risky activity and report the issue for coordinated handling. Follow an orderly process: check the unit, access, and weather; inspect the facilities and water routes; report damage before hazardous operations; leave repairs to authorized staff. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa unit akses dan cuaca",
+            "Amati sarana serta jalur air",
+            "Laporkan kerusakan sebelum operasi berisiko",
+            "Ikuti perbaikan oleh petugas berwenang"
+          ],
+          "title": "Site, Facilities, Currents, and Safe Access",
+          "vocabulary": [
+            {
+              "japanese": "施設",
+              "meaning": "facility",
+              "reading": "しせつ"
+            },
+            {
+              "japanese": "生簀",
+              "meaning": "cage",
+              "reading": "いけす"
+            },
+            {
+              "japanese": "潮流",
+              "meaning": "ocean current",
+              "reading": "ちょうりゅう"
+            },
+            {
+              "japanese": "係留",
+              "meaning": "mooring",
+              "reading": "けいりゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Water conditions can vary by location and time, so measurement context matters.",
+              "kind": "knowledge",
+              "options": [
+                "Determine fish color",
+                "Eliminate every disease",
+                "So changes can be compared accurately",
+                "Replace equipment calibration"
+              ],
+              "prompt": "Why are the time and location of water measurements recorded?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Report the issue immediately and follow the water-quality response plan. Water conditions can vary by location and time, so measurement context matters.",
+              "kind": "case",
+              "options": [
+                "Add medicine yourself",
+                "Report the issue immediately and follow the water-quality response plan",
+                "Add as much feed as possible",
+                "Turn off all aeration"
+              ],
+              "prompt": "Scenario: Fish are gathering at the surface and the oxygen reading has fallen below its usual range. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "塩分 is read えんぶん and means salinity. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "dissolved oxygen",
+                "water quality",
+                "salinity",
+                "measurement"
+              ],
+              "prompt": "In this lesson, what does 塩分（えんぶん） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by checking the equipment and sampling point. Then: Measure the parameter and record the time → Compare it with the species target → Report deviations and follow the response plan. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Measure the parameter and record the time",
+                "Compare it with the species target",
+                "Report deviations and follow the response plan",
+                "Check the equipment and sampling point"
+              ],
+              "prompt": "In the workflow “Water parameters and dissolved oxygen” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "溶存酸素を確認します。",
+              "meaning": "I will check the dissolved-oxygen level.",
+              "reading": "ようぞんさんそをかくにんします。"
+            }
+          ],
+          "id": "fish-18",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip parameter air dan oksigen terlarut.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Report immediately and carry out the water-quality response plan.",
+          "scenario": "Fish are gathering at the surface, and oxygen readings have dropped below the usual pattern.",
+          "sections": [
+            {
+              "body": "Monitor temperature, dissolved oxygen, pH, salinity, and waste parameters according to the species and system. A single reading does not describe the whole condition. Check or calibrate measuring equipment according to its manual, and record the sample location and time so results can be compared. Fish gathering at the surface or changes in consumption may signal a problem, but diagnosis requires data. Oxygen targets and corrective actions follow the facility plan, not a universal number; do not add chemicals based on a guess.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: Fish are gathering at the surface, and oxygen readings have dropped below the usual pattern. Recommended decision: report immediately and follow the water-quality response plan. Follow an orderly process: check the equipment and sampling point; measure and record the time and parameter; compare results with the species target; report deviations and follow the response plan. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa alat serta titik sampel",
+            "Ukur dan catat waktu parameter",
+            "Bandingkan dengan target spesies",
+            "Laporkan penyimpangan dan ikuti respons"
+          ],
+          "title": "Water Parameters and Dissolved Oxygen",
+          "vocabulary": [
+            {
+              "japanese": "溶存酸素",
+              "meaning": "dissolved oxygen",
+              "reading": "ようぞんさんそ"
+            },
+            {
+              "japanese": "水質",
+              "meaning": "water quality",
+              "reading": "すいしつ"
+            },
+            {
+              "japanese": "塩分",
+              "meaning": "salinity",
+              "reading": "えんぶん"
+            },
+            {
+              "japanese": "測定",
+              "meaning": "measurement",
+              "reading": "そくてい"
+            }
+          ]
+        }
+      ],
+      "title": "Aquaculture · Systems, Sites, and Water Quality",
+      "track": "aquaculture"
+    },
+    {
+      "description": "Temperature, acclimation, juvenile reception, count records, and grading.",
+      "id": "aqua-stock",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Acclimatization should be adjusted to the species and the transport and destination conditions.",
+              "kind": "knowledge",
+              "options": [
+                "Temperature has no effect",
+                "A sudden change can cause stress",
+                "All organisms are resistant to change",
+                "Transport water is always sterile"
+              ],
+              "prompt": "Why is it risky to release seed stock directly into a different environment?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not release the stock immediately; follow the acclimatization procedure. Acclimatization should be adjusted to the species and the transport and destination conditions.",
+              "kind": "case",
+              "options": [
+                "Do not release the stock immediately; follow the acclimatization procedure",
+                "Pour everything in at once",
+                "Add hot water as you wish",
+                "Ignore the difference"
+              ],
+              "prompt": "Scenario: The water in the transport container is at a very different temperature from the destination unit. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "変化 is read へんか and means change. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "acclimatization",
+                "transport",
+                "change",
+                "water temperature"
+              ],
+              "prompt": "In this lesson, what does 変化（へんか） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by checking the organisms' condition and origin data. Then: Compare the destination environment → Acclimatize according to the SOP → Record transfers and abnormalities. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Acclimatize according to the SOP",
+                "Record transfers and abnormalities",
+                "Check the organisms' condition and origin data",
+                "Compare the destination environment"
+              ],
+              "prompt": "In the workflow “Temperature, sudden changes, and acclimatization” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "水温を確認します。",
+              "meaning": "I will check the water temperature.",
+              "reading": "すいおんをかくにんします。"
+            }
+          ],
+          "id": "fish-19",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip suhu, perubahan mendadak, dan aklimatisasi.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Do not release the stock immediately; follow the acclimation procedure.",
+          "scenario": "The transport container water and receiving unit have very different temperatures.",
+          "sections": [
+            {
+              "body": "Sudden changes in temperature or salinity can cause stress. Receiving organisms from another site requires an acclimation procedure suited to the species, size, and transport system. Do not pour all transport water into the culture unit without following biosecurity procedures. Check the container, arrival time, environmental data, and lot status. If mortality or distress is present, stop any unsafe transfer and ask for direction. There is no single acclimation duration that applies to every organism.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The transport-container water and receiving unit differ greatly in temperature. Recommended decision: do not release the stock immediately; follow the acclimation procedure. Follow an orderly process: check the organisms and source records; compare conditions in the receiving environment; acclimate according to SOP; record the transfer and any abnormalities. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa kondisi organisme dan data asal",
+            "Bandingkan lingkungan tujuan",
+            "Lakukan aklimatisasi sesuai SOP",
+            "Catat pemindahan dan kelainan"
+          ],
+          "title": "Temperature, Sudden Changes, and Acclimation",
+          "vocabulary": [
+            {
+              "japanese": "水温",
+              "meaning": "water temperature",
+              "reading": "すいおん"
+            },
+            {
+              "japanese": "馴致",
+              "meaning": "acclimation",
+              "reading": "じゅんち"
+            },
+            {
+              "japanese": "輸送",
+              "meaning": "transport",
+              "reading": "ゆそう"
+            },
+            {
+              "japanese": "変化",
+              "meaning": "change",
+              "reading": "へんか"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Traceability begins when organisms are received and transferred.",
+              "kind": "knowledge",
+              "options": [
+                "Link the origin and condition to the correct group",
+                "Replace all observations",
+                "Determine the weather",
+                "Remove the need for biosecurity"
+              ],
+              "prompt": "What is the purpose of a seed-stock lot record?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Keep the incoming stock separate and confirm its identity before mixing it. Traceability begins when organisms are received and transferred.",
+              "kind": "case",
+              "options": [
+                "Mix it first to save time",
+                "Change the label yourself",
+                "Discard the documents",
+                "Keep the incoming stock separate and confirm its identity before mixing it"
+              ],
+              "prompt": "Scenario: The seed-stock label does not match the shipping documents. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "種苗 is read しゅびょう and means seed stock. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "origin",
+                "group",
+                "seed stock",
+                "receipt"
+              ],
+              "prompt": "In this lesson, what does 種苗（しゅびょう） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by matching the lot and species on the documents. Then: Check quantity, size, and condition → Place the stock according to the receiving procedure → Record its origin and destination unit. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Record its origin and destination unit",
+                "Match the lot and species on the documents",
+                "Check quantity, size, and condition",
+                "Place the stock according to the receiving procedure"
+              ],
+              "prompt": "In the workflow “Receiving seed stock and identifying groups” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "種苗を確認します。",
+              "meaning": "I will check the juvenile stock.",
+              "reading": "しゅびょうをかくにんします。"
+            }
+          ],
+          "id": "fish-20",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip penerimaan benih dan identitas kelompok.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Keep the delivery separate and confirm its identity before mixing it with other stock.",
+          "scenario": "The juvenile-stock label does not match the shipping documents.",
+          "sections": [
+            {
+              "body": "Check the origin, species, size, quantity, condition, and required documents for incoming juvenile stock. Confirm any mismatch between the label and contents before mixing the stock. Biosecurity may require separation, a health assessment, or other facility procedures. Do not assume that organisms from the same supplier all have the same status. Lot records help monitor growth, mortality, and treatments. Handle stock gently with suitable equipment to limit physical damage and time outside safe conditions.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The juvenile-stock label does not match the shipping documents. Recommended decision: keep the delivery separate and confirm its identity before mixing it with other stock. Follow an orderly process: match the lot and species to the documents; check quantity, size, and condition; place the stock according to receiving procedures; record its origin and receiving unit. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Cocokkan dokumen lot dan spesies",
+            "Periksa jumlah ukuran serta kondisi",
+            "Tempatkan sesuai prosedur penerimaan",
+            "Catat asal dan unit tujuan"
+          ],
+          "title": "Receiving Juveniles and Identifying Lots",
+          "vocabulary": [
+            {
+              "japanese": "種苗",
+              "meaning": "juvenile stock",
+              "reading": "しゅびょう"
+            },
+            {
+              "japanese": "受入れ",
+              "meaning": "intake",
+              "reading": "うけいれ"
+            },
+            {
+              "japanese": "由来",
+              "meaning": "origin",
+              "reading": "ゆらい"
+            },
+            {
+              "japanese": "群",
+              "meaning": "lot; group",
+              "reading": "むれ"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Sample count = 1,000 minus 20 minus 100 = 880, assuming there are no other changes.",
+              "kind": "knowledge",
+              "options": [
+                "1,080 organisms",
+                "920 organisms",
+                "1,120 organisms",
+                "880 organisms"
+              ],
+              "prompt": "How many remain from 1,000 organisms after 20 die and 100 are moved?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Record the remaining count as 880, as in the example. Sample count = 1,000 minus 20 minus 100 = 880, assuming there are no other changes.",
+              "kind": "case",
+              "options": [
+                "Delete the mortality data",
+                "Continue to record 1,000 organisms",
+                "Record the remaining count as 880, as in the example",
+                "Record 1,120 organisms"
+              ],
+              "prompt": "Scenario: A sample unit contains 1,000 organisms; 20 die and 100 are moved, with no additions. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "選別 is read せんべつ and means grading or sorting. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "growth",
+                "density",
+                "grading or sorting",
+                "number of fish"
+              ],
+              "prompt": "In this lesson, what does 選別（せんべつ） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by reading the stock count and target density. Then: Check sizes and grading needs → Separate stock according to the SOP → Update the count and group unit. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Read the stock count and target density",
+                "Check sizes and grading needs",
+                "Separate stock according to the SOP",
+                "Update the count and group unit"
+              ],
+              "prompt": "In the workflow “Stocking density, grading, and counting” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "密度を確認します。",
+              "meaning": "I will check the stocking density.",
+              "reading": "みつどをかくにんします。"
+            }
+          ],
+          "id": "fish-21",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kepadatan, grading, dan penghitungan jumlah.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Record 880 fish remaining in this example.",
+          "scenario": "A sample unit held 1,000 fish; 20 died and 100 were moved out, with none added.",
+          "sections": [
+            {
+              "body": "Stocking density affects access to feed, water quality, growth, and stress risk. Targets depend on species, size, facilities, and water-management capacity. When needed, grading separates size groups using suitable equipment and handling times. Calculate live counts from starting data, additions, transfers, and recorded mortalities; distinguish estimates from exact counts. Do not increase density just because space appears available or omit mortalities to make records look better.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A sample unit held 1,000 fish; 20 died and 100 were moved out, with none added. Recommended decision: record 880 remaining in this example. Follow an orderly process: review the count and target density; check size and whether grading is needed; separate the fish according to SOP; update the count and lot unit. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Baca jumlah serta target kepadatan",
+            "Periksa ukuran dan kebutuhan grading",
+            "Tangani pemisahan sesuai SOP",
+            "Perbarui jumlah dan unit kelompok"
+          ],
+          "title": "Stocking Density, Grading, and Counting",
+          "vocabulary": [
+            {
+              "japanese": "密度",
+              "meaning": "stocking density",
+              "reading": "みつど"
+            },
+            {
+              "japanese": "選別",
+              "meaning": "grading; sorting by size",
+              "reading": "せんべつ"
+            },
+            {
+              "japanese": "尾数",
+              "meaning": "number of fish",
+              "reading": "びすう"
+            },
+            {
+              "japanese": "成長",
+              "meaning": "growth",
+              "reading": "せいちょう"
+            }
+          ]
+        }
+      ],
+      "title": "Aquaculture · Stock, Density, and Growth",
+      "track": "aquaculture"
+    },
+    {
+      "description": "Feeding response, biomass, sample ration calculations, disease, and biosecurity.",
+      "id": "aqua-feed",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Actual feed amounts must account for feeding response and system conditions.",
+              "kind": "knowledge",
+              "options": [
+                "Replace the need for oxygen",
+                "Guarantee unlimited growth",
+                "Uneaten feed can worsen environmental quality",
+                "Always eliminate disease"
+              ],
+              "prompt": "What is a possible result of overfeeding?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Report the change and follow approved adjustments based on conditions. Actual feed amounts must account for feeding response and system conditions.",
+              "kind": "case",
+              "options": [
+                "Ignore the water-quality records",
+                "Report the change and follow approved adjustments based on conditions",
+                "Double the amount",
+                "Cover leftovers with new feed"
+              ],
+              "prompt": "Scenario: Feeding response has declined and a lot of feed remains uneaten. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "残餌 is read ざんじ and means uneaten feed. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "feed",
+                "feeding activity",
+                "leftover feed",
+                "storage"
+              ],
+              "prompt": "In this lesson, what does 残餌（ざんじ） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by checking the feed plan and water conditions. Then: Confirm feed quality and group → Feed according to the SOP while observing the response → Record the amount actually fed, leftovers, and any changes. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Confirm feed quality and group",
+                "Feed according to the SOP while observing the response",
+                "Record the amount actually fed, leftovers, and any changes",
+                "Check the feed plan and water conditions"
+              ],
+              "prompt": "In the workflow “Feeding and feeding response” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "飼料を確認します。",
+              "meaning": "I will check the feed.",
+              "reading": "しりょうをかくにんします。"
+            }
+          ],
+          "id": "fish-22",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemberian pakan dan respons makan.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Report the issue and follow adjustments approved for the conditions.",
+          "scenario": "Feeding response has declined, and a lot of feed remains uneaten.",
+          "sections": [
+            {
+              "body": "Choose feed according to species, size, life stage, and production plan. Water conditions, weather, health, and feeding response affect daily feeding. Excess feed does not reliably speed growth; leftovers may worsen the environment. Store labeled feed protected from water and pests. Do not use moldy products or administer medication without authorization. Record the amount actually given and the organisms' response, not just the planned ration. Report reduced feeding response together with environmental data.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: Feeding response has declined, and much feed remains uneaten. Recommended decision: report the change and follow adjustments approved for the conditions. Follow an orderly process: check the feed plan and water conditions; confirm feed quality and lot; feed according to SOP while observing the response; record actual leftovers and changes. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa rencana pakan dan kondisi air",
+            "Pastikan mutu pakan serta kelompok",
+            "Berikan sesuai SOP sambil mengamati respons",
+            "Catat aktual sisa dan perubahan"
+          ],
+          "title": "Feeding and Feeding Response",
+          "vocabulary": [
+            {
+              "japanese": "飼料",
+              "meaning": "feed",
+              "reading": "しりょう"
+            },
+            {
+              "japanese": "摂餌",
+              "meaning": "feeding activity",
+              "reading": "せつじ"
+            },
+            {
+              "japanese": "残餌",
+              "meaning": "leftover feed",
+              "reading": "ざんじ"
+            },
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "20 multiplied by 0.02 equals 0.4 kg. The actual percentage must follow the plan for the species and conditions.",
+              "kind": "knowledge",
+              "options": [
+                "0.04 kg",
+                "0.4 kg",
+                "4 kg",
+                "40 kg"
+              ],
+              "prompt": "What is 2 percent of a 20 kg biomass?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Calculate 0.4 kg of feed and confirm the actual plan. 20 multiplied by 0.02 equals 0.4 kg. The actual percentage must follow the plan for the species and conditions.",
+              "kind": "case",
+              "options": [
+                "Calculate 0.4 kg of feed and confirm the actual plan",
+                "Calculate 40 kg",
+                "Assume 2 kg is always correct",
+                "Change kilograms to number of fish"
+              ],
+              "prompt": "Scenario: The sample biomass is 20 kg and the practice plan calls for 2 percent per day. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "割合 is read わりあい and means percentage or proportion. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "average",
+                "feed amount",
+                "percentage or proportion",
+                "fish body weight"
+              ],
+              "prompt": "In this lesson, what does 割合（わりあい） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by checking the number of live organisms and sample weight data. Then: Calculate biomass using the correct units → Use the confirmed planned percentage → Check and record the actual amount fed. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Use the confirmed planned percentage",
+                "Check and record the actual amount fed",
+                "Check the number of live organisms and sample weight data",
+                "Calculate biomass using the correct units"
+              ],
+              "prompt": "In the workflow “Biomass and feed calculation practice” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "魚体重を確認します。",
+              "meaning": "I will check the fish's body weight.",
+              "reading": "ぎょたいじゅうをかくにんします。"
+            }
+          ],
+          "id": "fish-23",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip biomassa dan latihan menghitung pakan.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Calculate 0.4 kg of feed and confirm the actual plan.",
+          "scenario": "Sample biomass is 20 kg, and the practice plan uses 2 percent per day.",
+          "sections": [
+            {
+              "body": "Biomass is the estimated total weight of organisms in a unit. Sample measurements must follow the specified method so the largest individuals are not selectively chosen. For example, 100 fish with an average weight of 0.2 kilograms give a biomass of 20 kilograms. If a practice plan uses 2 percent of biomass per day, the calculation is 0.4 kilograms of feed. This is a math example, not a recommendation for every species or condition. Confirm units, live count, sampling method, and the actual plan before feeding.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: Sample biomass is 20 kg, and the practice plan uses 2 percent per day. Recommended decision: calculate 0.4 kg of feed and confirm the actual plan. Follow an orderly process: check live-stock counts and sample-weight data; calculate biomass using the correct units; use the confirmed plan percentage; double-check and record the amount actually fed. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa jumlah hidup dan data berat sampel",
+            "Hitung biomassa dengan satuan tepat",
+            "Gunakan persentase rencana yang dikonfirmasi",
+            "Periksa ulang dan catat pemberian aktual"
+          ],
+          "title": "Biomass and Feed-Calculation Practice",
+          "vocabulary": [
+            {
+              "japanese": "魚体重",
+              "meaning": "fish body weight",
+              "reading": "ぎょたいじゅう"
+            },
+            {
+              "japanese": "平均",
+              "meaning": "average",
+              "reading": "へいきん"
+            },
+            {
+              "japanese": "給餌量",
+              "meaning": "feed amount",
+              "reading": "きゅうじりょう"
+            },
+            {
+              "japanese": "割合",
+              "meaning": "percentage; proportion",
+              "reading": "わりあい"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Symptoms can have many causes; treatment and product safety require an authorized decision.",
+              "kind": "knowledge",
+              "options": [
+                "Assessment by an authorized person based on data",
+                "Guess based on one photo",
+                "Use medication intended for another group",
+                "Mix all substances"
+              ],
+              "prompt": "What should be done before selecting medication for a new symptom?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Report immediately with the unit, time, symptoms, and water-quality data. Symptoms can have many causes; treatment and product safety require an authorized decision.",
+              "kind": "case",
+              "options": [
+                "Give leftover medication without instructions",
+                "Dispose of carcasses in another unit",
+                "Delete the mortality count",
+                "Report immediately with the unit, time, symptoms, and water-quality data"
+              ],
+              "prompt": "Scenario: Mortality has risen sharply and several fish are swimming abnormally. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "疾病 is read しっぺい and means disease. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "symptom",
+                "diagnosis",
+                "disease",
+                "mortality"
+              ],
+              "prompt": "In this lesson, what does 疾病（しっぺい） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by observing the group and recording symptoms. Then: Check water data and history → Report the issue for authorized assessment → Follow controls and mortality-handling procedures. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Follow controls and mortality-handling procedures",
+                "Observe the group and record symptoms",
+                "Check water data and history",
+                "Report them for assessment by authorized personnel"
+              ],
+              "prompt": "In the workflow “Disease symptoms and mortality” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "疾病を確認します。",
+              "meaning": "I will check for signs of disease.",
+              "reading": "しっぺいをかくにんします。"
+            }
+          ],
+          "id": "fish-24",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip gejala penyakit dan mortalitas.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Report immediately with the unit, time, symptoms, and water-quality data.",
+          "scenario": "Mortality has risen sharply, and some fish are swimming abnormally.",
+          "sections": [
+            {
+              "body": "Monitor changes in swimming, appetite, color, lesions, and mortality together with water quality and lot history. Symptoms alone are not enough to diagnose a disease or choose medication. Record mortality by unit and time; handle dead organisms under facility procedures to avoid spreading a problem. Separate equipment or lots as directed. Medication requires authorization and records, and the product's applicable use limits must be followed. Do not ship products with unconfirmed status just because they look normal externally.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: Mortality has risen sharply, and some fish are swimming abnormally. Recommended decision: report immediately with the unit, time, symptoms, and water-quality data. Follow an orderly process: observe the group and record symptoms; check water data and history; report for assessment by authorized staff; follow controls and mortal-fish handling procedures. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Amati kelompok dan catat gejala",
+            "Periksa data air serta riwayat",
+            "Laporkan untuk penilaian berwenang",
+            "Ikuti pengendalian dan penanganan kematian"
+          ],
+          "title": "Disease Signs and Mortality",
+          "vocabulary": [
+            {
+              "japanese": "疾病",
+              "meaning": "disease",
+              "reading": "しっぺい"
+            },
+            {
+              "japanese": "死亡",
+              "meaning": "mortality",
+              "reading": "しぼう"
+            },
+            {
+              "japanese": "症状",
+              "meaning": "symptom",
+              "reading": "しょうじょう"
+            },
+            {
+              "japanese": "診断",
+              "meaning": "diagnosis",
+              "reading": "しんだん"
+            }
+          ]
+        }
+      ],
+      "title": "Aquaculture · Feed and Health",
+      "track": "aquaculture"
+    },
+    {
+      "description": "Cage nets, fouling, shellfish care, and unfed aquaculture.",
+      "id": "aqua-systems",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Net maintenance supports water flow and facility integrity.",
+              "kind": "knowledge",
+              "options": [
+                "Always provide enough feed",
+                "Replace the net",
+                "Guarantee that fish do not become ill",
+                "Can reduce water exchange and increase the load"
+              ],
+              "prompt": "Why are organisms attached to nets monitored?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Report the issue and follow the safety plan; do not enter the water spontaneously. Net maintenance supports water flow and facility integrity.",
+              "kind": "case",
+              "options": [
+                "Ignore it until harvest",
+                "Add chemicals at random",
+                "Report the issue and follow the safety plan; do not enter the water spontaneously",
+                "Dive in and repair it yourself"
+              ],
+              "prompt": "Scenario: A tear in a net is detected as the weather worsens. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "付着生物 is read ふちゃくせいぶつ and means attached organisms. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "replacement",
+                "net",
+                "attached organisms",
+                "damage"
+              ],
+              "prompt": "In this lesson, what does 付着生物（ふちゃくせいぶつ） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by checking net fastenings and safe access. Then: Record tears and attached growth → Coordinate maintenance according to the SOP → Inspect the unit and count after the work. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Check net fastenings and safe access",
+                "Record tears and attached growth",
+                "Coordinate maintenance according to the SOP",
+                "Inspect the unit and count after the work"
+              ],
+              "prompt": "In the workflow “Fish cages, nets, and control of attached organisms” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "網を確認します。",
+              "meaning": "I will inspect the net.",
+              "reading": "あみをかくにんします。"
+            }
+          ],
+          "id": "fish-25",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip keramba, jaring, dan pengendalian organisme penempel.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Report it and follow the rescue plan; do not enter the water spontaneously.",
+          "scenario": "A net tear is detected as the weather worsens.",
+          "sections": [
+            {
+              "body": "Cage nets keep stock in the unit while allowing water exchange. Tears create an escape risk, while fouling can reduce water exchange and add weight. Using safe methods, inspect the net, connections, floats, ropes, and surrounding conditions. Clean or replace equipment according to the plan to avoid exposing stock to stress or contaminants. Do not dive or apply antifouling substances without training and authorization. Record damage and actions against the correct unit.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A net tear is detected as the weather worsens. Recommended decision: report it and follow the securing plan; do not enter the water spontaneously. Follow an orderly process: inspect net ties and safe access; record the tear and fouling; coordinate maintenance according to SOP; check the unit and stock count afterward. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa jaring pengikat dan akses aman",
+            "Catat robekan serta penempel",
+            "Koordinasikan perawatan sesuai SOP",
+            "Periksa unit dan jumlah setelah tindakan"
+          ],
+          "title": "Cages, Nets, and Fouling Control",
+          "vocabulary": [
+            {
+              "japanese": "網",
+              "meaning": "net",
+              "reading": "あみ"
+            },
+            {
+              "japanese": "付着生物",
+              "meaning": "fouling organisms",
+              "reading": "ふちゃくせいぶつ"
+            },
+            {
+              "japanese": "破損",
+              "meaning": "damage",
+              "reading": "はそん"
+            },
+            {
+              "japanese": "交換",
+              "meaning": "replacement",
+              "reading": "こうかん"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Environmental hazards or biotoxins cannot be assessed by appearance alone.",
+              "kind": "knowledge",
+              "options": [
+                "Yes, after rinsing",
+                "Yes, if the buyer agrees",
+                "No; the area status and harvest requirements must be followed",
+                "Yes, always"
+              ],
+              "prompt": "Does a normal-looking shell prove shellfish are safe when the area is closed?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Stop harvesting as required and confirm the status. Environmental hazards or biotoxins cannot be assessed by appearance alone.",
+              "kind": "case",
+              "options": [
+                "Change the origin date",
+                "Stop harvesting as required and confirm the status",
+                "Harvest it and wash it to make it safe",
+                "Mix it with shellfish from another area without a label"
+              ],
+              "prompt": "Scenario: An official notice closes the shellfish harvesting area. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "採苗 is read さいびょう and means seed collection. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "shellfish",
+                "filtering",
+                "seed collection",
+                "water area"
+              ],
+              "prompt": "In this lesson, what does 採苗（さいびょう） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by checking the area status and shellfish lot. Then: Observe the facilities and growth conditions → Harvest only as permitted and planned → Record origin, time, and handling. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Observe the facilities and growth conditions",
+                "Harvest only as permitted and planned",
+                "Record origin, time, and handling",
+                "Check the area status and shellfish lot"
+              ],
+              "prompt": "In the workflow “Shellfish, natural feed, and harvesting areas” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "貝類を確認します。",
+              "meaning": "I will inspect the shellfish.",
+              "reading": "かいるいをかくにんします。"
+            }
+          ],
+          "id": "fish-26",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kerang, pakan alami, dan area panen.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Stop harvesting as required and confirm the status.",
+          "scenario": "An official notice announces a harvest closure in the shellfish area.",
+          "sections": [
+            {
+              "body": "Many shellfish feed by filtering particles from water, so site quality is critical. Systems without supplemental feed still require juvenile stock and facilities, growth and density monitoring, and assessment of environmental risks. Follow harvest-area closures and biotoxin warnings; washing shellfish does not automatically remove every hazard. Do not judge safety only by whether the shells look normal. Move, harvest, and ship stock according to area status and facility plans, maintaining lot identification.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: An official notice closes the shellfish harvest area. Recommended decision: stop harvesting as required and confirm the area's status. Follow an orderly process: check the area and shellfish-lot status; observe facilities and growth conditions; harvest only as permitted and planned; record origin, time, and handling. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa status area serta lot kerang",
+            "Amati sarana dan kondisi pertumbuhan",
+            "Panen hanya sesuai izin serta rencana",
+            "Catat asal waktu dan penanganan"
+          ],
+          "title": "Shellfish, Natural Feed, and Harvest Areas",
+          "vocabulary": [
+            {
+              "japanese": "貝類",
+              "meaning": "shellfish",
+              "reading": "かいるい"
+            },
+            {
+              "japanese": "濾過",
+              "meaning": "filter feeding; filtration",
+              "reading": "ろか"
+            },
+            {
+              "japanese": "採苗",
+              "meaning": "juvenile-stock collection",
+              "reading": "さいびょう"
+            },
+            {
+              "japanese": "海域",
+              "meaning": "water area",
+              "reading": "かいいき"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Photosynthesis and growth depend on the environment; specific needs vary by crop.",
+              "kind": "knowledge",
+              "options": [
+                "Water with no exchange ever",
+                "Light and water conditions suited to the species",
+                "Fish feed for every species",
+                "No monitoring is needed"
+              ],
+              "prompt": "Besides facilities, what does seaweed need?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Record and report the conditions for environmental assessment and maintenance. Photosynthesis and growth depend on the environment; specific needs vary by crop.",
+              "kind": "case",
+              "options": [
+                "Record and report the conditions for environmental assessment and maintenance",
+                "Add fish feed",
+                "Spray medication without authorization",
+                "Ignore it because seaweed is not fed"
+              ],
+              "prompt": "Scenario: Seaweed changes color and attached growth increases on a crowded unit. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "収穫 is read しゅうかく and means harvest. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "light",
+                "grow-out maintenance",
+                "harvest",
+                "seaweed"
+              ],
+              "prompt": "In this lesson, what does 収穫（しゅうかく） mean?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Start by checking the species, growth stage, and lines. Then: Observe environmental conditions and density → Maintain the crop according to its plan → Record growth and changes in the thalli. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Maintain the crop according to its plan",
+                "Record growth and changes in the thalli",
+                "Check the species, growth stage, and lines",
+                "Observe environmental conditions and density"
+              ],
+              "prompt": "In the workflow “Seaweed, light, and line maintenance” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "海藻を確認します。",
+              "meaning": "I will inspect the seaweed.",
+              "reading": "かいそうをかくにんします。"
+            }
+          ],
+          "id": "fish-27",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip rumput laut, cahaya, dan pemeliharaan tali.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Record and report the condition for environmental assessment and maintenance.",
+          "scenario": "Seaweed is changing color, and fouling is increasing in a densely stocked unit.",
+          "sections": [
+            {
+              "body": "Seaweed grows under light, temperature, salinity, current, and other environmental conditions suited to the species. Unfed aquaculture still requires stock preparation and deployment, density management, and checks of lines and fouling organisms. Excessive density may affect light and water flow, but adjustments follow the plan rather than one universal number. Record and report color changes or tissue damage. Adapt harvesting, drying, or storage to the product and prevent contamination from equipment and the work area.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: Seaweed is changing color, and fouling is increasing in a densely stocked unit. Recommended decision: record and report the condition for environmental assessment and maintenance. Follow an orderly process: check the species, growth stage, and line facilities; observe environmental conditions and density; maintain the crop according to its plan; record growth and tissue changes. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Periksa spesies fase dan sarana tali",
+            "Amati kondisi lingkungan serta kepadatan",
+            "Rawat sesuai rencana komoditas",
+            "Catat pertumbuhan serta perubahan jaringan"
+          ],
+          "title": "Seaweed, Light, and Line Maintenance",
+          "vocabulary": [
+            {
+              "japanese": "海藻",
+              "meaning": "seaweed",
+              "reading": "かいそう"
+            },
+            {
+              "japanese": "光",
+              "meaning": "light",
+              "reading": "ひかり"
+            },
+            {
+              "japanese": "養成",
+              "meaning": "grow-out rearing",
+              "reading": "ようせい"
+            },
+            {
+              "japanese": "収穫",
+              "meaning": "harvest",
+              "reading": "しゅうかく"
+            }
+          ]
+        }
+      ],
+      "title": "Aquaculture · Facilities, Shellfish, and Seaweed",
+      "track": "aquaculture"
+    },
+    {
+      "description": "Harvest readiness, product hygiene, traceability, and Japanese language.",
+      "id": "aqua-products",
+      "lessons": [
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Product decisions depend on treatment history and requirements that cannot be determined visually.",
+              "kind": "knowledge",
+              "options": [
+                "No; records and product requirements still need to be confirmed",
+                "Yes, always",
+                "Yes, if it is only a small amount",
+                "Yes, after changing the container"
+              ],
+              "prompt": "Does a healthy appearance replace checking treatment status before harvest?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Delay the product-release decision until the status is confirmed. Product decisions depend on treatment history and requirements that cannot be determined visually.",
+              "kind": "case",
+              "options": [
+                "Ship it if the fish look healthy",
+                "Delete the old records",
+                "Mix it into an untreated lot",
+                "Delay the product-release decision until the status is confirmed"
+              ],
+              "prompt": "Scenario: Treatment records for a group are incomplete as harvest approaches. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "出荷 is read as しゅっか and means “shipment.” Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "quality",
+                "preparation",
+                "shipment",
+                "medication withdrawal period"
+              ],
+              "prompt": "In this lesson, what does 出荷（しゅっか） mean?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Start by confirming the quality lot and treatment status. Then: Prepare the equipment and harvest-container plan → Handle the crop using an authorized method → Record the quantity and handling of the harvest. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Record the quantity and handling of the harvest",
+                "Confirm the quality lot and treatment status",
+                "Prepare the equipment and harvest-container plan",
+                "Handle the crop using an authorized method"
+              ],
+              "prompt": "In the workflow “Harvest preparation and treatment status” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "出荷を確認します。",
+              "meaning": "I will inspect the delivery.",
+              "reading": "しゅっかをかくにんします。"
+            }
+          ],
+          "id": "fish-28",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip persiapan panen dan status perlakuan.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Hold the product release until its status is confirmed.",
+          "scenario": "The lot's treatment records are incomplete shortly before harvest.",
+          "sections": [
+            {
+              "body": "Harvest readiness depends on stock condition, quality targets, treatment status, market needs, and handling facilities. Confirm medication records and any applicable withdrawal period before shipping; a healthy appearance is not enough. If feed must be withheld before harvest, follow the species and facility plan. Do not assume one withholding period applies to every case. Prepare clean equipment and containers, work from a safe position, and use trained handling methods to reduce injury and quality loss.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The lot's treatment records are incomplete shortly before harvest. Recommended decision: hold the product release until its status is confirmed. Follow an orderly process: confirm the lot, grade, and treatment status; prepare the harvest equipment and containers; handle the product using an authorized method; record the amount and handling. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Konfirmasikan lot mutu dan status perlakuan",
+            "Siapkan rencana alat serta wadah panen",
+            "Tangani sesuai metode yang diizinkan",
+            "Catat jumlah dan penanganan hasil"
+          ],
+          "title": "Harvest Preparation and Treatment Status",
+          "vocabulary": [
+            {
+              "japanese": "出荷",
+              "meaning": "shipment",
+              "reading": "しゅっか"
+            },
+            {
+              "japanese": "休薬期間",
+              "meaning": "medication withdrawal period",
+              "reading": "きゅうやくきかん"
+            },
+            {
+              "japanese": "品質",
+              "meaning": "quality",
+              "reading": "ひんしつ"
+            },
+            {
+              "japanese": "準備",
+              "meaning": "preparation",
+              "reading": "じゅんび"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 3,
+              "explanation": "Separation and proper equipment processing help control cross-contamination.",
+              "kind": "knowledge",
+              "options": [
+                "Increase the catch weight",
+                "Replace the label",
+                "Make all temperatures the same",
+                "Prevent contaminants from reaching the product"
+              ],
+              "prompt": "Why are clean-product routes and contaminated equipment kept separate?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Separate the equipment and sanitize it before it contacts products. Separation and proper equipment processing help control cross-contamination.",
+              "kind": "case",
+              "options": [
+                "Cover it with ice",
+                "Mix it into all lots",
+                "Separate the equipment and sanitize it before it contacts products",
+                "Use it as long as it does not smell"
+              ],
+              "prompt": "Scenario: A clean container has been mixed with equipment used to handle mortalities. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "容器 is read ようき and means container. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "contamination",
+                "hygiene",
+                "container",
+                "cold-temperature control"
+              ],
+              "prompt": "In this lesson, what does 容器（ようき） mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Start by matching the product with its handling method. Then: Check equipment and area cleanliness → Monitor storage conditions against specifications → Label the lot and report deviations. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Match the product with its handling method",
+                "Check equipment and area cleanliness",
+                "Monitor storage conditions against specifications",
+                "Label the lot and report deviations"
+              ],
+              "prompt": "In the workflow “Product hygiene and the storage chain” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "衛生を確認します。",
+              "meaning": "I will check hygiene.",
+              "reading": "えいせいをかくにんします。"
+            }
+          ],
+          "id": "fish-29",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip higiene hasil dan rantai penyimpanan.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Separate and sanitize the equipment before it contacts the product.",
+          "scenario": "A clean container has been mixed with equipment used to handle dead fish.",
+          "sections": [
+            {
+              "body": "Handle aquaculture products using containers, water, ice, and areas suitable for each product. Keep clean routes separate from waste, chemicals, and contaminated equipment. Cooling and other processes must meet the commodity's needs; live stock, fresh fish, shellfish, and seaweed may require different handling. Do not use one temperature or method for everything. Time and condition records support assessment when deviations occur. Separate questionable lots so decisions are not based only on odor or color.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: A clean container has been mixed with equipment used to handle mortalities. Recommended decision: separate and sanitize the equipment before it contacts the product. Follow an orderly process: match the product to its handling method; inspect the cleanliness of equipment and work area; monitor storage conditions against specifications; label the lot and report deviations. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Cocokkan produk dengan metode penanganan",
+            "Periksa kebersihan alat dan area",
+            "Pantau kondisi penyimpanan sesuai spesifikasi",
+            "Labeli lot serta laporkan penyimpangan"
+          ],
+          "title": "Product Hygiene and the Storage Chain",
+          "vocabulary": [
+            {
+              "japanese": "衛生",
+              "meaning": "hygiene",
+              "reading": "えいせい"
+            },
+            {
+              "japanese": "容器",
+              "meaning": "container",
+              "reading": "ようき"
+            },
+            {
+              "japanese": "保冷",
+              "meaning": "cold-temperature control",
+              "reading": "ほれい"
+            },
+            {
+              "japanese": "汚染",
+              "meaning": "contamination",
+              "reading": "おせん"
+            }
+          ]
+        },
+        {
+          "caution": "Follow standard procedures and stay within your authority. Moving machinery, chemicals, veterinary medicines, work in water, and emergencies require training and authorized personnel. Do not guess a dose or carry out a hazardous task based only on written materials.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "水温 means water temperature, and 確認 means to check or confirm.",
+              "kind": "knowledge",
+              "options": [
+                "Calculate the vessel's price",
+                "Open all nets",
+                "Check the water temperature",
+                "Add feed"
+              ],
+              "prompt": "What does 「水温を確認してください」 ask you to do?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Check the water temperature using the specified method. 水温 means water temperature, and 確認 means to check or confirm.",
+              "kind": "case",
+              "options": [
+                "Measure only the container weight",
+                "Check the water temperature using the specified method",
+                "Add feed immediately",
+                "Change the group label"
+              ],
+              "prompt": "Scenario: The instruction says 「水温を確認してください」. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "報告 is read ほうこく and means report. Learn this term before following work instructions.",
+              "kind": "vocabulary",
+              "options": [
+                "water temperature",
+                "feed amount",
+                "report",
+                "unit"
+              ],
+              "prompt": "In this lesson, what does 報告（ほうこく） mean?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Start by reading the parameter units, time, and measurement units. Then: Confirm any unclear instructions → Record actual results objectively → Hand over the report and follow-up tasks. This sequence applies to the scenarios and procedures explained in the lesson.",
+              "kind": "workflow",
+              "options": [
+                "Confirm any unclear instruction",
+                "Record actual results objectively",
+                "Hand over the report and follow-up tasks",
+                "Read the parameter units, time, and measurement units"
+              ],
+              "prompt": "In the workflow “Aquaculture reports and Japanese instructions” in the material, the first step before proceeding is to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示をもう一度お願いします。",
+              "meaning": "Please repeat the instructions.",
+              "reading": "しじをもういちどおねがいします。"
+            },
+            {
+              "japanese": "水温を確認します。",
+              "meaning": "I will check the water temperature.",
+              "reading": "すいおんをかくにんします。"
+            }
+          ],
+          "id": "fish-30",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip laporan budi daya dan instruksi jepang.",
+            "Menentukan urutan kerja dan respons kasus yang sesuai.",
+            "Membaca istilah Jepang dan mencatat hasil pengamatan."
+          ],
+          "response": "Check the water temperature using the specified method.",
+          "scenario": "The instruction says 「水温を確認してください」 (“Please check the water temperature”).",
+          "sections": [
+            {
+              "body": "Unit reports include species or lot, time, water parameters, actual feed, mortality, transfers, and approved actions. 給餌量 means “feed amount,” and 水温 means “water temperature.” Unclear units can change a decision; ask for repetition and confirm figures before acting. Distinguish measured data from estimates. The official aquaculture examination is in Japanese, while this material provides an Indonesian bridge through vocabulary and cases. Reading comprehension does not replace training in measurement, equipment, or water-work safety.",
+              "title": "Principles and Field Knowledge"
+            },
+            {
+              "body": "Consider this work situation: The instruction says 「水温を確認してください」 (“Please check the water temperature”). Recommended decision: check the water temperature using the specified method. Follow an orderly process: read the parameter, time unit, and measurement unit; clarify any unclear instruction; record the actual result objectively; hand over the report and follow-up task. Record conditions before and after the action, the affected location or group, observation time, and who received the report. If the result differs from the plan, stop the risky part and ask the person in charge for direction before changing the method. Target values, product doses, equipment settings, and weather limits depend on site instructions, product labels, and the species; practice examples are not universal values.",
+              "title": "Application, Scenarios, and Results Checks"
+            }
+          ],
+          "steps": [
+            "Baca unit waktu parameter dan satuan",
+            "Konfirmasikan instruksi yang belum jelas",
+            "Catat hasil aktual secara objektif",
+            "Serahkan laporan dan tugas tindak lanjut"
+          ],
+          "title": "Aquaculture Reports and Japanese Instructions",
+          "vocabulary": [
+            {
+              "japanese": "水温",
+              "meaning": "water temperature",
+              "reading": "すいおん"
+            },
+            {
+              "japanese": "給餌量",
+              "meaning": "feed amount",
+              "reading": "きゅうじりょう"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            },
+            {
+              "japanese": "単位",
+              "meaning": "unit",
+              "reading": "たんい"
+            }
+          ]
+        }
+      ],
+      "title": "Aquaculture · Harvest, Records, and Integration",
+      "track": "aquaculture"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Japan Fisheries Agency · Fisheries Workplace Safety",
+      "url": "https://www.jfa.maff.go.jp/j/kikaku/anzen.html"
+    },
+    {
+      "title": "Dainippon Suisankai · SSW No. 1 Scope and Study Text",
+      "url": "https://suisankai.or.jp/skill/"
+    },
+    {
+      "title": "Prometric · SSW No. 1 Capture Fisheries",
+      "url": "https://www.prometric-jp.com/ssw/test_list/archives/9"
+    },
+    {
+      "title": "Prometric · SSW No. 1 Aquaculture",
+      "url": "https://www.prometric-jp.com/ssw/test_list/archives/8bmgetj8jgci"
+    }
+  ]
+}

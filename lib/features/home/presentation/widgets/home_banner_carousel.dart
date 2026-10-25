@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
@@ -161,7 +162,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
                   : textWidth;
               final headingHeight =
                   measure(
-                    _eyebrow(banner.action),
+                    _eyebrow(banner.action).localized(context),
                     _eyebrowStyle,
                     1,
                     headingWidth,
@@ -474,7 +475,7 @@ class _BannerCard extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    _eyebrow(banner.action),
+                                    _eyebrow(banner.action).localized(context),
                                     style:
                                         (banner.action == 'premium' ||
                                             banner.action == 'manga')
@@ -487,7 +488,7 @@ class _BannerCard extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 12),
                                   Text(
-                                    banner.title,
+                                    banner.title.localized(context),
                                     style: _titleStyle,
                                     maxLines: 3,
                                     overflow: TextOverflow.ellipsis,
@@ -506,7 +507,7 @@ class _BannerCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          banner.description,
+                          banner.description.localized(context),
                           style: _descriptionStyle,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
@@ -535,7 +536,7 @@ class _BannerCard extends StatelessWidget {
                             size: 18,
                           ),
                           label: Text(
-                            banner.buttonLabel,
+                            banner.buttonLabel.localized(context),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/gamification_widgets.dart';
@@ -17,25 +18,29 @@ class _AchievementsState extends ConsumerState<AchievementsScreen> {
   Widget build(BuildContext context) {
     if (!ref.watch(authControllerProvider).isAuthenticated) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Achievements')),
+        appBar: AppBar(title: Text('Achievements'.localized(context))),
         body: Center(
           child: FilledButton(
             onPressed: () => context.push('/login'),
-            child: const Text('Masuk untuk melihat achievements'),
+            child: Text('Masuk untuk melihat achievements'.localized(context)),
           ),
         ),
       );
     }
     return Scaffold(
-      appBar: AppBar(title: const Text('Achievements')),
-      body: ref.watch(gamificationProvider).when(
+      appBar: AppBar(title: Text('Achievements'.localized(context))),
+      body: ref
+          .watch(gamificationProvider)
+          .when(
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (_, __) => GamificationError(
               retry: () => ref.invalidate(gamificationProvider),
             ),
             data: (data) => RefreshIndicator(
               onRefresh: () async {
-                await ref.refresh(gamificationProvider.future).then<void>(
+                await ref
+                    .refresh(gamificationProvider.future)
+                    .then<void>(
                       (_) {},
                       // The provider renders the error and retry action.
                       onError: (Object error, StackTrace stack) {},
@@ -48,16 +53,20 @@ class _AchievementsState extends ConsumerState<AchievementsScreen> {
                   GamificationStats(data: data),
                   const SizedBox(height: 16),
                   Text(
-                    '${data.unlockedCount}/${data.achievements.length} achievement terbuka',
+                    '${data.unlockedCount}/${data.achievements.length} achievement terbuka'
+                        .localized(context),
                   ),
                   const SizedBox(height: 12),
                   Wrap(
                     spacing: 8,
                     children: [
-                      for (final (index, label)
-                          in ['Semua', 'Terbuka', 'Terkunci'].indexed)
+                      for (final (index, label) in [
+                        'Semua',
+                        'Terbuka',
+                        'Terkunci',
+                      ].indexed)
                         ChoiceChip(
-                          label: Text(label),
+                          label: Text(label.localized(context)),
                           selected: filter == index,
                           onSelected: (_) => setState(() => filter = index),
                         ),
@@ -77,9 +86,13 @@ class _AchievementsState extends ConsumerState<AchievementsScreen> {
                             (filter == 1 ? a.isUnlocked : !a.isUnlocked),
                       )
                       .isEmpty)
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(20),
-                      child: Text('Belum ada achievement dalam kategori ini.'),
+                      child: Text(
+                        'Belum ada achievement dalam kategori ini.'.localized(
+                          context,
+                        ),
+                      ),
                     ),
                 ],
               ),

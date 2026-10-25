@@ -12,10 +12,21 @@ class HomeDashboard {
     required this.achievements,
     this.banners = const [],
     this.profile,
+    this.fromCache = false,
+    this.offline = false,
+    this.cachedAt,
   });
 
-  factory HomeDashboard.fromJson(Map<String, dynamic> json) {
+  factory HomeDashboard.fromJson(
+    Map<String, dynamic> json, {
+    bool fromCache = false,
+    bool offline = false,
+    DateTime? cachedAt,
+  }) {
     return HomeDashboard(
+      fromCache: fromCache,
+      offline: offline,
+      cachedAt: cachedAt,
       isAuthenticated: json['isAuthenticated'] as bool? ?? false,
       profile: json['profile'] is Map<String, dynamic>
           ? HomeProfile.fromJson(json['profile'] as Map<String, dynamic>)
@@ -31,6 +42,9 @@ class HomeDashboard {
   }
 
   final bool isAuthenticated;
+  final bool fromCache;
+  final bool offline;
+  final DateTime? cachedAt;
   final HomeProfile? profile;
   final HomeDailyGoal dailyGoal;
   final List<LearningCategory> categories;

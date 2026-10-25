@@ -13,6 +13,7 @@ import (
 )
 
 func TestSSWAPIAuthEntitlementValidationAndRevocation(t *testing.T) {
+	t.Setenv("ENGLISH_QA_PREVIEW_ENABLED", "true")
 	memory := store.NewMemoryStore()
 	user := database.DemoUserID
 	token, _ := memory.CreateSession(user)
@@ -42,6 +43,42 @@ func TestSSWAPIAuthEntitlementValidationAndRevocation(t *testing.T) {
 	purchase := domain.Purchase{Platform: "android", ID: "ssw-api-test", ProductID: "nihongo_master_lifetime", AccountToken: account, Proof: "ssw-api-test", State: "purchased", CheckedAt: time.Now()}
 	if err := memory.SaveVerifiedPurchase(user, purchase); err != nil {
 		t.Fatal(err)
+	}
+	englishPracticeRequest := httptest.NewRequest("GET", "/v1/ssw/agriculture/practice?module=crop-foundations", nil)
+	englishPracticeRequest.Header.Set("Authorization", "Bearer "+token)
+	englishPracticeRequest.Header.Set("Accept-Language", "en")
+	englishPracticeResponse := httptest.NewRecorder()
+	h.ServeHTTP(englishPracticeResponse, englishPracticeRequest)
+	var englishPractice struct {
+		Data struct {
+			Questions []struct {
+				ID      string   `json:"id"`
+				Prompt  string   `json:"prompt"`
+				Options []string `json:"options"`
+			} `json:"questions"`
+		} `json:"data"`
+	}
+	if err := json.Unmarshal(englishPracticeResponse.Body.Bytes(), &englishPractice); err != nil {
+		t.Fatal(err)
+	}
+	if englishPracticeResponse.Code != 200 {
+		t.Fatalf("English SSW practice request failed: %d %s", englishPracticeResponse.Code, englishPracticeResponse.Body.String())
+	}
+	foundLocalizedAgricultureQuestion := false
+	for _, question := range englishPractice.Data.Questions {
+		if question.ID != "agri-01-3" {
+			continue
+		}
+		foundLocalizedAgricultureQuestion = true
+		if question.Prompt != "In this lesson, what does 品種（ひんしゅ） mean?" {
+			t.Fatalf("SSW English prompt should preserve its Japanese term: %q", question.Prompt)
+		}
+		if len(question.Options) != 4 || question.Options[0] != "variety" || question.Options[1] != "plan" || question.Options[2] != "harvest" || question.Options[3] != "field plot" {
+			t.Fatalf("SSW practice answer options were not localized: %#v", question.Options)
+		}
+	}
+	if !foundLocalizedAgricultureQuestion {
+		t.Fatalf("English SSW practice response did not include question agri-01-3: %s", englishPracticeResponse.Body.String())
 	}
 	w := request("GET", "/v1/ssw/building-cleaning/practice?module=chemicals", "", true)
 	var response struct {

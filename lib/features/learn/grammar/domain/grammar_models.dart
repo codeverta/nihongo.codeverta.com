@@ -53,12 +53,12 @@ class GrammarCourse {
     required this.lessons,
   });
   factory GrammarCourse.fromJson(Map<String, dynamic> j) => GrammarCourse(
-        level: j['level'] as String,
-        title: j['title'] as String,
-        progress: j['progress'] as int,
-        completedLessons: j['completedLessons'] as int,
-        lessons: _items(j['lessons'], GrammarLessonSummary.fromJson),
-      );
+    level: j['level'] as String,
+    title: j['title'] as String,
+    progress: j['progress'] as int,
+    completedLessons: j['completedLessons'] as int,
+    lessons: _items(j['lessons'], GrammarLessonSummary.fromJson),
+  );
   final String level;
   final String title;
   final int progress;
@@ -74,10 +74,10 @@ class GrammarExample {
     required this.meaning,
   });
   factory GrammarExample.fromJson(Map<String, dynamic> j) => GrammarExample(
-        japanese: j['japanese'] as String,
-        reading: j['reading'] as String,
-        meaning: j['meaning'] as String,
-      );
+    japanese: j['japanese'] as String,
+    reading: j['reading'] as String,
+    meaning: j['meaning'] as String,
+  );
   final String japanese;
   final String reading;
   final String meaning;
@@ -94,13 +94,13 @@ class GrammarPoint {
     required this.examples,
   });
   factory GrammarPoint.fromJson(Map<String, dynamic> j) => GrammarPoint(
-        pattern: j['pattern'] as String,
-        meaning: j['meaning'] as String,
-        formation: j['formation'] as String,
-        explanation: j['explanation'] as String,
-        commonMistake: j['commonMistake'] as String,
-        examples: _items(j['examples'], GrammarExample.fromJson),
-      );
+    pattern: j['pattern'] as String,
+    meaning: j['meaning'] as String,
+    formation: j['formation'] as String,
+    explanation: j['explanation'] as String,
+    commonMistake: j['commonMistake'] as String,
+    examples: _items(j['examples'], GrammarExample.fromJson),
+  );
   final String pattern;
   final String meaning;
   final String formation;
@@ -113,9 +113,9 @@ class GrammarPoint {
 class GrammarLesson {
   const GrammarLesson({required this.summary, required this.points});
   factory GrammarLesson.fromJson(Map<String, dynamic> j) => GrammarLesson(
-        summary: GrammarLessonSummary.fromJson(j),
-        points: _items(j['points'], GrammarPoint.fromJson),
-      );
+    summary: GrammarLessonSummary.fromJson(j),
+    points: _items(j['points'], GrammarPoint.fromJson),
+  );
   final GrammarLessonSummary summary;
   final List<GrammarPoint> points;
 }
@@ -128,10 +128,10 @@ class GrammarQuestion {
     required this.options,
   });
   factory GrammarQuestion.fromJson(Map<String, dynamic> j) => GrammarQuestion(
-        id: j['id'] as String,
-        prompt: j['prompt'] as String,
-        options: _items(j['options'], QuizOption.fromJson),
-      );
+    id: j['id'] as String,
+    prompt: j['prompt'] as String,
+    options: _items(j['options'], QuizOption.fromJson),
+  );
   final String id;
   final String prompt;
   final List<QuizOption> options;
@@ -141,9 +141,9 @@ class GrammarQuestion {
 class GrammarAttempt {
   const GrammarAttempt({required this.id, required this.questions});
   factory GrammarAttempt.fromJson(Map<String, dynamic> j) => GrammarAttempt(
-        id: j['id'] as String,
-        questions: _items(j['questions'], GrammarQuestion.fromJson),
-      );
+    id: j['id'] as String,
+    questions: _items(j['questions'], GrammarQuestion.fromJson),
+  );
   final String id;
   final List<GrammarQuestion> questions;
 }
@@ -157,21 +157,25 @@ class GrammarResult {
     required this.passed,
     required this.bestScore,
     required this.progress,
+    this.verified = true,
   });
   factory GrammarResult.fromJson(Map<String, dynamic> j) => GrammarResult(
-        score: j['score'] as int,
-        correct: j['correctAnswers'] as int,
-        total: j['totalQuestions'] as int,
-        passed: j['passed'] as bool,
-        bestScore: j['bestScore'] as int,
-        progress: j['progress'] as int,
-      );
+    score: j['score'] as int,
+    correct: j['correctAnswers'] as int,
+    total: j['totalQuestions'] as int,
+    passed: j['passed'] as bool,
+    bestScore: j['bestScore'] as int,
+    progress: j['progress'] as int,
+    verified: j['verified'] != false,
+  );
   final int score;
   final int correct;
   final int total;
   final int bestScore;
   final int progress;
   final bool passed;
+  final bool verified;
+  bool get pendingSync => !verified;
 }
 
 typedef GrammarFeedback = AnswerFeedback;

@@ -1,9 +1,16 @@
 class SswSector {
-  const SswSector(this.id, this.name, this.japanese, this.keywords);
+  const SswSector(
+    this.id,
+    this.name,
+    this.japanese,
+    this.romaji,
+    this.keywords,
+  );
 
   final String id;
   final String name;
   final String japanese;
+  final String romaji;
   final String keywords;
 }
 
@@ -13,79 +20,127 @@ const sswSectors = [
     'nursing-care',
     'Perawatan lansia / Kaigo',
     '介護',
+    'kaigo',
     'keperawatan caregiver',
   ),
   SswSector(
     'building-cleaning',
     'Pembersihan gedung',
     'ビルクリーニング',
+    'biru kuriiningu',
     'cleaning kebersihan',
   ),
   SswSector(
     'linen-supply',
     'Pengolahan linen',
     'リネンサプライ',
+    'rinen sapurai',
     'laundry seprai handuk',
   ),
   SswSector(
     'industrial-manufacturing',
     'Manufaktur produk industri',
     '工業製品製造業',
+    'kougyou seihin seizougyou',
     'pabrik manufacturing',
   ),
-  SswSector('construction', 'Konstruksi', '建設', 'bangunan kensetsu'),
+  SswSector(
+    'construction',
+    'Konstruksi',
+    '建設',
+    'kensetsu',
+    'bangunan kensetsu',
+  ),
   SswSector(
     'shipbuilding',
     'Pembuatan kapal dan mesin kapal',
     '造船・舶用工業',
+    'zousen / hakuyou kougyou',
     'shipbuilding perkapalan',
   ),
   SswSector(
     'automobile-maintenance',
     'Perawatan dan perbaikan mobil',
     '自動車整備',
+    'jidousha seibi',
     'otomotif mekanik jidousha seibi',
   ),
-  SswSector('aviation', 'Penerbangan', '航空', 'bandara aviation koukuu'),
-  SswSector('accommodation', 'Perhotelan', '宿泊', 'hotel akomodasi shukuhaku'),
+  SswSector(
+    'aviation',
+    'Penerbangan',
+    '航空',
+    'koukuu',
+    'bandara aviation koukuu',
+  ),
+  SswSector(
+    'accommodation',
+    'Perhotelan',
+    '宿泊',
+    'shukuhaku',
+    'hotel akomodasi shukuhaku',
+  ),
   SswSector(
     'road-transport',
     'Transportasi kendaraan bermotor',
     '自動車運送業',
+    'jidousha unsougyou',
     'sopir truk bus taksi',
   ),
-  SswSector('railway', 'Perkeretaapian', '鉄道', 'kereta railway tetsudou'),
+  SswSector(
+    'railway',
+    'Perkeretaapian',
+    '鉄道',
+    'tetsudou',
+    'kereta railway tetsudou',
+  ),
   SswSector(
     'logistics-warehouse',
     'Gudang logistik',
     '物流倉庫',
+    'butsuryuu souko',
     'warehouse penyimpanan',
   ),
-  SswSector('agriculture', 'Pertanian', '農業', 'agriculture peternakan nougyou'),
+  SswSector(
+    'agriculture',
+    'Pertanian',
+    '農業',
+    'nougyou',
+    'agriculture peternakan nougyou',
+  ),
   SswSector(
     'fishery',
     'Perikanan dan budi daya',
     '漁業',
+    'gyogyou',
     'aquaculture budidaya gyogyou',
   ),
   SswSector(
     'food-manufacturing',
     'Produksi makanan dan minuman',
     '飲食料品製造業',
+    'inshokuryouhin seizougyou',
     'pengolahan pabrik makanan',
   ),
   SswSector(
     'food-service',
     'Layanan makanan / Restoran',
     '外食業',
+    'gaishokugyou',
     'restoran gaishoku food service',
   ),
-  SswSector('forestry', 'Kehutanan', '林業', 'hutan forestry ringyou'),
-  SswSector('wood-industry', 'Industri kayu', '木材産業', 'wood mokuzai'),
+  SswSector('forestry', 'Kehutanan', '林業', 'ringyou', 'hutan forestry ringyou'),
+  SswSector(
+    'wood-industry',
+    'Industri kayu',
+    '木材産業',
+    'mokuzai sangyou',
+    'wood mokuzai',
+  ),
   SswSector(
     'resource-recycling',
     'Daur ulang sumber daya',
     '資源循環',
+    'shigen junkan',
     'recycling limbah sampah',
   ),
 ];

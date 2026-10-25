@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_result_view.dart';
@@ -121,17 +122,24 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
         index = 0;
         notice = isSsw && result == null
             ? 'Bagian sebelumnya dikunci. $sswSectionLabel dimulai dengan timer bagian baru.'
+                  .localized(context)
             : isJft && result == null
             ? 'Bagian sebelumnya dikunci. $jftSectionLabel dimulai; timer total terus berjalan.'
+                  .localized(context)
             : section == 'grammar'
             ? isNat
                   ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
+                        .localized(context)
                   : widget.level == 'N3'
                   ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
+                        .localized(context)
                   : widget.level != 'N5'
                   ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
+                        .localized(context)
                   : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
-            : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.';
+                        .localized(context)
+            : 'Seluruh bagian selesai. Jawaban tersimpan telah dinilai.'
+                  .localized(context);
       }
     });
     if (previousSection != section && scroll.hasClients) scroll.jumpTo(0);
@@ -200,7 +208,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       if (mounted) {
         setState(
           () => error =
-              '${diagnosticError(e)} Pilihan belum dikonfirmasi tersimpan.',
+              '${diagnosticError(e)} ${'Pilihan belum dikonfirmasi tersimpan.'.localized(context)}',
         );
       }
     } finally {
@@ -222,35 +230,35 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       builder: (c) => AlertDialog(
         title: Text(
           isSsw
-              ? 'Kirim $sswSectionLabel?'
+              ? 'Kirim $sswSectionLabel?'.localized(context)
               : isJft
-              ? 'Kirim $jftSectionLabel?'
+              ? 'Kirim $jftSectionLabel?'.localized(context)
               : expected == 'vocabulary'
-              ? 'Kunci bagian kosakata?'
+              ? 'Kunci bagian kosakata?'.localized(context)
               : widget.level != 'N5'
-              ? 'Kirim grammar dan reading?'
-              : 'Kirim bagian grammar?',
+              ? 'Kirim grammar dan reading?'.localized(context)
+              : 'Kirim bagian grammar?'.localized(context),
         ),
         content: Text(
-          '${unanswered > 0 ? 'Masih ada $unanswered soal kosong; soal kosong dihitung salah.\n\n' : ''}'
+          '${unanswered > 0 ? 'Masih ada $unanswered soal kosong; soal kosong dihitung salah.\n\n'.localized(context) : ''}'
           '${isSsw
-              ? (diagnosticList(session!['sections']).last['id'] == expected ? 'Jawaban dikunci dan hasil ditampilkan.' : 'Bagian ini dikunci. Timer bagian berikutnya langsung dimulai.')
+              ? (diagnosticList(session!['sections']).last['id'] == expected ? 'Jawaban dikunci dan hasil ditampilkan.'.localized(context) : 'Bagian ini dikunci. Timer bagian berikutnya langsung dimulai.'.localized(context))
               : isJft
               ? expected == 'reading'
-                    ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'
-                    : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.'
+                    ? 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'.localized(context)
+                    : 'Setelah dikirim, kamu tidak bisa kembali. Bagian berikutnya dimulai dengan sisa waktu yang sama.'.localized(context)
               : expected == 'vocabulary'
-              ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.'
-              : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'}',
+              ? 'Setelah dikirim, kamu tidak bisa kembali. Timer bagian kedua langsung dimulai.'.localized(context)
+              : 'Setelah dikirim, jawaban dikunci dan hasil ditampilkan.'.localized(context)}',
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(c, false),
-            child: const Text('Periksa lagi'),
+            child: Text('Periksa lagi'.localized(context)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(c, true),
-            child: const Text('Kirim bagian'),
+            child: Text('Kirim bagian'.localized(context)),
           ),
         ],
       ),
@@ -279,18 +287,19 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
     final yes = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
-        title: const Text('Keluar dari simulasi?'),
-        content: const Text(
-          'Timer tetap berjalan. Kamu dapat melanjutkan dari jawaban yang sudah tersimpan melalui halaman simulasi.',
+        title: Text('Keluar dari simulasi?'.localized(context)),
+        content: Text(
+          'Timer tetap berjalan. Kamu dapat melanjutkan dari jawaban yang sudah tersimpan melalui halaman simulasi.'
+              .localized(context),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(c, false),
-            child: const Text('Tetap di ujian'),
+            child: Text('Tetap di ujian'.localized(context)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(c, true),
-            child: const Text('Keluar'),
+            child: Text('Keluar'.localized(context)),
           ),
         ],
       ),
@@ -321,12 +330,13 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
           child: ListView(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
             children: [
-              const ExamHeading('Peta soal bagian aktif'),
+              ExamHeading('Peta soal bagian aktif'.localized(context)),
               Text(
-                '${answers.length}/${questions.length} dijawab · ${marked.length} ditandai',
+                '${answers.length}/${questions.length} dijawab · ${marked.length} ditandai'
+                    .localized(context),
               ),
               const SizedBox(height: 8),
-              const Text('Indigo: terjawab · Bendera: ragu'),
+              Text('Indigo: terjawab · Bendera: ragu'.localized(context)),
               const SizedBox(height: 20),
               Wrap(
                 spacing: 10,
@@ -395,17 +405,17 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
         appBar: AppBar(
           title: Text(
             isSsw
-                ? '${result != null ? 'Hasil' : 'Simulasi'} ${sswExamTitle(widget.level)}'
+                ? '${result != null ? 'Hasil'.localized(context) : 'Simulasi'.localized(context)} ${sswExamTitle(widget.level)}'
                 : isJft
                 ? result != null
-                      ? 'Hasil JFT Exam $jftExamNumber'
+                      ? 'Hasil JFT Exam $jftExamNumber'.localized(context)
                       : 'JFT Exam $jftExamNumber'
                 : isNat
                 ? result != null
-                      ? 'Hasil NAT 5Q Exam $natPaper'
+                      ? 'Hasil NAT 5Q Exam $natPaper'.localized(context)
                       : 'NAT 5Q Exam $natPaper'
                 : result != null
-                ? 'Hasil simulasi ${widget.level}'
+                ? 'Hasil simulasi ${widget.level}'.localized(context)
                 : 'JLPT ${widget.level} Simulation',
           ),
           actions: [
@@ -431,7 +441,10 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
             ? error != null
                   ? Padding(
                       padding: const EdgeInsets.all(20),
-                      child: ExamMessage(message: error!, retry: load),
+                      child: ExamMessage(
+                        message: error!.localized(context),
+                        retry: load,
+                      ),
                     )
                   : const Center(child: CircularProgressIndicator())
             : result != null
@@ -452,12 +465,12 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                 isSsw
                                     ? sswSectionLabel
                                     : isJft
-                                    ? jftSectionLabel
+                                    ? jftSectionLabel.localized(context)
                                     : section == 'vocabulary'
-                                    ? 'Bagian 1 · 文字・語彙'
+                                    ? 'Bagian 1 · 文字・語彙'.localized(context)
                                     : widget.level != 'N5'
-                                    ? 'Bagian 2 · 文法・読解'
-                                    : 'Bagian 2 · 文法',
+                                    ? 'Bagian 2 · 文法・読解'.localized(context)
+                                    : 'Bagian 2 · 文法'.localized(context),
                                 style: const TextStyle(
                                   color: examInk,
                                   fontWeight: FontWeight.w800,
@@ -467,12 +480,12 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                             IconButton(
                               onPressed: busy || fetching ? null : map,
                               icon: const Icon(Icons.grid_view_rounded),
-                              tooltip: 'Peta soal',
+                              tooltip: 'Peta soal'.localized(context),
                             ),
                           ],
                         ),
                         Text(
-                          'Soal ${q!['number']} · ${index + 1}/${questions.length} bagian ini · ${answers.length} dijawab',
+                          '${'Soal'.localized(context)} ${q!['number']} · ${index + 1}/${questions.length} ${'bagian ini'.localized(context)} · ${answers.length} ${'dijawab'.localized(context)}',
                         ),
                         const SizedBox(height: 8),
                         LinearProgressIndicator(
@@ -492,17 +505,22 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                           _message(notice!, dismissible: true),
                         if (remaining == 0)
                           _message(
-                            'Waktu bagian habis. Menyinkronkan bagian berikutnya; jawaban terkunci.',
+                            'Waktu bagian habis. Menyinkronkan bagian berikutnya; jawaban terkunci.'
+                                .localized(context),
                           ),
                         if (error != null)
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              _message(error!),
+                              _message(error!.localized(context)),
                               TextButton.icon(
                                 onPressed: fetching || busy ? null : load,
                                 icon: const Icon(Icons.refresh),
-                                label: const Text('Periksa jawaban tersimpan'),
+                                label: Text(
+                                  'Periksa jawaban tersimpan'.localized(
+                                    context,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -622,8 +640,8 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                 ),
                                 label: Text(
                                   marked.contains(q['id'])
-                                      ? 'Ragu ditandai'
-                                      : 'Tandai ragu',
+                                      ? 'Ragu ditandai'.localized(context)
+                                      : 'Tandai ragu'.localized(context),
                                 ),
                               ),
                             ),
@@ -635,7 +653,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                       flag: marked.contains(q['id']),
                                     )
                                   : null,
-                              child: const Text('Hapus pilihan'),
+                              child: Text('Hapus pilihan'.localized(context)),
                             ),
                           ],
                         ),
@@ -653,7 +671,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                 ? () => jump(index - 1)
                                 : null,
                             icon: const Icon(Icons.arrow_back),
-                            tooltip: 'Soal sebelumnya',
+                            tooltip: 'Soal sebelumnya'.localized(context),
                           ),
                           const SizedBox(width: 8),
                           Expanded(
@@ -663,12 +681,16 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                         ? null
                                         : () => jump(index + 1),
                                     icon: const Icon(Icons.arrow_forward),
-                                    label: const Text('Berikutnya'),
+                                    label: Text(
+                                      'Berikutnya'.localized(context),
+                                    ),
                                   )
                                 : FilledButton.icon(
                                     onPressed: enabled ? submit : null,
                                     icon: const Icon(Icons.lock_outline),
-                                    label: const Text('Kirim bagian'),
+                                    label: Text(
+                                      'Kirim bagian'.localized(context),
+                                    ),
                                   ),
                           ),
                         ],
@@ -695,7 +717,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
               IconButton(
                 onPressed: () => setState(() => notice = null),
                 icon: const Icon(Icons.close),
-                tooltip: 'Tutup pemberitahuan',
+                tooltip: 'Tutup pemberitahuan'.localized(context),
               ),
           ],
         ),

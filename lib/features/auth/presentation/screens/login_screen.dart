@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
@@ -74,7 +75,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             ? IconButton(
                 onPressed: () => _finish(false),
                 icon: const Icon(Icons.close_rounded),
-                tooltip: 'Tutup',
+                tooltip: 'Tutup'.localized(context),
               )
             : null,
       ),
@@ -92,14 +93,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     const LoginArtwork(),
                     const SizedBox(height: 22),
                     Text(
-                      'Masuk untuk mulai belajar',
+                      'Masuk untuk mulai belajar'.localized(context),
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headlineSmall
                           ?.copyWith(fontWeight: FontWeight.w900),
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Simpan progress, ikuti ujian, dan buka achievement-mu.',
+                      'Simpan progress, ikuti ujian, dan buka achievement-mu.'
+                          .localized(context),
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
@@ -111,7 +113,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         side: BorderSide(color: colorScheme.outlineVariant),
                       ),
                       icon: const _GoogleMark(),
-                      label: const Text('Lanjutkan dengan Google'),
+                      label: Text('Lanjutkan dengan Google'.localized(context)),
                     ),
                     const SizedBox(height: 22),
                     Row(
@@ -120,7 +122,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 14),
                           child: Text(
-                            'atau dengan email',
+                            'atau dengan email'.localized(context),
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ),
@@ -139,7 +141,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       validator: (value) {
                         final email = value?.trim() ?? '';
                         if (email.isEmpty || !email.contains('@')) {
-                          return 'Masukkan email yang valid.';
+                          return 'Masukkan email yang valid.'.localized(
+                            context,
+                          );
                         }
                         return null;
                       },
@@ -167,7 +171,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       ),
                       validator: (value) {
                         if ((value ?? '').length < 8) {
-                          return 'Password minimal 8 karakter.';
+                          return 'Password minimal 8 karakter.'.localized(
+                            context,
+                          );
                         }
                         return null;
                       },
@@ -182,7 +188,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
-                          authState.errorMessage!,
+                          authState.errorMessage!.localized(context),
                           style: TextStyle(color: colorScheme.onErrorContainer),
                         ),
                       ),
@@ -198,14 +204,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                 color: Colors.white,
                               ),
                             )
-                          : const Text('Masuk'),
+                          : Text('Masuk'.localized(context)),
                     ),
                     const SizedBox(height: 12),
                     TextButton(
                       onPressed: authState.isLoading
                           ? null
                           : () => _finish(false),
-                      child: const Text('Lanjut sebagai tamu'),
+                      child: Text('Lanjut sebagai tamu'.localized(context)),
                     ),
                   ],
                 ),

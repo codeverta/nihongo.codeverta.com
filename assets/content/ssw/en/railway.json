@@ -1,0 +1,1278 @@
+{
+  "modules": [
+    {
+      "description": "Original practice for station and passenger-service work, including platform safety, information during service changes, and station and train cleaning. Workers follow assigned duties, area boundaries, and the operator's safety instructions.",
+      "id": "station-service",
+      "lessons": [
+        {
+          "caution": "Do not enter the track or a restricted area to retrieve an object without following the required procedure and obtaining permission.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Report from a safe position so staff can control the risk according to procedure.",
+              "kind": "knowledge",
+              "options": [
+                "Keep a safe distance and inform the responsible staff member",
+                "Run onto the track to retrieve the item",
+                "Move the barrier without authorization",
+                "Ignore it as long as the train has not arrived"
+              ],
+              "prompt": "What should you do when you see a hazard near the platform edge?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Authorized staff must handle items in hazardous areas; workers must not put themselves or others at risk.",
+              "kind": "case",
+              "options": [
+                "Enter the route to retrieve it",
+                "Throw it into the staff room",
+                "Keep a safe distance, report the location, and follow procedure",
+                "Ask another passenger to retrieve it"
+              ],
+              "prompt": "A bag has been left near the warning line. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Observe passengers and the platform from a safe position → Give confirmed guidance → Report risks or unusual conditions → Follow instructions from the staff member in charge.",
+              "kind": "workflow",
+              "options": [
+                "Observe passengers and the platform from a safe position",
+                "Give confirmed guidance",
+                "Report risks or unusual conditions",
+                "Follow the instructions of the staff member in charge"
+              ],
+              "prompt": "In the “Platform observation and passenger guidance” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "三番線はどこですか。",
+              "meaning": "Where is platform three?",
+              "reading": "さんばんせんはどこですか。"
+            },
+            {
+              "japanese": "この階段を上がってください。",
+              "meaning": "Please go up these stairs.",
+              "reading": "このかいだんをあがってください。"
+            }
+          ],
+          "id": "rail-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jarak aman dan memperhatikan keadaan peron selama bertugas.",
+            "Memberikan arah sederhana tanpa menghalangi arus penumpang.",
+            "Segera melaporkan benda atau keadaan yang berisiko."
+          ],
+          "response": "Do not approach the hazard to retrieve the bag. Notify authorized staff, indicate its location, and follow safety procedures.",
+          "scenario": "A bag has been left near the warning line on the platform.",
+          "sections": [
+            {
+              "body": "Station staff help passengers find platforms, exits, and facilities. Areas near platform edges and train doors require particular attention. Body position, use of walkways, and communication must follow operator procedures. Stay alert while protecting yourself, and do not enter restricted areas without authorization.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Answer with brief, confirmed directions, such as a platform name or the direction of a staircase. Report unattended belongings, a fallen passenger, or a crowd approaching a dangerous area to the staff member in charge. Do not chase an object onto the track or try to stop a train outside procedure. Example: a bag is left near the warning line. Response: keep your distance, notify staff, and follow local safety procedures.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati penumpang dan keadaan peron dari posisi aman",
+            "Berikan arahan yang sudah dipastikan",
+            "Laporkan risiko atau keadaan tidak biasa",
+            "Ikuti instruksi petugas penanggung jawab"
+          ],
+          "title": "Platform Observation and Passenger Directions",
+          "vocabulary": [
+            {
+              "japanese": "ホーム",
+              "meaning": "platform",
+              "reading": "ほーむ"
+            },
+            {
+              "japanese": "乗客",
+              "meaning": "passenger",
+              "reading": "じょうきゃく"
+            },
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            },
+            {
+              "japanese": "案内",
+              "meaning": "directions or information",
+              "reading": "あんない"
+            }
+          ]
+        },
+        {
+          "caution": "Do not present a personal estimate as the official schedule.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Unconfirmed information must be identified as such and updated after it is verified.",
+              "kind": "knowledge",
+              "options": [
+                "Say the information is being checked and refer to an official notice",
+                "Guess the time based on the previous day's schedule",
+                "Ask the passenger to wait in any lane",
+                "Confirm that the train will arrive shortly"
+              ],
+              "prompt": "What is the correct way to proceed when the next train time has not been confirmed?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Giving truthful information and directing the person to an official channel prevents misinformation and incorrect movement.",
+              "kind": "case",
+              "options": [
+                "Give your own estimated time",
+                "Say there is no problem and leave",
+                "Explain that it is still being checked and direct them to an official source",
+                "Direct passengers to another platform without checking"
+              ],
+              "prompt": "A passenger asks for the train time after a disruption, but no new schedule is available. What is the correct response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Listen to official announcements or messages → Check available routes, platforms, and times → Report unclear information → Communicate confirmed updates.",
+              "kind": "workflow",
+              "options": [
+                "Listen to official announcements or messages",
+                "Check the available routes, platforms, and times",
+                "Report information that is unclear",
+                "Communicate confirmed updates"
+              ],
+              "prompt": "In the “Information during a delay or service change” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "次の電車は何時ですか。",
+              "meaning": "What time is the next train?",
+              "reading": "つぎのでんしゃはなんじですか。"
+            },
+            {
+              "japanese": "今、確認しています。分かり次第お知らせします。",
+              "meaning": "We are checking. We will let you know when the information is available.",
+              "reading": "いま、かくにんしています。わかりしだいおしらせします。"
+            }
+          ],
+          "id": "rail-02",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan informasi layanan yang telah dikonfirmasi.",
+            "Melaporkan pertanyaan yang tidak dapat dijawab kepada petugas operasi.",
+            "Menjaga penumpang tetap berada di area yang aman."
+          ],
+          "response": "Explain that the time is still being checked, point to the official information source, and provide an update after staff confirm it.",
+          "scenario": "A service disruption has been announced, but the departure time of the next train has not been provided.",
+          "sections": [
+            {
+              "body": "Delays, track changes, and diversions can confuse passengers. Staff make announcements using the operator's official information. Use simple wording: the service name, the correct platform or direction, and where to ask if information is not yet available. Do not estimate departure times or direct passengers to another track without confirmation.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "If you receive unconfirmed information, say that it is being checked and promptly contact a supervisor or information center. When directing a group, point out the walking route and avoid making people rush. Example: after a disruption announcement that gives no time, a passenger asks when the next train will leave. Response: explain that the time is not confirmed and direct them to the operator's information source.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan pengumuman atau pesan resmi",
+            "Periksa rute, peron, dan waktu yang tersedia",
+            "Laporkan informasi yang belum jelas",
+            "Sampaikan pembaruan yang sudah dikonfirmasi"
+          ],
+          "title": "Information During Delays or Service Changes",
+          "vocabulary": [
+            {
+              "japanese": "遅延",
+              "meaning": "delay",
+              "reading": "ちえん"
+            },
+            {
+              "japanese": "運休",
+              "meaning": "service cancellation",
+              "reading": "うんきゅう"
+            },
+            {
+              "japanese": "変更",
+              "meaning": "change",
+              "reading": "へんこう"
+            },
+            {
+              "japanese": "確認中",
+              "meaning": "being checked",
+              "reading": "かくにんちゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix liquids, leave tools in passenger walkways, or touch unidentified substances.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Well-arranged equipment and clear signs keep the work area separate from public routes.",
+              "kind": "knowledge",
+              "options": [
+                "So passengers do not trip or enter an area that is not yet safe",
+                "So workers can leave the tools when taking a break",
+                "So the area looks busy",
+                "So the cleaning agent is used up quickly"
+              ],
+              "prompt": "Why must cleaning tools and warning signs be arranged properly in public areas?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Unknown liquid must be handled according to procedure to prevent workers or passengers from being exposed or slipping.",
+              "kind": "case",
+              "options": [
+                "Touch it to identify the liquid",
+                "Mix it with the strongest material",
+                "Do not touch it; report it and secure the area according to procedure",
+                "Direct passengers to walk past it"
+              ],
+              "prompt": "There is unidentified liquid on a busy floor. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Confirm the assigned area and cleaning task → Prepare tools and signs as instructed → Clean while keeping public routes safe → Report hazardous items or damaged facilities.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the assigned area and cleaning task",
+                "Prepare the tools and signs according to instructions",
+                "Clean while keeping public routes safe",
+                "Report hazardous items or damaged facilities"
+              ],
+              "prompt": "In the “Station-area and train cleanliness inspection” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "床がぬれています。",
+              "meaning": "The floor is wet.",
+              "reading": "ゆかがぬれています。"
+            },
+            {
+              "japanese": "道具を置き、責任者に連絡します。",
+              "meaning": "I will put down the tool and contact the person in charge.",
+              "reading": "どうぐをおき、せきにんしゃにれんらくします。"
+            }
+          ],
+          "id": "rail-03",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan alat dan bahan kebersihan sesuai area yang ditugaskan.",
+            "Mencegah alat atau cairan mengganggu pergerakan penumpang.",
+            "Melaporkan kerusakan atau kontaminasi yang membutuhkan petugas lain."
+          ],
+          "response": "Do not touch or mix the substance. Notify the person in charge, follow area-restriction procedures, and use a cleaning product only after it has been identified.",
+          "scenario": "During cleaning, an unidentified liquid is found on the floor of a busy concourse.",
+          "sections": [
+            {
+              "body": "Cleaning duties may cover train interiors and exteriors, platforms, concourses, and station facilities as assigned. Distinguish areas being cleaned from those still in use by passengers. Use tools, supplies, gloves, warning signs, and methods according to facility instructions; do not mix different substances or use them based on a guess.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Keep tools out of walkways and clear of obstructions. Follow procedure for warning signs on wet floors. Do not touch sharp objects, unidentified liquids, damaged facilities, or damage near the railway; restrict access from a safe position and report it. Example: the concourse floor is wet during a busy period. Response: use the prescribed signs, maintain a safe passage, and request help if the area cannot be secured.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan area dan tugas pembersihan yang ditetapkan",
+            "Siapkan alat serta tanda sesuai instruksi",
+            "Bersihkan sambil menjaga jalur pengguna tetap aman",
+            "Laporkan benda berbahaya atau fasilitas rusak"
+          ],
+          "title": "Cleaning Checks in Stations and Trains",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "meaning": "cleaning",
+              "reading": "せいそう"
+            },
+            {
+              "japanese": "道具",
+              "meaning": "tool",
+              "reading": "どうぐ"
+            },
+            {
+              "japanese": "床",
+              "meaning": "floor",
+              "reading": "ゆか"
+            },
+            {
+              "japanese": "立入禁止",
+              "meaning": "no entry",
+              "reading": "たちいりきんし"
+            }
+          ]
+        }
+      ],
+      "title": "Stations, Passengers, and Cleanliness"
+    },
+    {
+      "description": "Original practice in railway movement communication and control. Route changes, signals, operating equipment, and traffic control are handled only by authorized staff with the procedures and qualifications set by the operator.",
+      "id": "movement-control",
+      "lessons": [
+        {
+          "caution": "Do not operate points, signals, or track equipment unless assigned and authorized.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Only authorized staff may handle operating equipment because it affects travel safety.",
+              "kind": "knowledge",
+              "options": [
+                "Staff assigned and qualified or authorized under the operator's rules",
+                "Anyone who can see the equipment",
+                "A passenger who offers assistance",
+                "A worker from another section without instructions"
+              ],
+              "prompt": "Who may operate track or signaling equipment?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A discrepancy between a signal and an instruction must not be resolved by guessing; hold the operation and report it.",
+              "kind": "case",
+              "options": [
+                "Choose whichever indicator looks easier",
+                "Change the switch to test it",
+                "Hold the action and request confirmation from operations staff",
+                "Ask the passenger to choose a route"
+              ],
+              "prompt": "The instruction and switch indicator differ. What should be done?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Receive instructions from an authorized source → Repeat or verify them according to procedure → Check indicators that are part of the task → Act or hold as directed by the confirmation.",
+              "kind": "workflow",
+              "options": [
+                "Receive instructions from an authorized source",
+                "Repeat or verify the instruction according to procedure",
+                "Check the indicators that are part of the task",
+                "Act or hold as directed by the confirmation"
+              ],
+              "prompt": "In the “Route changes and operating equipment” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指示と表示が違います。",
+              "meaning": "The instruction and indicator do not match.",
+              "reading": "しじとひょうじがちがいます。"
+            },
+            {
+              "japanese": "操作を止めて、確認してください。",
+              "meaning": "Stop operation and confirm first.",
+              "reading": "そうさをとめて、かくにんしてください。"
+            }
+          ],
+          "id": "rail-04",
+          "minutes": 25,
+          "objectives": [
+            "Memahami bahwa pengaturan jalur dan isyarat mempunyai urutan resmi.",
+            "Menggunakan komunikasi ulang untuk memastikan instruksi operasi.",
+            "Menghentikan tindakan dan meminta bantuan saat informasi tidak jelas."
+          ],
+          "response": "Do not move the equipment. Report the discrepancy from a safe position and ask authorized staff to confirm the instruction and equipment status.",
+          "scenario": "A verbal instruction specifies one track, but the equipment indicator shows another.",
+          "sections": [
+            {
+              "body": "In railway operations, tracks, points, signals, and related equipment determine movement. Misunderstanding an instruction can have serious consequences, so only assigned and qualified workers handle operating equipment. Other workers keep clear and report what they observe. Company rules, official signals, and instructions from operations staff are authoritative.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Before taking an action within your authority, confirm the track identity, the intent of the instruction, and any communication required by the operator. Repeat the instruction if procedure requires it. If an indicator does not match or a message is unclear, do not guess; hold and report. Example: an indicator light conflicts with a verbal instruction. Response: stop in a safe place and ask the controller to confirm.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Terima instruksi dari sumber yang berwenang",
+            "Ulangi atau cocokkan instruksi sesuai prosedur",
+            "Periksa indikator yang menjadi bagian tugas",
+            "Lakukan atau tahan tindakan sesuai konfirmasi"
+          ],
+          "title": "Track Changes and Operating Equipment",
+          "vocabulary": [
+            {
+              "japanese": "線路",
+              "meaning": "railway track",
+              "reading": "せんろ"
+            },
+            {
+              "japanese": "信号",
+              "meaning": "signal",
+              "reading": "しんごう"
+            },
+            {
+              "japanese": "転てつ器",
+              "meaning": "railway points",
+              "reading": "てんてつき"
+            },
+            {
+              "japanese": "指示",
+              "meaning": "instruction",
+              "reading": "しじ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not guess the meaning of a signal or continue moving when communication is interrupted.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Movement must follow clear communication; if a signal is lost, stop and report it.",
+              "kind": "knowledge",
+              "options": [
+                "Stop movement according to procedure and restore communication",
+                "Continue using your own estimate",
+                "Ask the passenger to give a signal",
+                "Walk toward the vehicle to inspect it"
+              ],
+              "prompt": "What should you do when the shunting signal is not visible?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Stopping the activity prevents misunderstanding and exposure to the operating area.",
+              "kind": "case",
+              "options": [
+                "Continue at low speed",
+                "Give a new signal without coordinating",
+                "Stop movement from a safe position and contact the supervisor",
+                "Stand between vehicles"
+              ],
+              "prompt": "The signaler is no longer visible. What is the correct response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Confirm assigned roles and signals → Ensure safe working positions and a controlled route → Begin communication or movement as instructed → Stop and report if a signal is lost.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the assigned roles and signals",
+                "Confirm work positions are safe and the route is controlled",
+                "Begin communication or movement as instructed",
+                "Stop and report if the signal is lost"
+              ],
+              "prompt": "In the “Signals and safety during shunting” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "合図が見えません。",
+              "meaning": "I cannot see the signal.",
+              "reading": "あいずがみえません。"
+            },
+            {
+              "japanese": "停止して、もう一度確認します。",
+              "meaning": "Let's stop and check once more.",
+              "reading": "ていしして、もういちどかくにんします。"
+            }
+          ],
+          "id": "rail-05",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali pentingnya isyarat yang jelas saat pemindahan kendaraan di area kerja.",
+            "Menjaga posisi aman dan komunikasi dengan anggota tim.",
+            "Melaporkan instruksi yang tidak terlihat atau tidak dipahami."
+          ],
+          "response": "Stop movement according to procedure, remain in a safe position, and ask the supervisor to reestablish communication before resuming.",
+          "scenario": "During shunting, a team member can no longer see the signaler.",
+          "sections": [
+            {
+              "body": "Moving or shunting vehicles may involve a signaler, driver, and supervisor. Each operator has official codes, standing positions, and communication methods. Workers must know their duties before movement begins. If a signal is lost, obscured, or differs from the agreed signal, stop movement according to procedure and report it.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Do not stand between vehicles or enter their path of movement. Use communication devices and signals only as trained. Check the work route and personnel against the checklist. Example: the signaler is not visible when a move is about to start. Response: do not signal or move; wait until communication is clear again and the supervisor confirms.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Konfirmasi peran dan isyarat yang ditetapkan",
+            "Pastikan posisi kerja aman dan jalur terkendali",
+            "Mulai komunikasi/pergerakan sesuai instruksi",
+            "Hentikan dan laporkan bila isyarat hilang"
+          ],
+          "title": "Signals and Safety During Shunting",
+          "vocabulary": [
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            },
+            {
+              "japanese": "入換え",
+              "meaning": "shunting or vehicle movement",
+              "reading": "いれかえ"
+            },
+            {
+              "japanese": "停止",
+              "meaning": "stop",
+              "reading": "ていし"
+            },
+            {
+              "japanese": "連携",
+              "meaning": "coordination",
+              "reading": "れんけい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not report a suspected cause as fact or promise a restoration time.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Observed details help send the right assistance and prevent confusion.",
+              "kind": "knowledge",
+              "options": [
+                "The location, equipment or service, observed symptoms, and assistance needed",
+                "A personal guess about who is at fault",
+                "Only the word “broken,” without a location",
+                "A promised completion time"
+              ],
+              "prompt": "What is an important element in a disruption report to the operations center?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Report the issue and follow instructions; technical work must not be done by unassigned staff.",
+              "kind": "case",
+              "options": [
+                "Dismantle the gate without authorization",
+                "Allow the queue to form near a narrow area",
+                "Report the location and symptoms and guide passengers as instructed",
+                "Promise a repair time"
+              ],
+              "prompt": "A ticket gate is broken and a queue is forming. What is the correct step?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Observe the location and disruption → Communicate the service identity, location, and symptoms → Wait for a decision or technical assistance → Record and hand over any open status.",
+              "kind": "workflow",
+              "options": [
+                "Observe the location and disruption",
+                "Communicate the service identity, location, and symptoms",
+                "Wait for a decision or technical assistance",
+                "Record and hand over any open status"
+              ],
+              "prompt": "In the “Trip report and disruption coordination” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "改札機が動きません。",
+              "meaning": "The ticket gate is not working.",
+              "reading": "かいさつきがうごきません。"
+            },
+            {
+              "japanese": "駅の担当者に連絡します。",
+              "meaning": "I will contact station staff.",
+              "reading": "えきのたんとうしゃにれんらくします。"
+            }
+          ],
+          "id": "rail-06",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan lokasi dan fakta gangguan kepada pusat atau atasan.",
+            "Mengikuti perubahan layanan hanya setelah dikonfirmasi.",
+            "Meneruskan status yang belum selesai pada pergantian tugas."
+          ],
+          "response": "Do not dismantle the equipment. Contact operations staff with the location and symptoms, keep passenger routes safe, and give directions based on confirmed instructions.",
+          "scenario": "The ticket gate is not responding and a queue is beginning to build.",
+          "sections": [
+            {
+              "body": "Controllers and field staff must use the correct station name, train service number, or track. During a disruption, prompt and accurate information helps the operator manage service, passenger safety, and technical assistance. Record observable facts, the time, actions taken, and any status awaiting a decision.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Keep work communications concise: identify yourself, your location, the service or equipment involved, what you observed, and the help needed. Do not attempt repairs or announce a new route unless assigned. Example: a station ticket gate does not respond and a queue forms. Response: keep passengers in a safe place, notify operations staff, and give directions based on confirmed instructions.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati lokasi dan gangguan",
+            "Sampaikan identitas layanan, lokasi, dan gejala",
+            "Tunggu keputusan atau bantuan teknis",
+            "Catat serta serahkan status yang masih terbuka"
+          ],
+          "title": "Trip Reports and Disruption Coordination",
+          "vocabulary": [
+            {
+              "japanese": "運行状況",
+              "meaning": "operating status",
+              "reading": "うんこうじょうきょう"
+            },
+            {
+              "japanese": "故障",
+              "meaning": "damage",
+              "reading": "こしょう"
+            },
+            {
+              "japanese": "連絡",
+              "meaning": "communication",
+              "reading": "れんらく"
+            },
+            {
+              "japanese": "対応中",
+              "meaning": "being handled",
+              "reading": "たいおうちゅう"
+            }
+          ]
+        }
+      ],
+      "title": "Train Movements and Operations Coordination"
+    },
+    {
+      "description": "Original practice in track and railway electrical-facility maintenance. Work includes inspections, maintenance, and reporting; access and technical work are governed by the operator's safety system and supervision by authorized personnel.",
+      "id": "infrastructure",
+      "lessons": [
+        {
+          "caution": "Do not enter an active track or repair a component without protection and a work permit.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The location and facts help the supervisor assess the risk and decide what to check next.",
+              "kind": "knowledge",
+              "options": [
+                "The location and visible condition, then report them to the supervisor",
+                "A guessed cause",
+                "The name of the nearest person",
+                "No record is needed unless it is completely broken"
+              ],
+              "prompt": "What should be recorded when an unusual track condition is found?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Workers who have not been assigned the task must not perform repairs or tests that could create a hazard.",
+              "kind": "case",
+              "options": [
+                "Fix it with your foot",
+                "Take it home",
+                "Do not touch it; report the location to the supervisor",
+                "Wait for the train to test it"
+              ],
+              "prompt": "A track component appears to have shifted. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Receive the area boundaries and team instructions → Observe the route from an authorized position → Record the location and visible condition → Report findings and wait for directions.",
+              "kind": "workflow",
+              "options": [
+                "Receive the area boundaries and team instructions",
+                "Observe the route from an authorized position",
+                "Record the location and visible condition",
+                "Report the finding and wait for instructions"
+              ],
+              "prompt": "In the “Route inspection and recording findings” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この部品の位置が違います。",
+              "meaning": "This component is in a different position.",
+              "reading": "このぶひんのいちがちがいます。"
+            },
+            {
+              "japanese": "場所を記録して、責任者に報告してください。",
+              "meaning": "Record its location and report it to the person in charge.",
+              "reading": "ばしょをきろくして、せきにんしゃにほうこくしてください。"
+            }
+          ],
+          "id": "rail-07",
+          "minutes": 25,
+          "objectives": [
+            "Mengamati kondisi jalur sesuai area dan daftar tugas.",
+            "Menyampaikan perubahan atau kerusakan dengan lokasi yang dapat dikenali.",
+            "Menjaga diri di luar area bahaya sampai ada pengaturan kerja."
+          ],
+          "response": "Do not pull or tap the component. Record its location, notify the supervisor promptly, and follow instructions about restricting the area or further inspection.",
+          "scenario": "During an inspection, a track component appears to have shifted from its usual position.",
+          "sections": [
+            {
+              "body": "Track work includes measuring track condition, replacing components, handling ballast, and inspecting safety equipment. Inspections are performed by teams familiar with site boundaries, protection schedules, and the tools used. New workers must not enter a track or use work tools without direction and supervision under operator procedures.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Record the location, type of finding, and time, and take photos or use codes only when company rules allow. Do not touch rails, fasteners, or cables to test them. If a finding appears urgent, notify the supervisor promptly from a safe position. Example: a loose component is found on an inspection route. Response: stop in a safe area, mark the location only as permitted, and report to the supervisor.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Terima batas area dan instruksi tim",
+            "Amati jalur dari posisi yang diizinkan",
+            "Catat lokasi serta kondisi yang terlihat",
+            "Laporkan temuan dan tunggu arahan"
+          ],
+          "title": "Track Inspection and Recording Findings",
+          "vocabulary": [
+            {
+              "japanese": "軌道",
+              "meaning": "railway line",
+              "reading": "きどう"
+            },
+            {
+              "japanese": "線路",
+              "meaning": "train track",
+              "reading": "せんろ"
+            },
+            {
+              "japanese": "検査",
+              "meaning": "inspection",
+              "reading": "けんさ"
+            },
+            {
+              "japanese": "まくらぎ",
+              "meaning": "railway sleeper",
+              "reading": "まくらぎ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not assume a cable or device is safe because it appears switched off or motionless.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A safe status must be confirmed through procedure and authorized personnel, not appearance alone.",
+              "kind": "knowledge",
+              "options": [
+                "The equipment may still be hazardous or under system control",
+                "All cables contain only water",
+                "Equipment is always safe if it makes no sound",
+                "So no report is made"
+              ],
+              "prompt": "Why must workers not touch equipment that appears to be switched off?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not operate safety equipment; report the issue so authorized staff can secure the situation.",
+              "kind": "case",
+              "options": [
+                "Lift the barrier yourself",
+                "Turn off the alarm using the nearest box",
+                "Keep clear, report the symptoms, and follow safety measures",
+                "Ask the driver to proceed through"
+              ],
+              "prompt": "The level-crossing alarm keeps sounding, but the gate does not move. What is the best response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Identify signs of trouble from a safe position → Do not touch or operate the equipment → Report the location and symptoms to authorized staff → Wait for the area to be secured and for further instructions.",
+              "kind": "workflow",
+              "options": [
+                "Identify signs of trouble from a safe position",
+                "Do not touch or operate the equipment",
+                "Report the location and symptoms to authorized staff",
+                "Wait for the area to be secured and for further instructions"
+              ],
+              "prompt": "In the “Electrical, signaling, or level-crossing trouble” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "踏切の警報が続いています。",
+              "meaning": "The crossing alarm keeps sounding.",
+              "reading": "ふみきりのけいほうがつづいています。"
+            },
+            {
+              "japanese": "近づかないで、係員に連絡してください。",
+              "meaning": "Do not approach; contact staff.",
+              "reading": "ちかづかないで、かかりいんにれんらくしてください。"
+            }
+          ],
+          "id": "rail-08",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali alat listrik dan sinyal sebagai fasilitas yang hanya ditangani petugas berwenang.",
+            "Melaporkan alarm atau kerusakan tanpa menyentuh perangkat.",
+            "Mengikuti pembatasan area dan arahan pengawas."
+          ],
+          "response": "Stay in a safe place, do not touch the barrier or equipment, and report the situation to operations staff so safeguards can be put in place.",
+          "scenario": "A level-crossing barrier is not moving as usual while the alarm continues to sound.",
+          "sections": [
+            {
+              "body": "Railway electrical facilities include cables, substations, electrical equipment, signals, communications, and level-crossing safety devices. Some equipment remains dangerous even when it appears inactive. Workers must follow the site's authorization, energy-isolation, and inspection methods; this lesson does not grant permission or provide technical instructions for working on equipment.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "If you see a broken cable, dark signal, alarm, sparks, or damaged crossing barrier, do not approach or operate the equipment. Keep your distance from a safe position and report the location and symptoms to the designated person in charge. Example: a crossing alarm sounds continuously and the barrier appears stationary. Response: do not try to lift it; report the problem promptly and follow safety instructions.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali tanda gangguan dari posisi aman",
+            "Jangan menyentuh atau mengoperasikan alat",
+            "Laporkan lokasi dan gejala kepada petugas berwenang",
+            "Tunggu pengamanan dan arahan lanjutan"
+          ],
+          "title": "Electrical, Signal, or Crossing Failures",
+          "vocabulary": [
+            {
+              "japanese": "電気設備",
+              "meaning": "electrical equipment",
+              "reading": "でんきせつび"
+            },
+            {
+              "japanese": "踏切",
+              "meaning": "railway crossing",
+              "reading": "ふみきり"
+            },
+            {
+              "japanese": "警報",
+              "meaning": "alarm/warning",
+              "reading": "けいほう"
+            },
+            {
+              "japanese": "故障",
+              "meaning": "damage",
+              "reading": "こしょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not reopen an area or remove protections without the supervisor's authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Returning the area to service requires coordination and inspection under the operator's rules.",
+              "kind": "knowledge",
+              "options": [
+                "After the final inspection and authorization from the person in charge, as required by procedure",
+                "When a worker feels the job is complete",
+                "When the main equipment has already been used",
+                "As soon as the schedule shows the end time"
+              ],
+              "prompt": "When may the work area be returned to service?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A tool left behind can create a hazard; its status must be resolved and handed over before the area is reopened.",
+              "kind": "case",
+              "options": [
+                "Leave the area because everyone has gone home",
+                "Remove the tool from the list",
+                "Report it and search or count according to procedure before closeout",
+                "Ask the next train to inspect it"
+              ],
+              "prompt": "The tool has not been found as the team prepares to close out the work. What is the correct step?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Listen to the briefing and confirm roles → Check communications and work boundaries → Perform tasks only as directed → Count tools and hand over the status before closeout.",
+              "kind": "workflow",
+              "options": [
+                "Listen to the briefing and confirm roles",
+                "Check communications and work boundaries",
+                "Perform the task only as directed",
+                "Count the tools and hand over their status before closeout"
+              ],
+              "prompt": "In the “Field-work coordination and area closure” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "工具が一つ見つかりません。",
+              "meaning": "One tool has not been found.",
+              "reading": "こうぐがひとつみつかりません。"
+            },
+            {
+              "japanese": "作業を止めて、監督者に報告します。",
+              "meaning": "Stop work and report to the supervisor.",
+              "reading": "さぎょうをとめて、かんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "rail-09",
+          "minutes": 25,
+          "objectives": [
+            "Mengonfirmasi batas kerja, anggota tim, dan cara komunikasi sebelum mulai.",
+            "Menghentikan pekerjaan saat perlindungan atau komunikasi berubah.",
+            "Memastikan alat dan personel diperiksa sebelum area dikembalikan."
+          ],
+          "response": "Delay closing the work area and notify the supervisor. Locate and account for the tools according to procedure before the area is declared ready.",
+          "scenario": "A work tool is still missing as the team prepares to leave the area.",
+          "sections": [
+            {
+              "body": "Track or electrical maintenance is carried out by a team under the operator's protection system. Before work, members must know the supervisor, safe locations, access limits, communication equipment, and stop procedure. Returning an area to service also requires the designated inspection and authorization. A worker must not assume the job is complete just because their own task is finished.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Attend the pre-work briefing and repeat any instruction you do not understand. If communication is lost, boundaries change, or someone is in the wrong area, stop according to procedure and notify the supervisor. At the end, hand over tools, leftover materials, and finding status; do not remove barriers or authorize reopening the track. Example: a tool remains when the team is preparing to close the job. Response: report it and check again as a team before the person in charge declares the area ready.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan pengarahan dan pastikan peran",
+            "Periksa komunikasi serta batas kerja",
+            "Lakukan tugas hanya sesuai arahan",
+            "Hitung alat dan serahkan status sebelum penutupan"
+          ],
+          "title": "Fieldwork Coordination and Area Closure",
+          "vocabulary": [
+            {
+              "japanese": "作業区域",
+              "meaning": "work area",
+              "reading": "さぎょうくいき"
+            },
+            {
+              "japanese": "監督者",
+              "meaning": "supervisor",
+              "reading": "かんとくしゃ"
+            },
+            {
+              "japanese": "工具",
+              "meaning": "work tool",
+              "reading": "こうぐ"
+            },
+            {
+              "japanese": "終了確認",
+              "meaning": "completion confirmation",
+              "reading": "しゅうりょうかくにん"
+            }
+          ]
+        }
+      ],
+      "title": "Routes, Electricity, and Work Areas"
+    },
+    {
+      "description": "Original practice in rail-vehicle inspection, parts management, vehicle production, and station and train cleaning. Technical inspection, assembly, and equipment operation require specific training and supervision.",
+      "id": "rolling-stock",
+      "lessons": [
+        {
+          "caution": "Do not press, open, or adjust components outside your assigned duties.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checkable details help technicians locate the source of a problem safely.",
+              "kind": "knowledge",
+              "options": [
+                "The vehicle number, part, time, and observed symptoms",
+                "A guessed cause",
+                "The passenger's opinion only",
+                "A sign that the work is complete"
+              ],
+              "prompt": "What information is most helpful when reporting a vehicle symptom?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Workers report symptoms and follow procedure; assigned personnel carry out repairs.",
+              "kind": "case",
+              "options": [
+                "Lubricate it yourself with whatever material is available",
+                "Ignore it if the door is still moving",
+                "Record the symptoms and ask technical staff to inspect it",
+                "Close the inspection record"
+              ],
+              "prompt": "A vehicle door makes an unusual sound during inspection. What is the best step?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the checklist and vehicle number → Inspect the relevant parts according to the task and procedure → Record symptoms and results actually observed → Report them and wait for a readiness decision.",
+              "kind": "workflow",
+              "options": [
+                "Read the checklist and vehicle number",
+                "Inspect the relevant parts according to the task and procedure",
+                "Record symptoms and results actually observed",
+                "Report it and wait for a readiness decision"
+              ],
+              "prompt": "In the “Vehicle inspection and symptom reporting” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "扉から変な音がします。",
+              "meaning": "The door is making an unusual sound.",
+              "reading": "とびらからへんなおとがします。"
+            },
+            {
+              "japanese": "車両番号を伝えて、検査をお願いします。",
+              "meaning": "Give the vehicle number and request an inspection.",
+              "reading": "しゃりょうばんごうをつたえて、けんさをおねがいします。"
+            }
+          ],
+          "id": "rail-10",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti daftar inspeksi kendaraan dan tidak melewati butir yang belum pasti.",
+            "Mencatat gejala sebagai fakta, bukan langsung menyimpulkan penyebab.",
+            "Menyerahkan temuan kepada petugas teknis atau pengawas."
+          ],
+          "response": "Record the vehicle and symptom, do not adjust it yourself, and ask technical staff to inspect it before use.",
+          "scenario": "During an inspection, a vehicle door makes a sound that is different from usual.",
+          "sections": [
+            {
+              "body": "Vehicle work may include scheduled or unscheduled checks of brakes, doors, electrical devices, air conditioning, wheels, and other parts. Company procedures specify who inspects, which tools are used, and how vehicle readiness is decided. New workers must learn the limits of their authority and must not alter components without instruction.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Record the vehicle or part number, conditions seen or heard, inspection time, and actions taken. If something differs from the checklist, hold the relevant item and report it. Example: an unusual sound is heard while testing a door. Response: do not continue using the vehicle without confirmation from authorized staff.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca daftar dan nomor kendaraan",
+            "Periksa bagian sesuai tugas serta prosedur",
+            "Catat gejala dan hasil yang benar-benar dilihat",
+            "Laporkan dan tunggu keputusan kesiapan"
+          ],
+          "title": "Vehicle Inspection and Symptom Reports",
+          "vocabulary": [
+            {
+              "japanese": "車両",
+              "meaning": "rail vehicle",
+              "reading": "しゃりょう"
+            },
+            {
+              "japanese": "検査",
+              "meaning": "inspection",
+              "reading": "けんさ"
+            },
+            {
+              "japanese": "扉",
+              "meaning": "door",
+              "reading": "とびら"
+            },
+            {
+              "japanese": "異音",
+              "meaning": "unusual sound",
+              "reading": "いおん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use materials or continue assembly when their identification differs from the work order.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Numbers and records link the material used to the work order and the vehicle being built.",
+              "kind": "knowledge",
+              "options": [
+                "So the correct part is installed and the production result can be traced",
+                "So inventory can be mixed",
+                "So the label can be thrown away",
+                "So the work is completed without inspection"
+              ],
+              "prompt": "Why is the component number checked against the work order before assembly?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The material must not enter assembly until a supervisor confirms that its number and batch match.",
+              "kind": "case",
+              "options": [
+                "Install it because its shape is similar",
+                "Swap it with other stock without telling anyone",
+                "Hold it, record the discrepancy, and request confirmation",
+                "Throw away the work list"
+              ],
+              "prompt": "A component box on the production line does not match the work order. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the work order and component number → Check the material batch, quantity, and condition → Perform the assigned assembly task → Record inspection results and report discrepancies.",
+              "kind": "workflow",
+              "options": [
+                "Read the work order and component number",
+                "Check the material batch, quantity, and condition",
+                "Perform the assigned assembly task",
+                "Record the inspection results and report discrepancies"
+              ],
+              "prompt": "In the “Component receiving, assembly, and traceability” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "組立てる前に、部品番号を確認します。",
+              "meaning": "Before assembly, I check the part number.",
+              "reading": "くみたてるまえに、ぶひんばんごうをかくにんします。"
+            },
+            {
+              "japanese": "番号が作業表と違います。",
+              "meaning": "The number differs from the work sheet.",
+              "reading": "ばんごうがさぎょうひょうとちがいます。"
+            },
+            {
+              "japanese": "使わずに、担当者へ確認します。",
+              "meaning": "I will not use it; I will confirm with staff.",
+              "reading": "つかわずに、たんとうしゃへかくにんします。"
+            }
+          ],
+          "id": "rail-11",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan nomor dan kelompok bahan dengan instruksi kerja produksi.",
+            "Mengikuti penugasan perakitan serta melaporkan bahan yang rusak atau tidak cocok.",
+            "Mencatat hasil kerja agar bahan dan kendaraan yang dibuat dapat ditelusuri."
+          ],
+          "response": "Stop the affected assembly stage, set the box aside according to procedure, record the numbers on the box and work order, and ask the supervisor to confirm they match.",
+          "scenario": "A parts box on the production line has a label number that differs from the work order.",
+          "sections": [
+            {
+              "body": "Rail workshops and factories receive materials, install or assemble parts, and inspect work against production orders. Each part may have a specific number, material batch, drawing, and installation position. Parts that look alike are not necessarily interchangeable. Use tools and materials, assemble, and inspect only as assigned and under company training and supervision. Records of materials used and inspection results keep vehicle histories traceable.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Before starting, match part numbers and material batches to the work order. Follow the supplied drawing or sequence, use only tools assigned to you, and record inspections actually performed. If a number does not match, material is damaged, or an assembly differs from instructions, stop that stage and tell the supervisor. Example: a box label gives a different model from the work list. Response: keep it off the assembly line, report the discrepancy, and wait for confirmation.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca perintah kerja dan nomor komponen",
+            "Cocokkan kelompok bahan, jumlah, dan kondisi",
+            "Lakukan tugas perakitan yang ditugaskan",
+            "Catat hasil pemeriksaan dan laporkan selisih"
+          ],
+          "title": "Parts Receipt, Assembly, and Traceability",
+          "vocabulary": [
+            {
+              "japanese": "部品",
+              "meaning": "component",
+              "reading": "ぶひん"
+            },
+            {
+              "japanese": "在庫",
+              "meaning": "inventory",
+              "reading": "ざいこ"
+            },
+            {
+              "japanese": "番号",
+              "meaning": "number",
+              "reading": "ばんごう"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            },
+            {
+              "japanese": "組立て",
+              "meaning": "assembly",
+              "reading": "くみたて"
+            }
+          ]
+        },
+        {
+          "caution": "Do not treat cleaning as technical approval to operate a vehicle.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The handover records cleanliness and condition; authorized personnel make the technical readiness decision.",
+              "kind": "knowledge",
+              "options": [
+                "Tools are returned, the area is safe, and damage or pending tasks are recorded",
+                "That the vehicle is definitely ready to operate",
+                "That warning signs can be left anywhere",
+                "That all components have been repaired"
+              ],
+              "prompt": "What needs to be confirmed when handing over cleaning work?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A damage report must be passed on even when cleaning is complete; do not declare the vehicle ready without an inspection.",
+              "kind": "case",
+              "options": [
+                "Close the report because cleaning is complete",
+                "Repair it without authorization",
+                "Record the damage location and report it before handing over the area",
+                "Remove the seat while the train is moving"
+              ],
+              "prompt": "The cabin is clean, but one seat is damaged. What is the correct step?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check completed and pending work → Return tools and materials to their places → Record damage or areas that are not yet safe → Hand the status over to the next person in charge.",
+              "kind": "workflow",
+              "options": [
+                "Check completed and pending work",
+                "Return the tools and materials to their places",
+                "Record damage or areas that are not yet safe",
+                "Hand the status over to the next person in charge"
+              ],
+              "prompt": "In the “Work completion, cleanliness, and handover” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "車内の清掃が終わりました。",
+              "meaning": "The train interior has been cleaned.",
+              "reading": "しゃないのせいそうがおわりました。"
+            },
+            {
+              "japanese": "座席が壊れています。確認をお願いします。",
+              "meaning": "The seat is damaged. Please inspect it.",
+              "reading": "ざせきがこわれています。かくにんをおねがいします。"
+            }
+          ],
+          "id": "rail-12",
+          "minutes": 25,
+          "objectives": [
+            "Menyelesaikan pembersihan sesuai area, urutan, dan perlindungan yang ditetapkan.",
+            "Memastikan alat, bahan, serta barang tertinggal ditangani sebelum serah terima.",
+            "Meneruskan status pekerjaan yang belum selesai dengan catatan yang jelas."
+          ],
+          "response": "Do not close the finding just because the cabin is clean. Record the vehicle and seat location, notify the person in charge, and let authorized staff perform the readiness inspection.",
+          "scenario": "The cabin has been cleaned, but one seat appears damaged.",
+          "sections": [
+            {
+              "body": "Station and train cleaning covers public areas and workspaces as assigned. After cleaning or inspection, workers return tools and record unfinished areas. In workshops and factories, materials, components, and test items must remain separate from passenger routes. Cleanliness does not mean that a vehicle or facility has passed its technical inspection.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Perform the final checklist: return tools, deal with wet-floor signs, clear the area of lost property, and report damage. Do not remove barriers until the area has been declared safe. Example: cabin cleaning is complete but a seat is damaged. Response: record the vehicle number and seat location, notify the person in charge, and mark it according to procedure before the vehicle is returned.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa pekerjaan yang selesai dan tertunda",
+            "Kembalikan alat dan bahan ke tempatnya",
+            "Catat kerusakan atau area yang belum aman",
+            "Serahkan status kepada penanggung jawab berikutnya"
+          ],
+          "title": "Work Completion, Cleaning, and Handover",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "meaning": "cleaning",
+              "reading": "せいそう"
+            },
+            {
+              "japanese": "座席",
+              "meaning": "seat",
+              "reading": "ざせき"
+            },
+            {
+              "japanese": "破損",
+              "meaning": "damage",
+              "reading": "はそん"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        }
+      ],
+      "title": "Rail Vehicles, Parts, and Cleaning"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "国土交通省 — Accepting Foreign Workers in the Railway Sector (Specified Skilled Worker and Employment for Skill Development)",
+      "url": "https://www.mlit.go.jp/tetudo/tetudo_fr7_000056.html"
+    },
+    {
+      "title": "国土交通省 — Railway Sector Job Categories (Detailed Duties)",
+      "url": "https://www.mlit.go.jp/tetudo/content/001769018.pdf"
+    },
+    {
+      "title": "国土交通省 — Operational Policy for Specified Skilled Worker and Employment for Skill Development in the Railway Sector (January 23, 2026)",
+      "url": "https://www.mlit.go.jp/tetudo/content/001978642.pdf"
+    },
+    {
+      "title": "一般社団法人日本鉄道運転協会 — Exam Information for the Train Operations Staff Category",
+      "url": "https://www.jtoa.or.jp/ssw/index.html"
+    },
+    {
+      "title": "一般社団法人日本鉄道施設協会 — Specified Skilled Worker Category for Track Maintenance",
+      "url": "https://www.jrcea.or.jp/tokuteiginou"
+    }
+  ],
+  "version": 1
+}

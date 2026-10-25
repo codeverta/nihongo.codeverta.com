@@ -1,0 +1,1264 @@
+{
+  "modules": [
+    {
+      "description": "Follow front-desk procedures, protect guest identities, and refer requests that require staff approval.",
+      "id": "frontdesk",
+      "lessons": [
+        {
+          "caution": "Do not read another guest's name or reservation details aloud in a public area.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Matching several details helps locate the reservation and prevent mistakes.",
+              "kind": "knowledge",
+              "options": [
+                "Name, date, number of guests, and confirmation number if available",
+                "Another guest’s room number",
+                "Every guest’s address",
+                "The color of the suitcase"
+              ],
+              "prompt": "Which details should be matched when looking up a reservation?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Verify the discrepancy before promising a room or changing any information.",
+              "kind": "case",
+              "options": [
+                "Promise a room without checking",
+                "Check the spelling and date, and ask a senior colleague to search the system",
+                "Delete the guest’s confirmation",
+                "Show another guest’s information"
+              ],
+              "prompt": "The guest has a reservation confirmation, but their name cannot be found in the system. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Greet the guest and ask for the reservation name → Match the date, guest count, and confirmation number → Politely explain the result of the check → Escalate any discrepancy before changing information.",
+              "kind": "workflow",
+              "options": [
+                "Match the date, guest count, and confirmation number",
+                "Greet the guest and ask for the reservation name",
+                "Politely explain the result of the check",
+                "Escalate any discrepancy before changing information"
+              ],
+              "prompt": "In the “Welcoming a Guest and Checking a Reservation” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご予約のお名前をお願いします。",
+              "meaning": "May I have the name on the reservation?",
+              "reading": "ごよやくのおなまえをおねがいします。"
+            },
+            {
+              "japanese": "確認しますので、少々お待ちください。",
+              "meaning": "Please wait a moment while I check.",
+              "reading": "かくにんしますので、しょうしょうおまちください。"
+            }
+          ],
+          "id": "accommodation-01",
+          "minutes": 25,
+          "objectives": [
+            "Menyapa tamu serta mencocokkan nama, tanggal, jumlah tamu, dan nomor konfirmasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Check the spelling and dates with the guest, do not promise a room, and ask a senior staff member to search the reservation system.",
+          "scenario": "A guest shows a reservation confirmation, but their name does not appear on the front-desk screen.",
+          "sections": [
+            {
+              "body": "Front-desk service begins with a greeting, locating the reservation, and confirming the number of guests and length of stay. Use the property's systems and procedures. If the name or dates do not match, calmly check the spelling and confirmation number. Do not disclose another guest's information or change a reservation without authorization.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Repeat important information and ask the guest to confirm it. If you cannot find the reservation, do not blame the guest or promise a room. Contact a senior staff member, check an approved alternative system, and offer an appropriate place to wait.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Sapa tamu dan tanyakan nama reservasi",
+            "Cocokkan tanggal, jumlah tamu, dan nomor konfirmasi",
+            "Jelaskan hasil pemeriksaan dengan sopan",
+            "Eskalasi ketidakcocokan sebelum mengubah data"
+          ],
+          "title": "Welcoming Guests and Checking Reservations",
+          "vocabulary": [
+            {
+              "japanese": "予約",
+              "meaning": "reservation",
+              "reading": "よやく"
+            },
+            {
+              "japanese": "宿泊日",
+              "meaning": "stay dates",
+              "reading": "しゅくはくび"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            },
+            {
+              "japanese": "受付",
+              "meaning": "reception/front desk",
+              "reading": "うけつけ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not show screens, documents, or room numbers to unauthorized people.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A room number can affect a guest’s safety and privacy.",
+              "kind": "knowledge",
+              "options": [
+                "To protect the guest’s privacy and safety",
+                "So guests do not have to remember the key",
+                "So the front-desk staff do not have to use the system",
+                "So everyone knows which room is vacant"
+              ],
+              "prompt": "Why should you avoid saying a room number out loud in a public area?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Confirm that the person is authorized to receive a key to prevent unauthorized access.",
+              "kind": "case",
+              "options": [
+                "Give them the key once they tell you their friend’s name",
+                "Do not give out the key or room number; verify with the guest or a senior staff member",
+                "Write the room number on paper",
+                "Show the guest list"
+              ],
+              "prompt": "A person who is not listed asks for their friend’s room key. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Verify the reservation and identity according to procedure → Explain which forms or details need confirmation → Confirm that the key recipient is authorized for the room → Record the information and hand the issue over to a senior colleague.",
+              "kind": "workflow",
+              "options": [
+                "Explain which forms or details need confirmation",
+                "Verify the reservation and identity according to procedure",
+                "Confirm that the key recipient is authorized for the room",
+                "Record the information and hand the issue over to a senior colleague"
+              ],
+              "prompt": "In the “Check-in, Identity, and Privacy” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご本人様を確認します。",
+              "meaning": "I will verify your identity.",
+              "reading": "ごほんにんさまをかくにんします。"
+            },
+            {
+              "japanese": "確認が終わるまで鍵を渡せません。",
+              "meaning": "I cannot issue the key until verification is complete.",
+              "reading": "かくにんがおわるまでかぎをわたせません。"
+            }
+          ],
+          "id": "accommodation-02",
+          "minutes": 25,
+          "objectives": [
+            "Memverifikasi data tamu dan memberikan kunci melalui prosedur yang menjaga kerahasiaan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not give out the key or room number. Contact the registered guest or a senior staff member to verify authorization.",
+          "scenario": "Someone asks for a room key on behalf of a friend, but their name is not listed on the reservation.",
+          "sections": [
+            {
+              "body": "At check-in, follow the property's rules for identity and stay information. Make sure the person receiving a key is authorized for the room. Do not say room numbers aloud or expose information on a screen. Use guest documents and data only for authorized work purposes.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Politely ask for identification, match the name to the reservation, explain the form, and make sure the key goes to the right person. If the identity, party size, or payment status does not match, do not issue the key; ask a senior staff member for help and store documents in the designated place.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Verifikasi reservasi dan identitas sesuai prosedur",
+            "Jelaskan formulir atau data yang perlu dikonfirmasi",
+            "Pastikan penerima kunci berhak atas kamar",
+            "Simpan data dan serahkan masalah kepada senior"
+          ],
+          "title": "Check-In, Identification, and Privacy",
+          "vocabulary": [
+            {
+              "japanese": "本人確認",
+              "meaning": "identity verification",
+              "reading": "ほんにんかくにん"
+            },
+            {
+              "japanese": "鍵",
+              "meaning": "key",
+              "reading": "かぎ"
+            },
+            {
+              "japanese": "個人情報",
+              "meaning": "personal information",
+              "reading": "こじんじょうほう"
+            },
+            {
+              "japanese": "宿泊者",
+              "meaning": "registered guest",
+              "reading": "しゅくはくしゃ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not promise a room or change dates until the system and staff have confirmed it.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The room must be available and ready, and the move must follow procedure.",
+              "kind": "knowledge",
+              "options": [
+                "Availability, clean status, and approval according to the system",
+                "Only whether the door is open",
+                "The nearest room",
+                "The shift worker’s preference"
+              ],
+              "prompt": "What should be confirmed before assigning a replacement room?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not assign a room until its cleanliness has been confirmed.",
+              "kind": "case",
+              "options": [
+                "Give them the key to save time",
+                "Ask a senior colleague and housekeeping to confirm readiness before handing over the key",
+                "Move the item into the hallway",
+                "Change the status yourself"
+              ],
+              "prompt": "The replacement room is marked as not yet inspected. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Repeat the request, including the date or room → Check availability and the rules in the system → Get approval from an authorized staff member if needed → Update the record and notify the relevant team.",
+              "kind": "workflow",
+              "options": [
+                "Check availability and the rules in the system",
+                "Repeat the request, including the date or room",
+                "Get approval from an authorized staff member if needed",
+                "Update the record and notify the relevant team"
+              ],
+              "prompt": "In the “Schedule Changes and Room Status” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "部屋を変更できますか。",
+              "meaning": "May I change rooms?",
+              "reading": "へやをへんこうできますか。"
+            },
+            {
+              "japanese": "空室と清掃状況を確認します。",
+              "meaning": "I will check its availability and cleanliness.",
+              "reading": "くうしつとせいそうじょうきょうをかくにんします。"
+            }
+          ],
+          "id": "accommodation-03",
+          "minutes": 25,
+          "objectives": [
+            "Menangani permintaan perpanjangan atau pindah kamar tanpa memperbarui sistem secara sepihak.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Apologize and record the complaint. Do not issue a key to a room that is not ready; ask a senior staff member and housekeeping to check the available options.",
+          "scenario": "A guest wants to move because of noise, but the replacement room has not yet been inspected.",
+          "sections": [
+            {
+              "body": "Before making a change, confirm the reservation, room cleanliness, payment, and availability. An extension or room change may affect rates, cleaning, and the next guest. Staff record the request and check property rules; only authorized staff may approve certain changes.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Repeat the request and record the time and room involved. Check the system, then explain that the change is pending confirmation if it has not been approved. Do not move belongings or issue another room key until room status, cleanliness, payment, and authorization are confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Ulangi permintaan beserta tanggal atau kamar",
+            "Periksa ketersediaan dan aturan pada sistem",
+            "Minta persetujuan petugas berwenang bila perlu",
+            "Perbarui catatan dan beri tahu bagian terkait"
+          ],
+          "title": "Schedule Changes and Room Status",
+          "vocabulary": [
+            {
+              "japanese": "変更",
+              "meaning": "change",
+              "reading": "へんこう"
+            },
+            {
+              "japanese": "空室",
+              "meaning": "vacant room",
+              "reading": "くうしつ"
+            },
+            {
+              "japanese": "延長",
+              "meaning": "extension",
+              "reading": "えんちょう"
+            },
+            {
+              "japanese": "清掃状況",
+              "meaning": "cleaning status",
+              "reading": "せいそうじょうきょう"
+            }
+          ]
+        }
+      ],
+      "title": "Front Desk and Guest Arrival"
+    },
+    {
+      "description": "Listen to guests' needs, provide accurate guidance, and calmly refer issues within your authority.",
+      "id": "guestservice",
+      "lessons": [
+        {
+          "caution": "Do not give unchecked directions or times just to answer quickly.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Check information that may have changed before sharing it.",
+              "kind": "knowledge",
+              "options": [
+                "Check an up-to-date source or ask the designated staff member",
+                "Use the old schedule because it is convenient",
+                "Give an estimate without explaining",
+                "Ignore the question"
+              ],
+              "prompt": "What should you do when the available schedule is out of date?"
+            },
+            {
+              "answer": 1,
+              "explanation": "An outdated source cannot support an accurate answer.",
+              "kind": "case",
+              "options": [
+                "Give the old time as the next scheduled departure",
+                "Say that you will check, then use an up-to-date source",
+                "Tell the guest to wait without providing information",
+                "Write your own estimate"
+              ],
+              "prompt": "The bus schedule on the board is out of date. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Ask what information the guest needs → Check the board, map, or property information source → Briefly explain the location or schedule → Confirm their understanding and escalate if anything remains uncertain.",
+              "kind": "workflow",
+              "options": [
+                "Check the board, map, or property information source",
+                "Ask what information the guest needs",
+                "Briefly explain the location or schedule",
+                "Confirm understanding and escalate if anything remains uncertain"
+              ],
+              "prompt": "In the “Giving Directions and Facility Information” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "朝食会場はどこですか。",
+              "meaning": "Where is the breakfast room?",
+              "reading": "ちょうしょくかいじょうはどこですか。"
+            },
+            {
+              "japanese": "エレベーターの隣です。",
+              "meaning": "It is next to the elevator.",
+              "reading": "えれべーたーのとなりです。"
+            }
+          ],
+          "id": "accommodation-04",
+          "minutes": 25,
+          "objectives": [
+            "Memberi petunjuk singkat yang akurat dengan memakai informasi properti terbaru.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not guess the schedule. Say that you will check the latest information, then contact the transportation provider or designated staff member.",
+          "scenario": "A guest asks about the airport bus schedule, but the posted notice is past its validity date.",
+          "sections": [
+            {
+              "body": "Guests may ask about breakfast hours, elevator locations, room access, transportation, or services. Check the latest property information or notices. Give simple directions and use a map if available. If you are unsure, ask a colleague instead of guessing a schedule, location, or facility.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Name the location and an easy landmark, and offer to show the way if that is part of your duties. Use approved sources for transportation schedules or information outside the property. Do not rely on outdated schedules or share staff or guest personal information.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan informasi yang dibutuhkan tamu",
+            "Periksa papan, peta, atau sumber properti",
+            "Jelaskan lokasi atau jadwal dengan singkat",
+            "Pastikan pemahaman dan eskalasi jika belum pasti"
+          ],
+          "title": "Giving Directions and Facility Information",
+          "vocabulary": [
+            {
+              "japanese": "案内",
+              "meaning": "directions",
+              "reading": "あんない"
+            },
+            {
+              "japanese": "館内",
+              "meaning": "inside the building",
+              "reading": "かんない"
+            },
+            {
+              "japanese": "地図",
+              "meaning": "map",
+              "reading": "ちず"
+            },
+            {
+              "japanese": "時刻表",
+              "meaning": "schedule",
+              "reading": "じこくひょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not blame the guest or promise a solution that has not been approved.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Any promise must be based on confirmed information and approval.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm the action and timing with the responsible team",
+                "Guess when the problem will be resolved",
+                "Offer compensation without authorization",
+                "Blame another department"
+              ],
+              "prompt": "What should you do before promising to resolve a complaint?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A possible health hazard must be handled immediately under the safety procedure.",
+              "kind": "case",
+              "options": [
+                "Tell them to wait in the room",
+                "Help them reach a safe place and immediately follow the hazard reporting procedure",
+                "Spray air freshener",
+                "Close the door and continue working"
+              ],
+              "prompt": "A guest feels dizzy and smells a strong odor. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Listen and apologize politely → Repeat the issue and record the facts and time → Contact the relevant team according to the level of risk → Explain the confirmed follow-up and check its status.",
+              "kind": "workflow",
+              "options": [
+                "Repeat the issue and record the facts and time",
+                "Listen and apologize politely",
+                "Contact the relevant team according to the level of risk",
+                "Explain the confirmed follow-up and check its status"
+              ],
+              "prompt": "In the “Receiving a Complaint and Arranging Follow-up” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご不便をおかけして申し訳ありません。",
+              "meaning": "I am sorry for the inconvenience.",
+              "reading": "ごふべんをおかけしてもうしわけありません。"
+            },
+            {
+              "japanese": "すぐに担当者へ連絡します。",
+              "meaning": "I will contact the relevant staff member right away.",
+              "reading": "すぐにたんとうしゃへれんらくします。"
+            }
+          ],
+          "id": "accommodation-05",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan keluhan, meminta maaf atas ketidaknyamanan, mencatat fakta, dan meneruskan tindakan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Help the guest move to a safe place, immediately report the possible hazard, and follow emergency procedures; do not tell them to wait in the room.",
+          "scenario": "A guest smells a strong odor in the room and feels dizzy; the source of the odor is unknown.",
+          "sections": [
+            {
+              "body": "Complaints may concern noise, temperature, cleanliness, food, or service. Listen without interrupting, apologize for the inconvenience, and repeat the issue. Do not blame colleagues or promise compensation or repair times that have not been approved. Refer the matter to a department that can act.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Record the time, reported issue, and initial action in a secure system. For hazards such as a gas smell, hot wiring, or an ill guest, use the property's emergency procedure. After handing the matter over, explain who will follow up and when the information will be updated.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan dan minta maaf dengan sopan",
+            "Ulangi masalah serta catat fakta dan waktu",
+            "Hubungi bagian terkait sesuai tingkat risiko",
+            "Jelaskan tindak lanjut yang sudah dikonfirmasi dan cek status"
+          ],
+          "title": "Receiving Complaints and Arranging Follow-Up",
+          "vocabulary": [
+            {
+              "japanese": "苦情",
+              "meaning": "complaint",
+              "reading": "くじょう"
+            },
+            {
+              "japanese": "不便",
+              "meaning": "inconvenience",
+              "reading": "ふべん"
+            },
+            {
+              "japanese": "担当部署",
+              "meaning": "relevant department",
+              "reading": "たんとうぶしょ"
+            },
+            {
+              "japanese": "対応状況",
+              "meaning": "handling status",
+              "reading": "たいおうじょうきょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not make assumptions about a guest's disability or health condition.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A respectful question helps provide service while protecting the guest’s privacy.",
+              "kind": "knowledge",
+              "options": [
+                "Ask only what is necessary, using polite terms the guest is comfortable with",
+                "Ask for all medical details in the lobby",
+                "Assume the guest does not need help",
+                "Tell other guests about it"
+              ],
+              "prompt": "How should you ask about a guest’s special needs?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Confirm accessibility needs and room readiness before handing over the room.",
+              "kind": "case",
+              "options": [
+                "Hand over the key immediately",
+                "Explain that you are waiting for confirmation, then ask housekeeping or a senior colleague to inspect",
+                "Move the guest without their consent",
+                "Mark it as ready without inspecting it"
+              ],
+              "prompt": "An accessible room is available, but its cleaning status is unclear. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Ask about the need politely and only as much as necessary → Check the available facilities and services → Confirm with or escalate to the appropriate staff member → Record the request securely and ensure a proper handover.",
+              "kind": "workflow",
+              "options": [
+                "Check the available facilities and services",
+                "Ask politely and only as much as necessary about the guest’s needs",
+                "Confirm with or escalate to the appropriate staff member",
+                "Record the request securely and ensure a proper handover"
+              ],
+              "prompt": "In the “Special Requests and Accessibility Needs” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "段差のない部屋をお願いします。",
+              "meaning": "I would like a step-free room, please.",
+              "reading": "だんさのないへやをおねがいします。"
+            },
+            {
+              "japanese": "空室と設備を確認します。",
+              "meaning": "I will check the room and its facilities.",
+              "reading": "くうしつとせつびをかくにんします。"
+            }
+          ],
+          "id": "accommodation-06",
+          "minutes": 25,
+          "objectives": [
+            "Mengonfirmasi kebutuhan akses atau layanan khusus dan meneruskannya tanpa membuat janji yang belum pasti.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Explain that the room is being checked, contact housekeeping or a senior staff member to confirm accessibility and readiness, then offer a confirmed option.",
+          "scenario": "A guest requests a step-free room, but the room listed as available has not been confirmed clean.",
+          "sections": [
+            {
+              "body": "Guests may request an accessible room, help with belongings, food options, a baby cot, or health support. Ask only what is necessary and do so respectfully; do not request unnecessary personal details. Check the property's facilities and service limits. Refer safety or health-related requests to trained staff.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Record the need in a secure system using terms the guest approves. Repeat what can be provided and what is still awaiting confirmation. Do not give medical advice or promise facilities that are unavailable. In an emergency, follow the property's assistance procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan kebutuhan dengan sopan dan secukupnya",
+            "Periksa fasilitas serta layanan yang tersedia",
+            "Konfirmasi atau eskalasi kepada petugas tepat",
+            "Catat permintaan secara aman dan pastikan serah terima"
+          ],
+          "title": "Special Requests and Accessibility Needs",
+          "vocabulary": [
+            {
+              "japanese": "特別な希望",
+              "meaning": "special request",
+              "reading": "とくべつなきぼう"
+            },
+            {
+              "japanese": "段差",
+              "meaning": "step/level difference",
+              "reading": "だんさ"
+            },
+            {
+              "japanese": "設備",
+              "meaning": "facility",
+              "reading": "せつび"
+            },
+            {
+              "japanese": "確認します",
+              "meaning": "will check",
+              "reading": "かくにんします"
+            }
+          ]
+        }
+      ],
+      "title": "Guest Service, Requests, and Complaints"
+    },
+    {
+      "description": "Prepare tables, confirm food orders, and maintain cleanliness according to property procedures.",
+      "id": "restaurant",
+      "lessons": [
+        {
+          "caution": "Do not carry a dish if its label does not match the order.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Matching these details prevents serving the wrong dish.",
+              "kind": "knowledge",
+              "options": [
+                "The order, table or guest number, and dish label",
+                "The color of the plate",
+                "A table near the kitchen",
+                "The order in which workers arrived"
+              ],
+              "prompt": "What should be checked before serving a dish?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Confirm an unclear order before serving it.",
+              "kind": "case",
+              "options": [
+                "Put it on any table",
+                "Hold it safely and confirm the ticket with the kitchen or a colleague",
+                "Ask another guest",
+                "Change the ticket yourself"
+              ],
+              "prompt": "The food ticket is unclear and two tables ordered similar dishes. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Check the cleanliness of the table and equipment → Match the order to the table or guest number → Carry and serve it along a safe route → Confirm unclear tickets and report spills.",
+              "kind": "workflow",
+              "options": [
+                "Match the order to the table or guest number",
+                "Check the cleanliness of the table and equipment",
+                "Carry and serve it along a safe route",
+                "Confirm unclear tickets and report spills"
+              ],
+              "prompt": "In the “Preparing a Table and Serving Dishes” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご注文を確認します。",
+              "meaning": "I am confirming the order.",
+              "reading": "ごちゅうもんをかくにんします。"
+            },
+            {
+              "japanese": "こちらのお料理でよろしいですか。",
+              "meaning": "Is this the dish you ordered?",
+              "reading": "こちらのおりょうりでよろしいですか。"
+            }
+          ],
+          "id": "accommodation-07",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti urutan pelayanan dan memastikan hidangan diserahkan kepada meja yang tepat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not guess the table. Keep the dish in a safe place and confirm the ticket with the kitchen or a colleague.",
+          "scenario": "Two tables order similar dishes, but the kitchen ticket does not clearly show the table number.",
+          "sections": [
+            {
+              "body": "Restaurant service begins with clean tables, setting utensils to standard, and confirming the number of guests. Match orders to the table or room number in the system. Carry trays safely, name the dishes when needed, and never move food between tables based on a guess.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the table, utensils, and walking route. Repeat important orders to the kitchen. If a label or table is unclear, stop in a safe place and confirm. Report and clean spills or broken items according to procedure to keep guest routes safe.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa kebersihan meja dan perlengkapan",
+            "Cocokkan pesanan dengan nomor meja/tamu",
+            "Bawa dan sajikan melalui jalur aman",
+            "Konfirmasi tiket tak jelas dan laporkan tumpahan"
+          ],
+          "title": "Preparing Tables and Serving Dishes",
+          "vocabulary": [
+            {
+              "japanese": "配膳",
+              "meaning": "food service",
+              "reading": "はいぜん"
+            },
+            {
+              "japanese": "食器",
+              "meaning": "tableware",
+              "reading": "しょっき"
+            },
+            {
+              "japanese": "注文",
+              "meaning": "order",
+              "reading": "ちゅうもん"
+            },
+            {
+              "japanese": "席",
+              "meaning": "seat/table",
+              "reading": "せき"
+            }
+          ]
+        },
+        {
+          "caution": "Do not say food is safe until its ingredients and preparation method have been checked.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The kitchen checks the ingredients and possible cross-contact before an answer is given.",
+              "kind": "knowledge",
+              "options": [
+                "The kitchen or person in charge, by checking the ingredients and preparation process",
+                "The server, based on the food’s appearance",
+                "Another guest",
+                "A worker who has not checked the recipe"
+              ],
+              "prompt": "Who should confirm whether a dish is safe for a guest with an allergy?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not promise that a dish is safe without adequate ingredient information.",
+              "kind": "case",
+              "options": [
+                "Serve a small amount for the guest to try",
+                "Hold the sauce and ask the kitchen to check the ingredients and cross-contact",
+                "Say it is safe because no peanuts are visible",
+                "Mix it with another sauce"
+              ],
+              "prompt": "The sauce label does not list its ingredients, and the guest is allergic to peanuts. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Listen and record which ingredients must be avoided → Mark the order and pass it to the kitchen → Wait for confirmation about ingredients and cross-contact → Serve only an option that staff have confirmed is safe.",
+              "kind": "workflow",
+              "options": [
+                "Mark the order and pass it to the kitchen",
+                "Listen and record which ingredients must be avoided",
+                "Wait for confirmation about ingredients and cross-contact",
+                "Serve only an option that staff have confirmed is safe"
+              ],
+              "prompt": "In the “Confirming Allergies and Dietary Restrictions” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ナッツのアレルギーがあります。",
+              "meaning": "I have a peanut allergy.",
+              "reading": "なっつのあれるぎーがあります。"
+            },
+            {
+              "japanese": "厨房に確認しますので、お待ちください。",
+              "meaning": "Please wait while I confirm with the kitchen.",
+              "reading": "ちゅうぼうにかくにんしますので、おまちください。"
+            }
+          ],
+          "id": "accommodation-08",
+          "minutes": 25,
+          "objectives": [
+            "Meneruskan informasi alergi dengan tepat dan mencegah penyajian sebelum dapur mengonfirmasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not serve the sauce or promise that it is safe. Flag the order, ask the kitchen to check the ingredients and cross-contact, then communicate the confirmed result.",
+          "scenario": "A guest with a peanut allergy asks for sauce on the side, but the sauce label does not list its ingredients.",
+          "sections": [
+            {
+              "body": "Food allergies can cause severe reactions. Listen to the ingredients named by the guest and record them accurately. Do not assume a dish is safe because an ingredient is not visible; mixed ingredients and cross-contact are possible. The kitchen or person in charge must check the recipe and preparation method according to property policy.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Send the request directly to the kitchen through the proper work channel and wait for a clear answer. If safety cannot be confirmed, explain this through an authorized staff member and offer a verified alternative. Do not promise that a dish is “free of” an ingredient or change the recipe yourself.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan dan catat bahan yang harus dihindari",
+            "Tandai pesanan dan teruskan ke dapur",
+            "Tunggu konfirmasi bahan serta kontak silang",
+            "Sajikan hanya pilihan yang dinyatakan aman oleh petugas"
+          ],
+          "title": "Confirming Allergies and Dietary Restrictions",
+          "vocabulary": [
+            {
+              "japanese": "アレルギー",
+              "meaning": "allergy",
+              "reading": "あれるぎー"
+            },
+            {
+              "japanese": "原材料",
+              "meaning": "ingredient",
+              "reading": "げんざいりょう"
+            },
+            {
+              "japanese": "別添え",
+              "meaning": "served separately",
+              "reading": "べつぞえ"
+            },
+            {
+              "japanese": "厨房",
+              "meaning": "kitchen",
+              "reading": "ちゅうぼう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not serve food again if it has fallen, become dirty, or was not kept according to procedure.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Glass fragments can contaminate food, so control both the area and the food.",
+              "kind": "knowledge",
+              "options": [
+                "Move it away and hold service, then follow the cleaning or replacement procedure",
+                "Blow away the small fragments and serve the food",
+                "Cover it with a dirty napkin",
+                "Move the plate without reporting it"
+              ],
+              "prompt": "What should you do with uncovered food near broken glass?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Clean the area and assess the food according to procedure to prevent contamination.",
+              "kind": "case",
+              "options": [
+                "Leave the food in place and pick up the glass",
+                "Stop service, move food and people away, mark the area, and report it",
+                "Sweep it under the table",
+                "Serve it after removing the visible glass"
+              ],
+              "prompt": "A glass breaks near uncovered food. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Wash your hands and prepare clean equipment → Separate food from dirty surfaces → Stop service near a spill or broken glass → Report contamination and follow the replacement procedure.",
+              "kind": "workflow",
+              "options": [
+                "Separate the food from dirty surfaces",
+                "Wash your hands and prepare clean equipment",
+                "Stop service near a spill or broken glass",
+                "Report the contamination and follow the replacement procedure"
+              ],
+              "prompt": "In the “Food and Equipment Hygiene” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ガラスが割れました。",
+              "meaning": "A glass is broken.",
+              "reading": "がらすがわれました。"
+            },
+            {
+              "japanese": "料理を離して、すぐに報告します。",
+              "meaning": "I will move the food away and report it right away.",
+              "reading": "りょうりをはなして、すぐにほうこくします。"
+            }
+          ],
+          "id": "accommodation-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga tangan, alat, dan area layanan serta menghentikan penyajian bila terjadi kontaminasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop serving, move food and people away from the broken glass, mark the area, and report it for cleanup and replacement according to procedure.",
+          "scenario": "A glass breaks near the preparation table, with uncovered food beside it.",
+          "sections": [
+            {
+              "body": "Hands, equipment, and surfaces can transfer dirt or allergens. Follow handwashing schedules, use gloves when required, and keep clean equipment separate from used equipment. Do not serve food that has fallen, touched cleaning fluid, or was not kept according to procedure.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Wash your hands and change equipment or gloves when tasks change, as required. If there is broken glass or a spill, stop service in that area, move food away, and request cleanup. Never return dropped food to a plate; record the incident and request a safe replacement.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cuci tangan dan siapkan alat bersih",
+            "Pisahkan makanan dari permukaan kotor",
+            "Hentikan layanan dekat tumpahan atau pecahan",
+            "Laporkan kontaminasi dan ikuti penggantian"
+          ],
+          "title": "Food and Equipment Hygiene",
+          "vocabulary": [
+            {
+              "japanese": "衛生",
+              "meaning": "cleanliness/hygiene",
+              "reading": "えいせい"
+            },
+            {
+              "japanese": "手洗い",
+              "meaning": "handwashing",
+              "reading": "てあらい"
+            },
+            {
+              "japanese": "清潔な器具",
+              "meaning": "clean equipment",
+              "reading": "せいけつなきぐ"
+            },
+            {
+              "japanese": "汚染",
+              "meaning": "contamination",
+              "reading": "おせん"
+            }
+          ]
+        }
+      ],
+      "title": "Restaurant Service and Food Safety"
+    },
+    {
+      "description": "Maintain room status and found-property records, understand safety reports, and help with service planning and shift handovers.",
+      "id": "operations",
+      "lessons": [
+        {
+          "caution": "Do not mark a room ready just because it looks tidy or someone told you it was ready.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The status must reflect conditions that have actually been inspected.",
+              "kind": "knowledge",
+              "options": [
+                "After the required cleaning and inspection are complete",
+                "When it looks tidy from the hallway",
+                "When a guest asks",
+                "When the system is delayed"
+              ],
+              "prompt": "When can a room’s status be changed to ready?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Assess the damage before marking the room as ready.",
+              "kind": "case",
+              "options": [
+                "Mark it as ready",
+                "Report the damage and wait for an inspection",
+                "Ignore the light",
+                "Give out the key without telling anyone"
+              ],
+              "prompt": "The room is clean, but a light is flickering and its status is awaiting inspection. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Match the room against the list and system status → Check cleanliness and facilities as assigned → Mark and report any damage or lost items → Update the status after the inspection is complete.",
+              "kind": "workflow",
+              "options": [
+                "Check cleanliness and facilities as assigned",
+                "Match the room against the list and system status",
+                "Mark and report any damage or lost items",
+                "Update the status after the inspection is complete"
+              ],
+              "prompt": "In the “Room Status and Reporting Damage” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この部屋はまだ点検中です。",
+              "meaning": "This room is still being inspected.",
+              "reading": "このへやはまだてんけんちゅうです。"
+            },
+            {
+              "japanese": "確認後に状態を更新します。",
+              "meaning": "I will update the status after the inspection.",
+              "reading": "かくにんごにじょうたいをこうしんします。"
+            }
+          ],
+          "id": "accommodation-10",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan status kamar pada sistem serta melaporkan kerusakan sebelum kamar diberikan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not change the status to ready. Report the light to a technician or housekeeping and wait for inspection confirmation.",
+          "scenario": "The room looks clean, but the bathroom light is flickering and the system says it is awaiting inspection.",
+          "sections": [
+            {
+              "body": "A room may be occupied, need cleaning, be under cleaning, await inspection, or be ready. Use the property's terms. Follow the inspection checklist, and only perform work within your authority. Record damage so the room is not offered before it is declared ready.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Match the room number and system status, then follow the inspection sequence. If you find a leak, damaged wiring, broken glass, or a left-behind item, do not mark the room ready. Notify housekeeping or a technician and update the system after the inspection is complete.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan kamar dengan daftar dan status sistem",
+            "Periksa kebersihan serta fasilitas sesuai tugas",
+            "Tandai dan laporkan kerusakan atau barang tertinggal",
+            "Perbarui status setelah pemeriksaan selesai"
+          ],
+          "title": "Room Status and Damage Reporting",
+          "vocabulary": [
+            {
+              "japanese": "客室",
+              "meaning": "guest room",
+              "reading": "きゃくしつ"
+            },
+            {
+              "japanese": "清掃済み",
+              "meaning": "cleaned",
+              "reading": "せいそうずみ"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "故障",
+              "meaning": "damage",
+              "reading": "こしょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not touch suspicious items or investigate a hazard before it is safe.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Official storage keeps the item secure and helps its owner verify it.",
+              "kind": "knowledge",
+              "options": [
+                "Record it and hand it over to official storage without opening it",
+                "Open it to look for a name",
+                "Take it home",
+                "Announce the bag’s contents in the lobby"
+              ],
+              "prompt": "What should you do with a lost item?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Authorized staff handle smoke and unidentified objects, with safety as the priority.",
+              "kind": "case",
+              "options": [
+                "Go in and retrieve the bag",
+                "Do not enter or touch anything; move people away and activate reporting",
+                "Open the bag",
+                "Leave without reporting it"
+              ],
+              "prompt": "There is smoke coming from a service room and an unidentified bag near the door. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Assess the situation and ensure safety → Activate the appropriate reporting or response process → Keep found items safe without opening or using them → Record the location and hand them to authorized staff.",
+              "kind": "workflow",
+              "options": [
+                "Activate the appropriate reporting or response process",
+                "Assess the situation and ensure safety",
+                "Keep the found item safe without opening or using it",
+                "Record its location and hand it to authorized staff"
+              ],
+              "prompt": "In the “Lost Items and Emergencies” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "煙が見えます。",
+              "meaning": "I see smoke.",
+              "reading": "けむりがみえます。"
+            },
+            {
+              "japanese": "安全な場所へ案内します。",
+              "meaning": "I will guide people to a safe place.",
+              "reading": "あんぜんなばしょへあんないします。"
+            }
+          ],
+          "id": "accommodation-11",
+          "minutes": 25,
+          "objectives": [
+            "Mengamankan barang temuan atau bahaya serta segera memakai jalur laporan properti.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not enter or move the bag. Keep people away, activate the reporting procedure, and tell staff where the smoke is coming from.",
+          "scenario": "Smoke is coming from a service room, and an unknown bag is near the door.",
+          "sections": [
+            {
+              "body": "Record the location, time, and description of a lost item, then store it through the official process; do not open or use it. Emergencies may include fires, earthquakes, leaks, accidents, or an ill guest. Follow the evacuation plan, report the situation, and do not obstruct emergency responders.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "If you see smoke, smell gas, find a major water leak, or see someone needing help, put safety first and activate the alarm or call procedure. Do not touch suspicious items. Direct people to safety only within the limits of your training.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati kondisi dan pastikan keselamatan",
+            "Aktifkan pelaporan atau bantuan sesuai kejadian",
+            "Jaga barang temuan tanpa membuka atau menggunakannya",
+            "Catat lokasi dan serahkan kepada petugas berwenang"
+          ],
+          "title": "Lost Property and Emergencies",
+          "vocabulary": [
+            {
+              "japanese": "落とし物",
+              "meaning": "lost property",
+              "reading": "おとしもの"
+            },
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "火災",
+              "meaning": "fire",
+              "reading": "かさい"
+            },
+            {
+              "japanese": "避難",
+              "meaning": "evacuation",
+              "reading": "ひなん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not promise an unapproved price, facility, or room status.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Prices and offer periods can change, so use the latest approved information.",
+              "kind": "knowledge",
+              "options": [
+                "Official materials, conditions, dates, and validity period",
+                "Any old poster",
+                "A price you remember",
+                "Prices at other hotels"
+              ],
+              "prompt": "What should you check before explaining a promotional price?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Verify outdated information before promising a price.",
+              "kind": "case",
+              "options": [
+                "Continue to promise the price shown on the poster",
+                "Hold off on making a promise, confirm with the person in charge, then explain the latest information",
+                "Remove the poster yourself",
+                "Ask the guest to choose the price"
+              ],
+              "prompt": "An old poster shows a promotion, but the system says it has ended. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Recommended order: Check the official materials and their validity period → Explain the approved offer → Record requests and pending work → Hand over directly and confirm the recipient understands.",
+              "kind": "workflow",
+              "options": [
+                "Explain the approved offer",
+                "Check the official materials and their validity period",
+                "Record requests and pending work",
+                "Hand it over directly and confirm the recipient understands"
+              ],
+              "prompt": "In the “Promotion Information and Shift Handover” workflow, what is the next step after the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このプランは今も有効ですか。",
+              "meaning": "Is this package still valid?",
+              "reading": "このぷらんはいまもゆうこうですか。"
+            },
+            {
+              "japanese": "新しい情報を確認します。",
+              "meaning": "I will check the latest information.",
+              "reading": "あたらしいじょうほうをかくにんします。"
+            }
+          ],
+          "id": "accommodation-12",
+          "minutes": 25,
+          "objectives": [
+            "Menyampaikan penawaran yang disahkan dan menyerahkan pekerjaan terbuka dengan waktu serta status yang jelas.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not promise the price shown on the old poster. Check with the person in charge and explain that the price is being confirmed.",
+          "scenario": "A guest asks about a promotion price on an old poster, but the system shows that the offer period has ended.",
+          "sections": [
+            {
+              "body": "Planning and communications may cover facilities, events, packages, or nearby services. Use approved materials because dates, prices, and terms change. At shift change, pass on complaints, room status, requests, times, contacts, and next steps. Do not rely on memory or outdated status information.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before answering questions about a promotion, check the official materials or ask the person in charge. For a handover, record the relevant room or order, facts, actions, status, and follow-up. Hand it over directly and ask the recipient to repeat important information.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa materi resmi dan masa berlakunya",
+            "Jelaskan penawaran yang telah disahkan",
+            "Catat permintaan dan pekerjaan terbuka",
+            "Serahkan langsung dan pastikan penerima memahami"
+          ],
+          "title": "Promotional Information and Shift Handover",
+          "vocabulary": [
+            {
+              "japanese": "企画",
+              "meaning": "planning",
+              "reading": "きかく"
+            },
+            {
+              "japanese": "広報",
+              "meaning": "publication/information",
+              "reading": "こうほう"
+            },
+            {
+              "japanese": "有効期間",
+              "meaning": "validity period",
+              "reading": "ゆうこうきかん"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        }
+      ],
+      "title": "Room Operations, Safety, and Communication"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA — Accommodation Sector: Job Scope, Skills Tests, and Japanese Language",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/accommodation.html"
+    },
+    {
+      "title": "ISA — SSW No. 1 Job Descriptions by Sector",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "Japan Tourism Agency — Accommodation Sector Policies and Examination Guidelines",
+      "url": "https://www.mlit.go.jp/kankocho/seisaku_seido/kihonkeikaku/jizoku_kankochi/kankojinzai/ninaitekakuho/tokutei_gino.html"
+    },
+    {
+      "title": "CAIPT — Scope, Requirements, and SSW Accommodation Examination Information",
+      "url": "https://caipt.or.jp/tokuteiginou"
+    }
+  ],
+  "version": 1
+}

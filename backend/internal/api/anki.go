@@ -6,10 +6,12 @@ import (
 	"nihongo-master-backend/internal/anki"
 	"nihongo-master-backend/internal/store"
 	"strconv"
+	"strings"
 )
 
 func (s *Server) registerAnki(mux *http.ServeMux) {
-	mux.HandleFunc("GET /v1/anki/decks", s.ankiDecks)
+	s.registerAnkiTransfer(mux)
+	mux.HandleFunc("GET /v1/anki/decks", s.optionalAuth(s.ankiDecks))
 	mux.HandleFunc("GET /v1/anki/credits", s.ankiCredits)
 	mux.HandleFunc("GET /v1/anki/decks/{deckID}", s.optionalAuth(s.ankiDeck))
 	mux.HandleFunc("GET /v1/anki/decks/{deckID}/study", s.requireAuth(s.ankiStudy))
@@ -21,7 +23,29 @@ func (s *Server) ankiDecks(w http.ResponseWriter, r *http.Request) {
 		writeStoreError(w, err)
 		return
 	}
-	writeData(w, 200, map[string]any{"decks": decks, "revision": anki.Revision(), "source": "Kotoba / mistval"})
+	items := make([]any, 0, len(decks))
+	for _, deck := range decks {
+		items = append(items, deck)
+	}
+	if userID(r) != "" {
+		personal, err := s.store.UserAnkiDecks(userID(r))
+		if err != nil {
+			writeStoreError(w, err)
+			return
+		}
+		for _, deck := range personal {
+			category, query := r.URL.Query().Get("category"), strings.ToLower(strings.TrimSpace(r.URL.Query().Get("q")))
+			if category != "" && category != deck.Category {
+				continue
+			}
+			if query != "" && !strings.Contains(strings.ToLower(deck.Title+" "+deck.Description+" "+deck.Level), query) {
+				continue
+			}
+			items = append(items, deck)
+		}
+	}
+	w.Header().Set("Cache-Control", "private, no-store")
+	writeData(w, 200, map[string]any{"decks": items, "revision": anki.Revision(), "source": "Kotoba / mistval"})
 }
 func (s *Server) ankiCredits(w http.ResponseWriter, r *http.Request) {
 	writeData(w, 200, map[string]any{"repository": "https://github.com/mistval/kotoba", "revision": anki.Revision(), "license": anki.License(), "notice": "Data dan arti mengikuti sumber Kotoba. Sebagian deck memuat atribusi sumber pihak ketiga pada detailnya. Tautan media eksternal tetap mengikuti ketersediaan penyedianya."})

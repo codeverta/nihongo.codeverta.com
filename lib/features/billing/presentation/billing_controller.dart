@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:nihongo_master/core/auth/offline_access.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/billing/data/billing_repository.dart';
@@ -66,9 +67,13 @@ final billingControllerProvider =
           ? 'ios'
           : '';
       final controller = BillingController(
-        repository: BillingRepository(ref.watch(dioProvider)),
+        repository: BillingRepository(
+          ref.watch(dioProvider),
+          offlineAccess: ref.watch(offlineAccessStoreProvider),
+        ),
         gateway: platform.isEmpty ? null : NativePurchaseGateway(),
         platform: platform,
+        offlineAccess: ref.watch(offlineAccessStoreProvider),
         onChanged: () async {
           await ref.read(authControllerProvider.notifier).refreshUser();
           ref.invalidate(homeDashboardProvider);
@@ -92,6 +97,7 @@ class BillingController extends StateNotifier<BillingState>
     required this.gateway,
     required this.platform,
     required this.onChanged,
+    this.offlineAccess,
   }) : super(const BillingState()) {
     WidgetsBinding.instance.addObserver(this);
     subscription = gateway?.purchases.listen(
@@ -106,6 +112,7 @@ class BillingController extends StateNotifier<BillingState>
   final PurchaseGateway? gateway;
   final String platform;
   final Future<void> Function() onChanged;
+  final OfflineAccessStore? offlineAccess;
   StreamSubscription<List<PurchaseDetails>>? subscription;
   Future<void> queue = Future<void>.value();
   BillingAccount? account;
@@ -167,7 +174,7 @@ class BillingController extends StateNotifier<BillingState>
     }
     showMessage('Memeriksa akses dan store…', busy: true);
     try {
-      final info = await repository.status();
+      final info = await repository.status(userId: id);
       if (!mounted || user != id) return;
       account = info;
       state = BillingState(
@@ -206,16 +213,31 @@ class BillingController extends StateNotifier<BillingState>
     } on DioException catch (error) {
       if (error.response?.statusCode == 401) await onChanged();
       if (mounted && user == id) {
-        showMessage(
-          error.response?.statusCode == 403
+        final offlinePremium =
+            await offlineAccess?.canReadPremium(id) ?? state.premium;
+        if (!mounted || user != id) return;
+        state = BillingState(
+          product: state.product,
+          priceIdr: state.priceIdr,
+          premium: offlinePremium,
+          ready: state.ready,
+          message: error.response?.statusCode == 403
               ? 'Masuk dengan akun Google pribadi untuk membeli atau Restore. Akun demo digunakan bersama.'
               : 'Sesi atau koneksi bermasalah. Masuk lagi jika sesi sudah berakhir.',
         );
       }
     } on Object {
       if (mounted && user == id) {
-        showMessage(
-          'Tidak dapat memeriksa akses. Periksa koneksi lalu coba lagi.',
+        final offlinePremium =
+            await offlineAccess?.canReadPremium(id) ?? state.premium;
+        if (!mounted || user != id) return;
+        state = BillingState(
+          product: state.product,
+          priceIdr: state.priceIdr,
+          premium: offlinePremium,
+          ready: state.ready,
+          message:
+              'Tidak dapat memeriksa akses. Periksa koneksi lalu coba lagi.',
         );
       }
     }
@@ -370,6 +392,7 @@ class BillingController extends StateNotifier<BillingState>
           productId: purchase.productID,
           proof: purchase.verificationData.serverVerificationData,
           transactionId: platform == 'ios' ? purchase.purchaseID : null,
+          userId: id,
         );
         if (!mounted || user != id) continue;
         if (result == 'pending') {

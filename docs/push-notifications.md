@@ -1,5 +1,8 @@
 # Push notification pengumuman
 
+Untuk langkah operasional mengirim pesan lewat panel admin, lihat
+[Panduan mengirim push notification ke pengguna](panduan-kirim-push-notification.md).
+
 Versi pertama untuk Android: pengguna memilih ikon lonceng di Beranda atau tombol pengaturan di Profil, lalu mengaktifkan **Terima pengumuman** dan memberikan izin Android. Pendaftaran perangkat FCM dinonaktifkan sampai pengguna memilih aktif. Inisialisasi messaging di Dart berjalan setelah pilihan itu, atau untuk memulihkan langganan yang pernah aktif. Firebase Core native dapat diinisialisasi Android saat aplikasi mulai, tetapi FCM auto-init/registrasi tetap false sebelum persetujuan. Firebase Analytics tidak dipasang. iOS, web, dan desktop belum diaktifkan untuk push.
 
 ## Pengaturan Android / Firebase

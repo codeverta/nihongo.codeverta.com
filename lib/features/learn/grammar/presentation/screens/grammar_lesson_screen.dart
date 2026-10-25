@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
@@ -28,11 +29,14 @@ class GrammarLessonScreen extends ConsumerWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(e.toString(), textAlign: TextAlign.center),
+                Text(
+                  e.toString().localized(context),
+                  textAlign: TextAlign.center,
+                ),
                 const SizedBox(height: 16),
                 FilledButton(
                   onPressed: controller.load,
-                  child: const Text('Muat ulang'),
+                  child: Text('Muat ulang'.localized(context)),
                 ),
               ],
             ),
@@ -85,7 +89,7 @@ class _StudyState extends ConsumerState<_Study> {
             padding: const EdgeInsets.all(20),
             children: [
               Text(
-                'JLPT ${state.lesson.summary.level} • ${state.lesson.summary.chapter} • Pola ${state.pointIndex + 1}/${state.lesson.points.length}',
+                'JLPT ${state.lesson.summary.level} • ${state.lesson.summary.chapter} • ${'Pola'.localized(context)} ${state.pointIndex + 1}/${state.lesson.points.length}',
                 key: const Key('grammar-point-counter'),
                 style: TextStyle(
                   color: colors.primary,
@@ -121,20 +125,20 @@ class _StudyState extends ConsumerState<_Study> {
               ),
               const SizedBox(height: 20),
               _Section(
-                title: 'Cara membentuk',
+                title: 'Cara membentuk'.localized(context),
                 body: point.formation,
                 icon: Icons.extension_rounded,
               ),
               const SizedBox(height: 16),
               _Section(
-                title: 'Penjelasan',
+                title: 'Penjelasan'.localized(context),
                 body: point.explanation,
                 icon: Icons.menu_book_rounded,
               ),
               const SizedBox(height: 22),
               FilterChip(
                 key: const Key('grammar-furigana-toggle'),
-                label: const Text('Furigana'),
+                label: Text('Furigana'.localized(context)),
                 selected: furigana,
                 showCheckmark: false,
                 selectedColor: colors.secondary,
@@ -151,9 +155,12 @@ class _StudyState extends ConsumerState<_Study> {
                     .setFurigana(enabled: enabled),
               ),
               const SizedBox(height: 12),
-              const Text(
-                'Contoh kalimat',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+              Text(
+                'Contoh kalimat'.localized(context),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                ),
               ),
               const SizedBox(height: 12),
               for (final (index, example) in point.examples.indexed) ...[
@@ -201,7 +208,7 @@ class _StudyState extends ConsumerState<_Study> {
                 const SizedBox(height: 12),
               ],
               _Section(
-                title: 'Hindari kesalahan ini',
+                title: 'Hindari kesalahan ini'.localized(context),
                 body: point.commonMistake,
                 icon: Icons.lightbulb_outline_rounded,
               ),
@@ -240,7 +247,11 @@ class _StudyState extends ConsumerState<_Study> {
                               ? Icons.quiz_rounded
                               : Icons.arrow_forward_rounded,
                         ),
-                  label: Text(last ? 'Mulai kuis' : 'Pola berikutnya'),
+                  label: Text(
+                    last
+                        ? 'Mulai kuis'.localized(context)
+                        : 'Pola berikutnya'.localized(context),
+                  ),
                 ),
               ),
             ],
@@ -300,7 +311,7 @@ class _Quiz extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             children: [
               Text(
-                'Pertanyaan ${state.questionIndex + 1}/${attempt.questions.length}',
+                '${'Pertanyaan'.localized(context)} ${state.questionIndex + 1}/${attempt.questions.length}',
                 key: const Key('grammar-question-counter'),
                 style: TextStyle(
                   color: colors.primary,
@@ -394,7 +405,9 @@ class _Quiz extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          feedback.correct ? 'Benar!' : 'Belum tepat',
+                          feedback.correct
+                              ? 'Benar!'.localized(context)
+                              : 'Belum tepat'.localized(context),
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 19,
@@ -433,10 +446,10 @@ class _Quiz extends StatelessWidget {
                   ? const _Spinner()
                   : Text(
                       feedback == null
-                          ? 'Periksa jawaban'
+                          ? 'Periksa jawaban'.localized(context)
                           : state.questionIndex == attempt.questions.length - 1
-                          ? 'Lihat hasil'
-                          : 'Soal berikutnya',
+                          ? 'Lihat hasil'.localized(context)
+                          : 'Soal berikutnya'.localized(context),
                     ),
             ),
           ),
@@ -474,16 +487,25 @@ class _Result extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         Text(
-          result.passed ? 'Lesson dikuasai!' : 'Terus berlatih!',
+          result.pendingSync
+              ? 'Hasil sementara'.localized(context)
+              : result.passed
+              ? 'Lesson dikuasai!'.localized(context)
+              : 'Terus berlatih!'.localized(context),
           key: const Key('grammar-result'),
           textAlign: TextAlign.center,
           style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 12),
         Text(
-          result.passed
+          result.pendingSync
+              ? 'Jawaban tersimpan di perangkat. Kelulusan, XP, dan achievement menunggu verifikasi saat terhubung kembali.'
+                    .localized(context)
+              : result.passed
               ? 'Progress lesson sudah tersimpan. Lanjutkan ke pola berikutnya.'
-              : 'Nilai minimum adalah 80%. Pelajari penjelasan dan coba kuis kembali.',
+                    .localized(context)
+              : 'Nilai minimum adalah 80%. Pelajari penjelasan dan coba kuis kembali.'
+                    .localized(context),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 24),
@@ -501,35 +523,47 @@ class _Result extends StatelessWidget {
                     color: colors.primary,
                   ),
                 ),
-                Text('${result.correct}/${result.total} jawaban benar'),
+                Text(
+                  '${result.correct}/${result.total} jawaban benar'.localized(
+                    context,
+                  ),
+                ),
                 const SizedBox(height: 12),
-                Text('Nilai terbaik ${result.bestScore}%'),
-                Text('Progress kursus ${result.progress}%'),
+                if (!result.pendingSync) ...[
+                  Text('Nilai terbaik ${result.bestScore}%'.localized(context)),
+                  Text(
+                    'Progress kursus ${result.progress}%'.localized(context),
+                  ),
+                ] else
+                  Text('Menunggu sinkronisasi'.localized(context)),
               ],
             ),
           ),
         ),
         const SizedBox(height: 24),
         if (error != null) ...[
-          Text(error!, style: TextStyle(color: colors.error)),
+          Text(
+            error!.localized(context),
+            style: TextStyle(color: colors.error),
+          ),
           const SizedBox(height: 12),
         ],
         FilledButton.icon(
           key: const Key('grammar-retry'),
           onPressed: busy ? null : retry,
           icon: busy ? const _Spinner() : const Icon(Icons.refresh_rounded),
-          label: const Text('Ulangi kuis'),
+          label: Text('Ulangi kuis'.localized(context)),
         ),
         const SizedBox(height: 12),
         OutlinedButton(
           onPressed: busy ? null : study,
-          child: const Text('Pelajari materi lagi'),
+          child: Text('Pelajari materi lagi'.localized(context)),
         ),
         const SizedBox(height: 12),
         TextButton(
           key: const Key('grammar-finish'),
           onPressed: busy ? null : finish,
-          child: const Text('Kembali ke daftar lesson'),
+          child: Text('Kembali ke daftar lesson'.localized(context)),
         ),
       ],
     );

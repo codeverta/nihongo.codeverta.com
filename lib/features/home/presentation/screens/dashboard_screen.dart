@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_banner_content.dart';
@@ -36,6 +38,7 @@ class DashboardScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dashboard = ref.watch(homeDashboardProvider);
+    final offline = ref.watch(offlineProvider);
     final accountHasLifetimeAccess = ref.watch(
       authControllerProvider.select(
         (state) =>
@@ -56,7 +59,7 @@ class DashboardScreen extends ConsumerWidget {
         children: [
           const ContinueLearningSection(),
           _ErrorView(
-            message: error.toString(),
+            message: error.toString().localized(context),
             retry: () {
               ref.invalidate(homeDashboardProvider);
               ref.read(learningHistoryProvider.notifier).refresh();
@@ -74,6 +77,7 @@ class DashboardScreen extends ConsumerWidget {
         },
         child: _DashboardContent(
           data: data,
+          offline: offline || data.offline,
           active: active,
           accountHasLifetimeAccess: accountHasLifetimeAccess,
           openLearn: () => _authorize(context, openLearn),
@@ -99,9 +103,40 @@ class DashboardScreen extends ConsumerWidget {
   }
 }
 
+class _OfflineDashboardNotice extends StatelessWidget {
+  const _OfflineDashboardNotice();
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Container(
+      key: const Key('offline-dashboard-notice'),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: colors.surfaceContainerHigh,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.cloud_off_rounded, size: 18),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              'Offline · data terakhir tersimpan. Materi yang sudah disiapkan tetap bisa dibuka.'
+                  .localized(context),
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _DashboardContent extends StatelessWidget {
   const _DashboardContent({
     required this.data,
+    required this.offline,
     required this.active,
     required this.accountHasLifetimeAccess,
     required this.openExamCategory,
@@ -111,6 +146,7 @@ class _DashboardContent extends StatelessWidget {
   });
 
   final HomeDashboard data;
+  final bool offline;
   final bool active;
   final ValueChanged<String> openExamCategory;
   final bool accountHasLifetimeAccess;
@@ -120,11 +156,13 @@ class _DashboardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasLifetimeAccess =
-        accountHasLifetimeAccess ||
-        (data.profile?.isLifetime ?? false) ||
-        data.profile?.tier == 'premium';
-    final banners = homeBannersFor(data, lifetime: hasLifetimeAccess);
+    // A stale dashboard is presentation data, never proof of premium access.
+    final hasLifetimeAccess = accountHasLifetimeAccess;
+    final banners = homeBannersFor(
+      data,
+      lifetime: hasLifetimeAccess,
+      english: AppLocalizations.of(context).locale.languageCode == 'en',
+    );
     return CustomScrollView(
       key: const PageStorageKey('dashboard-scroll'),
       physics: const AlwaysScrollableScrollPhysics(),
@@ -134,6 +172,10 @@ class _DashboardContent extends StatelessWidget {
           sliver: SliverList.list(
             children: [
               _DashboardHeader(data: data, openProfile: openProfile),
+              if (offline) ...[
+                const SizedBox(height: 12),
+                const _OfflineDashboardNotice(),
+              ],
               const SizedBox(height: 22),
               if (banners.isNotEmpty) ...[
                 HomeBannerCarousel(
@@ -161,8 +203,8 @@ class _DashboardContent extends StatelessWidget {
               ],
               const ContinueLearningSection(),
               _SectionHeader(
-                title: 'Mulai belajar',
-                action: 'Lihat semua',
+                title: 'Mulai belajar'.localized(context),
+                action: 'Lihat semua'.localized(context),
                 onPressed: openLearn,
               ),
               const SizedBox(height: 8),
@@ -192,15 +234,17 @@ class _DashboardContent extends StatelessWidget {
               Card(
                 child: ListTile(
                   leading: const Icon(Icons.quiz_outlined),
-                  title: const Text('Latihan ujian'),
-                  subtitle: const Text('Simulasi JLPT, JFT, dan NAT'),
+                  title: Text('Latihan ujian'.localized(context)),
+                  subtitle: Text(
+                    'Simulasi JLPT, JFT, dan NAT'.localized(context),
+                  ),
                   trailing: const Icon(Icons.chevron_right_rounded),
                   onTap: openExam,
                 ),
               ),
               const SizedBox(height: 28),
               Text(
-                'Jelajahi Jepang',
+                'Jelajahi Jepang'.localized(context),
                 style: Theme.of(
                   context,
                 ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
@@ -252,8 +296,8 @@ class _DashboardHeader extends StatelessWidget {
             children: [
               Text(
                 name == null || name.isEmpty
-                    ? 'Selamat datang!'
-                    : 'おはよう, $name!',
+                    ? 'Selamat datang!'.localized(context)
+                    : 'おはよう, $name!'.localized(context),
                 key: const Key('home-greeting'),
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.w800,
@@ -264,7 +308,8 @@ class _DashboardHeader extends StatelessWidget {
               Text(
                 data.isAuthenticated
                     ? '${profile?.target ?? ''} • Level ${profile?.level ?? 1} • ${profile?.xp ?? 0} XP'
-                    : 'Jelajahi materi gratis, lalu masuk untuk menyimpan progress.',
+                    : 'Jelajahi materi gratis, lalu masuk untuk menyimpan progress.'
+                          .localized(context),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
@@ -272,7 +317,7 @@ class _DashboardHeader extends StatelessWidget {
         ),
         IconButton(
           onPressed: () => context.push('/notifications'),
-          tooltip: 'Pengaturan notifikasi',
+          tooltip: 'Pengaturan notifikasi'.localized(context),
           icon: const Icon(Icons.notifications_outlined),
         ),
         if (profile != null)
@@ -361,7 +406,7 @@ class _LearningMenuCard extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            category.name,
+                            category.name.localized(context),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(fontWeight: FontWeight.w700),
@@ -379,7 +424,7 @@ class _LearningMenuCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      '${category.lessonCount} pelajaran',
+                      '${category.lessonCount} pelajaran'.localized(context),
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
@@ -457,18 +502,18 @@ class _ErrorView extends StatelessWidget {
             ),
             const SizedBox(height: 14),
             Text(
-              'Beranda belum dapat dimuat',
+              'Beranda belum dapat dimuat'.localized(context),
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
             ),
             const SizedBox(height: 7),
-            Text(message, textAlign: TextAlign.center),
+            Text(message.localized(context), textAlign: TextAlign.center),
             const SizedBox(height: 18),
             FilledButton.icon(
               onPressed: retry,
               icon: const Icon(Icons.refresh_rounded),
-              label: const Text('Coba lagi'),
+              label: Text('Coba lagi'.localized(context)),
             ),
           ],
         ),

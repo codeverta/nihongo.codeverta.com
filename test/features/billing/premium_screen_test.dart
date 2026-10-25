@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/billing/data/billing_repository.dart';
@@ -144,6 +145,43 @@ void main() {
       scrollable: find.byType(Scrollable).first,
     );
     expect(find.text('Rp149.000'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('English premium screen never shows an IDR-only price', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          authControllerProvider.overrideWith(
+            (ref) => AuthController.test(const AuthenticationState.guest()),
+          ),
+          billingControllerProvider.overrideWith(
+            (_) => _StaticBilling(
+              const BillingState(priceIdr: 149000, ready: false),
+            ),
+          ),
+          lifetimeDisplayPriceProvider.overrideWith((ref) async => 149000),
+        ],
+        child: MaterialApp(
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: const PremiumScreen(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('lifetime-price-panel')),
+      250,
+      scrollable: find.byType(Scrollable).first,
+    );
+
+    expect(find.text('Store price unavailable'), findsOneWidget);
+    expect(find.text('Rp149.000'), findsNothing);
+    expect(find.text('Lebih jauh dari sekadar belajar'), findsNothing);
     expect(tester.takeException(), isNull);
   });
 }

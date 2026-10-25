@@ -1,0 +1,3194 @@
+{
+  "modules": [
+    {
+      "description": "Understand the caregiver's role, the service user's choices, and the limits of your authority.",
+      "id": "foundations",
+      "lessons": [
+        {
+          "caution": "Work speed is not a reason to take over an ability the person still has.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "An appropriate environment and partial assistance help preserve the abilities the person still has.",
+              "options": [
+                "Comb the person's hair without asking",
+                "Prepare a comb and help with the difficult parts",
+                "Forbid the service user from trying"
+              ],
+              "prompt": "A service user can still comb their hair. Assistance that supports independence is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "IADLs are more complex daily activities than basic ADLs.",
+              "options": [
+                "Manage the shopping schedule",
+                "Swallow food",
+                "Change the sleeping position"
+              ],
+              "prompt": "An example of an IADL is…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご自分でできますか。",
+              "meaning": "Can you do it by yourself?",
+              "reading": "ごじぶんでできますか。"
+            },
+            {
+              "japanese": "難しいところをお手伝いします。",
+              "meaning": "I will help with the difficult part.",
+              "reading": "むずかしいところをおてつだいします。"
+            }
+          ],
+          "id": "kaigo-01",
+          "minutes": 20,
+          "objectives": [
+            "Membedakan dukungan hidup dengan mengambil alih seluruh kegiatan",
+            "Mengidentifikasi ADL, IADL, dan kualitas hidup"
+          ],
+          "response": "Allow enough time, position Mr. Sato comfortably, bring the appropriate utensils within reach, and assist with the difficult part as planned. Assess his ability and preference before providing full assistance.",
+          "scenario": "Mr. Sato eats slowly but can hold a spoon. A new caregiver wants to feed him immediately to stay on schedule.",
+          "sections": [
+            {
+              "body": "Kaigo (介護) is support that helps a person live daily life according to their abilities and wishes. A person receiving services is called a riyōsha, not merely a collection of illnesses. Their needs include physical well-being, feelings, social relationships, habits, and meaning in life. Quick assistance is not necessarily appropriate if the person loses choices and opportunities to do things for themselves.\n\nADL means basic activities such as eating, dressing, transferring, bathing, and using the toilet. IADL includes more complex activities such as shopping, managing a schedule, and using transportation. QOL, or quality of life, asks whether life feels comfortable and meaningful to the person. These concepts help caregivers see needs as a whole.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Start by learning the person's habits: wake-up time, preferred foods, language, activities, and which body parts they can still use. Observe what they can actually do, then compare it with the care plan. Support may mean arranging the environment, giving a cue, supervising, or helping with only part of a task. Not every need calls for full assistance.\n\nFor example, a person may be able to comb their hair if the comb is placed in their right hand. Setting out the comb and mirror supports ability and confidence. A useful note describes the assistance needed and the person's response; do not write only “assistance provided.”",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca rencana dukungan dan kebiasaan pengguna.",
+            "Tanyakan kegiatan yang ingin dilakukan.",
+            "Amati kemampuan, hambatan, dan kelelahan.",
+            "Bantu hanya bagian yang diperlukan lalu evaluasi respons."
+          ],
+          "title": "Kaigo and a Meaningful Life",
+          "vocabulary": [
+            {
+              "japanese": "介護",
+              "meaning": "care support",
+              "reading": "かいご"
+            },
+            {
+              "japanese": "利用者",
+              "meaning": "person receiving services",
+              "reading": "りようしゃ"
+            },
+            {
+              "japanese": "日常生活",
+              "meaning": "daily life",
+              "reading": "にちじょうせいかつ"
+            },
+            {
+              "japanese": "生活の質",
+              "meaning": "quality of life",
+              "reading": "せいかつのしつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not threaten, coerce, or humiliate the person to gain compliance.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "A refusal may indicate a need or discomfort that should be understood.",
+              "options": [
+                "Force the work to finish on schedule",
+                "Ignore it permanently",
+                "Listen to the reason and look for an alternative"
+              ],
+              "prompt": "When a service user refuses a bath, the first step is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Choosing and using support can still be part of independence.",
+              "options": [
+                "The right to choose with support",
+                "Must always be done without assistance",
+                "Assistive equipment must not be used"
+              ],
+              "prompt": "Independence also includes…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今、お着替えしてもよろしいですか。",
+              "meaning": "May we change your clothes now?",
+              "reading": "いま、おきがえしてもよろしいですか。"
+            },
+            {
+              "japanese": "どちらがいいですか。",
+              "meaning": "Which one do you choose?",
+              "reading": "どちらがいいですか。"
+            }
+          ],
+          "id": "kaigo-02",
+          "minutes": 20,
+          "objectives": [
+            "Meminta persetujuan sebelum bantuan",
+            "Menjaga pilihan dan privasi saat kebutuhan tubuh dibantu"
+          ],
+          "response": "Acknowledge that the room feels cold, check the environment with the team, and offer another time or hygiene option consistent with the plan. Record the reason for refusing and which alternative was accepted.",
+          "scenario": "Mrs. Tanaka refuses her afternoon bath and says the room feels cold.",
+          "sections": [
+            {
+              "body": "Dignity means that every person remains valued, including when they need full assistance. Using a preferred name, speaking to someone as an adult, and explaining actions are practical ways to show respect. Independence does not mean forcing someone to do everything alone. It also means making choices, expressing wishes, and receiving appropriate support.\n\nConsent is a communication process, not just a single “yes.” Explain what you will do, why, and what choices are available in language the person can understand. Someone who has difficulty speaking can still show agreement or objection through movement, expression, and behavior. Check understanding and watch for changes in response throughout assistance.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "When helping someone change clothes, close the door or curtains and cover body parts that are not being cared for. Offer simple, genuine choices, such as blue or green clothing. Do not offer a choice you will not actually respect.\n\nIf a person refuses a bath, explore the reason: feeling cold or embarrassed, pain, fear of falling, or poor timing. Listen, offer an allowed alternative, and report to the team if the need remains unmet. Difficulty understanding a decision calls for team support, not a reason for the caregiver to make every decision alone.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Sapa pengguna dan jelaskan tujuan bantuan.",
+            "Tawarkan pilihan yang aman dan mudah dipahami.",
+            "Konfirmasi persetujuan serta tutup area privat.",
+            "Amati respons sepanjang bantuan; hentikan dan diskusikan bila menolak."
+          ],
+          "title": "Dignity, Consent, and Independence",
+          "vocabulary": [
+            {
+              "japanese": "尊厳",
+              "meaning": "dignity",
+              "reading": "そんげん"
+            },
+            {
+              "japanese": "自立",
+              "meaning": "independence",
+              "reading": "じりつ"
+            },
+            {
+              "japanese": "同意",
+              "meaning": "consent",
+              "reading": "どうい"
+            },
+            {
+              "japanese": "意思",
+              "meaning": "wish; intention",
+              "reading": "いし"
+            }
+          ]
+        },
+        {
+          "caution": "Do not perform medical procedures or change medication based on this app's material.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Consent, purpose, recipient, and usage policy still need to be checked.",
+              "options": [
+                "Send it to a private group",
+                "Manage it according to consent and official policy",
+                "Upload it as long as the face is blurred"
+              ],
+              "prompt": "A service user's photograph should…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Medication decisions require proper authority and clear instructions.",
+              "options": [
+                "Guess based on the packaging",
+                "Follow a friend's experience",
+                "Confirm with authorized staff"
+              ],
+              "prompt": "The medication instructions are unclear. The correct action is…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "看護師に確認します。",
+              "meaning": "I will confirm it with the nurse.",
+              "reading": "かんごしにかくにんします。"
+            },
+            {
+              "japanese": "もう一度説明していただけますか。",
+              "meaning": "Could you explain that once more?",
+              "reading": "もういちどせつめいしていただけますか。"
+            }
+          ],
+          "id": "kaigo-03",
+          "minutes": 20,
+          "objectives": [
+            "Melindungi informasi pengguna",
+            "Mengenali batas pekerjaan dan meminta bantuan yang tepat",
+            "Mengenali perlakuan tidak layak dan melaporkannya melalui jalur fasilitas"
+          ],
+          "response": "Verify the information request with the person in charge and follow privacy policy. For extra medication, contact the nurse; do not decide the dose yourself.",
+          "scenario": "An unfamiliar relative calls asking for the person's diagnosis. The caregiver is also asked to give an extra dose of medication.",
+          "sections": [
+            {
+              "body": "Caregivers work as part of a team that may include nurses, doctors, social workers, therapists, dietitians, and service managers. Their main role is to support daily life, observe, document, and report changes. A shared plan helps staff provide consistent support. Competence and authority are set by workplace rules and training, not by a willingness to try something.\n\nConfidentiality protects a person's identity, health information, family details, photos, and private conversations. Share information only with authorized people who need it for care. Discussing a person in an elevator, sending photos through a personal account, or sharing a story whose supposedly hidden identity is still easy to recognize can violate privacy.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "If an instruction is unclear, repeat its main point and ask for clarification before acting. When a task is outside your training, explain your limitation and contact the person in charge. Do not change medication, dosage, or clinical decisions on your own. Medication-related assistance must follow applicable rules, authority, and supervision.\n\nUse the official record system, lock devices, and check recipients before sending reports. Requests for information from family members also require verification of identity and authority. Maintain a friendly professional relationship, while following facility policy on gifts, money, and personal matters.",
+              "title": "Applying the Procedures at Work"
+            },
+            {
+              "body": "Abuse or neglect may include violence, insults, threats, neglecting needs, misuse of money, or violating bodily boundaries and privacy. Work pressure does not excuse these actions. People who have difficulty speaking or need full assistance still have the right to be heard and protected.\n\nIf you witness an incident or receive a complaint, prioritize safety and follow the safeguarding reporting process. Record what was said and the facts observed; do not investigate or draw conclusions yourself. Do not retaliate, blame the person, or promise secrecy that would prevent protection. Use supervision and team support when work pressure begins to affect staff behavior.",
+              "title": "Preventing Inappropriate Treatment"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, rencana, dan kewenangan tugas.",
+            "Sampaikan bila belum dilatih atau membutuhkan supervisi.",
+            "Bagikan informasi melalui saluran resmi kepada tim terkait.",
+            "Simpan dokumen dan perangkat dengan aman."
+          ],
+          "title": "Professional Ethics, Confidentiality, and Teamwork",
+          "vocabulary": [
+            {
+              "japanese": "守秘義務",
+              "meaning": "duty of confidentiality",
+              "reading": "しゅひぎむ"
+            },
+            {
+              "japanese": "連携",
+              "meaning": "coordination",
+              "reading": "れんけい"
+            },
+            {
+              "japanese": "看護師",
+              "meaning": "nurse",
+              "reading": "かんごし"
+            },
+            {
+              "japanese": "個人情報",
+              "meaning": "personal information",
+              "reading": "こじんじょうほう"
+            }
+          ]
+        }
+      ],
+      "title": "Kaigo Foundations, Dignity, and Ethics"
+    },
+    {
+      "description": "Connect body functions with support needs without making diagnoses.",
+      "id": "body",
+      "lessons": [
+        {
+          "caution": "Caregiver observations do not replace a diagnosis or clinical assessment.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "The time, observed behavior, and comparison with the person's usual condition help the team assess a change.",
+              "options": [
+                "They are strange",
+                "Possibly a serious illness",
+                "At 8:00 a.m., the person is unusually difficult to wake"
+              ],
+              "prompt": "The clearest observation report is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Context and a reporting channel are needed to make safe observations.",
+              "options": [
+                "Interpret it together with symptoms and procedure",
+                "Always considered normal",
+                "Use it to make your own diagnosis"
+              ],
+              "prompt": "A vital-sign value must…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いつから苦しいですか。",
+              "meaning": "When did the shortness of breath or discomfort begin?",
+              "reading": "いつからくるしいですか。"
+            },
+            {
+              "japanese": "いつもと様子が違います。",
+              "meaning": "Their condition is different from usual.",
+              "reading": "いつもとようすがちがいます。"
+            }
+          ],
+          "id": "kaigo-04",
+          "minutes": 20,
+          "objectives": [
+            "Menghubungkan organ dengan aktivitas sehari-hari",
+            "Membedakan pengamatan dengan diagnosis",
+            "Melaporkan nyeri dan mendukung kenyamanan sesuai rencana, termasuk akhir hayat"
+          ],
+          "response": "Stop risky activity, ensure safety, and promptly report the change in awareness, when it began, and the person's prior condition. Do not immediately label it dementia.",
+          "scenario": "Mr. Mori is usually talkative. This morning he is unusually drowsy and has difficulty following conversation.",
+          "sections": [
+            {
+              "body": "The body works as an integrated whole. The brain and nerves regulate movement, attention, and sensation; muscles, bones, and joints support posture and transfers. The heart and blood vessels circulate blood, the lungs support breathing, and the digestive system and kidneys process food and manage waste. A change in one function can affect how someone eats, walks, speaks, or uses the toilet.\n\nCaregivers do not need to make a diagnosis to report useful observations. Compare today's condition with the person's usual condition: speech, facial color, breathing, appetite, activity, and elimination patterns. A person's concern is important information and should not be dismissed just because an examination appears normal.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Follow the sequence: look, listen, ask, and record. If assigned to measure vital signs, use the trained equipment and method and follow the facility's reporting thresholds. Include the time, circumstances, and symptoms with the readings; do not judge safety from one number alone.\n\nSudden changes such as difficulty waking, breathing difficulty, or new weakness require an immediate response under procedure. Do not conclude that it is “just old age.” Report the facts and call the responsible staff member before resuming a risky activity.",
+              "title": "Applying the Procedures at Work"
+            },
+            {
+              "body": "Listen to concerns about pain: its location, when it began, what the person was doing when it started, and the words they use. For someone who has difficulty speaking, observe changes in expression, movement, and response to assistance, then report them. Use an assessment tool only if assigned and trained to do so. Silence does not mean there is no pain, and caregivers must not change medication to treat it.\n\nEnd-of-life support follows the team plan and choices communicated by the person or an authorized party under procedure. Caregivers support comfort, privacy, family relationships, and spiritual needs without imposing personal beliefs. Refusal to eat, changes in breathing, and new concerns must still be reported; do not respond with force or independent clinical decisions. A calm presence, attentive listening, and clear handover are important parts of support.",
+              "title": "Pain, Comfort, and End-of-Life Support"
+            }
+          ],
+          "steps": [
+            "Kenali kondisi dasar pengguna dari catatan dan tim.",
+            "Amati aktivitas, napas, ekspresi, serta keluhan.",
+            "Catat waktu dan perubahan yang terlihat.",
+            "Laporkan perubahan dan ikuti instruksi penanggung jawab."
+          ],
+          "title": "Body Functions and Daily Observations",
+          "vocabulary": [
+            {
+              "japanese": "呼吸",
+              "meaning": "breathing",
+              "reading": "こきゅう"
+            },
+            {
+              "japanese": "脈拍",
+              "meaning": "pulse",
+              "reading": "みゃくはく"
+            },
+            {
+              "japanese": "意識",
+              "meaning": "consciousness",
+              "reading": "いしき"
+            },
+            {
+              "japanese": "観察",
+              "meaning": "observation",
+              "reading": "かんさつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not assume a sudden change is due to aging without a team assessment.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Adapting communication makes room for the abilities the person retains.",
+              "options": [
+                "Allow time and reduce distractions",
+                "Always answer for the person",
+                "Repeat the question angrily"
+              ],
+              "prompt": "A way to support a service user who needs time to answer is…"
+            },
+            {
+              "answer": 1,
+              "explanation": "Ability and needs cannot be determined by age alone.",
+              "options": [
+                "Always the same",
+                "Needs to be assessed individually",
+                "Always causes dementia"
+              ],
+              "prompt": "Aging in each service user…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ゆっくりで大丈夫です。",
+              "meaning": "It's all right; take your time.",
+              "reading": "ゆっくりでだいじょうぶです。"
+            },
+            {
+              "japanese": "静かな場所でお話ししましょう。",
+              "meaning": "Let's talk somewhere quiet.",
+              "reading": "しずかなばしょでおはなししましょう。"
+            }
+          ],
+          "id": "kaigo-05",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali variasi penuaan",
+            "Menyesuaikan lingkungan tanpa merendahkan pengguna"
+          ],
+          "response": "Reduce noise, face the person, and check whether they need an aid specified in the plan. Report specific observations; do not assume the person is deliberately refusing to communicate.",
+          "scenario": "Mrs. Yamada often does not respond in the busy dining room but responds when spoken to in a quiet place.",
+          "sections": [
+            {
+              "body": "Aging may bring changes in strength, balance, vision, hearing, skin, and response speed. These changes vary from person to person. Age alone does not explain someone's abilities, interests, or decisions. Consider life history, the environment, conditions assessed by health professionals, and the assistance the person usually uses.\n\nLosing a partner, moving home, or having fewer social roles can affect a person's sense of security and self-esteem. Someone may want to continue caring for plants or choosing clothes even when they need physical assistance. Opportunities to take part in meaningful activities support their life, rather than merely filling a care schedule.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Adjust lighting, reduce noise, put frequently used items within reach, and allow time to respond. Make sure glasses or hearing aids are used according to the person's wishes and plan. Do not automatically shout or speak as if to a child.\n\nObserve new changes separately from familiar ones. Loss of appetite, withdrawal, or new pain should be reported to the team. Do not assume that every older person is forgetful, depressed, or unable to learn.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan kebiasaan, minat, serta alat bantu yang biasa digunakan.",
+            "Sesuaikan cahaya, suara, dan jangkauan barang.",
+            "Berikan waktu dan bantuan sebagian sesuai kemampuan.",
+            "Catat perubahan baru serta respons terhadap penyesuaian."
+          ],
+          "title": "Aging, Psychological Needs, and Remaining Abilities",
+          "vocabulary": [
+            {
+              "japanese": "老化",
+              "meaning": "aging",
+              "reading": "ろうか"
+            },
+            {
+              "japanese": "視力",
+              "meaning": "vision",
+              "reading": "しりょく"
+            },
+            {
+              "japanese": "聴力",
+              "meaning": "hearing ability",
+              "reading": "ちょうりょく"
+            },
+            {
+              "japanese": "残存能力",
+              "meaning": "remaining abilities",
+              "reading": "ざんぞんのうりょく"
+            }
+          ]
+        },
+        {
+          "caution": "Transfer techniques for one-sided weakness must be learned in person under supervision.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Speaking and understanding abilities are not always affected in the same way.",
+              "options": [
+                "Definitely does not understand",
+                "There is no need to speak with the person",
+                "The person's ability to understand still needs to be considered"
+              ],
+              "prompt": "Difficulty speaking means…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The assistance sequence aims to reduce difficulty; adapt it to the person's condition and care plan.",
+              "options": [
+                "Always start with the stronger side",
+                "Start with the side that needs assistance, according to the plan",
+                "Pull the person's arm to hurry them"
+              ],
+              "prompt": "When dressing with one-sided weakness, the general principle for putting on clothing is…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "痛いところはありますか。",
+              "meaning": "Is any area painful?",
+              "reading": "いたいところはありますか。"
+            },
+            {
+              "japanese": "こちらの手を使えますか。",
+              "meaning": "Can you use this hand?",
+              "reading": "こちらのてをつかえますか。"
+            }
+          ],
+          "id": "kaigo-06",
+          "minutes": 20,
+          "objectives": [
+            "Menyesuaikan dukungan dengan fungsi dan lingkungan",
+            "Menggunakan informasi sisi tubuh dari rencana perawatan"
+          ],
+          "response": "Continue speaking directly with Mr. Ito, use simple choices or a suitable communication aid, and give him time. Involve his family as support, not as a substitute for every decision.",
+          "scenario": "Mr. Ito understands conversation but has difficulty speaking. A new caregiver speaks only to his family.",
+          "sections": [
+            {
+              "body": "Disability may involve movement, vision, hearing, communication, or cognitive function. Barriers can also come from the environment: narrow doors, information that cannot be read, or equipment that is hard to reach. Good support reduces barriers and considers what the person wants to do.\n\nHemiparesis means weakness on one side of the body. Each person's condition and abilities differ, so the team assessment must identify the stronger side, pain, range of motion, and transfer method. Do not pull a weak arm or assume that side has no sensation. A speech impairment also does not automatically mean the person cannot understand a conversation.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "When dressing someone with weakness on one side, a general principle is to dress the side needing assistance first and undress the easier side first. Adapt this to the plan, clothing, pain, and staff training. Explain each step and continue involving the person's usable hand or abilities.\n\nUse visual cues, writing, pictures, or extra time for communication as needed. Place utensils, call bells, and chairs according to the person's assessment, not staff habits. Consult the team about changes to assistive devices.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa kemampuan, sisi tubuh, nyeri, dan rencana bantuan.",
+            "Tanyakan cara yang biasa dirasakan nyaman.",
+            "Atur alat serta lingkungan agar dapat diakses.",
+            "Bantu bertahap tanpa menarik anggota tubuh yang lemah."
+          ],
+          "title": "Disability, Hemiparesis, and Accessibility",
+          "vocabulary": [
+            {
+              "japanese": "障害",
+              "meaning": "disability",
+              "reading": "しょうがい"
+            },
+            {
+              "japanese": "片麻痺",
+              "meaning": "paralysis or weakness on one side",
+              "reading": "かたまひ"
+            },
+            {
+              "japanese": "健側",
+              "meaning": "unaffected side",
+              "reading": "けんそく"
+            },
+            {
+              "japanese": "患側",
+              "meaning": "affected side",
+              "reading": "かんそく"
+            }
+          ]
+        }
+      ],
+      "title": "The Body, Aging, and Disability"
+    },
+    {
+      "description": "Understand cognitive changes, respond to emotions, and recognize acute changes.",
+      "id": "dementia",
+      "lessons": [
+        {
+          "caution": "Do not conclude that someone has dementia based on one episode of forgetfulness.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Clear cues and a calm approach help address needs arising from memory difficulties.",
+              "options": [
+                "Respond calmly and provide guidance",
+                "Test the person's memory forcefully",
+                "Embarrass the person in front of others"
+              ],
+              "prompt": "A service user repeats a question. The appropriate response is…"
+            },
+            {
+              "answer": 1,
+              "explanation": "Age or a single episode of forgetfulness is not enough to determine a diagnosis.",
+              "options": [
+                "Always experienced by every older adult",
+                "Requires professional assessment and individualized support",
+                "Can be diagnosed from one episode of forgetfulness"
+              ],
+              "prompt": "Dementia…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "昼ご飯は十二時です。",
+              "meaning": "Lunch at twelve o'clock.",
+              "reading": "ひるごはんはじゅうにじです。"
+            },
+            {
+              "japanese": "一緒に確認しましょう。",
+              "meaning": "Let's check together.",
+              "reading": "いっしょにかくにんしましょう。"
+            }
+          ],
+          "id": "kaigo-07",
+          "minutes": 20,
+          "objectives": [
+            "Membedakan demensia dari stereotip penuaan",
+            "Mengenali pengaruh kognitif terhadap aktivitas sehari-hari"
+          ],
+          "response": "Answer briefly and calmly, show the schedule cue, and observe whether the person is hungry or anxious. Repeated questions call for support, not reprimands.",
+          "scenario": "Mrs. Suzuki repeatedly asks when lunch is. The caregiver is about to say, 'I've already answered you.'",
+          "sections": [
+            {
+              "body": "Dementia is a condition that can affect memory, thinking, communication, and daily activities. It is not an inevitable part of aging. Health professionals make the diagnosis. For caregivers, the important thing is to understand the person's individual needs and help them feel safe, not test or embarrass them about their memory.\n\nDifficulty remembering recent events may cause a person to repeat questions. Disorientation may cause confusion about place or time. Difficulty following a sequence may make clothing or equipment seem hard to use. Support responses should address observed barriers, not just a diagnostic label.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Use a familiar schedule, simple cues, and one-step prompts. If the person repeats a question about mealtime, answer calmly and point to the relevant cue. Do not force the person to admit that they have already asked the same question.\n\nSupport choices the person can still make, such as choosing a drink from two safe options. Consider their language, habits, and life history. Coordinate changes in support with the team so staff use a consistent approach and do not cause confusion.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali pola kesulitan dan kemampuan yang masih ada.",
+            "Gunakan kalimat pendek serta petunjuk satu langkah.",
+            "Atur lingkungan dengan tanda yang mudah dikenali.",
+            "Evaluasi apakah dukungan membuat pengguna lebih tenang."
+          ],
+          "title": "Dementia: Memory, Orientation, and Perception",
+          "vocabulary": [
+            {
+              "japanese": "認知症",
+              "meaning": "dementia",
+              "reading": "にんちしょう"
+            },
+            {
+              "japanese": "記憶",
+              "meaning": "memory",
+              "reading": "きおく"
+            },
+            {
+              "japanese": "見当識",
+              "meaning": "orientation to time, place, and person",
+              "reading": "けんとうしき"
+            },
+            {
+              "japanese": "不安",
+              "meaning": "anxiety",
+              "reading": "ふあん"
+            }
+          ]
+        },
+        {
+          "caution": "A caregiver must not independently use physical restraints or administer medication as a solution.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Acknowledge the person's feelings without arguing or affirming inaccurate information.",
+              "options": [
+                "Acknowledge the service user's feelings",
+                "Always agree with every statement",
+                "Force the service user to stop talking"
+              ],
+              "prompt": "Validating feelings means…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The sequence of events helps the team decide what support is appropriate.",
+              "options": [
+                "A label saying “naughty” only",
+                "An opinion without a time",
+                "The trigger, behavior, response, and outcome"
+              ],
+              "prompt": "A behavior record should include…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "心配なことがありますか。",
+              "meaning": "Is anything worrying you?",
+              "reading": "しんぱいなことがありますか。"
+            },
+            {
+              "japanese": "少し休みましょう。",
+              "meaning": "Let's take a short rest.",
+              "reading": "すこしやすみましょう。"
+            }
+          ],
+          "id": "kaigo-08",
+          "minutes": 20,
+          "objectives": [
+            "Mencari kebutuhan di balik perilaku",
+            "Memilih respons yang menenangkan tanpa berdebat"
+          ],
+          "response": "Reduce background noise, explain one step calmly, protect privacy, and give the person time to answer. Record whether this approach reduced refusal.",
+          "scenario": "Mr. Kato refuses to change clothes while two caregivers speak loudly and move quickly.",
+          "sections": [
+            {
+              "body": "Behavior that seems difficult is often a way of communicating a need that has not yet been understood. The person may feel afraid, lonely, embarrassed, uncomfortable, or confused. Before labeling them “difficult,” observe what happens before, during, and after the behavior. A noisy environment, staff changes, or instructions given too quickly may be relevant context.\n\nValidating emotions means acknowledging feelings, not agreeing with every statement. If a person says they want to go home, a staff member might say that they seem to miss home and ask what would help them feel comfortable. A prolonged argument about the facts often does not help the relationship or safety.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Record the trigger, the person's words, the staff response, and the outcome. Try a simple approach: lower your voice, give the person space, offer an activity they enjoy, or explain again at a better time. Report suspected new physical needs or changes in condition to the team.\n\nWhen a person wants to walk, use supervision and environmental adjustments as specified in the plan. Locking, tying up, or medicating someone for staff convenience is not a caregiver's decision. The team must address risk through procedures that respect the person's rights.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan keselamatan dan kurangi keramaian.",
+            "Dengarkan perasaan tanpa menghakimi.",
+            "Cari pemicu serta kebutuhan yang belum terpenuhi.",
+            "Tawarkan pilihan, amati hasil, dan laporkan pola kepada tim."
+          ],
+          "title": "Emotions, Refusal, and Challenging Behavior",
+          "vocabulary": [
+            {
+              "japanese": "拒否",
+              "meaning": "refusal",
+              "reading": "きょひ"
+            },
+            {
+              "japanese": "行動",
+              "meaning": "behavior",
+              "reading": "こうどう"
+            },
+            {
+              "japanese": "安心",
+              "meaning": "sense of security",
+              "reading": "あんしん"
+            },
+            {
+              "japanese": "気持ち",
+              "meaning": "feeling; emotion",
+              "reading": "きもち"
+            }
+          ]
+        },
+        {
+          "caution": "Do not delay escalating an acute change to finish records or an interview.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "A change from the person's usual condition needs assessment, not assumption.",
+              "options": [
+                "Dismiss it as a result of aging",
+                "Report it as a new change",
+                "Wait until the next shift"
+              ],
+              "prompt": "Sudden confusion in a service user with dementia requires…"
+            },
+            {
+              "answer": 0,
+              "explanation": "A life history helps the team understand needs while keeping the service user at the center of support.",
+              "options": [
+                "Routines and things that provide comfort",
+                "A neighbor's gossip",
+                "An instruction that always overrides the service user's choice"
+              ],
+              "prompt": "The most useful family information for personalized support is…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "午後から急に様子が変わりました。",
+              "meaning": "Their condition changed suddenly this afternoon.",
+              "reading": "ごごからきゅうにようすがかわりました。"
+            },
+            {
+              "japanese": "普段の生活について教えてください。",
+              "meaning": "Please tell me about their daily habits.",
+              "reading": "ふだんのせいかつについておしえてください。"
+            }
+          ],
+          "id": "kaigo-09",
+          "minutes": 20,
+          "objectives": [
+            "Melaporkan perubahan mendadak dari kondisi dasar",
+            "Mengumpulkan riwayat kebiasaan melalui keluarga secara tepat"
+          ],
+          "response": "Call authorized staff promptly, keep the person safe, and report the change from their usual condition and when it began. Do not assume it is simply worsening dementia.",
+          "scenario": "A person with dementia usually responds to greetings. This afternoon they suddenly cannot focus and are much sleepier than usual.",
+          "sections": [
+            {
+              "body": "Sudden or fluctuating confusion must not immediately be treated as a familiar dementia pattern. Caregivers should report changes in attention, awareness, activity, or behavior to clinical staff. Their role is to observe and maintain safety; distinguishing clinical causes requires professional assessment.\n\nFamily members can help identify habits, preferred names, past occupations, and things that comfort the person. Use this information to personalize support. The person remains at the center of conversations and choices; family members are not automatically authorized to receive every private detail or make every decision.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "When a change occurs, describe the person's usual condition, when they were last seen as usual, what has changed, and what actions have been taken. Ask for additional information only if doing so will not delay calling for help. Record observations without making your own diagnosis.\n\nIn conversations with family, ask open questions about routines and preferences. Repeat your understanding to confirm the information is accurate. Share concerns through the team and avoid promising outcomes that cannot be guaranteed. Staff should also discuss situations where family support and the person's wishes appear to differ.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Bandingkan keadaan dengan kondisi dasar pengguna.",
+            "Laporkan perubahan akut segera melalui jalur fasilitas.",
+            "Kumpulkan waktu, keluhan, dan tindakan yang telah dilakukan.",
+            "Gunakan riwayat keluarga untuk dukungan setelah keselamatan ditangani."
+          ],
+          "title": "Acute Changes and Family Support",
+          "vocabulary": [
+            {
+              "japanese": "急変",
+              "meaning": "sudden change in condition",
+              "reading": "きゅうへん"
+            },
+            {
+              "japanese": "家族",
+              "meaning": "family",
+              "reading": "かぞく"
+            },
+            {
+              "japanese": "普段",
+              "meaning": "usually; as usual",
+              "reading": "ふだん"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "reporting",
+              "reading": "ほうこく"
+            }
+          ]
+        }
+      ],
+      "title": "Dementia and Behavioral Support"
+    },
+    {
+      "description": "Practice listening, explaining assistance, and addressing communication barriers.",
+      "id": "communication",
+      "lessons": [
+        {
+          "caution": "Touch must respect the person's consent and preferences and fit the care context.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Silence can mean many things; consent must be confirmed.",
+              "options": [
+                "Assume consent immediately",
+                "Confirm understanding and response",
+                "Assume the person will refuse permanently"
+              ],
+              "prompt": "A service user is silent when offered assistance. The care worker should…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Confirmation prevents misunderstanding the service user's needs.",
+              "options": [
+                "Interrupt the answer",
+                "Guess without asking",
+                "Summarize and confirm understanding"
+              ],
+              "prompt": "Active listening includes…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "どんなことが気になりますか。",
+              "meaning": "What is bothering you?",
+              "reading": "どんなことがきになりますか。"
+            },
+            {
+              "japanese": "椅子が低いということですね。",
+              "meaning": "So the chair is too low.",
+              "reading": "いすがひくいということですね。"
+            }
+          ],
+          "id": "kaigo-10",
+          "minutes": 20,
+          "objectives": [
+            "Menggunakan pertanyaan terbuka dan konfirmasi",
+            "Membaca ekspresi tanpa menganggapnya sebagai diagnosis"
+          ],
+          "response": "Ask what feels uncomfortable and listen to the answer. Noise, chair position, or a particular experience may be the barrier, so assuming a lack of appetite may be wrong.",
+          "scenario": "Mrs. Arai says, 'I don't like the dining room.' The caregiver is about to conclude that she is not hungry.",
+          "sections": [
+            {
+              "body": "Communication is more than giving instructions. Staff need to understand what the person feels, needs, and wants. Active listening involves attention, pauses, and restating the main point in one's own words. An open question such as “What feels uncomfortable?” gives the person more room than guessing at an answer.\n\nFacial expression, gaze, posture, and movement can add to what is said. A grimace may indicate discomfort, but ask or report to clarify its cause. Silence does not always mean agreement. Do not interpret behavior based only on culture or age; confirm with the person and the team's information.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Sit or stand where the person can see your face without feeling intimidated. Introduce yourself, use the name they prefer, and reduce distractions. After they speak, summarize and ask whether you understood correctly. If they have difficulty speaking, use an agreed communication aid.\n\nDo not rush to fill every pause. Give the person time to form an answer. While providing physical assistance, continue to observe their expression and ask whether they are comfortable. Record important words accurately instead of replacing them with assumptions such as “uncooperative.”",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Sapa dan pastikan pengguna dapat melihat serta mendengar.",
+            "Ajukan satu pertanyaan yang jelas.",
+            "Dengarkan sampai selesai, termasuk jeda.",
+            "Rangkum isi dan konfirmasikan pemahaman."
+          ],
+          "title": "Active Listening and Nonverbal Communication",
+          "vocabulary": [
+            {
+              "japanese": "傾聴",
+              "meaning": "active listening",
+              "reading": "けいちょう"
+            },
+            {
+              "japanese": "表情",
+              "meaning": "facial expression",
+              "reading": "ひょうじょう"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            },
+            {
+              "japanese": "会話",
+              "meaning": "conversation",
+              "reading": "かいわ"
+            }
+          ]
+        },
+        {
+          "caution": "Movement instructions must follow the plan and trained techniques; verbal directions do not replace a transfer assessment.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "The service user may need time to understand and respond to one step.",
+              "options": [
+                "Several quick commands",
+                "One step at a time, then wait for a response",
+                "Only speak to a coworker"
+              ],
+              "prompt": "A clear, easy-to-follow way to give instructions is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Explanation and consent support a sense of safety and respect for the service user.",
+              "options": [
+                "Explain and ask for consent",
+                "Touch it immediately",
+                "Promise that it will not hurt"
+              ],
+              "prompt": "Before providing physical assistance, the care worker needs to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "これから椅子に移ります。",
+              "meaning": "We are going to transfer to the chair now.",
+              "reading": "これからいすにうつります。"
+            },
+            {
+              "japanese": "痛かったら教えてください。",
+              "meaning": "Tell me if you feel pain.",
+              "reading": "いたかったらおしえてください。"
+            }
+          ],
+          "id": "kaigo-11",
+          "minutes": 20,
+          "objectives": [
+            "Menggunakan satu instruksi per tahap",
+            "Meminta izin dan memeriksa kenyamanan"
+          ],
+          "response": "Stop and reassure the person, then repeat one step at a time according to the plan, confirming as you go. If assistance is not yet safe, ask a trained caregiver to help.",
+          "scenario": "The caregiver says, 'Hold, stand, turn, sit,' all in one sentence. The person stops and looks afraid.",
+          "sections": [
+            {
+              "body": "A good explanation of assistance says what will happen, why, and how the person can participate. Use everyday language before technical terms. Short sentences are easier to follow, especially when attention or hearing is limited. A calm tone and suitable pace are more helpful than a loud voice.\n\nDirections should relate to the current action. “Let's hold this handrail” is easier to follow than several instructions at once. Avoid promises such as “it definitely won't hurt.” Instead, explain that the person can tell you if they feel pain or want to stop. Along with asking “Do you understand?”, invite the person to show or say what they understood.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Before assisting, explain the purpose and ask permission. As you proceed, explain the next action and wait for a response. If the person seems confused, explain again more simply, show the equipment, or demonstrate a safe movement. Do not force repetition in a way that embarrasses them.\n\nAfterward, ask whether they are comfortable and place the call bell within reach. The person's feedback can guide future adjustments. In Japanese, use clear polite expressions; sentences that are too long or complicated keigo can make understanding harder.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Jelaskan satu tujuan sebelum mulai.",
+            "Minta izin dengan pilihan yang sesuai.",
+            "Berikan satu arahan, lalu tunggu respons.",
+            "Periksa kenyamanan selama dan sesudah bantuan."
+          ],
+          "title": "Explaining Assistance and Giving Simple Directions",
+          "vocabulary": [
+            {
+              "japanese": "説明",
+              "meaning": "explanation",
+              "reading": "せつめい"
+            },
+            {
+              "japanese": "声かけ",
+              "meaning": "greeting or verbal cue",
+              "reading": "こえかけ"
+            },
+            {
+              "japanese": "介助",
+              "meaning": "assistance",
+              "reading": "かいじょ"
+            },
+            {
+              "japanese": "手順",
+              "meaning": "sequence of actions",
+              "reading": "てじゅん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not rely only on guesses or automatic translation for important clinical instructions.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Confirmation prevents errors caused by partial understanding.",
+              "options": [
+                "Nod and then guess",
+                "Ignore the time details",
+                "Request clarification before acting"
+              ],
+              "prompt": "An important instruction has not been understood. The correct action…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Visual context and a calm environment can support communication.",
+              "options": [
+                "The person's face is visible and background noise is reduced",
+                "A shout from behind",
+                "Speak faster"
+              ],
+              "prompt": "A service user with hearing loss is best helped by…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "もう少しゆっくり話してください。",
+              "meaning": "Please speak a little more slowly.",
+              "reading": "もうすこしゆっくりはなしてください。"
+            },
+            {
+              "japanese": "食事の前ですか、後ですか。",
+              "meaning": "Was it before or after the meal?",
+              "reading": "しょくじのまえですか、あとですか。"
+            }
+          ],
+          "id": "kaigo-12",
+          "minutes": 20,
+          "objectives": [
+            "Menyesuaikan komunikasi tanpa menebak",
+            "Menggunakan klarifikasi dan bantuan tim"
+          ],
+          "response": "Ask for the instruction to be repeated and repeat the activity sequence to the person who gave it. Do not begin based on words you only partly understood.",
+          "scenario": "The caregiver hears a Japanese instruction about mealtime but is unsure whether it means before or after the check.",
+          "sections": [
+            {
+              "body": "Communication barriers may arise from language, hearing, vision, or difficulty expressing words. Choose support based on the person's needs. Large print helps some people, but not everyone can read well. Hearing aids also do not remove every difficulty, especially in a noisy room.\n\nCaregivers learning Japanese need to distinguish an unfamiliar word from an unclear instruction. Nodding to hide a lack of understanding can lead to mistakes. Clarifying is part of professional work: ask for repetition, repeat the information back, or point out the term that needs confirmation. For important information, use an interpreter or approved support under policy.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Speak where your face can be seen, at a comfortable distance, and in a clear voice. Do not shout from behind. If a person has difficulty expressing words, use yes-or-no choices or an agreed communication board while still checking their preferences. Do not assume a short answer means they do not want to take part.\n\nWhen receiving instructions, repeat the time, name, quantity, and action. If anything is still unclear, stop before beginning a risky task. Note unfamiliar terms to study after work safety has been secured.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Identifikasi hambatan serta alat komunikasi yang biasa digunakan.",
+            "Kurangi kebisingan dan pastikan wajah terlihat.",
+            "Gunakan kalimat pendek, tulisan, atau gambar sesuai kebutuhan.",
+            "Konfirmasi isi; minta bantuan bila informasi penting belum jelas."
+          ],
+          "title": "Language, Hearing, and Communication Barriers",
+          "vocabulary": [
+            {
+              "japanese": "聞き取り",
+              "meaning": "listening comprehension",
+              "reading": "ききとり"
+            },
+            {
+              "japanese": "補聴器",
+              "meaning": "hearing aid",
+              "reading": "ほちょうき"
+            },
+            {
+              "japanese": "筆談",
+              "meaning": "written communication",
+              "reading": "ひつだん"
+            },
+            {
+              "japanese": "失語症",
+              "meaning": "aphasia",
+              "reading": "しつごしょう"
+            }
+          ]
+        }
+      ],
+      "title": "Respectful Communication with Service Users"
+    },
+    {
+      "description": "Recognize risks, maintain hygiene, and escalate changing conditions.",
+      "id": "safety",
+      "lessons": [
+        {
+          "caution": "Follow the facility's infection-control procedures and do not use the same gloves for two people.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Gloves can become contaminated, and hands must be cleaned at the appropriate times.",
+              "options": [
+                "Replace handwashing",
+                "It may be shared between service users",
+                "Hand hygiene is still required"
+              ],
+              "prompt": "Gloves…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Dirty and clean flows must be separated to prevent contamination.",
+              "options": [
+                "Remove the guard and perform hand hygiene",
+                "Immediately use the same gloves",
+                "Only wipe the gloves"
+              ],
+              "prompt": "After helping with toileting and before preparing food, the care worker should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "手を洗ってからお手伝いします。",
+              "meaning": "I will wash my hands before helping.",
+              "reading": "てをあらってからおてつだいします。"
+            },
+            {
+              "japanese": "手袋を交換します。",
+              "meaning": "I will change my gloves.",
+              "reading": "てぶくろをこうかんします。"
+            }
+          ],
+          "id": "kaigo-13",
+          "minutes": 20,
+          "objectives": [
+            "Menerapkan kebersihan tangan pada momen yang tepat",
+            "Membedakan sarung tangan dengan kebersihan tangan"
+          ],
+          "response": "Stop the contamination pathway. Remove the gloves, clean your hands, and handle potentially contaminated equipment according to procedure before preparing clean assistance.",
+          "scenario": "After assisting with toileting, the caregiver is still wearing the same gloves while preparing another person's eating utensils.",
+          "sections": [
+            {
+              "body": "Infection prevention applies to every person receiving care, not only those known to be ill. Assess risk based on the task and possible contact with body fluids, broken skin, or contaminated objects. Hand hygiene and suitable protective equipment interrupt the transfer of contaminants between tasks.\n\nGloves do not replace hand hygiene. Clean your hands using the facility method before and after contacts that require it and after removing gloves. Visibly dirty hands should be washed with soap and water. Additional rules for specific infections come from the responsible staff member; do not decide isolation measures on your own.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Keep clean and dirty workflows separate: prepare clean equipment before starting, place used items in designated locations, and do not touch door handles or phones with soiled gloves. Change gloves between people and when switching from a dirty task to a clean one.\n\nChoose protective equipment based on the task assessment and your training. Follow the taught sequence for putting it on and removing it to avoid contaminating yourself. Use cleaning products, dilution, and contact times approved by the facility; do not mix cleaning chemicals.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Siapkan alat bersih dan tempat barang kotor.",
+            "Lakukan kebersihan tangan serta gunakan pelindung sesuai tugas.",
+            "Pisahkan alur bersih dan kotor selama bantuan.",
+            "Lepas pelindung dengan benar, lalu bersihkan tangan dan alat."
+          ],
+          "title": "Infection Prevention and Hand Hygiene",
+          "vocabulary": [
+            {
+              "japanese": "感染",
+              "meaning": "infection",
+              "reading": "かんせん"
+            },
+            {
+              "japanese": "手洗い",
+              "meaning": "handwashing",
+              "reading": "てあらい"
+            },
+            {
+              "japanese": "手袋",
+              "meaning": "gloves",
+              "reading": "てぶくろ"
+            },
+            {
+              "japanese": "消毒",
+              "meaning": "disinfection",
+              "reading": "しょうどく"
+            }
+          ]
+        },
+        {
+          "caution": "After a fall, do not automatically move the person before responding and assessing the situation as required.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "A near miss provides information that can be used to improve safety.",
+              "options": [
+                "Hide it",
+                "Report it for preventive action",
+                "Ignore it because no one has been injured"
+              ],
+              "prompt": "A near-trip incident without injury should…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Prioritize safety and assessment according to procedure before moving the person.",
+              "options": [
+                "Call for assistance and follow the assessment procedure",
+                "Pull the person up immediately",
+                "Ask the person to walk as a test"
+              ],
+              "prompt": "A service user has fallen. The correct step is…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "床が濡れています。",
+              "meaning": "The floor is wet.",
+              "reading": "ゆかがぬれています。"
+            },
+            {
+              "japanese": "歩く前に確認しましょう。",
+              "meaning": "Let's check before walking.",
+              "reading": "あるくまえにかくにんしましょう。"
+            }
+          ],
+          "id": "kaigo-14",
+          "minutes": 20,
+          "objectives": [
+            "Mengidentifikasi bahaya yang dapat diubah",
+            "Melaporkan kejadian hampir celaka tanpa menyalahkan"
+          ],
+          "response": "Secure the cable using an approved method, make sure the person is comfortable, and report the near miss with its location and context. The absence of an injury is not a reason to skip reporting.",
+          "scenario": "The person nearly trips over a charging cable beside the bed. No one is injured.",
+          "sections": [
+            {
+              "body": "Fall risk is affected by the person, the activity, and the environment. Wet floors, cables, poor lighting, unsuitable footwear, and equipment out of reach can increase risk. Urgent toileting needs or changes in condition also matter. An old assessment is not enough when circumstances change.\n\nA near miss, or hiyari-hatto, is an incident that could have caused harm but did not result in injury. Reporting helps the team improve the system before an accident occurs. The main purpose is to understand causes and prevention, not find someone to blame. Record objective observations: what happened, where and when it happened, and the conditions at the time.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Check the walking route, equipment brakes where relevant, call bell, and placement of belongings before providing assistance. Make sure the assistive device matches the plan and the person knows how to request help. Do not remove opportunities to move simply because staff feel afraid; discuss safe approaches with the team.\n\nIf a person falls, do not immediately lift or pull them up. Call for help, make the area safe, and follow the facility's assessment and response procedures. Record the facts after immediate needs have been addressed. Repeated changes at a particular time or place may indicate that the plan needs adjustment.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa jalur, cahaya, lantai, dan barang dalam jangkauan.",
+            "Cocokkan aktivitas dengan penilaian terbaru.",
+            "Laporkan bahaya serta kejadian hampir celaka.",
+            "Evaluasi perbaikan bersama tim dan dokumentasikan hasil."
+          ],
+          "title": "Fall Risks, the Environment, and Near Misses",
+          "vocabulary": [
+            {
+              "japanese": "転倒",
+              "meaning": "fall",
+              "reading": "てんとう"
+            },
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            },
+            {
+              "japanese": "予防",
+              "meaning": "prevention",
+              "reading": "よぼう"
+            },
+            {
+              "japanese": "事故",
+              "meaning": "accident",
+              "reading": "じこ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not give food, drink, or medication to an unresponsive person.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Escalation and safety must not be delayed by paperwork.",
+              "options": [
+                "Resolve it before calling",
+                "Replace the call for assistance",
+                "Do it after the immediate response has been handled"
+              ],
+              "prompt": "In an emergency, a lengthy record should…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The location and condition help the team respond appropriately.",
+              "options": [
+                "Only “please help”",
+                "The location and observed condition",
+                "A guessed diagnosis"
+              ],
+              "prompt": "A call for assistance must include…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "すぐに来てください。",
+              "meaning": "Please come right away.",
+              "reading": "すぐにきてください。"
+            },
+            {
+              "japanese": "二階の食堂です。呼吸が苦しそうです。",
+              "meaning": "In the second-floor dining room. Appears to be having difficulty breathing.",
+              "reading": "にかいのしょくどうです。こきゅうがくるしそうです。"
+            }
+          ],
+          "id": "kaigo-15",
+          "minutes": 20,
+          "objectives": [
+            "Memprioritaskan keselamatan dan eskalasi",
+            "Menyampaikan lokasi serta kondisi secara ringkas"
+          ],
+          "response": "Stop the activity, call for help immediately and state the location clearly, keep the person safe, and follow emergency instructions and procedures. Complete documentation after the immediate response is underway.",
+          "scenario": "During a morning activity, Mr. Ono suddenly has difficulty responding and appears to be struggling to breathe.",
+          "sections": [
+            {
+              "body": "In an emergency, staff must recognize danger, call for help, and follow trained procedures. Breathing difficulty, unresponsiveness, or a sudden change in function must be escalated immediately. Do not wait to make your own diagnosis. At work, learn the call buttons, contact routes, address, and person in charge on each shift.\n\nA good call for help gives the location, the person's identity as recorded in the system, observed condition, time of the incident, and assistance needed. Mention any environmental danger as well. Emergency interventions such as resuscitation require hands-on training and current instructions; this app does not replace that training.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "During a fire or disaster, follow the facility evacuation plan and responders' instructions. Before an incident, learn the safe routes, assembly points, list of people receiving care, and their assistive-equipment needs. Avoid spontaneous actions that could add danger, such as taking a route that has not been declared safe.\n\nAfter the incident, hand information over to the receiving team and record the factual sequence of events. Do not leave a person at risk unsupervised to look for documents; ask a colleague for help and divide tasks. Review drills regularly so the response does not depend on memorization alone.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan keselamatan diri, pengguna, dan lingkungan.",
+            "Panggil bantuan segera melalui jalur yang ditetapkan.",
+            "Sampaikan lokasi, kondisi, waktu, dan kebutuhan bantuan.",
+            "Ikuti arahan serta tindakan yang telah dilatih, lalu serah terima."
+          ],
+          "title": "Sudden Changes, Calling for Help, and Evacuation",
+          "vocabulary": [
+            {
+              "japanese": "緊急",
+              "meaning": "emergency",
+              "reading": "きんきゅう"
+            },
+            {
+              "japanese": "避難",
+              "meaning": "evacuation",
+              "reading": "ひなん"
+            },
+            {
+              "japanese": "応援",
+              "meaning": "additional assistance",
+              "reading": "おうえん"
+            },
+            {
+              "japanese": "安全",
+              "meaning": "safety",
+              "reading": "あんぜん"
+            }
+          ]
+        }
+      ],
+      "title": "Safety, Infection Prevention, and Emergencies"
+    },
+    {
+      "description": "Assess readiness, use equipment as trained, and support continued activity.",
+      "id": "mobility",
+      "lessons": [
+        {
+          "caution": "Do not attempt a lifting or hoist technique for the first time based only on reading; practice with an instructor.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Consider the service user's abilities, the equipment, the space, and the staff together.",
+              "options": [
+                "Guarantee that every lift is safe",
+                "Replace the assistive equipment",
+                "Assessment and equipment suited to the person's needs are still required"
+              ],
+              "prompt": "Good body mechanics…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The assistance plan must match the person's current condition.",
+              "options": [
+                "Use yesterday's method without changes",
+                "Stop and request a reassessment",
+                "Pull the service user more forcefully"
+              ],
+              "prompt": "A service user's ability to bear weight has changed today. The care worker should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日は立てそうですか。",
+              "meaning": "Do you think you can stand today?",
+              "reading": "きょうはたてそうですか。"
+            },
+            {
+              "japanese": "二人で確認してから行います。",
+              "meaning": "We will do it after checking together.",
+              "reading": "ふたりでかくにんしてからおこないます。"
+            }
+          ],
+          "id": "kaigo-16",
+          "minutes": 20,
+          "objectives": [
+            "Menjelaskan prinsip pusat gravitasi dan tumpuan",
+            "Memilih bantuan berdasarkan penilaian, bukan kekuatan petugas"
+          ],
+          "response": "Stop the transfer that does not match today's ability and request a team assessment. Prepare assistance and equipment according to the updated plan.",
+          "scenario": "Mr. Endo, who usually helps with standing, cannot bear weight today. The caregiver is about to use yesterday's method anyway.",
+          "sections": [
+            {
+              "body": "Body mechanics use posture and movement to make work more stable. A secure base, staying close to the task, and avoiding twisting the back while carrying a load help reduce inefficient movement. However, body mechanics alone cannot make every transfer safe. The person's weight and abilities, available equipment and space, and number of staff still determine how assistance should be provided.\n\nHandling a person is different from lifting an object. A person may move suddenly, feel pain, or lose balance. Follow the transfer assessment and equipment-use policy. Never lift a person who cannot support their own body alone just because a staff member feels strong enough.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Before assisting, read the plan and check for changes in the person's condition. Make sure equipment is available, working, and suitable for the person. Using a hoist, sling, or transfer device requires specific training and a check that the equipment fits. Staffing must follow the assessment and device instructions, not an assumption that two people are always enough.\n\nExplain how the person can participate and coordinate so one staff member leads the directions. If the situation does not match the plan, stop and request a reassessment. Feeling rushed or short-staffed is not a reason to skip checks.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cek kemampuan pengguna dan rencana penanganan terbaru.",
+            "Siapkan ruang, alat, serta jumlah petugas yang ditetapkan.",
+            "Jelaskan tahap dan koordinasikan arahan.",
+            "Hentikan bila kemampuan atau kondisi tidak sesuai penilaian."
+          ],
+          "title": "Body Mechanics and Safe Handling",
+          "vocabulary": [
+            {
+              "japanese": "重心",
+              "meaning": "center of gravity",
+              "reading": "じゅうしん"
+            },
+            {
+              "japanese": "支持基底面",
+              "meaning": "base of support",
+              "reading": "しじきていめん"
+            },
+            {
+              "japanese": "移乗",
+              "meaning": "transfer",
+              "reading": "いじょう"
+            },
+            {
+              "japanese": "福祉用具",
+              "meaning": "assistive device",
+              "reading": "ふくしようぐ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not set repositioning schedules or wound care yourself; follow the clinical assessment and individual plan.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Skin changes require assessment and appropriate protection.",
+              "options": [
+                "Massage it firmly",
+                "Report it and handle it as directed",
+                "Cover it without making a record"
+              ],
+              "prompt": "New skin redness should…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Each service user has different risks, preferences, and conditions.",
+              "options": [
+                "Follow the individual plan",
+                "The same for everyone",
+                "Determine it based only on the staff member's routine"
+              ],
+              "prompt": "A repositioning schedule must…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この姿勢は楽ですか。",
+              "meaning": "Are you comfortable in this position?",
+              "reading": "このしせいはらくですか。"
+            },
+            {
+              "japanese": "かかとに赤いところがあります。",
+              "meaning": "There is a reddened area on the heel.",
+              "reading": "かかとにあかいところがあります。"
+            }
+          ],
+          "id": "kaigo-17",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali posisi dasar dan kebutuhan dukungan",
+            "Mengamati kulit serta melaporkan perubahan"
+          ],
+          "response": "Report the location, time, and concern to the nurse, then follow instructions for pressure protection. Do not massage the area or apply cream without direction.",
+          "scenario": "While adjusting clothing, the caregiver notices new redness on the heel of a person who moves infrequently.",
+          "sections": [
+            {
+              "body": "Supine, side-lying, and sitting positions have different purposes and risks. A comfortable position must take into account the person's mobility, pain, breathing, and support plan. Use pillows or positioning aids according to the assessment; the goal is not simply to make the body look tidy.\n\nProlonged pressure, friction, moisture, and shear can damage skin. A person who has difficulty changing position needs a risk assessment and individual plan. No single repositioning schedule is automatically suitable for everyone. Follow the plan and report if it cannot be carried out or the person is uncomfortable.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "When repositioning someone, protect their privacy and use trained methods to reduce friction. Do not drag the person by pulling on an arm or clothing. Make sure sheet folds, equipment, and body parts do not create unwanted pressure. Leave the call bell within reach when finished.\n\nObserve the skin during care activities when possible and with consent. Report new redness, wounds, excess moisture, or pain to the nurse. Do not massage red areas or apply a new product without direction. Record the location and time of findings objectively.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa rencana posisi serta keluhan pengguna.",
+            "Siapkan alat penopang dan bantuan yang diperlukan.",
+            "Ubah posisi dengan teknik terlatih serta minim gesekan.",
+            "Periksa kenyamanan, kulit yang dapat diamati, dan jangkauan bel."
+          ],
+          "title": "Sleeping Positions, Comfort, and Skin Protection",
+          "vocabulary": [
+            {
+              "japanese": "仰臥位",
+              "meaning": "supine position",
+              "reading": "ぎょうがい"
+            },
+            {
+              "japanese": "側臥位",
+              "meaning": "side-lying position",
+              "reading": "そくがい"
+            },
+            {
+              "japanese": "体位変換",
+              "meaning": "repositioning",
+              "reading": "たいいへんかん"
+            },
+            {
+              "japanese": "褥瘡",
+              "meaning": "pressure injury",
+              "reading": "じょくそう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not descend a slope or cross an obstacle using a technique you have not been trained in.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Preparing equipment prevents delays and risks during a transfer.",
+              "options": [
+                "Leave it as it is to save time",
+                "Use it as a place to stand",
+                "Set it according to procedure before starting"
+              ],
+              "prompt": "During a transfer, an obstructing footrest should…"
+            },
+            {
+              "answer": 1,
+              "explanation": "A change in condition needs attention before the activity continues.",
+              "options": [
+                "Force the person to complete the distance",
+                "Stop safely and report it",
+                "Assume the person is lazy"
+              ],
+              "prompt": "A service user suddenly feels dizzy while walking. The care worker should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ブレーキを確認します。",
+              "meaning": "I will check the brakes.",
+              "reading": "ぶれーきをかくにんします。"
+            },
+            {
+              "japanese": "疲れたら休みましょう。",
+              "meaning": "Let's rest if you feel tired.",
+              "reading": "つかれたらやすみましょう。"
+            }
+          ],
+          "id": "kaigo-18",
+          "minutes": 20,
+          "objectives": [
+            "Memeriksa kesiapan alat dan jalur",
+            "Menjaga aktivitas tanpa mengabaikan perubahan kondisi"
+          ],
+          "response": "Stop first, explain, then set the footrests and brakes according to equipment procedure. Resume only when the transfer is ready and assistance matches the plan.",
+          "scenario": "The caregiver sees that the wheelchair footrests are still in the way as the person prepares to stand.",
+          "sections": [
+            {
+              "body": "Wheelchairs and walking aids support participation, but must be the right size and used according to the person's plan. Before use, check relevant parts such as brakes, the seat, footrests, and route. Devices do not all work the same way; follow training and the equipment instructions.\n\nWalking assistance takes balance, fatigue, pain, and ability to follow directions into account. Someone who usually walks independently may need different assistance on a particular day. Activity is not a test of courage; allow rest and request an assessment if changes arise.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Before transferring to or from a wheelchair, position the equipment and set the brakes and footrests according to procedure. Do not let the person stand on the footrests. Use the designated transfer method; do not pull on an arm. Once seated, check comfort, foot position, and any need for support.\n\nFor an outing, plan the route, weather, toilet access, supervision, and rest stops. Hills, thresholds, and uneven paths require trained techniques for the equipment. Explain a change in movement before making it so the person is not startled.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa kondisi pengguna, alat, dan jalur.",
+            "Atur transfer serta bagian alat sesuai prosedur.",
+            "Jelaskan gerakan dan pantau kenyamanan serta kelelahan.",
+            "Berhenti bila muncul pusing, nyeri, atau kesulitan baru dan laporkan."
+          ],
+          "title": "Wheelchairs, Walking, and Leaving the Room",
+          "vocabulary": [
+            {
+              "japanese": "車椅子",
+              "meaning": "wheelchair",
+              "reading": "くるまいす"
+            },
+            {
+              "japanese": "歩行",
+              "meaning": "walking",
+              "reading": "ほこう"
+            },
+            {
+              "japanese": "杖",
+              "meaning": "walking cane",
+              "reading": "つえ"
+            },
+            {
+              "japanese": "段差",
+              "meaning": "change in floor level",
+              "reading": "だんさ"
+            }
+          ]
+        }
+      ],
+      "title": "Body Positioning, Transfers, and Mobility"
+    },
+    {
+      "description": "Respect food choices, understand swallowing plans, and observe the person's response.",
+      "id": "food",
+      "lessons": [
+        {
+          "caution": "Do not change food texture or diet yourself when the person appears to have difficulty eating.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Confirm the person's identity, allergies, and diet plan before serving.",
+              "options": [
+                "Provide it according to the chair position",
+                "Check the recipient and their diet plan",
+                "Divide it randomly"
+              ],
+              "prompt": "Similar trays should…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Assistance should be based on the service user's comfort and abilities, not just the staff schedule.",
+              "options": [
+                "Follow the service user's abilities and responses",
+                "Always fast",
+                "The same for every service user"
+              ],
+              "prompt": "The pace of feeding assistance should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日の昼ご飯はこちらです。",
+              "meaning": "This is today's lunch.",
+              "reading": "きょうのひるごはんはこちらです。"
+            },
+            {
+              "japanese": "ご自分で食べてみますか。",
+              "meaning": "Would you like to try eating by yourself?",
+              "reading": "ごじぶんでたべてみますか。"
+            }
+          ],
+          "id": "kaigo-19",
+          "minutes": 20,
+          "objectives": [
+            "Memeriksa identitas, diet, dan alergi sesuai sistem",
+            "Memberi bantuan makan yang terarah dan menghormati tempo"
+          ],
+          "response": "Verify the recipient and diet in the facility system before serving food. Similar-looking meals are not necessarily safe or suitable.",
+          "scenario": "Two similar trays are placed side by side. The caregiver has not checked the labels or diet plan.",
+          "sections": [
+            {
+              "body": "Eating meets physical needs and can also be a social activity and source of enjoyment. Check that the food matches the person's identity under the facility system, diet, allergies, and assistance plan. Do not rely on seat location or how a plate looks to identify the recipient. The team should record and accommodate cultural and religious choices and habits.\n\nSupport for independence starts with the environment: table, utensils, lighting, and reach. A person may be able to eat independently if food is cut as planned or a particular utensil is prepared. Before assistance, check that posture, alertness, and swallowing ability match the assessment.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Explain the food and ask permission to help. Follow the person's pace; do not offer another spoonful while their mouth is still full. Observe responses such as difficulty, coughing, or fatigue and follow the reporting process. Do not force the person to finish a portion or mix all the food together just for efficiency.\n\nRecord the amount eaten according to facility practice, the type of assistance, any refusal, and concerns. Intake figures alone do not describe the mealtime experience; add observations that may help adjust the plan. If the food does not match the plan, confirm before serving it.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan pengguna, makanan, alergi, dan rencana cocok.",
+            "Atur lingkungan serta posisi menurut penilaian.",
+            "Jelaskan, beri kesempatan makan sendiri, dan bantu sesuai tempo.",
+            "Amati serta catat konsumsi, bantuan, dan respons."
+          ],
+          "title": "Meal Preparation and Support for Independence",
+          "vocabulary": [
+            {
+              "japanese": "食事",
+              "meaning": "eating; meal",
+              "reading": "しょくじ"
+            },
+            {
+              "japanese": "食欲",
+              "meaning": "appetite",
+              "reading": "しょくよく"
+            },
+            {
+              "japanese": "主食",
+              "meaning": "staple food",
+              "reading": "しゅしょく"
+            },
+            {
+              "japanese": "副食",
+              "meaning": "side dish",
+              "reading": "ふくしょく"
+            }
+          ]
+        },
+        {
+          "caution": "If the person develops a new swallowing difficulty, do not offer water, change liquid thickness, or continue feeding.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "A change in swallowing needs assessment; do not respond by giving a drink on your own.",
+              "options": [
+                "As much water as possible",
+                "Stop feeding and escalate according to procedure",
+                "Continue more quickly"
+              ],
+              "prompt": "New difficulty swallowing should be responded to by…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Each service user may have different needs and restrictions.",
+              "options": [
+                "The staff member's preference",
+                "The same rule for all older adults",
+                "An individual plan from the team"
+              ],
+              "prompt": "Texture and fluid targets are determined based on…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "飲み込みにくいですか。",
+              "meaning": "Are you having difficulty swallowing?",
+              "reading": "のみこみにくいですか。"
+            },
+            {
+              "japanese": "食事を止めて、看護師を呼びます。",
+              "meaning": "I will stop the meal assistance and call the nurse.",
+              "reading": "しょくじをとめて、かんごしをよびます。"
+            }
+          ],
+          "id": "kaigo-20",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali kesulitan yang perlu dilaporkan",
+            "Mengikuti rencana tekstur dan cairan individual"
+          ],
+          "response": "Stop giving food or drink, call authorized staff, and follow procedure. Report what was served and the person's response; do not try water as an improvised solution.",
+          "scenario": "During a meal, the person's voice becomes wet-sounding and they cough repeatedly. A coworker suggests giving plenty of water.",
+          "sections": [
+            {
+              "body": "Swallowing moves food or liquid toward the digestive tract. Difficulty swallowing is called enge shōgai; material entering the airway is called goen, or aspiration. Report coughing during meals, a changed voice after swallowing, or repeated difficulty. The absence of coughing does not ensure that swallowing is safe. Swallowing assessments are done by qualified professionals.\n\nThe plan may specify positioning, food texture, liquid consistency, equipment, and level of assistance. Staff follow the individual plan and their training. Do not estimate thickness or amounts. Cutting food into smaller pieces is not automatically suitable for every swallowing difficulty.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "If a new difficulty occurs during a meal, stop feeding, ensure safety, and call staff according to procedure. If the person cannot breathe or is unresponsive, use the trained emergency response. Do not force them to drink to “push down” food.\n\nHydration also follows the person's condition and plan. There is no single fluid target suitable for everyone, especially when clinical restrictions apply. Record intake using the facility system and report changes in drinking habits, dry mouth, or new concerns. Observations support communication; they are not a caregiver's diagnosis of dehydration.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca rencana menelan dan hidrasi terbaru.",
+            "Pastikan posisi, tekstur, alat, dan bantuan sesuai rencana.",
+            "Pantau respons selama pemberian dan hentikan bila muncul kesulitan.",
+            "Laporkan perubahan dan catat asupan secara akurat."
+          ],
+          "title": "Swallowing, Aspiration, and Hydration Plans",
+          "vocabulary": [
+            {
+              "japanese": "嚥下",
+              "meaning": "swallowing",
+              "reading": "えんげ"
+            },
+            {
+              "japanese": "誤嚥",
+              "meaning": "aspiration",
+              "reading": "ごえん"
+            },
+            {
+              "japanese": "水分",
+              "meaning": "liquid; fluid",
+              "reading": "すいぶん"
+            },
+            {
+              "japanese": "とろみ",
+              "meaning": "liquid consistency",
+              "reading": "とろみ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not force rinsing or use a volume of liquid that does not match the swallowing plan.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Complaints require assessment and follow-up within the worker's authority.",
+              "options": [
+                "Report it for assessment",
+                "Repair it yourself",
+                "Force continued use"
+              ],
+              "prompt": "A service user says their dentures hurt. The care worker should…"
+            },
+            {
+              "answer": 1,
+              "explanation": "Identification prevents personal items from being mixed up and supports hygiene.",
+              "options": [
+                "Share it by taking turns",
+                "Identify it and store it according to procedure",
+                "Mix it in so it is easier to clean"
+              ],
+              "prompt": "A denture container needs to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "口の中に痛みはありますか。",
+              "meaning": "Do you have any pain in your mouth?",
+              "reading": "くちのなかにいたみはありますか。"
+            },
+            {
+              "japanese": "入れ歯の具合はどうですか。",
+              "meaning": "How comfortable are your dentures?",
+              "reading": "いればのぐあいはどうですか。"
+            }
+          ],
+          "id": "kaigo-21",
+          "minutes": 20,
+          "objectives": [
+            "Menyiapkan bantuan mulut sesuai rencana",
+            "Mengamati keluhan dan menjaga identitas alat pribadi"
+          ],
+          "response": "Record what the person said and the change in food intake, report it to the team for assessment, and follow the assistance plan. Do not file or repair dentures yourself.",
+          "scenario": "Mrs. Noda has been eating less and says her dentures hurt when she wears them.",
+          "sections": [
+            {
+              "body": "Oral hygiene supports comfort, eating, communication, and social interaction. A person may need help brushing, cleaning their mouth, or caring for dentures. Choice of equipment, positioning, and use of liquids must match the person's abilities and plan, especially if they have difficulty swallowing.\n\nWatch for concerns such as pain, mouth sores, bleeding, dry mouth, or uncomfortable dentures. Report findings to the team; do not assume refusal to eat is always because the person dislikes the menu. Caregivers do not adjust dentures or perform dental procedures themselves.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Ask permission, prepare suitable personal equipment, and ensure the position is safe. Give the person the chance to do any parts they can manage. Assist gently according to training while monitoring comfort and tolerance. If a new difficulty or bleeding occurs, stop the problematic part and report it.\n\nEach person's dentures need identification, handling, storage, and cleaning products according to instructions and policy. Do not switch containers or casually use very hot water. When finished, record the assistance and any findings that need follow-up.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cek rencana, alat pribadi, dan kondisi mulut.",
+            "Jelaskan serta minta izin sebelum bantuan.",
+            "Bantu dengan lembut sesuai kemampuan dan pelatihan.",
+            "Bersihkan serta simpan alat dengan identitas tepat; laporkan keluhan."
+          ],
+          "title": "Oral Hygiene and Denture Care",
+          "vocabulary": [
+            {
+              "japanese": "口腔",
+              "meaning": "oral cavity",
+              "reading": "こうくう"
+            },
+            {
+              "japanese": "義歯",
+              "meaning": "dentures",
+              "reading": "ぎし"
+            },
+            {
+              "japanese": "歯磨き",
+              "meaning": "brushing teeth",
+              "reading": "はみがき"
+            },
+            {
+              "japanese": "うがい",
+              "meaning": "rinsing the mouth",
+              "reading": "うがい"
+            }
+          ]
+        }
+      ],
+      "title": "Eating, Drinking, and Oral Health"
+    },
+    {
+      "description": "Support elimination habits, maintain hygiene, and record changes.",
+      "id": "toileting",
+      "lessons": [
+        {
+          "caution": "Do not leave a person at risk alone on the toilet just to provide privacy.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Privacy matters, while assistance must still follow an individual risk assessment.",
+              "options": [
+                "Always leave the service user behind",
+                "Balance it with the need for supervision",
+                "Ignore it if staff are busy"
+              ],
+              "prompt": "Privacy during toileting must…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The person's routines and individual needs provide the basis for support.",
+              "options": [
+                "The service user's routines and plan",
+                "One schedule for everyone",
+                "The staff member's comfort alone"
+              ],
+              "prompt": "A toileting-support schedule should follow…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お手洗いに行きますか。",
+              "meaning": "Would you like to use the toilet?",
+              "reading": "おてあらいにいきますか。"
+            },
+            {
+              "japanese": "終わったら呼んでください。",
+              "meaning": "Call me when you are finished.",
+              "reading": "おわったらよんでください。"
+            }
+          ],
+          "id": "kaigo-22",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali pola dan kebutuhan bantuan",
+            "Menjaga privasi tanpa meninggalkan risiko"
+          ],
+          "response": "Follow the required level of supervision and find a way to protect privacy without leaving risks unaddressed. Explain this to the person and make sure help can be provided promptly.",
+          "scenario": "Mr. Hara needs supervision when sitting down and standing up. The caregiver wants to leave the toilet area to give him privacy.",
+          "sections": [
+            {
+              "body": "Elimination includes urination and bowel movements. Toileting support takes into account usual timing, mobility, clothing, communication, and privacy concerns. People who need assistance still have the right to an explanation and choices. Do not put everyone on the same schedule without considering their individual plan.\n\nIndependence can be supported with a safe route, easy-to-use clothing, toilet signs, and suitable equipment. Urgent needs can increase risk when a call bell is out of reach or the response is slow. The goal is not merely to prevent leakage, but to help the person stay comfortable and maintain routines where possible.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Before assisting with a transfer, check the plan, prepare hand-hygiene supplies and protective equipment, and explain each step. Once the person is in a safe position, protect their privacy while maintaining the supervision they need. Not everyone can safely be left alone; follow the assessment. Keep the call bell within reach and make sure the person knows how to use it.\n\nHelp with clothing and hygiene according to the person's abilities. When finished, check that they are comfortable, handle soiled items correctly, and clean your hands. Record the time and type of assistance. Report pain, new difficulty, or a change in pattern to the team.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan kebutuhan dan cek pola serta rencana toilet.",
+            "Siapkan jalur, alat, transfer, dan kebersihan.",
+            "Jaga privasi dengan tingkat pengawasan sesuai penilaian.",
+            "Bantu kebersihan, rapikan dengan izin, dan catat respons."
+          ],
+          "title": "Toileting Assistance and Elimination Habits",
+          "vocabulary": [
+            {
+              "japanese": "排泄",
+              "meaning": "elimination",
+              "reading": "はいせつ"
+            },
+            {
+              "japanese": "排尿",
+              "meaning": "urination",
+              "reading": "はいにょう"
+            },
+            {
+              "japanese": "排便",
+              "meaning": "bowel movement; defecation",
+              "reading": "はいべん"
+            },
+            {
+              "japanese": "便座",
+              "meaning": "toilet seat",
+              "reading": "べんざ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not reduce fluids, add pad layers, or use a new skin product without the team's plan.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "Fluid needs are not determined by the convenience of changing equipment.",
+              "options": [
+                "Always correct",
+                "A caregiver's primary method",
+                "Not appropriate without a plan and team assessment"
+              ],
+              "prompt": "Reducing a person's fluids on your own to prevent leakage is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Support should match the service user's needs, routines, and comfort.",
+              "options": [
+                "Follow the plan while continuing to consider toileting needs",
+                "Always replace all opportunities to use the toilet",
+                "Add as many layers as possible"
+              ],
+              "prompt": "A pad should be used…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "着替えをお持ちします。",
+              "meaning": "I will bring a change of clothes.",
+              "reading": "きがえをおもちします。"
+            },
+            {
+              "japanese": "皮膚がかゆいですか。",
+              "meaning": "Does your skin feel itchy?",
+              "reading": "ひふがかゆいですか。"
+            }
+          ],
+          "id": "kaigo-23",
+          "minutes": 20,
+          "objectives": [
+            "Menghindari stigma pada kebocoran",
+            "Mengelola alat penyerap dan alur bersih-kotor sesuai rencana"
+          ],
+          "response": "Respect the request, provide calm assistance in private, and record it through the official system. Review patterns with the team without embarrassing the person or changing fluid intake yourself.",
+          "scenario": "Mrs. Kondo has had an episode of incontinence and asks the caregiver not to speak loudly about it.",
+          "sections": [
+            {
+              "body": "Incontinence is the involuntary loss of urine or stool. It may make a person feel embarrassed and anxious about interacting with others. Caregivers should respond calmly, privately, and without blame. Do not call a person “dirty” or discuss leakage in front of others.\n\nAbsorbent products may help, but their type, size, checking frequency, and use must follow the plan. They do not automatically replace opportunities to use the toilet. The team needs to understand leakage patterns and barriers that can be addressed, not simply change the product after each incident.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Prepare supplies before starting so the person is not left uncovered. Protect comfort and cover body areas that are not being assisted. Keep clean and soiled equipment separate and follow trained hygiene techniques. Dry the skin gently; use skin protectant only as directed.\n\nCheck for concerns, redness, or visible skin changes during assistance and report new findings. After changing, make sure the product is not too tight, clothing is comfortable, and positioning follows the plan. Record the time, leakage, and assistance provided; do not independently restrict fluids to prevent leakage.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Jelaskan bantuan dengan suara serta tempat yang menjaga privasi.",
+            "Siapkan alat sesuai rencana dan pisahkan bersih-kotor.",
+            "Bantu kebersihan serta penggantian sesuai pelatihan.",
+            "Periksa kenyamanan, kulit, dan pola; laporkan perubahan."
+          ],
+          "title": "Incontinence, Pads, and Skin Hygiene",
+          "vocabulary": [
+            {
+              "japanese": "失禁",
+              "meaning": "incontinence",
+              "reading": "しっきん"
+            },
+            {
+              "japanese": "尿",
+              "meaning": "urine",
+              "reading": "にょう"
+            },
+            {
+              "japanese": "皮膚",
+              "meaning": "skin",
+              "reading": "ひふ"
+            },
+            {
+              "japanese": "清潔",
+              "meaning": "hygiene; cleanliness",
+              "reading": "せいけつ"
+            }
+          ]
+        },
+        {
+          "caution": "Report visible blood or a new concern; do not decide its cause yourself.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Records must distinguish actual measurements from estimates.",
+              "options": [
+                "Guess the number",
+                "Do not state the figure as a confirmed result",
+                "Use another service user's measurement"
+              ],
+              "prompt": "The urine volume was not measured. The record should…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Assessment and treatment decisions belong to authorized personnel.",
+              "options": [
+                "Treat it yourself",
+                "Ignore it if the person is embarrassed",
+                "Record and report it"
+              ],
+              "prompt": "New pain during urination requires…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いつ排便がありましたか。",
+              "meaning": "When was your last bowel movement?",
+              "reading": "いつはいべんがありましたか。"
+            },
+            {
+              "japanese": "排尿のときに痛いと話しています。",
+              "meaning": "They said it hurts when they urinate.",
+              "reading": "はいにょうのときにいたいとはなしています。"
+            }
+          ],
+          "id": "kaigo-24",
+          "minutes": 20,
+          "objectives": [
+            "Menulis pengamatan eliminasi secara objektif",
+            "Melaporkan nyeri atau perubahan tanpa mendiagnosis"
+          ],
+          "response": "Record the person's words, the time, and relevant observations, then report them to the nurse. Do not conclude there is an infection or give medication from another supply.",
+          "scenario": "Mr. Ueda says that urinating hurts. Previous records do not mention this concern.",
+          "sections": [
+            {
+              "body": "Elimination records help the team understand patterns and changes. They may include the time, frequency, amount if measured according to procedure, observed form or color, concerns, and type of assistance. Distinguish direct observations from what the person says. If an amount was not measured, do not write a number as if it were certain.\n\nConstipation, diarrhea, or difficulty urinating requires assessment and a plan; caregivers do not choose medication or make a diagnosis. Report new changes, visible blood, pain, or a worsening condition according to the urgency procedures. Do not wait several days to collect notes when a sign needs an immediate response.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Use the terms or scale used by the facility after training. A note such as “bad bowel movement” is less useful than the time, observed form, and any concern. Also record whether the person declined assistance or could not reach the toilet in time.\n\nSupport with activity, diet, and fluids follows the individual plan. Do not give a laxative, change medication, or perform an invasive procedure because a record looks unusual. If the person feels embarrassed discussing elimination, explain why observations are needed and speak privately.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati dengan persetujuan dan sesuai kebutuhan pelayanan.",
+            "Catat waktu, fakta, ukuran yang benar-benar diukur, serta keluhan.",
+            "Bandingkan dengan pola yang diketahui.",
+            "Laporkan perubahan dan ikuti instruksi tanpa membuat terapi sendiri."
+          ],
+          "title": "Urine, Stool, and Changes in Elimination Patterns",
+          "vocabulary": [
+            {
+              "japanese": "便秘",
+              "meaning": "constipation",
+              "reading": "べんぴ"
+            },
+            {
+              "japanese": "下痢",
+              "meaning": "diarrhea",
+              "reading": "げり"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            },
+            {
+              "japanese": "量",
+              "meaning": "quantity",
+              "reading": "りょう"
+            }
+          ]
+        }
+      ],
+      "title": "Toileting, Elimination, and Dignity"
+    },
+    {
+      "description": "Plan comfortable and private hygiene assistance suited to the person's abilities.",
+      "id": "hygiene",
+      "lessons": [
+        {
+          "caution": "Do not leave a person who requires supervision alone in the bathing area.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Check the person's current condition before continuing the activity.",
+              "options": [
+                "Report it before the activity continues",
+                "Ignore it because of the schedule",
+                "Address it with hotter water"
+              ],
+              "prompt": "Dizziness before bathing requires…"
+            },
+            {
+              "answer": 1,
+              "explanation": "Risks can come from the service user, equipment, and environment at the same time.",
+              "options": [
+                "Towels only",
+                "The environment, equipment, plan, and service user's condition",
+                "Only turn on the water"
+              ],
+              "prompt": "Bathing preparation includes…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お湯の温度はいかがですか。",
+              "meaning": "How is the water temperature?",
+              "reading": "おゆのおんどはいかがですか。"
+            },
+            {
+              "japanese": "めまいはありませんか。",
+              "meaning": "Do you feel dizzy?",
+              "reading": "めまいはありませんか。"
+            }
+          ],
+          "id": "kaigo-25",
+          "minutes": 20,
+          "objectives": [
+            "Memeriksa kesiapan pengguna dan lingkungan",
+            "Mendukung preferensi serta privasi saat mandi"
+          ],
+          "response": "Do not force the schedule. Keep the person safe, report the change, and wait for guidance about adjusting the activity.",
+          "scenario": "Mrs. Hayashi seems dizzy before her scheduled bath.",
+          "sections": [
+            {
+              "body": "Bathing supports hygiene, comfort, and routine. Before starting, check the plan, the person's condition that day, preferences, and assistance needs. The person may feel uncomfortable because of cold, fear of falling, embarrassment, or a past experience. Explanation and consent help determine appropriate support.\n\nBathrooms present risks from wet floors, temperature changes, limited space, and transfers. Check equipment, routes, grab bars, and staffing needs under procedure. Check water and room temperature according to SOP and confirm with the person; do not rely only on how the staff member's hand feels or on one number without context.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Prepare clothing, towels, supplies, and the transfer plan before undressing. Keep the person covered as much as possible and let them wash any areas they can reach. Monitor their response throughout, including dizziness, pain, or fatigue. If their condition changes, stop and follow the reporting process.\n\nAfter bathing, dry gently according to the plan, help the person dress, and make sure they are comfortable. Observe the skin when appropriate and with consent. Report new findings and record the assistance and response; completing the bath schedule alone does not show whether the activity was safe.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Konfirmasi persetujuan, kondisi, serta rencana mandi.",
+            "Siapkan perlengkapan, alat, petugas, dan lingkungan.",
+            "Periksa air menurut SOP, lalu bantu dengan menjaga privasi.",
+            "Pantau respons, bantu selesai dengan nyaman, dan dokumentasikan."
+          ],
+          "title": "Bath Preparation and Bathroom Safety",
+          "vocabulary": [
+            {
+              "japanese": "入浴",
+              "meaning": "bathing",
+              "reading": "にゅうよく"
+            },
+            {
+              "japanese": "浴室",
+              "meaning": "bathroom",
+              "reading": "よくしつ"
+            },
+            {
+              "japanese": "湯温",
+              "meaning": "bathwater temperature",
+              "reading": "ゆおん"
+            },
+            {
+              "japanese": "更衣",
+              "meaning": "changing clothes",
+              "reading": "こうい"
+            }
+          ]
+        },
+        {
+          "caution": "Nail, wound, and problem-skin care must stay within your authority and instructions; do not try a new procedure on your own.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Step-by-step assistance supports comfort and dignity.",
+              "options": [
+                "Leave the whole body exposed for a long time",
+                "Cover areas that are not being assisted",
+                "Leave the door open"
+              ],
+              "prompt": "When wiping the body, privacy is maintained by…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Skin care must match the person's condition, instructions, and the worker's authority.",
+              "options": [
+                "Scrub it until it disappears",
+                "Handle it with any available product",
+                "Report it for assessment"
+              ],
+              "prompt": "A new skin finding should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "体を拭いてもよろしいですか。",
+              "meaning": "May I help wipe your body?",
+              "reading": "からだをふいてもよろしいですか。"
+            },
+            {
+              "japanese": "寒くないですか。",
+              "meaning": "Are you warm enough?",
+              "reading": "さむくないですか。"
+            }
+          ],
+          "id": "kaigo-26",
+          "minutes": 20,
+          "objectives": [
+            "Mengenali alternatif kebersihan saat mandi tidak sesuai",
+            "Mengamati kulit dengan menjaga kenyamanan"
+          ],
+          "response": "Confirm what hygiene assistance is permitted, explain it, and assist step by step while keeping the person warm and private.",
+          "scenario": "The person is not scheduled for a bath today but feels uncomfortable because they are sweaty.",
+          "sections": [
+            {
+              "body": "Seishiki (清拭) means cleaning the body by wiping. It may be part of the plan when a full bath is not suitable, but the decision follows the person's condition and team directions. Hygiene assistance still includes consent, privacy, comfort, and opportunities for the person to do the parts they can manage.\n\nPrepare supplies according to SOP and keep clean and soiled equipment separate. There is no need to uncover the whole body for a long time to clean one area. Watch for cold, pain, and skin concerns. Products must match the plan, especially when the person has sensitivities or skin problems.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Work step by step using trained techniques, then gently dry the area. Do not scrub hard to remove every mark. For hair, adapt washing or combing to the person's position, tolerance, and preference. Personal equipment must not be shared without approved handling procedures.\n\nNail care and care of high-risk areas require facility-specific rules and assessment of the person's condition. Do not cut an area that cannot be assessed properly, treat a wound, or perform a task outside your training. Report changes in skin or nails, and any concerns, to the relevant staff member.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cek rencana alternatif kebersihan dan preferensi.",
+            "Siapkan alat, suhu lingkungan, serta pelindung sesuai tugas.",
+            "Bantu satu area dengan privasi dan teknik lembut.",
+            "Keringkan, rapikan, lalu laporkan temuan baru."
+          ],
+          "title": "Seishiki, Hair, and Personal Hygiene",
+          "vocabulary": [
+            {
+              "japanese": "清拭",
+              "meaning": "cleaning the body by wiping",
+              "reading": "せいしき"
+            },
+            {
+              "japanese": "洗髪",
+              "meaning": "washing hair",
+              "reading": "せんぱつ"
+            },
+            {
+              "japanese": "整容",
+              "meaning": "grooming; tidying one's appearance",
+              "reading": "せいよう"
+            },
+            {
+              "japanese": "保湿",
+              "meaning": "maintaining skin moisture",
+              "reading": "ほしつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not pull a weak arm or force a joint to put on clothing.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Partial assistance can respect the person's choices and preserve their abilities.",
+              "options": [
+                "Change it without asking",
+                "Help with the difficult buttons",
+                "Forbid the person from choosing"
+              ],
+              "prompt": "A service user has difficulty with buttons but chooses their own clothes. The care worker should…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Folds and tight clothing can cause discomfort.",
+              "options": [
+                "Comfort and pressure points",
+                "Color only",
+                "Only the completion schedule"
+              ],
+              "prompt": "After dressing, the care worker checks…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日はどの服にしますか。",
+              "meaning": "Which clothes would you like to wear today?",
+              "reading": "きょうはどのふくにしますか。"
+            },
+            {
+              "japanese": "ボタンをお手伝いしましょうか。",
+              "meaning": "Would you like me to help with the buttons?",
+              "reading": "ぼたんをおてつだいしましょうか。"
+            }
+          ],
+          "id": "kaigo-27",
+          "minutes": 20,
+          "objectives": [
+            "Memberi pilihan pakaian yang nyata",
+            "Menyesuaikan urutan bantuan dengan kemampuan"
+          ],
+          "response": "Respect the person's choice and help with the difficult buttons. If needed, discuss suitable aids or alternatives while preserving the parts of the task the person can still do.",
+          "scenario": "Mr. Ishii wants to wear his favorite shirt but has trouble fastening its small buttons.",
+          "sections": [
+            {
+              "body": "Clothing relates to identity, comfort, culture, temperature, and planned activities. A person may have important preferences about color or style. Simple choices that are respected support participation. The need for physical assistance does not take away the right to choose one's appearance.\n\nCheck hand ability, seated balance, pain, and which parts of the clothing are difficult to use. Support may include laying out clothes, giving cues, helping with buttons, or assisting with part of a movement. For one-sided weakness, the general sequence of dressing the affected side first must be adapted to the plan and trained technique.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Prepare clothing before changing, close the door or curtains, and explain each step. Do not pull on a limb or force its range of motion. If clothing is difficult to use, discuss alternatives with the person and team instead of changing their preference without explanation.\n\nAfter dressing, check for folds, tight areas, assistive-device placement, and comfort. Adjust shoes and footwear to the mobility plan as well. Offer a mirror or a chance to groom if the person wishes. Record the assistance needed so the next staff member can provide consistent support.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan pilihan serta siapkan pakaian yang sesuai.",
+            "Periksa kemampuan, nyeri, serta posisi bantuan.",
+            "Jelaskan dan bantu bagian sulit sesuai urutan rencana.",
+            "Periksa kenyamanan serta beri kesempatan merapikan diri."
+          ],
+          "title": "Dressing, Personal Choices, and Partial Assistance",
+          "vocabulary": [
+            {
+              "japanese": "衣服",
+              "meaning": "clothing",
+              "reading": "いふく"
+            },
+            {
+              "japanese": "袖",
+              "meaning": "sleeve",
+              "reading": "そで"
+            },
+            {
+              "japanese": "着脱",
+              "meaning": "putting on and taking off",
+              "reading": "ちゃくだつ"
+            },
+            {
+              "japanese": "身だしなみ",
+              "meaning": "neat appearance",
+              "reading": "みだしなみ"
+            }
+          ]
+        }
+      ],
+      "title": "Bathing, Dressing, and Personal Care"
+    },
+    {
+      "description": "Maintain the person's routines, participation, and comfort in their living space.",
+      "id": "daily-life",
+      "lessons": [
+        {
+          "caution": "A change in awareness or breathing at night requires a response under procedure; do not wait until morning.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Facts and context help the team assess the person's rest pattern.",
+              "options": [
+                "The time and observed needs",
+                "A careless label",
+                "A guessed number of hours"
+              ],
+              "prompt": "A good sleep record includes…"
+            },
+            {
+              "answer": 2,
+              "explanation": "A new change in alertness requires prompt assessment.",
+              "options": [
+                "Wait until morning",
+                "Give another dose of sleeping medication",
+                "Escalate it immediately"
+              ],
+              "prompt": "A service user is unusually difficult to wake. The care worker needs to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "眠れましたか。",
+              "meaning": "Were you able to sleep?",
+              "reading": "ねむれましたか。"
+            },
+            {
+              "japanese": "何か気になることがありますか。",
+              "meaning": "Is something on your mind?",
+              "reading": "なにかきになることがありますか。"
+            }
+          ],
+          "id": "kaigo-28",
+          "minutes": 20,
+          "objectives": [
+            "Mengidentifikasi kebiasaan tidur dan gangguan lingkungan",
+            "Mencatat pola tanpa menetapkan obat tidur"
+          ],
+          "response": "Record when the person woke, their toileting needs, assistance given, and response afterward. This information is more useful for adjusting support than a general label.",
+          "scenario": "The person wakes three times to use the toilet. The caregiver's note only says 'difficulty sleeping.'",
+          "sections": [
+            {
+              "body": "Sleep and rest are affected by routines, daytime activity, the environment, physical comfort, and worries. A person may be used to sleeping with a particular light or need help using the toilet at night. Support should consider these habits and the plan, rather than assume everyone should sleep at the same time.\n\nSleep observations include when the person appears asleep, waking, concerns, activities, and assistance. Record only what can be known; do not state an exact number of sleeping hours if the person was not observed throughout. New drowsiness or difficulty waking needs attention and reporting, not merely a note in the sleep record.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Prepare a comfortable environment with lighting and sound suited to the person's preferences and risks. Make sure pathways, the call bell, and assistive devices can be used. Night checks follow the plan and should minimize unnecessary disturbance where possible. Greet the person and explain before providing physical assistance.\n\nIf the person continues waking, ask about needs such as pain, toileting, temperature, or anxiety, then report patterns to the team. Do not give extra sleep medication or keep the person in bed as an independent decision. Discuss daytime activity support and sleep routines with the team.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pelajari kebiasaan tidur serta rencana malam.",
+            "Atur lingkungan dan jangkauan bel dengan aman.",
+            "Amati pola serta bantu kebutuhan sesuai rencana.",
+            "Catat fakta dan laporkan perubahan atau keluhan baru."
+          ],
+          "title": "Sleep, Rest, and Nighttime Observations",
+          "vocabulary": [
+            {
+              "japanese": "睡眠",
+              "meaning": "sleep",
+              "reading": "すいみん"
+            },
+            {
+              "japanese": "休息",
+              "meaning": "rest",
+              "reading": "きゅうそく"
+            },
+            {
+              "japanese": "起床",
+              "meaning": "waking up",
+              "reading": "きしょう"
+            },
+            {
+              "japanese": "就寝",
+              "meaning": "going to bed",
+              "reading": "しゅうしん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not force activities or conduct therapy exercises outside your instructions and training.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "The service user's experiences and choices are a central part of evaluation.",
+              "options": [
+                "Everyone is forced to attend",
+                "Enjoyment and meaningful participation",
+                "Only the longest duration"
+              ],
+              "prompt": "The success of an activity can be seen from…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Refusing one activity does not tell you about all of the service user's interests.",
+              "options": [
+                "Labeling the person as antisocial",
+                "Punish the person",
+                "Ask about the person's interests and offer another option"
+              ],
+              "prompt": "A service user declines bingo. The care worker should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "好きなことは何ですか。",
+              "meaning": "What activities do you enjoy?",
+              "reading": "すきなことはなんですか。"
+            },
+            {
+              "japanese": "またやってみたいですか。",
+              "meaning": "Would you like to try again?",
+              "reading": "またやってみたいですか。"
+            }
+          ],
+          "id": "kaigo-29",
+          "minutes": 20,
+          "objectives": [
+            "Memilih aktivitas berdasarkan minat pengguna",
+            "Menyesuaikan bantuan dan mengevaluasi pengalaman"
+          ],
+          "response": "Offer a safe activity related to the person's interest in plants. Use life history as a guide; do not force bingo just to increase attendance.",
+          "scenario": "Mr. Fujita refuses bingo but becomes enthusiastic when asked about plants he used to care for.",
+          "sections": [
+            {
+              "body": "Meaningful activities differ from person to person: gardening, music, reading, simple cooking, conversation, or spiritual activities. The aim is not to make everyone join the same activity. Consider each person's interests, life history, abilities, and wishes at the time. Refusing one activity does not automatically mean they do not want social contact.\n\nParticipation may mean doing part of an activity, choosing a song, observing, or helping decide the outcome. A simple activity can still provide a role and a sense of being valued. Avoid competition or praise that talks down to a person as if they were a child.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Check the activity risks and individual plan, including positioning, fatigue, equipment, and supervision needs. Offer real choices and do not force participation. Therapeutic movement exercises must follow a therapist's directions; caregivers do not create clinical exercise programs on their own.\n\nEvaluate the person's experience, not just attendance. Ask whether they enjoyed the activity, watch for fatigue or discomfort, and record which support worked. A short activity the person enjoys may be more meaningful than a long session that causes distress.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan minat dan pilihan kegiatan.",
+            "Periksa kesesuaian dengan kemampuan serta rencana.",
+            "Sesuaikan alat, tempo, dan bentuk partisipasi.",
+            "Evaluasi kenyamanan, kesenangan, dan keinginan mengulang."
+          ],
+          "title": "Recreation, Social Roles, and Meaningful Activities",
+          "vocabulary": [
+            {
+              "japanese": "余暇",
+              "meaning": "free time",
+              "reading": "よか"
+            },
+            {
+              "japanese": "役割",
+              "meaning": "role",
+              "reading": "やくわり"
+            },
+            {
+              "japanese": "参加",
+              "meaning": "participation",
+              "reading": "さんか"
+            },
+            {
+              "japanese": "趣味",
+              "meaning": "hobby",
+              "reading": "しゅみ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change equipment positions, bed height, or safety supports outside the plan and procedure.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "The room is the person's living environment and should continue to support their abilities.",
+              "options": [
+                "Do it without asking",
+                "Consider permission, routines, and reach",
+                "Prioritize a tidy-looking photograph"
+              ],
+              "prompt": "A service user's belongings should be rearranged…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Proper separation and handling reduce contamination.",
+              "options": [
+                "Handle it through the specified process",
+                "Shake it near clean equipment",
+                "Place it on the floor"
+              ],
+              "prompt": "Soiled linen needs to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "物の場所を変えてもいいですか。",
+              "meaning": "May I move your belongings?",
+              "reading": "もののばしょをかえてもいいですか。"
+            },
+            {
+              "japanese": "呼び出しボタンに手が届きますか。",
+              "meaning": "Can you reach the call bell?",
+              "reading": "よびだしぼたんにてがとどきますか。"
+            }
+          ],
+          "id": "kaigo-30",
+          "minutes": 20,
+          "objectives": [
+            "Menata ruang tanpa menghilangkan pilihan",
+            "Mengelola linen dan barang pribadi sesuai prosedur"
+          ],
+          "response": "Return the call bell to a reachable location as planned and make sure the person can use it. Tidiness must not reduce access to help.",
+          "scenario": "After tidying the room, the call bell is left on a table beyond the person's reach.",
+          "sections": [
+            {
+              "body": "A person's room is their living environment, not merely a place where staff work. The arrangement of belongings can support orientation and a sense of ownership. Rearranging everything without permission may confuse the person or put important items out of reach. Cleanliness, safety, and preference should be considered together.\n\nCheck lighting, pathways, temperature, noise, and access to belongings. Place the call bell, permitted drinks, glasses, and communication aids according to the plan and the person's abilities. Do not put items on a side they cannot reach just because it looks tidier.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Clean and soiled linen must follow separate workflows. Use protective equipment when required and follow facility procedures without shaking soiled linen. Do not put used linen on the floor or carry clean equipment through a dirty area. Changing sheets while a person is in bed must be learned under supervision.\n\nAfter making the bed, check that no folds or objects are pressing on the person and that important equipment and belongings are within reach again. Tell the person about any changes. Report damaged equipment or environmental problems through the proper channel for repair.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan pilihan susunan barang dan cek rencana.",
+            "Siapkan linen serta alat dengan alur bersih-kotor.",
+            "Rapikan sesuai teknik yang dilatih tanpa memindahkan barang sembarangan.",
+            "Periksa kenyamanan, akses bel, serta keamanan jalur."
+          ],
+          "title": "Rooms, Linen, and a Supportive Environment",
+          "vocabulary": [
+            {
+              "japanese": "環境",
+              "meaning": "environment",
+              "reading": "かんきょう"
+            },
+            {
+              "japanese": "寝具",
+              "meaning": "bedding",
+              "reading": "しんぐ"
+            },
+            {
+              "japanese": "シーツ",
+              "meaning": "bed sheet",
+              "reading": "しーつ"
+            },
+            {
+              "japanese": "整理",
+              "meaning": "arrangement",
+              "reading": "せいり"
+            }
+          ]
+        }
+      ],
+      "title": "Rest, Activities, and Living Environment"
+    },
+    {
+      "description": "Turn observations into records, handovers, and evaluations of support.",
+      "id": "team",
+      "lessons": [
+        {
+          "caution": "Do not independently change the plan for an activity requiring team assessment or clinical authority.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "Support outcomes should be connected to the service user's goals and experiences.",
+              "options": [
+                "The schedule alone",
+                "The response, goal, and support needs",
+                "The staff member's speed alone"
+              ],
+              "prompt": "A plan evaluation assesses…"
+            },
+            {
+              "answer": 2,
+              "explanation": "Specific abilities provide a sound basis for making adjustments.",
+              "options": [
+                "Fully independent",
+                "Completely unable to do it",
+                "Describe which parts the person can do independently and which parts need assistance"
+              ],
+              "prompt": "A service user is independent for only part of dressing. The record should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "計画を確認してから行います。",
+              "meaning": "I will do it after checking the plan.",
+              "reading": "けいかくをかくにんしてからおこないます。"
+            },
+            {
+              "japanese": "どこまでできたか記録します。",
+              "meaning": "I will record the parts completed successfully.",
+              "reading": "どこまでできたかきろくします。"
+            }
+          ],
+          "id": "kaigo-31",
+          "minutes": 20,
+          "objectives": [
+            "Menjelaskan siklus proses perawatan",
+            "Menghubungkan tujuan dengan dukungan dan respons nyata"
+          ],
+          "response": "Record the ability the person demonstrated and the assistance still needed. Specific information helps the team evaluate goals without inaccurately calling the person 'fully independent.'",
+          "scenario": "The plan calls for partial dressing assistance. The person gets an arm into the sleeve but still needs help with the buttons.",
+          "sections": [
+            {
+              "body": "The care process is a cycle of understanding needs, setting goals and a plan, providing support, and evaluating results. Caregivers contribute observations about daily activities and the person's preferences to the team. Needs are not assessed only by looking at limitations; remaining abilities and what the person wants to do are also important.\n\nGoals should be understandable to the person and reviewable through observation. Instead of “everything gets better,” a goal might be that the person can choose clothes and put on certain items with suitable assistance. The plan explains the form of assistance, equipment, supervision level, and matters that need reporting.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Implementation follows the latest plan and the person's current condition. If the person refuses, develops a new concern, or the support method is ineffective, record it and discuss it with the team. Following the plan does not mean ignoring changes. Plan changes, in turn, are made through the team to keep support consistent and safe.\n\nEvaluation compares goals with the response: what worked, what assistance is still needed, comfort, and the person's choices. Clear documentation gives a basis for adjustment decisions. Do not mark a goal as achieved merely because the activity was scheduled or staff finished helping.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kumpulkan kebutuhan, kemampuan, dan preferensi pengguna.",
+            "Pahami tujuan serta rencana yang disepakati tim.",
+            "Laksanakan sambil mengamati respons aktual.",
+            "Laporkan hasil dan bahas penyesuaian bila diperlukan."
+          ],
+          "title": "Assessment, Planning, Implementation, and Evaluation",
+          "vocabulary": [
+            {
+              "japanese": "介護過程",
+              "meaning": "care process",
+              "reading": "かいごかてい"
+            },
+            {
+              "japanese": "計画",
+              "meaning": "plan",
+              "reading": "けいかく"
+            },
+            {
+              "japanese": "実施",
+              "meaning": "implementation",
+              "reading": "じっし"
+            },
+            {
+              "japanese": "評価",
+              "meaning": "evaluation",
+              "reading": "ひょうか"
+            }
+          ]
+        },
+        {
+          "caution": "Do not record an unconfirmed diagnosis or present personal judgment as fact.",
+          "checks": [
+            {
+              "answer": 2,
+              "explanation": "The time, statement, and observation can be verified and followed up.",
+              "options": [
+                "They are lazy",
+                "Intentionally make it difficult",
+                "At 12:10 p.m., the person said they felt nauseated and ate two spoonfuls"
+              ],
+              "prompt": "An objective record is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Consultation helps ensure the task is handled with appropriate authority and support.",
+              "options": [
+                "Needs a decision or assistance",
+                "Wanting to hide a mistake",
+                "Does not want to provide information"
+              ],
+              "prompt": "A sōdan (consultation) is held when…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "十二時十分に、吐き気がすると話しました。",
+              "meaning": "At 12:10, they said they felt nauseated.",
+              "reading": "じゅうにじじゅっぷんに、はきけがするとはなしました。"
+            },
+            {
+              "japanese": "対応について相談したいです。",
+              "meaning": "I would like to consult about what action to take.",
+              "reading": "たいおうについてそうだんしたいです。"
+            }
+          ],
+          "id": "kaigo-32",
+          "minutes": 20,
+          "objectives": [
+            "Membedakan laporan, berbagi informasi, dan konsultasi",
+            "Memisahkan fakta, ucapan, dan dugaan"
+          ],
+          "response": "Record the time, the person's statement about nausea, observed intake, and reporting actions. This information supports follow-up without a judgmental label.",
+          "scenario": "The caregiver wants to write 'the person is too lazy to eat,' although the person says they feel nauseated and stops after two spoonfuls.",
+          "sections": [
+            {
+              "body": "Hōkoku means reporting results or changes to the person in charge. Renraku means sharing necessary information with relevant people. Sōdan means consulting someone when a decision or assistance is needed. These three practices are often summarized as hō-ren-sō. Information must be shared promptly, with the right person, through the appropriate channel.\n\nObjective notes describe what can be observed or measured. A person's words may be recorded as a quotation, while assumptions must not be stated as facts. “At 12:10, said they felt nauseated and ate two spoonfuls” is more useful than “deliberately did not eat.” Avoid blaming labels or judgments about personality.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "For a report, organize the time, location, event, usual condition, actions taken, and response. If a decision is needed, state the question clearly. Share emergency information immediately; complete the record afterward. Do not wait until the end of the shift if a change needs a response now.\n\nUse the official system and correct errors according to policy so the change history remains clear. Do not remove facts to make a report look better. Checking names and recipients helps prevent information from being entered under the wrong person.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Identifikasi apakah perlu laporan, informasi, atau konsultasi.",
+            "Sampaikan fakta, waktu, dan kebutuhan keputusan.",
+            "Gunakan saluran resmi serta penerima yang tepat.",
+            "Catat respons dan tindak lanjut tanpa mengganti fakta dengan dugaan."
+          ],
+          "title": "Reporting, Consulting, and Objective Records",
+          "vocabulary": [
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            },
+            {
+              "japanese": "連絡",
+              "meaning": "sharing information",
+              "reading": "れんらく"
+            },
+            {
+              "japanese": "相談",
+              "meaning": "consultation",
+              "reading": "そうだん"
+            },
+            {
+              "japanese": "事実",
+              "meaning": "fact",
+              "reading": "じじつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not hide an incident or continue risky work when you are not fit to do so safely.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The next team must be able to understand and follow up on unfinished tasks.",
+              "options": [
+                "Follow-up and the person responsible",
+                "Only “already reported”",
+                "An opinion about the service user's personality"
+              ],
+              "prompt": "A handover for an unresolved complaint needs to include…"
+            },
+            {
+              "answer": 1,
+              "explanation": "Staff readiness is part of safety for both the service user and the team.",
+              "options": [
+                "Hide it",
+                "Report it to arrange support",
+                "Address it by forcing the person to do every transfer alone"
+              ],
+              "prompt": "Severe fatigue that affects a task should…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "まだ確認が必要です。",
+              "meaning": "This still needs to be confirmed.",
+              "reading": "まだかくにんがひつようです。"
+            },
+            {
+              "japanese": "次の担当者に申し送ります。",
+              "meaning": "I will hand this over to the next staff member.",
+              "reading": "つぎのたんとうしゃにもうしおくります。"
+            }
+          ],
+          "id": "kaigo-33",
+          "minutes": 20,
+          "objectives": [
+            "Memberi serah terima yang dapat ditindaklanjuti",
+            "Menjaga kebugaran kerja dan meminta dukungan"
+          ],
+          "response": "Hand over the concern, report time, response received, and any unfinished follow-up. Confirm who will monitor it instead of merely saying it was reported.",
+          "scenario": "The night caregiver finds a new concern that was reported to a nurse, but no follow-up is recorded at shift change.",
+          "sections": [
+            {
+              "body": "Handover supports continuity of care between shifts. Include the person's condition, changes, assistance already provided, response, and anything outstanding. Give enough specific information for the next staff member to know what to monitor or do. Reading a note does not replace clarification when an important point is unclear.\n\nAn incident report describes the factual sequence and actions taken after safety is addressed. Report errors and near misses through the established procedure. Hiding an incident to protect a staff member's image can remove an opportunity to prevent recurrence and leave the team without important information.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "At handover, make sure the recipient understands priorities and outstanding tasks. Repeat safety-related points and confirm who is responsible. Protect privacy by choosing an appropriate place or system. Do not include gossip or labels that do not help with support.\n\nCaregivers also need to maintain their readiness through rest, training, ergonomics, and emotional support. Report severe fatigue, injury, or limitations that may affect safety. Asking for help is part of professional responsibility, not a personal failure. Use supervisory channels when facing pressure or suspected abuse or neglect.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Susun perubahan, tindakan, respons, dan tugas tertunda.",
+            "Sampaikan kepada penerima yang tepat serta konfirmasi prioritas.",
+            "Laporkan insiden secara faktual melalui jalur resmi.",
+            "Minta dukungan bila kondisi petugas memengaruhi keselamatan."
+          ],
+          "title": "Handover, Incidents, and Caregiver Readiness",
+          "vocabulary": [
+            {
+              "japanese": "申し送り",
+              "meaning": "handover",
+              "reading": "もうしおくり"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "task handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "勤務",
+              "meaning": "work; duty",
+              "reading": "きんむ"
+            },
+            {
+              "japanese": "疲労",
+              "meaning": "fatigue",
+              "reading": "ひろう"
+            }
+          ]
+        }
+      ],
+      "title": "Care Procedures, Records, and Professionalism"
+    },
+    {
+      "description": "Read care terms, communicate assistance, and understand work records in context.",
+      "id": "japanese",
+      "lessons": [
+        {
+          "caution": "Do not act on guessed numbers, sides of the body, or units you do not understand.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "左 means “left,” 足 means “foot,” and 痛い expresses pain.",
+              "options": [
+                "The right foot itches",
+                "The left foot hurts",
+                "The left hand hurts"
+              ],
+              "prompt": "左の足が痛いです means…"
+            },
+            {
+              "answer": 0,
+              "explanation": "午後 means “afternoon,” and 四時 is read よじ.",
+              "options": [
+                "Four o'clock in the afternoon",
+                "Four o'clock in the morning",
+                "Nine o'clock at night"
+              ],
+              "prompt": "午後四時 means…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "左の足が痛いですか。",
+              "meaning": "Does your left leg hurt?",
+              "reading": "ひだりのあしがいたいですか。"
+            },
+            {
+              "japanese": "午後四時ですね。",
+              "meaning": "Four in the afternoon, correct?",
+              "reading": "ごごよじですね。"
+            },
+            {
+              "japanese": "食事の後で行います。",
+              "meaning": "To be done after the meal.",
+              "reading": "しょくじのあとでおこないます。"
+            },
+            {
+              "japanese": "量と時間を確認します。",
+              "meaning": "I will confirm the amount and time.",
+              "reading": "りょうとじかんをかくにんします。"
+            }
+          ],
+          "id": "kaigo-34",
+          "minutes": 20,
+          "objectives": [
+            "Membaca istilah penting dalam konteks",
+            "Mengonfirmasi waktu, sisi tubuh, dan jumlah secara tepat"
+          ],
+          "response": "左 means left. Confirm the concern by politely pointing or repeating what was said, then report the correct location. Do not guess which side of the body is affected.",
+          "scenario": "The person says '左の足が痛いです' ('My left leg hurts'). The new caregiver understands only 足 and records that the right leg hurts.",
+          "sections": [
+            {
+              "body": "Kaigo vocabulary should be learned in context. 右 (migi) means right, 左 (hidari) left, 手 (te) hand, 足 (ashi) foot or leg, and 腰 (koshi) lower back or waist. 痛み (itami) means pain, while かゆみ (kayumi) means itching. Do not replace one concern with another term when making a report.\n\nTime and sequence often determine what to do: 前 (mae) means before, 後 (ato) after, 今 (ima) now, and 後で (ato de) later. 午前 (gozen) and 午後 (gogo) distinguish before and after noon. Number readings change in some combinations: 四時 is read よじ, 七時 is しちじ, and 九時 is くじ. Confirm the meaning by repeating it back, not just by recognizing kanji.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Practice reading short instructions: 食事の前に手を洗います means “Wash your hands before eating.” 右の足が痛いです means “My right foot/leg hurts.” Distinguish staff observations from the person's words by adding と話しています (“says that...”) when reporting a quotation.\n\nFor fluid amounts or other measurements, state the unit shown in the record and do not alter the number without a basis. 少し (“a little”) and 全部 (“all”) are not precise measurements. If you do not understand a number, body side, or sequence, repeat it to the person who gave the information and ask for confirmation. Make personal study cards from vocabulary in earlier lessons, then use the words in relevant sentences.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca istilah Jepang, kana, lalu artinya.",
+            "Gunakan istilah dalam satu kalimat kerja.",
+            "Latih waktu, sisi tubuh, serta urutan sebelum-sesudah.",
+            "Ulangi informasi penting dan minta konfirmasi bila ragu."
+          ],
+          "title": "Body Terms, Positions, Numbers, and Time",
+          "vocabulary": [
+            {
+              "japanese": "右",
+              "meaning": "right",
+              "reading": "みぎ"
+            },
+            {
+              "japanese": "左",
+              "meaning": "left",
+              "reading": "ひだり"
+            },
+            {
+              "japanese": "午前",
+              "meaning": "before noon",
+              "reading": "ごぜん"
+            },
+            {
+              "japanese": "午後",
+              "meaning": "afternoon; after noon",
+              "reading": "ごご"
+            }
+          ]
+        },
+        {
+          "caution": "Polite language does not replace consent; pay attention to the person's answer and response.",
+          "checks": [
+            {
+              "answer": 1,
+              "explanation": "This expression politely asks for permission before acting.",
+              "options": [
+                "Give a diagnosis",
+                "Ask for permission",
+                "Threaten the person"
+              ],
+              "prompt": "～てもよろしいですか is used to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The meaning of 大丈夫 depends on context; do not automatically treat it as consent.",
+              "options": [
+                "Always agree to receive assistance",
+                "Must be forced",
+                "They do not need it yet, so their choice should be respected and confirmed"
+              ],
+              "prompt": "When offered help, 「まだ大丈夫です」 may mean…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お手伝いしてもよろしいですか。",
+              "meaning": "May I help you?",
+              "reading": "おてつだいしてもよろしいですか。"
+            },
+            {
+              "japanese": "まだ大丈夫です。",
+              "meaning": "I don't need to go right now.",
+              "reading": "まだだいじょうぶです。"
+            },
+            {
+              "japanese": "行きたくなったら教えてください。",
+              "meaning": "Tell me if you would like to go.",
+              "reading": "いきたくなったらおしえてください。"
+            },
+            {
+              "japanese": "どこが痛いですか。",
+              "meaning": "Where does it hurt?",
+              "reading": "どこがいたいですか。"
+            },
+            {
+              "japanese": "寒いのですね。",
+              "meaning": "So you feel cold.",
+              "reading": "さむいのですね。"
+            },
+            {
+              "japanese": "毛布をお持ちしましょうか。",
+              "meaning": "Shall I bring you a blanket?",
+              "reading": "もうふをおもちしましょうか。"
+            }
+          ],
+          "id": "kaigo-35",
+          "minutes": 20,
+          "objectives": [
+            "Menggunakan permintaan izin serta tawaran bantuan",
+            "Menjawab penolakan dengan klarifikasi dan empati"
+          ],
+          "response": "In this context, the person says they do not need help yet. Confirm their answer, respect their choice, and explain that help remains available if needed.",
+          "scenario": "The caregiver offers help. The person replies 'まだ大丈夫です' ('I'm okay for now'), but the caregiver starts assisting without confirming.",
+          "sections": [
+            {
+              "body": "The pattern ～てもよろしいですか asks permission politely, for example, お手伝いしてもよろしいですか (“May I help you?”). The pattern ～ましょうか offers assistance, for example, カーテンを閉めましょうか (“Shall I close the curtains?”). Use clear sentences suited to the person, rather than long keigo expressions that are hard to understand.\n\nFor concerns, ask どこが痛いですか (“Where does it hurt?”) and いつからですか (“Since when?”). Listen without making a diagnosis. 大丈夫です may mean “I'm fine” or be a polite refusal of an offer; context and confirmation still matter. まだ means “not yet” or “still,” while もう can mean “already.” Misunderstanding these words can change the order of assistance.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Conversation example: staff member, “お手洗いに行きますか。” The person, “まだ大丈夫です。” Staff member, “分かりました。行きたくなったら教えてください。” This means: “Would you like to go to the toilet?” “I’m all right for now.” “Understood. Please tell me when you would like to go.” The response respects the person's answer while keeping help available.\n\nAnother example: the person says, “寒いです。” The staff member says, “寒いのですね。毛布をお持ちしましょうか。” This means: “I’m cold.” “You feel cold; shall I bring you a blanket?” If the concern is new or related to a clinical condition, report it to the team as required. The purpose of language practice is accurate communication, not simply memorizing translations.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Latih sapaan dan izin sebelum setiap bantuan.",
+            "Tanyakan satu keluhan atau pilihan dalam satu waktu.",
+            "Ulangi inti jawaban untuk konfirmasi.",
+            "Sampaikan rencana bantuan dan akses panggilan yang jelas."
+          ],
+          "title": "Assistance Conversations and Confirming Concerns",
+          "vocabulary": [
+            {
+              "japanese": "痛み",
+              "meaning": "pain",
+              "reading": "いたみ"
+            },
+            {
+              "japanese": "寒い",
+              "meaning": "cold",
+              "reading": "さむい"
+            },
+            {
+              "japanese": "まだ",
+              "meaning": "not yet; still",
+              "reading": "まだ"
+            },
+            {
+              "japanese": "手伝う",
+              "meaning": "to help; assisting",
+              "reading": "てつだう"
+            }
+          ]
+        },
+        {
+          "caution": "This course check is not an official SSW examination and does not authorize clinical practice.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "This sentence states that a report was made; the response and follow-up still need to be known.",
+              "options": [
+                "It has been reported to the nurse",
+                "The diagnosis is certain",
+                "All follow-up is guaranteed to be complete"
+              ],
+              "prompt": "看護師に報告した means…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The actual condition and safety come first, while continuing to respect the service user.",
+              "options": [
+                "Continue anyway in the name of independence",
+                "Stop feeding and escalate according to procedure",
+                "Change the texture on your own"
+              ],
+              "prompt": "A service user is usually independent when eating, but now has new difficulty swallowing. The care worker needs to…"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "昼食を半分食べました。",
+              "meaning": "Ate half of the lunch portion.",
+              "reading": "ちゅうしょくをはんぶんたべました。"
+            },
+            {
+              "japanese": "吐き気がすると話しています。",
+              "meaning": "They said they felt nauseated.",
+              "reading": "はきけがするとはなしています。"
+            },
+            {
+              "japanese": "看護師に報告しました。",
+              "meaning": "I have reported it to the nurse.",
+              "reading": "かんごしにほうこくしました。"
+            },
+            {
+              "japanese": "その後の対応を確認します。",
+              "meaning": "I will confirm the follow-up care.",
+              "reading": "そのごのたいおうをかくにんします。"
+            }
+          ],
+          "id": "kaigo-36",
+          "minutes": 20,
+          "objectives": [
+            "Mengambil waktu, fakta, dan tindak lanjut dari catatan Jepang",
+            "Menggabungkan pilihan pengguna, keselamatan, dan laporan"
+          ],
+          "response": "Confirm the nurse's response, instructions received, and any remaining tasks. 'Reported' does not mean 'follow-up completed.'",
+          "scenario": "The record says 'reported to the nurse' (看護師に報告した), but the next caregiver assumes all instructions have been carried out.",
+          "sections": [
+            {
+              "body": "Work notes often include the time, activity, assistance, the person's words, and follow-up. A made-up practice example: “12:10 昼食を半分食べた。吐き気がすると話した。看護師に報告した。” This means: at 12:10, ate half of lunch; said they felt nauseated; reported it to the nurse. The note does not state a diagnosis or confirm that all follow-up was completed.\n\nA second example: “15:00 歩行中に疲れたと話した。椅子で休んだ。” This means: at 15:00, said they felt tired while walking; rested in a chair. During handover, staff still need to explain the response after the rest and any team instructions. 報告した means “reported”; it does not automatically mean a decision was received.",
+              "title": "Understand the Concept"
+            },
+            {
+              "body": "Integrated case: a person chooses to eat independently, but today seems sleepier and has a new difficulty swallowing. Supporting independence remains important, but safety and the change in condition require stopping assistance and escalating according to procedure. Do not continue just because the person was previously independent.\n\nUse the learned process: identify the person's baseline, listen to concerns, check the plan, seek consent, prepare assistance, observe the response, and report changes. After immediate needs are addressed, document the facts and follow-up. Completing a course shows that the material was studied and knowledge checks were done; practical competence is still assessed through workplace training and supervision.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cari waktu serta tindakan utama dalam catatan.",
+            "Pisahkan ucapan pengguna dari pengamatan petugas.",
+            "Identifikasi informasi atau tindak lanjut yang belum jelas.",
+            "Gunakan prinsip martabat, keselamatan, dan koordinasi pada kasus terpadu."
+          ],
+          "title": "Reading Records and Working Through Integrated Cases",
+          "vocabulary": [
+            {
+              "japanese": "半分",
+              "meaning": "half",
+              "reading": "はんぶん"
+            },
+            {
+              "japanese": "吐き気",
+              "meaning": "nausea",
+              "reading": "はきけ"
+            },
+            {
+              "japanese": "歩行中",
+              "meaning": "while walking",
+              "reading": "ほこうちゅう"
+            },
+            {
+              "japanese": "対応",
+              "meaning": "response; action taken",
+              "reading": "たいおう"
+            }
+          ]
+        }
+      ],
+      "title": "Kaigo Japanese and Integrated Practice"
+    }
+  ],
+  "reviewed": "2026-10-11",
+  "sources": [
+    {
+      "title": "MHLW — Kaigo materials and second revision (2026)",
+      "url": "https://www.mhlw.go.jp/stf/newpage_28131.html"
+    },
+    {
+      "title": "MHLW — Official Indonesian-language Kaigo text, second revision",
+      "url": "https://www.mhlw.go.jp/content/12000000/001472066.pdf"
+    },
+    {
+      "title": "MHLW — Kaigo skills and language assessment scope",
+      "url": "https://www.mhlw.go.jp/stf/newpage_000117702.html"
+    },
+    {
+      "title": "WHO — Understanding dementia",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/dementia"
+    },
+    {
+      "title": "CDC — Hand hygiene for care staff",
+      "url": "https://www.cdc.gov/clean-hands/hcp/clinical-safety/"
+    },
+    {
+      "title": "OSHA — Assisting people and using transfer equipment",
+      "url": "https://www.osha.gov/healthcare/safe-patient-handling"
+    },
+    {
+      "title": "NHS — Swallowing difficulties",
+      "url": "https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/"
+    }
+  ],
+  "version": 1
+}

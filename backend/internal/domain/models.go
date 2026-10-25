@@ -57,6 +57,7 @@ type Profile struct {
 	DisplayName string      `json:"displayName"`
 	Email       string      `json:"email"`
 	PhotoURL    string      `json:"photoUrl,omitempty"`
+	Timezone    string      `json:"timezone"`
 	Target      string      `json:"target"`
 	Level       int         `json:"level"`
 	XP          int         `json:"xp"`

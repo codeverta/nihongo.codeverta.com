@@ -75,6 +75,8 @@ void main() {
             (ref) async => {
               'activeAttemptId': '',
               'history': <Json>[],
+              'questionCount': 43,
+              'durationMinutes': 60,
             },
           ),
         ],

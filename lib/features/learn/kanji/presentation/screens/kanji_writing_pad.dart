@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 
 /// A copy practice surface. It does not claim to grade stroke order.
 class KanjiWritingPad extends StatefulWidget {
@@ -20,14 +21,14 @@ class _KanjiWritingPadState extends State<KanjiWritingPad> {
       children: [
         Row(
           children: [
-            const Expanded(
+            Expanded(
               child: Text(
-                'Coba tulis ulang kanji',
+                'Coba tulis ulang kanji'.localized(context),
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
               ),
             ),
             IconButton(
-              tooltip: 'Hapus tulisan',
+              tooltip: 'Hapus tulisan'.localized(context),
               onPressed: () => setState(_strokes.clear),
               icon: const Icon(Icons.refresh_rounded),
             ),
@@ -36,7 +37,7 @@ class _KanjiWritingPadState extends State<KanjiWritingPad> {
         const SizedBox(height: 8),
         Center(
           child: Semantics(
-            label: 'Area menyalin kanji ${widget.character}',
+            label: 'Area menyalin kanji ${widget.character}'.localized(context),
             child: SizedBox.square(
               dimension: 250,
               child: ClipRRect(

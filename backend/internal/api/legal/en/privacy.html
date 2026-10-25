@@ -1,0 +1,34 @@
+{{define "content"}}
+<p class="meta">Updated October 17, 2026: this version explains profile-photo storage and optional notifications through Firebase Cloud Messaging.</p>
+<p>This policy applies to the Nihongo Master app, API, and related help pages operated by Codeverta. Send privacy questions and data-rights requests to <a href="mailto:{{.Email}}">{{.Email}}</a>.</p>
+
+<h2>Data we process and why</h2>
+<ul>
+  <li><strong>Account information:</strong> email address, display name, account ID, study target, and—if you choose Google Sign-In—your Google identity and profile-photo URL. You may also choose a profile photo from your device. We compress that photo, remove image metadata, and store it in Tencent Cloud COS so it can appear in the app. Anyone with the photo URL may be able to view it, so do not upload a sensitive image. We use account information for sign-in, your profile, and linking progress to your account. Authentication tokens keep your session active. Login credentials are processed to verify access; never send your password to support.</li>
+  <li><strong>Learning activity:</strong> lesson progress, practice and test answers or results, XP, streaks, achievements, and activity times are used to provide learning features and show your progress. Some practice and login sessions are temporary; selected progress data is stored in our database.</li>
+  <li><strong>Purchases:</strong> purchase and product IDs, store receipts or tokens, verification status and time, and an opaque account token are used to grant premium access, restore purchases, and prevent the same transaction proof from being reused. Our API does not receive your payment card or bank-account details; the store processes payment.</li>
+  <li><strong>Dictionary searches:</strong> searched words or characters may be sent to dictionary providers when needed, and results may be stored in a shared cache. A dictionary request does not include your account email or profile, but the search term is received by the provider.</li>
+  <li><strong>Optional notifications:</strong> if you enable announcements, Firebase Cloud Messaging (Google) processes an installation or device identifier and delivery metadata so a message can reach your phone. Announcement subscriptions are public and are not linked to your account in our backend; they do not include your email, learning answers, or purchase details. Your preference is stored on your device and can be turned off in the app's notification settings or Android settings. The backend stores admin announcement drafts and history, not a list of users' device tokens.</li>
+  <li><strong>Technical data:</strong> our server and network providers may process your IP address, connection metadata, requested URL, time, and browser or device information sent with a request to deliver content, protect security, and diagnose problems. Do not put personal information in searches or URLs.</li>
+  <li><strong>Support messages:</strong> your email address and information you send are used to answer questions, verify account ownership, and handle data or purchase requests.</li>
+</ul>
+
+<h2>Storage on your device</h2>
+<p>The app stores preferences, session state, and some dictionary history or favorites on your device. Clear the app's data in your device settings to remove local copies. Uninstalling the app does not delete your server account or cancel a purchase.</p>
+
+<h2>Who receives data</h2>
+<p>We use hosting and database providers; Cloudflare for content delivery and network security; Google for sign-in and Google Play purchases; and Apple for purchases in the iOS version, if used. Tencent Cloud COS may serve image assets and uploaded profile photos. Jisho and other dictionary sources receive dictionary queries as needed. Google Fonts may receive font requests from app versions that download fonts. These providers process data according to their services and policies. Data may also be disclosed when needed to meet legal obligations or protect service security. We do not sell user data, and the current app version does not include advertising SDKs or behavioral analytics.</p>
+
+<h2>Security and international transfers</h2>
+<p>Public endpoints use HTTPS. Database and backup access is restricted to authorized operators. Infrastructure or service providers may process data in countries outside your own. No system can guarantee absolute security.</p>
+
+<h2>Retention and deletion</h2>
+<p>Account and progress data are kept while you use your account, until you request deletion. Account deletion removes your uploaded profile photo and its COS object, profile, credentials and account, progress, achievements, and related sessions or attempts from active application storage. Minimum transaction evidence—including store identity, product, status, verification time, and an opaque token—remains without your former email, name, or account ID for as long as needed to restore lifetime access, reconcile transactions, and prevent replay. The shared dictionary cache is not a personal account history.</p>
+<p>Restricted backup copies may retain historical data after it is removed from active systems. The current deployment does not automatically clean backups or have a scheduled expiry period. Backups are not used for day-to-day service operation. You may contact the privacy address to ask an operator to review a deletion request from archives; if a backup is restored, account deletion must be applied again. Support correspondence is kept while a request is being handled and as needed for resolution records or legal obligations.</p>
+
+<h2>Your choices and children</h2>
+<p>You can update your profile, use guest catalogs where available, and request access to, correction of, or deletion of data by email. <a href="/en/delete-account">Instructions to delete an account and data</a> are available in the app and on this website. We do not ask for your date of birth. A parent or guardian who believes a child's data was provided without appropriate permission can contact us for review and deletion.</p>
+
+<h2>Changes to this policy</h2>
+<p>We publish new versions on this page with an effective date. We will explain material changes to data use through an appropriate service channel.</p>
+{{end}}

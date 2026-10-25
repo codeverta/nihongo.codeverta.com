@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/billing/data/billing_repository.dart';
@@ -50,12 +51,15 @@ class _JobApplyButtonState extends ConsumerState<JobApplyButton> {
       if (!widget.job.active || uri == null) return;
       final opened = await ref.read(jobApplicationLauncherProvider)(uri);
       if (!opened && mounted) {
-        _message('Tautan lamaran belum dapat dibuka. Coba lagi.');
+        _message(
+          'Tautan lamaran belum dapat dibuka. Coba lagi.'.localized(context),
+        );
       }
     } on Object {
       if (mounted) {
         _message(
-          'Akses premium belum dapat diverifikasi. Periksa koneksi lalu coba lagi.',
+          'Akses premium belum dapat diverifikasi. Periksa koneksi lalu coba lagi.'
+              .localized(context),
         );
       }
     } finally {
@@ -81,6 +85,10 @@ class _JobApplyButtonState extends ConsumerState<JobApplyButton> {
             child: CircularProgressIndicator(strokeWidth: 2),
           )
         : const Icon(Icons.workspace_premium_rounded),
-    label: Text(_busy ? 'Memeriksa akses…' : 'Lihat & lamar di situs sumber'),
+    label: Text(
+      _busy
+          ? 'Memeriksa akses…'.localized(context)
+          : 'Lihat & lamar di situs sumber'.localized(context),
+    ),
   );
 }

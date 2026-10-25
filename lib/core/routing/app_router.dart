@@ -3,8 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/core/notifications/notification_settings_screen.dart';
+import 'package:nihongo_master/core/offline/offline_settings_screen.dart';
 import 'package:nihongo_master/core/settings/display_settings_screen.dart';
+import 'package:nihongo_master/core/settings/study_timezone_settings_screen.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_import_screen.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/auth/presentation/screens/login_screen.dart';
@@ -106,6 +109,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     initialLocation: AppRoutes.splashPath,
     routes: [
       GoRoute(
+        path: '/settings/offline',
+        builder: (context, state) => const OfflineSettingsScreen(),
+      ),
+      GoRoute(
         path: '/attributions',
         builder: (context, state) => const AttributionsScreen(),
       ),
@@ -151,6 +158,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/settings/display',
         builder: (context, state) => const DisplaySettingsScreen(),
+      ),
+      GoRoute(
+        path: '/settings/timezone',
+        builder: (context, state) => const StudyTimezoneSettingsScreen(),
+      ),
+      GoRoute(
+        path: '/anki/import',
+        builder: (context, state) => const AnkiImportScreen(),
       ),
       GoRoute(
         path: '/anki',
@@ -228,6 +243,9 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.onboardingPath,
         name: AppRoutes.onboardingName,
         builder: (context, state) => OnboardingScreen(
+          isPreview:
+              state.uri.queryParameters['preview'] == '1' &&
+              !ref.read(isFirstTimeProvider),
           onCompleted: () =>
               ref.read(isFirstTimeProvider.notifier).completeOnboarding(),
         ),
@@ -411,6 +429,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             : AppRoutes.onboardingPath;
       }
 
+      if (location == AppRoutes.onboardingPath &&
+          state.uri.queryParameters['preview'] == '1') {
+        return null;
+      }
       if (location == AppRoutes.splashPath ||
           location == AppRoutes.onboardingPath) {
         return AppRoutes.homePath;

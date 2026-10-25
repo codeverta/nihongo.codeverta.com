@@ -193,12 +193,22 @@ List<JapaneseRubySegment> alignJapaneseRuby(String text, String reading) {
   final readingRunes = _normalizedReading(reading).runes.toList();
   var cursor = 0;
   final alignedGroups = <int>{};
-  for (var i = 0; i < groups.length; i++) {
+  final anchorPositions = List<int?>.filled(groups.length, null);
+  var anchorSearchBefore = readingRunes.length;
+  for (var i = groups.length - 1; i >= 0; i--) {
     final group = groups[i];
     if (group.kind != _JapaneseRun.kana) continue;
     final anchor = _toHiragana(group.base).runes.toList();
-    final at = _indexOf(readingRunes, anchor, cursor);
+    final at = _lastIndexOf(readingRunes, anchor, anchorSearchBefore);
     if (at < 0) continue;
+    anchorPositions[i] = at;
+    anchorSearchBefore = at;
+  }
+  for (var i = 0; i < groups.length; i++) {
+    final group = groups[i];
+    if (group.kind != _JapaneseRun.kana) continue;
+    final at = anchorPositions[i];
+    if (at == null) continue;
     if (i > 0 && groups[i - 1].kind == _JapaneseRun.kanji) {
       rubyByGroup[i - 1] = String.fromCharCodes(
         readingRunes.sublist(cursor, at),
@@ -206,7 +216,7 @@ List<JapaneseRubySegment> alignJapaneseRuby(String text, String reading) {
       alignedGroups.add(i - 1);
     }
     alignedGroups.add(i);
-    cursor = at + anchor.length;
+    cursor = at + group.base.runes.length;
   }
   if (cursor < readingRunes.length && groups.isNotEmpty) {
     final significantGroups = groups
@@ -254,9 +264,13 @@ List<JapaneseRubySegment> alignJapaneseRuby(String text, String reading) {
   ];
 }
 
-int _indexOf(List<int> source, List<int> target, int start) {
-  if (target.isEmpty) return start;
-  for (var i = start; i <= source.length - target.length; i++) {
+int _lastIndexOf(List<int> source, List<int> target, int before) {
+  if (target.isEmpty) return before;
+  var lastPossibleStart = before - target.length;
+  if (lastPossibleStart > source.length - target.length) {
+    lastPossibleStart = source.length - target.length;
+  }
+  for (var i = lastPossibleStart; i >= 0; i--) {
     var matches = true;
     for (var j = 0; j < target.length; j++) {
       if (source[i + j] != target[j]) {

@@ -17,6 +17,7 @@ class GamificationSummary {
     required this.activeDays,
     required this.minutesToday,
     required this.achievements,
+    this.timezone = 'Asia/Jakarta',
   });
 
   factory GamificationSummary.fromJson(Map<String, dynamic> json) =>
@@ -31,6 +32,7 @@ class GamificationSummary {
         examsCompleted: json['examsCompleted'] as int,
         activeDays: json['activeDays'] as int,
         minutesToday: json['minutesToday'] as int,
+        timezone: json['timezone'] as String? ?? 'Asia/Jakarta',
         achievements: (json['achievements'] as List<dynamic>)
             .map((a) => Achievement.fromJson(a as Map<String, dynamic>))
             .toList(growable: false),
@@ -46,6 +48,7 @@ class GamificationSummary {
   final int examsCompleted;
   final int activeDays;
   final int minutesToday;
+  final String timezone;
   final List<Achievement> achievements;
   int get unlockedCount => achievements.where((a) => a.isUnlocked).length;
 }
@@ -65,8 +68,9 @@ class GamificationRepository {
 final gamificationRepositoryProvider = Provider(
   (ref) => GamificationRepository(ref.watch(dioProvider)),
 );
-final gamificationProvider =
-    FutureProvider.autoDispose<GamificationSummary>((ref) {
+final gamificationProvider = FutureProvider.autoDispose<GamificationSummary>((
+  ref,
+) {
   final userId = ref.watch(authControllerProvider.select((s) => s.user?.id));
   if (userId == null) throw StateError('Silakan masuk untuk melihat progres.');
   return ref.watch(gamificationRepositoryProvider).fetch();

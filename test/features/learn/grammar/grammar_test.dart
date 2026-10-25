@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
@@ -83,6 +84,11 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          sharedPreferencesProvider.overrideWithValue(_preferences),
+          authControllerProvider.overrideWith(
+            (ref) => AuthController.test(const AuthenticationState.guest()),
+          ),
+          offlineProvider.overrideWithValue(true),
           grammarCourseLevelProvider('N2').overrideWith(
             (ref) async => GrammarCourse(
               level: 'N2',
@@ -123,13 +129,24 @@ void main() {
   ) async {
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [grammarCourseProvider.overrideWith((ref) async => _course)],
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(_preferences),
+          authControllerProvider.overrideWith(
+            (ref) => AuthController.test(const AuthenticationState.guest()),
+          ),
+          offlineProvider.overrideWithValue(true),
+          grammarCourseProvider.overrideWith((ref) async => _course),
+        ],
         child: const MaterialApp(home: GrammarCourseScreen()),
       ),
     );
     await tester.pumpAndSettle();
     expect(find.text('1/2 lesson selesai • 50%'), findsOneWidget);
-    await tester.ensureVisible(find.byKey(const ValueKey('grammar-search-N5')));
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('grammar-search-N5')),
+      100,
+      scrollable: find.byType(Scrollable).first,
+    );
     await tester.enterText(
       find.byKey(const ValueKey('grammar-search-N5')),
       'Waktu',

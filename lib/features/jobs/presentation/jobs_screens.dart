@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/jobs/data/jobs_repository.dart';
 import 'package:nihongo_master/features/jobs/domain/job_models.dart';
 import 'package:nihongo_master/features/jobs/presentation/job_apply_button.dart';
@@ -14,10 +16,11 @@ class JobsEntryCard extends StatelessWidget {
   const JobsEntryCard({super.key});
   @override
   Widget build(BuildContext context) => ExploreFeatureCard(
-    title: 'Kerja di Jepang',
-    eyebrow: 'LANGKAH BERIKUTNYA UNTUK KARIERMU',
+    title: 'Kerja di Jepang'.localized(context),
+    eyebrow: 'LANGKAH BERIKUTNYA UNTUK KARIERMU'.localized(context),
     description:
-        'Temukan peluang sesuai bidang, lokasi, gaji, dan kualifikasimu',
+        'Temukan peluang sesuai bidang, lokasi, gaji, dan kualifikasimu'
+            .localized(context),
     asset: 'assets/images/jobs/job-category-atlas.webp',
     color: const Color(0xFF443060),
     icon: Icons.work_rounded,
@@ -146,10 +149,10 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
     final meta = ref.watch(jobsMetaProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kerja di Jepang'),
+        title: Text('Kerja di Jepang'.localized(context)),
         actions: [
           IconButton(
-            tooltip: 'Sumber lowongan',
+            tooltip: 'Sumber lowongan'.localized(context),
             onPressed: () => context.push('/jobs/sources'),
             icon: const Icon(Icons.info_outline),
           ),
@@ -185,10 +188,11 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
                               unawaited(_load());
                             },
                             decoration: InputDecoration(
-                              hintText: 'Posisi, perusahaan, kata kunci…',
+                              hintText: 'Posisi, perusahaan, kata kunci…'
+                                  .localized(context),
                               prefixIcon: const Icon(Icons.search),
                               suffixIcon: IconButton(
-                                tooltip: 'Hapus pencarian',
+                                tooltip: 'Hapus pencarian'.localized(context),
                                 onPressed: () {
                                   _search.clear();
                                   _changed('');
@@ -200,7 +204,7 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
                         ),
                         const SizedBox(width: 8),
                         IconButton.filledTonal(
-                          tooltip: 'Filter lowongan',
+                          tooltip: 'Filter lowongan'.localized(context),
                           onPressed: meta.valueOrNull == null
                               ? null
                               : () => _filter(meta.requireValue),
@@ -215,14 +219,18 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
                     if (meta.hasError)
                       TextButton(
                         onPressed: () => ref.invalidate(jobsMetaProvider),
-                        child: const Text('Muat ulang pilihan filter'),
+                        child: Text(
+                          'Muat ulang pilihan filter'.localized(context),
+                        ),
                       ),
                     const SizedBox(height: 8),
                     Row(
                       children: [
                         Expanded(
                           child: Text(
-                            _loading ? 'Mencari peluang…' : '$_total lowongan',
+                            _loading
+                                ? 'Mencari peluang…'.localized(context)
+                                : '$_total lowongan'.localized(context),
                             style: const TextStyle(fontWeight: FontWeight.w700),
                           ),
                         ),
@@ -232,7 +240,7 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
                               _filters = {};
                               unawaited(_load());
                             },
-                            child: const Text('Reset filter'),
+                            child: Text('Reset filter'.localized(context)),
                           ),
                       ],
                     ),
@@ -240,7 +248,7 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
                     if (_error != null && _jobs.isEmpty) ...[
                       _Message(
                         message: _error!,
-                        action: 'Coba lagi',
+                        action: 'Coba lagi'.localized(context),
                         onTap: _load,
                       ),
                       const SizedBox(height: 10),
@@ -276,7 +284,7 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
               if (_jobs.isEmpty) return const SizedBox.shrink();
               return _Message(
                 message: _error!,
-                action: 'Coba lagi',
+                action: 'Coba lagi'.localized(context),
                 onTap: () => _load(more: _jobs.isNotEmpty),
               );
             }
@@ -287,21 +295,23 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
               );
             }
             if (_jobs.isEmpty) {
-              return const _Message(
+              return _Message(
                 message:
-                    'Belum ada lowongan yang cocok. Ubah pencarian atau filter. Sumber baru juga dapat ditambahkan secara bertahap.',
+                    'Belum ada lowongan yang cocok. Ubah pencarian atau filter. Sumber baru juga dapat ditambahkan secara bertahap.'
+                        .localized(context),
               );
             }
             if (_hasMore) {
               return TextButton(
                 onPressed: () => _load(more: true),
-                child: const Text('Muat lebih banyak'),
+                child: Text('Muat lebih banyak'.localized(context)),
               );
             }
-            return const Padding(
-              padding: EdgeInsets.all(16),
+            return Padding(
+              padding: const EdgeInsets.all(16),
               child: Text(
-                'Seluruh hasil telah ditampilkan. Data diperbarui berkala dari sumber.',
+                'Seluruh hasil telah ditampilkan. Data diperbarui berkala dari sumber.'
+                    .localized(context),
                 textAlign: TextAlign.center,
               ),
             );
@@ -350,7 +360,10 @@ class _JobCard extends StatelessWidget {
                   : job.location,
             ),
             const SizedBox(height: 6),
-            _IconLine(Icons.payments_outlined, job.salary),
+            _IconLine(
+              Icons.payments_outlined,
+              job.salaryFor(appRegionLocaleName(context)).localized(context),
+            ),
             const SizedBox(height: 12),
             Wrap(
               spacing: 6,
@@ -362,12 +375,13 @@ class _JobCard extends StatelessWidget {
                     meta?.label('employmentTypes', job.employmentType) ??
                         job.employmentType,
                   ),
-                if (!job.active) const _Tag('Tidak aktif'),
+                if (!job.active) _Tag('Tidak aktif'.localized(context)),
               ],
             ),
             const SizedBox(height: 12),
             Text(
-              '${job.sourceName} · Diperiksa ${jobDate(job.lastSeenAt)}',
+              '${job.sourceName} · Diperiksa ${jobDate(job.lastSeenAt, localeName: appRegionLocaleName(context))}'
+                  .localized(context),
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
@@ -402,7 +416,7 @@ class _JobFiltersState extends State<_JobFilters> {
       padding: const EdgeInsets.all(24),
       children: [
         Text(
-          'Temukan yang sesuai',
+          'Temukan yang sesuai'.localized(context),
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 16),
@@ -417,9 +431,9 @@ class _JobFiltersState extends State<_JobFilters> {
           DropdownButtonFormField<String>(
             initialValue: _values[field.$1],
             isExpanded: true,
-            decoration: InputDecoration(labelText: field.$3),
+            decoration: InputDecoration(labelText: field.$3.localized(context)),
             items: [
-              const DropdownMenuItem<String>(child: Text('Semua')),
+              DropdownMenuItem<String>(child: Text('Semua'.localized(context))),
               ...widget.meta.groups[field.$2]!.map(
                 (v) => DropdownMenuItem(
                   value: v.id,
@@ -436,12 +450,17 @@ class _JobFiltersState extends State<_JobFilters> {
         DropdownButtonFormField<String>(
           initialValue: _values['remote'],
           isExpanded: true,
-          decoration: const InputDecoration(labelText: 'Cara bekerja'),
-          items: const [
-            DropdownMenuItem<String>(child: Text('Semua')),
-            DropdownMenuItem(value: 'remote', child: Text('Remote')),
-            DropdownMenuItem(value: 'hybrid', child: Text('Hybrid')),
-            DropdownMenuItem(value: 'onsite', child: Text('Di tempat kerja')),
+          decoration: InputDecoration(
+            labelText: 'Cara bekerja'.localized(context),
+          ),
+          items: [
+            DropdownMenuItem<String>(child: Text('Semua'.localized(context))),
+            const DropdownMenuItem(value: 'remote', child: Text('Remote')),
+            const DropdownMenuItem(value: 'hybrid', child: Text('Hybrid')),
+            DropdownMenuItem(
+              value: 'onsite',
+              child: Text('Di tempat kerja'.localized(context)),
+            ),
           ],
           onChanged: (v) {
             v == null ? _values.remove('remote') : _values['remote'] = v;
@@ -451,23 +470,42 @@ class _JobFiltersState extends State<_JobFilters> {
         TextField(
           controller: _salary,
           keyboardType: TextInputType.number,
-          decoration: const InputDecoration(
-            labelText: 'Gaji minimum (JPY)',
-            hintText: 'Contoh: 250000',
+          decoration: InputDecoration(
+            labelText: 'Gaji minimum (JPY)'.localized(context),
+            hintText: 'Contoh: 250000'.localized(context),
           ),
         ),
         const SizedBox(height: 12),
         DropdownButtonFormField<String>(
           initialValue: _values['salaryPeriod'],
           isExpanded: true,
-          decoration: const InputDecoration(labelText: 'Periode gaji'),
-          items: const [
-            DropdownMenuItem<String>(child: Text('Pilih periode')),
-            DropdownMenuItem(value: 'month', child: Text('Per bulan')),
-            DropdownMenuItem(value: 'year', child: Text('Per tahun')),
-            DropdownMenuItem(value: 'hour', child: Text('Per jam')),
-            DropdownMenuItem(value: 'day', child: Text('Per hari')),
-            DropdownMenuItem(value: 'week', child: Text('Per minggu')),
+          decoration: InputDecoration(
+            labelText: 'Periode gaji'.localized(context),
+          ),
+          items: [
+            DropdownMenuItem<String>(
+              child: Text('Pilih periode'.localized(context)),
+            ),
+            DropdownMenuItem(
+              value: 'month',
+              child: Text('Per bulan'.localized(context)),
+            ),
+            DropdownMenuItem(
+              value: 'year',
+              child: Text('Per tahun'.localized(context)),
+            ),
+            DropdownMenuItem(
+              value: 'hour',
+              child: Text('Per jam'.localized(context)),
+            ),
+            DropdownMenuItem(
+              value: 'day',
+              child: Text('Per hari'.localized(context)),
+            ),
+            DropdownMenuItem(
+              value: 'week',
+              child: Text('Per minggu'.localized(context)),
+            ),
           ],
           onChanged: (v) {
             v == null
@@ -476,8 +514,9 @@ class _JobFiltersState extends State<_JobFilters> {
           },
         ),
         const SizedBox(height: 8),
-        const Text(
-          'Filter gaji hanya berlaku pada angka dan periode yang dicantumkan sumber.',
+        Text(
+          'Filter gaji hanya berlaku pada angka dan periode yang dicantumkan sumber.'
+              .localized(context),
         ),
         const SizedBox(height: 20),
         FilledButton(
@@ -488,9 +527,10 @@ class _JobFiltersState extends State<_JobFilters> {
                     amount <= 0 ||
                     !_values.containsKey('salaryPeriod'))) {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
+                SnackBar(
                   content: Text(
-                    'Masukkan gaji minimum yang valid dan pilih periodenya.',
+                    'Masukkan gaji minimum yang valid dan pilih periodenya.'
+                        .localized(context),
                   ),
                 ),
               );
@@ -505,11 +545,11 @@ class _JobFiltersState extends State<_JobFilters> {
             }
             Navigator.pop(context, _values);
           },
-          child: const Text('Tampilkan lowongan'),
+          child: Text('Tampilkan lowongan'.localized(context)),
         ),
         TextButton(
           onPressed: () => Navigator.pop(context, <String, String>{}),
-          child: const Text('Reset semua filter'),
+          child: Text('Reset semua filter'.localized(context)),
         ),
       ],
     ),
@@ -524,12 +564,12 @@ class JobDetailScreen extends ConsumerWidget {
     final detail = ref.watch(jobDetailProvider(id));
     final meta = ref.watch(jobsMetaProvider).valueOrNull;
     return Scaffold(
-      appBar: AppBar(title: const Text('Detail lowongan')),
+      appBar: AppBar(title: Text('Detail lowongan'.localized(context))),
       body: detail.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => _Message(
-          message: '$e',
-          action: 'Coba lagi',
+          message: '$e'.localized(context),
+          action: 'Coba lagi'.localized(context),
           onTap: () => ref.invalidate(jobDetailProvider(id)),
         ),
         data: (job) => ListView(
@@ -551,20 +591,26 @@ class JobDetailScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 16),
             if (!job.active)
-              const Card(
+              Card(
                 child: Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Text(
-                    'Lowongan ini sudah tidak aktif atau kedaluwarsa. Lamaran tidak tersedia.',
+                    'Lowongan ini sudah tidak aktif atau kedaluwarsa. Lamaran tidak tersedia.'
+                        .localized(context),
                   ),
                 ),
               ),
             _IconLine(
               Icons.location_on_outlined,
-              job.location.isEmpty ? 'Lokasi belum dicantumkan' : job.location,
+              job.location.isEmpty
+                  ? 'Lokasi belum dicantumkan'.localized(context)
+                  : job.location,
             ),
             const SizedBox(height: 10),
-            _IconLine(Icons.payments_outlined, job.salary),
+            _IconLine(
+              Icons.payments_outlined,
+              job.salaryFor(appRegionLocaleName(context)).localized(context),
+            ),
             const SizedBox(height: 20),
             _DetailRow(
               'Bidang',
@@ -590,9 +636,9 @@ class JobDetailScreen extends ConsumerWidget {
             ),
             _DetailRow('Cara bekerja', switch (job.remote) {
               'remote' => 'Remote',
-              'onsite' => 'Di tempat kerja',
+              'onsite' => 'Di tempat kerja'.localized(context),
               'hybrid' => 'Hybrid',
-              _ => 'Belum dicantumkan',
+              _ => 'Belum dicantumkan'.localized(context),
             }),
             _Section('Tentang pekerjaan', job.description),
             _Section('Kualifikasi', job.qualifications),
@@ -600,16 +646,27 @@ class JobDetailScreen extends ConsumerWidget {
               'Benefit & tunjangan',
               job.benefits.isEmpty
                   ? 'Benefit belum dicantumkan oleh sumber lowongan. Konfirmasikan tunjangan, fasilitas, dan ketentuannya kepada perekrut sebelum melamar.'
+                        .localized(context)
                   : job.benefits,
             ),
             const Divider(height: 32),
             _DetailRow('Sumber', job.sourceName),
-            _DetailRow('Tanggal publikasi', jobDate(job.postedAt)),
-            _DetailRow('Diperiksa oleh sistem', jobDate(job.lastSeenAt)),
-            _DetailRow('Batas lowongan', jobDate(job.expiresAt)),
+            _DetailRow(
+              'Tanggal publikasi',
+              jobDate(job.postedAt, localeName: appRegionLocaleName(context)),
+            ),
+            _DetailRow(
+              'Diperiksa oleh sistem',
+              jobDate(job.lastSeenAt, localeName: appRegionLocaleName(context)),
+            ),
+            _DetailRow(
+              'Batas lowongan',
+              jobDate(job.expiresAt, localeName: appRegionLocaleName(context)),
+            ),
             const SizedBox(height: 16),
-            const Text(
-              'Informasi mengikuti sumber aslinya dan dapat berubah. Baca persyaratan lengkap di situs penyedia sebelum melamar.',
+            Text(
+              'Informasi mengikuti sumber aslinya dan dapat berubah. Baca persyaratan lengkap di situs penyedia sebelum melamar.'
+                  .localized(context),
             ),
             const SizedBox(height: 20),
             Container(
@@ -619,29 +676,30 @@ class JobDetailScreen extends ConsumerWidget {
                 border: Border.all(color: const Color(0xFFDDE2F4)),
                 borderRadius: BorderRadius.circular(18),
               ),
-              child: const Row(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.workspace_premium_rounded,
                     color: Color(0xFF232667),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Lamar dengan Lifetime Access',
-                          style: TextStyle(
+                          'Lamar dengan Lifetime Access'.localized(context),
+                          style: const TextStyle(
                             fontWeight: FontWeight.w800,
                             color: Color(0xFF232667),
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Text(
-                          'Akses tautan lamaran untuk lowongan yang aktif, sekaligus buka materi lanjutan, simulasi ujian, dan Manga Jepang.',
-                          style: TextStyle(
+                          'Akses tautan lamaran untuk lowongan yang aktif, sekaligus buka materi lanjutan, simulasi ujian, dan Manga Jepang.'
+                              .localized(context),
+                          style: const TextStyle(
                             color: Color(0xFF44496B),
                             height: 1.5,
                           ),
@@ -656,7 +714,8 @@ class JobDetailScreen extends ConsumerWidget {
             JobApplyButton(job: job),
             const SizedBox(height: 8),
             Text(
-              'Lamaran diproses oleh situs sumber. Premium tidak menjamin diterima kerja atau persetujuan visa.',
+              'Lamaran diproses oleh situs sumber. Premium tidak menjamin diterima kerja atau persetujuan visa.'
+                  .localized(context),
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
@@ -670,21 +729,22 @@ class JobSourcesScreen extends ConsumerWidget {
   const JobSourcesScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-    appBar: AppBar(title: const Text('Sumber & pembaruan')),
+    appBar: AppBar(title: Text('Sumber & pembaruan'.localized(context))),
     body: ref
         .watch(jobSourcesProvider)
         .when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (e, _) => _Message(
-            message: '$e',
-            action: 'Coba lagi',
+            message: '$e'.localized(context),
+            action: 'Coba lagi'.localized(context),
             onTap: () => ref.invalidate(jobSourcesProvider),
           ),
           data: (sources) => ListView(
             padding: const EdgeInsets.all(20),
             children: [
-              const Text(
-                'Lowongan disimpan di server kami. Membuka atau mencari di aplikasi tidak mengambil ulang data dari situs penyedia.',
+              Text(
+                'Lowongan disimpan di server kami. Membuka atau mencari di aplikasi tidak mengambil ulang data dari situs penyedia.'
+                    .localized(context),
               ),
               const SizedBox(height: 16),
               for (final s in sources)
@@ -703,18 +763,23 @@ class JobSourcesScreen extends ConsumerWidget {
                         Text(
                           s['mode'] == 'directory'
                               ? 'Direktori · Kunjungi situs untuk lowongan lengkap'
-                              : 'Pembaruan otomatis · ${_sourceStatus(s['status'])}',
+                                    .localized(context)
+                              : '${'Pembaruan otomatis'.localized(context)} · ${_sourceStatus(s['status']).localized(context)}',
                         ),
-                        if (s['reason'] != null) Text('${s['reason']}'),
+                        if (s['reason'] != null)
+                          Text('${s['reason']}'.localized(context)),
                         if (s['mode'] != 'directory') ...[
                           Text(
-                            'Interval: ${_sourceInterval(s['intervalHours'])}',
+                            'Interval: ${_sourceInterval(s['intervalHours'])}'
+                                .localized(context),
                           ),
                           Text(
-                            'Berhasil diperbarui: ${jobDate(DateTime.tryParse('${s['lastSuccessAt'] ?? ''}'))}',
+                            'Berhasil diperbarui: ${jobDate(DateTime.tryParse('${s['lastSuccessAt'] ?? ''}'), localeName: appRegionLocaleName(context))}'
+                                .localized(context),
                           ),
                           Text(
-                            'Jadwal berikutnya: ${jobDate(DateTime.tryParse('${s['nextFetchAt'] ?? ''}'))}',
+                            'Jadwal berikutnya: ${jobDate(DateTime.tryParse('${s['nextFetchAt'] ?? ''}'), localeName: appRegionLocaleName(context))}'
+                                .localized(context),
                           ),
                         ],
                         Wrap(
@@ -723,14 +788,18 @@ class JobSourcesScreen extends ConsumerWidget {
                             if (jobExternalUri('${s['url']}') != null)
                               TextButton(
                                 onPressed: () => _open(context, '${s['url']}'),
-                                child: const Text('Kunjungi situs'),
+                                child: Text(
+                                  'Kunjungi situs'.localized(context),
+                                ),
                               ),
                             if (jobExternalUri('${s['termsUrl'] ?? ''}') !=
                                 null)
                               TextButton(
                                 onPressed: () =>
                                     _open(context, '${s['termsUrl']}'),
-                                child: const Text('Ketentuan sumber'),
+                                child: Text(
+                                  'Ketentuan sumber'.localized(context),
+                                ),
                               ),
                           ],
                         ),
@@ -755,7 +824,11 @@ Future<void> _open(BuildContext context, String value) async {
   }
   if (!opened && context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Tautan belum dapat dibuka. Coba kembali.')),
+      SnackBar(
+        content: Text(
+          'Tautan belum dapat dibuka. Coba kembali.'.localized(context),
+        ),
+      ),
     );
   }
 }
@@ -814,9 +887,14 @@ class _DetailRow extends StatelessWidget {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: Theme.of(context).textTheme.bodySmall),
         Text(
-          value.isEmpty || value == 'unknown' ? 'Belum dicantumkan' : value,
+          label.localized(context),
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+        Text(
+          value.isEmpty || value == 'unknown'
+              ? 'Belum dicantumkan'.localized(context)
+              : value,
           style: const TextStyle(fontWeight: FontWeight.w600),
         ),
       ],
@@ -835,7 +913,7 @@ class _Section extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          title.localized(context),
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
@@ -843,7 +921,7 @@ class _Section extends StatelessWidget {
         const SizedBox(height: 10),
         SelectableText(
           text.trim().isEmpty
-              ? 'Lihat informasi lengkap di situs sumber.'
+              ? 'Lihat informasi lengkap di situs sumber.'.localized(context)
               : text,
           scrollPhysics: const NeverScrollableScrollPhysics(),
         ),
@@ -863,8 +941,9 @@ class _Message extends StatelessWidget {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(message, textAlign: TextAlign.center),
-        if (onTap != null) TextButton(onPressed: onTap, child: Text(action!)),
+        Text(message.localized(context), textAlign: TextAlign.center),
+        if (onTap != null)
+          TextButton(onPressed: onTap, child: Text(action!.localized(context))),
       ],
     ),
   );

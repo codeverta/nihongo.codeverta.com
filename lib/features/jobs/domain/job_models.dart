@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class JapanJob {
   JapanJob.fromJson(Map<String, dynamic> json)
     : id = '${json['id'] ?? ''}',
@@ -57,12 +59,13 @@ class JapanJob {
   bool get active =>
       status == 'active' &&
       (expiresAt == null || expiresAt!.isAfter(DateTime.now()));
-  String get salary {
+  String get salary => salaryFor('en_US');
+
+  String salaryFor(String localeName) {
     if (salaryText.trim().isNotEmpty) return salaryText;
     if (salaryMin == null && salaryMax == null) return 'Gaji belum dicantumkan';
-    String amount(double value) => value
-        .toStringAsFixed(0)
-        .replaceAllMapped(RegExp(r'(\d)(?=(\d{3})+(?!\d))'), (m) => '${m[1]},');
+    String amount(double value) =>
+        NumberFormat.decimalPattern(localeName).format(value);
     final range = salaryMin != null && salaryMax != null
         ? '${amount(salaryMin!)}–${amount(salaryMax!)}'
         : salaryMin != null
@@ -134,11 +137,9 @@ Uri? jobExternalUri(String value) {
   return uri;
 }
 
-String jobDate(DateTime? value) => value == null
+String jobDate(DateTime? value, {String localeName = 'id_ID'}) => value == null
     ? 'Belum tersedia'
-    : '${value.toLocal().day.toString().padLeft(2, '0')}/'
-          '${value.toLocal().month.toString().padLeft(2, '0')}/'
-          '${value.toLocal().year}';
+    : DateFormat.yMd(localeName).format(value.toLocal());
 
 // Older cached listings may contain a clearly labeled benefits section in their
 // description. Copy only that section; never infer perks from keywords.

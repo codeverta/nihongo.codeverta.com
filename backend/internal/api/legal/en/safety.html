@@ -1,0 +1,19 @@
+{{define "content"}}
+<p>This summary describes the Nihongo Master version reviewed for the policy dated October 17, 2026. See the <a href="/en/privacy-policy">Privacy Policy</a> for full details.</p>
+
+<table>
+  <thead><tr><th>Data type</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>Email, name, account ID, Google photo, or user-selected profile photo</td><td>Sign-in, profile, and linking progress; a selected photo is compressed and stored in Tencent COS so it can be displayed</td></tr>
+    <tr><td>Progress, practice answers and results, XP, and activity</td><td>Learning features and statistics</td></tr>
+    <tr><td>Purchase history or evidence and store tokens</td><td>Premium verification, restoration, reconciliation, and replay prevention</td></tr>
+    <tr><td>Dictionary searches</td><td>Search through providers and a shared cache</td></tr>
+    <tr><td>Installation or device identifier and Firebase Cloud Messaging metadata (optional)</td><td>Deliver announcements after permission is granted; public subscriptions are not linked to an account in the backend</td></tr>
+    <tr><td>Network request metadata and support email</td><td>Content delivery, security, diagnosis, and support</td></tr>
+  </tbody>
+</table>
+
+<p>Public endpoints use HTTPS. Uploaded profile photos are stored at a public URL that anyone with the URL may be able to open. This version does not use advertising SDKs or behavioral analytics and does not request location, contacts, or microphone permissions. The camera is accessed only if you choose Take photo; gallery images are selected through the system picker. Network, sign-in, store, dictionary, and content providers process data as needed for the features you use. This statement does not mean the app collects no data.</p>
+
+<p><a href="/en/delete-account">Account deletion</a> is available in the app and by email request. Purchase evidence and backup retention are described in the privacy policy. Google Play Data safety answers must cover the complete build and SDKs you distribute and should be updated if their behavior changes.</p>
+{{end}}

@@ -1,10 +1,16 @@
+import 'dart:async';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
+import 'package:nihongo_master/features/exam/presentation/widgets/online_exam_gate.dart';
+import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 
 bool sswAvailable(String sector) => sswActiveSectorIds.contains(sector);
@@ -120,51 +126,57 @@ class SswAssessmentPanel extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'Latih pemahaman. Ukur kesiapan.',
+          'Latih pemahaman. Ukur kesiapan.'.localized(context),
           style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 12),
         Text(
           premium
               ? 'Latihan per topik memberikan pembahasan langsung. Simulasi memakai timer server dan pembahasan setelah selesai.'
-              : 'Latihan dan simulasi termasuk Lifetime Access. Materi bidang tetap dapat dibaca gratis.',
+                    .localized(context)
+              : 'Latihan dan simulasi termasuk Lifetime Access. Materi bidang tetap dapat dibaca gratis.'
+                    .localized(context),
         ),
         const SizedBox(height: 16),
         Card(
           child: ListTile(
             contentPadding: const EdgeInsets.all(16),
             leading: const Icon(Icons.psychology_alt_outlined),
-            title: const Text('Latihan per topik'),
-            subtitle: Text(switch (sector) {
-              'nursing-care' =>
-                '87 soal · 12 modul + bahasa Jepang · tanpa timer',
-              'agriculture' => '160 soal · 10 modul · tanaman & peternakan',
-              'fishery' => '120 soal · 10 modul · tangkap & budi daya',
-              'linen-supply' => '48 soal · 4 modul · pengolahan linen',
-              'industrial-manufacturing' =>
-                '36 soal · 4 modul · lintas kategori industri',
-              'construction' => '36 soal · 4 modul · konstruksi',
-              'shipbuilding' => '36 soal · 4 modul · kapal & mesin kapal',
-              'automobile-maintenance' =>
-                '36 soal · 4 modul · perawatan dan pemeriksaan kendaraan',
-              'aviation' =>
-                '36 soal · 4 modul · layanan darat dan perawatan pesawat',
-              'accommodation' =>
-                '36 soal · 4 modul · komunikasi dan layanan hotel',
-              'road-transport' => '36 soal · 4 modul · truk, bus, dan taksi',
-              'railway' => '36 soal · 4 modul · operasi dan keselamatan kereta',
-              'logistics-warehouse' =>
-                '36 soal · 4 modul · alur kerja gudang logistik',
-              'food-manufacturing' =>
-                '36 soal · 4 modul · higiene dan kendali produksi pangan',
-              'food-service' =>
-                '36 soal · 4 modul · layanan restoran dan higiene pangan',
-              'forestry' => '36 soal · 4 modul · keselamatan kerja kehutanan',
-              'wood-industry' => '36 soal · 4 modul · pengolahan dan mutu kayu',
-              'resource-recycling' =>
-                '36 soal · 4 modul · pemilahan dan keselamatan fasilitas daur ulang',
-              _ => '60 soal · 10 modul · tanpa timer',
-            }),
+            title: Text('Latihan per topik'.localized(context)),
+            subtitle: Text(
+              (switch (sector) {
+                'nursing-care' =>
+                  '87 soal · 12 modul + bahasa Jepang · tanpa timer',
+                'agriculture' => '160 soal · 10 modul · tanaman & peternakan',
+                'fishery' => '120 soal · 10 modul · tangkap & budi daya',
+                'linen-supply' => '48 soal · 4 modul · pengolahan linen',
+                'industrial-manufacturing' =>
+                  '36 soal · 4 modul · lintas kategori industri',
+                'construction' => '36 soal · 4 modul · konstruksi',
+                'shipbuilding' => '36 soal · 4 modul · kapal & mesin kapal',
+                'automobile-maintenance' =>
+                  '36 soal · 4 modul · perawatan dan pemeriksaan kendaraan',
+                'aviation' =>
+                  '36 soal · 4 modul · layanan darat dan perawatan pesawat',
+                'accommodation' =>
+                  '36 soal · 4 modul · komunikasi dan layanan hotel',
+                'road-transport' => '36 soal · 4 modul · truk, bus, dan taksi',
+                'railway' =>
+                  '36 soal · 4 modul · operasi dan keselamatan kereta',
+                'logistics-warehouse' =>
+                  '36 soal · 4 modul · alur kerja gudang logistik',
+                'food-manufacturing' =>
+                  '36 soal · 4 modul · higiene dan kendali produksi pangan',
+                'food-service' =>
+                  '36 soal · 4 modul · layanan restoran dan higiene pangan',
+                'forestry' => '36 soal · 4 modul · keselamatan kerja kehutanan',
+                'wood-industry' =>
+                  '36 soal · 4 modul · pengolahan dan mutu kayu',
+                'resource-recycling' =>
+                  '36 soal · 4 modul · pemilahan dan keselamatan fasilitas daur ulang',
+                _ => '60 soal · 10 modul · tanpa timer',
+              }).localized(context),
+            ),
             trailing: Icon(premium ? Icons.chevron_right : Icons.lock_outline),
             onTap: () => context.push('/ssw/$sector/practice'),
           ),
@@ -174,8 +186,10 @@ class SswAssessmentPanel extends ConsumerWidget {
             child: ListTile(
               contentPadding: const EdgeInsets.all(16),
               leading: const Icon(Icons.timer_outlined),
-              title: Text('Simulasi · ${sswExamTitle(level)}'),
-              subtitle: Text(sswExamSummary(level)),
+              title: Text(
+                'Simulasi · ${sswExamTitle(level).localized(context)}',
+              ),
+              subtitle: Text(sswExamSummary(level).localized(context)),
               trailing: Icon(
                 premium ? Icons.chevron_right : Icons.lock_outline,
               ),
@@ -184,8 +198,9 @@ class SswAssessmentPanel extends ConsumerWidget {
             ),
           ),
         const SizedBox(height: 12),
-        const Text(
-          'Soal orisinal persiapan SSW 1号. Bagian praktik memakai skenario teks; format foto, ilustrasi, dan demonstrasi alat tidak seluruhnya direplikasi. Hasil aplikasi bukan kelulusan resmi.',
+        Text(
+          'Soal orisinal persiapan SSW 1号. Bagian praktik memakai skenario teks; format foto, ilustrasi, dan demonstrasi alat tidak seluruhnya direplikasi. Hasil aplikasi bukan kelulusan resmi.'
+              .localized(context),
           style: TextStyle(height: 1.6, fontSize: 13),
         ),
       ],
@@ -204,6 +219,7 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
   bool busy = false;
   String? error;
   Future<void> start() async {
+    if (!requireOnlineExam(context, ref)) return;
     setState(() {
       busy = true;
       error = null;
@@ -225,7 +241,9 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: Text('Simulasi ${sswExamTitle(widget.level)}')),
+    appBar: AppBar(
+      title: Text('Simulasi ${sswExamTitle(widget.level).localized(context)}'),
+    ),
     body: ref
         .watch(simulationLevelOverviewProvider(widget.level))
         .when(
@@ -241,7 +259,7 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                     onPressed: () => ref.invalidate(
                       simulationLevelOverviewProvider(widget.level),
                     ),
-                    child: const Text('Coba lagi'),
+                    child: Text('Coba lagi'.localized(context)),
                   ),
                 ],
               ),
@@ -267,7 +285,8 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      '${data['questionCount']} soal · ${data['durationMinutes']} menit',
+                      '${data['questionCount']} soal · ${data['durationMinutes']} menit'
+                          .localized(context),
                     ),
                   ],
                 ),
@@ -279,19 +298,22 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                   leading: const Icon(Icons.schedule),
                   title: Text(section['name'] as String),
                   subtitle: Text(
-                    '${section['questionCount']} soal · ${(section['durationSeconds'] as int) ~/ 60} menit',
+                    '${section['questionCount']} soal · ${(section['durationSeconds'] as int) ~/ 60} menit'
+                        .localized(context),
                   ),
                 ),
               const SizedBox(height: 12),
-              Text(sswExamDescription(widget.level)),
+              Text(sswExamDescription(widget.level).localized(context)),
               const SizedBox(height: 20),
-              const Text(
-                'Timer tetap berjalan ketika aplikasi ditutup. Jawaban tersimpan setelah dikonfirmasi server. Gunakan peta soal dan tanda ragu. Setelah bagian dikirim atau waktu habis, jawaban dikunci. Kunci serta pembahasan tersedia setelah seluruh bagian selesai. Sesi dan riwayat tersimpan pada akun di server.',
+              Text(
+                'Timer tetap berjalan ketika aplikasi ditutup. Jawaban tersimpan setelah dikonfirmasi server. Gunakan peta soal dan tanda ragu. Setelah bagian dikirim atau waktu habis, jawaban dikunci. Kunci serta pembahasan tersedia setelah seluruh bagian selesai. Sesi dan riwayat tersimpan pada akun di server.'
+                    .localized(context),
                 style: TextStyle(height: 1.7),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'Simulasi belajar orisinal, bukan soal resmi. Keputusan praktik menggunakan skenario teks; tidak menggantikan latihan lapangan terawasi atau seluruh variasi visual CBT resmi.',
+              Text(
+                'Simulasi belajar orisinal, bukan soal resmi. Keputusan praktik menggunakan skenario teks; tidak menggantikan latihan lapangan terawasi atau seluruh variasi visual CBT resmi.'
+                    .localized(context),
                 style: TextStyle(height: 1.6, fontSize: 13),
               ),
               if (error != null)
@@ -316,19 +338,21 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                     : const Icon(Icons.play_arrow),
                 label: Text(
                   (data['activeAttemptId'] as String).isEmpty
-                      ? 'Mulai simulasi'
-                      : 'Lanjutkan simulasi',
+                      ? 'Mulai simulasi'.localized(context)
+                      : 'Lanjutkan simulasi'.localized(context),
                 ),
               ),
               const SizedBox(height: 24),
               Text(
-                'Riwayat simulasi',
+                'Riwayat simulasi'.localized(context),
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               if (diagnosticList(data['history']).isEmpty)
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 12),
-                  child: Text('Belum ada simulasi yang selesai.'),
+                  child: Text(
+                    'Belum ada simulasi yang selesai.'.localized(context),
+                  ),
                 ),
               for (final row in diagnosticList(data['history']))
                 ListTile(
@@ -353,9 +377,32 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
 final sswPracticeProvider = FutureProvider.autoDispose
     .family<List<Json>, String>((ref, sector) async {
       ref.watch(authControllerProvider.select((s) => s.user?.id));
-      final repo = DiagnosticRepository(ref.watch(dioProvider));
-      final data = await repo.request('/ssw/$sector/practice');
-      return diagnosticList(data['questions']);
+      final dio = ref.watch(dioProvider);
+      try {
+        final questions = await ref
+            .watch(offlinePracticeServiceProvider)
+            .loadBank('ssw', sector);
+        return [
+          for (final question in questions)
+            {
+              ...question,
+              'options': [
+                for (final option in (question['options'] as List<dynamic>))
+                  (option as Map<String, dynamic>)['text'],
+              ],
+              'optionIds': [
+                for (final option in (question['options'] as List<dynamic>))
+                  (option as Map<String, dynamic>)['id'],
+              ],
+            },
+        ];
+      } on DioException catch (error) {
+        if (![404, 503].contains(error.response?.statusCode)) rethrow;
+        final legacy = await DiagnosticRepository(
+          dio,
+        ).request('/ssw/$sector/practice');
+        return diagnosticList(legacy['questions']);
+      }
     });
 
 class SswPracticeScreen extends ConsumerStatefulWidget {
@@ -372,17 +419,147 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
   int correct = 0;
   bool busy = false;
   bool finished = false;
+  bool pendingSync = false;
+  bool verified = false;
+  int answeredCount = 0;
+  String? attemptId;
   Json? feedback;
   String? error;
+  StreamSubscription<OfflinePracticeSyncEvent>? _syncSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _syncSubscription = ref
+        .read(offlinePracticeServiceProvider)
+        .syncEvents
+        .listen((event) {
+          if (!mounted || event.attemptId != attemptId) return;
+          setState(() {
+            pendingSync = false;
+            verified = event.result['verified'] == true;
+            final serverCorrect = event.result['correctAnswers'];
+            if (serverCorrect is int) correct = serverCorrect;
+            final serverTotal = event.result['totalQuestions'];
+            if (serverTotal is int) answeredCount = serverTotal;
+          });
+        });
+  }
+
+  @override
+  void dispose() {
+    unawaited(_syncSubscription?.cancel());
+    super.dispose();
+  }
+
   void reset(String? value) => setState(() {
     module = value;
     index = 0;
     selected = null;
     correct = 0;
+    answeredCount = 0;
+    attemptId = null;
+    pendingSync = false;
+    verified = false;
+    busy = false;
     finished = false;
     feedback = null;
     error = null;
   });
+
+  Future<void> chooseModule(String value, List<Json> all) async {
+    reset(value);
+    if (!all.any((question) => question['optionIds'] is List)) return;
+    setState(() => busy = true);
+    try {
+      final attempt = await ref
+          .read(offlinePracticeServiceProvider)
+          .start('ssw', widget.sector, scope: value);
+      final questions = all
+          .where((question) => question['moduleId'] == value)
+          .toList(growable: false);
+      final savedAnswers = (attempt['storedAnswers'] as List<dynamic>).map(
+        (answer) => Map<String, String>.from(answer as Map),
+      );
+      final selectedByQuestion = {
+        for (final answer in savedAnswers)
+          answer['questionId']!: answer['optionId']!,
+      };
+      var answered = 0;
+      var right = 0;
+      for (final question in questions) {
+        final optionId = selectedByQuestion[question['id']];
+        if (optionId == null) break;
+        final optionIds = (question['optionIds'] as List<dynamic>)
+            .cast<String>();
+        if (!optionIds.contains(optionId)) break;
+        final result = await ref
+            .read(offlinePracticeServiceProvider)
+            .answer(
+              attempt['id'] as String,
+              question['id'] as String,
+              optionId,
+            );
+        if (result['correct'] == true) right++;
+        answered++;
+      }
+      if (!mounted) return;
+      setState(() {
+        attemptId = attempt['id'] as String;
+        index = answered.clamp(0, questions.length - 1);
+        answeredCount = answered;
+        correct = right;
+        busy = false;
+      });
+      if (answered == questions.length) await finishModule();
+    } on Object catch (e) {
+      if (mounted) setState(() => error = diagnosticError(e));
+    } finally {
+      if (mounted) setState(() => busy = false);
+    }
+  }
+
+  Future<void> finishModule() async {
+    final id = attemptId;
+    if (id == null) {
+      if (mounted) setState(() => finished = true);
+      return;
+    }
+    setState(() {
+      busy = true;
+      error = null;
+    });
+    try {
+      final result = await ref
+          .read(offlinePracticeServiceProvider)
+          .complete(id);
+      if (!mounted) return;
+      setState(() {
+        final serverCorrect = result['correctAnswers'];
+        if (result['verified'] == true && serverCorrect is int) {
+          correct = serverCorrect;
+        }
+        final serverTotal = result['totalQuestions'];
+        if (serverTotal is int) answeredCount = serverTotal;
+        verified = result['verified'] == true;
+        pendingSync = result['pendingSync'] == true;
+        finished = true;
+      });
+    } on Object catch (e) {
+      if (mounted) setState(() => error = diagnosticError(e));
+    } finally {
+      if (mounted) setState(() => busy = false);
+    }
+  }
+
+  Future<void> returnToTopics() async {
+    final id = attemptId;
+    if (id != null && answeredCount > 0 && !finished) {
+      await finishModule();
+      if (!mounted || !finished) return;
+    }
+    if (mounted) reset(null);
+  }
 
   Future<void> check(Json question) async {
     if (selected == null || busy || feedback != null) return;
@@ -391,15 +568,52 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
       error = null;
     });
     try {
-      final result = await DiagnosticRepository(ref.read(dioProvider)).request(
-        '/ssw/${widget.sector}/practice/check',
-        method: 'POST',
-        body: {'questionId': question['id'], 'answer': selected},
-      );
+      Json result;
+      final optionIds = question['optionIds'];
+      if (optionIds is List && selected != null) {
+        try {
+          var id = attemptId;
+          if (id == null) {
+            final attempt = await ref
+                .read(offlinePracticeServiceProvider)
+                .start('ssw', widget.sector, scope: module);
+            id = attempt['id'] as String;
+            attemptId = id;
+          }
+          final checked = await ref
+              .read(offlinePracticeServiceProvider)
+              .answer(
+                id,
+                question['id'] as String,
+                optionIds[selected!].toString(),
+              );
+          final answerIndex = optionIds.indexOf(checked['correctOptionId']);
+          result = {
+            'correct': checked['correct'],
+            'answer': answerIndex,
+            'explanation': checked['explanation'],
+            'lessonId': question['lessonId'],
+          };
+        } on DioException catch (error) {
+          if (![404, 503].contains(error.response?.statusCode)) rethrow;
+          result = await DiagnosticRepository(ref.read(dioProvider)).request(
+            '/ssw/${widget.sector}/practice/check',
+            method: 'POST',
+            body: {'questionId': question['id'], 'answer': selected},
+          );
+        }
+      } else {
+        result = await DiagnosticRepository(ref.read(dioProvider)).request(
+          '/ssw/${widget.sector}/practice/check',
+          method: 'POST',
+          body: {'questionId': question['id'], 'answer': selected},
+        );
+      }
       if (!mounted) return;
       setState(() {
         feedback = result;
         if (result['correct'] == true) correct++;
+        answeredCount++;
       });
     } on Object catch (e) {
       if (mounted) setState(() => error = diagnosticError(e));
@@ -415,7 +629,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
       if (mounted) context.go('/ssw/${widget.sector}?tab=test');
     });
     return Scaffold(
-      appBar: AppBar(title: const Text('Latihan SSW · per topik')),
+      appBar: AppBar(title: Text('Latihan SSW · per topik'.localized(context))),
       body: ref
           .watch(sswPracticeProvider(widget.sector))
           .when(
@@ -430,7 +644,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                     OutlinedButton(
                       onPressed: () =>
                           ref.invalidate(sswPracticeProvider(widget.sector)),
-                      child: const Text('Coba lagi'),
+                      child: Text('Coba lagi'.localized(context)),
                     ),
                   ],
                 ),
@@ -449,12 +663,13 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                   padding: const EdgeInsets.all(20),
                   children: [
                     Text(
-                      'Pilih topik latihan',
+                      'Pilih topik latihan'.localized(context),
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     const SizedBox(height: 12),
-                    const Text(
-                      'Tanpa timer. Periksa jawaban untuk melihat pembahasan, lalu lanjutkan. Hasil latihan berlaku selama sesi ini dan tidak memberi XP.',
+                    Text(
+                      'Tanpa timer. Periksa jawaban untuk melihat pembahasan, lalu lanjutkan. Jika offline, buka halaman ini saat online terlebih dahulu agar paket latihan tersimpan. Hasil latihan tidak memberi XP.'
+                          .localized(context),
                     ),
                     const SizedBox(height: 16),
                     for (final entry in groups.entries)
@@ -463,10 +678,11 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                           leading: const Icon(Icons.quiz_outlined),
                           title: Text(entry.value),
                           subtitle: Text(
-                            '${all.where((q) => q['moduleId'] == entry.key).length} soal',
+                            '${all.where((q) => q['moduleId'] == entry.key).length} soal'
+                                .localized(context),
                           ),
                           trailing: const Icon(Icons.chevron_right),
-                          onTap: () => reset(entry.key),
+                          onTap: () => chooseModule(entry.key, all),
                         ),
                       ),
                   ],
@@ -479,21 +695,38 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                     const Icon(Icons.task_alt, size: 64),
                     const SizedBox(height: 20),
                     Text(
-                      'Latihan selesai',
+                      'Latihan selesai'.localized(context),
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      '$correct/${questions.length} benar pada jawaban pertama',
+                      '$correct/$answeredCount benar pada jawaban pertama'
+                          .localized(context),
                     ),
+                    if (pendingSync)
+                      Padding(
+                        padding: EdgeInsets.only(top: 12),
+                        child: Text(
+                          'Jawaban tersimpan di perangkat dan menunggu sinkronisasi. Latihan ini tidak memberi XP.'
+                              .localized(context),
+                        ),
+                      ),
+                    if (verified)
+                      Padding(
+                        padding: EdgeInsets.only(top: 12),
+                        child: Text(
+                          'Jawaban sudah diverifikasi server. Latihan ini tidak memberi XP.'
+                              .localized(context),
+                        ),
+                      ),
                     const SizedBox(height: 20),
                     FilledButton(
                       onPressed: () => reset(module),
-                      child: const Text('Ulangi topik'),
+                      child: Text('Ulangi topik'.localized(context)),
                     ),
                     OutlinedButton(
                       onPressed: () => reset(null),
-                      child: const Text('Pilih topik lain'),
+                      child: Text('Pilih topik lain'.localized(context)),
                     ),
                   ],
                 );
@@ -512,7 +745,8 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                   LinearProgressIndicator(value: index / questions.length),
                   const SizedBox(height: 12),
                   Text(
-                    'Soal ${index + 1}/${questions.length} · $correct benar',
+                    'Soal ${index + 1}/${questions.length} · $correct benar'
+                        .localized(context),
                   ),
                   const SizedBox(height: 20),
                   Text(
@@ -559,7 +793,11 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                       onPressed: selected == null || busy
                           ? null
                           : () => check(q),
-                      child: Text(busy ? 'Memeriksa…' : 'Periksa jawaban'),
+                      child: Text(
+                        busy
+                            ? 'Memeriksa…'.localized(context)
+                            : 'Periksa jawaban'.localized(context),
+                      ),
                     ),
                   if (feedback != null) ...[
                     Card(
@@ -570,8 +808,8 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                           children: [
                             Text(
                               feedback!['correct'] == true
-                                  ? 'Tepat'
-                                  : 'Belum tepat',
+                                  ? 'Tepat'.localized(context)
+                                  : 'Belum tepat'.localized(context),
                               style: const TextStyle(
                                 fontWeight: FontWeight.w800,
                               ),
@@ -594,29 +832,31 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                         '/ssw/${widget.sector}/lessons/${q['lessonId']}',
                       ),
                       icon: const Icon(Icons.menu_book_outlined),
-                      label: const Text('Pelajari materi terkait'),
+                      label: Text('Pelajari materi terkait'.localized(context)),
                     ),
                     FilledButton(
-                      onPressed: () => setState(() {
-                        if (index + 1 == questions.length) {
-                          finished = true;
-                        } else {
-                          index++;
-                          selected = null;
-                          feedback = null;
-                          error = null;
-                        }
-                      }),
+                      onPressed: busy
+                          ? null
+                          : index + 1 == questions.length
+                          ? finishModule
+                          : () => setState(() {
+                              index++;
+                              selected = null;
+                              feedback = null;
+                              error = null;
+                            }),
                       child: Text(
-                        index + 1 == questions.length
-                            ? 'Lihat hasil latihan'
-                            : 'Soal berikutnya',
+                        busy
+                            ? 'Menyimpan…'.localized(context)
+                            : index + 1 == questions.length
+                            ? 'Lihat hasil latihan'.localized(context)
+                            : 'Soal berikutnya'.localized(context),
                       ),
                     ),
                   ],
                   TextButton(
-                    onPressed: busy ? null : () => reset(null),
-                    child: const Text('Kembali ke pilihan topik'),
+                    onPressed: busy ? null : returnToTopics,
+                    child: Text('Kembali ke pilihan topik'.localized(context)),
                   ),
                 ],
               );

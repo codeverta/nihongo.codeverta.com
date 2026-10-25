@@ -34,49 +34,52 @@ type account struct {
 	DisplayName    string
 	PhotoURL       string
 	CustomPhotoURL string
+	Timezone       string
 	PasswordHash   []byte
 	GoogleSub      string
 }
 
 type MemoryStore struct {
-	purchases           map[string]domain.Purchase
-	billingTokens       map[string]string
-	billingEnabled      bool
-	mu                  sync.RWMutex
-	gamification        map[string]*gamificationState
-	gamificationDB      *sql.DB
-	ormDB               *gorm.DB
-	ormWriter           *gorm.DB
-	persistenceConn     *sql.Conn
-	persistenceLockName string
-	persistenceClosed   bool
-	persistenceStop     chan struct{}
-	gamificationNow     func() time.Time
-	profiles            map[string]domain.Profile
-	progress            map[string]map[string]domain.LessonProgress
-	categories          []domain.LearningCategory
-	tracks              []domain.LearningTrack
-	exams               []domain.Exam
-	plans               []domain.Plan
-	attemptID           atomic.Uint64
-	accounts            map[string]account
-	playReviewEmail     string
-	playReviewUserID    string
-	sessions            map[string]string
-	vocabulary          []domain.VocabularyLevelContent
-	vocabAttempts       map[string]*vocabularyAttemptState
-	assetBaseURL        string
-	grammar             []grammarLessonContent
-	grammarAttempts     map[string]*grammarAttemptState
-	kanji               []kanjiLessonContent
-	kanjiAttempts       map[string]*kanjiAttemptState
-	reading             []readingLessonContent
-	readingAttempts     map[string]*readingAttemptState
-	diagnosticAttempts  map[string]*diagnosticAttemptState
-	diagnosticOrder     []string
-	simulationAttempts  map[string]*simulationAttemptState
-	simulationOrder     []string
-	simulationNow       func() time.Time
+	purchases            map[string]domain.Purchase
+	billingTokens        map[string]string
+	billingEnabled       bool
+	mu                   sync.RWMutex
+	gamification         map[string]*gamificationState
+	userAnkiDecks        map[string]*userAnkiDeckRecord
+	userAnkiDeckRequests map[string]string
+	gamificationDB       *sql.DB
+	ormDB                *gorm.DB
+	ormWriter            *gorm.DB
+	persistenceConn      *sql.Conn
+	persistenceLockName  string
+	persistenceClosed    bool
+	persistenceStop      chan struct{}
+	gamificationNow      func() time.Time
+	profiles             map[string]domain.Profile
+	progress             map[string]map[string]domain.LessonProgress
+	categories           []domain.LearningCategory
+	tracks               []domain.LearningTrack
+	exams                []domain.Exam
+	plans                []domain.Plan
+	attemptID            atomic.Uint64
+	accounts             map[string]account
+	playReviewEmail      string
+	playReviewUserID     string
+	sessions             map[string]string
+	vocabulary           []domain.VocabularyLevelContent
+	vocabAttempts        map[string]*vocabularyAttemptState
+	assetBaseURL         string
+	grammar              []grammarLessonContent
+	grammarAttempts      map[string]*grammarAttemptState
+	kanji                []kanjiLessonContent
+	kanjiAttempts        map[string]*kanjiAttemptState
+	reading              []readingLessonContent
+	readingAttempts      map[string]*readingAttemptState
+	diagnosticAttempts   map[string]*diagnosticAttemptState
+	diagnosticOrder      []string
+	simulationAttempts   map[string]*simulationAttemptState
+	simulationOrder      []string
+	simulationNow        func() time.Time
 }
 
 func (s *MemoryStore) SetAssetBaseURL(value string) {
@@ -87,29 +90,31 @@ func (s *MemoryStore) SetAssetBaseURL(value string) {
 
 func NewMemoryStore() *MemoryStore {
 	result := &MemoryStore{
-		purchases:          map[string]domain.Purchase{},
-		billingTokens:      map[string]string{},
-		profiles:           map[string]domain.Profile{},
-		gamification:       map[string]*gamificationState{},
-		gamificationNow:    time.Now,
-		progress:           map[string]map[string]domain.LessonProgress{},
-		categories:         seedCategories(),
-		tracks:             seedTracks(),
-		exams:              seedExams(),
-		plans:              seedPlans(),
-		accounts:           map[string]account{},
-		sessions:           map[string]string{},
-		vocabulary:         seedVocabulary(),
-		vocabAttempts:      map[string]*vocabularyAttemptState{},
-		grammar:            append(append(append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...), seedGrammarN2()...), seedGrammarN1()...),
-		grammarAttempts:    map[string]*grammarAttemptState{},
-		kanji:              seedKanji(),
-		kanjiAttempts:      map[string]*kanjiAttemptState{},
-		reading:            seedReading(),
-		readingAttempts:    map[string]*readingAttemptState{},
-		diagnosticAttempts: map[string]*diagnosticAttemptState{},
-		simulationAttempts: map[string]*simulationAttemptState{},
-		simulationNow:      time.Now,
+		purchases:            map[string]domain.Purchase{},
+		billingTokens:        map[string]string{},
+		profiles:             map[string]domain.Profile{},
+		gamification:         map[string]*gamificationState{},
+		userAnkiDecks:        map[string]*userAnkiDeckRecord{},
+		userAnkiDeckRequests: map[string]string{},
+		gamificationNow:      time.Now,
+		progress:             map[string]map[string]domain.LessonProgress{},
+		categories:           seedCategories(),
+		tracks:               seedTracks(),
+		exams:                seedExams(),
+		plans:                seedPlans(),
+		accounts:             map[string]account{},
+		sessions:             map[string]string{},
+		vocabulary:           seedVocabulary(),
+		vocabAttempts:        map[string]*vocabularyAttemptState{},
+		grammar:              append(append(append(append(seedGrammar(), seedGrammarN4()...), seedGrammarN3()...), seedGrammarN2()...), seedGrammarN1()...),
+		grammarAttempts:      map[string]*grammarAttemptState{},
+		kanji:                seedKanji(),
+		kanjiAttempts:        map[string]*kanjiAttemptState{},
+		reading:              seedReading(),
+		readingAttempts:      map[string]*readingAttemptState{},
+		diagnosticAttempts:   map[string]*diagnosticAttemptState{},
+		simulationAttempts:   map[string]*simulationAttemptState{},
+		simulationNow:        time.Now,
 	}
 	var nonce [8]byte
 	if _, err := rand.Read(nonce[:]); err != nil {
@@ -207,12 +212,64 @@ func (s *MemoryStore) Profile(userID string) domain.Profile {
 	defer s.mu.Unlock()
 	profile := s.ensureProfileLocked(userID)
 	profile.Entitlement = s.entitlementLocked(userID)
+	if profile.Timezone == "" {
+		profile.Timezone = defaultStudyTimezone
+	}
 	if state := s.gamification[userID]; state != nil {
 		profile.XP = state.XP
 		profile.Level = 1 + state.XP/500
 		profile.StreakDays, _ = studyStreaks(state, s.gamificationNow())
 	}
 	return profile
+}
+
+func (s *MemoryStore) UpdateStudyTimezone(userID, timezone string) (domain.Profile, error) {
+	if !isValidStudyTimezone(timezone) {
+		return domain.Profile{}, ErrInvalid
+	}
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	profile := s.ensureProfileLocked(userID)
+	profile.Timezone = timezone
+	profile.Entitlement = s.entitlementLocked(userID)
+	state := s.gamification[userID]
+	if state == nil {
+		state = newGamificationState()
+	}
+	nextState := *state
+	nextState.Timezone = timezone
+	if s.gamificationDB != nil {
+		raw, err := json.Marshal(&nextState)
+		if err != nil {
+			return domain.Profile{}, err
+		}
+		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.GamificationUser{UserID: userID, State: raw}).Error; err != nil {
+			return domain.Profile{}, fmt.Errorf("persist study timezone: %w", err)
+		}
+	}
+	updatedAccounts := make(map[string]account)
+	for email, account := range s.accounts {
+		if account.ID != userID {
+			continue
+		}
+		account.Timezone = timezone
+		if s.billingEnabled {
+			raw, err := json.Marshal(account)
+			if err != nil {
+				return domain.Profile{}, err
+			}
+			if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.Account{ID: account.ID, Email: email, State: raw}).Error; err != nil {
+				return domain.Profile{}, fmt.Errorf("persist account timezone: %w", err)
+			}
+		}
+		updatedAccounts[email] = account
+	}
+	s.gamification[userID] = &nextState
+	for email, account := range updatedAccounts {
+		s.accounts[email] = account
+	}
+	s.profiles[userID] = profile
+	return profile, nil
 }
 
 func (s *MemoryStore) UpdateProfile(userID, displayName, target string) (domain.Profile, error) {

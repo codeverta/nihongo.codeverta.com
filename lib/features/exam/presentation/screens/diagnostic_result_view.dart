@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 
@@ -24,10 +25,11 @@ class _ResultState extends State<DiagnosticResultView> {
       children: [
         DiagnosticHero(
           title: (r['score'] as int) >= 80
-              ? 'Dasarmu sudah kuat.'
-              : 'Langkah berikutnya\nlebih jelas sekarang.',
+              ? 'Dasarmu sudah kuat.'.localized(context)
+              : 'Langkah berikutnya\nlebih jelas sekarang.'.localized(context),
           subtitle:
-              '${r['correct']} dari ${r['total']} soal benar. Gunakan hasil ini untuk menentukan fokus belajar.',
+              '${r['correct']} dari ${r['total']} soal benar. Gunakan hasil ini untuk menentukan fokus belajar.'
+                  .localized(context),
           child: Row(
             children: [
               SizedBox(
@@ -58,7 +60,8 @@ class _ResultState extends State<DiagnosticResultView> {
               const SizedBox(width: 20),
               Expanded(
                 child: Text(
-                  '${r['answered']} dijawab\n${(r['total'] as int) - (r['answered'] as int)} soal kosong\n${(r['durationSeconds'] as int) ~/ 60} menit ${(r['durationSeconds'] as int) % 60} detik',
+                  '${r['answered']} dijawab\n${(r['total'] as int) - (r['answered'] as int)} soal kosong\n${(r['durationSeconds'] as int) ~/ 60} menit ${(r['durationSeconds'] as int) % 60} detik'
+                      .localized(context),
                   style: const TextStyle(color: Colors.white, height: 1.8),
                 ),
               ),
@@ -66,7 +69,7 @@ class _ResultState extends State<DiagnosticResultView> {
           ),
         ),
         const SizedBox(height: 24),
-        const ExamHeading('Peta kemampuanmu'),
+        ExamHeading('Peta kemampuanmu'.localized(context)),
         ExamPanel(
           child: Column(
             children: [
@@ -80,12 +83,14 @@ class _ResultState extends State<DiagnosticResultView> {
                           Expanded(
                             child: Text(
                               s['name'] as String,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.w800),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
                           Text(
-                            '${s['correct']}/${s['total']} benar  •  ${s['score']}%',
+                            '${s['correct']}/${s['total']} benar  •  ${s['score']}%'
+                                .localized(context),
                           ),
                         ],
                       ),
@@ -104,7 +109,7 @@ class _ResultState extends State<DiagnosticResultView> {
           ),
         ),
         const SizedBox(height: 24),
-        const ExamHeading('Fokus belajar berikutnya'),
+        ExamHeading('Fokus belajar berikutnya'.localized(context)),
         for (final s in focus.take(2))
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
@@ -121,39 +126,43 @@ class _ResultState extends State<DiagnosticResultView> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    _advice(s['name'] as String),
+                    _advice(context, s['name'] as String),
                     style: const TextStyle(height: 1.6),
                   ),
                   const SizedBox(height: 10),
                   TextButton.icon(
                     onPressed: () => context.push(_route(s['name'] as String)),
                     icon: const Icon(Icons.arrow_forward_rounded),
-                    label: const Text('Buka materi belajar'),
+                    label: Text('Buka materi belajar'.localized(context)),
                   ),
                 ],
               ),
             ),
           ),
         const SizedBox(height: 14),
-        const Text(
-          'Persentase dihitung dari jawaban benar. Diagnostic ini bukan penilaian kelulusan resmi JLPT.',
-          style: TextStyle(fontSize: 12, height: 1.6),
+        Text(
+          'Persentase dihitung dari jawaban benar. Diagnostic ini bukan penilaian kelulusan resmi JLPT.'
+              .localized(context),
+          style: const TextStyle(fontSize: 12, height: 1.6),
         ),
         const SizedBox(height: 24),
         Row(
           children: [
-            const Expanded(child: ExamHeading('Pembahasan jawaban')),
+            Expanded(
+              child: ExamHeading('Pembahasan jawaban'.localized(context)),
+            ),
             FilterChip(
-              label: const Text('Perlu ditinjau'),
+              label: Text('Perlu ditinjau'.localized(context)),
               selected: onlyWrong,
               onSelected: (v) => setState(() => onlyWrong = v),
             ),
           ],
         ),
         if (onlyWrong && reviews.every((q) => q['correct'] == true))
-          const ExamPanel(
+          ExamPanel(
             child: Text(
-              'Semua jawaban benar. Kamu bisa membuka seluruh pembahasan.',
+              'Semua jawaban benar. Kamu bisa membuka seluruh pembahasan.'
+                  .localized(context),
             ),
           ),
         for (final (i, review) in reviews.indexed)
@@ -173,17 +182,17 @@ class _ResultState extends State<DiagnosticResultView> {
                         : Theme.of(context).colorScheme.error,
                   ),
                   title: Text(
-                    'Soal ${i + 1} • ${(review['question'] as Map)['section']}',
+                    '${'Soal'.localized(context)} ${i + 1} • ${(review['question'] as Map)['section']}',
                     style: const TextStyle(fontWeight: FontWeight.w800),
                   ),
                   subtitle: Text(
                     review['selectedOptionId'] == ''
-                        ? 'Belum dijawab'
+                        ? 'Belum dijawab'.localized(context)
                         : review['correct'] == true
-                            ? 'Jawaban benar'
-                            : 'Perlu ditinjau',
+                        ? 'Jawaban benar'.localized(context)
+                        : 'Perlu ditinjau'.localized(context),
                   ),
-                  children: [_review(review)],
+                  children: [_review(context, review)],
                 ),
               ),
             ),
@@ -191,13 +200,13 @@ class _ResultState extends State<DiagnosticResultView> {
         OutlinedButton.icon(
           onPressed: () => context.pushReplacement('/exams/n5'),
           icon: const Icon(Icons.refresh_rounded),
-          label: const Text('Kerjakan ulang diagnostic'),
+          label: Text('Kerjakan ulang diagnostic'.localized(context)),
         ),
       ],
     );
   }
 
-  Widget _review(Json review) {
+  Widget _review(BuildContext context, Json review) {
     final q = review['question'] as Map;
     final options = diagnosticList(q['options']);
     String text(String id) =>
@@ -205,7 +214,7 @@ class _ResultState extends State<DiagnosticResultView> {
             .where((o) => o['id'] == id)
             .map((o) => o['text'] as String)
             .firstOrNull ??
-        'Tidak dijawab';
+        'Tidak dijawab'.localized(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -225,10 +234,12 @@ class _ResultState extends State<DiagnosticResultView> {
           ),
         ),
         const SizedBox(height: 12),
-        Text('Jawabanmu: ${text(review['selectedOptionId'] as String)}'),
+        Text(
+          '${'Jawabanmu:'.localized(context)} ${text(review['selectedOptionId'] as String)}',
+        ),
         const SizedBox(height: 8),
         Text(
-          'Jawaban benar: ${text(review['correctOptionId'] as String)}',
+          '${'Jawaban benar:'.localized(context)} ${text(review['correctOptionId'] as String)}',
           style: const TextStyle(color: examGreen, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 12),
@@ -242,19 +253,23 @@ class _ResultState extends State<DiagnosticResultView> {
   }
 
   String _route(String name) => switch (name) {
-        'Kosakata' => '/learn/vocabulary',
-        'Kanji' => '/learn/kanji',
-        'Grammar' => '/learn/grammar',
-        _ => '/learn/reading?level=N5'
-      };
-  String _advice(String name) => switch (name) {
-        'Kosakata' =>
-          'Ulangi kata sehari-hari dan pasangan kata yang sering tertukar. Perhatikan konteks kalimat.',
-        'Kanji' =>
-          'Latih arti dan cara baca kanji dasar, lalu gunakan contoh kata untuk mengingatnya.',
-        'Grammar' =>
-          'Tinjau partikel, perubahan bentuk kata kerja, dan pola kalimat dasar.',
-        _ =>
-          'Baca cerita pendek, lalu cari informasi waktu, tempat, alasan, dan tujuan dalam teks.'
-      };
+    'Kosakata' => '/learn/vocabulary',
+    'Kanji' => '/learn/kanji',
+    'Grammar' => '/learn/grammar',
+    _ => '/learn/reading?level=N5',
+  };
+  String _advice(BuildContext context, String name) => switch (name) {
+    'Kosakata' =>
+      'Ulangi kata sehari-hari dan pasangan kata yang sering tertukar. Perhatikan konteks kalimat.'
+          .localized(context),
+    'Kanji' =>
+      'Latih arti dan cara baca kanji dasar, lalu gunakan contoh kata untuk mengingatnya.'
+          .localized(context),
+    'Grammar' =>
+      'Tinjau partikel, perubahan bentuk kata kerja, dan pola kalimat dasar.'
+          .localized(context),
+    _ =>
+      'Baca cerita pendek, lalu cari informasi waktu, tempat, alasan, dan tujuan dalam teks.'
+          .localized(context),
+  };
 }

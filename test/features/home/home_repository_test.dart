@@ -3,6 +3,37 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nihongo_master/features/home/data/home_repository.dart';
 
 void main() {
+  test(
+    'cached dashboard keeps offline metadata and the last saved progress',
+    () async {
+      final dio = Dio(BaseOptions(baseUrl: 'https://api.example.test/v1'));
+      dio.interceptors.add(
+        InterceptorsWrapper(
+          onRequest: (options, handler) {
+            handler.resolve(
+              Response<Map<String, dynamic>>(
+                requestOptions: options,
+                data: _response,
+                extra: {
+                  'offlineCache': {
+                    'cached': true,
+                    'offline': true,
+                    'updatedAt': '2026-10-23T01:00:00Z',
+                  },
+                },
+              ),
+            );
+          },
+        ),
+      );
+      final saved = await HomeRepository(dio).fetchDashboard();
+      expect(saved.fromCache, true);
+      expect(saved.offline, true);
+      expect(saved.cachedAt, DateTime.utc(2026, 10, 23, 1));
+      expect(saved.tracks.single.progress, 35);
+    },
+  );
+
   test('fetchDashboard parses the complete home API response', () async {
     late RequestOptions capturedRequest;
     final dio = Dio(BaseOptions(baseUrl: 'http://localhost:8080/v1'))

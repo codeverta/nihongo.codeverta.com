@@ -1,6 +1,7 @@
 package api
 
 import (
+	"bytes"
 	"embed"
 	"io/fs"
 	"net/http"
@@ -12,7 +13,7 @@ import (
 // (HTML, CSS, JS, images, fonts) is embedded in the binary and served from
 // the same origin, so the CSP can stay at 'self'.
 //
-//go:embed site/index.html site/static
+//go:embed site/index.html site/index.en.html site/static
 var landingFiles embed.FS
 
 const landingCSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
@@ -30,19 +31,26 @@ func (s *Server) registerLanding(mux *http.ServeMux) {
 	if err != nil {
 		panic(err)
 	}
+	if publicEnglishContentEnabled() {
+		page = bytes.Replace(page, []byte("</nav>"), []byte(`<a href="/en/" lang="en">English</a></nav>`), 1)
+		englishPage, err := landingFiles.ReadFile("site/index.en.html")
+		if err != nil {
+			panic(err)
+		}
+		mux.HandleFunc("GET /en", func(w http.ResponseWriter, r *http.Request) {
+			http.Redirect(w, r, "/en/", http.StatusPermanentRedirect)
+		})
+		mux.HandleFunc("GET /en/{$}", func(w http.ResponseWriter, r *http.Request) {
+			writeLandingPage(w, englishPage)
+		})
+	}
 	static, err := fs.Sub(landingFiles, "site/static")
 	if err != nil {
 		panic(err)
 	}
 
 	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
-		h := w.Header()
-		h.Set("Content-Type", "text/html; charset=utf-8")
-		h.Set("X-Content-Type-Options", "nosniff")
-		h.Set("Referrer-Policy", "strict-origin-when-cross-origin")
-		h.Set("Content-Security-Policy", landingCSP)
-		h.Set("Cache-Control", "public, max-age=300, no-transform")
-		w.Write(page)
+		writeLandingPage(w, page)
 	})
 
 	mux.HandleFunc("GET /site/{file...}", func(w http.ResponseWriter, r *http.Request) {
@@ -67,4 +75,14 @@ func (s *Server) registerLanding(mux *http.ServeMux) {
 		}
 		w.Write(body)
 	})
+}
+
+func writeLandingPage(w http.ResponseWriter, page []byte) {
+	h := w.Header()
+	h.Set("Content-Type", "text/html; charset=utf-8")
+	h.Set("X-Content-Type-Options", "nosniff")
+	h.Set("Referrer-Policy", "strict-origin-when-cross-origin")
+	h.Set("Content-Security-Policy", landingCSP)
+	h.Set("Cache-Control", "public, max-age=300, no-transform")
+	_, _ = w.Write(page)
 }

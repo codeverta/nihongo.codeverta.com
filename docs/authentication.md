@@ -11,10 +11,40 @@ Profil dilindungi auth gate.
 1. Flutter mengirim email dan password ke `POST /v1/auth/login`.
 2. Backend membandingkan password dengan bcrypt hash.
 3. Backend membuat opaque random session token 256-bit.
-4. Flutter menyimpan token di SharedPreferences.
+4. Flutter menyimpan token pada Keychain/Keystore melalui secure storage;
+   token lama di SharedPreferences dipindahkan pada pemulihan sesi berikutnya.
 5. Dio mengirim `Authorization: Bearer <token>` pada request selanjutnya.
-6. Saat startup, Flutter memanggil `GET /v1/auth/me` untuk memvalidasi session.
-7. Logout memanggil backend untuk mencabut token lalu membersihkan storage lokal.
+6. Startup menampilkan profil akun tersimpan saat jaringan gagal, lalu mencoba
+   memvalidasi sesi melalui `GET /v1/auth/me`. Jawaban jaringan atau HTTP 5xx
+   mempertahankan sesi; HTTP 401 yang menandakan token dicabut menghapus token.
+7. Logout memanggil backend untuk mencabut token lalu membersihkan storage lokal
+   milik akun, termasuk profil cache dan bukti akses offline.
+
+### Pemulihan akun dan akses premium offline
+
+Profil akun terakhir disimpan untuk memulihkan identitas saat aplikasi dibuka
+tanpa jaringan. Profil cache tidak menyimpan entitlement. Materi premium offline
+memerlukan bukti Ed25519 dari backend yang terikat pada ID akun dan
+berlaku 30 hari sejak verifikasi Google Play/App Store terakhir yang berhasil.
+Server tidak memperpanjang bukti dari flag akun lama; lease baru diterbitkan
+hanya setelah purchase aktif diverifikasi store. Jawaban billing yang berhasil
+menegaskan status free atau refund menghapus lease lokal. Jika server/store
+sementara gagal, aplikasi mempertahankan lease yang telah terverifikasi sampai
+expiry.
+
+Jalankan `go run ./cmd/offline-keys` dari folder `backend` untuk membuat atau
+menggunakan kembali key stabil. Helper menyimpan private Ed25519 key dan
+practice HMAC secret di `backend/secrets/`, tidak pernah mencetak nilainya,
+serta menampilkan public pin dan path konfigurasi. Simpan path private pada
+`backend/.env` dan public pin pada `OFFLINE_ACCESS_PUBLIC_KEY`. Build Flutter
+menerima public pin melalui `--dart-define=OFFLINE_ACCESS_PUBLIC_KEY=<base64>`.
+Launcher `dart run.dart` meneruskan public pin dari environment atau
+`backend/.env`; CI release Android/iOS memakai variable public yang sama.
+Tanpa key server atau public pin yang cocok, offline premium ditolak dengan
+aman. Rotasi key memerlukan build aplikasi yang mem-pin public key baru.
+
+Rincian klaim lease dan konfigurasi deployment ada di
+[panduan offline access](offline-access.md).
 
 Demo development account:
 
@@ -335,6 +365,5 @@ terkunci di perangkat.
 - Tambahkan rate limit untuk endpoint login dan Google exchange.
 - Tambahkan account registration, email verification, reset password, dan MFA.
 - Pindahkan demo password dari seed source.
-- Simpan mobile token pada secure storage/Keychain/Keystore, bukan
-  SharedPreferences, sebelum release production.
+- Mobile session token saat ini disimpan pada secure storage/Keychain/Keystore.
 - Rotasi session setelah perubahan password atau security event.

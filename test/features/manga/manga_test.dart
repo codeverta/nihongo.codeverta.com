@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/manga/data/manga_repository.dart';
 import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
 
@@ -86,33 +87,67 @@ class _Repository extends MangaRepository {
   }
 }
 
-Widget _app(_Repository repository, {String location = '/manga'}) =>
-    ProviderScope(
-      overrides: [mangaRepositoryProvider.overrideWithValue(repository)],
-      child: MaterialApp.router(
-        routerConfig: GoRouter(
-          initialLocation: location,
-          routes: [
-            GoRoute(
-              path: '/manga',
-              builder: (_, __) => const MangaCatalogScreen(),
-            ),
-            GoRoute(
-              path: '/manga/chapters/:id',
-              builder: (_, state) =>
-                  MangaReaderScreen(id: state.pathParameters['id']!),
-            ),
-            GoRoute(
-              path: '/manga/:id',
-              builder: (_, state) =>
-                  MangaDetailScreen(id: state.pathParameters['id']!),
-            ),
-          ],
+Widget _app(
+  _Repository repository, {
+  String location = '/manga',
+  Locale locale = const Locale('id'),
+}) => ProviderScope(
+  overrides: [mangaRepositoryProvider.overrideWithValue(repository)],
+  child: MaterialApp.router(
+    locale: locale,
+    supportedLocales: AppLocalizations.supportedLocales,
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    routerConfig: GoRouter(
+      initialLocation: location,
+      routes: [
+        GoRoute(path: '/manga', builder: (_, __) => const MangaCatalogScreen()),
+        GoRoute(
+          path: '/manga/chapters/:id',
+          builder: (_, state) =>
+              MangaReaderScreen(id: state.pathParameters['id']!),
         ),
-      ),
-    );
+        GoRoute(
+          path: '/manga/:id',
+          builder: (_, state) =>
+              MangaDetailScreen(id: state.pathParameters['id']!),
+        ),
+      ],
+    ),
+  ),
+);
 
 void main() {
+  testWidgets('manga catalog localizes controls and empty state', (
+    tester,
+  ) async {
+    final repository = _Repository();
+    await tester.pumpWidget(_app(repository, locale: const Locale('en')));
+    await tester.pumpAndSettle();
+    expect(find.text('Japanese Manga'), findsOneWidget);
+    expect(
+      find.text('Great stories.\nIn the original language.'),
+      findsOneWidget,
+    );
+    await tester.enterText(find.byKey(const Key('manga-search')), 'unknown');
+    await tester.testTextInput.receiveAction(TextInputAction.search);
+    await tester.pumpAndSettle();
+    expect(find.text('No manga found'), findsOneWidget);
+    expect(
+      find.text(
+        'Curated titles will appear here. Try refreshing in a little while.',
+      ),
+      findsOneWidget,
+    );
+    await tester.pumpWidget(
+      _app(repository, location: '/manga/one', locale: const Locale('en')),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('物語'), findsOneWidget);
+    expect(find.text('日本語の物語です。'), findsOneWidget);
+    expect(find.text('About this story'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets(
     'catalog on a small phone filters stored results and resets pagination',
     (tester) async {

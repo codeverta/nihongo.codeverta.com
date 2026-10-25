@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/jobs/data/jobs_repository.dart';
 import 'package:nihongo_master/features/jobs/domain/job_models.dart';
 import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
@@ -80,6 +81,41 @@ class _Repository extends JobsRepository {
 }
 
 void main() {
+  testWidgets('job search and filters use English app labels', (tester) async {
+    final repository = _Repository();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [jobsRepositoryProvider.overrideWithValue(repository)],
+        child: const MaterialApp(
+          locale: Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          home: JobsScreen(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Work in Japan'), findsOneWidget);
+    expect(find.text('Care worker one'), findsOneWidget);
+    expect(find.byTooltip('Filter jobs'), findsOneWidget);
+    await tester.tap(find.byTooltip('Filter jobs'));
+    await tester.pumpAndSettle();
+    expect(find.text('Find the right fit'), findsOneWidget);
+    expect(find.text('Job category'), findsOneWidget);
+    expect(find.text('Minimum salary (JPY)'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Show jobs'),
+      180,
+      scrollable: find
+          .descendant(
+            of: find.byType(ListView).last,
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
+    expect(find.text('Show jobs'), findsOneWidget);
+  });
+
   testWidgets('late response cannot replace newer search results', (
     tester,
   ) async {

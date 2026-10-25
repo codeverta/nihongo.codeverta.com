@@ -27,6 +27,27 @@ void main() {
       );
     });
 
+    test(
+      'uses the last matching kana anchor when kanji reading contains it',
+      () {
+        expect(
+          alignJapaneseRuby(
+            '友達と学校へ行きます。',
+            'ともだちとがっこうへいきます。',
+          ).map((s) => (s.base, s.ruby)),
+          [
+            ('友達', 'ともだち'),
+            ('と', ''),
+            ('学校', 'がっこう'),
+            ('へ', ''),
+            ('行', 'い'),
+            ('きます', ''),
+            ('。', ''),
+          ],
+        );
+      },
+    );
+
     test('uses the full reading for an all-kanji word', () {
       expect(alignJapaneseRuby('学校', 'がっこう').map((s) => (s.base, s.ruby)), [
         ('学校', 'がっこう'),

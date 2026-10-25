@@ -1,0 +1,1269 @@
+{
+  "modules": [
+    {
+      "description": "Original practice material for truck drivers: vehicle inspections and transport instructions, cargo handling, and trip communications. The official work scope includes commercial freight transport and related duties; detailed procedures follow company rules and the person in charge.",
+      "id": "truck",
+      "lessons": [
+        {
+          "caution": "Do not ignore a fault indicator or handle equipment without authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A checklist supports regular checks, but problems must still be reported and handled by authorized personnel.",
+              "kind": "knowledge",
+              "options": [
+                "To check the vehicle's condition and report problems before the trip",
+                "So there is no need to read the load instructions",
+                "To replace a workshop inspection",
+                "So the schedule can be changed without authorization"
+              ],
+              "prompt": "Why do drivers use a checklist before operating a truck?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A warning may indicate a condition that needs assessment. The driver must report the facts and follow the person in charge's decision.",
+              "kind": "case",
+              "options": [
+                "Depart slowly without telling anyone",
+                "Turn off the panel and ignore it",
+                "Report the sign and wait for inspection instructions",
+                "Cover it with a label"
+              ],
+              "prompt": "A warning light comes on during inspection, and departure time is near. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the destination and trip instructions → Inspect the truck using the work checklist → Record and report anything abnormal → Confirm the vehicle is ready as directed by the person in charge.",
+              "kind": "workflow",
+              "options": [
+                "Read the destination and trip instructions",
+                "Inspect the truck using the work checklist",
+                "Record and report any abnormal signs",
+                "Confirm the vehicle is ready as directed by the person in charge"
+              ],
+              "prompt": "In the “Trip preparation and truck inspection” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "出発前に車両を点検します。",
+              "meaning": "I am inspecting the vehicle before departure.",
+              "reading": "しゅっぱつまえにしゃりょうをてんけんします。"
+            },
+            {
+              "japanese": "警告灯がついています。確認をお願いします。",
+              "meaning": "A warning light is on. Please inspect it.",
+              "reading": "けいこくとうがついています。かくにんをおねがいします。"
+            }
+          ],
+          "id": "road-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan pemeriksaan dasar truk sebelum dan sesudah perjalanan sesuai daftar perusahaan.",
+            "Melaporkan tanda yang tidak normal sebelum kendaraan digunakan.",
+            "Memahami instruksi kerja sederhana dalam bahasa Jepang."
+          ],
+          "response": "Hold departure, record which warning light is on, and report it to the dispatcher immediately. Follow the inspection decision; do not clear the warning yourself.",
+          "scenario": "Before departure, a warning light comes on and the scheduled start time is near.",
+          "sections": [
+            {
+              "body": "Drivers start a shift by reviewing destinations, schedules, cargo type, and dispatcher messages. Inspect the vehicle using the company checklist: check the exterior, lights, tires, windows, cargo doors, and dashboard warning indicators. These checks help identify problems early; this practice checklist does not replace required inspections or formal training.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Carry out inspections in a safe location and follow the company's sequence. Do not open or repair vehicle components unless authorized. If there is a warning light, leak, defect, or unclear record, do not assume the vehicle is fit to drive; inform the person in charge and wait for a decision. Case: a warning light comes on during inspection. Response: record the indicator, report it to the dispatcher, and use the vehicle only after receiving approval under procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca tujuan dan instruksi perjalanan",
+            "Periksa truk menurut daftar kerja",
+            "Catat dan laporkan tanda tidak normal",
+            "Pastikan kendaraan siap menurut arahan penanggung jawab"
+          ],
+          "title": "Trip Preparation and Truck Inspection",
+          "vocabulary": [
+            {
+              "japanese": "車両",
+              "meaning": "vehicle",
+              "reading": "しゃりょう"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "警告灯",
+              "meaning": "warning light",
+              "reading": "けいこくとう"
+            },
+            {
+              "japanese": "運行管理者",
+              "meaning": "trip dispatcher",
+              "reading": "うんこうかんりしゃ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change quantities, labels, or securing methods based on a guess.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Inspection checks the actual goods against the documents so errors in destination, quantity, or handling can be identified.",
+              "kind": "knowledge",
+              "options": [
+                "The destination identity, quantity, and goods condition or markings against the documents",
+                "The truck's color only",
+                "The driver's name only",
+                "An estimated break time"
+              ],
+              "prompt": "What information must be checked before declaring a load ready?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Report the actual count, then have staff confirm whether any items were left behind or recorded incorrectly.",
+              "kind": "case",
+              "options": [
+                "Change the document to eleven without reporting it",
+                "Take a box from another order",
+                "Record the discrepancy and request confirmation before departure",
+                "Write 12 because that is the order quantity"
+              ],
+              "prompt": "The document lists 12 boxes, but only 11 are found. How should you proceed?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check goods against documents → Count and inspect the packaging → Confirm the arrangement and securing method follow instructions → Record discrepancies and obtain approval to load.",
+              "kind": "workflow",
+              "options": [
+                "Check the goods against the documents",
+                "Count and inspect the packages",
+                "Confirm the arrangement and securing method follow instructions",
+                "Record the discrepancy and request approval to load"
+              ],
+              "prompt": "In the “Truck-load receiving and securing” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "伝票では十二個です。",
+              "meaning": "The documents list twelve items.",
+              "reading": "でんぴょうではじゅうにこです。"
+            },
+            {
+              "japanese": "今は十一個です。担当者に確認します。",
+              "meaning": "There are eleven now. I will confirm with a staff member.",
+              "reading": "いまはじゅういっこです。たんとうしゃにかくにんします。"
+            }
+          ],
+          "id": "road-02",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan identitas dan jumlah barang dengan dokumen pengiriman.",
+            "Menjaga susunan serta pengamanan barang sesuai petunjuk dan kewenangan.",
+            "Menyampaikan selisih atau risiko muatan sebelum kendaraan berjalan."
+          ],
+          "response": "Do not report the load as complete. Keep the group separate, record the number found, and ask staff to confirm the missing box before the truck departs.",
+          "scenario": "The documents list 12 boxes, but only 11 boxes with the same destination label are at the loading area.",
+          "sections": [
+            {
+              "body": "Truck duties center on goods. Match the recipient name or destination number, package count, and handling labels to the documents. Arrange and secure the load according to training, vehicle limits, and company instructions so goods do not shift or fall. Documents that appear to match do not prove that the quantity and physical condition are correct.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Check package type and condition with the loading staff. Use equipment only if trained and authorized; stay out of its operating area. If the quantity differs, a fragile-item label is missing, or a strap looks loose, stop that stage and ask for correction. Case: the documents list 12 boxes, but the count is 11. Response: separate the load, record the discrepancy, and request confirmation before departure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan barang dan dokumen",
+            "Hitung serta periksa kemasan",
+            "Pastikan susunan dan pengikat sesuai arahan",
+            "Catat selisih lalu minta persetujuan muat"
+          ],
+          "title": "Receiving and Securing Truck Cargo",
+          "vocabulary": [
+            {
+              "japanese": "荷物",
+              "meaning": "cargo",
+              "reading": "にもつ"
+            },
+            {
+              "japanese": "積み込み",
+              "meaning": "loading",
+              "reading": "つみこみ"
+            },
+            {
+              "japanese": "個数",
+              "meaning": "unit count",
+              "reading": "こすう"
+            },
+            {
+              "japanese": "固定",
+              "meaning": "securing; fastening",
+              "reading": "こてい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change the destination or leave cargo without instructions and a record.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The dispatcher helps coordinate the recipient and delivery plan while keeping the information trace intact.",
+              "kind": "knowledge",
+              "options": [
+                "So changes to the destination or time are decided and recorded correctly",
+                "So the load can be left at the roadside",
+                "So the documents do not need to be completed",
+                "So the driver can change the fare on their own"
+              ],
+              "prompt": "If the delivery address cannot receive the goods, why should the driver contact the dispatcher?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not record a fictitious handover or change the destination on your own; record the actual situation and wait for instructions.",
+              "kind": "case",
+              "options": [
+                "Leave all the items by the door",
+                "Redirect the load to another customer",
+                "Secure the load, contact the dispatcher, and record the situation",
+                "Record that the goods have been received"
+              ],
+              "prompt": "The receiving warehouse is closed, and the contact has not responded. What is the appropriate first action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Identify the obstacle and stop in a safe place if needed → Communicate the trip and factual situation → Wait for a decision from the dispatcher or recipient → Record the handover result and item status.",
+              "kind": "workflow",
+              "options": [
+                "Identify the obstacle and stop in a safe place if needed",
+                "Communicate the trip and factual situation",
+                "Wait for a decision from the dispatcher or recipient",
+                "Record the handover result and item status"
+              ],
+              "prompt": "In the “Route changes, delays, and handover evidence” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "届け先が閉まっています。",
+              "meaning": "The destination is currently closed.",
+              "reading": "とどけさきがしまっています。"
+            },
+            {
+              "japanese": "安全な場所で待ち、運行管理者に連絡します。",
+              "meaning": "I will wait in a safe place and contact the dispatcher.",
+              "reading": "あんぜんなばしょでまち、うんこうかんりしゃにれんらくします。"
+            }
+          ],
+          "id": "road-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan mengapa perubahan kondisi perjalanan perlu disampaikan kepada pengatur.",
+            "Mencatat waktu, keadaan barang, dan penerima sesuai formulir perusahaan.",
+            "Menjaga komunikasi singkat dan jelas ketika tujuan belum dapat dicapai."
+          ],
+          "response": "Secure the vehicle and cargo at a suitable location, contact the dispatcher under procedure, record the time and contact attempts, then wait for a decision.",
+          "scenario": "The truck arrives, but the receiving warehouse is closed and the contact has not answered the phone.",
+          "sections": [
+            {
+              "body": "During a trip, traffic, weather, road closures, or a hard-to-find address may change the plan. The driver informs the dispatcher through the company channel so schedules and recipients can be coordinated. For goods delivery, follow the company's recipient-verification and proof-of-delivery procedures; do not leave goods elsewhere on your own decision.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Once stopped in a safe location, report the trip number, position or destination, observed problem, and any estimate that can be confirmed. Record arrival time, quantity delivered, package condition, and recipient according to procedure. Case: the destination is closed and no staff member is present. Response: secure the cargo, report the situation, and wait for instructions about redelivery or another location.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali hambatan dan berhenti di lokasi aman bila perlu",
+            "Sampaikan perjalanan dan keadaan faktual",
+            "Tunggu keputusan pengatur atau penerima",
+            "Catat hasil serah dan status barang"
+          ],
+          "title": "Route Changes, Delays, and Proof of Delivery",
+          "vocabulary": [
+            {
+              "japanese": "遅延",
+              "meaning": "delay",
+              "reading": "ちえん"
+            },
+            {
+              "japanese": "連絡",
+              "meaning": "to contact",
+              "reading": "れんらく"
+            },
+            {
+              "japanese": "届け先",
+              "meaning": "delivery address or destination",
+              "reading": "とどけさき"
+            },
+            {
+              "japanese": "受領",
+              "meaning": "receipt of goods",
+              "reading": "じゅりょう"
+            },
+            {
+              "japanese": "受領印",
+              "meaning": "stamp; proof of receipt",
+              "reading": "じゅりょういん"
+            }
+          ]
+        }
+      ],
+      "title": "Truck Operations and Load Safety"
+    },
+    {
+      "description": "Original practice material for bus drivers: vehicle preparation, departure and passenger service, and initial response to disruptions. The official scope combines passenger transport and service; actual work follows new-driver training, company rules, and service instructions.",
+      "id": "bus",
+      "lessons": [
+        {
+          "caution": "Do not assume the old schedule still applies when a new notice has been issued.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The bus operates according to the coordinated service; verify conflicting information before departure.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm the task, schedule, and current service information",
+                "Turn every stop into the driver's choice",
+                "Replace the vehicle inspection",
+                "Delete the disruption record"
+              ],
+              "prompt": "What is the main purpose of checking the route before a bus carries passengers?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The route must be confirmed by authorized staff so that service and safety are coordinated.",
+              "kind": "case",
+              "options": [
+                "Choose the route that appears shorter",
+                "Ignore the screen because the work sheet has already been printed",
+                "Obtain confirmation from operations staff before departing",
+                "Ask the passenger to choose the route"
+              ],
+              "prompt": "The terminal board shows a diversion, but the work sheet shows the old route. What is the correct response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check the route sheet and notices → Inspect the bus using the company checklist → Report discrepancies or problems → Depart after readiness is confirmed.",
+              "kind": "workflow",
+              "options": [
+                "Check the route sheet and notices",
+                "Inspect the bus using the company checklist",
+                "Communicate discrepancies or problems",
+                "Depart after readiness is confirmed"
+              ],
+              "prompt": "In the “Bus inspection and route preparation” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "表示と運行表が違います。",
+              "meaning": "The display and the operations list do not match.",
+              "reading": "ひょうじとうんこうひょうがちがいます。"
+            },
+            {
+              "japanese": "確認してから出発します。",
+              "meaning": "I will depart after confirming.",
+              "reading": "かくにんしてからしゅっぱつします。"
+            }
+          ],
+          "id": "road-04",
+          "minutes": 25,
+          "objectives": [
+            "Membaca rute, jadwal, dan informasi layanan sebelum bertugas.",
+            "Memeriksa bus menurut daftar kerja serta melaporkan kondisi tidak normal.",
+            "Membedakan tugas bus penumpang dari pengiriman barang."
+          ],
+          "response": "Do not choose one route yourself. Contact operations staff, repeat the conflicting information, and wait for a confirmed route.",
+          "scenario": "The duty sheet shows the usual route, but the terminal information screen shows a diversion.",
+          "sections": [
+            {
+              "body": "A bus carries passengers on an assigned service. Before departure, the driver reviews the route, schedule, disruption notices, and vehicle records. Pre- and post-operation checks follow the company checklist and include the door area, cabin, lights, and warning indicators. Drivers stay within their assigned duties and follow operations staff instructions.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Report vehicle problems or route discrepancies before carrying passengers. Do not change the order of stops, disable a warning system, or take a bus that has not been cleared for service. Case: a terminal notice gives a route change, but the duty sheet still shows the old route. Response: ask for confirmation and use the information that has been authorized.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa lembar rute dan pemberitahuan",
+            "Periksa bus menurut daftar perusahaan",
+            "Sampaikan perbedaan atau masalah",
+            "Berangkat setelah kesiapan dikonfirmasi"
+          ],
+          "title": "Bus Inspection and Route Preparation",
+          "vocabulary": [
+            {
+              "japanese": "路線",
+              "meaning": "route",
+              "reading": "ろせん"
+            },
+            {
+              "japanese": "時刻表",
+              "meaning": "schedule",
+              "reading": "じこくひょう"
+            },
+            {
+              "japanese": "運行",
+              "meaning": "trip operations",
+              "reading": "うんこう"
+            },
+            {
+              "japanese": "乗務員",
+              "meaning": "vehicle crew",
+              "reading": "じょうむいん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not move while a passenger is still in the doorway or not yet ready under procedure.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Before the bus moves, the driver checks boarding and alighting and the doorway area according to procedure.",
+              "kind": "knowledge",
+              "options": [
+                "After the doorway and passenger are safe according to procedure",
+                "As soon as one passenger boards",
+                "When another passenger signals",
+                "Before the door is closed"
+              ],
+              "prompt": "When should the driver continue the journey after passengers have boarded?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Waiting and checking again prevent passengers from being in danger when the bus starts moving.",
+              "kind": "case",
+              "options": [
+                "Depart slowly to save time",
+                "Close the door without checking",
+                "Wait until the condition is safe according to procedure",
+                "Ask the passenger to stand on the steps"
+              ],
+              "prompt": "A passenger is still standing near the door as the bus is about to depart. What should you do?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Stop at the designated service point → Open the door and observe boarding and alighting → Confirm the doorway is safe according to procedure → Depart and answer questions when safe.",
+              "kind": "workflow",
+              "options": [
+                "Stop at the designated service point",
+                "Open the door and observe boarding and alighting",
+                "Confirm the doorway is safe according to procedure",
+                "Depart and answer questions when it is safe"
+              ],
+              "prompt": "In the “Passenger boarding and alighting and clear assistance” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "次の停留所で降りますか。",
+              "meaning": "Will you get off at the next stop?",
+              "reading": "つぎのていりゅうじょでおりますか。"
+            },
+            {
+              "japanese": "はい、安全を確認してから出発します。",
+              "meaning": "All right. I will depart once I have confirmed it is safe.",
+              "reading": "はい、あんぜんをかくにんしてからしゅっぱつします。"
+            }
+          ],
+          "id": "road-05",
+          "minutes": 25,
+          "objectives": [
+            "Menggunakan komunikasi sopan saat penumpang bertanya tentang tujuan dan pemberhentian.",
+            "Menjaga perhatian pada naik-turun penumpang sesuai prosedur bus.",
+            "Meminta bantuan saat kebutuhan penumpang tidak dapat ditangani dengan aman."
+          ],
+          "response": "Wait until the passenger is in a safe position under procedure, watch the doorway, and depart only when it is safe.",
+          "scenario": "A passenger boards slowly and is still standing near the door when the bus is about to leave.",
+          "sections": [
+            {
+              "body": "On a bus, passenger safety matters while people wait, board, sit, and alight. Drivers stop at designated service points, follow door procedures, and check conditions before moving. Answer questions about destinations or stops in simple language. Refer special needs or unclear problems to staff who can help.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Provide information without distracting the driver while the vehicle is moving. Give passengers time to board or alight under procedure, and do not close the doors while anyone is in the doorway. If a passenger falls, becomes ill, or needs help that cannot be given while driving, stop the service safely under procedure and contact the relevant party. Case: an older passenger has not yet sat down. Response: wait until it is safe before continuing.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Berhenti di tempat layanan yang ditentukan",
+            "Buka pintu dan amati proses naik-turun",
+            "Pastikan area pintu aman menurut prosedur",
+            "Berangkat dan jawab pertanyaan saat aman"
+          ],
+          "title": "Passenger Boarding, Alighting, and Clear Assistance",
+          "vocabulary": [
+            {
+              "japanese": "乗客",
+              "meaning": "passenger",
+              "reading": "じょうきゃく"
+            },
+            {
+              "japanese": "乗車",
+              "meaning": "boarding a vehicle",
+              "reading": "じょうしゃ"
+            },
+            {
+              "japanese": "降車",
+              "meaning": "alighting from a vehicle",
+              "reading": "こうしゃ"
+            },
+            {
+              "japanese": "停留所",
+              "meaning": "bus stop",
+              "reading": "ていりゅうじょ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not promise a departure time or resume service before receiving instructions.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Clear facts help staff make decisions and prepare accurate updates.",
+              "kind": "knowledge",
+              "options": [
+                "The location, service number, visible symptoms, and passenger's condition",
+                "An unverified guess about the cause",
+                "A promise about a time that is not yet known",
+                "A comment about the passenger"
+              ],
+              "prompt": "What information is useful when reporting a bus problem?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The driver communicates confirmed information, then follows the procedure and operating instructions.",
+              "kind": "case",
+              "options": [
+                "Promise to depart in five minutes",
+                "Ignore the passenger",
+                "Report the symptoms and say that the time will be confirmed",
+                "Restart without instructions"
+              ],
+              "prompt": "The bus has stopped because of a fault warning, and a passenger asks when it will depart. What is the correct response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Make the situation safe according to procedure → Report the location and signs of the disruption → Wait for instructions from operations staff → Share confirmed updates.",
+              "kind": "workflow",
+              "options": [
+                "Make the situation safe according to procedure",
+                "Report the location and signs of the disruption",
+                "Wait for instructions from operations staff",
+                "Communicate confirmed updates"
+              ],
+              "prompt": "In the “Service disruption and bus report” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "バスが止まりました。異常を報告します。",
+              "meaning": "The bus has stopped. I am reporting a service disruption.",
+              "reading": "ばすがとまりました。いじょうをほうこくします。"
+            },
+            {
+              "japanese": "確認後にお客様へ案内します。",
+              "meaning": "I will inform the passenger once it has been confirmed.",
+              "reading": "かくにんごにおきゃくさまへあんないします。"
+            }
+          ],
+          "id": "road-06",
+          "minutes": 25,
+          "objectives": [
+            "Memberi tahu penumpang tentang perubahan yang sudah dikonfirmasi.",
+            "Melaporkan gangguan kepada petugas operasi dengan fakta yang dapat diamati.",
+            "Menjaga penumpang tetap tertib sambil menunggu arahan."
+          ],
+          "response": "Follow procedure, contact operations staff, and tell passengers that timing information will be shared once confirmed.",
+          "scenario": "The bus has stopped because a fault indicator appeared; a passenger asks when it will depart.",
+          "sections": [
+            {
+              "body": "Disruptions may include delays, a stopped vehicle, or service changes. Operations staff coordinate the service; drivers provide confirmed information and do not promise an uncertain time or route. If a situation threatens safety, follow the company's emergency procedure and staff instructions. Record the time, place, condition, and actions taken.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Use short, clear sentences. When safe, contact operations staff and provide the location, service number, symptoms, and passenger status. Do not present a guess as fact. Case: a bus stops because an indicator shows a fault, and a passenger asks when it will depart. Response: keep the situation safe, report the indicator, and explain that departure time will be announced once confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amankan keadaan sesuai prosedur",
+            "Laporkan lokasi dan tanda gangguan",
+            "Tunggu instruksi petugas operasi",
+            "Sampaikan pembaruan yang sudah dikonfirmasi"
+          ],
+          "title": "Service Disruptions and Bus Reports",
+          "vocabulary": [
+            {
+              "japanese": "遅れ",
+              "meaning": "delay",
+              "reading": "おくれ"
+            },
+            {
+              "japanese": "異常",
+              "meaning": "abnormal condition",
+              "reading": "いじょう"
+            },
+            {
+              "japanese": "案内",
+              "meaning": "information; guidance",
+              "reading": "あんない"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            }
+          ]
+        }
+      ],
+      "title": "Bus Service and Passenger Safety"
+    },
+    {
+      "description": "Original practice material for taxi drivers: vehicle preparation, pickup and destination confirmation, passenger service, and trip reports. The official scope combines passenger transport and service; fare, payment, navigation, and emergency procedures follow company rules and training.",
+      "id": "taxi",
+      "lessons": [
+        {
+          "caution": "Do not assume the address on the screen is correct if the passenger gives another destination.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Repeating the destination prevents a wrong address and gives the passenger a chance to correct it.",
+              "kind": "knowledge",
+              "options": [
+                "To ensure both parties understand the same destination",
+                "To choose a farther destination",
+                "To change the order without authorization",
+                "To avoid recordkeeping"
+              ],
+              "prompt": "Why does a driver repeat the destination to a passenger?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Clarifying before departure prevents the wrong destination or an unagreed trip.",
+              "kind": "case",
+              "options": [
+                "Choose the address on the screen without asking",
+                "Choose the address that is easier to reach",
+                "Repeat both pieces of information and ask the passenger to confirm",
+                "Start driving while trying to find out"
+              ],
+              "prompt": "The address on the screen differs from the destination named by the passenger. What is the best action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the booking information → Greet the passenger and confirm the destination → Repeat the destination and any special needs → Start the trip after the information is understood.",
+              "kind": "workflow",
+              "options": [
+                "Read the booking information",
+                "Greet the passenger and confirm the destination",
+                "Repeat the destination and any special needs",
+                "Start the trip after the information is understood"
+              ],
+              "prompt": "In the “Taxi pickup and destination confirmation” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "目的地は駅の北口ですね。",
+              "meaning": "The destination is the station's north exit, correct?",
+              "reading": "もくてきちはえきのきたぐちですね。"
+            },
+            {
+              "japanese": "はい。確認してから出発します。",
+              "meaning": "Yes. I will depart after confirming.",
+              "reading": "はい。かくにんしてからしゅっぱつします。"
+            }
+          ],
+          "id": "road-07",
+          "minutes": 25,
+          "objectives": [
+            "Memastikan identitas pesanan dan tujuan dengan cara yang sopan.",
+            "Mengulang informasi tujuan untuk mengurangi salah paham.",
+            "Mengikuti kebijakan perusahaan saat informasi penumpang belum jelas."
+          ],
+          "response": "Repeat the address shown on the screen and the one the passenger gave, then ask them to confirm the correct destination before departure.",
+          "scenario": "The order screen shows one address, but the passenger gives a different one.",
+          "sections": [
+            {
+              "body": "Taxis provide passenger trips on request or by booking. Before starting, check the booking information you are authorized to verify: the name or booking identifier, pickup point, and destination. Ask clearly for the destination and repeat it back. If the passenger wants to change the destination, make sure the change is understood and follow company procedures for fares and records.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Protect passenger privacy and avoid saying personal information aloud in public. If the name, location, or destination differs, do not guess; confirm with the passenger or service center. Case: the app shows a different address from the one the passenger gives. Response: repeat both addresses and ask the passenger to confirm before starting the trip.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca informasi pemesanan",
+            "Sapa penumpang dan konfirmasi tujuan",
+            "Ulangi tujuan dan kebutuhan khusus",
+            "Mulai perjalanan setelah informasi dipahami"
+          ],
+          "title": "Taxi Pickup and Destination Confirmation",
+          "vocabulary": [
+            {
+              "japanese": "予約",
+              "meaning": "booking; reservation",
+              "reading": "よやく"
+            },
+            {
+              "japanese": "迎え",
+              "meaning": "pickup",
+              "reading": "むかえ"
+            },
+            {
+              "japanese": "目的地",
+              "meaning": "destination",
+              "reading": "もくてきち"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "to confirm; to make sure",
+              "reading": "かくにん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not look at or type on a device when your attention must be on the road.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The driver must remain focused on operating the vehicle; use devices safely according to procedure.",
+              "kind": "knowledge",
+              "options": [
+                "Use it only when safe and follow company procedure",
+                "Type while the vehicle is moving",
+                "Let the passenger change the device",
+                "Skip the inspection if the screen is slow"
+              ],
+              "prompt": "What is the safe principle when using navigation or a payment device?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Confirm the status to prevent duplicate charges or incorrect records.",
+              "kind": "case",
+              "options": [
+                "Say it has been paid without checking",
+                "Charge the same amount again",
+                "Check the status according to procedure and ask for help if it is unclear",
+                "Delete the transaction on the device"
+              ],
+              "prompt": "The payment terminal has not displayed a result, but a passenger asks whether the transaction is complete. What should you do?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Listen to the passenger's request when safe → Confirm the agreed route or service → Use navigation without distraction → Complete payment and transaction records according to procedure.",
+              "kind": "workflow",
+              "options": [
+                "Listen to the passenger's request when it is safe",
+                "Confirm the agreed route or service",
+                "Use navigation without becoming distracted",
+                "Complete payment and the transaction record according to procedure"
+              ],
+              "prompt": "In the “Taxi trip service and payment” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お支払いを確認します。",
+              "meaning": "I will confirm the payment.",
+              "reading": "おしはらいをかくにんします。"
+            },
+            {
+              "japanese": "領収書をお願いします。",
+              "meaning": "May I have the receipt, please?",
+              "reading": "りょうしゅうしょをおねがいします。"
+            }
+          ],
+          "id": "road-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan informasi layanan dengan kata-kata sederhana dan sopan.",
+            "Mengikuti prosedur perusahaan untuk rute, tarif, dan pembayaran.",
+            "Menyerahkan pertanyaan yang tidak dapat dipastikan kepada petugas yang tepat."
+          ],
+          "response": "Check the transaction status under company procedure, explain that you are confirming it, and contact staff if the result remains unclear.",
+          "scenario": "After the trip, the payment terminal shows no confirmation, and the passenger asks whether payment went through.",
+          "sections": [
+            {
+              "body": "Taxi drivers perform driving duties and passenger service. Make sure passengers can hear explanations about the destination or route options. Use navigation equipment according to company rules and keep your attention on the road. Handle fares, payments, and receipts using the local equipment and procedures; do not promise an unrecorded fare or change it yourself.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "If a passenger requests a particular route, listen when it is safe and repeat the request. If the navigation system and the passenger's directions differ, stop in a safe place if necessary to clarify. For payment-terminal problems, follow procedure and contact the service center. Case: the payment terminal does not respond. Response: explain briefly, do not attempt the charge again without checking, and request assistance under procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan permintaan penumpang saat aman",
+            "Pastikan rute atau layanan yang disepakati",
+            "Jalankan navigasi tanpa mengalihkan perhatian",
+            "Selesaikan pembayaran dan bukti transaksi sesuai prosedur"
+          ],
+          "title": "Taxi Service and Payment",
+          "vocabulary": [
+            {
+              "japanese": "運賃",
+              "meaning": "trip fare",
+              "reading": "うんちん"
+            },
+            {
+              "japanese": "支払い",
+              "meaning": "payment",
+              "reading": "しはらい"
+            },
+            {
+              "japanese": "領収書",
+              "meaning": "receipt; proof of delivery",
+              "reading": "りょうしゅうしょ"
+            },
+            {
+              "japanese": "経路",
+              "meaning": "route",
+              "reading": "けいろ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not promise a diagnosis or leave a passenger without appropriate guidance.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Responders need the location and observable facts to decide what to do next.",
+              "kind": "knowledge",
+              "options": [
+                "The vehicle location and visible condition",
+                "An unconfirmed suspected diagnosis",
+                "Personal information to an unrelated person",
+                "An opinion about the cause of the illness"
+              ],
+              "prompt": "What initial information should be given when requesting help for an ill passenger?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Safety comes first; the driver stops safely and requests appropriate assistance instead of making a diagnosis.",
+              "kind": "case",
+              "options": [
+                "Continue the trip without asking",
+                "Ask the passenger to get off at the roadside",
+                "Stop safely if possible and request assistance according to procedure",
+                "Give personal medication without instructions"
+              ],
+              "prompt": "A passenger suddenly feels dizzy and asks to stop. What is the most appropriate response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Listen and identify the problem → Move the vehicle to a safe state if needed → Contact the appropriate staff or service according to procedure → Record and hand over important information.",
+              "kind": "workflow",
+              "options": [
+                "Listen and identify the problem",
+                "Move the vehicle to a safe state if needed",
+                "Contact the staff member or service specified by procedure",
+                "Record and hand over important information"
+              ],
+              "prompt": "In the “Passenger needs and urgent situations” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "気分が悪いです。",
+              "meaning": "I am feeling unwell.",
+              "reading": "きぶんがわるいです。"
+            },
+            {
+              "japanese": "安全な場所に止めます。助けを呼びますか。",
+              "meaning": "I will stop in a safe place. Do you need assistance?",
+              "reading": "あんぜんなばしょにとめます。たすけをよびますか。"
+            }
+          ],
+          "id": "road-09",
+          "minutes": 25,
+          "objectives": [
+            "Mendengar permintaan penumpang tanpa menjanjikan bantuan yang belum dipastikan.",
+            "Mengambil langkah awal yang aman dan menghubungi petugas saat terjadi keadaan mendesak.",
+            "Menjaga kerahasiaan informasi penumpang."
+          ],
+          "response": "Stop the vehicle in a safe place if possible, ask what help is needed, and contact the party specified by company procedure.",
+          "scenario": "A passenger suddenly says they feel dizzy and asks the vehicle to stop.",
+          "sections": [
+            {
+              "body": "Passengers may need help because they feel ill, have left an item behind, or cannot understand information. Drivers speak calmly, assess whether the vehicle can stop in a safe place, and follow company guidance. In an emergency, contact the designated service or staff member; drivers do not replace medical professionals or attempt assistance beyond their abilities.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Ask about needs in simple sentences. If a passenger becomes ill or there is danger, stop the vehicle in a safe place for the circumstances, contact the authorized party, and report the location and observable condition. Do not publicize the passenger's identity or condition. Case: a passenger suddenly complains of dizziness. Response: stop safely if possible, ask whether help is needed, and contact the designated party promptly under procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan dan kenali masalah",
+            "Pindahkan kendaraan ke keadaan aman jika diperlukan",
+            "Hubungi petugas atau layanan sesuai prosedur",
+            "Catat serta serahkan informasi penting"
+          ],
+          "title": "Passenger Needs and Urgent Situations",
+          "vocabulary": [
+            {
+              "japanese": "体調",
+              "meaning": "physical condition",
+              "reading": "たいちょう"
+            },
+            {
+              "japanese": "気分",
+              "meaning": "feeling; physical condition",
+              "reading": "きぶん"
+            },
+            {
+              "japanese": "救急",
+              "meaning": "emergency assistance",
+              "reading": "きゅうきゅう"
+            },
+            {
+              "japanese": "忘れ物",
+              "meaning": "item left behind",
+              "reading": "わすれもの"
+            }
+          ]
+        }
+      ],
+      "title": "Taxi Service and Customer Communication"
+    },
+    {
+      "description": "Cross-vehicle practice on driver health, work records, and status handover. Drivers must work under company rules, training, and supervision; this material does not replace licensing or driver training.",
+      "id": "shared",
+      "lessons": [
+        {
+          "caution": "Do not mark a delivery or service as complete while goods or issues remain outstanding.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Factual records maintain continuity and prevent inaccurate completion reports.",
+              "kind": "knowledge",
+              "options": [
+                "So pending goods or issues can be followed up",
+                "So all trip types use the same form",
+                "So unfinished work is not visible",
+                "So the driver can change the schedule"
+              ],
+              "prompt": "Why must the post-trip record show the actual status?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The package status must remain traceable until the person in charge decides the next shipment step.",
+              "kind": "case",
+              "options": [
+                "Record that all goods have been received",
+                "Remove the package from the list",
+                "Record it as undelivered and pass along its status",
+                "Put it in another vehicle without authorization"
+              ],
+              "prompt": "A package has not been handed over because the recipient was absent. What should the record correctly state?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check completed and pending tasks → Inspect the vehicle after operation → Complete the record for the service type → Hand over the status to the person in charge.",
+              "kind": "workflow",
+              "options": [
+                "Check completed and pending tasks",
+                "Inspect the vehicle after operation",
+                "Complete the record according to the service type",
+                "Hand the status over to the person in charge"
+              ],
+              "prompt": "In the “Completing a trip and vehicle records” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この荷物は未配達です。",
+              "meaning": "This item has not been delivered.",
+              "reading": "このにもつはみはいたつです。"
+            },
+            {
+              "japanese": "記録して担当者に引き継ぎます。",
+              "meaning": "I will record it and hand it over to the staff member.",
+              "reading": "きろくしてたんとうしゃにひきつぎます。"
+            }
+          ],
+          "id": "road-10",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat hasil pekerjaan setelah perjalanan dengan data yang dapat dibuktikan.",
+            "Memeriksa keadaan kendaraan kembali dan meneruskan temuan.",
+            "Membedakan bukti serah barang dengan catatan layanan penumpang."
+          ],
+          "response": "Record the package as undelivered, use an approved storage location, and give the status to the dispatcher for rescheduling.",
+          "scenario": "One package could not be delivered because the recipient was unavailable.",
+          "sections": [
+            {
+              "body": "After a trip, truck drivers record goods status and handover; bus and taxi drivers record trip and passenger matters using their respective forms. Drivers also carry out post-operation checks using the applicable checklist. Records of time, distance, problems, damage, and outstanding items help the person in charge of the next shift.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Complete the record close to the time of the event and use facts: what happened, when and where it happened, and what action was taken. Do not use a signature or proof of receipt that was not actually received. Case: on a truck assignment, one package remains in the vehicle because the recipient is unavailable. Response: mark it as undelivered, note the approved temporary storage location, and hand over the information.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa tugas yang selesai dan yang tertunda",
+            "Periksa kendaraan setelah operasi",
+            "Isi catatan sesuai jenis layanan",
+            "Serahkan status kepada penanggung jawab"
+          ],
+          "title": "End-of-Trip Procedures and Vehicle Records",
+          "vocabulary": [
+            {
+              "japanese": "乗務記録",
+              "meaning": "trip record; duty record",
+              "reading": "じょうむきろく"
+            },
+            {
+              "japanese": "未配達",
+              "meaning": "undelivered",
+              "reading": "みはいたつ"
+            },
+            {
+              "japanese": "点呼",
+              "meaning": "work checks and communication",
+              "reading": "てんこ"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        },
+        {
+          "caution": "If you feel unsafe, do not rely on coffee or your own estimate to keep driving.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Unsafe conditions must be reported so the dispatcher can arrange an appropriate response.",
+              "kind": "knowledge",
+              "options": [
+                "Stop safely, notify the dispatcher, and follow instructions",
+                "Hide the condition and stick to the schedule",
+                "Ask the passenger to drive",
+                "Ignore the symptoms until the shift ends"
+              ],
+              "prompt": "What should a driver do if they feel it is unsafe to continue?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Reducing risk means not forcing the task and coordinating through the applicable procedure.",
+              "kind": "case",
+              "options": [
+                "Increase the speed to finish sooner",
+                "Open the window and keep driving without reporting the problem",
+                "Stop safely and contact the dispatcher for instructions",
+                "Turn off the trip record"
+              ],
+              "prompt": "A driver becomes sleepy before finishing the route. What should they do?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check physical condition and alertness → Stop the activity safely if needed → Contact the dispatcher and explain the situation → Follow the authorized rest or replacement plan.",
+              "kind": "workflow",
+              "options": [
+                "Check physical condition and alertness",
+                "Stop the activity safely if necessary",
+                "Contact the dispatcher and explain the situation",
+                "Follow the authorized rest or replacement plan"
+              ],
+              "prompt": "In the “Fatigue, impaired attention, and reporting” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "眠くて、安全に運転できません。",
+              "meaning": "I am drowsy and cannot drive safely.",
+              "reading": "ねむくて、あんぜんにうんてんできません。"
+            },
+            {
+              "japanese": "安全な場所で止まり、運行管理者に連絡します。",
+              "meaning": "I will stop in a safe place and contact the dispatcher.",
+              "reading": "あんぜんなばしょでとまり、うんこうかんりしゃにれんらくします。"
+            }
+          ],
+          "id": "road-11",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali keadaan diri yang dapat mengganggu perhatian saat mengemudi.",
+            "Menghubungi pengatur jika tidak aman melanjutkan tugas.",
+            "Mengikuti aturan istirahat dan kesehatan kerja yang berlaku di perusahaan."
+          ],
+          "response": "Find a safe way to stop for the situation, contact the dispatcher, and follow directions about resting or changing drivers before continuing.",
+          "scenario": "The driver feels drowsy with part of the route still remaining.",
+          "sections": [
+            {
+              "body": "Fatigue, illness, strong emotions, or distraction can affect driving. Drivers monitor their own condition and follow the established schedule and rest procedures. A personal estimate cannot replace work rules or medical advice. The safety of passengers, goods, and other road users must come first.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "If you become drowsy or feel your condition worsening, do not hide it to keep to the schedule. Stop or request assistance only in a safe way and at an appropriate location; contact the dispatcher and follow instructions. Case: your eyes feel heavy before the route is complete. Response: report your condition and safe location, then ask whether to rest or arrange a replacement.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Perhatikan kondisi tubuh dan perhatian",
+            "Hentikan kegiatan dengan cara aman bila perlu",
+            "Hubungi pengatur dan sampaikan keadaan",
+            "Ikuti rencana istirahat atau penggantian yang disahkan"
+          ],
+          "title": "Fatigue, Distracted Attention, and Reporting",
+          "vocabulary": [
+            {
+              "japanese": "疲れ",
+              "meaning": "fatigue",
+              "reading": "つかれ"
+            },
+            {
+              "japanese": "休憩",
+              "meaning": "rest",
+              "reading": "きゅうけい"
+            },
+            {
+              "japanese": "健康",
+              "meaning": "health",
+              "reading": "けんこう"
+            },
+            {
+              "japanese": "安全",
+              "meaning": "safety",
+              "reading": "あんぜん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not take on a vehicle category or duty that has not been assigned to you.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Vehicle types have different primary tasks and require appropriate assignments and qualifications.",
+              "kind": "knowledge",
+              "options": [
+                "Truck—goods and cargo; bus—passengers on a route; taxi—passengers with a confirmed destination",
+                "Truck—stop announcements; bus—load evidence; taxi—warehouse storage",
+                "All tasks are the same and licenses are interchangeable",
+                "Buses carry goods only"
+              ],
+              "prompt": "Which task and primary focus pairing is correct?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The person in charge must resolve any mismatch between the vehicle and task before the trip begins.",
+              "kind": "case",
+              "options": [
+                "Use the truck because it is available",
+                "Ask the passenger to choose a vehicle",
+                "Hold the departure and ask the person in charge to confirm the assignment",
+                "Change the schedule on your own"
+              ],
+              "prompt": "The schedule is for a bus, but the vehicle handed over is a truck. What is the best action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the vehicle type and task on the schedule → Match the assignment to the vehicle and the worker's competence → Report discrepancies to the person in charge → Start after the task is confirmed.",
+              "kind": "workflow",
+              "options": [
+                "Read the vehicle type and task on the schedule",
+                "Match the assignment to the vehicle and the worker's competence",
+                "Report the discrepancy to the person in charge",
+                "Start after the task is confirmed"
+              ],
+              "prompt": "In the “Choosing a task for the vehicle type” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "予定はバスですが、これはトラックです。",
+              "meaning": "The schedule says bus, but this is a truck.",
+              "reading": "よていはばすですが、これはとらっくです。"
+            },
+            {
+              "japanese": "担当者に確認してから出発します。",
+              "meaning": "I will depart after confirming with the person in charge.",
+              "reading": "たんとうしゃにかくにんしてからしゅっぱつします。"
+            }
+          ],
+          "id": "road-12",
+          "minutes": 25,
+          "objectives": [
+            "Membedakan fokus pekerjaan truk, bus, dan taksi.",
+            "Mengarahkan pertanyaan tentang tugas di luar peran kepada penanggung jawab.",
+            "Menggunakan istilah kerja sederhana saat serah terima."
+          ],
+          "response": "Do not depart. Show the discrepancy to the dispatcher, ask them to match the assignment with the vehicle, and reconfirm before starting work.",
+          "scenario": "The schedule shows bus service, but the vehicle and keys handed over are for a truck.",
+          "sections": [
+            {
+              "body": "All three vehicle groups require safe operation and communication, but their main duties differ. Trucks carry goods and handle cargo and proof of delivery. Buses carry passengers on scheduled services and routes. Taxis provide passenger trips on request, with destination and service confirmation. Licensing and training requirements also differ by category.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Review the schedule and assignment before your shift. Ask for a correction if the vehicle name or service type does not match your competence and license. Experience with one vehicle type does not automatically authorize you to operate another. Case: the duty list says bus, but the keys and instructions are for a truck. Response: hold departure and ask the person in charge to correct the assignment.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca jenis kendaraan dan tugas pada jadwal",
+            "Cocokkan penugasan dengan kendaraan dan kompetensi",
+            "Laporkan perbedaan kepada penanggung jawab",
+            "Mulai setelah tugas dikonfirmasi"
+          ],
+          "title": "Choosing Duties for Each Vehicle Type",
+          "vocabulary": [
+            {
+              "japanese": "トラック",
+              "meaning": "truck",
+              "reading": "とらっく"
+            },
+            {
+              "japanese": "バス",
+              "meaning": "bus",
+              "reading": "ばす"
+            },
+            {
+              "japanese": "タクシー",
+              "meaning": "taxi",
+              "reading": "たくしー"
+            },
+            {
+              "japanese": "担当",
+              "meaning": "duty; person in charge",
+              "reading": "たんとう"
+            }
+          ]
+        }
+      ],
+      "title": "Occupational Health, Records, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "出入国在留管理庁 — Job descriptions for each Specified Skilled Worker (i) sector",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "出入国在留管理庁 — Motor Vehicle Transportation Sector",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/automobiletransportation.html"
+    },
+    {
+      "title": "国土交通省 — Accepting Specified Skilled Workers in the Motor Vehicle Transportation Sector",
+      "url": "https://www.mlit.go.jp/jidosha/jidosha_tk1_000038.html"
+    },
+    {
+      "title": "国土交通省 — Implementation Guidelines for the Specified Skilled Worker (i) Evaluation Test in the Motor Vehicle Transportation Sector",
+      "url": "https://www.mlit.go.jp/jidosha/content/001851696.pdf"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,1272 @@
+{
+  "modules": [
+    {
+      "description": "Read the work plan, assess site conditions, and confirm communication, personal protection, and task limits before working in the forest.",
+      "id": "site",
+      "lessons": [
+        {
+          "caution": "Do not enter the work site alone or move to another area without telling the crew.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "When everyone understands the location and communications plan, the crew can work and request help quickly.",
+              "kind": "knowledge",
+              "options": [
+                "The location, task, route, and how to contact assistance",
+                "Only the number of tools being carried",
+                "Where the worker parked their personal vehicle",
+                "An estimate of today's timber output"
+              ],
+              "prompt": "What must be confirmed before a crew enters a forest worksite?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The communication failure makes contact uncertain; do not enter until the supervisor decides what to do.",
+              "kind": "case",
+              "options": [
+                "Do not enter the site. Check the equipment as instructed and report the communication problem so a reliable contact method can be confirmed.",
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "Workplace scenario: A worker receives a map with a new work point, but the radio cannot connect to the supervisor. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Read or listen to today's work plan → Confirm the location, task, and entry and exit routes → Check communication equipment and emergency contacts → Repeat any unclear instructions before departure.",
+              "kind": "workflow",
+              "options": [
+                "Read or listen to today's work plan",
+                "Check communication equipment and emergency contacts",
+                "Repeat any unclear instructions before departure",
+                "Confirm the location, task, and entry and exit routes"
+              ],
+              "prompt": "In the workflow “Work plan, location, and emergency communication,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "今日の作業場所をもう一度教えてください。",
+              "meaning": "Please tell me today's work location again.",
+              "reading": "きょうのさぎょうばしょをもういちどおしえてください。"
+            },
+            {
+              "japanese": "無線がつながりません。責任者に報告します。",
+              "meaning": "The radio is not connecting. I will report it to the person in charge.",
+              "reading": "むせんがつながりません。せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "fo-01",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa lokasi kerja, tugas, rute, kondisi cuaca, dan cara meminta bantuan sebelum masuk ke area hutan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not enter the site. Check the equipment as instructed and report the communication problem so a contact route can be confirmed.",
+          "scenario": "A worker receives a map showing a new work point, but the radio cannot connect to the leader.",
+          "sections": [
+            {
+              "body": "Forestry includes forest maintenance and timber production, and daily tasks vary by site and plan. The crew must know the work location, exit routes, how to contact the leader, and where to assemble in an emergency. Weather, terrain, and distance from roads can change conditions; workers must not change routes or tasks on their own.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before departure, listen to the instructions, repeat the location and task, check communication equipment, and confirm the contact person. Tell the crew if a radio battery is low or a route is impassable. If the weather worsens or the plan is unclear, stop preparations and ask for confirmation.\n\nPractice scenario: A worker receives a map with a new work point, but the radio cannot connect to the leader.\nSuggested response: Do not enter the site. Check the equipment as instructed and report the communication problem so a contact route can be confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca atau dengarkan rencana kerja hari ini",
+            "Pastikan lokasi, tugas, dan rute masuk-keluar",
+            "Periksa alat komunikasi dan kontak darurat",
+            "Ulangi instruksi yang belum dipahami sebelum berangkat"
+          ],
+          "title": "Work Plans, Locations, and Emergency Communication",
+          "vocabulary": [
+            {
+              "japanese": "作業計画",
+              "meaning": "work plan",
+              "reading": "さぎょうけいかく"
+            },
+            {
+              "japanese": "現場",
+              "meaning": "worksite",
+              "reading": "げんば"
+            },
+            {
+              "japanese": "連絡",
+              "meaning": "communication",
+              "reading": "れんらく"
+            },
+            {
+              "japanese": "退避場所",
+              "meaning": "evacuation point",
+              "reading": "たいひばしょ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not walk beneath hanging branches or cross a slope that has been judged unsafe.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Ground and branch conditions can change; reassess the hazards and use an approved route.",
+              "kind": "knowledge",
+              "options": [
+                "Reassess the hazards and report them before using the route",
+                "Use the route anyway because it was safe yesterday",
+                "Run quickly to avoid staying on the slope",
+                "Ask another worker to walk beneath the branch first"
+              ],
+              "prompt": "What should you do when terrain conditions change after rain?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Avoid the collapsed path and hanging branch, and report them before work continues.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Do not pass that point. Mark it or keep a safe distance according to crew rules, and report it so the supervisor can choose a safe route or action.",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "Workplace scenario: After rain, the route to the work point has a ground collapse and a large branch hanging over the path. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Observe terrain and weather from a safe point → Identify hazards above, below, and along the route → Mark or report hazards to the crew → Use an approved route and reassess if conditions change.",
+              "kind": "workflow",
+              "options": [
+                "Identify hazards above, below, and along the route",
+                "Observe terrain and weather from a safe point",
+                "Mark or report hazards to the crew",
+                "Use an approved route and reassess if conditions change"
+              ],
+              "prompt": "In the workflow “Reading terrain and recognizing hazards,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ここは地面が崩れています。通らないでください。",
+              "meaning": "The ground is sliding here. Do not pass.",
+              "reading": "ここはじめんがくずれています。とおらないでください。"
+            },
+            {
+              "japanese": "安全な道を責任者に確認します。",
+              "meaning": "I will confirm with the person in charge that the route is safe.",
+              "reading": "あんぜんなみちをせきにんしゃにかくにんします。"
+            }
+          ],
+          "id": "fo-02",
+          "minutes": 25,
+          "objectives": [
+            "Mengamati lereng, pijakan, pohon rusak, batu, cabang jatuh, dan perubahan cuaca sebelum bergerak.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not pass that point. Mark it or keep a safe distance as the crew requires, and report it so the leader can choose a safe route or action.",
+          "scenario": "After rain, the path to the work site has subsided ground, and a large branch hangs over the route.",
+          "sections": [
+            {
+              "body": "Forest terrain may include slippery slopes, roots, holes, loose rocks, dead trees, and hanging branches. Watch the areas above and below, keep your distance, and use approved routes. Rain, wind, fog, or darkness can change the risks; reassess conditions with the leader.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Walk at a pace that lets you see where you are stepping. Do not pass beneath a tree or branch that appears unstable; mark hazards as the crew requires. If the ground shifts or visibility drops, notify the team and wait for instructions. Do not try to move a tree or heavy rock alone.\n\nPractice scenario: After rain, the path to the work site has subsided ground, and a large branch hangs over the route.\nSuggested response: Do not pass that point. Mark it or keep a safe distance as the crew requires, and report it so the leader can choose a safe route or action.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati medan dan cuaca dari titik aman",
+            "Kenali bahaya di atas, bawah, dan sepanjang jalur",
+            "Tandai atau laporkan bahaya kepada kru",
+            "Gunakan jalur yang disetujui dan tinjau ulang bila kondisi berubah"
+          ],
+          "title": "Reading Terrain and Recognizing Hazards",
+          "vocabulary": [
+            {
+              "japanese": "斜面",
+              "meaning": "slope",
+              "reading": "しゃめん"
+            },
+            {
+              "japanese": "足場",
+              "meaning": "footing",
+              "reading": "あしば"
+            },
+            {
+              "japanese": "落枝",
+              "meaning": "fallen branch",
+              "reading": "らくし"
+            },
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not operate a chainsaw or hazardous equipment without the required training and assignment.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Damaged equipment may fail to protect you; report and replace it before starting the task.",
+              "kind": "knowledge",
+              "options": [
+                "Stop preparation and request a replacement before starting",
+                "Use it as long as the damage is minor",
+                "Cover the crack with cloth and continue",
+                "Borrow someone else's equipment without telling them"
+              ],
+              "prompt": "What should you do if protective equipment is damaged before work?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The worker has not been trained for this task; do not operate the chainsaw and ask the supervisor to assign the work appropriately.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Politely decline, do not start the chainsaw, and tell the supervisor so the task can be assigned to an authorized person.",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "Workplace scenario: A coworker asks a new worker to use a chainsaw, but they have not completed the required training. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Read the task type and required protective equipment → Check the equipment's condition and fit → Report damage and replace it before work → Confirm the task is within your training and instructions.",
+              "kind": "workflow",
+              "options": [
+                "Read the task type and required protective equipment",
+                "Check the equipment's condition and fit",
+                "Report damage and replace the equipment before work",
+                "Confirm the task is within your training and instructions"
+              ],
+              "prompt": "In the workflow “Protective equipment and task limits,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このヘルメットにひびがあります。交換してください。",
+              "meaning": "This helmet is cracked. Please replace it.",
+              "reading": "このへるめっとにひびがあります。こうかんしてください。"
+            },
+            {
+              "japanese": "まだ訓練を受けていません。操作できません。",
+              "meaning": "I have not completed the training. I cannot operate it yet.",
+              "reading": "まだくんれんをうけていません。そうさできません。"
+            }
+          ],
+          "id": "fo-03",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa perlengkapan pelindung dan hanya melakukan pekerjaan yang sesuai pelatihan serta arahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Politely refuse, do not start the saw, and tell the leader so the task can be assigned to an authorized person.",
+          "scenario": "A coworker asks a new worker to use a chainsaw, but the worker has not completed the required training.",
+          "sections": [
+            {
+              "body": "Forestry work involves hazards from falling objects, sharp tools, machinery, noise, weather, and terrain. Select equipment such as a helmet, eye or face protection, hearing protection, gloves, work boots, and protective clothing according to the task and company rules. Chainsaw work requires suitable training and assignment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before work, check equipment for damage, fit, fasteners, and suitability. If a helmet is cracked, a strap is damaged, or protection is unsuitable, do not start; request a replacement. Do not borrow or operate equipment you have not been trained to use, even if a coworker asks for quick help.\n\nPractice scenario: A coworker asks a new worker to use a chainsaw, but the worker has not completed the required training.\nSuggested response: Politely refuse, do not start the saw, and tell the leader so the task can be assigned to an authorized person.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca jenis tugas dan perlengkapan yang diwajibkan",
+            "Periksa kondisi serta kecocokan perlengkapan",
+            "Laporkan kerusakan dan ganti sebelum bekerja",
+            "Pastikan tugas sesuai pelatihan dan arahan"
+          ],
+          "title": "Protective Equipment and Work Limits",
+          "vocabulary": [
+            {
+              "japanese": "保護具",
+              "meaning": "protective equipment",
+              "reading": "ほごぐ"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "訓練",
+              "meaning": "training",
+              "reading": "くんれん"
+            },
+            {
+              "japanese": "資格",
+              "meaning": "qualification",
+              "reading": "しかく"
+            }
+          ]
+        }
+      ],
+      "title": "Site Preparation and Field Safety"
+    },
+    {
+      "description": "Understand forest planting and maintenance, protect seedlings and soil, and follow the instructions for each plot.",
+      "id": "silviculture",
+      "lessons": [
+        {
+          "caution": "Do not clear a plot or route beyond the planned boundary.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Maps and markers keep work within designated boundaries and protect sensitive areas.",
+              "kind": "knowledge",
+              "options": [
+                "Keep work within the planned area and reduce damage to soil or water",
+                "So workers can ignore old markers",
+                "To avoid recording plots",
+                "So all vegetation is cleared"
+              ],
+              "prompt": "Why check plot boundaries and work routes before preparing the land?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The boundary and route near the water are uncertain; stop and request confirmation before entering.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems",
+                "Stop before the uncertain boundary, avoid the area near the waterway, and ask the supervisor to confirm the map and markers."
+              ],
+              "prompt": "Workplace scenario: A plot boundary marker is not visible on one side, and the work route leads close to a waterway. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Match the map to plot-boundary markers → Confirm the route and protected areas → Prepare tools in a safe place → Report unclear boundaries or markers.",
+              "kind": "workflow",
+              "options": [
+                "Match the map to plot-boundary markers",
+                "Prepare tools in a safe place",
+                "Confirm the route and protected areas",
+                "Report unclear boundaries or markers"
+              ],
+              "prompt": "In the workflow “Preparing a planting plot and protecting soil,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この境界が見えません。地図を確認してください。",
+              "meaning": "This boundary is not visible. Please check the map.",
+              "reading": "このきょうかいがみえません。ちずをかくにんしてください。"
+            },
+            {
+              "japanese": "水の近くには入らず、責任者に聞きます。",
+              "meaning": "I will stay away from the water and ask the person in charge.",
+              "reading": "みずのちかくにはいらず、せきにんしゃにききます。"
+            }
+          ],
+          "id": "fo-04",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan petak tanam sesuai rencana dan menjaga jalur kerja agar tidak merusak tanah atau saluran air.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop before the uncertain boundary, stay clear of the stream area, and ask the leader to confirm the map and markers.",
+          "scenario": "A plot boundary marker is missing on one side, and the work route leads close to a stream.",
+          "sections": [
+            {
+              "body": "Before planting, confirm plot boundaries, the task, spacing, tools, and areas to avoid. Soil and vegetation help maintain forest functions; unplanned routes can cause erosion or damage roots. Match the map to field markers before opening an area.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Follow the plot markers and designated routes. Put tools down safely, protect waterways and marked areas, and report any boundary that is missing or differs from the map. Do not widen a route or move markers to speed up the work.\n\nPractice scenario: A plot boundary marker is missing on one side, and the work route leads close to a stream.\nSuggested response: Stop before the uncertain boundary, stay clear of the stream area, and ask the leader to confirm the map and markers.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan peta dan tanda batas petak",
+            "Pastikan jalur dan area yang harus dilindungi",
+            "Siapkan alat pada tempat yang aman",
+            "Laporkan batas atau tanda yang tidak jelas"
+          ],
+          "title": "Preparing Planting Plots and Protecting Soil",
+          "vocabulary": [
+            {
+              "japanese": "植栽地",
+              "meaning": "planting plot",
+              "reading": "しょくさいち"
+            },
+            {
+              "japanese": "境界",
+              "meaning": "boundary",
+              "reading": "きょうかい"
+            },
+            {
+              "japanese": "土壌",
+              "meaning": "soil",
+              "reading": "どじょう"
+            },
+            {
+              "japanese": "水路",
+              "meaning": "water channel",
+              "reading": "すいろ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix seedling species or change the planting pattern without approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking the species and condition prevents the wrong seedlings from being planted in a plot.",
+              "kind": "knowledge",
+              "options": [
+                "Species, quantity, condition, and planting-point markers",
+                "Leaf color alone",
+                "Distance from the main road alone",
+                "Which bundle is closest"
+              ],
+              "prompt": "What should be checked before planting seedlings?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The species label differs from the plan; hold the bundle and request confirmation.",
+              "kind": "case",
+              "options": [
+                "Set the bundle aside, do not plant it, and ask the supervisor to confirm the seedling species before work continues.",
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "Workplace scenario: One bundle contains seedlings labeled as a different species from the plot being planted. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Match the seedling species and quantity to the records → Check seedling condition before carrying them → Plant at the marked points and spacing → Record damaged seedlings or locations that cannot be planted.",
+              "kind": "workflow",
+              "options": [
+                "Match the seedling species and quantity to the records",
+                "Plant at the marked points and spacing",
+                "Record damaged seedlings or locations that cannot be planted",
+                "Check seedling condition before carrying them"
+              ],
+              "prompt": "In the workflow “Seedling selection and planting,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "苗木の種類が違うようです。確認してください。",
+              "meaning": "This seedling species appears to be different. Please check it.",
+              "reading": "なえぎのしゅるいがちがうようです。かくにんしてください。"
+            },
+            {
+              "japanese": "この場所に植えてもいいですか。",
+              "meaning": "May I plant here?",
+              "reading": "このばしょにうえてもいいですか。"
+            }
+          ],
+          "id": "fo-05",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa jenis, jumlah, serta kondisi bibit dan menanam mengikuti jarak serta cara yang ditunjukkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Set the bundle aside, do not plant it, and ask the leader to verify the species before work resumes.",
+          "scenario": "One bundle contains seedlings labeled as a different species from the one being planted in the plot.",
+          "sections": [
+            {
+              "body": "Healthy seedlings suited to the plot help the stand grow evenly. Check their species and quantity against the records, protect their roots, and follow the specified spacing or planting marks. Follow local technical instructions; new workers must not change the position, depth, or species without asking.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Set aside dry, broken, or record-mismatched seedlings and report the quantity. Carry them without damaging the roots, plant at marked points, and cover them with soil as instructed. If a point is blocked by a rock or standing water, do not choose a new position yourself; ask for guidance.\n\nPractice scenario: A bundle contains seedlings labeled as a different species from the one assigned to the plot.\nSuggested response: Set the bundle aside, do not plant it, and ask the leader to verify the species before work resumes.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan jenis dan jumlah bibit dengan catatan",
+            "Periksa kondisi bibit sebelum dibawa",
+            "Tanam pada titik dan jarak yang ditunjukkan",
+            "Catat bibit rusak atau titik yang tidak dapat ditanami"
+          ],
+          "title": "Seedling Selection and Planting",
+          "vocabulary": [
+            {
+              "japanese": "苗木",
+              "meaning": "tree seedling",
+              "reading": "なえぎ"
+            },
+            {
+              "japanese": "植栽",
+              "meaning": "planting",
+              "reading": "しょくさい"
+            },
+            {
+              "japanese": "根",
+              "meaning": "root",
+              "reading": "ね"
+            },
+            {
+              "japanese": "本数",
+              "meaning": "number of logs",
+              "reading": "ほんすう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use a tool when a coworker is too close or the maintenance target is uncertain.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Trees meant to be preserved could be damaged if the target is guessed; confirm it first.",
+              "kind": "knowledge",
+              "options": [
+                "Stop work and confirm the target before using equipment",
+                "Clear all nearby plants",
+                "Follow a coworker's guess without checking",
+                "Work faster before the marker disappears"
+              ],
+              "prompt": "What should you do when the target-tree marker is unclear?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Stop the equipment until the coworker's position and the maintenance target are confirmed safe.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Stop the equipment, call the coworker and supervisor, and confirm the target boundary and safe distance before resuming work.",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "Workplace scenario: The target-tree marker is covered by brush while a coworker is moving on the same side of the slope. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Read tree markers and maintenance targets → Confirm safe distance and communication with coworkers → Work only on designated vegetation → Stop equipment and report unclear markers or positions.",
+              "kind": "workflow",
+              "options": [
+                "Confirm safe distance and communication with coworkers",
+                "Read tree markers and maintenance targets",
+                "Work only on designated vegetation",
+                "Stop equipment and report unclear markers or positions"
+              ],
+              "prompt": "In the workflow “Vegetation maintenance and coworker safety,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "目印が見えません。作業を止めます。",
+              "meaning": "The marker is not visible. I am stopping work.",
+              "reading": "めじるしがみえません。さぎょうをとめます。"
+            },
+            {
+              "japanese": "仲間との距離を確認してから始めます。",
+              "meaning": "I will start after confirming my distance from the coworker.",
+              "reading": "なかまとのきょりをかくにんしてからはじめます。"
+            }
+          ],
+          "id": "fo-06",
+          "minutes": 25,
+          "objectives": [
+            "Melakukan pemeliharaan vegetasi sesuai tanda petak sambil menjaga jarak dan menghindari bibit yang dipertahankan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop the tool, call the coworker and leader, and confirm the target boundary and safe distance before resuming.",
+          "scenario": "Brush covers the target-plant marker while a coworker is moving on the same slope.",
+          "sections": [
+            {
+              "body": "Maintenance may involve clearing unwanted vegetation or caring for a stand according to plan. Plot markers and instructions show which plants to keep. Maintain a safe distance from coworkers using tools. Communicate before starting or moving equipment on slopes or through dense vegetation.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before clearing vegetation, identify the target plants and those that must remain. Make sure coworkers know your position, use tools only as trained, and stop if someone enters the work zone. If a marker is unclear or a seedling is damaged, mark the location and report it; do not proceed by guessing.\n\nPractice scenario: Brush covers the target-plant marker while a coworker is moving on the same slope.\nSuggested response: Stop the tool, call the coworker and leader, and confirm the target boundary and safe distance before resuming.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca tanda tanaman dan sasaran pemeliharaan",
+            "Pastikan jarak aman serta komunikasi dengan rekan",
+            "Kerjakan hanya vegetasi yang ditetapkan",
+            "Hentikan alat dan laporkan bila tanda atau posisi tidak jelas"
+          ],
+          "title": "Vegetation Maintenance and Coworker Safety",
+          "vocabulary": [
+            {
+              "japanese": "下刈り",
+              "meaning": "understory clearing",
+              "reading": "したがり"
+            },
+            {
+              "japanese": "間隔",
+              "meaning": "distance",
+              "reading": "かんかく"
+            },
+            {
+              "japanese": "目印",
+              "meaning": "sign",
+              "reading": "めじるし"
+            },
+            {
+              "japanese": "停止",
+              "meaning": "stop",
+              "reading": "ていし"
+            }
+          ]
+        }
+      ],
+      "title": "Forest Planting and Maintenance"
+    },
+    {
+      "description": "Understand timber-production work zones, communication signals, and how to move products only within your role and safety procedures.",
+      "id": "production",
+      "lessons": [
+        {
+          "caution": "Do not enter the felling zone or approach a tree that has not been declared safe.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Shared, understood signals control who may enter a hazardous zone.",
+              "kind": "knowledge",
+              "options": [
+                "Wait for a clear signal and authorization from the crew",
+                "Enter quickly when you cannot see anyone",
+                "Retrieve the tool without notifying anyone",
+                "Stand beneath a tree to ask"
+              ],
+              "prompt": "What should be done before entering a logging zone?"
+            },
+            {
+              "answer": 2,
+              "explanation": "There is no all-clear signal; workers stay outside and contact the supervisor.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Stay outside the boundary, contact the supervisor using the designated method, and enter only after clear authorization.",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "At work, a worker needs to retrieve a tool on the other side of the zone but cannot see the crew or hear an all-clear signal. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Identify work-zone boundaries from crew signs → Confirm two-way communication and permission to pass → Keep clear of hazardous work → Report missing signs or anyone entering the zone.",
+              "kind": "workflow",
+              "options": [
+                "Identify the work-zone boundary from the crew's markers",
+                "Confirm two-way communication and permission to pass",
+                "Keep clear of hazardous work",
+                "Report missing markers or anyone entering the zone"
+              ],
+              "prompt": "In the “Logging work zone and communication signals” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業区域に入ってもいいですか。",
+              "meaning": "May I enter the work zone?",
+              "reading": "さぎょうくいきにはいってもいいですか。"
+            },
+            {
+              "japanese": "まだ入らないでください。安全の合図を待ちます。",
+              "meaning": "Do not enter yet. Wait for the all-clear signal.",
+              "reading": "まだはいらないでください。あんぜんのあいずをまちます。"
+            }
+          ],
+          "id": "fo-07",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali batas zona berbahaya, mengikuti tanda kru, dan tidak masuk ke area penebangan tanpa izin.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stay outside the boundary, contact the leader using the designated method, and enter only after receiving clear permission.",
+          "scenario": "A worker needs to retrieve a tool from the other side of a zone but cannot see the crew or hear an all-clear signal.",
+          "sections": [
+            {
+              "body": "Tree felling and timber processing involve falling trees, branches, and powered equipment. The work plan and zone controls specify where each person may be; keep the instructed distance and use agreed communication. Only workers with the required training and assignment may fell trees.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before approaching, make sure the crew has signaled that the area is safe to cross. If you cannot see the workers or have not received a signal you understand, stop at the boundary and contact the leader. Do not try to predict a tree's fall direction or approach a tree that is still moving.\n\nPractice scenario: A worker needs to retrieve a tool on the other side of a zone but cannot see the crew or hear an all-clear signal.\nSuggested response: Stay outside the boundary, contact the leader using the designated method, and enter only after receiving clear permission.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Identifikasi batas zona kerja dari tanda kru",
+            "Pastikan komunikasi dua arah dan izin lewat",
+            "Jaga jarak dari pekerjaan berbahaya",
+            "Laporkan tanda yang hilang atau orang masuk zona"
+          ],
+          "title": "Felling Zones and Communication Signals",
+          "vocabulary": [
+            {
+              "japanese": "伐倒",
+              "meaning": "tree felling",
+              "reading": "ばっとう"
+            },
+            {
+              "japanese": "作業区域",
+              "meaning": "work zone",
+              "reading": "さぎょうくいき"
+            },
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            },
+            {
+              "japanese": "退避",
+              "meaning": "move away or evacuate",
+              "reading": "たいひ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change timber markings or combine groups without authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Identification links the output to its plot, quantity, and movement record.",
+              "kind": "knowledge",
+              "options": [
+                "So the timber's origin and destination can be traced",
+                "So the timber looks drier",
+                "So batches can be mixed without records",
+                "To replace a safety inspection"
+              ],
+              "prompt": "Why are timber products marked with information linked to their plot or batch?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The log's identity is unknown; separate it and trace it before loading.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems",
+                "Separate the log in the hold area, record its location and condition, then ask the supervisor to trace its identity before loading."
+              ],
+              "prompt": "At work, one log at the collection point has no plot mark, while two batches from different plots are being prepared. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Read the plot and timber-batch marks → Check the label against the work record → Separate unidentified or damaged timber → Record the quantity and report discrepancies.",
+              "kind": "workflow",
+              "options": [
+                "Read the plot and timber-batch marks",
+                "Separate unidentified or damaged timber",
+                "Check the label against the work record",
+                "Record the quantity and report the discrepancy"
+              ],
+              "prompt": "In the “Wood identification and product marking” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この丸太に表示がありません。",
+              "meaning": "This log has no markings.",
+              "reading": "このまるたにひょうじがありません。"
+            },
+            {
+              "japanese": "場所を記録して、責任者に確認します。",
+              "meaning": "I will record the location and ask the person in charge to confirm it.",
+              "reading": "ばしょをきろくして、せきにんしゃにかくにんします。"
+            }
+          ],
+          "id": "fo-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga identitas kayu hasil kerja dengan membaca tanda, ukuran atau kelompok yang dicatat, serta melaporkan kerusakan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Isolate the log in the hold area, record its location and condition, and ask the leader to trace its identity before loading.",
+          "scenario": "A log at the collection point has no plot mark while two groups from different plots are being prepared.",
+          "sections": [
+            {
+              "body": "Identify production output by plot, species, size, or destination according to the company's system. Marking links timber to its records and supports later handling. Measure or mark items only by the method you were taught; do not change the grade or destination yourself.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before moving timber, match its label or mark to the work records. Set aside unmarked or mismatched material at the designated location. Record the actual quantity and visible condition, then ask the leader to confirm its destination group. Do not combine timber from different plots without instructions.\n\nPractice scenario: One log at the collection point has no plot mark, while two groups from different plots are being prepared.\nSuggested response: Isolate the log in the hold area, record its location and condition, and ask the leader to trace its identity before loading.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca tanda petak dan kelompok kayu",
+            "Cocokkan label dengan catatan kerja",
+            "Pisahkan kayu tanpa identitas atau rusak",
+            "Catat jumlah serta laporkan selisih"
+          ],
+          "title": "Identifying Timber and Marking Products",
+          "vocabulary": [
+            {
+              "japanese": "丸太",
+              "meaning": "log",
+              "reading": "まるた"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "mark or label",
+              "reading": "ひょうじ"
+            },
+            {
+              "japanese": "数量",
+              "meaning": "quantity",
+              "reading": "すうりょう"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not walk in a heavy-equipment route or beneath raised timber.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A waiting zone keeps workers clear of blind spots, vehicle routes, and shifting loads.",
+              "kind": "knowledge",
+              "options": [
+                "In a safe zone outside the route and blind spots",
+                "Under the load for easier strapping",
+                "Directly behind the vehicle",
+                "Between the wheels and the timber stack"
+              ],
+              "prompt": "Where should workers wait while timber is being moved with heavy equipment?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The load has shifted and the signaler's position is hazardous; stop and move to a safe area.",
+              "kind": "case",
+              "options": [
+                "Give the stop signal according to procedure and move to a safe zone; tell the operator and supervisor that the beam has shifted.",
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "At work, one beam has shifted on a heavy-equipment load while a worker stands in the adjacent route to signal. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Identify vehicle routes and blind spots → Wait in a safe zone and confirm the signals are understood → Do not approach or stand beneath a load → Report shifting loads or route hazards.",
+              "kind": "workflow",
+              "options": [
+                "Identify vehicle routes and blind spots",
+                "Do not approach or stand beneath the load",
+                "Report a shifting load or route hazard",
+                "Wait in a safe zone and confirm the signal is understood"
+              ],
+              "prompt": "In the “Timber movement and heavy-equipment safety” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "丸太が動きました。作業を止めてください。",
+              "meaning": "The log is moving. Please stop work.",
+              "reading": "まるたがうごきました。さぎょうをとめてください。"
+            },
+            {
+              "japanese": "安全な場所へ下がります。",
+              "meaning": "I will move back to a safe place.",
+              "reading": "あんぜんなばしょへさがります。"
+            }
+          ],
+          "id": "fo-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jarak dari mesin pemindah, mengikuti arahan operator, serta memastikan area muat aman sebelum mendekat.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Give the stop signal as required and move to the safe zone; tell the operator and leader that the log has shifted.",
+          "scenario": "A log shifts on a heavy-equipment load while a worker stands beside the route to signal.",
+          "sections": [
+            {
+              "body": "Vehicles and timber-moving equipment have blind spots, shifting loads, and turning areas. Never stand beneath a load or in a vehicle route. Only authorized operators may control the equipment. Before movement or loading begins, everyone must understand the signals, route boundaries, and waiting zones.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Stay in the designated waiting area, maintain visual contact with the signaler, and do not cross behind moving equipment. If a load shifts, a warning sounds, or someone enters the route, give the stop signal according to procedure and move to a safe place. Report damage or road conditions.\n\nPractice scenario: A log shifts on a heavy-equipment load while a worker stands beside the route to signal.\nSuggested response: Give the stop signal as required and move to the safe zone; tell the operator and leader that the log has shifted.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali jalur kendaraan dan titik buta",
+            "Tunggu di zona aman dan pastikan isyarat dipahami",
+            "Jangan mendekati atau berdiri di bawah beban",
+            "Laporkan pergeseran beban atau bahaya lintasan"
+          ],
+          "title": "Timber Handling and Heavy-Equipment Safety",
+          "vocabulary": [
+            {
+              "japanese": "集材",
+              "meaning": "timber collection",
+              "reading": "しゅうざい"
+            },
+            {
+              "japanese": "重機",
+              "meaning": "heavy equipment",
+              "reading": "じゅうき"
+            },
+            {
+              "japanese": "荷物",
+              "meaning": "load",
+              "reading": "にもつ"
+            },
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            }
+          ]
+        }
+      ],
+      "title": "Timber Production and Handling"
+    },
+    {
+      "description": "Protect soil, water, and the surrounding environment, and report conditions that disrupt work or plot recovery.",
+      "id": "environment",
+      "lessons": [
+        {
+          "caution": "Do not dump materials or divert water flow without instructions.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A route change may worsen erosion; the supervisor must decide the work method and safe route.",
+              "kind": "knowledge",
+              "options": [
+                "Stop in a safe place and report the issue before using the route again",
+                "Keep driving so the route becomes level",
+                "Block the drain with waste",
+                "Redirect the water to another plot on your own"
+              ],
+              "prompt": "What is the correct response when vehicle routes are creating ruts toward a drain?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Ruts leading toward a drain must be reported before vehicles move again.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Stop the vehicle in a safe place, report the ruts and water-flow direction, then wait for the supervisor's decision about the next route.",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "At work, vehicle wheels have left deep ruts leading toward a drain after rain. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Check route markers and sensitive areas → Use designated routes for people and equipment → Watch for changes to the ground or water flow → Report visible erosion, spills, or disturbances.",
+              "kind": "workflow",
+              "options": [
+                "Use the designated routes for people and equipment",
+                "Check route markers and sensitive areas",
+                "Observe changes to the ground or water flow",
+                "Report visible erosion, spills, or disturbances"
+              ],
+              "prompt": "In the “Protecting soil and water flow” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "土が水路に流れています。",
+              "meaning": "Soil is washing into the water channel.",
+              "reading": "つちがすいろにながれています。"
+            },
+            {
+              "japanese": "この道を使わず、責任者に報告します。",
+              "meaning": "I will not use this route; I will report it to the person in charge.",
+              "reading": "このみちをつかわず、せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "fo-10",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti jalur yang ditetapkan, menjaga tepi aliran dan area sensitif, serta melaporkan erosi atau kebocoran.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop the vehicle in a safe place, report the rut and direction of flow, then wait for the leader to decide on the next route.",
+          "scenario": "After rain, a vehicle wheel leaves a deep rut leading toward a water channel.",
+          "sections": [
+            {
+              "body": "Forest soil stores water and supports growth. Equipment routes and unsuitable work can erode the surface or carry sediment into waterways. Marked plots and routes help limit disturbance. If a worker finds standing water, erosion, or a material leak, report it and do not move the material yourself.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the designated routes and storage areas. Do not wash tools or dump liquids into waterways. If you see mud entering a ditch or cracked soil, stop movement at that point and notify the leader. Follow directions to secure the area without blocking a channel or damaging vegetation.\n\nPractice scenario: After rain, a vehicle wheel leaves a deep rut leading toward a water channel.\nSuggested response: Stop the vehicle in a safe place, report the rut and direction of flow, then wait for the leader to decide on the next route.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa tanda jalur dan area sensitif",
+            "Gunakan rute yang ditentukan untuk orang dan alat",
+            "Amati perubahan tanah atau aliran",
+            "Laporkan erosi, tumpahan, atau gangguan yang terlihat"
+          ],
+          "title": "Protecting Soil and Waterways",
+          "vocabulary": [
+            {
+              "japanese": "水源",
+              "meaning": "water source",
+              "reading": "すいげん"
+            },
+            {
+              "japanese": "土壌",
+              "meaning": "soil",
+              "reading": "どじょう"
+            },
+            {
+              "japanese": "侵食",
+              "meaning": "erosion",
+              "reading": "しんしょく"
+            },
+            {
+              "japanese": "保護",
+              "meaning": "protection",
+              "reading": "ほご"
+            }
+          ]
+        },
+        {
+          "caution": "Do not approach a fire, leaking container, or hazardous tree to take a photo or sample.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The location and factual condition help the crew respond without delay while searching for the source of a report.",
+              "kind": "knowledge",
+              "options": [
+                "The location, time, and visible condition",
+                "A guess about the cause of the fire",
+                "A photograph taken by approaching the fire",
+                "Only the name of the nearest worker"
+              ],
+              "prompt": "What information is most useful when reporting smoke or fire?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Smoke may indicate danger; keep away and use the emergency communication channel.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Stay away, alert the crew and supervisor through the emergency channel, then follow the designated evacuation route.",
+                "Continue working despite equipment or communication problems"
+              ],
+              "prompt": "At work, a worker sees light smoke and smells burning from an area that has not been inspected. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Observe unusual signs from a safe distance → Record the location, time, and visible characteristics → Alert the crew through the specified communication method → Stay clear and follow the person in charge's instructions.",
+              "kind": "workflow",
+              "options": [
+                "Observe unusual signs from a safe distance",
+                "Record the location, time, and visible characteristics",
+                "Alert the crew using the designated communication method",
+                "Stay away from the area and follow the person in charge's instructions"
+              ],
+              "prompt": "In the “Reporting diseased trees, fire, and waste” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "煙が見えます。場所は北の斜面です。",
+              "meaning": "I see smoke. It is on the north slope.",
+              "reading": "けむりがみえます。ばしょはきたのしゃめんです。"
+            },
+            {
+              "japanese": "近づかずに、責任者へ連絡してください。",
+              "meaning": "Do not approach. Contact the person in charge.",
+              "reading": "ちかづかずに、せきにんしゃへれんらくしてください。"
+            }
+          ],
+          "id": "fo-11",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali tanda lingkungan yang tidak biasa dan melaporkannya tanpa menyentuh atau memindahkan sumber bahaya.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stay away, alert the crew and leader through the emergency channel, and follow the designated evacuation route.",
+          "scenario": "A worker sees light smoke and smells something burning in an area that has not been inspected.",
+          "sections": [
+            {
+              "body": "Field workers may find damaged trees, pest activity, smoke, fire, rubbish, or leaking containers. First, keep your distance, warn the crew, and report the location and visible signs. Pest control, firefighting, and hazardous-material handling must be carried out by designated people under the applicable plan.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Record the plot, time, direction, and observable signs; do not state a cause that has not been established. If there is smoke or fire, alert the crew through the emergency channel and follow the evacuation route. Do not touch a leaking container or transport waste by vehicle without instructions.\n\nPractice scenario: A worker sees light smoke and smells something burning in an area that has not been inspected.\nSuggested response: Stay away, alert the crew and leader through the emergency channel, and follow the designated evacuation route.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati tanda tidak biasa dari jarak aman",
+            "Catat lokasi, waktu, dan ciri yang terlihat",
+            "Peringatkan kru melalui cara komunikasi yang ditetapkan",
+            "Jauhi area dan ikuti arahan penanggung jawab"
+          ],
+          "title": "Reporting Diseased Trees, Fires, and Waste",
+          "vocabulary": [
+            {
+              "japanese": "煙",
+              "meaning": "smoke",
+              "reading": "けむり"
+            },
+            {
+              "japanese": "火災",
+              "meaning": "fire",
+              "reading": "かさい"
+            },
+            {
+              "japanese": "被害",
+              "meaning": "damage or impact",
+              "reading": "ひがい"
+            },
+            {
+              "japanese": "通報",
+              "meaning": "emergency report",
+              "reading": "つうほう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not leave equipment or an unresolved issue without marking and reporting it.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The final report allows the supervisor to close out the work and follow up on any remaining risks.",
+              "kind": "knowledge",
+              "options": [
+                "Actual results, equipment, hazards, and unfinished work",
+                "Only the target set at the start",
+                "An estimated quantity without checking",
+                "A statement that everything is finished even though a tool is missing"
+              ],
+              "prompt": "What should be included in the end-of-work report?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The missing tool and unchecked route must both be reported before the crew leaves the site.",
+              "kind": "case",
+              "options": [
+                "Enter a hazardous area before receiving an all-clear",
+                "Guess the instructions or change the procedure on your own",
+                "Continue working despite equipment or communication problems",
+                "Tell the supervisor before leaving the plot, search for the tool according to procedure, and record the route that has not been declared safe."
+              ],
+              "prompt": "At work, at the end of the day, a communication device has not been returned and a muddy route needs to be reviewed. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Gather tools and check them against the list → Inspect the plot and confirm the crew is complete → Record actual results and unresolved issues → Report to the supervisor before leaving the site.",
+              "kind": "workflow",
+              "options": [
+                "Gather the tools and check them against the list",
+                "Record actual results and unresolved issues",
+                "Inspect the plot and confirm the crew is complete",
+                "Report to the supervisor before leaving the site"
+              ],
+              "prompt": "In the “Final plot inspection and work report” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "無線機が一台足りません。",
+              "meaning": "One radio is missing.",
+              "reading": "むせんきがいちだいたりません。"
+            },
+            {
+              "japanese": "未確認の道を責任者に引き継ぎます。",
+              "meaning": "I will report the unchecked route to the person in charge.",
+              "reading": "みかくにんのみちをせきにんしゃにひきつぎます。"
+            }
+          ],
+          "id": "fo-12",
+          "minutes": 25,
+          "objectives": [
+            "Menghitung hasil, mengumpulkan alat, mencatat bahaya atau pekerjaan tertunda, dan menyerahkannya kepada pemimpin.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Tell the leader before leaving the plot, look for the device according to procedure, and record that the route has not been declared safe.",
+          "scenario": "At the end of the day, one communication device has not been returned, and a muddy route needs to be reviewed.",
+          "sections": [
+            {
+              "body": "At the end of the job, confirm that all people and tools are accounted for, review the plot, and record results using company units. Reports must distinguish completed quantities, damage, materials on hold, and unfinished tasks. Closeout ensures field issues are not overlooked when the crew leaves.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Inspect your assigned area, return tools according to the checklist, and compare output quantities with the records. Report locations and the status of markers, routes, or hazards requiring follow-up. Do not declare an area safe if it has not been inspected, or alter quantities to meet a target.\n\nPractice scenario: At the end of the day, one communication device is missing, and a muddy route needs another check.\nSuggested response: Tell the leader before leaving the plot, look for the device according to procedure, and record that the route has not been declared safe.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kumpulkan dan cocokkan alat dengan daftar",
+            "Periksa petak serta pastikan kru lengkap",
+            "Catat hasil aktual dan masalah yang belum selesai",
+            "Serahkan laporan kepada pemimpin sebelum meninggalkan lokasi"
+          ],
+          "title": "Final Plot Checks and Work Reports",
+          "vocabulary": [
+            {
+              "japanese": "作業記録",
+              "meaning": "work record",
+              "reading": "さぎょうきろく"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "未完了",
+              "meaning": "unfinished",
+              "reading": "みかんりょう"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        }
+      ],
+      "title": "Forest Protection and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA Japan — SSW(i) Job Overview",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "Forestry Agency — Foreign Worker Intake and Examinations in the Forestry Sector",
+      "url": "https://www.rinya.maff.go.jp/j/routai/gaikoku.html"
+    },
+    {
+      "title": "Forestry Agency — Information on 林業技能測定試験",
+      "url": "https://www.rinya.maff.go.jp/j/routai/attach/pdf/gaikoku-26.pdf"
+    },
+    {
+      "title": "林業技能向上センター — Examination Administrator and Information",
+      "url": "https://ringyou-gino.org/"
+    },
+    {
+      "title": "MHLW — Logging and Forestry Workplace Safety",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000207439_00003.html"
+    },
+    {
+      "title": "Forestry Agency — Forestry Training Materials for Foreign Workers",
+      "url": "https://www.rinya.maff.go.jp/j/routai/attach/pdf/gaikoku-28.pdf"
+    }
+  ],
+  "version": 1
+}

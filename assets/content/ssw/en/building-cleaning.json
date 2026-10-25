@@ -1,0 +1,2672 @@
+{
+  "modules": [
+    {
+      "description": "Cleaning goals, work scope, professional conduct, and the division of daily and periodic tasks.",
+      "id": "role",
+      "lessons": [
+        {
+          "caution": "Do not open panels or dismantle installations without authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Check the limits of your duties and electrical risks before doing the work.",
+              "options": [
+                "Report it to the technical supervisor",
+                "Open the panel yourself",
+                "Spray it with water",
+                "Ignore it without reporting it"
+              ],
+              "prompt": "An electrical panel is dirty, but it is outside your duties. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Standards cover cleanliness, safety, surface condition, and the service contract.",
+              "options": [
+                "Work instructions and the needs of the surface",
+                "Speed alone",
+                "The scent of fragrance alone",
+                "The amount of water used"
+              ],
+              "prompt": "What should determine the work standards?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業範囲を確認します。",
+              "meaning": "I will check the scope of work.",
+              "reading": "さぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "責任者に報告します。",
+              "meaning": "I will report it to the person in charge.",
+              "reading": "せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "cleaning-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip peran petugas dan lingkup pembersihan.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Explain the limits of your role and report the issue to the technical lead.",
+          "scenario": "You are asked to open a dusty electrical panel.",
+          "sections": [
+            {
+              "body": "Building cleaning supports cleanliness, a healthy environment, safety, and the appearance of spaces. A surface that looks clean may not meet hygiene requirements. Contracts and work instructions define the area, surfaces, schedule, methods, and result standards. Staff must not take on technical tasks just because they seem easy. Electrical repairs, hazardous-material control, and work at height require separate authorization and training.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Before starting, read the room list and work limits. Match user needs to the building schedule, then ask about anything unclear. Be mindful of occupants, personal belongings, and evacuation routes. When finished, compare the result with the standard: dust and stains removed, surfaces safe, supplies complete, and no new damage. Report obstacles with their location and facts so the next task can be planned.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca lingkup kerja",
+            "Periksa kondisi awal",
+            "Pilih metode yang diizinkan",
+            "Periksa dan laporkan hasil"
+          ],
+          "title": "Staff Roles and Cleaning Scope",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "meaning": "cleaning",
+              "reading": "せいそう"
+            },
+            {
+              "japanese": "建物",
+              "meaning": "building",
+              "reading": "たてもの"
+            },
+            {
+              "japanese": "作業",
+              "meaning": "work",
+              "reading": "さぎょう"
+            },
+            {
+              "japanese": "範囲",
+              "meaning": "scope",
+              "reading": "はんい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mark the work complete before the area has been inspected.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A record of the delay supports traceability and user safety.",
+              "options": [
+                "Coordinate with others and record the delay",
+                "Mark it as complete",
+                "Force the cleaning during a meeting",
+                "Remove it from the schedule"
+              ],
+              "prompt": "Periodic washing cannot be done while the room is in use. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Daily cleaning differs from periodic maintenance and technical repairs.",
+              "options": [
+                "Dirt from routine use",
+                "Electrical panel repairs",
+                "Replacing floor structures",
+                "All coating work every day"
+              ],
+              "prompt": "What does daily cleaning mainly address?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "予定を変更できますか。",
+              "meaning": "Can the schedule be changed?",
+              "reading": "よていをへんこうできますか。"
+            },
+            {
+              "japanese": "まだ終わっていません。",
+              "meaning": "It is not finished yet.",
+              "reading": "まだおわっていません。"
+            }
+          ],
+          "id": "cleaning-02",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pembersihan harian, berkala, dan inspeksi.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Coordinate a new time and record which areas have not yet been cleaned.",
+          "scenario": "The scheduled floor washing conflicts with a meeting.",
+          "sections": [
+            {
+              "body": "Daily cleaning addresses soil from routine use, such as dust, rubbish, and fingerprints. Periodic cleaning handles buildup or maintenance that need not be done every day, such as machine floor washing or finish care. An inspection is more than a signature: check initial conditions and final results against the area checklist. Set the frequency according to building use and specifications.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Plan the sequence so cleaned areas do not become dirty again. Allow time for work that requires drying or restricted access. If periodic cleaning cannot be done because a room is occupied, record the task as pending and coordinate another time. Do not replace a periodic method with a quick process that damages materials. Use inspection records to identify recurring stains and their causes.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca jadwal",
+            "Pisahkan pekerjaan harian dan berkala",
+            "Koordinasikan akses",
+            "Catat hasil inspeksi"
+          ],
+          "title": "Daily and Periodic Cleaning and Inspection",
+          "vocabulary": [
+            {
+              "japanese": "日常清掃",
+              "meaning": "daily cleaning",
+              "reading": "にちじょうせいそう"
+            },
+            {
+              "japanese": "定期清掃",
+              "meaning": "periodic cleaning",
+              "reading": "ていきせいそう"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "予定",
+              "meaning": "schedule",
+              "reading": "よてい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not photograph documents for a cleaning report.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A document is not trash simply because it is in the work area.",
+              "options": [
+                "Ask about the procedure before moving them",
+                "Throw away all the papers",
+                "Take a photo of their contents",
+                "Read them to identify the owner"
+              ],
+              "prompt": "Papers on a desk are in the way of cleaning. Choose the appropriate action."
+            },
+            {
+              "answer": 0,
+              "explanation": "Recording and formally handing in the wallet protects both its owner and staff.",
+              "options": [
+                "Hand it in according to the lost-property procedure",
+                "Take it home",
+                "Announce what is inside",
+                "Put it in the trash"
+              ],
+              "prompt": "What should you do with a lost wallet?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "清掃に入ってもよろしいですか。",
+              "meaning": "May I come in to clean?",
+              "reading": "せいそうにはいってもよろしいですか。"
+            },
+            {
+              "japanese": "忘れ物がありました。",
+              "meaning": "An item has been left behind.",
+              "reading": "わすれものがありました。"
+            }
+          ],
+          "id": "cleaning-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip etika, privasi, dan pelayanan pengguna.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Record the location and hand it to the designated staff member without inspecting its contents for personal reasons.",
+          "scenario": "A wallet is found under a chair in the meeting room.",
+          "sections": [
+            {
+              "body": "Staff work in spaces that may contain documents, devices, and personal belongings. Do not read, photograph, or move them except as authorized for the task. Hand found property over under the building's procedure, recording its location and the time. Professional conduct includes greeting people, asking permission to enter, limiting noise, and respecting how a room is being used. Do not casually disclose an owner's identity.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Knock or announce yourself before entering an occupied area. If documents prevent cleaning, ask a supervisor instead of assuming that items on a desk are rubbish. If a building user complains, listen, repeat the main issue, and report it factually. Do not promise work outside the contract. Use official channels to report lost property and information about occupants.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Minta izin",
+            "Jaga dokumen dan barang",
+            "Catat barang temuan",
+            "Serahkan melalui prosedur"
+          ],
+          "title": "Professional Conduct, Privacy, and Service",
+          "vocabulary": [
+            {
+              "japanese": "忘れ物",
+              "meaning": "item left behind",
+              "reading": "わすれもの"
+            },
+            {
+              "japanese": "貴重品",
+              "meaning": "valuable item",
+              "reading": "きちょうひん"
+            },
+            {
+              "japanese": "許可",
+              "meaning": "permission",
+              "reading": "きょか"
+            },
+            {
+              "japanese": "利用者",
+              "meaning": "building user",
+              "reading": "りようしゃ"
+            }
+          ]
+        }
+      ],
+      "title": "Professional Foundations and Service Quality"
+    },
+    {
+      "description": "Hazard assessment, restricting access, PPE, ergonomics, and incident response.",
+      "id": "safety",
+      "lessons": [
+        {
+          "caution": "A warning sign alone does not remove the risk of a slippery floor.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Reopen the area based on its actual condition, not on an estimated time alone.",
+              "options": [
+                "After the floor is dry and the area is confirmed safe",
+                "As soon as mopping is finished",
+                "When the supervisor leaves",
+                "After five minutes without checking"
+              ],
+              "prompt": "When may a wet-floor sign be removed?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not block evacuation routes with equipment or barriers.",
+              "options": [
+                "Kept safe and unobstructed",
+                "Used to store carts",
+                "Closed without coordination",
+                "Filled with buckets"
+              ],
+              "prompt": "What condition must evacuation routes be kept in during cleaning?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "床が滑りやすいです。",
+              "meaning": "The floor is slippery.",
+              "reading": "ゆかがすべりやすいです。"
+            },
+            {
+              "japanese": "こちらをお通りください。",
+              "meaning": "Please go this way.",
+              "reading": "こちらをおとおりください。"
+            }
+          ],
+          "id": "cleaning-04",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip bahaya terpeleset dan pembatasan area.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Restrict the wet area, provide a safe route, and coordinate assistance.",
+          "scenario": "The lobby floor is wet, and visitors keep walking through.",
+          "sections": [
+            {
+              "body": "Water, cables, equipment, and changes in floor surfaces can cause falls. Signs warn people, while barriers help control access; choose both according to the risk and site rules. Put signs in place before wet work begins and where people approaching can see them. Do not block an entire route without coordination. Reopen the area only after it has dried and passed a final check, not simply because a certain amount of time has passed.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Check alternative routes, emergency exits, and whether any users need mobility assistance. Clean the floor in small zones so a safe route remains available. If a spill occurs outside the work area, secure it or request help promptly. Move signs only after the floor is dry, equipment is stored, and no slippery residue remains. If pedestrian flow cannot be controlled, stop and coordinate another time.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa arus pengguna",
+            "Pasang rambu dan pembatas",
+            "Kerjakan per zona",
+            "Buka setelah kering dan aman"
+          ],
+          "title": "Slip Hazards and Restricting Access",
+          "vocabulary": [
+            {
+              "japanese": "滑る",
+              "meaning": "slip",
+              "reading": "すべる"
+            },
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "sign",
+              "reading": "ひょうじ"
+            },
+            {
+              "japanese": "通路",
+              "meaning": "passageway",
+              "reading": "つうろ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not lift a load of unknown weight by yourself.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Damaged PPE does not provide the intended protection.",
+              "options": [
+                "Stop and replace it safely",
+                "Continue until break time",
+                "Cover it with paper",
+                "Use the torn side"
+              ],
+              "prompt": "A glove tears during work. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Using equipment and sharing a load is safer than forcing an awkward posture.",
+              "options": [
+                "Use equipment and ask for help",
+                "Twist your waist more quickly",
+                "Hold the load farther away from your body",
+                "Lift it while running"
+              ],
+              "prompt": "How can you reduce risk when a load is too heavy?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "手伝ってください。",
+              "meaning": "Please help me.",
+              "reading": "てつだってください。"
+            },
+            {
+              "japanese": "台車を使います。",
+              "meaning": "I will use a cart.",
+              "reading": "だいしゃをつかいます。"
+            }
+          ],
+          "id": "cleaning-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip apd, postur, dan pengangkatan beban.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not force it; secure the load, use an aid, and request help according to procedure.",
+          "scenario": "A wet waste bag feels very heavy.",
+          "sections": [
+            {
+              "body": "Choose personal protective equipment based on the task risks and product label: suitable gloves, non-slip footwear, and eye protection where splashing is possible. Gloves do not replace hand hygiene. Repeated bending, twisting while lifting, and carrying an overfilled bucket increase the risk of injury. Use tools of a suitable length, divide loads, and use a cart when available.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Inspect PPE before use and replace anything torn or contaminated. Before moving a load, assess its weight and route. Keep the load close to your body and avoid twisting at the waist; move your feet to change direction. Do not force a load you cannot control. Ask for help according to procedure. Adjust handle height and alternate tasks to reduce repetitive movement.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Nilai risiko dan berat",
+            "Pakai APD sesuai label",
+            "Gunakan troli atau bantuan",
+            "Periksa kelelahan dan kondisi alat"
+          ],
+          "title": "PPE, Posture, and Lifting Loads",
+          "vocabulary": [
+            {
+              "japanese": "手袋",
+              "meaning": "gloves",
+              "reading": "てぶくろ"
+            },
+            {
+              "japanese": "保護具",
+              "meaning": "protective equipment",
+              "reading": "ほごぐ"
+            },
+            {
+              "japanese": "姿勢",
+              "meaning": "posture",
+              "reading": "しせい"
+            },
+            {
+              "japanese": "台車",
+              "meaning": "cart",
+              "reading": "だいしゃ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not try to neutralize an unidentified spill with another substance.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Do not test or mix an unknown substance yourself.",
+              "options": [
+                "Keep away, restrict access, and report it",
+                "Smell it to identify it",
+                "Mix it with bleach",
+                "Wipe it up with bare hands"
+              ],
+              "prompt": "An unlabeled substance has spilled. What should you do first?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A factual report supports the response and helps prevent similar incidents.",
+              "options": [
+                "Location, time, condition, and actions",
+                "An assumption without facts",
+                "Only a coworker's mistake",
+                "A personal photo of a user"
+              ],
+              "prompt": "What information makes an incident report useful?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ここに近づかないでください。",
+              "meaning": "Do not approach this area.",
+              "reading": "ここにちかづかないでください。"
+            },
+            {
+              "japanese": "すぐに連絡してください。",
+              "meaning": "Please contact the staff member immediately.",
+              "reading": "すぐにれんらくしてください。"
+            }
+          ],
+          "id": "cleaning-06",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip insiden, bahan tumpah, dan keadaan darurat.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Stay clear, keep people away from a safe position, and contact the emergency lead.",
+          "scenario": "An unlabeled bottle has broken and is giving off a strong odor.",
+          "sections": [
+            {
+              "body": "Prioritize your safety and the safety of others during an incident. Before beginning work, know how to contact the person in charge and the site's emergency number. Treat an unidentified spill as a potential hazard; do not touch, inhale, or mix it with anything. Handle fires, injuries, and chemical exposures under the emergency procedure and SDS information. Staff must not enter a hazardous area without training and protective equipment.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Stop work, restrict access from a safe position, and report the location, type of incident, and anyone affected. In an emergency, activate the building's emergency response without delaying to finish the task. Provide assistance only within your training and follow emergency responders' instructions. Keep product information available to support the response. Once the situation is safe, record the incident or near miss and actions taken.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Jauhkan diri dari bahaya",
+            "Amankan akses dari tempat aman",
+            "Panggil bantuan",
+            "Laporkan fakta setelah aman"
+          ],
+          "title": "Incidents, Spills, and Emergencies",
+          "vocabulary": [
+            {
+              "japanese": "事故",
+              "meaning": "accident",
+              "reading": "じこ"
+            },
+            {
+              "japanese": "避難",
+              "meaning": "evacuation",
+              "reading": "ひなん"
+            },
+            {
+              "japanese": "救急",
+              "meaning": "emergency assistance",
+              "reading": "きゅうきゅう"
+            },
+            {
+              "japanese": "漏れ",
+              "meaning": "leak",
+              "reading": "もれ"
+            }
+          ]
+        }
+      ],
+      "title": "Occupational Safety and Health"
+    },
+    {
+      "description": "Choosing a method based on the soil, product label, SDS, dilution, and material compatibility.",
+      "id": "chemicals",
+      "lessons": [
+        {
+          "caution": "Acid can damage some types of stone; never guess whether the product is compatible.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Compatibility depends on the material, not just the type of stain.",
+              "options": [
+                "Check the material specifications before using a strong chemical",
+                "Use acid immediately",
+                "Scrub it with metal",
+                "Soak it overnight"
+              ],
+              "prompt": "The floor material is unknown. What is the safe choice?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A cleaning tool can drag coarse particles across the surface and scratch it.",
+              "options": [
+                "Reduce the risk of scratches",
+                "Add chemical shine",
+                "Replace disinfection",
+                "Eliminate the need for signs"
+              ],
+              "prompt": "Why should dust and sand be removed before scrubbing?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "材質を確認してください。",
+              "meaning": "Please check what material it is.",
+              "reading": "ざいしつをかくにんしてください。"
+            },
+            {
+              "japanese": "目立たない所で試します。",
+              "meaning": "I will test it in a hidden area.",
+              "reading": "めだたないところでためします。"
+            }
+          ],
+          "id": "cleaning-07",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip mengenali kotoran dan bahan permukaan.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Check the material specifications before using a deposit remover.",
+          "scenario": "There is a deposit on a stone floor whose type is unknown.",
+          "sections": [
+            {
+              "body": "Loose dust, oil, mineral deposits, and absorbed stains need different methods. Start with the gentlest effective method that suits the surface. Natural stone, wood, metal, glass, floor finishes, and textiles differ in how they tolerate water, abrasion, acids, and alkalis. Stains that look alike may have different causes; check the material specifications before choosing a product and tool.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Remove loose soil first so it does not scratch the surface during scrubbing. If the material is unknown, ask and test in a hidden area if authorized. Do not start with a strong chemical. Watch for changes in color, gloss, or texture during the test. Stop and report any sign of damage. Record the method that worked in the site instructions for future use.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Identifikasi material",
+            "Kenali jenis kotoran",
+            "Pilih metode ringan dan uji",
+            "Periksa perubahan permukaan"
+          ],
+          "title": "Identifying Soil and Surface Materials",
+          "vocabulary": [
+            {
+              "japanese": "汚れ",
+              "meaning": "soil",
+              "reading": "よごれ"
+            },
+            {
+              "japanese": "材質",
+              "meaning": "material",
+              "reading": "ざいしつ"
+            },
+            {
+              "japanese": "油",
+              "meaning": "oil",
+              "reading": "あぶら"
+            },
+            {
+              "japanese": "傷",
+              "meaning": "scratch",
+              "reading": "きず"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix products; chlorine bleach and acid can release hazardous gas.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Correct identification and containers prevent exposure and misuse.",
+              "options": [
+                "A procedure-approved container with a clear label",
+                "An unlabeled beverage bottle",
+                "A cafeteria glass",
+                "A random bottle chosen by color"
+              ],
+              "prompt": "What is the correct container for a chemical?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Incompatible chemical mixtures are dangerous; follow the product label.",
+              "options": [
+                "No; it can produce dangerous gas",
+                "Yes, to make it stronger",
+                "Yes, with hot water",
+                "Yes, if it smells pleasant"
+              ],
+              "prompt": "Can chlorine bleach be mixed with an acidic cleaner?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "混ぜないでください。",
+              "meaning": "Do not mix them.",
+              "reading": "まぜないでください。"
+            },
+            {
+              "japanese": "ラベルがありません。",
+              "meaning": "The label is missing.",
+              "reading": "らべるがありません。"
+            }
+          ],
+          "id": "cleaning-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip label, sds, dan penyimpanan bahan.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not use it; follow the identification and labeled storage procedure.",
+          "scenario": "A coworker hands you a drink bottle containing cleaning liquid.",
+          "sections": [
+            {
+              "body": "A product label explains its use, hazards, dilution, and required protection. The SDS provides safety information such as hazards, handling, first aid, and storage. Do not use a chemical from an unidentified container. Transfer to a working bottle only under an approved labeling procedure. Store incompatible products separately, close containers securely, and prevent access by building users.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Match the product to the task and read the label before opening it. Know where the SDS is kept and make sure it is accessible. Use a suitable container with a readable label; never use a drink bottle for chemicals. Store chemicals in the designated place, away from evacuation routes and food. If a label is missing, isolate the container safely and ask the person in charge; do not try to identify it by smell.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca label",
+            "Temukan SDS",
+            "Periksa wadah dan identitas",
+            "Simpan sesuai kompatibilitas"
+          ],
+          "title": "Product Labels, SDS, and Chemical Storage",
+          "vocabulary": [
+            {
+              "japanese": "洗剤",
+              "meaning": "detergent",
+              "reading": "せんざい"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "label",
+              "reading": "ひょうじ"
+            },
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "混ぜる",
+              "meaning": "mixing",
+              "reading": "まぜる"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use an unlabeled bottle or guess the concentration from its color.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "1,000 divided by 100 is 10 ml of product; add water to reach the final volume.",
+              "options": [
+                "10 ml",
+                "100 ml",
+                "1 ml",
+                "1,000 ml"
+              ],
+              "prompt": "For a 100-fold FINAL dilution with a final volume of 1,000 ml, how much product is needed?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The concentration, surface, and contact time must follow the product instructions.",
+              "options": [
+                "The product instructions and its intended use",
+                "The same number for every product",
+                "The smell of the solution",
+                "The desire to work quickly"
+              ],
+              "prompt": "What determines the contact time for a disinfectant?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "濃度を確認します。",
+              "meaning": "I will check the concentration.",
+              "reading": "のうどをかくにんします。"
+            },
+            {
+              "japanese": "説明書どおりに使います。",
+              "meaning": "I will use it as instructed.",
+              "reading": "せつめいしょどおりにつかいます。"
+            }
+          ],
+          "id": "cleaning-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengenceran dan waktu kontak.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Measure 10 mL of concentrate and add water to a total volume of 1,000 mL, following the product instructions.",
+          "scenario": "The label calls for a final 100-fold dilution to make one liter.",
+          "sections": [
+            {
+              "body": "A solution that is too concentrated can leave residue, damage materials, or increase exposure; one that is too dilute may not work. Read how the ratio is defined: where the instructions say so, a 100-fold dilution means the product is one hundredth of the final volume. This differs from a 1:100 product-to-water notation. Use the correct units and measuring tool. Disinfectant contact time depends on the product; there is no universal value.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Calculate the final amount to avoid preparing too much. For one liter of a 100-fold final dilution, use 10 mL of product and add water to a final volume of 1,000 mL; do not add the product to 1,000 mL of water. If the label defines the ratio differently, follow that definition. Mix only in the sequence and conditions required by the label. Do not add extra product to speed up the work. Label the solution and its use-by limit according to procedure.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca definisi rasio pada label",
+            "Hitung volume akhir",
+            "Ukur dengan alat sesuai",
+            "Ikuti waktu kontak dan penanganan residu"
+          ],
+          "title": "Dilution and Contact Time",
+          "vocabulary": [
+            {
+              "japanese": "希釈",
+              "meaning": "dilution",
+              "reading": "きしゃく"
+            },
+            {
+              "japanese": "濃度",
+              "meaning": "concentration",
+              "reading": "のうど"
+            },
+            {
+              "japanese": "計量",
+              "meaning": "measurement",
+              "reading": "けいりょう"
+            },
+            {
+              "japanese": "時間",
+              "meaning": "time",
+              "reading": "じかん"
+            }
+          ]
+        }
+      ],
+      "title": "Soil, Surface Materials, and Chemicals"
+    },
+    {
+      "description": "Cloths, mops, vacuum cleaners, floor machines, electrical inspections, and tool storage.",
+      "id": "tools",
+      "lessons": [
+        {
+          "caution": "Follow the building's color code; do not assume the same colors are used everywhere.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Keeping tools separate prevents cross-contamination between zones.",
+              "options": [
+                "No; use a tool designated for the desk zone",
+                "Yes, if it looks clean",
+                "Yes, after spraying it with fragrance",
+                "Yes, if it is the same color"
+              ],
+              "prompt": "Can a toilet-cleaning cloth be used on a desk?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Drying and storage help keep tools hygienic.",
+              "options": [
+                "Dried and stored in a clean place",
+                "Left wet in a bag",
+                "Placed on the floor",
+                "Mixed with trash"
+              ],
+              "prompt": "How should cloths be handled after washing?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "新しい布に替えます。",
+              "meaning": "I replace it with a clean cloth.",
+              "reading": "あたらしいぬのにかえます。"
+            },
+            {
+              "japanese": "道具を分けて使います。",
+              "meaning": "I use the designated separate tools.",
+              "reading": "どうぐをわけてつかいます。"
+            }
+          ],
+          "id": "cleaning-10",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kain lap, mop, dan pemisahan alat.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Stop and use a clean cloth reserved for desk areas.",
+          "scenario": "A cloth used in the restroom is about to be used on the reception desk.",
+          "sections": [
+            {
+              "body": "Dirty cloths and mops can spread soil between areas. Separating tools by zone helps prevent cross-contamination; the specific colors are set by the site and are not universal. Fold a cloth to provide several clean sides. Change sides when soiled, and replace the cloth according to procedure. Do not use restroom tools on desks or clean areas. A damp cloth should not be dripping wet.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Prepare enough cloths and keep clean and used containers separate. Wipe in a consistent direction or with overlapping passes so no area is missed. Do not dip a dirty tool into clean solution when procedure prohibits it. After the task, wash or process tools to their specifications, dry them, and store them clean. Damp cloths sealed away before drying can develop odors and contamination.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Pisahkan alat per zona",
+            "Lipat dan gunakan sisi bersih",
+            "Ganti alat yang kotor",
+            "Cuci dan keringkan setelah kerja"
+          ],
+          "title": "Cleaning Cloths, Mops, and Tool Separation",
+          "vocabulary": [
+            {
+              "japanese": "雑巾",
+              "meaning": "cleaning cloth",
+              "reading": "ぞうきん"
+            },
+            {
+              "japanese": "モップ",
+              "meaning": "mop",
+              "reading": "もっぷ"
+            },
+            {
+              "japanese": "交換",
+              "meaning": "replacement",
+              "reading": "こうかん"
+            },
+            {
+              "japanese": "乾燥",
+              "meaning": "drying",
+              "reading": "かんそう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not vacuum water with a machine designed only for dry dust.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The machine's design determines whether it can safely pick up liquid.",
+              "options": [
+                "No; use equipment designed for liquids",
+                "Yes, any vacuum can be used",
+                "Yes, if you are quick",
+                "Yes, without a filter"
+              ],
+              "prompt": "Can a dry vacuum be used to pick up standing water?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Disconnect power before safely inspecting or servicing the machine.",
+              "options": [
+                "Switch it off and disconnect power according to the manual",
+                "Leave it running",
+                "Pull the hose while walking",
+                "Add water"
+              ],
+              "prompt": "What should you do before opening a machine to clear a blockage?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "電源を切ります。",
+              "meaning": "I turn off the power.",
+              "reading": "でんげんをきります。"
+            },
+            {
+              "japanese": "吸い込みが弱いです。",
+              "meaning": "The suction is weak.",
+              "reading": "すいこみがよわいです。"
+            }
+          ],
+          "id": "cleaning-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip vacuum cleaner dan pengendalian debu.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Stop and choose equipment approved for handling liquid.",
+          "scenario": "There is a puddle near a dry vacuum cleaner.",
+          "sections": [
+            {
+              "body": "A vacuum removes dust through airflow and filtration. A dry vacuum is not automatically safe for liquids. Use a machine designed for the task and material being collected. A full bag or container and a clogged filter reduce suction. Do not use an ordinary vacuum for hazardous or unidentified dust. Choose a nozzle for the surface and check the wheels so they do not scratch the floor.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Before plugging in the vacuum, check its cable, body, filter, and container capacity. Plan a cable route away from pedestrian flow and puddles. Safely pick up large objects first. Move the nozzle steadily, not too quickly, with overlapping passes. If suction drops, switch off and unplug the machine before checking it according to the manual. Dispose of dust under the procedure without scattering it again.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa jenis mesin dan kabel",
+            "Atur jalur kerja",
+            "Vacuum sistematis",
+            "Matikan dan rawat sesuai manual"
+          ],
+          "title": "Vacuum Cleaners and Dust Control",
+          "vocabulary": [
+            {
+              "japanese": "掃除機",
+              "meaning": "vacuum cleaner",
+              "reading": "そうじき"
+            },
+            {
+              "japanese": "吸引",
+              "meaning": "vacuuming",
+              "reading": "きゅういん"
+            },
+            {
+              "japanese": "電源",
+              "meaning": "electric power",
+              "reading": "でんげん"
+            },
+            {
+              "japanese": "ほこり",
+              "meaning": "dust",
+              "reading": "ほこり"
+            }
+          ]
+        },
+        {
+          "caution": "This material does not replace hands-on training in machine operation.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A working motor does not prove that its electrical cable is safe.",
+              "options": [
+                "Stop, mark it, and report it",
+                "Keep using it",
+                "Wrap it in tissue",
+                "Hold the frayed part"
+              ],
+              "prompt": "A cable is frayed, but the machine still works. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Pad/brush compatibility and the surface material determine the safe method.",
+              "options": [
+                "The manual, surface type, and task",
+                "A favorite color",
+                "Price alone",
+                "The operator's shoe size"
+              ],
+              "prompt": "What should guide the choice of machine accessories?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この機械は使えません。",
+              "meaning": "This machine must not be used.",
+              "reading": "このきかいはつかえません。"
+            },
+            {
+              "japanese": "異常があります。",
+              "meaning": "Something is abnormal.",
+              "reading": "いじょうがあります。"
+            }
+          ],
+          "id": "cleaning-12",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip mesin lantai dan keselamatan listrik.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not use it; isolate the equipment and report it for a technical inspection.",
+          "scenario": "A machine's cable is frayed, but the motor is still running.",
+          "sections": [
+            {
+              "body": "Floor machines require hands-on training and authorization. The pad, brush, speed, solution, and floor type must be compatible; pad color alone does not establish compatibility. Check the cable, plug, leaks, and safety guards. Wet hands and water near electrical connections increase danger. Operators must not improvise repairs to a damaged cable. Never leave a running machine unattended.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Read the manual, inspect the area, and set up barriers before installing the equipment. Attach accessories only when the power is disconnected, as instructed. Adjust the handle for control and route the cable away from wet areas. Do not operate a machine on stairs or on surfaces where it is not approved. If there is unusual noise, vibration, odor, or sparking, stop, isolate it according to procedure, and label it as out of service.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa izin dan kondisi",
+            "Pasang aksesori saat daya terputus",
+            "Operasikan dalam zona aman",
+            "Hentikan bila ada kelainan"
+          ],
+          "title": "Floor Machines and Electrical Safety",
+          "vocabulary": [
+            {
+              "japanese": "機械",
+              "meaning": "machine",
+              "reading": "きかい"
+            },
+            {
+              "japanese": "故障",
+              "meaning": "damage",
+              "reading": "こしょう"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "使用禁止",
+              "meaning": "do not use",
+              "reading": "しようきんし"
+            }
+          ]
+        }
+      ],
+      "title": "Manual Tools and Machinery"
+    },
+    {
+      "description": "Dust removal, mopping, floor washing, floor finishes, and textiles.",
+      "id": "floors",
+      "lessons": [
+        {
+          "caution": "Do not flood floors or joints that are sensitive to water.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Removing particles reduces mud and scratches.",
+              "options": [
+                "Remove dust, then mop according to the material",
+                "Mop over sand",
+                "Pour concentrated product first",
+                "Remove the signs before starting"
+              ],
+              "prompt": "What is the correct order for cleaning a floor?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Use an amount of water suited to the material and method, not as much as possible.",
+              "options": [
+                "Damage the material or joints",
+                "Always speed up drying",
+                "Replace the detergent",
+                "Eliminate all risks"
+              ],
+              "prompt": "What can excess water do to a water-sensitive floor?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "先にほこりを取ります。",
+              "meaning": "I remove the dust first.",
+              "reading": "さきにほこりをとります。"
+            },
+            {
+              "japanese": "床が乾くまでお待ちください。",
+              "meaning": "Wait until the floor is dry.",
+              "reading": "ゆかがかわくまでおまちください。"
+            }
+          ],
+          "id": "cleaning-13",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip mengangkat debu dan mengepel lantai keras.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Restrict access and handle residue according to the product procedure; correct the dilution.",
+          "scenario": "The floor remains sticky after being mopped with a concentrated solution.",
+          "sections": [
+            {
+              "body": "Remove loose sand and dust before mopping so they do not turn to mud or scratch the floor. Choose a dust mop or vacuum that suits the material and conditions. Use an appropriate level of moisture; more water does not mean a cleaner floor. Wood, joints, and some coated floors are sensitive to excess moisture. Work systematically toward an exit so you do not walk over cleaned areas.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Set out signs, check for sharp debris, and move dust from the edges toward an area where it can be collected. Use a solution as labeled and a mop that is not dripping. Work in zones, replace dirty solution, and check for residue. Let the area dry sufficiently before reopening. Report and mark raised, cracked, or still-slippery floor sections so users do not trip.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Amankan zona",
+            "Angkat debu lepas",
+            "Pel dengan kelembapan sesuai",
+            "Periksa kering dan bebas residu"
+          ],
+          "title": "Removing Dust and Mopping Hard Floors",
+          "vocabulary": [
+            {
+              "japanese": "床",
+              "meaning": "floor",
+              "reading": "ゆか"
+            },
+            {
+              "japanese": "水拭き",
+              "meaning": "damp wiping",
+              "reading": "みずぶき"
+            },
+            {
+              "japanese": "乾拭き",
+              "meaning": "dry wiping",
+              "reading": "からぶき"
+            },
+            {
+              "japanese": "砂",
+              "meaning": "sand",
+              "reading": "すな"
+            }
+          ]
+        },
+        {
+          "caution": "Floor stripping and coating require supervision and product instructions; do not experiment on your own.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Protective finishes must be compatible with the floor system.",
+              "options": [
+                "No; follow the material specifications",
+                "Yes, every day",
+                "Yes, including all carpets",
+                "Yes, without inspection"
+              ],
+              "prompt": "Should every floor be waxed?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Residue and moisture can affect the result and safety.",
+              "options": [
+                "A clean, dry surface as required by the product",
+                "Leave the dust in place",
+                "Let water pool on the floor",
+                "Make the solution extra concentrated"
+              ],
+              "prompt": "What is important before applying a floor finish?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "まだ乾いていません。",
+              "meaning": "It is not dry yet.",
+              "reading": "まだかわいていません。"
+            },
+            {
+              "japanese": "仕様を確認します。",
+              "meaning": "I check the specifications.",
+              "reading": "しようをかくにんします。"
+            }
+          ],
+          "id": "cleaning-14",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pencucian dan lapisan pelindung lantai.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Delay application until the surface and drying requirements are met.",
+          "scenario": "A supervisor requests floor coating while the floor is still damp.",
+          "sections": [
+            {
+              "body": "Periodic washing removes soil that daily cleaning does not address. Apply protective finish only to floors whose specifications allow it. Stripping an old finish is a separate task and may involve higher-risk products. Do not assume every floor needs wax. Residual solution, dampness, and remaining dust can affect adhesion and appearance.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Confirm the floor specifications and maintenance plan with a supervisor. Prepare the area with enough drying time, barriers, ventilation as stated on the label, and separate tools for applying the finish. Follow the product system for washing, residue removal, drying, and application. Do not apply another coat until the drying requirements are met. Check the result in adequate light before reopening the area.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Konfirmasi sistem perawatan",
+            "Cuci dan tangani residu",
+            "Pastikan kondisi kering sesuai produk",
+            "Aplikasikan dan inspeksi sesuai prosedur"
+          ],
+          "title": "Floor Washing and Protective Coatings",
+          "vocabulary": [
+            {
+              "japanese": "洗浄",
+              "meaning": "washing",
+              "reading": "せんじょう"
+            },
+            {
+              "japanese": "樹脂",
+              "meaning": "resin",
+              "reading": "じゅし"
+            },
+            {
+              "japanese": "塗布",
+              "meaning": "finish application",
+              "reading": "とふ"
+            },
+            {
+              "japanese": "剥離",
+              "meaning": "stripping",
+              "reading": "はくり"
+            }
+          ]
+        },
+        {
+          "caution": "Do not over-wet the material or mix stain removers.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Blotting in the correct direction helps keep stains from spreading and fibers from being damaged.",
+              "options": [
+                "Blot according to procedure, working from the edge toward the center",
+                "Scrub hard outward",
+                "Flood it with hot water",
+                "Mix all stain removers together"
+              ],
+              "prompt": "How should an ordinary liquid spill on carpet be handled?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Check moisture and area safety before allowing access.",
+              "options": [
+                "Not yet; confirm the area is safe and dry according to procedure",
+                "Yes, always",
+                "Yes, if it smells fresh",
+                "Yes, if the signs are expensive"
+              ],
+              "prompt": "Can a carpet be reopened immediately after treatment while it is still damp?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こすらずに吸い取ります。",
+              "meaning": "Blot without rubbing.",
+              "reading": "こすらずにすいとります。"
+            },
+            {
+              "japanese": "乾燥中です。",
+              "meaning": "Drying in progress.",
+              "reading": "かんそうちゅうです。"
+            }
+          ],
+          "id": "cleaning-15",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip karpet, noda, dan pengeringan tekstil.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Secure the area, absorb the spill with a clean cloth, and handle it according to the material-specific procedure.",
+          "scenario": "Coffee has just spilled on the carpet in the waiting room.",
+          "sections": [
+            {
+              "body": "Carpets need regular dust removal, especially in high-traffic areas. Treat stains promptly using a method suited to the fibers, dye, and backing. Blotting a spill is different from vigorous scrubbing, which can spread the stain and damage fibers. Test the product in a hidden area. Use an extractor and amount of liquid appropriate to the specifications so the carpet does not become too wet.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Identify the material and, if known, the stain source without touching hazardous substances. Safely remove solid matter, then absorb liquid with a clean cloth, working from the edges toward the center. Do not use several products at once. After treatment, ensure drying and ventilation as permitted; keep damp areas restricted. Report old or unidentified stains that resist treatment instead of scrubbing indefinitely.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa material dan noda",
+            "Serap dari tepi ke tengah",
+            "Gunakan metode yang disetujui",
+            "Batasi area sampai cukup kering"
+          ],
+          "title": "Carpets, Stains, and Textile Drying",
+          "vocabulary": [
+            {
+              "japanese": "繊維",
+              "meaning": "fiber",
+              "reading": "せんい"
+            },
+            {
+              "japanese": "染み",
+              "meaning": "stain",
+              "reading": "しみ"
+            },
+            {
+              "japanese": "吸収",
+              "meaning": "absorption",
+              "reading": "きゅうしゅう"
+            },
+            {
+              "japanese": "換気",
+              "meaning": "ventilation",
+              "reading": "かんき"
+            }
+          ]
+        }
+      ],
+      "title": "Hard Floors and Carpets"
+    },
+    {
+      "description": "Cleaning sequence by zone, sinks, toilets, contamination prevention, and restocking supplies.",
+      "id": "sanitary",
+      "lessons": [
+        {
+          "caution": "If you find a needle or blood, follow the special protocol; do not treat it as ordinary waste.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Keep tools separate according to zone and task type.",
+              "options": [
+                "Transfer contamination to a cleaner area",
+                "Speed up disinfection",
+                "Save time safely",
+                "No problem if it is wet"
+              ],
+              "prompt": "A toilet-cleaning tool is used on a sink. What is the problem?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Check user safety and privacy before beginning the work.",
+              "options": [
+                "Ensure access and privacy according to procedure",
+                "Enter every stall immediately",
+                "Photograph the users",
+                "Turn off all the lights"
+              ],
+              "prompt": "What should be done before entering a restroom to clean it?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "清掃中です。",
+              "meaning": "Cleaning in progress.",
+              "reading": "せいそうちゅうです。"
+            },
+            {
+              "japanese": "別のトイレをご利用ください。",
+              "meaning": "Please use another restroom.",
+              "reading": "べつのといれをごりようください。"
+            }
+          ],
+          "id": "cleaning-16",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip persiapan dan alur pembersihan toilet.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Respect the user's privacy and coordinate safe access before entering.",
+          "scenario": "The restroom is still in use when its scheduled cleaning time arrives.",
+          "sections": [
+            {
+              "body": "Restrooms present different contamination risks from office areas. Confirm permission to enter and respect users' privacy before closing a zone. Use PPE and dedicated tools under the building's system. The general principle is to work from cleaner to dirtier areas and from top to bottom, while following the facility's specific procedures. Do not move toilet tools to a sink or door handle.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Post a work sign and confirm the room is unoccupied according to procedure. Look for sharps, leaks, and damaged fixtures without reaching into unseen spaces. Remove waste and clean the zone with designated tools. Replace cloths and gloves as required before moving to a clean area. When finished, check that the floor is dry, supplies are adequate, and tools are sanitized before storage.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Konfirmasi ruang kosong dan pasang tanda",
+            "Siapkan APD dan alat zona",
+            "Kerjakan dari lebih bersih ke kotor",
+            "Periksa dan pulihkan akses"
+          ],
+          "title": "Preparing for and Cleaning Toilets",
+          "vocabulary": [
+            {
+              "japanese": "便所",
+              "meaning": "restroom",
+              "reading": "べんじょ"
+            },
+            {
+              "japanese": "清潔",
+              "meaning": "hygienically clean",
+              "reading": "せいけつ"
+            },
+            {
+              "japanese": "汚染",
+              "meaning": "contamination",
+              "reading": "おせん"
+            },
+            {
+              "japanese": "立入禁止",
+              "meaning": "no entry",
+              "reading": "たちいりきんし"
+            }
+          ]
+        },
+        {
+          "caution": "Chlorine products and acids must never be mixed, including residue left on a surface.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Handle soil and hygiene conditions using the appropriate methods.",
+              "options": [
+                "No; smell does not prove cleanliness",
+                "Yes, if it is strong",
+                "Yes, in every restroom",
+                "Yes, without inspection"
+              ],
+              "prompt": "Can fragrance replace cleaning?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Keeping tools separate prevents transferring contamination to touchpoints.",
+              "options": [
+                "A clean cloth for the zone and the correct product",
+                "Toilet brush",
+                "A used floor cloth",
+                "Bare hands alone"
+              ],
+              "prompt": "What should be used to clean touchpoints?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "洗剤を混ぜないでください。",
+              "meaning": "Do not mix detergents.",
+              "reading": "せんざいをまぜないでください。"
+            },
+            {
+              "japanese": "水漏れがあります。",
+              "meaning": "There is a water leak.",
+              "reading": "みずもれがあります。"
+            }
+          ],
+          "id": "cleaning-17",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip wastafel, kloset, dan titik sentuh.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Stop and follow the product's safety and handling instructions; do not mix it with anything.",
+          "scenario": "A coworker is about to add bleach to a toilet just treated with an acidic cleaner.",
+          "sections": [
+            {
+              "body": "Sinks, toilets, flush buttons, door handles, and taps require different tools and sequences. Remove soil before disinfection when the procedure requires it. Cleaning removes soil; disinfection uses a product under specified conditions. Spraying fragrance replaces neither step. Avoid splashes and do not spray electrical devices or sensors that are not liquid-resistant.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Use a product suited to the material and follow its label, including contact time and rinsing when required. Wipe high-touch points with a clean side of the cloth. Follow the toilet procedure using a dedicated brush, minimize aerosols and splashing, and never mix cleaners. Report leaks or a toilet that will not flush. Make sure the floor is dry and free of slippery residue before reopening the restroom.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Bersihkan kotoran",
+            "Gunakan produk sesuai label",
+            "Pisahkan alat dan titik sentuh",
+            "Periksa fungsi dan kekeringan"
+          ],
+          "title": "Sinks, Toilets, and High-Touch Points",
+          "vocabulary": [
+            {
+              "japanese": "洗面台",
+              "meaning": "sink",
+              "reading": "せんめんだい"
+            },
+            {
+              "japanese": "便器",
+              "meaning": "toilet bowl",
+              "reading": "べんき"
+            },
+            {
+              "japanese": "蛇口",
+              "meaning": "tap",
+              "reading": "じゃぐち"
+            },
+            {
+              "japanese": "接触",
+              "meaning": "touch",
+              "reading": "せっしょく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not combine soaps or refill a dispenser outside its procedure.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Incorrect mixing or refilling can cause contamination or product problems.",
+              "options": [
+                "No; follow the replacement procedure",
+                "Yes, to fill it up",
+                "Yes, if they are the same color",
+                "Yes, without a label"
+              ],
+              "prompt": "Can different types of soap be mixed directly?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A thorough inspection confirms the facility is ready for use.",
+              "options": [
+                "Function, cleanliness, supplies, and a safe floor",
+                "Smell alone",
+                "The time alone",
+                "Uniform color"
+              ],
+              "prompt": "What should be checked before reopening a restroom?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "石けんを補充します。",
+              "meaning": "I will refill the soap.",
+              "reading": "せっけんをほじゅうします。"
+            },
+            {
+              "japanese": "在庫が足りません。",
+              "meaning": "There are not enough supplies.",
+              "reading": "ざいこがたりません。"
+            }
+          ],
+          "id": "cleaning-18",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip perlengkapan toilet dan pemeriksaan akhir.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not mix the products; confirm the approved replacement system.",
+          "scenario": "Only a little soap remains, and the replacement product is a different type.",
+          "sections": [
+            {
+              "body": "Restocking soap, paper, and other supplies is part of service quality. Use the designated products and keep packaging free from contamination. A dispenser may not be refilled on top of old product; follow its cartridge system or cleaning procedure. Do not mix different products. The final check covers cleanliness, supplies, function, floor dryness, and items left behind.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Check supplies before starting so an area is not left closed for too long. Store stock in a clean, dry place that does not block a route. Report a broken dispenser and use a temporary solution only if authorized. Record low stock and fixtures needing repair. Remove barriers only after confirming the restroom is ready and no tools remain in the stalls.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa stok",
+            "Isi dengan sistem yang ditentukan",
+            "Periksa fungsi dan lantai",
+            "Catat kekurangan dan buka akses"
+          ],
+          "title": "Toilet Supplies and Final Checks",
+          "vocabulary": [
+            {
+              "japanese": "補充",
+              "meaning": "refilling",
+              "reading": "ほじゅう"
+            },
+            {
+              "japanese": "石けん",
+              "meaning": "soap",
+              "reading": "せっけん"
+            },
+            {
+              "japanese": "在庫",
+              "meaning": "stock",
+              "reading": "ざいこ"
+            },
+            {
+              "japanese": "不足",
+              "meaning": "shortage",
+              "reading": "ふそく"
+            }
+          ]
+        }
+      ],
+      "title": "Toilets and Sanitary Areas"
+    },
+    {
+      "description": "Reachable glass, stainless steel, ladders, lifts, and busy areas.",
+      "id": "glass",
+      "lessons": [
+        {
+          "caution": "A chair is not suitable equipment for working at height.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Do not address a fall risk with improvised equipment.",
+              "options": [
+                "Use an approved access method and trained staff",
+                "Climb on a wheeled chair",
+                "Stand on a bucket",
+                "Lean out of the window"
+              ],
+              "prompt": "The glass is out of reach. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Dirty or damaged rubber prevents the squeegee from removing solution cleanly from glass.",
+              "options": [
+                "The rubber's condition and cleanliness",
+                "The amount of fragrance",
+                "The wall color",
+                "The building's clock"
+              ],
+              "prompt": "A squeegee is leaving streaks. What should you check?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ガラスにひびがあります。",
+              "meaning": "There is a crack in the glass.",
+              "reading": "がらすにひびがあります。"
+            },
+            {
+              "japanese": "高い所は担当者に確認します。",
+              "meaning": "I will confirm the work at height with the staff member.",
+              "reading": "たかいところはたんとうしゃにかくにんします。"
+            }
+          ],
+          "id": "cleaning-19",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kaca dan teknik squeegee.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not climb on a chair; use an approved access method with a trained operator.",
+          "scenario": "The upper part of the glass cannot be reached from the floor.",
+          "sections": [
+            {
+              "body": "Begin glass cleaning by checking for cracks, special coatings, and frame damage. Use a suitable product and non-scratching tools. A squeegee draws solution off the surface; damaged or dirty rubber can leave streaks. This material covers only areas safely reachable from the floor. Facade, rope-access, and other work at height require special training and procedures.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Protect the floor and nearby areas from drips. Remove dust that could scratch the glass, wet it as needed, and move the squeegee in overlapping strokes. Clean the rubber edge with a cloth as instructed. Check the result from different angles and dry the frame and any puddles. Do not stand on a chair or lean out of a window. Report unreachable areas so an approved access method can be arranged.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa kaca dan akses",
+            "Lindungi area bawah",
+            "Bersihkan dengan alat sesuai",
+            "Periksa garis dan keringkan tepi"
+          ],
+          "title": "Glass and Squeegee Technique",
+          "vocabulary": [
+            {
+              "japanese": "窓",
+              "meaning": "window",
+              "reading": "まど"
+            },
+            {
+              "japanese": "ガラス",
+              "meaning": "glass",
+              "reading": "がらす"
+            },
+            {
+              "japanese": "枠",
+              "meaning": "frame",
+              "reading": "わく"
+            },
+            {
+              "japanese": "水滴",
+              "meaning": "water droplet",
+              "reading": "すいてき"
+            }
+          ]
+        },
+        {
+          "caution": "Do not spray electrical panels or lift buttons directly.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Protect openings in the device from liquids.",
+              "options": [
+                "Use a cloth method from the manual and keep liquid out",
+                "Spray it until it drips",
+                "Soak the panel",
+                "Scrub it with rough metal"
+              ],
+              "prompt": "How should an electronic button panel be cleaned?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The coating and finish can be damaged by the wrong product or excessive friction.",
+              "options": [
+                "No; compatibility still needs to be checked",
+                "Yes, without limits",
+                "Yes, if it is hot",
+                "Yes, if scrubbed hard"
+              ],
+              "prompt": "Is stainless steel resistant to all chemicals?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "直接スプレーしないでください。",
+              "meaning": "Do not spray directly.",
+              "reading": "ちょくせつすぷれーしないでください。"
+            },
+            {
+              "japanese": "柔らかい布を使います。",
+              "meaning": "I use a soft cloth.",
+              "reading": "やわらかいぬのをつかいます。"
+            }
+          ],
+          "id": "cleaning-20",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip stainless steel dan permukaan sensitif.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Use a cloth method suited to the equipment instructions and keep liquid from entering the device.",
+          "scenario": "Fingerprints are visible on the lift button panel.",
+          "sections": [
+            {
+              "body": "Metals that look alike may have different coatings and finish directions. Stainless steel is not immune to all chemicals or scratches. Use a soft cloth and approved products, often wiping in the direction of the finish grain. Avoid abrasives or strong chemicals unless specified. Keep liquids out of joints, buttons, and openings on electronic equipment and lift panels.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Identify the material and check the manufacturer's instructions before cleaning. If permitted by procedure, apply a small amount of liquid to a cloth rather than spraying directly onto a panel. Remove fingerprints without excessive rubbing. Dry as instructed to prevent water marks, then check for stains or surface changes. Report rust, corrosion, or coating damage; do not cover it with an unsuitable finish.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Periksa finishing",
+            "Pilih kain dan produk sesuai",
+            "Lap terarah tanpa membanjiri",
+            "Keringkan dan periksa"
+          ],
+          "title": "Stainless Steel and Sensitive Surfaces",
+          "vocabulary": [
+            {
+              "japanese": "金属",
+              "meaning": "metal",
+              "reading": "きんぞく"
+            },
+            {
+              "japanese": "表面",
+              "meaning": "surface",
+              "reading": "ひょうめん"
+            },
+            {
+              "japanese": "指紋",
+              "meaning": "fingerprint",
+              "reading": "しもん"
+            },
+            {
+              "japanese": "錆",
+              "meaning": "rust",
+              "reading": "さび"
+            }
+          ]
+        },
+        {
+          "caution": "Do not touch a moving lift or escalator mechanism.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Equipment must not create a trip hazard or block access.",
+              "options": [
+                "A safe area that does not obstruct the path",
+                "In the middle of a step",
+                "At the emergency exit",
+                "At the edge of a step"
+              ],
+              "prompt": "Where should a bucket be placed while cleaning stairs?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Marking and reporting the damage allows the proper technical response.",
+              "options": [
+                "Mark the hazard and report it",
+                "Cover it with a loose cloth",
+                "Ignore it",
+                "Repair the structure yourself"
+              ],
+              "prompt": "Damage is found on the edge of a stair. What should you do?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "通路をふさがないでください。",
+              "meaning": "Do not block the route.",
+              "reading": "つうろをふさがないでください。"
+            },
+            {
+              "japanese": "足元にご注意ください。",
+              "meaning": "Watch your step.",
+              "reading": "あしもとにごちゅういください。"
+            }
+          ],
+          "id": "cleaning-21",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip tangga, lift, dan jalur ramai.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Change the route or method and coordinate the work so the passage remains safe.",
+          "scenario": "The vacuum cleaner's cable would have to cross an emergency exit.",
+          "sections": [
+            {
+              "body": "Cleaning circulation areas requires controls for collisions, falls, and emergency access. Inspect stair edges, corners, and handrails. Do not place buckets or cables on steps. Coordinate lift work so doors and the car do not move unexpectedly while a cleaning method is being used. Work on escalators and moving equipment only with the required isolation and training.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Plan work for a time suited to building use. Divide the area into zones and direct people along a safe route; do not leave equipment unattended. Use a controlled method on stairs to maintain balance. Clean handrails with tools assigned to that zone. Mark and report loose tiles, damaged edges, or lift-door problems. Do not make mechanical repairs yourself.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Koordinasikan arus orang",
+            "Amankan zona tanpa menutup evakuasi",
+            "Kerjakan dengan posisi stabil",
+            "Periksa dan laporkan kerusakan"
+          ],
+          "title": "Ladders, Lifts, and Busy Routes",
+          "vocabulary": [
+            {
+              "japanese": "階段",
+              "meaning": "stairs",
+              "reading": "かいだん"
+            },
+            {
+              "japanese": "手すり",
+              "meaning": "handrail",
+              "reading": "てすり"
+            },
+            {
+              "japanese": "出口",
+              "meaning": "exit",
+              "reading": "でぐち"
+            },
+            {
+              "japanese": "段差",
+              "meaning": "difference in height",
+              "reading": "だんさ"
+            }
+          ]
+        }
+      ],
+      "title": "Glass, Metal, and Common Areas"
+    },
+    {
+      "description": "Waste sorting, sharps, hand hygiene, and the difference between cleaning and disinfection.",
+      "id": "waste",
+      "lessons": [
+        {
+          "caution": "Batteries, chemicals, and confidential documents require separate handling according to site rules.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Gloves do not eliminate the risk of puncture from hidden contents.",
+              "options": [
+                "No; hidden sharp objects may be inside",
+                "Yes, if wearing thin gloves",
+                "Yes, to save space",
+                "Yes, if it is a black bag"
+              ],
+              "prompt": "May you press down trash in a bag by hand?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Waste categories and disposal routes depend on local requirements.",
+              "options": [
+                "Local and building requirements",
+                "A favorite color",
+                "One rule for every country",
+                "Collection speed alone"
+              ],
+              "prompt": "What should waste-sorting rules be based on?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ごみを分別してください。",
+              "meaning": "Please sort the waste.",
+              "reading": "ごみをぶんべつしてください。"
+            },
+            {
+              "japanese": "袋が破れています。",
+              "meaning": "The bag is torn.",
+              "reading": "ふくろがやぶれています。"
+            }
+          ],
+          "id": "cleaning-22",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemilahan dan pengangkutan sampah.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not compress it; close the bag and handle it within capacity limits and according to the risk.",
+          "scenario": "A full bag contains objects that cannot be seen.",
+          "sections": [
+            {
+              "body": "Waste categories follow local government and building rules. Do not assume that all plastics or all paper go into the same waste stream. Separate designated materials, protect confidential information under the special procedure, and never reach into a bag by hand. Overfilled or leaking bags increase exposure and lifting risks. Use a cart and a transport route that does not contaminate clean areas.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Visually check the waste bin and look for sharps. Close the bag according to procedure; do not press its contents with your hands or body. If it leaks, use the additional controls required without touching the contents directly. Clean the bin with dedicated tools and fit the correct liner. Take the waste to its designated collection point, keep the route clear and clean, then clean your hands after removing PPE.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Kenali kategori lokal",
+            "Tutup tanpa memadatkan dengan tangan",
+            "Angkut melalui rute aman",
+            "Bersihkan alat dan tangan"
+          ],
+          "title": "Sorting and Transporting Waste",
+          "vocabulary": [
+            {
+              "japanese": "ごみ",
+              "meaning": "waste",
+              "reading": "ごみ"
+            },
+            {
+              "japanese": "分別",
+              "meaning": "sorting",
+              "reading": "ぶんべつ"
+            },
+            {
+              "japanese": "回収",
+              "meaning": "collection",
+              "reading": "かいしゅう"
+            },
+            {
+              "japanese": "袋",
+              "meaning": "bag",
+              "reading": "ふくろ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not pick up a needle by hand or put its cap back on.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Handling sharps requires special tools, containers, and training.",
+              "options": [
+                "Secure the area and contact staff according to protocol",
+                "Pick it up by hand",
+                "Put the cap back on the needle",
+                "Put it in paper waste"
+              ],
+              "prompt": "A used needle is found. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Respond promptly to an exposure according to facility protocol.",
+              "options": [
+                "Follow the exposure procedure and seek medical assessment immediately",
+                "Wait until the end of the month",
+                "Keep it secret and take no action",
+                "Just continue working"
+              ],
+              "prompt": "You are punctured by something during work. What should you do?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "針が落ちています。",
+              "meaning": "A needle has fallen.",
+              "reading": "はりがおちています。"
+            },
+            {
+              "japanese": "触らないでください。",
+              "meaning": "Do not touch.",
+              "reading": "さわらないでください。"
+            }
+          ],
+          "id": "cleaning-23",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip benda tajam dan cairan tubuh.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Secure the area and contact the designated staff member under the sharps protocol.",
+          "scenario": "A used needle is found in a public restroom.",
+          "sections": [
+            {
+              "body": "Needles, broken glass, blood, and bodily fluids are not ordinary waste or spills. Avoid direct contact and keep people away from the area. Handling requires trained staff, protective equipment, suitable tools, and the correct container. Ordinary gloves do not prevent punctures. Do not pick up a needle, recap it, or put it in a general waste bag.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Report the finding with its exact location and wait for assistance under the facility protocol. Do not begin handling it if the task is outside your authority. After an exposure or injury, follow first-aid procedures and obtain prompt medical assessment; do not wait until the end of the shift. Report the type of exposure without disclosing a building user's identity. Only authorized staff should clean and disinfect the area under the special protocol and product instructions.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Hindari kontak",
+            "Batasi area",
+            "Hubungi petugas terlatih",
+            "Ikuti pelaporan paparan bila terjadi"
+          ],
+          "title": "Sharps and Bodily Fluids",
+          "vocabulary": [
+            {
+              "japanese": "針",
+              "meaning": "needle",
+              "reading": "はり"
+            },
+            {
+              "japanese": "血液",
+              "meaning": "blood",
+              "reading": "けつえき"
+            },
+            {
+              "japanese": "破片",
+              "meaning": "broken pieces",
+              "reading": "はへん"
+            },
+            {
+              "japanese": "感染",
+              "meaning": "infection",
+              "reading": "かんせん"
+            }
+          ]
+        },
+        {
+          "caution": "Gloves and the smell of disinfectant do not prove that a surface is safe.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Hands can become contaminated while removing gloves.",
+              "options": [
+                "Perform hand hygiene",
+                "Handle food immediately",
+                "Simply change your uniform",
+                "Spray fragrance"
+              ],
+              "prompt": "What should you do after removing gloves used for a dirty task?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Dirt can reduce the effectiveness of disinfection.",
+              "options": [
+                "No; follow the cleaning steps and product label",
+                "Yes, always",
+                "Yes, if there is a lot of liquid",
+                "Yes, without a contact time"
+              ],
+              "prompt": "Does disinfection replace removing dirt?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "手を洗います。",
+              "meaning": "I wash my hands.",
+              "reading": "てをあらいます。"
+            },
+            {
+              "japanese": "清掃してから消毒します。",
+              "meaning": "I clean before disinfecting.",
+              "reading": "せいそうしてからしょうどくします。"
+            }
+          ],
+          "id": "cleaning-24",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kebersihan tangan dan disinfeksi yang tepat.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Perform hand hygiene according to procedure before handling tools or clean items.",
+          "scenario": "Gloves are removed after cleaning the toilet.",
+          "sections": [
+            {
+              "body": "Hand hygiene interrupts the spread of soil and microorganisms. Clean your hands at the required times, including after removing gloves and after dirty work. If hands are visibly soiled, wash with soap and water as directed by the facility. Disinfect surfaces when required by the risk assessment, not as a substitute for cleaning. Choose a product appropriate for the surface and intended use.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Prepare clean tools and keep used cloths separate from clean supplies. Remove soil before disinfecting as instructed, use the correct concentration and contact time, and handle residue if required. Never spray disinfectant on people or fog a room without a special procedure. Check high-touch points and equipment condition, then record the work using the facility checklist.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Jaga alur bersih dan kotor",
+            "Bersihkan kotoran",
+            "Disinfeksi bila diperlukan sesuai label",
+            "Bersihkan tangan setelah tugas"
+          ],
+          "title": "Hand Hygiene and Proper Disinfection",
+          "vocabulary": [
+            {
+              "japanese": "手洗い",
+              "meaning": "handwashing",
+              "reading": "てあらい"
+            },
+            {
+              "japanese": "消毒",
+              "meaning": "disinfection",
+              "reading": "しょうどく"
+            },
+            {
+              "japanese": "清拭",
+              "meaning": "wiping",
+              "reading": "せいしき"
+            },
+            {
+              "japanese": "衛生",
+              "meaning": "hygiene",
+              "reading": "えいせい"
+            }
+          ]
+        }
+      ],
+      "title": "Waste and Contamination Prevention"
+    },
+    {
+      "description": "Work sequence, reporting, result checks, water efficiency, and complaints.",
+      "id": "planning",
+      "lessons": [
+        {
+          "caution": "Do not guess at numbers or Japanese instructions that you do not understand.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Confirming instructions prevents mistakes with methods, amounts, and locations.",
+              "options": [
+                "Ask and confirm again",
+                "Guess to save time",
+                "Skip safety steps",
+                "Use the highest concentration"
+              ],
+              "prompt": "The instructions are unclear. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A planned order reduces the chance of soiling areas that have already been cleaned.",
+              "options": [
+                "Work from top to bottom according to the plan and risks",
+                "Always clean from dirty to clean",
+                "Work in any order without inspecting",
+                "Clean floors first, then dust the ceiling"
+              ],
+              "prompt": "What is the general principle for the order of cleaning?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "もう一度説明してください。",
+              "meaning": "Please explain that once more.",
+              "reading": "もういちどせつめいしてください。"
+            },
+            {
+              "japanese": "この手順でよろしいですか。",
+              "meaning": "Is this the correct sequence?",
+              "reading": "このてじゅんでよろしいですか。"
+            }
+          ],
+          "id": "cleaning-25",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip membaca instruksi dan merencanakan urutan.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Stop preparing the solution and confirm the instructions with the person in charge, showing them the label.",
+          "scenario": "The dilution instruction sounds different from what is on the label.",
+          "sections": [
+            {
+              "body": "Work instructions specify the location, target, tools, solution, timing, and inspection. Confirm any terms, figures, or units you do not understand. Safety and service requirements take priority over working as quickly as possible. Working from top to bottom and from cleaner to dirtier areas can reduce repeat work, but always adapt the sequence to the site plan and risks to building users.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Read the plan before preparing the cart, then check the tools and supplies. Allow for drying time, changes in building use, and disposal points. If an instruction conflicts with the label or actual conditions, stop and ask. Repeat key details in your own words to avoid mixing up dilution figures or room locations. Do not mark work complete if it has not been done.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca instruksi lengkap",
+            "Ulangi bagian penting",
+            "Siapkan alat dan rute",
+            "Konfirmasi perubahan kondisi"
+          ],
+          "title": "Reading Instructions and Planning the Sequence",
+          "vocabulary": [
+            {
+              "japanese": "指示",
+              "meaning": "instruction",
+              "reading": "しじ"
+            },
+            {
+              "japanese": "手順",
+              "meaning": "work sequence",
+              "reading": "てじゅん"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            },
+            {
+              "japanese": "準備",
+              "meaning": "preparation",
+              "reading": "じゅんび"
+            }
+          ]
+        },
+        {
+          "caution": "Do not conceal damage or promise repairs beyond your authority.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Factual reporting allows the issue to be assessed and handled appropriately.",
+              "options": [
+                "Record the facts and report the issue",
+                "Hide it with a cart",
+                "Blame the user",
+                "Ignore it to save time"
+              ],
+              "prompt": "Damage is found after the work. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Neutral communication helps resolve complaints without making promises beyond your authority.",
+              "options": [
+                "Listen, confirm the issue, and follow up",
+                "Argue without checking",
+                "Promise anything",
+                "Share their identity"
+              ],
+              "prompt": "How should a user's complaint be handled?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "確認して報告します。",
+              "meaning": "I will check and report it.",
+              "reading": "かくにんしてほうこくします。"
+            },
+            {
+              "japanese": "どこに問題がありますか。",
+              "meaning": "Where is the problem?",
+              "reading": "どこにもんだいがありますか。"
+            }
+          ],
+          "id": "cleaning-26",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip inspeksi mutu, kerusakan, dan keluhan.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Control the hazard, check for residue, and report it for correction according to procedure.",
+          "scenario": "A building user complains that the floor is still sticky after cleaning.",
+          "sections": [
+            {
+              "body": "Quality is judged by checkable results: dust and stains are removed to the required standard, the surface is safe, no troublesome residue remains, and supplies are ready. Compare conditions before and after work to identify damage. Record user complaints neutrally. Do not erase evidence or blame anyone without facts; report conditions and actions that can be verified.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Use the area checklist and pay attention to corners and high-touch points that are easy to miss. If the standard has not been met, correct the problem using an approved method or report the limitation. Record damage, its location, and the time through official channels without photographing personal information. Listen to a complaint fully, confirm its main point, and pass it to the person in charge so that follow-up is not missed.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Bandingkan hasil dengan standar",
+            "Periksa area terlewat",
+            "Catat kerusakan faktual",
+            "Laporkan dan ikuti tindak lanjut"
+          ],
+          "title": "Quality Inspections, Damage, and Complaints",
+          "vocabulary": [
+            {
+              "japanese": "品質",
+              "meaning": "quality",
+              "reading": "ひんしつ"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            },
+            {
+              "japanese": "破損",
+              "meaning": "damage",
+              "reading": "はそん"
+            },
+            {
+              "japanese": "苦情",
+              "meaning": "complaint",
+              "reading": "くじょう"
+            }
+          ]
+        },
+        {
+          "caution": "Saving product does not mean diluting it beyond the instructions or shortening its contact time.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A handover helps ensure hazards are not missed when staff change shifts.",
+              "options": [
+                "The location, status, and checks required before reopening",
+                "A greeting only",
+                "An exam score",
+                "Uniform color"
+              ],
+              "prompt": "The carpet is still wet at shift change. What information should be handed over?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Efficiency must not change effectiveness or safety requirements.",
+              "options": [
+                "Prepare the volume and dilution according to the label",
+                "Dilute it as you wish",
+                "Skip the contact time",
+                "Mix leftovers from all products"
+              ],
+              "prompt": "How can materials be used economically and safely?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この場所はまだ使えません。",
+              "meaning": "This area is not ready for use.",
+              "reading": "このばしょはまだつかえません。"
+            },
+            {
+              "japanese": "次の担当者に伝えます。",
+              "meaning": "I pass the information to the next staff member.",
+              "reading": "つぎのたんとうしゃにつたえます。"
+            }
+          ],
+          "id": "cleaning-27",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip penggunaan sumber daya dan serah terima shift.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Communicate the location, drying status, and required inspection before reopening the area.",
+          "scenario": "The shift is ending, but the carpet is still wet and the area remains restricted.",
+          "sections": [
+            {
+              "body": "Efficiency means meeting the required standard with appropriate use of products, water, energy, and time, without compromising safety. Correct dilution reduces waste and residue. Equipment maintenance helps it perform well and last longer. A shift handover should cover completed and pending tasks, restricted areas, damage, and supply needs. Missing information may lead a coworker to reopen an area that is still unsafe.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Calculate the amount of solution needed, avoid running water unnecessarily, and switch off machines as instructed when the task is done. Clean and dry tools before storing them. Return products to their designated storage and make sure the cart does not create a hazard. Write a brief handover with clear location and status details, including who has been contacted. The next staff member must know which areas must remain closed.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Siapkan volume sesuai kebutuhan",
+            "Rawat dan simpan alat",
+            "Catat tugas tertunda dan bahaya",
+            "Konfirmasikan serah terima"
+          ],
+          "title": "Resource Use and Shift Handover",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "節水",
+              "meaning": "water conservation",
+              "reading": "せっすい"
+            },
+            {
+              "japanese": "節電",
+              "meaning": "energy conservation",
+              "reading": "せつでん"
+            },
+            {
+              "japanese": "未完了",
+              "meaning": "unfinished",
+              "reading": "みかんりょう"
+            }
+          ]
+        }
+      ],
+      "title": "Planning, Communication, and Quality"
+    },
+    {
+      "description": "Signs, numbers, conversations, reading schedules, and integrated decisions.",
+      "id": "japanese",
+      "lessons": [
+        {
+          "caution": "Understanding one word is not enough when the number, location, or prohibition is still unclear.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "使用 means “use,” and 禁止 means “prohibited.”",
+              "options": [
+                "Must not be used",
+                "Please use it",
+                "Already dry",
+                "Available stock"
+              ],
+              "prompt": "What does 使用禁止 mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "清掃中 indicates that cleaning is in progress.",
+              "options": [
+                "Cleaning is in progress; follow the restrictions",
+                "The store is closed forever",
+                "The electrical repair is complete",
+                "Allow everyone to enter freely"
+              ],
+              "prompt": "What does 清掃中 on a door indicate?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "使用禁止です。",
+              "meaning": "Do not use.",
+              "reading": "しようきんしです。"
+            },
+            {
+              "japanese": "ここは立入禁止です。",
+              "meaning": "Do not enter here.",
+              "reading": "ここはたちいりきんしです。"
+            }
+          ],
+          "id": "cleaning-28",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip rambu dan instruksi keselamatan jepang.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Do not use it; ask the person in charge about the equipment's status.",
+          "scenario": "A machine marked 使用禁止 is available in the storage room.",
+          "sections": [
+            {
+              "body": "Signs and prohibitions often use short expressions. 立入禁止 means no entry, 使用禁止 means do not use, 清掃中 means cleaning in progress, and 注意 means caution. Do not rely on sign color alone; read the words and check where they apply. If you do not understand an instruction, stop the risky action and ask. A negative expression such as 触らないでください means do not touch.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Practice connecting signs to actions: stay out of a restricted area, choose another tool when equipment is marked as damaged, or use an alternative route. Do not move a sign to finish work sooner. In conversation, repeat important information to confirm understanding, such as the location and restricted area. Keep the sign in place until the conditions for reopening the area have actually been met.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca kata rambu",
+            "Hubungkan dengan lokasi dan tindakan",
+            "Tanyakan jika ragu",
+            "Patuhi sampai dinyatakan aman"
+          ],
+          "title": "Japanese Safety Signs and Instructions",
+          "vocabulary": [
+            {
+              "japanese": "禁止",
+              "meaning": "prohibition",
+              "reading": "きんし"
+            },
+            {
+              "japanese": "注意",
+              "meaning": "caution",
+              "reading": "ちゅうい"
+            },
+            {
+              "japanese": "清掃中",
+              "meaning": "cleaning in progress",
+              "reading": "せいそうちゅう"
+            },
+            {
+              "japanese": "故障中",
+              "meaning": "out of order",
+              "reading": "こしょうちゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not confuse milliliters with liters or morning times with afternoon times.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "午後 means “afternoon”; 二時 is two o'clock.",
+              "options": [
+                "2:00 p.m.",
+                "2:00 a.m.",
+                "12:00 p.m.",
+                "8:00 p.m."
+              ],
+              "prompt": "What time does 午後二時 mean?"
+            },
+            {
+              "answer": 0,
+              "explanation": "三階 means “third floor,” トイレ means “toilet,” and 水漏れ means “water leak.”",
+              "options": [
+                "A leak in the third-floor toilet",
+                "Waste in the lobby",
+                "The second-floor glass is cracked",
+                "A full stock of soap"
+              ],
+              "prompt": "What is being reported by 「三階のトイレで水漏れがあります」?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "三階のトイレで水漏れがあります。",
+              "meaning": "There is a leak in the restroom on the third floor.",
+              "reading": "さんがいのといれでみずもれがあります。"
+            },
+            {
+              "japanese": "午後二時に点検します。",
+              "meaning": "I will inspect it at 2:00 p.m.",
+              "reading": "ごごにじにてんけんします。"
+            }
+          ],
+          "id": "cleaning-29",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip jadwal, satuan, dan laporan singkat.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Confirm the inspection on the third floor at 2:00 p.m.",
+          "scenario": "The schedule says 3階、午後2時、点検.",
+          "sections": [
+            {
+              "body": "Work instructions often combine a time, floor, volume, and location. 午前 means before noon, 午後 means after noon, 階 indicates a floor, and 毫升 is commonly written as mL on products. A number without a unit can be misread. Read the whole schedule: what task, where, when, and what completion criteria apply. In reports, separate observed facts from assumptions about the cause.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "Use the pattern location + condition + action: 三階のトイレで水漏れがあります, meaning there is a water leak in the third-floor restroom. Confirm numbers by pointing to the instructions or writing them down if needed. If work is unfinished, state its status clearly instead of saying はい without understanding. Report any assistance needed and what has already been done. Share sensitive information only through approved channels.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Baca lokasi dan waktu",
+            "Periksa satuan",
+            "Ulangi angka penting",
+            "Laporkan fakta dan status"
+          ],
+          "title": "Schedules, Units, and Brief Reports",
+          "vocabulary": [
+            {
+              "japanese": "階",
+              "meaning": "building floor",
+              "reading": "かい"
+            },
+            {
+              "japanese": "午前",
+              "meaning": "before noon",
+              "reading": "ごぜん"
+            },
+            {
+              "japanese": "午後",
+              "meaning": "after noon",
+              "reading": "ごご"
+            },
+            {
+              "japanese": "完了",
+              "meaning": "finished",
+              "reading": "かんりょう"
+            }
+          ]
+        },
+        {
+          "caution": "Machine operation and work at height still require hands-on practice and supervision.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Control access before creating a hazard, and end the restriction only after inspection.",
+              "options": [
+                "Secure the area, clean it, dry it, inspect it, then reopen it",
+                "Mop, then put up a sign",
+                "Open access while it is wet",
+                "Store the tools at the emergency exit"
+              ],
+              "prompt": "What is the safe sequence for wet work on a public route?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A written decision-making exercise does not replace practical skills.",
+              "options": [
+                "No; supervised hands-on practice is required",
+                "Yes, automatically",
+                "Yes, if one question is correct",
+                "Yes, without training"
+              ],
+              "prompt": "Does a text simulation prove the ability to operate a machine?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "安全を先に確認します。",
+              "meaning": "I check safety first.",
+              "reading": "あんぜんをさきにかくにんします。"
+            },
+            {
+              "japanese": "分からない時は質問します。",
+              "meaning": "I ask when I do not understand.",
+              "reading": "わからないときはしつもんします。"
+            }
+          ],
+          "id": "cleaning-30",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip kasus terpadu dan persiapan penilaian cbt.",
+            "Memilih tindakan yang aman dari kasus kerja dan menjelaskan alasannya."
+          ],
+          "response": "Protect building users, avoid electrical hazards, coordinate the response, and use a method suited to the material.",
+          "scenario": "The lobby is busy, the floor is water-sensitive, and there is a spill near a cable.",
+          "sections": [
+            {
+              "body": "The SSW building-cleaning assessment covers knowledge and practical decisions. The official format reviewed here has a 20-question theory CBT lasting 20 minutes and a 30-question practical assessment lasting 30 minutes; each requires a score of 60 percent. The practical assessment may use photographs, illustrations, true-or-false items, choices, and sequencing. This app's simulation uses multiple-choice questions and original text scenarios, so it does not reproduce every official visual format.",
+              "title": "Work Principles and Knowledge"
+            },
+            {
+              "body": "When reading a scenario, identify the most urgent hazard, the surface, type of soil, equipment, and building users before choosing a method. If information is missing, confirm it rather than guess. A safe sequence usually begins by controlling access, preparing according to instructions, cleaning, and checking the result. Review the explanation after practice and revisit the relevant lesson. A simulation score is a study aid, not proof of field skill or an official exam result.",
+              "title": "Applying the Work Method and Checking Results"
+            }
+          ],
+          "steps": [
+            "Identifikasi bahaya utama",
+            "Cocokkan bahan dan metode",
+            "Pilih urutan aman",
+            "Tinjau hasil dan pelajari ulang"
+          ],
+          "title": "Integrated Scenarios and CBT Assessment Preparation",
+          "vocabulary": [
+            {
+              "japanese": "学科",
+              "meaning": "theory",
+              "reading": "がっか"
+            },
+            {
+              "japanese": "実技",
+              "meaning": "practice",
+              "reading": "じつぎ"
+            },
+            {
+              "japanese": "順番",
+              "meaning": "sequence",
+              "reading": "じゅんばん"
+            },
+            {
+              "japanese": "判断",
+              "meaning": "decision assessment",
+              "reading": "はんだん"
+            }
+          ]
+        }
+      ],
+      "title": "Workplace Japanese and Integrated Scenarios"
+    }
+  ],
+  "sources": [
+    {
+      "title": "JBMA · SSW No. 1: Scope, CBT, and Study Materials (Reviewed October 17, 2026)",
+      "url": "https://www.j-bma.or.jp/qualification-training/zairyu-1go"
+    },
+    {
+      "title": "JBMA · Building Cleaning Sector",
+      "url": "https://www.j-bma.or.jp/qualification-training/zairyu"
+    },
+    {
+      "title": "MHLW · Workplace Safety and Chemical Information",
+      "url": "https://anzeninfo.mhlw.go.jp/"
+    },
+    {
+      "title": "CDC · Cleaning and disinfecting",
+      "url": "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html"
+    }
+  ]
+}

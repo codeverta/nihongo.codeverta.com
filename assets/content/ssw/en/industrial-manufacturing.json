@@ -1,0 +1,1264 @@
+{
+  "modules": [
+    {
+      "description": "Cross-category principles for starting work, protecting people, and communicating. This material does not replace standards for a specific machine, category, or facility.",
+      "id": "safe-work",
+      "lessons": [
+        {
+          "caution": "Do not assume one qualification covers every production line, machine, or product.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Eligible categories and tasks are limited; follow the assignment and facility procedures.",
+              "kind": "knowledge",
+              "options": [
+                "Because tasks and facility eligibility depend on the category and instructions",
+                "Because all factory machines have the same procedure",
+                "Because workers may choose stages without coordination",
+                "Because the product name means all work is safe"
+              ],
+              "prompt": "Why must workers confirm the scope of work and workplace category?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Operation requires appropriate competence, instruction, and authorization.",
+              "kind": "case",
+              "options": [
+                "Request training and authorization before operating it",
+                "Start the machine so you can learn while working",
+                "Ask a coworker to watch from a distance without reading the instructions",
+                "Operate the machine at its lowest speed"
+              ],
+              "prompt": "A machine that is new to you is idle, and a coworker tells you to try it right away. What is the best action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「製造」is read せいぞう and means “manufacturing.”",
+              "kind": "vocabulary",
+              "options": [
+                "manufacturing",
+                "work scope",
+                "instruction",
+                "product"
+              ],
+              "prompt": "What does 「製造（せいぞう）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip lingkup kerja di manufaktur sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Do not start or activate the machine; request instruction and authorization according to procedure.",
+          "scenario": "You are temporarily assigned to a machine you have never used.",
+          "sections": [
+            {
+              "body": "Manufacturing work varies by category, product, machine, and qualifying business classification. The official 工業製品製造業 list covers 17 categories; this material teaches general work habits and does not authorize work in every factory or process. Follow your assigned placement and applicable instructions.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Before starting a task, check the product, process stage, and work instructions. Ask for an explanation if the task is outside your competence or category limits. Tell the work leader if conditions change.\n\nPractice scenario: You are temporarily assigned to a machine you have never used.\nResponse: Do not start or activate the machine; request instruction and authorization according to procedure.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Work Scope in Manufacturing",
+          "vocabulary": [
+            {
+              "japanese": "製造",
+              "meaning": "manufacturing",
+              "reading": "せいぞう"
+            },
+            {
+              "japanese": "作業範囲",
+              "meaning": "scope of work",
+              "reading": "さぎょうはんい"
+            },
+            {
+              "japanese": "指示",
+              "meaning": "instruction",
+              "reading": "しじ"
+            },
+            {
+              "japanese": "製品",
+              "meaning": "product",
+              "reading": "せいひん"
+            }
+          ]
+        },
+        {
+          "caution": "PPE reduces exposure but does not replace machine guards or hazard controls.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Suitable, serviceable PPE is part of risk control; it does not replace other procedures.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm that the equipment is suitable and undamaged",
+                "Replace all machine inspections",
+                "Allow workers to change the procedure",
+                "Prove that the production target has been met"
+              ],
+              "prompt": "The purpose of checking PPE before entering a work area is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "A damaged guard cannot be relied on; postpone hazardous work until safe equipment is available.",
+              "kind": "case",
+              "options": [
+                "Stop preparation, replace it, and report according to procedure",
+                "Position the crack facing sideways",
+                "Remove the goggles for a clearer view",
+                "Continue if the task is expected to be brief"
+              ],
+              "prompt": "Eye protection is cracked during work that requires goggles. What should be done?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「保護具」is read ほごぐ and means “protective equipment.”",
+              "kind": "vocabulary",
+              "options": [
+                "hazard",
+                "protective equipment",
+                "protective goggles",
+                "inspection"
+              ],
+              "prompt": "What does 「保護具（ほごぐ）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-02",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip ppe dan pemeriksaan awal sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Do not work with cracked eye protection; replace it according to procedure and inform the person in charge.",
+          "scenario": "Your eye protection is cracked before cutting work begins.",
+          "sections": [
+            {
+              "body": "Select PPE according to workplace hazards and rules. Safety footwear, eye protection, gloves, hearing protection, and respirators serve different purposes and are not interchangeable. PPE must fit, be intact, and be worn as directed.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Inspect PPE before entering the area. Check that machine guards and walkways appear normal without touching hazardous parts. Stop preparations and report damaged PPE or a missing guard.\n\nPractice scenario: Your eye protection is cracked before cutting work begins.\nResponse: Do not work with cracked eye protection; replace it according to procedure and inform the person in charge.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "PPE and Pre-Work Inspection",
+          "vocabulary": [
+            {
+              "japanese": "保護具",
+              "meaning": "protective equipment",
+              "reading": "ほごぐ"
+            },
+            {
+              "japanese": "保護眼鏡",
+              "meaning": "safety glasses",
+              "reading": "ほごめがね"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            },
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not put your hand inside or open a guard to look for the cause.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Clear facts help the person in charge choose a safe response.",
+              "kind": "knowledge",
+              "options": [
+                "The location and factual condition observed",
+                "A suspected cause without inspection",
+                "The name of the coworker considered to be at fault",
+                "An estimate of the production target only"
+              ],
+              "prompt": "A useful hazard report should include…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Protect yourself, use a known safe control, and request handling by authorized personnel.",
+              "kind": "case",
+              "options": [
+                "Move away, stop it safely according to procedure, then report it",
+                "Open the cover and remove the chips by hand",
+                "Increase the speed to eject the chips",
+                "Ask a coworker to stand near the machine and watch"
+              ],
+              "prompt": "Chips emerge from the machine when an abnormal sound is heard. The correct initial response is…"
+            },
+            {
+              "answer": 2,
+              "explanation": "「報告」is read ほうこく and means “report.”",
+              "kind": "vocabulary",
+              "options": [
+                "shutdown",
+                "person in charge",
+                "report",
+                "abnormality"
+              ],
+              "prompt": "What does 「報告（ほうこく）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip komunikasi dan stop-work sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Move away from the hazard. Stop the process only if the emergency stop is safely reachable and the procedure permits it, then call the person in charge.",
+          "scenario": "You hear an unusual noise and see fragments coming out of the machine.",
+          "sections": [
+            {
+              "body": "Workers must understand signs, signals, and warning words in the same way. Report hazards, near misses, injuries, and unclear instructions promptly and factually. Stopping dangerous work and asking for help are part of workplace safety.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "When reporting, state the machine or location, visible condition, time, and temporary action. Make sure the recipient understands. Do not attempt mechanical or electrical repairs without authorization.\n\nPractice scenario: You hear an unusual noise and see fragments coming out of a machine.\nResponse: Move away from the hazard, stop the process only if the emergency stop is safely reachable and procedure permits it, then call the person in charge.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Communication and Stopping Work",
+          "vocabulary": [
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            },
+            {
+              "japanese": "異常",
+              "meaning": "abnormality",
+              "reading": "いじょう"
+            },
+            {
+              "japanese": "停止",
+              "meaning": "shutdown",
+              "reading": "ていし"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            }
+          ]
+        }
+      ],
+      "title": "Safety and Work Organization"
+    },
+    {
+      "description": "Read work standards, control process quality, take measurements, and maintain traceability.",
+      "id": "quality-process",
+      "lessons": [
+        {
+          "caution": "Do not choose whichever version is easiest or combine old and new instructions.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Confirm the active revision so the process is controlled and results are traceable.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm the active revision before processing",
+                "Follow the shorter copy",
+                "Choose the old instruction because it is more familiar",
+                "Mix steps that appear to fit"
+              ],
+              "prompt": "When two copies of an instruction show different revisions, the worker should…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Resolve unclear documentation before continuing the process.",
+              "kind": "case",
+              "options": [
+                "Hold the affected process and ask which revision is active",
+                "Use the two alternately",
+                "Rewrite the steps from memory",
+                "Continue production until someone complains"
+              ],
+              "prompt": "The work sheet at the area has a different revision from your copy. What is the correct action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「標準作業」is read ひょうじゅんさぎょう and means “standard work.”",
+              "kind": "vocabulary",
+              "options": [
+                "standard work",
+                "work sequence",
+                "revision",
+                "confirmation"
+              ],
+              "prompt": "What does 「標準作業（ひょうじゅんさぎょう）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-04",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip standar kerja dan urutan proses sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Pause the affected process and confirm the active revision with the person in charge.",
+          "scenario": "The production-area work sheet has a different revision from the copy you brought.",
+          "sections": [
+            {
+              "body": "Work instructions specify materials, sequence, process conditions, inspections, and acceptance criteria. Unauthorized variation can result in nonconforming products and untraceable records. Check document versions and lot numbers.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Before starting, check the product code, instruction revision, and materials. Follow the work sequence; if instructions conflict with actual conditions, hold the work and ask for clarification before producing more units.\n\nPractice scenario: The production-area work sheet has a different revision from the copy you brought.\nResponse: Pause the affected process and confirm the active revision with the person in charge.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Work Standards and Process Sequence",
+          "vocabulary": [
+            {
+              "japanese": "標準作業",
+              "meaning": "standard work",
+              "reading": "ひょうじゅんさぎょう"
+            },
+            {
+              "japanese": "手順",
+              "meaning": "work sequence",
+              "reading": "てじゅん"
+            },
+            {
+              "japanese": "改訂",
+              "meaning": "revision",
+              "reading": "かいてい"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not hide defects, remove marks, or return products to the normal flow.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Identification and separation prevent a problem product from moving on or being shipped without an authorized decision.",
+              "kind": "knowledge",
+              "options": [
+                "So it is not confused with an accepted product",
+                "So no lot record needs to be made",
+                "So the defect is not visible during inspection",
+                "So workers can decide on repairs freely"
+              ],
+              "prompt": "Why must nonconforming products be separated and given a status?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Check and record the extent of the problem; do not decide the disposition on your own.",
+              "kind": "case",
+              "options": [
+                "Separate the component and hold the affected lot for inspection",
+                "Mix the component with good products after cleaning it",
+                "Discard all items without recording them",
+                "Ship it first because only one crack is visible"
+              ],
+              "prompt": "A component is cracked, and the box next to it has not been inspected. What is the safe step?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「不良品」is read ふりょうひん and means “defective product.”",
+              "kind": "vocabulary",
+              "options": [
+                "handling action",
+                "defective product",
+                "separation",
+                "production lot"
+              ],
+              "prompt": "What does 「不良品（ふりょうひん）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip cacat, pemisahan, dan eskalasi sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Segregate the component and hold the potentially affected group for inspection according to procedure.",
+          "scenario": "You find a crack in one component, but the adjacent box has not been inspected.",
+          "sections": [
+            {
+              "body": "Segregate defective or questionable products so they are not mixed with accepted products. Status labels, hold locations, quantities, and lot numbers help prevent accidental shipment. Only authorized personnel may decide disposition under the quality system.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Stop the flow of affected products as required, identify the lot and quantity, and apply the designated status mark. Record the finding and inform the inspector. Do not alter, repair, or discard products yourself outside procedure.\n\nPractice scenario: You find a crack in one component, but the adjacent box has not been inspected.\nResponse: Segregate the component and hold the potentially affected group for inspection according to procedure.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Defects, Segregation, and Escalation",
+          "vocabulary": [
+            {
+              "japanese": "不良品",
+              "meaning": "defective product",
+              "reading": "ふりょうひん"
+            },
+            {
+              "japanese": "隔離",
+              "meaning": "segregation",
+              "reading": "かくり"
+            },
+            {
+              "japanese": "ロット",
+              "meaning": "production lot",
+              "reading": "ろっと"
+            },
+            {
+              "japanese": "処置",
+              "meaning": "handling action",
+              "reading": "しょち"
+            }
+          ]
+        },
+        {
+          "caution": "Do not adjust or calibrate a tool yourself unless assigned and authorized to do so.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A suitable instrument status supports quality decisions based on reliable measurements.",
+              "kind": "knowledge",
+              "options": [
+                "The result's reliability must meet the purpose and inspection tolerance",
+                "Older equipment is always more accurate",
+                "Calibration replaces recording the result",
+                "Every instrument can measure every range"
+              ],
+              "prompt": "The calibration status of a measuring instrument matters because…"
+            },
+            {
+              "answer": 0,
+              "explanation": "An instrument with uncertain status must not be used as the basis for releasing a product.",
+              "kind": "case",
+              "options": [
+                "Use a valid instrument and evaluate the affected measurements",
+                "Continue using it if the reading appears stable",
+                "Adjust the scale yourself to match the product",
+                "Skip the measurement without telling anyone"
+              ],
+              "prompt": "The calibration label on a required instrument has expired. What is the correct action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「測定」is read そくてい and means “measurement.”",
+              "kind": "vocabulary",
+              "options": [
+                "dimension",
+                "calibration",
+                "measurement",
+                "measuring instrument"
+              ],
+              "prompt": "What does 「測定（そくてい）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-06",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengukuran dan alat ukur sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Do not rely on the result; request a tool with valid status and follow the process for evaluating products already measured.",
+          "scenario": "The required measuring tool has an expired calibration mark.",
+          "sections": [
+            {
+              "body": "Choose measuring tools with the required specifications and range. Cleanliness, condition, resolution, and calibration or check status affect the reliability of results. Use a measurement technique consistent with the instructions and the correct units.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Match the tool to the tolerance and measurement point. Make sure it is identified and serviceable; perform a zero or function check as instructed. Record the result and units. If the result is outside limits or the tool is questionable, hold the product and report it.\n\nPractice scenario: The required measuring tool has an expired calibration mark.\nResponse: Do not rely on the result; request a tool with valid status and follow the process for evaluating products already measured.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Measurement and Measuring Tools",
+          "vocabulary": [
+            {
+              "japanese": "測定",
+              "meaning": "measurement",
+              "reading": "そくてい"
+            },
+            {
+              "japanese": "測定器",
+              "meaning": "measuring tool",
+              "reading": "そくていき"
+            },
+            {
+              "japanese": "寸法",
+              "meaning": "dimension",
+              "reading": "すんぽう"
+            },
+            {
+              "japanese": "校正",
+              "meaning": "calibration",
+              "reading": "こうせい"
+            }
+          ]
+        }
+      ],
+      "title": "Processes, Quality, and Recordkeeping"
+    },
+    {
+      "description": "Choose equipment according to instructions, recognize common hazards, and handle materials safely.",
+      "id": "equipment-material",
+      "lessons": [
+        {
+          "caution": "Do not move labels between containers or combine leftover materials from different lots.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Match material against controlled information, not visual similarity.",
+              "kind": "knowledge",
+              "options": [
+                "The code and specifications in the instructions and the lot identity",
+                "The closest color match",
+                "The pattern in the previous order",
+                "The material that is easiest to reach"
+              ],
+              "prompt": "The basis for selecting production material is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Identity and lot information must be maintained; unexplained discrepancies require clarification.",
+              "kind": "case",
+              "options": [
+                "Check the code against the instructions and request verification if they differ",
+                "Use the coil that is closer",
+                "Move a label from another coil",
+                "Combine the two so nothing is left over"
+              ],
+              "prompt": "Two wire coils look alike but have different labels. What should be done?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「材料」is read ざいりょう and means “material.”",
+              "kind": "vocabulary",
+              "options": [
+                "material",
+                "identification",
+                "label/marking",
+                "receipt"
+              ],
+              "prompt": "What does 「材料（ざいりょう）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-07",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip material, label, dan identifikasi sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Do not choose by color or appearance alone; match the specifications to the instructions and ask if they do not agree.",
+          "scenario": "Two wire coils look similar, but their label codes differ.",
+          "sections": [
+            {
+              "body": "Materials may look alike but differ in type, size, lot, or specification. Labels and receiving documents link materials to work instructions and product results. Material errors can affect both safety and quality.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Before use, compare the name or code, lot, quantity, and physical condition with the production order. Separate damaged or unidentified material and request verification. Keep labels and records according to the rules.\n\nPractice scenario: Two wire coils look similar, but their label codes differ.\nResponse: Do not choose by color or appearance alone; match specifications to the instructions and ask if they do not agree.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Materials, Labels, and Identification",
+          "vocabulary": [
+            {
+              "japanese": "材料",
+              "meaning": "material",
+              "reading": "ざいりょう"
+            },
+            {
+              "japanese": "識別",
+              "meaning": "identification",
+              "reading": "しきべつ"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "label/marking",
+              "reading": "ひょうじ"
+            },
+            {
+              "japanese": "受入",
+              "meaning": "intake",
+              "reading": "うけいれ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not clean inside the machine or put your hands into it until authorized personnel have isolated the energy.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Do not bypass the interlock; handle the fault within your authority and follow energy-control procedures.",
+              "kind": "knowledge",
+              "options": [
+                "Keep the guard in place and request an authorized inspection",
+                "Hold down the switch with an object",
+                "Remove the guard so production can continue",
+                "Reach into the machine from the other side"
+              ],
+              "prompt": "When a safety interlock prevents the machine from running, workers need to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "A failed safeguard is hazardous; do not disable or bypass it.",
+              "kind": "case",
+              "options": [
+                "Stop using it and report it for an official inspection",
+                "Prop the cover open to activate the sensor",
+                "Try operating it with a hand near moving parts",
+                "Turn off the alarm and continue"
+              ],
+              "prompt": "The machine is not running because the safety cover is not locked. What is the correct response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「安全装置」is read あんぜんそうち and means “safety device.”",
+              "kind": "vocabulary",
+              "options": [
+                "repair",
+                "safety device",
+                "machine guard",
+                "power source"
+              ],
+              "prompt": "What does 「安全装置（あんぜんそうち）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pelindung mesin dan energi berbahaya sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Do not hold the switch or bypass the interlock; notify the technician or person in charge according to procedure.",
+          "scenario": "The machine has stopped because its safety cover is not locked.",
+          "sections": [
+            {
+              "body": "Guards, interlocks, and safety controls protect workers from moving parts and hazardous energy. Only designated personnel may lock out, isolate, adjust, or repair equipment under facility procedures.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Check that guards are present without disabling the system. If a guard is missing or an interlock does not work, do not run the machine and report it immediately. Maintenance must follow the formal isolation process and be performed by competent staff.\n\nPractice scenario: The machine stops because its safety cover is not locked.\nResponse: Do not hold the switch or bypass the interlock; notify the technician or person in charge according to procedure.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Machine Guards and Hazardous Energy",
+          "vocabulary": [
+            {
+              "japanese": "安全装置",
+              "meaning": "safety device",
+              "reading": "あんぜんそうち"
+            },
+            {
+              "japanese": "保護カバー",
+              "meaning": "machine guard",
+              "reading": "ほごかばー"
+            },
+            {
+              "japanese": "電源",
+              "meaning": "power source",
+              "reading": "でんげん"
+            },
+            {
+              "japanese": "修理",
+              "meaning": "rework",
+              "reading": "しゅうり"
+            }
+          ]
+        },
+        {
+          "caution": "Do not rush or carry a load that blocks your view.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Route planning and appropriate equipment help prevent injuries and dropped items.",
+              "kind": "knowledge",
+              "options": [
+                "The weight, route, equipment, and destination conditions",
+                "The speed of carrying the load",
+                "Whether anyone else can see",
+                "Whether the label can be read while walking"
+              ],
+              "prompt": "Before moving a load, you need to confirm…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not move a load when visibility or footing is unsafe.",
+              "kind": "case",
+              "options": [
+                "Do not lift it alone; secure the route, then use assistance or equipment as required",
+                "Carry it quickly to arrive sooner",
+                "Drag the box across the slippery route",
+                "Ask someone to walk ahead without telling them the destination"
+              ],
+              "prompt": "A heavy box blocks your view and the route is slippery. What is the safe action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「運搬」is read うんぱん and means “transporting goods.”",
+              "kind": "vocabulary",
+              "options": [
+                "trolley",
+                "route",
+                "goods movement",
+                "weight"
+              ],
+              "prompt": "What does 「運搬（うんぱん）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemindahan material dan ergonomi sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Do not lift it alone; secure the route, use an aid or coworker's help, and clean or report the floor condition.",
+          "scenario": "A heavy box blocks your view, and it must be carried across a wet floor.",
+          "sections": [
+            {
+              "body": "Loads can injure workers or fall while being lifted and moved. Consider the route, weight, shape, center of gravity, lifting aids, and team communication. Use lifting equipment only if you are authorized and trained.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Check the route and destination before moving material. Use a cart or team assistance as permitted; maintain good posture and do not carry a load that blocks your view. Secure the material against shifting and place it in the designated position.\n\nPractice scenario: A heavy box blocks your view, and it must be carried across a wet floor.\nResponse: Do not lift it alone; secure the route, use an aid or coworker's help, and clean or report the floor condition.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Material Handling and Ergonomics",
+          "vocabulary": [
+            {
+              "japanese": "運搬",
+              "meaning": "material handling",
+              "reading": "うんぱん"
+            },
+            {
+              "japanese": "重量",
+              "meaning": "weight",
+              "reading": "じゅうりょう"
+            },
+            {
+              "japanese": "台車",
+              "meaning": "cart",
+              "reading": "だいしゃ"
+            },
+            {
+              "japanese": "通路",
+              "meaning": "route",
+              "reading": "つうろ"
+            }
+          ]
+        }
+      ],
+      "title": "Equipment, Materials, and Workflow"
+    },
+    {
+      "description": "Verify products, identities, records, and handovers according to facility procedures.",
+      "id": "handover",
+      "lessons": [
+        {
+          "caution": "Do not disregard an out-of-range value just because the product looks good.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Documented criteria keep decisions consistent and traceable.",
+              "kind": "knowledge",
+              "options": [
+                "The specified criteria and inspection method",
+                "A worker's guess based on appearance",
+                "The target quantity to be completed",
+                "Comparison with a product from another lot"
+              ],
+              "prompt": "An acceptance decision must be based on…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Out-of-limit results must be controlled and evaluated; records must remain accurate.",
+              "kind": "case",
+              "options": [
+                "Hold it and report the actual result for an authorized decision",
+                "Record the measurement closest to the nominal value",
+                "Continue because it looks fine",
+                "Repeat the measurement until a passing value appears"
+              ],
+              "prompt": "A product looks fine, but one measurement is outside tolerance. What is the correct action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「検査」is read けんさ and means “inspection.”",
+              "kind": "vocabulary",
+              "options": [
+                "inspection",
+                "pass",
+                "criteria",
+                "record"
+              ],
+              "prompt": "What does 「検査（けんさ）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-10",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemeriksaan produk dan kriteria penerimaan sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Mark and hold the product according to procedure; report the actual value without changing the record or approving it yourself.",
+          "scenario": "The product looks good, but one measurement is outside tolerance.",
+          "sections": [
+            {
+              "body": "Final inspection compares product characteristics with documented criteria, such as dimensions, appearance, function, or quantity, as required by the category and instructions. Personal impressions do not determine a passing result. Use inspection tools and methods according to procedure.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Identify the product and lot, inspect the specified points, record results with units and status, and segregate failed or questionable items. Ask an authorized inspector to assess any deviation before the product moves to the next process.\n\nPractice scenario: The product looks good, but one measurement is outside tolerance.\nResponse: Mark and hold the product according to procedure; report the actual value without changing the record or approving it yourself.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Product Inspection and Acceptance Criteria",
+          "vocabulary": [
+            {
+              "japanese": "検査",
+              "meaning": "inspection",
+              "reading": "けんさ"
+            },
+            {
+              "japanese": "合格",
+              "meaning": "pass",
+              "reading": "ごうかく"
+            },
+            {
+              "japanese": "基準",
+              "meaning": "criteria",
+              "reading": "きじゅん"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not guess a label from how the contents look or replace a label without traceable records.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Labels and records link a product to its status, lot, and destination.",
+              "kind": "knowledge",
+              "options": [
+                "Maintain product identity and traceability",
+                "Replace the quality inspection",
+                "Allow a product with no status to be shipped",
+                "Reduce the need for recordkeeping"
+              ],
+              "prompt": "The purpose of lot information and a readable label is…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Resolve uncertain identification before release.",
+              "kind": "case",
+              "options": [
+                "Hold the shipment and recheck it against verified records",
+                "Choose the label based on the shape of the contents",
+                "Replace the label without recording it to finish quickly",
+                "Ship it and explain if the customer asks"
+              ],
+              "prompt": "Two boxes have each other's labels. What is the safe action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「梱包」is read こんぽう and means “packing.”",
+              "kind": "vocabulary",
+              "options": [
+                "tracking",
+                "packing",
+                "shipment",
+                "quantity"
+              ],
+              "prompt": "What does 「梱包（こんぽう）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengepakan dan keterlacakan sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Hold shipment, verify the identity using reliable records, correct the label only under procedure, and document the action.",
+          "scenario": "The labels on two boxes are found to have been swapped after inspection.",
+          "sections": [
+            {
+              "body": "Packaging protects products from damage and contamination during storage and shipment. Under procedure, labels must connect products to their code, lot, quantity, inspection status, and destination. Separating product statuses prevents items from being mixed up.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Verify product identity before packaging, use the specified materials and method, and make sure the quantity and label are readable. Separate unreleased items from those ready to ship. Record each transfer.\n\nPractice scenario: The labels on two boxes have been swapped after inspection.\nResponse: Hold shipment, verify identities using reliable records, correct the labels only under procedure, and document the action.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Packaging and Traceability",
+          "vocabulary": [
+            {
+              "japanese": "梱包",
+              "meaning": "packaging",
+              "reading": "こんぽう"
+            },
+            {
+              "japanese": "出荷",
+              "meaning": "shipment",
+              "reading": "しゅっか"
+            },
+            {
+              "japanese": "数量",
+              "meaning": "quantity",
+              "reading": "すうりょう"
+            },
+            {
+              "japanese": "追跡",
+              "meaning": "traceability",
+              "reading": "ついせき"
+            }
+          ]
+        },
+        {
+          "caution": "Do not leave held products unmarked or remove records to make the area look finished.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The next worker needs factual information to manage unfinished work.",
+              "kind": "knowledge",
+              "options": [
+                "Work status, findings, actions, and the lot or machine identity",
+                "Only the next production target",
+                "A conclusion without facts or records",
+                "Information about a problem after the product has shipped"
+              ],
+              "prompt": "A safe handover must communicate…"
+            },
+            {
+              "answer": 0,
+              "explanation": "A hold status must remain visible, recorded, and handed over.",
+              "kind": "case",
+              "options": [
+                "Mark and record the status, then hand the information over to the next worker",
+                "Leave the box in the area without notifying anyone",
+                "Change the status to passed so the shift can finish",
+                "Move the lot to the dispatch line"
+              ],
+              "prompt": "A lot is still on hold when the shift ends. What should you do?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「引継ぎ」is read ひきつぎ and means “handover.”",
+              "kind": "vocabulary",
+              "options": [
+                "the staff member in charge",
+                "notebook",
+                "handover",
+                "follow-up message"
+              ],
+              "prompt": "What does 「引継ぎ（ひきつぎ）」 mean in a work context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業手順を確認します。",
+              "meaning": "I will check the work sequence.",
+              "reading": "さぎょうてじゅんをかくにんします。"
+            },
+            {
+              "japanese": "異常を責任者に報告します。",
+              "meaning": "I will report the abnormality to the person in charge.",
+              "reading": "いじょうをせきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "manufacturing-12",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip serah-terima dan catatan shift sesuai prosedur tempat kerja.",
+            "Memilih tindakan aman dan menjaga mutu untuk situasi kerja terkait.",
+            "Mengenali kosakata Jepang yang dipakai dalam tugas ini."
+          ],
+          "response": "Record the lot identity, findings, hold location, and person responsible; tell the next staff member directly.",
+          "scenario": "Your shift is ending while a particular lot is on hold because of a defect.",
+          "sections": [
+            {
+              "body": "Shift records communicate product status, quantities, problems, machines on hold, and follow-up work. Objective, timely information helps the next shift protect safety and quality. A verbal handover does not replace required records.",
+              "title": "Concepts and Limits of Application"
+            },
+            {
+              "body": "Before leaving the area, make sure product and equipment status is clear. Record the lot and machine numbers, facts, temporary action, and who has been informed. Receive instructions for your next task and ask about anything you do not understand.\n\nPractice scenario: Your shift is ending while a particular lot is on hold because of a defect.\nResponse: Record the lot identity, findings, hold location, and person responsible; tell the next staff member directly.",
+              "title": "Putting the Work Process into Practice"
+            }
+          ],
+          "steps": [
+            "Pastikan instruksi, identitas produk, dan kondisi area",
+            "Kenali bahaya atau ketidakcocokan sebelum bertindak",
+            "Ikuti metode yang disetujui dan minta bantuan bila di luar kewenangan",
+            "Periksa, catat, dan serahkan status pekerjaan"
+          ],
+          "title": "Handover and Shift Records",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "申し送り",
+              "meaning": "follow-up message",
+              "reading": "もうしおくり"
+            },
+            {
+              "japanese": "担当者",
+              "meaning": "person in charge",
+              "reading": "たんとうしゃ"
+            },
+            {
+              "japanese": "記録簿",
+              "meaning": "logbook",
+              "reading": "きろくぼ"
+            }
+          ]
+        }
+      ],
+      "title": "Inspection, Packing, and Repair"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "METI: Categories of Eligible Workplaces and Jobs",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/gaikokujinzai/ukeiretaisyou.html"
+    },
+    {
+      "title": "JAIM: Overview of the SSW No. 1 and No. 2 Exams",
+      "url": "https://www.jaim-skill.or.jp/exam/"
+    },
+    {
+      "title": "JAIM: Detailed Standards for the Industrial Category Exam",
+      "url": "https://www.jaim-skill.or.jp/assets/files/exam/top/exam_criteria.pdf"
+    },
+    {
+      "title": "METI: Policy on Accepting Workers in Manufacturing",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/gaikokujinzai/sswm-exam.html"
+    }
+  ],
+  "version": 1
+}

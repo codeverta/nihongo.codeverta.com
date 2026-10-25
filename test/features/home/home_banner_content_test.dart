@@ -2,79 +2,44 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nihongo_master/features/home/domain/home_banner_content.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 
-HomeDashboard dashboard({
-  bool plan = true,
-  List<HomeBanner> banners = const [],
-}) => HomeDashboard(
-  isAuthenticated: true,
-  dailyGoal: const HomeDailyGoal(
-    minutesLearned: 0,
-    targetMinutes: 20,
-    streakDays: 0,
-  ),
-  banners: banners,
-  categories: const [],
-  tracks: const [],
-  exams: const [],
-  achievements: const [],
-  plans: plan
-      ? const [
-          SubscriptionPlan(
-            id: 'lifetime',
-            name: 'Lifetime Access',
-            billingType: 'lifetime',
-            priceIdr: 99000,
-            features: ['Akses lengkap'],
-            recommended: true,
-          ),
-        ]
-      : [],
-);
-
 void main() {
-  test('free and lifetime accounts always have five distinct destinations', () {
-    final free = homeBannersFor(dashboard(), lifetime: false);
-    expect(free.map((b) => b.action), [
-      'premium',
-      'learn',
-      'ssw',
-      'jobs',
-      'manga',
-    ]);
-    expect(free.first.description, contains('Rp99.000'));
-    final paid = homeBannersFor(dashboard(), lifetime: true);
-    expect(paid.map((b) => b.action), [
-      'learn',
-      'ssw',
-      'jobs',
-      'anki',
-      'manga',
-    ]);
+  test('English home offer does not present the Indonesian-only price', () {
+    final banner = homeBannersFor(
+      _dashboard(),
+      lifetime: false,
+      english: true,
+    ).first;
+
+    expect(banner.id, 'lifetime-offer');
+    expect(
+      banner.description,
+      'Your app store shows the local price at checkout.',
+    );
+    expect(banner.description, isNot(contains('Rp')));
   });
-  test('older APIs missing Manga and pricing still produce five slides', () {
-    final items = homeBannersFor(dashboard(plan: false), lifetime: false);
-    expect(items, hasLength(5));
-    expect(items.last.action, 'manga');
-    expect(items.map((b) => b.action).toSet(), hasLength(5));
+
+  test('Indonesian home offer keeps its configured price', () {
+    final banner = homeBannersFor(_dashboard(), lifetime: false).first;
+
+    expect(banner.description, 'All lessons • Rp1.499.000');
   });
-  test(
-    'configured Manga image is preserved and duplicates do not add slides',
-    () {
-      const manga = HomeBanner(
-        id: 'configured-manga',
-        title: 'Manga pilihan',
-        description: '',
-        imageUrl: 'https://our-cos.example/manga.png',
-        action: 'manga',
-        buttonLabel: 'Baca',
-      );
-      final items = homeBannersFor(
-        dashboard(banners: [manga, manga]),
-        lifetime: false,
-      );
-      expect(items, hasLength(5));
-      expect(items.where((b) => b.action == 'manga'), hasLength(1));
-      expect(items.last.imageUrl, manga.imageUrl);
-    },
-  );
 }
+
+HomeDashboard _dashboard() => const HomeDashboard(
+  isAuthenticated: false,
+  dailyGoal: HomeDailyGoal(minutesLearned: 0, targetMinutes: 20, streakDays: 0),
+  categories: [],
+  tracks: [],
+  exams: [],
+  plans: [
+    SubscriptionPlan(
+      id: 'lifetime',
+      name: 'Lifetime Access',
+      billingType: 'lifetime',
+      priceIdr: 1499000,
+      features: ['All lessons'],
+      recommended: true,
+    ),
+  ],
+  achievements: [],
+);

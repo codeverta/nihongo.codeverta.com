@@ -16,6 +16,8 @@ type Service struct {
 	Store     *store.MemoryStore
 	Verifier  Verifier
 	ProductID string
+	// OfflineSigner remains nil unless a stable signing key is configured.
+	OfflineSigner *OfflineLeaseSigner
 }
 
 func (s *Service) Verify(ctx context.Context, user string, proof domain.PurchaseProof) (domain.Purchase, error) {

@@ -7,17 +7,17 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 
 final ankiStudyProvider = StateNotifierProvider.autoDispose
     .family<AnkiStudyController, AnkiStudyState, String>((ref, id) {
-  ref.watch(
-    authControllerProvider.select((s) => (s.user?.id, s.user?.isPremium)),
-  );
-  final controller = AnkiStudyController(
-    ref.watch(ankiRepositoryProvider),
-    id,
-    onSaved: () => ref.invalidate(ankiDeckProvider(id)),
-  );
-  unawaited(controller.load());
-  return controller;
-});
+      ref.watch(
+        authControllerProvider.select((s) => (s.user?.id, s.user?.isPremium)),
+      );
+      final controller = AnkiStudyController(
+        ref.watch(ankiRepositoryProvider),
+        id,
+        onSaved: () => ref.invalidate(ankiDeckProvider(id)),
+      );
+      unawaited(controller.load());
+      return controller;
+    });
 
 class AnkiStudyState {
   const AnkiStudyState({
@@ -45,7 +45,7 @@ class AnkiStudyState {
 
 class AnkiStudyController extends StateNotifier<AnkiStudyState> {
   AnkiStudyController(this.repository, this.deckId, {this.onSaved})
-      : super(const AnkiStudyState());
+    : super(const AnkiStudyState());
   final AnkiRepository repository;
   final String deckId;
   final void Function()? onSaved;

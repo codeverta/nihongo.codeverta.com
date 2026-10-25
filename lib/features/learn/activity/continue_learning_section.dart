@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 
@@ -30,9 +31,10 @@ class ContinueLearningSection extends ConsumerWidget {
         : selected.coursePath;
     if (!selected.available) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
+        SnackBar(
           content: Text(
-            'Materi ini sudah tidak tersedia. Pilih materi lain di kursusnya.',
+            'Materi ini sudah tidak tersedia. Pilih materi lain di kursusnya.'
+                .localized(context),
           ),
         ),
       );
@@ -63,14 +65,14 @@ class ContinueLearningSection extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Lanjutkan belajar',
+            'Lanjutkan belajar'.localized(context),
             style: theme.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w800,
             ),
           ),
           const SizedBox(height: 4),
           Text(
-            'Kembali ke materi yang terakhir kamu buka.',
+            'Kembali ke materi yang terakhir kamu buka.'.localized(context),
             style: theme.textTheme.bodySmall,
           ),
           const SizedBox(height: 12),
@@ -97,7 +99,7 @@ class ContinueLearningSection extends ConsumerWidget {
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          '${latest.category} · JLPT ${latest.level}',
+                          '${latest.category.localized(context)} · JLPT ${latest.level}',
                           style: theme.textTheme.labelLarge?.copyWith(
                             color: colors.secondary,
                           ),
@@ -108,14 +110,14 @@ class ContinueLearningSection extends ConsumerWidget {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    latest.title,
+                    latest.title.localized(context),
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    _detail(latest, locked),
+                    _detail(context, latest, locked),
                     style: theme.textTheme.bodySmall,
                   ),
                   const SizedBox(height: 12),
@@ -144,12 +146,12 @@ class ContinueLearningSection extends ConsumerWidget {
                     ),
                     label: Text(
                       !latest.available
-                          ? 'Buka kursus'
+                          ? 'Buka kursus'.localized(context)
                           : locked
-                          ? 'Buka akses belajar'
+                          ? 'Buka akses belajar'.localized(context)
                           : latest.completed
-                          ? 'Pelajari lagi'
-                          : 'Lanjutkan belajar',
+                          ? 'Pelajari lagi'.localized(context)
+                          : 'Lanjutkan belajar'.localized(context),
                     ),
                   ),
                 ],
@@ -158,14 +160,17 @@ class ContinueLearningSection extends ConsumerWidget {
           ),
           if (items.length > 1) ...[
             const SizedBox(height: 16),
-            Text('Sebelumnya kamu belajar', style: theme.textTheme.labelLarge),
+            Text(
+              'Sebelumnya kamu belajar'.localized(context),
+              style: theme.textTheme.labelLarge,
+            ),
             const SizedBox(height: 4),
             for (final item in items.skip(1))
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: Icon(_icon(item.kind), color: colors.secondary),
                 title: Text(
-                  item.title,
+                  item.title.localized(context),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
@@ -174,7 +179,7 @@ class ContinueLearningSection extends ConsumerWidget {
                   ),
                 ),
                 subtitle: Text(
-                  '${item.category} · ${item.level}\n${_detail(item, item.isLocked(premium: user.isPremium))}',
+                  '${item.category.localized(context)} · ${item.level}\n${_detail(context, item, item.isLocked(premium: user.isPremium))}',
                   style: theme.textTheme.bodySmall,
                 ),
                 trailing: Icon(
@@ -191,23 +196,24 @@ class ContinueLearningSection extends ConsumerWidget {
     );
   }
 
-  String _detail(LearningActivity item, bool locked) {
+  String _detail(BuildContext context, LearningActivity item, bool locked) {
     final status = !item.available
-        ? 'Materi tidak tersedia'
+        ? 'Materi tidak tersedia'.localized(context)
         : locked
-        ? 'Akses Lifetime diperlukan'
+        ? 'Akses Lifetime diperlukan'.localized(context)
         : item.completed
-        ? 'Selesai'
-        : '${item.unit} ${item.position + 1} dari ${item.total}';
+        ? 'Selesai'.localized(context)
+        : '${item.unit.localized(context)} ${item.position + 1} dari ${item.total}'
+              .localized(context);
     final at = item.accessedAt.toLocal();
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
     final day = DateTime(at.year, at.month, at.day);
     final difference = today.difference(day).inDays;
     final date = difference == 0
-        ? 'Hari ini'
+        ? 'Hari ini'.localized(context)
         : difference == 1
-        ? 'Kemarin'
+        ? 'Kemarin'.localized(context)
         : '${at.day}/${at.month}/${at.year}';
     return '$status · $date';
   }

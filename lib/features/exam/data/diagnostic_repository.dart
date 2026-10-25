@@ -25,7 +25,9 @@ class DiagnosticRepository {
         throw Exception('Sesi berakhir. Silakan masuk kembali.');
       }
       if (e.response?.statusCode == 402) {
-        throw Exception('Lifetime Access diperlukan. Periksa status akses di halaman Premium.');
+        throw Exception(
+          'Lifetime Access diperlukan. Periksa status akses di halaman Premium.',
+        );
       }
       if (e.response?.statusCode == 404) {
         throw Exception(
@@ -38,17 +40,19 @@ class DiagnosticRepository {
         );
       }
       throw Exception(
-        'Tidak dapat terhubung ke ujian. Periksa koneksi lalu coba lagi.',
+        'Ujian memerlukan koneksi internet. Hubungkan kembali internet lalu coba lagi; akun tetap masuk.',
       );
     }
   }
 
   Future<Json> overview() => request('/diagnostic/n5');
-  Future<String> start() async => (await request(
-        '/exam-attempts',
-        method: 'POST',
-        body: {'examId': 'jlpt-n5-diagnostic'},
-      ))['id'] as String;
+  Future<String> start() async =>
+      (await request(
+            '/exam-attempts',
+            method: 'POST',
+            body: {'examId': 'jlpt-n5-diagnostic'},
+          ))['id']
+          as String;
   Future<Json> session(String id) =>
       request('/exam-attempts/${Uri.encodeComponent(id)}');
   Future<void> answer(String id, String question, String option) async {
@@ -60,13 +64,14 @@ class DiagnosticRepository {
   }
 
   Future<Json> complete(String id) => request(
-        '/exam-attempts/${Uri.encodeComponent(id)}/complete',
-        method: 'POST',
-      );
+    '/exam-attempts/${Uri.encodeComponent(id)}/complete',
+    method: 'POST',
+  );
 }
 
-final diagnosticRepositoryProvider =
-    Provider((ref) => DiagnosticRepository(ref.watch(dioProvider)));
+final diagnosticRepositoryProvider = Provider(
+  (ref) => DiagnosticRepository(ref.watch(dioProvider)),
+);
 final diagnosticOverviewProvider = FutureProvider.autoDispose<Json>((ref) {
   ref.watch(authControllerProvider.select((s) => s.user?.id));
   return ref.watch(diagnosticRepositoryProvider).overview();

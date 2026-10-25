@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
@@ -32,18 +33,20 @@ class _ResultState extends State<SimulationResultView> {
       padding: const EdgeInsets.all(20),
       children: [
         DiagnosticHero(
-          title: 'Simulasi selesai.',
+          title: 'Simulasi selesai.'.localized(context),
           subtitle:
               '${widget.level.startsWith('SSW-')
-                  ? sswExamTitle(widget.level)
-                  : widget.level == 'JFT' || widget.level.startsWith('JFT-')
-                  ? 'JFT Exam $jftExamNumber · Kosakata, Percakapan & Reading'
-                  : widget.level.startsWith('NAT')
-                  ? 'NAT 5Q Exam ${widget.level == 'NAT' ? 1 : widget.level.substring(4)} · Kosakata, Grammar & Reading'
-                  : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'}\n${result['correct']}/${result['total']} benar · ${result['score']}%',
+                      ? sswExamTitle(widget.level)
+                      : widget.level == 'JFT' || widget.level.startsWith('JFT-')
+                      ? 'JFT Exam $jftExamNumber · Kosakata, Percakapan & Reading'.localized(context)
+                      : widget.level.startsWith('NAT')
+                      ? 'NAT 5Q Exam ${widget.level == 'NAT' ? 1 : widget.level.substring(4)} · Kosakata, Grammar & Reading'.localized(context)
+                      : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'.localized(context)}\n${result['correct']}/${result['total']} benar · ${result['score']}%'
+                  .localized(context),
           child: Text(
             '${result['answered']} dijawab · ${(result['total'] as int) - (result['answered'] as int)} kosong\n'
-            'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik',
+                    'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik'
+                .localized(context),
             style: const TextStyle(color: Colors.white, height: 1.8),
           ),
         ),
@@ -53,7 +56,7 @@ class _ResultState extends State<SimulationResultView> {
           style: const TextStyle(fontSize: 12, height: 1.6),
         ),
         const SizedBox(height: 24),
-        const ExamHeading('Hasil per jenis soal'),
+        ExamHeading('Hasil per jenis soal'.localized(context)),
         ExamPanel(
           child: Column(
             children: [
@@ -69,7 +72,8 @@ class _ResultState extends State<SimulationResultView> {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        '${group['correct']}/${group['total']} benar · ${group['score']}%',
+                        '${group['correct']}/${group['total']} benar · ${group['score']}%'
+                            .localized(context),
                       ),
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
@@ -84,11 +88,11 @@ class _ResultState extends State<SimulationResultView> {
           ),
         ),
         const SizedBox(height: 24),
-        const ExamHeading('Pembahasan'),
+        ExamHeading('Pembahasan'.localized(context)),
         Align(
           alignment: Alignment.centerLeft,
           child: FilterChip(
-            label: const Text('Salah & belum dijawab'),
+            label: Text('Salah & belum dijawab'.localized(context)),
             selected: wrongOnly,
             onSelected: (value) => setState(() => wrongOnly = value),
           ),
@@ -110,9 +114,11 @@ class _ResultState extends State<SimulationResultView> {
                       ? examGreen
                       : Theme.of(context).colorScheme.error,
                 ),
-                title: Text('Soal ${(review['question'] as Json)['number']}'),
+                title: Text(
+                  '${'Soal'.localized(context)} ${(review['question'] as Json)['number']}',
+                ),
                 subtitle: Text((review['question'] as Json)['group'] as String),
-                children: [_review(review)],
+                children: [_review(context, review)],
               ),
             ),
           ),
@@ -122,13 +128,13 @@ class _ResultState extends State<SimulationResultView> {
             '/exams/${widget.level.toLowerCase()}/simulation',
           ),
           icon: const Icon(Icons.refresh_rounded),
-          label: const Text('Ulangi paket 01'),
+          label: Text('Ulangi paket 01'.localized(context)),
         ),
       ],
     );
   }
 
-  Widget _review(Json review) {
+  Widget _review(BuildContext context, Json review) {
     final question = review['question'] as Json;
     final options = diagnosticList(question['options']);
     String answer(String id) =>
@@ -136,7 +142,7 @@ class _ResultState extends State<SimulationResultView> {
             .where((o) => o['id'] == id)
             .map((o) => o['text'] as String)
             .firstOrNull ??
-        'Tidak dijawab';
+        'Tidak dijawab'.localized(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -156,10 +162,12 @@ class _ResultState extends State<SimulationResultView> {
           ),
         ),
         const SizedBox(height: 16),
-        Text('Jawabanmu: ${answer(review['selectedOptionId'] as String)}'),
+        Text(
+          '${'Jawabanmu:'.localized(context)} ${answer(review['selectedOptionId'] as String)}',
+        ),
         const SizedBox(height: 8),
         Text(
-          'Jawaban benar: ${answer(review['correctOptionId'] as String)}',
+          '${'Jawaban benar:'.localized(context)} ${answer(review['correctOptionId'] as String)}',
           style: const TextStyle(color: examGreen, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 12),

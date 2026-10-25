@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/anki/data/anki_repository.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_controller.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_deck_media.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_offline_preparation.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_transfer_actions.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/explore_feature_card.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,8 +24,9 @@ class AnkiEntryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ExploreFeatureCard(
     title: 'Anki · Flashcards',
-    eyebrow: 'REVIEW SEDIKIT, INGAT LEBIH LAMA',
-    description: 'Pilih deck favorit dan bangun kebiasaan review kosakata',
+    eyebrow: 'REVIEW SEDIKIT, INGAT LEBIH LAMA'.localized(context),
+    description: 'Pilih deck favorit dan bangun kebiasaan review kosakata'
+        .localized(context),
     asset: 'assets/images/explore/anki-flashcards.webp',
     color: const Color(0xFF145B60),
     icon: Icons.style_rounded,
@@ -45,7 +51,23 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
         title: const Text('Anki'),
         actions: [
           IconButton(
-            tooltip: 'Sumber data & lisensi',
+            key: const Key('anki-import'),
+            tooltip: 'Import deck'.localized(context),
+            onPressed: () async {
+              if (!ref.read(authControllerProvider).isAuthenticated) {
+                await context.push('/login');
+                return;
+              }
+              final id = await context.push<String>('/anki/import');
+              if (id != null && context.mounted) {
+                ref.invalidate(ankiDecksProvider);
+                await context.push(ankiDeckPath(id));
+              }
+            },
+            icon: const Icon(Icons.file_upload_outlined),
+          ),
+          IconButton(
+            tooltip: 'Sumber data & lisensi'.localized(context),
             onPressed: () => _credits(context),
             icon: const Icon(Icons.info_outline_rounded),
           ),
@@ -115,23 +137,28 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                               ),
                               const SizedBox(height: 16),
                               Text(
-                                'Sedikit hari ini.\nLebih ingat besok.',
+                                'Sedikit hari ini.\nLebih ingat besok.'
+                                    .localized(context),
                                 style: Theme.of(context).textTheme.headlineSmall
                                     ?.copyWith(fontWeight: FontWeight.w900),
                               ),
                               const SizedBox(height: 12),
-                              const Text(
-                                'Kenali topik deck, balik kartu untuk melihat jawaban, lalu nilai seberapa mudah kamu mengingatnya.',
-                                style: TextStyle(height: 1.6),
+                              Text(
+                                'Kenali topik deck, balik kartu untuk melihat jawaban, lalu nilai seberapa mudah kamu mengingatnya.'
+                                    .localized(context),
+                                style: const TextStyle(height: 1.6),
                               ),
                               const SizedBox(height: 16),
                               Wrap(
                                 spacing: 8,
                                 runSpacing: 8,
                                 children: [
-                                  _Tag('${decks.length} deck'),
                                   _Tag(
-                                    '${ankiCount(decks.fold<int>(0, (n, d) => n + d.cardCount))} kartu',
+                                    '${decks.length} deck'.localized(context),
+                                  ),
+                                  _Tag(
+                                    '${ankiCount(decks.fold<int>(0, (n, d) => n + d.cardCount))} kartu'
+                                        .localized(context),
                                   ),
                                 ],
                               ),
@@ -142,10 +169,12 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                         TextField(
                           key: const Key('anki-search'),
                           onChanged: (value) => setState(() => query = value),
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.search_rounded),
-                            labelText: 'Cari deck',
-                            hintText: 'N5, Wakayama, hiragana...',
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.search_rounded),
+                            labelText: 'Cari deck'.localized(context),
+                            hintText: 'N5, Wakayama, hiragana...'.localized(
+                              context,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 14),
@@ -158,7 +187,7 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                                   padding: const EdgeInsets.only(right: 8),
                                   child: ChoiceChip(
                                     selected: category == value,
-                                    label: Text(value),
+                                    label: Text(value.localized(context)),
                                     onSelected: (_) =>
                                         setState(() => category = value),
                                   ),
@@ -168,15 +197,16 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                         ),
                         const SizedBox(height: 20),
                         Text(
-                          '${filtered.length} deck',
+                          '${filtered.length} deck'.localized(context),
                           style: const TextStyle(fontWeight: FontWeight.w800),
                         ),
                         const SizedBox(height: 10),
                         if (filtered.isEmpty)
-                          const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 32),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 32),
                             child: Text(
-                              'Deck tidak ditemukan. Coba nama atau kategori lain.',
+                              'Deck tidak ditemukan. Coba nama atau kategori lain.'
+                                  .localized(context),
                             ),
                           ),
                       ],
@@ -196,7 +226,7 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                               contentPadding: const EdgeInsets.all(16),
                               leading: _DeckIcon(category: deck.category),
                               title: Text(
-                                deck.title,
+                                deck.title.localized(context),
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w800,
                                 ),
@@ -207,17 +237,21 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      '${deck.category} · ${ankiCount(deck.available ? deck.cardCount : deck.sourceCount)} kartu',
+                                      '${deck.category} · ${ankiCount(deck.available ? deck.cardCount : deck.sourceCount)} kartu'
+                                          .localized(context),
                                     ),
                                     const SizedBox(height: 8),
                                     if (!deck.available)
-                                      const _Tag(
-                                        'Data tersimpan · Belum tersedia',
+                                      _Tag(
+                                        'Data tersimpan · Belum tersedia'
+                                            .localized(context),
                                       )
                                     else if (deck.premium && !premium)
                                       const _Tag('Lifetime Access')
                                     else
-                                      const _Tag('Siap dipelajari'),
+                                      _Tag(
+                                        'Siap dipelajari'.localized(context),
+                                      ),
                                   ],
                                 ),
                               ),
@@ -242,7 +276,7 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
   final String deckId;
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-    appBar: AppBar(title: const Text('Tentang deck')),
+    appBar: AppBar(title: Text('Tentang deck'.localized(context))),
     body: ref
         .watch(ankiDeckProvider(deckId))
         .when(
@@ -258,13 +292,15 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
             return ListView(
               padding: const EdgeInsets.all(20),
               children: [
+                if (signedIn && !deck.locked)
+                  AnkiOfflinePreparation(deckId: deckId, level: deck.level),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: _DeckIcon(category: deck.category, size: 72),
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  deck.title,
+                  deck.title.localized(context),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w900,
                   ),
@@ -274,45 +310,72 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    _Tag(deck.category),
-                    _Tag('${ankiCount(deck.cardCount)} kartu siap'),
+                    _Tag(deck.category.localized(context)),
+                    if (deck.personal) _Tag('Deck pribadi'.localized(context)),
+                    _Tag(
+                      '${ankiCount(deck.cardCount)} kartu siap'.localized(
+                        context,
+                      ),
+                    ),
                     if (deck.premium) const _Tag('Lifetime Access'),
                   ],
                 ),
                 const SizedBox(height: 24),
+                if (deck.available && !deck.locked)
+                  AnkiExportButton(deckId: deck.id),
+                if (deck.personal)
+                  TextButton.icon(
+                    onPressed: () => deleteAnkiDeck(context, ref, deck.id),
+                    icon: const Icon(Icons.delete_outline_rounded),
+                    label: Text('Hapus deck pribadi'.localized(context)),
+                  ),
+                const SizedBox(height: 16),
                 _Section(
-                  title: 'Deck ini tentang apa?',
+                  title: 'Deck ini tentang apa?'.localized(context),
                   children: [
-                    Text(deck.description, style: const TextStyle(height: 1.7)),
+                    Text(
+                      deck.description.localized(context),
+                      style: const TextStyle(height: 1.7),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
                 _Section(
-                  title: 'Cara belajar',
+                  title: 'Cara belajar'.localized(context),
                   children: [
                     Text(
-                      deck.instructions,
+                      deck.instructions.localized(context),
                       style: const TextStyle(height: 1.7),
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      'Satu sesi berisi hingga 20 kartu. Review yang sudah jatuh tempo didahulukan, kemudian kartu baru. Pilihanmu menentukan jadwal berikutnya.',
-                      style: TextStyle(height: 1.7),
+                    Text(
+                      'Satu sesi berisi hingga 20 kartu. Review yang sudah jatuh tempo didahulukan, kemudian kartu baru. Pilihanmu menentukan jadwal berikutnya.'
+                          .localized(context),
+                      style: const TextStyle(height: 1.7),
                     ),
                   ],
                 ),
                 const SizedBox(height: 16),
                 if (deck.available)
                   _Section(
-                    title: 'Progress belajarmu',
+                    title: 'Progress belajarmu'.localized(context),
                     children: [
                       Wrap(
                         spacing: 20,
                         runSpacing: 16,
                         children: [
-                          _Stat(ankiCount(deck.seen), 'Pernah dipelajari'),
-                          _Stat(ankiCount(deck.due), 'Perlu review'),
-                          _Stat(ankiCount(deck.newCards), 'Kartu baru'),
+                          _Stat(
+                            ankiCount(deck.seen),
+                            'Pernah dipelajari'.localized(context),
+                          ),
+                          _Stat(
+                            ankiCount(deck.due),
+                            'Perlu review'.localized(context),
+                          ),
+                          _Stat(
+                            ankiCount(deck.newCards),
+                            'Kartu baru'.localized(context),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 14),
@@ -331,21 +394,26 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                       Text(
                         signedIn
                             ? 'Jadwal dan progress tersimpan di akunmu.'
-                            : 'Masuk untuk menyimpan progress dan jadwal review.',
+                                  .localized(context)
+                            : 'Masuk untuk menyimpan progress dan jadwal review.'
+                                  .localized(context),
                       ),
                       if (deck.nextDue != null && deck.due == 0) ...[
                         const SizedBox(height: 8),
-                        Text('Review berikutnya: ${_date(deck.nextDue!)}'),
+                        Text(
+                          'Review berikutnya: ${_date(context, deck.nextDue!)}'
+                              .localized(context),
+                        ),
                       ],
                     ],
                   ),
                 const SizedBox(height: 20),
                 if (!deck.available)
                   _Section(
-                    title: 'Ketersediaan deck',
+                    title: 'Ketersediaan deck'.localized(context),
                     children: [
                       Text(
-                        deck.unavailableReason,
+                        deck.unavailableReason.localized(context),
                         style: const TextStyle(height: 1.7),
                       ),
                     ],
@@ -376,24 +444,28 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                     ),
                     label: Text(
                       !signedIn
-                          ? 'Masuk untuk belajar'
+                          ? 'Masuk untuk belajar'.localized(context)
                           : deck.locked
-                          ? 'Buka dengan Lifetime Access'
+                          ? 'Buka dengan Lifetime Access'.localized(context)
                           : deck.due > 0
-                          ? 'Mulai review'
-                          : 'Mulai belajar',
+                          ? 'Mulai review'.localized(context)
+                          : 'Mulai belajar'.localized(context),
                     ),
                   ),
                 if (deck.preview.isNotEmpty) ...[
                   const SizedBox(height: 26),
                   Text(
-                    'Contoh isi deck',
+                    'Contoh isi deck'.localized(context),
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w800,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text('Preview menampilkan pertanyaan dan jawabannya.'),
+                  Text(
+                    'Preview menampilkan pertanyaan dan jawabannya.'.localized(
+                      context,
+                    ),
+                  ),
                   const SizedBox(height: 12),
                   for (final card in deck.preview)
                     Padding(
@@ -402,7 +474,9 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                         title: card.front,
                         children: [
                           if (card.imageUrl.isNotEmpty)
-                            _CardImage(card.imageUrl),
+                            AnkiDeckImage(card.imageUrl),
+                          if (card.audioUrl.isNotEmpty)
+                            AnkiDeckAudio(card.audioUrl),
                           _Answers(answers: card.answers),
                           if (card.meaning.isNotEmpty) ...[
                             const SizedBox(height: 8),
@@ -417,7 +491,7 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                 ],
                 const SizedBox(height: 18),
                 _Section(
-                  title: 'Asal data',
+                  title: 'Asal data'.localized(context),
                   children: [
                     Text(
                       'Kotoba · ${deck.originalName}',
@@ -425,7 +499,7 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      deck.meaningLanguage,
+                      deck.meaningLanguage.localized(context),
                       style: const TextStyle(height: 1.6),
                     ),
                     if (deck.originalDescription.isNotEmpty) ...[
@@ -438,38 +512,47 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                     if (deck.skippedCount > 0) ...[
                       const SizedBox(height: 10),
                       Text(
-                        '${ankiCount(deck.sourceCount)} entri sumber disimpan. ${ankiCount(deck.skippedCount)} entri belum dapat digunakan sebagai flashcard karena data kosong atau memerlukan mesin tambahan.',
+                        '${ankiCount(deck.sourceCount)} entri sumber disimpan. ${ankiCount(deck.skippedCount)} entri belum dapat digunakan sebagai flashcard karena data kosong atau memerlukan mesin tambahan.'
+                            .localized(context),
                         style: const TextStyle(height: 1.6),
                       ),
                     ],
-                    TextButton.icon(
-                      onPressed: () async {
-                        var opened = false;
-                        try {
-                          opened = await launchUrl(
-                            Uri.parse(deck.sourceUrl),
-                            mode: LaunchMode.externalApplication,
-                          );
-                        } on Object {
-                          opened = false;
-                        }
-                        if (!opened && context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                'Tautan sumber belum dapat dibuka.',
+                    if (const [
+                      'http',
+                      'https',
+                    ].contains(Uri.tryParse(deck.sourceUrl)?.scheme))
+                      TextButton.icon(
+                        onPressed: () async {
+                          var opened = false;
+                          try {
+                            opened = await launchUrl(
+                              Uri.parse(deck.sourceUrl),
+                              mode: LaunchMode.externalApplication,
+                            );
+                          } on Object {
+                            opened = false;
+                          }
+                          if (!opened && context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Tautan sumber belum dapat dibuka.'.localized(
+                                    context,
+                                  ),
+                                ),
                               ),
-                            ),
-                          );
-                        }
-                      },
-                      icon: const Icon(Icons.open_in_new_rounded),
-                      label: const Text('Lihat data sumber deck'),
-                    ),
+                            );
+                          }
+                        },
+                        icon: const Icon(Icons.open_in_new_rounded),
+                        label: Text(
+                          'Lihat data sumber deck'.localized(context),
+                        ),
+                      ),
                     TextButton.icon(
                       onPressed: () => _credits(context),
                       icon: const Icon(Icons.info_outline_rounded),
-                      label: const Text('Sumber data & lisensi'),
+                      label: Text('Sumber data & lisensi'.localized(context)),
                     ),
                   ],
                 ),
@@ -488,12 +571,13 @@ class AnkiStudyScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(ankiStudyProvider(deckId));
     final controller = ref.read(ankiStudyProvider(deckId).notifier);
+    final pendingSync = ref.watch(ankiRepositoryProvider).hasPendingReviews;
     final card = state.current;
     final colors = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          state.session?.title ?? 'Belajar flashcard',
+          state.session?.title ?? 'Belajar flashcard'.localized(context),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -502,7 +586,7 @@ class AnkiStudyScreen extends ConsumerWidget {
           ? const Center(child: CircularProgressIndicator())
           : state.session == null
           ? AnkiErrorView(
-              error: state.error ?? 'Sesi belum tersedia.',
+              error: state.error ?? 'Sesi belum tersedia.'.localized(context),
               onRetry: controller.load,
             )
           : card == null
@@ -513,8 +597,10 @@ class AnkiStudyScreen extends ConsumerWidget {
                 const SizedBox(height: 24),
                 Text(
                   state.position == 0
-                      ? 'Belum ada kartu yang perlu dipelajari.'
-                      : 'Sesi selesai!',
+                      ? 'Belum ada kartu yang perlu dipelajari.'.localized(
+                          context,
+                        )
+                      : 'Sesi selesai!'.localized(context),
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w800,
@@ -522,27 +608,38 @@ class AnkiStudyScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  '${state.position} kartu telah kamu nilai. Jadwal berikutnya tersimpan di akunmu. Kartu yang belum hafal dijadwalkan lagi sekitar 1 menit.',
+                  (pendingSync
+                          ? '${state.position} kartu telah kamu nilai. Penilaian tersimpan di perangkat dan menunggu sinkronisasi. Jadwal resmi diperbarui setelah terhubung.'
+                          : '${state.position} kartu telah kamu nilai. Jadwal berikutnya tersimpan di akunmu. Kartu yang belum hafal dijadwalkan lagi sekitar 1 menit.')
+                      .localized(context),
                   textAlign: TextAlign.center,
                   style: const TextStyle(height: 1.7),
                 ),
                 const SizedBox(height: 24),
                 FilledButton(
                   onPressed: controller.load,
-                  child: const Text('Periksa kartu berikutnya'),
+                  child: Text('Periksa kartu berikutnya'.localized(context)),
                 ),
                 const SizedBox(height: 10),
                 OutlinedButton(
                   onPressed: () => context.go(ankiDeckPath(deckId)),
-                  child: const Text('Kembali ke detail deck'),
+                  child: Text('Kembali ke detail deck'.localized(context)),
                 ),
               ],
             )
           : ListView(
               padding: const EdgeInsets.all(20),
               children: [
+                if (pendingSync) ...[
+                  Text(
+                    'Penilaian tersimpan di perangkat · menunggu sinkronisasi'
+                        .localized(context),
+                  ),
+                  const SizedBox(height: 12),
+                ],
                 Text(
-                  'KARTU ${state.position + 1} / ${state.session!.cards.length}',
+                  'KARTU ${state.position + 1} / ${state.session!.cards.length}'
+                      .localized(context),
                   style: TextStyle(
                     color: colors.primary,
                     fontWeight: FontWeight.w800,
@@ -576,8 +673,8 @@ class AnkiStudyScreen extends ConsumerWidget {
                       children: [
                         Text(
                           state.revealed
-                              ? 'PERTANYAAN & JAWABAN'
-                              : 'INGAT DULU JAWABANNYA',
+                              ? 'PERTANYAAN & JAWABAN'.localized(context)
+                              : 'INGAT DULU JAWABANNYA'.localized(context),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: colors.onSurfaceVariant,
@@ -587,7 +684,10 @@ class AnkiStudyScreen extends ConsumerWidget {
                           ),
                         ),
                         const SizedBox(height: 24),
-                        if (card.imageUrl.isNotEmpty) _CardImage(card.imageUrl),
+                        if (card.imageUrl.isNotEmpty)
+                          AnkiDeckImage(card.imageUrl),
+                        if (card.audioUrl.isNotEmpty)
+                          AnkiDeckAudio(card.audioUrl),
                         SelectableText(
                           card.front,
                           key: const Key('anki-card-front'),
@@ -627,17 +727,17 @@ class AnkiStudyScreen extends ConsumerWidget {
                     key: const Key('anki-reveal'),
                     onPressed: controller.reveal,
                     icon: const Icon(Icons.flip_rounded),
-                    label: const Text('Tampilkan jawaban'),
+                    label: Text('Tampilkan jawaban'.localized(context)),
                   ),
                 if (state.revealed) ...[
-                  const Text(
-                    'Seberapa mudah kamu mengingatnya?',
-                    style: TextStyle(fontWeight: FontWeight.w800),
+                  Text(
+                    'Seberapa mudah kamu mengingatnya?'.localized(context),
+                    style: const TextStyle(fontWeight: FontWeight.w800),
                   ),
                   const SizedBox(height: 12),
                   if (state.error != null) ...[
                     Text(
-                      state.error!.message,
+                      state.error!.message.localized(context),
                       style: TextStyle(color: colors.error, height: 1.6),
                     ),
                     const SizedBox(height: 12),
@@ -653,7 +753,7 @@ class AnkiStudyScreen extends ConsumerWidget {
                         onPressed: state.saving
                             ? null
                             : () => controller.rate(state.pendingRating!),
-                        child: const Text('Coba simpan kembali'),
+                        child: Text('Coba simpan kembali'.localized(context)),
                       ),
                   ] else
                     LayoutBuilder(
@@ -662,10 +762,10 @@ class AnkiStudyScreen extends ConsumerWidget {
                         runSpacing: 10,
                         children: [
                           for (final grade in [
-                            ('again', 'Belum hafal'),
-                            ('hard', 'Sulit'),
-                            ('good', 'Ingat'),
-                            ('easy', 'Mudah'),
+                            ('again', 'Belum hafal'.localized(context)),
+                            ('hard', 'Sulit'.localized(context)),
+                            ('good', 'Ingat'.localized(context)),
+                            ('easy', 'Mudah'.localized(context)),
                           ])
                             SizedBox(
                               width: (constraints.maxWidth - 10) / 2,
@@ -708,7 +808,8 @@ class AnkiStudyScreen extends ConsumerWidget {
                 ],
                 const SizedBox(height: 24),
                 Text(
-                  'Nilai berdasarkan ingatanmu sebelum membuka jawaban. Kamu bisa keluar kapan saja; setiap penilaian yang berhasil sudah tersimpan.',
+                  'Nilai berdasarkan ingatanmu sebelum membuka jawaban. Kamu bisa keluar kapan saja; setiap penilaian yang berhasil sudah tersimpan.'
+                      .localized(context),
                   style: TextStyle(
                     height: 1.6,
                     fontSize: 13,
@@ -738,8 +839,8 @@ class AnkiErrorView extends StatelessWidget {
             const SizedBox(height: 14),
             Text(
               error is AnkiFailure
-                  ? error.toString()
-                  : 'Deck belum dapat dimuat. Coba kembali.',
+                  ? error.toString().localized(context)
+                  : 'Deck belum dapat dimuat. Coba kembali.'.localized(context),
               textAlign: TextAlign.center,
               style: const TextStyle(height: 1.6),
             ),
@@ -750,7 +851,7 @@ class AnkiErrorView extends StatelessWidget {
                   await context.push<bool>('/login');
                   if (context.mounted) onRetry();
                 },
-                child: const Text('Masuk'),
+                child: Text('Masuk'.localized(context)),
               )
             else if (status == 402)
               FilledButton(
@@ -758,12 +859,16 @@ class AnkiErrorView extends StatelessWidget {
                   await context.push('/premium');
                   if (context.mounted) onRetry();
                 },
-                child: const Text('Lifetime Access'),
+                child: Text('Lifetime Access'.localized(context)),
               )
             else
               OutlinedButton(
                 onPressed: onRetry,
-                child: Text(status == 409 ? 'Muat ulang sesi' : 'Muat ulang'),
+                child: Text(
+                  status == 409
+                      ? 'Muat ulang sesi'.localized(context)
+                      : 'Muat ulang'.localized(context),
+                ),
               ),
           ],
         ),
@@ -880,7 +985,11 @@ class _Answers extends StatelessWidget {
       ),
       if (answers.length > 8)
         ExpansionTile(
-          title: Text('Lihat ${ankiCount(answers.length - 8)} jawaban lainnya'),
+          title: Text(
+            'Lihat ${ankiCount(answers.length - 8)} jawaban lainnya'.localized(
+              context,
+            ),
+          ),
           children: [
             SelectableText(
               answers.skip(8).join(' · '),
@@ -893,33 +1002,8 @@ class _Answers extends StatelessWidget {
   );
 }
 
-class _CardImage extends StatelessWidget {
-  const _CardImage(this.url);
-  final String url;
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(bottom: 16),
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(14),
-      child: Image.network(
-        url,
-        height: 200,
-        fit: BoxFit.contain,
-        cacheWidth: 700,
-        semanticLabel: 'Gambar pertanyaan dari deck Kotoba',
-        errorBuilder: (_, __, ___) => const SizedBox(
-          height: 100,
-          child: Center(child: Text('Gambar sumber belum dapat dimuat.')),
-        ),
-      ),
-    ),
-  );
-}
-
-String _date(DateTime value) {
-  final d = value.toLocal();
-  return '${d.day}/${d.month}/${d.year} ${d.hour.toString().padLeft(2, '0')}:${d.minute.toString().padLeft(2, '0')}';
-}
+String _date(BuildContext context, DateTime value) =>
+    regionalDateTime(value, localeName: appRegionLocaleName(context));
 
 void _credits(BuildContext context) => showModalBottomSheet<void>(
   context: context,
@@ -951,9 +1035,9 @@ void _credits(BuildContext context) => showModalBottomSheet<void>(
                   style: const TextStyle(height: 1.6),
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  'Lisensi repository Kotoba',
-                  style: TextStyle(fontWeight: FontWeight.w800),
+                Text(
+                  'Lisensi repository Kotoba'.localized(context),
+                  style: const TextStyle(fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 12),
                 SelectableText(

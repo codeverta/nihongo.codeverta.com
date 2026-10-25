@@ -6,12 +6,16 @@ import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
+import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/learn/reading/data/reading_repository.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final readingRepositoryProvider = Provider<ReadingRepository>(
-  (ref) => ReadingRepository(ref.watch(dioProvider)),
+  (ref) => ReadingRepository(
+    ref.watch(dioProvider),
+    offlinePractice: ref.watch(offlinePracticeServiceProvider),
+  ),
 );
 final readingCourseProvider = FutureProvider.autoDispose
     .family<ReadingCourse, String>((ref, level) {
@@ -101,11 +105,27 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
     this.lessonId, {
     required this.onProgress,
     this.history,
-  }) : super(const AsyncValue.loading());
+  }) : super(const AsyncValue.loading()) {
+    _syncSubscription = repository.syncEvents.listen(_onPracticeSync);
+  }
   final ReadingRepository repository;
   final String lessonId;
   final VoidCallback onProgress;
   final LearningHistoryController? history;
+  StreamSubscription<OfflinePracticeSyncEvent>? _syncSubscription;
+
+  void _onPracticeSync(OfflinePracticeSyncEvent event) {
+    final current = state.valueOrNull;
+    if (!mounted ||
+        current?.attempt?.id != event.attemptId ||
+        current?.result == null) {
+      return;
+    }
+    final result = ReadingResult.fromJson(event.result);
+    if (result.passed) history?.complete('reading', lessonId);
+    onProgress();
+    state = AsyncValue.data(current!.copyWith(result: result));
+  }
 
   Future<void> load() async {
     state = const AsyncValue.loading();
@@ -213,9 +233,11 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
     state = AsyncValue.data(s.copyWith(busy: true));
     try {
       final result = await repository.complete(s.attempt!.id);
-      if (mounted && result.passed) history?.complete('reading', lessonId);
+      if (mounted && result.verified && result.passed) {
+        history?.complete('reading', lessonId);
+      }
       if (mounted) {
-        onProgress();
+        if (result.verified) onProgress();
         state = AsyncValue.data(
           s.copyWith(stage: ReadingStage.result, result: result, busy: false),
         );
@@ -233,5 +255,11 @@ class ReadingController extends StateNotifier<AsyncValue<ReadingState>> {
       state = AsyncValue.data(ReadingState(lesson: s.lesson));
       history?.position('reading', lessonId, 0);
     }
+  }
+
+  @override
+  void dispose() {
+    unawaited(_syncSubscription?.cancel());
+    super.dispose();
   }
 }

@@ -1,0 +1,1264 @@
+{
+  "modules": [
+    {
+      "description": "Learn about intermediate processing work: receiving waste, matching documents and lots, checking conditions, and working safely during unloading. As of October 22, 2026, Japan's Ministry of the Environment aims to begin accepting workers in this sector in 2027 and says the skills-test details have not yet been decided; this material remains available as foundational learning.",
+      "id": "receiving",
+      "lessons": [
+        {
+          "caution": "Do not accept or mix a lot whose identity does not match the facility's criteria.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Identification links incoming material to process records and output.",
+              "kind": "knowledge",
+              "options": [
+                "So material can be traced through sorting and processing",
+                "So all loads can be mixed",
+                "To replace acceptance criteria",
+                "So weight records are unnecessary"
+              ],
+              "prompt": "Why is the lot identity recorded at receiving?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The load differs from its description and contains an unlabeled container; hold it and request an assessment.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Do not continue ordinary unloading. Hold the vehicle in a safe place, record the discrepancy, and request an inspection by the person in charge.",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, the document identifies the load as clean metal, but it appears mixed with an unlabeled closed container. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Read the documents and facility acceptance criteria → Check the vehicle, container, and lot identities → Weigh or count according to procedure and record the actual result → Hold discrepancies and request a decision from the person in charge.",
+              "kind": "workflow",
+              "options": [
+                "Read the documents and facility acceptance criteria",
+                "Check the vehicle, container, and lot identities",
+                "Weigh or count according to procedure and record the actual result",
+                "Hold the discrepancy and request a decision from the person in charge"
+              ],
+              "prompt": "In the “Waste receiving and lot recording” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "書類と荷物の種類が違います。",
+              "meaning": "The load type differs from the documents.",
+              "reading": "しょるいとにもつのしゅるいがちがいます。"
+            },
+            {
+              "japanese": "安全な場所で止めて、責任者に報告します。",
+              "meaning": "I have stopped in a safe place and will report it to the person in charge.",
+              "reading": "あんぜんなばしょでとめて、せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "rr-01",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan asal, jenis, berat atau jumlah, waktu, dan identitas kelompok dengan catatan penerimaan fasilitas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not continue normal unloading. Hold the vehicle in a safe location, record the discrepancy, and request an inspection by the person in charge.",
+          "scenario": "The documents say clean metal, but the load appears mixed with a sealed, unlabeled container.",
+          "sections": [
+            {
+              "body": "This sector focuses on intermediate waste processing for recycling or appropriate treatment, not every type of collection work. Each facility has its own acceptance criteria and record format. Lot identity links incoming material to sorting, processing, and subsequent output.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before unloading, match the documents, vehicle or container number, declared material type, and weight from the scale. Record the actual result and time. If the type or quantity differs, hold acceptance or move it to the designated waiting area and ask the person in charge to decide.\n\nPractice scenario: The documents say clean metal, but the load appears mixed with a sealed, unlabeled container.\nSuggested response: Do not continue normal unloading. Hold the vehicle in a safe location, record the discrepancy, and request an inspection by the person in charge.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca dokumen serta kriteria penerimaan fasilitas",
+            "Cocokkan identitas kendaraan, wadah, dan lot",
+            "Timbang atau hitung sesuai prosedur dan catat hasil aktual",
+            "Tahan selisih dan minta keputusan penanggung jawab"
+          ],
+          "title": "Waste Receipt and Lot Records",
+          "vocabulary": [
+            {
+              "japanese": "受入れ",
+              "meaning": "intake",
+              "reading": "うけいれ"
+            },
+            {
+              "japanese": "廃棄物",
+              "meaning": "waste",
+              "reading": "はいきぶつ"
+            },
+            {
+              "japanese": "計量",
+              "meaning": "weighing",
+              "reading": "けいりょう"
+            },
+            {
+              "japanese": "ロット",
+              "meaning": "lot or group",
+              "reading": "ろっと"
+            }
+          ]
+        },
+        {
+          "caution": "Do not open a container, smell an unidentified item closely, or sort it by hand.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The item may contain hidden hazards; designated staff must handle it.",
+              "kind": "knowledge",
+              "options": [
+                "Stop contact, keep a safe distance, and report it to authorized staff",
+                "Open the container to find out what is inside",
+                "Move it to the general-waste bin",
+                "Remove it by hand so the line does not stop"
+              ],
+              "prompt": "What is the first action when an unknown or damaged item is found?"
+            },
+            {
+              "answer": 3,
+              "explanation": "A swollen battery is hazardous; keep away and call trained staff.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area",
+                "Give the required stop signal, keep clear, warn the crew, and report it promptly so trained staff can decide how to handle it."
+              ],
+              "prompt": "At work, a swollen, odorous battery is visible on the conveyor while another worker is about to pick it up. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Stop contact with the unknown item → Keep people away according to facility rules → Record visible characteristics without opening or moving it → Contact the person in charge and wait for instructions.",
+              "kind": "workflow",
+              "options": [
+                "Stop contact with the unknown item",
+                "Record visible characteristics without opening or moving it",
+                "Keep people away from the area according to facility rules",
+                "Contact the person in charge and wait for instructions"
+              ],
+              "prompt": "In the “Unknown-material inspection and hidden hazards” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この電池がふくらんでいます。触らないでください。",
+              "meaning": "This battery is swollen. Do not touch it.",
+              "reading": "このでんちがふくらんでいます。さわらないでください。"
+            },
+            {
+              "japanese": "作業を止めて、責任者を呼びます。",
+              "meaning": "I am stopping work and calling the person in charge.",
+              "reading": "さぎょうをとめて、せきにんしゃをよびます。"
+            }
+          ],
+          "id": "rr-02",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali muatan yang mencurigakan atau tidak sesuai dan menjaga jarak sambil menghubungi petugas berwenang.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Give the stop signal as required, keep your distance, warn the crew, and report it immediately so trained staff can decide how to handle it.",
+          "scenario": "A swollen, odorous battery is visible on the conveyor while another worker is about to pick it up.",
+          "sections": [
+            {
+              "body": "A load may contain sharp objects, batteries, cylinders, liquids, chemicals, or sealed items that do not match the initial description. It is unsafe to open or hand-sort unidentified material. The facility sets handling criteria and routes; workers must stop, keep others back, and request an assessment by trained staff.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Observe from a safe position without shaking or opening the container. Mark or cordon off the area as required, report the location, shape, markings, and any odor you notice, then wait for instructions. Do not touch liquid, damaged batteries, cylinders, or dusty materials unless assigned and properly protected.\n\nPractice scenario: A swollen, odorous battery is visible on the conveyor while another worker is about to pick it up.\nSuggested response: Give the stop signal as required, keep your distance, warn the crew, and report it immediately so trained staff can decide how to handle it.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Hentikan kontak dengan benda yang tidak dikenal",
+            "Jauhkan orang dari area sesuai aturan fasilitas",
+            "Catat ciri yang terlihat tanpa membuka atau memindahkan",
+            "Hubungi penanggung jawab dan tunggu arahan"
+          ],
+          "title": "Checking Unidentified Materials and Hidden Hazards",
+          "vocabulary": [
+            {
+              "japanese": "危険",
+              "meaning": "hazard",
+              "reading": "きけん"
+            },
+            {
+              "japanese": "異物",
+              "meaning": "foreign object",
+              "reading": "いぶつ"
+            },
+            {
+              "japanese": "電池",
+              "meaning": "battery",
+              "reading": "でんち"
+            },
+            {
+              "japanese": "立入禁止",
+              "meaning": "no entry",
+              "reading": "たちいりきんし"
+            }
+          ]
+        },
+        {
+          "caution": "Do not stand behind a truck or under a raised dump bed.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A safe zone keeps workers clear of moving vehicles, truck beds, and falling loads.",
+              "kind": "knowledge",
+              "options": [
+                "In a safe zone outside vehicle routes and loads",
+                "Behind the truck bed so the label is visible",
+                "Under the truck bed to tie down waste",
+                "In the blind spot near the wheel"
+              ],
+              "prompt": "Where should workers be while a vehicle is unloading?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Stop the operation until everyone has left the area behind the vehicle.",
+              "kind": "case",
+              "options": [
+                "Stop unloading according to procedure, ask workers to move back to a safe zone, and continue only after the operator confirms the area is clear.",
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, a driver starts opening the truck bed while a worker is still behind the truck reading a label. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Check route markers and waiting zones → Confirm the signaler and operator are ready → Keep clear of moving vehicles and loads → Stop the operation and report anyone or any load in a hazardous zone.",
+              "kind": "workflow",
+              "options": [
+                "Check route markers and waiting zones",
+                "Keep clear of moving vehicles and loads",
+                "Stop the operation and report anyone or any load in the hazard zone",
+                "Confirm that the signaler and operator are ready"
+              ],
+              "prompt": "In the “Unloading and vehicle routes” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "後ろに人がいます。車を止めてください。",
+              "meaning": "There is someone behind you. Please stop the vehicle.",
+              "reading": "うしろにひとがいます。くるまをとめてください。"
+            },
+            {
+              "japanese": "安全区域まで下がります。",
+              "meaning": "I am moving back to the safe zone.",
+              "reading": "あんぜんくいきまでさがります。"
+            }
+          ],
+          "id": "rr-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jarak dari kendaraan serta memastikan zona bongkar dan komunikasi dengan operator aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop unloading according to procedure, ask the worker to move back to the safe zone, and resume only after the operator confirms the area is clear.",
+          "scenario": "A driver starts raising the dump bed while a worker is still behind the truck reading a label.",
+          "sections": [
+            {
+              "body": "The unloading area has moving vehicles, raised dump beds, loads that may fall, and blind spots. Separate pedestrian routes and use a signaler to reduce the risk of being struck or crushed. Do not approach the dump bed or load until the operator gives the all-clear required by facility rules.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the designated pedestrian routes and waiting zones. Make sure the operator can see the signaler; do not walk behind a vehicle or stand beneath a raised part. If someone enters the unloading zone, stop work using the method you were taught and alert the operator.\n\nPractice scenario: A driver starts raising the dump bed while a worker is still behind the truck reading a label.\nSuggested response: Stop unloading according to procedure, ask the worker to move back to the safe zone, and resume only after the operator confirms the area is clear.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa tanda jalur dan zona tunggu",
+            "Pastikan pemberi isyarat serta operator siap",
+            "Jaga jarak dari kendaraan dan muatan saat bergerak",
+            "Hentikan proses dan laporkan orang atau muatan di zona berbahaya"
+          ],
+          "title": "Unloading and Vehicle Routes",
+          "vocabulary": [
+            {
+              "japanese": "荷下ろし",
+              "meaning": "unloading",
+              "reading": "におろし"
+            },
+            {
+              "japanese": "車両",
+              "meaning": "vehicle",
+              "reading": "しゃりょう"
+            },
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            },
+            {
+              "japanese": "安全区域",
+              "meaning": "safe zone",
+              "reading": "あんぜんくいき"
+            }
+          ]
+        }
+      ],
+      "title": "Receiving, Identification, and Area Safety"
+    },
+    {
+      "description": "Sort according to acceptance criteria and process destination, keep fractions separate, and report misplaced or mixed items.",
+      "id": "sorting",
+      "lessons": [
+        {
+          "caution": "Do not sort by guessing or mix fractions just to empty a container.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Facility criteria define the process destination and reduce mixing errors.",
+              "kind": "knowledge",
+              "options": [
+                "The stream label and applicable facility criteria",
+                "The item's color only",
+                "The nearest empty location",
+                "A worker's estimate based on its shape"
+              ],
+              "prompt": "What should be consulted when deciding which sorting container to use?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The closed container is not listed in the criteria; do not put it in the plastic fraction.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Do not put it in the plastic fraction. Stop contact, isolate the area according to the rules, and report the item to the person in charge.",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, a closed aerosol container appears in a plastic stream, but it is not listed in the sorting criteria. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the stream label and applicable criteria → Inspect material before feeding it → Place it in the designated container or line → Hold and report unidentified material.",
+              "kind": "workflow",
+              "options": [
+                "Inspect the material before feeding it in",
+                "Read the stream label and applicable criteria",
+                "Place it in the designated container or line",
+                "Hold and report unidentified material"
+              ],
+              "prompt": "In the “Sorting by criteria and destination” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この容器は選別基準にありません。",
+              "meaning": "This container is not included in the sorting criteria.",
+              "reading": "このようきはせんべつきじゅんにありません。"
+            },
+            {
+              "japanese": "分けて、責任者に確認します。",
+              "meaning": "I will set it aside and ask the person in charge to confirm.",
+              "reading": "わけて、せきにんしゃにかくにんします。"
+            }
+          ],
+          "id": "rr-04",
+          "minutes": 25,
+          "objectives": [
+            "Memisahkan material sesuai label aliran dan kriteria fasilitas, serta menjaga bahan yang belum dikenali tetap tertahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not put it in the plastic fraction. Stop handling it, isolate the area as required, and report the item to the person in charge.",
+          "scenario": "A sealed aerosol container appears in the plastic stream, but it is not listed in the sorting criteria.",
+          "sections": [
+            {
+              "body": "Sorting directs material to the appropriate process and prevents cross-contamination between fractions. Do not classify material by color or shape alone; use labels, acceptance lists, examples, and line instructions. Identify mixed material that cannot yet be sorted safely and handle it according to workplace rules.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Read the container label before adding material. Check items that look different; do not put batteries, sealed containers, or foreign materials into a regular stream. If the label is unreadable or the category is unclear, stop and ask for confirmation; record the location and visible type.\n\nPractice scenario: A sealed aerosol container appears in the plastic stream, but it is not listed in the sorting criteria.\nSuggested response: Do not put it in the plastic fraction. Stop handling it, isolate the area as required, and report the item to the person in charge.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca label aliran dan kriteria yang berlaku",
+            "Amati material sebelum memasukkannya",
+            "Tempatkan pada wadah atau jalur yang ditetapkan",
+            "Tahan dan laporkan bahan yang tidak dikenali"
+          ],
+          "title": "Sorting by Criteria and Destination",
+          "vocabulary": [
+            {
+              "japanese": "選別",
+              "meaning": "sorting",
+              "reading": "せんべつ"
+            },
+            {
+              "japanese": "種類",
+              "meaning": "type",
+              "reading": "しゅるい"
+            },
+            {
+              "japanese": "分別",
+              "meaning": "category separation",
+              "reading": "ぶんべつ"
+            },
+            {
+              "japanese": "基準",
+              "meaning": "criteria",
+              "reading": "きじゅん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not reach into a conveyor or roller while it is moving.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Moving rollers can still pull in a hand; clear a blockage only after the machine is made safe.",
+              "kind": "knowledge",
+              "options": [
+                "Stop the line according to procedure and call the operator",
+                "Pull it by hand while the roller slows down",
+                "Use any stick without stopping the machine",
+                "Let another coworker press the material"
+              ],
+              "prompt": "What should be done when material gets caught in a roller?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not reach into the rollers. Stop and leave handling to the operator according to procedure.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Do not reach in. Stop the line using the taught method, keep people away, and ask the operator to handle it once the machine is safe.",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, a piece of fabric is caught between rollers, and a worker is about to pull it out by hand while the machine is running slowly. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Check the work position and guards before the line runs → Use the provided tools → Keep clear of rollers and pinch points → Stop and report blockages or hazards.",
+              "kind": "workflow",
+              "options": [
+                "Check the work position and guards before the line runs",
+                "Use the provided assistive equipment",
+                "Keep clear of rollers and pinch points",
+                "Stop and report any blockage or hazard"
+              ],
+              "prompt": "In the “Conveyor safety and sorting-line” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "布がローラーに挟まっています。",
+              "meaning": "Cloth is caught in the rollers.",
+              "reading": "ぬのがろーらーにはさまっています。"
+            },
+            {
+              "japanese": "手を入れないでください。機械を止めます。",
+              "meaning": "Do not put your hand in. I am stopping the machine.",
+              "reading": "てをいれないでください。きかいをとめます。"
+            }
+          ],
+          "id": "rr-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga posisi tubuh serta alat jauh dari titik jepit dan menghentikan pekerjaan saat kondisi lini tidak aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not reach in. Stop the line using the method you were taught, keep people back, and ask the operator to handle it once the machine is safe.",
+          "scenario": "A piece of cloth is caught between rollers, and a worker is about to pull it out by hand while the machine runs slowly.",
+          "sections": [
+            {
+              "body": "Conveyors, rollers, cutters, and sorting equipment can catch clothing or crush hands. Keep unauthorized people out of the work area and use aids only as instructed. Never reach between rollers while the machine is moving; follow facility procedures for stopping and isolating equipment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Stand in the marked position, use approved aids, and keep your arms and clothing away from moving parts. If material becomes stuck, a guard opens, or someone's hand enters a danger zone, stop the equipment according to the emergency procedure and call the operator. Do not pull out a blockage until the machine is safe.\n\nPractice scenario: A piece of cloth is caught between rollers, and a worker is about to pull it out by hand while the machine runs slowly.\nSuggested response: Do not reach in. Stop the line using the method you were taught, keep people back, and ask the operator to handle it once the machine is safe.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa posisi kerja dan pelindung sebelum lini berjalan",
+            "Gunakan alat bantu yang disediakan",
+            "Jaga jarak dari rol dan titik jepit",
+            "Hentikan serta laporkan sumbatan atau bahaya"
+          ],
+          "title": "Conveyor and Sorting-Line Safety",
+          "vocabulary": [
+            {
+              "japanese": "ベルトコンベヤー",
+              "meaning": "conveyor",
+              "reading": "べるとこんべやー"
+            },
+            {
+              "japanese": "巻き込まれ",
+              "meaning": "caught in machinery",
+              "reading": "まきこまれ"
+            },
+            {
+              "japanese": "停止",
+              "meaning": "stop",
+              "reading": "ていし"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not move a container or change its label without updating the records.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A mixed container needs assessment; its old label no longer describes its actual contents.",
+              "kind": "knowledge",
+              "options": [
+                "Stop filling, hold the container, and record the mixture",
+                "Change the label to the fraction with more material",
+                "Pour it back onto the conveyor without authorization",
+                "Ship it because the old label is still readable"
+              ],
+              "prompt": "What should be done if a container for one fraction turns out to contain mixed materials?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Hold the item and report it so the supervisor can decide whether to sort it again or take another action.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area",
+                "Stop filling and hold the container; record the mixture and ask whether it needs resorting or other handling."
+              ],
+              "prompt": "At work, a metal container contains a small amount of glass from an adjacent stream, but its label still says clean metal. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Prepare the correct container and destination label → Fill it only with a confirmed fraction → Record the lot, quantity, and container location → Hold and report any mixed fraction.",
+              "kind": "workflow",
+              "options": [
+                "Prepare the correct container and destination label",
+                "Record the lot, quantity, and container location",
+                "Fill it only with a confirmed fraction",
+                "Hold and report the mixed fraction"
+              ],
+              "prompt": "In the “Preparing fractions, containers, and destination signs” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ガラスが混ざっています。容器を保留します。",
+              "meaning": "Glass is mixed in. I am holding this container.",
+              "reading": "がらすがまざっています。ようきをほりゅうします。"
+            },
+            {
+              "japanese": "ラベルを直す前に、責任者に確認します。",
+              "meaning": "I will ask the person in charge before correcting the label.",
+              "reading": "らべるをなおすまえに、せきにんしゃにかくにんします。"
+            }
+          ],
+          "id": "rr-06",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga fraksi yang telah dipilah tetap terpisah serta memberi tanda kelompok dan tujuan sebelum tahap berikutnya.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop filling and hold the container. Record the contamination and ask whether it needs to be resorted or handled another way.",
+          "scenario": "A metal container has a small amount of glass from the adjacent stream in it; the label still says clean metal.",
+          "sections": [
+            {
+              "body": "Sorted material may be compacted, wrapped, or prepared for the next processing stage. Containers and labels preserve the fraction identity, quantity, and destination process. If fractions are mixed or a marking is missing, hold the group so it is not fed into the wrong machine or switched during internal transfer.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the empty container, label, and destination before filling it. Record the time and lot in the facility's format, secure the specified lid or tie, and use a safe route for transfer. If the wrong material is added, do not pour it back without approval; mark the container and report the estimated amount and type of mixture.\n\nPractice scenario: A metal container has a small amount of glass from the adjacent stream in it; the label still says clean metal.\nSuggested response: Stop filling and hold the container. Record the contamination and ask whether it needs to be resorted or handled another way.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Siapkan wadah dan label tujuan yang benar",
+            "Isi hanya dengan fraksi yang telah dikonfirmasi",
+            "Catat lot, jumlah, dan lokasi wadah",
+            "Tahan serta laporkan fraksi yang tercampur"
+          ],
+          "title": "Preparing Fractions, Containers, and Destination Labels",
+          "vocabulary": [
+            {
+              "japanese": "容器",
+              "meaning": "container",
+              "reading": "ようき"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "label or marking",
+              "reading": "ひょうじ"
+            },
+            {
+              "japanese": "搬送",
+              "meaning": "material transfer",
+              "reading": "はんそう"
+            },
+            {
+              "japanese": "混入",
+              "meaning": "unwanted mixing",
+              "reading": "こんにゅう"
+            }
+          ]
+        }
+      ],
+      "title": "Sorting and Preparing Materials"
+    },
+    {
+      "description": "Follow process-operation instructions and maintain equipment within your assigned role, including stopping and reporting abnormal conditions.",
+      "id": "treatment",
+      "lessons": [
+        {
+          "caution": "Do not remove guards or repair a machine without training and the required isolation procedure.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "An alarm or open guard indicates a condition that must be assessed before operation.",
+              "kind": "knowledge",
+              "options": [
+                "Do not operate it; request an inspection according to procedure",
+                "Turn off the alarm light and start the process",
+                "Open the guard to look inside",
+                "Ask another worker to hold the door"
+              ],
+              "prompt": "What should be done if an alarm appears before the machine is started?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The equipment has not been declared safe; stop preparation and escalate the issue.",
+              "kind": "case",
+              "options": [
+                "Do not operate the machine. Keep people away, notify the operator or supervisor, and wait for an inspection before starting the process.",
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, the compactor's warning light is on and its guard door is not fully locked. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Read today's instructions and operator tasks → Check guards, the floor, and specified indicators → Report damage or abnormal signs → Operate only after the inspection confirms readiness.",
+              "kind": "workflow",
+              "options": [
+                "Read today's instructions and operator tasks",
+                "Report damage or abnormal signs",
+                "Operate only after the inspection confirms readiness",
+                "Check the guards, floor, and specified indicators"
+              ],
+              "prompt": "In the “Initial inspection of processing equipment” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "警報が出ています。機械を動かしません。",
+              "meaning": "An alarm has appeared. I will not start the machine.",
+              "reading": "けいほうがでています。きかいをうごかしません。"
+            },
+            {
+              "japanese": "点検が終わるまで待ってください。",
+              "meaning": "Please wait until the inspection is complete.",
+              "reading": "てんけんがおわるまでまってください。"
+            }
+          ],
+          "id": "rr-07",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa kondisi mesin, pelindung, jalur, dan tombol keselamatan sebelum menjalankan proses yang ditugaskan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not start the machine. Keep people away, notify the operator or leader, and wait for an inspection before starting the process.",
+          "scenario": "The compactor's warning light is on, and the guard door is not fully locked.",
+          "sections": [
+            {
+              "body": "Processing equipment may cut, crush, compact, or separate material. Pre-operation checks confirm guards are fitted, the area is clear, and measuring devices or indicators are working. Operate only equipment you have been trained to use; cleaning, repairs, and energy isolation must follow facility procedures and authorization.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the startup checklist and report leaks, unusual sounds or vibration, and warning lights. Do not start a machine if a guard is open. Never put your hand in to clear a blockage or open an electrical panel.\n\nPractice scenario: The compactor's warning light is on, and the guard door is not fully locked.\nSuggested response: Do not start the machine. Keep people away, notify the operator or leader, and wait for an inspection before starting the process.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca instruksi dan tugas operator hari ini",
+            "Periksa pelindung, lantai, dan indikator yang ditetapkan",
+            "Laporkan kerusakan atau tanda tidak normal",
+            "Jalankan hanya setelah pemeriksaan dinyatakan siap"
+          ],
+          "title": "Pre-Operation Checks for Processing Equipment",
+          "vocabulary": [
+            {
+              "japanese": "設備",
+              "meaning": "equipment",
+              "reading": "せつび"
+            },
+            {
+              "japanese": "保護カバー",
+              "meaning": "machine guard",
+              "reading": "ほごかばー"
+            },
+            {
+              "japanese": "警報",
+              "meaning": "alarm",
+              "reading": "けいほう"
+            },
+            {
+              "japanese": "運転",
+              "meaning": "operation",
+              "reading": "うんてん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change the sequence or mix lots to meet a production target.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Lot records maintain traceability from receiving through output.",
+              "kind": "knowledge",
+              "options": [
+                "So output can be linked back to its material and process",
+                "So material from all sources can be mixed easily",
+                "To eliminate the need to weigh it",
+                "So the equipment can run without an operator"
+              ],
+              "prompt": "Why must the lot identity be recorded on process output?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The lot number does not match; hold the output and trace it before passing it on.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Hold the output, record the visible mark, and ask the person in charge to trace the lot before it moves to the next process.",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, the lot mark on an output from a process does not match the incoming-material record. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the material lot to the process instructions → Follow the sequence and operator task limits → Record the time, result, and output identity → Hold abnormal results and request an inspection.",
+              "kind": "workflow",
+              "options": [
+                "Follow the sequence and operator task limits",
+                "Match the material lot to the process instructions",
+                "Record the time, result, and output identity",
+                "Hold abnormal output and request an inspection"
+              ],
+              "prompt": "In the “Following process order and recording results” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ロット番号が記録と違います。",
+              "meaning": "The lot number differs from the record.",
+              "reading": "ろっとばんごうがきろくとちがいます。"
+            },
+            {
+              "japanese": "出力を保留して、担当者に確認します。",
+              "meaning": "I am holding the output and requesting staff confirmation.",
+              "reading": "しゅつりょくをほりゅうして、たんとうしゃにかくにんします。"
+            }
+          ],
+          "id": "rr-08",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti urutan pengolahan yang ditetapkan serta mencatat lot, waktu, dan hasil sesuai format fasilitas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold the output, record the visible markings, and ask the person in charge to trace the lot before moving it to the next process.",
+          "scenario": "Output from a process has a lot mark that does not match the incoming-material record.",
+          "sections": [
+            {
+              "body": "Intermediate processing changes material's form or condition so it can be recovered or processed further. Each facility sets routes and parameters for its machines, including the sequence of incoming material and output. Actual records link incoming lots to output fractions and help identify deviations.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Verify material identity against the instructions before feeding it into the process, check required indicators, and record lot changes or weigh-ins. If output looks different, the machine stops, or identity is lost, hold the product and report it. Do not mix output from two processes to hide a weight difference.\n\nPractice scenario: Output from a process has a lot mark that does not match the incoming-material record.\nSuggested response: Hold the output, record the visible markings, and ask the person in charge to trace the lot before moving it to the next process.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan lot bahan dengan instruksi proses",
+            "Ikuti urutan dan batas tugas operator",
+            "Catat waktu, hasil, dan identitas keluaran",
+            "Tahan hasil yang menyimpang dan minta pemeriksaan"
+          ],
+          "title": "Following Process Order and Recording Results",
+          "vocabulary": [
+            {
+              "japanese": "中間処理",
+              "meaning": "intermediate processing",
+              "reading": "ちゅうかんしょり"
+            },
+            {
+              "japanese": "工程",
+              "meaning": "process stage",
+              "reading": "こうてい"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            },
+            {
+              "japanese": "搬出",
+              "meaning": "dispatch or outbound transfer",
+              "reading": "はんしゅつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not open an electrical panel or clear a blockage without isolation and authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Observed details help staff identify the location and condition without guessing.",
+              "kind": "knowledge",
+              "options": [
+                "The machine number, time, and observed symptoms",
+                "A suspected cause without any signs",
+                "The name of the waiting customer",
+                "The operator's uniform color"
+              ],
+              "prompt": "What information helps a worker assess machine damage?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A burning smell and vibration are serious signs; stop and report them promptly.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Stop the equipment according to emergency procedure, move away from the area, and report the machine number and symptoms to the supervisor.",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, a pump on the line smells of burning and its vibration increases while running. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Observe signs of damage from a safe position → Stop the equipment as instructed if the condition is dangerous → Record the machine, time, and visible symptoms → Report to maintenance staff or a supervisor.",
+              "kind": "workflow",
+              "options": [
+                "Observe signs of damage from a safe position",
+                "Stop the equipment as instructed if the condition is hazardous",
+                "Record the machine, time, and visible symptoms",
+                "Report it to maintenance staff or a supervisor"
+              ],
+              "prompt": "In the “Abnormal conditions and equipment maintenance” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ポンプから焦げたにおいがします。",
+              "meaning": "The pump smells burnt.",
+              "reading": "ぽんぷからこげたにおいがします。"
+            },
+            {
+              "japanese": "運転を止めて、保全担当者に連絡します。",
+              "meaning": "I am stopping the operation and contacting maintenance staff.",
+              "reading": "うんてんをとめて、ほぜんたんとうしゃにれんらくします。"
+            }
+          ],
+          "id": "rr-09",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali kebocoran, getaran, bunyi, panas, atau kerusakan dan melaporkannya tanpa melakukan perbaikan di luar wewenang.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop the equipment according to the emergency procedure, move away, and report the machine number and symptoms to the leader.",
+          "scenario": "A line pump smells burnt and is vibrating more than usual while running.",
+          "sections": [
+            {
+              "body": "Equipment can wear out, clog, leak, or develop electrical faults. Watch for designated warning signs, stop using equipment if there is a hazard, and notify maintenance staff. Cleaning, lubrication, part replacement, and energy isolation are restricted to authorized people following facility rules.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Record the machine number, time, problem location, sounds or indicators observed, and temporary action taken. Keep coworkers away if needed and post signs as required. Do not open a panel, insert a tool, or repeatedly restart the machine to clear an alarm.\n\nPractice scenario: A line pump smells burnt and is vibrating more than usual while running.\nSuggested response: Stop the equipment according to the emergency procedure, move away, and report the machine number and symptoms to the leader.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati tanda kerusakan dari posisi aman",
+            "Hentikan alat sesuai instruksi bila kondisi berbahaya",
+            "Catat mesin, waktu, dan gejala yang terlihat",
+            "Laporkan kepada petugas perawatan atau pemimpin"
+          ],
+          "title": "Abnormal Conditions and Equipment Maintenance",
+          "vocabulary": [
+            {
+              "japanese": "故障",
+              "meaning": "damage",
+              "reading": "こしょう"
+            },
+            {
+              "japanese": "保全",
+              "meaning": "maintenance",
+              "reading": "ほぜん"
+            },
+            {
+              "japanese": "振動",
+              "meaning": "vibration",
+              "reading": "しんどう"
+            },
+            {
+              "japanese": "漏れ",
+              "meaning": "leak",
+              "reading": "もれ"
+            }
+          ]
+        }
+      ],
+      "title": "Intermediate Processing and Facility Maintenance"
+    },
+    {
+      "description": "Maintain product identity, storage areas, safe transfers, records, and handovers between processes.",
+      "id": "traceability",
+      "lessons": [
+        {
+          "caution": "Do not send output without a verifiable identity and destination.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The result must include the actual figure and a clear destination so it remains traceable.",
+              "kind": "knowledge",
+              "options": [
+                "Hold the output, record the actual result, and verify the destination",
+                "Use the target weight and continue",
+                "Move it to the nearest container",
+                "Apply the label from the previous output"
+              ],
+              "prompt": "What should be done if the weight and destination label do not match?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The destination mark has come off and the weight differs; hold the item before moving it.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area",
+                "Hold the container, record the actual weight and any remaining information, then ask the person in charge to restore the destination before internal dispatch."
+              ],
+              "prompt": "At work, the output weight on the scale differs from the record, and the destination label has come off the container. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Check the output label against the process card → Measure or count using facility units → Record the actual weight, time, lot, and destination → Hold any discrepancy and request confirmation before moving it.",
+              "kind": "workflow",
+              "options": [
+                "Check the output label against the process card",
+                "Record the actual weight, time, lot, and destination",
+                "Measure or count the result using facility units",
+                "Hold the discrepancy and request confirmation before moving it"
+              ],
+              "prompt": "In the “Recording output and its next destination” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "重量が記録と違います。",
+              "meaning": "The weight differs from the record.",
+              "reading": "じゅうりょうがきろくとちがいます。"
+            },
+            {
+              "japanese": "行き先が分かるまで移動しません。",
+              "meaning": "I will not move it until its destination is known.",
+              "reading": "いきさきがわかるまでいどうしません。"
+            }
+          ],
+          "id": "rr-10",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan hasil olahan, berat atau jumlah, nomor lot, dan tujuan proses sebelum pemindahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold the container, record the actual weight and any remaining information, and ask the person in charge to restore its destination before internal transfer.",
+          "scenario": "The output weight on the scale differs from the record, and the container's destination label has come off.",
+          "sections": [
+            {
+              "body": "Processed material may become feedstock for another stage, a reusable product, or residue that needs a different route. Facility records link incoming material weight and identity to the output and its next destination. Follow local procedures for record formats and data; do not guess the category or destination.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before transfer, check the label and process card, weigh or count as instructed, and record the actual result. If the quantity does not match or the destination marking is missing, hold the output in the designated location. Do not enter target figures in the records or move material elsewhere without permission.\n\nPractice scenario: The output weight on the scale differs from the record, and the container's destination label has come off.\nSuggested response: Hold the container, record the actual weight and any remaining information, and ask the person in charge to restore its destination before internal transfer.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan label hasil dengan kartu proses",
+            "Ukur atau hitung hasil sesuai satuan fasilitas",
+            "Catat berat, waktu, lot, dan tujuan aktual",
+            "Tahan selisih serta minta konfirmasi sebelum pindah"
+          ],
+          "title": "Recording Output and Its Next Destination",
+          "vocabulary": [
+            {
+              "japanese": "搬出",
+              "meaning": "outbound transfer",
+              "reading": "はんしゅつ"
+            },
+            {
+              "japanese": "重量",
+              "meaning": "weight",
+              "reading": "じゅうりょう"
+            },
+            {
+              "japanese": "行き先",
+              "meaning": "destination",
+              "reading": "いきさき"
+            },
+            {
+              "japanese": "照合",
+              "meaning": "matching",
+              "reading": "しょうごう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not wash or sweep unidentified material into a drain.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Unknown contents may be hazardous; do not release them into a drain or touch them carelessly.",
+              "kind": "knowledge",
+              "options": [
+                "Keep a safe distance, restrict the area, and contact authorized staff",
+                "Flush it into a drain to clean the floor",
+                "Absorb it with a personal cloth",
+                "Move the drum without protective equipment"
+              ],
+              "prompt": "What is the first action to take for a spill whose contents are unknown?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The spill is unidentified; keep a safe distance and leave handling to authorized staff.",
+              "kind": "case",
+              "options": [
+                "Do not touch or wash away the liquid. Keep people clear, mark the area according to the rules, and contact authorized staff.",
+                "Touch or open unfamiliar material",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, liquid is leaking from a storage drum near a floor drain, and the worker does not know what the drum contains. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Confirm the material is in the correct storage zone → Keep vehicle and evacuation routes clear → Check covers, leaks, dust, and spills → Restrict the area and report unsafe conditions.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the material is in the correct storage zone",
+                "Check covers, leaks, dust, and spills",
+                "Restrict the area and report unsafe conditions",
+                "Keep vehicle and evacuation routes clear"
+              ],
+              "prompt": "In the “Safe storage and dust or spill control” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ドラムから液体が漏れています。",
+              "meaning": "Liquid is leaking from the drum.",
+              "reading": "どらむからえきたいがもれています。"
+            },
+            {
+              "japanese": "触らずに、担当者へ連絡してください。",
+              "meaning": "Do not touch it; contact staff.",
+              "reading": "さわらずに、たんとうしゃへれんらくしてください。"
+            }
+          ],
+          "id": "rr-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga area simpan tertata dan melaporkan debu, tumpahan, bau, atau bahan yang dapat mencemari lingkungan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not touch or wash away the liquid. Keep people back, mark the area as required, and contact authorized staff.",
+          "scenario": "Liquid is leaking from a storage drum near a floor drain, and the worker does not know what the drum contains.",
+          "sections": [
+            {
+              "body": "Storage areas may contain different materials with specific stacking limits, covers, and vehicle routes. Dust, liquid, or fragments can cause breathing problems, slippery floors, or contamination. Follow the facility's controls and equipment requirements; do not sweep, wash, or move a hazardous spill without instructions.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Place containers in marked areas, keep exit routes clear, and check lids and for leaks. If there is excessive dust or liquid escaping, warn others, keep your distance, and report the location and any known material type. Use protective equipment and procedures only if assigned to the task.\n\nPractice scenario: Liquid is leaking from a storage drum near a floor drain, and the worker does not know what the drum contains.\nSuggested response: Do not touch or wash away the liquid. Keep people back, mark the area as required, and contact authorized staff.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan material berada pada zona simpan yang benar",
+            "Jaga jalur kendaraan dan evakuasi tetap terbuka",
+            "Amati penutup, kebocoran, debu, dan tumpahan",
+            "Batasi area serta laporkan kondisi yang tidak aman"
+          ],
+          "title": "Safe Storage and Dust or Spill Control",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "粉じん",
+              "meaning": "dust",
+              "reading": "ふんじん"
+            },
+            {
+              "japanese": "漏えい",
+              "meaning": "leak or release",
+              "reading": "ろうえい"
+            },
+            {
+              "japanese": "排水口",
+              "meaning": "drain",
+              "reading": "はいすいこう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not remove a hold marker or leave a hazardous area without a handover.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Facts and the status of open work help the next shift work safely and trace the lot.",
+              "kind": "knowledge",
+              "options": [
+                "The lot, location, machine status, hazards, and follow-up",
+                "Only the quantity completed today",
+                "A suspected cause without data",
+                "That everything is safe without checking"
+              ],
+              "prompt": "What should be communicated in a shift handover?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Lot verification and route control are not complete; keep the warning markers in place and clearly hand over the status.",
+              "kind": "case",
+              "options": [
+                "Touch or open unfamiliar material",
+                "Keep the hold sign and route boundary in place, record the container number and reason, then hand the information directly to the next shift and supervisor.",
+                "Combine containers to empty them quickly",
+                "Skip recording it and move it to another area"
+              ],
+              "prompt": "At work, at the end of a shift, a container of output is still awaiting lot verification, and the route near the machine is marked off. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Check the closeout list and tool inventory → Confirm that the lot and machine have clear statuses → Record facts, actions, and unfinished work → Hand the information over to the supervisor or next shift.",
+              "kind": "workflow",
+              "options": [
+                "Confirm that the lot and machine have clear statuses",
+                "Check the closeout list and tool inventory",
+                "Record the facts, actions, and unfinished work",
+                "Hand over the information to the supervisor or next shift"
+              ],
+              "prompt": "In the “Final inspection and shift handover” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この容器はロット確認中です。",
+              "meaning": "This container is awaiting a lot inspection.",
+              "reading": "このようきはろっとかくにんちゅうです。"
+            },
+            {
+              "japanese": "立入禁止の場所も引き継ぎます。",
+              "meaning": "I will also hand over the information about the restricted area.",
+              "reading": "たちいりきんしのばしょもひきつぎます。"
+            }
+          ],
+          "id": "rr-12",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan area, alat, dan lot pada akhir giliran serta menyerahkan status pekerjaan yang masih terbuka.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Keep the hold marker and route boundary in place, record the container number and reason, and hand over directly to the next shift and leader.",
+          "scenario": "At the end of the shift, one output container is still awaiting lot verification, and the route near the machine has been marked off.",
+          "sections": [
+            {
+              "body": "Facility work spans processes and shifts. A clear handover states the location, lot number, machine status, recorded quantity, and next action. Factual records help the next team continue without mixing output or repeating completed steps. Hand over active hazards directly.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Complete the closing checklist, return tools to their locations, and mark lots still awaiting results. Tell the next person about damage, missing labels, or restricted areas. Do not mark unfinished work as complete; ask the recipient to repeat key information to confirm understanding.\n\nPractice scenario: At the end of the shift, one output container is still awaiting lot verification, and the route near the machine has been marked off.\nSuggested response: Keep the hold marker and route boundary in place, record the container number and reason, and hand over directly to the next shift and leader.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa daftar penutupan dan kelengkapan alat",
+            "Pastikan lot serta mesin memiliki status yang terbaca",
+            "Catat fakta, tindakan, dan pekerjaan yang belum selesai",
+            "Serahkan informasi kepada pemimpin atau giliran berikutnya"
+          ],
+          "title": "Final Checks and Shift Handover",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "状況",
+              "meaning": "status",
+              "reading": "じょうきょう"
+            },
+            {
+              "japanese": "未完了",
+              "meaning": "unfinished",
+              "reading": "みかんりょう"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            }
+          ]
+        }
+      ],
+      "title": "Storage, Outbound Flow, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "Japan Immigration Services Agency — SSW (i) work in the resource-recycling sector",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "Ministry of the Environment — Resource-recycling sector scope and official test status",
+      "url": "https://www.env.go.jp/recycle/waste/foreigner.html"
+    },
+    {
+      "title": "Ministry of the Environment — Official overview of preparations for accepting workers in resource recycling",
+      "url": "https://www.env.go.jp/content/000378447.pdf"
+    },
+    {
+      "title": "ISA — Sector-specific policy pages, including resource recycling",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri01_00132.html"
+    }
+  ],
+  "version": 1
+}

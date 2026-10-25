@@ -6,10 +6,13 @@ Gambar onboarding (2.737.359 byte) juga dipindahkan ke `backend/assets/images`.
 Path `imageAsset` di JSON tetap menjadi object key `assets/images/...` agar
 kompatibel dengan COS. Aplikasi memakai `imageUrl`, atau menyelesaikan object
 key terhadap origin `API_BASE_URL` untuk respons backend versi lama.
-Hanya `app-icon-small.png` (76.078 byte) yang dibundel lokal, memakai versi
+Ikon `app-icon-small.png` (76.078 byte) dibundel lokal, memakai versi
 288 px yang sudah tersedia untuk native splash Android. Gambar master
 `app-icon-default.png` tetap tersedia untuk script branding, tetapi tidak
 masuk APK. Script branding juga memperbarui ikon kecil ketika branding berubah.
+Folder WebP vocabulary kini juga dibundel sebagai cadangan untuk semua 20 tema
+N5 (sekitar 2,6 MB sumber gambar). Daftar tema dan potongan ilustrasi kata
+tetap tampil saat gambar jaringan sedang dimuat atau gagal, termasuk offline.
 
 ## Backend
 
@@ -29,9 +32,9 @@ backend menambahkan `/assets/images/...`. Tanpa keduanya, URL gambar relatif
 diselesaikan aplikasi terhadap origin API. Jika API memakai reverse proxy,
 teruskan `/assets/` ke backend juga. Jika deployment memakai CDN tanpa folder
 lokal, endpoint aset backend mengarahkan permintaan ke CDN, termasuk onboarding.
-Gambar membutuhkan koneksi internet dan
-menampilkan placeholder jika gagal. Flutter memakai cache gambar dalam memori;
-belum ada penyimpanan gambar offline permanen.
+Vocabulary N5 memakai ilustrasi bawaan selama menunggu atau gagal memuat gambar
+jaringan. Pembaruan gambar dari backend tetap digunakan ketika berhasil dimuat.
+Gambar tanpa cadangan bawaan menggunakan placeholder jika tidak dapat dimuat.
 
 ## Build
 

@@ -3,11 +3,15 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:nihongo_master/core/app_update/app_update_controller.dart';
 import 'package:nihongo_master/core/app_update/app_update_gate.dart';
 import 'package:nihongo_master/core/branding/app_branding.dart';
 import 'package:nihongo_master/core/diagnostics/error_reporter.dart';
+import 'package:nihongo_master/core/localization/app_language.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/notifications/notification_lifecycle.dart';
+import 'package:nihongo_master/core/offline/offline_lifecycle.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
@@ -32,6 +36,7 @@ void main() {
         return false;
       };
 
+      await initializeDateFormatting();
       final preferences = await SharedPreferences.getInstance();
       ErrorReporter.initialize(preferences);
       runApp(
@@ -53,16 +58,23 @@ class NihongoMasterApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
+    final locale = ref.watch(appPresentationLocaleProvider);
+    final supportedLocales = ref.watch(appSupportedLocalesProvider);
     ref.watch(billingControllerProvider);
 
     return MaterialApp.router(
       title:
           ref.watch(appBrandingProvider).valueOrNull?.appName ??
           'Nihongo Master',
-      builder: (context, child) => NotificationLifecycle(
-        child: AppUpdateGate(child: BrandStartup(child: child!)),
+      builder: (context, child) => OfflineLifecycle(
+        child: NotificationLifecycle(
+          child: AppUpdateGate(child: BrandStartup(child: child!)),
+        ),
       ),
       debugShowCheckedModeBanner: false,
+      locale: locale,
+      supportedLocales: supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       routeInformationProvider: router.routeInformationProvider,

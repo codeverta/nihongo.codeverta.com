@@ -8,6 +8,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 	"runtime/debug"
 	"strings"
 	"time"
@@ -25,36 +26,42 @@ import (
 )
 
 type Server struct {
-	manga                 *manga.Repository
-	mangaAdminToken       string
-	mangaAccess           MangaAccessChecker
-	news                  *news.Repository
-	newsFetcher           news.Fetcher
-	newsAdminToken        string
-	newsImageDirectory    string
-	newsContext           context.Context
-	jobs                  *jobs.Repository
-	dictionary            *dictionary.Client
-	dictionaryAdminToken  string
-	billing               *billing.Service
-	billingPushAudience   string
-	billingPushEmail      string
-	assetDirectory        string
-	store                 *store.MemoryStore
-	googleVerifier        backendAuth.GoogleVerifier
-	branding              *BrandingStore
-	homeBanners           *HomeBannerStore
-	appUpdates            *AppUpdateStore
-	notifications         *NotificationStore
-	pricing               *PricingStore
-	profilePhotos         *media.ProfilePhotoStorage
-	diagnostics           *diagnostics.Repository
-	diagnosticsAdminToken string
-	diagnosticLimiter     diagnosticRateLimiter
+	manga                     *manga.Repository
+	mangaAdminToken           string
+	mangaAccess               MangaAccessChecker
+	news                      *news.Repository
+	newsFetcher               news.Fetcher
+	newsAdminToken            string
+	newsImageDirectory        string
+	newsContext               context.Context
+	jobs                      *jobs.Repository
+	dictionary                *dictionary.Client
+	dictionaryAdminToken      string
+	billing                   *billing.Service
+	billingPushAudience       string
+	billingPushEmail          string
+	assetDirectory            string
+	store                     *store.MemoryStore
+	offlinePracticeSigningKey []byte
+	googleVerifier            backendAuth.GoogleVerifier
+	branding                  *BrandingStore
+	homeBanners               *HomeBannerStore
+	appUpdates                *AppUpdateStore
+	notifications             *NotificationStore
+	pricing                   *PricingStore
+	profilePhotos             *media.ProfilePhotoStorage
+	diagnostics               *diagnostics.Repository
+	diagnosticsAdminToken     string
+	diagnosticLimiter         diagnosticRateLimiter
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
-	return &Server{store: store, googleVerifier: googleVerifier, dictionary: dictionary.NewClient()}
+	return &Server{
+		store:                     store,
+		googleVerifier:            googleVerifier,
+		dictionary:                dictionary.NewClient(),
+		offlinePracticeSigningKey: offlinePracticeSigningKey(os.Getenv("OFFLINE_PRACTICE_SIGNING_KEY"), os.Getenv("OFFLINE_PRACTICE_SIGNING_KEY_FILE"), os.Getenv("DB_PASSWORD")),
+	}
 }
 
 type userContextKey struct{}
@@ -105,6 +112,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("GET /v1/plans", s.plans)
 	mux.HandleFunc("GET /v1/me/profile", s.requireAuth(s.profile))
 	mux.HandleFunc("PATCH /v1/me/profile", s.requireAuth(s.updateProfile))
+	mux.HandleFunc("PUT /v1/me/timezone", s.requireAuth(s.updateStudyTimezone))
 	mux.HandleFunc("POST /v1/me/profile/photo", s.requireAuth(s.uploadProfilePhoto))
 	mux.HandleFunc("GET /v1/me/progress", s.requireAuth(s.progress))
 	mux.HandleFunc("GET /v1/me/learning-history", s.requireAuth(s.learningHistory))
@@ -132,7 +140,9 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /v1/reading/lessons/{lessonID}/attempts", s.requireAuth(s.startReadingAttempt))
 	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/answers", s.requireAuth(s.answerReadingQuestion))
 	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/complete", s.requireAuth(s.completeReadingAttempt))
-	return s.middleware(mux)
+	mux.HandleFunc("GET /v1/offline/practice/{kind}/{lessonID}", s.requireAuth(s.offlinePracticePackage))
+	mux.HandleFunc("POST /v1/offline/practice-attempts/sync", s.requireAuth(s.syncOfflinePracticeAttempt))
+	return s.middleware(localizedLearningResponses(localizedNewsResponses(mux)))
 }
 
 func (s *Server) ConfigureProfilePhotoStorage(storage *media.ProfilePhotoStorage) {
@@ -188,7 +198,7 @@ func (s *Server) googleLogin(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnauthorized, "invalid_google_token", "Google ID token tidak valid")
 		return
 	}
-	profile, err := s.store.AuthenticateGoogle(identity)
+	profile, err := s.store.AuthenticateGoogle(identity, r.Header.Get("X-Device-Timezone"))
 	if err != nil {
 		if errors.Is(err, store.ErrReviewEmailLogin) {
 			writeError(w, http.StatusForbidden, "email_login_required", "Akun reviewer harus masuk menggunakan email dan password.")
@@ -397,7 +407,7 @@ func (s *Server) middleware(next http.Handler) http.Handler {
 		started := time.Now()
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, Accept-Language, X-Device-Timezone")
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS")
 		if r.Method == http.MethodOptions {
 			w.WriteHeader(http.StatusNoContent)

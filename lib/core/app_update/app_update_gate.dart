@@ -92,7 +92,9 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(appUpdateControllerProvider);
-    final obscured = !state.initialized || state.showDialog;
+    // Cached lessons must remain usable while an online version check is still
+    // pending. A confirmed mandatory-update dialog continues to block access.
+    final obscured = state.showDialog;
     return Stack(
       fit: StackFit.expand,
       children: [
@@ -103,8 +105,6 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
             child: AbsorbPointer(absorbing: obscured, child: widget.child),
           ),
         ),
-        if (!state.initialized)
-          const Material(child: Center(child: CircularProgressIndicator())),
         if (state.showDialog) ...[
           const ModalBarrier(dismissible: false, color: Colors.black54),
           SafeArea(

@@ -197,7 +197,6 @@ class LearningHistoryController extends StateNotifier<List<LearningActivity>> {
     bool Function()? isActive,
   }) async {
     if (!mounted || userId == null) return 0;
-    await refresh();
     if (!mounted || (isActive != null && !isActive())) return 0;
     final old = state.where((e) => e.key == '$kind:$lessonId').firstOrNull;
     final position = completed ? 0 : (old?.position ?? 0).clamp(0, total - 1);
@@ -221,6 +220,11 @@ class LearningHistoryController extends StateNotifier<List<LearningActivity>> {
       ),
     );
     _schedule();
+    // Opening a cached lesson must never wait for the history API. Refresh in
+    // the background; _sync merges by accessedAt and checks the current local
+    // value before applying a save response, so a late response cannot roll
+    // back newer local navigation.
+    unawaited(refresh());
     return position;
   }
 

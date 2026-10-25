@@ -1,0 +1,1260 @@
+{
+  "modules": [
+    {
+      "description": "Original warehouse-work practice based on the official scope: receiving handover, inspection, movement, storage, picking, and distribution. All records and decisions follow facility procedures.",
+      "id": "receiving",
+      "lessons": [
+        {
+          "caution": "Do not add unidentified goods to available stock or change quantities just to match an order.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking links received goods with their order and owner.",
+              "kind": "knowledge",
+              "options": [
+                "The goods' identity, quantity, and accompanying documents",
+                "The box's color only",
+                "The driver's name only",
+                "The storage-aisle number"
+              ],
+              "prompt": "What needs to be checked when goods arrive?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Record and investigate the discrepancy before making the item available as stock for picking.",
+              "kind": "case",
+              "options": [
+                "Change the label so it matches",
+                "Put it into available stock",
+                "Hold the goods and request confirmation using the visible number",
+                "Discard the documents"
+              ],
+              "prompt": "The number on the box label differs from the receiving sheet. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Receive documents and goods in the designated area → Check the number, type, and quantity → Record the result in the system or form → Separate discrepancies and request confirmation.",
+              "kind": "workflow",
+              "options": [
+                "Receive documents and goods in the designated area",
+                "Check the number, type, and quantity",
+                "Record the result in the system or on a form",
+                "Separate the discrepancy and request confirmation"
+              ],
+              "prompt": "In the “Checking incoming goods against documents” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "伝票の番号と箱の番号が違います。",
+              "meaning": "The number on the document differs from the number on the box.",
+              "reading": "でんぴょうのばんごうとはこのばんごうがちがいます。"
+            },
+            {
+              "japanese": "確認するまで、ここに置いてください。",
+              "meaning": "Please place it here until it is confirmed.",
+              "reading": "かくにんするまで、ここにおいてください。"
+            }
+          ],
+          "id": "warehouse-01",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan identitas barang, jumlah, dan dokumen saat penerimaan.",
+            "Mencatat fakta penerimaan pada sistem atau formulir fasilitas.",
+            "Menahan kelompok yang belum dapat dikenali agar tetap terlacak."
+          ],
+          "response": "Hold the box in the inspection area, record the visible number and related documents, and ask staff to confirm the order before it enters active stock.",
+          "scenario": "The order number on the box label differs from the receiving sheet.",
+          "sections": [
+            {
+              "body": "Receiving begins the traceability record for goods. Match the order number or shipping reference, item name, counting unit, quantity, and recipient to the documents. Goods may arrive in boxes, on pallets, or in other containers. Warehouse systems differ, so use the field names and recording steps in the applicable work instructions.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Check one lot at a time so goods for two orders are not mixed. Scan the label or record the number accurately, then mark receipt according to procedure. If a label cannot be read or documents are missing, place the goods in the designated hold area and ask staff to inspect them. Case: the order number on the label differs from the receiving sheet. Response: do not add the goods to active stock until the discrepancy is confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Terima dokumen dan barang pada area yang ditetapkan",
+            "Cocokkan nomor, jenis, dan jumlah",
+            "Catat hasil pada sistem atau formulir",
+            "Pisahkan selisih dan minta konfirmasi"
+          ],
+          "title": "Matching Incoming Goods to Documents",
+          "vocabulary": [
+            {
+              "japanese": "入荷",
+              "meaning": "incoming goods; receiving",
+              "reading": "にゅうか"
+            },
+            {
+              "japanese": "伝票",
+              "meaning": "document; slip",
+              "reading": "でんぴょう"
+            },
+            {
+              "japanese": "数量",
+              "meaning": "quantity",
+              "reading": "すうりょう"
+            },
+            {
+              "japanese": "照合",
+              "meaning": "matching",
+              "reading": "しょうごう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not hide damage or mix held goods into good stock.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Separation keeps the item's status clear until the person in charge determines the next step.",
+              "kind": "knowledge",
+              "options": [
+                "So it is not picked as good stock and the issue can be followed up",
+                "So the total quantity does not need to be recorded",
+                "So another item's label can be used",
+                "So damaged goods disappear from the system automatically"
+              ],
+              "prompt": "Why are damaged goods separated from goods ready for storage?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Abnormal items must remain identified; inspection or use decisions must follow procedure.",
+              "kind": "case",
+              "options": [
+                "Store it on the rack for good items",
+                "Dry it quietly and remove the sign",
+                "Separate it, record the condition, and report it",
+                "Move the contents to another box without making a record"
+              ],
+              "prompt": "A box is wet and its seal is open. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Count goods using the work unit → Check package condition and external marks → Separate damaged or missing goods → Record and report before putaway.",
+              "kind": "workflow",
+              "options": [
+                "Count the goods using the work unit",
+                "Check package condition and external marks",
+                "Separate damaged or missing goods",
+                "Record and report it before putaway"
+              ],
+              "prompt": "In the “Quantity and package-condition inspection” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "箱がぬれて、封が開いています。",
+              "meaning": "The box is wet and its seal is open.",
+              "reading": "はこがぬれて、ふうがあいています。"
+            },
+            {
+              "japanese": "分けて、数量と状態を記録します。",
+              "meaning": "Separate it and record the quantity and condition.",
+              "reading": "わけて、すうりょうとじょうたいをきろくします。"
+            }
+          ],
+          "id": "warehouse-02",
+          "minutes": 25,
+          "objectives": [
+            "Menghitung satuan sesuai cara hitung yang ditentukan fasilitas.",
+            "Membedakan kerusakan yang terlihat dari perkiraan penyebabnya.",
+            "Memisahkan dan melaporkan barang rusak atau kurang."
+          ],
+          "response": "Separate the box from stock ready for storage, record the quantity and visible condition, then report it so staff can decide the next step.",
+          "scenario": "One box in a lot appears wet and its seal is open.",
+          "sections": [
+            {
+              "body": "Staff inspect the quantity and external condition of incoming goods using the specified method: by box, unit, or pallet. Record visible conditions such as tears, dents, wetness, broken seals, or shortages. Receiving inspections help establish when a problem occurred, but workers must not assign blame without evidence.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Use the hold status or quarantine area required by warehouse rules. Take photographs only when instructions permit. Do not open special packaging or remove labels without direction. Case: one of six boxes is wet and its seal is open. Response: separate the box, record its condition and quantity, notify the person in charge, and wait for a decision about further inspection.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Hitung barang menurut satuan kerja",
+            "Periksa kondisi kemasan dan tanda luar",
+            "Pisahkan barang yang rusak atau kurang",
+            "Catat dan laporkan sebelum penempatan"
+          ],
+          "title": "Checking Quantity and Package Condition",
+          "vocabulary": [
+            {
+              "japanese": "破損",
+              "meaning": "damage",
+              "reading": "はそん"
+            },
+            {
+              "japanese": "不足",
+              "meaning": "shortage",
+              "reading": "ふそく"
+            },
+            {
+              "japanese": "外装",
+              "meaning": "outer packaging",
+              "reading": "がいそう"
+            },
+            {
+              "japanese": "保留",
+              "meaning": "temporarily on hold",
+              "reading": "ほりゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use unregistered empty space as a storage location.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Accurate locations and quantities help ensure goods can be found during inventory or order checks.",
+              "kind": "knowledge",
+              "options": [
+                "So the next worker can find and trace the goods",
+                "So the empty location is not noticed",
+                "So goods can be moved without authorization",
+                "So the item label does not need to be read"
+              ],
+              "prompt": "Why record the location after goods have been moved?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Place the goods in the recorded location so inventory remains traceable.",
+              "kind": "case",
+              "options": [
+                "Place the goods in the aisle",
+                "Stack it on the rack without scanning",
+                "Report the obstruction and request a recorded alternative location",
+                "Remove the location from the system"
+              ],
+              "prompt": "The system's designated location is full, and the goods there have a different label. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the location specified by the system → Check the location code and placement limits → Move the goods using an authorized method → Record the final location and quantity placed.",
+              "kind": "workflow",
+              "options": [
+                "Read the location specified by the system",
+                "Check the location code and placement limits",
+                "Move the goods using an authorized method",
+                "Record the final location and quantity placed"
+              ],
+              "prompt": "In the “Recording receipt and storage location” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "指定された棚がいっぱいです。",
+              "meaning": "The assigned rack is already full.",
+              "reading": "していされたたながいっぱいです。"
+            },
+            {
+              "japanese": "別の場所を確認してください。",
+              "meaning": "Please confirm another location.",
+              "reading": "べつのばしょをかくにんしてください。"
+            }
+          ],
+          "id": "warehouse-03",
+          "minutes": 25,
+          "objectives": [
+            "Memilih lokasi simpan yang sesuai petunjuk sistem dan label barang.",
+            "Mencatat perpindahan dari area penerimaan ke lokasi stok.",
+            "Mencegah barang tanpa lokasi jelas tertinggal di lantai atau jalur kerja."
+          ],
+          "response": "Do not place goods in another location without recording it. Flag the obstruction, notify staff, and wait for an alternate location to be recorded.",
+          "scenario": "The assigned location is full, and the item on its shelf has a different label.",
+          "sections": [
+            {
+              "body": "After receiving, goods are sent to the location specified by the system or work instruction. Each location may have a zone, aisle, rack, or level code. Goods that look alike may have different item numbers, sizes, lots, or use-by limits, so do not choose a location simply because it is empty.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Scan or record the item and location during movement as required by procedure. Make sure the system quantity moves with the goods accurately. If a location does not match, is full, or has an unreadable label, hold the movement and ask for instructions. Case: the app directs you to a rack holding items with a different label. Response: do not squeeze the goods into the rack; report that it is full and request an approved location.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca lokasi yang ditunjuk sistem",
+            "Periksa kode lokasi dan batas penempatan",
+            "Pindahkan barang dengan cara yang diizinkan",
+            "Catat lokasi akhir dan jumlah yang ditempatkan"
+          ],
+          "title": "Recording Receipts and Storage Locations",
+          "vocabulary": [
+            {
+              "japanese": "保管場所",
+              "meaning": "storage location",
+              "reading": "ほかんばしょ"
+            },
+            {
+              "japanese": "棚",
+              "meaning": "rack; shelf",
+              "reading": "たな"
+            },
+            {
+              "japanese": "格納",
+              "meaning": "putting goods into storage",
+              "reading": "かくのう"
+            },
+            {
+              "japanese": "在庫",
+              "meaning": "stock; inventory",
+              "reading": "ざいこ"
+            }
+          ]
+        }
+      ],
+      "title": "Receiving and Identifying Goods"
+    },
+    {
+      "description": "Original practice in maintaining goods identity during storage. Rotation order, stacking limits, equipment, and special conditions follow facility requirements and the characteristics of the goods.",
+      "id": "storage",
+      "lessons": [
+        {
+          "caution": "Do not mix lots, owners, or zones because the packages look alike.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Lot information may be needed for inspection and order fulfillment, so it must not be lost.",
+              "kind": "knowledge",
+              "options": [
+                "So the correct quantity and batch history can be traced",
+                "So the label can be removed",
+                "So all goods look the same",
+                "So inventory can be counted faster without records"
+              ],
+              "prompt": "Why must goods from different lots remain distinguishable?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Separation and records preserve the trace for each group of goods.",
+              "kind": "case",
+              "options": [
+                "Mix them and use one label",
+                "Remove one of the lot numbers",
+                "Separate the items or use the designated locations and record each one",
+                "Choose the newer number without checking"
+              ],
+              "prompt": "Two similar boxes have different lot numbers. How should they be stored?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check the code and storage instructions → Use only the designated location → Place the goods while keeping labels readable → Record the location and any required separation.",
+              "kind": "workflow",
+              "options": [
+                "Check the code and storage instructions",
+                "Use only the designated location",
+                "Place the goods while keeping the label readable",
+                "Record the location and any required separation"
+              ],
+              "prompt": "In the “Placing goods according to zone and instructions” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この二つはロットが違います。",
+              "meaning": "These two items are from different lots.",
+              "reading": "このふたつはろっとがちがいます。"
+            },
+            {
+              "japanese": "表示を確認して分けます。",
+              "meaning": "I will check the label and then separate it.",
+              "reading": "ひょうじをかくにんしてわけます。"
+            }
+          ],
+          "id": "warehouse-04",
+          "minutes": 25,
+          "objectives": [
+            "Menggunakan lokasi yang ditetapkan bagi jenis atau kondisi barang.",
+            "Menjaga label dan identitas terlihat selama barang disimpan.",
+            "Meminta arahan jika ketentuan barang atau lokasi tidak jelas."
+          ],
+          "response": "Store each lot in a separate or designated location, then record where each group is kept to maintain traceability.",
+          "scenario": "Two boxes look alike but show different lot numbers.",
+          "sections": [
+            {
+              "body": "A warehouse may separate goods by owner, type, size, lot, temperature, or handling instructions. Zone information on the screen or label guides operations. Do not assume two items can be stored together because their packaging looks similar. Goods with special requirements need locations and monitoring according to facility instructions.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Match the item code and location before putting goods away. Make sure labels face outward or are positioned so they can be read, and do not block inspection routes. If you do not understand a special-condition label, stop and ask the person in charge. Case: two similar product boxes have different lot labels. Response: keep the lots separate and record each location in the system.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa kode dan petunjuk penyimpanan",
+            "Pilih hanya lokasi yang ditetapkan",
+            "Tempatkan barang sambil menjaga label terbaca",
+            "Catat lokasi dan pemisahan yang dibutuhkan"
+          ],
+          "title": "Placing Goods by Zone and Instructions",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "場所",
+              "meaning": "location",
+              "reading": "ばしょ"
+            },
+            {
+              "japanese": "ロット",
+              "meaning": "production group; lot",
+              "reading": "ろっと"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "label; display",
+              "reading": "ひょうじ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not operate lifting equipment without training or block a route with goods.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Some equipment requires training and facility authorization; workers must follow their assigned duties.",
+              "kind": "knowledge",
+              "options": [
+                "A worker trained and authorized to use that equipment",
+                "Anyone who is available",
+                "The recipient of the goods",
+                "A warehouse visitor"
+              ],
+              "prompt": "Who may operate specialized lifting or moving equipment?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A damaged pallet may fail during movement; staff must arrange safe handling and a safe route.",
+              "kind": "case",
+              "options": [
+                "Move it yourself with a forklift without authorization",
+                "Leave without telling anyone",
+                "Keep a safe distance, report it, and ask trained staff to handle it",
+                "Stack another pallet on top of it"
+              ],
+              "prompt": "A cracked pallet is in the route. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Check the goods, container, and route → Confirm equipment and its use are authorized → Move goods according to facility instructions → Clear the route and report unsafe conditions.",
+              "kind": "workflow",
+              "options": [
+                "Check the goods, container, and route",
+                "Confirm that the equipment and its use are authorized",
+                "Move the goods according to facility instructions",
+                "Clear the route and report unsafe conditions"
+              ],
+              "prompt": "In the “Safe movement and warehouse routes” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "通路に壊れたパレットがあります。",
+              "meaning": "There is a damaged pallet in the route.",
+              "reading": "つうろにこわれたぱれっとがあります。"
+            },
+            {
+              "japanese": "近くを通らないで、担当者に知らせます。",
+              "meaning": "Keep away from there and notify staff.",
+              "reading": "ちかくをとおらないで、たんとうしゃにしらせます。"
+            }
+          ],
+          "id": "warehouse-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga jalur pergerakan barang tetap tertata dan bebas penghalang.",
+            "Menggunakan alat pemindahan hanya sesuai pelatihan dan izin.",
+            "Melaporkan tumpahan, barang jatuh, atau kerusakan rak."
+          ],
+          "response": "Keep clear and notify the person in charge. Have trained staff decide how to move the pallet and keep other traffic out of the route.",
+          "scenario": "A cracked pallet carrying goods is in a material-handling route.",
+          "sections": [
+            {
+              "body": "Goods move by hand or suitable equipment within a facility. Keep pedestrian routes, equipment areas, and staging spaces organized so workers do not obstruct one another. Stack goods and use pallets and racks within warehouse limits and instructions; no single arrangement works for every type of item. Only trained and authorized workers may operate material-handling machinery.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Before pushing or carrying goods, check the route and container condition and decide whether assistance is needed. Do not place goods in front of doors, fire equipment, exits, or equipment routes. If goods fall or a rack appears altered, do not attempt a risky lift or repair yourself; keep clear from a safe position and report it. Case: a cracked pallet is found in a movement route. Response: do not move it with equipment without approval; request staff assistance.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa barang, wadah, dan rute",
+            "Pastikan alat dan penggunaannya sesuai izin",
+            "Pindahkan barang menurut petunjuk fasilitas",
+            "Rapikan jalur dan laporkan kondisi tidak aman"
+          ],
+          "title": "Safe Movement and Warehouse Routes",
+          "vocabulary": [
+            {
+              "japanese": "運搬",
+              "meaning": "material handling",
+              "reading": "うんぱん"
+            },
+            {
+              "japanese": "通路",
+              "meaning": "route",
+              "reading": "つうろ"
+            },
+            {
+              "japanese": "台車",
+              "meaning": "cart",
+              "reading": "だいしゃ"
+            },
+            {
+              "japanese": "整理",
+              "meaning": "arrangement",
+              "reading": "せいり"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change system quantities or take goods to cover a discrepancy without authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checks and approval keep inventory data reliable and prevent new errors.",
+              "kind": "knowledge",
+              "options": [
+                "Recheck the quantity and transaction, then request staff approval",
+                "Change the number in the system directly",
+                "Move goods from another rack",
+                "Delete all records"
+              ],
+              "prompt": "What is the correct action before making an inventory correction?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The discrepancy must be confirmed and handled through procedure, not concealed.",
+              "kind": "case",
+              "options": [
+                "Change it to 30 without checking",
+                "Take two items from another order",
+                "Recount, record the discrepancy, and report it for approval",
+                "Hide the 28 units"
+              ],
+              "prompt": "The system shows 30, but the physical count is 28. How should you proceed?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Select the location and item from the count list → Check the number and unit → Recount and review the related transaction → Record the discrepancy and wait for approval before correcting it.",
+              "kind": "workflow",
+              "options": [
+                "Select the location and item according to the count list",
+                "Check the number and unit",
+                "Recount and check the related transaction",
+                "Record the discrepancy and wait for approval to correct it"
+              ],
+              "prompt": "In the “Stock count and inventory discrepancy” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "記録は三十個ですが、実数は二十八個です。",
+              "meaning": "The record shows 30 items, but the physical count is 28.",
+              "reading": "きろくはさんじゅっこですが、じっすうはにじゅうはっこです。"
+            },
+            {
+              "japanese": "もう一度数えて、差異を報告してください。",
+              "meaning": "Count again and report the discrepancy.",
+              "reading": "もういちどかぞえて、さいをほうこくしてください。"
+            }
+          ],
+          "id": "warehouse-06",
+          "minutes": 25,
+          "objectives": [
+            "Membandingkan jumlah fisik dengan catatan sistem secara berurutan.",
+            "Tidak memperbarui stok sebelum selisih diperiksa.",
+            "Mencatat temuan dan menjaga kelompok terkait tetap dapat ditelusuri."
+          ],
+          "response": "Recount using the correct unit, check whether the latest transaction has not yet been recorded, then document the 28 units and report the discrepancy for review.",
+          "scenario": "The record shows 30 units, but the shelf count is only 28.",
+          "sections": [
+            {
+              "body": "A stock count compares the quantity at a location with the records. Discrepancies may result from an unrecorded transaction, wrong location, counting error, or damaged goods. Recount as instructed, check labels and units, and report the result. Do not alter the system merely to make the numbers match.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Stop moving goods from a location being counted if procedure requires it. Check the unit, item number, and recent transactions; ask authorized staff to approve any correction. Case: the system records 30 units, but the shelf holds 28. Response: recount, check nearby locations as directed, record the discrepancy, and wait for review before adjusting stock.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pilih lokasi dan barang sesuai daftar hitung",
+            "Cocokkan nomor serta satuan",
+            "Hitung ulang dan periksa transaksi terkait",
+            "Catat selisih dan tunggu persetujuan koreksi"
+          ],
+          "title": "Stock Counts and Inventory Discrepancies",
+          "vocabulary": [
+            {
+              "japanese": "棚卸し",
+              "meaning": "stock count",
+              "reading": "たなおろし"
+            },
+            {
+              "japanese": "差異",
+              "meaning": "discrepancy; difference",
+              "reading": "さい"
+            },
+            {
+              "japanese": "実数",
+              "meaning": "physical count",
+              "reading": "じっすう"
+            },
+            {
+              "japanese": "修正",
+              "meaning": "correction",
+              "reading": "しゅうせい"
+            }
+          ]
+        }
+      ],
+      "title": "Storage, Movement, and Inventory"
+    },
+    {
+      "description": "Original practice in selecting goods for an order, checking picked items, packing them, and placing them in the dispatch flow. Preserve order identity and movement history through handover.",
+      "id": "picking-shipping",
+      "lessons": [
+        {
+          "caution": "Do not substitute the type, size, lot, or quantity without approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking prevents product, location, and quantity errors.",
+              "kind": "knowledge",
+              "options": [
+                "The item code, location, and quantity on the order",
+                "The rack's color only",
+                "The driver's name",
+                "The dimensions of the available pallet"
+              ],
+              "prompt": "What should be checked before picking up goods?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A similar product is not an automatic substitute; report the shortage and obtain approval from the person in charge.",
+              "kind": "case",
+              "options": [
+                "Take the large size because it is almost the same",
+                "Change the order yourself",
+                "Check the code; report a shortage if there are not enough items in the requested size",
+                "Delete the order"
+              ],
+              "prompt": "The order requests a small size, but a similar large item is available. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the order code, quantity, and location → Check the item label at the location → Pick and scan the requested quantity → Report an empty location or mismatch.",
+              "kind": "workflow",
+              "options": [
+                "Read the order code, quantity, and location",
+                "Check the item label at the location",
+                "Pick and scan the requested quantity",
+                "Report the empty location or discrepancy"
+              ],
+              "prompt": "In the “Picking by order and location” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "注文は小さいサイズです。",
+              "meaning": "The order requests the small size.",
+              "reading": "ちゅうもんはちいさいさいずです。"
+            },
+            {
+              "japanese": "コードを見てから取ります。",
+              "meaning": "I will pick it after checking the code.",
+              "reading": "こーどをみてからとります。"
+            }
+          ],
+          "id": "warehouse-07",
+          "minutes": 25,
+          "objectives": [
+            "Membaca kode barang, jumlah, serta lokasi pada daftar picking.",
+            "Mengambil barang dari lokasi yang cocok dan memindai transaksi.",
+            "Meminta bantuan ketika barang tidak ada atau label berbeda."
+          ],
+          "response": "Match the full product code to the order before picking. If there are too few small items, record the shortage and contact staff instead of substituting the large size.",
+          "scenario": "The order calls for the small size, but the location contains boxes in both small and large sizes.",
+          "sections": [
+            {
+              "body": "Picking retrieves stock to fulfill an order. A list or scanner shows the item, quantity, location, and applicable selection rules. Items with similar names may not be the same. Rotation rules based on lots or dates apply only when specified by the system or facility; workers must not change the sequence based on habit.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Match the item code and location before picking, count using the specified unit, and confirm the transaction with the work device. If the quantity is short, the location is empty, or the label differs, do not substitute a similar product. Case: the shelf has two product sizes, but the order requires one size. Response: match the full item code, pick the correct size, and report a shortage if there are not enough.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca kode, jumlah, dan lokasi pesanan",
+            "Cocokkan label barang pada lokasi",
+            "Ambil dan pindai jumlah yang diminta",
+            "Laporkan lokasi kosong atau ketidakcocokan"
+          ],
+          "title": "Picking by Order and Location",
+          "vocabulary": [
+            {
+              "japanese": "ピッキング",
+              "meaning": "order picking",
+              "reading": "ぴっきんぐ"
+            },
+            {
+              "japanese": "注文",
+              "meaning": "order",
+              "reading": "ちゅうもん"
+            },
+            {
+              "japanese": "商品コード",
+              "meaning": "product code",
+              "reading": "しょうひんこーど"
+            },
+            {
+              "japanese": "欠品",
+              "meaning": "out of stock",
+              "reading": "けっぴん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not pack goods until their identity and status match.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Inspection before packing prevents incorrect or damaged goods from entering a shipment.",
+              "kind": "knowledge",
+              "options": [
+                "After the identity, quantity, condition, and requested information all match",
+                "After all items have been gathered, without inspection",
+                "When the label is visible from a distance",
+                "When the packing area is empty"
+              ],
+              "prompt": "When is the picking result ready to be packed?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Resolve and record lot discrepancies before the goods leave the warehouse.",
+              "kind": "case",
+              "options": [
+                "Keep it packed because the main code is similar",
+                "Replace the label without making a record",
+                "Hold it, check the transaction, and select the lot according to instructions",
+                "Ship it to another customer"
+              ],
+              "prompt": "The lot label on one item differs from the list. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Gather picked items in the order area → Check the requested code, quantity, and lot → Inspect the item condition and label → Separate errors and record replacements.",
+              "kind": "workflow",
+              "options": [
+                "Gather picked items in the order area",
+                "Check the requested code, quantity, and lot",
+                "Check the condition of the goods and their labels",
+                "Separate the incorrect item and record its replacement"
+              ],
+              "prompt": "In the “Picking-result inspection and lot management” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この番号は注文と違います。",
+              "meaning": "This number differs from the order.",
+              "reading": "このばんごうはちゅうもんとちがいます。"
+            },
+            {
+              "japanese": "梱包する前に確認しましょう。",
+              "meaning": "Let's confirm before packing.",
+              "reading": "こんぽうするまえにかくにんしましょう。"
+            }
+          ],
+          "id": "warehouse-08",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa hasil pengambilan terhadap daftar sebelum dikemas.",
+            "Menjaga nomor lot, tanggal, dan identitas pesanan sesuai aturan fasilitas.",
+            "Memisahkan barang salah atau rusak agar tidak terkirim."
+          ],
+          "response": "Hold the item, check the order and picking transaction, and report it so the correct lot can be selected before packing.",
+          "scenario": "An item in the packing area has a lot label that differs from the order list.",
+          "sections": [
+            {
+              "body": "Before packing, check picked items again: item code, quantity, lot or date when required, and condition. Some facilities use scanning to reduce shipping errors. The system indicates rotation and lot-selection methods for particular products. Do not assume one sequence applies to all goods.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Compare assembled products with the order and scan them as instructed. If an item is incorrect, damaged, or from the wrong lot, separate it from ready-to-ship orders, assign the status required by procedure, and request the correct replacement. Case: an item in the packing area has a label that differs from the list. Response: do not pack it; hold it and recheck its source location and transaction.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kumpulkan hasil picking pada area pesanan",
+            "Cocokkan kode, jumlah, dan lot yang diminta",
+            "Periksa kondisi barang dan label",
+            "Pisahkan kesalahan lalu catat penggantinya"
+          ],
+          "title": "Checking Picked Orders and Managing Lots",
+          "vocabulary": [
+            {
+              "japanese": "検品",
+              "meaning": "goods inspection",
+              "reading": "けんぴん"
+            },
+            {
+              "japanese": "品番",
+              "meaning": "item number; item code",
+              "reading": "ひんばん"
+            },
+            {
+              "japanese": "期限",
+              "meaning": "expiration date; use-by date",
+              "reading": "きげん"
+            },
+            {
+              "japanese": "一致",
+              "meaning": "matching; correct",
+              "reading": "いっち"
+            }
+          ]
+        },
+        {
+          "caution": "Do not ship a package with duplicate, unreadable, or wrong-destination labels.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Inspection links the package to the correct destination and order.",
+              "kind": "knowledge",
+              "options": [
+                "The label, order number, quantity, and destination",
+                "Packaging color alone",
+                "The name of the staff member who packed it",
+                "The dimensions of the waiting area"
+              ],
+              "prompt": "What must be checked before placing a package in the dispatch zone?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not ship the package until its identity and label are correct and recorded.",
+              "kind": "case",
+              "options": [
+                "Ship it because the box has already been sealed",
+                "Stick a new label over it without recording the change",
+                "Hold it and correct the label after checking the order",
+                "Move it to the busy dispatch zone"
+              ],
+              "prompt": "A sealed package has a destination label for another customer. What should be done?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Select packaging suited to the item and instructions → Protect the item and close the package → Check the label against the order number and destination → Place it in the correct dispatch zone.",
+              "kind": "workflow",
+              "options": [
+                "Select packaging suited to the item and instructions",
+                "Protect the goods and close the packaging",
+                "Check the label against the order number and destination",
+                "Place it in the correct dispatch zone"
+              ],
+              "prompt": "In the “Packing, labeling, and dispatch area” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ラベルの配送先が違います。",
+              "meaning": "The destination on the label is different.",
+              "reading": "らべるのはいそうさきがちがいます。"
+            },
+            {
+              "japanese": "出荷を止めて、伝票と確認します。",
+              "meaning": "Stop the shipment and check it against the documents.",
+              "reading": "しゅっかをとめて、でんぴょうとかくにんします。"
+            }
+          ],
+          "id": "warehouse-09",
+          "minutes": 25,
+          "objectives": [
+            "Mengemas barang dengan bahan dan cara yang ditetapkan untuk pesanan.",
+            "Memastikan label pengiriman dapat dibaca dan terkait dengan pesanan yang benar.",
+            "Menata kiriman pada area tunggu yang sesuai tujuan."
+          ],
+          "response": "Hold the package in the inspection area. Do not cover it with a new label outside procedure; request a corrected label and verify it against the order.",
+          "scenario": "A sealed package has a label for another customer's destination.",
+          "sections": [
+            {
+              "body": "Packing protects goods and preserves order identity during movement. Packaging methods, filler, seals, and labels depend on the product and customer requirements. A correct label links the order number, quantity, destination, and required handling information. Organize the dispatch area so different shipments are not mixed up when collected by carriers.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Choose packaging as instructed, check the label before applying it, and compare it with the order again. If a label is blurred, duplicated, or has the wrong destination, hold the package and reprint according to procedure. Place it in the correct destination zone and keep it out of walkways. Case: a package is sealed with a label for the wrong destination. Response: hold it, request a corrected label, and record that it is not ready to ship.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pilih kemasan sesuai barang dan instruksi",
+            "Lindungi barang dan tutup kemasan",
+            "Cocokkan label dengan nomor pesanan dan tujuan",
+            "Tempatkan pada zona kirim yang benar"
+          ],
+          "title": "Packing, Labeling, and Dispatch Areas",
+          "vocabulary": [
+            {
+              "japanese": "梱包",
+              "meaning": "packaging",
+              "reading": "こんぽう"
+            },
+            {
+              "japanese": "ラベル",
+              "meaning": "label",
+              "reading": "らべる"
+            },
+            {
+              "japanese": "出荷",
+              "meaning": "outbound shipment",
+              "reading": "しゅっか"
+            },
+            {
+              "japanese": "配送先",
+              "meaning": "shipping destination",
+              "reading": "はいそうさき"
+            }
+          ]
+        }
+      ],
+      "title": "Picking, Packing, and Dispatch"
+    },
+    {
+      "description": "Original practice in maintaining goods traceability and handling supporting warehouse activities, including reporting, organization, cleaning, and preparation for severe weather. The focus is warehouse work, not product manufacturing.",
+      "id": "traceability-flow",
+      "lessons": [
+        {
+          "caution": "Do not close a shipment or sign a receipt before confirming the actual quantity.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Records must describe the goods actually handed over and received.",
+              "kind": "knowledge",
+              "options": [
+                "After the quantity and handover have both been confirmed",
+                "When the carrier arrives at the door",
+                "When all packages are closed",
+                "After the label is printed"
+              ],
+              "prompt": "When may a shipment's status be marked complete?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Keep the discrepancy visible so an undelivered package remains traceable.",
+              "kind": "case",
+              "options": [
+                "Mark all eight as received",
+                "Change the list to seven without reporting it",
+                "Recount, record the package left behind, and coordinate",
+                "Put the eighth package in another vehicle"
+              ],
+              "prompt": "The list shows 8 packages, but the carrier takes 7. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Group shipments by destination → Check numbers and quantities against the list → Hand them over and record the recipient and time → Report any missing or different packages.",
+              "kind": "workflow",
+              "options": [
+                "Group shipments by destination",
+                "Check the number and quantity against the list",
+                "Hand it over and record the recipient and time",
+                "Report any missing or different package"
+              ],
+              "prompt": "In the “Dispatch handover and proof of delivery” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "リストは八個ですが、七個だけです。",
+              "meaning": "The list shows eight, but there are only seven.",
+              "reading": "りすとははっこですが、ななこだけです。"
+            },
+            {
+              "japanese": "数を確認して、記録してください。",
+              "meaning": "Confirm the quantity and record it.",
+              "reading": "かずをかくにんして、きろくしてください。"
+            }
+          ],
+          "id": "warehouse-10",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan kiriman, tujuan, dan jumlah sebelum serah terima.",
+            "Mencatat siapa atau bagian mana yang menerima kiriman sesuai prosedur.",
+            "Menjaga status tetap terbuka ketika bukti serah belum tersedia."
+          ],
+          "response": "Stop closing the transaction, recount, record the one package left behind, and coordinate whether it should be sent separately or held.",
+          "scenario": "The list shows eight packages, but the carrier is taking seven.",
+          "sections": [
+            {
+              "body": "The outbound stage ensures that picked and packed goods are handed to the carrier or next process for the correct destination. Handover documents, package count, shipment number, and time form part of the goods' traceability record. Document names and signature methods vary by facility; use the designated system.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Match packages to the list before handover. Record quantity differences or damage before the vehicle leaves the area. Do not mark goods as received without confirmation. Case: the list shows eight packages, but the carrier takes only seven. Response: keep the status open, recount, and ask the carrier and staff to confirm the package left behind.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kumpulkan kiriman menurut tujuan",
+            "Cocokkan nomor dan jumlah dengan daftar",
+            "Serahkan dan catat penerima serta waktu",
+            "Laporkan paket yang tertinggal atau berbeda"
+          ],
+          "title": "Outbound Handover and Proof of Delivery",
+          "vocabulary": [
+            {
+              "japanese": "出荷",
+              "meaning": "outbound shipment",
+              "reading": "しゅっか"
+            },
+            {
+              "japanese": "受け渡し",
+              "meaning": "handover",
+              "reading": "うけわたし"
+            },
+            {
+              "japanese": "配送",
+              "meaning": "distribution",
+              "reading": "はいそう"
+            },
+            {
+              "japanese": "受取人",
+              "meaning": "recipient",
+              "reading": "うけとりにん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change a product's function or specifications, or substitute items in a set, without authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A warehouse may prepare goods for distribution, but it does not change a product's function or specifications.",
+              "kind": "knowledge",
+              "options": [
+                "Apply labels or assemble sets according to instructions",
+                "Change the product's capabilities or function",
+                "Repair the production machine",
+                "Change the product contents based on an estimate"
+              ],
+              "prompt": "What is an example of a light distribution process in a warehouse?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The set's contents must match the instructions; substitutions require an authorized decision and accurate records.",
+              "kind": "case",
+              "options": [
+                "Replace it with a similar item without asking",
+                "Write that the set is complete",
+                "Hold the order and report the shortage for a staff decision",
+                "Take it from another order"
+              ],
+              "prompt": "One of the three types required for a set is unavailable. What should you do?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Read the process instructions and order identity → Check the available contents and quantity → Perform only the specified distribution process → Check the label and record the result.",
+              "kind": "workflow",
+              "options": [
+                "Read the process instructions and order identity",
+                "Check the available contents and quantity",
+                "Perform only the specified distribution process",
+                "Check the label and record the process result"
+              ],
+              "prompt": "In the “Relabeling and light distribution process” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "三つの品物を一組にします。",
+              "meaning": "Three items are assembled into one set.",
+              "reading": "みっつのしなものをひとくみにします。"
+            },
+            {
+              "japanese": "一つ足りません。確認をお願いします。",
+              "meaning": "One item is missing. Please check.",
+              "reading": "ひとつたりません。かくにんをおねがいします。"
+            }
+          ],
+          "id": "warehouse-11",
+          "minutes": 25,
+          "objectives": [
+            "Membedakan proses distribusi ringan dari pembuatan atau perubahan fungsi produk.",
+            "Mengikuti instruksi untuk pelabelan, set, atau pengemasan ulang.",
+            "Mempertahankan identitas barang dan catatan sebelum serta setelah proses."
+          ],
+          "response": "Hold the kitting process, record which products are present and missing, and ask staff whether to locate stock or delay the order.",
+          "scenario": "The instruction calls for a set of three products, but the third type cannot be found.",
+          "sections": [
+            {
+              "body": "Warehouse work may include light distribution tasks such as dividing quantities into smaller packages, applying labels, or assembling several items into an order set. These tasks prepare goods for distribution. Changes that create or enhance a product's function are manufacturing activities and are outside this warehouse practice.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Before starting, confirm the instructions, item number, quantity in each package, materials, and labels to be used. Keep the product and previous label traceable under procedure. Do not change the product contents, specifications, or description on your own. Case: the instruction calls for a set of three items, but only two types are available. Response: do not substitute the third type; hold the order and report the shortage.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca instruksi proses dan identitas pesanan",
+            "Cocokkan isi serta jumlah yang tersedia",
+            "Lakukan hanya proses distribusi yang ditetapkan",
+            "Periksa label dan catat hasil proses"
+          ],
+          "title": "Relabeling and Light Distribution Work",
+          "vocabulary": [
+            {
+              "japanese": "流通加工",
+              "meaning": "light distribution work",
+              "reading": "りゅうつうかこう"
+            },
+            {
+              "japanese": "小分け",
+              "meaning": "dividing into smaller packages",
+              "reading": "こわけ"
+            },
+            {
+              "japanese": "詰め合わせ",
+              "meaning": "assembling several items into a set",
+              "reading": "つめあわせ"
+            },
+            {
+              "japanese": "貼付",
+              "meaning": "label application",
+              "reading": "ちょうふ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not move or mark goods without updating their location and status.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Update the location and status so the goods remain findable and traceable.",
+              "kind": "knowledge",
+              "options": [
+                "The goods' identity and quantity, old and new locations, and reason or status",
+                "The worker's name only",
+                "An estimate without a record",
+                "There is no need to record it if it is temporary"
+              ],
+              "prompt": "What information must be communicated when goods are moved for weather protection?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Protection must follow safety instructions, and every movement must be recorded for traceability.",
+              "kind": "case",
+              "options": [
+                "Move all items to the aisle without recording them",
+                "Close off the area and say nothing",
+                "Report it to the supervisor and follow the plan; record any items moved",
+                "Use wet cardboard to cover it"
+              ],
+              "prompt": "Water is starting to enter near the rack. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Workflow taught: Identify and report the exception and its location → Follow the instructed protective action → Record the movement, quantity, and item status → Hand open issues over to the next worker.",
+              "kind": "workflow",
+              "options": [
+                "Identify and report the exception and its location",
+                "Follow the instructed protective action",
+                "Record the movement, quantity, and item status",
+                "Hand open issues over to the next worker"
+              ],
+              "prompt": "In the “Recording exceptions, weather, and handover” workflow, what is the next step after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "棚の近くに水が入っています。",
+              "meaning": "Water is entering near the racks.",
+              "reading": "たなのちかくにみずがはいっています。"
+            },
+            {
+              "japanese": "担当者に報告して、指示を待ちます。",
+              "meaning": "I will report it to staff and wait for instructions.",
+              "reading": "たんとうしゃにほうこくして、しじをまちます。"
+            }
+          ],
+          "id": "warehouse-12",
+          "minutes": 25,
+          "objectives": [
+            "Melaporkan kerusakan, lokasi, dan transaksi yang belum selesai dengan jelas.",
+            "Membantu penataan dan perlindungan barang sesuai arahan saat cuaca buruk.",
+            "Menyerahkan status persediaan dan hambatan kepada giliran berikutnya."
+          ],
+          "response": "Report the location and conditions to a supervisor, follow the warehouse protection plan, and record every box moved and its new location.",
+          "scenario": "Water is starting to enter near the racks, and several boxes are on a low level.",
+          "sections": [
+            {
+              "body": "Warehouses rely on reports to keep goods traceable through receiving, storage, picking, and dispatch. Record spills, water ingress, roof leaks, missing labels, or system outages along with the location and safe actions taken. As severe weather approaches, the facility plan may call for moving goods or protecting areas from rain.",
+              "title": "Work Concepts"
+            },
+            {
+              "body": "Follow the person in charge's instructions and do not move sensitive goods without recording the new location. Report an incident immediately; at handover, explain the lot, rack, quantity, status, time, and any action still needed. Case: water is starting to enter near a rack. Response: notify a supervisor, protect yourself, and move goods only when directed through a safe procedure; record the new location.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali dan laporkan pengecualian beserta lokasinya",
+            "Ikuti tindakan perlindungan yang diperintahkan",
+            "Catat perpindahan, jumlah, dan status barang",
+            "Serahkan masalah terbuka kepada petugas berikutnya"
+          ],
+          "title": "Recording Exceptions, Weather, and Handover",
+          "vocabulary": [
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            },
+            {
+              "japanese": "水漏れ",
+              "meaning": "water leak",
+              "reading": "みずもれ"
+            },
+            {
+              "japanese": "移動",
+              "meaning": "movement",
+              "reading": "いどう"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        }
+      ],
+      "title": "Traceability, Distribution, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "国土交通省 — Accepting Specified Skilled Worker and Employment-for-Skill-Development Workers in the Logistics Warehouse Sector",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/warehousing_ssw.html"
+    },
+    {
+      "title": "出入国在留管理庁 — Specified Skilled Worker System (general information, including the logistics warehouse sector)",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/index.html"
+    },
+    {
+      "title": "国土交通省 — Operational Policy for the Logistics Warehouse Sector (Cabinet decision of January 23, 2026; publication page)",
+      "url": "https://www.mlit.go.jp/seisakutokatsu/freight/warehousing_ssw.html"
+    }
+  ],
+  "version": 1
+}

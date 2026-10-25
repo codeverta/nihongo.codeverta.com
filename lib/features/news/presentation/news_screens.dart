@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/dictionary/data/dictionary_repository.dart';
@@ -11,27 +13,25 @@ import 'package:nihongo_master/features/news/presentation/furigana_text.dart';
 
 const newsFuriganaPreferenceKey = legacyNewsFuriganaPreferenceKey;
 
-String newsDate(DateTime date, {bool time = false}) {
-  final d = date.toUtc().add(const Duration(hours: 7));
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'Mei',
-    'Jun',
-    'Jul',
-    'Agu',
-    'Sep',
-    'Okt',
-    'Nov',
-    'Des',
-  ];
-  final day = '${d.day} ${months[d.month - 1]} ${d.year}';
+String newsDate(
+  DateTime date, {
+  bool time = false,
+  String localeName = 'id_ID',
+}) {
+  final formatter = DateFormat.yMMMd(localeName);
+  // Source dates are calendar dates in Japan rather than instants. Preserve
+  // that day; timestamps such as fetchedAt should follow the device timezone.
   return time
-      ? '$day, ${d.hour.toString().padLeft(2, '0')}.${d.minute.toString().padLeft(2, '0')} WIB'
-      : day;
+      ? formatter.add_Hm().format(date.toLocal())
+      : formatter.format(date);
 }
+
+String _newsDateFor(BuildContext context, DateTime date, {bool time = false}) =>
+    newsDate(
+      date,
+      time: time,
+      localeName: Localizations.localeOf(context).toString(),
+    );
 
 class NewsPreview extends ConsumerWidget {
   const NewsPreview({super.key});
@@ -43,7 +43,7 @@ class NewsPreview extends ConsumerWidget {
         children: [
           Expanded(
             child: Text(
-              'Berita Jepang',
+              'Berita Jepang'.localized(context),
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
@@ -51,11 +51,11 @@ class NewsPreview extends ConsumerWidget {
           ),
           TextButton(
             onPressed: () => context.push('/news'),
-            child: const Text('Lihat semua'),
+            child: Text('Lihat semua'.localized(context)),
           ),
         ],
       ),
-      const Text('Baca Jepang, temukan kata baru.'),
+      Text('Baca Jepang, temukan kata baru.'.localized(context)),
       const SizedBox(height: 12),
       ref
           .watch(newsPreviewProvider)
@@ -92,16 +92,21 @@ Color _kindColor(BuildContext context, String kind) {
 }
 
 /// Label tanggal relatif ("Hari ini", "Kemarin", "3 hari lalu").
-String newsRelativeDate(DateTime date) {
-  final now = DateTime.now().toUtc().add(const Duration(hours: 7));
-  final today = DateTime.utc(now.year, now.month, now.day);
-  final d = date.toUtc().add(const Duration(hours: 7));
-  final day = DateTime.utc(d.year, d.month, d.day);
+String newsRelativeDate(
+  DateTime date, {
+  String localeName = 'id_ID',
+  DateTime? now,
+}) {
+  final localNow = (now ?? DateTime.now()).toLocal();
+  final today = DateTime(localNow.year, localNow.month, localNow.day);
+  final day = DateTime(date.year, date.month, date.day);
   final diff = today.difference(day).inDays;
-  if (diff <= 0) return 'Hari ini';
-  if (diff == 1) return 'Kemarin';
-  if (diff < 7) return '$diff hari lalu';
-  return newsDate(date);
+  if (diff <= 0) return localeName.startsWith('en') ? 'Today' : 'Hari ini';
+  if (diff == 1) return localeName.startsWith('en') ? 'Yesterday' : 'Kemarin';
+  if (diff < 7) {
+    return localeName.startsWith('en') ? '$diff days ago' : '$diff hari lalu';
+  }
+  return newsDate(date, localeName: localeName);
 }
 
 class _KindBadge extends StatelessWidget {
@@ -126,7 +131,7 @@ class _KindBadge extends StatelessWidget {
           ),
           const SizedBox(width: 4),
           Text(
-            article.kindLabel,
+            article.kindLabel.localized(context),
             style: TextStyle(
               color: color,
               fontSize: 11,
@@ -162,7 +167,13 @@ class _NewsMeta extends StatelessWidget {
         Text('  ·  ', style: style),
         Icon(Icons.schedule_rounded, size: 13, color: muted),
         const SizedBox(width: 4),
-        Text(newsRelativeDate(article.sourceDate), style: style),
+        Text(
+          newsRelativeDate(
+            article.sourceDate,
+            localeName: Localizations.localeOf(context).toString(),
+          ),
+          style: style,
+        ),
       ],
     );
   }
@@ -341,18 +352,18 @@ class _FeaturedNewsCard extends StatelessWidget {
                         color: _newsCrimson,
                         borderRadius: BorderRadius.circular(99),
                       ),
-                      child: const Row(
+                      child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.bolt_rounded,
                             size: 14,
                             color: Colors.white,
                           ),
-                          SizedBox(width: 3),
+                          const SizedBox(width: 3),
                           Text(
-                            'Terbaru',
-                            style: TextStyle(
+                            'Terbaru'.localized(context),
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 11,
                               fontWeight: FontWeight.w800,
@@ -399,7 +410,7 @@ class _FeaturedNewsCard extends StatelessWidget {
                     children: [
                       Expanded(child: _NewsMeta(article: article)),
                       Text(
-                        'Baca',
+                        'Baca'.localized(context),
                         style: TextStyle(
                           color: theme.colorScheme.primary,
                           fontWeight: FontWeight.w700,
@@ -491,9 +502,9 @@ class _NewsHero extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '日本のニュース',
-                  style: TextStyle(
+                Text(
+                  '日本のニュース'.localized(context),
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.w800,
@@ -501,7 +512,8 @@ class _NewsHero extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Latih membaca dengan berita asli. Pilih kata untuk melihat artinya.',
+                  'Latih membaca dengan berita asli. Pilih kata untuk melihat artinya.'
+                      .localized(context),
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: .82),
                     height: 1.4,
@@ -516,7 +528,7 @@ class _NewsHero extends StatelessWidget {
                     if (page != null)
                       _HeroChip(
                         icon: Icons.article_rounded,
-                        label: '${page!.total} artikel',
+                        label: '${page!.total} artikel'.localized(context),
                       ),
                     for (final s in sources)
                       _HeroChip(
@@ -527,7 +539,7 @@ class _NewsHero extends StatelessWidget {
                             ? const Color(0xFFFFC857)
                             : const Color(0xFF5BE49B),
                         label:
-                            '${s['name']} · ${s['lastSuccessAt'] == null ? 'menunggu sinkronisasi' : newsDate(DateTime.parse(s['lastSuccessAt'] as String), time: true)}',
+                            '${s['name']} · ${s['lastSuccessAt'] == null ? 'menunggu sinkronisasi'.localized(context) : _newsDateFor(context, DateTime.parse(s['lastSuccessAt'] as String), time: true)}',
                       ),
                   ],
                 ),
@@ -622,7 +634,7 @@ class _FilterBarDelegate extends SliverPersistentHeaderDelegate {
             Padding(
               padding: const EdgeInsets.only(right: 8),
               child: _FilterPill(
-                label: label,
+                label: label.localized(context),
                 icon: icon,
                 color: kind == 'all'
                     ? theme.colorScheme.primary
@@ -724,7 +736,7 @@ class _SectionLabel extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         Text(
-          text,
+          text.localized(context),
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
@@ -753,7 +765,7 @@ class _NewsPager extends StatelessWidget {
         child: Row(
           children: [
             IconButton.filledTonal(
-              tooltip: 'Sebelumnya',
+              tooltip: 'Sebelumnya'.localized(context),
               onPressed: page > 1 ? () => onChange(page - 1) : null,
               icon: const Icon(Icons.chevron_left_rounded),
             ),
@@ -761,7 +773,7 @@ class _NewsPager extends StatelessWidget {
               child: Text.rich(
                 TextSpan(
                   children: [
-                    const TextSpan(text: 'Halaman '),
+                    TextSpan(text: '${'Halaman'.localized(context)} '),
                     TextSpan(
                       text: '$page',
                       style: TextStyle(
@@ -769,14 +781,14 @@ class _NewsPager extends StatelessWidget {
                         color: theme.colorScheme.primary,
                       ),
                     ),
-                    TextSpan(text: ' dari $pages'),
+                    TextSpan(text: ' ${'dari'.localized(context)} $pages'),
                   ],
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
             IconButton.filledTonal(
-              tooltip: 'Berikutnya',
+              tooltip: 'Berikutnya'.localized(context),
               onPressed: page < pages ? () => onChange(page + 1) : null,
               icon: const Icon(Icons.chevron_right_rounded),
             ),
@@ -817,7 +829,7 @@ class _NewsSkeletonState extends State<_NewsSkeleton>
       ),
     );
     return FadeTransition(
-      opacity: Tween(begin: .45, end: 1.0).animate(_c),
+      opacity: Tween<double>(begin: .45, end: 1).animate(_c),
       child: Column(
         children: [
           Container(
@@ -908,7 +920,9 @@ class _NewsListScreenState extends ConsumerState<NewsListScreen> {
             _FadeIn(index: 0, child: _FeaturedNewsCard(article: featured)),
           if (rest.isNotEmpty)
             _SectionLabel(
-              featured == null ? 'Daftar berita' : 'Berita lainnya',
+              (featured == null ? 'Daftar berita' : 'Berita lainnya').localized(
+                context,
+              ),
             ),
           for (final (i, article) in rest.indexed)
             _FadeIn(
@@ -929,7 +943,8 @@ class _NewsListScreenState extends ConsumerState<NewsListScreen> {
               const SizedBox(width: 6),
               Expanded(
                 child: Text(
-                  'Tanggal mengikuti terbitan sumber. Berita reguler memakai teks Jepang asli; info Easy memakai bahasa yang lebih sederhana.',
+                  'Tanggal mengikuti terbitan sumber. Berita reguler memakai teks Jepang asli; info Easy memakai bahasa yang lebih sederhana.'
+                      .localized(context),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
@@ -958,7 +973,7 @@ class _NewsListScreenState extends ConsumerState<NewsListScreen> {
           slivers: [
             SliverAppBar(
               pinned: true,
-              title: const Text('Berita Jepang'),
+              title: Text('Berita Jepang'.localized(context)),
               leading: BackButton(
                 onPressed: () =>
                     context.canPop() ? context.pop() : context.go('/home'),
@@ -1008,11 +1023,13 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
     final provider = newsArticleProvider(widget.id);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Baca berita'),
+        title: Text('Baca berita'.localized(context)),
         actions: [
           IconButton(
             key: const Key('news-furigana-toggle'),
-            tooltip: furigana ? 'Matikan furigana' : 'Tampilkan furigana',
+            tooltip: furigana
+                ? 'Matikan furigana'.localized(context)
+                : 'Tampilkan furigana'.localized(context),
             isSelected: furigana,
             onPressed: () =>
                 displayPreferencesController.setFurigana(enabled: !furigana),
@@ -1031,7 +1048,7 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
               padding: const EdgeInsets.fromLTRB(22, 8, 22, 40),
               children: [
                 Text(
-                  article.kindLabel,
+                  article.kindLabel.localized(context),
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w700,
@@ -1049,10 +1066,11 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  '${article.source} · ${article.dateLabel} ${newsDate(article.sourceDate)}',
+                  '${article.source} · ${article.dateLabel.localized(context)} ${_newsDateFor(context, article.sourceDate)}',
                 ),
                 Text(
-                  'Disinkronkan ${newsDate(article.fetchedAt, time: true)}',
+                  'Disinkronkan ${_newsDateFor(context, article.fetchedAt, time: true)}'
+                      .localized(context),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 if (article.imageUrl.isNotEmpty) ...[
@@ -1070,10 +1088,15 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                   ),
                 ],
                 const SizedBox(height: 14),
-                const Text('Pilih kata atau kalimat, lalu tekan “Cari arti”.'),
+                Text(
+                  'Pilih kata atau kalimat, lalu tekan “Cari arti”.'.localized(
+                    context,
+                  ),
+                ),
                 if (furigana)
                   Text(
-                    'Furigana dapat dibuat otomatis dan bisa keliru, terutama pada nama.',
+                    'Furigana dapat dibuat otomatis dan bisa keliru, terutama pada nama.'
+                        .localized(context),
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 const Divider(height: 30),
@@ -1095,21 +1118,22 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                   ),
                 const Divider(height: 30),
                 Text(
-                  'Sumber & kredit',
+                  'Sumber & kredit'.localized(context),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 _NewsLink(
-                  label: '${article.source} · Artikel asli',
+                  label: '${article.source} · Artikel asli'.localized(context),
                   url: article.url,
                 ),
                 for (final credit in article.credits)
                   _NewsLink(
                     label:
                         '${credit['role'] == 'translator'
-                            ? 'Penerjemah'
-                            : credit['role'] == 'publisher'
-                            ? 'Penerbit'
-                            : 'Penulis'}: ${credit['name']}',
+                                ? 'Penerjemah'
+                                : credit['role'] == 'publisher'
+                                ? 'Penerbit'
+                                : 'Penulis'}: ${credit['name']}'
+                            .localized(context),
                     url: credit['url'] as String,
                   ),
                 _NewsLink(label: article.license, url: article.licenseUrl),
@@ -1119,22 +1143,25 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                 ),
                 if (article.imageCredit.isNotEmpty)
                   Text(
-                    'Gambar: ${article.imageCredit} · ${article.imageLicense}',
+                    'Gambar: ${article.imageCredit} · ${article.imageLicense}'
+                        .localized(context),
                   ),
                 if (article.imageSourceUrl.isNotEmpty)
                   _NewsLink(
-                    label: 'Sumber gambar',
+                    label: 'Sumber gambar'.localized(context),
                     url: article.imageSourceUrl,
                   ),
                 if (article.imageLicenseUrl.isNotEmpty)
                   _NewsLink(
-                    label: 'Lisensi gambar · ${article.imageLicense}',
+                    label: 'Lisensi gambar · ${article.imageLicense}'.localized(
+                      context,
+                    ),
                     url: article.imageLicenseUrl,
                   ),
                 if (article.references.isNotEmpty)
                   ExpansionTile(
                     tilePadding: EdgeInsets.zero,
-                    title: const Text('Referensi dalam artikel'),
+                    title: Text('Referensi dalam artikel'.localized(context)),
                     children: [
                       for (final link in article.references)
                         _NewsLink(
@@ -1210,11 +1237,15 @@ class _NewsDictionaryState extends ConsumerState<_NewsDictionary> {
   Widget build(BuildContext context) => ListView(
     padding: const EdgeInsets.fromLTRB(22, 0, 22, 32),
     children: [
-      Text('Kamus bacaan', style: Theme.of(context).textTheme.titleLarge),
+      Text(
+        'Kamus bacaan'.localized(context),
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
       const SizedBox(height: 8),
       if (widget.tokens.length > 1) ...[
-        const Text(
-          'Pilih kata untuk melihat arti. Bentuk dasar dipakai untuk mencari kata yang berubah bentuk.',
+        Text(
+          'Pilih kata untuk melihat arti. Bentuk dasar dipakai untuk mencari kata yang berubah bentuk.'
+              .localized(context),
         ),
         Wrap(
           spacing: 8,
@@ -1252,22 +1283,24 @@ class _NewsDictionaryState extends ConsumerState<_NewsDictionary> {
             if (snapshot.hasError) {
               return Column(
                 children: [
-                  const Text(
-                    'Arti belum dapat dimuat. Periksa koneksi dan coba kembali.',
+                  Text(
+                    'Arti belum dapat dimuat. Periksa koneksi dan coba kembali.'
+                        .localized(context),
                   ),
                   TextButton(
                     onPressed: () => setState(() => _search(_selected!)),
-                    child: const Text('Coba lagi'),
+                    child: Text('Coba lagi'.localized(context)),
                   ),
                 ],
               );
             }
             final entries = snapshot.data!.entries;
             if (entries.isEmpty) {
-              return const Padding(
-                padding: EdgeInsets.all(16),
+              return Padding(
+                padding: const EdgeInsets.all(16),
                 child: Text(
-                  'Kata belum ditemukan di kamus. Nama orang atau tempat tidak selalu tersedia.',
+                  'Kata belum ditemukan di kamus. Nama orang atau tempat tidak selalu tersedia.'
+                      .localized(context),
                 ),
               );
             }
@@ -1319,15 +1352,16 @@ class _NewsError extends StatelessWidget {
               ),
               const SizedBox(height: 14),
             ],
-            const Text(
-              'Berita belum dapat dimuat. Periksa koneksi dan coba kembali.',
+            Text(
+              'Berita belum dapat dimuat. Periksa koneksi dan coba kembali.'
+                  .localized(context),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
             FilledButton.tonalIcon(
               onPressed: onRetry,
               icon: const Icon(Icons.refresh_rounded, size: 18),
-              label: const Text('Coba lagi'),
+              label: Text('Coba lagi'.localized(context)),
             ),
           ],
         ),
@@ -1355,7 +1389,8 @@ class _NewsEmpty extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Belum ada artikel tersedia. Berita akan muncul setelah sinkronisasi sumber berhasil.',
+            'Belum ada artikel tersedia. Berita akan muncul setelah sinkronisasi sumber berhasil.'
+                .localized(context),
             textAlign: TextAlign.center,
             style: TextStyle(color: color),
           ),

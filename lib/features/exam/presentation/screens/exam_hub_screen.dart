@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
@@ -39,13 +41,15 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
         padding: const EdgeInsets.fromLTRB(20, 24, 20, 32),
         physics: const AlwaysScrollableScrollPhysics(),
         children: [
-          const Text(
-            'Latihan Ujian',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
+          Text(
+            'Latihan Ujian'.localized(context),
+            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 6),
           Text(
-            'Pilih kategori ujian dan latihan yang ingin kamu ikuti.',
+            'Pilih kategori ujian dan latihan yang ingin kamu ikuti.'.localized(
+              context,
+            ),
             style: TextStyle(color: colors.onSurfaceVariant),
           ),
           const SizedBox(height: 20),
@@ -64,16 +68,18 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
           const SizedBox(height: 20),
           if (category == 'SSW') const SswEntryCard(exams: true),
           if (category == 'NAT Test') ...[
-            const _SectionTitle('NAT-TEST 5Q'),
+            _SectionTitle('NAT-TEST 5Q'.localized(context)),
             for (var paper = 1; paper <= 5; paper++) ...[
               if (paper > 1) const Divider(height: 1),
               _ExamRow(
                 badge: '5Q',
                 imageAsset: 'assets/images/exams/nat.webp',
                 title: 'NAT 5Q Exam $paper',
-                metadata: '43 soal · 60 menit',
-                description: 'Kosakata, kanji, grammar & reading',
-                note: 'Latihan tertulis · Tanpa listening',
+                metadata: '43 soal · 60 menit'.localized(context),
+                description: 'Kosakata, kanji, grammar & reading'.localized(
+                  context,
+                ),
+                note: 'Latihan tertulis · Tanpa listening'.localized(context),
                 locked: !premium,
                 onTap: () => context.push(
                   premium
@@ -86,16 +92,18 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             ],
           ],
           if (category == 'JFT Test') ...[
-            const _SectionTitle('JFT-Basic'),
+            _SectionTitle('JFT-Basic'.localized(context)),
             for (final paperNo in [1, 2, 3, 4, 5]) ...[
               if (paperNo > 1) const Divider(height: 1),
               _ExamRow(
                 badge: 'JFT',
                 imageAsset: 'assets/images/exams/jft.webp',
                 title: 'JFT Exam $paperNo',
-                metadata: '36 soal · 45 menit',
-                description: 'Kosakata, percakapan & reading',
-                note: 'Soal orisinal · Tanpa listening',
+                metadata: '36 soal · 45 menit'.localized(context),
+                description: 'Kosakata, percakapan & reading'.localized(
+                  context,
+                ),
+                note: 'Soal orisinal · Tanpa listening'.localized(context),
                 locked: !premium,
                 onTap: () => context.push(
                   premium ? '/exams/jft/exam-$paperNo' : '/premium',
@@ -104,25 +112,27 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             ],
           ],
           if (category == 'JLPT') ...[
-            const _SectionTitle('Simulasi JLPT'),
+            _SectionTitle('Simulasi JLPT'.localized(context)),
             const SizedBox(height: 4),
             _ExamRow(
               badge: 'N5',
               imageAsset: 'assets/images/exams/n5.webp',
-              title: 'Simulasi N5',
-              metadata: '38 soal · 40 menit',
-              description: 'Kosakata, kanji & grammar',
-              note: 'Tanpa reading & listening',
+              title: 'Simulasi N5'.localized(context),
+              metadata: '38 soal · 40 menit'.localized(context),
+              description: 'Kosakata, kanji & grammar'.localized(context),
+              note: 'Tanpa reading & listening'.localized(context),
               onTap: () => context.push('/exams/n5/simulation'),
             ),
             const Divider(height: 1),
             _ExamRow(
               badge: 'N4',
               imageAsset: 'assets/images/exams/n4.webp',
-              title: 'Simulasi N4',
-              metadata: '57 soal · 80 menit',
-              description: 'Kosakata, kanji, grammar & reading',
-              note: 'Tanpa listening',
+              title: 'Simulasi N4'.localized(context),
+              metadata: '57 soal · 80 menit'.localized(context),
+              description: 'Kosakata, kanji, grammar & reading'.localized(
+                context,
+              ),
+              note: 'Tanpa listening'.localized(context),
               locked: !premium,
               onTap: () =>
                   context.push(premium ? '/exams/n4/simulation' : '/premium'),
@@ -131,10 +141,12 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             _ExamRow(
               badge: 'N3',
               imageAsset: 'assets/images/exams/n3.webp',
-              title: 'Simulasi N3',
-              metadata: '74 soal · 100 menit',
-              description: 'Kosakata, kanji, grammar & reading',
-              note: 'Tanpa listening',
+              title: 'Simulasi N3'.localized(context),
+              metadata: '74 soal · 100 menit'.localized(context),
+              description: 'Kosakata, kanji, grammar & reading'.localized(
+                context,
+              ),
+              note: 'Tanpa listening'.localized(context),
               locked: !premium,
               onTap: () =>
                   context.push(premium ? '/exams/n3/simulation' : '/premium'),
@@ -143,10 +155,11 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             _ExamRow(
               badge: 'N2',
               imageAsset: 'assets/images/exams/n3.webp',
-              title: 'Simulasi N2',
-              metadata: '64 soal · 105 menit',
-              description: 'Kosakata, grammar & reading tingkat lanjut',
-              note: 'Bagian tertulis · Tanpa listening',
+              title: 'Simulasi N2'.localized(context),
+              metadata: '64 soal · 105 menit'.localized(context),
+              description: 'Kosakata, grammar & reading tingkat lanjut'
+                  .localized(context),
+              note: 'Bagian tertulis · Tanpa listening'.localized(context),
               locked: !premium,
               onTap: () =>
                   context.push(premium ? '/exams/n2/simulation' : '/premium'),
@@ -155,26 +168,29 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
             _ExamRow(
               badge: 'N1',
               imageAsset: 'assets/images/exams/n3.webp',
-              title: 'Simulasi N1',
-              metadata: '64 soal · 110 menit',
-              description: 'Kosakata, grammar & reading tingkat mahir',
-              note: 'Bagian tertulis · Tanpa listening',
+              title: 'Simulasi N1'.localized(context),
+              metadata: '64 soal · 110 menit'.localized(context),
+              description: 'Kosakata, grammar & reading tingkat mahir'
+                  .localized(context),
+              note: 'Bagian tertulis · Tanpa listening'.localized(context),
               locked: !premium,
               onTap: () =>
                   context.push(premium ? '/exams/n1/simulation' : '/premium'),
             ),
             const SizedBox(height: 20),
-            const _SectionTitle('Cek kemampuan awal'),
+            _SectionTitle('Cek kemampuan awal'.localized(context)),
             const SizedBox(height: 4),
             _ExamRow(
               icon: Icons.insights_outlined,
               imageAsset: 'assets/images/exams/diagnostic-n5.webp',
               title: 'Diagnostic N5',
-              description: 'Temukan bagian yang perlu kamu latih.',
+              description: 'Temukan bagian yang perlu kamu latih.'.localized(
+                context,
+              ),
               onTap: () => context.push('/exams/n5'),
             ),
             const SizedBox(height: 20),
-            const _SectionTitle('Riwayat diagnostic'),
+            _SectionTitle('Riwayat diagnostic'.localized(context)),
             const SizedBox(height: 12),
             overview.when(
               loading: () => const Padding(
@@ -182,7 +198,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                 child: Center(child: CircularProgressIndicator()),
               ),
               error: (e, _) => ExamMessage(
-                message: diagnosticError(e),
+                message: diagnosticError(e).localized(context),
                 retry: () => ref.invalidate(diagnosticOverviewProvider),
               ),
               data: (data) {
@@ -201,8 +217,12 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                             Icons.play_circle_outline,
                             color: examInk,
                           ),
-                          title: const Text('Lanjutkan diagnostic N5'),
-                          subtitle: const Text('Jawabanmu sudah tersimpan.'),
+                          title: Text(
+                            'Lanjutkan diagnostic N5'.localized(context),
+                          ),
+                          subtitle: Text(
+                            'Jawabanmu sudah tersimpan.'.localized(context),
+                          ),
                           trailing: const Icon(Icons.chevron_right),
                           onTap: () => context.push(
                             '/exams/n5/attempt/$activeAttemptId',
@@ -213,7 +233,8 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                     ],
                     if (history.isEmpty)
                       Text(
-                        'Belum ada hasil. Riwayat akan muncul setelah kamu menyelesaikan diagnostic.',
+                        'Belum ada hasil. Riwayat akan muncul setelah kamu menyelesaikan diagnostic.'
+                            .localized(context),
                         style: TextStyle(
                           color: colors.onSurfaceVariant,
                           height: 1.5,
@@ -228,7 +249,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         subtitle: Text(
-                          '${history[i]['correct']}/${history[i]['total']} benar · ${_date(history[i]['completedAt'] as String)}',
+                          '${history[i]['correct']}/${history[i]['total']} benar · ${_date(context, history[i]['completedAt'] as String)}',
                         ),
                         trailing: Text(
                           '${history[i]['score']}%',
@@ -253,10 +274,10 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
     );
   }
 
-  String _date(String value) {
-    final d = DateTime.parse(value).toLocal();
-    return '${d.day}/${d.month}/${d.year}';
-  }
+  String _date(BuildContext context, String value) => regionalDate(
+    DateTime.parse(value),
+    localeName: appRegionLocaleName(context),
+  );
 }
 
 class _SectionTitle extends StatelessWidget {
@@ -265,7 +286,7 @@ class _SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-    text,
+    text.localized(context),
     style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
   );
 }
@@ -355,7 +376,7 @@ class _ExamRow extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        title,
+                        title.localized(context),
                         style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w700,
@@ -363,11 +384,14 @@ class _ExamRow extends StatelessWidget {
                       ),
                       if (metadata != null) ...[
                         const SizedBox(height: 4),
-                        Text(metadata!, style: const TextStyle(fontSize: 13)),
+                        Text(
+                          metadata!.localized(context),
+                          style: const TextStyle(fontSize: 13),
+                        ),
                       ],
                       const SizedBox(height: 4),
                       Text(
-                        description,
+                        description.localized(context),
                         style: TextStyle(
                           fontSize: 13,
                           color: colors.onSurfaceVariant,
@@ -375,7 +399,7 @@ class _ExamRow extends StatelessWidget {
                       ),
                       if (note != null)
                         Text(
-                          note!,
+                          note!.localized(context),
                           style: TextStyle(
                             fontSize: 12,
                             color: colors.onSurfaceVariant,

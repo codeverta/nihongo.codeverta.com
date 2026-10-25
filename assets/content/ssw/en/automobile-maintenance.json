@@ -1,0 +1,1264 @@
+{
+  "modules": [
+    {
+      "description": "Record the complaint and inspect the vehicle using the work checklist, model-specific instructions, and the workshop's authorization limits.",
+      "id": "intake",
+      "lessons": [
+        {
+          "caution": "Do not record a guess as a confirmed diagnosis or remove information that is unclear.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Factual records distinguish the customer's report from inspection findings.",
+              "kind": "knowledge",
+              "options": [
+                "So the technician can check the facts without being influenced by assumptions",
+                "So the customer does not need an answer",
+                "So the vehicle can be dismantled immediately",
+                "So the record can be deleted"
+              ],
+              "prompt": "Why should symptoms be recorded separately from a diagnosis?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Record symptoms as reported and inspect them before making a diagnosis.",
+              "kind": "case",
+              "options": [
+                "Write that the brake pads are definitely worn out",
+                "Record the symptom and request a brake inspection",
+                "Delete the complaint because the sound cannot be heard now",
+                "Return the vehicle without making a record"
+              ],
+              "prompt": "A customer reports a scraping sound while braking, but the vehicle has not been inspected. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the vehicle identification to its documents → Ask when and under what conditions the symptom occurs → Record the customer's exact words and reported signs → Confirm the record and report any safety risk.",
+              "kind": "workflow",
+              "options": [
+                "Ask when and under what conditions the symptom occurs",
+                "Match the vehicle identification to its documents",
+                "Record the customer's exact words and reported signs",
+                "Confirm the record and report any safety risk"
+              ],
+              "prompt": "In the “Customer complaint and work order” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いつ音がしましたか。",
+              "meaning": "When did that noise occur?",
+              "reading": "いつおとがしましたか。"
+            },
+            {
+              "japanese": "ブレーキをかける時です。",
+              "meaning": "When I brake.",
+              "reading": "ぶれーきをかけるときです。"
+            }
+          ],
+          "id": "auto-01",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat gejala, waktu, dan kondisi saat muncul tanpa mengubah laporan menjadi diagnosis.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Record this morning's scraping during braking as a symptom and request that the brake inspection be prioritized; do not state that the pads are definitely worn.",
+          "scenario": "The customer reports a scraping sound while braking this morning. Another technician suspects worn brake pads before inspecting the vehicle.",
+          "sections": [
+            {
+              "body": "Listen to the customer's description of the symptoms: when they occur, whether the vehicle is stationary or moving, and whether a warning light is on. Keep the customer's words separate from a technician's assumptions. Check the vehicle number and instructions so the issue is not confused with another vehicle.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Repeat the main point of the complaint and ask the customer to confirm it. Do not promise a cause or cost before an inspection. Immediately pass complaints about brakes, steering, tires, smoke, or warning lights to the person in charge.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan identitas kendaraan dan dokumen",
+            "Dengarkan waktu dan kondisi munculnya gejala",
+            "Catat ucapan faktual serta tanda yang dilaporkan",
+            "Konfirmasi catatan dan teruskan risiko keselamatan"
+          ],
+          "title": "Customer Complaints and Work Orders",
+          "vocabulary": [
+            {
+              "japanese": "症状",
+              "meaning": "symptom",
+              "reading": "しょうじょう"
+            },
+            {
+              "japanese": "受付",
+              "meaning": "intake",
+              "reading": "うけつけ"
+            },
+            {
+              "japanese": "整備記録",
+              "meaning": "service record",
+              "reading": "せいびきろく"
+            },
+            {
+              "japanese": "警告灯",
+              "meaning": "warning light",
+              "reading": "けいこくとう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not touch hot, moving, or energized parts, and do not ignore warning indicators.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A checklist supports regular inspection but does not replace instructions or diagnosis.",
+              "kind": "knowledge",
+              "options": [
+                "Ensure specified items are checked and recorded consistently",
+                "Replace the entire manual",
+                "Establish a diagnosis without an inspection",
+                "Allow the vehicle to remain in use"
+              ],
+              "prompt": "What is the purpose of a daily checklist?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A supervisor must assess a leak or warning indicator before the vehicle is used.",
+              "kind": "case",
+              "options": [
+                "Clean it up and hand over the keys",
+                "Hold the vehicle, record the findings, and report them",
+                "Disconnect the battery to turn off the light",
+                "Top it up with any fluid and continue"
+              ],
+              "prompt": "There is a leak and a warning light is on. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Make sure the vehicle is in a safe area → Read the checklist and model manual → Check the tires, lights, wipers, leaks, and indicators → Record findings and hold any vehicle that poses a risk.",
+              "kind": "workflow",
+              "options": [
+                "Read the checklist and model manual",
+                "Make sure the vehicle is in a safe area",
+                "Check the tires, lights, wipers, leaks, and indicators",
+                "Record findings and hold any vehicle that poses a risk"
+              ],
+              "prompt": "In the “Routine inspection before vehicle use” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "警告灯を確認してください。",
+              "meaning": "Please check this warning light.",
+              "reading": "けいこくとうをかくにんしてください。"
+            },
+            {
+              "japanese": "責任者に報告します。",
+              "meaning": "I reported it to the person in charge.",
+              "reading": "せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "auto-02",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa bagian yang terlihat sesuai daftar harian dan melaporkan kondisi berisiko.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not release the vehicle for use. Record where the fluid is dripping and which indicator is on, mark it according to procedure, and call the person in charge.",
+          "scenario": "Fluid is dripping beneath the vehicle, and a warning light is still on.",
+          "sections": [
+            {
+              "body": "Routine checks may include tires, lights, wipers, visible leaks, indicators, and the fluids specified in the procedure. Use the checklist and manufacturer's instructions for the vehicle. A visual check does not replace measurements or diagnoses requiring special tools and authorization.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Make sure the vehicle is in a safe inspection area and the engine is in the specified condition. Check each item and record the result. If a tire is flat, a light does not work, fluid is leaking, or an indicator is on, keep the vehicle out of use and ask for instructions; do not adjust components without authorization.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan kendaraan berada di area aman",
+            "Baca daftar periksa dan manual model",
+            "Periksa ban, lampu, wiper, kebocoran, dan indikator",
+            "Catat temuan serta tahan kendaraan berisiko"
+          ],
+          "title": "Routine Checks Before a Vehicle Is Used",
+          "vocabulary": [
+            {
+              "japanese": "日常点検",
+              "meaning": "routine inspection",
+              "reading": "にちじょうてんけん"
+            },
+            {
+              "japanese": "漏れ",
+              "meaning": "leak",
+              "reading": "もれ"
+            },
+            {
+              "japanese": "灯火",
+              "meaning": "vehicle light",
+              "reading": "とうか"
+            },
+            {
+              "japanese": "点検表",
+              "meaning": "checklist",
+              "reading": "てんけんひょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use limits from another model or enter results for checks that were never performed.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The correct manual guides inspections according to the vehicle's specifications.",
+              "kind": "knowledge",
+              "options": [
+                "Methods and limits can vary by vehicle",
+                "The manual is only needed after the work is done",
+                "All vehicles use the same figures",
+                "Periodic inspections do not need to be recorded"
+              ],
+              "prompt": "Why should measurement limits be checked against the model's manual?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Work that depends on specifications must wait until reliable information is available.",
+              "kind": "case",
+              "options": [
+                "Use a figure from a similar model",
+                "Hold that item, find the manual, or ask for guidance",
+                "Mark all results as normal",
+                "Skip it without making a record"
+              ],
+              "prompt": "The manual has not been found, and you are asked to use a figure from memory. How should you respond?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the model to the work list → Prepare the appropriate tools and manual → Check each item and record the actual results → Mark any unresolved items and ask for guidance.",
+              "kind": "workflow",
+              "options": [
+                "Prepare the appropriate tools and manual",
+                "Match the model to the work list",
+                "Check each item and record the actual results",
+                "Mark any unresolved items and ask for guidance"
+              ],
+              "prompt": "In the “Periodic inspection and work sequence” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この車の整備書はありますか。",
+              "meaning": "Is this car service manual available?",
+              "reading": "このくるまのせいびしょはありますか。"
+            },
+            {
+              "japanese": "確認してから作業します。",
+              "meaning": "I will work after confirming it is safe.",
+              "reading": "かくにんしてからさぎょうします。"
+            }
+          ],
+          "id": "auto-03",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti daftar pemeriksaan berkala serta mencatat hasil setiap butir sebelum pekerjaan diteruskan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not guess the measurement limit. Hold work that depends on it, find the correct manual, and continue after the person in charge confirms the value.",
+          "scenario": "The vehicle's model manual cannot be found, and a coworker suggests using a tolerance value from memory.",
+          "sections": [
+            {
+              "body": "Scheduled inspections follow the timing and checklist for the vehicle. The work order identifies the vehicle, task, and inspection items. The manufacturer's manual sets the method and limits, which may vary by model. Accurately mark each item as complete, requiring follow-up, or not yet checked.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the manual, prepare the tools, and perform each item in the specified order. Do not mark a task complete just because a part looks fine. If a measurement is outside the limit or the manual is unavailable, hold that item and ask an authorized technician for instructions.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan model dan daftar kerja",
+            "Siapkan alat serta manual yang sesuai",
+            "Periksa tiap butir dan catat hasil sebenarnya",
+            "Tandai bagian terbuka dan minta arahan"
+          ],
+          "title": "Scheduled Inspections and Work Sequence",
+          "vocabulary": [
+            {
+              "japanese": "定期点検",
+              "meaning": "scheduled inspection",
+              "reading": "ていきてんけん"
+            },
+            {
+              "japanese": "基準値",
+              "meaning": "standard value",
+              "reading": "きじゅんち"
+            },
+            {
+              "japanese": "作業指示書",
+              "meaning": "work instructions",
+              "reading": "さぎょうしじしょ"
+            },
+            {
+              "japanese": "未確認",
+              "meaning": "not yet confirmed",
+              "reading": "みかくにん"
+            }
+          ]
+        }
+      ],
+      "title": "Intake and Initial Inspection"
+    },
+    {
+      "description": "Learn to inspect tires, wheels, the engine, fluids, the battery, and measuring tools while following the vehicle's specifications.",
+      "id": "inspection",
+      "lessons": [
+        {
+          "caution": "Do not declare a vehicle safe or repair a tire without the proper work order and inspection.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A bulge must be assessed; a thick tread does not remove the risk.",
+              "kind": "knowledge",
+              "options": [
+                "Record it and ask a technician to assess it before the vehicle is used",
+                "Lower the tire pressure until the bulge disappears",
+                "Cover it with paint",
+                "Declare it safe if the tread is thick"
+              ],
+              "prompt": "What should you do if you find a bulge on a tire sidewall?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A potentially dangerous tire condition must be assessed before returning the vehicle.",
+              "kind": "case",
+              "options": [
+                "Return the vehicle with a verbal message",
+                "Mark it, hold the vehicle from use, and report the issue",
+                "Move the tire without authorization",
+                "Delete the record"
+              ],
+              "prompt": "A tire has a bulge, and the customer wants the vehicle right away. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the wheel to the inspection item → Visually inspect the tire, rim, and brake area → Measure only the assigned parts with the appropriate tool → Record abnormalities and ask a technician to assess them.",
+              "kind": "workflow",
+              "options": [
+                "Visually inspect the tire, rim, and brake area",
+                "Match the wheel to the inspection item",
+                "Measure only the assigned parts with the appropriate tool",
+                "Record abnormalities and ask a technician to assess them"
+              ],
+              "prompt": "In the “Tires, wheels, and signs of brake trouble” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "タイヤにふくらみがあります。",
+              "meaning": "There is a bulge on the tire.",
+              "reading": "たいやにふくらみがあります。"
+            },
+            {
+              "japanese": "車を動かさず、責任者を呼びます。",
+              "meaning": "I did not move the car and called the person in charge.",
+              "reading": "くるまをうごかさず、せきにんしゃをよびます。"
+            }
+          ],
+          "id": "auto-04",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali kerusakan ban dan tanda gangguan roda atau rem tanpa mengambil keputusan di luar kompetensi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not hand over the vehicle. Record the location of the bulge, keep the vehicle out of use, and report it to a technician.",
+          "scenario": "The front tire has a visible bulge on its sidewall, and the customer is waiting for the vehicle.",
+          "sections": [
+            {
+              "body": "Check for wear, cracks, bulges, foreign objects, and tire pressure using the appropriate tools and vehicle specifications. Listen to reports of vibration or noise. A visual inspection can reveal early warning signs, but brake diagnoses and roadworthiness decisions must be made by authorized staff.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use a tire gauge as trained and record the result for the specified position. Do not remove a wheel or go under the vehicle without securing it and obtaining permission. If a tire is bulging, cracked, punctured, or a brake fluid leak is present, mark it and report it.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan roda dengan butir pemeriksaan",
+            "Periksa visual ban, pelek, dan area rem",
+            "Ukur hanya bagian yang ditugaskan dengan alat sesuai",
+            "Catat kelainan dan minta teknisi menilai"
+          ],
+          "title": "Tires, Wheels, and Signs of Brake Problems",
+          "vocabulary": [
+            {
+              "japanese": "タイヤ",
+              "meaning": "tire",
+              "reading": "たいや"
+            },
+            {
+              "japanese": "摩耗",
+              "meaning": "wear",
+              "reading": "まもう"
+            },
+            {
+              "japanese": "空気圧",
+              "meaning": "air pressure",
+              "reading": "くうきあつ"
+            },
+            {
+              "japanese": "制動装置",
+              "meaning": "braking system",
+              "reading": "せいどうそうち"
+            }
+          ]
+        },
+        {
+          "caution": "Do not open the coolant cap while hot or let a tool bridge the battery terminals.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Heat and pressure can cause hot fluid or steam to spray out.",
+              "kind": "knowledge",
+              "options": [
+                "Hot fluid or steam can spray out and cause injury",
+                "The fluid turns into oil",
+                "The level always rises",
+                "The manual does not apply"
+              ],
+              "prompt": "Why should you not open the radiator cap when the engine is hot?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Hot components must be handled according to safety procedures and the supervisor's instructions.",
+              "kind": "case",
+              "options": [
+                "Open it slightly using a cloth",
+                "Do not open it; move away and report it until it is safe",
+                "Pour water on it, then open it",
+                "Ask the customer to inspect it"
+              ],
+              "prompt": "Steam is visible near the radiator cap. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Make sure the engine is safe to inspect and wear PPE → Locate inspection points in the manual → Check fluid levels and external condition without opening hazardous components → Record and report leaks or heat.",
+              "kind": "workflow",
+              "options": [
+                "Locate inspection points in the manual",
+                "Make sure the engine is safe to inspect and wear PPE",
+                "Check fluid levels and external condition without opening hazardous components",
+                "Record and report leaks or heat"
+              ],
+              "prompt": "In the “Oil, coolant, and battery” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "エンジンが熱いです。",
+              "meaning": "The engine is hot.",
+              "reading": "えんじんがあついです。"
+            },
+            {
+              "japanese": "冷えるまで開けません。",
+              "meaning": "I did not open it until it was cool.",
+              "reading": "ひえるまであけません。"
+            }
+          ],
+          "id": "auto-05",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa cairan dan baterai hanya dalam kondisi aman serta melaporkan tanda tidak normal.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not open the cap. Move away from the steam, inform the person in charge, and wait until the procedure confirms the engine is safe.",
+          "scenario": "The engine was just running, and steam is visible near the coolant cap; someone asks you to open it.",
+          "sections": [
+            {
+              "body": "Check oil and coolant according to the engine condition, method, and level marks in the manual. A hot engine can cause injury. Do not mix fluids indiscriminately. Battery terminals carry voltage; avoid short circuits and use protective equipment as required by procedure.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Make sure the engine is in the required condition before opening an inspection point. Check fluid levels or leaks as assigned. Do not open the coolant cap while hot or pour in unidentified fluid. Record signs of damage and ask a technician to determine the next step.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Pastikan kondisi mesin aman dan gunakan APD",
+            "Kenali titik pemeriksaan pada manual",
+            "Periksa level dan keadaan luar tanpa membuka bagian berbahaya",
+            "Catat kebocoran atau panas dan laporkan"
+          ],
+          "title": "Oil, Coolant, and the Battery",
+          "vocabulary": [
+            {
+              "japanese": "エンジンオイル",
+              "meaning": "engine oil",
+              "reading": "えんじんおいる"
+            },
+            {
+              "japanese": "冷却水",
+              "meaning": "coolant",
+              "reading": "れいきゃくすい"
+            },
+            {
+              "japanese": "バッテリー",
+              "meaning": "battery",
+              "reading": "ばってりー"
+            },
+            {
+              "japanese": "高温",
+              "meaning": "high temperature",
+              "reading": "こうおん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use damaged tools or change units to make a result look normal.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Results can be compared when the tools and measurement conditions are appropriate.",
+              "kind": "knowledge",
+              "options": [
+                "The tool, units, measurement point, and vehicle specifications",
+                "The tool's color and the customer's name",
+                "Figures from another vehicle alone",
+                "Queue length"
+              ],
+              "prompt": "What must match before comparing measurement results?"
+            },
+            {
+              "answer": 1,
+              "explanation": "An unstable measurement cannot be trusted until the tool or method has been verified.",
+              "kind": "case",
+              "options": [
+                "Choose the largest reading",
+                "Stop and ask for the tool or connection to be checked",
+                "Write the value closest to the standard",
+                "Borrow a tool without checking it"
+              ],
+              "prompt": "The multimeter reading keeps changing. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Determine the measurement needed from the work order → Select a tool with the appropriate range and units → Check the tool and measure at the specified point → Record the value and request verification if it seems doubtful.",
+              "kind": "workflow",
+              "options": [
+                "Select a tool with the appropriate range and units",
+                "Determine the measurement needed from the work order",
+                "Check the tool and measure at the specified point",
+                "Record the value and request verification if it seems doubtful"
+              ],
+              "prompt": "In the “Selecting measuring tools and recording results” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この測定器は使えますか。",
+              "meaning": "May I use this measuring tool?",
+              "reading": "このそくていきはつかえますか。"
+            },
+            {
+              "japanese": "点検してから測ります。",
+              "meaning": "I checked the tool before measuring.",
+              "reading": "てんけんしてからはかります。"
+            }
+          ],
+          "id": "auto-06",
+          "minutes": 25,
+          "objectives": [
+            "Memilih alat sesuai pengukuran, memeriksa satuan, dan membandingkan hasil dengan spesifikasi tepat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop the measurement; ask someone to inspect the tool and its connections, then repeat the measurement only with a serviceable tool.",
+          "scenario": "The multimeter reading keeps changing, but the form requires a stable value.",
+          "sections": [
+            {
+              "body": "Pressure gauges, calipers, multimeters, and torque wrenches have different functions and limits. Check each tool's condition, units, range, and inspection or calibration status according to workshop rules. A result is meaningful only when the technique, measurement point, tool, and vehicle specifications are appropriate.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Read the tool instructions. Record the reading, units, and measurement location, then compare them with the manual. If the reading fluctuates, the units are unclear, or the tool is damaged, do not choose a convenient result. Stop measuring and request verification.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tentukan jenis pengukuran dari perintah kerja",
+            "Pilih alat dengan rentang dan satuan sesuai",
+            "Periksa alat dan ukur pada titik yang ditentukan",
+            "Catat nilai dan minta verifikasi jika meragukan"
+          ],
+          "title": "Choosing Measuring Tools and Recording Results",
+          "vocabulary": [
+            {
+              "japanese": "測定器",
+              "meaning": "measuring tool",
+              "reading": "そくていき"
+            },
+            {
+              "japanese": "単位",
+              "meaning": "unit",
+              "reading": "たんい"
+            },
+            {
+              "japanese": "測定値",
+              "meaning": "measurement value",
+              "reading": "そくていち"
+            },
+            {
+              "japanese": "校正",
+              "meaning": "calibration",
+              "reading": "こうせい"
+            }
+          ]
+        }
+      ],
+      "title": "Components and Measuring Tools"
+    },
+    {
+      "description": "Prepare the work area, secure the vehicle, and follow the manufacturer's instructions for authorized basic tasks.",
+      "id": "repair",
+      "lessons": [
+        {
+          "caution": "Never go under a vehicle supported only by a jack or by a lift that has not been locked.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Confirm that the safety locks are engaged and the vehicle is stable before going underneath it.",
+              "kind": "knowledge",
+              "options": [
+                "After the safety locks are engaged and the position is confirmed safe",
+                "As the vehicle starts to rise",
+                "If a coworker holds the vehicle body",
+                "After switching off the lift without engaging the safety locks"
+              ],
+              "prompt": "When may a worker go underneath a raised vehicle?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Secure the area and identify the lifting points before raising the vehicle.",
+              "kind": "case",
+              "options": [
+                "Guess and proceed slowly",
+                "Stop, ask your coworker to move away, and check the manual",
+                "Increase the lift pressure",
+                "Raise only one side"
+              ],
+              "prompt": "The lifting points are unclear, and a coworker is about to go under the vehicle. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the support points to the manual → Inspect the lift and clear the area → Position the equipment and wheel chocks according to procedure → Raise and lock the vehicle, then confirm it is secure before working.",
+              "kind": "workflow",
+              "options": [
+                "Inspect the lift and clear the area",
+                "Match the support points to the manual",
+                "Position the equipment and wheel chocks according to procedure",
+                "Raise and lock the vehicle, then confirm it is secure before working"
+              ],
+              "prompt": "In the “Safely raising a vehicle” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "車の支持点を確認します。",
+              "meaning": "I checked the vehicle's support points.",
+              "reading": "くるまのしじてんをかくにんします。"
+            },
+            {
+              "japanese": "ロックを確認してから入ります。",
+              "meaning": "I went under after checking the safety lock.",
+              "reading": "ろっくをかくにんしてからはいります。"
+            }
+          ],
+          "id": "auto-07",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan lift atau dongkrak sesuai prosedur dan menjaga orang keluar dari area berbahaya.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop the lift, ask your coworker to move away, find the support point in the manual, and continue only after the position has been checked.",
+          "scenario": "The vehicle's support point is unclear, but a coworker is preparing to go underneath it.",
+          "sections": [
+            {
+              "body": "Before lifting a vehicle, check that the floor, equipment capacity, model-specific support points, and lift condition meet workshop instructions. Stabilize the vehicle and set the parking brake or transmission as required. Incorrect positioning can cause the vehicle to slip or damage the body.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Clear the area, place wheel chocks if needed, and request a second check when required. Do not go under the vehicle until the lift is locked and the person in charge confirms it is safe. If the support points are unclear, do not guess.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan titik tumpu dengan manual",
+            "Periksa lift dan kosongkan area",
+            "Posisikan alat serta pengaman roda sesuai prosedur",
+            "Angkat, kunci, dan pastikan aman sebelum bekerja"
+          ],
+          "title": "Lifting a Vehicle Safely",
+          "vocabulary": [
+            {
+              "japanese": "リフト",
+              "meaning": "vehicle lift",
+              "reading": "りふと"
+            },
+            {
+              "japanese": "ジャッキ",
+              "meaning": "jack",
+              "reading": "じゃっき"
+            },
+            {
+              "japanese": "支持点",
+              "meaning": "support point",
+              "reading": "しじてん"
+            },
+            {
+              "japanese": "輪止め",
+              "meaning": "wheel chock",
+              "reading": "わどめ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not assume a vehicle is safe just because the engine is quiet or a warning light is off.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The system may retain stored energy, so isolation and authorized personnel are required.",
+              "kind": "knowledge",
+              "options": [
+                "Energy may remain stored even when the engine or indicators are off",
+                "All hybrid cables are harmless",
+                "The voltage disappears when the hood is opened",
+                "The label is only decorative"
+              ],
+              "prompt": "Why should a vehicle that appears to be off still be treated as a high-voltage hazard?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A damaged cable can cause electric shock or fire and must be handled by a qualified technician.",
+              "kind": "case",
+              "options": [
+                "Cover it with your bare hand",
+                "Do not touch it; keep people away and call a technician",
+                "Measure it with any tool",
+                "Start the vehicle"
+              ],
+              "prompt": "A high-voltage cable is damaged, and you have not been trained. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Identify the vehicle and high-voltage markings → Confirm the task matches your training and authorization → Secure the area and follow the approved isolation procedure → Stop and report damaged cables or batteries.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the task matches your training and authorization",
+                "Identify the vehicle and high-voltage markings",
+                "Secure the area and follow the approved isolation procedure",
+                "Stop and report damaged cables or batteries"
+              ],
+              "prompt": "In the “Hybrid vehicles and high voltage” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "高電圧の線が見えます。",
+              "meaning": "I see a high-voltage cable.",
+              "reading": "こうでんあつのせんがみえます。"
+            },
+            {
+              "japanese": "触らずに、担当者を呼びます。",
+              "meaning": "I did not touch it and called a staff member.",
+              "reading": "さわらずに、たんとうしゃをよびます。"
+            }
+          ],
+          "id": "auto-08",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali tanda bahaya kendaraan hibrida dan membatasi pekerjaan pada pelatihan serta otorisasi yang dimiliki.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not touch the cable or cover. Keep people away and contact an authorized technician according to procedure.",
+          "scenario": "A cable marked high voltage appears damaged, and you have not been trained to work on that system.",
+          "sections": [
+            {
+              "body": "Warning labels and high-voltage cables identify parts that must not be touched without the required competence and special procedures. A vehicle that appears to be off may still contain electrical energy. Only trained staff using the specified protective equipment may isolate and inspect the system.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Identify the vehicle type and read the model-specific instructions. Do not cut or disconnect a connector unless the task includes it. If a cable is damaged, the battery is dented, there is a burning smell, or fluid is present, keep people away, do not touch anything, and follow the facility's reporting procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Identifikasi kendaraan dan tanda tegangan tinggi",
+            "Cocokkan tugas dengan pelatihan dan otorisasi",
+            "Amankan area dan ikuti prosedur isolasi yang disetujui",
+            "Hentikan serta laporkan kabel atau baterai yang rusak"
+          ],
+          "title": "Hybrid Vehicles and High Voltage",
+          "vocabulary": [
+            {
+              "japanese": "高電圧",
+              "meaning": "high voltage",
+              "reading": "こうでんあつ"
+            },
+            {
+              "japanese": "感電",
+              "meaning": "electric shock",
+              "reading": "かんでん"
+            },
+            {
+              "japanese": "絶縁手袋",
+              "meaning": "insulating gloves",
+              "reading": "ぜつえんてぶくろ"
+            },
+            {
+              "japanese": "資格者",
+              "meaning": "qualified staff member",
+              "reading": "しかくしゃ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not guess torque values, mix up bolts, or reuse parts designated for one-time use.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Tightening must follow the vehicle specifications; guesses are not a substitute.",
+              "kind": "knowledge",
+              "options": [
+                "The value in the manual or work sheet for that model",
+                "Hand strength",
+                "The value used on a previous vehicle",
+                "A guess based on how tight it feels"
+              ],
+              "prompt": "What should determine the tightening value?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Confirm the component identity and required value before installation.",
+              "kind": "case",
+              "options": [
+                "Tighten it as much as possible",
+                "Hold the work and confirm the component identity and specifications",
+                "Use the value for a larger bolt",
+                "Skip the inspection"
+              ],
+              "prompt": "Bolts have been mixed up, and the torque value is not available. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the sequence and values in the manual → Mark positions and store labeled components → Install using the correct tools and specifications → Count the components and request verification.",
+              "kind": "workflow",
+              "options": [
+                "Mark positions and store labeled components",
+                "Read the sequence and values in the manual",
+                "Install using the correct tools and specifications",
+                "Count the components and request verification"
+              ],
+              "prompt": "In the “Removing and installing components” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このボルトの位置はどこですか。",
+              "meaning": "Where does this bolt go?",
+              "reading": "このぼるとのいちはどこですか。"
+            },
+            {
+              "japanese": "整備書を確認してから締めます。",
+              "meaning": "I tightened it after checking the manual.",
+              "reading": "せいびしょをかくにんしてからしめます。"
+            }
+          ],
+          "id": "auto-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga urutan bongkar-pasang, identitas komponen, dan nilai pengencangan sesuai instruksi kendaraan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Hold the installation, separate bolts that can be identified, and request the manual or clarification before tightening them.",
+          "scenario": "Two similar bolts have been mixed up, and the torque value is missing from the work sheet.",
+          "sections": [
+            {
+              "body": "Remove and install parts in the order shown in the manual or work sheet. Mark positions and keep bolts or connectors in containers so they are not mixed up. Follow the work specifications for torque, lubricant, locking materials, and part reuse; never use values from another model.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use a torque wrench within the range and value specified in the manual. Count the parts before closing the work area. If a thread is damaged, a part is missing, or a specification is unavailable, stop installation and report it so the work is not treated as complete.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca urutan dan nilai pada manual",
+            "Tandai posisi serta simpan komponen berlabel",
+            "Pasang dengan alat dan spesifikasi tepat",
+            "Hitung komponen dan minta verifikasi"
+          ],
+          "title": "Removing and Installing Components",
+          "vocabulary": [
+            {
+              "japanese": "分解",
+              "meaning": "removal",
+              "reading": "ぶんかい"
+            },
+            {
+              "japanese": "組立て",
+              "meaning": "assembly",
+              "reading": "くみたて"
+            },
+            {
+              "japanese": "締付けトルク",
+              "meaning": "tightening torque",
+              "reading": "しめつけとるく"
+            },
+            {
+              "japanese": "部品番号",
+              "meaning": "part number",
+              "reading": "ぶひんばんごう"
+            }
+          ]
+        }
+      ],
+      "title": "Repair Work and Energy Control"
+    },
+    {
+      "description": "Check results, hold nonconforming work, and pass accurate records to the team and service staff.",
+      "id": "quality",
+      "lessons": [
+        {
+          "caution": "Do not mark the work complete or road-test the vehicle without authorization and a valid driver's license.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A road test requires authorization, a valid driver's license, and safe conditions.",
+              "kind": "knowledge",
+              "options": [
+                "After it is assigned and authorized, with a licensed driver and safe procedures",
+                "Any technician may do one at any time",
+                "Before inspecting the vehicle",
+                "If the customer asks verbally"
+              ],
+              "prompt": "When may a road test be performed?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The inspection is incomplete, and you must not perform a road test without authorization.",
+              "kind": "case",
+              "options": [
+                "Mark it complete and drive the vehicle",
+                "Record the unresolved item and ask authorized staff to follow up",
+                "Remove the light",
+                "Leave the keys without making a report"
+              ],
+              "prompt": "A warning light has not been checked, and you are asked to road-test the vehicle. How should you respond?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the work order to the work performed → Check the tools and related area → Carry out the assigned function test according to procedure → Record the results and request a final inspection.",
+              "kind": "workflow",
+              "options": [
+                "Check the tools and related area",
+                "Match the work order to the work performed",
+                "Carry out the assigned function test according to procedure",
+                "Record the results and request a final inspection"
+              ],
+              "prompt": "In the “Final inspection and function test” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この項目はまだ確認していません。",
+              "meaning": "I have not checked this item yet.",
+              "reading": "このこうもくはまだかくにんしていません。"
+            },
+            {
+              "japanese": "責任者に確認をお願いします。",
+              "meaning": "Please ask the person in charge to inspect it.",
+              "reading": "せきにんしゃにかくにんをおねがいします。"
+            }
+          ],
+          "id": "auto-10",
+          "minutes": 25,
+          "objectives": [
+            "Memastikan semua butir perintah kerja selesai atau ditahan sebelum kendaraan diserahkan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not mark the work complete or drive the vehicle. Record the unchecked item and ask an authorized staff member to decide the next step.",
+          "scenario": "All work appears complete, but one warning light has not been checked and you are asked to road-test the vehicle.",
+          "sections": [
+            {
+              "body": "The final inspection compares the completed work with the records, returned tools, and vehicle condition. Perform a function test only when assigned and authorized. A road test requires the workshop's procedure and a driver with the appropriate valid license. This learning material does not grant permission to drive.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Inspect the serviced parts, make sure no tools are left behind, and check the relevant indicators. Record any unfinished work. Do not drive a customer's vehicle unless assigned and properly licensed; ask authorized staff to arrange a function test.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan daftar kerja dengan pekerjaan",
+            "Periksa alat dan area terkait",
+            "Lakukan uji fungsi yang ditugaskan sesuai prosedur",
+            "Catat hasil dan minta pemeriksaan akhir"
+          ],
+          "title": "Final Inspection and Function Testing",
+          "vocabulary": [
+            {
+              "japanese": "完成検査",
+              "meaning": "final inspection",
+              "reading": "かんせいけんさ"
+            },
+            {
+              "japanese": "試運転",
+              "meaning": "function test/road test",
+              "reading": "しうんてん"
+            },
+            {
+              "japanese": "運転免許",
+              "meaning": "driver's license",
+              "reading": "うんてんめんきょ"
+            },
+            {
+              "japanese": "引渡し",
+              "meaning": "handover",
+              "reading": "ひきわたし"
+            }
+          ]
+        },
+        {
+          "caution": "Do not hide a nonconformity to release the vehicle sooner or make the work appear complete.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Observed details support inspection and traceability.",
+              "kind": "knowledge",
+              "options": [
+                "The vehicle, location, time, facts, results, and actions",
+                "A suspected cause alone",
+                "The customer's name without any findings",
+                "A general impression"
+              ],
+              "prompt": "What makes an abnormality report actionable?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A new sound must be inspected before returning the vehicle.",
+              "kind": "case",
+              "options": [
+                "Return the vehicle and wait for a complaint",
+                "Hold the handover, record the sound, and request another inspection",
+                "Delete the record",
+                "Ask the customer to find the source"
+              ],
+              "prompt": "A new sound appeared after a repair, and the customer is about to collect the car. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Stop the risky work and secure the vehicle → Mark it as held according to procedure → Record the facts, location, time, and temporary action → Report the issue and wait for the supervisor's decision.",
+              "kind": "workflow",
+              "options": [
+                "Mark it as held according to procedure",
+                "Stop the risky work and secure the vehicle",
+                "Record the facts, location, time, and temporary action",
+                "Report the issue and wait for the supervisor's decision"
+              ],
+              "prompt": "In the “Holding a vehicle and reporting an abnormality” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業後に音が聞こえます。",
+              "meaning": "There is a noise after the work.",
+              "reading": "さぎょうごにおとがきこえます。"
+            },
+            {
+              "japanese": "車を渡さず、報告します。",
+              "meaning": "I did not hand over the car and reported the issue.",
+              "reading": "くるまをわたさず、ほうこくします。"
+            }
+          ],
+          "id": "auto-11",
+          "minutes": 25,
+          "objectives": [
+            "Menghentikan pekerjaan atau penggunaan kendaraan saat menemukan risiko, hasil di luar batas, atau kondisi yang belum dipahami.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Hold the handover, record when and where the noise occurred, and call the technician in charge for another inspection.",
+          "scenario": "A new noise is heard after a part replacement, and the customer is about to collect the vehicle.",
+          "sections": [
+            {
+              "body": "A hold mark prevents use of a vehicle until its risks have been assessed. A useful report identifies the vehicle, location, visible condition, time, any measurement, and temporary action. Report facts, not assumptions. The person in charge decides on repairs, reinspection, and who may continue the work.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "If there is a leak, damaged cable, unusual noise, missing part, or result outside the manual's limits, stop the affected step and mark it. Tell the workshop leader directly. Do not remove the mark or close the record until a decision and inspection have been made.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Hentikan tahap berisiko dan amankan kendaraan",
+            "Beri tanda tahan menurut prosedur",
+            "Catat fakta, lokasi, waktu, dan tindakan sementara",
+            "Laporkan dan tunggu keputusan penanggung jawab"
+          ],
+          "title": "Holding a Vehicle and Reporting Abnormalities",
+          "vocabulary": [
+            {
+              "japanese": "異常",
+              "meaning": "abnormality",
+              "reading": "いじょう"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            },
+            {
+              "japanese": "保留",
+              "meaning": "temporarily on hold",
+              "reading": "ほりゅう"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not share customer data or promise an unapproved diagnosis or cost.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Parts records support traceability and service explanations.",
+              "kind": "knowledge",
+              "options": [
+                "So parts and work can be traced",
+                "So customer data can be shared",
+                "So leftover items do not need to be counted",
+                "So an inspection is not needed"
+              ],
+              "prompt": "Why should part numbers and quantities be recorded?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Customer data must be protected, and only authorized staff should explain information that has not been approved.",
+              "kind": "case",
+              "options": [
+                "Send it in a private message and guess the cost",
+                "Protect the records and refer the customer to service staff",
+                "Refuse angrily",
+                "Delete the customer's data"
+              ],
+              "prompt": "A customer asks for a photo of the records and an estimate that has not been approved. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match records to the vehicle and work order → Record parts, quantities, results, and unresolved items → Sort parts and documents according to procedure → Hand over the records and direct customer questions to the appropriate staff.",
+              "kind": "workflow",
+              "options": [
+                "Record parts, quantities, results, and unresolved items",
+                "Match records to the vehicle and work order",
+                "Sort parts and documents according to procedure",
+                "Hand over the records and direct the customer's questions"
+              ],
+              "prompt": "In the “Service records, parts, and explanations” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "費用はまだ確認していません。",
+              "meaning": "I have not checked the cost yet.",
+              "reading": "ひようはまだかくにんしていません。"
+            },
+            {
+              "japanese": "担当者から説明します。",
+              "meaning": "The relevant staff member will explain it.",
+              "reading": "たんとうしゃからせつめいします。"
+            }
+          ],
+          "id": "auto-12",
+          "minutes": 25,
+          "objectives": [
+            "Menyelesaikan catatan perbaikan dan meneruskan status dengan informasi yang dapat ditelusuri.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not send the record or guess the cost. Refer the customer to service staff after the information has been checked and approved.",
+          "scenario": "The customer asks for a photo of the repair record and an estimate for extra costs that have not been approved.",
+          "sections": [
+            {
+              "body": "Records link the vehicle, complaint, inspection, parts, results, and follow-up. Use part numbers and actual quantities; keep used, new, and pending-inspection parts separate. Keep customer information confidential and share it only with authorized people.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Complete your task fields and pass the status to the service staff or next technician. If a customer asks about a diagnosis or cost that has not been approved, do not guess or make promises. Refer them to authorized staff and explain only the work that has been confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan catatan dengan kendaraan dan perintah kerja",
+            "Catat komponen, jumlah, hasil, dan bagian terbuka",
+            "Pisahkan suku cadang serta dokumen menurut prosedur",
+            "Serahkan catatan dan arahkan pertanyaan pelanggan"
+          ],
+          "title": "Service Records, Parts, and Explanations",
+          "vocabulary": [
+            {
+              "japanese": "交換部品",
+              "meaning": "replacement part",
+              "reading": "こうかんぶひん"
+            },
+            {
+              "japanese": "数量",
+              "meaning": "quantity",
+              "reading": "すうりょう"
+            },
+            {
+              "japanese": "個人情報",
+              "meaning": "personal information",
+              "reading": "こじんじょうほう"
+            },
+            {
+              "japanese": "説明",
+              "meaning": "explanation",
+              "reading": "せつめい"
+            }
+          ]
+        }
+      ],
+      "title": "Quality, Reporting, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA — Motor Vehicle Maintenance Sector: Jobs, Skills Tests, and Japanese Language",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/automobilerepair.html"
+    },
+    {
+      "title": "ISA — SSW No. 1 Job Descriptions by Sector",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "MLIT — Accepting SSW Workers in the Motor Vehicle Maintenance Sector",
+      "url": "https://www.mlit.go.jp/jidosha/jidosha_SSW.html"
+    },
+    {
+      "title": "JASPA — Scope and Information for the Motor Vehicle Maintenance Skills Assessment Test",
+      "url": "https://www.jaspa.or.jp/mechanic/specific-skill/index.html"
+    }
+  ],
+  "version": 1
+}

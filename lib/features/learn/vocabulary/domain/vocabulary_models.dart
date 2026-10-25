@@ -283,6 +283,7 @@ class VocabularyResult {
     required this.bestScore,
     required this.progress,
     required this.canRetry,
+    this.verified = true,
   });
 
   factory VocabularyResult.fromJson(Map<String, dynamic> json) =>
@@ -296,6 +297,7 @@ class VocabularyResult {
         bestScore: json['bestScore'] as int? ?? 0,
         progress: json['progress'] as int? ?? 0,
         canRetry: json['canRetry'] as bool? ?? true,
+        verified: json['verified'] != false,
       );
 
   final String attemptId;
@@ -307,6 +309,8 @@ class VocabularyResult {
   final int bestScore;
   final int progress;
   final bool canRetry;
+  final bool verified;
+  bool get pendingSync => !verified;
 }
 
 List<T> _list<T>(Object? value, T Function(Map<String, dynamic>) fromJson) {

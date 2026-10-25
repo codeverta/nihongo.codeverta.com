@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 
 const examInk = Color(0xFF22235B);
 const examGreen = Color(0xFF167C67);
@@ -120,14 +121,14 @@ class ExamMessage extends StatelessWidget {
             const SizedBox(height: 12),
             Text(message, textAlign: TextAlign.center),
             const SizedBox(height: 12),
-            TextButton(onPressed: retry, child: const Text('Coba lagi')),
+            TextButton(onPressed: retry, child: Text('Coba lagi'.localized(context))),
             if (message.contains('Sesi berakhir'))
               FilledButton(
                 onPressed: () async {
                   final success = await context.push<bool>('/login');
                   if ((success ?? false) && context.mounted) retry();
                 },
-                child: const Text('Masuk kembali'),
+                child: Text('Masuk kembali'.localized(context)),
               ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/billing/presentation/billing_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -11,25 +12,30 @@ class PremiumScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(authControllerProvider);
     final billing = ref.watch(billingControllerProvider);
-    final publicPrice = ref.watch(lifetimeDisplayPriceProvider).valueOrNull;
+    final english = AppLocalizations.of(context).locale.languageCode == 'en';
+    final publicPrice = english
+        ? null
+        : ref.watch(lifetimeDisplayPriceProvider).valueOrNull;
     final displayPriceIdr = billing.priceIdr ?? publicPrice;
     final controller = ref.read(billingControllerProvider.notifier);
     return Scaffold(
-      appBar: AppBar(title: const Text('Lifetime Access')),
+      appBar: AppBar(title: Text('Lifetime Access'.localized(context))),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
         children: [
           _LifetimeHero(active: billing.premium),
           const SizedBox(height: 22),
           Text(
-            'Lebih jauh dari sekadar belajar',
+            'Lebih jauh dari sekadar belajar'.localized(context),
             style: Theme.of(
               context,
             ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: 6),
           Text(
-            'Dari persiapan JLPT sampai langkah kariermu di Jepang.',
+            'Dari persiapan JLPT sampai langkah kariermu di Jepang.'.localized(
+              context,
+            ),
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(height: 16),
@@ -91,8 +97,14 @@ class PremiumScreen extends ConsumerWidget {
                 const SizedBox(height: 16),
                 Text(
                   billing.product?.price ??
-                      (displayPriceIdr == null
-                          ? 'Harga belum tersedia'
+                      (english
+                          ? (billing.busy
+                                ? 'Memeriksa harga store…'.localized(context)
+                                : 'Harga store belum tersedia'.localized(
+                                    context,
+                                  ))
+                          : displayPriceIdr == null
+                          ? 'Harga belum tersedia'.localized(context)
                           : _rupiah(displayPriceIdr)),
                   style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                     color: const Color(0xFF25264F),
@@ -100,9 +112,9 @@ class PremiumScreen extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: 4),
-                const Text(
-                  'Sekali bayar. Tanpa biaya bulanan.',
-                  style: TextStyle(
+                Text(
+                  'Sekali bayar. Tanpa biaya bulanan.'.localized(context),
+                  style: const TextStyle(
                     color: Color(0xFF5C4C2C),
                     fontWeight: FontWeight.w700,
                   ),
@@ -122,12 +134,15 @@ class PremiumScreen extends ConsumerWidget {
           if (billing.message != null)
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
-              child: Text(billing.message!, key: const Key('billing-message')),
+              child: Text(
+                billing.message!.localized(context),
+                key: const Key('billing-message'),
+              ),
             ),
           if (!auth.isAuthenticated)
             FilledButton(
               onPressed: () => context.push('/login'),
-              child: const Text('Masuk untuk melanjutkan'),
+              child: Text('Masuk untuk melanjutkan'.localized(context)),
             )
           else ...[
             if (billing.premium)
@@ -147,7 +162,7 @@ class PremiumScreen extends ConsumerWidget {
                         : '/home',
                   );
                 },
-                child: const Text('Jelajahi akses saya'),
+                child: Text('Jelajahi akses saya'.localized(context)),
               ),
             FilledButton.icon(
               key: const Key('buy-lifetime'),
@@ -172,37 +187,39 @@ class PremiumScreen extends ConsumerWidget {
                   : const Icon(Icons.lock_open),
               label: Text(
                 billing.premium
-                    ? 'Akses aktif'
+                    ? 'Akses aktif'.localized(context)
                     : billing.pending
-                    ? 'Menunggu pembayaran'
-                    : 'Buka Lifetime Access',
+                    ? 'Menunggu pembayaran'.localized(context)
+                    : 'Buka Lifetime Access'.localized(context),
               ),
             ),
             const SizedBox(height: 10),
             OutlinedButton(
               onPressed: billing.busy ? null : controller.restore,
-              child: const Text('Restore pembelian'),
+              child: Text('Restore pembelian'.localized(context)),
             ),
             TextButton(
               onPressed: billing.busy ? null : controller.retry,
-              child: const Text('Coba verifikasi lagi'),
+              child: Text('Coba verifikasi lagi'.localized(context)),
             ),
           ],
           const SizedBox(height: 20),
           Text(
-            'Materi N5–N4 dan tes N5 tetap gratis. Kuis di dalam lesson mengikuti akses materi.',
+            'Materi N5–N4 dan tes N5 tetap gratis. Kuis di dalam lesson mengikuti akses materi.'
+                .localized(context),
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const Divider(height: 32),
           Text(
-            'Tentang pembelianmu',
+            'Tentang pembelianmu'.localized(context),
             style: Theme.of(
               context,
             ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 10),
-          const Text(
-            'Pembayaran yang dibatalkan atau tertunda tidak mengaktifkan akses. Refund atau pencabutan oleh store mengunci premium kembali. Menghapus akun tidak mengembalikan uang; pembelian dapat dipulihkan dengan akun store pembeli setelah masuk ke akun aplikasi baru.',
+          Text(
+            'Pembayaran yang dibatalkan atau tertunda tidak mengaktifkan akses. Refund atau pencabutan oleh store mengunci premium kembali. Menghapus akun tidak mengembalikan uang; pembelian dapat dipulihkan dengan akun store pembeli setelah masuk ke akun aplikasi baru.'
+                .localized(context),
           ),
           const SizedBox(height: 8),
           TextButton(
@@ -210,11 +227,11 @@ class PremiumScreen extends ConsumerWidget {
               context,
               'https://support.google.com/googleplay/answer/2479637',
             ),
-            child: const Text('Bantuan refund Google Play'),
+            child: Text('Bantuan refund Google Play'.localized(context)),
           ),
           TextButton(
             onPressed: () => _help(context, 'https://support.apple.com/118223'),
-            child: const Text('Bantuan refund App Store'),
+            child: Text('Bantuan refund App Store'.localized(context)),
           ),
         ],
       ),
@@ -233,7 +250,11 @@ class PremiumScreen extends ConsumerWidget {
     }
     if (!opened && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Tautan bantuan tidak dapat dibuka.')),
+        SnackBar(
+          content: Text(
+            'Tautan bantuan tidak dapat dibuka.'.localized(context),
+          ),
+        ),
       );
     }
   }
@@ -270,7 +291,8 @@ class _LifetimeHero extends StatelessWidget {
             fit: BoxFit.cover,
             cacheWidth: 1200,
             semanticLabel:
-                'Perjalanan belajar bahasa dan meraih peluang di Jepang',
+                'Perjalanan belajar bahasa dan meraih peluang di Jepang'
+                    .localized(context),
             errorBuilder: (_, __, ___) => const Center(
               child: Icon(
                 Icons.workspace_premium_rounded,
@@ -308,8 +330,10 @@ class _LifetimeHero extends StatelessWidget {
                     Flexible(
                       child: Text(
                         active
-                            ? 'LIFETIME AKTIF'
-                            : 'SEKALI BAYAR · AKSES SELAMANYA',
+                            ? 'LIFETIME AKTIF'.localized(context)
+                            : 'SEKALI BAYAR · AKSES SELAMANYA'.localized(
+                                context,
+                              ),
                         style: const TextStyle(
                           color: Color(0xFF5A3E14),
                           fontWeight: FontWeight.w800,
@@ -323,8 +347,10 @@ class _LifetimeHero extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 active
-                    ? 'Lifetime Access aktif'
-                    : 'Buka lebih banyak.\nMelangkah lebih jauh.',
+                    ? 'Lifetime Access aktif'.localized(context)
+                    : 'Buka lebih banyak.\nMelangkah lebih jauh.'.localized(
+                        context,
+                      ),
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -332,9 +358,10 @@ class _LifetimeHero extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Belajar, baca, latihan, dan temukan peluang dalam satu akses.',
-                style: TextStyle(color: Color(0xFFDADBF0), height: 1.6),
+              Text(
+                'Belajar, baca, latihan, dan temukan peluang dalam satu akses.'
+                    .localized(context),
+                style: const TextStyle(color: Color(0xFFDADBF0), height: 1.6),
               ),
             ],
           ),
@@ -379,12 +406,12 @@ class _PremiumBenefit extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  title.localized(context),
                   style: const TextStyle(fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 5),
                 Text(
-                  description,
+                  description.localized(context),
                   style: Theme.of(
                     context,
                   ).textTheme.bodySmall?.copyWith(height: 1.6),
@@ -415,7 +442,7 @@ class _PriceNote extends StatelessWidget {
         const SizedBox(width: 8),
         Expanded(
           child: Text(
-            text,
+            text.localized(context),
             style: const TextStyle(
               color: Color(0xFF5C4C2C),
               fontSize: 12,

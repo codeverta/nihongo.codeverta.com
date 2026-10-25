@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
@@ -14,10 +15,13 @@ class SswEntryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ExploreFeatureCard(
     title: 'SSW / Tokutei Ginou',
-    eyebrow: 'KETERAMPILAN & PERSIAPAN UJIAN',
+    eyebrow: 'KETERAMPILAN & PERSIAPAN UJIAN'.localized(context),
     description: exams
         ? 'Latihan soal dan simulasi untuk ${sswSectors.length} bidang SSW'
-        : 'Kenali bidangmu, pelajari materi, lalu coba simulasinya',
+              .localized(context)
+        : 'Kenali bidangmu, pelajari materi, lalu coba simulasinya'.localized(
+            context,
+          ),
     asset: 'assets/images/ssw/ssw-careers.webp',
     color: const Color(0xFF125E60),
     icon: Icons.school_rounded,
@@ -47,7 +51,7 @@ class _SswHubState extends State<SswHubScreen> {
     final filtered = sswSectors
         .where(
           (sector) =>
-              '${sector.name} ${sector.japanese} ${sector.keywords}'
+              '${sector.name} ${sector.japanese} ${sector.romaji} ${sector.keywords}'
                   .toLowerCase()
                   .contains(query.trim().toLowerCase()) &&
               (activeFilter == 'Semua' ||
@@ -57,14 +61,14 @@ class _SswHubState extends State<SswHubScreen> {
         )
         .toList();
     return Scaffold(
-      appBar: AppBar(title: const Text('SSW / Tokutei Ginou')),
+      appBar: AppBar(title: Text('SSW / Tokutei Ginou')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
           const SswArtwork(),
           const SizedBox(height: 22),
           Text(
-            'BELAJAR UNTUK DUNIA KERJA',
+            'BELAJAR UNTUK DUNIA KERJA'.localized(context),
             style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
               fontSize: 12,
@@ -74,7 +78,7 @@ class _SswHubState extends State<SswHubScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Temukan bidangmu.\nBangun keterampilanmu.',
+            'Temukan bidangmu.\nBangun keterampilanmu.'.localized(context),
             style: Theme.of(
               context,
             ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800),
@@ -83,7 +87,9 @@ class _SswHubState extends State<SswHubScreen> {
           Text(
             widget.exams
                 ? 'Latihan per topik dan simulasi belajar tersedia untuk ${sswSectors.length} bidang SSW. Paket aplikasi memakai soal orisinal dan dapat berbeda dari format tes resmi.'
-                : 'Kurikulum, kasus kerja, latihan per topik, dan simulasi belajar tersedia untuk ${sswSectors.length} bidang SSW. Mulai dari materi, lalu lanjutkan ke latihan dan simulasi.',
+                      .localized(context)
+                : 'Kurikulum, kasus kerja, latihan per topik, dan simulasi belajar tersedia untuk ${sswSectors.length} bidang SSW. Mulai dari materi, lalu lanjutkan ke latihan dan simulasi.'
+                      .localized(context),
             style: const TextStyle(height: 1.5),
           ),
           const SizedBox(height: 20),
@@ -97,14 +103,16 @@ class _SswHubState extends State<SswHubScreen> {
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
               title: Text(
-                'Pelajari Kaigo',
+                'Pelajari Kaigo'.localized(context),
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
               subtitle: Text(
-                'Kurikulum perawatan dan bahasa Jepang tersedia',
+                'Kurikulum perawatan dan bahasa Jepang tersedia'.localized(
+                  context,
+                ),
                 style: TextStyle(
                   height: 1.5,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -122,9 +130,11 @@ class _SswHubState extends State<SswHubScreen> {
           const SizedBox(height: 20),
           TextField(
             onChanged: (value) => setState(() => query = value),
-            decoration: const InputDecoration(
-              labelText: 'Cari bidang SSW',
-              hintText: 'Kaigo, linen, manufaktur, konstruksi...',
+            decoration: InputDecoration(
+              labelText: 'Cari bidang SSW'.localized(context),
+              hintText: 'Kaigo, linen, manufaktur, konstruksi...'.localized(
+                context,
+              ),
               prefixIcon: Icon(Icons.search),
             ),
           ),
@@ -139,7 +149,7 @@ class _SswHubState extends State<SswHubScreen> {
                 if (hasComingSoon) 'Segera hadir',
               ])
                 ChoiceChip(
-                  label: Text(value),
+                  label: Text(value.localized(context)),
                   selected: activeFilter == value,
                   onSelected: (_) => setState(() => filter = value),
                 ),
@@ -147,14 +157,16 @@ class _SswHubState extends State<SswHubScreen> {
           ),
           const SizedBox(height: 20),
           Text(
-            '${filtered.length} bidang',
+            '${filtered.length} ${'bidang'.localized(context)}',
             style: const TextStyle(fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 8),
           if (filtered.isEmpty)
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(vertical: 24),
-              child: Text('Bidang tidak ditemukan. Coba kata lain.'),
+              child: Text(
+                'Bidang tidak ditemukan. Coba kata lain.'.localized(context),
+              ),
             ),
           for (final sector in filtered)
             Card(
@@ -182,6 +194,13 @@ class _SswHubState extends State<SswHubScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(sector.japanese),
+                    const SizedBox(height: 2),
+                    Text(
+                      sector.romaji,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                    ),
                     const SizedBox(height: 6),
                     SswStatusBadge(available: sswAvailable(sector.id)),
                   ],
@@ -228,9 +247,9 @@ class _SswSectorState extends State<SswSectorScreen> {
   Widget build(BuildContext context) {
     final sector = sswSectorById(widget.sectorId);
     return Scaffold(
-      appBar: AppBar(title: const Text('Bidang SSW')),
+      appBar: AppBar(title: Text('Bidang SSW'.localized(context))),
       body: sector == null
-          ? const Center(child: Text('Bidang tidak ditemukan.'))
+          ? Center(child: Text('Bidang tidak ditemukan.'.localized(context)))
           : ListView(
               padding: const EdgeInsets.all(20),
               children: [
@@ -245,6 +264,13 @@ class _SswSectorState extends State<SswSectorScreen> {
                   sector.japanese,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
+                const SizedBox(height: 4),
+                Text(
+                  sector.romaji,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
                 const SizedBox(height: 12),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -255,12 +281,12 @@ class _SswSectorState extends State<SswSectorScreen> {
                   spacing: 8,
                   children: [
                     ChoiceChip(
-                      label: const Text('Materi'),
+                      label: Text('Materi'.localized(context)),
                       selected: !exams,
                       onSelected: (_) => setState(() => exams = false),
                     ),
                     ChoiceChip(
-                      label: const Text('Tes'),
+                      label: Text('Tes'.localized(context)),
                       selected: exams,
                       onSelected: (_) => setState(() => exams = true),
                     ),
@@ -270,37 +296,41 @@ class _SswSectorState extends State<SswSectorScreen> {
                 if (exams && sswAvailable(sector.id)) ...[
                   SswAssessmentPanel(sector: sector.id),
                 ] else if (exams) ...[
-                  const _FeaturePreview(
+                  _FeaturePreview(
                     icon: Icons.quiz_outlined,
-                    title: 'Latihan soal',
-                    description:
-                        'Latihan pemahaman keterampilan sesuai bidang.',
+                    title: 'Latihan soal'.localized(context),
+                    description: 'Latihan pemahaman keterampilan sesuai bidang.'
+                        .localized(context),
                   ),
-                  const _FeaturePreview(
+                  _FeaturePreview(
                     icon: Icons.timer_outlined,
-                    title: 'Simulasi ujian',
+                    title: 'Simulasi ujian'.localized(context),
                     description:
-                        'Paket ujian dengan timer, hasil, dan pembahasan.',
+                        'Paket ujian dengan timer, hasil, dan pembahasan.'
+                            .localized(context),
                   ),
                 ] else if (sswAvailable(sector.id)) ...[
                   KaigoCurriculumPanel(sectorId: sector.id),
                 ] else ...[
-                  const _FeaturePreview(
+                  _FeaturePreview(
                     icon: Icons.menu_book_outlined,
-                    title: 'Materi bidang',
-                    description: 'Materi keterampilan untuk bidang pilihanmu.',
+                    title: 'Materi bidang'.localized(context),
+                    description: 'Materi keterampilan untuk bidang pilihanmu.'
+                        .localized(context),
                   ),
-                  const _FeaturePreview(
+                  _FeaturePreview(
                     icon: Icons.translate,
-                    title: 'Kosakata bidang',
+                    title: 'Kosakata bidang'.localized(context),
                     description:
-                        'Istilah bahasa Jepang yang digunakan di bidang ini.',
+                        'Istilah bahasa Jepang yang digunakan di bidang ini.'
+                            .localized(context),
                   ),
                 ],
                 const SizedBox(height: 12),
                 if (!sswAvailable(sector.id))
-                  const Text(
-                    'Konten belum tersedia. Kamu belum dapat memulai materi atau tes pada bidang ini.',
+                  Text(
+                    'Konten belum tersedia. Kamu belum dapat memulai materi atau tes pada bidang ini.'
+                        .localized(context),
                     style: TextStyle(height: 1.5),
                   ),
               ],

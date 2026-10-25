@@ -30,7 +30,7 @@ class AppUpdateState {
 
   bool get showDialog =>
       requirement != AppUpdateRequirement.supported && !dismissed;
-  bool get interceptBack => !initialized || showDialog;
+  bool get interceptBack => showDialog;
 }
 
 final appUpdateControllerProvider =

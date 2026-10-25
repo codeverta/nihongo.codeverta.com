@@ -8,10 +8,14 @@ import 'package:nihongo_master/features/home/presentation/controllers/home_contr
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/kanji/data/kanji_repository.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
+import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final kanjiRepositoryProvider = Provider<KanjiRepository>(
-  (ref) => KanjiRepository(ref.watch(dioProvider)),
+  (ref) => KanjiRepository(
+    ref.watch(dioProvider),
+    offlinePractice: ref.watch(offlinePracticeServiceProvider),
+  ),
 );
 final kanjiCourseProvider = FutureProvider.autoDispose
     .family<KanjiCourse, String>((ref, level) {
@@ -101,11 +105,27 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
     this.lessonId, {
     required this.onProgress,
     this.history,
-  }) : super(const AsyncValue.loading());
+  }) : super(const AsyncValue.loading()) {
+    _syncSubscription = repository.syncEvents.listen(_onPracticeSync);
+  }
   final KanjiRepository repository;
   final String lessonId;
   final VoidCallback onProgress;
   final LearningHistoryController? history;
+  StreamSubscription<OfflinePracticeSyncEvent>? _syncSubscription;
+
+  void _onPracticeSync(OfflinePracticeSyncEvent event) {
+    final current = state.valueOrNull;
+    if (!mounted ||
+        current?.attempt?.id != event.attemptId ||
+        current?.result == null) {
+      return;
+    }
+    final result = KanjiResult.fromJson(event.result);
+    if (result.passed) history?.complete('kanji', lessonId);
+    onProgress();
+    state = AsyncValue.data(current!.copyWith(result: result));
+  }
 
   Future<void> load() async {
     state = const AsyncValue.loading();
@@ -213,9 +233,11 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
     state = AsyncValue.data(s.copyWith(busy: true));
     try {
       final result = await repository.complete(s.attempt!.id);
-      if (mounted && result.passed) history?.complete('kanji', lessonId);
+      if (mounted && result.verified && result.passed) {
+        history?.complete('kanji', lessonId);
+      }
       if (mounted) {
-        onProgress();
+        if (result.verified) onProgress();
         state = AsyncValue.data(
           s.copyWith(stage: KanjiStage.result, result: result, busy: false),
         );
@@ -233,5 +255,11 @@ class KanjiController extends StateNotifier<AsyncValue<KanjiState>> {
       state = AsyncValue.data(KanjiState(lesson: s.lesson));
       history?.position('kanji', lessonId, 0);
     }
+  }
+
+  @override
+  void dispose() {
+    unawaited(_syncSubscription?.cancel());
+    super.dispose();
   }
 }

@@ -7,6 +7,7 @@ import (
 	"gorm.io/gorm/clause"
 	"math"
 	"nihongo-master-backend/internal/anki"
+	"nihongo-master-backend/internal/ankitransfer"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 	"sort"
@@ -39,16 +40,22 @@ type AnkiStats struct {
 }
 type AnkiDeckView struct {
 	anki.Deck
-	Stats  AnkiStats `json:"stats"`
-	Locked bool      `json:"locked"`
+	Stats        AnkiStats `json:"stats"`
+	Locked       bool      `json:"locked"`
+	Personal     bool      `json:"personal"`
+	RequiredTier string    `json:"requiredTier"`
+	SourceID     string    `json:"sourceId,omitempty"`
 }
 type AnkiStudyCard struct {
 	anki.Card
 	Version   int               `json:"version"`
 	Intervals map[string]string `json:"intervals"`
+	AudioURL  string            `json:"audioUrl,omitempty"`
 }
 type AnkiSession struct {
 	Title        string          `json:"title"`
+	Level        string          `json:"level"`
+	RequiredTier string          `json:"requiredTier"`
 	Instructions string          `json:"instructions"`
 	DeckID       string          `json:"deckId"`
 	Cards        []AnkiStudyCard `json:"cards"`
@@ -67,10 +74,13 @@ type AnkiReviewResult struct {
 }
 
 func ankiState(state *gamificationState, id string) *AnkiDeckState {
-	if state != nil && state.Anki != nil && state.Anki[id] != nil && state.Anki[id].Revision == anki.Revision() {
+	return ankiStateForRevision(state, id, anki.Revision())
+}
+func ankiStateForRevision(state *gamificationState, id, revision string) *AnkiDeckState {
+	if state != nil && state.Anki != nil && state.Anki[id] != nil && state.Anki[id].Revision == revision {
 		return state.Anki[id]
 	}
-	return &AnkiDeckState{Revision: anki.Revision(), Cards: map[int]AnkiCardState{}}
+	return &AnkiDeckState{Revision: revision, Cards: map[int]AnkiCardState{}}
 }
 func ankiStats(state *AnkiDeckState, total int, now time.Time) AnkiStats {
 	stats := AnkiStats{New: total}
@@ -93,6 +103,9 @@ func ankiPremium(deck anki.Deck) bool {
 	return deck.Level == "N1" || deck.Level == "N2" || deck.Level == "N3"
 }
 func (s *MemoryStore) AnkiDeck(user, id string) (AnkiDeckView, error) {
+	if isUserAnkiDeckID(id) {
+		return s.userAnkiDeck(user, id)
+	}
 	deck, err := anki.Get(id)
 	if errors.Is(err, anki.ErrNotFound) {
 		return AnkiDeckView{}, ErrNotFound
@@ -103,10 +116,14 @@ func (s *MemoryStore) AnkiDeck(user, id string) (AnkiDeckView, error) {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 	locked := ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium
+	requiredTier := "free"
+	if ankiPremium(deck) {
+		requiredTier = "lifetime"
+	}
 	if locked {
 		deck.Preview = nil
 	}
-	return AnkiDeckView{Deck: deck, Stats: ankiStats(ankiState(s.gamification[user], id), deck.CardCount, s.gamificationNow()), Locked: locked}, nil
+	return AnkiDeckView{Deck: deck, Stats: ankiStats(ankiState(s.gamification[user], id), deck.CardCount, s.gamificationNow()), Locked: locked, RequiredTier: requiredTier}, nil
 }
 func (s *MemoryStore) AnkiStudy(user, id string, limit int) (AnkiSession, error) {
 	view, err := s.AnkiDeck(user, id)
@@ -123,7 +140,18 @@ func (s *MemoryStore) AnkiStudy(user, id string, limit int) (AnkiSession, error)
 		return AnkiSession{}, ErrInvalid
 	}
 	s.mu.RLock()
-	state := ankiState(s.gamification[user], id)
+	stateRevision := anki.Revision()
+	var personalCards []ankitransfer.Card
+	if isUserAnkiDeckID(id) {
+		record := s.userAnkiDecks[id]
+		if record == nil || record.UserID != user {
+			s.mu.RUnlock()
+			return AnkiSession{}, ErrNotFound
+		}
+		stateRevision = record.Revision
+		personalCards = copyAnkiTransferCards(record.Cards)
+	}
+	state := ankiStateForRevision(s.gamification[user], id, stateRevision)
 	now := s.gamificationNow().UTC()
 	type item struct {
 		index int
@@ -155,11 +183,25 @@ func (s *MemoryStore) AnkiStudy(user, id string, limit int) (AnkiSession, error)
 	}
 	stats := ankiStats(state, view.CardCount, now)
 	s.mu.RUnlock()
-	result := AnkiSession{Title: view.Title, Instructions: view.Instructions, DeckID: id, Stats: stats, Cards: []AnkiStudyCard{}}
+	requiredTier := view.RequiredTier
+	if requiredTier == "" {
+		requiredTier = "free"
+	}
+	result := AnkiSession{Title: view.Title, Level: view.Level, RequiredTier: requiredTier, Instructions: view.Instructions, DeckID: id, Stats: stats, Cards: []AnkiStudyCard{}}
 	for _, entry := range selected {
-		card, err := anki.ReadCard(id, entry.index)
-		if err != nil {
-			return AnkiSession{}, err
+		var card anki.Card
+		audioURL := ""
+		if isUserAnkiDeckID(id) {
+			transferCard := personalCards[entry.index]
+			card = anki.Card{Index: entry.index, SourceIndex: entry.index, Front: transferCard.Front, Answers: append([]string(nil), transferCard.Answers...), Meaning: transferCard.Meaning, ImageURL: ankiMediaURL(id, transferCard.ImageURL)}
+			audioURL = ankiMediaURL(id, transferCard.Audio)
+		} else {
+			var err error
+			card, err = anki.ReadCard(id, entry.index)
+			if err != nil {
+				return AnkiSession{}, err
+			}
+			card.ImageURL = ankiMediaURL(id, card.ImageURL)
 		}
 		intervals := map[string]string{}
 		for _, rating := range []string{"again", "hard", "good", "easy"} {
@@ -173,7 +215,7 @@ func (s *MemoryStore) AnkiStudy(user, id string, limit int) (AnkiSession, error)
 				intervals[rating] = timeDaysLabel(duration)
 			}
 		}
-		result.Cards = append(result.Cards, AnkiStudyCard{Card: card, Version: entry.state.Version, Intervals: intervals})
+		result.Cards = append(result.Cards, AnkiStudyCard{Card: card, Version: entry.state.Version, Intervals: intervals, AudioURL: audioURL})
 	}
 	return result, nil
 }
@@ -229,9 +271,21 @@ func ankiSchedule(current AnkiCardState, rating string, now time.Time) AnkiCardS
 	return next
 }
 func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiReviewResult, error) {
-	deck, err := anki.Get(id)
-	if err != nil {
-		return AnkiReviewResult{}, ErrNotFound
+	var deck anki.Deck
+	deckRevision := anki.Revision()
+	if isUserAnkiDeckID(id) {
+		view, err := s.AnkiDeck(user, id)
+		if err != nil {
+			return AnkiReviewResult{}, ErrNotFound
+		}
+		deck = view.Deck
+		deckRevision = ""
+	} else {
+		var err error
+		deck, err = anki.Get(id)
+		if err != nil {
+			return AnkiReviewResult{}, ErrNotFound
+		}
 	}
 	requestID, err := uuid.Parse(input.RequestID)
 	if err != nil || requestID == uuid.Nil || input.Index < 0 || input.Index >= deck.CardCount || !deck.Available || input.Version < 0 {
@@ -245,10 +299,19 @@ func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiRe
 	if _, exists := s.profiles[user]; !exists {
 		return AnkiReviewResult{}, ErrNotFound
 	}
-	if ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium {
+	if isUserAnkiDeckID(id) {
+		record := s.userAnkiDecks[id]
+		if record == nil || record.UserID != user {
+			return AnkiReviewResult{}, ErrNotFound
+		}
+		deckRevision = record.Revision
+		if userAnkiDeckPremium(record) && s.profiles[user].Entitlement.Tier != domain.TierPremium {
+			return AnkiReviewResult{}, ErrPremium
+		}
+	} else if ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium {
 		return AnkiReviewResult{}, ErrPremium
 	}
-	state := ankiState(s.gamification[user], id)
+	state := ankiStateForRevision(s.gamification[user], id, deckRevision)
 	current := state.Cards[input.Index]
 	now := s.gamificationNow().UTC()
 	if current.RequestID == input.RequestID {
@@ -275,7 +338,7 @@ func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiRe
 	if next.Anki == nil {
 		next.Anki = map[string]*AnkiDeckState{}
 	}
-	progress := ankiState(next, id)
+	progress := ankiStateForRevision(next, id, deckRevision)
 	next.Anki[id] = progress
 	scheduled := ankiSchedule(current, input.Rating, now)
 	scheduled.RequestID = input.RequestID

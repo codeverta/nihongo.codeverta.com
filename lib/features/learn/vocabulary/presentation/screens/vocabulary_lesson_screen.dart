@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_study_view.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
+import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_ruby_text.dart';
 
 class VocabularyLessonScreen extends ConsumerWidget {
   const VocabularyLessonScreen({required this.lessonId, super.key});
@@ -22,24 +25,24 @@ class VocabularyLessonScreen extends ConsumerWidget {
     if (state != null) {
       body = switch (state.stage) {
         VocabularyStage.study => VocabularyStudyView(
-            state: state,
-            previous: controller.previousWord,
-            next: controller.nextWord,
-            startQuiz: controller.startQuiz,
-          ),
+          state: state,
+          previous: controller.previousWord,
+          next: controller.nextWord,
+          startQuiz: controller.startQuiz,
+        ),
         VocabularyStage.quiz => _QuizStage(
-            state: state,
-            selectOption: controller.selectOption,
-            submit: controller.submitAnswer,
-            next: controller.continueQuiz,
-          ),
+          state: state,
+          selectOption: controller.selectOption,
+          submit: controller.submitAnswer,
+          next: controller.continueQuiz,
+        ),
         VocabularyStage.result => _ResultStage(
-            result: state.result!,
-            error: state.error,
-            busy: state.submitting,
-            retry: controller.retry,
-            finish: context.pop,
-          ),
+          result: state.result!,
+          error: state.error,
+          busy: state.submitting,
+          retry: controller.retry,
+          finish: context.pop,
+        ),
       };
     } else if (lesson.hasError) {
       body = _LessonError(
@@ -56,15 +59,13 @@ class VocabularyLessonScreen extends ConsumerWidget {
             ? 'lesson-$lessonId-loading'
             : 'lesson-$lessonId-${state.stage.name}',
       ),
-      appBar: AppBar(
-        title: Text(state?.lesson.title ?? 'Lesson Vocabulary'),
-      ),
+      appBar: AppBar(title: Text(state?.lesson.title ?? 'Lesson Vocabulary')),
       body: body,
     );
   }
 }
 
-class _QuizStage extends StatelessWidget {
+class _QuizStage extends ConsumerWidget {
   const _QuizStage({
     required this.state,
     required this.selectOption,
@@ -78,15 +79,18 @@ class _QuizStage extends StatelessWidget {
   final VoidCallback next;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final attempt = state.attempt!;
     final question = attempt.questions[state.questionIndex];
     final feedback = state.feedback;
+    final furigana = ref.watch(displayPreferencesProvider).furigana;
+    final annotateQuestion = furigana && question.kind != 'Cara baca';
     return Column(
       children: [
         LinearProgressIndicator(
-          backgroundColor:
-              Theme.of(context).colorScheme.secondary.withValues(alpha: .1),
+          backgroundColor: Theme.of(
+            context,
+          ).colorScheme.secondary.withValues(alpha: .1),
           color: Theme.of(context).colorScheme.secondary,
           value: (state.questionIndex + 1) / attempt.questions.length,
           minHeight: 6,
@@ -120,21 +124,25 @@ class _QuizStage extends StatelessWidget {
                 ),
                 const SizedBox(height: 18),
                 Text(
-                  'Pertanyaan ${state.questionIndex + 1} dari ${attempt.questions.length}',
+                  '${'Pertanyaan'.localized(context)} ${state.questionIndex + 1} ${'dari'.localized(context)} ${attempt.questions.length}',
                   style: Theme.of(context).textTheme.labelLarge,
                 ),
                 const SizedBox(height: 12),
-                Text(
-                  question.prompt,
+                VocabularyRubyText(
+                  text: question.prompt,
+                  words: state.lesson.words,
+                  enabled: annotateQuestion,
                   key: Key('question-${question.id}'),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.w900,
-                      ),
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
                 const SizedBox(height: 22),
                 for (final option in question.options) ...[
                   _OptionTile(
                     option: option,
+                    words: state.lesson.words,
+                    furigana: annotateQuestion,
                     selected: state.selectedOptionId == option.id,
                     feedback: feedback,
                     onTap: () => selectOption(option.id),
@@ -143,14 +151,18 @@ class _QuizStage extends StatelessWidget {
                 ],
                 if (state.error != null)
                   Text(
-                    state.error!,
+                    state.error!.localized(context),
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.error,
                     ),
                   ),
                 if (feedback != null) ...[
                   const SizedBox(height: 10),
-                  _FeedbackCard(feedback: feedback),
+                  _FeedbackCard(
+                    feedback: feedback,
+                    words: state.lesson.words,
+                    furigana: furigana,
+                  ),
                 ],
               ],
             ),
@@ -167,10 +179,10 @@ class _QuizStage extends StatelessWidget {
                 onPressed: state.submitting
                     ? null
                     : feedback == null
-                        ? state.selectedOptionId == null
-                            ? null
-                            : submit
-                        : next,
+                    ? state.selectedOptionId == null
+                          ? null
+                          : submit
+                    : next,
                 child: state.submitting
                     ? const SizedBox.square(
                         dimension: 20,
@@ -178,11 +190,11 @@ class _QuizStage extends StatelessWidget {
                       )
                     : Text(
                         feedback == null
-                            ? 'Periksa jawaban'
+                            ? 'Periksa jawaban'.localized(context)
                             : state.questionIndex ==
-                                    attempt.questions.length - 1
-                                ? 'Lihat hasil'
-                                : 'Pertanyaan berikutnya',
+                                  attempt.questions.length - 1
+                            ? 'Lihat hasil'.localized(context)
+                            : 'Pertanyaan berikutnya'.localized(context),
                       ),
               ),
             ),
@@ -196,12 +208,16 @@ class _QuizStage extends StatelessWidget {
 class _OptionTile extends StatelessWidget {
   const _OptionTile({
     required this.option,
+    required this.words,
+    required this.furigana,
     required this.selected,
     required this.feedback,
     required this.onTap,
   });
 
   final QuizOption option;
+  final List<VocabularyWord> words;
+  final bool furigana;
   final bool selected;
   final AnswerFeedback? feedback;
   final VoidCallback onTap;
@@ -214,10 +230,10 @@ class _OptionTile extends StatelessWidget {
     final color = isCorrect
         ? Colors.green
         : selectedWrong
-            ? colors.error
-            : selected
-                ? colors.primary
-                : colors.outlineVariant;
+        ? colors.error
+        : selected
+        ? colors.primary
+        : colors.outlineVariant;
     return Material(
       color: color.withValues(alpha: selected || isCorrect ? 0.1 : 0.025),
       borderRadius: BorderRadius.circular(16),
@@ -228,15 +244,19 @@ class _OptionTile extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            border:
-                Border.all(color: color, width: selected || isCorrect ? 2 : 1),
+            border: Border.all(
+              color: color,
+              width: selected || isCorrect ? 2 : 1,
+            ),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
             children: [
               Expanded(
-                child: Text(
-                  option.text,
+                child: VocabularyRubyText(
+                  text: option.text,
+                  words: words,
+                  enabled: furigana,
                   style: const TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 19,
@@ -257,14 +277,21 @@ class _OptionTile extends StatelessWidget {
 }
 
 class _FeedbackCard extends StatelessWidget {
-  const _FeedbackCard({required this.feedback});
+  const _FeedbackCard({
+    required this.feedback,
+    required this.words,
+    required this.furigana,
+  });
 
   final AnswerFeedback feedback;
+  final List<VocabularyWord> words;
+  final bool furigana;
 
   @override
   Widget build(BuildContext context) {
-    final color =
-        feedback.correct ? Colors.green : Theme.of(context).colorScheme.error;
+    final color = feedback.correct
+        ? Colors.green
+        : Theme.of(context).colorScheme.error;
     return Semantics(
       liveRegion: true,
       child: Container(
@@ -278,7 +305,9 @@ class _FeedbackCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              feedback.correct ? 'Benar!' : 'Belum tepat',
+              feedback.correct
+                  ? 'Benar!'.localized(context)
+                  : 'Belum tepat'.localized(context),
               style: TextStyle(
                 color: color,
                 fontSize: 18,
@@ -286,7 +315,11 @@ class _FeedbackCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 6),
-            Text(feedback.explanation),
+            VocabularyRubyText(
+              text: feedback.explanation,
+              words: words,
+              enabled: furigana,
+            ),
           ],
         ),
       ),
@@ -323,17 +356,26 @@ class _ResultStage extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            result.passed ? 'Lesson dikuasai!' : 'Sedikit lagi!',
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium
-                ?.copyWith(fontWeight: FontWeight.w900),
+            result.pendingSync
+                ? 'Hasil sementara'.localized(context)
+                : result.passed
+                ? 'Lesson dikuasai!'.localized(context)
+                : 'Sedikit lagi!'.localized(context),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: 8),
           Text(
-            result.passed
-                ? 'Anda sudah memahami kosakata pada lesson ini.'
-                : 'Nilai minimum kelulusan adalah 80%. Pelajari feedback lalu coba kembali.',
+            result.pendingSync
+                ? 'Jawaban tersimpan di perangkat. Kelulusan, XP, dan achievement menunggu verifikasi saat terhubung kembali.'
+                      .localized(context)
+                : result.passed
+                ? 'Anda sudah memahami kosakata pada lesson ini.'.localized(
+                    context,
+                  )
+                : 'Nilai minimum kelulusan adalah 80%. Pelajari feedback lalu coba kembali.'
+                      .localized(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 28),
@@ -356,12 +398,15 @@ class _ResultStage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${result.correctAnswers} dari ${result.totalQuestions} jawaban benar',
+                  '${result.correctAnswers} ${'dari'.localized(context)} ${result.totalQuestions} ${'jawaban benar'.localized(context)}',
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  'Nilai terbaik: ${result.bestScore}% • Progress total: ${result.progress}%',
-                ),
+                if (!result.pendingSync)
+                  Text(
+                    '${'Nilai terbaik:'.localized(context)} ${result.bestScore}% • ${'Progress total:'.localized(context)} ${result.progress}%',
+                  )
+                else
+                  Text('Menunggu sinkronisasi'.localized(context)),
               ],
             ),
           ),
@@ -372,19 +417,26 @@ class _ResultStage extends StatelessWidget {
               key: const Key('retry-vocabulary-lesson'),
               onPressed: busy ? null : retry,
               icon: const Icon(Icons.replay_rounded),
-              label: Text(busy ? 'Menyiapkan kuis…' : 'Ulangi lesson'),
+              label: Text(
+                busy
+                    ? 'Menyiapkan kuis…'.localized(context)
+                    : 'Ulangi lesson'.localized(context),
+              ),
             ),
           ),
           const SizedBox(height: 10),
           if (error != null) ...[
-            Text(error!, style: TextStyle(color: colors.error)),
+            Text(
+              error!.localized(context),
+              style: TextStyle(color: colors.error),
+            ),
             const SizedBox(height: 10),
           ],
           SizedBox(
             width: double.infinity,
             child: OutlinedButton(
               onPressed: finish,
-              child: const Text('Kembali ke daftar lesson'),
+              child: Text('Kembali ke daftar lesson'.localized(context)),
             ),
           ),
         ],
@@ -409,9 +461,12 @@ class _LessonError extends StatelessWidget {
           children: [
             const Icon(Icons.error_outline_rounded, size: 52),
             const SizedBox(height: 12),
-            Text(message, textAlign: TextAlign.center),
+            Text(message.localized(context), textAlign: TextAlign.center),
             const SizedBox(height: 16),
-            FilledButton(onPressed: retry, child: const Text('Muat ulang')),
+            FilledButton(
+              onPressed: retry,
+              child: Text('Muat ulang'.localized(context)),
+            ),
           ],
         ),
       ),

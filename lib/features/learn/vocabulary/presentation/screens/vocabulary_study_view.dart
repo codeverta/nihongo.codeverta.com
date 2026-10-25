@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
@@ -58,7 +59,7 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                 children: [
                   Expanded(
                     child: Text(
-                      'KATA ${s.wordIndex + 1} / ${s.lesson.words.length}',
+                      '${'KATA'.localized(context)} ${s.wordIndex + 1} / ${s.lesson.words.length}',
                       key: const Key('lesson-study-counter'),
                       style: TextStyle(
                         color: colors.secondary,
@@ -147,13 +148,17 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                 ),
               ),
               const SizedBox(height: 24),
-              const Text(
-                'Pakai dalam kalimat',
-                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+              Text(
+                'Pakai dalam kalimat'.localized(context),
+                style: const TextStyle(
+                  fontSize: 21,
+                  fontWeight: FontWeight.w800,
+                ),
               ),
               const SizedBox(height: 6),
-              const Text(
-                'Perhatikan cara kata ini digunakan dalam situasi berbeda.',
+              Text(
+                'Perhatikan cara kata ini digunakan dalam situasi berbeda.'
+                    .localized(context),
               ),
               const SizedBox(height: 12),
               Wrap(
@@ -162,7 +167,7 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                 children: [
                   FilterChip(
                     key: const Key('toggle-furigana'),
-                    label: const Text('Furigana'),
+                    label: Text('Furigana'.localized(context)),
                     selected: furigana,
                     showCheckmark: false,
                     selectedColor: colors.secondary,
@@ -174,7 +179,7 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                         .setFurigana(enabled: enabled),
                   ),
                   FilterChip(
-                    label: const Text('Terjemahan'),
+                    label: Text('Terjemahan'.localized(context)),
                     selected: meaning,
                     showCheckmark: false,
                     selectedColor: colors.secondary,
@@ -201,7 +206,7 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          'CONTOH ${i + 1}',
+                          '${'CONTOH'.localized(context)} ${i + 1}',
                           style: TextStyle(
                             color: colors.secondary,
                             fontSize: 11,
@@ -248,9 +253,9 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                   Icons.lightbulb_outline_rounded,
                   color: colors.primary,
                 ),
-                title: const Text(
-                  'Catatan pemakaian',
-                  style: TextStyle(fontWeight: FontWeight.w700),
+                title: Text(
+                  'Catatan pemakaian'.localized(context),
+                  style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
                 children: [
                   Padding(
@@ -260,7 +265,10 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                 ],
               ),
               if (s.error != null)
-                Text(s.error!, style: TextStyle(color: colors.error)),
+                Text(
+                  s.error!.localized(context),
+                  style: TextStyle(color: colors.error),
+                ),
             ],
           ),
         ),
@@ -305,7 +313,11 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                                 ? Icons.quiz_outlined
                                 : Icons.arrow_forward_rounded,
                           ),
-                    label: Text(last ? 'Latihan pemahaman' : 'Kata berikutnya'),
+                    label: Text(
+                      last
+                          ? 'Latihan pemahaman'.localized(context)
+                          : 'Kata berikutnya'.localized(context),
+                    ),
                   ),
                 ),
               ],

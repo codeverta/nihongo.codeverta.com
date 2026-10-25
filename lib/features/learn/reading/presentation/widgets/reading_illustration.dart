@@ -32,7 +32,7 @@ class ReadingIllustration extends StatelessWidget {
               maxWidth: constraints.maxWidth * 3,
               minHeight: constraints.maxWidth,
               maxHeight: constraints.maxWidth,
-              child: RemoteAssetImage(asset: asset, url: url),
+              child: RemoteAssetImage(asset: asset, url: url, persistOffline: true),
             ),
           ),
         ),

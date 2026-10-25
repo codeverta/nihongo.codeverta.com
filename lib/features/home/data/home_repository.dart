@@ -30,7 +30,14 @@ class HomeRepository {
           };
         }).toList();
       }
-      return HomeDashboard.fromJson(resolved);
+      final metadata = response.extra['offlineCache'];
+      final cache = metadata is Map ? metadata : const <String, Object?>{};
+      return HomeDashboard.fromJson(
+        resolved,
+        fromCache: cache['cached'] == true,
+        offline: cache['offline'] == true,
+        cachedAt: DateTime.tryParse(cache['updatedAt'] as String? ?? ''),
+      );
     } on HomeException {
       rethrow;
     } on DioException catch (error) {
@@ -46,7 +53,7 @@ class HomeRepository {
         return details['message'] as String;
       }
     }
-    return 'Beranda tidak dapat dimuat. Periksa koneksi dan backend.';
+    return 'Beranda belum tersimpan di perangkat ini. Hubungkan internet untuk menyiapkannya.';
   }
 }
 

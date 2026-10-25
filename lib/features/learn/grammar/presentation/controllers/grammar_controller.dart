@@ -8,10 +8,14 @@ import 'package:nihongo_master/features/home/presentation/controllers/home_contr
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/grammar/data/grammar_repository.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
+import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 
 final grammarRepositoryProvider = Provider<GrammarRepository>(
-  (ref) => GrammarRepository(ref.watch(dioProvider)),
+  (ref) => GrammarRepository(
+    ref.watch(dioProvider),
+    offlinePractice: ref.watch(offlinePracticeServiceProvider),
+  ),
 );
 final grammarCourseProvider = FutureProvider.autoDispose<GrammarCourse>((ref) {
   ref.watch(authControllerProvider.select((s) => s.user?.id));
@@ -106,11 +110,27 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
     this.lessonId, {
     required this.onProgress,
     this.history,
-  }) : super(const AsyncValue.loading());
+  }) : super(const AsyncValue.loading()) {
+    _syncSubscription = repository.syncEvents.listen(_onPracticeSync);
+  }
   final GrammarRepository repository;
   final String lessonId;
   final VoidCallback onProgress;
   final LearningHistoryController? history;
+  StreamSubscription<OfflinePracticeSyncEvent>? _syncSubscription;
+
+  void _onPracticeSync(OfflinePracticeSyncEvent event) {
+    final current = state.valueOrNull;
+    if (!mounted ||
+        current?.attempt?.id != event.attemptId ||
+        current?.result == null) {
+      return;
+    }
+    final result = GrammarResult.fromJson(event.result);
+    if (result.passed) history?.complete('grammar', lessonId);
+    onProgress();
+    state = AsyncValue.data(current!.copyWith(result: result));
+  }
 
   Future<void> load() async {
     state = const AsyncValue.loading();
@@ -219,9 +239,11 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
     state = AsyncValue.data(s.copyWith(busy: true));
     try {
       final result = await repository.complete(s.attempt!.id);
-      if (mounted && result.passed) history?.complete('grammar', lessonId);
+      if (mounted && result.verified && result.passed) {
+        history?.complete('grammar', lessonId);
+      }
       if (mounted) {
-        onProgress();
+        if (result.verified) onProgress();
         state = AsyncValue.data(
           s.copyWith(stage: GrammarStage.result, result: result, busy: false),
         );
@@ -239,5 +261,11 @@ class GrammarController extends StateNotifier<AsyncValue<GrammarState>> {
       state = AsyncValue.data(GrammarState(lesson: s.lesson));
       history?.position('grammar', lessonId, 0);
     }
+  }
+
+  @override
+  void dispose() {
+    unawaited(_syncSubscription?.cancel());
+    super.dispose();
   }
 }

@@ -166,7 +166,7 @@ class FakeBilling extends BillingRepository {
   int verifications = 0;
   Completer<String>? delayed;
   @override
-  Future<BillingAccount> status() async => BillingAccount(
+  Future<BillingAccount> status({String? userId}) async => BillingAccount(
     productId: 'nihongo_master_lifetime',
     accountToken: 'account-token',
     platforms: ['android', 'ios'],
@@ -179,6 +179,7 @@ class FakeBilling extends BillingRepository {
     required String productId,
     required String proof,
     String? transactionId,
+    String? userId,
   }) async {
     verifications++;
     if (fail || conflict) {

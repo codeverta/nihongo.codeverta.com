@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
 
 /// Ruby is painted over actual native selection boxes. The selectable string
@@ -110,7 +111,7 @@ class _FuriganaTextState extends State<FuriganaText> {
                 anchors: state.contextMenuAnchors,
                 buttonItems: [
                   ContextMenuButtonItem(
-                    label: 'Cari arti',
+                    label: 'Cari arti'.localized(context),
                     onPressed: () {
                       final selection = state.textEditingValue.selection;
                       final tokens = newsSelectionTokens(

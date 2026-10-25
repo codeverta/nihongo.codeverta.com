@@ -5,6 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/core/network/remote_asset_image.dart';
 import 'package:nihongo_master/features/manga/data/manga_repository.dart';
 import 'package:nihongo_master/shared/presentation/widgets/explore_feature_card.dart';
@@ -12,10 +14,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 const _ink = Color(0xFF232667);
 
-String _retryDate(DateTime value) {
-  final d = value.toLocal();
-  return '${d.day}/${d.month}/${d.year}, ${d.hour.toString().padLeft(2, '0')}.${d.minute.toString().padLeft(2, '0')}';
-}
+String _retryDate(BuildContext context, DateTime value) =>
+    regionalDateTime(value, localeName: appRegionLocaleName(context));
 
 Future<void> _openSource(BuildContext context, String raw) async {
   final uri = Uri.tryParse(raw);
@@ -29,7 +29,9 @@ Future<void> _openSource(BuildContext context, String raw) async {
   }
   if (!opened && context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Tautan sumber belum dapat dibuka.')),
+      SnackBar(
+        content: Text('Tautan sumber belum dapat dibuka.'.localized(context)),
+      ),
     );
   }
 }
@@ -39,9 +41,10 @@ class MangaEntryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ExploreFeatureCard(
     key: const Key('open-manga'),
-    title: 'Manga Jepang',
+    title: 'Manga Jepang'.localized(context),
     eyebrow: 'PREMIUM · LIFETIME ACCESS',
-    description: 'Nikmati cerita dan latih membaca Jepang lewat panel aslinya',
+    description: 'Nikmati cerita dan latih membaca Jepang lewat panel aslinya'
+        .localized(context),
     asset: 'assets/images/explore/manga-reading.webp',
     color: const Color(0xFF30265D),
     icon: Icons.auto_stories_rounded,
@@ -122,7 +125,7 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
     final catalog = ref.watch(provider);
     final colors = Theme.of(context).colorScheme;
     return Scaffold(
-      appBar: AppBar(title: const Text('Manga Jepang')),
+      appBar: AppBar(title: Text('Manga Jepang'.localized(context))),
       body: RefreshIndicator(
         onRefresh: () => ref.refresh(provider.future),
         child: ListView(
@@ -137,13 +140,13 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                 ),
                 borderRadius: BorderRadius.circular(26),
               ),
-              child: const Row(
+              child: Row(
                 children: [
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           '日本語・ORIGINAL',
                           style: TextStyle(
                             color: Color(0xFFFFD96A),
@@ -152,26 +155,30 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                             letterSpacing: 1.3,
                           ),
                         ),
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         Text(
-                          'Cerita seru.\nBahasa aslinya.',
-                          style: TextStyle(
+                          'Cerita seru.\nBahasa aslinya.'.localized(context),
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 25,
                             fontWeight: FontWeight.w900,
                             height: 1.2,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
-                          'Latih membaca Jepang lewat panel demi panel.',
-                          style: TextStyle(color: Colors.white, height: 1.5),
+                          'Latih membaca Jepang lewat panel demi panel.'
+                              .localized(context),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            height: 1.5,
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(width: 12),
-                  MangaArtwork(),
+                  const SizedBox(width: 12),
+                  const MangaArtwork(),
                 ],
               ),
             ),
@@ -184,7 +191,7 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                   visualDensity: VisualDensity.compact,
                 ),
                 onPressed: () => context.push('/attributions'),
-                child: const Text('Sumber & atribusi ↗'),
+                child: Text('Sumber & atribusi ↗'.localized(context)),
               ),
             ),
             const SizedBox(height: 12),
@@ -197,10 +204,10 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                 _page = 1;
               }),
               decoration: InputDecoration(
-                hintText: 'Cari judul manga…',
+                hintText: 'Cari judul manga…'.localized(context),
                 prefixIcon: const Icon(Icons.search_rounded),
                 suffixIcon: IconButton(
-                  tooltip: 'Cari',
+                  tooltip: 'Cari'.localized(context),
                   onPressed: () => setState(() {
                     _query = _search.text.trim();
                     _page = 1;
@@ -226,7 +233,9 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                       padding: const EdgeInsets.only(right: 8),
                       child: ChoiceChip(
                         key: ValueKey('manga-genre-$genre'),
-                        label: Text(genre.isEmpty ? 'Semua' : genre),
+                        label: Text(
+                          genre.isEmpty ? 'Semua'.localized(context) : genre,
+                        ),
                         selected: _genre == genre,
                         onSelected: (_) => setState(() {
                           _genre = genre;
@@ -260,16 +269,17 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                           const SizedBox(height: 16),
                           Text(
                             _query.isNotEmpty || _genre.isNotEmpty
-                                ? 'Manga belum ditemukan'
-                                : 'Koleksi sedang disiapkan',
+                                ? 'Manga belum ditemukan'.localized(context)
+                                : 'Koleksi sedang disiapkan'.localized(context),
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
                           const SizedBox(height: 8),
-                          const Text(
-                            'Judul terkurasi akan tersedia di sini. Coba muat ulang beberapa saat lagi.',
+                          Text(
+                            'Judul terkurasi akan tersedia di sini. Coba muat ulang beberapa saat lagi.'
+                                .localized(context),
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -279,7 +289,9 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '${data.total} judul untuk dijelajahi',
+                          '${data.total} judul untuk dijelajahi'.localized(
+                            context,
+                          ),
                           style: const TextStyle(fontWeight: FontWeight.w800),
                         ),
                         const SizedBox(height: 14),
@@ -307,16 +319,16 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
                           children: [
                             IconButton(
                               key: const Key('manga-previous-page'),
-                              tooltip: 'Halaman sebelumnya',
+                              tooltip: 'Halaman sebelumnya'.localized(context),
                               onPressed: _page > 1
                                   ? () => setState(() => _page--)
                                   : null,
                               icon: const Icon(Icons.chevron_left),
                             ),
-                            Text('Halaman $_page'),
+                            Text('Halaman $_page'.localized(context)),
                             IconButton(
                               key: const Key('manga-next-page'),
-                              tooltip: 'Halaman berikutnya',
+                              tooltip: 'Halaman berikutnya'.localized(context),
                               onPressed: _page * 20 < data.total
                                   ? () => setState(() => _page++)
                                   : null,
@@ -329,7 +341,8 @@ class _MangaCatalogScreenState extends ConsumerState<MangaCatalogScreen> {
             ),
             const SizedBox(height: 16),
             Text(
-              'Pilihan tanpa konten dewasa/ecchi. Katalog diperiksa mingguan.',
+              'Pilihan tanpa konten dewasa/ecchi. Katalog diperiksa mingguan.'
+                  .localized(context),
               style: TextStyle(
                 color: colors.onSurfaceVariant,
                 fontSize: 12,
@@ -377,7 +390,7 @@ class _MangaCard extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          '${series.chapterCount} chapter · 日本語',
+          '${series.chapterCount} chapter · 日本語'.localized(context),
           style: TextStyle(
             fontSize: 12,
             color: Theme.of(context).colorScheme.onSurfaceVariant,
@@ -412,7 +425,7 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
   Widget build(BuildContext context) {
     final provider = mangaDetailProvider(widget.id);
     return Scaffold(
-      appBar: AppBar(title: const Text('Detail manga')),
+      appBar: AppBar(title: Text('Detail manga'.localized(context))),
       body: ref
           .watch(provider)
           .when(
@@ -482,7 +495,8 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
                               ),
                             const SizedBox(height: 12),
                             Text(
-                              '${s.chapterCount} chapter · Jepang asli',
+                              '${s.chapterCount} chapter · Jepang asli'
+                                  .localized(context),
                               style: const TextStyle(
                                 fontWeight: FontWeight.w700,
                               ),
@@ -502,9 +516,12 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
                   ),
                   _SourceLink(url: s.sourceUrl),
                   const SizedBox(height: 12),
-                  const Text(
-                    'Tentang cerita',
-                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 19),
+                  Text(
+                    'Tentang cerita'.localized(context),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 19,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   SelectableText(
@@ -518,15 +535,15 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
                         '/manga/chapters/${data.chapters.first.id}',
                       ),
                       icon: const Icon(Icons.menu_book_rounded),
-                      label: const Text('Mulai membaca'),
+                      label: Text('Mulai membaca'.localized(context)),
                     ),
                   const SizedBox(height: 22),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Text(
-                          'Daftar chapter',
-                          style: TextStyle(
+                          'Daftar chapter'.localized(context),
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w800,
                           ),
@@ -534,8 +551,8 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
                       ),
                       IconButton(
                         tooltip: _newest
-                            ? 'Urutan terlama dahulu'
-                            : 'Urutan terbaru dahulu',
+                            ? 'Urutan terlama dahulu'.localized(context)
+                            : 'Urutan terbaru dahulu'.localized(context),
                         onPressed: () => setState(() => _newest = !_newest),
                         icon: const Icon(Icons.sort_rounded),
                       ),
@@ -543,16 +560,18 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
                   ),
                   TextField(
                     onChanged: (v) => setState(() => _search = v),
-                    decoration: const InputDecoration(
-                      hintText: 'Cari nomor chapter',
-                      prefixIcon: Icon(Icons.search),
+                    decoration: InputDecoration(
+                      hintText: 'Cari nomor chapter'.localized(context),
+                      prefixIcon: const Icon(Icons.search),
                     ),
                   ),
                   const SizedBox(height: 12),
                   if (chapters.isEmpty)
-                    const Padding(
-                      padding: EdgeInsets.all(24),
-                      child: Text('Chapter tidak ditemukan.'),
+                    Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Text(
+                        'Chapter tidak ditemukan.'.localized(context),
+                      ),
                     ),
                   for (final ch in chapters)
                     ListTile(
@@ -571,12 +590,12 @@ class _MangaDetailScreenState extends ConsumerState<MangaDetailScreen> {
                       ),
                       subtitle: Text(
                         ch.status == 'ready'
-                            ? 'Siap dibaca'
+                            ? 'Siap dibaca'.localized(context)
                             : ch.pending
-                            ? 'Sedang disiapkan'
+                            ? 'Sedang disiapkan'.localized(context)
                             : ch.status == 'failed'
-                            ? 'Belum tersedia'
-                            : 'Siapkan untuk dibaca',
+                            ? 'Belum tersedia'.localized(context)
+                            : 'Siapkan untuk dibaca'.localized(context),
                       ),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () => context.push('/manga/chapters/${ch.id}'),
@@ -687,11 +706,13 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
       appBar: AppBar(
         backgroundColor: const Color(0xFF15151D),
         foregroundColor: Colors.white,
-        title: Text(ch?.title ?? 'Manga reader'),
+        title: Text(ch?.title ?? 'Pembaca manga'.localized(context)),
         actions: [
           if (ch?.ready ?? false)
             IconButton(
-              tooltip: _continuous ? 'Baca per halaman' : 'Baca dengan scroll',
+              tooltip: _continuous
+                  ? 'Baca per halaman'.localized(context)
+                  : 'Baca dengan scroll'.localized(context),
               onPressed: () => setState(() => _continuous = !_continuous),
               icon: Icon(
                 _continuous
@@ -701,7 +722,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
             ),
           if (ch != null)
             IconButton(
-              tooltip: 'Sumber: Rawkuma',
+              tooltip: 'Sumber: Rawkuma'.localized(context),
               onPressed: () => _openSource(context, ch.sourceUrl),
               icon: const Icon(Icons.open_in_new_rounded),
             ),
@@ -755,10 +776,10 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                     ),
                     child: Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text(
-                            'Baca dari kanan ke kiri',
-                            style: TextStyle(
+                            'Baca dari kanan ke kiri'.localized(context),
+                            style: const TextStyle(
                               color: Colors.white70,
                               fontSize: 11,
                             ),
@@ -766,7 +787,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                         ),
                         if (!_continuous) ...[
                           IconButton(
-                            tooltip: 'Halaman sebelumnya',
+                            tooltip: 'Halaman sebelumnya'.localized(context),
                             color: Colors.white70,
                             disabledColor: Colors.white24,
                             onPressed: _page > 0
@@ -782,7 +803,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                             style: const TextStyle(color: Colors.white),
                           ),
                           IconButton(
-                            tooltip: 'Halaman berikutnya',
+                            tooltip: 'Halaman berikutnya'.localized(context),
                             color: Colors.white70,
                             disabledColor: Colors.white24,
                             onPressed: _page + 1 < ch.pages.length
@@ -819,8 +840,8 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                     const SizedBox(height: 22),
                     Text(
                       ch?.pending ?? false
-                          ? 'Chapter sedang disiapkan'
-                          : 'Siap menjelajahi cerita?',
+                          ? 'Chapter sedang disiapkan'.localized(context)
+                          : 'Siap menjelajahi cerita?'.localized(context),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: Colors.white,
@@ -830,11 +851,13 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      _error ??
+                      _error?.localized(context) ??
                           (ch?.pending ?? false
                               ? 'Halaman akan terbuka setelah semua gambar siap. Kamu juga bisa kembali dan membukanya lagi nanti.'
+                                    .localized(context)
                               : ch?.status == 'failed'
                               ? 'Beberapa halaman belum siap. Cek kembali setelah waktu berikutnya.'
+                                    .localized(context)
                               : 'Siapkan chapter ini agar tersedia untuk dibaca.'),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
@@ -846,7 +869,8 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: Text(
-                          'Coba kembali: ${_retryDate(ch!.retryAt!)}',
+                          'Coba kembali: ${_retryDate(context, ch!.retryAt!)}'
+                              .localized(context),
                           style: const TextStyle(color: Colors.white70),
                         ),
                       ),
@@ -859,7 +883,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                                 _polls = 0;
                                 unawaited(_load(prepare: true));
                               },
-                        child: const Text('Siapkan chapter'),
+                        child: Text('Siapkan chapter'.localized(context)),
                       ),
                     if (!_busy)
                       TextButton(
@@ -867,17 +891,20 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
                           _polls = 0;
                           unawaited(_load());
                         },
-                        child: const Text(
-                          'Muat ulang',
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          'Muat ulang'.localized(context),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     if (ch != null)
                       TextButton(
                         onPressed: () => _openSource(context, ch.sourceUrl),
-                        child: const Text(
-                          'Sumber: Rawkuma ↗',
-                          style: TextStyle(fontSize: 11, color: Colors.white70),
+                        child: Text(
+                          'Sumber: Rawkuma ↗'.localized(context),
+                          style: const TextStyle(
+                            fontSize: 11,
+                            color: Colors.white70,
+                          ),
                         ),
                       ),
                   ],
@@ -907,7 +934,7 @@ class _PageImageState extends State<_PageImage> {
       key: ValueKey('${page.url}-$_attempt'),
       fit: widget.contain ? BoxFit.contain : BoxFit.fitWidth,
       width: double.infinity,
-      semanticLabel: 'Halaman manga bahasa Jepang',
+      semanticLabel: 'Halaman manga bahasa Jepang'.localized(context),
       loadingBuilder: (_, child, progress) => progress == null
           ? child
           : const SizedBox(
@@ -921,16 +948,16 @@ class _PageImageState extends State<_PageImage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Gambar belum dapat dimuat',
-              style: TextStyle(color: Colors.white70),
+            Text(
+              'Gambar belum dapat dimuat'.localized(context),
+              style: const TextStyle(color: Colors.white70),
             ),
             TextButton(
               onPressed: () async {
                 await NetworkImage(page.url).evict();
                 if (mounted) setState(() => _attempt++);
               },
-              child: const Text('Coba lagi'),
+              child: Text('Coba lagi'.localized(context)),
             ),
           ],
         ),
@@ -954,7 +981,7 @@ class _SourceLink extends StatelessWidget {
         visualDensity: VisualDensity.compact,
       ),
       icon: const Icon(Icons.open_in_new_rounded, size: 12),
-      label: const Text('Sumber: Rawkuma'),
+      label: Text('Sumber: Rawkuma'.localized(context)),
     ),
   );
 }
@@ -977,14 +1004,16 @@ class _MangaError extends StatelessWidget {
               color: Color(0xFF9A6500),
             ),
             const SizedBox(height: 12),
-            const Text(
-              'Manga Jepang khusus pengguna Lifetime Access.',
+            Text(
+              'Manga Jepang khusus pengguna Lifetime Access.'.localized(
+                context,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 12),
             FilledButton(
               onPressed: () => context.push('/premium?from=%2Fmanga'),
-              child: const Text('Lihat Lifetime Access'),
+              child: Text('Lihat Lifetime Access'.localized(context)),
             ),
           ],
         ),
@@ -995,12 +1024,16 @@ class _MangaError extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
-            'Manga belum dapat dimuat. Periksa koneksi lalu coba kembali.',
+          Text(
+            'Manga belum dapat dimuat. Periksa koneksi lalu coba kembali.'
+                .localized(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
-          OutlinedButton(onPressed: retry, child: const Text('Coba lagi')),
+          OutlinedButton(
+            onPressed: retry,
+            child: Text('Coba lagi'.localized(context)),
+          ),
         ],
       ),
     );

@@ -1,0 +1,36 @@
+package api
+
+// sswCurriculumLinenSupplyEnglish contains exact, hand-reviewed translations
+// for linen-supply SSW learning material.
+var sswCurriculumLinenSupplyEnglish = map[examSSWEnglishKey]string{
+	{field: "ssw.title", source: `Area bersih, penyimpanan, dan pemindahan`}:   `Clean Areas, Storage, and Movement`,
+	{field: "ssw.title", source: `Bahan proses dan kebersihan area`}:           `Process Chemicals and Area Hygiene`,
+	{field: "ssw.title", source: `Gangguan mesin dan keselamatan`}:             `Machine Problems and Safety`,
+	{field: "ssw.title", source: `Jalur finishing dan persiapan mesin`}:        `Finishing Line and Machine Preparation`,
+	{field: "ssw.title", source: `Jumlah dan pengikatan per pesanan`}:          `Order Quantities and Bundling`,
+	{field: "ssw.title", source: `Pemeriksaan hasil finishing`}:                `Checking Finished Linen`,
+	{field: "ssw.title", source: `Pemilahan menurut jenis dan kondisi`}:        `Sorting by Type and Condition`,
+	{field: "ssw.title", source: `Pencucian dan pemisahan aliran`}:             `Washing and Keeping Flows Separate`,
+	{field: "ssw.title", source: `Penerimaan dan pencatatan jumlah`}:           `Receiving and Quantity Records`,
+	{field: "ssw.title", source: `Pengeringan dan perpindahan ke zona bersih`}: `Drying and Transfer to the Clean Zone`,
+	{field: "ssw.title", source: `Serah terima dan laporan ketidaksesuaian`}:   `Handover and Discrepancy Reports`,
+	{field: "ssw.title", source: `Siklus linen dan batas peran`}:               `The Linen Cycle and Role Boundaries`,
+	{field: "ssw.description", source: `Memahami siklus layanan, penerimaan, pemilahan, dan pencatatan yang menjaga identitas serta pemisahan linen kotor dan bersih. Materi dan simulasi ini adalah latihan belajar orisinal. Sumber resmi yang ditinjau menyebut nama ujian linen supply, tetapi belum memublikasikan blueprint, silabus rinci, atau format ujian; jangan menganggap paket app sebagai format resmi.`}: `Understand the service cycle, receiving, sorting, and recordkeeping that preserve linen identity and keep soiled and clean linen separate. This material and its simulations are original study practice. The official source reviewed names the linen-supply examination but has not published a blueprint, detailed syllabus, or exam format; do not treat the app's practice set as an official format.`,
+	{field: "ssw.description", source: `Mencocokkan jenis linen dengan jalur finishing, menjaga keselamatan mesin, dan memisahkan hasil yang tidak sesuai.`}:    `Match linen types to the finishing line, operate safely around machinery, and separate nonconforming items.`,
+	{field: "ssw.description", source: `Menjaga kelompok, jumlah, zona bersih, dan komunikasi antar-giliran hingga linen siap dikirim.`}:                        `Maintain lot identity and counts, protect clean zones, and communicate across shifts until linen is ready to ship.`,
+	{field: "ssw.description", source: `Menjaga urutan pencucian dan pengeringan, mengikuti setelan fasilitas, serta mengenali penyimpangan dan bahaya bahan.`}: `Maintain washing and drying sequences, follow facility settings, and recognize deviations and chemical hazards.`,
+	{field: "ssw.objective", source: `Memeriksa dokumen, kondisi, dan jumlah linen yang masuk sebelum pemrosesan.`}:                                             `Check documents, condition, and quantity of incoming linen before processing.`,
+	{field: "ssw.objective", source: `Memeriksa hasil lipatan atau penyelesaian dan memisahkan linen yang tidak memenuhi kriteria.`}:                            `Inspect folded or finished items and separate linen that does not meet criteria.`,
+	{field: "ssw.objective", source: `Memilah linen menurut jenis, pelanggan, dan instruksi penanganan tanpa mencampur kelompok yang tidak sesuai.`}:            `Sort linen by type, customer, and handling instructions without mixing incompatible lots.`,
+	{field: "ssw.objective", source: `Memilih respons kerja yang aman dan menjaga mutu pada kasus lapangan.`}:                                                   `Choose a safe work response that maintains quality in workplace situations.`,
+	{field: "ssw.objective", source: `Mencocokkan jenis linen dengan mesin finishing dan memeriksa alat sebelum proses.`}:                                       `Match linen type to the finishing machine and check equipment before processing.`,
+	{field: "ssw.objective", source: `Mengawasi pengeringan menurut prosedur dan menjaga pemisahan setelah proses selesai.`}:                                    `Monitor drying under procedure and keep finished linen separate.`,
+	{field: "ssw.objective", source: `Mengelompokkan linen selesai menurut jenis dan pelanggan serta memenuhi jumlah yang dipesan.`}:                            `Group finished linen by type and customer and meet the ordered quantity.`,
+	{field: "ssw.objective", source: `Mengenali aturan bahan proses dan menjaga area kerja tetap bersih serta terkendali.`}:                                     `Recognize process-chemical rules and keep the work area clean and controlled.`,
+	{field: "ssw.objective", source: `Menggunakan kosakata Jepang yang terkait dengan tugas ini.`}:                                                              `Use Japanese vocabulary related to these tasks.`,
+	{field: "ssw.objective", source: `Mengikuti cara kerja aman ketika aliran finishing terganggu dan mengetahui batas kewenangan perbaikan.`}:                  `Follow safe work practices when the finishing flow is disrupted and respect limits on repair authority.`,
+	{field: "ssw.objective", source: `Mengikuti pencucian sesuai jenis linen, prosedur, dan pengendalian kebersihan.`}:                                          `Wash linen according to its type, procedure, and hygiene controls.`,
+	{field: "ssw.objective", source: `Menjaga produk selesai terlindung saat disimpan dan dipindahkan menuju pengiriman.`}:                                      `Protect finished products during storage and movement to dispatch.`,
+	{field: "ssw.objective", source: `Menjelaskan perjalanan linen dari pemakaian pelanggan hingga pemrosesan dan pengiriman kembali.`}:                         `Describe the linen cycle from customer use through processing and return delivery.`,
+	{field: "ssw.objective", source: `Menyampaikan status pekerjaan, hambatan, dan tindak lanjut dengan catatan yang jelas.`}:                                   `Communicate work status, obstacles, and follow-up in clear records.`,
+}

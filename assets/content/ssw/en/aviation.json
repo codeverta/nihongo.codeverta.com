@@ -1,0 +1,1276 @@
+{
+  "modules": [
+    {
+      "description": "Use briefings, safe zones, team communication, and foreign-object controls during airside work.",
+      "id": "apron",
+      "lessons": [
+        {
+          "caution": "Do not enter an aircraft zone or pick up a hazardous object without authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Foreign objects in operational areas are a safety hazard.",
+              "kind": "knowledge",
+              "options": [
+                "A small object can damage an aircraft or equipment, or injure someone",
+                "So the area looks good in photographs",
+                "Because it always belongs to a passenger",
+                "So a briefing is not needed"
+              ],
+              "prompt": "Why must foreign objects in aircraft areas be reported immediately?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Communicate about the area and secure it before resuming operations.",
+              "kind": "case",
+              "options": [
+                "Drive past it slowly",
+                "Stop nearby activity, report the object, and wait until the area is safe",
+                "Hide it near a wheel",
+                "Pick it up by hand without telling anyone"
+              ],
+              "prompt": "A piece of metal is near a vehicle route. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Attend the briefing and repeat key instructions → Wear PPE and check its condition → Inspect the work area for foreign objects and hazards → Stop work near any finding and report it.",
+              "kind": "workflow",
+              "options": [
+                "Wear PPE and check its condition",
+                "Attend the briefing and repeat key instructions",
+                "Inspect the work area for foreign objects and hazards",
+                "Stop work near the finding and report it"
+              ],
+              "prompt": "In the “Safety briefing and foreign objects” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "前方に異物があります。",
+              "meaning": "There is a foreign object ahead.",
+              "reading": "ぜんぽうにいぶつがあります。"
+            },
+            {
+              "japanese": "作業を止めて、報告します。",
+              "meaning": "I will stop work and report it.",
+              "reading": "さぎょうをとめて、ほうこくします。"
+            }
+          ],
+          "id": "aviation-01",
+          "minutes": 25,
+          "objectives": [
+            "Mengikuti briefing, memakai APD yang ditetapkan, serta melaporkan benda asing di area operasi.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop the vehicle and nearby work, report the location, and wait until the area is declared safe.",
+          "scenario": "A piece of metal is visible near the vehicle route as the team prepares to approach the aircraft.",
+          "sections": [
+            {
+              "body": "Airside work follows airport rules and company instructions. Wear work clothing, hearing protection, a high-visibility vest, and other PPE required for the task. Small objects such as bolts or plastic can damage aircraft or injure people. Do not pick up an unsafe object outside the established procedure.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Listen to the briefing about the flight, weather, vehicle routes, hazard zones, and task changes. If you find a foreign object, stop nearby work, report it through the designated channel, and secure it only if authorized. Record its location so the team can inspect the area.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Hadiri briefing dan ulangi instruksi penting",
+            "Pakai APD serta periksa kondisinya",
+            "Periksa area kerja untuk benda asing dan bahaya",
+            "Hentikan pekerjaan sekitar temuan dan laporkan"
+          ],
+          "title": "Safety Briefings and Foreign Object Debris",
+          "vocabulary": [
+            {
+              "japanese": "制限区域",
+              "meaning": "restricted area",
+              "reading": "せいげんくいき"
+            },
+            {
+              "japanese": "保護具",
+              "meaning": "personal protective equipment",
+              "reading": "ほごぐ"
+            },
+            {
+              "japanese": "異物",
+              "meaning": "foreign object",
+              "reading": "いぶつ"
+            },
+            {
+              "japanese": "危険予知",
+              "meaning": "hazard prediction",
+              "reading": "きけんよち"
+            }
+          ]
+        },
+        {
+          "caution": "Do not signal or move an aircraft without training, authorization, and communication.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Aircraft movement must be controlled by authorized personnel.",
+              "kind": "knowledge",
+              "options": [
+                "A trained and authorized staff member",
+                "Anyone who sees the aircraft",
+                "The nearest passenger",
+                "A worker passing by"
+              ],
+              "prompt": "Who may signal during aircraft movement?"
+            },
+            {
+              "answer": 1,
+              "explanation": "If communication is lost, stop the operation and confirm the instructions again.",
+              "kind": "case",
+              "options": [
+                "Continue following the vehicle ahead",
+                "Stop safely and contact the team leader",
+                "Give signals yourself",
+                "Reverse without looking"
+              ],
+              "prompt": "You lose sight of the guide and cannot hear the radio. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Check entry authorization, route, and movement lead → Confirm communication and staff positions → Perform the task using approved signals and equipment → Stop movement if communication is lost.",
+              "kind": "workflow",
+              "options": [
+                "Confirm communication and staff positions",
+                "Check entry authorization, route, and movement lead",
+                "Perform the task using approved signals and equipment",
+                "Stop movement if communication is lost"
+              ],
+              "prompt": "In the “Ground movement support for aircraft” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "合図が見えません。",
+              "meaning": "I cannot see the signal.",
+              "reading": "あいずがみえません。"
+            },
+            {
+              "japanese": "安全な場所で止まります。",
+              "meaning": "I have stopped in a safe place.",
+              "reading": "あんぜんなばしょでとまります。"
+            }
+          ],
+          "id": "aviation-02",
+          "minutes": 25,
+          "objectives": [
+            "Berkoordinasi saat pesawat atau kendaraan bergerak dan menjaga jalur steril sesuai instruksi bandara.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop movement at a safe position according to procedure. Do not continue by guessing; contact the controller or team leader.",
+          "scenario": "While supporting aircraft movement, you lose sight of the guide and cannot hear the radio.",
+          "sections": [
+            {
+              "body": "Aircraft movement on the apron follows routes, priorities, and communications controlled by authorized staff. Support may include directing vehicles or moving aircraft according to assigned roles. Only trained and authorized staff may signal, operate specialized equipment, or lead a movement.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before entering a route, confirm that authorization and communication are clear. Use standard workplace signals; do not improvise. If your view is blocked, the radio fails, or visual contact is lost, stop in a safe position and report it so the lead can reorganize the movement.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa izin masuk, rute, dan pemimpin pergerakan",
+            "Pastikan komunikasi serta posisi petugas",
+            "Lakukan tugas dengan isyarat dan alat yang disetujui",
+            "Hentikan gerakan bila komunikasi terputus"
+          ],
+          "title": "Supporting Aircraft Ground Movement",
+          "vocabulary": [
+            {
+              "japanese": "誘導",
+              "meaning": "marshalling",
+              "reading": "ゆうどう"
+            },
+            {
+              "japanese": "地上走行",
+              "meaning": "ground movement",
+              "reading": "ちじょうそうこう"
+            },
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            },
+            {
+              "japanese": "無線",
+              "meaning": "radio communication",
+              "reading": "むせん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use damaged equipment or continue operations when weather limits have been exceeded.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Safety depends on authorization, equipment condition, the environment, and the route.",
+              "kind": "knowledge",
+              "options": [
+                "Operator authorization, equipment condition, weather, and work route",
+                "Vehicle color alone",
+                "The flight schedule alone",
+                "The number of suitcases"
+              ],
+              "prompt": "What should be checked before using ground-service vehicles?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not use a vehicle with a fault, especially on a slippery surface.",
+              "kind": "case",
+              "options": [
+                "Continue slowly",
+                "Do not use it; park safely, mark it, and report the fault",
+                "Ask workers to push it",
+                "Turn off the lights and depart"
+              ],
+              "prompt": "A tow vehicle's brakes are not working properly on a slippery apron. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Check operator authorization and equipment → Assess the weather, surface, and route → Use equipment within its limits and according to instructions → Secure equipment and report changes or damage.",
+              "kind": "workflow",
+              "options": [
+                "Assess the weather, surface, and route",
+                "Check operator authorization and equipment",
+                "Use equipment within its limits and according to instructions",
+                "Secure equipment and report changes or damage"
+              ],
+              "prompt": "In the “Ground-service equipment and weather” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ブレーキに異常があります。",
+              "meaning": "There is a problem with the brakes.",
+              "reading": "ぶれーきにいじょうがあります。"
+            },
+            {
+              "japanese": "この車両を使わず、報告します。",
+              "meaning": "I will not use this vehicle; I will report it.",
+              "reading": "このしゃりょうをつかわず、ほうこくします。"
+            }
+          ],
+          "id": "aviation-03",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa alat, izin operator, cuaca, dan jalur sebelum memakai kendaraan atau peralatan layanan darat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not tow the baggage. Park in a safe place, mark the vehicle as required, and report the brakes and apron conditions.",
+          "scenario": "Rain has made the apron slippery, and the tug's brakes do not feel normal.",
+          "sections": [
+            {
+              "body": "Stairs, baggage tractors, and service vehicles move in tight spaces shared with aircraft and workers. Check brakes, leaks, alarms, and safety devices using the checklist. Rain, wind, lightning, slippery surfaces, and poor visibility can change the risks; follow airport operating limits.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the designated route and speed, keep clear of the aircraft, and secure equipment before leaving it. Do not operate equipment without authorization. If it is damaged or the weather changes, stop, park safely if possible, mark it, and report the issue.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa izin operator dan alat",
+            "Nilai cuaca, permukaan, serta jalur",
+            "Gunakan peralatan sesuai batas dan instruksi",
+            "Amankan alat dan laporkan perubahan atau kerusakan"
+          ],
+          "title": "Ground Service Equipment and Weather",
+          "vocabulary": [
+            {
+              "japanese": "地上支援機材",
+              "meaning": "ground-service equipment",
+              "reading": "ちじょうしえんきざい"
+            },
+            {
+              "japanese": "ブレーキ",
+              "meaning": "brake",
+              "reading": "ぶれーき"
+            },
+            {
+              "japanese": "天候",
+              "meaning": "weather",
+              "reading": "てんこう"
+            },
+            {
+              "japanese": "運転資格",
+              "meaning": "operating authorization",
+              "reading": "うんてんしかく"
+            }
+          ]
+        }
+      ],
+      "title": "Apron Safety and Aircraft Movement"
+    },
+    {
+      "description": "Maintain item identity, destination, condition, and placement according to documents and approved loading instructions.",
+      "id": "baggage",
+      "lessons": [
+        {
+          "caution": "Do not mix items for different flights or change a label without approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Unclear identification increases the risk of loading an item onto the wrong flight, so it must be traced.",
+              "kind": "knowledge",
+              "options": [
+                "To prevent misrouting and allow its identity to be verified",
+                "So all baggage fits on one cart",
+                "So the label can be discarded",
+                "So it can be loaded faster"
+              ],
+              "prompt": "Why should baggage with an unreadable label be separated?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not guess the destination; hold the baggage until its identity is confirmed.",
+              "kind": "case",
+              "options": [
+                "Put it on an available cart",
+                "Separate it and ask staff to verify the destination",
+                "Write the most common destination",
+                "Discard the label"
+              ],
+              "prompt": "The baggage destination is unreadable, and another cart is nearly full. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the label and special instructions → Match the flight and destination in the system → Place the baggage on the correct route → Hold any baggage without identification and request verification.",
+              "kind": "workflow",
+              "options": [
+                "Match the flight and destination in the system",
+                "Read the label and special instructions",
+                "Place the baggage on the correct route",
+                "Hold baggage without identification and request verification"
+              ],
+              "prompt": "In the “Sorting baggage by label and destination” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "荷物の行先が読めません。",
+              "meaning": "This baggage's destination cannot be read.",
+              "reading": "にもつのいきさきがよめません。"
+            },
+            {
+              "japanese": "確認するまで分けておきます。",
+              "meaning": "I will keep it separate until it is confirmed.",
+              "reading": "かくにんするまでわけておきます。"
+            }
+          ],
+          "id": "aviation-04",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan label bagasi dengan penerbangan dan tujuan sebelum dipindahkan ke alur muat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Separate the suitcase from the cart, do not guess its destination, and ask staff to verify it through the tracing procedure.",
+          "scenario": "A suitcase label is wet and its destination cannot be read, while a cart for another flight is nearly full.",
+          "sections": [
+            {
+              "body": "Keep every piece of baggage linked to its label, flight, and destination. Match label information against the approved list or system. Handle misrouted, unlabeled, damaged, or specially marked baggage through the tracing procedure; do not guess.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Read or scan the label, then place the item on the correctly marked cart. Check it again before the next transfer. If the label cannot be read, do not write a code from memory; hold the baggage and ask staff to verify its destination.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca label dan instruksi khusus",
+            "Cocokkan penerbangan serta tujuan pada sistem",
+            "Tempatkan bagasi pada jalur yang benar",
+            "Tahan bagasi tanpa identitas dan minta verifikasi"
+          ],
+          "title": "Sorting Baggage by Label and Destination",
+          "vocabulary": [
+            {
+              "japanese": "手荷物",
+              "meaning": "baggage",
+              "reading": "てにもつ"
+            },
+            {
+              "japanese": "行先",
+              "meaning": "destination",
+              "reading": "いきさき"
+            },
+            {
+              "japanese": "搭乗便",
+              "meaning": "flight",
+              "reading": "とうじょうびん"
+            },
+            {
+              "japanese": "仕分け",
+              "meaning": "sorting",
+              "reading": "しわけ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change cargo placement or quantity outside the approved plan.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Loads must follow approved calculations and plans.",
+              "kind": "knowledge",
+              "options": [
+                "Authorized personnel using an approved loading plan",
+                "The worker nearest the door",
+                "The cart driver",
+                "A passenger"
+              ],
+              "prompt": "Who determines aircraft load position and balance?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Differences in documents or position must be resolved before loading.",
+              "kind": "case",
+              "options": [
+                "Load it in another position",
+                "Hold the cargo, report the issue, and wait for confirmed instructions",
+                "Open the packaging without authorization",
+                "Change the list yourself"
+              ],
+              "prompt": "The cargo label is different, and the position does not match. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match cargo to the list and handling labels → Check the packaging and moving equipment → Move and load according to the approved plan → Confirm restraints are secured and report any discrepancies.",
+              "kind": "workflow",
+              "options": [
+                "Check the packaging and moving equipment",
+                "Match cargo to the list and handling labels",
+                "Move and load according to the approved plan",
+                "Confirm restraints are secured and report any discrepancies"
+              ],
+              "prompt": "In the “Handling and loading cargo” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この貨物はリストと違います。",
+              "meaning": "This cargo does not match the list.",
+              "reading": "このかもつはりすととちがいます。"
+            },
+            {
+              "japanese": "指示を確認してから積みます。",
+              "meaning": "I will load it after checking the instructions.",
+              "reading": "しじをかくにんしてからつみます。"
+            }
+          ],
+          "id": "aviation-05",
+          "minutes": 25,
+          "objectives": [
+            "Menangani kargo sesuai berat, tanda, instruksi pemuatan, dan pembagian tugas tim.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not load it in another position. Hold the cargo, report the mismatch, and wait for verified documents or instructions.",
+          "scenario": "The cargo label does not match the loading list, and the available loading position is unsuitable.",
+          "sections": [
+            {
+              "body": "Cargo varies in weight, shape, protection, and placement limits. Check its label, documents, packaging condition, and instructions from authorized staff. Do not calculate balance or create a loading plan yourself. Use suitable equipment or team assistance to prevent injury or damage.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Match the cargo to the flight list and assigned position. Use transfer equipment according to procedure and secure the load as instructed. If the weight or position differs from the documents, hold the cargo and request a recalculation or updated instructions.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan kargo dengan daftar dan tanda penanganan",
+            "Periksa kemasan serta alat pemindah",
+            "Pindahkan dan muat sesuai rencana yang disahkan",
+            "Konfirmasi penguncian dan laporkan perbedaan"
+          ],
+          "title": "Handling and Loading Cargo",
+          "vocabulary": [
+            {
+              "japanese": "貨物",
+              "meaning": "cargo",
+              "reading": "かもつ"
+            },
+            {
+              "japanese": "搭載",
+              "meaning": "loading",
+              "reading": "とうさい"
+            },
+            {
+              "japanese": "荷札",
+              "meaning": "item label",
+              "reading": "にふだ"
+            },
+            {
+              "japanese": "積付け",
+              "meaning": "load placement",
+              "reading": "つみつけ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not load damaged or incorrectly identified items until an authorized staff member has decided how to proceed.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Details support traceability and follow-up.",
+              "kind": "knowledge",
+              "options": [
+                "Flight/item, location, time, condition, and temporary action",
+                "A guess about the owner",
+                "The name of someone passing by",
+                "The word “damaged” alone"
+              ],
+              "prompt": "What key information belongs in a report about a problem item?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A leaking item with mismatched identification must be separated and inspected.",
+              "kind": "case",
+              "options": [
+                "Move it to the nearest baggage",
+                "Stop, separate it from the flow, and report it",
+                "Rewrap it secretly",
+                "Load it so the leak cannot be seen"
+              ],
+              "prompt": "A suitcase is leaking and is for a different flight from the other items on the cart. How should you respond?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the quantity and identification on receipt → Check the item's condition before moving it → Separate and mark any problem item → Report the facts and pass its status to a supervisor.",
+              "kind": "workflow",
+              "options": [
+                "Check the item's condition before moving it",
+                "Match the quantity and identification on receipt",
+                "Separate and mark any problem item",
+                "Report the facts and pass the status to a supervisor"
+              ],
+              "prompt": "In the “Inspecting damaged or misrouted items” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この荷物が壊れています。",
+              "meaning": "This baggage is damaged.",
+              "reading": "このにもつがこわれています。"
+            },
+            {
+              "japanese": "作業を止めて、担当者に伝えます。",
+              "meaning": "I will stop work and notify the staff.",
+              "reading": "さぎょうをとめて、たんとうしゃにつたえます。"
+            }
+          ],
+          "id": "aviation-06",
+          "minutes": 25,
+          "objectives": [
+            "Menghentikan alur saat menemukan bagasi/kargo rusak, salah identitas, atau jumlah yang tidak cocok.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop moving the suitcase, remove the cart from the loading flow, and report the leak and flight mismatch.",
+          "scenario": "A suitcase is leaking liquid on a cart, and its flight number differs from the other items.",
+          "sections": [
+            {
+              "body": "Check quantity and identity as items move from sorting to a cart and then to the aircraft. Look for damaged packaging, leaking liquid, and special markings. Reports should include the flight, item number if available, location, time, condition, and any temporary action taken.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "If an item is dropped, leaking, damaged, or assigned to another flight, separate it and notify the supervisor. Do not conceal damage without authorization. If the quantity differs or baggage is missing, follow the tracing process and pass the status to the next shift.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan jumlah dan identitas saat menerima",
+            "Periksa kondisi sebelum dipindahkan",
+            "Pisahkan barang bermasalah dan tandai",
+            "Laporkan fakta serta teruskan status kepada pengawas"
+          ],
+          "title": "Checking Damaged or Misrouted Items",
+          "vocabulary": [
+            {
+              "japanese": "破損",
+              "meaning": "damage",
+              "reading": "はそん"
+            },
+            {
+              "japanese": "個数",
+              "meaning": "item quantity",
+              "reading": "こすう"
+            },
+            {
+              "japanese": "漏れ",
+              "meaning": "leak",
+              "reading": "もれ"
+            },
+            {
+              "japanese": "追跡",
+              "meaning": "traceability",
+              "reading": "ついせき"
+            }
+          ]
+        }
+      ],
+      "title": "Baggage, Cargo, and Loading"
+    },
+    {
+      "description": "Learn about the expanded ground-handling work introduced in the 2026 revision, including communication and safety limits.",
+      "id": "services",
+      "lessons": [
+        {
+          "caution": "Do not share travel information or give assurances that have not been verified.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Use official information that has been confirmed.",
+              "kind": "knowledge",
+              "options": [
+                "Information checked in the system or confirmed by staff",
+                "An estimated departure time",
+                "Another passenger's information",
+                "A promise that every request will be met"
+              ],
+              "prompt": "What information is safe to provide to a passenger?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Gate staff can provide the official status and follow-up assistance.",
+              "kind": "case",
+              "options": [
+                "Assure the passenger they can still board without checking",
+                "Explain that the status is being confirmed, then contact gate staff",
+                "Ask the passenger to try on their own",
+                "Show another person's screen"
+              ],
+              "prompt": "The boarding status has not been updated. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Ask politely what the passenger needs → Check information using an official source → Give a brief, confirmed answer → Pass on special requests and confirm they were received.",
+              "kind": "workflow",
+              "options": [
+                "Check information using an official source",
+                "Ask politely what the passenger needs",
+                "Give a brief, confirmed answer",
+                "Pass on special requests and confirm they were received"
+              ],
+              "prompt": "In the “Passenger assistance and flight information” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "搭乗の状況を確認します。",
+              "meaning": "I am checking the boarding status.",
+              "reading": "とうじょうのじょうきょうをかくにんします。"
+            },
+            {
+              "japanese": "担当者におつなぎします。",
+              "meaning": "I will connect you with the relevant staff member.",
+              "reading": "たんとうしゃにおつなぎします。"
+            }
+          ],
+          "id": "aviation-07",
+          "minutes": 25,
+          "objectives": [
+            "Memberi informasi yang sudah dikonfirmasi dan meneruskan permintaan khusus kepada petugas yang tepat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not promise that the passenger can board. Explain that the status is being checked and contact the gate staff promptly.",
+          "scenario": "A passenger asks whether there is still time to board, but the screen shows that the status has not been updated.",
+          "sections": [
+            {
+              "body": "Passenger service includes queues, information, boarding assistance, and coordination when schedules change. Use data from the system or authorized staff, protect the privacy of documents, and do not promise an unverified seat or departure. Consider accessibility and safety needs.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Listen to the question, repeat important information, and answer simply. For wheelchair assistance, a health concern, a missing document, or difficulty understanding instructions, contact passenger-service staff. Confirm that the person who needs help is properly handed over to them.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Tanyakan kebutuhan dengan sopan",
+            "Periksa informasi pada sumber resmi",
+            "Berikan jawaban singkat yang terkonfirmasi",
+            "Serahkan permintaan khusus dan pastikan diterima"
+          ],
+          "title": "Passenger Assistance and Flight Information",
+          "vocabulary": [
+            {
+              "japanese": "旅客",
+              "meaning": "passenger",
+              "reading": "りょかく"
+            },
+            {
+              "japanese": "搭乗口",
+              "meaning": "boarding gate",
+              "reading": "とうじょうぐち"
+            },
+            {
+              "japanese": "案内",
+              "meaning": "directions",
+              "reading": "あんない"
+            },
+            {
+              "japanese": "確認中",
+              "meaning": "being confirmed",
+              "reading": "かくにんちゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not load a cart that is dirty, assigned to the wrong flight, has a broken seal, or has a faulty lock.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Cart identification, cleanliness, and condition protect both service and safety.",
+              "kind": "knowledge",
+              "options": [
+                "Flight, quantity, cleanliness, seals, wheels, and locks",
+                "Cart color alone",
+                "The workers' schedule",
+                "The name of a passenger near the kitchen"
+              ],
+              "prompt": "What must be checked before loading a food cart?"
+            },
+            {
+              "answer": 1,
+              "explanation": "An authorized staff member must clarify any discrepancy before loading.",
+              "kind": "case",
+              "options": [
+                "Replace the seal yourself and load it",
+                "Separate it and ask catering staff to inspect the contents and suitability",
+                "Mix it with another flight's meals",
+                "Ignore it if it looks fine"
+              ],
+              "prompt": "The food cart seal is broken, and the quantity does not match. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the flight and cart quantity → Check cleanliness, seals, wheels, and locks → Transport and load using the approved route → Confirm the locks and report any discrepancy.",
+              "kind": "workflow",
+              "options": [
+                "Check cleanliness, seals, wheels, and locks",
+                "Match the flight and cart quantity",
+                "Transport and load using the approved route",
+                "Confirm the locks and report any discrepancy"
+              ],
+              "prompt": "In the “Transporting and loading aircraft meals” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "台車の封印が壊れています。",
+              "meaning": "This cart's seal is broken.",
+              "reading": "だいしゃのふういんがこわれています。"
+            },
+            {
+              "japanese": "搭載せず、確認をお願いします。",
+              "meaning": "Please check before loading.",
+              "reading": "とうさいせず、かくにんをおねがいします。"
+            }
+          ],
+          "id": "aviation-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga kebersihan troli katering, kecocokan penerbangan, serta penguncian sebelum diangkut atau dimuat.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Set the cart aside, do not change its contents or seal yourself, and ask catering staff to inspect it before a loading decision is made.",
+          "scenario": "The meal cart has a broken seal, and its quantity differs from the flight list.",
+          "sections": [
+            {
+              "body": "Aircraft meal service has specific timing and destinations. Match the cart quantity, flight, instructions, and seals against the documents. Keep carts and food clean. Do not mix incorrectly labeled items or items with broken seals. Trained staff must load them using approved equipment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check cleanliness, wheels, locks, and markings before departure. Follow the route and supervisor's directions when approaching the aircraft. Make sure the cart is locked after loading. If the quantity or label does not match, do not change the contents; ask catering staff to verify them.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan penerbangan dan jumlah troli",
+            "Periksa kebersihan, segel, roda, dan pengunci",
+            "Angkut serta muat melalui rute yang disetujui",
+            "Pastikan penguncian dan laporkan selisih"
+          ],
+          "title": "Transporting and Loading Aircraft Meals",
+          "vocabulary": [
+            {
+              "japanese": "機内食",
+              "meaning": "aircraft meals",
+              "reading": "きないしょく"
+            },
+            {
+              "japanese": "台車",
+              "meaning": "cart",
+              "reading": "だいしゃ"
+            },
+            {
+              "japanese": "封印",
+              "meaning": "seal",
+              "reading": "ふういん"
+            },
+            {
+              "japanese": "搭載前",
+              "meaning": "before loading",
+              "reading": "とうさいまえ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not connect a hose or clean up a spill unless you are authorized to do so.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Aircraft fueling is specialized, hazardous work that requires training and authorization.",
+              "kind": "knowledge",
+              "options": [
+                "A specially trained and authorized staff member",
+                "Any apron worker",
+                "A passenger",
+                "A baggage handler without training"
+              ],
+              "prompt": "Who may operate aircraft-fueling equipment?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Do not touch or approach the spill; move away and call the specialist team.",
+              "kind": "case",
+              "options": [
+                "Touch the hose to find a leak",
+                "Move away safely, warn others, and report to the specialist team",
+                "Turn on a light to see",
+                "Clean it with your own cloth"
+              ],
+              "prompt": "There is a smell of fuel and liquid near a hose. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Identify the zone and confirm roles and authorization → Keep your distance and observe no-ignition rules → Move away as directed if there is a leak → Report the location and hazard signs to the specialist team.",
+              "kind": "workflow",
+              "options": [
+                "Keep your distance and observe no-ignition rules",
+                "Identify the zone and confirm roles and authorization",
+                "Move away as directed if there is a leak",
+                "Report the location and hazard signs to the specialist team"
+              ],
+              "prompt": "In the “Safe limits for fuel handling” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "燃料のにおいがします。",
+              "meaning": "There is a smell of fuel.",
+              "reading": "ねんりょうのにおいがします。"
+            },
+            {
+              "japanese": "近づかずに、担当者へ連絡します。",
+              "meaning": "I will stay back and contact the staff.",
+              "reading": "ちかづかずに、たんとうしゃへれんらくします。"
+            }
+          ],
+          "id": "aviation-09",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali bahaya bahan bakar dan menghentikan serta melaporkan keadaan sesuai zona dan prosedur.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Do not approach or touch the hose. Warn others, move away by a safe route, and notify the fuel staff immediately.",
+          "scenario": "There is a fuel smell and liquid is visible near a hose during preparations.",
+          "sections": [
+            {
+              "body": "Aircraft fuel handling is restricted to trained and authorized staff. Other workers must understand restricted zones, the ban on flames and sparks, safe routes, and how to raise an alarm. Refueling and inspections follow the operator's procedures; this material does not authorize anyone to refuel aircraft.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Near fuel operations, follow signs, distance requirements, and supervisor instructions. If you notice a strong smell, a spill, a damaged hose, or an ignition source, do not touch or clean anything. Leave by a safe route and notify the fuel staff and supervisor.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali zona dan pastikan peran serta otorisasi",
+            "Jaga jarak dan patuhi larangan sumber api",
+            "Menjauh sesuai instruksi bila ada kebocoran",
+            "Laporkan lokasi dan tanda bahaya ke petugas khusus"
+          ],
+          "title": "Safe Limits for Fuel Handling",
+          "vocabulary": [
+            {
+              "japanese": "燃料",
+              "meaning": "fuel",
+              "reading": "ねんりょう"
+            },
+            {
+              "japanese": "漏えい",
+              "meaning": "leak",
+              "reading": "ろうえい"
+            },
+            {
+              "japanese": "火気厳禁",
+              "meaning": "ignition sources are prohibited",
+              "reading": "かきげんきん"
+            },
+            {
+              "japanese": "退避",
+              "meaning": "move away/evacuate",
+              "reading": "たいひ"
+            }
+          ]
+        }
+      ],
+      "title": "Passengers, Catering, and Fuel"
+    },
+    {
+      "description": "Learn about work instructions, basic techniques, safety, and recordkeeping. Perform technical tasks only within your competence and current authorization.",
+      "id": "maintenance",
+      "lessons": [
+        {
+          "caution": "Do not sign off work you did not perform.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Traceability requires the correct documents and components and proper authorization.",
+              "kind": "knowledge",
+              "options": [
+                "Aircraft/component identification, task, instruction revision, and authorization",
+                "Aircraft color",
+                "Departure time alone",
+                "The previous worker's signature"
+              ],
+              "prompt": "What must be matched before maintenance begins?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Resolve document discrepancies before continuing the work.",
+              "kind": "case",
+              "options": [
+                "Use the old work card",
+                "Stop and ask a supervisor to check the identification and revision",
+                "Change the number yourself",
+                "Continue and record it later"
+              ],
+              "prompt": "The component number differs from the work card. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the aircraft identification and job number → Confirm the instructions are current and legible → Perform only the steps you are authorized to do → Record the results and submit them for verification.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the instructions are current and legible",
+                "Match the aircraft identification and job number",
+                "Perform only the steps you are authorized to do",
+                "Record the results and submit them for verification"
+              ],
+              "prompt": "In the “Work card and maintenance traceability” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "部品番号が違います。",
+              "meaning": "The component number is different.",
+              "reading": "ぶひんばんごうがちがいます。"
+            },
+            {
+              "japanese": "作業を止めて、確認します。",
+              "meaning": "I will stop work and confirm the details.",
+              "reading": "さぎょうをとめて、かくにんします。"
+            }
+          ],
+          "id": "aviation-10",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan identitas pesawat, tugas, komponen, dan status sebelum memulai atau menutup pekerjaan.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop work without changing the records. Contact the supervisor to verify the component identity and instruction revision.",
+          "scenario": "The component number on the work card differs from the installed component, and the card revision is unclear.",
+          "sections": [
+            {
+              "body": "Aircraft maintenance includes operational checks, scheduled maintenance, and component repairs within the organization's authorization. Work cards specify steps, tools, materials, limits, and records. Technicians must not substitute a familiar method. Complete records support traceability and the authorized staff member's release decision.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Match the aircraft number and component to the documents, including the instruction revision. Make sure the tools and materials are available. If the documents do not match or a required step has not been signed off, stop and clarify; do not close the work or declare the aircraft ready.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan identitas pesawat dan nomor tugas",
+            "Pastikan instruksi berlaku dan terbaca",
+            "Lakukan hanya langkah dalam otorisasi",
+            "Catat hasil dan serahkan untuk verifikasi"
+          ],
+          "title": "Work Cards and Maintenance Traceability",
+          "vocabulary": [
+            {
+              "japanese": "作業カード",
+              "meaning": "work card",
+              "reading": "さぎょうかーど"
+            },
+            {
+              "japanese": "機体番号",
+              "meaning": "aircraft number",
+              "reading": "きたいばんごう"
+            },
+            {
+              "japanese": "部品番号",
+              "meaning": "part number",
+              "reading": "ぶひんばんごう"
+            },
+            {
+              "japanese": "署名",
+              "meaning": "signature",
+              "reading": "しょめい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not leave small parts behind or use values that are not specified for the task.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A foreign object left behind can endanger the aircraft and must be located.",
+              "kind": "knowledge",
+              "options": [
+                "Stop the work and follow the search/reporting procedure",
+                "Assume it has left the aircraft",
+                "Continue if the engine is off",
+                "Replace it without making a record"
+              ],
+              "prompt": "What should you do if a small component being used goes missing?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Control and locate missing components before continuing the work.",
+              "kind": "case",
+              "options": [
+                "Continue after picking up another screw",
+                "Stop work in the area and report the issue for a search",
+                "Close the panel so it cannot be seen",
+                "Mark the work complete"
+              ],
+              "prompt": "A screw has fallen and has not been found. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the methods and limits in the work instructions → Prepare the tools and count them → Work according to the specified sequence, values, and techniques → Record results and report problems.",
+              "kind": "workflow",
+              "options": [
+                "Prepare the tools and count them",
+                "Read the methods and limits in the work instructions",
+                "Work according to the specified sequence, values, and techniques",
+                "Record results and report problems"
+              ],
+              "prompt": "In the “Fastening and mechanical measurement” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ねじが見つかりません。",
+              "meaning": "The screw cannot be found.",
+              "reading": "ねじがみつかりません。"
+            },
+            {
+              "japanese": "作業を止めて、報告します。",
+              "meaning": "I will stop work and report it.",
+              "reading": "さぎょうをとめて、ほうこくします。"
+            }
+          ],
+          "id": "aviation-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga komponen kecil serta memakai alat dan nilai yang ditetapkan dalam instruksi kerja.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop work in that area, notify the supervisor, and follow the foreign-object search procedure before work resumes.",
+          "scenario": "A screw falls into a narrow space and is not found during the initial check.",
+          "sections": [
+            {
+              "body": "Basic work may involve bolts, screws, nuts, locking devices, and mechanical measurements. Follow current instructions for cleanliness, sequence, tool size, and locking method. Limits and torque values depend on the task. Do not assume that similar-looking components have the same specifications.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Prepare a container so small items are not left in the aircraft. Follow the documented sequence, tools, and values. If a thread is damaged, a tool is unsuitable, or a measurement is outside limits, do not repair it outside your assigned task. Mark it and report it to a senior technician.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca metode dan batas pada instruksi kerja",
+            "Siapkan alat serta hitung kelengkapannya",
+            "Kerjakan sesuai urutan, nilai, dan teknik",
+            "Catat hasil dan laporkan masalah"
+          ],
+          "title": "Mechanical Fastening and Measurement",
+          "vocabulary": [
+            {
+              "japanese": "締結",
+              "meaning": "securing/tightening",
+              "reading": "ていけつ"
+            },
+            {
+              "japanese": "ねじ",
+              "meaning": "screw",
+              "reading": "ねじ"
+            },
+            {
+              "japanese": "計測器",
+              "meaning": "measuring tool",
+              "reading": "けいそくき"
+            },
+            {
+              "japanese": "異物残留",
+              "meaning": "foreign object left behind",
+              "reading": "いぶつざんりゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not measure a circuit that has not been made safe or alter a connector to clear an alarm.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Record results factually and have authorized personnel assess them.",
+              "kind": "knowledge",
+              "options": [
+                "Record the result and submit it to an authorized technician",
+                "Change the connection until the reading is normal",
+                "Delete the value",
+                "Declare it ready to fly"
+              ],
+              "prompt": "What should be done with an abnormal electrical measurement?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A burning smell is a hazard that must be made safe and investigated.",
+              "kind": "case",
+              "options": [
+                "Touch the connector to check for heat",
+                "Stop, do not touch it, and report it to a supervisor",
+                "Spray cleaning fluid",
+                "Close the work card"
+              ],
+              "prompt": "The reading is unstable, and there is a burning smell. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the circuit and measurement points to the work card → Confirm the tool, safe conditions, and authorization → Record the results and any abnormal signs → Stop and report the issue to an authorized technician.",
+              "kind": "workflow",
+              "options": [
+                "Confirm the tool, safe conditions, and authorization",
+                "Match the circuit and measurement points to the work card",
+                "Record the results and any abnormal signs",
+                "Stop and report the issue to an authorized technician"
+              ],
+              "prompt": "In the “Electrical measurement and anomaly handover” workflow, what is the next step after the first one?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "値が安定しません。",
+              "meaning": "The reading is unstable.",
+              "reading": "あたいがあんていしません。"
+            },
+            {
+              "japanese": "触らずに、責任者へ報告します。",
+              "meaning": "I will not touch it; I will report it.",
+              "reading": "さわらずに、せきにんしゃへほうこくします。"
+            }
+          ],
+          "id": "aviation-12",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat hasil pengukuran listrik dan meneruskan anomali tanpa menebak penyebab.",
+            "Memilih tindakan yang menjaga keselamatan, mutu, dan batas kewenangan.",
+            "Menggunakan ungkapan Jepang sederhana yang terkait dengan pekerjaan."
+          ],
+          "response": "Stop measuring, do not touch the connector, and report the smell and readings to the maintenance supervisor.",
+          "scenario": "The electrical reading is unstable, and there is a burning smell near the connector.",
+          "sections": [
+            {
+              "body": "Aircraft electrical measurements must follow the specified instructions, test points, tools, and circuit conditions. Competent staff perform system isolation and inspection. Record values and units. Stop work if readings are abnormal, wires are worn, there is a burning smell, or a connector is loose; do not alter a connection to make results appear normal.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the circuit identity on the work card, confirm it is safe, and measure only within your assigned task. If the reading is unstable or outside limits, stop and record the facts. Refer it to a senior technician for evaluation and a repair decision.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan rangkaian dan titik ukur dengan kartu kerja",
+            "Pastikan alat, kondisi aman, dan otorisasi",
+            "Catat hasil dan tanda tidak normal",
+            "Hentikan serta laporkan kepada teknisi berwenang"
+          ],
+          "title": "Electrical Measurements and Anomaly Handover",
+          "vocabulary": [
+            {
+              "japanese": "電気計測",
+              "meaning": "electrical measurement",
+              "reading": "でんきけいそく"
+            },
+            {
+              "japanese": "配線",
+              "meaning": "wire/circuit",
+              "reading": "はいせん"
+            },
+            {
+              "japanese": "端子",
+              "meaning": "terminal/connector",
+              "reading": "たんし"
+            },
+            {
+              "japanese": "測定結果",
+              "meaning": "measurement result",
+              "reading": "そくていけっか"
+            }
+          ]
+        }
+      ],
+      "title": "Aircraft Maintenance and Quality Control"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA — Aviation Sector: Job Scope, Skills, and Japanese Language",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/aviation.html"
+    },
+    {
+      "title": "ISA — SSW No. 2 Job Descriptions: Ground Handling and Aircraft Maintenance",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/10_00180.html"
+    },
+    {
+      "title": "MLIT — Aviation Sector Policies, Requirements, and Examination Information",
+      "url": "https://www.mlit.go.jp/koku/koku_fr19_000011.html"
+    },
+    {
+      "title": "MLIT — Ground Handling Examination Guidelines, Effective August 1, 2026",
+      "url": "https://www.mlit.go.jp/koku/content/002001685.pdf"
+    },
+    {
+      "title": "JAEA — 2026 Revision and Ground Handling Study Materials",
+      "url": "https://exam.jaea.or.jp/?page_id=51378"
+    },
+    {
+      "title": "JAEA — Aircraft Maintenance Study and Examination Materials",
+      "url": "https://exam.jaea.or.jp/?page_id=389"
+    },
+    {
+      "title": "MLIT — SSW No. 2 Examination Guidelines for Aircraft Maintenance",
+      "url": "https://www.mlit.go.jp/koku/content/001872766.pdf"
+    }
+  ],
+  "version": 1
+}

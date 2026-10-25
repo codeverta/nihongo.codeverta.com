@@ -25,7 +25,7 @@ func (s *MemoryStore) AuthenticateEmail(email, password string) (domain.Profile,
 	return s.Profile(account.ID), nil
 }
 
-func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain.Profile, error) {
+func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity, deviceTimezone ...string) (domain.Profile, error) {
 	email := strings.ToLower(strings.TrimSpace(identity.Email))
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -35,6 +35,10 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 	existingAccount, ok := s.accounts[email]
 	if !ok {
 		id := uuid.NewString()
+		timezone := defaultStudyTimezone
+		if len(deviceTimezone) > 0 && isValidStudyTimezone(deviceTimezone[0]) {
+			timezone = deviceTimezone[0]
+		}
 		// Preserve progress from accounts created before durable account storage.
 		if s.gamification[database.UserUUID("google-"+identity.Subject)] != nil {
 			id = database.UserUUID("google-" + identity.Subject)
@@ -45,6 +49,7 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity) (domain
 			DisplayName: identity.DisplayName,
 			PhotoURL:    identity.PhotoURL,
 			GoogleSub:   identity.Subject,
+			Timezone:    timezone,
 		}
 	} else {
 		existingAccount.GoogleSub = identity.Subject
@@ -158,6 +163,10 @@ func (s *MemoryStore) ensureProfileForAccountLocked(account account) domain.Prof
 		profile.DisplayName = account.DisplayName
 		profile.Email = account.Email
 		profile.PhotoURL = account.profilePhotoURL()
+		profile.Timezone = account.Timezone
+		if profile.Timezone == "" {
+			profile.Timezone = defaultStudyTimezone
+		}
 		s.profiles[account.ID] = profile
 		return profile
 	}
@@ -167,11 +176,16 @@ func (s *MemoryStore) ensureProfileForAccountLocked(account account) domain.Prof
 }
 
 func profileForAccount(account account) domain.Profile {
+	timezone := account.Timezone
+	if timezone == "" {
+		timezone = defaultStudyTimezone
+	}
 	return domain.Profile{
 		ID:          account.ID,
 		DisplayName: account.DisplayName,
 		Email:       account.Email,
 		PhotoURL:    account.profilePhotoURL(),
+		Timezone:    timezone,
 		Target:      "JLPT N5",
 		Level:       1,
 		Entitlement: domain.Entitlement{Tier: domain.TierFree},

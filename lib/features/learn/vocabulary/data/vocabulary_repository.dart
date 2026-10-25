@@ -1,10 +1,18 @@
 import 'package:dio/dio.dart';
+import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 
 class VocabularyRepository {
-  const VocabularyRepository(this._dio);
+  const VocabularyRepository(
+    this._dio, {
+    OfflinePracticeService? offlinePractice,
+  }) : _offlinePractice = offlinePractice;
 
   final Dio _dio;
+  final OfflinePracticeService? _offlinePractice;
+  Stream<OfflinePracticeSyncEvent> get syncEvents =>
+      _offlinePractice?.syncEvents ??
+      const Stream<OfflinePracticeSyncEvent>.empty();
 
   Future<List<VocabularyLevel>> getLevels() async {
     final data = await _getList('/vocabulary/levels');
@@ -18,6 +26,15 @@ class VocabularyRepository {
   }
 
   Future<VocabularyAttempt> startAttempt(String lessonId) async {
+    if (_offlinePractice != null) {
+      try {
+        return VocabularyAttempt.fromJson(
+          await _offlinePractice.start('vocabulary', lessonId),
+        );
+      } on DioException catch (error) {
+        if (!_canUseLegacyOnlineQuiz(error)) rethrow;
+      }
+    }
     return VocabularyAttempt.fromJson(
       await _post('/vocabulary/lessons/$lessonId/attempts'),
     );
@@ -28,6 +45,12 @@ class VocabularyRepository {
     required String questionId,
     required String optionId,
   }) async {
+    if (_offlinePractice != null &&
+        await _offlinePractice.ownsAttempt(attemptId)) {
+      return AnswerFeedback.fromJson(
+        await _offlinePractice.answer(attemptId, questionId, optionId),
+      );
+    }
     return AnswerFeedback.fromJson(
       await _post(
         '/vocabulary/attempts/$attemptId/answers',
@@ -37,9 +60,20 @@ class VocabularyRepository {
   }
 
   Future<VocabularyResult> complete(String attemptId) async {
+    if (_offlinePractice != null &&
+        await _offlinePractice.ownsAttempt(attemptId)) {
+      return VocabularyResult.fromJson(
+        await _offlinePractice.complete(attemptId),
+      );
+    }
     return VocabularyResult.fromJson(
       await _post('/vocabulary/attempts/$attemptId/complete'),
     );
+  }
+
+  bool _canUseLegacyOnlineQuiz(DioException error) {
+    final status = error.response?.statusCode;
+    return status == 404 || status == 503;
   }
 
   Future<Map<String, dynamic>> _get(String path) async {

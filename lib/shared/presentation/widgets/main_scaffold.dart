@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/exam_hub_screen.dart';
@@ -116,31 +117,31 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
         child: NavigationBar(
           selectedIndex: _selectedIndex,
           onDestinationSelected: _selectDestination,
-          destinations: const [
+          destinations: [
             NavigationDestination(
-              icon: Icon(Icons.home_outlined),
-              selectedIcon: Icon(Icons.home_rounded),
-              label: 'Beranda',
+              icon: const Icon(Icons.home_outlined),
+              selectedIcon: const Icon(Icons.home_rounded),
+              label: 'Beranda'.localized(context),
             ),
             NavigationDestination(
-              icon: Icon(Icons.local_library_outlined),
-              selectedIcon: Icon(Icons.local_library_rounded),
-              label: 'Belajar',
+              icon: const Icon(Icons.local_library_outlined),
+              selectedIcon: const Icon(Icons.local_library_rounded),
+              label: 'Belajar'.localized(context),
             ),
             NavigationDestination(
-              icon: Icon(Icons.quiz_outlined),
-              selectedIcon: Icon(Icons.quiz_rounded),
-              label: 'Ujian',
+              icon: const Icon(Icons.quiz_outlined),
+              selectedIcon: const Icon(Icons.quiz_rounded),
+              label: 'Ujian'.localized(context),
             ),
             NavigationDestination(
-              icon: Icon(Icons.search_outlined),
-              selectedIcon: Icon(Icons.manage_search_rounded),
-              label: 'Kamus',
+              icon: const Icon(Icons.search_outlined),
+              selectedIcon: const Icon(Icons.manage_search_rounded),
+              label: 'Kamus'.localized(context),
             ),
             NavigationDestination(
-              icon: Icon(Icons.person_outline_rounded),
-              selectedIcon: Icon(Icons.person_rounded),
-              label: 'Profil',
+              icon: const Icon(Icons.person_outline_rounded),
+              selectedIcon: const Icon(Icons.person_rounded),
+              label: 'Profil'.localized(context),
             ),
           ],
         ),

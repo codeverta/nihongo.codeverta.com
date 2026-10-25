@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="{{.Title}} for Nihongo Master by Codeverta">
+<title>{{.Title}} · Nihongo Master</title>
+<style>
+body{margin:0;background:#FBFAF7;color:#14163C;font:17px/1.75 system-ui,sans-serif}
+header,main,footer{max-width:880px;margin:auto;padding:24px}
+header{border-bottom:1px solid #dde2ee}
+nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+a{color:#1D2088;text-underline-offset:4px}
+.brand{display:inline-block;margin-bottom:8px;font-weight:900;font-size:1.15rem;color:#1D2088;text-decoration:none}
+main{background:white;border-radius:20px;margin:28px auto;padding:32px;box-sizing:border-box}
+h1{font-size:2rem;line-height:1.2;color:#1D2088;letter-spacing:-.02em}
+h2{font-size:1.3rem;margin-top:32px}
+small,.meta{color:#56617a}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{border:1px solid #dde2ee;padding:12px;text-align:left;vertical-align:top}
+.button{display:inline-block;background:#E60012;color:white;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:700}
+@media(max-width:650px){main{margin:12px;padding:20px}header,footer{padding:20px}table{display:block;overflow:auto}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/en/">Nihongo Master</a>
+  <nav aria-label="Information">
+    <a href="/en/legal">Information</a>
+    <a href="/en/privacy-policy">Privacy</a>
+    <a href="/en/terms-of-service">Terms</a>
+    <a href="/en/refund-policy">Refunds</a>
+    <a href="/en/delete-account">Delete account</a>
+    <a href="/en/support">Support</a>
+    <a href="/en/data-safety">Data safety</a>
+    <a href="/" lang="id">Bahasa Indonesia</a>
+  </nav>
+</header>
+<main>
+  <h1>{{.Title}}</h1>
+  <p class="meta">Effective October 14, 2026 · Nihongo Master (com.codeverta.nihongomaster)</p>
+  {{template "content" .}}
+</main>
+<footer>
+  <p><a href="https://play.google.com/store/apps/details?id=com.codeverta.nihongomaster">Get Nihongo Master on Google Play</a></p>
+  <p>Operated by Codeverta. Contact: <a href="mailto:{{.Email}}">{{.Email}}</a></p>
+  <small>This public page can be viewed without an app account.</small>
+</footer>
+</body>
+</html>

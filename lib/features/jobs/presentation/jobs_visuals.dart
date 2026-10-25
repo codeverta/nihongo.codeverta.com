@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/jobs/domain/job_models.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_visuals.dart';
 
@@ -31,7 +32,8 @@ class JobBoardHero extends StatelessWidget {
             'assets/images/ssw/ssw-careers.webp',
             fit: BoxFit.cover,
             alignment: const Alignment(.78, .5),
-            semanticLabel: 'Ilustrasi pekerja dari berbagai bidang di Jepang',
+            semanticLabel: 'Ilustrasi pekerja dari berbagai bidang di Jepang'
+                .localized(context),
           ),
         ),
         Positioned.fill(
@@ -61,11 +63,14 @@ class JobBoardHero extends StatelessWidget {
                   color: Colors.white.withValues(alpha: .8),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 6,
+                  ),
                   child: Text(
-                    'PELUANG KERJA',
-                    style: TextStyle(
+                    'PELUANG KERJA'.localized(context),
+                    style: const TextStyle(
                       color: _ink,
                       fontSize: 11,
                       letterSpacing: .7,
@@ -75,9 +80,9 @@ class JobBoardHero extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Langkah berikutnya\nmenuju Jepang',
-                style: TextStyle(
+              Text(
+                'Langkah berikutnya\nmenuju Jepang'.localized(context),
+                style: const TextStyle(
                   color: _ink,
                   fontSize: 21,
                   height: 1.12,
@@ -85,9 +90,11 @@ class JobBoardHero extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text(
-                'Temukan peluang dari berbagai sumber terpercaya.',
-                style: TextStyle(color: _ink, height: 1.3),
+              Text(
+                'Temukan peluang dari berbagai sumber terpercaya.'.localized(
+                  context,
+                ),
+                style: const TextStyle(color: _ink, height: 1.3),
               ),
             ],
           ),
@@ -119,7 +126,7 @@ class JobCategoryStrip extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 10),
           child: Text(
-            'Jelajahi bidang',
+            'Jelajahi bidang'.localized(context),
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w800,
               color: const Color(0xFF1D2088),
@@ -180,7 +187,7 @@ class _JobCategoryCard extends StatelessWidget {
       child: Semantics(
         button: true,
         selected: selected,
-        label: 'Kategori ${item.label}',
+        label: 'Kategori ${item.label}'.localized(context),
         child: Material(
           color: Colors.white,
           clipBehavior: Clip.antiAlias,

@@ -13,10 +13,12 @@ class FakeHistory extends LearningHistoryRepository {
   FakeHistory() : super(Dio());
   List<LearningActivity> items = [];
   bool offline = false;
+  Completer<List<LearningActivity>>? pendingFetch;
   Completer<LearningActivity>? pendingSave;
   final saves = <LearningActivity>[];
   @override
   Future<List<LearningActivity>> fetch() async {
+    if (pendingFetch != null) return pendingFetch!.future;
     if (offline) throw StateError('offline');
     return items;
   }
@@ -89,6 +91,34 @@ void main() {
       );
       expect(index, 2);
       expect(restored.state.length, 1);
+    },
+  );
+  test(
+    'opening a lesson does not wait for a stalled history request',
+    () async {
+      final repository = FakeHistory()..pendingFetch = Completer();
+      final controller = LearningHistoryController(
+        preferences,
+        repository,
+        'a',
+      );
+      addTearDown(controller.dispose);
+
+      final position = await controller
+          .open(
+            kind: 'grammar',
+            lessonId: 'grammar-n5-1',
+            title: 'Materi 1',
+            total: 4,
+            completed: false,
+          )
+          .timeout(const Duration(milliseconds: 100));
+      expect(position, 0);
+      expect(controller.state.single.lessonId, 'grammar-n5-1');
+
+      final refreshing = controller.refresh();
+      repository.pendingFetch!.complete([]);
+      await refreshing;
     },
   );
   test(
@@ -165,6 +195,7 @@ void main() {
         'a',
       );
       addTearDown(controller.dispose);
+      await controller.refresh();
       await controller.open(
         kind: 'grammar',
         lessonId: 'grammar-n5-2',

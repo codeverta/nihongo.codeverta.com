@@ -32,6 +32,7 @@ jobs:
     env:
       API_BASE_URL: ${{ vars.API_BASE_URL }}
       GOOGLE_SERVER_CLIENT_ID: ${{ vars.GOOGLE_SERVER_CLIENT_ID }}
+      OFFLINE_ACCESS_PUBLIC_KEY: ${{ vars.OFFLINE_ACCESS_PUBLIC_KEY }}
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -154,6 +155,16 @@ jobs:
           : "${ANDROID_KEY_PASSWORD:?Add the upload key password as an Actions secret.}"
           : "${GOOGLE_SERVER_CLIENT_ID:?Add the Web OAuth Client ID as an Actions variable.}"
           : "${API_BASE_URL:?Add the production API URL as an Actions variable.}"
+          : "${OFFLINE_ACCESS_PUBLIC_KEY:?Add the offline entitlement public key as an Actions variable.}"
+          python3 - <<'PY'
+          import base64, os
+          try:
+              key = base64.b64decode(os.environ['OFFLINE_ACCESS_PUBLIC_KEY'], validate=True)
+          except Exception:
+              raise SystemExit('OFFLINE_ACCESS_PUBLIC_KEY must be a base64 Ed25519 public key.')
+          if len(key) != 32:
+              raise SystemExit('OFFLINE_ACCESS_PUBLIC_KEY must decode to exactly 32 bytes.')
+          PY
           [[ "$GOOGLE_SERVER_CLIENT_ID" == *.apps.googleusercontent.com ]]
           [[ "$API_BASE_URL" == https://* ]]
 
@@ -182,6 +193,7 @@ jobs:
           --build-number="$BUILD_NUMBER"
           --dart-define=API_BASE_URL="$API_BASE_URL"
           --dart-define=GOOGLE_SERVER_CLIENT_ID="$GOOGLE_SERVER_CLIENT_ID"
+          --dart-define=OFFLINE_ACCESS_PUBLIC_KEY="$OFFLINE_ACCESS_PUBLIC_KEY"
 
       - name: Build installable APK
         env:
@@ -196,6 +208,7 @@ jobs:
           --build-number="$BUILD_NUMBER"
           --dart-define=API_BASE_URL="$API_BASE_URL"
           --dart-define=GOOGLE_SERVER_CLIENT_ID="$GOOGLE_SERVER_CLIENT_ID"
+          --dart-define=OFFLINE_ACCESS_PUBLIC_KEY="$OFFLINE_ACCESS_PUBLIC_KEY"
 
       - name: Prepare release files
         run: |

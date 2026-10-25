@@ -5,6 +5,7 @@ import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
@@ -37,10 +38,17 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               OutlinedButton.icon(
                 onPressed: () => context.push('/settings/display'),
                 icon: const Icon(Icons.text_fields_rounded),
-                label: const Text('Pengaturan tampilan'),
+                label: Text('Pengaturan tampilan'.localized(context)),
               ),
               const SizedBox(height: 12),
-              const Text('Masuk untuk melihat profil.'),
+              OutlinedButton.icon(
+                key: const Key('replay-onboarding'),
+                onPressed: () => context.push('/onboarding?preview=1'),
+                icon: const Icon(Icons.auto_stories_outlined),
+                label: Text('Panduan aplikasi'.localized(context)),
+              ),
+              const SizedBox(height: 12),
+              Text('Masuk untuk melihat profil.'.localized(context)),
               const LegalLinks(),
               const AttributionsLink(),
             ],
@@ -69,7 +77,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   children: [
                     Expanded(
                       child: Text(
-                        'Profil',
+                        'Profil'.localized(context),
                         style: Theme.of(context).textTheme.headlineMedium
                             ?.copyWith(fontWeight: FontWeight.w900),
                       ),
@@ -77,7 +85,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     IconButton.filledTonal(
                       onPressed: () => context.push('/notifications'),
                       icon: const Icon(Icons.settings_outlined),
-                      tooltip: 'Pengaturan notifikasi',
+                      tooltip: 'Pengaturan notifikasi'.localized(context),
                     ),
                   ],
                 ),
@@ -89,7 +97,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Foto dikompres sebelum diunggah. Tautan foto dapat dibuka oleh siapa pun yang memilikinya.',
+                  'Foto dikompres sebelum diunggah. Tautan foto dapat dibuka oleh siapa pun yang memilikinya.'
+                      .localized(context),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const SizedBox(height: 16),
@@ -107,7 +116,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 ],
                 const SizedBox(height: 28),
                 Text(
-                  'Gamification',
+                  'Gamification'.localized(context),
                   style: Theme.of(
                     context,
                   ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
@@ -124,7 +133,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         onPressed: () => context.push('/achievements'),
                         icon: const Icon(Icons.emoji_events_outlined),
                         label: Text(
-                          'Lihat semua achievement (${data.unlockedCount}/${data.achievements.length})',
+                          'Lihat semua achievement (${data.unlockedCount}/${data.achievements.length})'
+                              .localized(context),
                         ),
                       ),
                     ],
@@ -155,12 +165,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
           children: [
             ListTile(
               leading: const Icon(Icons.photo_library_outlined),
-              title: const Text('Pilih dari galeri'),
+              title: Text('Pilih dari galeri'.localized(context)),
               onTap: () => Navigator.pop(context, ImageSource.gallery),
             ),
             ListTile(
               leading: const Icon(Icons.photo_camera_outlined),
-              title: const Text('Ambil foto'),
+              title: Text('Ambil foto'.localized(context)),
               onTap: () => Navigator.pop(context, ImageSource.camera),
             ),
           ],
@@ -210,25 +220,26 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     if (!mounted) return;
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(message)));
+      ..showSnackBar(SnackBar(content: Text(message.localized(context))));
   }
 
   Future<void> _confirmLogout(BuildContext context, WidgetRef ref) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Keluar dari akun?'),
-        content: const Text(
-          'Progress lokal tetap aman dan dapat disinkronkan saat masuk kembali.',
+        title: Text('Keluar dari akun?'.localized(context)),
+        content: Text(
+          'Data pribadi di perangkat akan dihapus. Progres dan penilaian offline yang belum tersinkron juga akan hilang. Hubungkan internet sebelum logout untuk menyinkronkannya.'
+              .localized(context),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Batal'),
+            child: Text('Batal'.localized(context)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Logout'),
+            child: Text('Logout'.localized(context)),
           ),
         ],
       ),
@@ -242,18 +253,19 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Hapus akun permanen?'),
-        content: const Text(
-          'Profil, progress, achievement, dan sesi login akan dihapus. Pembayaran store tidak otomatis direfund. Bukti transaksi minimum disimpan untuk restore dan mencegah penyalahgunaan. Setelah membuat akun baru, gunakan Restore dengan akun store pembeli.',
+        title: Text('Hapus akun permanen?'.localized(context)),
+        content: Text(
+          'Profil, progress, achievement, dan sesi login akan dihapus. Pembayaran store tidak otomatis direfund. Bukti transaksi minimum disimpan untuk restore dan mencegah penyalahgunaan. Setelah membuat akun baru, gunakan Restore dengan akun store pembeli.'
+              .localized(context),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Batal'),
+            child: Text('Batal'.localized(context)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Hapus akun'),
+            child: Text('Hapus akun'.localized(context)),
           ),
         ],
       ),
@@ -265,9 +277,11 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     } on Object {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Text(
-              'Akun belum dihapus. Periksa koneksi lalu coba lagi.',
+              'Akun belum dihapus. Periksa koneksi lalu coba lagi.'.localized(
+                context,
+              ),
             ),
           ),
         );
@@ -295,7 +309,7 @@ class _ProfileHeader extends StatelessWidget {
       children: [
         Semantics(
           button: onChangePhoto != null,
-          label: 'Ubah foto profil',
+          label: 'Ubah foto profil'.localized(context),
           child: InkWell(
             onTap: onChangePhoto,
             customBorder: const CircleBorder(),
@@ -347,7 +361,7 @@ class _ProfileHeader extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                user?.email ?? 'Memuat profil...',
+                user?.email ?? 'Memuat profil...'.localized(context),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 7),
@@ -423,8 +437,8 @@ class _LifetimeCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Lifetime Access',
+                Text(
+                  'Lifetime Access'.localized(context),
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
@@ -433,7 +447,7 @@ class _LifetimeCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  'Sekali bayar, belajar selamanya.',
+                  'Sekali bayar, belajar selamanya.'.localized(context),
                   style: TextStyle(color: Colors.white.withValues(alpha: 0.72)),
                 ),
               ],
@@ -442,7 +456,7 @@ class _LifetimeCard extends StatelessWidget {
           TextButton(
             onPressed: () => context.push('/premium'),
             style: TextButton.styleFrom(foregroundColor: Colors.white),
-            child: const Text('Lihat'),
+            child: Text('Lihat'.localized(context)),
           ),
         ],
       ),
@@ -462,40 +476,52 @@ class _ProfileMenu extends StatelessWidget {
       child: Column(
         children: [
           _ProfileMenuTile(
+            icon: Icons.auto_stories_outlined,
+            title: 'Panduan aplikasi'.localized(context),
+            onTap: () => context.push('/onboarding?preview=1'),
+          ),
+          const Divider(height: 1, indent: 68),
+          _ProfileMenuTile(
             icon: Icons.text_fields_rounded,
-            title: 'Pengaturan tampilan',
+            title: 'Pengaturan tampilan'.localized(context),
             onTap: () => context.push('/settings/display'),
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
+            icon: Icons.offline_bolt_outlined,
+            title: 'Belajar offline & penyimpanan'.localized(context),
+            onTap: () => context.push('/settings/offline'),
+          ),
+          const Divider(height: 1, indent: 68),
+          _ProfileMenuTile(
             icon: Icons.bar_chart_rounded,
-            title: 'Statistik pembelajaran',
+            title: 'Statistik pembelajaran'.localized(context),
             onTap: () => context.push('/achievements'),
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
             icon: Icons.logout_rounded,
-            title: 'Logout',
+            title: 'Logout'.localized(context),
             iconColor: Theme.of(context).colorScheme.error,
             onTap: onLogout,
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
             icon: Icons.credit_card_rounded,
-            title: 'Paket & pembayaran',
+            title: 'Paket & pembayaran'.localized(context),
             onTap: () => context.push('/premium'),
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
             icon: Icons.delete_forever_outlined,
-            title: 'Hapus akun',
+            title: 'Hapus akun'.localized(context),
             iconColor: Theme.of(context).colorScheme.error,
             onTap: onDelete,
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
             icon: Icons.help_outline_rounded,
-            title: 'Bantuan',
+            title: 'Bantuan'.localized(context),
             onTap: () => openLegalPage(context, '/support'),
           ),
         ],
@@ -526,7 +552,10 @@ class _ProfileMenuTile extends StatelessWidget {
         icon,
         color: iconColor ?? Theme.of(context).colorScheme.primary,
       ),
-      title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+      title: Text(
+        title.localized(context),
+        style: const TextStyle(fontWeight: FontWeight.w600),
+      ),
       trailing: const Icon(Icons.chevron_right_rounded),
     );
   }

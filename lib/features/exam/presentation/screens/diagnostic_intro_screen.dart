@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 
@@ -34,13 +35,13 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
   Widget build(BuildContext context) {
     final data = ref.watch(diagnosticOverviewProvider);
     return Scaffold(
-      appBar: AppBar(title: const Text('JLPT N5 Diagnostic')),
+      appBar: AppBar(title: Text('JLPT N5 Diagnostic'.localized(context))),
       body: data.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Padding(
           padding: const EdgeInsets.all(20),
           child: ExamMessage(
-            message: diagnosticError(e),
+            message: diagnosticError(e).localized(context),
             retry: () => ref.invalidate(diagnosticOverviewProvider),
           ),
         ),
@@ -54,10 +55,10 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                 child: ListView(
                   padding: const EdgeInsets.all(20),
                   children: [
-                    const DiagnosticHero(
-                      title: 'Kenali titik\nawal belajarmu.',
+                    DiagnosticHero(
+                      title: 'Kenali titik\nawal belajarmu.'.localized(context),
                       subtitle:
-                          'Kerjakan dengan kemampuanmu saat ini. Hasilnya membantu memilih materi belajar berikutnya.',
+                          'Kerjakan dengan kemampuanmu saat ini. Hasilnya membantu memilih materi belajar berikutnya.'.localized(context),
                     ),
                     const SizedBox(height: 20),
                     ExamPanel(
@@ -67,19 +68,19 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                           _stat(
                             Icons.quiz_outlined,
                             '${exam['questionCount']}',
-                            'soal',
+                            'soal'.localized(context),
                           ),
                           _stat(
                             Icons.timer_outlined,
                             '${exam['durationMinutes']}',
-                            'menit',
+                            'menit'.localized(context),
                           ),
-                          _stat(Icons.lock_open_rounded, 'Gratis', 'akses'),
+                          _stat(Icons.lock_open_rounded, 'Gratis'.localized(context), 'akses'.localized(context)),
                         ],
                       ),
                     ),
                     const SizedBox(height: 24),
-                    const ExamHeading('Yang akan kamu kerjakan'),
+                    ExamHeading('Yang akan kamu kerjakan'.localized(context)),
                     for (final name in [
                       'Kosakata',
                       'Kanji',
@@ -99,7 +100,7 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                               const SizedBox(width: 14),
                               Expanded(
                                 child: Text(
-                                  name,
+                                  name.localized(context),
                                   style: const TextStyle(
                                     fontSize: 17,
                                     fontWeight: FontWeight.w800,
@@ -107,7 +108,7 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                                 ),
                               ),
                               Text(
-                                '${counts[name]} soal',
+                                '${counts[name]} ${'soal'.localized(context)}',
                                 style: const TextStyle(
                                   color: examInk,
                                   fontWeight: FontWeight.w700,
@@ -118,26 +119,26 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                         ),
                       ),
                     const SizedBox(height: 14),
-                    const ExamPanel(
+                    ExamPanel(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Sebelum mulai',
-                            style: TextStyle(
+                            'Sebelum mulai'.localized(context),
+                            style: const TextStyle(
                               fontWeight: FontWeight.w800,
                               fontSize: 17,
                             ),
                           ),
                           SizedBox(height: 10),
                           Text(
-                            '• Pilih satu jawaban untuk setiap soal.\n• Kamu boleh kembali dan mengubah jawaban.\n• Tandai soal yang ingin diperiksa lagi.\n• Jawaban disimpan saat koneksi tersedia.\n• Waktu tetap berjalan saat keluar dari sesi.\n• Soal kosong dihitung salah.',
-                            style: TextStyle(height: 1.8),
+                            '• Pilih satu jawaban untuk setiap soal.\n• Kamu boleh kembali dan mengubah jawaban.\n• Tandai soal yang ingin diperiksa lagi.\n• Jawaban disimpan saat koneksi tersedia.\n• Waktu tetap berjalan saat keluar dari sesi.\n• Soal kosong dihitung salah.'.localized(context),
+                            style: const TextStyle(height: 1.8),
                           ),
                           SizedBox(height: 12),
                           Text(
-                            'Latihan buatan Nihongo Master. Hasil berupa persentase jawaban benar, bukan skor atau prediksi kelulusan resmi JLPT.',
-                            style: TextStyle(fontSize: 12, height: 1.5),
+                            'Latihan buatan Nihongo Master. Hasil berupa persentase jawaban benar, bukan skor atau prediksi kelulusan resmi JLPT.'.localized(context),
+                            style: const TextStyle(fontSize: 12, height: 1.5),
                           ),
                         ],
                       ),
@@ -157,7 +158,7 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10),
                           child: Text(
-                            error!,
+                            error!.localized(context),
                             style: TextStyle(
                               color: Theme.of(context).colorScheme.error,
                             ),
@@ -175,7 +176,7 @@ class _DiagnosticIntroState extends ConsumerState<DiagnosticIntroScreen> {
                               )
                             : const Icon(Icons.play_arrow_rounded),
                         label: Text(
-                          active ? 'Lanjutkan sesi' : 'Mulai diagnostic',
+                          active ? 'Lanjutkan sesi'.localized(context) : 'Mulai diagnostic'.localized(context),
                         ),
                       ),
                     ],

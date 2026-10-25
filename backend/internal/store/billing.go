@@ -301,6 +301,12 @@ func (s *MemoryStore) DeleteAccountWithProfilePhoto(user string) (string, error)
 	}
 	if s.billingEnabled {
 		if err := s.ormWriter.Transaction(func(tx *gorm.DB) error {
+			if err := tx.Where("user_id = ?", user).Delete(&database.UserAnkiDeckMedia{}).Error; err != nil {
+				return err
+			}
+			if err := tx.Where("user_id = ?", user).Delete(&database.UserAnkiDeck{}).Error; err != nil {
+				return err
+			}
 			if err := tx.Where("user_id = ?", user).Delete(&database.GamificationUser{}).Error; err != nil {
 				return err
 			}
@@ -333,7 +339,15 @@ func (s *MemoryStore) DeleteAccountWithProfilePhoto(user string) (string, error)
 			return "", err
 		}
 	} else if s.gamificationDB != nil {
-		if err := s.ormWriter.Where("user_id = ?", user).Delete(&database.GamificationUser{}).Error; err != nil {
+		if err := s.ormWriter.Transaction(func(tx *gorm.DB) error {
+			if err := tx.Where("user_id = ?", user).Delete(&database.UserAnkiDeckMedia{}).Error; err != nil {
+				return err
+			}
+			if err := tx.Where("user_id = ?", user).Delete(&database.UserAnkiDeck{}).Error; err != nil {
+				return err
+			}
+			return tx.Where("user_id = ?", user).Delete(&database.GamificationUser{}).Error
+		}); err != nil {
 			return "", err
 		}
 	}
@@ -344,6 +358,7 @@ func (s *MemoryStore) DeleteAccountWithProfilePhoto(user string) (string, error)
 	delete(s.profiles, user)
 	delete(s.progress, user)
 	delete(s.gamification, user)
+	s.forgetUserAnkiDecksLocked(user)
 	delete(s.billingTokens, user)
 	for email, a := range s.accounts {
 		if a.ID == user {

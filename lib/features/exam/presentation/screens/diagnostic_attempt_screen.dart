@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_result_view.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
@@ -50,9 +51,9 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
     try {
       final data = await repository.session(widget.attemptId);
       if (!mounted) return;
-      secondsAtLoad = DateTime.parse(data['expiresAt'] as String)
-          .difference(DateTime.parse(data['serverTime'] as String))
-          .inSeconds;
+      secondsAtLoad = DateTime.parse(
+        data['expiresAt'] as String,
+      ).difference(DateTime.parse(data['serverTime'] as String)).inSeconds;
       watch
         ..reset()
         ..start();
@@ -94,7 +95,7 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
       if (mounted) {
         setState(
           () => error =
-              '${diagnosticError(e)} Pilihan belum tersimpan; pilih ulang.',
+              '${diagnosticError(e)} ${'Pilihan belum tersimpan; pilih ulang.'.localized(context)}',
         );
       }
     } finally {
@@ -129,20 +130,22 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
     final yes = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
-        title: const Text('Selesaikan diagnostic?'),
+        title: Text('Selesaikan diagnostic?'.localized(context)),
         content: Text(
           empty > 0
               ? 'Masih ada $empty soal kosong. Soal kosong dihitung salah. Kamu bisa memeriksanya sebelum mengirim.'
-              : 'Semua soal sudah dijawab. Setelah dikirim, jawaban tidak dapat diubah.',
+                    .localized(context)
+              : 'Semua soal sudah dijawab. Setelah dikirim, jawaban tidak dapat diubah.'
+                    .localized(context),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(c, false),
-            child: const Text('Periksa lagi'),
+            child: Text('Periksa lagi'.localized(context)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(c, true),
-            child: const Text('Kirim jawaban'),
+            child: Text('Kirim jawaban'.localized(context)),
           ),
         ],
       ),
@@ -167,12 +170,13 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const ExamHeading('Peta soal'),
+              ExamHeading('Peta soal'.localized(context)),
               Text(
-                '${answers.length}/${questions.length} dijawab • ${marked.length} ditandai',
+                '${answers.length}/${questions.length} dijawab • ${marked.length} ditandai'
+                    .localized(context),
               ),
               const SizedBox(height: 10),
-              const Text('Indigo: dijawab  ·  Bendera: ditandai'),
+              Text('Indigo: dijawab  ·  Bendera: ditandai'.localized(context)),
               const SizedBox(height: 20),
               Wrap(
                 spacing: 8,
@@ -186,14 +190,14 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
                         onPressed: () => Navigator.pop(c, i),
                         style: FilledButton.styleFrom(
                           padding: EdgeInsets.zero,
-                          backgroundColor: answers
-                                  .containsKey(questions[i]['id'])
+                          backgroundColor:
+                              answers.containsKey(questions[i]['id'])
                               ? examInk
                               : Theme.of(c).colorScheme.surfaceContainerHighest,
                           foregroundColor:
                               answers.containsKey(questions[i]['id'])
-                                  ? Colors.white
-                                  : examInk,
+                              ? Colors.white
+                              : examInk,
                           side: i == index
                               ? BorderSide(
                                   color: Theme.of(c).colorScheme.primary,
@@ -214,10 +218,7 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
                               ),
                             ),
                             if (marked.contains(questions[i]['id']))
-                              const Icon(
-                                Icons.flag_rounded,
-                                size: 12,
-                              ),
+                              const Icon(Icons.flag_rounded, size: 12),
                           ],
                         ),
                       ),
@@ -230,11 +231,9 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
                 child: OutlinedButton(
                   onPressed: () => Navigator.pop(
                     c,
-                    questions.indexWhere(
-                      (q) => !answers.containsKey(q['id']),
-                    ),
+                    questions.indexWhere((q) => !answers.containsKey(q['id'])),
                   ),
-                  child: const Text('Ke soal belum dijawab'),
+                  child: Text('Ke soal belum dijawab'.localized(context)),
                 ),
               ),
             ],
@@ -250,18 +249,19 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
     final yes = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
-        title: const Text('Keluar dari sesi?'),
-        content: const Text(
-          'Jawaban yang sudah tersimpan bisa dilanjutkan dari halaman Ujian. Timer tetap berjalan. Tanda soal tidak disimpan saat keluar.',
+        title: Text('Keluar dari sesi?'.localized(context)),
+        content: Text(
+          'Jawaban yang sudah tersimpan bisa dilanjutkan dari halaman Ujian. Timer tetap berjalan. Tanda soal tidak disimpan saat keluar.'
+              .localized(context),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(c, false),
-            child: const Text('Tetap di sini'),
+            child: Text('Tetap di sini'.localized(context)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(c, true),
-            child: const Text('Keluar'),
+            child: Text('Keluar'.localized(context)),
           ),
         ],
       ),
@@ -297,7 +297,11 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text(result == null ? 'Diagnostic N5' : 'Hasil diagnostic'),
+          title: Text(
+            result == null
+                ? 'Diagnostic N5'.localized(context)
+                : 'Hasil diagnostic'.localized(context),
+          ),
           actions: [
             if (session != null && result == null)
               Padding(
@@ -312,9 +316,7 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
                   ),
                   label: Text(
                     '${(remaining ~/ 60).toString().padLeft(2, '0')}:${(remaining % 60).toString().padLeft(2, '0')}',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w800,
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.w800),
                   ),
                 ),
               ),
@@ -323,235 +325,233 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
         body: loading
             ? const Center(child: CircularProgressIndicator())
             : result != null
-                ? DiagnosticResultView(result: result!)
-                : session == null
-                    ? Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: ExamMessage(
-                          message: error ?? 'Sesi tidak dapat dimuat.',
-                          retry: load,
+            ? DiagnosticResultView(result: result!)
+            : session == null
+            ? Padding(
+                padding: const EdgeInsets.all(20),
+                child: ExamMessage(
+                  message: (error ?? 'Sesi tidak dapat dimuat.').localized(
+                    context,
+                  ),
+                  retry: load,
+                ),
+              )
+            : Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              '${q!['section']}  /  ${'Soal'.localized(context)} ${index + 1} ${'dari'.localized(context)} ${questions.length}',
+                              style: const TextStyle(
+                                color: examInk,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            const Spacer(),
+                            IconButton(
+                              onPressed: busy ? null : numbers,
+                              icon: const Icon(Icons.grid_view_rounded),
+                              tooltip: 'Peta soal'.localized(context),
+                            ),
+                          ],
                         ),
-                      )
-                    : Column(
-                        children: [
+                        const SizedBox(height: 8),
+                        LinearProgressIndicator(
+                          value: answers.length / questions.length,
+                          color: examInk,
+                          backgroundColor: examInk.withValues(alpha: .1),
+                          minHeight: 6,
+                          borderRadius: BorderRadius.circular(99),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: ListView(
+                      controller: scroll,
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                      children: [
+                        if (expired)
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+                            padding: EdgeInsets.only(bottom: 12),
+                            child: Text(
+                              'Waktu habis. Jawaban tersimpan akan dinilai.'
+                                  .localized(context),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                        if ((q['passage'] as String? ?? '').isNotEmpty) ...[
+                          ExamPanel(
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      '${q!['section']}  /  Soal ${index + 1} dari ${questions.length}',
-                                      style: const TextStyle(
-                                        color: examInk,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                    const Spacer(),
-                                    IconButton(
-                                      onPressed: busy ? null : numbers,
-                                      icon: const Icon(Icons.grid_view_rounded),
-                                      tooltip: 'Peta soal',
-                                    ),
-                                  ],
+                                Text(
+                                  'BACAAN'.localized(context),
+                                  style: const TextStyle(
+                                    color: examGreen,
+                                    letterSpacing: 2,
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
-                                const SizedBox(height: 8),
-                                LinearProgressIndicator(
-                                  value: answers.length / questions.length,
-                                  color: examInk,
-                                  backgroundColor:
-                                      examInk.withValues(alpha: .1),
-                                  minHeight: 6,
-                                  borderRadius: BorderRadius.circular(99),
+                                const SizedBox(height: 14),
+                                Text(
+                                  q['passage'] as String,
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    height: 1.9,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
+                          const SizedBox(height: 16),
+                        ],
+                        ExamPanel(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                q['prompt'] as String,
+                                style: const TextStyle(
+                                  fontSize: 23,
+                                  height: 1.7,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                              Text(
+                                'Pilih satu jawaban'.localized(context),
+                                style: TextStyle(
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 18),
+                        for (final (i, option) in diagnosticList(
+                          q['options'],
+                        ).indexed)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: _Option(
+                              letter: String.fromCharCode(65 + i),
+                              text: option['text'] as String,
+                              selected: answers[q['id']] == option['id'],
+                              onTap: busy || expired
+                                  ? null
+                                  : () => select(
+                                      q['id'] as String,
+                                      option['id'] as String,
+                                    ),
+                            ),
+                          ),
+                        Row(
+                          children: [
+                            TextButton.icon(
+                              onPressed: busy
+                                  ? null
+                                  : () => setState(() {
+                                      final id = q['id'] as String;
+                                      if (!marked.add(id)) {
+                                        marked.remove(id);
+                                      }
+                                    }),
+                              icon: Icon(
+                                marked.contains(q['id'])
+                                    ? Icons.flag_rounded
+                                    : Icons.outlined_flag_rounded,
+                              ),
+                              label: Text(
+                                marked.contains(q['id'])
+                                    ? 'Ditandai untuk ditinjau'.localized(
+                                        context,
+                                      )
+                                    : 'Tandai soal'.localized(context),
+                              ),
+                            ),
+                            const Spacer(),
+                            if (busy)
+                              const SizedBox(
+                                width: 18,
+                                height: 18,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              ),
+                          ],
+                        ),
+                        if (answers.containsKey(q['id']))
+                          Text(
+                            'Jawaban tersimpan'.localized(context),
+                            style: const TextStyle(
+                              color: examGreen,
+                              fontSize: 12,
+                            ),
+                          ),
+                        if (error != null)
+                          Text(
+                            error!.localized(context),
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.error,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  SafeArea(
+                    top: false,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 56,
+                            height: 56,
+                            child: OutlinedButton(
+                              onPressed: busy || index == 0
+                                  ? null
+                                  : () => jump(index - 1),
+                              style: OutlinedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                minimumSize: const Size(0, 56),
+                              ),
+                              child: const Icon(Icons.arrow_back_rounded),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
                           Expanded(
-                            child: ListView(
-                              controller: scroll,
-                              padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-                              children: [
-                                if (expired)
-                                  const Padding(
-                                    padding: EdgeInsets.only(bottom: 12),
-                                    child: Text(
-                                      'Waktu habis. Jawaban tersimpan akan dinilai.',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ),
-                                if ((q['passage'] as String? ?? '')
-                                    .isNotEmpty) ...[
-                                  ExamPanel(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'BACAAN',
-                                          style: TextStyle(
-                                            color: examGreen,
-                                            letterSpacing: 2,
-                                            fontWeight: FontWeight.w800,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 14),
-                                        Text(
-                                          q['passage'] as String,
-                                          style: const TextStyle(
-                                            fontSize: 20,
-                                            height: 1.9,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(height: 16),
-                                ],
-                                ExamPanel(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        q['prompt'] as String,
-                                        style: const TextStyle(
-                                          fontSize: 23,
-                                          height: 1.7,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      const SizedBox(height: 16),
-                                      Text(
-                                        'Pilih satu jawaban',
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSurfaceVariant,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(height: 18),
-                                for (final (i, option)
-                                    in diagnosticList(q['options']).indexed)
-                                  Padding(
-                                    padding: const EdgeInsets.only(bottom: 12),
-                                    child: _Option(
-                                      letter: String.fromCharCode(65 + i),
-                                      text: option['text'] as String,
-                                      selected:
-                                          answers[q['id']] == option['id'],
-                                      onTap: busy || expired
-                                          ? null
-                                          : () => select(
-                                                q['id'] as String,
-                                                option['id'] as String,
-                                              ),
-                                    ),
-                                  ),
-                                Row(
-                                  children: [
-                                    TextButton.icon(
-                                      onPressed: busy
-                                          ? null
-                                          : () => setState(() {
-                                                final id = q['id'] as String;
-                                                if (!marked.add(id)) {
-                                                  marked.remove(id);
-                                                }
-                                              }),
-                                      icon: Icon(
-                                        marked.contains(q['id'])
-                                            ? Icons.flag_rounded
-                                            : Icons.outlined_flag_rounded,
-                                      ),
-                                      label: Text(
-                                        marked.contains(q['id'])
-                                            ? 'Ditandai untuk ditinjau'
-                                            : 'Tandai soal',
-                                      ),
-                                    ),
-                                    const Spacer(),
-                                    if (busy)
-                                      const SizedBox(
-                                        width: 18,
-                                        height: 18,
-                                        child: CircularProgressIndicator(
-                                          strokeWidth: 2,
-                                        ),
-                                      ),
-                                  ],
-                                ),
-                                if (answers.containsKey(q['id']))
-                                  const Text(
-                                    'Jawaban tersimpan',
-                                    style: TextStyle(
-                                      color: examGreen,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                if (error != null)
-                                  Text(
-                                    error!,
-                                    style: TextStyle(
-                                      color:
-                                          Theme.of(context).colorScheme.error,
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ),
-                          SafeArea(
-                            top: false,
-                            child: Padding(
-                              padding: const EdgeInsets.all(20),
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 56,
-                                    height: 56,
-                                    child: OutlinedButton(
-                                      onPressed: busy || index == 0
-                                          ? null
-                                          : () => jump(index - 1),
-                                      style: OutlinedButton.styleFrom(
-                                        padding: EdgeInsets.zero,
-                                        minimumSize: const Size(0, 56),
-                                      ),
-                                      child: const Icon(
-                                        Icons.arrow_back_rounded,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 12),
-                                  Expanded(
-                                    child: FilledButton(
-                                      onPressed: busy
-                                          ? null
-                                          : expired
-                                              ? finish
-                                              : index == questions.length - 1
-                                                  ? confirmFinish
-                                                  : () => jump(index + 1),
-                                      child: Text(
-                                        expired
-                                            ? 'Lihat hasil'
-                                            : index == questions.length - 1
-                                                ? 'Selesaikan ujian'
-                                                : 'Soal berikutnya',
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                            child: FilledButton(
+                              onPressed: busy
+                                  ? null
+                                  : expired
+                                  ? finish
+                                  : index == questions.length - 1
+                                  ? confirmFinish
+                                  : () => jump(index + 1),
+                              child: Text(
+                                expired
+                                    ? 'Lihat hasil'.localized(context)
+                                    : index == questions.length - 1
+                                    ? 'Selesaikan ujian'.localized(context)
+                                    : 'Soal berikutnya'.localized(context),
                               ),
                             ),
                           ),
                         ],
                       ),
+                    ),
+                  ),
+                ],
+              ),
       ),
     );
   }
@@ -570,53 +570,53 @@ class _Option extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) => Semantics(
-        selected: selected,
-        button: true,
-        child: Material(
-          color: selected
-              ? examInk.withValues(alpha: .07)
-              : Theme.of(context).colorScheme.surface,
-          borderRadius: BorderRadius.circular(20),
-          child: InkWell(
-            onTap: onTap,
+    selected: selected,
+    button: true,
+    child: Material(
+      color: selected
+          ? examInk.withValues(alpha: .07)
+          : Theme.of(context).colorScheme.surface,
+      borderRadius: BorderRadius.circular(20),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: selected
-                      ? examInk
-                      : Theme.of(context).colorScheme.outlineVariant,
-                  width: selected ? 2 : 1,
-                ),
-              ),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 18,
-                    backgroundColor: selected
-                        ? examInk
-                        : Theme.of(context).colorScheme.surfaceContainerHighest,
-                    foregroundColor: selected ? Colors.white : examInk,
-                    child: Text(
-                      letter,
-                      style: const TextStyle(fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Text(
-                      text,
-                      style: const TextStyle(fontSize: 19, height: 1.5),
-                    ),
-                  ),
-                  if (selected)
-                    const Icon(Icons.check_circle_rounded, color: examInk),
-                ],
-              ),
+            border: Border.all(
+              color: selected
+                  ? examInk
+                  : Theme.of(context).colorScheme.outlineVariant,
+              width: selected ? 2 : 1,
             ),
           ),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 18,
+                backgroundColor: selected
+                    ? examInk
+                    : Theme.of(context).colorScheme.surfaceContainerHighest,
+                foregroundColor: selected ? Colors.white : examInk,
+                child: Text(
+                  letter,
+                  style: const TextStyle(fontWeight: FontWeight.w800),
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Text(
+                  text,
+                  style: const TextStyle(fontSize: 19, height: 1.5),
+                ),
+              ),
+              if (selected)
+                const Icon(Icons.check_circle_rounded, color: examInk),
+            ],
+          ),
         ),
-      );
+      ),
+    ),
+  );
 }

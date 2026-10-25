@@ -1,0 +1,28 @@
+package api
+
+var sswCurriculumLogisticsWarehouseCautionsEnglish = map[examSSWEnglishKey]string{
+	{field: "ssw.caution", source: `Jangan memasukkan barang tanpa identitas ke stok tersedia atau mengubah angka agar sama dengan pesanan.`}: `Do not add unidentified goods to available stock or change quantities just to match an order.`,
+	{field: "ssw.caution", source: `Jangan memindahkan atau menandai barang tanpa memperbarui lokasi dan statusnya.`}:                         `Do not move or mark goods without updating their location and status.`,
+	{field: "ssw.caution", source: `Jangan mencampur lot, pemilik, atau zona berdasarkan kesamaan bentuk kemasan.`}:                           `Do not mix lots, owners, or zones because the packages look alike.`,
+	{field: "ssw.caution", source: `Jangan mengemas barang yang identitas atau statusnya belum cocok.`}:                                       `Do not pack goods until their identity and status match.`,
+	{field: "ssw.caution", source: `Jangan mengganti jenis, ukuran, lot, atau jumlah tanpa persetujuan.`}:                                     `Do not substitute the type, size, lot, or quantity without approval.`,
+	{field: "ssw.caution", source: `Jangan menggunakan ruang kosong yang tidak terdaftar sebagai lokasi simpan.`}:                             `Do not use unregistered empty space as a storage location.`,
+	{field: "ssw.caution", source: `Jangan mengirim paket berlabel ganda, tidak terbaca, atau berbeda tujuan.`}:                               `Do not ship a package with duplicate, unreadable, or wrong-destination labels.`,
+	{field: "ssw.caution", source: `Jangan mengoperasikan alat angkat tanpa pelatihan atau memblokir jalur dengan barang.`}:                   `Do not operate lifting equipment without training or block a route with goods.`,
+	{field: "ssw.caution", source: `Jangan mengubah angka sistem atau mengambil barang untuk menutup selisih tanpa izin.`}:                    `Do not change system quantities or take goods to cover a discrepancy without authorization.`,
+	{field: "ssw.caution", source: `Jangan mengubah fungsi atau spesifikasi produk atau mengganti isi set tanpa izin.`}:                       `Do not change a product's function or specifications, or substitute items in a set, without authorization.`,
+	{field: "ssw.caution", source: `Jangan menutup pengiriman atau membubuhkan tanda terima sebelum jumlah aktual dipastikan.`}:               `Do not close a shipment or sign a receipt before confirming the actual quantity.`,
+	{field: "ssw.caution", source: `Jangan menyembunyikan kerusakan atau mencampur barang tahan ke stok baik.`}:                               `Do not hide damage or mix held goods into good stock.`,
+	{field: "ssw.caution", source: `Jangan berasumsi bahwa jadwal lama masih berlaku ketika ada pemberitahuan baru.`}:                         `Do not assume the old schedule still applies when a new notice is issued.`,
+	{field: "ssw.caution", source: `Jangan melanjutkan dengan mengandalkan kopi atau perkiraan sendiri bila merasa tidak aman.`}:              `If you feel unsafe, do not rely on coffee or your own estimate to continue working.`,
+	{field: "ssw.caution", source: `Jangan melewati tanda kerusakan atau menyentuh peralatan yang belum diizinkan.`}:                          `Do not ignore a fault indicator or handle equipment without authorization.`,
+	{field: "ssw.caution", source: `Jangan melihat atau mengetik perangkat saat perhatian harus tertuju pada jalan.`}:                         `Do not look at or type on a device while your attention must be on the road.`,
+	{field: "ssw.caution", source: `Jangan menandai pengiriman atau layanan selesai jika masih ada barang atau masalah terbuka.`}:             `Do not mark a delivery or service complete while goods or issues remain outstanding.`,
+	{field: "ssw.caution", source: `Jangan mengalihkan tujuan atau meninggalkan muatan tanpa instruksi dan catatan.`}:                         `Do not change a destination or leave cargo without instructions and a record.`,
+	{field: "ssw.caution", source: `Jangan mengambil alih kategori kendaraan atau tugas yang belum menjadi penugasan Anda.`}:                  `Do not take on a vehicle category or duty that has not been assigned to you.`,
+	{field: "ssw.caution", source: `Jangan menganggap alamat pada layar benar bila penumpang menyebut tujuan lain.`}:                          `Do not assume the screen address is correct if the passenger gives another destination.`,
+	{field: "ssw.caution", source: `Jangan mengubah jumlah, label, atau cara pengikatan berdasarkan perkiraan.`}:                              `Do not change quantities, labels, or securing methods based on a guess.`,
+	{field: "ssw.caution", source: `Jangan menjanjikan diagnosis atau meninggalkan penumpang tanpa arahan yang sesuai.`}:                      `Do not promise a diagnosis or leave a passenger without appropriate guidance.`,
+	{field: "ssw.caution", source: `Jangan menjanjikan waktu berangkat atau memulai kembali sebelum mendapat arahan.`}:                        `Do not promise a departure time or resume service before receiving instructions.`,
+	{field: "ssw.caution", source: `Jangan mulai bergerak ketika penumpang masih berada di area pintu atau belum siap menurut prosedur.`}:     `Do not move while a passenger is in the doorway or not yet ready under procedure.`,
+}

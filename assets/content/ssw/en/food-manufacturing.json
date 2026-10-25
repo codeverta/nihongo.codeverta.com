@@ -1,0 +1,1272 @@
+{
+  "modules": [
+    {
+      "description": "Build hygienic habits from entry into the production area through task changes, and prevent cross-contamination by separating zones, equipment, and material flows.",
+      "id": "hygiene",
+      "lessons": [
+        {
+          "caution": "Do not enter a food-handling area with symptoms or an unreported wound.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Symptoms, wounds, clothing, and hair can be sources of contamination; report any problem before starting work.",
+              "kind": "knowledge",
+              "options": [
+                "To prevent worker-borne contamination from reaching the product",
+                "So production records do not need to be made",
+                "To replace temperature checks of ingredients",
+                "So workers can bypass zone rules"
+              ],
+              "prompt": "Why are health and clothing checks done before handling food?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Gloves do not eliminate the risk of illness. Report the symptoms and wait for work instructions.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target",
+                "Report the symptoms to the supervisor and do not handle food; wait for a safe work assignment according to facility procedure."
+              ],
+              "prompt": "Workplace scenario: Before the shift starts, a worker has diarrhea and plans to wear gloves to package ready-to-eat products. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Read the entry rules for the production zone → Check your physical condition and report symptoms or wounds → Wear clothing and hair covering as required → Request a recheck before handling food.",
+              "kind": "workflow",
+              "options": [
+                "Read the entry rules for the production zone",
+                "Wear clothing and hair covering as required",
+                "Check your physical condition and report symptoms or wounds",
+                "Request a recheck before handling food"
+              ],
+              "prompt": "In the workflow “Health check and entry to the production area,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "少し熱があります。責任者に報告します。",
+              "meaning": "I have a slight fever. I will report it to the person in charge.",
+              "reading": "すこしねつがあります。せきにんしゃにほうこくします。"
+            },
+            {
+              "japanese": "作業を始める前に、体調を確認してください。",
+              "meaning": "Before starting work, check your health.",
+              "reading": "さぎょうをはじめるまえに、たいちょうをかくにんしてください。"
+            }
+          ],
+          "id": "fm-01",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa kondisi tubuh, pakaian kerja, rambut, dan perlengkapan sebelum menangani pangan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Report the symptoms to the leader and do not handle food; wait to be assigned safe duties under facility procedures.",
+          "scenario": "Before the shift begins, a worker has diarrhea and plans to wear gloves while packaging ready-to-eat product.",
+          "sections": [
+            {
+              "body": "Workers can carry contaminants on their hands, hair, clothing, or wounds. An entry check can identify fever, diarrhea, vomiting, wounds, or dirty clothing before products are exposed. Follow the facility's hygiene plan: report the issue, and let the person in charge assign safe duties.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before entering, read the posted instructions, store personal items, change clothing according to the zone, cover your hair, and check your equipment. If you feel unwell or a wound dressing comes loose, stop tasks involving food and tell the leader. Do not hide a health problem to meet production targets.\n\nPractice scenario: Before the shift begins, a worker has diarrhea and plans to wear gloves while packaging ready-to-eat product.\nSuggested response: Report the symptoms to the leader and do not handle food; wait to be assigned safe duties under facility procedures.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca aturan masuk untuk zona produksi",
+            "Periksa kondisi tubuh dan laporkan gejala atau luka",
+            "Kenakan pakaian dan penutup rambut sesuai aturan",
+            "Minta pemeriksaan ulang sebelum mulai menangani pangan"
+          ],
+          "title": "Health Checks and Entry to the Production Area",
+          "vocabulary": [
+            {
+              "japanese": "体調",
+              "meaning": "physical condition",
+              "reading": "たいちょう"
+            },
+            {
+              "japanese": "作業着",
+              "meaning": "work clothing",
+              "reading": "さぎょうぎ"
+            },
+            {
+              "japanese": "健康確認",
+              "meaning": "health check",
+              "reading": "けんこうかくにん"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not keep using the same gloves after touching waste, a phone, or raw ingredients.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Dirty hands can contaminate new gloves when putting them on; wash your hands first.",
+              "kind": "knowledge",
+              "options": [
+                "Wash your hands according to procedure first",
+                "Just spray the outside of the old gloves",
+                "Rinse the food that was touched",
+                "Put on two pairs of gloves without washing your hands"
+              ],
+              "prompt": "What should you do before putting on new gloves after touching a waste bin?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The gloves have touched waste; stop contact with the product, discard the gloves, wash your hands, and put on new ones.",
+              "kind": "case",
+              "options": [
+                "Do not continue filling. Discard the gloves, wash your hands according to procedure, and put on new gloves before returning to the product.",
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: A worker touches a waste-bin handle with gloves, then is about to fill a ready-to-eat product container. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Stop contact with the product and discard the soiled gloves → Wash your hands in the posted sequence → Dry and sanitize according to procedure → Put on new gloves if the task requires them.",
+              "kind": "workflow",
+              "options": [
+                "Stop contact with the product and discard the soiled gloves",
+                "Dry and sanitize according to procedure",
+                "Put on new gloves if the task requires them",
+                "Wash your hands in the posted sequence"
+              ],
+              "prompt": "In the workflow “Handwashing and glove replacement,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "手袋を交換します。先に手を洗います。",
+              "meaning": "I will change my gloves. I will wash my hands first.",
+              "reading": "てぶくろをこうかんします。さきにてをあらいます。"
+            },
+            {
+              "japanese": "その手袋で食品に触らないでください。",
+              "meaning": "Do not touch food with those gloves.",
+              "reading": "そのてぶくろでしょくひんにさわらないでください。"
+            }
+          ],
+          "id": "fm-02",
+          "minutes": 25,
+          "objectives": [
+            "Melakukan cuci tangan pada saat yang ditetapkan dan mengganti sarung tangan yang terkontaminasi.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not continue filling. Remove the gloves, wash your hands as required, and put on new gloves before handling the product again.",
+          "scenario": "A worker touches a waste-bin handle with gloves and then prepares to fill a container with ready-to-eat product.",
+          "sections": [
+            {
+              "body": "Hands can transfer dirt or microorganisms from toilets, waste, money, raw ingredients, phones, and surfaces to food. Disposable gloves can also become contaminated and do not replace handwashing. The facility's plan specifies the washing, drying, and sanitizing steps and when gloves must be changed.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Wash your hands before starting, after using the toilet, after touching raw ingredients or waste, and when moving from a dirty task to a clean one. Remove gloves without touching food, discard them as required, wash your hands, and put on a new pair. Complete any required records.\n\nPractice scenario: A worker touches a waste-bin handle with gloves and then prepares to fill a container with ready-to-eat product.\nSuggested response: Do not continue filling. Remove the gloves, wash your hands as required, and put on new gloves before handling the product again.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Hentikan kontak dengan produk dan buang sarung tangan yang kotor",
+            "Cuci tangan sesuai urutan yang dipasang",
+            "Keringkan dan lakukan sanitasi sesuai prosedur",
+            "Pakai sarung tangan baru bila tugas memerlukannya"
+          ],
+          "title": "Handwashing and Glove Changes",
+          "vocabulary": [
+            {
+              "japanese": "手洗い",
+              "meaning": "handwashing",
+              "reading": "てあらい"
+            },
+            {
+              "japanese": "使い捨て手袋",
+              "meaning": "disposable gloves",
+              "reading": "つかいすててぶくろ"
+            },
+            {
+              "japanese": "交換",
+              "meaning": "replacement",
+              "reading": "こうかん"
+            },
+            {
+              "japanese": "汚染",
+              "meaning": "contamination",
+              "reading": "おせん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not assume equipment is ready to use just because its surface looks dry.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Dirty equipment must not return to the clean workflow until it has gone through the facility's required steps.",
+              "kind": "knowledge",
+              "options": [
+                "Separate it, clean it, then sanitize it according to procedure",
+                "Wipe it quickly and put it on the clean shelf",
+                "Mix it with clean equipment so it dries together",
+                "Spray chemicals over the food"
+              ],
+              "prompt": "What is the general sequence for preparing dirty equipment for reuse?"
+            },
+            {
+              "answer": 1,
+              "explanation": "After falling on the floor, the container's cleanliness cannot be assumed; separate it and request reprocessing.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Set the container aside as not ready for use and request washing and sanitizing again according to facility rules.",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: A container labeled clean falls on the floor near the raw-material area, and a worker wants to reuse it immediately. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Identify zone boundaries and equipment-status labels → Take clean equipment from its designated place → Separate used equipment in the washing area → Report equipment or surfaces that may be contaminated.",
+              "kind": "workflow",
+              "options": [
+                "Take clean equipment from its designated place",
+                "Identify zone boundaries and equipment-status labels",
+                "Separate used equipment in the washing area",
+                "Report equipment or surfaces that may be contaminated"
+              ],
+              "prompt": "In the workflow “Equipment cleaning and zone separation,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この容器は床に落ちました。洗浄をお願いします。",
+              "meaning": "This container fell on the floor. Please wash it.",
+              "reading": "このようきはゆかにおちました。せんじょうをおねがいします。"
+            },
+            {
+              "japanese": "清潔な器具はこの棚に置きます。",
+              "meaning": "Clean tools are kept on this shelf.",
+              "reading": "せいけつなきぐはこのたなにおきます。"
+            }
+          ],
+          "id": "fm-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjaga meja, pisau, wadah, dan alat tetap sesuai status bersih atau belum dibersihkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Set the container aside as not ready for use and request washing and sanitizing again according to facility rules.",
+          "scenario": "A container marked clean falls on the floor near the raw-ingredient area, and a worker wants to reuse it immediately.",
+          "sections": [
+            {
+              "body": "Cleaning removes food residue and soil; sanitize according to procedure after the required cleaning steps. Equipment that looks clean is not necessarily ready to use. Facility markers, storage locations, and schedules show equipment status and boundaries between raw-material, processing, and ready-to-eat areas.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before starting, check equipment status labels and condition. After a dirty task, send tools to the correct wash area; do not put them back on the clean-equipment shelf. If a clean container falls or is splashed from a dirty area, set it aside and request a reassessment. Keep cleaning chemicals separate from food.\n\nPractice scenario: A container marked clean falls on the floor near the raw-ingredient area, and a worker wants to reuse it immediately.\nSuggested response: Set the container aside as not ready for use and request washing and sanitizing again according to facility rules.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali batas zona dan label status alat",
+            "Ambil alat bersih dari tempat yang ditetapkan",
+            "Pisahkan alat bekas ke tempat pencucian",
+            "Laporkan alat atau permukaan yang terkena cemaran"
+          ],
+          "title": "Equipment Cleaning and Zone Separation",
+          "vocabulary": [
+            {
+              "japanese": "洗浄",
+              "meaning": "washing",
+              "reading": "せんじょう"
+            },
+            {
+              "japanese": "消毒",
+              "meaning": "sanitation or disinfection",
+              "reading": "しょうどく"
+            },
+            {
+              "japanese": "清潔",
+              "meaning": "clean and hygienic",
+              "reading": "せいけつ"
+            },
+            {
+              "japanese": "区域",
+              "meaning": "zone or area",
+              "reading": "くいき"
+            }
+          ]
+        }
+      ],
+      "title": "Worker Hygiene and Contamination Prevention"
+    },
+    {
+      "description": "Check material identity, condition, quantity, storage, and flow so lots and recipes remain matched throughout processing.",
+      "id": "materials",
+      "lessons": [
+        {
+          "caution": "Do not use ingredients with missing identity or conditions outside the criteria without approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Lot numbers help trace ingredients when a discrepancy or product problem occurs.",
+              "kind": "knowledge",
+              "options": [
+                "Link ingredients to their supplier and the products made",
+                "Replace package-condition checks",
+                "Make all ingredients usable without restriction",
+                "Remove the need for process records"
+              ],
+              "prompt": "What is the benefit of recording the lot number when ingredients are received?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A mismatched lot or package must be separated and recorded before use.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Set the problem box aside, record its quantity and visible lot number, and ask the person in charge to decide whether to accept it.",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: The documents list 12 boxes of ingredients, but one box is leaking and its lot number differs from the receiving list. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Match the documents and lot identity → Check the quantity, package, date, and required conditions → Record the inspection result and actual discrepancy → Hold any problem ingredients and request a decision.",
+              "kind": "workflow",
+              "options": [
+                "Match the documents and lot identity",
+                "Check the quantity, package, date, and required conditions",
+                "Record the inspection result and actual discrepancy",
+                "Hold any problem ingredients and request a decision"
+              ],
+              "prompt": "In the workflow “Inspecting incoming ingredients,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ロット番号が書類と違います。確認してください。",
+              "meaning": "The lot number differs from the documents. Please check it.",
+              "reading": "ろっとばんごうがしょるいとちがいます。かくにんしてください。"
+            },
+            {
+              "japanese": "この箱は分けて、責任者に報告します。",
+              "meaning": "I am setting this box aside and reporting it to the person in charge.",
+              "reading": "このはこはわけて、せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "fm-04",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan nama bahan, nomor lot, jumlah, tanggal, kemasan, dan kondisi penerimaan dengan dokumen kerja.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Set the problem box aside, record the quantity and visible lot number, and ask the person in charge to decide whether to accept it.",
+          "scenario": "The documents list 12 ingredient boxes, but one box is leaking and its lot number differs from the receiving list.",
+          "sections": [
+            {
+              "body": "Receiving links suppliers, ingredients, and lots to the finished product. Check documents against package markings, seal condition, leaks, damage, and temperature when required for the material. Acceptance criteria come from ingredient specifications and facility plans; hold nonconforming items for a decision by the person in charge.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the designated measuring tools and record actual results, time, and lot number. Separate damaged packages or ingredients with mismatched records in the hold area without guessing whether they are acceptable. Do not change document figures or move a label from another lot.\n\nPractice scenario: The documents list 12 ingredient boxes, but one box is leaking and its lot number differs from the receiving list.\nSuggested response: Set the problem box aside, record the quantity and visible lot number, and ask the person in charge to decide whether to accept it.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan dokumen dan identitas lot",
+            "Periksa jumlah, kemasan, tanggal, dan syarat kondisi",
+            "Catat hasil pemeriksaan dan selisih aktual",
+            "Tahan bahan bermasalah serta minta keputusan"
+          ],
+          "title": "Incoming Material Checks",
+          "vocabulary": [
+            {
+              "japanese": "受入れ",
+              "meaning": "intake",
+              "reading": "うけいれ"
+            },
+            {
+              "japanese": "原材料",
+              "meaning": "ingredient",
+              "reading": "げんざいりょう"
+            },
+            {
+              "japanese": "ロット番号",
+              "meaning": "lot number",
+              "reading": "ろっとばんごう"
+            },
+            {
+              "japanese": "破損",
+              "meaning": "damage",
+              "reading": "はそん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not rely on a remembered temperature instead of the limit specified for the product and process.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Temperature requirements vary by ingredient and process; use the specified limit and record the result.",
+              "kind": "knowledge",
+              "options": [
+                "From the label or specification and the facility control plan",
+                "From an estimate based on the outdoor weather",
+                "From one value used for all foods",
+                "From the remaining quantity of ingredients"
+              ],
+              "prompt": "Where should workers find the temperature limit for a particular ingredient?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Record and hold deviations for the person in charge to decide; do not silently alter them.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target",
+                "Hold the affected lot, record the time and reading, and report it so the person in charge can decide how to handle it."
+              ],
+              "prompt": "Workplace scenario: The cold-room record shows a temperature above the limit on the form, but a lot is about to be used. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Read the storage requirements on the specification or label → Place the lot in the correctly identified location → Measure and record the temperature on the facility schedule → Hold and report deviations before using the ingredient.",
+              "kind": "workflow",
+              "options": [
+                "Read the storage requirements on the specification or label",
+                "Measure and record the temperature on the facility schedule",
+                "Place the lot in the correctly identified location",
+                "Hold and report deviations before using the ingredient"
+              ],
+              "prompt": "In the workflow “Storage and temperature monitoring,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "表示の保存条件を確認します。",
+              "meaning": "I will check the storage conditions on the label.",
+              "reading": "ひょうじのほぞんじょうけんをかくにんします。"
+            },
+            {
+              "japanese": "温度が基準を超えています。ロットを保留します。",
+              "meaning": "The temperature exceeded the limit. I am holding this lot.",
+              "reading": "おんどがきじゅんをこえています。ろっとをほりゅうします。"
+            }
+          ],
+          "id": "fm-05",
+          "minutes": 25,
+          "objectives": [
+            "Menempatkan bahan pada lokasi dan kondisi simpan yang ditetapkan serta mencatat suhu sesuai rencana.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold the affected lot, record the time and reading, and report it so the person in charge can determine how to handle it.",
+          "scenario": "Cold-room records show a temperature above the form's operating limit, but a lot is about to be used.",
+          "sections": [
+            {
+              "body": "Each ingredient has storage requirements set by the product, specification, and facility control system. Monitor refrigerator and freezer temperatures with the specified instruments and written limits; there is no single value that applies to every product. Separate raw ingredients from ready-to-eat products to prevent drips or contact.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check storage labels, use marked shelves and containers, and record instrument readings at designated times. If temperature exceeds a limit, a door has been left open, or an instrument is questionable, hold the lot and report it. Do not change settings or decide on your own that the ingredients are still safe.\n\nPractice scenario: Cold-room records show a temperature above the form's operating limit, but a lot is about to be used.\nSuggested response: Hold the affected lot, record the time and reading, and report it so the person in charge can determine how to handle it.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca syarat simpan pada spesifikasi atau label",
+            "Tempatkan lot di lokasi beridentitas yang benar",
+            "Ukur dan catat suhu sesuai jadwal fasilitas",
+            "Tahan serta laporkan penyimpangan sebelum bahan dipakai"
+          ],
+          "title": "Storage and Temperature Monitoring",
+          "vocabulary": [
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "冷蔵",
+              "meaning": "cooling",
+              "reading": "れいぞう"
+            },
+            {
+              "japanese": "冷凍",
+              "meaning": "freezing",
+              "reading": "れいとう"
+            },
+            {
+              "japanese": "温度記録",
+              "meaning": "temperature record",
+              "reading": "おんどきろく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not estimate quantities or substitute ingredients without recipe approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking before weighing prevents the wrong ingredient from entering the mixture and preserves traceability.",
+              "kind": "knowledge",
+              "options": [
+                "So the mixture matches the formula and ingredients remain traceable",
+                "So the scale does not need to be checked",
+                "So the formula sequence can be changed freely",
+                "So actual records are unnecessary"
+              ],
+              "prompt": "Why should the ingredient name and lot be checked before weighing a recipe?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A mismatched label means the identity is uncertain; stop weighing until it is confirmed.",
+              "kind": "case",
+              "options": [
+                "Do not start mixing. Set the container aside, compare its identity with the ingredient list, and ask the person in charge to confirm.",
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: The formula sheet calls for ingredient A powder, but the container on the table is labeled ingredient B and weighing has not begun. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Match the formula, ingredients, and lot → Check the units and scale condition → Weigh and record each ingredient separately → Add ingredients in sequence and mark the work completed.",
+              "kind": "workflow",
+              "options": [
+                "Match the formula, ingredients, and lot",
+                "Weigh and record each ingredient separately",
+                "Add ingredients in sequence and mark the work completed",
+                "Check the units and scale condition"
+              ],
+              "prompt": "In the workflow “Recipe weighing and ingredient sequence,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "材料名とロット番号を照合します。",
+              "meaning": "I will match the ingredient name and lot number.",
+              "reading": "ざいりょうめいとろっとばんごうをしょうごうします。"
+            },
+            {
+              "japanese": "表示が違うので、計量を止めます。",
+              "meaning": "The label is different, so I am stopping the weighing.",
+              "reading": "ひょうじがちがうので、けいりょうをとめます。"
+            }
+          ],
+          "id": "fm-06",
+          "minutes": 25,
+          "objectives": [
+            "Menimbang bahan dengan satuan resep yang benar dan menjaga urutan penambahan serta identitas kelompok campuran.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not start mixing. Set the container aside, match its identity to the ingredient list, and ask the person in charge to confirm.",
+          "scenario": "The recipe calls for ingredient A powder, but the container on the table is labeled ingredient B, and weighing has not started.",
+          "sections": [
+            {
+              "body": "The production recipe controls composition, yield, quality, and allergen information. Use scales suited to the required units, account for container tare, and add ingredients in the specified order. Line workers may not change a recipe or substitute ingredients unless an authorized person approves and records the change.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before opening a package, match the ingredient name and lot to the recipe sheet. Weigh one ingredient at a time, record the actual value, and mark each completed step. If a number, label, or quantity does not match, stop mixing and request a second check; do not substitute a nearby stock item.\n\nPractice scenario: The recipe calls for ingredient A powder, but the container on the table is labeled ingredient B, and weighing has not started.\nSuggested response: Do not start mixing. Set the container aside, match its identity to the ingredient list, and ask the person in charge to confirm.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan formula, bahan, dan lot",
+            "Periksa satuan serta kondisi timbangan",
+            "Timbang dan catat tiap bahan secara terpisah",
+            "Tambahkan menurut urutan dan tandai hasil kerja"
+          ],
+          "title": "Recipe Weighing and Ingredient Sequence",
+          "vocabulary": [
+            {
+              "japanese": "配合",
+              "meaning": "composition or recipe",
+              "reading": "はいごう"
+            },
+            {
+              "japanese": "計量",
+              "meaning": "weighing",
+              "reading": "けいりょう"
+            },
+            {
+              "japanese": "単位",
+              "meaning": "unit",
+              "reading": "たんい"
+            },
+            {
+              "japanese": "秤",
+              "meaning": "scale",
+              "reading": "はかり"
+            }
+          ]
+        }
+      ],
+      "title": "Receiving and Preparing Ingredients"
+    },
+    {
+      "description": "Follow process sequences, control limits, machine safeguards, and product changeovers, with attention to deviations and allergens.",
+      "id": "processing",
+      "lessons": [
+        {
+          "caution": "Do not open a guard or put your hand into a machine that has not been isolated according to procedure.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Pre-operation checks find hazardous conditions before equipment moves and products enter the process.",
+              "kind": "knowledge",
+              "options": [
+                "Reduce the risk of entanglement, crushing, or contamination by loose objects",
+                "Allow the machine to run without a work checklist",
+                "Replace operator training",
+                "So minor damage does not need to be reported"
+              ],
+              "prompt": "Why do workers check machine guards and the surrounding area before starting?"
+            },
+            {
+              "answer": 1,
+              "explanation": "A loose guard is unsafe; do not run the machine and escalate the issue for inspection.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Do not start the mixer. Keep people away from the hazard and tell the supervisor so the machine can be inspected.",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: A mixer guard feels loose, but the line is trying to meet its production target. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Read the instructions and limits of the operator's role → Check guards, buttons, cables, and the surrounding area → Report damage or abnormal conditions → Start only after the machine is declared ready.",
+              "kind": "workflow",
+              "options": [
+                "Check guards, buttons, cables, and the surrounding area",
+                "Read the instructions and limits of the operator's role",
+                "Report damage or abnormal conditions",
+                "Start only after the machine is declared ready"
+              ],
+              "prompt": "In the workflow “Pre-operation machine and guard checks,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "安全カバーがゆるんでいます。機械を止めます。",
+              "meaning": "The safety guard is loose. I am stopping the machine.",
+              "reading": "あんぜんかばーがゆるんでいます。きかいをとめます。"
+            },
+            {
+              "japanese": "修理の人に確認してもらいます。",
+              "meaning": "I will ask maintenance staff to inspect it.",
+              "reading": "しゅうりのひとにかくにんしてもらいます。"
+            }
+          ],
+          "id": "fm-07",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa kondisi mesin, tombol berhenti, pelindung, dan area kerja sebelum menjalankan alat yang menjadi tugasnya.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not start the mixer. Keep people away from the danger area and tell the leader so the machine can be inspected.",
+          "scenario": "A mixer guard feels loose, but the line is trying to meet its production target.",
+          "sections": [
+            {
+              "body": "Food-processing machines such as mixers, cutters, and conveyors can trap or injure workers. Before work, check guards, emergency stops, cables, and the area for loose tools. Only instructed workers may operate or clean equipment; energy isolation and repairs follow local procedures and authorization.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Compare the machine with the startup checklist. Do not run it if a guard is loose, there is unusual noise or vibration, or a control cannot be tested as instructed. Post a sign if required and call the person in charge or a technician. Never put your hand near moving parts to clear a blockage.\n\nPractice scenario: A mixer guard feels loose, but the line is trying to meet its production target.\nSuggested response: Do not start the mixer. Keep people away from the danger area and tell the leader so the machine can be inspected.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca instruksi dan batas tugas operator",
+            "Periksa pelindung, tombol, kabel, dan area sekitar",
+            "Laporkan kerusakan atau keadaan tidak normal",
+            "Jalankan hanya setelah dinyatakan siap"
+          ],
+          "title": "Pre-Operation Machine and Guard Checks",
+          "vocabulary": [
+            {
+              "japanese": "機械",
+              "meaning": "machine",
+              "reading": "きかい"
+            },
+            {
+              "japanese": "安全カバー",
+              "meaning": "safety guard",
+              "reading": "あんぜんかばー"
+            },
+            {
+              "japanese": "非常停止",
+              "meaning": "emergency stop",
+              "reading": "ひじょうていし"
+            },
+            {
+              "japanese": "点検",
+              "meaning": "inspection",
+              "reading": "てんけん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not continue a lot on the assumption that it is safe after the temperature returns to normal.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Actual data linked to time and lot helps verify the process and trace the impact of deviations.",
+              "kind": "knowledge",
+              "options": [
+                "The actual result, time, and product or lot identity",
+                "Only the target value in the instructions",
+                "An estimate after the machine finishes",
+                "The worker's name without a reading"
+              ],
+              "prompt": "What should be recorded when checking process parameters?"
+            },
+            {
+              "answer": 2,
+              "explanation": "If a limit has not been met, hold the product and report the deviation for a decision.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Stop lot release, hold affected product, record the reading and time, and request a decision from the person in charge.",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: A heating record shows that the reading has not reached the limit in the product instructions, but the next tray is already waiting. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Match the product with the process-control instructions → Check the specified measuring device or display → Record the time and actual reading → Hold affected product and report deviations.",
+              "kind": "workflow",
+              "options": [
+                "Match the product with the process-control instructions",
+                "Check the specified measuring device or display",
+                "Record the time and actual reading",
+                "Hold affected product and report deviations"
+              ],
+              "prompt": "In the workflow “Time and temperature process controls,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "温度が指示の基準に届いていません。",
+              "meaning": "The temperature has not reached the limit in the instructions.",
+              "reading": "おんどがしじのきじゅんにとどいていません。"
+            },
+            {
+              "japanese": "この製品を保留して、責任者に報告します。",
+              "meaning": "I am holding this product and reporting it to the person in charge.",
+              "reading": "このせいひんをほりゅうして、せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "fm-08",
+          "minutes": 25,
+          "objectives": [
+            "Membaca batas proses yang berlaku, memantau waktu atau suhu, dan menahan produk ketika kendali menyimpang.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop lot release, hold affected products, record the reading and time, and ask the person in charge to decide what to do.",
+          "scenario": "Heating records show a reading below the limit in the product instructions, but the next trays are waiting.",
+          "sections": [
+            {
+              "body": "Heating, cooling, mixing, and other processes have parameters set for specific products. Check the lot instructions, use required instruments, and record actual results at monitoring points. If a reading is outside limits or an instrument fails, product made since the last check may need to be held for assessment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before processing, verify that the product code, settings, and measuring instruments match the instructions. Record the start time, readings, and lot identity without rounding to hide a discrepancy. When an alarm sounds or a limit is exceeded, stop the line as instructed, mark affected product, and report it immediately.\n\nPractice scenario: Heating records show a reading below the limit in the product instructions, but the next trays are waiting.\nSuggested response: Stop lot release, hold affected products, record the reading and time, and ask the person in charge to decide what to do.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan produk dengan instruksi kendali proses",
+            "Periksa alat ukur atau tampilan yang ditentukan",
+            "Catat waktu dan pembacaan aktual",
+            "Tahan produk terdampak dan laporkan penyimpangan"
+          ],
+          "title": "Time and Temperature Process Controls",
+          "vocabulary": [
+            {
+              "japanese": "工程",
+              "meaning": "process stage",
+              "reading": "こうてい"
+            },
+            {
+              "japanese": "基準",
+              "meaning": "limit or standard",
+              "reading": "きじゅん"
+            },
+            {
+              "japanese": "測定",
+              "meaning": "measurement",
+              "reading": "そくてい"
+            },
+            {
+              "japanese": "保留",
+              "meaning": "temporary hold",
+              "reading": "ほりゅう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not rely on memory or glove changes alone to declare a line free of allergens.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Residues, ingredients, and labels must match the next product's specifications; hold product until this is verified.",
+              "kind": "knowledge",
+              "options": [
+                "Cleaning according to procedure, ingredients, and the new product label",
+                "Only the new package color",
+                "The quantity of product from the previous shift",
+                "An assumption that all ingredient residue is gone"
+              ],
+              "prompt": "What must be verified before releasing product after an allergen changeover?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Changeover cleaning is not complete, so hold the line and product until verification is finished.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target",
+                "Stop the line and hold product from the label change onward; report the sequence of events and wait for cleaning and label checks."
+              ],
+              "prompt": "Workplace scenario: After a product containing milk, a roll of labels for a milk-free product is installed before the changeover cleaning record is complete. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Read the next product's specifications and allergen matrix → Separate the previous product and stop the flow as instructed → Clean or replace equipment according to procedure → Verify ingredients and labels before releasing the new product.",
+              "kind": "workflow",
+              "options": [
+                "Read the next product's specifications and allergen matrix",
+                "Clean or replace equipment according to procedure",
+                "Separate the previous product and stop the flow as instructed",
+                "Verify ingredients and labels before releasing the new product"
+              ],
+              "prompt": "In the workflow “Product changeover and allergen control,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "切替えの清掃記録を確認してください。",
+              "meaning": "Please check the changeover cleaning record.",
+              "reading": "きりかえのせいそうきろくをかくにんしてください。"
+            },
+            {
+              "japanese": "表示が違うかもしれません。製品を保留します。",
+              "meaning": "The label may be different. I am holding this product.",
+              "reading": "ひょうじがちがうかもしれません。せいひんをほりゅうします。"
+            }
+          ],
+          "id": "fm-09",
+          "minutes": 25,
+          "objectives": [
+            "Mencegah perpindahan alergen saat pergantian resep dengan memeriksa bahan, pembersihan, alat, dan label.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop the line and hold product from the label change onward; report the sequence of events and wait for cleaning and label checks.",
+          "scenario": "After a product containing milk, a label roll for a milk-free product is installed before the changeover cleaning record is complete.",
+          "sections": [
+            {
+              "body": "Allergens can transfer through residue on machines, tables, gloves, measuring tools, or packaging. Allergen lists and label information may change under current requirements; use the product specifications and matrix in force at your facility. Production changeovers require approval, cleaning according to procedure, and another check of labels and lot identity.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "When changing to a product with a different allergen profile, hold startup until the changeover procedure is complete. Check designated equipment, new ingredients, and labels, and request a second check if required. If labels are mixed up or residue is visible, stop the line, separate product made since the last known-correct point, and report it. Do not promise an allergen-free product without official data.\n\nPractice scenario: After a product containing milk, a label roll for a milk-free product is installed before the changeover cleaning record is complete.\nSuggested response: Stop the line and hold product from the label change onward; report the sequence of events and wait for cleaning and label checks.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca spesifikasi dan matriks alergen produk berikutnya",
+            "Pisahkan produk lama dan hentikan alur sesuai instruksi",
+            "Bersihkan atau ganti alat menurut prosedur yang berlaku",
+            "Verifikasi bahan dan label sebelum melepas produk baru"
+          ],
+          "title": "Product Changeovers and Allergen Control",
+          "vocabulary": [
+            {
+              "japanese": "アレルゲン",
+              "meaning": "allergen",
+              "reading": "あれるげん"
+            },
+            {
+              "japanese": "表示",
+              "meaning": "label or information",
+              "reading": "ひょうじ"
+            },
+            {
+              "japanese": "交差接触",
+              "meaning": "cross-contact",
+              "reading": "こうさせっしょく"
+            },
+            {
+              "japanese": "切替え",
+              "meaning": "product changeover",
+              "reading": "きりかえ"
+            }
+          ]
+        }
+      ],
+      "title": "Processing, Machine Controls, and Allergens"
+    },
+    {
+      "description": "Inspect products before packaging and dispatch, keep information consistent, and record discrepancies for traceability.",
+      "id": "quality",
+      "lessons": [
+        {
+          "caution": "Do not release product with labels that have not been verified at the start of a lot or after a roll change.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking the label prevents incorrect information from being attached to the right product.",
+              "kind": "knowledge",
+              "options": [
+                "To ensure the product, lot, date, and printed information match",
+                "So product-content checks can be skipped",
+                "Use any label to save time",
+                "So the lot number can be removed after printing"
+              ],
+              "prompt": "Why is the label checked again when a roll or product changes?"
+            },
+            {
+              "answer": 0,
+              "explanation": "A different code indicates a possible mislabel; stop, hold the affected product, and escalate the issue.",
+              "kind": "case",
+              "options": [
+                "Stop packaging, hold packages since the last check, record the quantity and code, and report the issue for reinspection.",
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: The label code on a new roll differs by one digit from the production sheet, and some packages have already been made. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Match the product and lot code to the instructions → Check the label, allergen information, and date → Check the seal and package condition → Hold and report any mismatch.",
+              "kind": "workflow",
+              "options": [
+                "Match the product and lot code to the instructions",
+                "Check the seal and package condition",
+                "Hold and report any mismatch",
+                "Check the label, allergen information, and date"
+              ],
+              "prompt": "In the workflow “Package and product-label checks,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ラベルの番号が製造指示と違います。",
+              "meaning": "The label number differs from the production instructions.",
+              "reading": "らべるのばんごうがせいぞうしじとちがいます。"
+            },
+            {
+              "japanese": "包装を止めて、製品を保留してください。",
+              "meaning": "Stop packaging and hold the product.",
+              "reading": "ほうそうをとめて、せいひんをほりゅうしてください。"
+            }
+          ],
+          "id": "fm-10",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan kode produk, lot, tanggal, label alergen, jumlah, dan keadaan kemasan sebelum pelepasan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop packaging, hold packages made since the last check, record the quantity and code, and report them for reinspection.",
+          "scenario": "The label code on a new roll differs by one digit from the production sheet, and several packages have already been made.",
+          "sections": [
+            {
+              "body": "Packaging protects food, and labels provide consumers with product identity and important information. Label rolls, packages, and products must therefore match the production plan. A wrong label can misstate product or allergen information even when the contents are correct. Check labels at startup, when packaging materials change, and at other points set by the facility.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Read the code on the work sheet and package, then compare it with the approved label sample. Check the print date, legibility, seal, and label orientation. If anything differs, stop packaging, hold product made since the last satisfactory check, record the code and quantity, and ask the person in charge to arrange a recheck.\n\nPractice scenario: The label code on a new roll differs by one digit from the production sheet, and several packages have already been made.\nSuggested response: Stop packaging, hold packages made since the last check, record the quantity and code, and report them for reinspection.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan kode produk dan lot dengan instruksi",
+            "Periksa label, informasi alergen, dan tanggal",
+            "Periksa segel serta keadaan kemasan",
+            "Tahan dan laporkan setiap ketidakcocokan"
+          ],
+          "title": "Product Packaging and Label Checks",
+          "vocabulary": [
+            {
+              "japanese": "包装",
+              "meaning": "packaging",
+              "reading": "ほうそう"
+            },
+            {
+              "japanese": "賞味期限",
+              "meaning": "best-before date",
+              "reading": "しょうみきげん"
+            },
+            {
+              "japanese": "製品表示",
+              "meaning": "product label",
+              "reading": "せいひんひょうじ"
+            },
+            {
+              "japanese": "照合",
+              "meaning": "matching",
+              "reading": "しょうごう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not remove a foreign object and ship the product without an assessment by the person in charge.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "These facts help determine which products must be held and inspected.",
+              "kind": "knowledge",
+              "options": [
+                "The time, machine or location, lot, quantity, and last inspection",
+                "Only the worker's clothing color",
+                "Only the quantity of products made that day",
+                "An estimated source without a time or lot number"
+              ],
+              "prompt": "What information helps trace products after a foreign object is found?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The source and scope are unclear; hold the flow and report the facts for assessment.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Stop or hold the flow as instructed, separate affected products, and report the location and time of the finding for inspection.",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: A worker sees a plastic fragment near a product on the conveyor and does not know whether it came from the package. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Observe the product and watch for inspection-equipment alarms → Stop or divert the flow as instructed → Separate affected products by lot identity → Record the finding and submit it for inspection.",
+              "kind": "workflow",
+              "options": [
+                "Stop or divert the flow as instructed",
+                "Observe the product and watch for inspection-equipment alarms",
+                "Separate affected products by lot identity",
+                "Record the finding and submit it for inspection"
+              ],
+              "prompt": "In the workflow “Defect and foreign-object checks,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "異物を見つけました。ラインを止めます。",
+              "meaning": "I found a foreign object. I am stopping the line.",
+              "reading": "いぶつをみつけました。らいんをとめます。"
+            },
+            {
+              "japanese": "時間とロット番号を記録してください。",
+              "meaning": "Please record the time and lot number.",
+              "reading": "じかんとろっとばんごうをきろくしてください。"
+            }
+          ],
+          "id": "fm-11",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali cacat atau benda asing, memisahkan produk terdampak, dan melaporkan sesuai titik kendali fasilitas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop or hold the line as instructed, separate the affected products, and report where and when the item was found for inspection.",
+          "scenario": "A worker sees a plastic fragment near a product on the conveyor and does not know whether it came from the packaging.",
+          "sections": [
+            {
+              "body": "Visual checks and designated inspection devices help detect damaged packaging, discoloration, missing parts, or foreign objects. Acceptance criteria vary by product. Follow standard samples and facility limits; do not decide on your own that a defect is safe. Do not bypass or adjust inspection devices without authorization.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "If you find a foreign object or an inspection-device alarm occurs, stop the line as instructed and use an identified hold container. Record the time, machine, product, lot, and quantity since the last accepted check. Do not discard evidence or put the same product back into the line before assessment.\n\nPractice scenario: A worker sees a plastic fragment near a product on the conveyor and does not know whether it came from the packaging.\nSuggested response: Stop or hold the line as instructed, separate the affected products, and report where and when the item was found for inspection.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Amati produk dan perhatikan alarm alat pemeriksa",
+            "Hentikan atau alihkan aliran sesuai instruksi",
+            "Pisahkan produk terkait dengan identitas lot",
+            "Catat temuan dan serahkan untuk pemeriksaan"
+          ],
+          "title": "Checking for Defects and Foreign Objects",
+          "vocabulary": [
+            {
+              "japanese": "異物",
+              "meaning": "foreign object",
+              "reading": "いぶつ"
+            },
+            {
+              "japanese": "検査",
+              "meaning": "inspection",
+              "reading": "けんさ"
+            },
+            {
+              "japanese": "不良品",
+              "meaning": "nonconforming product",
+              "reading": "ふりょうひん"
+            },
+            {
+              "japanese": "隔離",
+              "meaning": "separation or isolation",
+              "reading": "かくり"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mark a lot complete or remove its hold status before receiving authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Detailed information keeps open work visible and supports proper follow-up.",
+              "kind": "knowledge",
+              "options": [
+                "State the lot, location, facts, actions, and unfinished work",
+                "Only mention that production was slow",
+                "Clear all hold statuses before the shift change",
+                "Write an estimated cause without data"
+              ],
+              "prompt": "What makes a handover record useful to the next shift?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The label check is not complete; record and hand over the status, location, and follow-up.",
+              "kind": "case",
+              "options": [
+                "Put on gloves and continue packaging as usual",
+                "Continue using estimated figures or ingredients without reporting it",
+                "Add the lot status, hold location, reason, and outstanding check according to correction rules, then hand it directly to the next shift worker.",
+                "Move the product to another group to meet the target"
+              ],
+              "prompt": "Workplace scenario: At the end of a shift, a lot is still awaiting a label check, but the next worker receives only the production quantity record. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Record the time, lot, process, and actual result → Mark products or processes still on hold → Explain actions taken and unfinished work → Hand over the information and confirm the recipient understands it.",
+              "kind": "workflow",
+              "options": [
+                "Record the time, lot, process, and actual result",
+                "Mark products or processes still on hold",
+                "Explain actions taken and unfinished work",
+                "Hand over the information and confirm the recipient understands it"
+              ],
+              "prompt": "In the workflow “Production records and lot handover,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このロットは表示確認が終わっていません。",
+              "meaning": "The label check for this lot is not complete.",
+              "reading": "このろっとはひょうじかくにんがおわっていません。"
+            },
+            {
+              "japanese": "保留場所と次の確認を引き継ぎます。",
+              "meaning": "I am handing over the hold location and the next inspection.",
+              "reading": "ほりゅうばしょとつぎのかくにんをひきつぎます。"
+            }
+          ],
+          "id": "fm-12",
+          "minutes": 25,
+          "objectives": [
+            "Mencatat status proses, jumlah, penyimpangan, dan tindak lanjut agar giliran berikutnya dapat bekerja aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Record the lot status, hold location, reason, and outstanding check according to correction rules, then hand it over directly to the next shift.",
+          "scenario": "At shift end, a lot is still awaiting a label check, but the next worker receives only the production quantity record.",
+          "sections": [
+            {
+              "body": "Production records link ingredients, parameters, inspections, packaging, and lot results. Record actual facts, times, product identity, and actions taken. At shift change, communicate the status of held items, faulty machines, and unfinished checks verbally and in writing according to the facility's system.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Complete forms as work is performed rather than from memory at shift end. Do not erase an incorrect value; use the official correction method so the change remains visible. During handover, state the lot number, hold location and reason, checks already completed, and who must follow up. Ask the recipient to repeat key points if anything is unclear.\n\nPractice scenario: At shift end, a lot is still awaiting a label check, but the next worker receives only the production quantity record.\nSuggested response: Record the lot status, hold location, reason, and outstanding check according to correction rules, then hand it over directly to the next shift.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Catat waktu, lot, proses, dan hasil aktual",
+            "Tandai produk atau proses yang masih ditahan",
+            "Jelaskan tindakan serta pekerjaan yang belum selesai",
+            "Serahkan informasi dan pastikan penerima memahaminya"
+          ],
+          "title": "Production Records and Lot Handover",
+          "vocabulary": [
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "状況",
+              "meaning": "condition or status",
+              "reading": "じょうきょう"
+            },
+            {
+              "japanese": "未完了",
+              "meaning": "unfinished",
+              "reading": "みかんりょう"
+            }
+          ]
+        }
+      ],
+      "title": "Packaging, Quality Checks, and Traceability"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA Japan — Information on the SSW Food and Beverage Manufacturing Sector",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/foodandbeverages.html"
+    },
+    {
+      "title": "MAFF — Foreign Worker Intake and Examinations for the Food Manufacturing Sector",
+      "url": "https://www.maff.go.jp/j/shokusan/sanki/soumu/tokuteiginou.html"
+    },
+    {
+      "title": "OTAFF — SSW(i) Food and Beverage Manufacturing Examination Guide",
+      "url": "https://otaff.or.jp/tokutei/insyoku-1/"
+    },
+    {
+      "title": "OTAFF — Food and Beverage Manufacturing Examination Study Text",
+      "url": "https://otaff.or.jp/tokutei/insyoku-1/materials/"
+    },
+    {
+      "title": "MHLW — HACCP and Food Hygiene Guide",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/haccp/01_00020.html"
+    },
+    {
+      "title": "Consumer Affairs Agency — Food Allergen Labeling Information",
+      "url": "https://www.caa.go.jp/policies/policy/food_labeling/food_sanitation/allergy/"
+    }
+  ],
+  "version": 1
+}

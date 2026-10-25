@@ -1,0 +1,1264 @@
+{
+  "modules": [
+    {
+      "description": "Distinguish the three SSW work divisions: 造船, 舶用機械, and 舶用電気電子機器. Hands-on skill testing takes place on site and cannot be replaced by an app quiz.",
+      "id": "scope-safety",
+      "lessons": [
+        {
+          "caution": "Do not assume that a work category uses the same list of examination trades or qualifications.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The three work divisions are shipbuilding, ship machinery, and ship electrical/electronic equipment.",
+              "kind": "knowledge",
+              "options": [
+                "Shipbuilding, ship machinery, and ship electrical/electronic equipment",
+                "Welding, painting, and ironwork only",
+                "Transportation, fishing, and ship maintenance",
+                "Hull construction only"
+              ],
+              "prompt": "The three work divisions in this field include…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Different work requires appropriate guidance, methods, and competence.",
+              "kind": "case",
+              "options": [
+                "Ask for confirmation of the work scope and instructions before starting",
+                "Use the hull-work documents because both tasks are on the ship",
+                "Start with a component that appears to fit",
+                "Ask another worker and continue without approval"
+              ],
+              "prompt": "You have been assigned electrical assembly, but the documents describe only hull work. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「造船」is read ぞうせん and means “shipbuilding.”",
+              "kind": "vocabulary",
+              "options": [
+                "process/stage",
+                "shipbuilding",
+                "ship machinery",
+                "electrical/electronic equipment"
+              ],
+              "prompt": "What does 「造船（ぞうせん）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip tiga divisi kerja bidang shipbuilding untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Hold the work until the person in charge confirms its scope, documents, and required competence.",
+          "scenario": "You are assigned to assemble ship electrical equipment but have received instructions only for hull work.",
+          "sections": [
+            {
+              "body": "The 造船・舶用工業 field covers shipbuilding (造船), marine machinery (舶用機械), and marine electrical and electronic equipment (舶用電気電子機器). Processes vary by division and may include hull work, machinery, piping, painting, electrical assembly, or maintenance within the official scope.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Match the task, product, location, and instructions to your assignment. Ask for directions if the component or division is unclear. Do not assume that every activity in the shipyard follows the same procedure.\n\nPractice scenario: You are assigned to assemble ship electrical equipment but have received instructions only for hull work.\nResponse: Hold the work until the person in charge confirms its scope, documents, and required competence.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "The Three Shipbuilding Work Divisions",
+          "vocabulary": [
+            {
+              "japanese": "造船",
+              "meaning": "shipbuilding",
+              "reading": "ぞうせん"
+            },
+            {
+              "japanese": "舶用機械",
+              "meaning": "ship machinery",
+              "reading": "はくようきかい"
+            },
+            {
+              "japanese": "電気電子機器",
+              "meaning": "electrical/electronic equipment",
+              "reading": "でんきでんしきき"
+            },
+            {
+              "japanese": "工程",
+              "meaning": "process/stage",
+              "reading": "こうてい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not confuse the six No. 1 examination trades with the three official work divisions.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "This distinction matters: there are three work divisions and a separate list of examination trades with different scopes.",
+              "kind": "knowledge",
+              "options": [
+                "The two use different classifications",
+                "Each division has only one examination trade",
+                "The examination-trade list covers every shipyard activity",
+                "The division list changes according to the exam name"
+              ],
+              "prompt": "Which statement about work divisions and examination trades is correct?"
+            },
+            {
+              "answer": 0,
+              "explanation": "SSW work divisions and examination categories describe different things.",
+              "kind": "case",
+              "options": [
+                "Separate the work-division list from the examination-trade list and check the source for each",
+                "State that the six trades are official work divisions",
+                "Ignore the difference because all work is on the ship",
+                "Use the No. 2 list in place of the division list"
+              ],
+              "prompt": "Someone uses the list of six Specified Skilled Worker (i) trades to explain the three work divisions. How should this be clarified?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「技能評価試験」is read ぎのうひょうかしけん and means “skills evaluation test.”",
+              "kind": "vocabulary",
+              "options": [
+                "painting",
+                "work type/trade",
+                "skills evaluation test",
+                "welding"
+              ],
+              "prompt": "What does 「技能評価試験（ぎのうひょうかしけん）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-02",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip bidang kerja dan trade ujian untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Explain that work divisions and examination trades are different groupings, and check the official documents.",
+          "scenario": "A coworker says electrical assembly is a separate work division because it appears on the examination-trade list.",
+          "sections": [
+            {
+              "body": "SSW work divisions differ from the trades used for skills testing. Published No. 1 examination trades include welding, painting, ironwork, finishing, machining, and electrical equipment assembly. No. 2 has a different group of trades.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Use official descriptions for the relevant division, level, and year when checking requirements. In study materials, do not treat one list of examination trades as a complete list of work in the field, or the other way around.\n\nPractice scenario: A coworker says electrical assembly is a separate work division because it appears on the examination-trade list.\nResponse: Explain that work divisions and examination trades are different groupings, and check the official documents.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Work Divisions and Examination Trades",
+          "vocabulary": [
+            {
+              "japanese": "技能評価試験",
+              "meaning": "skills evaluation test",
+              "reading": "ぎのうひょうかしけん"
+            },
+            {
+              "japanese": "溶接",
+              "meaning": "welding",
+              "reading": "ようせつ"
+            },
+            {
+              "japanese": "塗装",
+              "meaning": "painting",
+              "reading": "とそう"
+            },
+            {
+              "japanese": "職種",
+              "meaning": "work type/trade",
+              "reading": "しょくしゅ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not cross a barrier or rely on a signal from someone who is not designated.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Parallel tasks need coordination so they do not create hazards for one another.",
+              "kind": "knowledge",
+              "options": [
+                "The sequence, zones, hazards, signals, and work between teams",
+                "Only the personal production target",
+                "A way to bypass the barrier",
+                "Replacing all work drawings"
+              ],
+              "prompt": "A shipyard briefing primarily aligns…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Communicate any changed zone or sequence before continuing affected work.",
+              "kind": "case",
+              "options": [
+                "Stop the affected activity and coordinate the work zone again",
+                "Continue while giving your own signals",
+                "Pass through the zone quickly",
+                "Ask a coworker to keep working on the other side without informing the supervisor"
+              ],
+              "prompt": "A ship block is about to be moved into an area occupied by your team. What is the safe action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "「造船所」is read ぞうせんじょ and means “shipyard.”",
+              "kind": "vocabulary",
+              "options": [
+                "signal",
+                "work zone",
+                "coordination",
+                "shipyard"
+              ],
+              "prompt": "What does 「造船所（ぞうせんじょ）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip briefing galangan dan koordinasi tim untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Stop tasks that enter the affected zone and coordinate access again with the person in charge.",
+          "scenario": "A ship-block move is starting in an area also used by your team.",
+          "sections": [
+            {
+              "body": "Shipyards have overlapping tasks, including fabrication, lifting, painting, machinery installation, and electrical work. Daily briefings communicate sequence, zones, signals, weather changes, and conflicts between tasks. Teams follow the site plan and procedures.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Know the area boundaries, safe routes, communication methods, and nearby work. If the lifting plan or sequence changes, inform the team and stop any work that could conflict until coordination is complete.\n\nPractice scenario: A ship-block move is starting in an area also used by your team.\nResponse: Stop tasks that enter the affected zone and coordinate access again with the person in charge.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Shipyard Briefings and Team Coordination",
+          "vocabulary": [
+            {
+              "japanese": "造船所",
+              "meaning": "shipyard",
+              "reading": "ぞうせんじょ"
+            },
+            {
+              "japanese": "合図",
+              "meaning": "signal",
+              "reading": "あいず"
+            },
+            {
+              "japanese": "作業区域",
+              "meaning": "work zone",
+              "reading": "さぎょうくいき"
+            },
+            {
+              "japanese": "調整",
+              "meaning": "coordination",
+              "reading": "ちょうせい"
+            }
+          ]
+        }
+      ],
+      "title": "Shipyard Work Scope and Safety"
+    },
+    {
+      "description": "This material introduces controls and coordination for fabrication and joining. Technical work must follow shipyard procedures, permits, required competence, and supervisor instructions.",
+      "id": "hull-work",
+      "lessons": [
+        {
+          "caution": "Do not copy a number from a neighboring plate or rely on a material's appearance.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Ship components must meet specifications and remain traceable.",
+              "kind": "knowledge",
+              "options": [
+                "Identity, specifications, dimensions, and work instructions",
+                "The surface color only",
+                "The speed of the available machine",
+                "A mark on another material"
+              ],
+              "prompt": "Before processing a plate, workers need to check…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Confirm missing identification before processing changes the material's condition.",
+              "kind": "case",
+              "options": [
+                "Hold the work and trace the identity through receiving records",
+                "Copy the number from the nearest plate",
+                "Process it first to find out its dimensions",
+                "Discard the material without reporting it"
+              ],
+              "prompt": "A plate number is unreadable before processing. What is the correct step?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「鋼板」is read こうはん and means “steel plate.”",
+              "kind": "vocabulary",
+              "options": [
+                "steel plate",
+                "identification number",
+                "processing",
+                "dimension"
+              ],
+              "prompt": "What does 「鋼板（こうはん）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-04",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip persiapan material dan fabrikasi lambung untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Hold processing and request that the item be traced again using receiving records.",
+          "scenario": "The plate to be processed has no readable identification number.",
+          "sections": [
+            {
+              "body": "Hull fabrication uses metal plates and sections with defined identities, dimensions, marks, and drawing revisions. Keep orientation and part numbers traceable through cutting, forming, and assembly. Follow shipyard standards and work within your competence.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Check the part number, grade or material, dimensions, and reference marks before processing. Report damage, deformation, or missing identity; use approved storage and lifting areas.\n\nPractice scenario: The plate to be processed has no readable identification number.\nResponse: Hold processing and request trace-back using receiving records.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Material Preparation and Hull Fabrication",
+          "vocabulary": [
+            {
+              "japanese": "鋼板",
+              "meaning": "steel plate",
+              "reading": "こうはん"
+            },
+            {
+              "japanese": "識別番号",
+              "meaning": "identification number",
+              "reading": "しきべつばんごう"
+            },
+            {
+              "japanese": "加工",
+              "meaning": "processing",
+              "reading": "かこう"
+            },
+            {
+              "japanese": "寸法",
+              "meaning": "dimension",
+              "reading": "すんぽう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not move gas cylinders, adjust settings, or weld without the required authorization and competence.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Hot work requires a permit and the specified protective measures.",
+              "kind": "knowledge",
+              "options": [
+                "Shipyard permits and hazard controls required by procedure are in place",
+                "The area looks empty",
+                "The production target approved by the customer",
+                "The worker brings their own equipment"
+              ],
+              "prompt": "Hot work may begin after…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Authorization limits must not be exceeded to meet a schedule.",
+              "kind": "case",
+              "options": [
+                "Hold the work until the permit and safety controls are in place",
+                "Start briefly while wearing eye protection",
+                "Ask a coworker to stand by without obtaining a permit",
+                "Transfer the work without informing the person in charge"
+              ],
+              "prompt": "The work needs to start quickly, but the hot-work permit is not available. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「火気作業」is read かきさぎょう and means “hot work.”",
+              "kind": "vocabulary",
+              "options": [
+                "ventilation",
+                "hot work",
+                "welding",
+                "authorization"
+              ],
+              "prompt": "What does 「火気作業（かきさぎょう）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengelasan dan pekerjaan panas untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Do not start the equipment; first request that the permit and safety controls be completed.",
+          "scenario": "The hot-work permit is not available, but the work is supposed to start soon.",
+          "sections": [
+            {
+              "body": "Welding is a hot process that can cause burns, fires, fumes, and damage to materials or structures. Shipyard rules specify permits, area inspections, ignition-source controls, ventilation, PPE, and competence. A quiz does not train practical welding skills.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Check the permit and site conditions before beginning. Control flammable materials, other workers, ventilation, and emergency equipment according to procedure. After the work, complete the required inspection before declaring the area safe.\n\nPractice scenario: The hot-work permit is not available, but the work is supposed to start soon.\nResponse: Do not start the equipment; request that the permit and safety controls be completed first.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Welding and Hot Work",
+          "vocabulary": [
+            {
+              "japanese": "火気作業",
+              "meaning": "hot work",
+              "reading": "かきさぎょう"
+            },
+            {
+              "japanese": "溶接",
+              "meaning": "welding",
+              "reading": "ようせつ"
+            },
+            {
+              "japanese": "許可",
+              "meaning": "permission",
+              "reading": "きょか"
+            },
+            {
+              "japanese": "換気",
+              "meaning": "ventilation",
+              "reading": "かんき"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use solvents or mix substances without the specified instructions and protection.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Paint application must follow the specified specifications and conditions.",
+              "kind": "knowledge",
+              "options": [
+                "The material system, surface preparation, conditions, and process time",
+                "The worker's preferred color",
+                "A layer count chosen independently",
+                "The speed of finishing the area"
+              ],
+              "prompt": "Paint-coating quality depends in part on…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The material must match the specified system; do not experiment on the product.",
+              "kind": "case",
+              "options": [
+                "Hold the application and confirm the correct material",
+                "Mix it with old paint so the color matches",
+                "Apply it to a hidden area first",
+                "Use it because the container size is suitable"
+              ],
+              "prompt": "The paint-material code differs from the coating system in the document. What should be done?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「塗料」is read とりょう and means “paint” or “coating material.”",
+              "kind": "vocabulary",
+              "options": [
+                "drying",
+                "surface",
+                "paint/coating material",
+                "painting"
+              ],
+              "prompt": "What does 「塗料（とりょう）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-06",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengecatan dan pengendalian kontaminasi untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Do not mix or apply it; hold it and confirm the correct material.",
+          "scenario": "The paint brought to the area does not match the coating-system code on the drawing.",
+          "sections": [
+            {
+              "body": "Ship painting protects surfaces and provides the specified finish. Follow product instructions and shipyard procedures for surface preparation, environmental conditions, coating system, drying time, and inspection. Dust, oil, moisture, and an incorrect coating can reduce quality.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Check the area, coating system, batch number, use-by date, and required work conditions. Keep materials separate and maintain ventilation and PPE as required. Protect uncured work from dust and other activity, and record required conditions.\n\nPractice scenario: The paint brought to the area does not match the coating-system code on the drawing.\nResponse: Do not mix or apply it; hold it and confirm the correct material.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Painting and Contamination Control",
+          "vocabulary": [
+            {
+              "japanese": "塗料",
+              "meaning": "paint/coating material",
+              "reading": "とりょう"
+            },
+            {
+              "japanese": "塗装",
+              "meaning": "painting",
+              "reading": "とそう"
+            },
+            {
+              "japanese": "乾燥",
+              "meaning": "drying",
+              "reading": "かんそう"
+            },
+            {
+              "japanese": "表面",
+              "meaning": "surface",
+              "reading": "ひょうめん"
+            }
+          ]
+        }
+      ],
+      "title": "Hull, Metal, and Hot Work"
+    },
+    {
+      "description": "Ships combine auxiliary machinery, piping, outfitting, cables, and electrical or electronic equipment. Identification, work sequence, isolation, and inspection follow the documents and your authorization.",
+      "id": "systems-fitout",
+      "lessons": [
+        {
+          "caution": "Do not identify system contents by color or shape alone.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Connection errors can affect the function and safety of ship systems.",
+              "kind": "knowledge",
+              "options": [
+                "The identity, direction or flow, drawing, and safe system condition",
+                "Its exterior color resembles the old connection",
+                "Apply pressure by touching the pipe",
+                "A component from another ship can be used"
+              ],
+              "prompt": "Before connecting ship pipes, workers must confirm…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Resolve the identity discrepancy before connecting the system.",
+              "kind": "case",
+              "options": [
+                "Hold the connection and request verification before work continues",
+                "Install it and test it yourself",
+                "Follow the color even if the label differs",
+                "Ask another technician to repair it after installation"
+              ],
+              "prompt": "The medium label or flow direction differs from the drawing. What is the best response?"
+            },
+            {
+              "answer": 3,
+              "explanation": "「配管」is read はいかん and means piping.",
+              "kind": "vocabulary",
+              "options": [
+                "ship machinery",
+                "connection",
+                "foreign object",
+                "piping"
+              ],
+              "prompt": "What does 「配管（はいかん）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-07",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip mesin kapal dan pemipaan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Do not connect it; hold the work and request a check of the drawing, identity, and isolation status.",
+          "scenario": "A pipe that appears suitable has a different contents label and flow direction.",
+          "sections": [
+            {
+              "body": "Machinery and piping installation connects components, mounts, joints, and utilities. Control position, cleanliness, alignment, joint type, and pressure or energy status according to the drawings and sequence. Designated personnel perform testing and maintenance.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Check component labels and routes against the latest drawing. Make sure the system is safe and isolated before opening it, keep foreign objects out, and report discrepancies. Do not test or adjust anything outside your assigned task.\n\nPractice scenario: A pipe that appears suitable has a different contents label and flow direction.\nResponse: Do not connect it; hold the work and request a check of the drawing, identity, and isolation status.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Ship Machinery and Piping",
+          "vocabulary": [
+            {
+              "japanese": "配管",
+              "meaning": "pipework",
+              "reading": "はいかん"
+            },
+            {
+              "japanese": "機関",
+              "meaning": "ship machinery",
+              "reading": "きかん"
+            },
+            {
+              "japanese": "接続",
+              "meaning": "joint",
+              "reading": "せつぞく"
+            },
+            {
+              "japanese": "異物",
+              "meaning": "foreign object",
+              "reading": "いぶつ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not test voltage, open a panel, or alter a circuit beyond your authority.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Circuit documents support correct installation and inspection.",
+              "kind": "knowledge",
+              "options": [
+                "Identify system relationships and components according to the design",
+                "Determine the cable color by guesswork",
+                "Replace energy isolation",
+                "Change system functions without approval"
+              ],
+              "prompt": "A circuit diagram is used to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Confirm cable identification and isolation before electrical work.",
+              "kind": "case",
+              "options": [
+                "Hold the connection and request verification by authorized staff",
+                "Change the label yourself based on color",
+                "Connect one cable to test it",
+                "Open the panel while the system is operating"
+              ],
+              "prompt": "The cable label does not match the panel diagram. What is the safe step?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「配線」is read はいせん and means “wiring.”",
+              "kind": "vocabulary",
+              "options": [
+                "wiring",
+                "terminal",
+                "power source",
+                "circuit diagram"
+              ],
+              "prompt": "What does 「配線（はいせん）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip perakitan listrik dan elektronik kapal untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Do not connect the cables or change labels; stop the task and request verification of the diagram and isolation.",
+          "scenario": "The labels on two cables in the panel do not match the diagram.",
+          "sections": [
+            {
+              "body": "Ship electrical work includes cables, panels, sensors, and electrical or electronic equipment as designed. Competent personnel must identify cables, polarity, protection, tightening, routes, and tests using controlled documents. Stored energy and electrical-contact hazards remain present.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Match cables and terminals to the diagram and labels. Before work begins, authorized staff must isolate the system and verify that it is de-energized. Protect connectors from moisture and contamination. Record assigned tests.\n\nPractice scenario: The labels on two cables in the panel do not match the diagram.\nResponse: Do not connect the cables or change the labels; stop the task and request verification of the diagram and isolation.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Ship Electrical and Electronic Assembly",
+          "vocabulary": [
+            {
+              "japanese": "配線",
+              "meaning": "wiring",
+              "reading": "はいせん"
+            },
+            {
+              "japanese": "端子",
+              "meaning": "terminal",
+              "reading": "たんし"
+            },
+            {
+              "japanese": "電源",
+              "meaning": "power source",
+              "reading": "でんげん"
+            },
+            {
+              "japanese": "回路図",
+              "meaning": "circuit diagram",
+              "reading": "かいろず"
+            }
+          ]
+        },
+        {
+          "caution": "Do not drill into a structure or move a pipe without drawings and approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Installation must support the function of and access to other systems.",
+              "kind": "knowledge",
+              "options": [
+                "The position, access space, and interference with other systems",
+                "The component can be installed by the quickest method",
+                "Maintenance access may be closed after testing",
+                "The ship's structure may be drilled without approval"
+              ],
+              "prompt": "Before installing outfitting, workers need to confirm…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Resolve interference through coordination before installation.",
+              "kind": "case",
+              "options": [
+                "Hold the installation and coordinate a solution through the supervisor",
+                "Install it and cover the access point",
+                "Move the pipe without permission",
+                "Cut the bracket to fit without inspection"
+              ],
+              "prompt": "The bracket will block access for pipe inspection. What is the correct action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「艤装」is read ぎそう and means “ship outfitting.”",
+              "kind": "vocabulary",
+              "options": [
+                "inspection access",
+                "ship outfitting/equipment",
+                "installation",
+                "collision/interference"
+              ],
+              "prompt": "What does 「艤装（ぎそう）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip outfitting dan koordinasi antarpekerjaan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Hold the installation and request coordination of the change with the systems team and supervisor.",
+          "scenario": "An equipment bracket blocks access to a designated pipe inspection point.",
+          "sections": [
+            {
+              "body": "Outfitting installs equipment and interior or exterior ship components after coordinating with structures and other systems. Consider confined spaces, evacuation routes, protected surfaces, inspection access, and work sequence. Changes to a position require drawing approval.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Before installation, check mounting points, clearances, maintenance access, and concealed work. Protect surfaces and components. Report interference with piping or cables or structural changes before moving the unit.\n\nPractice scenario: An equipment bracket blocks access to a designated pipe inspection point.\nResponse: Hold the installation and request coordination of the change with the systems team and supervisor.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Outfitting and Coordination Between Trades",
+          "vocabulary": [
+            {
+              "japanese": "艤装",
+              "meaning": "ship outfitting/equipment",
+              "reading": "ぎそう"
+            },
+            {
+              "japanese": "取付",
+              "meaning": "installation",
+              "reading": "とりつけ"
+            },
+            {
+              "japanese": "干渉",
+              "meaning": "collision/interference",
+              "reading": "かんしょう"
+            },
+            {
+              "japanese": "点検口",
+              "meaning": "inspection access",
+              "reading": "てんけんこう"
+            }
+          ]
+        }
+      ],
+      "title": "Machinery, Equipment, and Electrical Systems"
+    },
+    {
+      "description": "Maintain ship product quality, track work status, and communicate findings across teams.",
+      "id": "inspection-handover",
+      "lessons": [
+        {
+          "caution": "Do not change test data or repeat a test until it passes without recording the first result.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Actual results protect the integrity of quality decisions and must be followed up.",
+              "kind": "knowledge",
+              "options": [
+                "Record it, place it on hold, and assess it before further processing",
+                "Erase it after repair",
+                "Report it only if the customer asks",
+                "Replace it with an estimated passing result"
+              ],
+              "prompt": "A failed test result must…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Failures must be documented and handled using the approved method.",
+              "kind": "case",
+              "options": [
+                "Hold the system, record and report the issue before closing or continuing",
+                "Seal the leak with any available material",
+                "Repeat the test without saving the first result",
+                "Declare it passed because there is only one point"
+              ],
+              "prompt": "A test shows a leak before the section is closed. What is the correct step?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「試験」is read しけん and means “test.”",
+              "kind": "vocabulary",
+              "options": [
+                "pass",
+                "record",
+                "testing",
+                "leak"
+              ],
+              "prompt": "What does 「試験（しけん）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-10",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip inspeksi, pengujian, dan cacat untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Keep the system on hold and report the result; do not close it, repressurize it, or declare it passed yourself.",
+          "scenario": "A joint test reveals a leak, but follow-up work is waiting.",
+          "sections": [
+            {
+              "body": "Inspect and test the ship at the designated hold and inspection points using the specified criteria, personnel, tools, and records. Identify, segregate, and report questionable results, defects, and failed tests. Repairs and retesting must wait for a decision and approved method.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Check the part identity, measuring tool, and procedure. Record actual values and results, conditions, and witnesses if required. Mark the area on hold so it is not covered or handed over before a quality decision is made.\n\nPractice scenario: A joint test reveals a leak, but follow-up work is waiting.\nResponse: Keep the system on hold and report the result; do not close it, repressurize it, or declare it passed yourself.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Inspection, Testing, and Defects",
+          "vocabulary": [
+            {
+              "japanese": "試験",
+              "meaning": "testing",
+              "reading": "しけん"
+            },
+            {
+              "japanese": "漏れ",
+              "meaning": "leak",
+              "reading": "もれ"
+            },
+            {
+              "japanese": "合格",
+              "meaning": "pass",
+              "reading": "ごうかく"
+            },
+            {
+              "japanese": "記録",
+              "meaning": "record",
+              "reading": "きろく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not move a sling or load lock unless you are designated and trained to do so.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Loads may shift or fall; no one may enter the hazard zone.",
+              "kind": "knowledge",
+              "options": [
+                "Empty it and control it according to the lifting plan",
+                "Use it to retrieve a tool quickly",
+                "It can be passed if workers are wearing helmets",
+                "Use it as a place to put other components"
+              ],
+              "prompt": "The area beneath a suspended load must…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Never stand beneath a load; use a safe route once the operation is under control.",
+              "kind": "case",
+              "options": [
+                "Do not pass; wait until the load is safe and the route is reopened",
+                "Pass quickly while signaling",
+                "Push the load to open up space",
+                "Ask a coworker to hold the load by hand"
+              ],
+              "prompt": "You are asked to pass beneath a suspended component. What is the safe response?"
+            },
+            {
+              "answer": 3,
+              "explanation": "「吊り荷」is read つりに and means “suspended load.”",
+              "kind": "vocabulary",
+              "options": [
+                "rigging/load securing",
+                "storage",
+                "rust protection",
+                "suspended load"
+              ],
+              "prompt": "What does 「吊り荷（つりに）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengangkatan, penyimpanan, dan perlindungan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Do not pass underneath; wait until the load is placed in a safe position and use an approved alternative route.",
+          "scenario": "A component is suspended, and a worker asks you to pass underneath it to get a tool.",
+          "sections": [
+            {
+              "body": "Ship sections and equipment may be heavy, have designated lifting points, or be easily damaged. Follow site procedures for rigging plans, inspected equipment, capacity, communication, exclusion zones, and weather conditions. Protect surfaces and components during storage.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Check weight and lifting-point marks and the approved plan. Do not enter beneath a suspended load or direct the operation unless designated. Secure components on suitable supports and protect them from water, corrosion, and impact.\n\nPractice scenario: A component is suspended, and a worker asks you to pass underneath it to get a tool.\nResponse: Do not pass underneath; wait until the load is placed safely and use an approved alternative route.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Lifting, Storage, and Protection",
+          "vocabulary": [
+            {
+              "japanese": "吊り荷",
+              "meaning": "suspended load",
+              "reading": "つりに"
+            },
+            {
+              "japanese": "玉掛け",
+              "meaning": "rigging/load securing",
+              "reading": "たまがけ"
+            },
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "防錆",
+              "meaning": "corrosion protection",
+              "reading": "ぼうせい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not remove a lock or tag or change system status just to close a shift record.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Accurate information prevents another team from entering work that is not yet safe.",
+              "kind": "knowledge",
+              "options": [
+                "The location or system, results, isolation status, and work on hold",
+                "Only the list of completed work",
+                "The panel code without its status",
+                "A verbal note without the area identity"
+              ],
+              "prompt": "A handover for shipyard work must communicate…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Only authorized personnel may change an isolation, following the applicable procedure.",
+              "kind": "case",
+              "options": [
+                "Keep the label in place and hand the status over to authorized staff",
+                "Remove the isolation because you have finished",
+                "Leave the label as it is without telling anyone",
+                "Ask an unassigned staff member to remove it"
+              ],
+              "prompt": "The panel is still isolated when the shift ends. What is the correct action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「引継ぎ」is read ひきつぎ and means “handover.”",
+              "kind": "vocabulary",
+              "options": [
+                "handover",
+                "isolation/separation",
+                "inside the ship",
+                "person in charge"
+              ],
+              "prompt": "What does 「引継ぎ（ひきつぎ）」 mean in a shipyard context?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "図面と作業範囲を確認します。",
+              "meaning": "I will check the drawing and scope of work.",
+              "reading": "ずめんとさぎょうはんいをかくにんします。"
+            },
+            {
+              "japanese": "異常を監督者に報告します。",
+              "meaning": "I will report the abnormality to the supervisor.",
+              "reading": "いじょうをかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "shipbuilding-12",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip serah-terima lintas divisi dan catatan untuk proses galangan kapal.",
+            "Memilih respons aman dan menjaga mutu berdasarkan situasi kerja.",
+            "Mengenali kosakata Jepang yang terkait tugas ini."
+          ],
+          "response": "Keep the isolation label in place according to procedure and hand over the status to an authorized successor.",
+          "scenario": "Your shift ends while the panel is still isolated and the work is unfinished.",
+          "sections": [
+            {
+              "body": "Ship work passes between structural, machinery, outfitting, electrical, and inspection teams. Handovers identify the ship and area, system, revision, inspection results, energy and isolation status, work on hold, and access limits. Records must reflect the facts so the next team does not rely on assumptions.",
+              "title": "Concepts and Limits of This Material"
+            },
+            {
+              "body": "Make sure area labels and status match the records. Directly communicate safety issues, items not yet released, and permits still in effect. Ask the recipient to repeat critical information. Update records through the official procedure.\n\nPractice scenario: Your shift ends while the panel is still isolated and the work is unfinished.\nResponse: Keep the isolation label in place according to procedure and hand over the status to an authorized successor.",
+              "title": "Applying the Work Process"
+            }
+          ],
+          "steps": [
+            "Cocokkan divisi, komponen, instruksi, dan status area",
+            "Pastikan risiko serta otorisasi sebelum tindakan",
+            "Ikuti urutan dan metode galangan yang telah disetujui",
+            "Periksa hasil, catat, dan serahkan status lintas tim"
+          ],
+          "title": "Cross-Division Handover and Records",
+          "vocabulary": [
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "隔離",
+              "meaning": "isolation/separation",
+              "reading": "かくり"
+            },
+            {
+              "japanese": "船内",
+              "meaning": "inside the ship",
+              "reading": "せんない"
+            },
+            {
+              "japanese": "担当",
+              "meaning": "person in charge",
+              "reading": "たんとう"
+            }
+          ]
+        }
+      ],
+      "title": "Inspection, Protection, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "MLIT: Shipbuilding and Marine Equipment Sector Scope and Exams",
+      "url": "https://www.mlit.go.jp/maritime/maritime_fr5_000006.html"
+    },
+    {
+      "title": "ISA: SSW No. 2 Job Descriptions for the Three Divisions",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00180.html"
+    },
+    {
+      "title": "MLIT: No. 1 Skills Test Standards",
+      "url": "https://www.mlit.go.jp/common/001341301.pdf"
+    },
+    {
+      "title": "ClassNK: Test Operator and Trade Information",
+      "url": "https://www.classnk.or.jp/hp/ja/authentication/evaluation/index.html"
+    }
+  ],
+  "version": 1
+}

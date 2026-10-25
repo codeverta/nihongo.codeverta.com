@@ -5,12 +5,23 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nihongo_master/core/offline/network_status.dart';
+import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
+import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/kanji/data/kanji_repository.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_course_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+late SharedPreferences _preferences;
 
 void main() {
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+    _preferences = await SharedPreferences.getInstance();
+  });
+
   test('repository requests the selected level and defaults to N5', () async {
     final dio = Dio();
     addTearDown(dio.close);
@@ -53,6 +64,11 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          sharedPreferencesProvider.overrideWithValue(_preferences),
+          authControllerProvider.overrideWith(
+            (ref) => AuthController.test(const AuthenticationState.guest()),
+          ),
+          offlineProvider.overrideWithValue(true),
           kanjiCourseProvider.overrideWith((ref, level) async {
             requested.add(level);
             return _course(level);
@@ -93,6 +109,11 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
+          sharedPreferencesProvider.overrideWithValue(_preferences),
+          authControllerProvider.overrideWith(
+            (ref) => AuthController.test(const AuthenticationState.guest()),
+          ),
+          offlineProvider.overrideWithValue(true),
           kanjiCourseProvider.overrideWith((ref, level) async {
             requested.add(level);
             return _course(level);

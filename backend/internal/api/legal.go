@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-//go:embed legal/*.html
+//go:embed legal/*.html legal/en/*.html
 var legalFiles embed.FS
 
 func (s *Server) registerLegal(mux *http.ServeMux) {
@@ -36,6 +36,33 @@ func (s *Server) registerLegal(mux *http.ServeMux) {
 			w.Write(body)
 		}
 		mux.HandleFunc("GET "+page.path, handler)
+	}
+	if publicEnglishContentEnabled() {
+		englishPages := []struct{ path, name, title string }{
+			{"/en/legal", "index", "Information and policies"},
+			{"/en/privacy-policy", "privacy", "Privacy policy"},
+			{"/en/delete-account", "deletion", "Account and data deletion"},
+			{"/en/refund-policy", "refund", "Purchase and refund policy"},
+			{"/en/terms-of-service", "terms", "Terms of service"},
+			{"/en/support", "support", "Support and contact"},
+			{"/en/data-safety", "safety", "Data safety summary"},
+		}
+		for _, page := range englishPages {
+			view := template.Must(template.ParseFS(legalFiles, "legal/en/layout.html", "legal/en/"+page.name+".html"))
+			var rendered bytes.Buffer
+			if err := view.ExecuteTemplate(&rendered, "layout.html", struct{ Title, Email string }{page.title, "contact@codeverta.com"}); err != nil {
+				panic(err)
+			}
+			body := append([]byte(nil), rendered.Bytes()...)
+			mux.HandleFunc("GET "+page.path, func(w http.ResponseWriter, r *http.Request) {
+				w.Header().Set("Content-Type", "text/html; charset=utf-8")
+				w.Header().Set("X-Content-Type-Options", "nosniff")
+				w.Header().Set("Referrer-Policy", "no-referrer")
+				w.Header().Set("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'")
+				w.Header().Set("Cache-Control", "public, max-age=300, no-transform")
+				_, _ = w.Write(body)
+			})
+		}
 	}
 	for alias, target := range map[string]string{"/privacy": "/privacy-policy", "/terms": "/terms-of-service", "/refunds": "/refund-policy", "/account-deletion": "/delete-account"} {
 		destination := target

@@ -1,0 +1,1264 @@
+{
+  "modules": [
+    {
+      "description": "Work in civil engineering 土木, building construction 建築, or utilities and facilities ライフライン・設備 must follow the assigned task, work plan, and applicable supervision.",
+      "id": "site-safety",
+      "lessons": [
+        {
+          "caution": "Site access permission does not authorize you to perform every type of construction work.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Work must comply with the applicable classification, assignment, and instructions.",
+              "kind": "knowledge",
+              "options": [
+                "The division of work areas, plans, and instructions determines which tasks may be performed",
+                "All tasks at a site have the same risks",
+                "Workers may choose tasks based on old drawings",
+                "A supervisor is only needed after the work is complete"
+              ],
+              "prompt": "Workers must confirm the scope of their task because…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Drawings and conditions vary by site and project; clarify any work that is not clear.",
+              "kind": "case",
+              "options": [
+                "Confirm the scope and instructions before starting any unclear part",
+                "Follow another worker without asking",
+                "Use drawings seen on another project",
+                "Start only with the part that looks easy"
+              ],
+              "prompt": "You are moved to utility work without drawings or a briefing. What should you do?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「建設」is read けんせつ and means construction.",
+              "kind": "vocabulary",
+              "options": [
+                "facilities/utilities",
+                "construction",
+                "civil engineering",
+                "building/architecture"
+              ],
+              "prompt": "What does 「建設（けんせつ）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-01",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip ruang lingkup dan peran pekerja sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Pause the unclear part and confirm the scope and instructions with the supervisor.",
+          "scenario": "You are asked to move from the civil works team to a utility task without an explanation of the drawings.",
+          "sections": [
+            {
+              "body": "An SSW No. 1 worker performs assigned construction tasks under the designated direction. The official fields are 土木 (civil engineering), 建築 (building construction), and ライフライン・設備 (utilities and facilities). An assignment does not automatically include every task on a site.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Before starting, confirm the trade, location, drawing, sequence, and person giving instructions. No. 1 workers should ask for clarification when task boundaries, conditions, or competence requirements are unclear; a worker's status does not imply authority to supervise others.\\n\\nPractice scenario: You are asked to move from the civil works team to a utility task without an explanation of the drawings.\\nResponse: Pause the unclear part and confirm the scope and instructions with the supervisor.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Work Scope and Worker Roles",
+          "vocabulary": [
+            {
+              "japanese": "建設",
+              "meaning": "construction",
+              "reading": "けんせつ"
+            },
+            {
+              "japanese": "土木",
+              "meaning": "civil engineering",
+              "reading": "どぼく"
+            },
+            {
+              "japanese": "建築",
+              "meaning": "building construction/architecture",
+              "reading": "けんちく"
+            },
+            {
+              "japanese": "設備",
+              "meaning": "facilities/utilities",
+              "reading": "せつび"
+            }
+          ]
+        },
+        {
+          "caution": "Do not continue on the assumption that an earlier plan is still safe.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A briefing aligns the team's understanding with the relevant plan and risks.",
+              "kind": "knowledge",
+              "options": [
+                "Align on methods, hazards, roles, and responses to changes",
+                "Replace project drawings and instructions",
+                "Allow everyone to change the work sequence",
+                "Avoid recording incidents"
+              ],
+              "prompt": "A pre-work briefing helps the team to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Changed conditions require reassessment and communication before affected work resumes.",
+              "kind": "case",
+              "options": [
+                "Stop the affected work and coordinate the change with the supervisor",
+                "Continue and hope the driver sees the workers",
+                "Move the barrier without informing the team",
+                "Ask one worker to watch while the work continues"
+              ],
+              "prompt": "The vehicle route changes and crosses the work area after the briefing. What should you do?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「作業計画」is read さぎょうけいかく and means work plan.",
+              "kind": "vocabulary",
+              "options": [
+                "hazard prediction",
+                "communication",
+                "work plan",
+                "morning briefing"
+              ],
+              "prompt": "What does 「作業計画（さぎょうけいかく）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-02",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip rencana kerja harian dan komunikasi bahaya sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Stop the affected work, inform the supervisor, and coordinate a new route and access restrictions.",
+          "scenario": "After the briefing, a transport vehicle is rerouted through your team's work area.",
+          "sections": [
+            {
+              "body": "Before work begins, the team reviews the method, sequence, expected hazards, person in charge, and any changed conditions. The plan must match project documents and the briefing. Clear, concise communication helps workers understand the limits and what to do if a hazard occurs.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Attend the briefing and ask for confirmation if you did not hear something. Before continuing affected work, report changes in weather, access, ground conditions, or other teams' work. Make sure emergency signals are understood.\\n\\nPractice scenario: After the briefing, a transport vehicle is rerouted through your team's work area.\\nResponse: Stop the affected activity, inform the supervisor, and coordinate a new route and access restrictions.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Daily Work Plans and Hazard Communication",
+          "vocabulary": [
+            {
+              "japanese": "作業計画",
+              "meaning": "work plan",
+              "reading": "さぎょうけいかく"
+            },
+            {
+              "japanese": "朝礼",
+              "meaning": "morning briefing",
+              "reading": "ちょうれい"
+            },
+            {
+              "japanese": "危険予知",
+              "meaning": "hazard prediction",
+              "reading": "きけんよち"
+            },
+            {
+              "japanese": "連絡",
+              "meaning": "communication",
+              "reading": "れんらく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not enter a hole or equipment zone to repair a barrier without a safe work plan.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Barriers and signs control access; they must be kept in proper condition.",
+              "kind": "knowledge",
+              "options": [
+                "Prevent access to hazardous zones as specified in the site plan",
+                "Mark the area as a place to store all materials",
+                "Replace site condition checks",
+                "Allow workers to cross the work zone"
+              ],
+              "prompt": "The purpose of an area barrier is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Protect yourself and stop exposure; correct the issue according to the site plan and communication procedures.",
+              "kind": "case",
+              "options": [
+                "Warn others from a safe position and report it so the area can be secured",
+                "Cross the barrier and enter the opening to inspect it",
+                "Leave it until the end of the shift",
+                "Move it yourself without coordinating with the team"
+              ],
+              "prompt": "A barrier near an opening has shifted into a pedestrian route. What is the appropriate response?"
+            },
+            {
+              "answer": 3,
+              "explanation": "「立入禁止」is read たちいりきんし and means no entry.",
+              "kind": "vocabulary",
+              "options": [
+                "route",
+                "excavation",
+                "sign/signboard",
+                "no entry"
+              ],
+              "prompt": "What does 「立入禁止（たちいりきんし）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-03",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pembatas area dan akses aman sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Protect yourself, warn others from a safe position, stop work that could expose people to the hazard, and report the barrier for replacement.",
+          "scenario": "A barrier near an opening has shifted, allowing pedestrians to enter.",
+          "sections": [
+            {
+              "body": "Construction sites may have moving equipment, open edges, holes, changes in level, stored materials, and public access. Install and inspect barriers, signs, lighting, pedestrian routes, and access controls according to the site plan.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Know the work-area boundaries, exits, assembly point, and equipment routes. Do not move barriers without authorization. If access is blocked or someone enters a hazardous zone, stop the affected work and report it.\\n\\nPractice scenario: A barrier near an opening has shifted, allowing pedestrians to enter.\\nResponse: Protect yourself, warn others from a safe position, stop work that could expose people to the hazard, and report the barrier for replacement.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Work-Area Barriers and Safe Access",
+          "vocabulary": [
+            {
+              "japanese": "立入禁止",
+              "meaning": "no entry",
+              "reading": "たちいりきんし"
+            },
+            {
+              "japanese": "通路",
+              "meaning": "route",
+              "reading": "つうろ"
+            },
+            {
+              "japanese": "掘削",
+              "meaning": "excavation",
+              "reading": "くっさく"
+            },
+            {
+              "japanese": "標識",
+              "meaning": "mark/sign",
+              "reading": "ひょうしき"
+            }
+          ]
+        }
+      ],
+      "title": "Site Safety and Work Practices"
+    },
+    {
+      "description": "Read controlled work information, identify the site, and prepare the task for the assigned trade and instructions.",
+      "id": "drawings-layout",
+      "lessons": [
+        {
+          "caution": "Do not combine dimensions from different drawing revisions.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Controlled information must agree with site conditions and approved documents.",
+              "kind": "knowledge",
+              "options": [
+                "The current drawing number and revision",
+                "The largest print size",
+                "The easiest-to-read drawing, even if it is old",
+                "Dimensions from another part of the project"
+              ],
+              "prompt": "Before marking out from a drawing, make sure…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Revisions must be controlled before dependent work proceeds.",
+              "kind": "case",
+              "options": [
+                "Confirm the current version and stop affected work",
+                "Choose the drawing with the latest print date without asking",
+                "Combine details from both",
+                "Continue and report it after finishing"
+              ],
+              "prompt": "The document at the worksite shows a different revision. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「図面」is read ずめん and means a technical drawing.",
+              "kind": "vocabulary",
+              "options": [
+                "technical drawing",
+                "dimension",
+                "scale",
+                "revision"
+              ],
+              "prompt": "What does 「図面（ずめん）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-04",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip membaca gambar dan revisi sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Hold the affected work and ask the supervisor to confirm the current drawing.",
+          "scenario": "The field drawing has an older revision than the document on the information board.",
+          "sections": [
+            {
+              "body": "Working drawings show locations, dimensions, symbols, levels, details, and how parts relate. Confirm the version and revision because design changes can affect coordination and safety. Ask for an explanation if a symbol or dimension is unreadable.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Check the drawing number and revision against the current document package. Review the relevant views, plans, and details before marking or positioning components. Do not measure from an old drawing or guess the printed scale.\\n\\nPractice scenario: The field drawing has an older revision than the document on the information board.\\nResponse: Hold the affected work and ask the supervisor to confirm the current drawing.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Reading Drawings and Revisions",
+          "vocabulary": [
+            {
+              "japanese": "図面",
+              "meaning": "technical drawing",
+              "reading": "ずめん"
+            },
+            {
+              "japanese": "寸法",
+              "meaning": "dimension",
+              "reading": "すんぽう"
+            },
+            {
+              "japanese": "縮尺",
+              "meaning": "scale",
+              "reading": "しゅくしゃく"
+            },
+            {
+              "japanese": "改訂",
+              "meaning": "revision",
+              "reading": "かいてい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not move a reference stake or erase a mark before confirming it is correct.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Measurements can only be compared when they use a consistent, authorized reference point.",
+              "kind": "knowledge",
+              "options": [
+                "Measurements and markings use the same reference",
+                "Each worker uses a point of their choice",
+                "There is no need to check again",
+                "Project dimensions can be changed on site"
+              ],
+              "prompt": "A reference point is needed so that…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Check the reference source for discrepancies before setting a position.",
+              "kind": "case",
+              "options": [
+                "Check the reference point and repeat the measurement together according to procedure",
+                "Use the value closest to the target",
+                "Move the stake until both values match",
+                "Close the area without recording the discrepancy"
+              ],
+              "prompt": "Two elevation readings differ. What is the next step?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「測量」is read そくりょう and means surveying/measurement.",
+              "kind": "vocabulary",
+              "options": [
+                "line marking",
+                "survey/measurement",
+                "reference point",
+                "elevation"
+              ],
+              "prompt": "What does 「測量（そくりょう）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-05",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pengukuran, elevasi, dan penandaan sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Do not choose one value by guesswork; verify the reference point and repeat the check with an authorized person.",
+          "scenario": "The elevation mark on site differs from your coworker's measurement.",
+          "sections": [
+            {
+              "body": "Field measurements transfer coordinates, reference lines, dimensions, and elevations from documents to the site. Use the reference point and measuring instrument specified in the instructions; make sure the instrument is stable and checked. Re-measuring can reveal errors before the work is covered.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Identify the designated stake or benchmark, check the instrument, measure at the specified point and in the required units, then compare the result with project tolerances. Mark the point clearly and record changes or discrepancies. Request an inspection if the result is uncertain.\\n\\nPractice scenario: The elevation mark on site differs from your coworker's measurement.\\nResponse: Do not choose a value by guesswork; verify the reference point and repeat the check with an authorized person.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Measurement, Elevation, and Marking",
+          "vocabulary": [
+            {
+              "japanese": "測量",
+              "meaning": "survey/measurement",
+              "reading": "そくりょう"
+            },
+            {
+              "japanese": "基準点",
+              "meaning": "reference point",
+              "reading": "きじゅんてん"
+            },
+            {
+              "japanese": "高さ",
+              "meaning": "elevation",
+              "reading": "たかさ"
+            },
+            {
+              "japanese": "墨出し",
+              "meaning": "line marking",
+              "reading": "すみだし"
+            }
+          ]
+        },
+        {
+          "caution": "Do not install material until its identity and suitability are confirmed.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Inspection confirms conformity and prevents unsuitable materials from being installed.",
+              "kind": "knowledge",
+              "options": [
+                "Identity, condition, quantity, and conformity with the documents",
+                "Materials may be installed immediately without inspection",
+                "Labels may be discarded once the goods arrive",
+                "An evacuation route may be used for storage"
+              ],
+              "prompt": "An acceptance inspection is useful for verifying…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Traceability must be confirmed before the material is used.",
+              "kind": "case",
+              "options": [
+                "Set it aside and confirm its identity before installation",
+                "Install it in a place that cannot be seen",
+                "Write the lot number from the nearest material",
+                "Remove the required label to speed up the process"
+              ],
+              "prompt": "Material is missing the required lot identification. What should you do?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「資材」is read しざい and means construction materials.",
+              "kind": "vocabulary",
+              "options": [
+                "storage",
+                "quantity",
+                "construction materials",
+                "acceptance inspection"
+              ],
+              "prompt": "What does 「資材（しざい）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-06",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip material dan penerimaan di lokasi sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Hold the material from installation, protect it, and request verification of the documents and identity.",
+          "scenario": "Rebar arrives without the lot label required for traceability.",
+          "sections": [
+            {
+              "body": "Materials and components on site must match the type, grade, size, quantity, and intended use in the documents. Stack and protect them according to the plan to prevent movement, damage, contamination, or blocked routes.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Verify the identity and condition of materials when they arrive. Store them in an approved location and keep access clear. Separate and report damaged or unsuitable material before installation.\\n\\nPractice scenario: Rebar arrives without the lot label required for traceability.\\nResponse: Hold it from installation, protect it, and request verification of its documents and identity.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Materials and Site Receipt",
+          "vocabulary": [
+            {
+              "japanese": "資材",
+              "meaning": "construction material",
+              "reading": "しざい"
+            },
+            {
+              "japanese": "受入検査",
+              "meaning": "receipt inspection",
+              "reading": "うけいれけんさ"
+            },
+            {
+              "japanese": "保管",
+              "meaning": "storage",
+              "reading": "ほかん"
+            },
+            {
+              "japanese": "数量",
+              "meaning": "quantity",
+              "reading": "すうりょう"
+            }
+          ]
+        }
+      ],
+      "title": "Drawings, Measurement, and Preparation"
+    },
+    {
+      "description": "Principles that apply across construction work. Technical methods and authority must follow approved procedures, drawings, and supervision.",
+      "id": "execution",
+      "lessons": [
+        {
+          "caution": "Do not touch or move an unidentified utility, or continue excavating near it.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Deviations can create serious hazards and must be handled in a coordinated way.",
+              "kind": "knowledge",
+              "options": [
+                "Stop the affected work and wait for the supervisor's instructions",
+                "Dig faster to expose the utility",
+                "Move the utility marker yourself",
+                "Let a coworker continue while you look for a map"
+              ],
+              "prompt": "When utility or ground conditions differ from the plan, workers must…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not approach or alter an unidentified utility.",
+              "kind": "case",
+              "options": [
+                "Move workers away, stop the affected activity, and report it immediately",
+                "Keep digging slowly with any available tool",
+                "Pull the utility out of the way",
+                "Ask a coworker to stand near the point and look"
+              ],
+              "prompt": "The utility's position on site differs from the mark on the plan. What is the safe action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "「地中埋設物」is read ちちゅうまいせつぶつ and means a buried utility.",
+              "kind": "vocabulary",
+              "options": [
+                "soil/fill",
+                "collapse",
+                "evacuate/move away",
+                "buried utility"
+              ],
+              "prompt": "What does 「地中埋設物（ちちゅうまいせつぶつ）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-07",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip penggalian dan kondisi bawah tanah sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Stop the affected activity, keep a safe distance, and inform the supervisor promptly under procedure.",
+          "scenario": "An underground utility mark does not match the position seen during excavation.",
+          "sections": [
+            {
+              "body": "Excavation involves buried utilities, ground stability, water, edges, and access. Qualified personnel determine utility plans, permits, shoring or slope plans, supervision, and condition monitoring. Workers follow instructions and do not enter an unsafe excavation.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Before excavation, check the area boundaries, permits and utility markings, assigned equipment, and entry and exit routes. Report changed ground conditions, leaks, cracks, or unidentified utilities, and wait for instructions.\\n\\nPractice scenario: An underground utility mark does not match the position seen during excavation.\\nResponse: Stop the affected activity, keep a safe distance, and promptly inform the supervisor according to procedure.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Excavation and Subsurface Conditions",
+          "vocabulary": [
+            {
+              "japanese": "地中埋設物",
+              "meaning": "buried utility",
+              "reading": "ちちゅうまいせつぶつ"
+            },
+            {
+              "japanese": "土砂",
+              "meaning": "ground/fill",
+              "reading": "どしゃ"
+            },
+            {
+              "japanese": "崩壊",
+              "meaning": "collapse",
+              "reading": "ほうかい"
+            },
+            {
+              "japanese": "退避",
+              "meaning": "evacuate/move away",
+              "reading": "たいひ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not shim or alter temporary supports without instructions from a qualified person.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Required inspections must take place at the designated hold point before visual access is lost.",
+              "kind": "knowledge",
+              "options": [
+                "Conditions that will later be concealed can still be inspected and corrected",
+                "So the checklist does not need to be completed",
+                "Because drawings no longer apply after installation",
+                "So materials can be left in the area"
+              ],
+              "prompt": "Why is an inspection before a section is covered or concrete is poured important?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Temporary supports must be assessed and corrected by authorized personnel before a load is applied.",
+              "kind": "case",
+              "options": [
+                "Stop the concrete pour and request an authorized inspection",
+                "Add pieces of wood without instructions",
+                "Continue a little at a time",
+                "Ask a worker to stand underneath and hold it"
+              ],
+              "prompt": "Formwork support shifts before concrete is poured. What should you do?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「型枠」is read かたわく and means formwork.",
+              "kind": "vocabulary",
+              "options": [
+                "formwork",
+                "steel reinforcement",
+                "concrete",
+                "support"
+              ],
+              "prompt": "What does 「型枠（かたわく）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-08",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pekerjaan struktur dan komponen bangunan sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Do not continue pouring concrete; hold the area and request an inspection and the supervisor's instructions.",
+          "scenario": "Before concrete is poured, a gap is visible in the formwork and a support appears to have shifted.",
+          "sections": [
+            {
+              "body": "Building work may include preparing components, rebar work, formwork, concrete pouring, installation, or finishing, as assigned. Work sequence, temporary supports, inspections before work is covered, and team coordination protect quality and stability.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Check components against the drawing and their positions. Inspect formwork, supports, or fasteners only as assigned in the checklist and within your authority. Request the required inspection before concrete is poured or a structural section is covered.\\n\\nPractice scenario: Before concrete is poured, a gap is visible in the formwork and a support appears to have shifted.\\nResponse: Do not continue pouring; hold the area and request an inspection and the supervisor's instructions.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Structural Work and Building Components",
+          "vocabulary": [
+            {
+              "japanese": "型枠",
+              "meaning": "formwork",
+              "reading": "かたわく"
+            },
+            {
+              "japanese": "鉄筋",
+              "meaning": "steel rebar",
+              "reading": "てっきん"
+            },
+            {
+              "japanese": "コンクリート",
+              "meaning": "concrete",
+              "reading": "こんくりーと"
+            },
+            {
+              "japanese": "支持",
+              "meaning": "support",
+              "reading": "しじ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not guess what a pipe carries based on its color or location.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Utility systems must be identified and controlled according to safety procedures.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm identification, drawings, isolation, and authorization",
+                "Use pipe color as the only evidence",
+                "Assume the system is de-energized because the project is new",
+                "Ask a coworker to test it by touching it"
+              ],
+              "prompt": "Before opening or connecting a utility, workers need to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Confirm the identity and energy or pressure state before intervening.",
+              "kind": "case",
+              "options": [
+                "Stop and request proper identification and isolation",
+                "Cut a small section to see what is inside",
+                "Put on goggles and continue",
+                "Ask another worker who has not inspected it"
+              ],
+              "prompt": "A pipe without identification is scheduled to be cut. What is the safe response?"
+            },
+            {
+              "answer": 1,
+              "explanation": "「配管」is read はいかん and means piping.",
+              "kind": "vocabulary",
+              "options": [
+                "isolation/disconnection",
+                "piping",
+                "cable installation",
+                "connection"
+              ],
+              "prompt": "What does 「配管（はいかん）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-09",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pekerjaan utilitas dan fasilitas sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Do not open or cut the pipe; hold the work and ask the supervisor to identify it and provide the procedure.",
+          "scenario": "The pipe to be worked on has no contents label, and its route has not been confirmed.",
+          "sections": [
+            {
+              "body": "Work on ライフライン・設備 covers project infrastructure and facilities such as pipe or cable networks. Follow the documents and your authorization when identifying routes, isolating systems, arranging access, testing, and coordinating with systems already in operation.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Before starting, check labels, routes, connection points, and permits. Do not cut, connect, or open an energized or pressurized system without isolation procedures and authorization. Report any difference between site conditions and the drawings.\\n\\nPractice scenario: The pipe to be worked on has no contents label, and its route has not been confirmed.\\nResponse: Do not open or cut it; hold the work and ask the supervisor to identify it and provide the procedure.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Utility and Facility Work",
+          "vocabulary": [
+            {
+              "japanese": "配管",
+              "meaning": "pipework",
+              "reading": "はいかん"
+            },
+            {
+              "japanese": "配線",
+              "meaning": "cable installation",
+              "reading": "はいせん"
+            },
+            {
+              "japanese": "接続",
+              "meaning": "joint",
+              "reading": "せつぞく"
+            },
+            {
+              "japanese": "遮断",
+              "meaning": "isolation/disconnection",
+              "reading": "しゃだん"
+            }
+          ]
+        }
+      ],
+      "title": "Work Execution and Process Coordination"
+    },
+    {
+      "description": "Inspect work, control materials, keep records, and hand over the work status responsibly.",
+      "id": "quality-handover",
+      "lessons": [
+        {
+          "caution": "Do not conceal a deviation with a cover or finish.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A deviation must be evaluated and a decision made before the next stage proceeds.",
+              "kind": "knowledge",
+              "options": [
+                "Record and report the deviation before continuing with the affected stage",
+                "Change the specifications to match the result",
+                "Cover the section to make it look neat",
+                "Continue and inform others after the project is complete"
+              ],
+              "prompt": "If site results differ from the specifications, workers should…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The inspection point must be completed while the section can still be inspected.",
+              "kind": "case",
+              "options": [
+                "Delay covering it and request the required inspection",
+                "Cover it and make a record from memory afterward",
+                "Take a photo without informing the quality team",
+                "Ask the next worker to inspect it after it has been covered"
+              ],
+              "prompt": "A connection is about to be covered before the required inspection point. What should you do?"
+            },
+            {
+              "answer": 2,
+              "explanation": "「施工」is read せこう and means construction work.",
+              "kind": "vocabulary",
+              "options": [
+                "nonconformity",
+                "correction",
+                "construction work",
+                "inspection"
+              ],
+              "prompt": "What does 「施工（せこう）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-10",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip pemeriksaan pekerjaan dan ketidaksesuaian sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Delay covering the joint and request the inspection required by the quality plan.",
+          "scenario": "A utility joint is about to be covered before the required inspection.",
+          "sections": [
+            {
+              "body": "Inspection compares the result with drawings, specifications, inspection points, and the agreed method. Protect a nonconformity from being covered or worked on further before a decision is made. Records of location, dimensions, photographs if authorized, and lot numbers support follow-up.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Inspect the designated points before the next task makes them inaccessible. Record actual results and status. Report deviations for evaluation; make corrections only after the method and approval have been established.\\n\\nPractice scenario: A utility joint is about to be covered before the required inspection.\\nResponse: Delay covering it and request the inspection required by the quality plan.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Work Inspection and Nonconformities",
+          "vocabulary": [
+            {
+              "japanese": "施工",
+              "meaning": "construction work",
+              "reading": "せこう"
+            },
+            {
+              "japanese": "検査",
+              "meaning": "inspection",
+              "reading": "けんさ"
+            },
+            {
+              "japanese": "不適合",
+              "meaning": "nonconformity",
+              "reading": "ふてきごう"
+            },
+            {
+              "japanese": "是正",
+              "meaning": "correction",
+              "reading": "ぜせい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not dispose of liquid or residue in soil, a drain, or a general container before identifying it.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Classification and handling must follow the rules; do not guess the material's properties.",
+              "kind": "knowledge",
+              "options": [
+                "Identify it and handle it according to the project procedure",
+                "Mix it with general waste",
+                "Dispose of it in the nearest drain",
+                "Move it to another location without a label"
+              ],
+              "prompt": "Unidentified leftover material must…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not move or dispose of an unidentified substance without assessment and authorization.",
+              "kind": "case",
+              "options": [
+                "Keep your distance, prevent exposure from a safe position, and report it for identification",
+                "Pour a small amount into the drain to check it",
+                "Move the open container to a common area",
+                "Mix it with known leftover materials"
+              ],
+              "prompt": "An unlabeled container is near a storm drain. What is the best action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "「廃材」is read はいざい and means leftover material.",
+              "kind": "vocabulary",
+              "options": [
+                "sorting",
+                "drainage",
+                "environment",
+                "leftover material"
+              ],
+              "prompt": "What does 「廃材（はいざい）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-11",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip lingkungan dan pengelolaan material sisa sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Do not pour or move the contents; keep people away from a safe position and report it immediately.",
+          "scenario": "An unlabeled container of leftover material is near a storm drain.",
+          "sections": [
+            {
+              "body": "Store and sort leftover materials, dust, water, and hazardous substances according to project requirements and facility policy. Protect routes, drains, and the surrounding environment. Workers must not dispose of or mix materials based on assumptions.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Know the designated collection areas and required waste-separation categories. Hold unidentified material, use PPE as directed, and ask how it must be handled. Keep routes and drains clear.\\n\\nPractice scenario: An unlabeled container of leftover material is near a storm drain.\\nResponse: Do not pour or move its contents; keep people away from a safe position and report it immediately.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Environmental Protection and Waste Material Management",
+          "vocabulary": [
+            {
+              "japanese": "廃材",
+              "meaning": "leftover material",
+              "reading": "はいざい"
+            },
+            {
+              "japanese": "分別",
+              "meaning": "sorting",
+              "reading": "ぶんべつ"
+            },
+            {
+              "japanese": "排水",
+              "meaning": "drainage",
+              "reading": "はいすい"
+            },
+            {
+              "japanese": "環境",
+              "meaning": "environment",
+              "reading": "かんきょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not remove a sign just because your own task is finished.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Records linked to locations and documents support coordination and inspection.",
+              "kind": "knowledge",
+              "options": [
+                "Factual, linked to a location or document, and traceable",
+                "Record only completed work",
+                "Delete the deviation after it has been corrected",
+                "Use general terms without a location number"
+              ],
+              "prompt": "A good work record should primarily be…"
+            },
+            {
+              "answer": 0,
+              "explanation": "Pass on the status and area restrictions to keep the next shift safe.",
+              "kind": "case",
+              "options": [
+                "Keep the signs in place, record the status, and hand it over directly",
+                "Remove the signs so the site looks finished",
+                "Leave without a handover because signs are in place",
+                "Move the work to another area without instructions"
+              ],
+              "prompt": "The area is still restricted when the shift ends. What is the proper step?"
+            },
+            {
+              "answer": 0,
+              "explanation": "「日報」is read にっぽう and means a daily report.",
+              "kind": "vocabulary",
+              "options": [
+                "daily report",
+                "handover",
+                "worksite",
+                "construction record"
+              ],
+              "prompt": "What does 「日報（にっぽう）」 mean in the context of construction?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "作業内容と図面を確認します。",
+              "meaning": "I will check the assigned task and working drawings.",
+              "reading": "さぎょうないようとずめんをかくにんします。"
+            },
+            {
+              "japanese": "異常があれば監督者に報告します。",
+              "meaning": "If anything is abnormal, I will report it to the supervisor.",
+              "reading": "いじょうがあればかんとくしゃにほうこくします。"
+            }
+          ],
+          "id": "construction-12",
+          "minutes": 25,
+          "objectives": [
+            "Menjelaskan prinsip catatan harian dan serah-terima sesuai dokumen dan pengarahan lokasi.",
+            "Memilih tindakan aman serta menjaga mutu pada kasus konstruksi.",
+            "Mengenali kosakata Jepang terkait pekerjaan ini."
+          ],
+          "response": "Make sure the barrier remains visible, record the location and status, and tell the next staff member directly.",
+          "scenario": "Your shift ends while the area remains restricted because a measurement is outside the expected range.",
+          "sections": [
+            {
+              "body": "Daily records connect the work to its location, drawing and revision, personnel, equipment, materials, inspections, conditions, and obstacles. At shift or process handover, clearly communicate open items and area restrictions so the next team does not act on assumptions.",
+              "title": "Concepts and Scope"
+            },
+            {
+              "body": "Record the facts, time, location, and document number; attach evidence only as permitted by policy. Hand over work on hold, permits, measurements, and changed conditions to the supervisor and the next team. Ask them to confirm receipt of important information.\\n\\nPractice scenario: Your shift ends while the area remains restricted because a measurement is outside the expected range.\\nResponse: Make sure the barrier remains visible, record the location and status, and tell the next staff member directly.",
+              "title": "Applying the Work Methods"
+            }
+          ],
+          "steps": [
+            "Konfirmasi rencana, dokumen, dan penanggung jawab",
+            "Periksa akses, kondisi, material, dan bahaya yang relevan",
+            "Laksanakan hanya tugas yang ditetapkan dan ikuti pengawasan",
+            "Periksa hasil, catat kondisi, dan serahkan status"
+          ],
+          "title": "Daily Records and Handover",
+          "vocabulary": [
+            {
+              "japanese": "日報",
+              "meaning": "daily report",
+              "reading": "にっぽう"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            },
+            {
+              "japanese": "現場",
+              "meaning": "worksite",
+              "reading": "げんば"
+            },
+            {
+              "japanese": "工事記録",
+              "meaning": "construction record",
+              "reading": "こうじきろく"
+            }
+          ]
+        }
+      ],
+      "title": "Quality, Environment, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA: SSW Construction Sector and Job Types",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/construction.html"
+    },
+    {
+      "title": "JAC: Examinations and Study Material Scope by Field",
+      "url": "https://jac-skill.or.jp/exam/"
+    },
+    {
+      "title": "JAC: Official Materials and Examination Scope",
+      "url": "https://global.jac-skill.or.jp/examination/documents.php"
+    },
+    {
+      "title": "MLIT: SSW No. 1 Construction Skills Evaluation Standards",
+      "url": "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/content/001519991.pdf"
+    }
+  ],
+  "version": 1
+}

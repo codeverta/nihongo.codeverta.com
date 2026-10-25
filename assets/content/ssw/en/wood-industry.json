@@ -1,0 +1,1268 @@
+{
+  "modules": [
+    {
+      "description": "Identify the source, type, properties, condition, and identity of wood materials before they enter the production line.",
+      "id": "materials",
+      "lessons": [
+        {
+          "caution": "Do not combine unidentified material with a lot that has already been inspected.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Identification maintains the link between incoming material, the production plan, and timber output.",
+              "kind": "knowledge",
+              "options": [
+                "So the material can be traced to the correct batch and work",
+                "So the timber looks flatter",
+                "To replace a quantity check",
+                "So all types of timber can be mixed"
+              ],
+              "prompt": "Why is the lot identity checked when receiving timber?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Keep an unlabeled stack separate until its identity has been traced.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear",
+                "Separate the stack, record its location, and ask the person in charge to trace its identity before moving it."
+              ],
+              "prompt": "At work, a stack of boards has no label, but a worker is asked to move it to the production-material area. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Read the documents and timber-batch identity → Check the quantity and visible condition → Record actual discrepancies or damage → Separate questionable material and request confirmation.",
+              "kind": "workflow",
+              "options": [
+                "Read the documents and timber-batch identity",
+                "Record actual discrepancies or damage",
+                "Check the quantity and visible condition",
+                "Separate the questionable material and request confirmation"
+              ],
+              "prompt": "In the “Timber receiving and identity check” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この木材にロット表示がありません。",
+              "meaning": "This wood has no lot marking.",
+              "reading": "このもくざいにろっとひょうじがありません。"
+            },
+            {
+              "japanese": "移動する前に、責任者へ確認します。",
+              "meaning": "I will ask the person in charge before moving it.",
+              "reading": "いどうするまえに、せきにんしゃへかくにんします。"
+            }
+          ],
+          "id": "wi-01",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan tanda petak atau pemasok, jenis bahan, jumlah, dan kondisi kayu dengan dokumen penerimaan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Separate the stack, record its location, and ask the person in charge to trace its identity before it is moved.",
+          "scenario": "A stack of boards has no label, but a worker is asked to move it to the production-material area.",
+          "sections": [
+            {
+              "body": "Incoming materials may include logs, boards, veneer sheets, or other items used in the process. Lot numbers and origin markings link materials to the production plan. At receipt, workers check the quantity, dimensions, visible damage, and documents; unidentified material must not be mixed with a verified lot.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the marked receiving area and match each marking to the work documents. If the quantity differs, a label is missing, or the wood is split, record what you observe and separate it as directed. Do not guess the type or copy a number from a neighboring stack.\n\nPractice case: A stack of boards has no label, but a worker is asked to move it to the production-material area.\nRecommended response: Separate the stack, record its location, and ask the person in charge to trace its identity before it is moved.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca dokumen dan identitas kelompok kayu",
+            "Periksa jumlah serta kondisi yang terlihat",
+            "Catat selisih atau kerusakan aktual",
+            "Pisahkan bahan yang meragukan dan minta konfirmasi"
+          ],
+          "title": "Wood Receiving and Identity Checks",
+          "vocabulary": [
+            {
+              "japanese": "木材",
+              "meaning": "wood",
+              "reading": "もくざい"
+            },
+            {
+              "japanese": "原木",
+              "meaning": "log",
+              "reading": "げんぼく"
+            },
+            {
+              "japanese": "受入れ",
+              "meaning": "intake",
+              "reading": "うけいれ"
+            },
+            {
+              "japanese": "ロット",
+              "meaning": "lot or production batch",
+              "reading": "ろっと"
+            }
+          ]
+        },
+        {
+          "caution": "Do not assign a quality grade outside the criteria and your authority.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Defects must be assessed against product criteria and within the applicable authority.",
+              "kind": "knowledge",
+              "options": [
+                "Separate it and ask quality staff to assess it",
+                "Cover the defect and continue processing",
+                "Choose the grade based on an estimate",
+                "Mix it with boards without defects"
+              ],
+              "prompt": "What should you do when you find a defect with unclear acceptance criteria?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The crack has not been assessed; hold the board for a quality inspection.",
+              "kind": "case",
+              "options": [
+                "Separate the boards and ask quality staff to inspect them against the criteria before processing.",
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, a board to be processed has a long crack at the end, but the documents do not say whether it is acceptable. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Read the product specifications and acceptance samples → Check the grain, cracks, knots, and shape → Mark or separate nonconforming pieces → Report conditions that require assessment.",
+              "kind": "workflow",
+              "options": [
+                "Read the product specifications and acceptance samples",
+                "Mark or separate nonconforming parts",
+                "Report conditions that require assessment",
+                "Check the grain, cracks, knots, and shape"
+              ],
+              "prompt": "In the “Wood properties, grain direction, and visible defects” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この板に長い割れがあります。",
+              "meaning": "This board has a long crack.",
+              "reading": "このいたにながいわれがあります。"
+            },
+            {
+              "japanese": "品質の担当者に見てもらいます。",
+              "meaning": "I will ask quality-control staff to inspect it.",
+              "reading": "ひんしつのたんとうしゃにみてもらいます。"
+            }
+          ],
+          "id": "wi-02",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali serat, mata kayu, retak, perubahan bentuk, dan kondisi lain yang memengaruhi pemakaian bahan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Set the board aside and ask quality-control staff to check it against the criteria before processing.",
+          "scenario": "A board to be processed has a long crack at one end, but the documents do not say whether it is acceptable.",
+          "sections": [
+            {
+              "body": "Wood has grain patterns, growth rings, moisture content, and natural variation. Cracks, loose knots, warping, or surface changes can affect processing and quality. Workers inspect against product samples and criteria; final grading or decisions about use follow the designated procedure and role.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Inspect the material's surfaces and ends before processing, then mark or separate visible defects. If the grain or dimensions make cutting inconsistent with the instructions, stop and ask for guidance. Do not conceal a defect by turning the affected side inward in the stack.\n\nPractice case: A board to be processed has a long crack at one end, but the documents do not say whether it is acceptable.\nRecommended response: Set the board aside and ask quality-control staff to check it against the criteria before processing.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca spesifikasi produk dan contoh penerimaan",
+            "Amati serat, retak, mata kayu, dan bentuk",
+            "Tandai atau pisahkan bagian yang tidak sesuai",
+            "Laporkan keadaan yang memerlukan penilaian"
+          ],
+          "title": "Wood Properties, Grain Direction, and Visible Defects",
+          "vocabulary": [
+            {
+              "japanese": "木目",
+              "meaning": "wood grain pattern",
+              "reading": "もくめ"
+            },
+            {
+              "japanese": "年輪",
+              "meaning": "growth rings",
+              "reading": "ねんりん"
+            },
+            {
+              "japanese": "節",
+              "meaning": "knot",
+              "reading": "ふし"
+            },
+            {
+              "japanese": "割れ",
+              "meaning": "crack",
+              "reading": "われ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix records or moisture targets from different types and lots.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Materials and product purposes differ; workers use the target specified for that lot.",
+              "kind": "knowledge",
+              "options": [
+                "The target depends on the timber type, product, and process instructions",
+                "Moisture content depends only on the outdoor weather",
+                "All timber must have the same number",
+                "The target can be changed based on the board's color"
+              ],
+              "prompt": "Why should the target moisture content not be assumed to be the same for all timber?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The reading differs from the target card; record it and request an assessment before moving the item.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Repeat the check only as instructed, record the reading, and hold the movement until the person in charge assesses the result.",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, a measuring instrument gives a result far from the target card for a stack of boards. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Match the stack identity to its drying target → Check the measuring instrument and specified measurement location → Record the actual moisture result and time → Store or hold the stack as directed by the supervisor.",
+              "kind": "workflow",
+              "options": [
+                "Check the measuring instrument and specified measurement location",
+                "Match the stack identity to its drying target",
+                "Record the actual moisture result and time",
+                "Store or hold the stack according to the supervisor's decision"
+              ],
+              "prompt": "In the “Moisture content, drying, and timber storage” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このロットの含水率を記録します。",
+              "meaning": "I will record this lot's moisture content.",
+              "reading": "このろっとのがんすいりつをきろくします。"
+            },
+            {
+              "japanese": "目標と違います。責任者に報告します。",
+              "meaning": "The result differs from the target. I will report it to the person in charge.",
+              "reading": "もくひょうとちがいます。せきにんしゃにほうこくします。"
+            }
+          ],
+          "id": "wi-03",
+          "minutes": 25,
+          "objectives": [
+            "Membaca target kadar air atau kondisi pengeringan yang diberikan dan menyimpan kayu agar tidak berubah bentuk.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Repeat the check only as instructed, record the reading, and hold the transfer until the person in charge evaluates the result.",
+          "scenario": "A measuring tool gives a result far from the target on the card for a stack of boards.",
+          "sections": [
+            {
+              "body": "Moisture content affects wood weight, dimensional stability, processing, and quality. Drying follows the schedule and target for each type and product; workers must not use a single figure for all wood. Stacking methods, air circulation, protection from water, and location records also help preserve material condition.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the stack label and drying instructions, use the measuring tool as trained, and record the actual result and time. Arrange spacers or supports as shown so the stack is stable and air can circulate. If the result is outside the target or the stack is wet or leaning, mark it and report the issue.\n\nPractice case: A measuring tool gives a result far from the target on the card for a stack of boards.\nRecommended response: Repeat the check only as instructed, record the reading, and hold the transfer until the person in charge evaluates the result.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan identitas tumpukan dengan target pengeringan",
+            "Periksa alat ukur dan posisi pengukuran yang ditetapkan",
+            "Catat hasil kadar air dan waktu aktual",
+            "Simpan atau tahan tumpukan sesuai keputusan pemimpin"
+          ],
+          "title": "Moisture Content, Drying, and Wood Storage",
+          "vocabulary": [
+            {
+              "japanese": "含水率",
+              "meaning": "moisture content",
+              "reading": "がんすいりつ"
+            },
+            {
+              "japanese": "乾燥",
+              "meaning": "drying",
+              "reading": "かんそう"
+            },
+            {
+              "japanese": "積み重ね",
+              "meaning": "stacking",
+              "reading": "つみかさね"
+            },
+            {
+              "japanese": "測定",
+              "meaning": "measurement",
+              "reading": "そくてい"
+            }
+          ]
+        }
+      ],
+      "title": "Wood, Raw Materials, and Storage"
+    },
+    {
+      "description": "Follow instructions on sawing, cutting, veneer, panel, and other wood-product lines without bypassing guards or assigned-duty limits.",
+      "id": "processing",
+      "lessons": [
+        {
+          "caution": "Do not remove guards or clean a machine while it is moving.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "A malfunctioning guard increases the risk of contact with moving parts; stop before operation.",
+              "kind": "knowledge",
+              "options": [
+                "Do not operate the machine and report it for inspection",
+                "Hold the timber so your hands stay clear of the blade",
+                "Remove the guard so timber can be fed in",
+                "Ask another worker to stand near the button"
+              ],
+              "prompt": "What should be done if a machine guard does not close fully?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not use the machine until its guard has been inspected and declared ready.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Stop feeding, keep people away from the hazard point, and report the guard for inspection before using the machine.",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, a conveyor guard does not close fully, but the next operator has already prepared timber for feeding. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Read the operating instructions and task limits → Check guards, controls, and the surrounding area → Report abnormal conditions before switching on → Operate only after checks and authorization are complete.",
+              "kind": "workflow",
+              "options": [
+                "Read the operating instructions and task limits",
+                "Check the guards, controls, and surrounding area",
+                "Report the abnormal condition before switching on",
+                "Operate only after checks and authorization are complete"
+              ],
+              "prompt": "In the workflow “Pre-operation machine and guard checks,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "カバーが閉まりません。運転を止めます。",
+              "meaning": "The guard will not close. I am stopping operation.",
+              "reading": "かばーがしまりません。うんてんをとめます。"
+            },
+            {
+              "japanese": "機械を確認してから再開します。",
+              "meaning": "We will continue after the machine has been inspected.",
+              "reading": "きかいをかくにんしてからさいかいします。"
+            }
+          ],
+          "id": "wi-04",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa pelindung, tombol berhenti, area lintasan, serta kondisi mesin sebelum menjalankan alat sesuai tugas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold the feed, keep people away from the hazard, and report the guard for inspection before using the machine.",
+          "scenario": "A conveyor guard does not close fully, but the next operator has already prepared wood to feed into it.",
+          "sections": [
+            {
+              "body": "Woodworking and sawing machines have hazardous blades, rollers, conveyors, and pinch points. Initial checks confirm guards are fitted, the area is clear of loose objects, and controls work according to the checklist. Only trained operators may run, clean, or clear jams under facility procedures.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before starting, match the machine and task to the instructions, check guards and warning signs, and make sure other workers are in safe positions. If the sound, vibration, or guard is abnormal, do not start the machine. Never reach inside to clear sawdust while the machine is moving.\n\nPractice case: A conveyor guard does not close fully, but the next operator has already prepared wood to feed into it.\nRecommended response: Hold the feed, keep people away from the hazard, and report the guard for inspection before using the machine.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca instruksi operasi dan batas tugas",
+            "Periksa pelindung, kontrol, dan area sekitar",
+            "Laporkan kondisi tidak normal sebelum menyalakan",
+            "Jalankan hanya setelah pemeriksaan dan izin selesai"
+          ],
+          "title": "Pre-Operation Machine and Guard Checks",
+          "vocabulary": [
+            {
+              "japanese": "機械",
+              "meaning": "machine",
+              "reading": "きかい"
+            },
+            {
+              "japanese": "安全カバー",
+              "meaning": "safety guard",
+              "reading": "あんぜんかばー"
+            },
+            {
+              "japanese": "非常停止",
+              "meaning": "emergency stop",
+              "reading": "ひじょうていし"
+            },
+            {
+              "japanese": "異常",
+              "meaning": "abnormal condition",
+              "reading": "いじょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not guess units or dimensions based on a product handled previously.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking prevents the wrong material from being cut or cut to the wrong size.",
+              "kind": "knowledge",
+              "options": [
+                "The product code, material, dimensions, and unit in the instructions",
+                "Only the material length",
+                "The setting from the previous job",
+                "The number of boards near the machine"
+              ],
+              "prompt": "What must be checked before starting a cut?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The instruction and label do not match; stop preparation and confirm before cutting.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear",
+                "Do not feed in the material. Hold the setup, compare both documents, and ask the person in charge to confirm the applicable instruction."
+              ],
+              "prompt": "At work, the work sheet shows a different thickness from the label on the stack, and cutting has not begun. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Check the material, product code, and size sheet → Confirm the units and work direction are understood → Set up the machine only according to approved instructions → Inspect the first sample and report discrepancies.",
+              "kind": "workflow",
+              "options": [
+                "Check the material, product code, and size sheet",
+                "Set up the machine only according to approved instructions",
+                "Confirm the units and work direction are understood",
+                "Inspect the first sample and report discrepancies"
+              ],
+              "prompt": "In the “Sawing and size instructions” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "厚さの表示が違います。",
+              "meaning": "The thickness marking is different.",
+              "reading": "あつさのひょうじがちがいます。"
+            },
+            {
+              "japanese": "切る前に指示を確認してください。",
+              "meaning": "Please confirm the instruction before cutting.",
+              "reading": "きるまえにしじをかくにんしてください。"
+            }
+          ],
+          "id": "wi-05",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan bahan serta instruksi ukuran sebelum pemotongan dan menghentikan proses bila data tidak jelas.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not feed the material. Keep the settings unchanged, compare both documents, and ask the person in charge to confirm the applicable instruction.",
+          "scenario": "The work sheet gives a thickness that differs from the stack label, and cutting has not started.",
+          "sections": [
+            {
+              "body": "Sawing converts raw material to planned product dimensions. Instructions may specify length, width, thickness, orientation, and quantity; read each number with its unit. Tolerances and measurement methods follow the product specification, not an operator's estimate. Changes to dimensions require approval to avoid waste or nonconforming products.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Match the product and material codes to the work sheet before feeding the wood. Use the measuring tools and machine stops as trained, then inspect the initial sample as required. If a number or unit differs, stop before cutting and request a second check; do not quietly change the settings.\n\nPractice case: The work sheet gives a thickness that differs from the stack label, and cutting has not started.\nRecommended response: Do not feed the material. Keep the settings unchanged, compare both documents, and ask the person in charge to confirm the applicable instruction.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan bahan, kode produk, dan lembar ukuran",
+            "Pastikan satuan serta arah kerja dipahami",
+            "Atur mesin hanya menurut instruksi yang disetujui",
+            "Periksa sampel awal dan laporkan selisih"
+          ],
+          "title": "Sawing and Size Instructions",
+          "vocabulary": [
+            {
+              "japanese": "製材",
+              "meaning": "wood sawing",
+              "reading": "せいざい"
+            },
+            {
+              "japanese": "寸法",
+              "meaning": "size or dimension",
+              "reading": "すんぽう"
+            },
+            {
+              "japanese": "厚さ",
+              "meaning": "thickness",
+              "reading": "あつさ"
+            },
+            {
+              "japanese": "単位",
+              "meaning": "unit",
+              "reading": "たんい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change the adhesive or layer sequence without process approval.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Material sequence and orientation are part of the product and quality instructions.",
+              "kind": "knowledge",
+              "options": [
+                "So the arrangement meets specifications and the result is traceable",
+                "So all panels look the same from the outside",
+                "So the adhesive can be changed to match available stock",
+                "To eliminate the need for lot marks"
+              ],
+              "prompt": "Why must the order and direction of panel layers be checked?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The sheet direction differs; hold the work and confirm before applying adhesive or pressure.",
+              "kind": "case",
+              "options": [
+                "Stop stacking the layers and separate that sheet; ask the operator or supervisor to confirm the orientation before continuing.",
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, one sheet of veneer has a different grain-direction mark from the other sheets in a panel batch. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Read the panel type and identity of each material → Check the layer order and direction against the instructions → Inspect the material and specified adhesive → Carry out or hand over the process within the task limits.",
+              "kind": "workflow",
+              "options": [
+                "Read the panel type and identity of each material",
+                "Inspect the material condition and specified adhesive",
+                "Perform or hand over the process within the task limits",
+                "Check the layer order and direction against the instructions"
+              ],
+              "prompt": "In the “Panel products: veneer, plywood, and laminated timber” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この単板の向きを確認してください。",
+              "meaning": "Please check the orientation of this veneer sheet.",
+              "reading": "このたんぱんのむきをかくにんしてください。"
+            },
+            {
+              "japanese": "接着剤は指示どおりに使います。",
+              "meaning": "Use the adhesive according to instructions.",
+              "reading": "せっちゃくざいはしじどおりにつかいます。"
+            }
+          ],
+          "id": "wi-06",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali alur umum bahan panel dan mengikuti identitas, urutan, serta petunjuk kerja pada produk yang dibuat.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop arranging the layers and set the sheet aside; ask the operator or lead to confirm its orientation before continuing.",
+          "scenario": "One veneer sheet has a direction marking that differs from the other sheets in the panel lot.",
+          "sections": [
+            {
+              "body": "The wood industry may process veneer sheets, plywood, LVL, or laminated wood. Products differ in layer arrangement, orientation, and purpose; material sequence and sheet identity matter for results and traceability. Handle adhesives and pressure according to instructions and training; only assigned workers may operate the related equipment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check side markings, lot numbers, and stack order before feeding a layer. If a sheet is reversed, damaged, or missing a marking, set it aside for inspection. Do not change the adhesive type, number of layers, or machine settings based on a guess; report discrepancies before pressing or bonding the material.\n\nPractice case: One veneer sheet has a direction marking that differs from the other sheets in the panel lot.\nRecommended response: Stop arranging the layers and set the sheet aside; ask the operator or lead to confirm its orientation before continuing.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca jenis panel dan identitas setiap bahan",
+            "Cocokkan urutan serta arah lapisan dengan instruksi",
+            "Periksa kondisi bahan dan perekat yang ditetapkan",
+            "Jalankan atau serahkan proses sesuai batas tugas"
+          ],
+          "title": "Panel Products: Veneer, Plywood, and Laminated Wood",
+          "vocabulary": [
+            {
+              "japanese": "単板",
+              "meaning": "veneer sheet",
+              "reading": "たんぱん"
+            },
+            {
+              "japanese": "合板",
+              "meaning": "plywood",
+              "reading": "ごうはん"
+            },
+            {
+              "japanese": "集成材",
+              "meaning": "laminated wood",
+              "reading": "しゅうせいざい"
+            },
+            {
+              "japanese": "接着剤",
+              "meaning": "adhesive",
+              "reading": "せっちゃくざい"
+            }
+          ]
+        }
+      ],
+      "title": "Production Processes and Machine Control"
+    },
+    {
+      "description": "Check product dimensions, shape, surface, and markings against product criteria before releasing it to the next stage.",
+      "id": "quality",
+      "lessons": [
+        {
+          "caution": "Do not use a damaged measuring tool or alter measurement records.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "An out-of-limit result may indicate a process change; hold and assess the product.",
+              "kind": "knowledge",
+              "options": [
+                "Hold the affected product, record the result, and report it",
+                "Repeat the measurement until the desired value appears",
+                "Change the record without checking the instrument",
+                "Ship the sample and wait for a complaint"
+              ],
+              "prompt": "What should be done when a sample result is outside tolerance?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Record the correct value and escalate the issue before releasing the next product.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Hold the product since the last inspection, record the actual result, and call quality staff or the line supervisor.",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, the first sample shows a thickness outside the tolerance listed on the work sheet. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the tolerance and measurement points on the quality sheet → Check the measuring instrument and units → Measure the sample and record the actual result → Hold the affected product and report any out-of-limit result.",
+              "kind": "workflow",
+              "options": [
+                "Check the measuring instrument and its units",
+                "Read the tolerance and measurement points on the quality sheet",
+                "Measure the sample and record the actual result",
+                "Hold the affected product and report the out-of-limit result"
+              ],
+              "prompt": "In the “Dimension measurement and sample inspection” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "測定値が許容差の外です。",
+              "meaning": "The measurement is outside the tolerance.",
+              "reading": "そくていちがきょようさのそとです。"
+            },
+            {
+              "japanese": "この製品を保留して、担当者に報告します。",
+              "meaning": "I am holding this product and reporting it to the staff member in charge.",
+              "reading": "このせいひんをほりゅうして、たんとうしゃにほうこくします。"
+            }
+          ],
+          "id": "wi-07",
+          "minutes": 25,
+          "objectives": [
+            "Mengukur produk dengan alat serta titik ukur yang ditentukan dan mencatat hasil aktual.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold products made since the last inspection, record the actual result, and call quality-control staff or the line lead.",
+          "scenario": "The first sample has a thickness outside the tolerance listed on the work sheet.",
+          "sections": [
+            {
+              "body": "Length, width, thickness, and shape affect whether a product is suitable for its next use. Each job has its own tolerances and measurement points; workers read the quality sheet and use checked tools. Initial or periodic samples help detect changes before large quantities are processed.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Make sure the measuring tool is clean and set to the correct unit, then measure at the stated positions. Record the result, time, machine, and product lot. If the result is outside tolerance or the tool is dropped, stop releasing the affected samples and request an inspection; do not adjust figures to make a product pass.\n\nPractice case: The first sample has a thickness outside the tolerance listed on the work sheet.\nRecommended response: Hold products made since the last inspection, record the actual result, and call quality-control staff or the line lead.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca toleransi dan titik ukur pada lembar mutu",
+            "Periksa alat ukur serta satuannya",
+            "Ukur sampel dan catat hasil aktual",
+            "Tahan produk terkait dan laporkan hasil di luar batas"
+          ],
+          "title": "Dimension Measurement and Sample Inspection",
+          "vocabulary": [
+            {
+              "japanese": "寸法",
+              "meaning": "dimension",
+              "reading": "すんぽう"
+            },
+            {
+              "japanese": "測定",
+              "meaning": "measurement",
+              "reading": "そくてい"
+            },
+            {
+              "japanese": "許容差",
+              "meaning": "tolerance",
+              "reading": "きょようさ"
+            },
+            {
+              "japanese": "検査",
+              "meaning": "inspection",
+              "reading": "けんさ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not conceal a defect by stacking it on the hidden side.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Separation keeps a held product identifiable and available for inspection.",
+              "kind": "knowledge",
+              "options": [
+                "Prevent the nonconforming product from mixing with others and wait for a quality decision",
+                "So the defect is hidden beneath the stack",
+                "So workers can ship it more quickly",
+                "To reduce the need for inspection"
+              ],
+              "prompt": "What is the purpose of separating products with defects that have not yet been assessed?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Do not make repairs beyond your authority; isolate the item and request an assessment.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Separate the boards and ask quality staff to decide on repair or rejection according to procedure.",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, several boards have sharp splinters along the edge after planing, but the worker does not know whether they may sand them down. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Compare the product with the sample or quality criteria → Safely inspect the surface, edges, and ends → Separate any product that appears nonconforming → Record the defect location and report it.",
+              "kind": "workflow",
+              "options": [
+                "Compare the product with the sample or quality criteria",
+                "Safely inspect the surface, edges, and ends",
+                "Separate products that appear nonconforming",
+                "Record the defect location and report it"
+              ],
+              "prompt": "In the “Surfaces, edges, and processing defects” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "端にささくれがあります。",
+              "meaning": "There is a wood splinter on the edge.",
+              "reading": "はしにささくれがあります。"
+            },
+            {
+              "japanese": "品質担当者に確認してもらいます。",
+              "meaning": "I will ask quality-control staff to inspect it.",
+              "reading": "ひんしつたんとうしゃにかくにんしてもらいます。"
+            }
+          ],
+          "id": "wi-08",
+          "minutes": 25,
+          "objectives": [
+            "Mengenali serpihan, retak, permukaan kasar, atau cacat hasil proses serta memisahkannya sesuai kriteria.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Set the boards aside and ask quality-control staff to determine repair or rejection under procedure.",
+          "scenario": "Several boards have sharp splinters along the edge after planing, and the worker does not know whether they may smooth them independently.",
+          "sections": [
+            {
+              "body": "Processing may cause defects such as chipped edges, wavy surfaces, knife marks, or splinters. Inspection follows approved samples and the product's intended use. Workers must not conceal or smooth defects outside procedure; if unsure whether a product is acceptable, request a quality-control inspection.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Inspect samples safely in a well-lit area, avoid touching sharp edges without protection, and place nonconforming products in the hold area. Record the defect location and product code so the process can be reviewed. Do not return defective boards to the line without authorization.\n\nPractice case: Several boards have sharp splinters along the edge after planing, and the worker does not know whether they may smooth them independently.\nRecommended response: Set the boards aside and ask quality-control staff to determine repair or rejection under procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Bandingkan produk dengan sampel atau kriteria mutu",
+            "Periksa permukaan, tepi, dan ujung dengan aman",
+            "Pisahkan produk yang tampak tidak sesuai",
+            "Catat lokasi cacat dan laporkan"
+          ],
+          "title": "Surfaces, Edges, and Processing Defects",
+          "vocabulary": [
+            {
+              "japanese": "表面",
+              "meaning": "surface",
+              "reading": "ひょうめん"
+            },
+            {
+              "japanese": "端",
+              "meaning": "edge",
+              "reading": "はし"
+            },
+            {
+              "japanese": "ささくれ",
+              "meaning": "wood splinter",
+              "reading": "ささくれ"
+            },
+            {
+              "japanese": "不良",
+              "meaning": "nonconformity",
+              "reading": "ふりょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not replace a label or grade based on a guess.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Labels must correspond to the correct lot and specifications to maintain traceability.",
+              "kind": "knowledge",
+              "options": [
+                "Hold the bundle and restore its identity using official records",
+                "Choose the grade based on appearance",
+                "Apply the label from the nearest bundle",
+                "Ship it without a label to avoid a delay"
+              ],
+              "prompt": "What should be done when a quality label cannot be read?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The identity is unreadable; do not ship the bundle until staff confirm its number and grade.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear",
+                "Hold the bundle in the inspection area, record the lot number that remains visible, and ask quality staff to restore its identity."
+              ],
+              "prompt": "At work, a bundle's grade label is wet and unreadable before it enters the dispatch area. What is the most appropriate action?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Sequence taught: Read the specifications and product-batch marks → Check the label, quantity, and destination → Hold the batch if its identity or grade is uncertain → Record discrepancies and request approval.",
+              "kind": "workflow",
+              "options": [
+                "Read the specifications and product-batch marks",
+                "Hold the batch if its identity or grade is uncertain",
+                "Check the label, quantity, and destination",
+                "Record the discrepancy and request approval"
+              ],
+              "prompt": "In the “Quality labels, product batches, and traceability” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このラベルが読めません。",
+              "meaning": "This label is unreadable.",
+              "reading": "このらべるがよめません。"
+            },
+            {
+              "japanese": "出荷前に製品番号を確認します。",
+              "meaning": "I will check the product number before dispatch.",
+              "reading": "しゅっかまえにせいひんばんごうをかくにんします。"
+            }
+          ],
+          "id": "wi-09",
+          "minutes": 25,
+          "objectives": [
+            "Memastikan tanda produk, spesifikasi, grade yang telah ditetapkan, dan jumlah cocok sebelum hasil dipindahkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold the bundle in the inspection area, record any visible lot number, and ask quality-control staff to restore its identity.",
+          "scenario": "The grade label on a bundle is wet and illegible before the bundle enters the dispatch area.",
+          "sections": [
+            {
+              "body": "Product markings may show type, dimensions, grade, lot, or customer destination. Grade criteria come from specifications and designated inspections; workers must not guess a grade from appearance alone. Keep the wood-lot identity attached as it moves from processing to inspection, storage, or dispatch.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Compare the label with the documents after processing and before transfer. If a marking comes off, is damaged, or the quantity does not match, hold the lot and record its location and any readable information. Do not reprint a label or change the grade without authorization.\n\nPractice case: The grade label on a bundle is wet and illegible before the bundle enters the dispatch area.\nRecommended response: Hold the bundle in the inspection area, record any visible lot number, and ask quality-control staff to restore its identity.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca spesifikasi dan tanda kelompok produk",
+            "Cocokkan label, jumlah, serta tujuan",
+            "Tahan kelompok bila identitas atau grade meragukan",
+            "Catat selisih dan minta pengesahan"
+          ],
+          "title": "Quality Labels, Product Lots, and Traceability",
+          "vocabulary": [
+            {
+              "japanese": "等級",
+              "meaning": "grade",
+              "reading": "とうきゅう"
+            },
+            {
+              "japanese": "製品番号",
+              "meaning": "product number",
+              "reading": "せいひんばんごう"
+            },
+            {
+              "japanese": "照合",
+              "meaning": "matching",
+              "reading": "しょうごう"
+            },
+            {
+              "japanese": "追跡",
+              "meaning": "traceability",
+              "reading": "ついせき"
+            }
+          ]
+        }
+      ],
+      "title": "Quality Inspection and Product Identification"
+    },
+    {
+      "description": "Keep wood products stable and identifiable during storage, transfer, and handover to the next process.",
+      "id": "dispatch",
+      "lessons": [
+        {
+          "caution": "Do not stand or work beneath a stack that appears to be shifting.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "An unstable bundle can collapse; keep people away and have the assigned person handle it.",
+              "kind": "knowledge",
+              "options": [
+                "Stop adding to the stack and keep people away from the collapse area",
+                "Brace the stack with your shoulder",
+                "Climb up and pull the board",
+                "Keep adding timber to balance the stack"
+              ],
+              "prompt": "What is the safe response to a leaning timber stack?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not brace the load with your body; stop work, keep a safe distance, and call for assistance.",
+              "kind": "case",
+              "options": [
+                "Stop adding to the stack, keep people clear of its fall path, and ask the operator or supervisor to stabilize it using the appropriate procedure.",
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, a stack of boards begins to lean after one support shifts, while a worker is about to place another board on top. What is the most appropriate action?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Sequence taught: Check the floor and stack supports → Confirm the identity and stacking direction are correct → Stack only up to the specified height → Keep people clear and report unstable bundles.",
+              "kind": "workflow",
+              "options": [
+                "Check the floor and stack supports",
+                "Stack only up to the specified height",
+                "Keep people away and report the unstable bundle",
+                "Confirm the identity and stacking direction are correct"
+              ],
+              "prompt": "In the “Stacking and bundle stability” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この束が傾いています。近づかないでください。",
+              "meaning": "This bundle is leaning. Do not come close.",
+              "reading": "このたばがかたむいています。ちかづかないでください。"
+            },
+            {
+              "japanese": "作業を止めて、責任者を呼びます。",
+              "meaning": "I am stopping work and calling the person in charge.",
+              "reading": "さぎょうをとめて、せきにんしゃをよびます。"
+            }
+          ],
+          "id": "wi-10",
+          "minutes": 25,
+          "objectives": [
+            "Menyusun kayu sesuai batas tumpukan dan menggunakan penyangga serta area simpan yang ditetapkan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop adding boards, keep people clear of the fall path, and ask the operator or lead to stabilize the stack using the proper procedure.",
+          "scenario": "A stack of boards starts leaning after one support shifts, while a worker is about to place another board on top.",
+          "sections": [
+            {
+              "body": "Wood stacks can collapse or shift if the surface is uneven, supports are misaligned, or the stack is too high. Stack limits and strapping methods follow workplace instructions. Keep hands and feet away from pinch points and never climb a stack; use suitable equipment operated by authorized personnel for transfers.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the floor, supports, labels, and stacking direction before adding wood. If a bundle leans, a strap is damaged, or wood shifts, keep people away and report it. Do not try to hold a heavy bundle with your body or rearrange a stack while equipment is moving.\n\nPractice case: A stack of boards starts leaning after one support shifts, while a worker is about to place another board on top.\nRecommended response: Stop adding boards, keep people clear of the fall path, and ask the operator or lead to stabilize the stack using the proper procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa lantai dan penyangga tumpukan",
+            "Pastikan identitas serta arah susunan benar",
+            "Susun hanya pada batas tinggi yang ditetapkan",
+            "Jauhkan orang dan laporkan bundel tidak stabil"
+          ],
+          "title": "Stacking and Bundle Stability",
+          "vocabulary": [
+            {
+              "japanese": "積み重ね",
+              "meaning": "stacking",
+              "reading": "つみかさね"
+            },
+            {
+              "japanese": "荷崩れ",
+              "meaning": "stack collapse",
+              "reading": "にくずれ"
+            },
+            {
+              "japanese": "支え",
+              "meaning": "support",
+              "reading": "ささえ"
+            },
+            {
+              "japanese": "安定",
+              "meaning": "stable",
+              "reading": "あんてい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not change a destination label to conceal an order shortage.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "This check confirms that the batch is correct, safe to transport, and going to the right customer.",
+              "kind": "knowledge",
+              "options": [
+                "The number of bundles, dimensions, labels, ties, and destination",
+                "Vehicle color alone",
+                "The driver's name without the order list",
+                "The stack that is easiest to reach"
+              ],
+              "prompt": "What should be checked before loading timber onto a vehicle?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The destination label differs. Hold the bundle and trace it before loading the vehicle.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Hold the bundle and check its lot number against the order and production record before loading.",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, a bundle has the correct dimensions, but its label names a different customer from the loading list. What is the most appropriate action?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Sequence taught: Read the order and destination identity → Count the bundles and check product dimensions → Inspect the ties and labels after packing → Confirm the destination before loading.",
+              "kind": "workflow",
+              "options": [
+                "Count the bundles and check the product dimensions",
+                "Read the order and destination identity",
+                "Check the ties and labels after packing",
+                "Confirm the destination before loading"
+              ],
+              "prompt": "In the “Packing and destination inspection” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "納品先の表示が違います。",
+              "meaning": "The shipping-destination marking is different.",
+              "reading": "のうひんさきのひょうじがちがいます。"
+            },
+            {
+              "japanese": "積み込む前に注文書と照合します。",
+              "meaning": "I will check the order before loading.",
+              "reading": "つみこむまえにちゅうもんしょとしょうごうします。"
+            }
+          ],
+          "id": "wi-11",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan jumlah, ukuran, label pelanggan, dan kondisi ikatan sebelum kayu dikirim.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Hold the bundle and match its lot number to the order and production records before loading.",
+          "scenario": "A bundle has the correct dimensions, but its label shows a different customer from the loading list.",
+          "sections": [
+            {
+              "body": "Stack and strap wood products according to order dimensions, transport method, and facility rules. Keep destination labels readable after packaging. Checking the quantity and straps helps prevent shipping errors and falling wood during transfer; hold wood with mismatched identity before loading.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use the order list, check the quantity and bundle number, inspect the straps and edge protectors, and place the products in the correct dispatch lane. Do not move products to a vehicle until the destination is confirmed. If a bundle is short or customer labels are mixed up, hold it in the dispatch area and report the issue.\n\nPractice case: A bundle has the correct dimensions, but its label shows a different customer from the loading list.\nRecommended response: Hold the bundle and match its lot number to the order and production records before loading.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca pesanan dan identitas tujuan",
+            "Hitung bundel serta cocokkan ukuran produk",
+            "Periksa ikatan dan label setelah dikemas",
+            "Konfirmasi tujuan sebelum memuat"
+          ],
+          "title": "Packaging and Destination Checks",
+          "vocabulary": [
+            {
+              "japanese": "包装",
+              "meaning": "packaging",
+              "reading": "ほうそう"
+            },
+            {
+              "japanese": "結束",
+              "meaning": "tying or strapping",
+              "reading": "けっそく"
+            },
+            {
+              "japanese": "出荷",
+              "meaning": "shipment",
+              "reading": "しゅっか"
+            },
+            {
+              "japanese": "納品先",
+              "meaning": "shipping destination",
+              "reading": "のうひんさき"
+            }
+          ]
+        },
+        {
+          "caution": "Do not clean moving parts or repair a machine without isolation and authorization.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Facts and status help the recipient follow up without repeating the search.",
+              "kind": "knowledge",
+              "options": [
+                "Machine number, location, time, condition, and temporary action",
+                "A suspected cause alone",
+                "A statement that the machine is safe without inspection",
+                "Only the next worker's name"
+              ],
+              "prompt": "What should be included when reporting machine condition at shift change?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Leaks must be reported promptly and included in the handover before the shift ends.",
+              "kind": "case",
+              "options": [
+                "Bypass the guard or put a hand into a moving machine",
+                "Guess the dimensions, grade, or destination based on another product",
+                "Keep clear of the risk area, follow the facility's stop procedure or signals, and promptly inform the supervisor before handover.",
+                "Continue processing even though the material identity is unclear"
+              ],
+              "prompt": "At work, at the end of a shift, a worker sees a small leak near a machine and does not know whether the line should be stopped. What is the most appropriate action?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Sequence taught: Read the cleaning and routine-maintenance checklist → Clean the area using approved tools and sequence → Mark and report abnormal machine conditions → Hand over the status of machines, lots, and open work.",
+              "kind": "workflow",
+              "options": [
+                "Read the cleaning and routine-maintenance checklist",
+                "Clean the area using approved tools and sequence",
+                "Mark and report the abnormal machine condition",
+                "Hand over the status of machines, lots, and open work"
+              ],
+              "prompt": "In the “Cleaning, routine maintenance, and shift reporting” workflow, what should be done next after the first step is complete?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "機械の近くに漏れがあります。",
+              "meaning": "There is a leak near the machine.",
+              "reading": "きかいのちかくにもれがあります。"
+            },
+            {
+              "japanese": "場所と時間を記録して、責任者に伝えます。",
+              "meaning": "I will record the location and time, then notify the person in charge.",
+              "reading": "ばしょとじかんをきろくして、せきにんしゃにつたえます。"
+            }
+          ],
+          "id": "wi-12",
+          "minutes": 25,
+          "objectives": [
+            "Membersihkan area sesuai tugas, melaporkan keausan alat atau kebocoran, dan menyerahkan status mesin serta lot.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Keep clear of the risk area, follow the shutdown procedure or facility signage, and notify the lead promptly before handover.",
+          "scenario": "At the end of the shift, a worker notices a small leak near a machine and is unsure whether the line must be stopped.",
+          "sections": [
+            {
+              "body": "Handle sawdust, offcuts, and dust according to the designated schedule and method to keep routes and equipment clear. Clean machinery only under the required conditions and within your authority, following isolation procedures when needed. Shift reports record machines needing attention, held materials, and unfinished tasks.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Use designated cleaning tools and do not blow sawdust in a way that spreads it across the work area. If a guard, blade, or cable appears damaged, post a sign as required and notify the lead. Before leaving, hand over the status and location of the issue with the machine and lot numbers.\n\nPractice case: At the end of the shift, a worker notices a small leak near a machine and is unsure whether the line must be stopped.\nRecommended response: Keep clear of the risk area, follow the shutdown procedure or facility signage, and notify the lead promptly before handover.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca daftar kebersihan dan perawatan rutin",
+            "Bersihkan area dengan alat serta urutan yang disetujui",
+            "Tandai dan laporkan kondisi mesin tidak normal",
+            "Serahkan status mesin, lot, dan pekerjaan terbuka"
+          ],
+          "title": "Cleaning, Routine Maintenance, and Shift Reports",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "meaning": "cleaning",
+              "reading": "せいそう"
+            },
+            {
+              "japanese": "保全",
+              "meaning": "maintenance",
+              "reading": "ほぜん"
+            },
+            {
+              "japanese": "漏れ",
+              "meaning": "leak",
+              "reading": "もれ"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        }
+      ],
+      "title": "Stacking, Dispatch, and Handover"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "Forestry Agency — Accepting Foreign Workers in the Wood Industry Sector",
+      "url": "https://www.rinya.maff.go.jp/j/mokusan/seisankakou/foreigner.html"
+    },
+    {
+      "title": "Forestry Agency — Wood Industry SSW (i) study text, including the Indonesian version",
+      "url": "https://www.rinya.maff.go.jp/j/mokusan/seisankakou/foreigner.html"
+    },
+    {
+      "title": "全国木材組合連合会 — Official website for the wood industry sector exam",
+      "url": "https://zenmokuren.jp/foreigner/"
+    },
+    {
+      "title": "Prometric — Wood Industry SSW (i) exam information",
+      "url": "https://www.prometric-jp.com/ssw/test_list/archives/26"
+    },
+    {
+      "title": "Japan Immigration Services Agency — Summary of SSW (i) work",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    }
+  ],
+  "version": 1
+}

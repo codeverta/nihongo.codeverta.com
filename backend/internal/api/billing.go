@@ -12,6 +12,7 @@ import (
 	"nihongo-master-backend/internal/domain"
 	"nihongo-master-backend/internal/store"
 	"strings"
+	"time"
 )
 
 func (s *Server) ConfigureBilling(service *billing.Service, audience, email string) {
@@ -38,7 +39,13 @@ func (s *Server) billingStatus(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	writeData(w, 200, map[string]any{"productId": product, "accountToken": token, "priceIdr": s.lifetimePriceIDR(), "billingType": "lifetime", "platforms": platforms, "entitlement": s.store.Profile(userID(r)).Entitlement})
+	result := map[string]any{"productId": product, "accountToken": token, "priceIdr": s.lifetimePriceIDR(), "billingType": "lifetime", "platforms": platforms, "entitlement": s.store.Profile(userID(r)).Entitlement}
+	if s.billing != nil {
+		if lease := s.billing.OfflineLease(userID(r), time.Now().UTC()); lease != "" {
+			result["offlineLease"] = lease
+		}
+	}
+	writeData(w, 200, result)
 }
 func (s *Server) verifyPurchase(w http.ResponseWriter, r *http.Request) {
 	if !s.personalBillingAccount(w, r) {
@@ -62,7 +69,13 @@ func (s *Server) verifyPurchase(w http.ResponseWriter, r *http.Request) {
 	if p.State == "pending" {
 		status = 202
 	}
-	writeData(w, status, map[string]any{"state": p.State, "entitlement": s.store.Profile(userID(r)).Entitlement})
+	result := map[string]any{"state": p.State, "entitlement": s.store.Profile(userID(r)).Entitlement}
+	if p.State == "purchased" {
+		if lease := s.billing.OfflineLease(userID(r), time.Now().UTC()); lease != "" {
+			result["offlineLease"] = lease
+		}
+	}
+	writeData(w, status, result)
 }
 func (s *Server) personalBillingAccount(w http.ResponseWriter, r *http.Request) bool {
 	if s.store.IsDemoUser(userID(r)) || s.store.IsPlayReviewUser(userID(r)) {

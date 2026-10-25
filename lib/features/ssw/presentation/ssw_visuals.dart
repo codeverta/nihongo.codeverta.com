@@ -1,44 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 
 class SswArtwork extends StatelessWidget {
   const SswArtwork({super.key});
 
   @override
   Widget build(BuildContext context) => ClipRRect(
-        borderRadius: BorderRadius.circular(24),
-        child: AspectRatio(
-          aspectRatio: 1.5,
-          child: Image.asset(
-            'assets/images/ssw/ssw-careers.webp',
-            fit: BoxFit.cover,
-            semanticLabel:
-                'Caregiver dan lansia bersama pekerja berbagai bidang di Jepang',
-          ),
-        ),
-      );
+    borderRadius: BorderRadius.circular(24),
+    child: AspectRatio(
+      aspectRatio: 1.5,
+      child: Image.asset(
+        'assets/images/ssw/ssw-careers.webp',
+        fit: BoxFit.cover,
+        semanticLabel:
+            'Caregiver dan lansia bersama pekerja berbagai bidang di Jepang'
+                .localized(context),
+      ),
+    ),
+  );
 }
 
 IconData sswSectorIcon(String id) => switch (id) {
-      'nursing-care' => Icons.volunteer_activism_rounded,
-      'building-cleaning' => Icons.cleaning_services_rounded,
-      'linen-supply' => Icons.local_laundry_service_rounded,
-      'industrial-manufacturing' => Icons.precision_manufacturing_rounded,
-      'construction' => Icons.construction_rounded,
-      'shipbuilding' => Icons.directions_boat_rounded,
-      'automobile-maintenance' => Icons.car_repair_rounded,
-      'aviation' => Icons.flight_rounded,
-      'accommodation' => Icons.hotel_rounded,
-      'road-transport' => Icons.local_shipping_rounded,
-      'railway' => Icons.train_rounded,
-      'logistics-warehouse' => Icons.warehouse_rounded,
-      'agriculture' => Icons.agriculture_rounded,
-      'fishery' => Icons.water_rounded,
-      'food-manufacturing' => Icons.lunch_dining_rounded,
-      'food-service' => Icons.restaurant_rounded,
-      'forestry' => Icons.forest_rounded,
-      'wood-industry' => Icons.carpenter_rounded,
-      _ => Icons.recycling_rounded,
-    };
+  'nursing-care' => Icons.volunteer_activism_rounded,
+  'building-cleaning' => Icons.cleaning_services_rounded,
+  'linen-supply' => Icons.local_laundry_service_rounded,
+  'industrial-manufacturing' => Icons.precision_manufacturing_rounded,
+  'construction' => Icons.construction_rounded,
+  'shipbuilding' => Icons.directions_boat_rounded,
+  'automobile-maintenance' => Icons.car_repair_rounded,
+  'aviation' => Icons.flight_rounded,
+  'accommodation' => Icons.hotel_rounded,
+  'road-transport' => Icons.local_shipping_rounded,
+  'railway' => Icons.train_rounded,
+  'logistics-warehouse' => Icons.warehouse_rounded,
+  'agriculture' => Icons.agriculture_rounded,
+  'fishery' => Icons.water_rounded,
+  'food-manufacturing' => Icons.lunch_dining_rounded,
+  'food-service' => Icons.restaurant_rounded,
+  'forestry' => Icons.forest_rounded,
+  'wood-industry' => Icons.carpenter_rounded,
+  _ => Icons.recycling_rounded,
+};
 
 class SswStatusBadge extends StatelessWidget {
   const SswStatusBadge({super.key, this.available = false});
@@ -57,11 +59,14 @@ class SswStatusBadge extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Text(
-          available ? 'Materi & tes tersedia' : 'Coming Soon',
+          available
+              ? 'Materi & tes tersedia'.localized(context)
+              : 'Coming Soon',
           style: TextStyle(
             fontSize: 12,
-            color:
-                available ? colors.onPrimaryContainer : colors.onSurfaceVariant,
+            color: available
+                ? colors.onPrimaryContainer
+                : colors.onSurfaceVariant,
             fontWeight: FontWeight.w700,
           ),
         ),

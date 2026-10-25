@@ -1,0 +1,1280 @@
+{
+  "modules": [
+    {
+      "description": "Apply personal hygiene, ingredient separation, and time and temperature controls according to the restaurant's work plan. Program status as of October 22, 2026: the official government page indicates that new SSW(i) applications in Food Service are unavailable; OTAFF has also stopped accepting SSW(i) exam bookings. The learning materials remain available, and the status should be checked again against official sources.",
+      "id": "hygiene",
+      "lessons": [
+        {
+          "caution": "Do not handle food before reporting illness symptoms.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The supervisor needs to know about symptoms to assign duties and prevent food exposure.",
+              "kind": "knowledge",
+              "options": [
+                "Report it to the supervisor before handling food",
+                "Wear two layers of gloves and work",
+                "Wait until a customer asks",
+                "Keep the symptoms to yourself until the shift ends"
+              ],
+              "prompt": "What should a worker do if they have symptoms of illness before a shift?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Report the symptoms. Do not prepare food until the supervisor gives instructions.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Tell the supervisor, do not prepare food, and wait for a work assignment according to restaurant procedure.",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: Before preparing a salad, a worker has felt nauseated and has been vomiting since morning, but the restaurant is busy. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Change into clothing and equipment required by restaurant rules → Check your physical condition and hands → Report symptoms or wounds to the supervisor → Start work after receiving instructions.",
+              "kind": "workflow",
+              "options": [
+                "Check your physical condition and hands",
+                "Change into clothing and equipment required by restaurant rules",
+                "Report symptoms or wounds to the supervisor",
+                "Start work after receiving instructions"
+              ],
+              "prompt": "In the workflow “Physical condition and pre-shift preparation,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "気分が悪いです。責任者に報告します。",
+              "meaning": "I do not feel well. I will report to the person in charge.",
+              "reading": "きぶんがわるいです。せきにんしゃにほうこくします。"
+            },
+            {
+              "japanese": "食品を扱う前に、手と服を確認してください。",
+              "meaning": "Before handling food, check your hands and clothing.",
+              "reading": "しょくひんをあつかうまえに、てとふくをかくにんしてください。"
+            }
+          ],
+          "id": "fs-01",
+          "minutes": 25,
+          "objectives": [
+            "Melaporkan gejala sakit dan menyiapkan seragam, rambut, kuku, serta perlengkapan sebelum menangani makanan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Tell the supervisor, do not prepare food, and wait for a task assignment according to restaurant procedures.",
+          "scenario": "Before preparing a salad, a worker feels nauseated and has been vomiting since morning, but the restaurant is busy.",
+          "sections": [
+            {
+              "body": "Restaurant workers handle ingredients, tools, dishes, and surfaces used by customers. Symptoms such as fever, diarrhea, or vomiting, as well as hand injuries, can increase contamination risks. Each workplace has reporting and task-assignment rules; tell the supervisor so safe duties can be assigned before work begins.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before your shift, change into your uniform, cover your hair, store personal belongings, and check your hands and general condition. If you feel ill while working, stop handling food and tell the supervisor. Do not hide symptoms or simply put on gloves to continue a risky task.\n\nPractice scenario: Before preparing a salad, a worker feels nauseated and has been vomiting since morning, but the restaurant is busy.\nRecommended response: Tell the supervisor, do not prepare food, and wait for a task assignment according to restaurant procedures.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Ganti pakaian dan perlengkapan sesuai aturan restoran",
+            "Periksa kondisi tubuh dan tangan",
+            "Laporkan gejala atau luka kepada pemimpin",
+            "Mulai tugas setelah mendapat arahan"
+          ],
+          "title": "Health and Preparation Before a Shift",
+          "vocabulary": [
+            {
+              "japanese": "体調",
+              "meaning": "physical condition",
+              "reading": "たいちょう"
+            },
+            {
+              "japanese": "制服",
+              "meaning": "uniform",
+              "reading": "せいふく"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            },
+            {
+              "japanese": "報告",
+              "meaning": "report",
+              "reading": "ほうこく"
+            }
+          ]
+        },
+        {
+          "caution": "Do not use the same knife or gloves for raw ingredients and ready-to-eat food.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Separation reduces the chance of contaminants from raw ingredients reaching ready-to-eat dishes.",
+              "kind": "knowledge",
+              "options": [
+                "Prevent contaminants from reaching food that will not be cooked again",
+                "Wear out the tools faster",
+                "So workers do not need to wash their hands",
+                "Make the flavor of every dish the same"
+              ],
+              "prompt": "Why are tools for raw ingredients kept separate from tools for ready-to-eat food?"
+            },
+            {
+              "answer": 2,
+              "explanation": "Stop using, separate, and reprocess tools and ingredients that may have been contaminated, following instructions.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Stop serving the salad, separate tools and ingredients that may have been contaminated, wash your hands, and tell the supervisor so they can be handled again.",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: After cutting raw chicken, a worker uses the same gloves to pick up tomato slices for a salad. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Identify tool labels or codes for each ingredient type → Separate raw ingredients from ready-to-eat food → Wash hands after contact with raw ingredients or dirty tasks → Clean or replace tools before switching tasks.",
+              "kind": "workflow",
+              "options": [
+                "Identify tool labels or codes for each ingredient type",
+                "Separate raw ingredients from ready-to-eat food",
+                "Wash hands after contact with raw ingredients or dirty tasks",
+                "Clean or replace tools before switching tasks"
+              ],
+              "prompt": "In the workflow “Handwashing and raw-ingredient separation,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このまな板は生肉用です。",
+              "meaning": "This cutting board is for raw meat.",
+              "reading": "このまないたはなまにくようです。"
+            },
+            {
+              "japanese": "サラダ用の器具に替えます。",
+              "meaning": "I will replace it with tools for the salad.",
+              "reading": "さらだようのきぐにかえます。"
+            }
+          ],
+          "id": "fs-02",
+          "minutes": 25,
+          "objectives": [
+            "Mencuci tangan pada saat yang tepat dan mencegah alat atau tangan memindahkan cemaran ke makanan siap makan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop serving the salad, separate tools and ingredients that may be affected, wash your hands, and tell the supervisor so they can be handled again.",
+          "scenario": "After cutting raw chicken, a worker uses the same gloves to pick up tomato slices for a salad.",
+          "sections": [
+            {
+              "body": "Hands, knives, cutting boards, and counters can transfer contamination from raw ingredients to food that will not be cooked again. Wash your hands after touching raw meat, waste, toilets, money, phones, or cleaning tasks. The same gloves can also spread contamination; follow the restaurant's rules for changing gloves and separating equipment.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Store ingredients and cutting boards according to the restaurant's labels or color coding. After preparing raw meat, stop, wash your hands, change gloves if worn, and use a cleaned surface for ready-to-eat food. If a clean tool is exposed to raw juices, set it aside and request rewashing.\n\nPractice scenario: After cutting raw chicken, a worker uses the same gloves to pick up tomato slices for a salad.\nRecommended response: Stop serving the salad, separate tools and ingredients that may be affected, wash your hands, and tell the supervisor so they can be handled again.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Kenali label atau kode alat untuk tiap jenis bahan",
+            "Pisahkan bahan mentah dari makanan siap makan",
+            "Cuci tangan setelah kontak dengan bahan mentah atau tugas kotor",
+            "Bersihkan atau ganti alat sebelum berpindah tugas"
+          ],
+          "title": "Wash Hands and Separate Raw Ingredients",
+          "vocabulary": [
+            {
+              "japanese": "生肉",
+              "meaning": "raw meat",
+              "reading": "なまにく"
+            },
+            {
+              "japanese": "まな板",
+              "meaning": "cutting board",
+              "reading": "まないた"
+            },
+            {
+              "japanese": "交差汚染",
+              "meaning": "cross-contamination",
+              "reading": "こうさおせん"
+            },
+            {
+              "japanese": "手洗い",
+              "meaning": "handwashing",
+              "reading": "てあらい"
+            }
+          ]
+        },
+        {
+          "caution": "Do not judge food safety by smell, touch, or appearance alone.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Limits follow ingredient requirements and the restaurant plan; measure and record actual results.",
+              "kind": "knowledge",
+              "options": [
+                "Read the label and applicable restaurant procedures",
+                "Use the same value for all dishes",
+                "Guess based on the food's color and smell",
+                "Ask the customer who ordered it"
+              ],
+              "prompt": "How should workers determine a time or temperature limit for an ingredient?"
+            },
+            {
+              "answer": 3,
+              "explanation": "Without traceable time records and working equipment, the food must not be served.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order",
+                "Do not serve the soup. Hold the container, report the missing label and faulty tool, then wait for inspection according to procedure."
+              ],
+              "prompt": "Workplace scenario: Soup ready to be served has no time label, and the station thermometer shows an error. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Read the time label and storage requirements → Use the measuring tool as instructed → Record the actual time and temperature → Hold ingredients outside the limits and report them.",
+              "kind": "workflow",
+              "options": [
+                "Read the time label and storage requirements",
+                "Record the actual time and temperature",
+                "Use the measuring tool as instructed",
+                "Hold ingredients outside the limits and report them"
+              ],
+              "prompt": "In the workflow “Ingredient time, temperature, and storage,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "温度計にエラーが出ています。",
+              "meaning": "The thermometer is displaying an error.",
+              "reading": "おんどけいにえらーがでています。"
+            },
+            {
+              "japanese": "このスープを保留して、責任者に確認します。",
+              "meaning": "I am holding this soup and requesting an inspection by the person in charge.",
+              "reading": "このすーぷをほりゅうして、せきにんしゃにかくにんします。"
+            }
+          ],
+          "id": "fs-03",
+          "minutes": 25,
+          "objectives": [
+            "Memeriksa kondisi simpan serta mencatat waktu atau suhu sesuai batas pada label dan prosedur restoran.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not serve the soup. Hold the container, report the missing label and faulty instrument, and wait for an inspection according to procedure.",
+          "scenario": "Soup ready to be served has no time label, and the station thermometer is displaying an error.",
+          "sections": [
+            {
+              "body": "Cold, hot, and ready-to-eat foods have storage requirements based on the product and restaurant plan. Use a thermometer and the limits written for that ingredient rather than relying on touch or memorized numbers. Container lids, time labels, and ingredient separation help maintain safety and quality during a shift.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Check the temperature with the designated instrument, clean the probe according to procedure, and record the time and result. Keep containers covered with readable identification. If the temperature or time exceeds restaurant limits, a label is missing, or equipment does not work, hold the ingredient and ask the supervisor to decide what to do next.\n\nPractice scenario: Soup ready to be served has no time label, and the station thermometer is displaying an error.\nRecommended response: Do not serve the soup. Hold the container, report the missing label and faulty instrument, and wait for an inspection according to procedure.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca label waktu dan syarat penyimpanan",
+            "Gunakan alat ukur sesuai instruksi",
+            "Catat waktu dan suhu aktual",
+            "Tahan bahan yang menyimpang dan laporkan"
+          ],
+          "title": "Time, Temperature, and Ingredient Storage",
+          "vocabulary": [
+            {
+              "japanese": "温度",
+              "meaning": "temperature",
+              "reading": "おんど"
+            },
+            {
+              "japanese": "温度計",
+              "meaning": "thermometer",
+              "reading": "おんどけい"
+            },
+            {
+              "japanese": "保存",
+              "meaning": "storage",
+              "reading": "ほぞん"
+            },
+            {
+              "japanese": "時間",
+              "meaning": "time",
+              "reading": "じかん"
+            }
+          ]
+        }
+      ],
+      "title": "Food Hygiene and Safety"
+    },
+    {
+      "description": "Prepare workstations, handle special requests with clear confirmation, and prevent cross-contact in the kitchen.",
+      "id": "preparation",
+      "lessons": [
+        {
+          "caution": "Do not guess the ingredient or portion when the ticket and label do not match.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Ingredient identity must be certain to ensure the recipe, safety, and allergy information are correct.",
+              "kind": "knowledge",
+              "options": [
+                "Set the ingredient aside and request identification before use",
+                "Taste a little to identify the ingredient",
+                "Use it only if its color resembles the recipe",
+                "Mix it with other ingredients and ask about it later"
+              ],
+              "prompt": "What is the correct step when an ingredient at the station is unlabeled?"
+            },
+            {
+              "answer": 0,
+              "explanation": "Do not use unidentified ingredients; set them aside and confirm with the supervisor.",
+              "kind": "case",
+              "options": [
+                "Do not use the container's contents. Set it aside and ask the supervisor to identify them before preparing the order.",
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: The ticket orders vegetable soup, but a container at the station is unlabeled and its contents cannot be identified. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Read the recipe and order requirements → Check the ingredients, labels, and required tools → Prepare ingredients in separate, identified containers → Organize the station and clarify anything uncertain.",
+              "kind": "workflow",
+              "options": [
+                "Read the recipe and order requirements",
+                "Prepare ingredients in separate, identified containers",
+                "Organize the station and clarify anything uncertain",
+                "Check the ingredients, labels, and required tools"
+              ],
+              "prompt": "In the workflow “Ingredient preparation and work station setup,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "この材料の名前を確認してください。",
+              "meaning": "Please confirm the name of this ingredient.",
+              "reading": "このざいりょうのなまえをかくにんしてください。"
+            },
+            {
+              "japanese": "注文票を見てから、準備します。",
+              "meaning": "I will prepare it after reading the order ticket.",
+              "reading": "ちゅうもんひょうをみてから、じゅんびします。"
+            }
+          ],
+          "id": "fs-04",
+          "minutes": 25,
+          "objectives": [
+            "Menyiapkan bahan, alat, porsi, dan urutan kerja berdasarkan resep serta tiket pesanan yang benar.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not use the contents. Set the container aside and ask the supervisor to identify them before preparing the order.",
+          "scenario": "The ticket is for vegetable soup, but an unlabelled container at the station has unidentified contents.",
+          "sections": [
+            {
+              "body": "Organized preparation reduces ingredient mix-ups, waiting, and repeated movements during busy service. Check the recipe, portions, tools, and ingredient condition before setting up a station. Keep ready-to-eat food separate from raw ingredients; use knives, heat, and electrical equipment only within your training.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Arrange ingredients in labeled containers, take only what is needed for the shift, and store the rest as required. Read tickets carefully; if a note is unreadable, confirm it before cooking. Clean spills promptly without contaminating ingredients or making the floor slippery.\n\nPractice scenario: The ticket is for vegetable soup, but an unlabelled container at the station has unidentified contents.\nRecommended response: Do not use the contents. Set the container aside and ask the supervisor to identify them before preparing the order.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Baca resep dan kebutuhan pesanan",
+            "Periksa bahan, label, dan alat yang diperlukan",
+            "Siapkan bahan dalam wadah terpisah dan beridentitas",
+            "Rapikan stasiun dan konfirmasi hal yang tidak jelas"
+          ],
+          "title": "Ingredient and Workstation Preparation",
+          "vocabulary": [
+            {
+              "japanese": "仕込み",
+              "meaning": "ingredient preparation",
+              "reading": "しこみ"
+            },
+            {
+              "japanese": "注文票",
+              "meaning": "order ticket",
+              "reading": "ちゅうもんひょう"
+            },
+            {
+              "japanese": "分量",
+              "meaning": "measurement",
+              "reading": "ぶんりょう"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not say a dish is “safe” based on a guess or simply because the ingredient is not visible on the plate.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Do not present unverified information as certain; escalate the question to someone with the correct data.",
+              "kind": "knowledge",
+              "options": [
+                "Explain that you will check, then confirm with the supervisor",
+                "Say it is safe because the ingredient is not visible",
+                "Ask the customer to try a small amount",
+                "Change the sauce without telling anyone"
+              ],
+              "prompt": "What is the appropriate response if allergen information on the menu is incomplete?"
+            },
+            {
+              "answer": 1,
+              "explanation": "The list has not been updated, so do not guess; verify the information with the person in charge.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Do not guess. Say you will check, withhold a dish recommendation, and ask the supervisor to verify the latest information.",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: A customer asks whether the sauce contains peanuts, but the ingredient list at the station has not been updated. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Listen to the request and note the ingredients to avoid → Repeat the request to confirm the customer's meaning → Check the guidance and confirm with an authorized person → Share verified information or a safe option.",
+              "kind": "workflow",
+              "options": [
+                "Repeat the request to confirm the customer's meaning",
+                "Listen to the request and note the ingredients to avoid",
+                "Check the guidance and confirm with an authorized person",
+                "Share verified information or a safe option"
+              ],
+              "prompt": "In the workflow “Responding to a customer's allergy question,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "このソースにナッツが入っていますか。",
+              "meaning": "Does this sauce contain peanuts?",
+              "reading": "このそーすになっつがはいっていますか。"
+            },
+            {
+              "japanese": "確認しますので、少しお待ちください。",
+              "meaning": "I will check that for you. Please wait a moment.",
+              "reading": "かくにんしますので、すこしおまちください。"
+            }
+          ],
+          "id": "fs-05",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan permintaan alergi, memeriksa informasi menu, dan menghubungi dapur atau pemimpin tanpa membuat janji yang tidak pasti.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not guess. Say you will check, hold off on recommending the dish, and ask the supervisor to verify the latest information.",
+          "scenario": "A customer asks whether a sauce contains peanuts, but the ingredient list at the station has not been updated.",
+          "sections": [
+            {
+              "body": "Food allergies can cause serious reactions. Ingredient information and cross-contact risks can vary by menu, supplier, and cooking method. Use the restaurant's current allergy guide and ask an authorized person when an answer is unclear. Do not guess from a dish's name or claim it is allergen-free without confirmation.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Listen to the ingredient the customer needs to avoid, repeat it to confirm, then check the guide or menu system. Clearly share what is known. If the information is insufficient, tell the customer you will confirm it and contact the supervisor or kitchen right away. Do not change the recipe or ask the kitchen to ignore procedures.\n\nPractice scenario: A customer asks whether a sauce contains peanuts, but the ingredient list at the station has not been updated.\nRecommended response: Do not guess. Say you will check, hold off on recommending the dish, and ask the supervisor to verify the latest information.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan permintaan dan catat bahan yang dihindari",
+            "Ulangi permintaan untuk memastikan maksud pelanggan",
+            "Periksa panduan dan konfirmasi dengan pihak berwenang",
+            "Sampaikan informasi yang terverifikasi atau pilihan aman"
+          ],
+          "title": "Responding to Customer Allergy Questions",
+          "vocabulary": [
+            {
+              "japanese": "アレルギー",
+              "meaning": "allergy",
+              "reading": "あれるぎー"
+            },
+            {
+              "japanese": "原材料",
+              "meaning": "ingredient",
+              "reading": "げんざいりょう"
+            },
+            {
+              "japanese": "確認します",
+              "meaning": "I will check",
+              "reading": "かくにんします"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            }
+          ]
+        },
+        {
+          "caution": "Do not remove an ingredient from a finished dish to meet an allergy request.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "The correct ticket and confirmation connect the request to the dish being prepared.",
+              "kind": "knowledge",
+              "options": [
+                "Record it on the correct ticket and confirm the kitchen received it",
+                "Tell a coworker without updating the ticket",
+                "Change the plate after the dish is ready",
+                "Let the kitchen read the customer's mind"
+              ],
+              "prompt": "How can you make sure an order change reaches the kitchen correctly?"
+            },
+            {
+              "answer": 2,
+              "explanation": "The dish was prepared before the allergy request was recorded; hold it and follow the correct order process.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Do not serve the original dish. Stop service, inform the kitchen and supervisor, then create the correct ticket and follow the allergy procedure.",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: A customer requests an egg-free dish because of an allergy; the original ticket has already gone to the kitchen without that note. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Repeat the order change to the customer → Add the note to the correct ticket → Confirm the kitchen received the change → Check the dish and tools before serving.",
+              "kind": "workflow",
+              "options": [
+                "Repeat the order change to the customer",
+                "Add the note to the correct ticket",
+                "Confirm the kitchen received the change",
+                "Check the dish and tools before serving"
+              ],
+              "prompt": "In the workflow “Order changes and cross-contact prevention,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "卵なしの注文に変更します。",
+              "meaning": "I will change the order to egg-free.",
+              "reading": "たまごなしのちゅうもんにへんこうします。"
+            },
+            {
+              "japanese": "新しい伝票を確認してください。",
+              "meaning": "Please check the new ticket.",
+              "reading": "あたらしいでんぴょうをかくにんしてください。"
+            }
+          ],
+          "id": "fs-06",
+          "minutes": 25,
+          "objectives": [
+            "Meneruskan perubahan pesanan ke dapur dengan jelas dan memastikan alat serta alur kerja sesuai permintaan terverifikasi.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Do not bring out the original dish. Stop service, tell the kitchen and supervisor, then create the correct ticket and follow allergy procedures.",
+          "scenario": "A customer requests an egg-free dish because of an allergy, but the original ticket has already gone to the kitchen without that note.",
+          "sections": [
+            {
+              "body": "Notes such as “no egg” or “sauce on the side” change how the kitchen prepares and serves a dish. The ticket must state the change clearly and be linked to the correct table or order number. For allergy-related requests, the kitchen follows established cross-contact procedures; do not treat small changes as unimportant.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Repeat the change to the customer, enter it in the system or ticket, and make sure the kitchen receives the correct version. If tickets are mixed up or a modification is unconfirmed, hold the dish before it is carried out. Use the plate and tools designated for the order; do not simply scrape an ingredient off a finished dish.\n\nPractice scenario: A customer requests an egg-free dish because of an allergy, but the original ticket has already gone to the kitchen without that note.\nRecommended response: Do not bring out the original dish. Stop service, tell the kitchen and supervisor, then create the correct ticket and follow allergy procedures.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Ulangi perubahan pesanan kepada pelanggan",
+            "Masukkan catatan pada tiket yang benar",
+            "Konfirmasi penerimaan perubahan oleh dapur",
+            "Periksa hidangan dan alat sebelum disajikan"
+          ],
+          "title": "Order Changes and Cross-Contact Prevention",
+          "vocabulary": [
+            {
+              "japanese": "変更",
+              "meaning": "change",
+              "reading": "へんこう"
+            },
+            {
+              "japanese": "注文",
+              "meaning": "order",
+              "reading": "ちゅうもん"
+            },
+            {
+              "japanese": "伝票",
+              "meaning": "order ticket",
+              "reading": "でんぴょう"
+            },
+            {
+              "japanese": "別々",
+              "meaning": "separate",
+              "reading": "べつべつ"
+            }
+          ]
+        }
+      ],
+      "title": "Dish Preparation and Allergy Requests"
+    },
+    {
+      "description": "Use polite language and simple confirmations when welcoming guests, recording orders, and serving dishes.",
+      "id": "hospitality",
+      "lessons": [
+        {
+          "caution": "Do not say private reservation details aloud in front of others.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Confirm that the table is ready and the route is safe before seating guests.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm that the table has been cleaned and is ready",
+                "Ask the guests to clean it themselves",
+                "Seat the guests and clean the table while they eat",
+                "Move equipment from a neighboring table without permission"
+              ],
+              "prompt": "What should be done before seating guests at a newly vacated table?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The table has not been cleaned; explain this and wait for confirmation before seating the guests.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order",
+                "Greet the guests, explain that the table is being prepared, and ask them to wait in the designated area until the table is confirmed ready."
+              ],
+              "prompt": "Workplace scenario: Guests arrive without a reservation, and the newly vacated table has not been cleaned. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Greet the guests politely → Ask about a reservation or party size if needed → Check the table and walking route → Seat the guests and present the menu.",
+              "kind": "workflow",
+              "options": [
+                "Greet the guests politely",
+                "Check the table and walking route",
+                "Ask about a reservation or party size if needed",
+                "Seat the guests and present the menu"
+              ],
+              "prompt": "In the workflow “Greeting guests and seating them,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "いらっしゃいませ。何名様ですか。",
+              "meaning": "Welcome. How many people are in your party?",
+              "reading": "いらっしゃいませ。なんめいさまですか。"
+            },
+            {
+              "japanese": "こちらの席へご案内します。",
+              "meaning": "I will show you to this table.",
+              "reading": "こちらのせきへごあんないします。"
+            }
+          ],
+          "id": "fs-07",
+          "minutes": 25,
+          "objectives": [
+            "Menyapa tamu, memastikan jumlah orang atau reservasi, dan mengantar ke meja yang sesuai.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Greet them, explain that the table is being prepared, and ask them to wait in the designated area until the table is confirmed ready.",
+          "scenario": "Guests arrive without a reservation, and a recently vacated table has not yet been cleaned.",
+          "sections": [
+            {
+              "body": "A warm greeting helps guests feel welcome and supports table flow. Greet guests politely, ask the party size when needed, and confirm reservations without saying personal information aloud. Keep service routes clear of carts, belongings, and spills so guests and staff can pass safely.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Greet guests, listen to their answers, and repeat important information such as the reservation name or party size. If a table is not ready, give an estimated wait only after checking and ask guests to wait in the designated area. Do not promise a particular table without confirming it in the system.\n\nPractice scenario: Guests arrive without a reservation, and a recently vacated table has not yet been cleaned.\nRecommended response: Greet them, explain that the table is being prepared, and ask them to wait in the designated area until the table is confirmed ready.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Sapa tamu dengan ungkapan yang sopan",
+            "Tanyakan reservasi atau jumlah orang bila perlu",
+            "Periksa meja dan jalur berjalan",
+            "Antar tamu dan sampaikan menu"
+          ],
+          "title": "Welcoming Guests and Showing Them to Their Table",
+          "vocabulary": [
+            {
+              "japanese": "いらっしゃいませ",
+              "meaning": "welcome",
+              "reading": "いらっしゃいませ"
+            },
+            {
+              "japanese": "予約",
+              "meaning": "reservation",
+              "reading": "よやく"
+            },
+            {
+              "japanese": "席",
+              "meaning": "seat",
+              "reading": "せき"
+            },
+            {
+              "japanese": "案内",
+              "meaning": "to escort or give directions",
+              "reading": "あんない"
+            }
+          ]
+        },
+        {
+          "caution": "Do not send the ticket while the customer's quantity or choices are still unclear.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Repeating the order gives you a chance to correct a misunderstanding before the kitchen prepares the food.",
+              "kind": "knowledge",
+              "options": [
+                "Confirm that the items, quantities, and special requests are correct",
+                "Make the guest change their order",
+                "Delay the kitchen's work",
+                "So the ticket does not need to be read"
+              ],
+              "prompt": "Why does a worker repeat an order before sending the ticket?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The request is not recorded; confirm it and update the ticket before the kitchen starts.",
+              "kind": "case",
+              "options": [
+                "Confirm the request for no onions, update the correct table's ticket, and make sure the kitchen receives the note.",
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: A customer orders two dishes and requests one without onions, but the worker records only the dish names. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Listen to the complete order → Record the items and quantities at the correct table → Repeat the main choices for confirmation → Send the ticket and communicate special requests.",
+              "kind": "workflow",
+              "options": [
+                "Listen to the complete order",
+                "Repeat the main choices for confirmation",
+                "Send the ticket and communicate special requests",
+                "Record the items and quantities at the correct table"
+              ],
+              "prompt": "In the workflow “Recording orders and repeating them for confirmation,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "ご注文はカレー二つですね。",
+              "meaning": "Two curries, is that correct?",
+              "reading": "ごちゅうもんはかれーふたつですね。"
+            },
+            {
+              "japanese": "玉ねぎなしで、よろしいですか。",
+              "meaning": "No onion, correct?",
+              "reading": "たまねぎなしで、よろしいですか。"
+            }
+          ],
+          "id": "fs-08",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan pesanan, mencatat jumlah serta pilihan dengan benar, dan mengulang poin penting kepada tamu.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Confirm the no-onion request, update the ticket for the correct table, and make sure the kitchen receives the note.",
+          "scenario": "A customer orders two dishes and requests one without onions, but the worker records only the dish names.",
+          "sections": [
+            {
+              "body": "An order includes the dish, quantity, size, cooking level when applicable, and special requests. Repeating the order helps catch misunderstandings before sending the ticket. If a word or choice is unclear, ask politely and use the menu picture or dish number to help.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Record orders promptly in the system or on a ticket for the correct table. Repeat the items and quantities, ask again about unclear choices, then send the ticket to the kitchen. Do not enter allergy notes as ordinary preferences; tell the supervisor and follow the restaurant's special procedure.\n\nPractice scenario: A customer orders two dishes and requests one without onions, but the worker records only the dish names.\nRecommended response: Confirm the no-onion request, update the ticket for the correct table, and make sure the kitchen receives the note.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan pesanan sampai selesai",
+            "Catat item dan jumlah pada meja yang benar",
+            "Ulangi pilihan utama untuk konfirmasi",
+            "Kirim tiket dan sampaikan permintaan khusus"
+          ],
+          "title": "Recording Orders and Repeating Them for Confirmation",
+          "vocabulary": [
+            {
+              "japanese": "注文",
+              "meaning": "order",
+              "reading": "ちゅうもん"
+            },
+            {
+              "japanese": "個数",
+              "meaning": "quantity",
+              "reading": "こすう"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            },
+            {
+              "japanese": "伝票",
+              "meaning": "order ticket",
+              "reading": "でんぴょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not hand over a dish if its table or order identity is uncertain.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking the ticket reduces the risk of taking the wrong dish to the wrong table.",
+              "kind": "knowledge",
+              "options": [
+                "Dish name, quantity, modifications, and table number",
+                "The customer's uniform color",
+                "The table closest to the kitchen",
+                "Only the number of available trays"
+              ],
+              "prompt": "What should be checked before carrying a dish to a table?"
+            },
+            {
+              "answer": 1,
+              "explanation": "Two table numbers conflict; stop in a safe place and match the ticket before serving the dish.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Stop in a safe place and match the ticket to the table number; do not serve the dish until its destination is confirmed.",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: In the aisle, a worker sees that the ticket on a tray says table 8, but a coworker calls them to table 6. The most appropriate action is to…"
+            },
+            {
+              "answer": 0,
+              "explanation": "The taught sequence is: Match the dishes and quantities to the ticket → Check modifications and tray stability → Carry the dishes along a safe route → Name each dish and confirm the correct table.",
+              "kind": "workflow",
+              "options": [
+                "Check modifications and tray stability",
+                "Match the dishes and quantities to the ticket",
+                "Carry the dishes along a safe route",
+                "Name each dish and confirm the correct table"
+              ],
+              "prompt": "In the workflow “Delivering dishes and checking the table,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "こちらは焼き魚でございます。",
+              "meaning": "Here is your grilled fish.",
+              "reading": "こちらはやきざかなでございます。"
+            },
+            {
+              "japanese": "テーブル番号を確認します。",
+              "meaning": "I will confirm the table number.",
+              "reading": "てーぶるばんごうをかくにんします。"
+            }
+          ],
+          "id": "fs-09",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan hidangan dengan tiket dan meja serta membawa nampan dengan aman.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Stop in a safe place and match the ticket to the table number; do not hand over the dish until its destination is confirmed.",
+          "scenario": "In the aisle, a worker sees a ticket on the tray for table 8, but a colleague calls them to table 6.",
+          "sections": [
+            {
+              "body": "Each dish must reach the table and customer who ordered it. Before leaving, read the dish name or number on the ticket, check the quantity and modifications, and make sure the plates and tray are stable. Routes between tables can be narrow; prioritize visibility and balance over speed.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Lift the tray steadily and use a route that is not slippery. At the table, briefly name each dish and set it down without touching the eating surface. If an item does not match the ticket or the customer says it is not what they ordered, do not leave it; hold it and take it back to the check point.\n\nPractice scenario: In the aisle, a worker sees a ticket on the tray for table 8, but a colleague calls them to table 6.\nRecommended response: Stop in a safe place and match the ticket to the table number; do not hand over the dish until its destination is confirmed.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan hidangan dan jumlah dengan tiket",
+            "Periksa modifikasi serta kestabilan nampan",
+            "Bawa melalui jalur yang aman",
+            "Sebutkan hidangan dan pastikan meja yang benar"
+          ],
+          "title": "Serving Dishes and Checking the Table",
+          "vocabulary": [
+            {
+              "japanese": "配膳",
+              "meaning": "serving dishes",
+              "reading": "はいぜん"
+            },
+            {
+              "japanese": "料理",
+              "meaning": "dish",
+              "reading": "りょうり"
+            },
+            {
+              "japanese": "皿",
+              "meaning": "plate",
+              "reading": "さら"
+            },
+            {
+              "japanese": "通路",
+              "meaning": "route",
+              "reading": "つうろ"
+            }
+          ]
+        }
+      ],
+      "title": "Guest Reception and Table Service"
+    },
+    {
+      "description": "Handle complaints calmly, process transactions accurately, and clean and hand over restaurant status at the end of a shift.",
+      "id": "closing",
+      "lessons": [
+        {
+          "caution": "Do not argue, blame the customer, or promise actions beyond your authority.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Listening and checking the facts help determine the proper follow-up.",
+              "kind": "knowledge",
+              "options": [
+                "Listen, repeat the concern, and say that you will check it",
+                "Blame the customer for choosing incorrectly",
+                "Promise a refund before asking any questions",
+                "Ignore the complaint until the customer leaves"
+              ],
+              "prompt": "What is a good first response to a complaint?"
+            },
+            {
+              "answer": 2,
+              "explanation": "A possible health issue must be escalated; do not argue or speculate.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Respond calmly, stop serving the dish in question, call the supervisor, and record the time and dish without speculating.",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: A customer says they felt ill after tasting a dish and wants to know who is responsible. The most appropriate action is to…"
+            },
+            {
+              "answer": 1,
+              "explanation": "The taught sequence is: Listen to the customer without interrupting → Repeat the main concern and apologize politely → Contact the supervisor for a decision within their authority → Record the facts and needed follow-up.",
+              "kind": "workflow",
+              "options": [
+                "Listen to the customer without interrupting",
+                "Repeat the main concern and apologize politely",
+                "Contact the supervisor for a decision within their authority",
+                "Record the facts and needed follow-up"
+              ],
+              "prompt": "In the workflow “Handling a customer complaint,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "申し訳ございません。すぐに確認します。",
+              "meaning": "I am sorry. I will check that right away.",
+              "reading": "もうしわけございません。すぐにかくにんします。"
+            },
+            {
+              "japanese": "責任者をお呼びします。",
+              "meaning": "I will call the person in charge.",
+              "reading": "せきにんしゃをおよびします。"
+            }
+          ],
+          "id": "fs-10",
+          "minutes": 25,
+          "objectives": [
+            "Mendengarkan keluhan, mengulangi masalah dengan sopan, dan meminta bantuan pemimpin untuk keputusan atau risiko keselamatan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Respond calmly, stop serving the dish, call the supervisor, and record the time and dish without speculation.",
+          "scenario": "After tasting a dish, a customer says they feel unwell and asks who is responsible.",
+          "sections": [
+            {
+              "body": "Complaints may concern an incorrect dish, delays, quality, allergies, or safety. Stay calm, listen without arguing, apologize for the inconvenience, and gather the facts. Replacements, refunds, and incident handling must follow the restaurant's authority rules; immediately refer health concerns to the supervisor.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Say that you will check, repeat the issue so the customer knows they were heard, then contact the supervisor. Do not blame the kitchen or promise compensation beyond your authority. If the customer feels ill or food may be unsafe, stop selling the related dish and report it immediately.\n\nPractice scenario: After tasting a dish, a customer says they feel unwell and asks who is responsible.\nRecommended response: Respond calmly, stop serving the dish, call the supervisor, and record the time and dish without speculation.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Dengarkan pelanggan tanpa menyela",
+            "Ulangi inti masalah dan minta maaf dengan sopan",
+            "Hubungi pemimpin untuk keputusan sesuai wewenang",
+            "Catat fakta dan tindak lanjut yang diperlukan"
+          ],
+          "title": "Handling Customer Complaints",
+          "vocabulary": [
+            {
+              "japanese": "苦情",
+              "meaning": "complaint",
+              "reading": "くじょう"
+            },
+            {
+              "japanese": "確認します",
+              "meaning": "I will check",
+              "reading": "かくにんします"
+            },
+            {
+              "japanese": "責任者",
+              "meaning": "person in charge",
+              "reading": "せきにんしゃ"
+            },
+            {
+              "japanese": "状況",
+              "meaning": "condition",
+              "reading": "じょうきょう"
+            }
+          ]
+        },
+        {
+          "caution": "Do not write down or store customer payment details in a personal location.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Checking the transaction prevents duplicate payment and protects customer data.",
+              "kind": "knowledge",
+              "options": [
+                "Check the transaction status before trying again",
+                "Ask the customer to pay cash without checking",
+                "Repeat the transaction several times quickly",
+                "Save the customer's card data for later"
+              ],
+              "prompt": "What should you do when the terminal has not shown a clear payment status?"
+            },
+            {
+              "answer": 3,
+              "explanation": "The payment status is unclear; check the system or ask the supervisor before trying again.",
+              "kind": "case",
+              "options": [
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order",
+                "Check the transaction status in the system or ask the supervisor for help before retrying, so the customer is not charged twice."
+              ],
+              "prompt": "Workplace scenario: The payment terminal shows a pending message after the customer's card is tapped, and the customer asks the worker to try again. The most appropriate action is to…"
+            },
+            {
+              "answer": 2,
+              "explanation": "The taught sequence is: Match the table and items on the bill → State the payment amount clearly → Process payment according to the system → Confirm the transaction and provide the receipt.",
+              "kind": "workflow",
+              "options": [
+                "Match the table and items on the bill",
+                "Process payment according to the system",
+                "State the payment amount clearly",
+                "Confirm the transaction and provide the receipt"
+              ],
+              "prompt": "In the workflow “Payment and bill check,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "お会計は三千円でございます。",
+              "meaning": "The total is three thousand yen.",
+              "reading": "おかいけいはさんぜんえんでございます。"
+            },
+            {
+              "japanese": "決済の状態を確認いたします。",
+              "meaning": "I will check the transaction status.",
+              "reading": "けっさいのじょうたいをかくにんいたします。"
+            }
+          ],
+          "id": "fs-11",
+          "minutes": 25,
+          "objectives": [
+            "Mencocokkan tagihan dengan pesanan, menerima pembayaran sesuai prosedur, dan menjaga informasi pelanggan.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Check the transaction status in the system or ask the supervisor before retrying, so the customer is not charged twice.",
+          "scenario": "The payment terminal shows a pending message after the customer taps their card, and the customer asks the worker to try again.",
+          "sections": [
+            {
+              "body": "Accurate payment depends on the table bill, amount, payment method, and cashier procedures. Check the total in the system and explain charges clearly if customers ask. Handle cash, cards, and payment apps as instructed; do not store passwords, card numbers, or customer information outside the official system.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Before closing a transaction, match the table number and items on the bill. State the amount due, process the customer's chosen payment method, and provide a receipt if the system requires it. If a payment is declined or the amount differs, do not retry until the first transaction's status is confirmed; call the supervisor or follow cashier procedures.\n\nPractice scenario: The payment terminal shows a pending message after the customer taps their card, and the customer asks the worker to try again.\nRecommended response: Check the transaction status in the system or ask the supervisor before retrying, so the customer is not charged twice.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Cocokkan meja dan item pada tagihan",
+            "Sampaikan jumlah pembayaran dengan jelas",
+            "Proses metode pembayaran sesuai sistem",
+            "Konfirmasi hasil transaksi dan serahkan bukti"
+          ],
+          "title": "Payment and Bill Checks",
+          "vocabulary": [
+            {
+              "japanese": "会計",
+              "meaning": "payment or cashier",
+              "reading": "かいけい"
+            },
+            {
+              "japanese": "伝票",
+              "meaning": "bill",
+              "reading": "でんぴょう"
+            },
+            {
+              "japanese": "支払い",
+              "meaning": "payment",
+              "reading": "しはらい"
+            },
+            {
+              "japanese": "確認",
+              "meaning": "confirmation",
+              "reading": "かくにん"
+            }
+          ]
+        },
+        {
+          "caution": "Do not mix cleaning chemicals with food or hide unfinished tasks.",
+          "checks": [
+            {
+              "answer": 0,
+              "explanation": "Clear status information helps the next shift manage ingredients and finish open tasks.",
+              "kind": "knowledge",
+              "options": [
+                "Low stock, damaged equipment, ingredients on hold, and open tasks",
+                "Only the number of customers who came in",
+                "A guess without a location or status",
+                "That everything is finished, even if it has not been recorded"
+              ],
+              "prompt": "What should be communicated in an end-of-shift handover?"
+            },
+            {
+              "answer": 0,
+              "explanation": "The container and cleaning do not have complete records; report and hand over their status.",
+              "kind": "case",
+              "options": [
+                "Set the container aside for assessment according to rules, record the unfinished cleaning, and hand over both issues to the supervisor.",
+                "Guess the ingredients or allergens from the dish name",
+                "Use the same tools because customers are waiting",
+                "Ignore the ticket and continue with the usual order"
+              ],
+              "prompt": "Workplace scenario: At the end of a shift, an open ingredient container has no time label and cleaning of the refrigerator has not been recorded. The most appropriate action is to…"
+            },
+            {
+              "answer": 3,
+              "explanation": "The taught sequence is: Check the closing task list → Clean and store equipment according to area rules → Mark ingredients, stock, or work still open → Hand over the information to the supervisor or next shift.",
+              "kind": "workflow",
+              "options": [
+                "Check the closing task list",
+                "Mark ingredients, stock, or work still open",
+                "Hand over the information to the supervisor or next shift",
+                "Clean and store equipment according to area rules"
+              ],
+              "prompt": "In the workflow “Cleaning, restocking, and handover,” what should you do after completing the first step?"
+            }
+          ],
+          "dialogue": [
+            {
+              "japanese": "冷蔵庫の清掃記録がまだです。",
+              "meaning": "The refrigerator-cleaning record is unfinished.",
+              "reading": "れいぞうこのせいそうきろくがまだです。"
+            },
+            {
+              "japanese": "残った作業を次の人に伝えます。",
+              "meaning": "I will hand the remaining work over to the next shift.",
+              "reading": "のこったさぎょうをつぎのひとにつたえます。"
+            }
+          ],
+          "id": "fs-12",
+          "minutes": 25,
+          "objectives": [
+            "Membersihkan stasiun, memilah limbah, mengisi kebutuhan giliran berikutnya, dan melaporkan pekerjaan yang belum selesai.",
+            "Memilih tindakan aman pada satu situasi kerja dan menjelaskan alasannya.",
+            "Menggunakan ungkapan Jepang sederhana untuk meminta konfirmasi atau melaporkan keadaan."
+          ],
+          "response": "Set the container aside for assessment according to rules, record the unfinished cleaning, and hand both items over to the supervisor.",
+          "scenario": "At the end of a shift, an open ingredient container has no time label and refrigerator cleaning has not been recorded.",
+          "sections": [
+            {
+              "body": "Closing a restaurant includes cleaning tools and tables, storing ingredients, disposing of waste, and checking remaining tasks. Store ingredients according to their labels and required conditions; keep cleaning chemicals separate. Shift handover notes should identify low stock, damaged equipment, held ingredients, and unfinished tasks.",
+              "title": "Work Concepts and Standards"
+            },
+            {
+              "body": "Follow the closing checklist from clean areas to dirty areas using the appropriate cleaning tools. Make sure ingredients are packed, labeled, and placed in the correct storage location. Before leaving, tell the next shift about low stock or equipment problems; do not mark work complete if it has not been done.\n\nPractice scenario: At the end of a shift, an open ingredient container has no time label and refrigerator cleaning has not been recorded.\nRecommended response: Set the container aside for assessment according to rules, record the unfinished cleaning, and hand both items over to the supervisor.",
+              "title": "Applying the Procedures at Work"
+            }
+          ],
+          "steps": [
+            "Periksa daftar tugas penutupan",
+            "Bersihkan dan simpan alat sesuai aturan area",
+            "Tandai bahan, stok, atau pekerjaan yang masih terbuka",
+            "Serahkan informasi kepada pemimpin atau giliran berikutnya"
+          ],
+          "title": "Cleaning, Restocking, and Handover",
+          "vocabulary": [
+            {
+              "japanese": "清掃",
+              "meaning": "cleaning",
+              "reading": "せいそう"
+            },
+            {
+              "japanese": "補充",
+              "meaning": "refilling",
+              "reading": "ほじゅう"
+            },
+            {
+              "japanese": "廃棄物",
+              "meaning": "waste",
+              "reading": "はいきぶつ"
+            },
+            {
+              "japanese": "引継ぎ",
+              "meaning": "handover",
+              "reading": "ひきつぎ"
+            }
+          ]
+        }
+      ],
+      "title": "Handling Issues, Payment, and Closing"
+    }
+  ],
+  "reviewed": "2026-10-22",
+  "sources": [
+    {
+      "title": "ISA Japan — SSW Food Service Sector Information and Status",
+      "url": "https://www.ssw.go.jp/en/about/visa/"
+    },
+    {
+      "title": "ISA Japan — SSW(i) Job Overview",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/10_00179.html"
+    },
+    {
+      "title": "MAFF — Foreign Worker Intake in the Food Service Sector",
+      "url": "https://www.maff.go.jp/j/shokusan/gaisyoku/gaikokujinzai.html"
+    },
+    {
+      "title": "OTAFF — SSW(i) Food Service Examination and Guide",
+      "url": "https://otaff.or.jp/tokutei/gaisyoku-1/"
+    },
+    {
+      "title": "OTAFF — Notice on the Suspension of SSW(i) Food Service Examination Reservations",
+      "url": "https://otaff.or.jp/tokutei/news/cat5/1894/"
+    },
+    {
+      "title": "Japan Food Service Association — SSW Food Service Examination Study Materials",
+      "url": "https://www.jfnet.or.jp/"
+    },
+    {
+      "title": "MHLW — HACCP and Food Hygiene Guide",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/haccp/01_00020.html"
+    },
+    {
+      "title": "Consumer Affairs Agency — Food Allergen Labeling Information",
+      "url": "https://www.caa.go.jp/policies/policy/food_labeling/food_sanitation/allergy/"
+    }
+  ],
+  "version": 1
+}

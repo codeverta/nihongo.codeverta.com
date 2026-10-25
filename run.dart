@@ -21,6 +21,7 @@ Future<void> main(List<String> args) async {
       File('${backendRoot.path}${Platform.pathSeparator}.env'),
     );
     final googleServerClientId = _resolveGoogleClientId(env);
+    final offlineAccessPublicKey = _resolveOfflineAccessPublicKey(env);
     final apiBaseUrl =
         options.apiBaseUrl ??
         Platform.environment['API_BASE_URL'] ??
@@ -28,18 +29,22 @@ Future<void> main(List<String> args) async {
     if (Uri.tryParse(apiBaseUrl)?.hasAuthority != true) {
       throw const _LaunchException('API_BASE_URL tidak valid.');
     }
-    final flutterArgs = <String>[
-      'run',
+    final flutterDefines = <String>[
       '--dart-define=API_BASE_URL=$apiBaseUrl',
       '--dart-define=GOOGLE_SERVER_CLIENT_ID=$googleServerClientId',
+      if (offlineAccessPublicKey.isNotEmpty)
+        '--dart-define=OFFLINE_ACCESS_PUBLIC_KEY=$offlineAccessPublicKey',
+    ];
+    final flutterArgs = <String>[
+      'run',
+      ...flutterDefines,
       ...options.flutterArgs,
     ];
     final selectedFlutterArgs = options.backendOnly
         ? flutterArgs
         : <String>[
             'run',
-            '--dart-define=API_BASE_URL=$apiBaseUrl',
-            '--dart-define=GOOGLE_SERVER_CLIENT_ID=$googleServerClientId',
+            ...flutterDefines,
             ...await prepareAndroidDeviceArgs(
               projectRoot: projectRoot,
               flutterArgs: options.flutterArgs,
@@ -185,6 +190,15 @@ String _resolveGoogleClientId(Map<String, String> env) {
     );
   }
   return clientId;
+}
+
+String _resolveOfflineAccessPublicKey(Map<String, String> env) {
+  final fromEnvironment = Platform.environment['OFFLINE_ACCESS_PUBLIC_KEY']
+      ?.trim();
+  if (fromEnvironment != null && fromEnvironment.isNotEmpty) {
+    return fromEnvironment;
+  }
+  return env['OFFLINE_ACCESS_PUBLIC_KEY']?.trim() ?? '';
 }
 
 int _backendPort(Map<String, String> env) {

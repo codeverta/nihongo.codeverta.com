@@ -8,15 +8,19 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-sql-driver/mysql"
+	"github.com/google/uuid"
 	"gorm.io/gorm/clause"
 	"log"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 	"sort"
+	"strings"
 	"time"
 )
 
-var studyLocation = time.FixedZone("Asia/Jakarta", 7*60*60)
+const defaultStudyTimezone = "Asia/Jakarta"
+
+var studyLocation = time.FixedZone(defaultStudyTimezone, 7*60*60)
 
 // Only server-graded attempts can create these events. This is not a public input.
 type studyEvent struct {
@@ -25,20 +29,24 @@ type studyEvent struct {
 	At                                  time.Time
 	Progress                            *domain.LessonProgress
 	SSWAttempt                          *SSWAttemptRecord
+	OfflinePracticeAttemptID            string
+	OfflinePracticeRecord               *offlinePracticeAttemptRecord
 }
 type gamificationState struct {
-	LearningActivity map[string]LearningActivity `json:",omitempty"`
-	SSWAttempts map[string]SSWAttemptRecord
-	Anki        map[string]*AnkiDeckState
-	XP          int
-	Events      map[string]bool
-	Rewards     map[string]bool
-	Lessons     map[string]domain.LessonProgress
-	Subjects    map[string]string
-	Days        map[string]int
-	Unlocked    map[string]time.Time
-	Exams       map[string]bool
-	PassedExam  bool
+	LearningActivity        map[string]LearningActivity             `json:",omitempty"`
+	OfflinePracticeAttempts map[string]offlinePracticeAttemptRecord `json:",omitempty"`
+	SSWAttempts             map[string]SSWAttemptRecord
+	Anki                    map[string]*AnkiDeckState
+	XP                      int
+	Events                  map[string]bool
+	Rewards                 map[string]bool
+	Lessons                 map[string]domain.LessonProgress
+	Subjects                map[string]string
+	Days                    map[string]int
+	Unlocked                map[string]time.Time
+	Exams                   map[string]bool
+	PassedExam              bool
+	Timezone                string
 }
 type GamificationSummary struct {
 	XP               int                  `json:"xp"`
@@ -56,7 +64,24 @@ type GamificationSummary struct {
 }
 
 func newGamificationState() *gamificationState {
-	return &gamificationState{Events: map[string]bool{}, Rewards: map[string]bool{}, Lessons: map[string]domain.LessonProgress{}, Subjects: map[string]string{}, Days: map[string]int{}, Unlocked: map[string]time.Time{}, Exams: map[string]bool{}}
+	return &gamificationState{Events: map[string]bool{}, Rewards: map[string]bool{}, Lessons: map[string]domain.LessonProgress{}, Subjects: map[string]string{}, Days: map[string]int{}, Unlocked: map[string]time.Time{}, Exams: map[string]bool{}, OfflinePracticeAttempts: map[string]offlinePracticeAttemptRecord{}, Timezone: defaultStudyTimezone}
+}
+
+func isValidStudyTimezone(timezone string) bool {
+	if timezone == "" || strings.TrimSpace(timezone) != timezone {
+		return false
+	}
+	_, err := time.LoadLocation(timezone)
+	return err == nil
+}
+
+func studyTimezone(state *gamificationState) *time.Location {
+	if state != nil && isValidStudyTimezone(state.Timezone) {
+		if location, err := time.LoadLocation(state.Timezone); err == nil {
+			return location
+		}
+	}
+	return studyLocation
 }
 
 // EnableGamificationPersistence connects to MariaDB before serving traffic.
@@ -116,7 +141,7 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 	if err := database.EnsureUUIDSchema(orm.WithContext(schemaCtx)); err != nil {
 		return fmt.Errorf("migrate UUID schema: %w", err)
 	}
-	if err := database.Migrate(orm.WithContext(schemaCtx), &database.GamificationUser{}); err != nil {
+	if err := database.Migrate(orm.WithContext(schemaCtx), &database.GamificationUser{}, &database.UserAnkiDeck{}, &database.UserAnkiDeckMedia{}); err != nil {
 		return fmt.Errorf("initialize GORM gamification schema: %w", err)
 	}
 	var records []database.GamificationUser
@@ -129,6 +154,9 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 		if err := json.Unmarshal(record.State, state); err != nil {
 			return fmt.Errorf("invalid gamification record: %w", err)
 		}
+		if !isValidStudyTimezone(state.Timezone) {
+			state.Timezone = defaultStudyTimezone
+		}
 		if state.XP < 0 || state.Events == nil || state.Rewards == nil || state.Lessons == nil || state.Subjects == nil || state.Days == nil || state.Unlocked == nil || state.Exams == nil {
 			return fmt.Errorf("invalid gamification record for user %q", record.UserID)
 		}
@@ -138,6 +166,42 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 			}
 		}
 		loaded[record.UserID] = state
+	}
+	var persistedDecks []database.UserAnkiDeck
+	if err := orm.Find(&persistedDecks).Error; err != nil {
+		return err
+	}
+	var persistedMedia []userAnkiMediaMetadata
+	if err := orm.Model(&database.UserAnkiDeckMedia{}).
+		Select("user_id, deck_id, name, mime, OCTET_LENGTH(data) AS size").
+		Scan(&persistedMedia).Error; err != nil {
+		return err
+	}
+	mediaByDeck := make(map[string][]userAnkiMediaMetadata, len(persistedDecks))
+	for _, item := range persistedMedia {
+		mediaByDeck[item.DeckID] = append(mediaByDeck[item.DeckID], item)
+	}
+	loadedUserDecks := make(map[string]*userAnkiDeckRecord, len(persistedDecks))
+	loadedUserDeckRequests := make(map[string]string, len(persistedDecks))
+	for _, persisted := range persistedDecks {
+		record, err := persistedUserAnkiDeck(persisted, mediaByDeck[persisted.ID])
+		if err != nil {
+			return fmt.Errorf("invalid imported Anki deck %q: %w", persisted.ID, err)
+		}
+		request, err := uuid.Parse(record.RequestID)
+		if err != nil || request == uuid.Nil {
+			return fmt.Errorf("invalid imported Anki deck request ID")
+		}
+		record.RequestID = request.String()
+		requestKey := ankiUserDeckRequestKey(record.UserID, record.RequestID)
+		if _, duplicateID := loadedUserDecks[record.ID]; duplicateID {
+			return fmt.Errorf("duplicate imported Anki deck ID")
+		}
+		if _, duplicateRequest := loadedUserDeckRequests[requestKey]; duplicateRequest {
+			return fmt.Errorf("duplicate imported Anki deck request ID")
+		}
+		loadedUserDecks[record.ID] = record
+		loadedUserDeckRequests[requestKey] = record.ID
 	}
 
 	s.mu.Lock()
@@ -151,6 +215,8 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 	s.persistenceConn = writer
 	s.persistenceLockName = lockName
 	s.gamification = loaded
+	s.userAnkiDecks = loadedUserDecks
+	s.userAnkiDeckRequests = loadedUserDeckRequests
 	for id, state := range loaded {
 		for attemptID, r := range state.SSWAttempts {
 			s.simulationAttempts[attemptID] = &simulationAttemptState{r.Session, r.Questions, r.Correct, r.Explanations, r.Marked}
@@ -218,6 +284,9 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 	current := s.gamification[userID]
 	if current == nil {
 		current = newGamificationState()
+		if profile := s.profiles[userID]; profile.Timezone != "" {
+			current.Timezone = profile.Timezone
+		}
 	}
 	if current.Events[event.ID] {
 		return nil
@@ -244,13 +313,22 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		}
 		next.SSWAttempts[record.Session.Attempt.ID] = record
 	}
+	if event.OfflinePracticeRecord != nil {
+		if event.OfflinePracticeAttemptID == "" {
+			return fmt.Errorf("offline practice attempt ID is required")
+		}
+		if next.OfflinePracticeAttempts == nil {
+			next.OfflinePracticeAttempts = map[string]offlinePracticeAttemptRecord{}
+		}
+		next.OfflinePracticeAttempts[event.OfflinePracticeAttemptID] = *event.OfflinePracticeRecord
+	}
 	next.Events[event.ID] = true
 	if event.Progress != nil {
 		next.Lessons[event.LessonID] = *event.Progress
 		next.Subjects[event.LessonID] = event.Subject
 	}
 	if event.Answered > 0 {
-		day := event.At.In(studyLocation).Format("2006-01-02")
+		day := event.At.In(studyTimezone(next)).Format("2006-01-02")
 		seconds := event.Seconds
 		if seconds < 0 {
 			seconds = 0
@@ -282,10 +360,12 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 			next.Rewards[reward] = true
 		}
 	}
-	for _, a := range gamificationAchievements(next, event.At) {
-		if a.Progress >= a.Target {
-			if _, ok := next.Unlocked[a.ID]; !ok {
-				next.Unlocked[a.ID] = event.At.UTC()
+	if event.Kind != "ssw-practice" {
+		for _, a := range gamificationAchievements(next, event.At) {
+			if a.Progress >= a.Target {
+				if _, ok := next.Unlocked[a.ID]; !ok {
+					next.Unlocked[a.ID] = event.At.UTC()
+				}
 			}
 		}
 	}
@@ -321,8 +401,9 @@ func studyStreaks(state *gamificationState, now time.Time) (int, int) {
 	sort.Strings(dates)
 	best, run := 0, 0
 	previous := time.Time{}
+	location := studyTimezone(state)
 	for _, day := range dates {
-		date, err := time.ParseInLocation("2006-01-02", day, studyLocation)
+		date, err := time.ParseInLocation("2006-01-02", day, location)
 		if err != nil {
 			continue
 		}
@@ -336,8 +417,8 @@ func studyStreaks(state *gamificationState, now time.Time) (int, int) {
 		}
 		previous = date
 	}
-	today := now.In(studyLocation)
-	date := time.Date(today.Year(), today.Month(), today.Day(), 0, 0, 0, 0, studyLocation)
+	today := now.In(location)
+	date := time.Date(today.Year(), today.Month(), today.Day(), 0, 0, 0, 0, location)
 	if _, ok := state.Days[date.Format("2006-01-02")]; !ok {
 		date = date.AddDate(0, 0, -1)
 	}
@@ -402,10 +483,14 @@ func (s *MemoryStore) Gamification(userID string) GamificationSummary {
 	state := s.gamification[userID]
 	if state == nil {
 		state = newGamificationState()
+		if profile := s.profiles[userID]; profile.Timezone != "" {
+			state.Timezone = profile.Timezone
+		}
 	}
 	now := s.gamificationNow()
 	current, best := studyStreaks(state, now)
-	result := GamificationSummary{XP: state.XP, Level: 1 + state.XP/500, LevelXP: state.XP % 500, NextLevelXP: 500, StreakDays: current, BestStreak: best, ExamsCompleted: len(state.Exams), ActiveDays: len(state.Days), Timezone: "Asia/Jakarta", MinutesToday: state.Days[now.In(studyLocation).Format("2006-01-02")] / 60, Achievements: gamificationAchievements(state, now)}
+	location := studyTimezone(state)
+	result := GamificationSummary{XP: state.XP, Level: 1 + state.XP/500, LevelXP: state.XP % 500, NextLevelXP: 500, StreakDays: current, BestStreak: best, ExamsCompleted: len(state.Exams), ActiveDays: len(state.Days), Timezone: location.String(), MinutesToday: state.Days[now.In(location).Format("2006-01-02")] / 60, Achievements: gamificationAchievements(state, now)}
 	for _, p := range state.Lessons {
 		if p.Completed {
 			result.LessonsCompleted++

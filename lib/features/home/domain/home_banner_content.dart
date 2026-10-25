@@ -2,7 +2,11 @@ import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 
 /// Five distinct destinations, even when an older API has no Manga banner yet.
 /// Subscribers see Anki in place of the purchase offer.
-List<HomeBanner> homeBannersFor(HomeDashboard data, {required bool lifetime}) {
+List<HomeBanner> homeBannersFor(
+  HomeDashboard data, {
+  required bool lifetime,
+  bool english = false,
+}) {
   const defaults = [
     HomeBanner(
       id: 'learn',
@@ -55,8 +59,9 @@ List<HomeBanner> homeBannersFor(HomeDashboard data, {required bool lifetime}) {
       ? HomeBanner(
           id: 'lifetime-offer',
           title: plan.name,
-          description:
-              '${plan.features.firstOrNull ?? plan.name} • Rp${plan.priceIdr.toString().replaceAllMapped(RegExp(r"(\d)(?=(\d{3})+(?!\d))"), (m) => '${m[1]}.')}',
+          description: english
+              ? 'Your app store shows the local price at checkout.'
+              : '${plan.features.firstOrNull ?? plan.name} • Rp${plan.priceIdr.toString().replaceAllMapped(RegExp(r"(\d)(?=(\d{3})+(?!\d))"), (m) => '${m[1]}.')}',
           imageUrl: '',
           action: 'premium',
           buttonLabel: 'Lihat paket',

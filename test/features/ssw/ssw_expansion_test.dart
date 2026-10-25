@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
+import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -28,9 +29,11 @@ void main() {
   setUpAll(() async {
     course = KaigoCurriculum.fromJson(
       jsonDecode(
-        await rootBundle
-            .loadString('assets/content/ssw/building-cleaning.json'),
-      ) as Json,
+            await rootBundle.loadString(
+              'assets/content/ssw/building-cleaning.json',
+            ),
+          )
+          as Json,
     );
   });
   test('building cleaning course and premium paths have complete coverage', () {
@@ -59,12 +62,28 @@ void main() {
     );
     expect(requiresPremium(Uri.parse('/exams/ssw-kaigo/simulation')), isTrue);
     expect(
-      requiresPremium(
-        Uri.parse('/ssw/building-cleaning/lessons/cleaning-01'),
-      ),
+      requiresPremium(Uri.parse('/ssw/building-cleaning/lessons/cleaning-01')),
       isFalse,
     );
   });
+
+  test(
+    'English SSW curricula use a translated asset with no Indonesian fallback',
+    () {
+      expect(
+        sswCurriculumAssetPath(sector: 'kaigo', languageCode: 'en'),
+        'assets/content/ssw/en/kaigo.json',
+      );
+      expect(
+        sswCurriculumAssetPath(sector: 'food-service', languageCode: 'en'),
+        'assets/content/ssw/en/food-service.json',
+      );
+      expect(
+        sswCurriculumAssetPath(sector: 'kaigo', languageCode: 'id'),
+        'assets/content/ssw/kaigo.json',
+      );
+    },
+  );
 
   test('all expanded SSW fields have sourced, readable curricula', () async {
     const sectors = [
@@ -88,9 +107,11 @@ void main() {
 
     for (final sector in sectors) {
       expect(sswActiveSectorIds, contains(sector));
-      final raw = jsonDecode(
-        await rootBundle.loadString('assets/content/ssw/$sector.json'),
-      ) as Json;
+      final raw =
+          jsonDecode(
+                await rootBundle.loadString('assets/content/ssw/$sector.json'),
+              )
+              as Json;
       final course = KaigoCurriculum.fromJson(raw);
       expect(course.modules, hasLength(4), reason: sector);
       expect(course.lessons, hasLength(12), reason: sector);
@@ -159,8 +180,9 @@ void main() {
     }
   });
 
-  testWidgets('cleaning phone reader saves progress independently from Kaigo',
-      (tester) async {
+  testWidgets('cleaning phone reader saves progress independently from Kaigo', (
+    tester,
+  ) async {
     tester.view.physicalSize = const Size(320, 740);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
@@ -189,8 +211,9 @@ void main() {
       ProviderScope(
         overrides: [
           sharedPreferencesProvider.overrideWithValue(prefs),
-          sswCurriculumProvider('building-cleaning')
-              .overrideWith((ref) async => course),
+          sswCurriculumProvider(
+            'building-cleaning',
+          ).overrideWith((ref) async => course),
           authControllerProvider.overrideWith(
             (ref) => AuthController.test(
               const AuthenticationState.authenticated(
@@ -206,8 +229,9 @@ void main() {
         child: MaterialApp.router(
           routerConfig: router,
           builder: (context, child) => MediaQuery(
-            data: MediaQuery.of(context)
-                .copyWith(textScaler: const TextScaler.linear(1.4)),
+            data: MediaQuery.of(
+              context,
+            ).copyWith(textScaler: const TextScaler.linear(1.4)),
             child: child!,
           ),
         ),
@@ -242,157 +266,185 @@ void main() {
     await show(find.byKey(const Key('kaigo-complete')));
     await tester.tap(find.byKey(const Key('kaigo-complete')));
     await tester.pumpAndSettle();
-    expect(
-      prefs.getStringList('ssw_building-cleaning_completed_v1_cleaner'),
-      ['cleaning-01'],
-    );
+    expect(prefs.getStringList('ssw_building-cleaning_completed_v1_cleaner'), [
+      'cleaning-01',
+    ]);
     expect(prefs.getStringList('ssw_kaigo_completed_v1_cleaner'), isNull);
     expect(find.text(course.lessons[1].title), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
   testWidgets(
-      'practice phone retries failure, then reveals feedback only after check',
-      (tester) async {
-    tester.view.physicalSize = const Size(320, 740);
-    tester.view.devicePixelRatio = 1;
-    addTearDown(tester.view.resetPhysicalSize);
-    addTearDown(tester.view.resetDevicePixelRatio);
-    final source = jsonDecode(
-      File('backend/internal/store/ssw_resources/assessments.json')
-          .readAsStringSync(),
-    ) as Json;
-    final bank = diagnosticList((source['banks'] as Json)['building-cleaning']);
-    final dio = Dio();
-    var fail = true;
-    dio.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (o, h) {
-          if (o.method == 'GET') {
+    'practice phone retries failure, then reveals feedback only after check',
+    (tester) async {
+      tester.view.physicalSize = const Size(320, 740);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      final source =
+          jsonDecode(
+                File(
+                  'backend/internal/store/ssw_resources/assessments.json',
+                ).readAsStringSync(),
+              )
+              as Json;
+      final bank = diagnosticList(
+        (source['banks'] as Json)['building-cleaning'],
+      );
+      final dio = Dio();
+      var fail = true;
+      dio.interceptors.add(
+        InterceptorsWrapper(
+          onRequest: (o, h) {
+            if (o.method == 'GET') {
+              if (o.path.contains('/offline/practice/')) {
+                h.reject(
+                  DioException(
+                    requestOptions: o,
+                    response: Response<Json>(
+                      requestOptions: o,
+                      statusCode: 503,
+                    ),
+                  ),
+                );
+                return;
+              }
+              h.resolve(
+                Response<Json>(
+                  requestOptions: o,
+                  data: {
+                    'data': {'questions': bank},
+                  },
+                ),
+              );
+              return;
+            }
+            if (fail) {
+              fail = false;
+              h.reject(
+                DioException(
+                  requestOptions: o,
+                  type: DioExceptionType.connectionTimeout,
+                ),
+              );
+              return;
+            }
+            final body = o.data as Json;
+            final q = bank.firstWhere((q) => q['id'] == body['questionId']);
             h.resolve(
               Response<Json>(
                 requestOptions: o,
                 data: {
-                  'data': {'questions': bank},
+                  'data': {
+                    'correct': q['answer'] == body['answer'],
+                    'answer': q['answer'],
+                    'explanation': q['explanation'],
+                    'lessonId': q['lessonId'],
+                  },
                 },
               ),
             );
-            return;
-          }
-          if (fail) {
-            fail = false;
-            h.reject(
-              DioException(
-                requestOptions: o,
-                type: DioExceptionType.connectionTimeout,
-              ),
-            );
-            return;
-          }
-          final body = o.data as Json;
-          final q = bank.firstWhere((q) => q['id'] == body['questionId']);
-          h.resolve(
-            Response<Json>(
-              requestOptions: o,
-              data: {
-                'data': {
-                  'correct': q['answer'] == body['answer'],
-                  'answer': q['answer'],
-                  'explanation': q['explanation'],
-                  'lessonId': q['lessonId'],
-                },
-              },
-            ),
-          );
-        },
-      ),
-    );
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          dioProvider.overrideWithValue(dio),
-          authControllerProvider.overrideWith(
-            (ref) => AuthController.test(
-              const AuthenticationState.authenticated(
-                AuthenticatedUser(
-                  id: 'learner',
-                  displayName: 'Learner',
-                  email: 'l@example.test',
-                  isPremium: true,
+          },
+        ),
+      );
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            dioProvider.overrideWithValue(dio),
+            offlineProvider.overrideWithValue(false),
+            authControllerProvider.overrideWith(
+              (ref) => AuthController.test(
+                const AuthenticationState.authenticated(
+                  AuthenticatedUser(
+                    id: 'learner',
+                    displayName: 'Learner',
+                    email: 'l@example.test',
+                    isPremium: true,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
-        child: MaterialApp(
-          home: const SswPracticeScreen(sector: 'building-cleaning'),
-          builder: (context, child) => MediaQuery(
-            data: MediaQuery.of(context)
-                .copyWith(textScaler: const TextScaler.linear(1.4)),
-            child: child!,
+          ],
+          child: MaterialApp(
+            home: const SswPracticeScreen(sector: 'building-cleaning'),
+            builder: (context, child) => MediaQuery(
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: const TextScaler.linear(1.4)),
+              child: child!,
+            ),
           ),
         ),
-      ),
-    );
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Dasar profesi dan mutu layanan'));
-    await tester.pumpAndSettle();
-    expect(find.text('Jawaban:'), findsNothing);
-    Future<void> show(Finder f) async {
-      await tester.scrollUntilVisible(
-        f,
-        180,
-        scrollable: find.byType(Scrollable).first,
-        maxScrolls: 30,
       );
       await tester.pumpAndSettle();
-    }
+      await tester.scrollUntilVisible(
+        find.text('Dasar profesi dan mutu layanan'),
+        180,
+        scrollable: find.byType(Scrollable).first,
+        maxScrolls: 20,
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Dasar profesi dan mutu layanan'));
+      await tester.pumpAndSettle();
+      expect(find.text('Jawaban:'), findsNothing);
+      Future<void> show(Finder f) async {
+        await tester.scrollUntilVisible(
+          f,
+          180,
+          scrollable: find.byType(Scrollable).first,
+          maxScrolls: 30,
+        );
+        await tester.pumpAndSettle();
+      }
 
-    await show(find.byKey(const Key('ssw-practice-answer-0')));
-    await tester.tap(find.byKey(const Key('ssw-practice-answer-0')));
-    await tester.pumpAndSettle();
-    await show(find.text('Periksa jawaban'));
-    await tester.tap(find.text('Periksa jawaban'));
-    await tester.pumpAndSettle();
-    expect(find.textContaining('Tidak dapat terhubung'), findsOneWidget);
-    expect(find.text('Tepat'), findsNothing);
-    await show(find.text('Periksa jawaban'));
-    await tester.tap(find.text('Periksa jawaban'));
-    await tester.pumpAndSettle();
-    await show(find.text('Soal berikutnya'));
-    expect(find.text('Tepat'), findsOneWidget);
-    await tester.tap(find.text('Soal berikutnya'));
-    await tester.pumpAndSettle();
-    expect(find.text('Soal 2/6 · 1 benar'), findsOneWidget);
-    expect(find.text('Tepat'), findsNothing);
-    expect(tester.takeException(), isNull);
-  });
+      await show(find.byKey(const Key('ssw-practice-answer-0')));
+      await tester.tap(find.byKey(const Key('ssw-practice-answer-0')));
+      await tester.pumpAndSettle();
+      await show(find.text('Periksa jawaban'));
+      await tester.tap(find.text('Periksa jawaban'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('Tidak dapat terhubung'), findsOneWidget);
+      expect(find.text('Tepat'), findsNothing);
+      await show(find.text('Periksa jawaban'));
+      await tester.tap(find.text('Periksa jawaban'));
+      await tester.pumpAndSettle();
+      await show(find.text('Soal berikutnya'));
+      expect(find.text('Tepat'), findsOneWidget);
+      await tester.tap(find.text('Soal berikutnya'));
+      await tester.pumpAndSettle();
+      expect(find.text('Soal 2/6 · 1 benar'), findsOneWidget);
+      expect(find.text('Tepat'), findsNothing);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets(
-      'Kaigo simulation displays the full 60 minute clock and SSW labels',
-      (tester) async {
-    final repo = _SswSessionRepository();
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          simulationLevelRepositoryProvider('SSW-KAIGO')
-              .overrideWithValue(repo),
-        ],
-        child: const MaterialApp(
-          home: SimulationAttemptScreen(attemptId: 'a', level: 'SSW-KAIGO'),
+    'Kaigo simulation displays the full 60 minute clock and SSW labels',
+    (tester) async {
+      final repo = _SswSessionRepository();
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            simulationLevelRepositoryProvider(
+              'SSW-KAIGO',
+            ).overrideWithValue(repo),
+          ],
+          child: const MaterialApp(
+            home: SimulationAttemptScreen(attemptId: 'a', level: 'SSW-KAIGO'),
+          ),
         ),
-      ),
-    );
-    await tester.pumpAndSettle();
-    expect(find.text('Simulasi Kaigo · Keterampilan'), findsOneWidget);
-    expect(find.text('Keterampilan Kaigo · 45 soal'), findsOneWidget);
-    expect(
-      tester.widget<Text>(find.byKey(const Key('simulation-timer'))).data,
-      startsWith('60:'),
-    );
-    expect(tester.takeException(), isNull);
-    await tester.pumpWidget(const SizedBox());
-  });
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Simulasi Kaigo · Keterampilan'), findsOneWidget);
+      expect(find.text('Keterampilan Kaigo · 45 soal'), findsOneWidget);
+      expect(
+        tester.widget<Text>(find.byKey(const Key('simulation-timer'))).data,
+        startsWith('60:'),
+      );
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+    },
+  );
 }
 
 class _SswSessionRepository extends SimulationRepository {
@@ -412,7 +464,7 @@ class _SswSessionRepository extends SimulationRepository {
           'name': 'Keterampilan Kaigo · 45 soal',
           'durationSeconds': 3600,
           'questionCount': 45,
-        }
+        },
       ],
       'questions': [
         {
@@ -426,7 +478,7 @@ class _SswSessionRepository extends SimulationRepository {
             {'id': 'a', 'text': 'Hormati martabat pengguna'},
             {'id': 'b', 'text': 'Abaikan pilihan pengguna'},
           ],
-        }
+        },
       ],
       'answers': <String, dynamic>{},
       'marked': <String>[],
