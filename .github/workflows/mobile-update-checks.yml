@@ -1,49 +1,6 @@
 name: Mobile update checks
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'lib/core/app_update/**'
-      - 'lib/core/auth/**'
-      - 'lib/core/notifications/**'
-      - 'lib/core/network/**'
-      - 'lib/core/routing/**'
-      - 'lib/features/auth/**'
-      - 'test/core/notifications/**'
-      - 'test/core/network/**'
-      - 'test/features/auth/**'
-      - 'pubspec.*'
-      - 'android/**/*.kts'
-      - 'android/app/google-services.json'
-      - 'android/app/src/main/AndroidManifest.xml'
-      - 'ios/Runner/Info.plist'
-      - 'lib/main.dart'
-      - 'test/core/app_update/**'
-      - 'android/app/src/main/kotlin/**'
-      - 'ios/Runner/AppDelegate.swift'
-      - '.github/workflows/mobile-update-checks.yml'
-  pull_request:
-    paths:
-      - 'lib/core/app_update/**'
-      - 'lib/core/auth/**'
-      - 'lib/core/notifications/**'
-      - 'lib/core/network/**'
-      - 'lib/core/routing/**'
-      - 'lib/features/auth/**'
-      - 'test/core/notifications/**'
-      - 'test/core/network/**'
-      - 'test/features/auth/**'
-      - 'pubspec.*'
-      - 'android/**/*.kts'
-      - 'android/app/google-services.json'
-      - 'android/app/src/main/AndroidManifest.xml'
-      - 'ios/Runner/Info.plist'
-      - 'lib/main.dart'
-      - 'test/core/app_update/**'
-      - 'android/app/src/main/kotlin/**'
-      - 'ios/Runner/AppDelegate.swift'
-      - '.github/workflows/mobile-update-checks.yml'
   workflow_dispatch:
 
 permissions:
