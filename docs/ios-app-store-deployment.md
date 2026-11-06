@@ -8,8 +8,9 @@ menambahkan IPA ke GitHub Release saat tag versi `v*` didorong.
 
 - Workflow ada di `.github/workflows/ios-release.yml` dan memakai runner
   macOS GitHub-hosted.
-- Bundle ID iOS masih placeholder `com.example.nihongoMaster`. Ganti dengan
-  Bundle ID final yang terdaftar pada Apple Developer Account sebelum build.
+- Bundle ID iOS di project sudah `com.codeverta.nihongomaster` (sama dengan
+  Android). Pastikan ID ini terdaftar sebagai App ID pada Apple Developer
+  Account dan sama dengan variable `IOS_BUNDLE_ID` sebelum build.
 - Workflow Android sudah ada terpisah. Kedua workflow menggunakan lock rilis
   yang sama supaya tidak berebut membuat GitHub Release yang sama.
 - Build membutuhkan sertifikat Apple Distribution dan App Store provisioning
