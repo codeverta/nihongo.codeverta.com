@@ -19,7 +19,8 @@ class ReadingLessonScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          lesson.valueOrNull?.lesson.summary.title ?? 'Cerita Reading',
+          lesson.valueOrNull?.lesson.summary.title ??
+              'Cerita Reading'.localized(context),
         ),
       ),
       body: lesson.when(

@@ -211,7 +211,7 @@ class KaigoLessonScreen extends ConsumerWidget {
       title: Text(
         sectorId == 'nursing-care'
             ? 'Lesson Kaigo'
-            : 'Lesson ${sswSectorById(sectorId)?.name ?? 'SSW'}',
+            : 'Lesson ${(sswSectorById(sectorId)?.name ?? 'SSW').localized(context)}',
       ),
     ),
     body: ref

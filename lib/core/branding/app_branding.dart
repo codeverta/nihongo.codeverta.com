@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 
@@ -147,7 +148,7 @@ class _BrandStartupState extends ConsumerState<BrandStartup> {
         if (!_complete)
           Positioned.fill(
             child: Semantics(
-              label: '${branding.appName}, membuka aplikasi',
+              label: '${branding.appName}, ${'membuka aplikasi'.localized(context)}',
               child: Material(
                 color: branding.backgroundColor,
                 child: Stack(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
@@ -19,7 +20,9 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
   String chapter = 'Semua';
   Future<void> open(KanjiLessonSummary lesson) async {
     await context.push(AppRoutes.kanjiLessonPath(lesson.id));
-    if (mounted) ref.invalidate(kanjiCourseProvider(widget.level));
+    if (!mounted) return;
+    ref.invalidate(kanjiCourseProvider(widget.level));
+    requestAppReviewIfEligible(ref);
   }
 
   @override

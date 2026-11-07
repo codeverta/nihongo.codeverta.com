@@ -293,6 +293,24 @@ func (r *Repository) List(ctx context.Context, f Filter) (Page, error) {
 	}
 	return out, nil
 }
+// PrefectureCounts returns active job counts keyed by prefecture code ("13").
+// Jobs without a prefecture are left out.
+func (r *Repository) PrefectureCounts(ctx context.Context) (map[string]int64, error) {
+	now := r.now().UTC()
+	var rows []struct {
+		Prefecture string
+		Total      int64
+	}
+	err := r.db.WithContext(ctx).Model(&listingRow{}).Select("prefecture, COUNT(*) AS total").
+		Where("status = ? AND last_seen_at >= ? AND (expires_at IS NULL OR expires_at > ?)", "active", now.Add(-StaleAfter), now).
+		Where("prefecture <> ''").Group("prefecture").Scan(&rows).Error
+	counts := map[string]int64{}
+	for _, row := range rows {
+		counts[row.Prefecture] = row.Total
+	}
+	return counts, err
+}
+
 func (r *Repository) Get(ctx context.Context, id string) (Job, error) {
 	if uuid.Validate(id) != nil {
 		return Job{}, ErrNotFound

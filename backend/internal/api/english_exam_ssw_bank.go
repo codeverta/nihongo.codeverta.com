@@ -7721,6 +7721,12 @@ func englishExamSSWText(field, source string) (string, bool) {
 		text, ok = englishJLPTSimulationExplanations[examSSWEnglishKey{field: field, source: source}]
 	}
 	if !ok {
+		text, ok = englishJLPTSimulationExtraExplanations[examSSWEnglishKey{field: field, source: source}]
+	}
+	if !ok {
+		text, ok = englishJLPTSimulationJSONText(field, source)
+	}
+	if !ok {
 		text, ok = englishSSWAccommodationCatalog[examSSWEnglishKey{field: field, source: source}]
 	}
 	if !ok {

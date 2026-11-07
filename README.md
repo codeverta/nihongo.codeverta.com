@@ -44,6 +44,7 @@ nihongo_master/
 - [Backend API quick reference](backend/README.md)
 - [Ikon, splash, branding backend, dan preview Play Store](docs/app-branding.md)
 - [JLPT N5 Simulation](docs/jlpt-n5-simulation.md)
+- [JLPT N5 dan N4 Paket 02–10 dengan furigana](docs/jlpt-n5-n4-extra-simulations.md)
 - [JLPT N3 Simulation dan thumbnail ujian](docs/jlpt-n3-simulation.md)
 - [JFT Exam 1: latihan tertulis](docs/jft-exam-1.md)
 - [NAT 5Q Exam 1: latihan tertulis](docs/nat-exam-1.md)

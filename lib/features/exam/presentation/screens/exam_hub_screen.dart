@@ -123,6 +123,20 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
               note: 'Tanpa reading & listening'.localized(context),
               onTap: () => context.push('/exams/n5/simulation'),
             ),
+            for (final paper in [2, 3, 4, 5, 6, 7, 8, 9, 10]) ...[
+              const Divider(height: 1),
+              _ExamRow(
+                badge: 'N5',
+                imageAsset: 'assets/images/exams/n5.webp',
+                title:
+                    '${'Simulasi N5'.localized(context)} · ${'Paket'.localized(context)} 0$paper',
+                metadata: '38 soal · 40 menit'.localized(context),
+                description: 'Kosakata, kanji & grammar · dengan furigana'
+                    .localized(context),
+                note: 'Gratis · Tanpa reading & listening'.localized(context),
+                onTap: () => context.push('/exams/n5-$paper/simulation'),
+              ),
+            ],
             const Divider(height: 1),
             _ExamRow(
               badge: 'N4',
@@ -133,10 +147,22 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                 context,
               ),
               note: 'Tanpa listening'.localized(context),
-              locked: !premium,
-              onTap: () =>
-                  context.push(premium ? '/exams/n4/simulation' : '/premium'),
+              onTap: () => context.push('/exams/n4/simulation'),
             ),
+            for (final paper in [2, 3, 4, 5, 6, 7, 8, 9, 10]) ...[
+              const Divider(height: 1),
+              _ExamRow(
+                badge: 'N4',
+                imageAsset: 'assets/images/exams/n4.webp',
+                title:
+                    '${'Simulasi N4'.localized(context)} · ${'Paket'.localized(context)} 0$paper',
+                metadata: '57 soal · 80 menit'.localized(context),
+                description: 'Kosakata, kanji, grammar & reading · dengan furigana'
+                    .localized(context),
+                note: 'Gratis · Tanpa listening'.localized(context),
+                onTap: () => context.push('/exams/n4-$paper/simulation'),
+              ),
+            ],
             const Divider(height: 1),
             _ExamRow(
               badge: 'N3',
@@ -249,7 +275,7 @@ class _ExamHubScreenState extends ConsumerState<ExamHubScreen> {
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         subtitle: Text(
-                          '${history[i]['correct']}/${history[i]['total']} benar · ${_date(context, history[i]['completedAt'] as String)}',
+                          '${history[i]['correct']}/${history[i]['total']} ${'benar'.localized(context)} · ${_date(context, history[i]['completedAt'] as String)}',
                         ),
                         trailing: Text(
                           '${history[i]['score']}%',

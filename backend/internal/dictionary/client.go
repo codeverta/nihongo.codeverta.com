@@ -21,7 +21,25 @@ var (
 	ErrInvalid     = errors.New("invalid dictionary query")
 	ErrUnavailable = errors.New("dictionary source unavailable")
 	ErrNotFound    = errors.New("kanji not found")
+	// ErrRateLimited means the caller's upstream gate refused a lookup that is
+	// not cached yet. Cached lookups never return it.
+	ErrRateLimited = errors.New("dictionary upstream quota reached")
 )
+
+type upstreamGateKey struct{}
+
+// WithUpstreamGate returns a context whose lookups call allow only when the
+// result is missing from memory and the database and the upstream source must
+// be contacted. When allow returns false the lookup fails with ErrRateLimited.
+// Requests that join an in-flight lookup share that lookup's gate decision.
+func WithUpstreamGate(ctx context.Context, allow func() bool) context.Context {
+	return context.WithValue(ctx, upstreamGateKey{}, allow)
+}
+
+func upstreamAllowed(ctx context.Context) bool {
+	allow, ok := ctx.Value(upstreamGateKey{}).(func() bool)
+	return !ok || allow == nil || allow()
+}
 
 type Words struct {
 	Query   string            `json:"query"`
@@ -119,6 +137,69 @@ func (c *Client) Kanji(ctx context.Context, character string) (json.RawMessage, 
 	}
 	return json.RawMessage(body), nil
 }
+
+// CachedWord returns one archived Jisho entry by slug from the database only.
+// It never contacts the upstream source, so crawlers cannot trigger fetches.
+func (c *Client) CachedWord(ctx context.Context, slug string) (json.RawMessage, error) {
+	if !validArchiveID(slug) {
+		return nil, ErrNotFound
+	}
+	return c.archived(ctx, "jisho.org", slug)
+}
+
+// CachedKanji returns archived kanjiapi.dev details from the database only.
+func (c *Client) CachedKanji(ctx context.Context, character string) (json.RawMessage, error) {
+	runes := []rune(character)
+	if len(runes) != 1 || !unicode.Is(unicode.Han, runes[0]) {
+		return nil, ErrNotFound
+	}
+	return c.archived(ctx, "kanjiapi.dev", character)
+}
+
+// ArchivedIDs lists archived entry IDs ("word" slugs or "kanji" characters),
+// newest first, for sitemaps. It reads the database only.
+func (c *Client) ArchivedIDs(ctx context.Context, kind string, limit int) ([]string, error) {
+	if c.Persistence == nil || limit < 1 {
+		return nil, nil
+	}
+	source := map[string]string{"word": "jisho.org", "kanji": "kanjiapi.dev"}[kind]
+	if source == "" {
+		return nil, ErrInvalid
+	}
+	ids, err := c.Persistence.entryIDs(ctx, source, limit)
+	if err != nil {
+		return nil, fmt.Errorf("%w: database read failed", ErrUnavailable)
+	}
+	return ids, nil
+}
+
+func (c *Client) archived(ctx context.Context, source, id string) (json.RawMessage, error) {
+	if c.Persistence == nil {
+		return nil, ErrNotFound
+	}
+	body, ok, err := c.Persistence.entry(ctx, source, id)
+	if err != nil {
+		return nil, fmt.Errorf("%w: database read failed", ErrUnavailable)
+	}
+	if !ok || !json.Valid(body) {
+		return nil, ErrNotFound
+	}
+	c.databaseHits.Add(1)
+	return json.RawMessage(body), nil
+}
+
+func validArchiveID(id string) bool {
+	if id == "" || !utf8.ValidString(id) || len(id) > 512 || strings.TrimSpace(id) != id {
+		return false
+	}
+	for _, r := range id {
+		if unicode.IsControl(r) {
+			return false
+		}
+	}
+	return true
+}
+
 func (c *Client) evict(key string) { c.mu.Lock(); delete(c.cache, key); c.mu.Unlock() }
 
 const maxMemoryBytes = 16 << 20
@@ -234,6 +315,9 @@ func (c *Client) loadOrFetch(ctx context.Context, endpoint string, refresh bool)
 				return hit, nil
 			}
 		}
+	}
+	if !refresh && !upstreamAllowed(ctx) {
+		return cached{}, ErrRateLimited
 	}
 	body, err := c.fetch(ctx, endpoint)
 	if err != nil {

@@ -183,7 +183,7 @@ func (s *MemoryStore) ExamRequiresPremium(id string) bool {
 	defer s.mu.RUnlock()
 	for _, e := range s.exams {
 		if e.ID == id {
-			return !(e.System == "JLPT" && e.Level == "N5")
+			return !(e.System == "JLPT" && e.Level == "N5") && !IsFreeJLPTSimulationExam(e.ID)
 		}
 	}
 	return false
@@ -262,7 +262,7 @@ func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bo
 		id = a.attempt.LessonID
 	}
 	if a := s.simulationAttempts[attemptID]; a != nil {
-		return a.session.Attempt.ExamID != "jlpt-n5-simulation-1"
+		return !IsFreeJLPTSimulationExam(a.session.Attempt.ExamID)
 	}
 	for _, level := range s.vocabulary {
 		for _, lesson := range level.Lessons {

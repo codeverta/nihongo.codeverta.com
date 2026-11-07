@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/auth/offline_access.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/download_preferences.dart';
 import 'package:nihongo_master/core/offline/offline_providers.dart';
 
@@ -24,18 +25,19 @@ class _OfflineSettingsState extends ConsumerState<OfflineSettingsScreen> {
       final confirmed = await showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('Hapus materi tersimpan?'),
-          content: const Text(
-            'Materi perlu diunduh kembali untuk digunakan offline. Progres belajar dan penilaian yang menunggu sinkronisasi tetap disimpan.',
+          title: Text('Hapus materi tersimpan?'.localized(context)),
+          content: Text(
+            'Materi perlu diunduh kembali untuk digunakan offline. Progres belajar dan penilaian yang menunggu sinkronisasi tetap disimpan.'
+                .localized(context),
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
-              child: const Text('Batal'),
+              child: Text('Batal'.localized(context)),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
-              child: const Text('Hapus materi'),
+              child: Text('Hapus materi'.localized(context)),
             ),
           ],
         ),
@@ -57,8 +59,8 @@ class _OfflineSettingsState extends ConsumerState<OfflineSettingsScreen> {
           SnackBar(
             content: Text(
               imagesOnly
-                  ? 'Gambar otomatis dibersihkan. Teks materi tetap tersedia.'
-                  : 'Materi tersimpan sudah dihapus.',
+                  ? 'Gambar otomatis dibersihkan. Teks materi tetap tersedia.'.localized(context)
+                  : 'Materi tersimpan sudah dihapus.'.localized(context),
             ),
           ),
         );
@@ -66,8 +68,12 @@ class _OfflineSettingsState extends ConsumerState<OfflineSettingsScreen> {
     } on Object {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Penyimpanan belum dapat dibersihkan. Coba lagi.'),
+          SnackBar(
+            content: Text(
+              'Penyimpanan belum dapat dibersihkan. Coba lagi.'.localized(
+                context,
+              ),
+            ),
           ),
         );
       }
@@ -83,12 +89,15 @@ class _OfflineSettingsState extends ConsumerState<OfflineSettingsScreen> {
     final expiry = ref.watch(offlineLeaseExpiryProvider).valueOrNull?.toLocal();
     String mb(int bytes) => '${(bytes / (1024 * 1024)).toStringAsFixed(1)} MB';
     return Scaffold(
-      appBar: AppBar(title: const Text('Belajar offline & penyimpanan')),
+      appBar: AppBar(
+        title: Text('Belajar offline & penyimpanan'.localized(context)),
+      ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          const Text(
-            'Teks materi disiapkan saat membuka course dan langsung dipakai saat belajar berikutnya. Batas cache otomatis 100 MB; gambar otomatis dibersihkan lebih dahulu ketika ruang penuh.',
+          Text(
+            'Teks materi disiapkan saat membuka course dan langsung dipakai saat belajar berikutnya. Batas cache otomatis 100 MB; gambar otomatis dibersihkan lebih dahulu ketika ruang penuh.'
+                .localized(context),
           ),
           const SizedBox(height: 16),
           stats.when(
@@ -107,26 +116,35 @@ class _OfflineSettingsState extends ConsumerState<OfflineSettingsScreen> {
                       value: value.usageRatio.clamp(0, 1),
                     ),
                     const SizedBox(height: 16),
-                    Text('Teks materi: ${mb(value.textBytes)}'),
-                    Text('Gambar: ${mb(value.mediaBytes)}'),
+                    Text(
+                      '${'Teks materi'.localized(context)}: ${mb(value.textBytes)}',
+                    ),
+                    Text(
+                      '${'Gambar'.localized(context)}: ${mb(value.mediaBytes)}',
+                    ),
                     if (value.pinnedBytes > 0)
-                      Text('Unduhan pilihanmu: ${mb(value.pinnedBytes)}'),
+                      Text(
+                        '${'Unduhan pilihanmu'.localized(context)}: ${mb(value.pinnedBytes)}',
+                      ),
                   ],
                 ),
               ),
             ),
-            error: (_, __) => const ListTile(
-              leading: Icon(Icons.storage_outlined),
-              title: Text('Ukuran penyimpanan belum dapat dibaca.'),
+            error: (_, __) => ListTile(
+              leading: const Icon(Icons.storage_outlined),
+              title: Text(
+                'Ukuran penyimpanan belum dapat dibaca.'.localized(context),
+              ),
             ),
             loading: () => const LinearProgressIndicator(),
           ),
           const SizedBox(height: 12),
           SwitchListTile.adaptive(
             contentPadding: EdgeInsets.zero,
-            title: const Text('Unduhan besar lewat data seluler'),
-            subtitle: const Text(
-              'Teks dan ilustrasi kecil tetap boleh disiapkan. Gambar besar otomatis menunggu Wi-Fi jika pilihan ini mati.',
+            title: Text('Unduhan besar lewat data seluler'.localized(context)),
+            subtitle: Text(
+              'Teks dan ilustrasi kecil tetap boleh disiapkan. Gambar besar otomatis menunggu Wi-Fi jika pilihan ini mati.'
+                  .localized(context),
             ),
             value: allowMobile,
             onChanged: (value) => ref
@@ -137,25 +155,26 @@ class _OfflineSettingsState extends ConsumerState<OfflineSettingsScreen> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: const Icon(Icons.workspace_premium_outlined),
-              title: const Text('Premium offline aktif'),
+              title: Text('Premium offline aktif'.localized(context)),
               subtitle: Text(
-                'Verifikasi berlaku sampai ${expiry.day}/${expiry.month}/${expiry.year}. Diperbarui otomatis saat terhubung.',
+                '${'Verifikasi berlaku sampai'.localized(context)} ${expiry.day}/${expiry.month}/${expiry.year}. ${'Diperbarui otomatis saat terhubung.'.localized(context)}',
               ),
             ),
           const SizedBox(height: 16),
           OutlinedButton.icon(
             onPressed: _busy ? null : () => _clear(imagesOnly: true),
             icon: const Icon(Icons.image_not_supported_outlined),
-            label: const Text('Bersihkan gambar otomatis'),
+            label: Text('Bersihkan gambar otomatis'.localized(context)),
           ),
           const SizedBox(height: 8),
           TextButton(
             onPressed: _busy ? null : () => _clear(imagesOnly: false),
-            child: const Text('Hapus semua materi tersimpan'),
+            child: Text('Hapus semua materi tersimpan'.localized(context)),
           ),
           const SizedBox(height: 16),
-          const Text(
-            'Materi yang belum selesai disiapkan membutuhkan internet saat pertama dibuka. Simulasi ujian tetap memerlukan koneksi. Logout menghapus data pribadi lokal, termasuk progres yang belum tersinkron.',
+          Text(
+            'Materi yang belum selesai disiapkan membutuhkan internet saat pertama dibuka. Simulasi ujian tetap memerlukan koneksi. Logout menghapus data pribadi lokal, termasuk progres yang belum tersinkron.'
+                .localized(context),
           ),
         ],
       ),

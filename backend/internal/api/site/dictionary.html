@@ -1,0 +1,119 @@
+{{define "page"}}<!doctype html>
+<html lang="{{.C.Lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{.Title}}</title>
+<meta name="description" content="{{.Description}}">
+<meta name="theme-color" content="#1D2088">
+{{if .NoIndex}}<meta name="robots" content="noindex,follow">
+{{end}}{{if .Canonical}}<link rel="canonical" href="{{.Canonical}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.Title}}">
+<meta property="og:description" content="{{.Description}}">
+<meta property="og:url" content="{{.Canonical}}">
+{{end}}<link rel="icon" type="image/png" href="/site/img/icon-64.png">
+<link rel="apple-touch-icon" href="/site/img/icon-192.png">
+<link rel="stylesheet" href="/site/site.css">
+</head>
+<body>
+<a class="skip" href="#isi">{{.C.Skip}}</a>
+
+<header class="bar">
+  <a class="brand" href="{{.C.Home}}" aria-label="{{.C.HomeLabel}}"><img src="/site/img/icon-64.png" width="36" height="36" alt=""><span>Nihongo Master</span></a>
+  <nav aria-label="{{.C.NavLabel}}">
+    <a href="{{.C.Home}}">{{.C.HomeNav}}</a>
+    <a href="{{.C.Base}}" aria-current="page">{{.C.Dictionary}}</a>
+  </nav>
+  <a class="btn btn-sm" href="{{.PlayURL}}">Download</a>
+</header>
+
+<main id="isi" class="dict">
+  <section class="dict-head"{{if .ShowHeading}} aria-labelledby="dict-h"{{else}} aria-label="{{.C.Dictionary}}"{{end}}>
+    {{if .ShowHeading}}<h1 id="dict-h">{{.C.Heading}}</h1>
+    <p class="dict-lede">{{.C.Lede}}</p>
+    {{end}}<form class="dict-form" action="{{.C.Base}}" method="get" role="search">
+      <label class="dict-q"><span class="sr">{{.C.SearchLabel}}</span>
+        <input type="search" name="q" value="{{.Query}}" placeholder="{{.C.SearchPlaceholder}}" maxlength="100" required autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+      <button class="btn btn-sm" type="submit">{{.C.SearchButton}}</button>
+      <div class="dict-filters">
+        <label>{{.C.ModeLabel}}
+          <select name="mode">{{range .Modes}}<option value="{{.Value}}"{{if .Selected}} selected{{end}}>{{.Label}}</option>{{end}}</select></label>
+        <label>{{.C.LevelLabel}}
+          <select name="jlpt">{{range .Levels}}<option value="{{.Value}}"{{if .Selected}} selected{{end}}>{{.Label}}</option>{{end}}</select></label>
+        <label class="dict-check"><input type="checkbox" name="common" value="1"{{if .Common}} checked{{end}}> {{.C.CommonOnly}}</label>
+      </div>
+    </form>
+  </section>
+
+  {{if .Notice}}<p class="dict-notice" role="status">{{.Notice}}{{if .NoticeLink}} <a href="{{.NoticeLink}}">{{.NoticeLinkText}}</a>{{end}}</p>
+  {{end}}
+
+  {{if .Results}}<section class="dict-results" aria-labelledby="res-h">
+    <h2 id="res-h" class="dict-count">{{.ResultsHeading}}</h2>
+    <ol class="dict-list">
+      {{range .Results}}<li class="dict-item">
+        <a class="dict-item-link" href="{{.URL}}"><span class="dict-word" lang="ja">{{.Title}}</span>{{if .Reading}} <span class="dict-reading" lang="ja">{{.Reading}}</span>{{end}}</a>
+        {{template "badges" (badgeData . $.C)}}
+        <p class="dict-gloss">{{.Summary}}</p>
+      </li>
+      {{end}}
+    </ol>
+    {{if .NextURL}}<a class="btn btn-light dict-more" href="{{.NextURL}}" rel="nofollow">{{.C.More}}</a>{{end}}
+  </section>
+  {{end}}
+
+  {{with .Word}}<article class="dict-entry" aria-labelledby="word-h">
+    <h1 id="word-h"><span class="dict-word" lang="ja">{{.Title}}</span>{{if .Reading}} <span class="dict-reading" lang="ja">{{.Reading}}</span>{{end}}</h1>
+    {{template "badges" (badgeData . $.C)}}
+    <h2>{{$.C.Meanings}}</h2>
+    <ol class="dict-senses">
+      {{range .Senses}}<li>
+        {{if .Parts}}<p class="dict-pos">{{.Parts}}</p>{{end}}
+        <p class="dict-def">{{.Definitions}}</p>
+        {{if .Notes}}<p class="dict-note">{{.Notes}}</p>{{end}}
+        {{if .SeeAlso}}<p class="dict-links">{{$.C.SeeAlso}}: {{range .SeeAlso}}<a href="{{.URL}}" lang="ja" rel="nofollow">{{.Text}}</a> {{end}}</p>{{end}}
+        {{if .Antonyms}}<p class="dict-links">{{$.C.Antonyms}}: {{range .Antonyms}}<a href="{{.URL}}" lang="ja" rel="nofollow">{{.Text}}</a> {{end}}</p>{{end}}
+      </li>
+      {{end}}
+    </ol>
+    {{if .Others}}<h2>{{$.C.OtherForms}}</h2>
+    <p lang="ja">{{.Others}}</p>
+    {{end}}{{if .Kanji}}<h2>{{$.C.KanjiInWord}}</h2>
+    <ul class="dict-kanji-links">{{range .Kanji}}<li><a href="{{.URL}}" lang="ja">{{.Text}}</a></li>{{end}}</ul>
+    {{end}}<p class="dict-links"><a href="{{.JishoURL}}" rel="noopener">{{$.C.OpenJisho}}</a></p>
+  </article>
+  {{end}}
+
+  {{with .Kanji}}<article class="dict-entry dict-kanji" aria-labelledby="kanji-h">
+    <h1 id="kanji-h"><span class="dict-kanji-char" lang="ja">{{.Character}}</span></h1>
+    {{if .Meanings}}<p class="dict-def"><span class="dict-pos">{{$.C.Meaning}}</span><br>{{.Meanings}}</p>{{end}}
+    <dl class="dict-facts">
+      {{range .Facts}}<div><dt>{{.Label}}</dt><dd{{if .Japanese}} lang="ja"{{end}}>{{.Value}}</dd></div>
+      {{end}}
+    </dl>
+    <p class="dict-links"><a href="{{.SearchURL}}" rel="nofollow">{{$.C.WordsWithKanji}}</a> <a href="{{.JishoURL}}" rel="noopener">{{$.C.OpenJisho}}</a></p>
+  </article>
+  {{end}}
+
+  <aside class="dict-cta">
+    <p>{{.C.AppCTA}}</p>
+    <a class="btn btn-light" href="{{.PlayURL}}">{{.C.AppButton}}</a>
+  </aside>
+
+  <p class="dict-source">{{if eq .C.Lang "en"}}Word data from <a href="https://jisho.org/about">Jisho.org</a>, based on JMdict, JMnedict, and KANJIDIC2 by the <a href="https://www.edrdg.org/edrdg/licence.html">EDRDG</a> (used under its licence). Kanji details from <a href="https://kanjiapi.dev">kanjiapi.dev</a>. Definitions are in English as provided by the source.{{else}}Data kata dari <a href="https://jisho.org/about">Jisho.org</a>, berdasarkan JMdict, JMnedict, dan KANJIDIC2 milik <a href="https://www.edrdg.org/edrdg/licence.html">EDRDG</a> (dipakai sesuai lisensinya). Detail kanji dari <a href="https://kanjiapi.dev">kanjiapi.dev</a>. Definisi berbahasa Inggris sesuai sumbernya.{{end}}</p>
+</main>
+
+<footer class="dict-foot">
+  <nav aria-label="{{.C.FooterLabel}}">
+    <a href="/privacy-policy">{{.C.Privacy}}</a>
+    <a href="/terms-of-service">{{.C.Terms}}</a>
+    <a href="/support">{{.C.Support}}</a>
+    <a href="mailto:contact@codeverta.com">contact@codeverta.com</a>
+  </nav>
+</footer>
+</body>
+</html>
+{{end}}
+
+{{define "badges"}}{{if or .Word.Common .Word.Levels}}<p class="dict-badges">{{if .Word.Common}}<span class="dict-badge dict-badge-common">{{.C.Common}}</span>{{end}}{{range .Word.Levels}}<span class="dict-badge">JLPT {{.}}</span>{{end}}</p>{{end}}{{end}}

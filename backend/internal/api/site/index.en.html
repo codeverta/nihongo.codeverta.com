@@ -30,6 +30,7 @@
     <a href="#levels">Levels</a>
     <a href="#exams">Exams</a>
     <a href="#ssw">Work in Japan</a>
+    <a href="/en/dictionary">Dictionary</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
     <a href="/" lang="id">Bahasa Indonesia</a>
@@ -213,7 +214,14 @@
       <figcaption><b>Anki flashcards.</b> Topic decks with search, category filters, and progress for each deck.</figcaption>
     </figure>
     <div class="ex-text rise">
-      <p><b>Japanese dictionary.</b> Search vocabulary across levels. Free, even without signing in.</p>
+      <div>
+        <p><b>Japanese dictionary.</b> Search vocabulary across levels. Free, even without signing in, also <a href="/en/dictionary">on the web</a>.</p>
+        <form class="ex-search" action="/en/dictionary" method="get" role="search">
+          <label class="sr" for="ex-q">Search Japanese words</label>
+          <input id="ex-q" type="search" name="q" placeholder="猫, neko, or cat" maxlength="100" required autocomplete="off" autocapitalize="off" spellcheck="false">
+          <button class="btn btn-sm" type="submit">Search</button>
+        </form>
+      </div>
       <p><b>Japanese news.</b> Read recent articles from Japanese publishers in their original form. Free.</p>
       <p><b>Daily goals and streaks.</b> XP and achievements are based on quizzes and tests you complete.</p>
     </div>

@@ -135,7 +135,7 @@ void main() {
       await tester.tap(find.text('Simulasi N4'));
       await tester.pumpAndSettle();
       expect(
-        find.text(premium ? 'N4 destination' : 'Upgrade destination'),
+        find.text('N4 destination'),
         findsOneWidget,
       );
     });

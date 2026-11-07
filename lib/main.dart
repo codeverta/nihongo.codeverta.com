@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:nihongo_master/core/app_review/app_review_service.dart';
+import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/app_update/app_update_controller.dart';
 import 'package:nihongo_master/core/app_update/app_update_gate.dart';
 import 'package:nihongo_master/core/branding/app_branding.dart';
@@ -39,6 +41,12 @@ void main() {
       await initializeDateFormatting();
       final preferences = await SharedPreferences.getInstance();
       ErrorReporter.initialize(preferences);
+      unawaited(
+        AppReviewService(
+          preferences,
+          const InAppReviewClient(),
+        ).recordActiveDay(),
+      );
       runApp(
         ProviderScope(
           overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
@@ -60,7 +68,9 @@ class NihongoMasterApp extends ConsumerWidget {
     final router = ref.watch(appRouterProvider);
     final locale = ref.watch(appPresentationLocaleProvider);
     final supportedLocales = ref.watch(appSupportedLocalesProvider);
-    ref.watch(billingControllerProvider);
+    ref
+      ..watch(billingControllerProvider)
+      ..watch(analyticsBootstrapProvider);
 
     return MaterialApp.router(
       title:

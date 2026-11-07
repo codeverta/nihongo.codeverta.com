@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const _legalBaseUrl = String.fromEnvironment(
@@ -23,7 +24,9 @@ Future<void> openLegalPage(BuildContext context, String path) async {
   }
   if (context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Halaman tidak dapat dibuka. Coba lagi.')),
+      SnackBar(
+        content: Text('Halaman tidak dapat dibuka. Coba lagi.'.localized(context)),
+      ),
     );
   }
 }
@@ -39,7 +42,7 @@ class LegalLinks extends StatelessWidget {
         for (final page in _legalPages.entries)
           TextButton(
             onPressed: () => openLegalPage(context, page.key),
-            child: Text(page.value),
+            child: Text(page.value.localized(context)),
           ),
       ],
     );

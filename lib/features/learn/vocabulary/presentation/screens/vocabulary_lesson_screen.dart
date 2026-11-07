@@ -116,7 +116,7 @@ class _QuizStage extends ConsumerWidget {
                   ),
                 const SizedBox(height: 14),
                 Text(
-                  question.kind,
+                  question.kind.localized(context),
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.w800,

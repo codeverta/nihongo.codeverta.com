@@ -159,6 +159,10 @@ func translateLearningJSONForPath(body []byte, path string) ([]byte, error) {
 		domain = "grammar"
 	}
 	translateLearningValueInContext(payload, "", nil, domain, materialContextID)
+	if path == "/v1/home" || strings.HasPrefix(path, "/v1/home/") {
+		translateAchievements(payload)
+		translatePlanFeatures(payload)
+	}
 	return json.Marshal(payload)
 }
 

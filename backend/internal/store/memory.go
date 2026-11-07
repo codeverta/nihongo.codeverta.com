@@ -398,6 +398,9 @@ func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, erro
 	if examID == "jlpt-n4-simulation-1" {
 		return s.StartSimulation(userID, "N4")
 	}
+	if base, paperNo, ok := jlptExtraExam(examID); ok {
+		return s.StartSimulation(userID, fmt.Sprintf("%s-%d", base, paperNo))
+	}
 	if examID == "jlpt-n5-simulation-1" {
 		return s.StartSimulation(userID)
 	}
@@ -495,9 +498,27 @@ func seedExams() []domain.Exam {
 		{ID: "jlpt-n3-simulation-1", System: "JLPT", Level: "N3", Title: "JLPT N3 Simulation · Kosakata, Grammar & Reading", QuestionCount: 74, DurationMin: 100, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n2-simulation-1", System: "JLPT", Level: "N2", Title: "JLPT N2 Simulation · Kosakata, Grammar & Reading", QuestionCount: 64, DurationMin: 105, RequiredTier: domain.TierPremium},
 		{ID: "jlpt-n1-simulation-1", System: "JLPT", Level: "N1", Title: "JLPT N1 Simulation · Kosakata, Grammar & Reading", QuestionCount: 64, DurationMin: 110, RequiredTier: domain.TierPremium},
-		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierPremium},
+		{ID: "jlpt-n4-simulation-1", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-diagnostic", System: "JLPT", Level: "N5", Title: "JLPT N5 Diagnostic", QuestionCount: 25, DurationMin: 30, RequiredTier: domain.TierFree},
 		{ID: "jlpt-n5-simulation-1", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-2", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 02 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-3", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 03 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-2", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 02 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-3", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 03 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-4", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 04 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-5", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 05 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-4", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 04 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-5", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 05 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-6", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 06 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-7", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 07 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-6", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 06 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-7", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 07 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-8", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 08 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-9", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 09 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n5-simulation-10", System: "JLPT", Level: "N5", Title: "JLPT N5 Simulation · Paket 10 · Kosakata & Grammar", QuestionCount: 38, DurationMin: 40, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-8", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 08 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-9", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 09 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
+		{ID: "jlpt-n4-simulation-10", System: "JLPT", Level: "N4", Title: "JLPT N4 Simulation · Paket 10 · Kosakata, Grammar & Reading", QuestionCount: 57, DurationMin: 80, RequiredTier: domain.TierFree},
 		{ID: "nat-5q-full-1", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 1 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
 		{ID: "nat-5q-full-2", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 2 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},
 		{ID: "nat-5q-full-3", System: "NAT", Level: "5Q", Title: "NAT 5Q Exam 3 · Latihan tertulis", QuestionCount: 43, DurationMin: 60, RequiredTier: domain.TierPremium},

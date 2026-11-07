@@ -16,7 +16,7 @@ import (
 //go:embed site/index.html site/index.en.html site/static
 var landingFiles embed.FS
 
-const landingCSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+const landingCSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
 
 var landingStaticTypes = map[string]string{
 	".css":   "text/css; charset=utf-8",

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peta Jepang • Nihongo Master</title>
+<style>
+body{font:16px system-ui;background:#f7f8fc;color:#202340;max-width:1180px;margin:30px auto;padding:20px}
+input,select,button,textarea{font:inherit;padding:8px 10px;margin:4px 0;box-sizing:border-box}
+textarea{width:100%;min-height:90px}button{cursor:pointer}button:disabled{cursor:wait}
+table{width:100%;border-collapse:collapse;background:#fff}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}
+a{color:#4338ca}.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;background:#eef;margin:2px 4px 2px 0}
+.warn{background:#fde8e8;color:#9b1c1c}.ok{background:#def7ec;color:#03543f}
+#editor{background:#fff;border:1px solid #dde0ed;border-radius:12px;padding:20px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 16px}.grid label,.full label{display:block}
+.grid input,.grid select{width:100%}.phrase{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:6px;align-items:center}
+.phrase input{width:100%}#status{min-height:24px;font-weight:600}img.thumb{width:96px;height:64px;object-fit:cover;border-radius:6px;background:#eee}
+small{color:#555}
+</style>
+<a href="/admin">← Admin</a><h1>Peta Jepang</h1>
+<p>Tambah spot dengan <b>ID Wikidata</b> (misalnya Q123), <b>URL en.wikipedia</b>, atau <b>judul en.wikipedia</b>. Server mengambil nama, ringkasan, tips Wikivoyage, koordinat, dan foto Commons <b>sekali</b>, lalu menyimpannya di database. Spot baru belum terbit sampai Anda menerbitkannya.</p>
+<form id="unlock"><label>Kunci admin <input id="key" type="password" autocomplete="off" required></label> <button>Buka</button></form>
+<section id="panel" hidden>
+  <button id="lock">Kunci</button>
+  <h2>Tambah spot</h2>
+  <form id="import"><input id="input" placeholder="Fushimi Inari-taisha atau Q…" maxlength="300" required size="40"> <select id="importCategory"></select> <button>Ambil & simpan</button></form>
+  <h2>Daftar spot</h2>
+  <p><label>Filter <select id="filter"><option value="">Semua</option><option value="missing">Belum ada teks Indonesia</option><option value="draft">Belum terbit</option><option value="published">Sudah terbit</option><option value="unpublishable">Belum bisa terbit (koordinat/prefektur kosong)</option></select></label> <span id="count"></span></p>
+  <div style="overflow:auto"><table><thead><tr><th>Foto</th><th>Spot</th><th>Kategori / prefektur</th><th>Status</th><th>Tindakan</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <section id="editor" hidden></section>
+</section>
+<p id="status" role="status" aria-live="polite"></p>
+<script>
+const labels={culture:'Budaya',shrine:'Kuil & Shrine',nature:'Alam',food:'Kuliner',city:'Kota & modern',history:'Sejarah'};
+const prefectures='Hokkaido,Aomori,Iwate,Miyagi,Akita,Yamagata,Fukushima,Ibaraki,Tochigi,Gunma,Saitama,Chiba,Tokyo,Kanagawa,Niigata,Toyama,Ishikawa,Fukui,Yamanashi,Nagano,Gifu,Shizuoka,Aichi,Mie,Shiga,Kyoto,Osaka,Hyogo,Nara,Wakayama,Tottori,Shimane,Okayama,Hiroshima,Yamaguchi,Tokushima,Kagawa,Ehime,Kochi,Fukuoka,Saga,Nagasaki,Kumamoto,Oita,Miyazaki,Kagoshima,Okinawa'.split(',');
+const prefName=code=>code?code+' '+(prefectures[Number(code)-1]||''):'—';
+let token='',spots=[],categories=[],busy=false;
+const el=id=>document.getElementById(id),status=m=>el('status').textContent=m;
+function node(tag,props={},...children){const n=document.createElement(tag);Object.assign(n,props);n.append(...children);return n}
+async function api(path,method='GET',body){const options={method,headers:{Authorization:'Bearer '+token}};if(body instanceof FormData)options.body=body;else if(body!==undefined){options.headers['Content-Type']='application/json';options.body=JSON.stringify(body)}const r=await fetch(path,options);if(r.status===204)return null;const data=await r.json();if(!r.ok){const e=Error(data.error?.message||'Permintaan gagal');e.data=data.data;throw e}return data.data}
+async function run(message,task){if(busy)return;busy=true;status(message);try{await task()}catch(e){status(e.message);return}finally{busy=false}}
+async function load(){const data=await api('/v1/admin/map/spots');spots=data.spots;categories=data.categories;if(!el('importCategory').options.length)for(const c of categories)el('importCategory').append(node('option',{value:c,textContent:labels[c]||c}));render()}
+function render(){const f=el('filter').value;const list=spots.filter(s=>!f||(f==='missing'&&s.missingIndonesian)||(f==='draft'&&!s.published)||(f==='published'&&s.published)||(f==='unpublishable'&&!s.publishable));el('count').textContent=list.length+' dari '+spots.length+' spot';el('rows').replaceChildren(...list.map(s=>{const img=s.imageUrl?node('img',{className:'thumb',src:s.imageUrl,alt:''}):node('span',{textContent:'—'});const name=node('div',{},node('b',{textContent:s.nameId||s.nameEn||s.wikidataId}),node('small',{textContent:[s.nameEn,s.nameJa,s.reading].filter(Boolean).join(' · ')}),node('small',{},node('a',{href:'https://www.wikidata.org/wiki/'+s.wikidataId,target:'_blank',rel:'noopener',textContent:s.wikidataId})));const tags=node('div');tags.append(node('span',{className:'tag '+(s.published?'ok':''),textContent:s.published?'Terbit':'Draft'}));if(s.missingIndonesian)tags.append(node('span',{className:'tag warn',textContent:'Belum ada teks Indonesia'}));if(!s.publishable)tags.append(node('span',{className:'tag warn',textContent:'Koordinat/prefektur kosong'}));if(!s.imageUrl)tags.append(node('span',{className:'tag',textContent:'Tanpa foto'}));const edit=node('button',{textContent:'Edit',onclick:()=>openEditor(s)});const refresh=node('button',{textContent:'Refresh',onclick:()=>run('Mengambil ulang '+s.wikidataId+'…',async()=>{const u=await api('/v1/admin/map/spots/'+s.id+'/refresh','POST');replace(u);status('Refresh berhasil.')})});return node('tr',{},node('td',{},img),node('td',{},name),node('td',{textContent:(labels[s.category]||s.category)+' · '+prefName(s.prefecture)}),node('td',{},tags),node('td',{},edit,' ',refresh))}))}
+function replace(spot){const i=spots.findIndex(s=>s.id===spot.id);if(i<0)spots.push(spot);else spots[i]=spot;render();if(!el('editor').hidden&&el('editor').dataset.id===spot.id)openEditor(spot)}
+function field(label,input){return node('label',{},label,input)}
+function openEditor(s){const ed=el('editor');ed.dataset.id=s.id;ed.hidden=false;
+ const cat=node('select');for(const c of categories)cat.append(node('option',{value:c,textContent:labels[c]||c,selected:c===s.category}));
+ const pref=node('select');pref.append(node('option',{value:'',textContent:'(otomatis dari koordinat)'}));prefectures.forEach((p,i)=>{const code=String(i+1).padStart(2,'0');pref.append(node('option',{value:code,textContent:code+' '+p,selected:code===s.prefecture}))});
+ const lat=node('input',{type:'number',step:'any',value:s.lat??''}),lng=node('input',{type:'number',step:'any',value:s.lng??''}),manual=node('input',{type:'checkbox',checked:s.manualLocation});
+ const t=(v,attrs={})=>node('input',{value:v||'',maxLength:200,...attrs}),a=v=>node('textarea',{value:v||'',maxLength:5000});
+ const nameId=t(s.nameId),nameEn=t(s.nameEn),nameJa=t(s.nameJa,{lang:'ja'}),reading=t(s.reading,{lang:'ja'});
+ const sumId=a(s.manualSummaryId),sumEn=a(s.manualSummaryEn),tipsId=a(s.manualTipsId),tipsEn=a(s.manualTipsEn);
+ const published=node('input',{type:'checkbox',checked:s.published});
+ const phrases=node('div');const addPhrase=p=>{const row=node('div',{className:'phrase'},node('input',{placeholder:'Teks Jepang *',value:p.japanese||'',lang:'ja'}),node('input',{placeholder:'Bacaan',value:p.reading||'',lang:'ja'}),node('input',{placeholder:'Arti Indonesia *',value:p.meaningId||''}),node('input',{placeholder:'Arti Inggris (opsional)',value:p.meaningEn||''}));row.append(node('button',{type:'button',textContent:'Hapus',onclick:()=>row.remove()}));phrases.append(row)};(s.phrases||[]).forEach(addPhrase);
+ const fetched=(label,text,url)=>node('details',{},node('summary',{textContent:label+(text?'':' (kosong)')}),node('p',{textContent:text||'—'}),url?node('a',{href:url,target:'_blank',rel:'noopener',textContent:url}):'');
+ const file=node('input',{type:'file',accept:'image/png,image/jpeg'}),author=node('input',{placeholder:'Pembuat foto *'}),license=node('input',{placeholder:'Lisensi, mis. "Milik sendiri" *'});
+ const form=node('form');form.onsubmit=e=>{e.preventDefault();const body={category:cat.value,prefecture:pref.value,lat:lat.value===''?null:Number(lat.value),lng:lng.value===''?null:Number(lng.value),manualLocation:manual.checked,nameId:nameId.value,nameEn:nameEn.value,nameJa:nameJa.value,reading:reading.value,manualSummaryId:sumId.value,manualSummaryEn:sumEn.value,manualTipsId:tipsId.value,manualTipsEn:tipsEn.value,published:published.checked,phrases:[...phrases.children].map(r=>{const i=r.querySelectorAll('input');return{japanese:i[0].value,reading:i[1].value,meaningId:i[2].value,meaningEn:i[3].value}}).filter(p=>p.japanese||p.meaningId)};run('Menyimpan…',async()=>{replace(await api('/v1/admin/map/spots/'+s.id,'PUT',body));status('Tersimpan.')})};
+ form.append(node('h2',{textContent:'Edit: '+(s.nameId||s.nameEn)}),
+  node('div',{className:'grid'},field('Kategori',cat),field('Nama Indonesia',nameId),field('Nama Inggris',nameEn),field('Nama Jepang',nameJa),field('Bacaan (hiragana)',reading)),
+  node('h3',{textContent:'Lokasi'}),node('div',{className:'grid'},field('Lintang',lat),field('Bujur',lng),field('Prefektur',pref),node('label',{},manual,' Pakai lokasi manual (tidak ditimpa saat refresh)')),
+  node('h3',{textContent:'Teks manual (menggantikan teks Wikipedia/Wikivoyage)'}),node('div',{className:'grid'},field('Ringkasan Indonesia',sumId),field('Ringkasan Inggris',sumEn),field('Tips berkunjung Indonesia',tipsId),field('Tips berkunjung Inggris',tipsEn)),
+  node('h3',{textContent:'Teks dari sumber'}),fetched('Wikipedia Indonesia',s.summaryId,s.wikipediaId),fetched('Wikipedia Inggris',s.summaryEn,s.wikipediaEn),fetched('Wikivoyage Indonesia',s.tipsId,s.wikivoyageId),fetched('Wikivoyage Inggris',s.tipsEn,s.wikivoyageEn),
+  node('h3',{textContent:'Kosakata & frasa'}),node('small',{textContent:'Teks Jepang dan arti Indonesia wajib. Tanpa arti Inggris, frasa disembunyikan di mode Inggris.'}),phrases,node('button',{type:'button',textContent:'+ Tambah frasa',onclick:()=>addPhrase({})}),
+  node('h3',{textContent:'Terbit'}),node('label',{},published,' Tampilkan di peta aplikasi'),node('p',{},node('button',{textContent:'Simpan perubahan'}),' ',node('button',{type:'button',textContent:'Tutup',onclick:()=>{ed.hidden=true}})));
+ const photo=node('div',{},node('h3',{textContent:'Foto'}),s.imageUrl?node('img',{className:'thumb',src:s.imageUrl,alt:'',style:'width:240px;height:160px'}):node('p',{textContent:'Belum ada foto berlisensi bebas.'}),node('small',{textContent:s.imageUrl?('© '+(s.imageAuthor||'?')+' · '+(s.imageLicense||'')+(s.manualImage?' · diunggah admin':' · Wikimedia Commons')):''}),
+  node('p',{},file,' ',author,' ',license,' ',node('button',{type:'button',textContent:'Unggah foto sendiri',onclick:()=>{if(!file.files[0])return status('Pilih file foto.');const fd=new FormData();fd.append('image',file.files[0]);fd.append('author',author.value);fd.append('license',license.value);run('Mengunggah…',async()=>{replace(await api('/v1/admin/map/spots/'+s.id+'/image','POST',fd));status('Foto tersimpan.')})}}),' ',s.manualImage?node('button',{type:'button',textContent:'Kembali ke foto Commons (saat refresh)',onclick:()=>run('Menghapus foto unggahan…',async()=>{replace(await api('/v1/admin/map/spots/'+s.id+'/image','DELETE'));status('Foto unggahan dihapus. Klik Refresh untuk mengambil foto Commons.')})}):''));
+ const danger=node('p',{},node('button',{type:'button',textContent:'Hapus spot',onclick:()=>{if(!confirm('Hapus spot ini secara permanen?'))return;run('Menghapus…',async()=>{await api('/v1/admin/map/spots/'+s.id,'DELETE');spots=spots.filter(x=>x.id!==s.id);ed.hidden=true;render();status('Spot dihapus.')})}}));
+ ed.replaceChildren(form,photo,danger);ed.scrollIntoView({behavior:'smooth'})}
+el('unlock').onsubmit=e=>{e.preventDefault();token=el('key').value;run('Memuat…',async()=>{try{await load()}catch(err){token='';throw err}el('key').value='';el('unlock').hidden=true;el('panel').hidden=false;status('')})};
+el('lock').onclick=()=>{token='';spots=[];el('rows').replaceChildren();el('editor').hidden=true;el('panel').hidden=true;el('unlock').hidden=false;status('Terkunci.')};
+el('filter').onchange=render;
+el('import').onsubmit=e=>{e.preventDefault();run('Mengambil dari Wikidata/Wikipedia… (bisa 10–30 detik)',async()=>{try{const s=await api('/v1/admin/map/spots','POST',{input:el('input').value,category:el('importCategory').value});replace(s);el('input').value='';status('Tersimpan sebagai draft: '+(s.nameId||s.nameEn)+(s.publishable?'':' — lengkapi koordinat/prefektur sebelum terbit.'));openEditor(s)}catch(err){if(err.data){replace(err.data);openEditor(err.data)}throw err}})};
+</script></html>

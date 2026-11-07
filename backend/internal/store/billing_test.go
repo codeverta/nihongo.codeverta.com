@@ -104,8 +104,8 @@ func TestBillingDeletionRestoreAndRestart(t *testing.T) {
 }
 func TestPaidExamPolicy(t *testing.T) {
 	s := NewMemoryStore()
-	if _, err := s.StartSimulation("free", "N4"); !errors.Is(err, ErrPremium) {
-		t.Fatal("N4 simulation is free")
+	if _, err := s.StartSimulation("free", "N3"); !errors.Is(err, ErrPremium) {
+		t.Fatal("N3 simulation is free")
 	}
 	if _, err := s.StartSimulation("free", "N5"); err != nil {
 		t.Fatal(err)

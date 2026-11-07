@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -133,14 +134,28 @@ final learningHistoryProvider =
         ref.watch(sharedPreferencesProvider),
         ref.watch(learningHistoryRepositoryProvider),
         id,
+        onFirstCompletion: (key) {
+          // Sinyal untuk ajakan rating store; tidak boleh mengganggu belajar.
+          try {
+            unawaited(
+              ref.read(appReviewServiceProvider).recordLessonCompleted(key),
+            );
+          } on Object {
+            return;
+          }
+        },
       );
       if (id != null) unawaited(Future<void>.microtask(controller.refresh));
       return controller;
     });
 
 class LearningHistoryController extends StateNotifier<List<LearningActivity>> {
-  LearningHistoryController(this.preferences, this.repository, this.userId)
-    : super([]) {
+  LearningHistoryController(
+    this.preferences,
+    this.repository,
+    this.userId, {
+    this.onFirstCompletion,
+  }) : super([]) {
     if (userId == null) return;
     try {
       final raw = preferences.getString(storageKey);
@@ -156,6 +171,9 @@ class LearningHistoryController extends StateNotifier<List<LearningActivity>> {
   final SharedPreferences preferences;
   final LearningHistoryRepository repository;
   final String? userId;
+
+  /// Dipanggil sekali saat pelajaran berubah dari belum selesai ke selesai.
+  final void Function(String key)? onFirstCompletion;
   String get storageKey => 'learning_history_v1_$userId';
   Timer? _timer;
   Future<void>? _refresh;
@@ -242,6 +260,7 @@ class LearningHistoryController extends StateNotifier<List<LearningActivity>> {
     if (!mounted) return;
     final old = state.where((e) => e.key == '$kind:$id').firstOrNull;
     if (old == null) return;
+    if (!old.completed) onFirstCompletion?.call(old.key);
     _replace(
       old.copy(completed: true, accessedAt: _timestamp(), pending: true),
     );

@@ -13,6 +13,7 @@ import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
 import 'package:nihongo_master/features/learn/activity/continue_learning_section.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
+import 'package:nihongo_master/features/map/presentation/map_entry_card.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
@@ -263,6 +264,7 @@ class _DashboardContent extends StatelessWidget {
                       SizedBox(width: width, child: const AnkiEntryCard()),
                       SizedBox(width: width, child: const SswEntryCard()),
                       SizedBox(width: width, child: const JobsEntryCard()),
+                      SizedBox(width: width, child: const MapEntryCard()),
                     ],
                   );
                 },

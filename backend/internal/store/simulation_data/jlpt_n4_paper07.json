@@ -1,0 +1,861 @@
+{
+ "level": "N4",
+ "paper": 7,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{結婚式|けっこんしき}の[[会場]]はホテルの{三階|さんがい}です。",
+   "choices": [
+    "かいじょう",
+    "かいば",
+    "えじょう",
+    "かいじょ"
+   ],
+   "explanation": "会場（かいじょう） berarti tempat acara.",
+   "explanationEn": "会場（かいじょう） means venue."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{祖父|そふ}は[[農業]]をしています。",
+   "choices": [
+    "のうぎょう",
+    "のぎょう",
+    "のうごう",
+    "のうぎょ"
+   ],
+   "explanation": "農業（のうぎょう） berarti pertanian.",
+   "explanationEn": "農業（のうぎょう） means agriculture."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{今夜|こんや}は{友達|ともだち}の{家|いえ}に[[泊まります]]。",
+   "choices": [
+    "とまります",
+    "どまります",
+    "はくまります",
+    "ひまります"
+   ],
+   "explanation": "泊まる（とまる） berarti menginap.",
+   "explanationEn": "泊まる（とまる） means to stay overnight."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "あの{高|たか}い[[建物]]は{市役所|しやくしょ}です。",
+   "choices": [
+    "たてもの",
+    "けんぶつ",
+    "たてぶつ",
+    "たちもの"
+   ],
+   "explanation": "建物（たてもの） berarti gedung.",
+   "explanationEn": "建物（たてもの） means building."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{旅行|りょこう}の{日|ひ}が[[決まりました]]。",
+   "choices": [
+    "きまりました",
+    "けまりました",
+    "さまりました",
+    "きめました"
+   ],
+   "explanation": "決まる（きまる） berarti diputuskan; 決まりました = sudah diputuskan.",
+   "explanationEn": "決まる（きまる） means to be decided; 決まりました = it has been decided."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{夏休|なつやす}みに[[海岸]]を{散歩|さんぽ}しました。",
+   "choices": [
+    "かいがん",
+    "かいかん",
+    "うみぎし",
+    "かいごん"
+   ],
+   "explanation": "海岸（かいがん） berarti pantai.",
+   "explanationEn": "海岸（かいがん） means coast."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の{言葉|ことば}はどう{読|よ}みますか。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "",
+   "prompt": "[[特急]]に{乗|の}れば、{一時間|いちじかん}で{着|つ}きます。",
+   "choices": [
+    "とっきゅう",
+    "とくきゅう",
+    "とっきゅ",
+    "どっきゅう"
+   ],
+   "explanation": "特急（とっきゅう） berarti kereta ekspres khusus.",
+   "explanationEn": "特急（とっきゅう） means limited express train."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の{言葉|ことば}を{漢字|かんじ}やカタカナで{書|か}くとき、いちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "レストランで[[ちゅうもん]]しました。",
+   "choices": [
+    "注文",
+    "注又",
+    "主文",
+    "往文"
+   ],
+   "explanation": "ちゅうもん (pesanan) ditulis 注文.",
+   "explanationEn": "ちゅうもん (order) is written 注文."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の{言葉|ことば}を{漢字|かんじ}やカタカナで{書|か}くとき、いちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{私|わたし}は{日本|にほん}の{歴史|れきし}に[[きょうみ]]があります。",
+   "choices": [
+    "興味",
+    "興未",
+    "與味",
+    "興妹"
+   ],
+   "explanation": "きょうみ (minat) ditulis 興味.",
+   "explanationEn": "きょうみ (interest) is written 興味."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の{言葉|ことば}を{漢字|かんじ}やカタカナで{書|か}くとき、いちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{広場|ひろば}に{人|ひと}が[[あつまり]]ました。",
+   "choices": [
+    "集まり",
+    "進まり",
+    "準まり",
+    "雑まり"
+   ],
+   "explanation": "あつまる (berkumpul) ditulis 集まる.",
+   "explanationEn": "あつまる (to gather) is written 集まる."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の{言葉|ことば}を{漢字|かんじ}やカタカナで{書|か}くとき、いちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "この{公園|こうえん}は[[ひろい]]です。",
+   "choices": [
+    "広い",
+    "庁い",
+    "店い",
+    "応い"
+   ],
+   "explanation": "ひろい (luas) ditulis 広い.",
+   "explanationEn": "ひろい (wide) is written 広い."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の{言葉|ことば}を{漢字|かんじ}やカタカナで{書|か}くとき、いちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "[[こんびに]]で{飲|の}み{物|もの}を{買|か}いました。",
+   "choices": [
+    "コンビニ",
+    "コンピニ",
+    "コソビニ",
+    "コンビこ"
+   ],
+   "explanation": "こんびに (minimarket) ditulis コンビニ dengan katakana.",
+   "explanationEn": "こんびに (convenience store) is written コンビニ in katakana."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{友達|ともだち}との{約束|やくそく}の{時間|じかん}を（　）ください。",
+   "choices": [
+    "{守|まも}って",
+    "{集|あつ}めて",
+    "{止|と}めて",
+    "{直|なお}して"
+   ],
+   "explanation": "時間を守る berarti menepati waktu. 集める = mengumpulkan; 止める = menghentikan; 直す = memperbaiki.",
+   "explanationEn": "時間を守る means to keep to the time. 集める = collect; 止める = stop; 直す = fix."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{日本|にほん}{語|ご}の（　）が{上|あ}がるように、{毎日|まいにち}{勉強|べんきょう}しています。",
+   "choices": [
+    "{能力|のうりょく}",
+    "{注意|ちゅうい}",
+    "{都合|つごう}",
+    "{準備|じゅんび}"
+   ],
+   "explanation": "能力が上がる berarti kemampuan meningkat. 注意 = perhatian; 都合 = kenyamanan waktu; 準備 = persiapan.",
+   "explanationEn": "能力が上がる means ability improves. 注意 = caution; 都合 = convenience; 準備 = preparation."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{新|あたら}しいルールが{来月|らいげつ}から（　）。",
+   "choices": [
+    "{始|はじ}まります",
+    "{過|す}ぎます",
+    "{渡|わた}ります",
+    "{続|つづ}けます"
+   ],
+   "explanation": "ルールが始まる berarti aturan mulai berlaku. 過ぎる = lewat; 渡る = menyeberang; 続ける = melanjutkan.",
+   "explanationEn": "ルールが始まる means the rule takes effect. 過ぎる = pass; 渡る = cross; 続ける = continue."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{田中|たなか}さんは、{人|ひと}の（　）をよく{聞|き}いてくれる{人|ひと}です。",
+   "choices": [
+    "{意見|いけん}",
+    "{注意|ちゅうい}",
+    "{予定|よてい}",
+    "{連絡|れんらく}"
+   ],
+   "explanation": "意見を聞く berarti mendengarkan pendapat.",
+   "explanationEn": "意見を聞く means to listen to opinions."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{新|あたら}しい{仕事|しごと}に（　）まで、{少|すこ}し{時間|じかん}がかかりました。",
+   "choices": [
+    "{慣|な}れる",
+    "{間|ま}に{合|あ}う",
+    "{決|き}まる",
+    "{集|あつ}まる"
+   ],
+   "explanation": "仕事に慣れる berarti terbiasa dengan pekerjaan.",
+   "explanationEn": "仕事に慣れる means to get used to a job."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{雨|あめ}で{試合|しあい}が（　）になりました。",
+   "choices": [
+    "{中止|ちゅうし}",
+    "{注意|ちゅうい}",
+    "{中心|ちゅうしん}",
+    "{準備|じゅんび}"
+   ],
+   "explanation": "試合が中止になる berarti pertandingan dibatalkan.",
+   "explanationEn": "試合が中止になる means the match is cancelled."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{電車|でんしゃ}で、お{年寄|としよ}りに{席|せき}を（　）。",
+   "choices": [
+    "{譲|ゆず}りました",
+    "{渡|わた}しました",
+    "{預|あず}けました",
+    "{届|とど}けました"
+   ],
+   "explanation": "席を譲る berarti memberikan tempat duduk.",
+   "explanationEn": "席を譲る means to give up one's seat."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に{入|はい}るいちばんよい{言葉|ことば}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "このカメラは（　）がよくて、{人気|にんき}があります。",
+   "choices": [
+    "{性能|せいのう}",
+    "{運動|うんどう}",
+    "{説明|せつめい}",
+    "{経験|けいけん}"
+   ],
+   "explanation": "性能がいい berarti kinerjanya baik.",
+   "explanationEn": "性能がいい means the performance is good."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "＿＿の{文|ぶん}と{意味|いみ}がいちばん{近|ちか}い{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "[[このスープはしょっぱいです。]]",
+   "choices": [
+    "このスープは{塩|しお}が{多|おお}いです。",
+    "このスープは{甘|あま}すぎます。",
+    "このスープは{冷|つめ}たいです。",
+    "このスープはおいしくて{安|やす}いです。"
+   ],
+   "explanation": "しょっぱい berarti asin, yaitu garamnya banyak.",
+   "explanationEn": "しょっぱい means salty, i.e. it has a lot of salt."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "＿＿の{文|ぶん}と{意味|いみ}がいちばん{近|ちか}い{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "[[{田中|たなか}さんは{時間|じかん}を{守|まも}ります。]]",
+   "choices": [
+    "{田中|たなか}さんは{約束|やくそく}の{時間|じかん}に{遅|おく}れません。",
+    "{田中|たなか}さんは{時間|じかん}を{忘|わす}れます。",
+    "{田中|たなか}さんはいつも{遅刻|ちこく}します。",
+    "{田中|たなか}さんは{時計|とけい}を{持|も}っていません。"
+   ],
+   "explanation": "時間を守る = tidak terlambat dari waktu yang dijanjikan.",
+   "explanationEn": "時間を守る = not being late for the promised time."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "＿＿の{文|ぶん}と{意味|いみ}がいちばん{近|ちか}い{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "[[{荷物|にもつ}を{運|はこ}びました。]]",
+   "choices": [
+    "{荷物|にもつ}を{別|べつ}の{場所|ばしょ}に{持|も}っていきました。",
+    "{荷物|にもつ}を{捨|す}てました。",
+    "{荷物|にもつ}を{開|あ}けました。",
+    "{荷物|にもつ}を{買|か}いました。"
+   ],
+   "explanation": "運ぶ berarti membawa sesuatu ke tempat lain.",
+   "explanationEn": "運ぶ means to carry something to another place."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "＿＿の{文|ぶん}と{意味|いみ}がいちばん{近|ちか}い{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "[[{試合|しあい}は{延期|えんき}になりました。]]",
+   "choices": [
+    "{試合|しあい}は{別|べつ}の{日|ひ}になりました。",
+    "{試合|しあい}はなくなりました。",
+    "{試合|しあい}は{今日|きょう}になりました。",
+    "{試合|しあい}は{短|みじか}くなりました。"
+   ],
+   "explanation": "延期 berarti ditunda ke hari lain.",
+   "explanationEn": "延期 means postponed to another day."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}5 · {用法|ようほう}",
+   "instructions": "{次|つぎ}の{言葉|ことば}の{使|つか}い{方|かた}としていちばんよい{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "「すっかり」",
+   "choices": [
+    "{部屋|へや}の{掃除|そうじ}をして、すっかりきれいになりました。",
+    "すっかり{明日|あした}、{友達|ともだち}に{会|あ}います。",
+    "この{荷物|にもつ}はすっかり{重|おも}いです。",
+    "すっかり{雨|あめ}が{降|ふ}るでしょう。"
+   ],
+   "explanation": "すっかり berarti sepenuhnya, dipakai untuk perubahan yang sudah selesai.",
+   "explanationEn": "すっかり means completely, used for a change that is finished."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}5 · {用法|ようほう}",
+   "instructions": "{次|つぎ}の{言葉|ことば}の{使|つか}い{方|かた}としていちばんよい{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "「{連絡|れんらく}」",
+   "choices": [
+    "{駅|えき}に{着|つ}いたら、すぐに{連絡|れんらく}してください。",
+    "この{連絡|れんらく}は{大|おお}きくて{重|おも}いです。",
+    "{毎日|まいにち}、{連絡|れんらく}を{食|た}べています。",
+    "{山|やま}の{連絡|れんらく}が{見|み}えます。"
+   ],
+   "explanation": "連絡 berarti menghubungi atau kabar.",
+   "explanationEn": "連絡 means contact or notification."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}5 · {用法|ようほう}",
+   "instructions": "{次|つぎ}の{言葉|ことば}の{使|つか}い{方|かた}としていちばんよい{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "「{並|なら}ぶ」",
+   "choices": [
+    "{店|みせ}の{前|まえ}に、お{客|きゃく}さんが{長|なが}く{並|なら}んでいます。",
+    "{雨|あめ}が{空|そら}に{並|なら}んでいます。",
+    "{私|わたし}は{毎日|まいにち}、{本|ほん}を{並|なら}んで{読|よ}みます。",
+    "{母|はは}が{料理|りょうり}を{並|なら}んでいます。"
+   ],
+   "explanation": "並ぶ berarti berbaris; kata kerja intransitif. Memajang sesuatu memakai 並べる.",
+   "explanationEn": "並ぶ means to line up and is intransitive. Arranging something uses 並べる."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}5 · {用法|ようほう}",
+   "instructions": "{次|つぎ}の{言葉|ことば}の{使|つか}い{方|かた}としていちばんよい{文|ぶん}を{選|えら}んでください。",
+   "passage": "",
+   "prompt": "「{無理|むり}」",
+   "choices": [
+    "{一日|いちにち}で{百|ひゃく}{個|こ}の{漢字|かんじ}を{覚|おぼ}えるのは、{無理|むり}です。",
+    "{無理|むり}に{雨|あめ}が{降|ふ}っています。",
+    "{無理|むり}なご{飯|はん}を{食|た}べました。",
+    "{彼|かれ}は{無理|むり}な{水|みず}を{飲|の}みました。"
+   ],
+   "explanation": "無理 berarti tidak mungkin atau terlalu dipaksakan.",
+   "explanationEn": "無理 means impossible or too much to ask."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "この{町|まち}は、{昔|むかし}（　）ずっと{静|しず}かになりました。",
+   "choices": [
+    "より",
+    "ほど",
+    "まで",
+    "ばかり"
+   ],
+   "explanation": "～より berarti dibandingkan dengan: 昔より静かになった.",
+   "explanationEn": "～より means compared with: 昔より静かになった."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{日本|にほん}へ{来|く}る{前|まえ}に、{日本|にほん}{語|ご}を（　）おけばよかったです。",
+   "choices": [
+    "{勉強|べんきょう}して",
+    "{勉強|べんきょう}し",
+    "{勉強|べんきょう}する",
+    "{勉強|べんきょう}した"
+   ],
+   "explanation": "Bentuk て + おけばよかった berarti seharusnya sudah dilakukan lebih dulu.",
+   "explanationEn": "The て-form + おけばよかった means I should have done it beforehand."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{体|からだ}に{悪|わる}い（　）、たばこをやめました。",
+   "choices": [
+    "ので",
+    "のに",
+    "ても",
+    "ながら"
+   ],
+   "explanation": "ので menyatakan alasan: karena tidak baik untuk tubuh, berhenti merokok.",
+   "explanationEn": "ので states a reason: because it is bad for the body, he quit smoking."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "あした{雨|あめ}が（　）、{試合|しあい}は{中止|ちゅうし}になります。",
+   "choices": [
+    "{降|ふ}ったら",
+    "{降|ふ}ったのに",
+    "{降|ふ}ったり",
+    "{降|ふ}るより"
+   ],
+   "explanation": "Bentuk ～たら berarti jika: 雨が降ったら.",
+   "explanationEn": "The ～たら form means if: 雨が降ったら."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "この{薬|くすり}は、{一日|いちにち}に{三回|さんかい}、{食事|しょくじ}の（　）{飲|の}んでください。",
+   "choices": [
+    "あとで",
+    "うちに",
+    "ところで",
+    "ばかりで"
+   ],
+   "explanation": "Kata benda の + あとで berarti setelah: 食事のあとで.",
+   "explanationEn": "Noun の + あとで means after: 食事のあとで."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{私|わたし}は、{母|はは}に（　）ように、{部屋|へや}を{掃除|そうじ}しました。",
+   "choices": [
+    "しかられない",
+    "しからない",
+    "しかられた",
+    "しかった"
+   ],
+   "explanation": "Pasif negatif + ように: agar tidak dimarahi ibu.",
+   "explanationEn": "Passive negative + ように: so as not to be scolded by mother."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{田中|たなか}さんは、きのう{会社|かいしゃ}を（　）。",
+   "choices": [
+    "{休|やす}んだそうです",
+    "{休|やす}むそうです",
+    "{休|やす}みそうです",
+    "{休|やす}んでそうです"
+   ],
+   "explanation": "Kabar lampau: bentuk た + そうです. 休みそうです berarti tampaknya akan libur.",
+   "explanationEn": "Past hearsay: た-form + そうです. 休みそうです means looks like he will take a day off."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{部屋|へや}の{電気|でんき}が（　）います。{誰|だれ}かいるようです。",
+   "choices": [
+    "ついて",
+    "つけられて",
+    "つけさせて",
+    "つかれて"
+   ],
+   "explanation": "電気がつく berarti lampu menyala; ついています = sedang menyala.",
+   "explanationEn": "電気がつく means the light is on; ついています = is on."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "この{問題|もんだい}は、{先生|せんせい}（　）わからないほど{難|むずか}しいです。",
+   "choices": [
+    "でも",
+    "しか",
+    "ほど",
+    "ばかり"
+   ],
+   "explanation": "～でも berarti bahkan: bahkan guru pun tidak tahu.",
+   "explanationEn": "～でも means even: even the teacher does not know."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{日本|にほん}{語|ご}を{勉強|べんきょう}して（　）、もう{三年|さんねん}になります。",
+   "choices": [
+    "から",
+    "まで",
+    "ので",
+    "ばかり"
+   ],
+   "explanation": "Bentuk て + から berarti sejak: sejak belajar bahasa Jepang, sudah tiga tahun.",
+   "explanationEn": "The て-form + から means since: it has been three years since I started studying Japanese."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "この{靴|くつ}は、{歩|ある}き（　）て、{足|あし}が{疲|つか}れません。",
+   "choices": [
+    "やすく",
+    "にくく",
+    "すぎ",
+    "たがり"
+   ],
+   "explanation": "Batang kata kerja + やすい berarti mudah dilakukan: 歩きやすくて.",
+   "explanationEn": "Verb stem + やすい means easy to do: 歩きやすくて."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{田中|たなか}さんは、{毎朝|まいあさ}、{犬|いぬ}を（　）、{散歩|さんぽ}に{行|い}きます。",
+   "choices": [
+    "{連|つ}れて",
+    "{連|つ}れる",
+    "{連|つ}れた",
+    "{連|つ}れれば"
+   ],
+   "explanation": "Bentuk て menyatakan tindakan berurutan atau cara: 犬を連れて散歩に行く.",
+   "explanationEn": "The て-form expresses accompanying action: 犬を連れて散歩に行く, goes for a walk with the dog."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{日曜日|にちようび}は、{家族|かぞく}と{一緒|いっしょ}に{出|で}かける（　）しています。",
+   "choices": [
+    "ように",
+    "ために",
+    "ばかり",
+    "ほどに"
+   ],
+   "explanation": "Bentuk kamus + ようにしている berarti berusaha melakukan secara kebiasaan.",
+   "explanationEn": "Dictionary form + ようにしている means to make a point of doing something."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "{四|よっ}つの{言葉|ことば}を{並|なら}べて{文|ぶん}を{作|つく}ってください。★に{入|はい}るものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{田中|たなか}さんは ＿＿ ＿＿ ★ ＿＿ なりました。",
+   "choices": [
+    "{引|ひ}っ{越|こ}す",
+    "{来月|らいげつ}",
+    "{大阪|おおさか}に",
+    "ことに"
+   ],
+   "explanation": "Urutan: 田中さんは 来月 大阪に 引っ越す ことに なりました (diputuskan Tanaka pindah ke Osaka bulan depan). ★ adalah slot ketiga, 引っ越す.",
+   "explanationEn": "Order: 田中さんは 来月 大阪に 引っ越す ことに なりました (it was decided that Tanaka will move to Osaka next month). ★ is the third slot, 引っ越す."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "{四|よっ}つの{言葉|ことば}を{並|なら}べて{文|ぶん}を{作|つく}ってください。★に{入|はい}るものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{日本|にほん}{語|ご}が ＿＿ ＿＿ ★ ＿＿ {上手|じょうず}に なります。",
+   "choices": [
+    "ように",
+    "{毎日|まいにち}",
+    "{話|はな}す",
+    "すれば"
+   ],
+   "explanation": "Urutan: 日本語が 毎日 話す ように すれば 上手に なります (jika berusaha berbicara setiap hari, bahasa Jepang akan mahir). ★ adalah slot ketiga, ように.",
+   "explanationEn": "Order: 日本語が 毎日 話す ように すれば 上手に なります (if you make a point of speaking every day, your Japanese will improve). ★ is the third slot, ように."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "{四|よっ}つの{言葉|ことば}を{並|なら}べて{文|ぶん}を{作|つく}ってください。★に{入|はい}るものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "ここは ＿＿ ＿＿ ★ ＿＿ {便利|べんり}です。",
+   "choices": [
+    "だけでなく",
+    "{駅|えき}に",
+    "{近|ちか}い",
+    "{買|か}い{物|もの}にも"
+   ],
+   "explanation": "Urutan: ここは 駅に 近い だけでなく 買い物にも 便利です (tempat ini tidak hanya dekat stasiun, tetapi juga praktis untuk belanja). ★ adalah slot ketiga, だけでなく.",
+   "explanationEn": "Order: ここは 駅に 近い だけでなく 買い物にも 便利です (this place is not only close to the station but also convenient for shopping). ★ is the third slot, だけでなく."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "{四|よっ}つの{言葉|ことば}を{並|なら}べて{文|ぶん}を{作|つく}ってください。★に{入|はい}るものを{選|えら}んでください。",
+   "passage": "",
+   "prompt": "{彼|かれ}は ＿＿ ＿＿ ★ ＿＿ ありません。",
+   "choices": [
+    "ような",
+    "{約束|やくそく}を",
+    "{破|やぶ}る",
+    "{人|ひと}では"
+   ],
+   "explanation": "Urutan: 彼は 約束を 破る ような 人では ありません (dia bukan orang yang ingkar janji). ★ adalah slot ketiga, ような.",
+   "explanationEn": "Order: 彼は 約束を 破る ような 人では ありません (he is not the kind of person who breaks promises). ★ is the third slot, ような."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、【　】に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "{先週|せんしゅう}の{土曜日|どようび}、{私|わたし}は{大学時代|だいがくじだい}の{友達|ともだち}の{結婚式|けっこんしき}に{出席|しゅっせき}しました。{会場|かいじょう}は{海|うみ}の{近|ちか}くのホテルで、{天気|てんき}もよく、とてもすてきな{式|しき}でした。{友達|ともだち}は{白|しろ}いドレスを{着|き}て、とても{幸|しあわ}せ【46】。{私|わたし}は、スピーチを{頼|たの}まれていたので、{前|まえ}の{日|ひ}から{緊張|きんちょう}していました。【47】、{話|はな}し{始|はじ}めると、みんなが{笑顔|えがお}で{聞|き}いて【48】、{安心|あんしん}しました。{結婚式|けっこんしき}のあと、{新|あたら}しい{二人|ふたり}が{幸|しあわ}せになるように、{心|こころ}から【49】。",
+   "prompt": "【46】",
+   "choices": [
+    "そうでした",
+    "ようでした",
+    "ばかりでした",
+    "ほどでした"
+   ],
+   "explanation": "幸せそうでした berarti tampak bahagia: batang kata sifat + そうです.",
+   "explanationEn": "幸せそうでした means looked happy: adjective stem + そうです."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、【　】に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "{先週|せんしゅう}の{土曜日|どようび}、{私|わたし}は{大学時代|だいがくじだい}の{友達|ともだち}の{結婚式|けっこんしき}に{出席|しゅっせき}しました。{会場|かいじょう}は{海|うみ}の{近|ちか}くのホテルで、{天気|てんき}もよく、とてもすてきな{式|しき}でした。{友達|ともだち}は{白|しろ}いドレスを{着|き}て、とても{幸|しあわ}せ【46】。{私|わたし}は、スピーチを{頼|たの}まれていたので、{前|まえ}の{日|ひ}から{緊張|きんちょう}していました。【47】、{話|はな}し{始|はじ}めると、みんなが{笑顔|えがお}で{聞|き}いて【48】、{安心|あんしん}しました。{結婚式|けっこんしき}のあと、{新|あたら}しい{二人|ふたり}が{幸|しあわ}せになるように、{心|こころ}から【49】。",
+   "prompt": "【47】",
+   "choices": [
+    "でも",
+    "だから",
+    "そのうえ",
+    "たとえば"
+   ],
+   "explanation": "Gugup, tetapi setelah mulai berbicara tenang: pertentangan, maka でも.",
+   "explanationEn": "Nervous, yet calm once speaking began: contrast, so でも."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、【　】に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "{先週|せんしゅう}の{土曜日|どようび}、{私|わたし}は{大学時代|だいがくじだい}の{友達|ともだち}の{結婚式|けっこんしき}に{出席|しゅっせき}しました。{会場|かいじょう}は{海|うみ}の{近|ちか}くのホテルで、{天気|てんき}もよく、とてもすてきな{式|しき}でした。{友達|ともだち}は{白|しろ}いドレスを{着|き}て、とても{幸|しあわ}せ【46】。{私|わたし}は、スピーチを{頼|たの}まれていたので、{前|まえ}の{日|ひ}から{緊張|きんちょう}していました。【47】、{話|はな}し{始|はじ}めると、みんなが{笑顔|えがお}で{聞|き}いて【48】、{安心|あんしん}しました。{結婚式|けっこんしき}のあと、{新|あたら}しい{二人|ふたり}が{幸|しあわ}せになるように、{心|こころ}から【49】。",
+   "prompt": "【48】",
+   "choices": [
+    "くれて",
+    "あげて",
+    "もらって",
+    "さしあげて"
+   ],
+   "explanation": "みんなが聞いてくれて berarti semua mendengarkan untuk saya. あげる arahnya terbalik; もらう memakai に.",
+   "explanationEn": "みんなが聞いてくれて means everyone listened for me. あげる reverses the direction; もらう takes に."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、【　】に{入|はい}るいちばんよいものを{選|えら}んでください。",
+   "passage": "{先週|せんしゅう}の{土曜日|どようび}、{私|わたし}は{大学時代|だいがくじだい}の{友達|ともだち}の{結婚式|けっこんしき}に{出席|しゅっせき}しました。{会場|かいじょう}は{海|うみ}の{近|ちか}くのホテルで、{天気|てんき}もよく、とてもすてきな{式|しき}でした。{友達|ともだち}は{白|しろ}いドレスを{着|き}て、とても{幸|しあわ}せ【46】。{私|わたし}は、スピーチを{頼|たの}まれていたので、{前|まえ}の{日|ひ}から{緊張|きんちょう}していました。【47】、{話|はな}し{始|はじ}めると、みんなが{笑顔|えがお}で{聞|き}いて【48】、{安心|あんしん}しました。{結婚式|けっこんしき}のあと、{新|あたら}しい{二人|ふたり}が{幸|しあわ}せになるように、{心|こころ}から【49】。",
+   "prompt": "【49】",
+   "choices": [
+    "{願|ねが}いました",
+    "{願|ねが}われました",
+    "{願|ねが}わせました",
+    "{願|ねが}いません"
+   ],
+   "explanation": "心から願いました berarti berdoa dengan tulus; menyatakan perasaan penulis.",
+   "explanationEn": "心から願いました means I wished from the heart; it states the writer's feeling."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}1 · {短文|たんぶん}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "お{客様|きゃくさま}へ\nへ{当店|とうてん}では、{来月|らいげつ}{一日|ついたち}から、クレジットカードが{使|つか}えるようになります。これまでは{現金|げんきん}だけでしたが、カードでも{払|はら}えます。ただし、{千円|せんえん}より{安|やす}いお{買|か}い{物|もの}は、{現金|げんきん}でお{願|ねが}いします。\n。さくら{書店|しょてん}",
+   "prompt": "お{知|し}らせの{内容|ないよう}で、{正|ただ}しいのはどれですか。",
+   "choices": [
+    "{来月|らいげつ}から、{千円|せんえん}{以上|いじょう}の{買|か}い{物|もの}はカードで{払|はら}える。",
+    "{今月|こんげつ}からカードで{払|はら}える。",
+    "{五百|ごひゃく}{円|えん}の{買|か}い{物|もの}もカードで{払|はら}える。",
+    "{来月|らいげつ}からは{現金|げんきん}が{使|つか}えなくなる。"
+   ],
+   "explanation": "Mulai bulan depan kartu kredit bisa dipakai, kecuali belanja di bawah seribu yen.",
+   "explanationEn": "From next month credit cards can be used, except for purchases under 1,000 yen."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}1 · {短文|たんぶん}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "{田中|たなか}さんへ\nさんへ{昨日|きのう}は{急|きゅう}に{雨|あめ}が{降|ふ}ってきたとき、{傘|かさ}を{貸|か}してくださって、ありがとうございました。おかげで、ぬれずに{帰|かえ}れました。{傘|かさ}は、{今日|きょう}、{会社|かいしゃ}の{机|つくえ}の{上|うえ}に{返|かえ}しておきました。{今度|こんど}、お{礼|れい}にお{昼|ひる}ご{飯|はん}をごちそうします。\n。{山本|やまもと}",
+   "prompt": "{山本|やまもと}さんは、これから{何|なに}をするつもりですか。",
+   "choices": [
+    "{田中|たなか}さんにお{昼|ひる}ご{飯|はん}をごちそうする。",
+    "{田中|たなか}さんに{傘|かさ}を{貸|か}す。",
+    "{新|あたら}しい{傘|かさ}を{買|か}う。",
+    "{会社|かいしゃ}の{机|つくえ}を{片|かた}づける。"
+   ],
+   "explanation": "Yamamoto berniat mentraktir makan siang sebagai tanda terima kasih.",
+   "explanationEn": "Yamamoto plans to treat Tanaka to lunch as thanks."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}1 · {短文|たんぶん}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "{参加者|さんかしゃ}のみなさまへ\nのみなさまへ{今度|こんど}の{日曜日|にちようび}のハイキングですが、{天気予報|てんきよほう}によると、{午後|ごご}から{雨|あめ}になるそうです。{山道|やまみち}は{滑|すべ}りやすくて{危|あぶ}ないので、{今回|こんかい}は{中止|ちゅうし}にします。{来月|らいげつ}の{第|だい}{二|に}{日曜日|にちようび}に、{同|おな}じコースで{行|おこな}いますので、{予定|よてい}を{空|あ}けておいてください。\n。{世話係|せわがかり}",
+   "prompt": "{来月|らいげつ}のハイキングについて、{正|ただ}しいのはどれですか。",
+   "choices": [
+    "{同|おな}じコースで、{第|だい}{二|に}{日曜日|にちようび}に{行|おこな}う。",
+    "{別|べつ}のコースで、{第|だい}{一|いち}{日曜日|にちようび}に{行|おこな}う。",
+    "{雨|あめ}の{日|ひ}だけ{行|おこな}う。",
+    "{今度|こんど}の{日曜日|にちようび}に{延期|えんき}される。"
+   ],
+   "explanation": "Pendakian diadakan bulan depan pada Minggu kedua dengan rute yang sama.",
+   "explanationEn": "The hike will be held next month on the second Sunday on the same course."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}2 · {中文|ちゅうぶん}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "{私|わたし}の{祖父|そふ}は、{毎朝|まいあさ}、{六時|ろくじ}に{起|お}きて、{一時間|いちじかん}ぐらい{散歩|さんぽ}します。{以前|いぜん}は、あまり{歩|ある}かなかったのですが、{三年前|さんねんまえ}に{病気|びょうき}になってから、{医者|いしゃ}に「{歩|ある}いたほうがいい」と{言|い}われて、{始|はじ}めました。{今|いま}では、{近所|きんじょ}の{人|ひと}と{会|あ}って{話|はな}すのが{楽|たの}しみになったそうです。{祖父|そふ}は「{歩|ある}くと、{体|からだ}も{元気|げんき}になるし、{友達|ともだち}も{増|ふ}える。いいことばかりだよ」と{笑|わら}っています。",
+   "prompt": "{祖父|そふ}が{毎朝|まいあさ}{散歩|さんぽ}を{始|はじ}めたのは、どうしてですか。",
+   "choices": [
+    "{病気|びょうき}になって、{医者|いしゃ}にすすめられたから。",
+    "{近所|きんじょ}に{新|あたら}しい{友達|ともだち}ができたから。",
+    "{一人|ひとり}で{家|いえ}にいるのがいやになったから。",
+    "{以前|いぜん}から{歩|ある}くのが{好|す}きだったから。"
+   ],
+   "explanation": "Kakek mulai berjalan setelah sakit karena disarankan dokter.",
+   "explanationEn": "Grandfather started walking after falling ill because his doctor recommended it."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}2 · {中文|ちゅうぶん}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "{最近|さいきん}、スーパーで、{自分|じぶん}で{会計|かいけい}をする{機械|きかい}が{増|ふ}えました。{商品|しょうひん}のバーコードを{機械|きかい}に{読|よ}ませて、お{金|かね}を{入|い}れるだけです。{店員|てんいん}と{話|はな}さなくていいので、{楽|らく}だという{人|ひと}もいます。でも、{私|わたし}は、{年|とし}をとった{人|ひと}には{少|すこ}し{難|むずか}しいのではないかと{思|おも}います。{使|つか}い{方|かた}が{分|わ}からなくて{困|こま}っている{人|ひと}を、{先週|せんしゅう}も{見|み}ました。",
+   "prompt": "「{私|わたし}」は、この{機械|きかい}について、どう{思|おも}っていますか。",
+   "choices": [
+    "{年|とし}をとった{人|ひと}には{難|むずか}しいかもしれない。",
+    "{店員|てんいん}と{話|はな}せるので{楽|たの}しい。",
+    "{若|わか}い{人|ひと}にしか{使|つか}えない。",
+    "お{金|かね}を{入|い}れなくてもいい。"
+   ],
+   "explanation": "Penulis berpikir mesin ini mungkin sulit bagi orang tua; ia pernah melihat orang kesulitan.",
+   "explanationEn": "The writer thinks the machine may be hard for older people; she saw someone struggling."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}2 · {中文|ちゅうぶん}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "ワンさんへ\nさんへ{今度|こんど}の{土曜日|どようび}に{引|ひ}っ{越|こ}しをするのですが、{荷物|にもつ}が{多|おお}くて{困|こま}っています。もし{時間|じかん}があれば、{手伝|てつだ}っていただけませんか。{朝|あさ}{九時|くじ}から{昼|ひる}ごろまでです。お{昼|ひる}ご{飯|はん}は、{私|わたし}が{用意|ようい}します。ほかの{友達|ともだち}にも{頼|たの}んでありますが、まだ{三人|さんにん}しか{決|き}まっていません。\n。{木村|きむら}",
+   "prompt": "{木村|きむら}さんは、ワンさんに{何|なに}を{頼|たの}んでいますか。",
+   "choices": [
+    "{引|ひ}っ{越|こ}しの{手伝|てつだ}い。",
+    "お{昼|ひる}ご{飯|はん}の{用意|ようい}。",
+    "{新|あたら}しい{友達|ともだち}を{紹介|しょうかい}すること。",
+    "{荷物|にもつ}を{預|あず}かること。"
+   ],
+   "explanation": "Kimura meminta bantuan pindahan; makan siang disiapkan Kimura sendiri.",
+   "explanationEn": "Kimura asks for help with the move; Kimura prepares lunch."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}3 · {情報検索|じょうほうけんさく}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "にほんごクラス（{無料|むりょう}）\n）A　{月曜日|げつようび}　10:00～12:00　{初級|しょきゅう}（はじめて{勉強|べんきょう}する{人|ひと}）\n）B　{火曜日|かようび}　19:00～21:00　{初級|しょきゅう}\n{初級|しょきゅう}C　{木曜日|もくようび}　19:00～21:00　{中級|ちゅうきゅう}（{少|すこ}し{話|はな}せる{人|ひと}）\n）D　{土曜日|どようび}　10:00～12:00　{中級|ちゅうきゅう}\n{中級|ちゅうきゅう}※{仕事|しごと}がある{人|ひと}は、{夜|よる}のクラスをおすすめします。",
+   "prompt": "{日本|にほん}{語|ご}を{少|すこ}し{話|はな}せて、{昼|ひる}は{仕事|しごと}がある{人|ひと}は、どのクラスに{出|で}るといいですか。",
+   "choices": [
+    "Cクラス",
+    "Aクラス",
+    "Bクラス",
+    "Dクラス"
+   ],
+   "explanation": "Perlu kelas menengah di malam hari: C (Kamis 19:00).",
+   "explanationEn": "It needs an intermediate class in the evening: C (Thursday 19:00)."
+  },
+  {
+   "section": "grammar",
+   "group": "{読解|どっかい} {問題|もんだい}3 · {情報検索|じょうほうけんさく}",
+   "instructions": "{文章|ぶんしょう}を{読|よ}んで、{質問|しつもん}に{答|こた}えてください。いちばんよいものを{一|ひと}つ{選|えら}んでください。",
+   "passage": "さくら{市|し}バス　{一日|いちにち}{乗車券|じょうしゃけん}\n{乗車券|じょうしゃけん}{一日|いちにち}{乗車券|じょうしゃけん}：500{円|えん}（{市内|しない}どこでも{乗|の}り{放題|ほうだい}）\n）{一回|いっかい}の{運賃|うんちん}：{大人|おとな} 220{円|えん}　{子|こ}ども 110{円|えん}\n{円|えん}※{一日|いちにち}{乗車券|じょうしゃけん}は、{大人|おとな}も{子|こ}どもも{同|おな}じ{値段|ねだん}です。",
+   "prompt": "{大人|おとな}{一人|ひとり}が、{一日|いちにち}に{五回|ごかい}バスに{乗|の}ります。{一日|いちにち}{乗車券|じょうしゃけん}を{買|か}うと、{買|か}わないときより、いくら{安|やす}いですか。",
+   "choices": [
+    "600{円|えん}",
+    "500{円|えん}",
+    "1,100{円|えん}",
+    "1,600{円|えん}"
+   ],
+   "explanation": "Tanpa tiket: 220×5 = 1.100 yen; dengan tiket 500 yen, hemat 600 yen.",
+   "explanationEn": "Without the pass: 220×5 = 1,100 yen; with the pass 500 yen, saving 600 yen."
+  }
+ ]
+}

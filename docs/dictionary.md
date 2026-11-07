@@ -29,6 +29,25 @@ Kedua sumber publik tidak menjamin SLA. Tidak ada biaya API maupun secret tambah
 
 Flutter memanggil backend aplikasi; backend hanya mengakses host HTTPS tetap Jisho dan kanjiapi.dev. Token login tidak diteruskan ke sumber. Ukuran satu respons maksimal 1 MiB. Pencarian serupa yang sedang berjalan digabung. Maksimal dua request upstream aktif, diberi jarak minimal 500 ms; permintaan lain mendapat retry. HTTP upstream timeout delapan detik. Tidak ada scrape HTML maupun proxy URL arbitrer. Pastikan egress HTTPS server mengizinkan kedua host. Untuk deployment besar gunakan rate limit pada reverse proxy dan evaluasi hosting indeks JMdict sendiri sesuai lisensi sumber.
 
+## Kamus web publik
+
+Landing page `nihongo.codeverta.com` memiliki kamus web yang dirender server (HTML tanpa JavaScript, `internal/api/dictionary_web.go` dan template `internal/api/site/dictionary.html`). Navigasi landing berisi tautan **Kamus**, dan bagian *extras* memiliki kotak pencarian yang mengarah ke `/kamus`.
+
+- `/kamus?q=neko&mode=auto&jlpt=N5&common=1&page=2`: hasil pencarian, 20 kata per halaman, tautan "muat lebih banyak". Halaman hasil memakai `noindex`; `/kamus` tanpa query dapat diindeks.
+- `/kamus/kata/{slug}`: detail kata dari tabel `dictionary_entries` saja. Kata yang belum diarsipkan menghasilkan 404 dengan tautan pencarian; halaman ini tidak pernah memanggil Jisho.
+- `/kamus/kanji/{karakter}`: detail kanji (memori → DB → kanjiapi.dev dengan kuota web).
+- Versi Inggris `/en/dictionary`, `/en/dictionary/word/{slug}`, `/en/dictionary/kanji/{karakter}` aktif bersama `PUBLIC_ENGLISH_CONTENT_ENABLED=true`.
+- `robots.txt` memblokir `/v1/`, `/admin/`, dan URL hasil pencarian (`/kamus?`, `/en/dictionary?`). `sitemap.xml` berisi landing, indeks kamus, maksimal 22.000 kata dan 2.500 kanji terbaru per bahasa, dibaca dari DB saja.
+- Setiap halaman menampilkan atribusi Jisho.org, EDRDG (JMdict/JMnedict/KANJIDIC2), dan kanjiapi.dev, serta ajakan mengunduh aplikasi. CSP landing tetap `default-src 'none'`; `form-action` diubah menjadi `'self'` agar form pencarian berjalan.
+
+### Kuota web untuk sumber eksternal
+
+Pencarian yang sudah ada di memori atau MariaDB tidak dibatasi. Pencarian web yang harus mengambil data baru dari Jisho atau kanjiapi.dev dibatasi **20 per pengunjung per jam** dan **300 per jam untuk seluruh web** (konstanta `webDictionaryPerIPPerHour` dan `webDictionaryGlobalPerHour`, jendela tetap per jam, disimpan di memori proses). Melebihi kuota menghasilkan HTTP 429 dengan tautan ke Jisho. Kuota ini tidak berlaku untuk endpoint aplikasi `/v1/dictionary/*`. Batas global upstream yang lama (2 request aktif, jarak 500 ms) tetap berlaku untuk semuanya.
+
+Pengunjung diidentifikasi dari header `CF-Connecting-IP` **hanya jika** koneksi datang dari loopback (Cloudflare Tunnel → Nginx di host yang sama); koneksi langsung memakai alamat socket sehingga header tidak bisa dipalsukan. IPv6 dikelompokkan per /64. Jika Nginx tidak berjalan di host yang sama atau tidak meneruskan header tersebut, semua pengunjung akan berbagi satu kuota; sesuaikan `webDictionaryClient` bila topologi berubah. Rate Limiting Rules Cloudflare dapat ditambahkan sebagai lapisan tambahan.
+
+Mekanismenya memakai `dictionary.WithUpstreamGate`: gerbang hanya dipanggil saat lookup tidak ada di memori maupun DB. Request yang bergabung dengan lookup identik yang sedang berjalan mengikuti keputusan gerbang lookup tersebut.
+
 ## Penyimpanan database bersama
 
 Backend memakai **MariaDB**. Startup menginisialisasi tabel kamus pada database

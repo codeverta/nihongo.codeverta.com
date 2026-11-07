@@ -7,6 +7,7 @@ import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/online_exam_gate.dart';
+import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
 
 class SimulationIntroScreen extends ConsumerStatefulWidget {
   const SimulationIntroScreen({super.key, this.level = 'N5'});
@@ -19,8 +20,9 @@ class SimulationIntroScreen extends ConsumerStatefulWidget {
 class _IntroState extends ConsumerState<SimulationIntroScreen> {
   bool busy = false;
   String? error;
-  bool get n4 => widget.level == 'N4';
-  bool get n3 => widget.level == 'N3';
+  bool get n4 => jlptBaseLevel(widget.level) == 'N4';
+  String get paperLabel => jlptPaperLabel(widget.level);
+  bool get n3 => jlptBaseLevel(widget.level) == 'N3';
   bool get nat => widget.level.startsWith('NAT');
   int get natPaper =>
       widget.level == 'NAT' ? 1 : int.tryParse(widget.level.substring(4)) ?? 1;
@@ -55,7 +57,9 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
       title: Text(
-        nat ? 'NAT 5Q Exam $natPaper' : 'JLPT ${widget.level} Simulation',
+        nat
+            ? 'NAT 5Q Exam $natPaper'
+            : 'JLPT ${jlptBaseLevel(widget.level)}${jlptPaperNumber(widget.level) > 1 ? ' ${'Paket'.localized(context)} $paperLabel' : ''} Simulation',
       ),
     ),
     body: ref
@@ -85,13 +89,10 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
                             ? 'Exam $natPaper · ${data['questionCount']} soal · ${data['durationMinutes']} menit\nKosakata, kanji, grammar, dan reading NAT 5Q. Listening belum termasuk.'
                                   .localized(context)
                             : n3
-                            ? 'Paket 01 · 74 soal · 100 menit\nKosakata, kanji, grammar, dan reading N3. Listening dilewati.'
-                                  .localized(context)
+                            ? '${'Paket'.localized(context)} $paperLabel · ${'74 soal · 100 menit'.localized(context)}\n${'Kosakata, kanji, grammar, dan reading N3. Listening dilewati.'.localized(context)}'
                             : n4
-                            ? 'Paket 01 · 57 soal · 80 menit\nKosakata, kanji, grammar, dan reading N4. Listening dilewati.'
-                                  .localized(context)
-                            : 'Paket 01 · 38 soal · 40 menit\nKosakata, kanji, dan grammar N5. Dokkai dan listening dilewati.'
-                                  .localized(context),
+                            ? '${'Paket'.localized(context)} $paperLabel · ${'57 soal · 80 menit'.localized(context)}\n${'Kosakata, kanji, grammar, dan reading N4. Listening dilewati.'.localized(context)}'
+                            : '${'Paket'.localized(context)} $paperLabel · ${'38 soal · 40 menit'.localized(context)}\n${'Kosakata, kanji, dan grammar N5. Dokkai dan listening dilewati.'.localized(context)}',
                       ),
                       const SizedBox(height: 24),
                       ExamHeading('Dua bagian, dua timer'.localized(context)),

@@ -490,3 +490,63 @@ details p{padding:0 26px 26px;max-width:40em}
   details p{padding:0 20px 22px}
   .foot-cta .btn{width:100%;justify-content:center}
 }
+
+/* public dictionary (/kamus) and the landing search box */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.ex-search{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ex-search input,.dict-q input{flex:1 1 180px;min-width:0;font:inherit;font-size:17px;padding:10px 18px;border:2px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink)}
+.ex-search .btn,.dict-form .btn{border:0;cursor:pointer;font-family:inherit}
+.dict{max-width:880px;margin:0 auto;padding:32px var(--m) 0}
+.dict-head h1{font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-.035em;line-height:1.05;color:var(--navy)}
+.dict-lede{margin-top:16px;color:var(--ink-2);max-width:36em}
+.dict-form{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.dict-q{display:flex;flex:1 1 320px}
+.dict-q input{font-size:20px;padding:13px 22px}
+.dict-filters{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;width:100%;font-size:15px;color:var(--ink-2)}
+.dict-filters select{font:inherit;padding:6px 10px;margin-left:6px;border:1px solid var(--ink-2);border-radius:8px;background:#fff;color:var(--ink)}
+.dict-check{display:inline-flex;align-items:center;gap:8px}
+.dict-notice{margin-top:32px;padding:16px 20px;background:var(--tone);border-left:4px solid var(--red)}
+.dict-results{margin-top:48px}
+.dict-count{font-size:15px;font-weight:700;color:var(--ink-2)}
+.dict-list{list-style:none;padding:0;margin:16px 0 0;border-top:1px solid #DDDAD2}
+.dict-item{padding:20px 0;border-bottom:1px solid #DDDAD2}
+.dict-item-link{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;text-decoration:none}
+.dict-item-link:hover .dict-word{color:var(--red-ink)}
+.dict-word{font-size:28px;font-weight:700;line-height:1.2;color:var(--navy)}
+.dict-reading{font-size:18px;font-weight:400;color:var(--ink-2)}
+.dict-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.dict-badge{font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--tone);color:var(--ink)}
+.dict-badge-common{background:#E9EAFB;color:var(--navy)}
+.dict-gloss{margin-top:8px}
+.dict-more{margin-top:32px}
+.dict-entry{margin-top:56px}
+.dict-entry h1{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px}
+.dict-entry h1 .dict-word{font-size:clamp(48px,8vw,88px);font-weight:900;letter-spacing:-.02em}
+.dict-entry h1 .dict-reading{font-size:24px}
+.dict-entry h2{font-size:20px;font-weight:900;color:var(--navy);margin-top:40px}
+.dict-entry h2+p{margin-top:8px}
+.dict-senses{margin:16px 0 0;padding-left:1.5em;display:grid;gap:20px}
+.dict-pos{font-size:14px;font-weight:700;color:var(--ink-2)}
+.dict-def{font-size:20px}
+.dict-note{margin-top:4px;font-size:15px;color:var(--ink-2)}
+.dict-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;font-size:15px}
+.dict-kanji-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.dict-kanji-links a{display:grid;place-items:center;width:64px;height:64px;font-size:32px;text-decoration:none;background:#fff;border:2px solid var(--ink);border-radius:12px;color:var(--navy)}
+.dict-kanji-links a:hover{border-color:var(--red);color:var(--red-ink)}
+.dict-kanji-char{font-size:clamp(96px,16vw,160px);font-weight:700;line-height:1;color:var(--navy)}
+.dict-kanji>.dict-def{margin-top:24px}
+.dict-facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:32px}
+.dict-facts div{padding:16px;background:var(--tone)}
+.dict-facts dt{font-size:14px;font-weight:700;color:var(--ink-2)}
+.dict-facts dd{margin:4px 0 0;font-size:18px}
+.dict-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:64px;padding:32px;background:var(--navy);color:#fff}
+.dict-cta p{max-width:24em;font-size:22px;font-weight:700;line-height:1.35}
+.dict-source{margin-top:32px;font-size:14px;color:var(--ink-2)}
+.dict-foot{margin-top:64px;padding:32px var(--m);background:var(--navy);color:var(--on-navy-2);font-size:15px}
+.dict-foot nav{display:flex;flex-wrap:wrap;gap:8px 24px;max-width:880px;margin:0 auto}
+.dict-foot a{color:#fff;text-underline-offset:4px}
+@media (max-width:640px){
+  .dict-form .btn,.dict-cta .btn{width:100%;justify-content:center}
+  .dict-cta{padding:24px}
+  .dict-cta p{font-size:19px}
+}

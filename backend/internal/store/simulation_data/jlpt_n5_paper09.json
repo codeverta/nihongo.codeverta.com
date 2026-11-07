@@ -1,0 +1,576 @@
+{
+ "level": "N5",
+ "paper": 9,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "にほんの [[春]]は さくらが きれいです。",
+   "choices": [
+    "はる",
+    "はな",
+    "はれ",
+    "ばる"
+   ],
+   "explanation": "春 dibaca はる (musim semi).",
+   "explanationEn": "春 is read はる (spring)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "かさを [[持って]] いきます。",
+   "choices": [
+    "もって",
+    "もうって",
+    "もちて",
+    "もたって"
+   ],
+   "explanation": "持つ (もつ) berarti membawa atau memegang; bentuk て: 持って.",
+   "explanationEn": "持つ (もつ) means to hold or carry; its て-form is 持って."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "わたしの うちには [[犬]]が います。",
+   "choices": [
+    "いぬ",
+    "ねこ",
+    "いな",
+    "いめ"
+   ],
+   "explanation": "犬 dibaca いぬ (anjing). 猫 = ねこ.",
+   "explanationEn": "犬 is read いぬ (dog). 猫 = ねこ."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "この [[道]]を まっすぐ いって ください。",
+   "choices": [
+    "みち",
+    "みじ",
+    "みつ",
+    "まち"
+   ],
+   "explanation": "道 dibaca みち (jalan). 町 = まち.",
+   "explanationEn": "道 is read みち (road). 町 = まち."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "この [[紙]]に なまえを かいて ください。",
+   "choices": [
+    "かみ",
+    "がみ",
+    "かめ",
+    "こみ"
+   ],
+   "explanation": "紙 dibaca かみ (kertas).",
+   "explanationEn": "紙 is read かみ (paper)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "この かばんは とても [[重い]]です。",
+   "choices": [
+    "おもい",
+    "かるい",
+    "おもじい",
+    "おむい"
+   ],
+   "explanation": "重い dibaca おもい (berat). 軽い = かるい (ringan).",
+   "explanationEn": "重い is read おもい (heavy). 軽い = かるい (light)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}1 · {漢字|かんじ}の{読|よ}み",
+   "instructions": "＿＿の ことばは どう よみますか。１・２・３・４から いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "ひるごはんは [[食堂]]で たべます。",
+   "choices": [
+    "しょくどう",
+    "しょくとう",
+    "しょうどう",
+    "しょくどお"
+   ],
+   "explanation": "食堂 dibaca しょくどう (kantin).",
+   "explanationEn": "食堂 is read しょくどう (cafeteria)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の ことばを かんじや カタカナで かくとき、どれが ただしいですか。ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "なつに [[うみ]]へ いきました。",
+   "choices": [
+    "海",
+    "毎",
+    "梅",
+    "悔"
+   ],
+   "explanation": "うみ (laut) ditulis 海.",
+   "explanationEn": "うみ (sea) is written 海."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の ことばを かんじや カタカナで かくとき、どれが ただしいですか。ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "けさは [[ゆき]]が ふって います。",
+   "choices": [
+    "雪",
+    "雲",
+    "雷",
+    "雨"
+   ],
+   "explanation": "ゆき (salju) ditulis 雪. 雲 = awan; 雷 = petir; 雨 = hujan.",
+   "explanationEn": "ゆき (snow) is written 雪. 雲 = cloud; 雷 = thunder; 雨 = rain."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の ことばを かんじや カタカナで かくとき、どれが ただしいですか。ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "まいにち [[じてんしゃ]]で がっこうへ いきます。",
+   "choices": [
+    "自転車",
+    "自転東",
+    "白転車",
+    "自軽車"
+   ],
+   "explanation": "じてんしゃ (sepeda) ditulis 自転車.",
+   "explanationEn": "じてんしゃ (bicycle) is written 自転車."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の ことばを かんじや カタカナで かくとき、どれが ただしいですか。ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "[[ごご]]に ともだちと あいます。",
+   "choices": [
+    "午後",
+    "牛後",
+    "午御",
+    "干後"
+   ],
+   "explanation": "ごご (siang sampai sore) ditulis 午後.",
+   "explanationEn": "ごご (afternoon) is written 午後."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}2 · {表記|ひょうき}",
+   "instructions": "＿＿の ことばを かんじや カタカナで かくとき、どれが ただしいですか。ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "この [[ちず]]を みて ください。",
+   "choices": [
+    "地図",
+    "池図",
+    "地回",
+    "他図"
+   ],
+   "explanation": "ちず (peta) ditulis 地図.",
+   "explanationEn": "ちず (map) is written 地図."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に はいる いちばん よい ことばを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "がっこうの まえで バスを（　）。",
+   "choices": [
+    "まちます",
+    "わらいます",
+    "ねます",
+    "およぎます"
+   ],
+   "explanation": "バスをまつ berarti menunggu bus.",
+   "explanationEn": "バスをまつ means to wait for the bus."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に はいる いちばん よい ことばを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "となりの ひとに あいさつを（　）。",
+   "choices": [
+    "しました",
+    "ひきました",
+    "かけました",
+    "とりました"
+   ],
+   "explanation": "あいさつをする berarti memberi salam.",
+   "explanationEn": "あいさつをする means to greet someone."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に はいる いちばん よい ことばを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "わたしの うちは えきから とおいですから、まいあさ バスに（　）。",
+   "choices": [
+    "のります",
+    "きります",
+    "なります",
+    "ひきます"
+   ],
+   "explanation": "バスにのる berarti naik bus.",
+   "explanationEn": "バスにのる means to ride a bus."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に はいる いちばん よい ことばを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "ここに なまえと じゅうしょを（　）ください。",
+   "choices": [
+    "かいて",
+    "あけて",
+    "ひいて",
+    "とって"
+   ],
+   "explanation": "なまえをかく berarti menulis nama.",
+   "explanationEn": "なまえをかく means to write one's name."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に はいる いちばん よい ことばを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "デザートは もう（　）。おなかが いっぱいです。",
+   "choices": [
+    "いりません",
+    "います",
+    "あります",
+    "ふりません"
+   ],
+   "explanation": "いりません berarti tidak perlu.",
+   "explanationEn": "いりません means I do not need it."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}3 · {文脈|ぶんみゃく}",
+   "instructions": "（　）に はいる いちばん よい ことばを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "この レストランは うるさいですから、もっと（　）ところへ いきましょう。",
+   "choices": [
+    "しずかな",
+    "にぎやかな",
+    "いそがしい",
+    "わるい"
+   ],
+   "explanation": "うるさい (berisik) lawan katanya しずか (tenang).",
+   "explanationEn": "うるさい (noisy) is the opposite of しずか (quiet)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "もとの ぶんと いみが いちばん ちかい ぶんを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "[[この みせは ９じに しまります。]]",
+   "choices": [
+    "この みせは ９じに おわります。",
+    "この みせは ９じに あきます。",
+    "この みせは ９じから ひらきます。",
+    "この みせは ９じに できます。"
+   ],
+   "explanation": "しまる (tutup) = selesai berbisnis. あく dan ひらく = buka.",
+   "explanationEn": "しまる (close) = finish for the day. あく and ひらく = open."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "もとの ぶんと いみが いちばん ちかい ぶんを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "[[きのうは あつくて、ねむれませんでした。]]",
+   "choices": [
+    "きのうは あつかったですから、よく ねられませんでした。",
+    "きのうは さむかったですから、よく ねました。",
+    "きのうは あつくて、すぐに ねました。",
+    "きのうは ねむくて、はやく ねました。"
+   ],
+   "explanation": "ねむれない = tidak bisa tidur nyenyak. Pilihan lain mengubah sebab atau hasil.",
+   "explanationEn": "ねむれない = could not sleep well. The other choices change the cause or the result."
+  },
+  {
+   "section": "vocabulary",
+   "group": "{文字|もじ}・{語彙|ごい} {問題|もんだい}4 · {言|い}い{換|か}え",
+   "instructions": "もとの ぶんと いみが いちばん ちかい ぶんを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "[[ははは いま おふろに はいって います。]]",
+   "choices": [
+    "ははは いま おふろの なかに います。",
+    "ははは いま おふろから でました。",
+    "ははは いま かいものに いって います。",
+    "ははは いま ごはんを つくって います。"
+   ],
+   "explanation": "おふろにはいっている = sedang berada di bak mandi.",
+   "explanationEn": "おふろにはいっている = is in the bath."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "あした（　）やすみですから、ゆっくり ねます。",
+   "choices": [
+    "は",
+    "を",
+    "に",
+    "で"
+   ],
+   "explanation": "Topik ditandai は: あしたはやすみ.",
+   "explanationEn": "The topic is marked with は: あしたはやすみ."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "この ペンは ちち（　）もらいました。",
+   "choices": [
+    "に",
+    "を",
+    "が",
+    "と"
+   ],
+   "explanation": "Pemberi pada もらう ditandai に: ちちにもらう.",
+   "explanationEn": "The giver with もらう is marked with に: ちちにもらう."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "まいにち かいしゃまで でんしゃ（　）いきます。",
+   "choices": [
+    "で",
+    "を",
+    "が",
+    "に"
+   ],
+   "explanation": "Alat transportasi ditandai で: でんしゃで.",
+   "explanationEn": "A means of transport is marked with で: でんしゃで."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "はやく ねないと、あした おきられ（　）。",
+   "choices": [
+    "ません",
+    "ました",
+    "ましょう",
+    "ませんか"
+   ],
+   "explanation": "Bentuk potensial negatif: おきられません, tidak bisa bangun.",
+   "explanationEn": "Negative potential: おきられません, cannot get up."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "ほしい ものが たくさん あります（　）、おかねが ありません。",
+   "choices": [
+    "が",
+    "から",
+    "ので",
+    "と"
+   ],
+   "explanation": "が menyatakan pertentangan: ada banyak yang diinginkan, tetapi tidak ada uang.",
+   "explanationEn": "が expresses contrast: there are many things I want, but I have no money."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "びょういんは あの たてもの（　）となりです。",
+   "choices": [
+    "の",
+    "を",
+    "に",
+    "で"
+   ],
+   "explanation": "Kata benda の となり berarti di sebelah: たてもののとなり.",
+   "explanationEn": "Noun の となり means next to: たてもののとなり."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "あした テストですから、きょうは あそばない（　）いいです。",
+   "choices": [
+    "ほうが",
+    "ことが",
+    "ばかり",
+    "だけが"
+   ],
+   "explanation": "Bentuk ない + ほうがいいです berarti sebaiknya tidak.",
+   "explanationEn": "ない-form + ほうがいいです means had better not."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "わたしは ごはんを たべた（　）、はを みがきます。",
+   "choices": [
+    "あとで",
+    "まえに",
+    "ながら",
+    "のに"
+   ],
+   "explanation": "Bentuk た + あとで berarti setelah: たべたあとで.",
+   "explanationEn": "た-form + あとで means after: たべたあとで."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}1 · {文|ぶん}の{文法|ぶんぽう}",
+   "instructions": "（　）に はいる いちばん よい ものを ひとつ えらんで ください。",
+   "passage": "",
+   "prompt": "おんなの こは にっこり（　）、「ありがとう」と いいました。",
+   "choices": [
+    "わらって",
+    "わらう",
+    "わらった",
+    "わらえば"
+   ],
+   "explanation": "Bentuk て menghubungkan dua tindakan: わらって、いいました.",
+   "explanationEn": "The て-form links two actions: わらって、いいました."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "４つの ことばを ならべて ぶんを つくって ください。★に はいる ことばを えらんで ください。",
+   "passage": "",
+   "prompt": "これは ＿＿ ＿＿ ★ ＿＿ ほんです。",
+   "choices": [
+    "よんで",
+    "むかし",
+    "ははが",
+    "くれた"
+   ],
+   "explanation": "Urutan: これは むかし ははが よんで くれた ほんです (ini buku yang dulu dibacakan ibu untuk saya). ★ adalah slot ketiga, よんで.",
+   "explanationEn": "Order: これは むかし ははが よんで くれた ほんです (this is the book my mother read to me long ago). ★ is the third slot, よんで."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "４つの ことばを ならべて ぶんを つくって ください。★に はいる ことばを えらんで ください。",
+   "passage": "",
+   "prompt": "あした ＿＿ ＿＿ ★ ＿＿。",
+   "choices": [
+    "あつまる",
+    "どこに",
+    "なんじに",
+    "のですか"
+   ],
+   "explanation": "Urutan: あした どこに なんじに あつまる のですか (besok berkumpul di mana dan jam berapa?). ★ adalah slot ketiga, あつまる.",
+   "explanationEn": "Order: あした どこに なんじに あつまる のですか (where and at what time are we meeting tomorrow?). ★ is the third slot, あつまる."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "４つの ことばを ならべて ぶんを つくって ください。★に はいる ことばを えらんで ください。",
+   "passage": "",
+   "prompt": "あの ＿＿ ＿＿ ★ ＿＿ ともだちです。",
+   "choices": [
+    "いる",
+    "めがねを",
+    "かけて",
+    "ひとは"
+   ],
+   "explanation": "Urutan: あの めがねを かけて いる ひとは ともだちです (orang yang memakai kacamata itu temanku). ★ adalah slot ketiga, いる.",
+   "explanationEn": "Order: あの めがねを かけて いる ひとは ともだちです (that person wearing glasses is my friend). ★ is the third slot, いる."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}2 · {文|ぶん}の{組|く}み{立|た}て",
+   "instructions": "４つの ことばを ならべて ぶんを つくって ください。★に はいる ことばを えらんで ください。",
+   "passage": "",
+   "prompt": "へやを ＿＿ ＿＿ ★ ＿＿ ください。",
+   "choices": [
+    "おふろに",
+    "そうじして",
+    "から",
+    "はいって"
+   ],
+   "explanation": "Urutan: へやを そうじして から おふろに はいって ください (bersihkan kamar dulu, lalu mandi). ★ adalah slot ketiga, おふろに.",
+   "explanationEn": "Order: へやを そうじして から おふろに はいって ください (clean the room first, then take a bath). ★ is the third slot, おふろに."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "つぎの ぶんしょうを よんで、（　）に はいる いちばん よい ものを えらんで ください。",
+   "passage": "こんしゅうの どようびに、わたしは はじめて カレーを【35】。ちちが やさいの きりかたを おしえて くれました。にんじんと じゃがいもを きってから、にくを いためました。【36】、おなべに みずを いれて、にました。さんじゅっぷんぐらいで できあがりました。ははは「とても おいしい」と【37】、おかわりを しました。また つくって あげたいと【38】。",
+   "prompt": "【35】",
+   "choices": [
+    "つくりました",
+    "つくります",
+    "つくって",
+    "つくりたい"
+   ],
+   "explanation": "Kejadian hari Sabtu lalu: つくりました (lampau).",
+   "explanationEn": "An event last Saturday: つくりました (past)."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "つぎの ぶんしょうを よんで、（　）に はいる いちばん よい ものを えらんで ください。",
+   "passage": "こんしゅうの どようびに、わたしは はじめて カレーを【35】。ちちが やさいの きりかたを おしえて くれました。にんじんと じゃがいもを きってから、にくを いためました。【36】、おなべに みずを いれて、にました。さんじゅっぷんぐらいで できあがりました。ははは「とても おいしい」と【37】、おかわりを しました。また つくって あげたいと【38】。",
+   "prompt": "【36】",
+   "choices": [
+    "つぎに",
+    "でも",
+    "だから",
+    "しかし"
+   ],
+   "explanation": "つぎに berarti selanjutnya, untuk urutan langkah memasak. でも dan しかし menyatakan pertentangan.",
+   "explanationEn": "つぎに means next, for the order of cooking steps. でも and しかし express contrast."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "つぎの ぶんしょうを よんで、（　）に はいる いちばん よい ものを えらんで ください。",
+   "passage": "こんしゅうの どようびに、わたしは はじめて カレーを【35】。ちちが やさいの きりかたを おしえて くれました。にんじんと じゃがいもを きってから、にくを いためました。【36】、おなべに みずを いれて、にました。さんじゅっぷんぐらいで できあがりました。ははは「とても おいしい」と【37】、おかわりを しました。また つくって あげたいと【38】。",
+   "prompt": "【37】",
+   "choices": [
+    "いって",
+    "いい",
+    "いう",
+    "いった"
+   ],
+   "explanation": "Bentuk て menyambung tindakan: いって、おかわりをしました.",
+   "explanationEn": "The て-form links actions: いって、おかわりをしました."
+  },
+  {
+   "section": "grammar",
+   "group": "{文法|ぶんぽう} {問題|もんだい}3 · {文章|ぶんしょう}の{文法|ぶんぽう}",
+   "instructions": "つぎの ぶんしょうを よんで、（　）に はいる いちばん よい ものを えらんで ください。",
+   "passage": "こんしゅうの どようびに、わたしは はじめて カレーを【35】。ちちが やさいの きりかたを おしえて くれました。にんじんと じゃがいもを きってから、にくを いためました。【36】、おなべに みずを いれて、にました。さんじゅっぷんぐらいで できあがりました。ははは「とても おいしい」と【37】、おかわりを しました。また つくって あげたいと【38】。",
+   "prompt": "【38】",
+   "choices": [
+    "おもいました",
+    "おもいません",
+    "おもって",
+    "おもう"
+   ],
+   "explanation": "～と おもいました menyatakan perasaan penulis.",
+   "explanationEn": "～と おもいました states the writer's feeling."
+  }
+ ]
+}

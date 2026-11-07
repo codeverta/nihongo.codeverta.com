@@ -4,6 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_a.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_b.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_c.dart';
+import 'package:nihongo_master/core/localization/ui_english_wave1_core.dart';
+import 'package:nihongo_master/core/localization/ui_english_wave1_exam.dart';
+import 'package:nihongo_master/core/localization/ui_english_wave1_learn.dart';
 
 /// Lightweight app localization catalog. Japanese source text remains as-is;
 /// only app-owned Indonesian copy is translated for English users.
@@ -277,7 +280,10 @@ class AppLocalizations {
         _englishCopy[source] ??
         ankiEnglishCopyA[source] ??
         ankiEnglishCopyB[source] ??
-        ankiEnglishCopyC[source];
+        ankiEnglishCopyC[source] ??
+        uiEnglishWave1Core[source] ??
+        uiEnglishWave1Learn[source] ??
+        uiEnglishWave1Exam[source];
     if (exact != null) return exact;
 
     final learningCourseStats = RegExp(
@@ -956,6 +962,11 @@ const _englishCopy = <String, String>{
   'Notifikasi': 'Notifications',
   'Offline': 'Offline',
   'Pengaturan': 'Settings',
+  'Bantu tingkatkan aplikasi': 'Help improve the app',
+  'Pilihan privasi iklan': 'Ad privacy choices',
+  'Iklan': 'Ad',
+  'Kirim data penggunaan anonim (fitur yang dibuka). Tidak berisi data pribadi.':
+      'Share anonymous usage data (which features you open). No personal data is included.',
   'Pengaturan tampilan': 'Display settings',
   'Pengaturan notifikasi': 'Notification settings',
   'Pencarian terakhir': 'Recent searches',
@@ -1583,6 +1594,41 @@ const _englishCopy = <String, String>{
 
   // Data source and attribution screens.
   'Sumber data & atribusi': 'Data sources & attributions',
+  'Beri rating aplikasi': 'Rate this app',
+
+  // Japan map.
+  'Budaya': 'Culture',
+  'Kuil & Shrine': 'Temples & shrines',
+  'Kuliner': 'Food',
+  'Kota & modern': 'City & modern',
+  'Sejarah': 'History',
+  'Peta Jepang': 'Japan map',
+  'Tampilkan seluruh Jepang': 'Show all of Japan',
+  'Offline: menampilkan data peta yang tersimpan.': 'Offline: showing saved map data.',
+  'Tempat belum dapat dimuat. Periksa koneksi dan coba lagi.': 'Places could not be loaded. Check your connection and try again.',
+  'Peta tidak dapat ditampilkan.': 'The map cannot be shown.',
+  'Tempat & budaya': 'Places & culture',
+  'Lowongan kerja': 'Jobs',
+  'lowongan': 'jobs',
+  'Belum ada tempat di prefektur ini.': 'No places in this prefecture yet.',
+  'Belum ada lowongan di prefektur ini.': 'No jobs in this prefecture yet.',
+  'Lowongan belum dapat dimuat.': 'Jobs could not be loaded.',
+  'Lihat semua lowongan': 'See all jobs',
+  'Tempat ini tidak ditemukan.': 'This place was not found.',
+  'Teks asli dalam bahasa Inggris': 'Original text in English',
+  'Tentang tempat ini': 'About this place',
+  'Tips berkunjung': 'Visiting tips',
+  'Kosakata & frasa': 'Words & phrases',
+  'Buka di Google Maps': 'Open in Google Maps',
+  'Lowongan di prefektur ini': 'Jobs in this prefecture',
+  'Teks dari Wikipedia dan Wikivoyage berlisensi CC BY-SA 4.0; perubahan dapat dilakukan oleh tim Nihongo Master.':
+      'Text from Wikipedia and Wikivoyage is licensed under CC BY-SA 4.0; the Nihongo Master team may have edited it.',
+  'Foto': 'Photo',
+  'BUDAYA, TEMPAT, DAN LOWONGAN': 'CULTURE, PLACES, AND JOBS',
+  'Kenali budaya tiap daerah dan lihat lowongan kerja di peta Jepang':
+      "Discover each region's culture and see jobs on a map of Japan",
+  'Lihat di peta': 'View on map',
+  'Peta belum dapat dimuat. Periksa koneksi dan coba lagi.': 'The map could not be loaded. Check your connection and try again.',
   'Dibangun bersama banyak sumber': 'Built with many sources',
   'Terima kasih kepada penerbit, pembuat dataset, dan komunitas yang menjadi sumber konten Nihongo Master. Hak cipta tetap milik masing-masing pemilik.':
       'Thank you to the publishers, dataset creators, and communities that provide content for Nihongo Master. Copyright remains with each respective owner.',

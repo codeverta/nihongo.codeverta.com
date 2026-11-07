@@ -247,7 +247,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
                         button: true,
                         selected: i == _index,
                         label:
-                            'Banner ${i + 1} dari ${widget.banners.length}: ${widget.banners[i].title}',
+                            'Banner ${i + 1} ${'dari'.localized(context)} ${widget.banners.length}: ${widget.banners[i].title}',
                         child: InkWell(
                           key: Key('home-banner-dot-$i'),
                           onTap: () => _select(i),

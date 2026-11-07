@@ -14,6 +14,8 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.8.0+1
   equatable: ^2.0.7
+  firebase_analytics: ^12.1.0
+  google_mobile_ads: ^9.2.0
   firebase_core: ^4.15.0
   firebase_messaging: ^16.7.0
   flutter:
@@ -31,6 +33,7 @@ dependencies:
   google_fonts: ^6.2.1
   google_sign_in: ^7.2.0
   image_picker: ^1.2.3
+  in_app_review: ^2.0.10
   in_app_purchase: 3.3.1
   path_provider: ^2.1.6
   riverpod_annotation: ^2.6.1
@@ -57,6 +60,7 @@ flutter:
     - assets/images/ssw/
     - assets/images/jobs/
     - assets/images/explore/
+    - assets/map/
     - assets/content/ssw/
     - assets/content/ssw/en/
     - assets/images/app-icon-small.webp

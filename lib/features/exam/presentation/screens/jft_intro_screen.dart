@@ -197,11 +197,8 @@ class _JftIntroState extends ConsumerState<JftIntroScreen> {
                             busy
                                 ? 'Menyiapkan ujian...'.localized(context)
                                 : active
-                                ? 'Lanjutkan Exam ${widget.examNumber}'
-                                      .localized(context)
-                                : 'Mulai Exam ${widget.examNumber}'.localized(
-                                    context,
-                                  ),
+                                ? '${'Lanjutkan Exam'.localized(context)} ${widget.examNumber}'
+                                : '${'Mulai Exam'.localized(context)} ${widget.examNumber}',
                           ),
                         ),
                       ],

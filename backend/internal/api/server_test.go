@@ -187,7 +187,7 @@ func TestSaveProgressRejectsInvalidPercentage(t *testing.T) {
 func TestFreeUserCannotStartPremiumExam(t *testing.T) {
 	server := newServer()
 	token := login(t, server)
-	body := bytes.NewBufferString(`{"examId":"jlpt-n4-simulation-1"}`)
+	body := bytes.NewBufferString(`{"examId":"jlpt-n3-simulation-1"}`)
 	request := httptest.NewRequest(http.MethodPost, "/v1/exam-attempts", body)
 	request.Header.Set("Authorization", "Bearer "+token)
 	request.Header.Set("Content-Type", "application/json")

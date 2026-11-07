@@ -95,7 +95,7 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
       if (mounted) {
         setState(
           () => error =
-              '${diagnosticError(e)} ${'Pilihan belum tersimpan; pilih ulang.'.localized(context)}',
+              '${diagnosticError(e).localized(context)} ${'Pilihan belum tersimpan; pilih ulang.'.localized(context)}',
         );
       }
     } finally {
@@ -345,7 +345,7 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
                         Row(
                           children: [
                             Text(
-                              '${q!['section']}  /  ${'Soal'.localized(context)} ${index + 1} ${'dari'.localized(context)} ${questions.length}',
+                              '${'${q!['section']}'.localized(context)}  /  ${'Soal'.localized(context)} ${index + 1} ${'dari'.localized(context)} ${questions.length}',
                               style: const TextStyle(
                                 color: examInk,
                                 fontWeight: FontWeight.w800,

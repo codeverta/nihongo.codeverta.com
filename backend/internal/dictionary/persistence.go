@@ -92,6 +92,26 @@ func responseEntries(endpoint string, body []byte) (source, kind string, entries
 	}
 	return "", "", nil, ErrInvalid
 }
+func (s *SQLCache) entry(ctx context.Context, source, id string) ([]byte, bool, error) {
+	var record database.DictionaryEntry
+	err := s.db.WithContext(ctx).Where("source = ? AND source_entry_id = ?", source, id).Take(&record).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return nil, false, nil
+	}
+	if err != nil {
+		return nil, false, err
+	}
+	return record.Body, true, nil
+}
+
+func (s *SQLCache) entryIDs(ctx context.Context, source string, limit int) ([]string, error) {
+	var ids []string
+	err := s.db.WithContext(ctx).Model(&database.DictionaryEntry{}).
+		Where("source = ?", source).Order("fetched_at DESC").Limit(limit).
+		Pluck("source_entry_id", &ids).Error
+	return ids, err
+}
+
 func (s *SQLCache) save(ctx context.Context, endpoint string, hit cached) error {
 	source, kind, entries, err := responseEntries(endpoint, hit.body)
 	if err != nil {

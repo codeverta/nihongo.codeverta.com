@@ -27,6 +27,7 @@
     <a href="#level">Level</a>
     <a href="#ujian">Ujian</a>
     <a href="#ssw">Kerja di Jepang</a>
+    <a href="/kamus">Kamus</a>
     <a href="#harga">Harga</a>
     <a href="#tanya">Tanya jawab</a>
   </nav>
@@ -209,7 +210,14 @@
       <figcaption><b>Anki flashcards.</b> Deck per topik dengan pencarian, filter kategori, dan progres tiap deck.</figcaption>
     </figure>
     <div class="ex-text rise">
-      <p><b>Kamus Jepang.</b> Cari kosakata semua level. Gratis, bahkan tanpa login.</p>
+      <div>
+        <p><b>Kamus Jepang.</b> Cari kosakata semua level. Gratis, bahkan tanpa login, juga <a href="/kamus">di web</a>.</p>
+        <form class="ex-search" action="/kamus" method="get" role="search">
+          <label class="sr" for="ex-q">Cari kata Jepang</label>
+          <input id="ex-q" type="search" name="q" placeholder="猫, neko, atau cat" maxlength="100" required autocomplete="off" autocapitalize="off" spellcheck="false">
+          <button class="btn btn-sm" type="submit">Cari</button>
+        </form>
+      </div>
       <p><b>Berita Jepang.</b> Artikel terbaru dari penerbit Jepang, dibaca apa adanya. Gratis.</p>
       <p><b>Target harian dan streak.</b> XP dan achievement dihitung dari kuis dan ujian yang benar-benar kamu selesaikan.</p>
     </div>

@@ -10,10 +10,12 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 	"log"
+	"net"
 	"net/url"
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
 	"strings"
 
 	"nihongo-master-backend/internal/imageopt"
@@ -25,6 +27,9 @@ import (
 type imageCandidate struct {
 	URL, Credit, License, LicenseURL, SourceURL string
 	CommonsFiles                                []string
+	// Unlicensed marks a plain article image (og:image, feed media or the first
+	// body image). It is credited to the publisher instead of a license.
+	Unlicensed bool
 }
 
 // Only explicit commercial reuse licenses on the individual image caption
@@ -58,6 +63,123 @@ func allowedImageURL(value string) bool {
 	}
 	return (u.Host == "globalvoices.org" || u.Host == "jp.globalvoices.org") && strings.HasPrefix(u.Path, "/wp-content/uploads/") ||
 		u.Host == "www.city.osaka.lg.jp" && strings.Contains(u.Path, "/cmsfiles/contents/")
+}
+
+// safeImageURL accepts any public HTTPS image URL (publisher CDNs included)
+// while refusing credentials, ports, IP literals and local hostnames.
+func safeImageURL(value string) bool {
+	u, err := url.Parse(value)
+	if err != nil || u.Scheme != "https" || u.User != nil || u.Port() != "" || len(value) > 1000 {
+		return false
+	}
+	host := strings.ToLower(u.Hostname())
+	if host == "" || host == "localhost" || !strings.Contains(host, ".") || strings.HasSuffix(host, ".local") || strings.HasSuffix(host, ".internal") {
+		return false
+	}
+	return net.ParseIP(host) == nil
+}
+
+var skippedImageHints = []string{"gravatar", "emoji", "/smilies/", "logo", "icon", "sprite", "avatar", "spacer", "pixel", ".svg", ".gif"}
+
+func resolveImageURL(base, ref string) string {
+	ref = strings.TrimSpace(ref)
+	if ref == "" || strings.HasPrefix(ref, "data:") {
+		return ""
+	}
+	b, err := url.Parse(base)
+	if err != nil {
+		return ""
+	}
+	r, err := b.Parse(ref)
+	if err != nil {
+		return ""
+	}
+	r.Fragment = ""
+	value := r.String()
+	if !safeImageURL(value) {
+		return ""
+	}
+	lower := strings.ToLower(value)
+	for _, hint := range skippedImageHints {
+		if strings.Contains(lower, hint) {
+			return ""
+		}
+	}
+	return value
+}
+
+// metaImage returns og:image / twitter:image from a full HTML document.
+func metaImage(doc *html.Node, base string) string {
+	found := ""
+	walk(doc, func(n *html.Node) {
+		if n.Data != "meta" || found != "" {
+			return
+		}
+		key := strings.ToLower(attr(n, "property") + attr(n, "name"))
+		if key == "og:image" || key == "og:image:secure_url" || key == "twitter:image" {
+			found = resolveImageURL(base, attr(n, "content"))
+		}
+	})
+	return found
+}
+
+// bodyImages lists article images in document order, skipping tiny images.
+func bodyImages(root *html.Node, base string) []string {
+	result := []string{}
+	seen := map[string]bool{}
+	walk(root, func(n *html.Node) {
+		if n.Data != "img" {
+			return
+		}
+		for _, dim := range []string{"width", "height"} {
+			if v, err := strconv.Atoi(strings.TrimSuffix(attr(n, dim), "px")); err == nil && v < 120 {
+				return
+			}
+		}
+		src := attr(n, "src")
+		for _, lazy := range []string{"data-src", "data-lazy-src", "data-orig-file"} {
+			if v := attr(n, lazy); v != "" {
+				src = v
+				break
+			}
+		}
+		if value := resolveImageURL(base, src); value != "" && !seen[value] {
+			seen[value] = true
+			result = append(result, value)
+		}
+	})
+	return result
+}
+
+// plainImageCandidates gathers unlicensed fallbacks: feed media first, then the
+// page's og:image, then body images.
+func plainImageCandidates(base string, feedURLs []string, doc, body *html.Node) []imageCandidate {
+	urls := []string{}
+	for _, v := range feedURLs {
+		if value := resolveImageURL(base, v); value != "" {
+			urls = append(urls, value)
+		}
+	}
+	if doc != nil {
+		if v := metaImage(doc, base); v != "" {
+			urls = append(urls, v)
+		}
+	}
+	if body != nil {
+		urls = append(urls, bodyImages(body, base)...)
+	}
+	result := []imageCandidate{}
+	seen := map[string]bool{}
+	for _, v := range urls {
+		if !seen[v] {
+			seen[v] = true
+			result = append(result, imageCandidate{URL: v, SourceURL: base, Unlicensed: true})
+		}
+	}
+	if len(result) > 4 {
+		result = result[:4]
+	}
+	return result
 }
 
 func licensedImages(doc *html.Node) []imageCandidate {
@@ -117,22 +239,36 @@ func licensedImages(doc *html.Node) []imageCandidate {
 }
 
 func (f *HTTPFetcher) importImages(ctx context.Context, articles []Article) {
-	if f.imageDirectory == "" {
+	if f.imageDirectory == "" && f.store == nil {
 		return
 	}
 	for i := range articles {
+		// Articles that already hold a stored image are never re-downloaded
+		// from the publisher.
+		if f.hasImage != nil && f.hasImage(ctx, articles[i].URL) {
+			continue
+		}
 		for _, candidate := range articles[i].imageCandidates {
-			credit, err := f.imageAttribution(ctx, candidate)
-			if err != nil {
-				log.Printf("news image credit %s: %v", articles[i].URL, err)
-				continue
+			credit, license := candidate.Credit, candidate.License
+			if candidate.Unlicensed {
+				host := "sumber berita"
+				if u, err := url.Parse(articles[i].URL); err == nil && u.Hostname() != "" {
+					host = u.Hostname()
+				}
+				credit, license = "Foto dari "+host, "Hak cipta pemilik sumber"
+			} else {
+				var err error
+				if credit, err = f.imageAttribution(ctx, candidate); err != nil {
+					log.Printf("news image credit %s: %v", articles[i].URL, err)
+					continue
+				}
 			}
 			path, err := f.downloadImage(ctx, candidate.URL)
 			if err != nil {
 				log.Printf("news image import %s: %v", articles[i].URL, err)
 				continue
 			}
-			articles[i].ImageURL, articles[i].ImageCredit, articles[i].ImageLicense = path, credit, candidate.License
+			articles[i].ImageURL, articles[i].ImageCredit, articles[i].ImageLicense = path, credit, license
 			articles[i].ImageSourceURL, articles[i].ImageLicenseURL = candidate.SourceURL, candidate.LicenseURL
 			break
 		}
@@ -193,7 +329,7 @@ func (f *HTTPFetcher) imageAttribution(ctx context.Context, candidate imageCandi
 }
 
 func (f *HTTPFetcher) downloadImage(ctx context.Context, remote string) (string, error) {
-	if !allowedImageURL(remote) {
+	if !safeImageURL(remote) {
 		return "", ErrInvalid
 	}
 	data, _, _, err := f.get(ctx, remote, Source{}, false)
@@ -207,7 +343,7 @@ func (f *HTTPFetcher) downloadImage(ctx context.Context, remote string) (string,
 	if err != nil {
 		return "", err
 	}
-	if (format != "jpeg" && format != "png" && format != "webp") || config.Width < 1 || config.Height < 1 || config.Width > 4096 || config.Height > 4096 {
+	if (format != "jpeg" && format != "png" && format != "webp") || config.Width < 100 || config.Height < 100 || config.Width > 8000 || config.Height > 8000 || config.Width*config.Height > 30_000_000 {
 		return "", fmt.Errorf("unsupported image dimensions or format")
 	}
 	decoded, _, err := image.Decode(bytes.NewReader(data))
@@ -217,6 +353,9 @@ func (f *HTTPFetcher) downloadImage(ctx context.Context, remote string) (string,
 	encoded, err := imageopt.JPEG(decoded)
 	if err != nil {
 		return "", err
+	}
+	if f.store != nil {
+		return f.store.Put(ctx, encoded)
 	}
 	name := fmt.Sprintf("%x.jpg", sha256.Sum256(encoded))
 	if err := os.MkdirAll(f.imageDirectory, 0755); err != nil {

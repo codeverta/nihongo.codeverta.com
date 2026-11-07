@@ -57,6 +57,27 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     preferences = await SharedPreferences.getInstance();
   });
+  test('first completion of a lesson notifies the rating prompt once', () async {
+    final completed = <String>[];
+    final history = LearningHistoryController(
+      preferences,
+      FakeHistory()..offline = true,
+      'a',
+      onFirstCompletion: completed.add,
+    );
+    addTearDown(history.dispose);
+    await history.open(
+      kind: 'kanji',
+      lessonId: 'kanji-n5-1',
+      title: 'Kanji 1',
+      total: 3,
+      completed: false,
+    );
+    history
+      ..complete('kanji', 'kanji-n5-1')
+      ..complete('kanji', 'kanji-n5-1');
+    expect(completed, ['kanji:kanji-n5-1']);
+  });
   test(
     'offline positions persist per account and synchronize after reconnect',
     () async {

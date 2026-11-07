@@ -7,10 +7,12 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"nihongo-master-backend/internal/config"
 	"nihongo-master-backend/internal/database"
+	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/news"
 )
 
@@ -49,6 +51,20 @@ func main() {
 		brandingPath = "data/branding.json"
 	}
 	fetcher := news.NewFetcher(filepath.Join(filepath.Dir(brandingPath), "news-images"))
+	assetBaseURL := strings.TrimSpace(os.Getenv("ASSET_BASE_URL"))
+	if assetBaseURL == "" {
+		assetBaseURL = os.Getenv("COS_BUCKET_URL")
+	}
+	images, err := media.NewCOSNewsImageStorage(os.Getenv("COS_BUCKET_URL"), assetBaseURL, os.Getenv("COS_SECRET_ID"), os.Getenv("COS_SECRET_KEY"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	if images != nil {
+		fetcher.SetImageStore(images)
+	} else {
+		log.Print("COS is not configured; news images stay on local disk")
+	}
+	fetcher.SetImageLookup(repo.HasImage)
 	for _, source := range sources {
 		if !source.Enabled || (!*force && source.NextFetchAt.After(time.Now())) {
 			continue

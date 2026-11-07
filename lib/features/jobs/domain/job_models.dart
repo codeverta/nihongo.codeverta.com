@@ -61,22 +61,27 @@ class JapanJob {
       (expiresAt == null || expiresAt!.isAfter(DateTime.now()));
   String get salary => salaryFor('en_US');
 
-  String salaryFor(String localeName) {
+  /// [translate] localizes the fixed Indonesian fragments (not [salaryText],
+  /// which is server-provided). Defaults to the Indonesian source text.
+  String salaryFor(String localeName, {String Function(String)? translate}) {
+    String t(String source) => translate == null ? source : translate(source);
     if (salaryText.trim().isNotEmpty) return salaryText;
-    if (salaryMin == null && salaryMax == null) return 'Gaji belum dicantumkan';
+    if (salaryMin == null && salaryMax == null) {
+      return t('Gaji belum dicantumkan');
+    }
     String amount(double value) =>
         NumberFormat.decimalPattern(localeName).format(value);
     final range = salaryMin != null && salaryMax != null
         ? '${amount(salaryMin!)}–${amount(salaryMax!)}'
         : salaryMin != null
-        ? 'mulai ${amount(salaryMin!)}'
-        : 'hingga ${amount(salaryMax!)}';
+        ? '${t('mulai')} ${amount(salaryMin!)}'
+        : '${t('hingga')} ${amount(salaryMax!)}';
     final period = switch (salaryPeriod) {
-      'hour' || 'hourly' => 'jam',
-      'month' || 'monthly' => 'bulan',
-      'year' || 'yearly' || 'annual' => 'tahun',
-      'day' || 'daily' => 'hari',
-      'week' || 'weekly' => 'minggu',
+      'hour' || 'hourly' => t('jam'),
+      'month' || 'monthly' => t('bulan'),
+      'year' || 'yearly' || 'annual' => t('tahun'),
+      'day' || 'daily' => t('hari'),
+      'week' || 'weekly' => t('minggu'),
       _ => '',
     };
     return '$salaryCurrency $range${period.isEmpty ? '' : ' / $period'}';

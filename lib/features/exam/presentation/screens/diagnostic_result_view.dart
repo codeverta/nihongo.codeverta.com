@@ -82,15 +82,14 @@ class _ResultState extends State<DiagnosticResultView> {
                         children: [
                           Expanded(
                             child: Text(
-                              s['name'] as String,
+                              '${s['name']}'.localized(context),
                               style: const TextStyle(
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
                           ),
                           Text(
-                            '${s['correct']}/${s['total']} benar  •  ${s['score']}%'
-                                .localized(context),
+                            '${s['correct']}/${s['total']} ${'benar'.localized(context)}  •  ${s['score']}%',
                           ),
                         ],
                       ),
@@ -118,7 +117,7 @@ class _ResultState extends State<DiagnosticResultView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '${s['name']} N5',
+                    '${'${s['name']}'.localized(context)} N5',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
@@ -182,7 +181,7 @@ class _ResultState extends State<DiagnosticResultView> {
                         : Theme.of(context).colorScheme.error,
                   ),
                   title: Text(
-                    '${'Soal'.localized(context)} ${i + 1} • ${(review['question'] as Map)['section']}',
+                    '${'Soal'.localized(context)} ${i + 1} • ${'${(review['question'] as Map)['section']}'.localized(context)}',
                     style: const TextStyle(fontWeight: FontWeight.w800),
                   ),
                   subtitle: Text(

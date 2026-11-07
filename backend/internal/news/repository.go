@@ -437,3 +437,11 @@ func validateArticle(a Article, s Source, now time.Time) error {
 	}
 	return nil
 }
+
+// HasImage reports whether the stored article already has an image, so imports
+// do not request it from the publisher again.
+func (r *Repository) HasImage(ctx context.Context, articleURL string) bool {
+	var count int64
+	err := r.db.WithContext(ctx).Model(&Article{}).Where("url = ? AND image_url <> ''", articleURL).Count(&count).Error
+	return err == nil && count > 0
+}

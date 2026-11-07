@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/notifications/notification_settings_screen.dart';
 import 'package:nihongo_master/core/offline/offline_settings_screen.dart';
 import 'package:nihongo_master/core/settings/display_settings_screen.dart';
+import 'package:nihongo_master/core/settings/settings_screen.dart';
 import 'package:nihongo_master/core/settings/study_timezone_settings_screen.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_import_screen.dart';
@@ -28,6 +31,8 @@ import 'package:nihongo_master/features/learn/reading/presentation/screens/readi
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_course_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
 import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
+import 'package:nihongo_master/features/map/presentation/japan_map_screen.dart';
+import 'package:nihongo_master/features/map/presentation/spot_detail_screen.dart';
 import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
@@ -109,6 +114,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     initialLocation: AppRoutes.splashPath,
     routes: [
       GoRoute(
+        path: '/settings',
+        builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
         path: '/settings/offline',
         builder: (context, state) => const OfflineSettingsScreen(),
       ),
@@ -141,7 +150,21 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) =>
             NewsReaderScreen(id: state.pathParameters['id']!),
       ),
-      GoRoute(path: '/jobs', builder: (context, state) => const JobsScreen()),
+      GoRoute(
+        path: '/jobs',
+        builder: (context, state) => JobsScreen(
+          initialPrefecture: state.uri.queryParameters['prefecture'],
+        ),
+      ),
+      GoRoute(
+        path: '/map',
+        builder: (context, state) => const JapanMapScreen(),
+      ),
+      GoRoute(
+        path: '/map/spot/:id',
+        builder: (context, state) =>
+            SpotDetailScreen(id: state.pathParameters['id']!),
+      ),
       GoRoute(
         path: '/jobs/sources',
         builder: (context, state) => const JobSourcesScreen(),
@@ -320,6 +343,22 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           ),
         ),
       ],
+      for (final base in ['N5', 'N4']) ...[
+        for (final paper in [2, 3, 4, 5, 6, 7, 8, 9, 10]) ...[
+          GoRoute(
+            path: '/exams/${base.toLowerCase()}-$paper/simulation',
+            builder: (context, state) =>
+                SimulationIntroScreen(level: '$base-$paper'),
+          ),
+          GoRoute(
+            path: '/exams/${base.toLowerCase()}-$paper/simulation/:attemptId',
+            builder: (context, state) => SimulationAttemptScreen(
+              level: '$base-$paper',
+              attemptId: state.pathParameters['attemptId']!,
+            ),
+          ),
+        ],
+      ],
       GoRoute(
         path: '/exams/n5/simulation',
         builder: (context, state) => const SimulationIntroScreen(),
@@ -456,9 +495,26 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       return null;
     },
     errorBuilder: (context, state) => Scaffold(
-      body: Center(child: Text('Halaman tidak ditemukan: ${state.error}')),
+      body: Center(
+        child: Text(
+          '${'Halaman tidak ditemukan'.localized(context)}: ${state.error}',
+        ),
+      ),
     ),
   );
+
+  // Catat layar yang dibuka (termasuk push imperatif) untuk analytics fitur.
+  final analytics = ref.read(analyticsServiceProvider);
+  void trackScreen() {
+    try {
+      analytics.logScreen(router.routerDelegate.currentConfiguration.fullPath);
+    } on Object {
+      // Analytics tidak boleh memengaruhi navigasi.
+    }
+  }
+
+  router.routerDelegate.addListener(trackScreen);
+  ref.onDispose(() => router.routerDelegate.removeListener(trackScreen));
 
   // GoRouter perlu diberi tahu saat state yang dipakai redirect berubah.
   ref

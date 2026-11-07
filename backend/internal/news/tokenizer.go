@@ -37,6 +37,28 @@ func hasKanji(s string) bool {
 	return false
 }
 
+// Reading returns the hiragana reading of Japanese text, or "" when any part
+// containing kanji has no dictionary reading (for example rare place names).
+func Reading(text string) string {
+	if strings.TrimSpace(text) == "" || prepareAnalyzer() != nil {
+		return ""
+	}
+	analyzerMu.Lock()
+	defer analyzerMu.Unlock()
+	var out strings.Builder
+	for _, part := range analyzer.Tokenize(text) {
+		reading, ok := part.Reading()
+		if !ok || reading == "" || reading == "*" {
+			if hasKanji(part.Surface) {
+				return ""
+			}
+			reading = part.Surface
+		}
+		out.WriteString(hiragana(reading))
+	}
+	return out.String()
+}
+
 // Token positions always address the untouched selectable base text, never ruby.
 func tokenize(text string) []Token {
 	tokens := []Token{}

@@ -130,10 +130,10 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
             ? isNat
                   ? 'Kosakata dikunci. Grammar dan reading dimulai; timer 40 menit berjalan.'
                         .localized(context)
-                  : widget.level == 'N3'
+                  : jlptBaseLevel(widget.level) == 'N3'
                   ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 70 menit berjalan.'
                         .localized(context)
-                  : widget.level != 'N5'
+                  : jlptBaseLevel(widget.level) != 'N5'
                   ? 'Kosakata dikunci. Bagian grammar dan reading sudah dimulai; timer 55 menit berjalan.'
                         .localized(context)
                   : 'Kosakata dikunci. Bagian grammar sudah dimulai; timer 20 menit berjalan.'
@@ -208,7 +208,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
       if (mounted) {
         setState(
           () => error =
-              '${diagnosticError(e)} ${'Pilihan belum dikonfirmasi tersimpan.'.localized(context)}',
+              '${diagnosticError(e).localized(context)} ${'Pilihan belum dikonfirmasi tersimpan.'.localized(context)}',
         );
       }
     } finally {
@@ -235,7 +235,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
               ? 'Kirim $jftSectionLabel?'.localized(context)
               : expected == 'vocabulary'
               ? 'Kunci bagian kosakata?'.localized(context)
-              : widget.level != 'N5'
+              : jlptBaseLevel(widget.level) != 'N5'
               ? 'Kirim grammar dan reading?'.localized(context)
               : 'Kirim bagian grammar?'.localized(context),
         ),
@@ -405,7 +405,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
         appBar: AppBar(
           title: Text(
             isSsw
-                ? '${result != null ? 'Hasil'.localized(context) : 'Simulasi'.localized(context)} ${sswExamTitle(widget.level)}'
+                ? '${result != null ? 'Hasil'.localized(context) : 'Simulasi'.localized(context)} ${sswExamTitle(widget.level).localized(context)}'
                 : isJft
                 ? result != null
                       ? 'Hasil JFT Exam $jftExamNumber'.localized(context)
@@ -415,8 +415,8 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                       ? 'Hasil NAT 5Q Exam $natPaper'.localized(context)
                       : 'NAT 5Q Exam $natPaper'
                 : result != null
-                ? 'Hasil simulasi ${widget.level}'.localized(context)
-                : 'JLPT ${widget.level} Simulation',
+                ? 'Hasil simulasi ${jlptBaseLevel(widget.level)}'.localized(context)
+                : 'JLPT ${jlptBaseLevel(widget.level)}${jlptPaperNumber(widget.level) > 1 ? ' ${'Paket'.localized(context)} ${jlptPaperLabel(widget.level)}' : ''} Simulation',
           ),
           actions: [
             if (data != null && result == null)
@@ -463,12 +463,12 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                             Expanded(
                               child: Text(
                                 isSsw
-                                    ? sswSectionLabel
+                                    ? sswSectionLabel.localized(context)
                                     : isJft
                                     ? jftSectionLabel.localized(context)
                                     : section == 'vocabulary'
                                     ? 'Bagian 1 · 文字・語彙'.localized(context)
-                                    : widget.level != 'N5'
+                                    : jlptBaseLevel(widget.level) != 'N5'
                                     ? 'Bagian 2 · 文法・読解'.localized(context)
                                     : 'Bagian 2 · 文法'.localized(context),
                                 style: const TextStyle(
@@ -524,7 +524,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                               ),
                             ],
                           ),
-                        Text(
+                        SimulationText(
                           q['group'] as String,
                           style: const TextStyle(
                             fontWeight: FontWeight.w800,
@@ -532,14 +532,14 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                           ),
                         ),
                         const SizedBox(height: 12),
-                        Text(
+                        SimulationText(
                           q['instructions'] as String,
                           style: const TextStyle(fontSize: 15, height: 1.8),
                         ),
                         const SizedBox(height: 20),
                         if ((q['passage'] as String? ?? '').isNotEmpty) ...[
                           ExamPanel(
-                            child: Text(
+                            child: SimulationText(
                               q['passage'] as String,
                               style: const TextStyle(fontSize: 19, height: 2),
                             ),
@@ -604,7 +604,7 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                                     ),
                                     const SizedBox(width: 16),
                                     Expanded(
-                                      child: Text(
+                                      child: SimulationText(
                                         option['text'] as String,
                                         style: const TextStyle(
                                           fontSize: 20,

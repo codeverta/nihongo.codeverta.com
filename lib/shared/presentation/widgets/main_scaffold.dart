@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
+import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
@@ -36,6 +38,10 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
           _selectedIndex = index;
           if (index == 3) _dictionaryOpened = true;
         });
+        const tabs = ['home', 'learn', 'exam', 'dictionary', 'profile'];
+        if (index >= 0 && index < tabs.length) {
+          ref.read(analyticsServiceProvider).logTab(tabs[index]);
+        }
       }
     }
   }
@@ -90,7 +96,22 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
           child: IndexedStack(index: _selectedIndex, children: screens),
         ),
       ),
-      bottomNavigationBar: NavigationBarTheme(
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Visibility(
+            visible: const {0, 1, 3}.contains(_selectedIndex),
+            maintainState: true,
+            child: const AdBannerSlot(),
+          ),
+          _buildNavigationBar(context, colorScheme),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNavigationBar(BuildContext context, ColorScheme colorScheme) {
+    return NavigationBarTheme(
         data: NavigationBarThemeData(
           height: 72,
           backgroundColor: colorScheme.surface,
@@ -145,7 +166,6 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
             ),
           ],
         ),
-      ),
     );
   }
 }

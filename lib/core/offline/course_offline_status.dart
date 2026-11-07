@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/offline/offline_providers.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -79,8 +80,8 @@ class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
           SnackBar(
             content: Text(
               _pinned
-                  ? 'Teks course disimpan untuk offline.'
-                  : '$saved dari ${widget.lessonIds.length} lesson tersimpan. Hubungkan internet atau kosongkan ruang untuk melengkapi.',
+                  ? 'Teks course disimpan untuk offline.'.localized(context)
+                  : '$saved ${'dari'.localized(context)} ${widget.lessonIds.length} ${'lesson tersimpan.'.localized(context)} ${'Hubungkan internet atau kosongkan ruang untuk melengkapi.'.localized(context)}',
             ),
           ),
         );
@@ -88,9 +89,10 @@ class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
     } on Object {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Text(
-              'Materi belum selesai disimpan. Periksa koneksi dan ruang penyimpanan.',
+              'Materi belum selesai disimpan. Periksa koneksi dan ruang penyimpanan.'
+                  .localized(context),
             ),
           ),
         );
@@ -151,15 +153,15 @@ class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
           Expanded(
             child: Text(
               offline
-                  ? 'Offline · buka materi yang sudah disiapkan.'
+                  ? 'Offline · buka materi yang sudah disiapkan.'.localized(context)
                   : preparing
-                  ? 'Menyiapkan teks materi · ${progress.completed}/${progress.total}'
+                  ? '${'Menyiapkan teks materi'.localized(context)} · ${progress.completed}/${progress.total}'
                   : thisCourse &&
                         (progress!.failed > 0 || progress.remaining > 0)
-                  ? 'Sebagian materi tersimpan. Materi lainnya belum selesai disiapkan.'
+                  ? 'Sebagian materi tersimpan. Materi lainnya belum selesai disiapkan.'.localized(context)
                   : thisCourse && progress!.completed > 0
-                  ? 'Teks materi siap dipakai offline.'
-                  : 'Teks disiapkan otomatis untuk belajar berikutnya.',
+                  ? 'Teks materi siap dipakai offline.'.localized(context)
+                  : 'Teks disiapkan otomatis untuk belajar berikutnya.'.localized(context),
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),
@@ -172,10 +174,10 @@ class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
             onPressed: _saving || _pinned ? null : _saveCourse,
             child: Text(
               _saving
-                  ? 'Menyimpan…'
+                  ? 'Menyimpan…'.localized(context)
                   : _pinned
-                  ? 'Tersimpan'
-                  : 'Simpan teks',
+                  ? 'Tersimpan'.localized(context)
+                  : 'Simpan teks'.localized(context),
             ),
           ),
         ],

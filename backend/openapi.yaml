@@ -411,6 +411,97 @@ paths:
       security: []
       responses:
         '200': {description: Public pricing configuration; Cache-Control no-store}
+  /map/spots:
+    get:
+      tags: [Map]
+      summary: Published Japan map spots with text resolved per language (id, en)
+      description: Content was fetched once from Wikidata, Wikipedia, Wikivoyage, and Wikimedia Commons by an admin and is served from MariaDB only. Supports If-None-Match.
+      security: []
+      responses:
+        '200': {description: 'data contains spots (id, category, prefecture, lat, lng, name, nameJa, reading, summary, tips, phrases, image, sources) and categories; ETag header'}
+        '304': {description: Unchanged since the given ETag}
+        '503': {description: Map not configured or database unavailable}
+  /jobs/prefecture-counts:
+    get:
+      tags: [Jobs]
+      summary: Active job counts keyed by prefecture code (01-47)
+      security: []
+      responses:
+        '200': {description: 'data.counts maps prefecture codes to active job counts; prefectures without jobs are omitted'}
+        '503': {description: Jobs catalog not connected}
+  /admin/map/spots:
+    get:
+      tags: [Map]
+      summary: List all spots including drafts, with missingIndonesian and publishable flags
+      security: [{bearerAuth: []}]
+      responses:
+        '200': {description: data contains spots and categories}
+        '401': {description: Invalid map admin token}
+    post:
+      tags: [Map]
+      summary: Import a spot from a Wikidata ID, en.wikipedia URL, or en.wikipedia title (saved unpublished)
+      security: [{bearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [input, category]
+              properties:
+                input: {type: string, maxLength: 300}
+                category: {type: string, enum: [culture, shrine, nature, food, city, history]}
+      responses:
+        '201': {description: Imported spot}
+        '400': {description: Invalid input or category}
+        '404': {description: Title or Wikidata ID not found}
+        '409': {description: Spot already exists; data contains the existing spot}
+        '502': {description: Wikimedia unreachable from the server}
+  /admin/map/spots/{id}:
+    put:
+      tags: [Map]
+      summary: Edit category, location, names, manual text, phrases, and published state
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Updated spot}
+        '400': {description: Invalid edit or spot not publishable}
+    delete:
+      tags: [Map]
+      summary: Delete a spot permanently
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        '204': {description: Deleted}
+  /admin/map/spots/{id}/refresh:
+    post:
+      tags: [Map]
+      summary: Re-fetch sources; manual text, phrases, category, published state, manual location, and uploaded photos are kept
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Refreshed spot}
+        '502': {description: Wikimedia unreachable from the server}
+  /admin/map/spots/{id}/image:
+    post:
+      tags: [Map]
+      summary: Upload an own photo (multipart image, author, license); kept on refresh
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Updated spot}
+    delete:
+      tags: [Map]
+      summary: Remove the uploaded photo so the next refresh uses Commons again
+      security: [{bearerAuth: []}]
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Updated spot}
   /dictionary/search:
     get:
       tags: [Dictionary]
@@ -693,7 +784,7 @@ paths:
       security: [{bearerAuth: []}]
       parameters:
         - {$ref: '#/components/parameters/AcceptLanguage'}
-        - {name: level, in: path, required: true, description: Use NAT-2 through NAT-5 for additional NAT 5Q papers, or JFT, JFT-2, JFT-3, JFT-4 or JFT-5 for original written practice papers., schema: {type: string, example: NAT-2}}
+        - {name: level, in: path, required: true, description: Use N5-2 through N5-10 or N4-2 through N4-10 for the additional free JLPT papers (with furigana markup), NAT-2 through NAT-5 for additional NAT 5Q papers, or JFT, JFT-2, JFT-3, JFT-4 or JFT-5 for original written practice papers., schema: {type: string, example: NAT-2}}
       responses:
         '200':
           headers:
@@ -1110,7 +1201,7 @@ paths:
               type: object
               required: [examId]
               properties:
-                examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
+                examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1 through jlpt-n5-simulation-10, jlpt-n4-simulation-1 through jlpt-n4-simulation-10, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
       responses:
         '201': {description: Exam attempt created, headers: {Content-Language: {$ref: '#/components/headers/ContentLanguage'}}}
         '401': {$ref: '#/components/responses/LocalizedUnauthorized'}
@@ -2043,7 +2134,7 @@ components:
           type: object
           properties:
             id: {type: string}
-            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
+            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1 through jlpt-n5-simulation-10, jlpt-n4-simulation-1 through jlpt-n4-simulation-10, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
             userId: {type: string}
             status: {type: string, enum: [in_progress, completed]}
             startedAt: {type: string, format: date-time}
@@ -2124,7 +2215,7 @@ components:
           type: object
           properties:
             id: {type: string}
-            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1, jlpt-n4-simulation-1, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
+            examId: {type: string, description: "Simulation IDs include jlpt-n5-simulation-1 through jlpt-n5-simulation-10, jlpt-n4-simulation-1 through jlpt-n4-simulation-10, jlpt-n3-simulation-1, jft-a2-full-1 through jft-a2-full-5, and nat-5q-full-1"}
             userId: {type: string}
             status: {type: string, enum: [in_progress, completed]}
             startedAt: {type: string, format: date-time}

@@ -23,6 +23,7 @@ import (
 	"nihongo-master-backend/internal/manga"
 	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/news"
+	"nihongo-master-backend/internal/places"
 	"nihongo-master-backend/internal/notifications"
 	"nihongo-master-backend/internal/store"
 )
@@ -164,6 +165,17 @@ func main() {
 		log.Fatalf("configure news: %v", err)
 	}
 	newsFetcher := news.NewFetcher(filepath.Join(filepath.Dir(brandingPath), "news-images"))
+	newsImages, err := media.NewCOSNewsImageStorage(os.Getenv("COS_BUCKET_URL"), assetBaseURL, os.Getenv("COS_SECRET_ID"), os.Getenv("COS_SECRET_KEY"))
+	if err != nil {
+		log.Fatalf("configure news image COS: %v", err)
+	}
+	if newsImages != nil {
+		newsFetcher.SetImageStore(newsImages)
+		apiServer.ConfigureNewsImageStore(newsImages)
+	} else {
+		log.Printf("news images stay on local disk: COS is not configured")
+	}
+	newsFetcher.SetImageLookup(newsRepository.HasImage)
 	newsToken := os.Getenv("NEWS_ADMIN_TOKEN")
 	if newsToken == "" {
 		newsToken = os.Getenv("BRANDING_ADMIN_TOKEN")
@@ -178,6 +190,27 @@ func main() {
 	if os.Getenv("NEWS_SYNC_ENABLED") != "false" {
 		go newsRepository.Run(jobsContext, newsFetcher)
 	}
+	mapRepository, err := places.New(jobDB)
+	if err != nil {
+		log.Fatalf("configure map spots: %v", err)
+	}
+	mapService := &places.Service{
+		Store:   mapRepository,
+		Fetcher: places.NewFetcher(os.Getenv("MAP_SOURCE_USER_AGENT")),
+		Reading: news.Reading,
+	}
+	var mapLocalImages *places.LocalImages
+	if newsImages != nil {
+		mapService.Images = newsImages.WithPrefix("map/images/")
+	} else {
+		mapLocalImages = &places.LocalImages{Directory: filepath.Join(filepath.Dir(brandingPath), "map-images"), PublicPath: "/map-images/"}
+		mapService.Images = mapLocalImages
+	}
+	mapToken := os.Getenv("MAP_ADMIN_TOKEN")
+	if mapToken == "" {
+		mapToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	apiServer.ConfigureMap(mapService, mapToken, mapLocalImages)
 	mangaImages, err := manga.NewCOSStore(os.Getenv("COS_BUCKET_URL"), assetBaseURL, os.Getenv("COS_SECRET_ID"), os.Getenv("COS_SECRET_KEY"))
 	if err != nil {
 		log.Fatalf("configure manga COS: %v", err)
@@ -233,6 +266,17 @@ func main() {
 	}
 	if err := apiServer.ConfigureAppUpdates(updatePath, updateToken); err != nil {
 		log.Fatalf("configure app update policy: %v", err)
+	}
+	adsPath := os.Getenv("ADS_CONFIG_PATH")
+	if adsPath == "" {
+		adsPath = "data/ads.json"
+	}
+	adsToken := os.Getenv("ADS_ADMIN_TOKEN")
+	if adsToken == "" {
+		adsToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	if err := apiServer.ConfigureAds(adsPath, adsToken); err != nil {
+		log.Fatalf("configure ads: %v", err)
 	}
 	notificationPath := os.Getenv("NOTIFICATIONS_CONFIG_PATH")
 	if notificationPath == "" {

@@ -22,6 +22,7 @@ import (
 	"nihongo-master-backend/internal/manga"
 	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/news"
+	"nihongo-master-backend/internal/places"
 	"nihongo-master-backend/internal/store"
 )
 
@@ -33,6 +34,7 @@ type Server struct {
 	newsFetcher               news.Fetcher
 	newsAdminToken            string
 	newsImageDirectory        string
+	newsImageStore            news.ImageStore
 	newsContext               context.Context
 	jobs                      *jobs.Repository
 	dictionary                *dictionary.Client
@@ -47,12 +49,17 @@ type Server struct {
 	branding                  *BrandingStore
 	homeBanners               *HomeBannerStore
 	appUpdates                *AppUpdateStore
+	ads                       *AdsStore
 	notifications             *NotificationStore
 	pricing                   *PricingStore
 	profilePhotos             *media.ProfilePhotoStorage
 	diagnostics               *diagnostics.Repository
 	diagnosticsAdminToken     string
 	diagnosticLimiter         diagnosticRateLimiter
+	webDictionaryLimiter      webDictionaryLimiter
+	mapSpots                  *places.Service
+	mapAdminToken             string
+	mapLocalImages            *places.LocalImages
 }
 
 func NewServer(store *store.MemoryStore, googleVerifier backendAuth.GoogleVerifier) *Server {
@@ -75,6 +82,8 @@ func (s *Server) Handler() http.Handler {
 	s.registerJobs(mux)
 	s.registerLegal(mux)
 	s.registerLanding(mux)
+	s.registerDictionaryWeb(mux)
+	s.registerMap(mux)
 	s.registerAnki(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
@@ -88,6 +97,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerHomeBanners(mux)
 	s.registerPricing(mux)
 	s.registerAppUpdates(mux)
+	s.registerAds(mux)
 	s.registerNotifications(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
 	mux.HandleFunc("GET /v1/ssw/{sector}/practice", s.requireAuth(s.sswPractice))
@@ -142,7 +152,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/complete", s.requireAuth(s.completeReadingAttempt))
 	mux.HandleFunc("GET /v1/offline/practice/{kind}/{lessonID}", s.requireAuth(s.offlinePracticePackage))
 	mux.HandleFunc("POST /v1/offline/practice-attempts/sync", s.requireAuth(s.syncOfflinePracticeAttempt))
-	return s.middleware(localizedLearningResponses(localizedNewsResponses(mux)))
+	return s.middleware(localizedAccountResponses(localizedLearningResponses(localizedNewsResponses(mux))))
 }
 
 func (s *Server) ConfigureProfilePhotoStorage(storage *media.ProfilePhotoStorage) {

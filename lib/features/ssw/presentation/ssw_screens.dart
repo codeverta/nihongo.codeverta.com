@@ -51,7 +51,7 @@ class _SswHubState extends State<SswHubScreen> {
     final filtered = sswSectors
         .where(
           (sector) =>
-              '${sector.name} ${sector.japanese} ${sector.romaji} ${sector.keywords}'
+              '${sector.name} ${sector.name.localized(context)} ${sector.japanese} ${sector.romaji} ${sector.keywords}'
                   .toLowerCase()
                   .contains(query.trim().toLowerCase()) &&
               (activeFilter == 'Semua' ||
@@ -187,7 +187,7 @@ class _SswHubState extends State<SswHubScreen> {
                   vertical: 10,
                 ),
                 title: Text(
-                  sector.name,
+                  sector.name.localized(context),
                   style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
                 subtitle: Column(
@@ -254,7 +254,7 @@ class _SswSectorState extends State<SswSectorScreen> {
               padding: const EdgeInsets.all(20),
               children: [
                 Text(
-                  sector.name,
+                  sector.name.localized(context),
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.w800,
                   ),

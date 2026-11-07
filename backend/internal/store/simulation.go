@@ -5,6 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"math/big"
+	"strconv"
 	"strings"
 	"time"
 
@@ -52,6 +53,63 @@ func jftPaperNumber(level string) int {
 
 func IsJFTLevel(level string) bool {
 	return jftPaperNumber(level) != 0
+}
+
+// jlptLastPaper is the highest numbered N5/N4 practice paper. Papers 06 and later
+// are JSON files in simulation_data/ (see simulation_json.go).
+const jlptLastPaper = 10
+
+// jlptExtraPaper recognizes the additional free JLPT papers "N5-2" through
+// "N5-10" and "N4-2" through "N4-10". Paper 01 keeps the plain "N5" and "N4" levels.
+func jlptExtraPaper(level string) (base string, paperNo int, ok bool) {
+	level = strings.ToUpper(level)
+	if len(level) < 4 || len(level) > 5 || level[2] != '-' || (level[:2] != "N5" && level[:2] != "N4") {
+		return "", 0, false
+	}
+	n, err := strconv.Atoi(level[3:])
+	if err != nil || n < 2 || n > jlptLastPaper || strconv.Itoa(n) != level[3:] {
+		return "", 0, false
+	}
+	return level[:2], n, true
+}
+
+// jlptExtraExam maps "jlpt-n5-simulation-6" style IDs of papers 02 and later to
+// their level base ("N5") and paper number.
+func jlptExtraExam(examID string) (base string, paperNo int, ok bool) {
+	for _, prefix := range []string{"n5", "n4"} {
+		if rest, found := strings.CutPrefix(examID, "jlpt-"+prefix+"-simulation-"); found {
+			n, err := strconv.Atoi(rest)
+			if err != nil || n < 2 || n > jlptLastPaper || strconv.Itoa(n) != rest {
+				return "", 0, false
+			}
+			return strings.ToUpper(prefix), n, true
+		}
+	}
+	return "", 0, false
+}
+
+// IsJLPTExtraLevel reports whether level is one of the additional N5/N4 papers.
+func IsJLPTExtraLevel(level string) bool {
+	_, _, ok := jlptExtraPaper(level)
+	return ok
+}
+
+// jlptSimulationFree lists the JLPT simulations available without premium.
+func jlptSimulationFree(level string) bool {
+	switch strings.ToUpper(level) {
+	case "N5", "N4":
+		return true
+	}
+	return IsJLPTExtraLevel(level)
+}
+
+// IsFreeJLPTSimulationExam reports the free simulation exam IDs: every N5 and N4 paper (01-10).
+func IsFreeJLPTSimulationExam(examID string) bool {
+	if examID == "jlpt-n5-simulation-1" || examID == "jlpt-n4-simulation-1" {
+		return true
+	}
+	_, _, ok := jlptExtraExam(examID)
+	return ok
 }
 
 func simulationPaper(levels ...string) simulationPaperConfig {
@@ -107,6 +165,15 @@ func simulationPaper(levels ...string) simulationPaperConfig {
 			{ID: "written", Name: "言語知識（文字・語彙・文法）・読解 · Kosakata, Grammar & Reading", DurationSeconds: 6600, QuestionCount: 64},
 		}, simulationN1Content(), []string{"listening"}}
 	}
+	if base, paperNo, ok := jlptExtraPaper(level); ok {
+		if base == "N5" {
+			return simulationPaperConfig{level, fmt.Sprintf("jlpt-n5-simulation-%d", paperNo), fmt.Sprintf("n5-language-%02d", paperNo), simulationSections(), simulationN5AdditionalContent(paperNo), []string{"dokkai", "listening"}}
+		}
+		return simulationPaperConfig{level, fmt.Sprintf("jlpt-n4-simulation-%d", paperNo), fmt.Sprintf("n4-language-%02d", paperNo), []domain.SimulationSection{
+			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1500, QuestionCount: 28},
+			{ID: "grammar", Name: "文法・読解 · Grammar & Reading", DurationSeconds: 3300, QuestionCount: 29},
+		}, simulationN4AdditionalContent(paperNo), []string{"listening"}}
+	}
 	if level == "N4" {
 		return simulationPaperConfig{level, "jlpt-n4-simulation-1", "n4-language-01", []domain.SimulationSection{
 			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1500, QuestionCount: 28},
@@ -121,10 +188,10 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
 	paper := simulationPaper(levels...)
-	if paper.level != "N5" && paper.level != "N4" && paper.level != "N3" && paper.level != "N2" && paper.level != "N1" && !IsJFTLevel(paper.level) && paper.level != "NAT" && !strings.HasPrefix(paper.level, "NAT-") && !IsSSWLevel(paper.level) {
+	if paper.level != "N5" && paper.level != "N4" && !IsJLPTExtraLevel(paper.level) && paper.level != "N3" && paper.level != "N2" && paper.level != "N1" && !IsJFTLevel(paper.level) && paper.level != "NAT" && !strings.HasPrefix(paper.level, "NAT-") && !IsSSWLevel(paper.level) {
 		return domain.ExamAttempt{}, ErrInvalid
 	}
-	if paper.level != "N5" && s.entitlementLocked(userID).Tier != domain.TierPremium {
+	if !jlptSimulationFree(paper.level) && s.entitlementLocked(userID).Tier != domain.TierPremium {
 		return domain.ExamAttempt{}, ErrPremium
 	}
 	for i := len(s.simulationOrder) - 1; i >= 0; i-- {
@@ -217,7 +284,7 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 		}
 	}
 	result := domain.SimulationResult{AttemptID: state.session.Attempt.ID, PaperID: state.session.PaperID, Total: len(state.questions), Answered: len(state.session.Answers), CompletedAt: at, DurationSeconds: int(at.Sub(state.session.Attempt.StartedAt).Seconds()), Sections: []domain.DiagnosticSection{}, Reviews: []domain.SimulationReview{}, ScoringNote: "Skor latihan = persentase jawaban benar. Dokkai dan listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."}
-	if state.session.PaperID == "n4-language-01" || state.session.PaperID == "n3-language-01" || state.session.PaperID == "n2-language-01" || state.session.PaperID == "n1-language-01" {
+	if state.session.PaperID == "n4-language-01" || state.session.PaperID == "n4-language-02" || state.session.PaperID == "n4-language-03" || state.session.PaperID == "n3-language-01" || state.session.PaperID == "n2-language-01" || state.session.PaperID == "n1-language-01" {
 		result.ScoringNote = "Skor latihan = persentase jawaban benar. Listening dilewati. Ini bukan skor berskala atau keputusan kelulusan resmi JLPT."
 	}
 	if strings.HasPrefix(state.session.PaperID, "jft-written-") {
@@ -430,6 +497,9 @@ func (s *MemoryStore) SimulationOverviewChecked(userID string, levels ...string)
 		duration += section.DurationSeconds
 	}
 	title := "JLPT " + paper.level + " Simulation"
+	if base, paperNo, ok := jlptExtraPaper(paper.level); ok {
+		title = fmt.Sprintf("JLPT %s Simulation · Paket %02d", base, paperNo)
+	}
 	if IsJFTLevel(paper.level) {
 		title = fmt.Sprintf("JFT Exam %d · Latihan tertulis", jftPaperNumber(paper.level))
 	}

@@ -296,7 +296,7 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: const Icon(Icons.schedule),
-                  title: Text(section['name'] as String),
+                  title: Text((section['name'] as String).localized(context)),
                   subtitle: Text(
                     '${section['questionCount']} soal · ${(section['durationSeconds'] as int) ~/ 60} menit'
                         .localized(context),
@@ -320,7 +320,7 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Text(
-                    error!,
+                    error!.localized(context),
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.error,
                     ),
@@ -358,7 +358,7 @@ class _SswIntroState extends ConsumerState<SswSimulationIntroScreen> {
                 ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(
-                    '${row['correct']}/${row['total']} benar · ${row['score']}%',
+                    '${row['correct']}/${row['total']} ${'benar'.localized(context)} · ${row['score']}%',
                   ),
                   subtitle: Text(
                     (row['completedAt'] as String).split('T').first,
@@ -738,7 +738,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                 padding: const EdgeInsets.all(20),
                 children: [
                   Text(
-                    '${q['group']}',
+                    '${q['group']}'.localized(context),
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 12),
@@ -783,7 +783,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                     ),
                   if (error != null)
                     Text(
-                      error!,
+                      error!.localized(context),
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.error,
                       ),
@@ -816,7 +816,8 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              'Jawaban: ${options[feedback!['answer'] as int]}',
+                              'Jawaban: ${options[feedback!['answer'] as int]}'
+                                  .localized(context),
                             ),
                             const SizedBox(height: 12),
                             Text(

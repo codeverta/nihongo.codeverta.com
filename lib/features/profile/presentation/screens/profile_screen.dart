@@ -5,6 +5,7 @@ import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:nihongo_master/core/app_review/rate_app_link.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/widgets/legal_links.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -51,6 +52,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               Text('Masuk untuk melihat profil.'.localized(context)),
               const LegalLinks(),
               const AttributionsLink(),
+              const RateAppLink(),
             ],
           ),
         ),
@@ -83,9 +85,9 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       ),
                     ),
                     IconButton.filledTonal(
-                      onPressed: () => context.push('/notifications'),
+                      onPressed: () => context.push('/settings'),
                       icon: const Icon(Icons.settings_outlined),
-                      tooltip: 'Pengaturan notifikasi'.localized(context),
+                      tooltip: 'Pengaturan'.localized(context),
                     ),
                   ],
                 ),
@@ -141,13 +143,11 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   ),
                 ),
                 const SizedBox(height: 24),
-                _ProfileMenu(
-                  onLogout: () => _confirmLogout(context, ref),
-                  onDelete: () => _confirmDelete(context, ref),
-                ),
+                const _ProfileMenu(),
                 const SizedBox(height: 16),
                 const LegalLinks(),
                 const AttributionsLink(),
+                const RateAppLink(),
               ],
             ),
           ),
@@ -221,72 +221,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text(message.localized(context))));
-  }
-
-  Future<void> _confirmLogout(BuildContext context, WidgetRef ref) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text('Keluar dari akun?'.localized(context)),
-        content: Text(
-          'Data pribadi di perangkat akan dihapus. Progres dan penilaian offline yang belum tersinkron juga akan hilang. Hubungkan internet sebelum logout untuk menyinkronkannya.'
-              .localized(context),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text('Batal'.localized(context)),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text('Logout'.localized(context)),
-          ),
-        ],
-      ),
-    );
-    if (confirmed != true) return;
-    await ref.read(authControllerProvider.notifier).logout();
-    if (context.mounted) context.go('/home');
-  }
-
-  Future<void> _confirmDelete(BuildContext context, WidgetRef ref) async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text('Hapus akun permanen?'.localized(context)),
-        content: Text(
-          'Profil, progress, achievement, dan sesi login akan dihapus. Pembayaran store tidak otomatis direfund. Bukti transaksi minimum disimpan untuk restore dan mencegah penyalahgunaan. Setelah membuat akun baru, gunakan Restore dengan akun store pembeli.'
-              .localized(context),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text('Batal'.localized(context)),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text('Hapus akun'.localized(context)),
-          ),
-        ],
-      ),
-    );
-    if (confirmed != true) return;
-    try {
-      await ref.read(authControllerProvider.notifier).deleteAccount();
-      if (context.mounted) context.go('/home');
-    } on Object {
-      if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              'Akun belum dihapus. Periksa koneksi lalu coba lagi.'.localized(
-                context,
-              ),
-            ),
-          ),
-        );
-      }
-    }
   }
 }
 
@@ -465,10 +399,7 @@ class _LifetimeCard extends StatelessWidget {
 }
 
 class _ProfileMenu extends StatelessWidget {
-  const _ProfileMenu({required this.onLogout, required this.onDelete});
-
-  final VoidCallback onLogout;
-  final VoidCallback onDelete;
+  const _ProfileMenu();
 
   @override
   Widget build(BuildContext context) {
@@ -482,9 +413,9 @@ class _ProfileMenu extends StatelessWidget {
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
-            icon: Icons.text_fields_rounded,
-            title: 'Pengaturan tampilan'.localized(context),
-            onTap: () => context.push('/settings/display'),
+            icon: Icons.settings_outlined,
+            title: 'Pengaturan'.localized(context),
+            onTap: () => context.push('/settings'),
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
@@ -500,23 +431,9 @@ class _ProfileMenu extends StatelessWidget {
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
-            icon: Icons.logout_rounded,
-            title: 'Logout'.localized(context),
-            iconColor: Theme.of(context).colorScheme.error,
-            onTap: onLogout,
-          ),
-          const Divider(height: 1, indent: 68),
-          _ProfileMenuTile(
             icon: Icons.credit_card_rounded,
             title: 'Paket & pembayaran'.localized(context),
             onTap: () => context.push('/premium'),
-          ),
-          const Divider(height: 1, indent: 68),
-          _ProfileMenuTile(
-            icon: Icons.delete_forever_outlined,
-            title: 'Hapus akun'.localized(context),
-            iconColor: Theme.of(context).colorScheme.error,
-            onTap: onDelete,
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(

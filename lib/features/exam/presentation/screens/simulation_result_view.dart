@@ -34,15 +34,15 @@ class _ResultState extends State<SimulationResultView> {
       children: [
         DiagnosticHero(
           title: 'Simulasi selesai.'.localized(context),
-          subtitle:
-              '${widget.level.startsWith('SSW-')
-                      ? sswExamTitle(widget.level)
-                      : widget.level == 'JFT' || widget.level.startsWith('JFT-')
-                      ? 'JFT Exam $jftExamNumber · Kosakata, Percakapan & Reading'.localized(context)
-                      : widget.level.startsWith('NAT')
-                      ? 'NAT 5Q Exam ${widget.level == 'NAT' ? 1 : widget.level.substring(4)} · Kosakata, Grammar & Reading'.localized(context)
-                      : 'Paket 01 · ${widget.level} · Kosakata & Grammar${widget.level != 'N5' ? ' & Reading' : ''}'.localized(context)}\n${result['correct']}/${result['total']} benar · ${result['score']}%'
-                  .localized(context),
+          subtitle: widget.level.startsWith('SSW-')
+              ? '${sswExamTitle(widget.level).localized(context)}\n${result['correct']}/${result['total']} ${'benar'.localized(context)} · ${result['score']}%'
+              : widget.level == 'JFT' || widget.level.startsWith('JFT-')
+              ? 'JFT Exam $jftExamNumber · Kosakata, Percakapan & Reading\n${result['correct']}/${result['total']} benar · ${result['score']}%'
+                    .localized(context)
+              : widget.level.startsWith('NAT')
+              ? 'NAT 5Q Exam ${widget.level == 'NAT' ? 1 : widget.level.substring(4)} · Kosakata, Grammar & Reading\n${result['correct']}/${result['total']} benar · ${result['score']}%'
+                    .localized(context)
+              : '${'Paket'.localized(context)} ${jlptPaperLabel(widget.level)} · ${jlptBaseLevel(widget.level)} · ${'Kosakata & Grammar'.localized(context)}${jlptBaseLevel(widget.level) != 'N5' ? ' & Reading' : ''}\n${result['correct']}/${result['total']} ${'benar'.localized(context)} · ${result['score']}%',
           child: Text(
             '${result['answered']} dijawab · ${(result['total'] as int) - (result['answered'] as int)} kosong\n'
                     'Durasi ${(result['durationSeconds'] as int) ~/ 60} menit ${(result['durationSeconds'] as int) % 60} detik'
@@ -52,7 +52,7 @@ class _ResultState extends State<SimulationResultView> {
         ),
         const SizedBox(height: 20),
         Text(
-          result['scoringNote'] as String,
+          (result['scoringNote'] as String).localized(context),
           style: const TextStyle(fontSize: 12, height: 1.6),
         ),
         const SizedBox(height: 24),
@@ -67,13 +67,12 @@ class _ResultState extends State<SimulationResultView> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        group['name'] as String,
+                        (group['name'] as String).localized(context),
                         style: const TextStyle(fontWeight: FontWeight.w800),
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        '${group['correct']}/${group['total']} benar · ${group['score']}%'
-                            .localized(context),
+                        '${group['correct']}/${group['total']} ${'benar'.localized(context)} · ${group['score']}%',
                       ),
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
@@ -147,7 +146,7 @@ class _ResultState extends State<SimulationResultView> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         if ((question['passage'] as String? ?? '').isNotEmpty) ...[
-          Text(
+          SimulationText(
             question['passage'] as String,
             style: const TextStyle(fontSize: 17, height: 1.8),
           ),
@@ -163,11 +162,11 @@ class _ResultState extends State<SimulationResultView> {
         ),
         const SizedBox(height: 16),
         Text(
-          '${'Jawabanmu:'.localized(context)} ${answer(review['selectedOptionId'] as String)}',
+          '${'Jawabanmu:'.localized(context)} ${stripSimulationMarkup(answer(review['selectedOptionId'] as String))}',
         ),
         const SizedBox(height: 8),
         Text(
-          '${'Jawaban benar:'.localized(context)} ${answer(review['correctOptionId'] as String)}',
+          '${'Jawaban benar:'.localized(context)} ${stripSimulationMarkup(answer(review['correctOptionId'] as String))}',
           style: const TextStyle(color: examGreen, fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 12),

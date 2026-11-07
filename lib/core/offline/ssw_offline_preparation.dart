@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/offline/offline_providers.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -42,13 +43,13 @@ class _PreparationState extends ConsumerState<SswOfflinePreparation> {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         thisSector && progress!.isPreparing
-            ? 'Materi tersedia offline · menyiapkan latihan…'
+            ? 'Materi tersedia offline · menyiapkan latihan…'.localized(context)
             : thisSector &&
                   progress!.total > 0 &&
                   progress.failed == 0 &&
                   progress.remaining == 0
-            ? 'Materi dan latihan siap dipakai offline.'
-            : 'Materi tersedia di perangkat. Simulasi ujian memerlukan internet.',
+            ? 'Materi dan latihan siap dipakai offline.'.localized(context)
+            : 'Materi tersedia di perangkat. Simulasi ujian memerlukan internet.'.localized(context),
         style: Theme.of(context).textTheme.bodySmall,
       ),
     );

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/jobs/data/jobs_repository.dart';
@@ -29,7 +30,10 @@ class JobsEntryCard extends StatelessWidget {
 }
 
 class JobsScreen extends ConsumerStatefulWidget {
-  const JobsScreen({super.key});
+  const JobsScreen({this.initialPrefecture, super.key});
+
+  /// Opens the list already filtered to a prefecture code (from the map).
+  final String? initialPrefecture;
   @override
   ConsumerState<JobsScreen> createState() => _JobsScreenState();
 }
@@ -51,6 +55,11 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
   @override
   void initState() {
     super.initState();
+    final prefecture = widget.initialPrefecture;
+    if (prefecture != null &&
+        RegExp(r'^(0[1-9]|[1-3][0-9]|4[0-7])$').hasMatch(prefecture)) {
+      _filters = {'prefecture': prefecture};
+    }
     _scroll.addListener(() {
       if (_scroll.position.extentAfter < 450 &&
           _hasMore &&
@@ -151,6 +160,12 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
       appBar: AppBar(
         title: Text('Kerja di Jepang'.localized(context)),
         actions: [
+          IconButton(
+            key: const Key('jobs-open-map'),
+            tooltip: 'Lihat di peta'.localized(context),
+            onPressed: () => context.push('/map'),
+            icon: const Icon(Icons.map_outlined),
+          ),
           IconButton(
             tooltip: 'Sumber lowongan'.localized(context),
             onPressed: () => context.push('/jobs/sources'),
@@ -278,7 +293,17 @@ class _JobsScreenState extends ConsumerState<JobsScreen> {
             }
             final jobIndex = index - 1;
             if (jobIndex < _jobs.length) {
-              return _JobCard(job: _jobs[jobIndex], meta: meta.valueOrNull);
+              final card = _JobCard(job: _jobs[jobIndex], meta: meta.valueOrNull);
+              final every = nativeAdEvery(ref, NativeAdPlacement.jobs);
+              if (every > 0 && (jobIndex + 1) % every == 0) {
+                return Column(
+                  children: [
+                    card,
+                    const NativeAdSlot(placement: NativeAdPlacement.jobs),
+                  ],
+                );
+              }
+              return card;
             }
             if (_error != null) {
               if (_jobs.isEmpty) return const SizedBox.shrink();
@@ -362,7 +387,10 @@ class _JobCard extends StatelessWidget {
             const SizedBox(height: 6),
             _IconLine(
               Icons.payments_outlined,
-              job.salaryFor(appRegionLocaleName(context)).localized(context),
+              job.salaryFor(
+                appRegionLocaleName(context),
+                translate: (source) => source.localized(context),
+              ),
             ),
             const SizedBox(height: 12),
             Wrap(
@@ -609,7 +637,10 @@ class JobDetailScreen extends ConsumerWidget {
             const SizedBox(height: 10),
             _IconLine(
               Icons.payments_outlined,
-              job.salaryFor(appRegionLocaleName(context)).localized(context),
+              job.salaryFor(
+                appRegionLocaleName(context),
+                translate: (source) => source.localized(context),
+              ),
             ),
             const SizedBox(height: 20),
             _DetailRow(

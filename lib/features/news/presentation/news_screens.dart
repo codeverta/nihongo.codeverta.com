@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
@@ -894,6 +895,7 @@ class _NewsListScreenState extends ConsumerState<NewsListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final newsAdEvery = nativeAdEvery(ref, NativeAdPlacement.news);
     final filter = (page: _page, source: _source);
     final provider = newsPageProvider(filter);
     final state = ref.watch(provider);
@@ -924,11 +926,14 @@ class _NewsListScreenState extends ConsumerState<NewsListScreen> {
                 context,
               ),
             ),
-          for (final (i, article) in rest.indexed)
+          for (final (i, article) in rest.indexed) ...[
             _FadeIn(
               index: i + 1,
               child: NewsArticleCard(article: article),
             ),
+            if (newsAdEvery > 0 && (i + 1) % newsAdEvery == 0)
+              const NativeAdSlot(placement: NativeAdPlacement.news),
+          ],
           if (pages > 1)
             _NewsPager(page: _page, pages: pages, onChange: _changePage),
           const SizedBox(height: 14),

@@ -84,6 +84,20 @@ func translateNewsMetadataValue(value any) bool {
 	switch value := value.(type) {
 	case map[string]any:
 		for key, child := range value {
+			if key == "imageLicense" {
+				if text, ok := child.(string); ok && text == "Hak cipta pemilik sumber" {
+					value[key] = "Publisher's copyright"
+					changed = true
+				}
+				continue
+			}
+			if key == "imageCredit" {
+				if text, ok := child.(string); ok && strings.HasPrefix(text, "Foto dari ") {
+					value[key] = "Photo from " + strings.TrimPrefix(text, "Foto dari ")
+					changed = true
+				}
+				continue
+			}
 			if key == "changes" {
 				if text, ok := child.(string); ok {
 					if translated, found := newsChangesTranslations[text]; found {
@@ -137,9 +151,11 @@ func englishNewsErrorMessage(code string) string {
 }
 
 var newsChangesTranslations = map[string]string{
-	"Furigana ditambahkan oleh Nihongo Master; media eksternal tidak disertakan.":                                                                     "Furigana added by Nihongo Master; external media is not included.",
-	"Furigana ditambahkan oleh Nihongo Master. Gambar berizin disalin dan dikonversi ke JPEG bila tersedia.":                                          "Furigana added by Nihongo Master. Licensed images are copied and converted to JPEG when available.",
-	"Teks HTML Osaka City; furigana ditambahkan oleh Nihongo Master. Hanya gambar dengan lisensi tersendiri yang disalin; lampiran tidak disertakan.": "Osaka City HTML text; furigana added by Nihongo Master. Only images with a separate license are copied; attachments are not included.",
+	"Furigana ditambahkan oleh Nihongo Master; media eksternal tidak disertakan.":                                                                                          "Furigana added by Nihongo Master; external media is not included.",
+	"Furigana ditambahkan oleh Nihongo Master. Gambar berizin disalin dan dikonversi ke JPEG bila tersedia.":                                                               "Furigana added by Nihongo Master. Licensed images are copied and converted to JPEG when available.",
+	"Furigana ditambahkan oleh Nihongo Master. Gambar artikel disalin ke penyimpanan Nihongo Master dan dikonversi ke JPEG bila tersedia; kredit gambar mengikuti sumber.": "Furigana added by Nihongo Master. Article images are copied to Nihongo Master storage and converted to JPEG when available; image credits follow the source.",
+	"Teks HTML Osaka City; furigana ditambahkan oleh Nihongo Master. Gambar artikel disalin ke penyimpanan Nihongo Master; lampiran tidak disertakan.":                     "Osaka City HTML text; furigana added by Nihongo Master. Article images are copied to Nihongo Master storage; attachments are not included.",
+	"Teks HTML Osaka City; furigana ditambahkan oleh Nihongo Master. Hanya gambar dengan lisensi tersendiri yang disalin; lampiran tidak disertakan.":                      "Osaka City HTML text; furigana added by Nihongo Master. Only images with a separate license are copied; attachments are not included.",
 }
 
 var newsErrorTranslations = map[string]string{

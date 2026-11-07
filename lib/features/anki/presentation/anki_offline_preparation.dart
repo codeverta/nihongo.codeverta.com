@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/offline/offline_providers.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -50,15 +51,15 @@ class _PreparationState extends ConsumerState<AnkiOfflinePreparation> {
       padding: const EdgeInsets.only(bottom: 12),
       child: Text(
         offline
-            ? 'Offline · sesi kartu yang sudah disiapkan tetap bisa dibuka.'
+            ? 'Offline · sesi kartu yang sudah disiapkan tetap bisa dibuka.'.localized(context)
             : thisDeck && progress!.isPreparing
-            ? 'Menyiapkan sesi kartu untuk offline…'
+            ? 'Menyiapkan sesi kartu untuk offline…'.localized(context)
             : thisDeck &&
                   progress!.total > 0 &&
                   progress.failed == 0 &&
                   progress.remaining == 0
-            ? 'Sesi kartu tersimpan untuk offline.'
-            : 'Sesi kartu disiapkan saat terhubung.',
+            ? 'Sesi kartu tersimpan untuk offline.'.localized(context)
+            : 'Sesi kartu disiapkan saat terhubung.'.localized(context),
         style: Theme.of(context).textTheme.bodySmall,
       ),
     );

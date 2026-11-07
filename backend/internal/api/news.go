@@ -43,6 +43,10 @@ func (s *Server) ConfigureNews(repo *news.Repository, fetcher news.Fetcher, toke
 	s.newsContext = ctx
 	return nil
 }
+
+// ConfigureNewsImageStore sends admin uploads to object storage. Without it,
+// uploads stay on the local news image directory.
+func (s *Server) ConfigureNewsImageStore(store news.ImageStore) { s.newsImageStore = store }
 func (s *Server) registerNews(mux *http.ServeMux) {
 	mux.HandleFunc("GET /admin/news", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
@@ -159,7 +163,12 @@ func (s *Server) editNews(w http.ResponseWriter, r *http.Request) {
 		newsError(w, news.ErrInvalid)
 		return
 	}
-	if input.ImageURL != "" {
+	if input.ImageURL != "" && s.newsImageStore != nil && s.newsImageStore.Owns(input.ImageURL) {
+		if input.ImageCredit == "" || input.ImageLicense == "" {
+			newsError(w, news.ErrInvalid)
+			return
+		}
+	} else if input.ImageURL != "" {
 		const prefix = "/news-images/"
 		if len(input.ImageURL) <= len(prefix) || input.ImageURL[:len(prefix)] != prefix || !newsImageName.MatchString(input.ImageURL[len(prefix):]) || input.ImageCredit == "" || input.ImageLicense == "" {
 			newsError(w, news.ErrInvalid)
@@ -243,6 +252,15 @@ func (s *Server) uploadNewsImage(w http.ResponseWriter, r *http.Request) {
 	optimized, err := imageopt.JPEG(decoded)
 	if err != nil {
 		newsError(w, err)
+		return
+	}
+	if s.newsImageStore != nil {
+		stored, err := s.newsImageStore.Put(r.Context(), optimized)
+		if err != nil {
+			newsError(w, err)
+			return
+		}
+		writeData(w, 201, map[string]string{"url": stored})
 		return
 	}
 	sum := sha256.Sum256(optimized)

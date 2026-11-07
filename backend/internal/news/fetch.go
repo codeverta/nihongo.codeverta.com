@@ -38,6 +38,17 @@ type HTTPFetcher struct {
 	client         *http.Client
 	spacing        time.Duration
 	imageDirectory string
+	store          ImageStore
+	hasImage       func(ctx context.Context, articleURL string) bool
+}
+
+// SetImageStore sends imported images to object storage (COS) instead of the
+// local image directory.
+func (f *HTTPFetcher) SetImageStore(store ImageStore) { f.store = store }
+
+// SetImageLookup lets the fetcher skip articles whose image is already stored.
+func (f *HTTPFetcher) SetImageLookup(lookup func(ctx context.Context, articleURL string) bool) {
+	f.hasImage = lookup
 }
 
 func NewFetcher(imageDirectory ...string) *HTTPFetcher {
@@ -144,6 +155,16 @@ type rssItem struct {
 	URL     string `xml:"link"`
 	Date    string `xml:"pubDate"`
 	Content string `xml:"http://purl.org/rss/1.0/modules/content/ encoded"`
+	Media   []struct {
+		URL string `xml:"url,attr"`
+	} `xml:"http://search.yahoo.com/mrss/ content"`
+	Thumbnails []struct {
+		URL string `xml:"url,attr"`
+	} `xml:"http://search.yahoo.com/mrss/ thumbnail"`
+	Enclosures []struct {
+		URL  string `xml:"url,attr"`
+		Type string `xml:"type,attr"`
+	} `xml:"enclosure"`
 }
 
 func parseGlobalVoices(data []byte, since time.Time) ([]Article, int, error) {
@@ -218,8 +239,20 @@ func parseGlobalVoices(data []byte, since time.Time) ([]Article, int, error) {
 		}
 		a := Article{URL: item.URL, Title: strings.TrimSpace(item.Title), TitleTokens: tokenize(item.Title), Paragraphs: paragraphs, References: refs, Credits: credits, PublishedAt: published.UTC(), DateType: "published", License: "CC BY 3.0", LicenseURL: "https://creativecommons.org/licenses/by/3.0/", Changes: "Furigana ditambahkan oleh Nihongo Master; media eksternal tidak disertakan."}
 		a.Summary = excerpt(paragraphs[0].Text, 160)
-		a.imageCandidates = licensedImages(doc)
-		a.Changes = "Furigana ditambahkan oleh Nihongo Master. Gambar berizin disalin dan dikonversi ke JPEG bila tersedia."
+		feedImages := []string{}
+		for _, m := range item.Media {
+			feedImages = append(feedImages, m.URL)
+		}
+		for _, m := range item.Thumbnails {
+			feedImages = append(feedImages, m.URL)
+		}
+		for _, m := range item.Enclosures {
+			if strings.HasPrefix(m.Type, "image/") {
+				feedImages = append(feedImages, m.URL)
+			}
+		}
+		a.imageCandidates = append(licensedImages(doc), plainImageCandidates(item.URL, feedImages, nil, doc)...)
+		a.Changes = "Furigana ditambahkan oleh Nihongo Master. Gambar artikel disalin ke penyimpanan Nihongo Master dan dikonversi ke JPEG bila tersedia; kredit gambar mengikuti sumber."
 		items = append(items, a)
 	}
 	sort.Slice(items, func(i, j int) bool { return items[i].PublishedAt.After(items[j].PublishedAt) })
@@ -298,7 +331,7 @@ func parseOsakaArticle(data []byte, link osakaLink) (Article, error) {
 	if len(paragraphs) == 0 {
 		return Article{}, fmt.Errorf("Osaka article has no eligible HTML text")
 	}
-	return Article{imageCandidates: licensedImages(body), URL: link.URL, Title: link.Title, TitleTokens: tokenize(link.Title), Summary: excerpt(paragraphs[0].Text, 160), Paragraphs: paragraphs, References: refs, Credits: []Credit{{Name: "大阪市", URL: link.URL, Role: "publisher"}}, PublishedAt: link.Date, DateType: "source", License: "CC BY 4.0 compatible (Osaka City terms)", LicenseURL: "https://www.city.osaka.lg.jp/main/site_policy/0000000124.html", Changes: "Teks HTML Osaka City; furigana ditambahkan oleh Nihongo Master. Hanya gambar dengan lisensi tersendiri yang disalin; lampiran tidak disertakan."}, nil
+	return Article{imageCandidates: append(licensedImages(body), plainImageCandidates(link.URL, nil, doc, body)...), URL: link.URL, Title: link.Title, TitleTokens: tokenize(link.Title), Summary: excerpt(paragraphs[0].Text, 160), Paragraphs: paragraphs, References: refs, Credits: []Credit{{Name: "大阪市", URL: link.URL, Role: "publisher"}}, PublishedAt: link.Date, DateType: "source", License: "CC BY 4.0 compatible (Osaka City terms)", LicenseURL: "https://www.city.osaka.lg.jp/main/site_policy/0000000124.html", Changes: "Teks HTML Osaka City; furigana ditambahkan oleh Nihongo Master. Gambar artikel disalin ke penyimpanan Nihongo Master; lampiran tidak disertakan."}, nil
 }
 func attr(n *html.Node, key string) string {
 	for _, a := range n.Attr {

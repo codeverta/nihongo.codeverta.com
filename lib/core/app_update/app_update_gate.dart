@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/app_update/app_update_controller.dart';
 import 'package:nihongo_master/core/app_update/app_update_policy.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AppUpdateGate extends ConsumerStatefulWidget {
@@ -147,17 +148,20 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
     final androidMinimum = androidVersions[policy.minimumAndroidApi];
     final requirement = device.platform == 'android'
         ? androidMinimum == null
-            ? 'versi Android yang lebih baru'
-            : 'Android $androidMinimum atau lebih baru'
-        : 'iOS ${policy.minimumIOSVersion} atau lebih baru';
+            ? 'versi Android yang lebih baru'.localized(context)
+            : 'Android $androidMinimum ${'atau lebih baru'.localized(context)}'
+        : 'iOS ${policy.minimumIOSVersion} ${'atau lebih baru'.localized(context)}';
     final instructions = device.platform == 'android'
         ? 'Buka Pengaturan HP > Sistem > Pembaruan sistem. Nama menu dapat berbeda pada setiap merek.'
-        : 'Buka Pengaturan > Umum > Pembaruan Perangkat Lunak.';
+              .localized(context)
+        : 'Buka Pengaturan > Umum > Pembaruan Perangkat Lunak.'.localized(
+            context,
+          );
     return AlertDialog(
       title: Text(
         needsUpdate
-            ? 'Perbarui Nihongo Master'
-            : 'Perangkat belum mendukung versi baru',
+            ? 'Perbarui Nihongo Master'.localized(context)
+            : 'Perangkat belum mendukung versi baru'.localized(context),
       ),
       icon: Icon(needsUpdate ? Icons.system_update : Icons.phonelink_erase),
       content: SizedBox(
@@ -168,13 +172,13 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
           children: [
             Text(
               needsUpdate
-                  ? 'Versi aplikasi ini sudah tidak didukung. Perbarui melalui $store untuk melanjutkan.'
-                  : 'Versi aplikasi yang diwajibkan membutuhkan $requirement. Perangkat Anda menggunakan ${device.platform == 'android' ? 'Android' : 'iOS'} ${device.osVersion}.',
+                  ? '${'Versi aplikasi ini sudah tidak didukung.'.localized(context)} ${'Perbarui melalui'.localized(context)} $store ${'untuk melanjutkan.'.localized(context)}'
+                  : '${'Versi aplikasi yang diwajibkan membutuhkan'.localized(context)} $requirement. ${'Perangkat Anda menggunakan'.localized(context)} ${device.platform == 'android' ? 'Android' : 'iOS'} ${device.osVersion}.',
             ),
             const SizedBox(height: 12),
             if (needsUpdate)
               Text(
-                'Versi terpasang: ${device.version}\nVersi terbaru: ${policy.latestVersion}',
+                '${'Versi terpasang'.localized(context)}: ${device.version}\n${'Versi terbaru'.localized(context)}: ${policy.latestVersion}',
               )
             else ...[
               Text(instructions),
@@ -182,7 +186,9 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
               Text(
                 canContinue
                     ? 'Anda masih dapat menggunakan versi yang terpasang. Perbarui OS sebelum memasang versi aplikasi baru.'
-                    : 'Jika pembaruan OS sudah tidak tersedia, gunakan perangkat lain yang kompatibel. Untuk bantuan: rabih@codeverta.com.',
+                          .localized(context)
+                    : 'Jika pembaruan OS sudah tidak tersedia, gunakan perangkat lain yang kompatibel. Untuk bantuan: rabih@codeverta.com.'
+                          .localized(context),
               ),
             ],
             if (policy.message.isNotEmpty) ...[
@@ -190,16 +196,17 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
               Text(policy.message),
             ],
             if (needsUpdate)
-              const Padding(
-                padding: EdgeInsets.only(top: 12),
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
                 child: Text(
-                  'Jika Update tidak muncul di store, periksa akun store dan ketersediaan rilis untuk perangkat Anda. Hubungi rabih@codeverta.com jika perangkat dinyatakan tidak kompatibel.',
+                  'Jika Update tidak muncul di store, periksa akun store dan ketersediaan rilis untuk perangkat Anda. Hubungi rabih@codeverta.com jika perangkat dinyatakan tidak kompatibel.'
+                      .localized(context),
                 ),
               ),
             if (state.error != null || _storeError != null) ...[
               const SizedBox(height: 12),
               Text(
-                _storeError ?? state.error!,
+                (_storeError ?? state.error!).localized(context),
                 style: TextStyle(color: Theme.of(context).colorScheme.error),
               ),
             ],
@@ -211,19 +218,30 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
           onPressed: state.checking
               ? null
               : () => ref.read(appUpdateControllerProvider.notifier).check(),
-          child: Text(state.checking ? 'Memeriksa…' : 'Periksa lagi'),
+          child: Text(
+            state.checking
+                ? 'Memeriksa…'.localized(context)
+                // 'Periksa lagi' is already mapped to "Review again" for exams.
+                : Localizations.localeOf(context).languageCode == 'en'
+                ? 'Check again'
+                : 'Periksa lagi',
+          ),
         ),
         if (canContinue)
           FilledButton(
             onPressed: () => ref
                 .read(appUpdateControllerProvider.notifier)
                 .continueOnLegacyDevice(),
-            child: const Text('Lanjutkan versi ini'),
+            child: Text('Lanjutkan versi ini'.localized(context)),
           ),
         if (needsUpdate)
           FilledButton(
             onPressed: _openingStore ? null : () => _openStore(state),
-            child: Text(_openingStore ? 'Membuka store…' : 'Update sekarang'),
+            child: Text(
+              _openingStore
+                  ? 'Membuka store…'.localized(context)
+                  : 'Update sekarang'.localized(context),
+            ),
           ),
       ],
     );
