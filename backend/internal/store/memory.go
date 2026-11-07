@@ -65,6 +65,7 @@ type MemoryStore struct {
 	attemptID            atomic.Uint64
 	accounts             map[string]account
 	playReviewEmail      string
+	adminLoginEmail      string
 	playReviewUserID     string
 	sessions             map[string]string
 	vocabulary           []domain.VocabularyLevelContent

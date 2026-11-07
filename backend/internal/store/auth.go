@@ -35,7 +35,7 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity, deviceT
 	email := strings.ToLower(strings.TrimSpace(identity.Email))
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	if email == s.playReviewEmail {
+	if email == s.playReviewEmail || (s.adminLoginEmail != "" && email == s.adminLoginEmail) {
 		return domain.Profile{}, ErrReviewEmailLogin
 	}
 	existingAccount, ok := s.accounts[email]
@@ -121,6 +121,48 @@ func (s *MemoryStore) ConfigurePlayReviewAccount(email, password string) error {
 	s.profiles[userID] = profileForAccount(configuredAccount)
 	s.playReviewEmail = email
 	s.playReviewUserID = userID
+	return nil
+}
+
+// ConfigureAdminLoginAccount adds an email/password account for the /admin/
+// dashboard. Credentials come from the server environment and are never stored
+// in the database. The account cannot be used with Google Sign-In.
+func (s *MemoryStore) ConfigureAdminLoginAccount(email, password string) error {
+	email = strings.ToLower(strings.TrimSpace(email))
+	if email == "" && password == "" {
+		return nil
+	}
+	if email == "" || password == "" {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL and ADMIN_LOGIN_PASSWORD must both be set")
+	}
+	parsed, err := mail.ParseAddress(email)
+	if err != nil || parsed.Address != email {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL must be a valid email address")
+	}
+	if email == "demo@nihongomaster.app" {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL must be different from the development demo account")
+	}
+	if strings.TrimSpace(password) != password || len([]byte(password)) < 12 || len([]byte(password)) > 72 {
+		return fmt.Errorf("ADMIN_LOGIN_PASSWORD must be 12 to 72 bytes without surrounding spaces")
+	}
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	if err != nil {
+		return fmt.Errorf("hash admin password: %w", err)
+	}
+	userID := uuid.NewSHA1(uuid.NameSpaceURL, []byte("nihongo-master:admin-login:"+email)).String()
+	configured := account{ID: userID, Email: email, DisplayName: "Admin", PasswordHash: hash}
+
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if email == s.playReviewEmail {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL must be different from PLAY_REVIEW_EMAIL")
+	}
+	if existing, ok := s.accounts[email]; ok && existing.ID != userID {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL is already assigned to another account")
+	}
+	s.accounts[email] = configured
+	s.profiles[userID] = profileForAccount(configured)
+	s.adminLoginEmail = email
 	return nil
 }
 
