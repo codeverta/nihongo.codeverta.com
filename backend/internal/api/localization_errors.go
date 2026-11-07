@@ -183,7 +183,7 @@ var apiErrorMessagesEnglishBySource = map[string]string{
 	"Ringkasan error belum dapat dibaca.":                                                                "The error summary could not be read.",
 	"Riwayat mencapai 500 pesan. Minta operator mengarsipkan riwayat sebelum membuat pesan baru.":        "The history has reached 500 messages. Ask an operator to archive it before creating new messages.",
 	"Sesi login tidak valid atau telah dicabut.":                                                         "Your session is invalid or has been revoked.",
-	"Simulation supports N5, N5 and N4 (papers 01–10), N3, N2, N1, JFT Exams 1–5, NAT and SSW":           "Simulation supports N5, N5 and N4 (papers 01–10), N3, N2, N1, JFT Exams 1–5, NAT and SSW.",
+	"Simulation supports N5/N4 (papers 01–10), N3/N2/N1 (papers 01–10), JFT 1–10, NAT 1–10 and SSW":      "Simulation supports N5/N4 (papers 01–10), N3/N2/N1 (papers 01–10), JFT 1–10, NAT 1–10 and SSW.",
 	"Status pengiriman gagal disimpan. Pesan belum dikirim.":                                             "The delivery status could not be saved. The message has not been sent.",
 	"Sumber harus flutter atau backend.":                                                                 "The source must be flutter or backend.",
 	"Sumber kamus sedang tidak tersedia. Coba lagi sebentar atau buka Jisho.":                            "The dictionary source is temporarily unavailable. Try again shortly or open Jisho.",

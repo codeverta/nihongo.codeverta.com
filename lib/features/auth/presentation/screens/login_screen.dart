@@ -7,7 +7,10 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({this.from, super.key});
+
+  /// Page that required login; opened again after a successful sign-in.
+  final String? from;
 
   @override
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
@@ -46,7 +49,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     // return to a premium gate or another stale route and leave the user
     // feeling like login did not finish.
     if (authenticated) {
-      context.go('/home');
+      final target = widget.from;
+      context.go(
+        target != null && target.startsWith('/') && !target.startsWith('//')
+            ? target
+            : '/home',
+      );
       return;
     }
 

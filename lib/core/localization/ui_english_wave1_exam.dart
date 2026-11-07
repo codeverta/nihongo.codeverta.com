@@ -10,7 +10,6 @@ const uiEnglishWave1Exam = <String, String>{
       'Vocabulary, kanji & grammar · with furigana',
   'Kosakata, kanji, grammar & reading · dengan furigana':
       'Vocabulary, kanji, grammar & reading · with furigana',
-  'Gratis · Tanpa reading & listening': 'Free · No reading & listening',
   'Gratis · Tanpa listening': 'Free · No listening',
   'Belum ada hasil. Riwayat akan muncul setelah kamu menyelesaikan diagnostic.':
       'No results yet. Your history will appear after you finish the diagnostic.',

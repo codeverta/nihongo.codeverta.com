@@ -27,13 +27,13 @@ IconData categoryIcon(String category) => switch (category) {
 };
 
 Color categoryColor(String category) => switch (category) {
-  'culture' => const Color(0xFFD9480F),
-  'shrine' => const Color(0xFFC92A2A),
-  'nature' => const Color(0xFF2B8A3E),
-  'food' => const Color(0xFFE67700),
-  'city' => const Color(0xFF1864AB),
-  'history' => const Color(0xFF5F3DC4),
+  'culture' => const Color(0xFFC2410C),
+  'shrine' => const Color(0xFFD7263D),
+  'nature' => const Color(0xFF15803D),
+  'food' => const Color(0xFFB45309),
+  'city' => const Color(0xFF2563EB),
+  'history' => const Color(0xFF7C3AED),
   _ => const Color(0xFF495057),
 };
 
-const jobPinColor = Color(0xFF443060);
+const jobPinColor = Color(0xFF2A2F6E);

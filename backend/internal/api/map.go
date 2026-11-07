@@ -3,7 +3,6 @@ package api
 import (
 	"bytes"
 	"crypto/sha256"
-	"crypto/subtle"
 	_ "embed"
 	"encoding/hex"
 	"encoding/json"
@@ -114,7 +113,7 @@ func (s *Server) mapImage(w http.ResponseWriter, r *http.Request) {
 func (s *Server) mapAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
-		if s.mapAdminToken == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(s.mapAdminToken)) != 1 {
+		if !adminRequestAuthorized(r, s.mapAdminToken) {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "kunci admin salah atau belum dikonfigurasi")
 			return
 		}

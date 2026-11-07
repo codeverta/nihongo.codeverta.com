@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	_ "embed"
 	"encoding/json"
 	"fmt"
@@ -90,7 +89,7 @@ func (s *Server) pricingAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
 		pricing := s.pricing
-		if pricing.token == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(pricing.token)) != 1 {
+		if !adminRequestAuthorized(r, pricing.token) {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "kunci admin salah atau belum dikonfigurasi")
 			return
 		}

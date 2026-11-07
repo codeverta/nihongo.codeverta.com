@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"crypto/sha256"
-	"crypto/subtle"
 	_ "embed"
 	"encoding/hex"
 	"errors"
@@ -73,7 +72,7 @@ func (s *Server) registerNews(mux *http.ServeMux) {
 func (s *Server) newsAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
-		if s.newsAdminToken == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(s.newsAdminToken)) != 1 {
+		if !adminRequestAuthorized(r, s.newsAdminToken) {
 			writeError(w, 401, "unauthorized", "Kunci admin salah atau belum dikonfigurasi.")
 			return
 		}

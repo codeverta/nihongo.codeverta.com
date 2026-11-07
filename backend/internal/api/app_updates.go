@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -113,7 +112,7 @@ func (s *Server) registerAppUpdates(mux *http.ServeMux) {
 	mux.HandleFunc("GET /v1/admin/app-update-policy", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
 		u := s.appUpdates
-		if u.token == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(u.token)) != 1 {
+		if !adminRequestAuthorized(r, u.token) {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "Kunci admin salah atau belum diatur di server.")
 			return
 		}
@@ -131,7 +130,7 @@ func (s *Server) registerAppUpdates(mux *http.ServeMux) {
 
 func (s *Server) updateAppUpdatePolicy(w http.ResponseWriter, r *http.Request) {
 	u := s.appUpdates
-	if u.token == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(u.token)) != 1 {
+	if !adminRequestAuthorized(r, u.token) {
 		writeError(w, http.StatusUnauthorized, "unauthorized", "admin token tidak valid atau belum dikonfigurasi")
 		return
 	}

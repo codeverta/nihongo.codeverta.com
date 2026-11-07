@@ -2,6 +2,7 @@ package store
 
 import (
 	"errors"
+	"fmt"
 	"regexp"
 	"strings"
 	"testing"
@@ -106,12 +107,12 @@ func TestSimulationJLPTExtraPapers(t *testing.T) {
 
 func TestSimulationJLPTExtraPapersAreFreeAndIsolated(t *testing.T) {
 	s := NewMemoryStore()
-	for _, examID := range []string{"jlpt-n5-simulation-2", "jlpt-n5-simulation-5", "jlpt-n4-simulation-1", "jlpt-n4-simulation-4", "jlpt-n4-simulation-5", "jlpt-n5-simulation-6", "jlpt-n5-simulation-7", "jlpt-n4-simulation-6", "jlpt-n4-simulation-7", "jlpt-n5-simulation-10", "jlpt-n4-simulation-10"} {
+	for _, examID := range []string{"jlpt-n5-simulation-2", "jlpt-n5-simulation-5", "jlpt-n4-simulation-1", "jlpt-n4-simulation-4", "jlpt-n4-simulation-5", "jlpt-n5-simulation-6", "jlpt-n5-simulation-7", "jlpt-n4-simulation-6", "jlpt-n4-simulation-7", "jlpt-n5-simulation-10", "jlpt-n4-simulation-10", "jlpt-n3-simulation-2", "jlpt-n3-simulation-3", "jlpt-n2-simulation-2", "jlpt-n2-simulation-3", "jlpt-n1-simulation-2", "jlpt-n1-simulation-3"} {
 		if !IsFreeJLPTSimulationExam(examID) {
 			t.Fatal("not free", examID)
 		}
 	}
-	if IsFreeJLPTSimulationExam("jlpt-n3-simulation-1") || IsFreeJLPTSimulationExam("jlpt-n4-simulation-11") {
+	if IsFreeJLPTSimulationExam("jlpt-n3-simulation-1") || IsFreeJLPTSimulationExam("jlpt-n4-simulation-11") || IsFreeJLPTSimulationExam("jlpt-n3-simulation-11") || IsFreeJLPTSimulationExam("jlpt-n1-simulation-11") {
 		t.Fatal("premium paper marked free")
 	}
 	if _, err := s.StartExam("free", "jlpt-n3-simulation-1"); !errors.Is(err, ErrPremium) {
@@ -157,5 +158,82 @@ func TestSimulationJLPTExtraPapersAreFreeAndIsolated(t *testing.T) {
 	}
 	if _, err = s.StartSimulation("free", "N5-11"); !errors.Is(err, ErrInvalid) {
 		t.Fatal("unsupported paper accepted")
+	}
+}
+
+func TestSimulationJLPTN3ToN1ExtraPapers(t *testing.T) {
+	s := NewMemoryStore()
+	for _, c := range []struct {
+		level    string
+		examID   string
+		total    int
+		sections int
+	}{{"N3-2", "jlpt-n3-simulation-2", 74, 2}, {"N3-3", "jlpt-n3-simulation-3", 74, 2},
+		{"N2-2", "jlpt-n2-simulation-2", 64, 1}, {"N2-3", "jlpt-n2-simulation-3", 64, 1},
+		{"N1-2", "jlpt-n1-simulation-2", 64, 1}, {"N1-3", "jlpt-n1-simulation-3", 64, 1}} {
+		attempt, err := s.StartExam("free", c.examID)
+		if err != nil {
+			t.Fatalf("%s: %v", c.examID, err)
+		}
+		session, err := s.SimulationSession("free", attempt.ID)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if attempt.ExamID != c.examID || len(session.Sections) != c.sections {
+			t.Fatalf("%s: bad session %+v", c.examID, session.Sections)
+		}
+		overview, err := s.SimulationOverviewChecked("free", c.level)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if overview["questionCount"] != c.total {
+			t.Fatalf("%s: questionCount %v, want %d", c.level, overview["questionCount"], c.total)
+		}
+	}
+	for _, level := range []string{"N3-11", "N2-11", "N1-11", "N3-1", "N1-02"} {
+		if _, err := s.StartSimulation("free", level); !errors.Is(err, ErrInvalid) {
+			t.Fatalf("%s should be invalid, got %v", level, err)
+		}
+	}
+	if _, err := s.StartSimulation("free", "N1"); !errors.Is(err, ErrPremium) {
+		t.Fatal("N1 paper 01 should stay premium")
+	}
+}
+
+func TestSimulationNATAndJFTPapersSixToTen(t *testing.T) {
+	s := NewMemoryStore()
+	grantTestLifetime(t, s, "premium")
+	for n := 6; n <= 10; n++ {
+		for _, c := range []struct {
+			examID string
+			total  int
+		}{{fmt.Sprintf("nat-5q-full-%d", n), 43}, {fmt.Sprintf("jft-a2-full-%d", n), 36}} {
+			if _, err := s.StartExam("free", c.examID); !errors.Is(err, ErrPremium) {
+				t.Fatalf("%s should be premium, got %v", c.examID, err)
+			}
+			attempt, err := s.StartExam("premium", c.examID)
+			if err != nil {
+				t.Fatalf("%s: %v", c.examID, err)
+			}
+			session, err := s.SimulationSession("premium", attempt.ID)
+			if err != nil {
+				t.Fatal(err)
+			}
+			total := 0
+			for _, section := range session.Sections {
+				total += section.QuestionCount
+			}
+			if attempt.ExamID != c.examID || total != c.total {
+				t.Fatalf("%s: bad session total %d", c.examID, total)
+			}
+		}
+	}
+	for _, id := range []string{"nat-5q-full-11", "nat-5q-full-06", "nat-5q-full-0"} {
+		if _, err := s.StartExam("premium", id); !errors.Is(err, ErrNotFound) {
+			t.Fatalf("%s should be not found, got %v", id, err)
+		}
+	}
+	if IsJFTLevel("JFT-11") || IsJFTLevel("JFT-1") || IsJFTLevel("JFT-06") || !IsJFTLevel("JFT-10") {
+		t.Fatal("JFT level parsing is wrong")
 	}
 }

@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	_ "embed"
 	"errors"
 	"net/http"
@@ -28,7 +27,7 @@ func (s *Server) registerDictionaryAdmin(mux *http.ServeMux) {
 func (s *Server) dictionaryAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
-		if s.dictionaryAdminToken == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(s.dictionaryAdminToken)) != 1 {
+		if !adminRequestAuthorized(r, s.dictionaryAdminToken) {
 			writeError(w, 401, "unauthorized", "Kunci admin salah atau belum dikonfigurasi.")
 			return
 		}

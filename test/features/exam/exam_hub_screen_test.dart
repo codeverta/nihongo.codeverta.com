@@ -64,9 +64,15 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      // Both simulation choices are immediately accessible on a small phone.
+      // The level filter shows only the selected JLPT level.
       expect(find.text('Simulasi N5').hitTestable(), findsOneWidget);
+      expect(find.text('Simulasi N4'), findsNothing);
+      await tester.tap(find.byKey(const Key('exam-level-N4')));
+      await tester.pumpAndSettle();
       expect(find.text('Simulasi N4').hitTestable(), findsOneWidget);
+      expect(find.text('Simulasi N5'), findsNothing);
+      await tester.tap(find.byKey(const Key('exam-level-N5')));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('NAT Test'));
       await tester.pumpAndSettle();
       expect(find.text('NAT 5Q Exam 1'), findsOneWidget);
@@ -130,6 +136,13 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('exam-level-N4')),
+        -100,
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('exam-level-N4')));
+      await tester.pumpAndSettle();
       await tester.scrollUntilVisible(find.text('Simulasi N4'), -100);
       await tester.pumpAndSettle();
       await tester.tap(find.text('Simulasi N4'));
@@ -189,8 +202,9 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      // Both simulation choices are immediately accessible on a small phone.
       expect(find.text('Simulasi N5').hitTestable(), findsOneWidget);
+      await tester.tap(find.byKey(const Key('exam-level-N3')));
+      await tester.pumpAndSettle();
       await tester.scrollUntilVisible(find.text('Simulasi N3'), 100);
       await tester.pumpAndSettle();
       expect(find.text('Simulasi N3').hitTestable(), findsOneWidget);
@@ -231,6 +245,13 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('exam-level-N3')),
+        -100,
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('exam-level-N3')));
+      await tester.pumpAndSettle();
       await tester.scrollUntilVisible(find.text('Simulasi N3'), -100);
       await tester.pumpAndSettle();
       await tester.tap(find.text('Simulasi N3'));

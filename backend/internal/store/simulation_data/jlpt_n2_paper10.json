@@ -1,0 +1,966 @@
+{
+ "level": "N2",
+ "paper": 10,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "子どもに教育を受けさせるのは、親の[[義務]]である。",
+   "choices": [
+    "ぎむ",
+    "ぎぶ",
+    "ぎむう",
+    "きむ"
+   ],
+   "explanation": "義務（ぎむ） berarti kewajiban.",
+   "explanationEn": "義務（ぎむ） means obligation."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "大学では、幅広い[[教養]]を身につけることが大切だ。",
+   "choices": [
+    "きょうよう",
+    "きょうよ",
+    "こうよう",
+    "きょうゆう"
+   ],
+   "explanation": "教養（きょうよう） berarti wawasan umum yang luas.",
+   "explanationEn": "教養（きょうよう） means general culture and learning."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生は、一人一人に丁寧に[[指導]]している。",
+   "choices": [
+    "しどう",
+    "しとう",
+    "しどお",
+    "じどう"
+   ],
+   "explanation": "指導（しどう） berarti bimbingan.",
+   "explanationEn": "指導（しどう） means guidance or instruction."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "成績が優秀な学生は、[[奨学金]]をもらうことができる。",
+   "choices": [
+    "しょうがくきん",
+    "しょうがっきん",
+    "そうがくきん",
+    "しょうかくきん"
+   ],
+   "explanation": "奨学金（しょうがくきん） berarti beasiswa.",
+   "explanationEn": "奨学金（しょうがくきん） means a scholarship."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この村は、[[過疎]]が進み、若者が少なくなった。",
+   "choices": [
+    "かそ",
+    "かぞ",
+    "かそう",
+    "がそ"
+   ],
+   "explanation": "過疎（かそ） berarti kependudukan yang menipis.",
+   "explanationEn": "過疎（かそ） means depopulation."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この町には、三百年続く[[伝統]]の祭りがある。",
+   "choices": [
+    "でんとう",
+    "でんと",
+    "でんどう",
+    "てんとう"
+   ],
+   "explanation": "伝統（でんとう） berarti tradisi.",
+   "explanationEn": "伝統（でんとう） means tradition."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[自治体]]は、住民の意見を聞く会を開いた。",
+   "choices": [
+    "じちたい",
+    "じじたい",
+    "じちだい",
+    "しちたい"
+   ],
+   "explanation": "自治体（じちたい） berarti pemerintah daerah.",
+   "explanationEn": "自治体（じちたい） means a local government."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "外国の学生との[[こうりゅう]]会が開かれた。",
+   "choices": [
+    "交流",
+    "交琉",
+    "効流",
+    "交留"
+   ],
+   "explanation": "こうりゅう (pertukaran, pergaulan) ditulis 交流.",
+   "explanationEn": "こうりゅう (exchange, interaction) is written 交流."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "子どもたちが安心して学べる[[かんきょう]]をつくる。",
+   "choices": [
+    "環境",
+    "環鏡",
+    "還境",
+    "環竟"
+   ],
+   "explanation": "かんきょう (lingkungan) ditulis 環境.",
+   "explanationEn": "かんきょう (environment) is written 環境."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新しく入った先生のための[[けんしゅう]]が行われた。",
+   "choices": [
+    "研修",
+    "研周",
+    "検修",
+    "研終"
+   ],
+   "explanation": "けんしゅう (pelatihan) ditulis 研修.",
+   "explanationEn": "けんしゅう (training course) is written 研修."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "来月から、新しい制度を[[じっし]]する。",
+   "choices": [
+    "実施",
+    "実旋",
+    "実絶",
+    "美施"
+   ],
+   "explanation": "じっし (melaksanakan) ditulis 実施.",
+   "explanationEn": "じっし (to carry out) is written 実施."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この森は、国の法律で[[ほご]]されている。",
+   "choices": [
+    "保護",
+    "保譲",
+    "保獲",
+    "保講"
+   ],
+   "explanation": "ほご (perlindungan) ditulis 保護.",
+   "explanationEn": "ほご (protection) is written 保護."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「まだ大人になっていない年齢の人」を表す言葉はどれですか。",
+   "choices": [
+    "未成年",
+    "無成年",
+    "不成年",
+    "非成年"
+   ],
+   "explanation": "未～ berarti belum: 未成年 = di bawah umur.",
+   "explanationEn": "未～ means not yet: 未成年 = a minor."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「子どもの数が少なくなること」を表す言葉はどれですか。",
+   "choices": [
+    "少子化",
+    "少子性",
+    "少子力",
+    "少子感"
+   ],
+   "explanation": "～化 berarti menjadi: 少子化 = penurunan jumlah anak.",
+   "explanationEn": "～化 means becoming: 少子化 = declining birthrate."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「学校の授業が終わったあとの時間」を表す言葉はどれですか。",
+   "choices": [
+    "放課後",
+    "終課後",
+    "放学後",
+    "退課後"
+   ],
+   "explanation": "～後 berarti setelah: 放課後 = sepulang sekolah.",
+   "explanationEn": "～後 means after: 放課後 = after school."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「物事を深く考える力」を表す言葉はどれですか。",
+   "choices": [
+    "思考力",
+    "思考性",
+    "思考感",
+    "思考率"
+   ],
+   "explanation": "～力 berarti kemampuan: 思考力 = daya pikir.",
+   "explanationEn": "～力 means ability: 思考力 = thinking ability."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "この町では、祭りの伝統を次の世代に（　）ために、子どもたちが練習している。",
+   "choices": [
+    "受け継ぐ",
+    "引き返す",
+    "打ち明ける",
+    "見渡す"
+   ],
+   "explanation": "伝統を受け継ぐ berarti mewarisi tradisi.",
+   "explanationEn": "伝統を受け継ぐ means to inherit a tradition."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "人口が減って、地域の活気が（　）いる。",
+   "choices": [
+    "失われて",
+    "おそわれて",
+    "ゆるされて",
+    "ふさがれて"
+   ],
+   "explanation": "活気が失われる berarti semangat hidup hilang.",
+   "explanationEn": "活気が失われる means vitality is lost."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "学校は、保護者の意見を（　）して、制度を見直した。",
+   "choices": [
+    "反映",
+    "反響",
+    "反射",
+    "反発"
+   ],
+   "explanation": "意見を反映する berarti mencerminkan pendapat.",
+   "explanationEn": "意見を反映する means to reflect opinions."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "先生は、生徒一人一人の個性を（　）指導している。",
+   "choices": [
+    "いかして",
+    "おさえて",
+    "ひろって",
+    "かくして"
+   ],
+   "explanation": "個性を生かす berarti memanfaatkan kepribadian.",
+   "explanationEn": "個性を生かす means to make use of individuality."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "この町は、観光客が増えて、地元の経済が（　）。",
+   "choices": [
+    "潤った",
+    "偏った",
+    "傾いた",
+    "薄れた"
+   ],
+   "explanation": "経済が潤う berarti ekonomi menjadi makmur.",
+   "explanationEn": "経済が潤う means the economy is enriched."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "近所の人たちが協力して、川の（　）活動を行っている。",
+   "choices": [
+    "清掃",
+    "清算",
+    "清書",
+    "清涼"
+   ],
+   "explanation": "川の清掃 berarti pembersihan sungai.",
+   "explanationEn": "川の清掃 means cleaning the river."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "子どもの[[自主性]]を育てることが、学校の目標だ。",
+   "choices": [
+    "自分から進んで行う気持ち",
+    "親に従う気持ち",
+    "人と競う気持ち",
+    "勉強が好きな気持ち"
+   ],
+   "explanation": "自主性 berarti sikap mandiri dan inisiatif.",
+   "explanationEn": "自主性 means a spirit of acting on one's own initiative."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この町では、お年寄りの[[見守り]]活動が行われている。",
+   "choices": [
+    "気をつけて様子を見ること",
+    "食事を作ること",
+    "病院へ連れていくこと",
+    "家の掃除をすること"
+   ],
+   "explanation": "見守り berarti mengawasi dengan penuh perhatian.",
+   "explanationEn": "見守り means watching over attentively."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会議は、[[滞りなく]]終わった。",
+   "choices": [
+    "問題なく順調に",
+    "予定より長引いて",
+    "突然中止されて",
+    "全員が反対して"
+   ],
+   "explanation": "滞りなく berarti tanpa hambatan.",
+   "explanationEn": "滞りなく means without a hitch."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、[[率先して]]ごみ拾いを始めた。",
+   "choices": [
+    "先頭に立って",
+    "いやいやながら",
+    "誰かに頼まれて",
+    "少しだけ"
+   ],
+   "explanation": "率先して berarti mendahului memelopori.",
+   "explanationEn": "率先して means taking the lead."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "学校の[[方針]]が変わった。",
+   "choices": [
+    "進むべき方向や考え方",
+    "建物の形",
+    "先生の数",
+    "授業の時間割"
+   ],
+   "explanation": "方針 berarti kebijakan arah.",
+   "explanationEn": "方針 means a policy or course of direction."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「担う」",
+   "choices": [
+    "若い世代が、これからの地域を担っていく。",
+    "雨が担って、道路がぬれた。",
+    "この料理は塩を担って、おいしい。",
+    "先生は宿題を担って、生徒に出した。"
+   ],
+   "explanation": "担う berarti memikul tanggung jawab.",
+   "explanationEn": "担う means to bear responsibility."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「ふさわしい」",
+   "choices": [
+    "卒業式にふさわしい服装で出席した。",
+    "今日は天気がふさわしくて、洗濯物がよく乾く。",
+    "この問題は私にはふさわしくて、すぐに解けた。",
+    "彼はふさわしく走って、駅に向かった。"
+   ],
+   "explanation": "ふさわしい berarti pantas.",
+   "explanationEn": "ふさわしい means suitable or fitting."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「うやむや」",
+   "choices": [
+    "責任がはっきりせず、問題はうやむやのままになっている。",
+    "このスープはうやむやに熱くて、飲めない。",
+    "彼は毎日うやむやに運動している。",
+    "うやむやな山を登って、頂上に着いた。"
+   ],
+   "explanation": "うやむや berarti kabur tidak jelas.",
+   "explanationEn": "うやむや means vague and left unresolved."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「こだわる」",
+   "choices": [
+    "彼は、材料の品質にこだわって、パンを焼いている。",
+    "風にこだわって、窓を開けた。",
+    "母は朝からこだわって、掃除を終えた。",
+    "駅までこだわって、歩いた。"
+   ],
+   "explanation": "こだわる berarti berpegang teguh pada hal tertentu.",
+   "explanationEn": "こだわる means to be particular about something."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「ありがたい」",
+   "choices": [
+    "困っていたとき、友達が助けてくれて、ありがたかった。",
+    "この道は、ありがたくて、歩きにくい。",
+    "彼は毎朝ありがたく走っている。",
+    "ありがたい荷物は、重くて持てない。"
+   ],
+   "explanation": "ありがたい berarti terasa bersyukur.",
+   "explanationEn": "ありがたい means grateful or welcome."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この制度は、地域の人々の協力（　）成り立たない。",
+   "choices": [
+    "なくしては",
+    "にひきかえ",
+    "ともなると",
+    "のもとに"
+   ],
+   "explanation": "～なくしては～ない berarti tanpa ～ tidak mungkin.",
+   "explanationEn": "～なくしては～ない means without ～, it cannot work."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "子どもの数が減っている（　）、学校の統合が進んでいる。",
+   "choices": [
+    "ことから",
+    "ものを",
+    "ばかりに",
+    "かぎりは"
+   ],
+   "explanation": "～ことから berarti berdasarkan fakta bahwa ～.",
+   "explanationEn": "～ことから means from the fact that ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この地域は、人口が少ない（　）、住民同士の結びつきが強い。",
+   "choices": [
+    "だけに",
+    "くせに",
+    "あげく",
+    "ところで"
+   ],
+   "explanation": "～だけに berarti justru karena ～.",
+   "explanationEn": "～だけに means precisely because ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生に注意された（　）、彼は同じ失敗を繰り返した。",
+   "choices": [
+    "そばから",
+    "あげく",
+    "かたわら",
+    "ついでに"
+   ],
+   "explanation": "～そばから berarti baru saja ～ sudah lagi.",
+   "explanationEn": "～そばから means no sooner than ～ it happens again."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この学校は、勉強（　）、スポーツも盛んだ。",
+   "choices": [
+    "もさることながら",
+    "どころか",
+    "だけあって",
+    "にひきかえ"
+   ],
+   "explanation": "～もさることながら berarti ～ tentu saja, tetapi juga.",
+   "explanationEn": "～もさることながら means not to mention ～, but also."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、仕事の（　）、地域のボランティアにも参加している。",
+   "choices": [
+    "かたわら",
+    "うえで",
+    "あまり",
+    "とたん"
+   ],
+   "explanation": "～かたわら berarti di samping ～.",
+   "explanationEn": "～かたわら means alongside ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この制度が変わる（　）、新しい手続きが必要になる。",
+   "choices": [
+    "に伴い",
+    "をよそに",
+    "にかかわらず",
+    "に反して"
+   ],
+   "explanation": "～に伴い berarti seiring dengan ～.",
+   "explanationEn": "～に伴い means along with ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "入学式は、雨天（　）、体育館で行われる。",
+   "choices": [
+    "の場合は",
+    "によらず",
+    "をよそに",
+    "ならでは"
+   ],
+   "explanation": "～の場合は berarti dalam hal ～.",
+   "explanationEn": "～の場合は means in the case of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、生徒に注意する（　）、必ずよい点もほめる。",
+   "choices": [
+    "と同時に",
+    "うちに",
+    "ごとに",
+    "かぎり"
+   ],
+   "explanation": "～と同時に berarti sambil sekaligus ～.",
+   "explanationEn": "～と同時に means at the same time as ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "地域の祭りは、住民の協力が（　）成功した。",
+   "choices": [
+    "あってこそ",
+    "あるまいし",
+    "あるまじき",
+    "ありつつ"
+   ],
+   "explanation": "～あってこそ berarti hanya karena ada ～.",
+   "explanationEn": "～あってこそ means only thanks to ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この学校は ＿＿ ＿＿ ★ ＿＿ 力を入れている。",
+   "choices": [
+    "だけでなく",
+    "学力の",
+    "向上",
+    "人間性の育成にも"
+   ],
+   "explanation": "Urutan: 学力の 向上 だけでなく 人間性の育成にも 力を入れている. ★ slot ketiga, だけでなく.",
+   "explanationEn": "Order: 学力の 向上 だけでなく 人間性の育成にも (it focuses on character building as well as academics). ★ is the third slot, だけでなく."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "地域の ＿＿ ＿＿ ★ ＿＿ 活動が続いている。",
+   "choices": [
+    "子どもたちを",
+    "住民が",
+    "協力して",
+    "守る"
+   ],
+   "explanation": "Urutan: 住民が 協力して 子どもたちを 守る 活動が続いている. ★ slot ketiga, 子どもたちを.",
+   "explanationEn": "Order: 住民が 協力して 子どもたちを 守る (residents cooperating to protect children). ★ is the third slot, 子どもたちを."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "来年度から、＿＿ ＿＿ ★ ＿＿ ことになった。",
+   "choices": [
+    "一つに",
+    "二つの",
+    "小学校が",
+    "統合される"
+   ],
+   "explanation": "Urutan: 二つの 小学校が 一つに 統合される ことになった. ★ slot ketiga, 一つに.",
+   "explanationEn": "Order: 二つの 小学校が 一つに 統合される (two elementary schools will merge into one). ★ is the third slot, 一つに."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "＿＿ ＿＿ ★ ＿＿ ことで、地域の課題が見えてくる。",
+   "choices": [
+    "声に",
+    "住民の",
+    "一人一人の",
+    "耳を傾ける"
+   ],
+   "explanation": "Urutan: 住民の 一人一人の 声に 耳を傾ける ことで. ★ slot ketiga, 声に.",
+   "explanationEn": "Order: 住民の 一人一人の 声に 耳を傾ける (by listening to each resident). ★ is the third slot, 声に."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "山あいの小さな町で、バスの本数が年々減っている。利用する人が少なくなり、会社が採算を取れなくなったからだ。【46】、車を運転できない高齢者にとって、バスは生活に欠かせない足である。病院や買い物に行けなくなれば、その町で暮らし続けること自体が難しくなって【47】。\nそこで、町は、住民が自分の車で近所の人を乗せて運ぶ仕組みを試し始めた。運転する住民には、少額の謝礼が出る。始めてみると、移動の問題が解決しただけでなく、顔を合わせる機会が増え、近所の人どうしの会話も増えた。もちろん、事故の責任の問題など、解決すべき課題は【48】。しかし、行政だけに頼らず、住民が互いに助け合う仕組みを育てていくことは、これからの地域にとって【49】。",
+   "prompt": "【46】",
+   "choices": [
+    "しかし",
+    "そのうえ",
+    "たとえば",
+    "そこで"
+   ],
+   "explanation": "Bus berkurang karena tak untung, tetapi bagi lansia vital: しかし.",
+   "explanationEn": "Buses are cut as unprofitable, but they are vital for elders: しかし."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "山あいの小さな町で、バスの本数が年々減っている。利用する人が少なくなり、会社が採算を取れなくなったからだ。【46】、車を運転できない高齢者にとって、バスは生活に欠かせない足である。病院や買い物に行けなくなれば、その町で暮らし続けること自体が難しくなって【47】。\nそこで、町は、住民が自分の車で近所の人を乗せて運ぶ仕組みを試し始めた。運転する住民には、少額の謝礼が出る。始めてみると、移動の問題が解決しただけでなく、顔を合わせる機会が増え、近所の人どうしの会話も増えた。もちろん、事故の責任の問題など、解決すべき課題は【48】。しかし、行政だけに頼らず、住民が互いに助け合う仕組みを育てていくことは、これからの地域にとって【49】。",
+   "prompt": "【47】",
+   "choices": [
+    "しまう",
+    "おく",
+    "みる",
+    "くる"
+   ],
+   "explanation": "～てしまう menyatakan hasil yang tak diinginkan.",
+   "explanationEn": "～てしまう expresses an undesirable outcome."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "山あいの小さな町で、バスの本数が年々減っている。利用する人が少なくなり、会社が採算を取れなくなったからだ。【46】、車を運転できない高齢者にとって、バスは生活に欠かせない足である。病院や買い物に行けなくなれば、その町で暮らし続けること自体が難しくなって【47】。\nそこで、町は、住民が自分の車で近所の人を乗せて運ぶ仕組みを試し始めた。運転する住民には、少額の謝礼が出る。始めてみると、移動の問題が解決しただけでなく、顔を合わせる機会が増え、近所の人どうしの会話も増えた。もちろん、事故の責任の問題など、解決すべき課題は【48】。しかし、行政だけに頼らず、住民が互いに助け合う仕組みを育てていくことは、これからの地域にとって【49】。",
+   "prompt": "【48】",
+   "choices": [
+    "残っている",
+    "残してある",
+    "残させている",
+    "残られている"
+   ],
+   "explanation": "Masih ada masalah tersisa: 残っている.",
+   "explanationEn": "Problems still remain: 残っている."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "山あいの小さな町で、バスの本数が年々減っている。利用する人が少なくなり、会社が採算を取れなくなったからだ。【46】、車を運転できない高齢者にとって、バスは生活に欠かせない足である。病院や買い物に行けなくなれば、その町で暮らし続けること自体が難しくなって【47】。\nそこで、町は、住民が自分の車で近所の人を乗せて運ぶ仕組みを試し始めた。運転する住民には、少額の謝礼が出る。始めてみると、移動の問題が解決しただけでなく、顔を合わせる機会が増え、近所の人どうしの会話も増えた。もちろん、事故の責任の問題など、解決すべき課題は【48】。しかし、行政だけに頼らず、住民が互いに助け合う仕組みを育てていくことは、これからの地域にとって【49】。",
+   "prompt": "【49】",
+   "choices": [
+    "大切な試みだと言える",
+    "大切な試みとは限らない",
+    "大切な試みにほかならない",
+    "大切な試みであるはずがない"
+   ],
+   "explanation": "Menyimpulkan sistem saling bantu penting.",
+   "explanationEn": "Concludes that a mutual-aid system is an important attempt."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "保護者のみなさまへ\n来月の授業参観は、感染症の予防のため、各学年で時間を分けて行います。一、二年生は九時から、三、四年生は十時から、五、六年生は十一時からです。ご自分のお子さんの学年の時間にお越しください。きょうだいがいる場合は、小さい学年のほうにお越しください。\n校長",
+   "prompt": "授業参観について、正しいものはどれですか。",
+   "choices": [
+    "学年によって、参観の時間が違う。",
+    "全学年が同じ時間に行われる。",
+    "きょうだいがいる場合は、大きい学年に行く。",
+    "感染症が広がったら、毎月行う。"
+   ],
+   "explanation": "Waktu kunjungan kelas berbeda menurut tingkat kelas.",
+   "explanationEn": "The visiting time differs by grade."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "市民の皆様へ\n市では、子育て中の家庭を支えるため、来月から、小学生以下の子どもがいる家庭を対象に、地域の送迎サービスを始めます。利用には事前の登録が必要です。登録は市役所の窓口のほか、市のホームページでもできます。料金は一回三百円です。\n子育て支援課",
+   "prompt": "このサービスについて、正しいものはどれですか。",
+   "choices": [
+    "利用するためには、事前に登録しなければならない。",
+    "登録は市役所の窓口だけでできる。",
+    "料金は無料である。",
+    "中学生も利用できる。"
+   ],
+   "explanation": "Harus mendaftar lebih dahulu untuk memakai layanan.",
+   "explanationEn": "Prior registration is required."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "中学校の部活動を、地域のクラブに移す動きが進んでいる。先生の負担を減らし、専門の指導を受けられるようにするためだ。しかし、費用が増えて参加できない子が出たり、近くに適当なクラブがなかったりする心配もある。制度を変えるなら、すべての子どもが不利にならない配慮が欠かせない。",
+   "prompt": "筆者が最も言いたいことは何ですか。",
+   "choices": [
+    "制度を変えるなら、どの子どもも不利にならない配慮が必要だ。",
+    "部活動は今すぐやめるべきだ。",
+    "先生の負担は減らすべきではない。",
+    "専門の指導は必要ない。"
+   ],
+   "explanation": "Jika sistem diubah, perlu perhatian agar anak mana pun tidak dirugikan.",
+   "explanationEn": "If the system changes, care is needed so no child is disadvantaged."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "私の町には、「子ども食堂」がある。地域の大人たちが、週に一度、無料か少額で食事を出す場所だ。もともとは、十分に食事をとれない子どもを支えるために始まったが、今では、いろいろな子どもが集まる。\n私は大学生になってから、ボランティアとして手伝っている。調理や片づけだけでなく、子どもの宿題を見ることもある。最近は、一緒に食べたあとで、子どもが学校での出来事を話してくれるようになった。食事を出すことだけでなく、子どもが安心して話せる場所であることも、この食堂の大きな役割だと感じている。",
+   "prompt": "子ども食堂は、もともと何のために始まりましたか。",
+   "choices": [
+    "十分に食事をとれない子どもを支えるため",
+    "地域の大人が料理を習うため",
+    "大学生に仕事を紹介するため",
+    "子どもに宿題を教えるため"
+   ],
+   "explanation": "Awalnya untuk menopang anak yang kurang makan.",
+   "explanationEn": "It began to support children who could not eat enough."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "私の町には、「子ども食堂」がある。地域の大人たちが、週に一度、無料か少額で食事を出す場所だ。もともとは、十分に食事をとれない子どもを支えるために始まったが、今では、いろいろな子どもが集まる。\n私は大学生になってから、ボランティアとして手伝っている。調理や片づけだけでなく、子どもの宿題を見ることもある。最近は、一緒に食べたあとで、子どもが学校での出来事を話してくれるようになった。食事を出すことだけでなく、子どもが安心して話せる場所であることも、この食堂の大きな役割だと感じている。",
+   "prompt": "筆者は、この食堂の役割をどう考えていますか。",
+   "choices": [
+    "食事だけでなく、子どもが安心して話せる場所でもある。",
+    "無料で食事を出すことだけである。",
+    "大学生が勉強する場所である。",
+    "大人が集まって相談する場所である。"
+   ],
+   "explanation": "Selain makan, tempat anak bisa bicara dengan tenang.",
+   "explanationEn": "Beyond meals, a place where children can talk with peace of mind."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "方言は、その土地の歴史や暮らしを映す大切な文化である。しかし、テレビや学校で共通語に触れる機会が増え、方言を使う若者は減っている。自分の祖父母の言葉が、聞いても分からないという子どももいるという。\n最近、ある町では、お年寄りの話す方言を録音し、ホームページで公開する取り組みを始めた。学校でも、授業で方言の昔話を聞く時間を設けた。方言を「古い言葉」として捨てるのではなく、「地域の宝」として次の世代に伝えていこうとする試みである。",
+   "prompt": "方言を使う若者が減っている理由として、筆者が挙げているのはどれですか。",
+   "choices": [
+    "テレビや学校で、共通語に触れる機会が増えたから。",
+    "お年寄りが方言を話さなくなったから。",
+    "方言が難しくなったから。",
+    "方言を禁止する法律ができたから。"
+   ],
+   "explanation": "Karena kesempatan bertemu bahasa standar bertambah.",
+   "explanationEn": "Because chances to hear the standard language increased."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "方言は、その土地の歴史や暮らしを映す大切な文化である。しかし、テレビや学校で共通語に触れる機会が増え、方言を使う若者は減っている。自分の祖父母の言葉が、聞いても分からないという子どももいるという。\n最近、ある町では、お年寄りの話す方言を録音し、ホームページで公開する取り組みを始めた。学校でも、授業で方言の昔話を聞く時間を設けた。方言を「古い言葉」として捨てるのではなく、「地域の宝」として次の世代に伝えていこうとする試みである。",
+   "prompt": "ある町の取り組みについて、正しいものはどれですか。",
+   "choices": [
+    "お年寄りの方言を録音して、公開している。",
+    "方言を使うことを禁止している。",
+    "子どもに方言を書かせている。",
+    "方言の辞書を売っている。"
+   ],
+   "explanation": "Merekam dialek lansia dan menayangkannya.",
+   "explanationEn": "They record elders' dialect and make it public."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 複数文章の統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】小さな学校は、先生と子どもの距離が近く、一人一人に目が届くという利点がある。しかし、人数が少なすぎると、友達の数が限られ、いろいろな意見に触れる機会も減ってしまう。子どもの成長のためには、ある程度の人数のなかで学ぶほうがよいので、学校の統合は進めるべきだ。\n\n【B】学校は、勉強をする場所であると同時に、地域の中心でもある。学校がなくなると、行事も人の集まりもなくなり、町がさらに寂しくなる。統合するにしても、地域の人たちの意見を十分に聞くことが何より重要だ。子どもの数だけで決めてはならない。",
+   "prompt": "学校の統合について、Aの筆者はどう考えていますか。",
+   "choices": [
+    "子どもの成長のために、進めるべきだ。",
+    "地域の意見を聞かずに進めるべきだ。",
+    "小さな学校は、一人一人に目が届かない。",
+    "統合すると、先生と子どもの距離が近くなる。"
+   ],
+   "explanation": "A menilai penggabungan sekolah perlu demi pertumbuhan anak.",
+   "explanationEn": "A thinks mergers should proceed for children's growth."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 複数文章の統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】小さな学校は、先生と子どもの距離が近く、一人一人に目が届くという利点がある。しかし、人数が少なすぎると、友達の数が限られ、いろいろな意見に触れる機会も減ってしまう。子どもの成長のためには、ある程度の人数のなかで学ぶほうがよいので、学校の統合は進めるべきだ。\n\n【B】学校は、勉強をする場所であると同時に、地域の中心でもある。学校がなくなると、行事も人の集まりもなくなり、町がさらに寂しくなる。統合するにしても、地域の人たちの意見を十分に聞くことが何より重要だ。子どもの数だけで決めてはならない。",
+   "prompt": "Bの筆者が最も重要だと考えていることは何ですか。",
+   "choices": [
+    "地域の人たちの意見を十分に聞くこと",
+    "子どもの数を数えること",
+    "学校をすべてなくすこと",
+    "先生の数を増やすこと"
+   ],
+   "explanation": "B menekankan mendengarkan pendapat warga secara memadai.",
+   "explanationEn": "B stresses hearing local residents' views fully."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "近年、「地域おこし協力隊」として、都市部から地方へ移り住む若者が増えている。観光の宣伝や特産品づくりなどを手伝いながら、数年間その地域で暮らす制度だ。人口が減る地域にとっては、新しい力が加わる貴重な機会となる。\nしかし、うまくいく例ばかりではない。地域の人々と隊員の間で、期待にずれが生じることがあるからだ。地域側は、いつか定住してくれることを望む。一方、隊員は、数年間の経験として来ている場合もある。こうしたずれが、不満や誤解を生み、任期を終えて去ってしまう隊員も少なくない。\n成功している地域に共通するのは、受け入れる前に、双方が互いの考えをよく話し合っていることだ。隊員に何を期待するのかを具体的に伝え、隊員の希望も聞く。そのうえで、地域の人が日常的に声をかけ、見守る姿勢をとる。人が移り住むことは、制度だけでなく、人と人との信頼がなければ成り立たないのである。",
+   "prompt": "地域おこし協力隊について、正しいものはどれですか。",
+   "choices": [
+    "都市部の若者が、数年間地方で暮らしながら地域の活動を手伝う制度",
+    "地方の若者が都市部で働く制度",
+    "外国人が日本の地方で日本語を学ぶ制度",
+    "地方の会社が都市部に店を出す制度"
+   ],
+   "explanation": "Sistem pemuda kota tinggal beberapa tahun di daerah membantu kegiatan.",
+   "explanationEn": "A system where young city people live in rural areas for years helping with activities."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "近年、「地域おこし協力隊」として、都市部から地方へ移り住む若者が増えている。観光の宣伝や特産品づくりなどを手伝いながら、数年間その地域で暮らす制度だ。人口が減る地域にとっては、新しい力が加わる貴重な機会となる。\nしかし、うまくいく例ばかりではない。地域の人々と隊員の間で、期待にずれが生じることがあるからだ。地域側は、いつか定住してくれることを望む。一方、隊員は、数年間の経験として来ている場合もある。こうしたずれが、不満や誤解を生み、任期を終えて去ってしまう隊員も少なくない。\n成功している地域に共通するのは、受け入れる前に、双方が互いの考えをよく話し合っていることだ。隊員に何を期待するのかを具体的に伝え、隊員の希望も聞く。そのうえで、地域の人が日常的に声をかけ、見守る姿勢をとる。人が移り住むことは、制度だけでなく、人と人との信頼がなければ成り立たないのである。",
+   "prompt": "地域と隊員の間で、どのようなずれが生じることがありますか。",
+   "choices": [
+    "地域は定住を望むが、隊員は数年間の経験として来ている場合がある。",
+    "地域は隊員に給料を払いたくないと考えている。",
+    "隊員は地域の人と話したくないと考えている。",
+    "地域は隊員に早く帰ってほしいと考えている。"
+   ],
+   "explanation": "Daerah ingin menetap, anggota hanya ingin pengalaman beberapa tahun.",
+   "explanationEn": "The region wants settlement, members may come for a few years' experience."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "近年、「地域おこし協力隊」として、都市部から地方へ移り住む若者が増えている。観光の宣伝や特産品づくりなどを手伝いながら、数年間その地域で暮らす制度だ。人口が減る地域にとっては、新しい力が加わる貴重な機会となる。\nしかし、うまくいく例ばかりではない。地域の人々と隊員の間で、期待にずれが生じることがあるからだ。地域側は、いつか定住してくれることを望む。一方、隊員は、数年間の経験として来ている場合もある。こうしたずれが、不満や誤解を生み、任期を終えて去ってしまう隊員も少なくない。\n成功している地域に共通するのは、受け入れる前に、双方が互いの考えをよく話し合っていることだ。隊員に何を期待するのかを具体的に伝え、隊員の希望も聞く。そのうえで、地域の人が日常的に声をかけ、見守る姿勢をとる。人が移り住むことは、制度だけでなく、人と人との信頼がなければ成り立たないのである。",
+   "prompt": "成功している地域に共通することは何ですか。",
+   "choices": [
+    "受け入れる前に、双方が互いの考えをよく話し合っていること",
+    "隊員に難しい仕事を任せていること",
+    "隊員の数をできるだけ増やしていること",
+    "隊員が地域の人と関わらないようにしていること"
+   ],
+   "explanation": "Sebelum menerima, kedua pihak berdiskusi mendalam.",
+   "explanationEn": "Both sides talk through their expectations before acceptance."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みどり町公民館　秋の講座\nA　パソコン入門　毎週月曜 10:00〜12:00（全4回）　受講料 2,000円　定員12名　※ノートパソコンをご持参ください\nB　書道教室　毎週水曜 14:00〜16:00（全5回）　受講料 3,000円　定員10名　※道具は貸し出します\nC　郷土料理を作ろう　10月12日（日）10:00〜13:00（1回）　材料費 800円　定員16名　※エプロンを持参\nD　地域の歴史を歩く　10月26日（日）9:00〜12:00（1回）　無料　定員20名　※雨天は中止\n※申し込みは、9月20日までに公民館の窓口でお願いします。※定員を超えた場合は抽選です。",
+   "prompt": "平日の昼間に参加できて、道具を持っていかなくてよい講座はどれですか。",
+   "choices": [
+    "B",
+    "A",
+    "C",
+    "D"
+   ],
+   "explanation": "Hari kerja siang dan alat dipinjamkan: B (Rabu). A harus membawa laptop sendiri; C dan D hari Minggu.",
+   "explanationEn": "Weekday daytime with tools lent: B (Wednesday); A requires your own laptop; C and D are Sundays."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みどり町公民館　秋の講座\nA　パソコン入門　毎週月曜 10:00〜12:00（全4回）　受講料 2,000円　定員12名　※ノートパソコンをご持参ください\nB　書道教室　毎週水曜 14:00〜16:00（全5回）　受講料 3,000円　定員10名　※道具は貸し出します\nC　郷土料理を作ろう　10月12日（日）10:00〜13:00（1回）　材料費 800円　定員16名　※エプロンを持参\nD　地域の歴史を歩く　10月26日（日）9:00〜12:00（1回）　無料　定員20名　※雨天は中止\n※申し込みは、9月20日までに公民館の窓口でお願いします。※定員を超えた場合は抽選です。",
+   "prompt": "案内の内容と合っているものはどれですか。",
+   "choices": [
+    "申し込みは九月二十日までに窓口でする。",
+    "Dは雨でも必ず行われる。",
+    "Cは材料費が無料である。",
+    "申し込みは電話でもできる。"
+   ],
+   "explanation": "Pendaftaran di loket sebelum 20 September.",
+   "explanationEn": "Apply at the counter by September 20."
+  }
+ ]
+}

@@ -100,6 +100,9 @@ func ankiStats(state *AnkiDeckState, total int, now time.Time) AnkiStats {
 	return stats
 }
 func ankiPremium(deck anki.Deck) bool {
+	if openLearningAccess {
+		return false
+	}
 	return deck.Level == "N1" || deck.Level == "N2" || deck.Level == "N3"
 }
 func (s *MemoryStore) AnkiDeck(user, id string) (AnkiDeckView, error) {

@@ -1,8 +1,11 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
+import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_banner_content.dart';
@@ -19,6 +22,7 @@ import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
+import 'package:nihongo_master/shared/presentation/widgets/motion.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({
@@ -172,37 +176,53 @@ class _DashboardContent extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 18, 20, 32),
           sliver: SliverList.list(
             children: [
-              _DashboardHeader(data: data, openProfile: openProfile),
+              StaggeredEntrance(
+                child: _DashboardHeader(data: data, openProfile: openProfile),
+              ),
+              if (data.isAuthenticated && data.profile != null) ...[
+                const SizedBox(height: 16),
+                StaggeredEntrance(
+                  index: 1,
+                  child: _ProgressSummary(
+                    profile: data.profile!,
+                    onTap: openProfile,
+                  ),
+                ),
+              ],
               if (offline) ...[
                 const SizedBox(height: 12),
                 const _OfflineDashboardNotice(),
               ],
-              const SizedBox(height: 22),
+              const SizedBox(height: 16),
               if (banners.isNotEmpty) ...[
-                HomeBannerCarousel(
-                  key: ValueKey(banners.map((banner) => banner.id).join(':')),
-                  banners: banners,
-                  active: active,
-                  onOpen: (banner) {
-                    switch (banner.action) {
-                      case 'premium':
-                        context.push('/premium');
-                      case 'learn':
-                        openLearn();
-                      case 'anki':
-                        context.push('/anki');
-                      case 'manga':
-                        context.push('/manga');
-                      case 'ssw':
-                        context.push('/ssw');
-                      case 'jobs':
-                        context.push('/jobs');
-                    }
-                  },
+                StaggeredEntrance(
+                  index: 2,
+                  child: HomeBannerCarousel(
+                    key: ValueKey(banners.map((banner) => banner.id).join(':')),
+                    banners: banners,
+                    active: active,
+                    onOpen: (banner) {
+                      switch (banner.action) {
+                        case 'premium':
+                          context.push('/premium');
+                        case 'learn':
+                          openLearn();
+                        case 'anki':
+                          context.push('/anki');
+                        case 'manga':
+                          context.push('/manga');
+                        case 'ssw':
+                          context.push('/ssw');
+                        case 'jobs':
+                          context.push('/jobs');
+                      }
+                    },
+                  ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
               ],
               const ContinueLearningSection(),
+              const SizedBox(height: 6),
               _SectionHeader(
                 title: 'Mulai belajar'.localized(context),
                 action: 'Lihat semua'.localized(context),
@@ -234,7 +254,11 @@ class _DashboardContent extends StatelessWidget {
               const SizedBox(height: 12),
               Card(
                 child: ListTile(
-                  leading: const Icon(Icons.quiz_outlined),
+                  contentPadding: const EdgeInsets.fromLTRB(14, 6, 10, 6),
+                  leading: KanjiGlyphTile(
+                    glyph: '試',
+                    color: SakuraColors.of(context).grammar,
+                  ),
                   title: Text('Latihan ujian'.localized(context)),
                   subtitle: Text(
                     'Simulasi JLPT, JFT, dan NAT'.localized(context),
@@ -288,51 +312,231 @@ class _DashboardHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final profile = data.profile;
     final name = profile?.displayName.trim();
+    final hasName = name != null && name.isNotEmpty;
     return Row(
       children: [
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (hasName)
+                Text(
+                  'おはよう',
+                  style: AppTypography.japanese(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
               Text(
-                name == null || name.isEmpty
-                    ? 'Selamat datang!'.localized(context)
-                    : 'おはよう, $name!'.localized(context),
+                hasName ? name! : 'Selamat datang!'.localized(context),
                 key: const Key('home-greeting'),
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.w800,
-                  letterSpacing: -0.4,
+                  letterSpacing: -0.6,
+                  height: 1.15,
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 4),
               Text(
                 data.isAuthenticated
-                    ? '${profile?.target ?? ''} • Level ${profile?.level ?? 1} • ${profile?.xp ?? 0} XP'
+                    ? [
+                        if ((profile?.target ?? '').isNotEmpty)
+                          profile!.target,
+                        'Level ${profile?.level ?? 1}',
+                      ].join(' • ')
                     : 'Jelajahi materi gratis, lalu masuk untuk menyimpan progress.'
                           .localized(context),
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: theme.textTheme.bodySmall,
               ),
             ],
           ),
         ),
-        IconButton(
+        _HeaderIconButton(
           onPressed: () => context.push('/notifications'),
           tooltip: 'Pengaturan notifikasi'.localized(context),
-          icon: const Icon(Icons.notifications_outlined),
+          icon: Icons.notifications_none_rounded,
         ),
-        if (profile != null)
-          InkWell(
+        if (profile != null) ...[
+          const SizedBox(width: 8),
+          Pressable(
             onTap: openProfile,
-            customBorder: const CircleBorder(),
+            borderRadius: BorderRadius.circular(40),
             child: ProfileAvatar(
-              radius: 24,
+              radius: 22,
               displayName: profile.displayName,
               photoUrl: profile.photoUrl,
             ),
           ),
+        ],
       ],
+    );
+  }
+}
+
+class _HeaderIconButton extends StatefulWidget {
+  const _HeaderIconButton({
+    required this.onPressed,
+    required this.tooltip,
+    required this.icon,
+  });
+
+  final VoidCallback onPressed;
+  final String tooltip;
+  final IconData icon;
+
+  @override
+  State<_HeaderIconButton> createState() => _HeaderIconButtonState();
+}
+
+class _HeaderIconButtonState extends State<_HeaderIconButton>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _ring = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 600),
+  );
+
+  @override
+  void dispose() {
+    _ring.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Tooltip(
+      message: widget.tooltip,
+      child: Pressable(
+        borderRadius: BorderRadius.circular(40),
+        semanticsLabel: widget.tooltip,
+        onTap: () {
+          if (!AppMotion.reduced(context)) _ring.forward(from: 0);
+          widget.onPressed();
+        },
+        child: SakuraCard(
+          padding: const EdgeInsets.all(10),
+          radius: 40,
+          child: AnimatedBuilder(
+            animation: _ring,
+            builder: (context, child) {
+              final t = _ring.value;
+              final angle = 0.3 * math.sin(t * math.pi * 5) * (1 - t);
+              return Transform.rotate(angle: angle, child: child);
+            },
+            child: Icon(widget.icon, size: 20, color: scheme.onSurface),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ProgressSummary extends StatelessWidget {
+  const _ProgressSummary({required this.profile, required this.onTap});
+
+  final HomeProfile profile;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final sakura = SakuraColors.of(context);
+    final scheme = theme.colorScheme;
+    Widget stat({
+      required IconData icon,
+      required Color color,
+      required Widget value,
+      required String label,
+    }) {
+      return Expanded(
+        child: Row(
+          children: [
+            Container(
+              width: 34,
+              height: 34,
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.14),
+                borderRadius: BorderRadius.circular(11),
+              ),
+              child: Icon(icon, size: 18, color: color),
+            ),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  DefaultTextStyle.merge(
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                    ),
+                    child: value,
+                  ),
+                  Text(
+                    label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Pressable(
+      key: const Key('home-progress-summary'),
+      onTap: onTap,
+      scale: 0.98,
+      borderRadius: BorderRadius.circular(18),
+      child: SakuraCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                stat(
+                  icon: Icons.local_fire_department_rounded,
+                  color: scheme.primary,
+                  value: AnimatedCount(value: profile.streakDays),
+                  label: 'Streak hari'.localized(context),
+                ),
+                stat(
+                  icon: Icons.bolt_rounded,
+                  color: sakura.goldText,
+                  value: AnimatedCount(value: profile.xp),
+                  label: 'XP',
+                ),
+                stat(
+                  icon: Icons.emoji_events_rounded,
+                  color: sakura.grammar,
+                  value: Text('${profile.level}'),
+                  label: 'Level',
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text(
+              profile.streakDays > 0
+                  ? 'Pertahankan streak dengan menyelesaikan kuis hari ini.'
+                        .localized(context)
+                  : 'Selesaikan 1 kuis atau ujian hari ini untuk memulai streak.'
+                        .localized(context),
+              style: theme.textTheme.bodySmall,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -364,6 +568,7 @@ class _LearningMenuGrid extends StatelessWidget {
           itemBuilder: (context, index) => _LearningMenuCard(
             category: categories[index],
             onPressed: onPressed,
+            index: index,
           ),
         );
       },
@@ -372,31 +577,34 @@ class _LearningMenuGrid extends StatelessWidget {
 }
 
 class _LearningMenuCard extends StatelessWidget {
-  const _LearningMenuCard({required this.category, required this.onPressed});
+  const _LearningMenuCard({
+    required this.category,
+    required this.onPressed,
+    this.index = 0,
+  });
 
   final LearningCategory category;
   final VoidCallback onPressed;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-    final color = _categoryColor(category.id);
-    return Card(
-      child: InkWell(
+    final sakura = SakuraColors.of(context);
+    final color = sakura.category(category.id);
+    return StaggeredEntrance(
+      index: index,
+      child: Pressable(
         key: Key('category-${category.id}'),
         onTap: onPressed,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
+        borderRadius: BorderRadius.circular(18),
+        child: SakuraCard(
           padding: const EdgeInsets.all(13),
           child: Row(
             children: [
-              Container(
-                width: 45,
-                height: 45,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.12),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Icon(_categoryIcon(category.id), color: color),
+              KanjiGlyphTile(
+                glyph: categoryGlyph(category.id),
+                color: color,
+                size: 44,
               ),
               const SizedBox(width: 10),
               Expanded(
@@ -416,10 +624,10 @@ class _LearningMenuCard extends StatelessWidget {
                         ),
                         if (category.isPremium) ...[
                           const SizedBox(width: 4),
-                          const Icon(
+                          Icon(
                             Icons.workspace_premium_rounded,
                             size: 15,
-                            color: Color(0xFFE59E24),
+                            color: sakura.goldText,
                           ),
                         ],
                       ],
@@ -523,22 +731,3 @@ class _ErrorView extends StatelessWidget {
     );
   }
 }
-
-IconData _categoryIcon(String id) => switch (id) {
-  'vocabulary' => Icons.translate_rounded,
-  'grammar' => Icons.menu_book_rounded,
-  'listening' => Icons.headphones_rounded,
-  'reading' => Icons.chrome_reader_mode_rounded,
-  'kanji' => Icons.brush_rounded,
-  'speaking' => Icons.record_voice_over_rounded,
-  _ => Icons.school_rounded,
-};
-
-Color _categoryColor(String id) => switch (id) {
-  'vocabulary' => const Color(0xFFE85555),
-  'grammar' => const Color(0xFF5B67D7),
-  'listening' => const Color(0xFF16A085),
-  'reading' => const Color(0xFFE59E24),
-  'kanji' => const Color(0xFF9B59B6),
-  _ => const Color(0xFF2E86C1),
-};

@@ -1,0 +1,966 @@
+{
+ "level": "N1",
+ "paper": 8,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この地域には、昔からの[[慣習]]が今も残っている。",
+   "choices": [
+    "かんしゅう",
+    "かんじゅう",
+    "がんしゅう",
+    "かんしゅ"
+   ],
+   "explanation": "慣習（かんしゅう） berarti kebiasaan turun-temurun.",
+   "explanationEn": "慣習（かんしゅう） means long-standing custom."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "裁判官は、証拠に基づいて事件を[[裁く]]。",
+   "choices": [
+    "さばく",
+    "さだく",
+    "さばぐ",
+    "さかく"
+   ],
+   "explanation": "裁く（さばく） berarti mengadili.",
+   "explanationEn": "裁く（さばく） means to judge or try a case."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "物価の上昇を[[抑制]]する政策が打ち出された。",
+   "choices": [
+    "よくせい",
+    "よくそく",
+    "よっせい",
+    "よくさい"
+   ],
+   "explanation": "抑制（よくせい） berarti menekan atau mengendalikan.",
+   "explanationEn": "抑制（よくせい） means restraint or suppression."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "すべての法律は、[[憲法]]に反してはならない。",
+   "choices": [
+    "けんぽう",
+    "けんぼう",
+    "げんぽう",
+    "けんほう"
+   ],
+   "explanation": "憲法（けんぽう） berarti konstitusi.",
+   "explanationEn": "憲法（けんぽう） means the constitution."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "町の予算は、主に税収で[[賄われて]]いる。",
+   "choices": [
+    "まかなわれて",
+    "まかのわれて",
+    "まどなわれて",
+    "わいなわれて"
+   ],
+   "explanation": "賄う（まかなう） berarti membiayai atau mencukupi.",
+   "explanationEn": "賄う（まかなう） means to cover or finance."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "一定の収入以下の世帯には、授業料が[[免除]]される。",
+   "choices": [
+    "めんじょ",
+    "めんぞ",
+    "めんじょう",
+    "べんじょ"
+   ],
+   "explanation": "免除（めんじょ） berarti pembebasan.",
+   "explanationEn": "免除（めんじょ） means exemption."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "国境をめぐる[[紛争]]が、長年解決されていない。",
+   "choices": [
+    "ふんそう",
+    "ふんぞう",
+    "ぶんそう",
+    "ふんじょう"
+   ],
+   "explanation": "紛争（ふんそう） berarti sengketa atau konflik.",
+   "explanationEn": "紛争（ふんそう） means dispute or conflict."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、いかなる申し出も[[拒んだ]]。",
+   "choices": [
+    "こばんだ",
+    "こぼんだ",
+    "ことばんだ",
+    "きょんだ"
+   ],
+   "explanation": "拒む（こばむ） berarti menolak.",
+   "explanationEn": "拒む（こばむ） means to refuse."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "その法案は、賛成多数で（　）された。",
+   "choices": [
+    "可決",
+    "補足",
+    "装備",
+    "暗示"
+   ],
+   "explanation": "法案が可決される berarti rancangan undang-undang disahkan.",
+   "explanationEn": "法案が可決される means a bill is passed."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "警察は、組織的な不正の（　）に乗り出した。",
+   "choices": [
+    "摘発",
+    "発揮",
+    "発散",
+    "発祥"
+   ],
+   "explanation": "不正の摘発 berarti membongkar pelanggaran.",
+   "explanationEn": "不正の摘発 means exposing wrongdoing."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女の主張は、根拠のない（　）にすぎない。",
+   "choices": [
+    "憶測",
+    "推進",
+    "保証",
+    "共鳴"
+   ],
+   "explanation": "根拠のない憶測 berarti dugaan tanpa dasar.",
+   "explanationEn": "根拠のない憶測 means groundless speculation."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "契約を（　）する場合は、一か月前までに書面で通知すること。",
+   "choices": [
+    "解除",
+    "解散",
+    "解雇",
+    "解体"
+   ],
+   "explanation": "契約を解除する berarti membatalkan kontrak.",
+   "explanationEn": "契約を解除する means to cancel a contract."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "双方の意見が（　）したまま、交渉は平行線をたどった。",
+   "choices": [
+    "対立",
+    "対応",
+    "対照",
+    "対抗"
+   ],
+   "explanation": "意見が対立する berarti pendapat saling bertentangan.",
+   "explanationEn": "意見が対立する means opinions conflict."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、社会的弱者を（　）する活動に生涯をささげた。",
+   "choices": [
+    "擁護",
+    "保管",
+    "看護",
+    "守備"
+   ],
+   "explanation": "弱者を擁護する berarti membela pihak lemah.",
+   "explanationEn": "弱者を擁護する means to defend the weak."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の応対は[[ぞんざい]]だった。",
+   "choices": [
+    "雑で礼儀に欠けていた",
+    "丁寧で控えめだった",
+    "堂々として立派だった",
+    "冷静で落ち着いていた"
+   ],
+   "explanation": "ぞんざい berarti kasar dan tidak sopan.",
+   "explanationEn": "ぞんざい means rough and discourteous."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会議は[[滞りなく]]終了した。",
+   "choices": [
+    "問題なく順調に",
+    "予定より長引いて",
+    "途中で中断して",
+    "大声で言い争って"
+   ],
+   "explanation": "滞りなく berarti lancar tanpa hambatan.",
+   "explanationEn": "滞りなく means without a hitch."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は[[さりげなく]]席を立った。",
+   "choices": [
+    "目立たないように自然に",
+    "怒って勢いよく",
+    "急に大声を出して",
+    "ためらいがちに何度も"
+   ],
+   "explanation": "さりげなく berarti dengan wajar tanpa menarik perhatian.",
+   "explanationEn": "さりげなく means casually, without drawing attention."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "その提案は[[あながち]]間違いとは言えない。",
+   "choices": [
+    "必ずしも",
+    "少しも",
+    "たしかに",
+    "もうすぐ"
+   ],
+   "explanation": "あながち～ない berarti belum tentu.",
+   "explanationEn": "あながち～ない means not necessarily."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は[[かたくなに]]意見を変えなかった。",
+   "choices": [
+    "頑固に",
+    "柔軟に",
+    "静かに",
+    "慎重に"
+   ],
+   "explanation": "かたくな berarti keras kepala.",
+   "explanationEn": "かたくな means stubborn."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新法の施行で、現場は[[てんてこ舞い]]だ。",
+   "choices": [
+    "忙しくて大混乱している",
+    "暇でのんびりしている",
+    "喜んで踊っている",
+    "困って泣いている"
+   ],
+   "explanation": "てんてこ舞い berarti kewalahan karena sibuk.",
+   "explanationEn": "てんてこ舞い means being run off one's feet."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「見合わせる」",
+   "choices": [
+    "天候が悪いので、出発を見合わせることにした。",
+    "隣の席の人に、辞書を見合わせた。",
+    "駅で財布を見合わせてしまった。",
+    "彼女は毎朝、新聞を見合わせている。"
+   ],
+   "explanation": "見合わせる berarti menunda atau menangguhkan.",
+   "explanationEn": "見合わせる means to postpone or hold off."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「抜群」",
+   "choices": [
+    "彼は運動神経が抜群で、どんな競技もこなす。",
+    "この部屋は抜群に狭くて、息苦しい。",
+    "昨日の試験は抜群に失敗した。",
+    "雨が抜群に降り続いている。"
+   ],
+   "explanation": "抜群 dipakai untuk hal yang unggul.",
+   "explanationEn": "抜群 is used for something outstanding."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「もてなす」",
+   "choices": [
+    "遠方からの客を、手料理でもてなした。",
+    "先生が学生の意見をもてなした。",
+    "駅で友人をもてなして電車に乗った。",
+    "彼は仕事の疲れをもてなして帰宅した。"
+   ],
+   "explanation": "もてなす berarti menjamu tamu.",
+   "explanationEn": "もてなす means to entertain a guest."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「兼ねる」",
+   "choices": [
+    "この部屋は、書斎と寝室を兼ねている。",
+    "駅まで兼ねて走ったので、息が切れた。",
+    "彼は友達を兼ねて、先生に叱られた。",
+    "電話を兼ねてもらったので、助かった。"
+   ],
+   "explanation": "兼ねる berarti merangkap dua fungsi.",
+   "explanationEn": "兼ねる means to serve as both."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「そそのかす」",
+   "choices": [
+    "友人にそそのかされて、つい借金をしてしまった。",
+    "先生は学生をそそのかして、勉強を励ました。",
+    "母は子どもをそそのかして、そっと寝かせた。",
+    "彼は丁寧にそそのかして、客を見送った。"
+   ],
+   "explanation": "そそのかす berarti menghasut.",
+   "explanationEn": "そそのかす means to incite or tempt."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女の才能（　）、この程度の試験は簡単だったに違いない。",
+   "choices": [
+    "をもってすれば",
+    "ならではの",
+    "にひきかえ",
+    "をおいて"
+   ],
+   "explanation": "～をもってすれば berarti jika memakai ～.",
+   "explanationEn": "～をもってすれば means if one applies ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "今回の失敗は、彼の経験不足（　）結果だった。",
+   "choices": [
+    "ゆえの",
+    "ならではの",
+    "どころの",
+    "かたがたの"
+   ],
+   "explanation": "～ゆえの berarti akibat dari ～.",
+   "explanationEn": "～ゆえの means resulting from ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は謝る（　）、その場を立ち去った。",
+   "choices": [
+    "こともなく",
+    "ばかりに",
+    "ともなく",
+    "ものなら"
+   ],
+   "explanation": "～こともなく berarti tanpa ～.",
+   "explanationEn": "～こともなく means without ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "事態がここまで悪化した（　）、もはや一刻の猶予も許されない。",
+   "choices": [
+    "とあっては",
+    "ものなら",
+    "どころか",
+    "にひきかえ"
+   ],
+   "explanation": "～とあっては berarti dalam keadaan seperti ～.",
+   "explanationEn": "～とあっては means given the situation of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "一言連絡してくれれば助けられた（　）。",
+   "choices": [
+    "ものを",
+    "ものか",
+    "ものの",
+    "ものだから"
+   ],
+   "explanation": "～ものを berarti padahal bisa ～ (penyesalan).",
+   "explanationEn": "～ものを expresses regret: if only you had."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は周囲の反対（　）、独自の路線を貫いた。",
+   "choices": [
+    "をものともせず",
+    "とあいまって",
+    "を皮切りに",
+    "ならではの"
+   ],
+   "explanation": "～をものともせず berarti tidak peduli pada ～.",
+   "explanationEn": "～をものともせず means undaunted by ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "親としては、子どもの将来を案じる（　）、つい口うるさくなる。",
+   "choices": [
+    "あまり",
+    "まじき",
+    "ことなく",
+    "たりとも"
+   ],
+   "explanation": "～あまり berarti saking terlalu ～.",
+   "explanationEn": "～あまり means out of excessive ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の業績は、日本の経済史上、特筆（　）ものだ。",
+   "choices": [
+    "に値する",
+    "を禁じえない",
+    "に至らない",
+    "にかたくない"
+   ],
+   "explanation": "～に値する berarti layak ～.",
+   "explanationEn": "～に値する means worthy of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この制度は ＿＿ ＿＿ ★ ＿＿ 必要がある。",
+   "choices": [
+    "即して",
+    "時代の",
+    "変化に",
+    "見直す"
+   ],
+   "explanation": "Urutan: 時代の 変化に 即して 見直す (perlu ditinjau sesuai perubahan zaman). ★ slot ketiga, 即して.",
+   "explanationEn": "Order: 時代の 変化に 即して 見直す (needs revising in line with the times). ★ is the third slot, 即して."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は ＿＿ ＿＿ ★ ＿＿ 人物だ。",
+   "choices": [
+    "直面しても",
+    "どんな",
+    "困難に",
+    "動じない"
+   ],
+   "explanation": "Urutan: どんな 困難に 直面しても 動じない (tak goyah menghadapi kesulitan apa pun). ★ slot ketiga, 直面しても.",
+   "explanationEn": "Order: どんな 困難に 直面しても 動じない (unshaken whatever difficulty he faces). ★ is the third slot, 直面しても."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "与党は ＿＿ ＿＿ ★ ＿＿ 。",
+   "choices": [
+    "顧みず",
+    "野党の",
+    "反発を",
+    "採決を強行した"
+   ],
+   "explanation": "Urutan: 野党の 反発を 顧みず 採決を強行した (voting dipaksakan tanpa menghiraukan oposisi). ★ slot ketiga, 顧みず.",
+   "explanationEn": "Order: 野党の 反発を 顧みず 採決を強行した (forced a vote ignoring the opposition). ★ is the third slot, 顧みず."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "自由には責任が伴うと言われる。【46】、この言葉は、しばしば「何をしても結果は自己責任だ」という冷たい意味で使われがちである。しかし、本来の趣旨は、選択の結果を引き受ける覚悟を求めることであって、失敗した人を突き放すことではない。\n人は、生まれた環境や与えられた情報という、自分では選べない条件の中で選択を【47】。その条件の差を無視して責任だけを問うのは、公平とは言い難い。社会に求められるのは、選択の自由を尊重しつつ、失敗しても【48】仕組みを整えることだろう。自由と責任は、個人だけでなく、社会全体で【49】ものなのである。",
+   "prompt": "【46】",
+   "choices": [
+    "ところが",
+    "したがって",
+    "たとえば",
+    "すなわち"
+   ],
+   "explanation": "Ada makna yang diharapkan, tetapi kenyataannya sering berlawanan: ところが.",
+   "explanationEn": "The expected meaning, yet in practice it is often the opposite: ところが."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "自由には責任が伴うと言われる。【46】、この言葉は、しばしば「何をしても結果は自己責任だ」という冷たい意味で使われがちである。しかし、本来の趣旨は、選択の結果を引き受ける覚悟を求めることであって、失敗した人を突き放すことではない。\n人は、生まれた環境や与えられた情報という、自分では選べない条件の中で選択を【47】。その条件の差を無視して責任だけを問うのは、公平とは言い難い。社会に求められるのは、選択の自由を尊重しつつ、失敗しても【48】仕組みを整えることだろう。自由と責任は、個人だけでなく、社会全体で【49】ものなのである。",
+   "prompt": "【47】",
+   "choices": [
+    "迫られている",
+    "迫るに足りない",
+    "迫らずにはおかない",
+    "迫ろうにも迫れない"
+   ],
+   "explanation": "Manusia dipaksa memilih dalam kondisi yang tidak dipilihnya: 迫られている.",
+   "explanationEn": "People are compelled to choose under conditions they did not pick: 迫られている."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "自由には責任が伴うと言われる。【46】、この言葉は、しばしば「何をしても結果は自己責任だ」という冷たい意味で使われがちである。しかし、本来の趣旨は、選択の結果を引き受ける覚悟を求めることであって、失敗した人を突き放すことではない。\n人は、生まれた環境や与えられた情報という、自分では選べない条件の中で選択を【47】。その条件の差を無視して責任だけを問うのは、公平とは言い難い。社会に求められるのは、選択の自由を尊重しつつ、失敗しても【48】仕組みを整えることだろう。自由と責任は、個人だけでなく、社会全体で【49】ものなのである。",
+   "prompt": "【48】",
+   "choices": [
+    "やり直せる",
+    "やり直しようがない",
+    "やり直すべくもない",
+    "やり直さずにいられない"
+   ],
+   "explanation": "Sistem yang memungkinkan memulai ulang meski gagal: やり直せる仕組み.",
+   "explanationEn": "A system in which one can start over even after failing: やり直せる仕組み."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "自由には責任が伴うと言われる。【46】、この言葉は、しばしば「何をしても結果は自己責任だ」という冷たい意味で使われがちである。しかし、本来の趣旨は、選択の結果を引き受ける覚悟を求めることであって、失敗した人を突き放すことではない。\n人は、生まれた環境や与えられた情報という、自分では選べない条件の中で選択を【47】。その条件の差を無視して責任だけを問うのは、公平とは言い難い。社会に求められるのは、選択の自由を尊重しつつ、失敗しても【48】仕組みを整えることだろう。自由と責任は、個人だけでなく、社会全体で【49】ものなのである。",
+   "prompt": "【49】",
+   "choices": [
+    "分かち合うべき",
+    "分かち合いかねない",
+    "分かち合うどころではない",
+    "分かち合うともかぎらない"
+   ],
+   "explanation": "Kebebasan dan tanggung jawab patut dibagi bersama masyarakat: 分かち合うべき.",
+   "explanationEn": "Freedom and responsibility should be shared by society as a whole: 分かち合うべき."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "条文は、一見すると明確に見えても、現実の事件にあてはめる段階で、解釈の余地が生じる。「相当の注意」とは何か、「公共の福祉」とはどの範囲か。こうした言葉は、あえて幅を持たせてあるからこそ、時代の変化に対応できる。ただし、その幅を運用する者の恣意に任せてよいわけではなく、判断の理由を公開し、検証できるようにしておくことが欠かせない。",
+   "prompt": "筆者は、法律の言葉に幅があることについてどう考えていますか。",
+   "choices": [
+    "時代に対応できる利点があるが、判断の理由を検証できるようにすべきだ。",
+    "曖昧なので、すべて具体的な数字に置き換えるべきだ。",
+    "運用する者の判断に任せるのが最善だ。",
+    "時代の変化に対応できないので、問題である。"
+   ],
+   "explanation": "Rentang makna berguna, asal alasan keputusan dapat diperiksa.",
+   "explanationEn": "The breadth is useful, provided the reasons for decisions can be checked."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "市民の皆様へ\n当市では、来年度から始まる「ごみ減量推進計画」の案について、広く意見を募集します。案は、市役所一階の窓口および市のホームページでご覧いただけます。意見は、住所・氏名を明記のうえ、書面またはメールで十二月十日（必着）までにお寄せください。電話での受け付けは行いません。なお、いただいた意見は、氏名を除いて公表する場合があります。",
+   "prompt": "この案内の内容と合っているものはどれですか。",
+   "choices": [
+    "意見は、書面またはメールで、十二月十日までに届くように送る。",
+    "意見は、電話でも受け付けてもらえる。",
+    "意見を出した人の氏名は、必ず公表される。",
+    "計画の案は、ホームページでしか見ることができない。"
+   ],
+   "explanation": "Pendapat dikirim tertulis atau email, sampai 10 Desember.",
+   "explanationEn": "Opinions are sent in writing or by e-mail to arrive by December 10."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "「正義」とは何かを問われて、私たちはしばしば、自分に都合のよい答えを選ぶ。だが、哲学者たちが長い間、この問いを手放さなかったのは、答えが見つからないからではなく、問い続ける行為そのものが、社会を少しずつ公正な方向へ動かしてきたからではないだろうか。答えを持たないことは、決して無力ではない。",
+   "prompt": "筆者の考えに最も近いものはどれですか。",
+   "choices": [
+    "正義を問い続けることそのものが、社会を公正な方向へ動かす。",
+    "正義の答えが見つかったので、哲学者は問いをやめた。",
+    "自分に都合のよい答えを選ぶのが、正義である。",
+    "答えを持たない人は、無力である。"
+   ],
+   "explanation": "Terus bertanya tentang keadilan menggerakkan masyarakat.",
+   "explanationEn": "The very act of asking about justice moves society toward fairness."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "選挙のたびに、投票率の低さが話題になる。若者の「政治離れ」が原因だと言われることが多いが、果たしてそうだろうか。ある調査では、若者の多くが、社会問題に関心があると答えている。つまり、関心がないのではなく、一票が現実を変えるという実感が持てないのである。\n必要なのは、若者に投票を促す呼びかけよりも、投票した結果、何がどう変わったのかを、具体的に示すことだろう。成功体験の積み重ねがなければ、関心は行動につながらない。",
+   "prompt": "筆者は、若者の投票率が低い原因をどう考えていますか。",
+   "choices": [
+    "一票が現実を変えるという実感が持てないこと",
+    "社会問題に関心を持っていないこと",
+    "選挙の日程が分かりにくいこと",
+    "政治家の数が少ないこと"
+   ],
+   "explanation": "Kurang merasa satu suara mengubah kenyataan.",
+   "explanationEn": "They lack the sense that one vote changes reality."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "選挙のたびに、投票率の低さが話題になる。若者の「政治離れ」が原因だと言われることが多いが、果たしてそうだろうか。ある調査では、若者の多くが、社会問題に関心があると答えている。つまり、関心がないのではなく、一票が現実を変えるという実感が持てないのである。\n必要なのは、若者に投票を促す呼びかけよりも、投票した結果、何がどう変わったのかを、具体的に示すことだろう。成功体験の積み重ねがなければ、関心は行動につながらない。",
+   "prompt": "筆者が必要だと述べていることは何ですか。",
+   "choices": [
+    "投票の結果、何がどう変わったかを具体的に示すこと",
+    "投票を義務にすること",
+    "若者への呼びかけを増やすこと",
+    "選挙の回数を減らすこと"
+   ],
+   "explanation": "Tunjukkan secara konkret apa yang berubah akibat memilih.",
+   "explanationEn": "Show concretely what changed as a result of voting."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "裁判員制度が始まって、一般の市民が刑事裁判に参加するようになった。当初は、「人を裁く重責に耐えられない」と不安を訴える声が多かった。しかし、実際に参加した人の多くが、「よい経験だった」と振り返っている。\n専門家だけの世界だった裁判に、市民の常識が入ることで、判決の理由が分かりやすく説明されるようになったという指摘もある。一方で、守秘義務の重さや、精神的な負担への配慮は、今後も課題として残っている。",
+   "prompt": "裁判員制度が始まって、変わったことは何ですか。",
+   "choices": [
+    "判決の理由が、分かりやすく説明されるようになった。",
+    "裁判の回数が大きく減った。",
+    "専門家が裁判に関わらなくなった。",
+    "参加者の負担がなくなった。"
+   ],
+   "explanation": "Alasan putusan dijelaskan lebih mudah dipahami.",
+   "explanationEn": "The reasons for verdicts came to be explained more clearly."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "裁判員制度が始まって、一般の市民が刑事裁判に参加するようになった。当初は、「人を裁く重責に耐えられない」と不安を訴える声が多かった。しかし、実際に参加した人の多くが、「よい経験だった」と振り返っている。\n専門家だけの世界だった裁判に、市民の常識が入ることで、判決の理由が分かりやすく説明されるようになったという指摘もある。一方で、守秘義務の重さや、精神的な負担への配慮は、今後も課題として残っている。",
+   "prompt": "今後の課題として、筆者が挙げているものはどれですか。",
+   "choices": [
+    "守秘義務の重さや、精神的負担への配慮",
+    "裁判員の給与の引き上げ",
+    "裁判所の建物の建て替え",
+    "刑事裁判の廃止"
+   ],
+   "explanation": "Beban kerahasiaan dan perhatian pada beban mental.",
+   "explanationEn": "The weight of confidentiality duties and care for mental strain."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「公平」と「平等」は、似ているようで、異なる概念である。平等は、すべての人に同じものを与えることであり、公平は、それぞれの事情に応じて、必要なものを与えることである。\n身長の違う三人が、塀の向こうの試合を見ようとする場面を考えてみよう。全員に同じ高さの台を一つずつ渡すのが平等である。しかし、それでは、もともと背の高い人は台がなくても見えるのに対し、背の低い人は、台を使っても、まだ見えない。背の低い人により高い台を渡し、背の高い人には渡さないことで、全員が試合を見られるようにするのが公平である。\n教育の現場でも、同じ問題がある。全員に同じ教材と同じ時間を与えることは、一見、平等である。だが、家庭の事情や学習の進み具合の違いを無視すれば、結果としての格差はむしろ広がるおそれがある。\nとはいえ、公平を追求する際には、注意すべき点がある。誰にどれだけ多く与えるかを決める基準が不透明であれば、「ひいきではないか」という不信を生むからである。公平な分配には、基準の明確さと、それを説明する責任が伴う。\nつまり、平等は出発点にすぎない。私たちが目指すべきは、結果として、誰もが機会を生かせる状態であり、そのために何が必要かを、絶えず問い直す姿勢なのである。",
+   "prompt": "筆者は、「平等」と「公平」をどのように区別していますか。",
+   "choices": [
+    "平等は同じものを与えること、公平は事情に応じて必要なものを与えること",
+    "平等は事情に応じること、公平は同じものを与えること",
+    "平等も公平も、同じものを与えることである",
+    "平等は結果を、公平は費用を重視することである"
+   ],
+   "explanation": "Setara = memberi sama, adil = memberi sesuai kebutuhan.",
+   "explanationEn": "Equality gives the same; fairness gives what each needs."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「公平」と「平等」は、似ているようで、異なる概念である。平等は、すべての人に同じものを与えることであり、公平は、それぞれの事情に応じて、必要なものを与えることである。\n身長の違う三人が、塀の向こうの試合を見ようとする場面を考えてみよう。全員に同じ高さの台を一つずつ渡すのが平等である。しかし、それでは、もともと背の高い人は台がなくても見えるのに対し、背の低い人は、台を使っても、まだ見えない。背の低い人により高い台を渡し、背の高い人には渡さないことで、全員が試合を見られるようにするのが公平である。\n教育の現場でも、同じ問題がある。全員に同じ教材と同じ時間を与えることは、一見、平等である。だが、家庭の事情や学習の進み具合の違いを無視すれば、結果としての格差はむしろ広がるおそれがある。\nとはいえ、公平を追求する際には、注意すべき点がある。誰にどれだけ多く与えるかを決める基準が不透明であれば、「ひいきではないか」という不信を生むからである。公平な分配には、基準の明確さと、それを説明する責任が伴う。\nつまり、平等は出発点にすぎない。私たちが目指すべきは、結果として、誰もが機会を生かせる状態であり、そのために何が必要かを、絶えず問い直す姿勢なのである。",
+   "prompt": "塀の向こうの試合の例で、「公平」にあたるのはどれですか。",
+   "choices": [
+    "背の低い人により高い台を渡し、背の高い人には渡さない。",
+    "全員に同じ高さの台を一つずつ渡す。",
+    "背の高い人にだけ台を渡す。",
+    "誰にも台を渡さない。"
+   ],
+   "explanation": "Yang pendek diberi pijakan lebih tinggi, yang tinggi tidak.",
+   "explanationEn": "The shorter person gets a taller stand, the tall one gets none."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「公平」と「平等」は、似ているようで、異なる概念である。平等は、すべての人に同じものを与えることであり、公平は、それぞれの事情に応じて、必要なものを与えることである。\n身長の違う三人が、塀の向こうの試合を見ようとする場面を考えてみよう。全員に同じ高さの台を一つずつ渡すのが平等である。しかし、それでは、もともと背の高い人は台がなくても見えるのに対し、背の低い人は、台を使っても、まだ見えない。背の低い人により高い台を渡し、背の高い人には渡さないことで、全員が試合を見られるようにするのが公平である。\n教育の現場でも、同じ問題がある。全員に同じ教材と同じ時間を与えることは、一見、平等である。だが、家庭の事情や学習の進み具合の違いを無視すれば、結果としての格差はむしろ広がるおそれがある。\nとはいえ、公平を追求する際には、注意すべき点がある。誰にどれだけ多く与えるかを決める基準が不透明であれば、「ひいきではないか」という不信を生むからである。公平な分配には、基準の明確さと、それを説明する責任が伴う。\nつまり、平等は出発点にすぎない。私たちが目指すべきは、結果として、誰もが機会を生かせる状態であり、そのために何が必要かを、絶えず問い直す姿勢なのである。",
+   "prompt": "教育の現場について、筆者はどう述べていますか。",
+   "choices": [
+    "同じ条件を与えても、事情を無視すれば格差が広がるおそれがある。",
+    "同じ教材を与えれば、格差はなくなる。",
+    "家庭の事情は、学習に影響しない。",
+    "学習の進み具合は、すぐに揃う。"
+   ],
+   "explanation": "Memberi kondisi sama tanpa memperhatikan keadaan bisa memperlebar kesenjangan.",
+   "explanationEn": "Identical conditions ignoring circumstances can widen gaps."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「公平」と「平等」は、似ているようで、異なる概念である。平等は、すべての人に同じものを与えることであり、公平は、それぞれの事情に応じて、必要なものを与えることである。\n身長の違う三人が、塀の向こうの試合を見ようとする場面を考えてみよう。全員に同じ高さの台を一つずつ渡すのが平等である。しかし、それでは、もともと背の高い人は台がなくても見えるのに対し、背の低い人は、台を使っても、まだ見えない。背の低い人により高い台を渡し、背の高い人には渡さないことで、全員が試合を見られるようにするのが公平である。\n教育の現場でも、同じ問題がある。全員に同じ教材と同じ時間を与えることは、一見、平等である。だが、家庭の事情や学習の進み具合の違いを無視すれば、結果としての格差はむしろ広がるおそれがある。\nとはいえ、公平を追求する際には、注意すべき点がある。誰にどれだけ多く与えるかを決める基準が不透明であれば、「ひいきではないか」という不信を生むからである。公平な分配には、基準の明確さと、それを説明する責任が伴う。\nつまり、平等は出発点にすぎない。私たちが目指すべきは、結果として、誰もが機会を生かせる状態であり、そのために何が必要かを、絶えず問い直す姿勢なのである。",
+   "prompt": "公平を追求するときの注意点として、筆者が挙げているのはどれですか。",
+   "choices": [
+    "基準が不透明だと、ひいきではないかという不信を生むこと",
+    "基準を決めるのに時間がかかりすぎること",
+    "分配する資源が足りなくなること",
+    "平等を求める人が減ること"
+   ],
+   "explanation": "Kriteria yang tidak jelas menimbulkan kecurigaan pilih kasih.",
+   "explanationEn": "Opaque criteria breed suspicion of favoritism."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「公平」と「平等」は、似ているようで、異なる概念である。平等は、すべての人に同じものを与えることであり、公平は、それぞれの事情に応じて、必要なものを与えることである。\n身長の違う三人が、塀の向こうの試合を見ようとする場面を考えてみよう。全員に同じ高さの台を一つずつ渡すのが平等である。しかし、それでは、もともと背の高い人は台がなくても見えるのに対し、背の低い人は、台を使っても、まだ見えない。背の低い人により高い台を渡し、背の高い人には渡さないことで、全員が試合を見られるようにするのが公平である。\n教育の現場でも、同じ問題がある。全員に同じ教材と同じ時間を与えることは、一見、平等である。だが、家庭の事情や学習の進み具合の違いを無視すれば、結果としての格差はむしろ広がるおそれがある。\nとはいえ、公平を追求する際には、注意すべき点がある。誰にどれだけ多く与えるかを決める基準が不透明であれば、「ひいきではないか」という不信を生むからである。公平な分配には、基準の明確さと、それを説明する責任が伴う。\nつまり、平等は出発点にすぎない。私たちが目指すべきは、結果として、誰もが機会を生かせる状態であり、そのために何が必要かを、絶えず問い直す姿勢なのである。",
+   "prompt": "筆者が最も言いたいことは何ですか。",
+   "choices": [
+    "誰もが機会を生かせる状態を目指し、そのために何が必要かを問い直し続けるべきだ。",
+    "平等は不要なので、公平だけを目指すべきだ。",
+    "基準を公開すれば、問題は解決する。",
+    "背の高い人は、他人を助けるべきだ。"
+   ],
+   "explanation": "Targetnya semua orang bisa memanfaatkan kesempatan.",
+   "explanationEn": "The goal is a state in which everyone can use opportunities."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】死刑制度は、廃止すべきだと考える。人間の判断である以上、誤判の可能性をなくすことはできない。無実の人の命を奪えば、取り返しがつかない。また、死刑に犯罪を抑止する効果があるという明確な根拠も示されていない。被害者の遺族への支援を手厚くしながら、国家が命を奪う制度は終わりにするべきだ。\n\n【B】重大な犯罪の被害者や遺族にとって、加害者が命をもって償うことは、癒やしきれない悲しみの中の、一つの区切りとなりうる。世論も、制度の存続を支持する声が多い。誤判を防ぐ仕組みを徹底することは当然必要だが、それは制度を廃止する理由ではなく、運用を厳しくする理由である。",
+   "prompt": "AとBは、死刑制度について、どのように述べていますか。",
+   "choices": [
+    "Aは廃止を主張し、Bは誤判の防止を徹底しつつ存続を支持している。",
+    "AもBも、廃止すべきだと述べている。",
+    "Aは存続を主張し、Bは廃止を主張している。",
+    "AもBも、誤判の可能性はないと述べている。"
+   ],
+   "explanation": "A mendukung penghapusan, B mempertahankan dengan pencegahan salah putus.",
+   "explanationEn": "A calls for abolition; B supports keeping it with rigorous safeguards."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】死刑制度は、廃止すべきだと考える。人間の判断である以上、誤判の可能性をなくすことはできない。無実の人の命を奪えば、取り返しがつかない。また、死刑に犯罪を抑止する効果があるという明確な根拠も示されていない。被害者の遺族への支援を手厚くしながら、国家が命を奪う制度は終わりにするべきだ。\n\n【B】重大な犯罪の被害者や遺族にとって、加害者が命をもって償うことは、癒やしきれない悲しみの中の、一つの区切りとなりうる。世論も、制度の存続を支持する声が多い。誤判を防ぐ仕組みを徹底することは当然必要だが、それは制度を廃止する理由ではなく、運用を厳しくする理由である。",
+   "prompt": "Aが、廃止すべき理由として挙げていないものはどれですか。",
+   "choices": [
+    "制度の運用に、多額の費用がかかること",
+    "誤判の可能性をなくせないこと",
+    "取り返しがつかないこと",
+    "抑止効果の明確な根拠がないこと"
+   ],
+   "explanation": "Biaya besar tidak disebut oleh A.",
+   "explanationEn": "A does not mention high cost."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】死刑制度は、廃止すべきだと考える。人間の判断である以上、誤判の可能性をなくすことはできない。無実の人の命を奪えば、取り返しがつかない。また、死刑に犯罪を抑止する効果があるという明確な根拠も示されていない。被害者の遺族への支援を手厚くしながら、国家が命を奪う制度は終わりにするべきだ。\n\n【B】重大な犯罪の被害者や遺族にとって、加害者が命をもって償うことは、癒やしきれない悲しみの中の、一つの区切りとなりうる。世論も、制度の存続を支持する声が多い。誤判を防ぐ仕組みを徹底することは当然必要だが、それは制度を廃止する理由ではなく、運用を厳しくする理由である。",
+   "prompt": "Bが、誤判を防ぐ仕組みについて述べていることは何ですか。",
+   "choices": [
+    "制度を廃止する理由ではなく、運用を厳しくする理由である。",
+    "廃止のために最も重要な仕組みである。",
+    "遺族への支援として十分である。",
+    "世論を変えるために必要である。"
+   ],
+   "explanation": "Pencegahan salah putus bukan alasan menghapus, tetapi memperketat.",
+   "explanationEn": "Safeguards justify stricter operation, not abolition."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】死刑制度は、廃止すべきだと考える。人間の判断である以上、誤判の可能性をなくすことはできない。無実の人の命を奪えば、取り返しがつかない。また、死刑に犯罪を抑止する効果があるという明確な根拠も示されていない。被害者の遺族への支援を手厚くしながら、国家が命を奪う制度は終わりにするべきだ。\n\n【B】重大な犯罪の被害者や遺族にとって、加害者が命をもって償うことは、癒やしきれない悲しみの中の、一つの区切りとなりうる。世論も、制度の存続を支持する声が多い。誤判を防ぐ仕組みを徹底することは当然必要だが、それは制度を廃止する理由ではなく、運用を厳しくする理由である。",
+   "prompt": "AとBに共通して述べられていることはどれですか。",
+   "choices": [
+    "被害者や遺族の存在を重く受け止めている。",
+    "世論は廃止を支持している。",
+    "犯罪の抑止効果は証明されている。",
+    "制度は今のままで問題がない。"
+   ],
+   "explanation": "Keduanya mempertimbangkan korban dan keluarganya.",
+   "explanationEn": "Both take victims and families seriously."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「多数決は民主主義の原則だ」とよく言われる。確かに、意見が分かれたとき、最終的には多数の意見に従うしかない場面は多い。しかし、多数決は、議論を尽くしたあとの最後の手段であって、議論を省くための道具ではない。\n多数決の危うさは、少数意見が、最初から存在しないかのように扱われやすいことにある。数で劣る意見の中に、のちに多数派が見落としていた重大な欠陥を指摘するものが含まれていたという例は、歴史上、少なくない。\nだからこそ、成熟した民主主義では、少数意見を、尊重するだけでなく、むしろ積極的に聞き出す努力が行われる。反対意見を述べる人は、集団にとって、時に最も貴重な情報源なのである。\n多数決は、結論を出す方法である。しかし、よい結論を導くのは、そこに至る過程の丁寧さである。結果の勝ち負けにばかり目を向け、過程を軽んじる社会は、いずれ判断を誤るだろう。",
+   "prompt": "筆者は、多数決をどのようなものだと考えていますか。",
+   "choices": [
+    "議論を尽くしたあとの最後の手段であり、議論を省く道具ではない",
+    "議論を省くために最も有効な道具",
+    "少数意見を排除するための方法",
+    "歴史上、一度も誤らなかった方法"
+   ],
+   "explanation": "Voting adalah jalan terakhir setelah diskusi.",
+   "explanationEn": "Majority rule is the last resort after full debate."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「多数決は民主主義の原則だ」とよく言われる。確かに、意見が分かれたとき、最終的には多数の意見に従うしかない場面は多い。しかし、多数決は、議論を尽くしたあとの最後の手段であって、議論を省くための道具ではない。\n多数決の危うさは、少数意見が、最初から存在しないかのように扱われやすいことにある。数で劣る意見の中に、のちに多数派が見落としていた重大な欠陥を指摘するものが含まれていたという例は、歴史上、少なくない。\nだからこそ、成熟した民主主義では、少数意見を、尊重するだけでなく、むしろ積極的に聞き出す努力が行われる。反対意見を述べる人は、集団にとって、時に最も貴重な情報源なのである。\n多数決は、結論を出す方法である。しかし、よい結論を導くのは、そこに至る過程の丁寧さである。結果の勝ち負けにばかり目を向け、過程を軽んじる社会は、いずれ判断を誤るだろう。",
+   "prompt": "多数決の危うさとして、筆者が挙げているのはどれですか。",
+   "choices": [
+    "少数意見が、最初から存在しないかのように扱われやすいこと",
+    "結論が出るまでに時間がかかること",
+    "多数派が、必ず間違えること",
+    "投票に参加しない人が増えること"
+   ],
+   "explanation": "Suara minoritas mudah diabaikan.",
+   "explanationEn": "Minority views tend to be treated as nonexistent."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「多数決は民主主義の原則だ」とよく言われる。確かに、意見が分かれたとき、最終的には多数の意見に従うしかない場面は多い。しかし、多数決は、議論を尽くしたあとの最後の手段であって、議論を省くための道具ではない。\n多数決の危うさは、少数意見が、最初から存在しないかのように扱われやすいことにある。数で劣る意見の中に、のちに多数派が見落としていた重大な欠陥を指摘するものが含まれていたという例は、歴史上、少なくない。\nだからこそ、成熟した民主主義では、少数意見を、尊重するだけでなく、むしろ積極的に聞き出す努力が行われる。反対意見を述べる人は、集団にとって、時に最も貴重な情報源なのである。\n多数決は、結論を出す方法である。しかし、よい結論を導くのは、そこに至る過程の丁寧さである。結果の勝ち負けにばかり目を向け、過程を軽んじる社会は、いずれ判断を誤るだろう。",
+   "prompt": "「反対意見を述べる人は、集団にとって、時に最も貴重な情報源」とありますが、なぜですか。",
+   "choices": [
+    "多数派が見落とした欠陥を指摘してくれることがあるから。",
+    "反対意見は、必ず正しいから。",
+    "反対する人が、集団を代表するから。",
+    "議論の時間を短くしてくれるから。"
+   ],
+   "explanation": "Mereka kadang menunjuk cacat yang terlewat mayoritas.",
+   "explanationEn": "They sometimes point out flaws the majority overlooked."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「多数決は民主主義の原則だ」とよく言われる。確かに、意見が分かれたとき、最終的には多数の意見に従うしかない場面は多い。しかし、多数決は、議論を尽くしたあとの最後の手段であって、議論を省くための道具ではない。\n多数決の危うさは、少数意見が、最初から存在しないかのように扱われやすいことにある。数で劣る意見の中に、のちに多数派が見落としていた重大な欠陥を指摘するものが含まれていたという例は、歴史上、少なくない。\nだからこそ、成熟した民主主義では、少数意見を、尊重するだけでなく、むしろ積極的に聞き出す努力が行われる。反対意見を述べる人は、集団にとって、時に最も貴重な情報源なのである。\n多数決は、結論を出す方法である。しかし、よい結論を導くのは、そこに至る過程の丁寧さである。結果の勝ち負けにばかり目を向け、過程を軽んじる社会は、いずれ判断を誤るだろう。",
+   "prompt": "この文章で筆者が最も言いたいことは何ですか。",
+   "choices": [
+    "よい結論を導くのは、結論に至る過程の丁寧さである。",
+    "多数決は、廃止するべきである。",
+    "少数意見は、無視してもよい。",
+    "結果の勝ち負けが、最も重要である。"
+   ],
+   "explanation": "Kualitas kesimpulan ditentukan ketelitian prosesnya.",
+   "explanationEn": "Good conclusions come from a careful process."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "市民ホール　貸し出しのご案内\n【大ホール】定員600名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 30,000円／土日祝 45,000円\n【小ホール】定員150名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 8,000円／土日祝 12,000円\n【会議室】定員30名　毎日 午前9時〜午後9時　使用料（3時間）2,000円\n\n・使用料は、3時間を超えた場合、1時間ごとに3時間分の3分の1が加算されます。\n・市内の団体は、使用料が2割引になります。\n・申し込みは、使用日の6か月前から、使用日の7日前までです。\n・営利目的の入場料を取る催しは、使用料が2倍になります。",
+   "prompt": "土曜日に市内の団体が、小ホールを3時間使うとき、使用料はいくらですか。",
+   "choices": [
+    "9,600円",
+    "8,000円",
+    "12,000円",
+    "24,000円"
+   ],
+   "explanation": "12.000 × 0,8 = 9.600 yen.",
+   "explanationEn": "12,000 × 0.8 = 9,600 yen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "市民ホール　貸し出しのご案内\n【大ホール】定員600名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 30,000円／土日祝 45,000円\n【小ホール】定員150名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 8,000円／土日祝 12,000円\n【会議室】定員30名　毎日 午前9時〜午後9時　使用料（3時間）2,000円\n\n・使用料は、3時間を超えた場合、1時間ごとに3時間分の3分の1が加算されます。\n・市内の団体は、使用料が2割引になります。\n・申し込みは、使用日の6か月前から、使用日の7日前までです。\n・営利目的の入場料を取る催しは、使用料が2倍になります。",
+   "prompt": "平日の大ホールを4時間使うとき（市外の団体、入場料なし）、使用料はいくらですか。",
+   "choices": [
+    "40,000円",
+    "30,000円",
+    "33,000円",
+    "45,000円"
+   ],
+   "explanation": "3 jam 30.000 + 1 jam tambahan 10.000 = 40.000 yen.",
+   "explanationEn": "30,000 for 3 hours plus 10,000 for the extra hour = 40,000 yen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "市民ホール　貸し出しのご案内\n【大ホール】定員600名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 30,000円／土日祝 45,000円\n【小ホール】定員150名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 8,000円／土日祝 12,000円\n【会議室】定員30名　毎日 午前9時〜午後9時　使用料（3時間）2,000円\n\n・使用料は、3時間を超えた場合、1時間ごとに3時間分の3分の1が加算されます。\n・市内の団体は、使用料が2割引になります。\n・申し込みは、使用日の6か月前から、使用日の7日前までです。\n・営利目的の入場料を取る催しは、使用料が2倍になります。",
+   "prompt": "使用日が六月十五日の場合、申し込みの受け付けが終わるのはいつですか。",
+   "choices": [
+    "六月八日",
+    "六月十四日",
+    "六月一日",
+    "五月十五日"
+   ],
+   "explanation": "Batas 7 hari sebelum: 8 Juni.",
+   "explanationEn": "Seven days before: June 8."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "市民ホール　貸し出しのご案内\n【大ホール】定員600名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 30,000円／土日祝 45,000円\n【小ホール】定員150名　平日 午前9時〜午後9時　土日祝 午前9時〜午後10時　使用料（3時間）平日 8,000円／土日祝 12,000円\n【会議室】定員30名　毎日 午前9時〜午後9時　使用料（3時間）2,000円\n\n・使用料は、3時間を超えた場合、1時間ごとに3時間分の3分の1が加算されます。\n・市内の団体は、使用料が2割引になります。\n・申し込みは、使用日の6か月前から、使用日の7日前までです。\n・営利目的の入場料を取る催しは、使用料が2倍になります。",
+   "prompt": "この案内の内容と合っているものはどれですか。",
+   "choices": [
+    "入場料を取る営利目的の催しは、使用料が2倍になる。",
+    "会議室は、土日祝は使えない。",
+    "市内の団体は、使用料が無料になる。",
+    "大ホールの定員は、150名である。"
+   ],
+   "explanation": "Acara komersial berbayar: tarif dua kali lipat.",
+   "explanationEn": "Paid commercial events pay double."
+  }
+ ]
+}

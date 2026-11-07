@@ -784,7 +784,7 @@ paths:
       security: [{bearerAuth: []}]
       parameters:
         - {$ref: '#/components/parameters/AcceptLanguage'}
-        - {name: level, in: path, required: true, description: Use N5-2 through N5-10 or N4-2 through N4-10 for the additional free JLPT papers (with furigana markup), NAT-2 through NAT-5 for additional NAT 5Q papers, or JFT, JFT-2, JFT-3, JFT-4 or JFT-5 for original written practice papers., schema: {type: string, example: NAT-2}}
+        - {name: level, in: path, required: true, description: Use N5-2 through N5-10, N4-2 through N4-10 or N3-2 through N3-10, N2-2 through N2-10 or N1-2 through N1-10 for the additional free JLPT papers (furigana markup on N5/N4 and, for kanji outside the N5/N4 set, N3; none on N2/N1), NAT-2 through NAT-10 for additional NAT 5Q papers, or JFT and JFT-2 through JFT-10 for original written practice papers., schema: {type: string, example: NAT-2}}
       responses:
         '200':
           headers:

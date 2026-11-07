@@ -1,0 +1,966 @@
+{
+ "level": "N2",
+ "paper": 6,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい法律が、来月から[[施行]]される。",
+   "choices": [
+    "しこう",
+    "せこう",
+    "しぎょう",
+    "せぎょう"
+   ],
+   "explanation": "施行（しこう） berarti pemberlakuan.",
+   "explanationEn": "施行（しこう） means coming into effect."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、仲間の[[信頼]]を失ってしまった。",
+   "choices": [
+    "しんらい",
+    "しんたい",
+    "じんらい",
+    "しんれい"
+   ],
+   "explanation": "信頼（しんらい） berarti kepercayaan.",
+   "explanationEn": "信頼（しんらい） means trust."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この[[地域]]では、毎年夏に祭りが開かれる。",
+   "choices": [
+    "ちいき",
+    "ちいぎ",
+    "じいき",
+    "ちえき"
+   ],
+   "explanation": "地域（ちいき） berarti daerah.",
+   "explanationEn": "地域（ちいき） means region or area."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会議の[[議題]]は、来年度の予算についてだ。",
+   "choices": [
+    "ぎだい",
+    "ぎてい",
+    "げだい",
+    "きだい"
+   ],
+   "explanation": "議題（ぎだい） berarti agenda rapat.",
+   "explanationEn": "議題（ぎだい） means agenda item."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "母は、毎晩、台所を[[片づけて]]から寝る。",
+   "choices": [
+    "かたづけて",
+    "へんづけて",
+    "かたつけて",
+    "かたずけて"
+   ],
+   "explanation": "片づける（かたづける） berarti merapikan.",
+   "explanationEn": "片づける（かたづける） means to tidy up."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、言葉を[[選んで]]、慎重に話した。",
+   "choices": [
+    "えらんで",
+    "えらべて",
+    "そろんで",
+    "せんじて"
+   ],
+   "explanation": "選ぶ（えらぶ） berarti memilih.",
+   "explanationEn": "選ぶ（えらぶ） means to choose."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "近年、世界の気候は大きく[[変動]]している。",
+   "choices": [
+    "へんどう",
+    "へんとう",
+    "べんどう",
+    "へんゆう"
+   ],
+   "explanation": "変動（へんどう） berarti fluktuasi.",
+   "explanationEn": "変動（へんどう） means fluctuation."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "台風で、電車が[[うんきゅう]]になった。",
+   "choices": [
+    "運休",
+    "運体",
+    "運急",
+    "雲休"
+   ],
+   "explanation": "うんきゅう (tidak beroperasi) ditulis 運休.",
+   "explanationEn": "うんきゅう (service suspension) is written 運休."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "社員の[[ふくり]]厚生を充実させる。",
+   "choices": [
+    "福利",
+    "複利",
+    "福理",
+    "副利"
+   ],
+   "explanation": "ふくり (kesejahteraan) ditulis 福利.",
+   "explanationEn": "ふくり (welfare benefits) is written 福利."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、会社の代表として会議に[[しゅっせき]]した。",
+   "choices": [
+    "出席",
+    "出度",
+    "出常",
+    "出籍"
+   ],
+   "explanation": "しゅっせき (hadir) ditulis 出席.",
+   "explanationEn": "しゅっせき (attendance) is written 出席."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "試験に落ちて、[[ざんねん]]な気持ちになった。",
+   "choices": [
+    "残念",
+    "残年",
+    "桟念",
+    "残然"
+   ],
+   "explanation": "ざんねん (menyayangkan) ditulis 残念.",
+   "explanationEn": "ざんねん (regrettable) is written 残念."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "長い[[れきし]]を持つ寺を訪ねた。",
+   "choices": [
+    "歴史",
+    "暦史",
+    "歴使",
+    "歴紙"
+   ],
+   "explanation": "れきし (sejarah) ditulis 歴史.",
+   "explanationEn": "れきし (history) is written 歴史."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「年に一度行われること」を表す言葉はどれですか。",
+   "choices": [
+    "年次",
+    "年中",
+    "年間的",
+    "年式化"
+   ],
+   "explanation": "年次 berarti tahunan.",
+   "explanationEn": "年次 means annual."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「まだ完成していない状態」を表す言葉はどれですか。",
+   "choices": [
+    "未完成",
+    "非完成",
+    "無完成",
+    "反完成"
+   ],
+   "explanation": "未～ berarti belum: 未完成 = belum selesai.",
+   "explanationEn": "未～ means not yet: 未完成 = unfinished."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「使い終わった紙を、もう一度紙として使えるようにしたもの」を表す言葉はどれですか。",
+   "choices": [
+    "再生紙",
+    "新生紙",
+    "復活紙",
+    "再現紙"
+   ],
+   "explanation": "再生紙 berarti kertas daur ulang.",
+   "explanationEn": "再生紙 means recycled paper."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「会社などで、一番上の責任を持つ人」を表す言葉はどれですか。",
+   "choices": [
+    "最高責任者",
+    "最大責任者",
+    "最強責任者",
+    "最良責任者"
+   ],
+   "explanation": "最高責任者 berarti penanggung jawab tertinggi.",
+   "explanationEn": "最高責任者 means chief executive."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、新しい仕事に（　）を感じている。",
+   "choices": [
+    "やりがい",
+    "あきらめ",
+    "なやみ",
+    "ためらい"
+   ],
+   "explanation": "やりがいを感じる berarti merasa pekerjaan bermakna.",
+   "explanationEn": "やりがいを感じる means to feel fulfilled by work."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "友達の突然の訪問に、思わず（　）した。",
+   "choices": [
+    "どきっと",
+    "ぐっすり",
+    "のんびり",
+    "すっきり"
+   ],
+   "explanation": "どきっとする berarti terkejut.",
+   "explanationEn": "どきっとする means to be startled."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "この道は、車の（　）が激しいので、注意が必要だ。",
+   "choices": [
+    "往来",
+    "往復",
+    "往診",
+    "往年"
+   ],
+   "explanation": "車の往来が激しい berarti lalu lintas padat.",
+   "explanationEn": "車の往来が激しい means traffic is heavy."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、自分の意見を（　）言わない人だ。",
+   "choices": [
+    "めったに",
+    "ちょうど",
+    "ようやく",
+    "せっかく"
+   ],
+   "explanation": "めったに～ない berarti jarang.",
+   "explanationEn": "めったに～ない means rarely."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "長い間の努力が（　）、ついに夢が叶った。",
+   "choices": [
+    "報われて",
+    "妨げられて",
+    "遮られて",
+    "失われて"
+   ],
+   "explanation": "努力が報われる berarti usaha terbalas.",
+   "explanationEn": "努力が報われる means one's efforts are rewarded."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、会社の（　）を背負って、交渉に臨んだ。",
+   "choices": [
+    "命運",
+    "運命的",
+    "運搬",
+    "運動"
+   ],
+   "explanation": "会社の命運を背負う berarti memikul nasib perusahaan.",
+   "explanationEn": "会社の命運を背負う means to carry the fate of the company."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、[[ひたむきに]]練習を続けた。",
+   "choices": [
+    "一つのことに熱心に",
+    "いやいやながら",
+    "時々",
+    "適当に"
+   ],
+   "explanation": "ひたむきに berarti dengan tekun penuh semangat.",
+   "explanationEn": "ひたむきに means single-mindedly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "友人の言葉が、[[心にしみた]]。",
+   "choices": [
+    "深く感じられた",
+    "聞こえなかった",
+    "腹が立った",
+    "すぐ忘れた"
+   ],
+   "explanation": "心にしみる berarti meresap ke hati.",
+   "explanationEn": "心にしみる means to touch deeply."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、いつも[[さりげなく]]人を助ける。",
+   "choices": [
+    "目立たないように自然に",
+    "大声で宣伝して",
+    "仕方なく",
+    "急に"
+   ],
+   "explanation": "さりげなく berarti dengan wajar tanpa mencolok.",
+   "explanationEn": "さりげなく means casually, unobtrusively."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この計画には、まだ[[難点]]がある。",
+   "choices": [
+    "問題になる点",
+    "よい点",
+    "長い点",
+    "新しい点"
+   ],
+   "explanation": "難点 berarti titik kesulitan.",
+   "explanationEn": "難点 means a weak point or difficulty."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、締め切りに[[追われて]]いる。",
+   "choices": [
+    "時間がなくて急がされて",
+    "ほめられて",
+    "呼ばれて",
+    "待たされて"
+   ],
+   "explanation": "締め切りに追われる berarti dikejar tenggat.",
+   "explanationEn": "締め切りに追われる means to be chased by a deadline."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「見合わせる」",
+   "choices": [
+    "天候が悪いので、出発を見合わせることにした。",
+    "犬と顔を見合わせて、散歩に出た。",
+    "駅で、友人を見合わせて、電車に乗った。",
+    "夜空の星を見合わせて、写真を撮った。"
+   ],
+   "explanation": "見合わせる berarti menunda atau mengurungkan.",
+   "explanationEn": "見合わせる means to postpone or refrain from."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「ぎこちない」",
+   "choices": [
+    "初めての発表で、彼の話し方はぎこちなかった。",
+    "このケーキはぎこちなくて、とてもおいしい。",
+    "空がぎこちなく晴れて、気持ちがいい。",
+    "彼女はぎこちない足で、元気に走った。"
+   ],
+   "explanation": "ぎこちない berarti kaku dan canggung.",
+   "explanationEn": "ぎこちない means awkward or stiff."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「根気」",
+   "choices": [
+    "漢字を覚えるには、根気が必要だ。",
+    "この果物は根気が強くて、甘い。",
+    "彼女は根気で、新しい服を買った。",
+    "部屋の根気が冷たくて、風邪をひいた。"
+   ],
+   "explanation": "根気 berarti ketekunan.",
+   "explanationEn": "根気 means perseverance."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「ありふれた」",
+   "choices": [
+    "ありふれた方法では、他社に勝てない。",
+    "ありふれた雨が、一年じゅう降っている。",
+    "彼はありふれた声で、大きく笑った。",
+    "ありふれた駅に、特急が止まった。"
+   ],
+   "explanation": "ありふれた berarti biasa dan lumrah.",
+   "explanationEn": "ありふれた means commonplace."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「踏まえる」",
+   "choices": [
+    "先生の意見を踏まえて、論文を書き直した。",
+    "階段を踏まえて、二階へ上がった。",
+    "足を踏まえて、靴をはいた。",
+    "夜道を踏まえて、家に帰った。"
+   ],
+   "explanation": "踏まえる berarti mendasarkan pada.",
+   "explanationEn": "踏まえる means to take into account."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新商品の発売に（　）、記者会見が開かれた。",
+   "choices": [
+    "先立って",
+    "もかかわらず",
+    "つれて",
+    "対して"
+   ],
+   "explanation": "～に先立って berarti sebelum ～.",
+   "explanationEn": "～に先立って means prior to ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会議の（　）に、突然、停電が起きた。",
+   "choices": [
+    "最中",
+    "拍子",
+    "あげく",
+    "うえ"
+   ],
+   "explanation": "～の最中に berarti di tengah ～.",
+   "explanationEn": "～の最中に means in the middle of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この島は、猫が多い（　）、「猫島」と呼ばれている。",
+   "choices": [
+    "ことから",
+    "ものの",
+    "せいか",
+    "ばかりに"
+   ],
+   "explanation": "～ことから berarti dari fakta bahwa ～.",
+   "explanationEn": "～ことから means from the fact that ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "忙しくて、結局、彼に会わ（　）だった。",
+   "choices": [
+    "ずじまい",
+    "ずにはおかない",
+    "ざるをえない",
+    "ようがない"
+   ],
+   "explanation": "V-ずじまい berarti berakhir tanpa ～.",
+   "explanationEn": "V-ずじまい means ending up without doing."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "将来のことが心配で（　）。",
+   "choices": [
+    "ならない",
+    "かまわない",
+    "すまない",
+    "かぎらない"
+   ],
+   "explanation": "～てならない berarti tak tertahankan.",
+   "explanationEn": "～てならない means cannot help feeling."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あれほど準備したのだから、失敗する（　）。",
+   "choices": [
+    "はずがない",
+    "わけにはいかない",
+    "ことになる",
+    "にすぎない"
+   ],
+   "explanation": "～はずがない berarti mustahil.",
+   "explanationEn": "～はずがない means there is no way."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "寒い日は、温かい鍋料理を食べる（　）。",
+   "choices": [
+    "に限る",
+    "に過ぎない",
+    "に決まっている",
+    "に違いない"
+   ],
+   "explanation": "～に限る berarti paling baik.",
+   "explanationEn": "～に限る means nothing beats."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "今から急いだ（　）、もう間に合わないだろう。",
+   "choices": [
+    "ところで",
+    "からには",
+    "うちに",
+    "ばかりに"
+   ],
+   "explanation": "～たところで berarti sekalipun ～ (tetap sia-sia).",
+   "explanationEn": "～たところで means even if ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日本の人口は、今、減少し（　）ある。",
+   "choices": [
+    "つつ",
+    "もの",
+    "ほど",
+    "さえ"
+   ],
+   "explanation": "～つつある berarti sedang berlangsung.",
+   "explanationEn": "～つつある means is in the process of."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、業界（　）の実力者として知られている。",
+   "choices": [
+    "きって",
+    "なり",
+    "ずつ",
+    "まで"
+   ],
+   "explanation": "～きっての berarti paling ～ di antara ～.",
+   "explanationEn": "～きっての means the foremost in ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は ＿＿ ＿＿ ★ ＿＿ 笑顔を見せた。",
+   "choices": [
+    "に",
+    "疲れて",
+    "いる",
+    "もかかわらず"
+   ],
+   "explanation": "Urutan: 疲れて いる に もかかわらず (tetap tersenyum meski lelah). ★ slot ketiga, に.",
+   "explanationEn": "Order: 疲れて いる に もかかわらず (smiled despite being tired). ★ is the third slot, に."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "雨が ＿＿ ＿＿ ★ ＿＿ 試合は行われる。",
+   "choices": [
+    "降る",
+    "降ろ",
+    "うと",
+    "まいと"
+   ],
+   "explanation": "Urutan: 降ろ うと 降る まいと (hujan atau tidak). ★ slot ketiga, 降る.",
+   "explanationEn": "Order: 降ろ うと 降る まいと (rain or shine). ★ is the third slot, 降る."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あれほど準備したのだから ＿＿ ＿＿ ★ ＿＿ ない。",
+   "choices": [
+    "はず",
+    "失敗",
+    "する",
+    "が"
+   ],
+   "explanation": "Urutan: 失敗 する はず が (mustahil gagal). ★ slot ketiga, はず.",
+   "explanationEn": "Order: 失敗 する はず が (there is no way it fails). ★ is the third slot, はず."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は ＿＿ ＿＿ ★ ＿＿ 話し続けた。",
+   "choices": [
+    "いない",
+    "誰も",
+    "聞いて",
+    "のに"
+   ],
+   "explanation": "Urutan: 誰も 聞いて いない のに (terus bicara walau tak ada yang mendengar). ★ slot ketiga, いない.",
+   "explanationEn": "Order: 誰も 聞いて いない のに (kept talking though nobody listened). ★ is the third slot, いない."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本の多くの町には、商店街がある。かつては、買い物客でにぎわい、地域の中心として栄えていた。【46】、大型店やインターネット通販の普及で、客が減り、閉店する店が相次いでいる。\n【47】、商店街を元気にしようと、新しい取り組みを始める地域も出てきた。空き店舗を、若者が起業する場として貸し出したり、地元の農家と協力して朝市を開いたりしている。こうした活動の【48】、商店街に若い世代が戻り始めた例もある。商店街は、単に物を売る場所ではなく、人が集まる場所として、改めて【49】のかもしれない。",
+   "prompt": "【46】",
+   "choices": [
+    "ところが",
+    "したがって",
+    "たとえば",
+    "つまり"
+   ],
+   "explanation": "Dulu ramai, tetapi kini sepi: pertentangan, ところが.",
+   "explanationEn": "Once lively, but now empty: contrast, ところが."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本の多くの町には、商店街がある。かつては、買い物客でにぎわい、地域の中心として栄えていた。【46】、大型店やインターネット通販の普及で、客が減り、閉店する店が相次いでいる。\n【47】、商店街を元気にしようと、新しい取り組みを始める地域も出てきた。空き店舗を、若者が起業する場として貸し出したり、地元の農家と協力して朝市を開いたりしている。こうした活動の【48】、商店街に若い世代が戻り始めた例もある。商店街は、単に物を売る場所ではなく、人が集まる場所として、改めて【49】のかもしれない。",
+   "prompt": "【47】",
+   "choices": [
+    "そんな中",
+    "それにしては",
+    "それどころか",
+    "そうすると"
+   ],
+   "explanation": "そんな中 berarti di tengah situasi seperti itu.",
+   "explanationEn": "そんな中 means in such circumstances."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本の多くの町には、商店街がある。かつては、買い物客でにぎわい、地域の中心として栄えていた。【46】、大型店やインターネット通販の普及で、客が減り、閉店する店が相次いでいる。\n【47】、商店街を元気にしようと、新しい取り組みを始める地域も出てきた。空き店舗を、若者が起業する場として貸し出したり、地元の農家と協力して朝市を開いたりしている。こうした活動の【48】、商店街に若い世代が戻り始めた例もある。商店街は、単に物を売る場所ではなく、人が集まる場所として、改めて【49】のかもしれない。",
+   "prompt": "【48】",
+   "choices": [
+    "かいあって",
+    "せいにして",
+    "うえで",
+    "おそれがあって"
+   ],
+   "explanation": "～かいあって berarti berkat usaha, hasilnya terlihat.",
+   "explanationEn": "～かいあって means thanks to the effort, with good results."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本の多くの町には、商店街がある。かつては、買い物客でにぎわい、地域の中心として栄えていた。【46】、大型店やインターネット通販の普及で、客が減り、閉店する店が相次いでいる。\n【47】、商店街を元気にしようと、新しい取り組みを始める地域も出てきた。空き店舗を、若者が起業する場として貸し出したり、地元の農家と協力して朝市を開いたりしている。こうした活動の【48】、商店街に若い世代が戻り始めた例もある。商店街は、単に物を売る場所ではなく、人が集まる場所として、改めて【49】のかもしれない。",
+   "prompt": "【49】",
+   "choices": [
+    "見直されている",
+    "見直させている",
+    "見直しかねない",
+    "見直すはずがない"
+   ],
+   "explanation": "Nilai pertokoan kembali ditinjau.",
+   "explanationEn": "The value of shopping streets is being reconsidered."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "従業員の皆様へ\n来月八日（金）の午後、全館で停電を伴う電気設備の点検を行います。停電は午後一時から三時までの予定です。この間、パソコンやコピー機は使用できません。作業中のデータは、必ず保存してください。エレベーターも止まりますので、ご注意ください。\n施設管理課",
+   "prompt": "このお知らせについて、正しいものはどれですか。",
+   "choices": [
+    "停電の間は、エレベーターも使えない。",
+    "停電は午前中に行われる。",
+    "パソコンは停電中も使える。",
+    "作業データを保存する必要はない。"
+   ],
+   "explanation": "Lift juga berhenti saat mati listrik.",
+   "explanationEn": "Elevators stop during the outage."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "友人から、「結婚式のスピーチを頼まれた」と相談された。彼は、緊張して何を話せばよいか分からないと言う。私は、完璧なスピーチを目指すより、新郎新婦との思い出を一つだけ、自分の言葉で話すほうが、聞く人の心に届くと伝えた。うまく話すことより、気持ちを込めることが大切だと思う。",
+   "prompt": "筆者が友人に伝えたことは何ですか。",
+   "choices": [
+    "思い出を一つ、自分の言葉で話すほうが、気持ちが届く。",
+    "完璧な原稿を暗記するべきだ。",
+    "スピーチは短ければ短いほどよい。",
+    "スピーチは断ったほうがよい。"
+   ],
+   "explanation": "Ceritakan satu kenangan dengan kata sendiri.",
+   "explanationEn": "Tell one memory in your own words."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "近所の公園に、新しい遊具が設置された。以前の遊具より安全だが、どれも似た形で、子どもたちは、すぐに飽きてしまうという。安全を重視することは大切だが、子どもが工夫して遊べる余地を残すことも、必要ではないだろうか。",
+   "prompt": "筆者は、公園の遊具についてどう考えていますか。",
+   "choices": [
+    "安全に加えて、子どもが工夫して遊べる余地も必要だ。",
+    "遊具は、危険なほど楽しい。",
+    "新しい遊具は、必要ない。",
+    "遊具は、全部同じ形がよい。"
+   ],
+   "explanation": "Selain aman, perlu ruang untuk berkreasi.",
+   "explanationEn": "Besides safety, room for inventive play is needed."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "日本の駅には、改札口の近くに、忘れ物の窓口がある。傘や財布など、毎日たくさんの物が届けられ、持ち主に返される。ある調査では、届けられた財布の多くが、持ち主のもとに戻っているという。\n外国の友人に話すと、「信じられない」と驚かれることがある。拾った人が、自分の物にしないで届けるという行動の裏には、他人の物を大切にする意識がある。それは、長い時間をかけて、社会の中で育まれてきたものだと言えるだろう。",
+   "prompt": "忘れ物について、筆者が述べていることは何ですか。",
+   "choices": [
+    "届けられた財布の多くが、持ち主に戻っている。",
+    "届く物は傘だけである。",
+    "拾った人は、お礼をもらう。",
+    "外国では、すべて戻ってくる。"
+   ],
+   "explanation": "Banyak dompet kembali ke pemilik.",
+   "explanationEn": "Most wallets handed in return to owners."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "日本の駅には、改札口の近くに、忘れ物の窓口がある。傘や財布など、毎日たくさんの物が届けられ、持ち主に返される。ある調査では、届けられた財布の多くが、持ち主のもとに戻っているという。\n外国の友人に話すと、「信じられない」と驚かれることがある。拾った人が、自分の物にしないで届けるという行動の裏には、他人の物を大切にする意識がある。それは、長い時間をかけて、社会の中で育まれてきたものだと言えるだろう。",
+   "prompt": "筆者は、この行動の背景に何があると考えていますか。",
+   "choices": [
+    "他人の物を大切にする意識",
+    "お礼をもらう習慣",
+    "法律の厳しい罰",
+    "外国人の観光客の多さ"
+   ],
+   "explanation": "Kesadaran menghargai milik orang lain.",
+   "explanationEn": "An awareness of respecting others' belongings."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "朝型の生活が健康によいとよく言われる。確かに、早起きして日光を浴びると、体内時計が整い、気分もすっきりする。しかし、朝型と夜型は、生まれつきの体質も関係していて、すべての人に朝型が向いているわけではないという研究もある。\n大切なのは、自分の体質に合った生活のリズムを見つけ、それを守ることだろう。無理に朝型に変えようとして、睡眠不足になってしまっては、本末転倒である。",
+   "prompt": "朝型生活について、筆者はどのように述べていますか。",
+   "choices": [
+    "体質によるので、すべての人に向くとは限らない。",
+    "誰にとっても最もよい。",
+    "夜型は健康に悪い。",
+    "体質は変えられる。"
+   ],
+   "explanation": "Tergantung bawaan tubuh, tidak cocok untuk semua.",
+   "explanationEn": "It depends on constitution, so it does not suit everyone."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "朝型の生活が健康によいとよく言われる。確かに、早起きして日光を浴びると、体内時計が整い、気分もすっきりする。しかし、朝型と夜型は、生まれつきの体質も関係していて、すべての人に朝型が向いているわけではないという研究もある。\n大切なのは、自分の体質に合った生活のリズムを見つけ、それを守ることだろう。無理に朝型に変えようとして、睡眠不足になってしまっては、本末転倒である。",
+   "prompt": "「本末転倒」とは、ここではどういうことですか。",
+   "choices": [
+    "健康のために朝型にしたのに、睡眠不足で逆効果になること",
+    "朝型を始めて早起きが得意になること",
+    "夜型の人が朝に強くなること",
+    "睡眠時間を長くとること"
+   ],
+   "explanation": "Demi sehat jadi kurang tidur: kebalikan tujuan.",
+   "explanationEn": "Trying to be healthy but ending up sleep-deprived."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 複数文章の統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】オンライン授業は、時間や場所を選ばず、学べる点が大きな利点だ。遠くに住む人や、仕事が忙しい社会人にも、学ぶ機会が広がった。録画を見直せば、理解できなかった部分を繰り返し学ぶこともできる。\n\n【B】オンライン授業では、画面越しで、友人や先生の表情が分かりにくく、質問しづらいという声も多い。集中を保つのが難しく、一人で学ぶことに不安を感じる学生もいる。対面授業の良さも、見直されるべきだ。",
+   "prompt": "オンライン授業の利点として、Aが挙げているのはどれですか。",
+   "choices": [
+    "録画を見直して、理解できなかった部分を繰り返し学べる。",
+    "友人と直接話せる。",
+    "先生に質問しやすい。",
+    "試験が簡単になる。"
+   ],
+   "explanation": "Rekaman bisa diulang.",
+   "explanationEn": "Recordings can be rewatched."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 複数文章の統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】オンライン授業は、時間や場所を選ばず、学べる点が大きな利点だ。遠くに住む人や、仕事が忙しい社会人にも、学ぶ機会が広がった。録画を見直せば、理解できなかった部分を繰り返し学ぶこともできる。\n\n【B】オンライン授業では、画面越しで、友人や先生の表情が分かりにくく、質問しづらいという声も多い。集中を保つのが難しく、一人で学ぶことに不安を感じる学生もいる。対面授業の良さも、見直されるべきだ。",
+   "prompt": "AとBの違いは何ですか。",
+   "choices": [
+    "Aは学べる機会の広がりを、Bは学ぶ環境の難しさを述べている。",
+    "Aは費用を、Bは時間を述べている。",
+    "Aは対面授業を、Bはオンライン授業を支持している。",
+    "AもBも、オンライン授業に反対している。"
+   ],
+   "explanation": "A: perluasan kesempatan, B: kesulitan lingkungan belajar.",
+   "explanationEn": "A: wider access; B: difficulties of the learning environment."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「天才」と聞くと、生まれつきの特別な才能を持った人を思い浮かべる人が多い。しかし、多くの研究者は、才能そのものより、正しい方法で長い時間練習を重ねることのほうが、大きな成果を生むと指摘している。\nある音楽家は、子どもの頃、毎日同じ曲を何時間も弾き続けたという。周りからは「才能がある」と言われたが、本人は、「上手に弾けるようになるまで、やめなかっただけだ」と振り返っている。\nつまり、才能とは、始めた時点で決まっているものではなく、継続の結果として、あとから形になるものなのかもしれない。そう考えれば、私たちにも、まだ多くの可能性が残されているはずだ。",
+   "prompt": "多くの研究者の指摘は何ですか。",
+   "choices": [
+    "正しい方法で長い時間練習を重ねることが、大きな成果を生む。",
+    "才能は変えることができない。",
+    "練習の量は成果と関係がない。",
+    "子どもの頃の才能がすべてを決める。"
+   ],
+   "explanation": "Latihan benar dan panjang menghasilkan prestasi besar.",
+   "explanationEn": "Long, correct practice produces great results."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「天才」と聞くと、生まれつきの特別な才能を持った人を思い浮かべる人が多い。しかし、多くの研究者は、才能そのものより、正しい方法で長い時間練習を重ねることのほうが、大きな成果を生むと指摘している。\nある音楽家は、子どもの頃、毎日同じ曲を何時間も弾き続けたという。周りからは「才能がある」と言われたが、本人は、「上手に弾けるようになるまで、やめなかっただけだ」と振り返っている。\nつまり、才能とは、始めた時点で決まっているものではなく、継続の結果として、あとから形になるものなのかもしれない。そう考えれば、私たちにも、まだ多くの可能性が残されているはずだ。",
+   "prompt": "音楽家は、自分についてどのように振り返っていますか。",
+   "choices": [
+    "上手に弾けるようになるまで、やめなかっただけだ。",
+    "生まれつき才能があった。",
+    "練習はあまりしなかった。",
+    "周りの人に教えてもらった。"
+   ],
+   "explanation": "Hanya tidak berhenti sampai bisa.",
+   "explanationEn": "He just did not stop until he could play well."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「天才」と聞くと、生まれつきの特別な才能を持った人を思い浮かべる人が多い。しかし、多くの研究者は、才能そのものより、正しい方法で長い時間練習を重ねることのほうが、大きな成果を生むと指摘している。\nある音楽家は、子どもの頃、毎日同じ曲を何時間も弾き続けたという。周りからは「才能がある」と言われたが、本人は、「上手に弾けるようになるまで、やめなかっただけだ」と振り返っている。\nつまり、才能とは、始めた時点で決まっているものではなく、継続の結果として、あとから形になるものなのかもしれない。そう考えれば、私たちにも、まだ多くの可能性が残されているはずだ。",
+   "prompt": "筆者の考える「才能」とは何ですか。",
+   "choices": [
+    "継続の結果として、あとから形になるもの",
+    "生まれた時に決まるもの",
+    "他人に認められたもの",
+    "短い時間で身につくもの"
+   ],
+   "explanation": "Bakat terbentuk kemudian sebagai hasil ketekunan.",
+   "explanationEn": "Talent takes shape later as a result of persistence."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "ひまわり市　市民マラソン大会　参加者募集\n【種目】10km　5km　3km（親子）\n【日時】11月3日（日・祝）　受付 7:30〜8:30　スタート 9:00\n【参加費】10km 4,000円　5km 3,000円　3km（親子ペア）3,500円\n【申込】10月10日（木）までに、市のホームページで申し込み。定員は、10km 300名、5km 400名、3km 100組。定員を超えた場合は、抽選。\n※雨天でも実施します。ただし、台風などの場合は中止し、参加費を返金します。",
+   "prompt": "小学生の子どもと一緒に参加したい人が申し込める種目はどれですか。",
+   "choices": [
+    "3km（親子）",
+    "10km",
+    "5km",
+    "どれも参加できない"
+   ],
+   "explanation": "Anak SD dan orang tua: 3km (parent-child).",
+   "explanationEn": "Parent and child: 3 km."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "ひまわり市　市民マラソン大会　参加者募集\n【種目】10km　5km　3km（親子）\n【日時】11月3日（日・祝）　受付 7:30〜8:30　スタート 9:00\n【参加費】10km 4,000円　5km 3,000円　3km（親子ペア）3,500円\n【申込】10月10日（木）までに、市のホームページで申し込み。定員は、10km 300名、5km 400名、3km 100組。定員を超えた場合は、抽選。\n※雨天でも実施します。ただし、台風などの場合は中止し、参加費を返金します。",
+   "prompt": "この案内の内容と合っているものはどれですか。",
+   "choices": [
+    "台風などで中止になった場合は、参加費が返金される。",
+    "申込は当日、会場で受け付ける。",
+    "雨の日は、必ず中止になる。",
+    "定員を超えたら、先着順で決まる。"
+   ],
+   "explanation": "Bila batal karena topan, biaya dikembalikan.",
+   "explanationEn": "If cancelled due to a typhoon, the fee is refunded."
+  }
+ ]
+}

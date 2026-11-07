@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
@@ -51,16 +52,7 @@ class MapRepository {
     final cached = preferences.getString(spotsKey);
     final etag = preferences.getString(spotsEtagKey);
     try {
-      final response = await dio.get<Object>(
-        '/map/spots',
-        options: Options(
-          headers: {
-            if (cached != null && etag != null) 'If-None-Match': etag,
-          },
-          validateStatus: (status) => status == 200 || status == 304,
-          responseType: ResponseType.plain,
-        ),
-      );
+      final response = await _getSpots(cached != null && etag != null ? etag : null);
       if (response.statusCode == 304 && cached != null) {
         return MapData(spots: _parseSpots(cached));
       }
@@ -74,7 +66,8 @@ class MapRepository {
         await preferences.remove(spotsEtagKey);
       }
       return MapData(spots: spots);
-    } on Object {
+    } on Object catch (error) {
+      debugPrint('Map spots failed: $error');
       if (cached != null) {
         try {
           return MapData(spots: _parseSpots(cached), fromCache: true);
@@ -85,6 +78,34 @@ class MapRepository {
       throw const MapFailure(
         'Peta belum dapat dimuat. Periksa koneksi dan coba lagi.',
       );
+    }
+  }
+
+  /// The spot list is one large document, so it gets a longer read timeout
+  /// than normal API calls and one retry for transient failures.
+  Future<Response<Object>> _getSpots(String? etag) async {
+    Future<Response<Object>> request() => dio.get<Object>(
+      '/map/spots',
+      options: Options(
+        headers: {if (etag != null) 'If-None-Match': etag},
+        validateStatus: (status) => status == 200 || status == 304,
+        responseType: ResponseType.plain,
+        receiveTimeout: const Duration(seconds: 45),
+        sendTimeout: const Duration(seconds: 20),
+      ),
+    );
+    try {
+      return await request();
+    } on DioException catch (error) {
+      final status = error.response?.statusCode ?? 0;
+      final transient =
+          error.type == DioExceptionType.connectionTimeout ||
+          error.type == DioExceptionType.receiveTimeout ||
+          error.type == DioExceptionType.connectionError ||
+          status >= 500;
+      if (!transient) rethrow;
+      await Future<void>.delayed(const Duration(seconds: 1));
+      return request();
     }
   }
 

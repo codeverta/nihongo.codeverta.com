@@ -20,7 +20,7 @@ func (s *MemoryStore) OfflinePracticePackage(user, kind, lessonID string) (domai
 	if !exists {
 		return domain.OfflinePracticePackage{}, ErrNotFound
 	}
-	if (kind == "ssw" || PremiumLevel(level)) && s.entitlementLocked(user).Tier != domain.TierPremium {
+	if !openLearningAccess && (kind == "ssw" || PremiumLevel(level)) && s.entitlementLocked(user).Tier != domain.TierPremium {
 		return domain.OfflinePracticePackage{}, ErrPremium
 	}
 
@@ -246,7 +246,7 @@ func (s *MemoryStore) SyncOfflinePracticeAttempt(user string, input domain.Offli
 	if !exists || level != manifest.Level {
 		return domain.OfflinePracticeResult{}, ErrInvalid
 	}
-	if (manifest.Kind == "ssw" || PremiumLevel(level)) && s.entitlementLocked(user).Tier != domain.TierPremium {
+	if !openLearningAccess && (manifest.Kind == "ssw" || PremiumLevel(level)) && s.entitlementLocked(user).Tier != domain.TierPremium {
 		return domain.OfflinePracticeResult{}, ErrPremium
 	}
 	partialPractice := manifest.Kind == "ssw"

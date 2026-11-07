@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_language.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
+import 'package:nihongo_master/core/settings/theme_mode_preference.dart';
 
 class DisplaySettingsScreen extends ConsumerWidget {
   const DisplaySettingsScreen({super.key});
@@ -15,6 +16,7 @@ class DisplaySettingsScreen extends ConsumerWidget {
     final locale = ref.watch(appLanguageProvider);
     final languageController = ref.read(appLanguageProvider.notifier);
     final englishAvailable = ref.watch(englishAvailabilityProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text('Pengaturan tampilan'.localized(context))),
@@ -69,6 +71,56 @@ class DisplaySettingsScreen extends ConsumerWidget {
                   ),
                 ),
               ],
+            ),
+          ),
+          const SizedBox(height: 12),
+          Card(
+            key: const Key('display-theme-mode-setting'),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Tema'.localized(context),
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Pilih tampilan terang, gelap, atau ikuti pengaturan HP.'
+                        .localized(context),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: double.infinity,
+                    child: SegmentedButton<ThemeMode>(
+                      showSelectedIcon: false,
+                      segments: [
+                        ButtonSegment(
+                          value: ThemeMode.system,
+                          icon: const Icon(Icons.brightness_auto_rounded),
+                          label: Text('Sistem'.localized(context)),
+                        ),
+                        ButtonSegment(
+                          value: ThemeMode.light,
+                          icon: const Icon(Icons.light_mode_rounded),
+                          label: Text('Terang'.localized(context)),
+                        ),
+                        ButtonSegment(
+                          value: ThemeMode.dark,
+                          icon: const Icon(Icons.dark_mode_rounded),
+                          label: Text('Gelap'.localized(context)),
+                        ),
+                      ],
+                      selected: {themeMode},
+                      onSelectionChanged: (selection) => ref
+                          .read(themeModeProvider.notifier)
+                          .select(selection.first),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 12),

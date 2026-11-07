@@ -1,0 +1,651 @@
+{
+ "level": "NAT",
+ "paper": 9,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[家族]]は四人です。",
+   "choices": [
+    "かぞく",
+    "かそく",
+    "いえぞく",
+    "かぞうく"
+   ],
+   "explanation": "家族（かぞく） berarti keluarga.",
+   "explanationEn": "家族（かぞく） means family."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[台所]]で母が料理をしています。",
+   "choices": [
+    "だいどころ",
+    "だいどこ",
+    "たいどころ",
+    "だいところ"
+   ],
+   "explanation": "台所（だいどころ） berarti dapur.",
+   "explanationEn": "台所（だいどころ） means kitchen."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[体]]を動かすのは、いいことです。",
+   "choices": [
+    "からだ",
+    "かだら",
+    "たい",
+    "からた"
+   ],
+   "explanation": "体（からだ） berarti tubuh.",
+   "explanationEn": "体（からだ） means body."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[頭]]が痛いです。",
+   "choices": [
+    "あたま",
+    "あだま",
+    "かしら",
+    "あたば"
+   ],
+   "explanation": "頭（あたま） berarti kepala.",
+   "explanationEn": "頭（あたま） means head."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[病気]]のときは、ゆっくり休んでください。",
+   "choices": [
+    "びょうき",
+    "ひょうき",
+    "びょうぎ",
+    "へいき"
+   ],
+   "explanation": "病気（びょうき） berarti sakit.",
+   "explanationEn": "病気（びょうき） means illness."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "食事のあとで[[薬]]を飲みます。",
+   "choices": [
+    "くすり",
+    "ぐすり",
+    "やく",
+    "くずり"
+   ],
+   "explanation": "薬（くすり） berarti obat.",
+   "explanationEn": "薬（くすり） means medicine."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[妹]]は高校生です。",
+   "choices": [
+    "いもうと",
+    "いもと",
+    "おとうと",
+    "あね"
+   ],
+   "explanation": "妹（いもうと） berarti adik perempuan.",
+   "explanationEn": "妹（いもうと） means younger sister."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[窓]]から山が見えます。",
+   "choices": [
+    "まど",
+    "まと",
+    "かど",
+    "そら"
+   ],
+   "explanation": "窓（まど） berarti jendela.",
+   "explanationEn": "窓（まど） means window."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日曜日に部屋を[[掃除]]します。",
+   "choices": [
+    "そうじ",
+    "そじ",
+    "しょうじ",
+    "そうち"
+   ],
+   "explanation": "掃除（そうじ） berarti membersihkan.",
+   "explanationEn": "掃除（そうじ） means cleaning."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "毎朝、[[洗濯]]をしてから出かけます。",
+   "choices": [
+    "せんたく",
+    "せいたく",
+    "せんだく",
+    "ぜんたく"
+   ],
+   "explanation": "洗濯（せんたく） berarti mencuci pakaian.",
+   "explanationEn": "洗濯（せんたく） means laundry."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "熱があるので、病院へ（　）。",
+   "choices": [
+    "行きます",
+    "走ります",
+    "書きます",
+    "買います"
+   ],
+   "explanation": "病院へ行く berarti pergi ke rumah sakit.",
+   "explanationEn": "病院へ行く means to go to the hospital."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "おなかが痛いときは、あたたかい（　）を飲むといいです。",
+   "choices": [
+    "お茶",
+    "本",
+    "靴",
+    "壁"
+   ],
+   "explanation": "あたたかいお茶 berarti teh hangat.",
+   "explanationEn": "あたたかいお茶 means warm tea."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ねる前に、電気を（　）。",
+   "choices": [
+    "消します",
+    "買います",
+    "売ります",
+    "洗います"
+   ],
+   "explanation": "電気を消す berarti mematikan lampu.",
+   "explanationEn": "電気を消す means to turn off the light."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "洗濯機で服を（　）。",
+   "choices": [
+    "洗います",
+    "書きます",
+    "読みます",
+    "歌います"
+   ],
+   "explanation": "服を洗う berarti mencuci baju.",
+   "explanationEn": "服を洗う means to wash clothes."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "弟はまだ小さいので、一人で服が（　）。",
+   "choices": [
+    "着られません",
+    "着たいです",
+    "着ましょう",
+    "着ています"
+   ],
+   "explanation": "着られません berarti belum bisa memakai sendiri.",
+   "explanationEn": "着られません means cannot put on by oneself."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "母は（　）で働いています。",
+   "choices": [
+    "病院",
+    "本棚",
+    "冷蔵庫",
+    "洗面所"
+   ],
+   "explanation": "病院で働く berarti bekerja di rumah sakit.",
+   "explanationEn": "病院で働く means to work at a hospital."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "つめたい牛乳は（　）に入れておきます。",
+   "choices": [
+    "冷蔵庫",
+    "玄関",
+    "廊下",
+    "窓"
+   ],
+   "explanation": "冷蔵庫に入れる berarti memasukkan ke kulkas.",
+   "explanationEn": "冷蔵庫に入れる means to put in the fridge."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "頭が（　）ので、薬を飲みました。",
+   "choices": [
+    "いたい",
+    "うすい",
+    "ひろい",
+    "かたい"
+   ],
+   "explanation": "頭がいたい berarti kepala sakit.",
+   "explanationEn": "頭がいたい means to have a headache."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "祖母はとても元気で、毎朝（　）をしています。",
+   "choices": [
+    "さんぽ",
+    "けんか",
+    "しっぱい",
+    "ちこく"
+   ],
+   "explanation": "さんぽをする berarti berjalan-jalan.",
+   "explanationEn": "さんぽをする means to take a walk."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "トイレの（　）を開けてください。",
+   "choices": [
+    "ドア",
+    "さら",
+    "ふく",
+    "ほし"
+   ],
+   "explanation": "ドアを開ける berarti membuka pintu.",
+   "explanationEn": "ドアを開ける means to open the door."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "かぎを（　）から、部屋に入れません。",
+   "choices": [
+    "なくした",
+    "あらった",
+    "よんだ",
+    "ふんだ"
+   ],
+   "explanation": "かぎをなくす berarti kehilangan kunci.",
+   "explanationEn": "かぎをなくす means to lose the key."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "弟（　）私より背が高いです。",
+   "choices": [
+    "は",
+    "を",
+    "に",
+    "で"
+   ],
+   "explanation": "は menandai topik: 弟は.",
+   "explanationEn": "は marks the topic: 弟は."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "おなかが痛い（　）、会社を休みました。",
+   "choices": [
+    "ので",
+    "まで",
+    "だけ",
+    "より"
+   ],
+   "explanation": "ので menyatakan alasan (痛いので).",
+   "explanationEn": "ので gives a reason (痛いので)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "弟は、まだ漢字が（　）。",
+   "choices": [
+    "読めません",
+    "読みません",
+    "読んだ",
+    "読むです"
+   ],
+   "explanation": "Bentuk potensial 読めません berarti belum bisa membaca.",
+   "explanationEn": "Potential 読めません means cannot read yet."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "手を洗った（　）、食事をします。",
+   "choices": [
+    "あとで",
+    "まえに",
+    "ながら",
+    "ために"
+   ],
+   "explanation": "V＋たあとで berarti setelah ～ (洗ったあとで).",
+   "explanationEn": "V＋たあとで means after ～ (洗ったあとで)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "熱が（　）ときは、早くねてください。",
+   "choices": [
+    "ある",
+    "あって",
+    "あり",
+    "あれば"
+   ],
+   "explanation": "Bentuk kamus + とき (あるとき) berarti ketika ada.",
+   "explanationEn": "Dictionary form + とき (あるとき) means when there is."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この薬は一日に三回（　）。",
+   "choices": [
+    "飲んでください",
+    "飲みましょう",
+    "飲みたい",
+    "飲んでいます"
+   ],
+   "explanation": "～てください menyatakan instruksi (飲んでください).",
+   "explanationEn": "～てください gives an instruction (飲んでください)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "母は、いつも家族のため（　）、料理を作ります。",
+   "choices": [
+    "に",
+    "で",
+    "を",
+    "が"
+   ],
+   "explanation": "AのためにB berarti demi A (家族のために).",
+   "explanationEn": "AのためにB means for the sake of A (家族のために)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私は、妹（　）けんかしました。",
+   "choices": [
+    "と",
+    "を",
+    "に",
+    "が"
+   ],
+   "explanation": "人とけんかする berarti bertengkar dengan seseorang.",
+   "explanationEn": "人とけんかする means to quarrel with someone."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "窓を開け（　）、寝ました。",
+   "choices": [
+    "たまま",
+    "ながら",
+    "ために",
+    "ますが"
+   ],
+   "explanation": "V＋たまま berarti dalam keadaan tetap (開けたまま).",
+   "explanationEn": "V＋たまま means while still in that state (開けたまま)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "疲れているときは、無理を（　）ほうがいいです。",
+   "choices": [
+    "しない",
+    "した",
+    "する",
+    "しなかった"
+   ],
+   "explanation": "V＋ないほうがいい berarti sebaiknya jangan (しないほうがいい).",
+   "explanationEn": "V＋ないほうがいい means had better not (しないほうがいい)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "うちの犬は、ご飯（　）食べると、すぐねます。",
+   "choices": [
+    "を",
+    "が",
+    "の",
+    "と"
+   ],
+   "explanation": "ご飯を食べる: を menandai objek.",
+   "explanationEn": "ご飯を食べる: を marks the object."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あしたは、早く起き（　）なりません。",
+   "choices": [
+    "なければ",
+    "なくて",
+    "ないで",
+    "なかった"
+   ],
+   "explanation": "～なければなりません berarti harus ～ (起きなければ).",
+   "explanationEn": "～なければなりません means must ～ (起きなければ)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この薬は、苦（　）、飲めません。",
+   "choices": [
+    "くて",
+    "いで",
+    "で",
+    "に"
+   ],
+   "explanation": "Adjektiva-い: い → くて (苦くて).",
+   "explanationEn": "い-adjective: い → くて (苦くて)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "お母さん（　）、お父さんのほうが料理が上手です。",
+   "choices": [
+    "より",
+    "まで",
+    "だけ",
+    "しか"
+   ],
+   "explanation": "AよりBのほうが～ membandingkan (お母さんより).",
+   "explanationEn": "AよりBのほうが～ compares (お母さんより)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "部屋の電気が（　）います。",
+   "choices": [
+    "ついて",
+    "つけて",
+    "つける",
+    "つけた"
+   ],
+   "explanation": "電気がついている berarti lampu menyala (intransitif).",
+   "explanationEn": "電気がついている means the light is on (intransitive)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "病気のとき、水を（　）飲んだほうがいいです。",
+   "choices": [
+    "たくさん",
+    "たくさんの",
+    "たくさんで",
+    "たくさんが"
+   ],
+   "explanation": "たくさん sebagai adverbia sebelum kata kerja.",
+   "explanationEn": "たくさん works as an adverb before the verb."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "兄は、サッカーが上手（　）、ピアノもひけます。",
+   "choices": [
+    "で",
+    "に",
+    "を",
+    "が"
+   ],
+   "explanation": "Na-adjektiva disambung dengan で (上手で).",
+   "explanationEn": "Na-adjective connects with で (上手で)."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "うちのきまり。ご飯の前に手を洗います。夜十時までにおふろに入ります。日曜日は家族みんなでそうじをします。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "日曜日は家族でそうじをします。",
+    "ご飯のあとで手を洗います。",
+    "おふろは十二時に入ります。",
+    "そうじは毎日一人でします。"
+   ],
+   "explanation": "Aturan rumah: hari Minggu bersih-bersih bersama.",
+   "explanationEn": "House rules: the family cleans together on Sunday."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "田中先生へ。むすめが熱を出したので、今日は学校を休みます。あしたは行けると思います。宿題はあしたのあさ、持って行きます。山本",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "あしたは学校へ行くつもりです。",
+    "今日はむすめが学校へ行きました。",
+    "宿題は今日出しました。",
+    "先生が熱を出しました。"
+   ],
+   "explanation": "Surat izin: putri berencana masuk sekolah besok.",
+   "explanationEn": "Absence note: the daughter plans to go to school tomorrow."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "昨日、おばあさんの家に行きました。おばあさんは庭で花を育てています。きれいな黄色い花をもらいました。家の机の上に置いています。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "おばあさんから花をもらいました。",
+    "花は赤いです。",
+    "庭は小さいです。",
+    "花を店で買いました。"
+   ],
+   "explanation": "Buku harian nenek: menerima bunga kuning dari nenek.",
+   "explanationEn": "Grandma diary: got yellow flowers from grandma."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "山田病院。月曜日から土曜日、午前九時から十二時まで。午後は三時から六時まで。木曜日の午後と日曜日は休みです。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "木曜日の午前は病院が開いています。",
+    "日曜日は三時から開いています。",
+    "午後は二時から開きます。",
+    "土曜日は休みです。"
+   ],
+   "explanation": "Jam praktik rumah sakit: Kamis pagi buka.",
+   "explanationEn": "Clinic hours: open on Thursday morning."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "この薬は、食事のあとで飲みます。朝、昼、夜に一つずつ飲んでください。二日たっても熱が下がらないときは、また病院に来てください。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "薬は一日に三回飲みます。",
+    "薬は食事の前に飲みます。",
+    "熱が下がらなくても、病院に来ません。",
+    "一回に三つ飲みます。"
+   ],
+   "explanation": "Petunjuk obat: diminum tiga kali sehari.",
+   "explanationEn": "Medicine directions: take it three times a day."
+  }
+ ]
+}

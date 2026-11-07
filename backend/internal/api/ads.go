@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -111,7 +110,7 @@ func (s *Server) registerAds(mux *http.ServeMux) {
 }
 
 func (s *Server) adsAuthorized(r *http.Request) bool {
-	return s.ads.token != "" && subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(s.ads.token)) == 1
+	return adminRequestAuthorized(r, s.ads.token)
 }
 
 func (s *Server) updateAdsConfig(w http.ResponseWriter, r *http.Request) {

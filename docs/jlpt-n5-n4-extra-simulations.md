@@ -28,13 +28,27 @@ Aturan isi:
 |---|---|---|---|
 | N5 Paket 02–10 | `N5-2` … `N5-10` | `jlpt-n5-simulation-2` … `-10` | `n5-language-02` … `-10` |
 | N4 Paket 02–10 | `N4-2` … `N4-10` | `jlpt-n4-simulation-2` … `-10` | `n4-language-02` … `-10` |
+| N3 Paket 02–10 | `N3-2` … `N3-10` | `jlpt-n3-simulation-2` … `-10` | `n3-language-02` … `-10` |
+| N2 Paket 02–10 | `N2-2` … `N2-10` | `jlpt-n2-simulation-2` … `-10` | `n2-language-02` … `-10` |
+| N1 Paket 02–10 | `N1-2` … `N1-10` | `jlpt-n1-simulation-2` … `-10` | `n1-language-02` … `-10` |
+| NAT 5Q Exam 06–10 (premium) | `NAT-6` … `NAT-10` | `nat-5q-full-6` … `-10` | `nat-5q-written-06` … `-10` |
+| JFT Exam 06–10 (premium) | `JFT-6` … `JFT-10` | `jft-a2-full-6` … `-10` | `jft-written-06` … `-10` |
 
-Rute Flutter: `/exams/n5-{2..10}/simulation` dan `/exams/n4-{2..10}/simulation`. Overview: `GET /simulation/{level}`.
+Rute Flutter: `/exams/n5-{2..10}/simulation`, `/exams/n4-{2..10}/simulation`, `/exams/n{3,2,1}-{2..10}/simulation`, `/exams/nat-{2..10}/simulation` dan `/exams/jft/exam-{2..10}`. Overview: `GET /simulation/{level}`.
 
 ## Akses
 
 Semua simulasi JLPT N5 dan N4 (Paket 01–10) gratis (`jlptSimulationFree`, `IsFreeJLPTSimulationExam`,
-dan `RequiredTier: TierFree` pada katalog ujian). N3, N2, dan N1 tetap premium.
+dan `RequiredTier: TierFree` pada katalog ujian). Paket 02–10 untuk N3, N2, dan N1 juga gratis, sedangkan
+Paket 01 N3, N2, dan N1 (`jlpt-n3/n2/n1-simulation-1`) tetap premium.
+
+## N3, N2, N1 Paket 02–10, NAT dan JFT 06–10
+
+Disimpan sebagai JSON (`simulation_data/jlpt_n{3,2,1}_paperNN.json`, `nat_paperNN.json`, `jft_paperNN.json`) dan dimuat lewat `simulationJSONContent`.
+Struktur sama dengan Paket 01: N3 memakai bagian `vocabulary` (35 soal) dan `grammar` (39 soal); N2 dan N1
+memakai satu bagian `written` (64 soal). Listening dilewati. Hanya N3 yang diberi furigana, dan hanya untuk
+kanji di luar himpunan N5+N4; N2 dan N1 tanpa furigana seperti ujian sebenarnya. Batas paket per level
+ditentukan `jlptPaperMax` (JLPT) serta `natLastPaper`/`jftLastPaper` (NAT dan JFT, tetap premium) di `backend/internal/store/simulation.go`.
 
 ## Bahasa Inggris
 

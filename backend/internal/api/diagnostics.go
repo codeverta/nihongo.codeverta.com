@@ -3,7 +3,6 @@ package api
 import (
 	"bytes"
 	"context"
-	"crypto/subtle"
 	_ "embed"
 	"encoding/json"
 	"io"
@@ -60,7 +59,7 @@ func (s *Server) registerDiagnostics(mux *http.ServeMux) {
 func (s *Server) diagnosticsAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
-		if s.diagnosticsAdminToken == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(s.diagnosticsAdminToken)) != 1 {
+		if !adminRequestAuthorized(r, s.diagnosticsAdminToken) {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "Kunci admin salah atau belum dikonfigurasi.")
 			return
 		}

@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -88,7 +87,7 @@ func (s *Server) registerBranding(mux *http.ServeMux) {
 
 func (s *Server) updateBranding(w http.ResponseWriter, r *http.Request) {
 	b := s.branding
-	if b.token == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(b.token)) != 1 {
+	if !adminRequestAuthorized(r, b.token) {
 		writeError(w, http.StatusUnauthorized, "unauthorized", "admin token tidak valid atau belum dikonfigurasi")
 		return
 	}

@@ -95,7 +95,7 @@ class _StudyViewState extends ConsumerState<VocabularyStudyView> {
                         url: w.imageUrl,
                         panel: w.imagePanel,
                         description: w.imageDescription,
-                        aspectRatio: 1.6,
+                        aspectRatio: 1,
                       ),
                     Padding(
                       padding: const EdgeInsets.all(22),

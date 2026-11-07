@@ -1,0 +1,966 @@
+{
+ "level": "N1",
+ "paper": 5,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この制度の[[趣旨]]を、全員に分かりやすく説明した。",
+   "choices": [
+    "しゅし",
+    "しゅうし",
+    "しゅじ",
+    "しょし"
+   ],
+   "explanation": "趣旨（しゅし） berarti maksud atau tujuan.",
+   "explanationEn": "趣旨（しゅし） means purpose or gist."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "大雪が、救助隊の到着を[[阻んだ]]。",
+   "choices": [
+    "はばんだ",
+    "こばんだ",
+    "さまたんだ",
+    "へだんだ"
+   ],
+   "explanation": "阻む（はばむ） berarti menghalangi.",
+   "explanationEn": "阻む（はばむ） means to block or hinder."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この大学は、運営費の多くを寄付で[[賄って]]いる。",
+   "choices": [
+    "まかなって",
+    "わいなって",
+    "まいなって",
+    "まかのって"
+   ],
+   "explanation": "賄う（まかなう） berarti membiayai.",
+   "explanationEn": "賄う（まかなう） means to cover or finance."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この橋は古くて、[[脆く]]なっている。",
+   "choices": [
+    "もろく",
+    "ふるく",
+    "あやうく",
+    "ぜいく"
+   ],
+   "explanation": "脆い（もろい） berarti rapuh.",
+   "explanationEn": "脆い（もろい） means fragile."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "一定の条件を満たせば、授業料は[[免除]]される。",
+   "choices": [
+    "めんじょ",
+    "めんじょう",
+    "べんじょ",
+    "めんぞ"
+   ],
+   "explanation": "免除（めんじょ） berarti pembebasan.",
+   "explanationEn": "免除（めんじょ） means exemption."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、長年にわたって[[慈善]]活動を続けている。",
+   "choices": [
+    "じぜん",
+    "じざん",
+    "しぜん",
+    "じせん"
+   ],
+   "explanation": "慈善（じぜん） berarti amal.",
+   "explanationEn": "慈善（じぜん） means charity."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "役所の[[煩わしい]]手続きに、時間をとられた。",
+   "choices": [
+    "わずらわしい",
+    "はんわしい",
+    "わずわらしい",
+    "くるわしい"
+   ],
+   "explanation": "煩わしい（わずらわしい） berarti merepotkan.",
+   "explanationEn": "煩わしい（わずらわしい） means troublesome."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "店主は、料理の盛りつけに工夫を[[凝らして]]いる。",
+   "choices": [
+    "こらして",
+    "ほらして",
+    "こごらして",
+    "ぎょうらして"
+   ],
+   "explanation": "工夫を凝らす（こらす） berarti mencurahkan kreativitas.",
+   "explanationEn": "工夫を凝らす（こらす） means to put ingenuity into."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい法律の施行を（　）、各社は準備を急いでいる。",
+   "choices": [
+    "控えて",
+    "兼ねて",
+    "妨げて",
+    "欠いて"
+   ],
+   "explanation": "施行を控える berarti menjelang pemberlakuan.",
+   "explanationEn": "施行を控える means to be on the eve of enforcement."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "長引く不況で、消費者の財布のひもが（　）。",
+   "choices": [
+    "固くなった",
+    "重くなった",
+    "狭くなった",
+    "太くなった"
+   ],
+   "explanation": "財布のひもが固くなる berarti orang jadi hemat.",
+   "explanationEn": "財布のひもが固くなる means people become tight with money."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は周囲の期待を一身に（　）、初めての大舞台に立った。",
+   "choices": [
+    "背負って",
+    "預けて",
+    "刻んで",
+    "挟んで"
+   ],
+   "explanation": "期待を背負う berarti memikul harapan.",
+   "explanationEn": "期待を背負う means to bear the expectations of others."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "この地域では、古くからの伝統行事が代々（　）されている。",
+   "choices": [
+    "継承",
+    "承認",
+    "承諾",
+    "承知"
+   ],
+   "explanation": "伝統が継承される berarti diwariskan.",
+   "explanationEn": "伝統が継承される means tradition is handed down."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "予算の（　）で、計画の見直しを余儀なくされた。",
+   "choices": [
+    "制約",
+    "制裁",
+    "制圧",
+    "制止"
+   ],
+   "explanation": "予算の制約 berarti keterbatasan anggaran.",
+   "explanationEn": "予算の制約 means a budget constraint."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は部下の失敗を（　）、自分で責任を取った。",
+   "choices": [
+    "かばって",
+    "かすめて",
+    "ゆだねて",
+    "はぶいて"
+   ],
+   "explanation": "失敗をかばう berarti melindungi kesalahan bawahan.",
+   "explanationEn": "失敗をかばう means to cover for someone's mistake."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、飛び出してきた子どもを見て、[[とっさに]]ブレーキを踏んだ。",
+   "choices": [
+    "考える間もなく素早く",
+    "ゆっくり考えてから",
+    "何度も迷って",
+    "注意されてから"
+   ],
+   "explanation": "とっさに berarti spontan seketika.",
+   "explanationEn": "とっさに means instantly without thinking."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "資料を並べて検討すれば、[[おのずと]]答えが見えてくる。",
+   "choices": [
+    "自然に",
+    "無理やり",
+    "急に",
+    "誰かの助けで"
+   ],
+   "explanation": "おのずと (N1 Paket 05) berarti jawaban muncul dengan sendirinya.",
+   "explanationEn": "おのずと (N1 Paper 05) means an answer emerging of its own accord."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、根拠もなく[[むやみに]]人を疑う。",
+   "choices": [
+    "理由もなくやたらに",
+    "慎重に",
+    "時々",
+    "悲しそうに"
+   ],
+   "explanation": "むやみに berarti sembarangan.",
+   "explanationEn": "むやみに means indiscriminately."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "心配された会議は、[[滞りなく]]終了した。",
+   "choices": [
+    "問題なく順調に",
+    "長引いて",
+    "途中で中止になって",
+    "急に決まって"
+   ],
+   "explanation": "滞りなく berarti lancar tanpa hambatan.",
+   "explanationEn": "滞りなく means without a hitch."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あの男の話には、どこか[[うさんくさい]]ところがある。",
+   "choices": [
+    "怪しくて信用できない",
+    "面白くて飽きない",
+    "難しくて分からない",
+    "優しくて感動的な"
+   ],
+   "explanation": "うさんくさい berarti mencurigakan.",
+   "explanationEn": "うさんくさい means fishy or suspicious."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会社は、不振の店舗に[[てこ入れ]]をした。",
+   "choices": [
+    "状況をよくするために力を加えた",
+    "店を閉めた",
+    "店の名前を変えずに放置した",
+    "責任者を褒めた"
+   ],
+   "explanation": "てこ入れ berarti memberi dorongan untuk memperbaiki.",
+   "explanationEn": "てこ入れ means to give a boost to improve."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「はびこる」",
+   "choices": [
+    "庭に雑草がはびこって、手に負えなくなった。",
+    "新しい店が駅前にはびこって、とてもきれいだ。",
+    "彼は仕事がはびこって、毎日早く帰る。",
+    "夕日が海をはびこって、美しく見える。"
+   ],
+   "explanation": "はびこる berarti merajalela.",
+   "explanationEn": "はびこる means to run rampant."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「すたれる」",
+   "choices": [
+    "伝統的な遊びが、次第にすたれてしまった。",
+    "雨のせいで、洗濯物がすたれた。",
+    "彼の成績は、毎年すたれている。",
+    "風邪でのどがすたれて、声が出ない。"
+   ],
+   "explanation": "すたれる berarti ditinggalkan, tidak populer lagi.",
+   "explanationEn": "すたれる means to go out of fashion."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「かさむ」",
+   "choices": [
+    "修理費がかさんで、予算を超えてしまった。",
+    "雲がかさんで、空が晴れてきた。",
+    "熱がかさんで、体が楽になった。",
+    "道が長くかさんで、近道を通った。"
+   ],
+   "explanation": "かさむ berarti (biaya) membengkak.",
+   "explanationEn": "かさむ means (costs) to pile up."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「やりくり」",
+   "choices": [
+    "限られた収入で、毎月の生活をやりくりしている。",
+    "友人とやりくりして、同じ服を買った。",
+    "先生に作文をやりくりしてもらった。",
+    "荷物をやりくりして、玄関に置いた。"
+   ],
+   "explanation": "やりくり berarti mengatur dengan pas-pasan.",
+   "explanationEn": "やりくり means managing with limited resources."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「まぎらわしい」",
+   "choices": [
+    "この二つの薬は、名前がまぎらわしくて間違えやすい。",
+    "彼の説明はまぎらわしくて、すぐに理解できた。",
+    "今日は天気がまぎらわしくて、洗濯物がよく乾く。",
+    "母のまぎらわしい料理が、毎日の楽しみだ。"
+   ],
+   "explanation": "まぎらわしい berarti membingungkan karena mirip.",
+   "explanationEn": "まぎらわしい means confusingly similar."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女の歌は、聞く人を感動させ（　）。",
+   "choices": [
+    "ずにはおかない",
+    "ずにすむ",
+    "ずじまいだ",
+    "かねない"
+   ],
+   "explanation": "～ずにはおかない berarti pasti membuat.",
+   "explanationEn": "～ずにはおかない means cannot fail to."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "理由が何（　）、約束を破ってはいけない。",
+   "choices": [
+    "であれ",
+    "ずして",
+    "として",
+    "ならず"
+   ],
+   "explanation": "～であれ berarti apa pun ～.",
+   "explanationEn": "～であれ means no matter what ～ is."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、妻の反対（　）、会社を辞めて店を開いた。",
+   "choices": [
+    "をよそに",
+    "をもとに",
+    "をおいて",
+    "を通じて"
+   ],
+   "explanation": "～をよそに berarti mengabaikan.",
+   "explanationEn": "～をよそに means in disregard of."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は優れた研究者である（　）、教育者としても高く評価されている。",
+   "choices": [
+    "のみならず",
+    "ばかりに",
+    "くせに",
+    "ならまだしも"
+   ],
+   "explanation": "～のみならず berarti tidak hanya ～ tetapi juga.",
+   "explanationEn": "～のみならず means not only ～ but also."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、一度も弱音を吐く（　）、最後まで走りきった。",
+   "choices": [
+    "ことなく",
+    "ともなく",
+    "ほかなく",
+    "ばかりなく"
+   ],
+   "explanation": "～ことなく berarti tanpa pernah ～.",
+   "explanationEn": "～ことなく means without ever ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "長年この仕事をしてきた（　）、彼の判断は的確だ。",
+   "choices": [
+    "だけあって",
+    "ものの",
+    "ばかりに",
+    "くせに"
+   ],
+   "explanation": "～だけあって berarti pantas dengan ～.",
+   "explanationEn": "～だけあって means as befits ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "お礼（　）、近いうちにご挨拶に伺います。",
+   "choices": [
+    "かたがた",
+    "ずくめ",
+    "次第",
+    "ばかり"
+   ],
+   "explanation": "～かたがた berarti sekalian ～.",
+   "explanationEn": "～かたがた means by way of ～ as well."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "時間もない（　）、今日の会議はここまでにしよう。",
+   "choices": [
+    "ことだし",
+    "ものを",
+    "くせに",
+    "ゆえんで"
+   ],
+   "explanation": "～ことだし berarti karena ～, jadi.",
+   "explanationEn": "～ことだし means since ～, let's."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は ＿＿ ＿＿ ★ ＿＿ 責任感の強い人だ。",
+   "choices": [
+    "ありながら",
+    "まだ",
+    "二十代で",
+    "驚くほど"
+   ],
+   "explanation": "Urutan: まだ 二十代で ありながら 驚くほど (meski baru dua puluhan, sangat bertanggung jawab). ★ slot ketiga, ありながら.",
+   "explanationEn": "Order: まだ 二十代で ありながら 驚くほど (though only in his twenties, remarkably responsible). ★ is the third slot, ありながら."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "他ならぬ ＿＿ ＿＿ ★ ＿＿ わけにはいかない。",
+   "choices": [
+    "あっては",
+    "友人の",
+    "頼みと",
+    "断る"
+   ],
+   "explanation": "Urutan: 友人の 頼みと あっては 断る (kalau permintaan sahabat, tak mungkin menolak). ★ slot ketiga, あっては.",
+   "explanationEn": "Order: 友人の 頼みと あっては 断る (when it is a friend's request, I cannot refuse). ★ is the third slot, あっては."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この製品は世代を問わず ＿＿ ＿＿ ★ ＿＿ 広く支持されている。",
+   "choices": [
+    "使いやすさ",
+    "品質の",
+    "高さと",
+    "ゆえに"
+   ],
+   "explanation": "Urutan: 品質の 高さと 使いやすさ ゆえに (karena kualitas tinggi dan mudah dipakai). ★ slot ketiga, 使いやすさ.",
+   "explanationEn": "Order: 品質の 高さと 使いやすさ ゆえに (because of high quality and ease of use). ★ is the third slot, 使いやすさ."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "災害が起きたとき、最初に助けてくれるのは、行政ではなく近所の人々だと言われる。大きな地震では、道路が寸断され、消防や救急がすぐには駆けつけられない【46】。実際、過去の災害では、救出された人の多くが、近隣の住民によって助けられたという。\nそれにもかかわらず、都市部では、隣にどんな人が住んでいるのかも知らない人が少なくない。いざというとき、助けが必要な高齢者や障害のある人がどこにいるのか分からなければ、助けようにも【47】。\n一部の地域では、普段から顔を合わせて挨拶を交わし、年に一度の防災訓練で、支援が必要な人の情報を共有する取り組みを進めている。防災の備えとは、物資を蓄えることだけではなく、人と人との信頼関係を【48】ことでもある。顔の見える関係を築くことが、結局は自分自身の安全を【49】のである。",
+   "prompt": "【46】",
+   "choices": [
+    "恐れがある",
+    "ものではない",
+    "はずがない",
+    "ことはない"
+   ],
+   "explanation": "～恐れがある berarti ada kekhawatiran.",
+   "explanationEn": "～恐れがある means there is a risk that."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "災害が起きたとき、最初に助けてくれるのは、行政ではなく近所の人々だと言われる。大きな地震では、道路が寸断され、消防や救急がすぐには駆けつけられない【46】。実際、過去の災害では、救出された人の多くが、近隣の住民によって助けられたという。\nそれにもかかわらず、都市部では、隣にどんな人が住んでいるのかも知らない人が少なくない。いざというとき、助けが必要な高齢者や障害のある人がどこにいるのか分からなければ、助けようにも【47】。\n一部の地域では、普段から顔を合わせて挨拶を交わし、年に一度の防災訓練で、支援が必要な人の情報を共有する取り組みを進めている。防災の備えとは、物資を蓄えることだけではなく、人と人との信頼関係を【48】ことでもある。顔の見える関係を築くことが、結局は自分自身の安全を【49】のである。",
+   "prompt": "【47】",
+   "choices": [
+    "助けられない",
+    "助けるに違いない",
+    "助けずにはおかない",
+    "助けるまでもない"
+   ],
+   "explanation": "助けようにも助けられない berarti ingin menolong pun tak bisa.",
+   "explanationEn": "助けようにも助けられない means even if one wants to help, one cannot."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "災害が起きたとき、最初に助けてくれるのは、行政ではなく近所の人々だと言われる。大きな地震では、道路が寸断され、消防や救急がすぐには駆けつけられない【46】。実際、過去の災害では、救出された人の多くが、近隣の住民によって助けられたという。\nそれにもかかわらず、都市部では、隣にどんな人が住んでいるのかも知らない人が少なくない。いざというとき、助けが必要な高齢者や障害のある人がどこにいるのか分からなければ、助けようにも【47】。\n一部の地域では、普段から顔を合わせて挨拶を交わし、年に一度の防災訓練で、支援が必要な人の情報を共有する取り組みを進めている。防災の備えとは、物資を蓄えることだけではなく、人と人との信頼関係を【48】ことでもある。顔の見える関係を築くことが、結局は自分自身の安全を【49】のである。",
+   "prompt": "【48】",
+   "choices": [
+    "築いておく",
+    "壊しておく",
+    "避けておく",
+    "忘れておく"
+   ],
+   "explanation": "Membangun kepercayaan sebelumnya: 築いておく.",
+   "explanationEn": "Building trust in advance: 築いておく."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "災害が起きたとき、最初に助けてくれるのは、行政ではなく近所の人々だと言われる。大きな地震では、道路が寸断され、消防や救急がすぐには駆けつけられない【46】。実際、過去の災害では、救出された人の多くが、近隣の住民によって助けられたという。\nそれにもかかわらず、都市部では、隣にどんな人が住んでいるのかも知らない人が少なくない。いざというとき、助けが必要な高齢者や障害のある人がどこにいるのか分からなければ、助けようにも【47】。\n一部の地域では、普段から顔を合わせて挨拶を交わし、年に一度の防災訓練で、支援が必要な人の情報を共有する取り組みを進めている。防災の備えとは、物資を蓄えることだけではなく、人と人との信頼関係を【48】ことでもある。顔の見える関係を築くことが、結局は自分自身の安全を【49】のである。",
+   "prompt": "【49】",
+   "choices": [
+    "守ることになる",
+    "脅かすことになる",
+    "見失うことになる",
+    "後回しにする"
+   ],
+   "explanation": "Hubungan yang baik pada akhirnya melindungi keselamatan sendiri.",
+   "explanationEn": "Good relationships end up protecting one's own safety."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "お知らせ\n市立図書館は、館内の改修工事のため、三月一日から三十一日まで、全館を休館します。休館中の本の返却は、玄関前の返却ポストをご利用ください。貸出期間は、休館した日数の分だけ自動的に延長されます。ご不便をおかけしますが、ご理解をお願いいたします。",
+   "prompt": "休館中の図書館について、正しいものはどれですか。",
+   "choices": [
+    "本の返却は、玄関前の返却ポストでできる。",
+    "休館中は、本を返却することができない。",
+    "貸出期間は延長されない。",
+    "一部の部屋だけは利用することができる。"
+   ],
+   "explanation": "Pengembalian buku lewat kotak di depan pintu.",
+   "explanationEn": "Books can be returned through the drop box at the entrance."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "パソコンで文章を書くことが当たり前になり、手書きの機会は減った。しかし、手で書くという動作は、考えを整理し、記憶に定着させる効果があるという。便利さを享受しつつも、あえて手書きの時間を残すことには意味があるのではないか。",
+   "prompt": "筆者は、手書きについてどう考えていますか。",
+   "choices": [
+    "考えを整理し記憶に残す効果があるので、残す意味がある。",
+    "パソコンより速いので、もっと使うべきだ。",
+    "時代遅れなので、やめるべきだ。",
+    "最近、手書きの機会が増えている。"
+   ],
+   "explanation": "Menulis tangan berguna menata pikiran dan mengingat.",
+   "explanationEn": "Handwriting helps organize thoughts and memory, so it is worth keeping."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "「急がば回れ」という言葉がある。一見遠回りに見えても、確実な方法を選んだほうが、結局は早く目的に達するという意味だ。納期に追われているときほど、手順を省きたくなるが、その誘惑に負けた結果、やり直しが生じて、かえって時間を失った経験は誰にもあるだろう。",
+   "prompt": "筆者が最も言いたいことは何ですか。",
+   "choices": [
+    "急いでいるときほど、確実な手順を省かないほうが結局は早い。",
+    "遠回りをすれば、必ず時間がかかる。",
+    "納期は守らなくてもよい。",
+    "やり直しは避けられないものだ。"
+   ],
+   "explanation": "Saat terburu-buru, jangan lewati prosedur yang pasti.",
+   "explanationEn": "When in a hurry, do not skip reliable steps; it is faster in the end."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "ある旅館では、宿泊客から寄せられた不満を、毎朝の会議で全員に共有している。以前は、苦情は担当者だけが対応していたが、それでは同じ不満が繰り返されることに気づいたからだ。今では、従業員が自ら改善案を出し、小さな工夫が積み重なって、リピーターが増えたという。\n苦情は、誰もが避けたいものだが、見方を変えれば、サービスを良くするための貴重な情報源である。",
+   "prompt": "旅館が苦情を全員で共有するようになったのは、なぜですか。",
+   "choices": [
+    "担当者だけで対応すると、同じ不満が繰り返されたから。",
+    "苦情の数が減ったから。",
+    "宿泊客がそう頼んだから。",
+    "法律で決められたから。"
+   ],
+   "explanation": "Jika hanya petugas yang menangani, keluhan yang sama berulang.",
+   "explanationEn": "Handling by one person led to the same complaints repeating."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "ある旅館では、宿泊客から寄せられた不満を、毎朝の会議で全員に共有している。以前は、苦情は担当者だけが対応していたが、それでは同じ不満が繰り返されることに気づいたからだ。今では、従業員が自ら改善案を出し、小さな工夫が積み重なって、リピーターが増えたという。\n苦情は、誰もが避けたいものだが、見方を変えれば、サービスを良くするための貴重な情報源である。",
+   "prompt": "筆者は、苦情をどのようなものだと考えていますか。",
+   "choices": [
+    "サービスを良くするための貴重な情報源",
+    "できるだけ無視するべきもの",
+    "担当者だけが処理するべきもの",
+    "従業員の評価を下げるもの"
+   ],
+   "explanation": "Keluhan adalah sumber informasi berharga.",
+   "explanationEn": "Complaints are a valuable source of information."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "私の祖父は、毎朝、庭の木々に水をやるのが日課だった。幼い私は、なぜそんな面倒なことを毎日続けるのかと不思議に思っていた。ある日、祖父は「木は急には育たないが、毎日見ていれば小さな変化に気づける」と言った。\n大人になった今、私は仕事で成果が出ずに焦ることがある。そんなとき、祖父の言葉を思い出す。結果ばかりを追わず、日々の小さな変化に目を向けることが、続ける力になるのだと思う。",
+   "prompt": "祖父は、どのように言いましたか。",
+   "choices": [
+    "木は急には育たないが、毎日見ていれば小さな変化に気づける。",
+    "木は水をやらなくても育つ。",
+    "毎日水をやる必要はない。",
+    "木はすぐに大きく育つ。"
+   ],
+   "explanation": "Kakek: pohon tak tumbuh cepat, tapi perubahan kecil terlihat bila dilihat tiap hari.",
+   "explanationEn": "Grandfather: trees do not grow quickly, but you notice small changes by watching daily."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "私の祖父は、毎朝、庭の木々に水をやるのが日課だった。幼い私は、なぜそんな面倒なことを毎日続けるのかと不思議に思っていた。ある日、祖父は「木は急には育たないが、毎日見ていれば小さな変化に気づける」と言った。\n大人になった今、私は仕事で成果が出ずに焦ることがある。そんなとき、祖父の言葉を思い出す。結果ばかりを追わず、日々の小さな変化に目を向けることが、続ける力になるのだと思う。",
+   "prompt": "筆者は、続ける力についてどう考えていますか。",
+   "choices": [
+    "結果ばかり追わず、小さな変化に目を向けることが続ける力になる。",
+    "焦らずに仕事をやめるべきだ。",
+    "庭の手入れは仕事より大切だ。",
+    "成果は気にしなくてよい。"
+   ],
+   "explanation": "Kekuatan bertahan datang dari memperhatikan perubahan kecil.",
+   "explanationEn": "The strength to continue comes from noticing small daily changes."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "古い絵画や建物を修復する際、最も難しいのは、「どこまで元の姿に戻すか」という判断である。完全に当時の姿に復元すれば、見た目は美しくなるが、長い年月を経てきた歴史の痕跡は失われる。一方、傷みをそのまま残せば、作品の寿命は縮む。\n近年の修復では、「可逆性」という考え方が重視されている。これは、修復のために加えた材料や処置を、将来、元の状態に影響を与えずに取り除けるようにしておくという原則である。技術は進歩するため、現在最善とされる方法が、数十年後には不適切と判断されるかもしれない。後の世代が、より良い方法を選べる余地を残しておくべきだという発想である。\n実際、過去には、当時の最新技術で施された修復が、のちに作品を傷める原因と分かった例が少なくない。こうした失敗は、人間の判断が常に未来の知識に追い越されることを教えている。\nだからこそ、修復の担当者には、技術だけでなく、自分の判断も不完全だと認める謙虚さが求められる。修復とは、作品を「完成させる」作業ではなく、次の世代に「手渡す」作業なのである。",
+   "prompt": "修復で最も難しいとされる判断は何ですか。",
+   "choices": [
+    "どこまで元の姿に戻すかという判断",
+    "修復の費用をどう集めるかという判断",
+    "修復を誰に頼むかという判断",
+    "修復にかかる期間をどうするかという判断"
+   ],
+   "explanation": "Yang tersulit: sejauh mana dikembalikan ke wujud asli.",
+   "explanationEn": "The hardest call is how far to restore the original appearance."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "古い絵画や建物を修復する際、最も難しいのは、「どこまで元の姿に戻すか」という判断である。完全に当時の姿に復元すれば、見た目は美しくなるが、長い年月を経てきた歴史の痕跡は失われる。一方、傷みをそのまま残せば、作品の寿命は縮む。\n近年の修復では、「可逆性」という考え方が重視されている。これは、修復のために加えた材料や処置を、将来、元の状態に影響を与えずに取り除けるようにしておくという原則である。技術は進歩するため、現在最善とされる方法が、数十年後には不適切と判断されるかもしれない。後の世代が、より良い方法を選べる余地を残しておくべきだという発想である。\n実際、過去には、当時の最新技術で施された修復が、のちに作品を傷める原因と分かった例が少なくない。こうした失敗は、人間の判断が常に未来の知識に追い越されることを教えている。\nだからこそ、修復の担当者には、技術だけでなく、自分の判断も不完全だと認める謙虚さが求められる。修復とは、作品を「完成させる」作業ではなく、次の世代に「手渡す」作業なのである。",
+   "prompt": "「可逆性」とは、どのような原則ですか。",
+   "choices": [
+    "修復の処置を、将来、元の状態に影響を与えず取り除けるようにしておくこと",
+    "作品を元の色に完全に戻すこと",
+    "修復した部分が見えないようにすること",
+    "修復を何度でも繰り返すこと"
+   ],
+   "explanation": "Reversibilitas: penanganan bisa dicabut tanpa merusak keadaan asli.",
+   "explanationEn": "Reversibility: treatments can be removed later without affecting the original."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "古い絵画や建物を修復する際、最も難しいのは、「どこまで元の姿に戻すか」という判断である。完全に当時の姿に復元すれば、見た目は美しくなるが、長い年月を経てきた歴史の痕跡は失われる。一方、傷みをそのまま残せば、作品の寿命は縮む。\n近年の修復では、「可逆性」という考え方が重視されている。これは、修復のために加えた材料や処置を、将来、元の状態に影響を与えずに取り除けるようにしておくという原則である。技術は進歩するため、現在最善とされる方法が、数十年後には不適切と判断されるかもしれない。後の世代が、より良い方法を選べる余地を残しておくべきだという発想である。\n実際、過去には、当時の最新技術で施された修復が、のちに作品を傷める原因と分かった例が少なくない。こうした失敗は、人間の判断が常に未来の知識に追い越されることを教えている。\nだからこそ、修復の担当者には、技術だけでなく、自分の判断も不完全だと認める謙虚さが求められる。修復とは、作品を「完成させる」作業ではなく、次の世代に「手渡す」作業なのである。",
+   "prompt": "可逆性が重視されるのは、なぜですか。",
+   "choices": [
+    "将来、より良い方法が見つかったときに選べる余地を残すため",
+    "修復の費用を安くするため",
+    "作品を早く完成させるため",
+    "修復の技術を秘密にするため"
+   ],
+   "explanation": "Agar generasi berikut bisa memilih cara yang lebih baik.",
+   "explanationEn": "So later generations can choose a better method."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "古い絵画や建物を修復する際、最も難しいのは、「どこまで元の姿に戻すか」という判断である。完全に当時の姿に復元すれば、見た目は美しくなるが、長い年月を経てきた歴史の痕跡は失われる。一方、傷みをそのまま残せば、作品の寿命は縮む。\n近年の修復では、「可逆性」という考え方が重視されている。これは、修復のために加えた材料や処置を、将来、元の状態に影響を与えずに取り除けるようにしておくという原則である。技術は進歩するため、現在最善とされる方法が、数十年後には不適切と判断されるかもしれない。後の世代が、より良い方法を選べる余地を残しておくべきだという発想である。\n実際、過去には、当時の最新技術で施された修復が、のちに作品を傷める原因と分かった例が少なくない。こうした失敗は、人間の判断が常に未来の知識に追い越されることを教えている。\nだからこそ、修復の担当者には、技術だけでなく、自分の判断も不完全だと認める謙虚さが求められる。修復とは、作品を「完成させる」作業ではなく、次の世代に「手渡す」作業なのである。",
+   "prompt": "過去の修復の失敗は、何を教えていますか。",
+   "choices": [
+    "人間の判断は、常に未来の知識に追い越されるということ",
+    "最新技術は使うべきでないということ",
+    "修復は必ず失敗するということ",
+    "古い方法のほうが優れているということ"
+   ],
+   "explanation": "Penilaian manusia selalu dilampaui pengetahuan masa depan.",
+   "explanationEn": "Human judgment is always overtaken by future knowledge."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "古い絵画や建物を修復する際、最も難しいのは、「どこまで元の姿に戻すか」という判断である。完全に当時の姿に復元すれば、見た目は美しくなるが、長い年月を経てきた歴史の痕跡は失われる。一方、傷みをそのまま残せば、作品の寿命は縮む。\n近年の修復では、「可逆性」という考え方が重視されている。これは、修復のために加えた材料や処置を、将来、元の状態に影響を与えずに取り除けるようにしておくという原則である。技術は進歩するため、現在最善とされる方法が、数十年後には不適切と判断されるかもしれない。後の世代が、より良い方法を選べる余地を残しておくべきだという発想である。\n実際、過去には、当時の最新技術で施された修復が、のちに作品を傷める原因と分かった例が少なくない。こうした失敗は、人間の判断が常に未来の知識に追い越されることを教えている。\nだからこそ、修復の担当者には、技術だけでなく、自分の判断も不完全だと認める謙虚さが求められる。修復とは、作品を「完成させる」作業ではなく、次の世代に「手渡す」作業なのである。",
+   "prompt": "筆者の考えに合うものはどれですか。",
+   "choices": [
+    "修復は、作品を完成させるのではなく、次の世代に手渡す作業である。",
+    "修復は、元の姿に完全に戻す作業である。",
+    "修復は、技術さえあれば誰でもできる。",
+    "傷みはそのまま放置するべきだ。"
+   ],
+   "explanation": "Restorasi adalah menyerahkan karya kepada generasi berikutnya.",
+   "explanationEn": "Restoration is handing the work on to the next generation."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】週休三日制の導入は、社員の生活を豊かにするだけでなく、企業にも利点がある。休日が増えれば、心身の疲れが取れ、集中して働けるため、生産性が上がる。優秀な人材を確保する上でも、柔軟な働き方を認める企業は有利になるだろう。\n\n【B】週休三日制は、一見魅力的だが、業種によっては現実的でない。人手が必要な医療や接客の現場では、休みが増えれば、他の社員の負担が増すだけである。また、給与が減るのではないかという不安もある。まず、各職場の実情を調べ、導入できる業種から試すべきだ。",
+   "prompt": "Aが、企業にとっての利点として述べているのはどれですか。",
+   "choices": [
+    "生産性が上がり、優秀な人材を確保しやすくなること",
+    "給与を減らせること",
+    "営業日を増やせること",
+    "社員の数を減らせること"
+   ],
+   "explanation": "A: produktivitas naik dan SDM unggul mudah didapat.",
+   "explanationEn": "A: productivity rises and top talent is easier to secure."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】週休三日制の導入は、社員の生活を豊かにするだけでなく、企業にも利点がある。休日が増えれば、心身の疲れが取れ、集中して働けるため、生産性が上がる。優秀な人材を確保する上でも、柔軟な働き方を認める企業は有利になるだろう。\n\n【B】週休三日制は、一見魅力的だが、業種によっては現実的でない。人手が必要な医療や接客の現場では、休みが増えれば、他の社員の負担が増すだけである。また、給与が減るのではないかという不安もある。まず、各職場の実情を調べ、導入できる業種から試すべきだ。",
+   "prompt": "Bが問題点として挙げているのはどれですか。",
+   "choices": [
+    "人手が必要な現場で、他の社員の負担が増すこと",
+    "社員が休みすぎること",
+    "優秀な人材が来なくなること",
+    "生産性が下がりすぎること"
+   ],
+   "explanation": "B: beban karyawan lain meningkat di tempat yang butuh tenaga.",
+   "explanationEn": "B: other staff are burdened at labor-intensive workplaces."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】週休三日制の導入は、社員の生活を豊かにするだけでなく、企業にも利点がある。休日が増えれば、心身の疲れが取れ、集中して働けるため、生産性が上がる。優秀な人材を確保する上でも、柔軟な働き方を認める企業は有利になるだろう。\n\n【B】週休三日制は、一見魅力的だが、業種によっては現実的でない。人手が必要な医療や接客の現場では、休みが増えれば、他の社員の負担が増すだけである。また、給与が減るのではないかという不安もある。まず、各職場の実情を調べ、導入できる業種から試すべきだ。",
+   "prompt": "AとBに共通している点はどれですか。",
+   "choices": [
+    "週休三日制に、働く人にとって魅力的な面があることは否定していない。",
+    "すべての業種で、すぐに導入するべきだと考えている。",
+    "給与は必ず上がると考えている。",
+    "週休三日制は必要ないと考えている。"
+   ],
+   "explanation": "Keduanya tidak menyangkal daya tarik libur tiga hari.",
+   "explanationEn": "Neither denies that a three-day weekend is attractive to workers."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】週休三日制の導入は、社員の生活を豊かにするだけでなく、企業にも利点がある。休日が増えれば、心身の疲れが取れ、集中して働けるため、生産性が上がる。優秀な人材を確保する上でも、柔軟な働き方を認める企業は有利になるだろう。\n\n【B】週休三日制は、一見魅力的だが、業種によっては現実的でない。人手が必要な医療や接客の現場では、休みが増えれば、他の社員の負担が増すだけである。また、給与が減るのではないかという不安もある。まず、各職場の実情を調べ、導入できる業種から試すべきだ。",
+   "prompt": "Bの筆者の提案は何ですか。",
+   "choices": [
+    "各職場の実情を調べ、導入できる業種から試すこと",
+    "すべての業種で一斉に導入すること",
+    "給与を大幅に上げること",
+    "制度を完全にやめること"
+   ],
+   "explanation": "B mengusulkan mencoba di sektor yang memungkinkan.",
+   "explanationEn": "B proposes trying it first in sectors where it is feasible."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "他人の話を聞くとき、私たちはしばしば「共感すること」が最良の対応だと考える。確かに、「つらかったね」と寄り添われれば、人は救われる。しかし、安易な共感には落とし穴がある。\n共感とは、相手の気持ちを分かったつもりになることではない。人の経験は、本人にしか分からない部分を必ず含んでいる。「私も同じ経験をしたから分かる」という言葉は、善意から出たものであっても、相手の経験を自分の物差しで測ってしまう危険を伴う。\n大切なのは、分かったつもりにならず、「分からない」という自覚を持ったまま、相手の話に耳を傾け続けることではないだろうか。分からないからこそ、問いかけ、待ち、確かめる。その姿勢が、結果として、相手に「尊重されている」という実感を与える。\n共感は、感情の一致ではなく、理解しようとする努力の積み重ねである。",
+   "prompt": "筆者が述べる「安易な共感の落とし穴」とは何ですか。",
+   "choices": [
+    "相手の経験を、自分の物差しで測ってしまう危険",
+    "相手が必ず怒り出すこと",
+    "話が長くなりすぎること",
+    "自分の経験を忘れてしまうこと"
+   ],
+   "explanation": "Jebakan: mengukur pengalaman orang dengan penggaris sendiri.",
+   "explanationEn": "The pitfall: measuring another's experience with one's own yardstick."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "他人の話を聞くとき、私たちはしばしば「共感すること」が最良の対応だと考える。確かに、「つらかったね」と寄り添われれば、人は救われる。しかし、安易な共感には落とし穴がある。\n共感とは、相手の気持ちを分かったつもりになることではない。人の経験は、本人にしか分からない部分を必ず含んでいる。「私も同じ経験をしたから分かる」という言葉は、善意から出たものであっても、相手の経験を自分の物差しで測ってしまう危険を伴う。\n大切なのは、分かったつもりにならず、「分からない」という自覚を持ったまま、相手の話に耳を傾け続けることではないだろうか。分からないからこそ、問いかけ、待ち、確かめる。その姿勢が、結果として、相手に「尊重されている」という実感を与える。\n共感は、感情の一致ではなく、理解しようとする努力の積み重ねである。",
+   "prompt": "「私も同じ経験をしたから分かる」という言葉について、筆者はどう考えていますか。",
+   "choices": [
+    "善意からでも、相手の経験を自分の物差しで測る危険がある。",
+    "相手を最も元気づける言葉である。",
+    "事実と違うので避けるべきである。",
+    "同じ経験をした人にしか言えない。"
+   ],
+   "explanation": "Walau bermaksud baik, ucapan itu berisiko.",
+   "explanationEn": "Even if well-meant, it risks imposing one's own measure."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "他人の話を聞くとき、私たちはしばしば「共感すること」が最良の対応だと考える。確かに、「つらかったね」と寄り添われれば、人は救われる。しかし、安易な共感には落とし穴がある。\n共感とは、相手の気持ちを分かったつもりになることではない。人の経験は、本人にしか分からない部分を必ず含んでいる。「私も同じ経験をしたから分かる」という言葉は、善意から出たものであっても、相手の経験を自分の物差しで測ってしまう危険を伴う。\n大切なのは、分かったつもりにならず、「分からない」という自覚を持ったまま、相手の話に耳を傾け続けることではないだろうか。分からないからこそ、問いかけ、待ち、確かめる。その姿勢が、結果として、相手に「尊重されている」という実感を与える。\n共感は、感情の一致ではなく、理解しようとする努力の積み重ねである。",
+   "prompt": "筆者が大切だと考えている姿勢はどれですか。",
+   "choices": [
+    "分からないという自覚を持ち、相手の話に耳を傾け続けること",
+    "相手の話を要約して伝えること",
+    "自分の経験を話して安心させること",
+    "相手の気持ちにすぐ同意すること"
+   ],
+   "explanation": "Sadar belum mengerti dan terus mendengar.",
+   "explanationEn": "Staying aware of not understanding and continuing to listen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "他人の話を聞くとき、私たちはしばしば「共感すること」が最良の対応だと考える。確かに、「つらかったね」と寄り添われれば、人は救われる。しかし、安易な共感には落とし穴がある。\n共感とは、相手の気持ちを分かったつもりになることではない。人の経験は、本人にしか分からない部分を必ず含んでいる。「私も同じ経験をしたから分かる」という言葉は、善意から出たものであっても、相手の経験を自分の物差しで測ってしまう危険を伴う。\n大切なのは、分かったつもりにならず、「分からない」という自覚を持ったまま、相手の話に耳を傾け続けることではないだろうか。分からないからこそ、問いかけ、待ち、確かめる。その姿勢が、結果として、相手に「尊重されている」という実感を与える。\n共感は、感情の一致ではなく、理解しようとする努力の積み重ねである。",
+   "prompt": "筆者は、共感をどのようなものだと述べていますか。",
+   "choices": [
+    "感情の一致ではなく、理解しようとする努力の積み重ね",
+    "相手と同じ感情になること",
+    "相手を励ますこと",
+    "相手の意見に賛成すること"
+   ],
+   "explanation": "Empati = upaya terus memahami, bukan kesamaan perasaan.",
+   "explanationEn": "Empathy is accumulated effort to understand, not matching feelings."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "グリーンフィットネス　会員のご案内\n【レギュラー会員】月会費 8,800円　利用時間：毎日 9:00〜22:00　プール・スタジオ・ジム利用可\n【デイタイム会員】月会費 6,600円　利用時間：平日 9:00〜17:00　プール・スタジオ・ジム利用可\n【ジム会員】月会費 5,500円　利用時間：毎日 9:00〜22:00　ジムのみ利用可\n【ナイト・ウィークエンド会員】月会費 7,000円　利用時間：平日 18:00〜22:00、土日祝 9:00〜22:00　プール・スタジオ・ジム利用可\n\n・入会時に、入会金 5,000円が必要です（キャンペーン期間中は無料）。\n・学生の方は、月会費が1,000円引きになります（ジム会員を除く）。\n・退会は、希望する月の前月末までにお申し出ください。\n・一時休会は、年に三か月まで可能で、休会中の月会費は 1,100円です。",
+   "prompt": "平日は仕事が終わる18:30以降にしか行けないが、プールも使いたい人に合う、いちばん安い会員はどれですか。",
+   "choices": [
+    "ナイト・ウィークエンド会員",
+    "レギュラー会員",
+    "デイタイム会員",
+    "ジム会員"
+   ],
+   "explanation": "Hanya paket malam yang cocok dan paling murah (7.000 yen).",
+   "explanationEn": "Only the night/weekend plan fits and it is cheapest (7,000 yen)."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "グリーンフィットネス　会員のご案内\n【レギュラー会員】月会費 8,800円　利用時間：毎日 9:00〜22:00　プール・スタジオ・ジム利用可\n【デイタイム会員】月会費 6,600円　利用時間：平日 9:00〜17:00　プール・スタジオ・ジム利用可\n【ジム会員】月会費 5,500円　利用時間：毎日 9:00〜22:00　ジムのみ利用可\n【ナイト・ウィークエンド会員】月会費 7,000円　利用時間：平日 18:00〜22:00、土日祝 9:00〜22:00　プール・スタジオ・ジム利用可\n\n・入会時に、入会金 5,000円が必要です（キャンペーン期間中は無料）。\n・学生の方は、月会費が1,000円引きになります（ジム会員を除く）。\n・退会は、希望する月の前月末までにお申し出ください。\n・一時休会は、年に三か月まで可能で、休会中の月会費は 1,100円です。",
+   "prompt": "学生がデイタイム会員になる場合、月会費はいくらですか。",
+   "choices": [
+    "5,600円",
+    "6,600円",
+    "4,500円",
+    "7,800円"
+   ],
+   "explanation": "6.600 − 1.000 = 5.600 yen.",
+   "explanationEn": "6,600 − 1,000 = 5,600 yen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "グリーンフィットネス　会員のご案内\n【レギュラー会員】月会費 8,800円　利用時間：毎日 9:00〜22:00　プール・スタジオ・ジム利用可\n【デイタイム会員】月会費 6,600円　利用時間：平日 9:00〜17:00　プール・スタジオ・ジム利用可\n【ジム会員】月会費 5,500円　利用時間：毎日 9:00〜22:00　ジムのみ利用可\n【ナイト・ウィークエンド会員】月会費 7,000円　利用時間：平日 18:00〜22:00、土日祝 9:00〜22:00　プール・スタジオ・ジム利用可\n\n・入会時に、入会金 5,000円が必要です（キャンペーン期間中は無料）。\n・学生の方は、月会費が1,000円引きになります（ジム会員を除く）。\n・退会は、希望する月の前月末までにお申し出ください。\n・一時休会は、年に三か月まで可能で、休会中の月会費は 1,100円です。",
+   "prompt": "三か月休会したとき、休会中に払う月会費の合計はいくらですか。",
+   "choices": [
+    "3,300円",
+    "1,100円",
+    "6,600円",
+    "0円"
+   ],
+   "explanation": "1.100 × 3 bulan = 3.300 yen.",
+   "explanationEn": "1,100 × 3 months = 3,300 yen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "グリーンフィットネス　会員のご案内\n【レギュラー会員】月会費 8,800円　利用時間：毎日 9:00〜22:00　プール・スタジオ・ジム利用可\n【デイタイム会員】月会費 6,600円　利用時間：平日 9:00〜17:00　プール・スタジオ・ジム利用可\n【ジム会員】月会費 5,500円　利用時間：毎日 9:00〜22:00　ジムのみ利用可\n【ナイト・ウィークエンド会員】月会費 7,000円　利用時間：平日 18:00〜22:00、土日祝 9:00〜22:00　プール・スタジオ・ジム利用可\n\n・入会時に、入会金 5,000円が必要です（キャンペーン期間中は無料）。\n・学生の方は、月会費が1,000円引きになります（ジム会員を除く）。\n・退会は、希望する月の前月末までにお申し出ください。\n・一時休会は、年に三か月まで可能で、休会中の月会費は 1,100円です。",
+   "prompt": "この案内の内容と合っているものはどれですか。",
+   "choices": [
+    "退会したいときは、希望する月の前月末までに申し出なければならない。",
+    "入会金は、いつも無料である。",
+    "ジム会員にも、学生割引がある。",
+    "休会は、年に六か月まで可能である。"
+   ],
+   "explanation": "Pengunduran diri diajukan paling lambat akhir bulan sebelumnya.",
+   "explanationEn": "Cancellation must be requested by the end of the previous month."
+  }
+ ]
+}

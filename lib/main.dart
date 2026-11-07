@@ -15,6 +15,7 @@ import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/notifications/notification_lifecycle.dart';
 import 'package:nihongo_master/core/offline/offline_lifecycle.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
+import 'package:nihongo_master/core/settings/theme_mode_preference.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/billing/presentation/billing_controller.dart';
@@ -87,6 +88,7 @@ class NihongoMasterApp extends ConsumerWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
+      themeMode: ref.watch(themeModeProvider),
       routeInformationProvider: router.routeInformationProvider,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,

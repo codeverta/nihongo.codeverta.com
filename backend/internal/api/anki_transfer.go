@@ -86,7 +86,7 @@ func (s *Server) readAnkiImport(w http.ResponseWriter, r *http.Request) (ankitra
 		writeError(w, 422, "invalid_level", "Level deck tidak dikenal.")
 		return ankitransfer.Document{}, "", false
 	}
-	if document.Level == "N1" || document.Level == "N2" || document.Level == "N3" {
+	if !store.OpenLearningAccess() && (document.Level == "N1" || document.Level == "N2" || document.Level == "N3") {
 		if s.store.Profile(userID(r)).Entitlement.Tier != domain.TierPremium {
 			writeStoreError(w, store.ErrPremium)
 			return ankitransfer.Document{}, "", false

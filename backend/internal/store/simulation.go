@@ -34,40 +34,58 @@ type simulationPaperConfig struct {
 	omitted                []string
 }
 
+// jftLastPaper and natLastPaper are the highest numbered JFT/NAT practice papers.
+// Papers 06 and later are JSON files in simulation_data/.
+const (
+	jftLastPaper = 10
+	natLastPaper = 10
+)
+
 func jftPaperNumber(level string) int {
-	switch strings.ToUpper(level) {
-	case "JFT":
+	level = strings.ToUpper(level)
+	if level == "JFT" {
 		return 1
-	case "JFT-2":
-		return 2
-	case "JFT-3":
-		return 3
-	case "JFT-4":
-		return 4
-	case "JFT-5":
-		return 5
-	default:
+	}
+	rest, ok := strings.CutPrefix(level, "JFT-")
+	if !ok {
 		return 0
 	}
+	n, err := strconv.Atoi(rest)
+	if err != nil || n < 2 || n > jftLastPaper || strconv.Itoa(n) != rest {
+		return 0
+	}
+	return n
 }
 
 func IsJFTLevel(level string) bool {
 	return jftPaperNumber(level) != 0
 }
 
-// jlptLastPaper is the highest numbered N5/N4 practice paper. Papers 06 and later
-// are JSON files in simulation_data/ (see simulation_json.go).
-const jlptLastPaper = 10
+// jlptPaperMax returns the highest numbered practice paper of a JLPT level: N5 and
+// N4 have papers 01-10, N3, N2 and N1 have papers 01-10. Papers 06 and later of
+// N5/N4 and every extra N3/N2/N1 paper are JSON files in simulation_data/ (see
+// simulation_json.go).
+func jlptPaperMax(base string) int {
+	switch strings.ToUpper(base) {
+	case "N5", "N4":
+		return 10
+	case "N3", "N2", "N1":
+		return 10
+	}
+	return 0
+}
 
 // jlptExtraPaper recognizes the additional free JLPT papers "N5-2" through
-// "N5-10" and "N4-2" through "N4-10". Paper 01 keeps the plain "N5" and "N4" levels.
+// "N5-10", "N4-2" through "N4-10" and "N3-2".."N1-10". Paper 01 keeps the plain
+// "N5" ... "N1" levels (N5/N4 are free, N3/N2/N1 paper 01 is premium).
 func jlptExtraPaper(level string) (base string, paperNo int, ok bool) {
 	level = strings.ToUpper(level)
-	if len(level) < 4 || len(level) > 5 || level[2] != '-' || (level[:2] != "N5" && level[:2] != "N4") {
+	if len(level) < 4 || len(level) > 5 || level[2] != '-' {
 		return "", 0, false
 	}
+	max := jlptPaperMax(level[:2])
 	n, err := strconv.Atoi(level[3:])
-	if err != nil || n < 2 || n > jlptLastPaper || strconv.Itoa(n) != level[3:] {
+	if max == 0 || err != nil || n < 2 || n > max || strconv.Itoa(n) != level[3:] {
 		return "", 0, false
 	}
 	return level[:2], n, true
@@ -76,10 +94,10 @@ func jlptExtraPaper(level string) (base string, paperNo int, ok bool) {
 // jlptExtraExam maps "jlpt-n5-simulation-6" style IDs of papers 02 and later to
 // their level base ("N5") and paper number.
 func jlptExtraExam(examID string) (base string, paperNo int, ok bool) {
-	for _, prefix := range []string{"n5", "n4"} {
+	for _, prefix := range []string{"n5", "n4", "n3", "n2", "n1"} {
 		if rest, found := strings.CutPrefix(examID, "jlpt-"+prefix+"-simulation-"); found {
 			n, err := strconv.Atoi(rest)
-			if err != nil || n < 2 || n > jlptLastPaper || strconv.Itoa(n) != rest {
+			if err != nil || n < 2 || n > jlptPaperMax(prefix) || strconv.Itoa(n) != rest {
 				return "", 0, false
 			}
 			return strings.ToUpper(prefix), n, true
@@ -88,7 +106,7 @@ func jlptExtraExam(examID string) (base string, paperNo int, ok bool) {
 	return "", 0, false
 }
 
-// IsJLPTExtraLevel reports whether level is one of the additional N5/N4 papers.
+// IsJLPTExtraLevel reports whether level is one of the additional free JLPT papers (02 and later).
 func IsJLPTExtraLevel(level string) bool {
 	_, _, ok := jlptExtraPaper(level)
 	return ok
@@ -103,7 +121,7 @@ func jlptSimulationFree(level string) bool {
 	return IsJLPTExtraLevel(level)
 }
 
-// IsFreeJLPTSimulationExam reports the free simulation exam IDs: every N5 and N4 paper (01-10).
+// IsFreeJLPTSimulationExam reports the free simulation exam IDs: every N5 and N4 paper (01-10) and N3/N2/N1 papers 02-10 (paper 01 of N3-N1 stays premium).
 func IsFreeJLPTSimulationExam(examID string) bool {
 	if examID == "jlpt-n5-simulation-1" || examID == "jlpt-n4-simulation-1" {
 		return true
@@ -123,7 +141,7 @@ func simulationPaper(levels ...string) simulationPaperConfig {
 	if level == "NAT" || strings.HasPrefix(level, "NAT-") {
 		paperNo := 1
 		if level != "NAT" {
-			if _, err := fmt.Sscanf(level, "NAT-%d", &paperNo); err != nil || paperNo < 2 || paperNo > 5 {
+			if _, err := fmt.Sscanf(level, "NAT-%d", &paperNo); err != nil || paperNo < 2 || paperNo > natLastPaper {
 				paperNo = 1
 			}
 		}
@@ -169,6 +187,21 @@ func simulationPaper(levels ...string) simulationPaperConfig {
 		if base == "N5" {
 			return simulationPaperConfig{level, fmt.Sprintf("jlpt-n5-simulation-%d", paperNo), fmt.Sprintf("n5-language-%02d", paperNo), simulationSections(), simulationN5AdditionalContent(paperNo), []string{"dokkai", "listening"}}
 		}
+		switch base {
+		case "N3":
+			return simulationPaperConfig{level, fmt.Sprintf("jlpt-n3-simulation-%d", paperNo), fmt.Sprintf("n3-language-%02d", paperNo), []domain.SimulationSection{
+				{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1800, QuestionCount: 35},
+				{ID: "grammar", Name: "文法・読解 · Grammar & Reading", DurationSeconds: 4200, QuestionCount: 39},
+			}, simulationJSONContent("N3", paperNo), []string{"listening"}}
+		case "N2":
+			return simulationPaperConfig{level, fmt.Sprintf("jlpt-n2-simulation-%d", paperNo), fmt.Sprintf("n2-language-%02d", paperNo), []domain.SimulationSection{
+				{ID: "written", Name: "言語知識（文字・語彙・文法）・読解 · Kosakata, Grammar & Reading", DurationSeconds: 6300, QuestionCount: 64},
+			}, simulationJSONContent("N2", paperNo), []string{"listening"}}
+		case "N1":
+			return simulationPaperConfig{level, fmt.Sprintf("jlpt-n1-simulation-%d", paperNo), fmt.Sprintf("n1-language-%02d", paperNo), []domain.SimulationSection{
+				{ID: "written", Name: "言語知識（文字・語彙・文法）・読解 · Kosakata, Grammar & Reading", DurationSeconds: 6600, QuestionCount: 64},
+			}, simulationJSONContent("N1", paperNo), []string{"listening"}}
+		}
 		return simulationPaperConfig{level, fmt.Sprintf("jlpt-n4-simulation-%d", paperNo), fmt.Sprintf("n4-language-%02d", paperNo), []domain.SimulationSection{
 			{ID: "vocabulary", Name: "文字・語彙 · Kosakata & Kanji", DurationSeconds: 1500, QuestionCount: 28},
 			{ID: "grammar", Name: "文法・読解 · Grammar & Reading", DurationSeconds: 3300, QuestionCount: 29},
@@ -191,7 +224,7 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	if paper.level != "N5" && paper.level != "N4" && !IsJLPTExtraLevel(paper.level) && paper.level != "N3" && paper.level != "N2" && paper.level != "N1" && !IsJFTLevel(paper.level) && paper.level != "NAT" && !strings.HasPrefix(paper.level, "NAT-") && !IsSSWLevel(paper.level) {
 		return domain.ExamAttempt{}, ErrInvalid
 	}
-	if !jlptSimulationFree(paper.level) && s.entitlementLocked(userID).Tier != domain.TierPremium {
+	if !openLearningAccess && !jlptSimulationFree(paper.level) && s.entitlementLocked(userID).Tier != domain.TierPremium {
 		return domain.ExamAttempt{}, ErrPremium
 	}
 	for i := len(s.simulationOrder) - 1; i >= 0; i-- {

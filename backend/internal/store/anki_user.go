@@ -163,6 +163,9 @@ func copyAnkiTransferCards(cards []ankitransfer.Card) []ankitransfer.Card {
 }
 
 func userAnkiDeckPremium(record *userAnkiDeckRecord) bool {
+	if openLearningAccess {
+		return false
+	}
 	if record == nil {
 		return false
 	}

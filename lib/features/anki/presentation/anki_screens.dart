@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/storage/recent_access.dart';
 import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/anki/data/anki_repository.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_controller.dart';
@@ -61,6 +64,7 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
               final id = await context.push<String>('/anki/import');
               if (id != null && context.mounted) {
                 ref.invalidate(ankiDecksProvider);
+                ref.read(recentAccessProvider('anki').notifier).record(id);
                 await context.push(ankiDeckPath(id));
               }
             },
@@ -102,7 +106,10 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                 'n4',
                 'wakayama',
               ];
+              final recent = ref.watch(recentAccessProvider('anki'));
               filtered.sort((a, b) {
+                final byRecent = compareRecent(recent, a.id, b.id);
+                if (byRecent != 0) return byRecent;
                 final ai = preferred.indexOf(a.id);
                 final bi = preferred.indexOf(b.id);
                 if (ai >= 0 || bi >= 0) {
@@ -111,9 +118,7 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                 return a.title.compareTo(b.title);
               });
               final premium = ref.watch(
-                authControllerProvider.select(
-                  (s) => s.user?.isPremium ?? false,
-                ),
+                authControllerProvider.select((s) => s.isAuthenticated),
               );
               return CustomScrollView(
                 slivers: [
@@ -256,7 +261,12 @@ class _DeckListState extends ConsumerState<AnkiDeckListScreen> {
                                 ),
                               ),
                               trailing: const Icon(Icons.chevron_right_rounded),
-                              onTap: () => context.push(ankiDeckPath(deck.id)),
+                              onTap: () {
+                                ref
+                                    .read(recentAccessProvider('anki').notifier)
+                                    .record(deck.id);
+                                unawaited(context.push(ankiDeckPath(deck.id)));
+                              },
                             ),
                           ),
                         );
@@ -430,6 +440,9 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                         await context.push('/premium');
                         return;
                       }
+                      ref
+                          .read(recentAccessProvider('anki').notifier)
+                          .record(deck.id);
                       await context.push(ankiStudyPath(deck.id));
                       if (context.mounted) {
                         ref.invalidate(ankiDeckProvider(deckId));

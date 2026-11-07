@@ -1,0 +1,546 @@
+{
+ "level": "JFT",
+ "paper": 7,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "重い箱を持って、[[指]]をけがしました。下線の言葉はどう読みますか。",
+   "choices": [
+    "ゆび",
+    "あし",
+    "ゆぴ",
+    "うで"
+   ],
+   "explanation": "指 dibaca ゆび, jari.",
+   "explanationEn": "指 is read ゆび, finger."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "受付で、整理[[番号]]をもらいました。下線の言葉はどう読みますか。",
+   "choices": [
+    "ばんごう",
+    "ばんこう",
+    "ばんごお",
+    "ぱんごう"
+   ],
+   "explanation": "番号 dibaca ばんごう, nomor.",
+   "explanationEn": "番号 is read ばんごう, number."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "道に迷ったので、[[交番]]で聞きました。下線の言葉はどう読みますか。",
+   "choices": [
+    "こうばん",
+    "こうぱん",
+    "こうはん",
+    "ごうばん"
+   ],
+   "explanation": "交番 dibaca こうばん, pos polisi kecil.",
+   "explanationEn": "交番 is read こうばん, police box."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "会社の前に、毎日面接の[[練習]]をしています。下線の言葉はどう読みますか。",
+   "choices": [
+    "れんしゅう",
+    "れんじゅう",
+    "れんしゅ",
+    "れんしゅお"
+   ],
+   "explanation": "練習 dibaca れんしゅう, latihan.",
+   "explanationEn": "練習 is read れんしゅう, practice."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "友達が「引っ越し」をします。引っ越しは何ですか。",
+   "choices": [
+    "住む家を変えること",
+    "新しい仕事を始めること",
+    "旅行に行くこと",
+    "学校を卒業すること"
+   ],
+   "explanation": "引っ越し berarti pindah rumah.",
+   "explanationEn": "引っ越し means moving house."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "店で「在庫」がないと言われました。在庫は何ですか。",
+   "choices": [
+    "店にある商品の数",
+    "店の人の名前",
+    "店の開く時間",
+    "店のカード"
+   ],
+   "explanation": "在庫 adalah persediaan barang di toko.",
+   "explanationEn": "在庫 means stock on hand."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "部長が「急ぎの仕事」があると言いました。急ぎの仕事はどんな仕事ですか。",
+   "choices": [
+    "すぐにしなければならない仕事",
+    "来年する仕事",
+    "簡単で楽しい仕事",
+    "誰もしない仕事"
+   ],
+   "explanation": "急ぎの仕事 adalah pekerjaan yang harus segera dikerjakan.",
+   "explanationEn": "急ぎの仕事 is work that must be done right away."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "レストランで「個室」を予約しました。個室は何ですか。",
+   "choices": [
+    "他の客と別の小さい部屋",
+    "外の席",
+    "安い料理",
+    "電話の番号"
+   ],
+   "explanation": "個室 adalah ruang pribadi.",
+   "explanationEn": "個室 means a private room."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "朝は道が混んでいるので、早く家を（　）ほうがいいです。",
+   "choices": [
+    "出た",
+    "切った",
+    "売った",
+    "払った"
+   ],
+   "explanation": "家を出る: meninggalkan rumah.",
+   "explanationEn": "家を出る means to leave the house."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "すみません、窓を（　）もいいですか。暑いので。",
+   "choices": [
+    "開けて",
+    "閉めて",
+    "作って",
+    "買って"
+   ],
+   "explanation": "窓を開ける: membuka jendela agar sejuk.",
+   "explanationEn": "窓を開ける means to open the window."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の意味と用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "「北」という漢字を使う文はどれですか。",
+   "choices": [
+    "北の方は雪が降っています。",
+    "北をたくさん飲みました。",
+    "北が痛くて病院へ行きました。",
+    "北で名前を書きます。"
+   ],
+   "explanation": "北 berarti utara.",
+   "explanationEn": "北 means north."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の意味と用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "「重い」の使い方が正しい文はどれですか。",
+   "choices": [
+    "この荷物は重くて、一人で持てません。",
+    "この荷物は重くて、とても楽しいです。",
+    "この荷物は重くて、とても青いです。",
+    "この荷物は重くて、毎日歩きます。"
+   ],
+   "explanation": "重い berarti berat untuk barang bawaan.",
+   "explanationEn": "重い means heavy, fitting for luggage."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：昨日は何をしましたか。\nB：友達に会って、一緒に映画を（　）。",
+   "choices": [
+    "見ました",
+    "見ます",
+    "見ません",
+    "見たい"
+   ],
+   "explanation": "Lampau: 見ました.",
+   "explanationEn": "Past tense: 見ました."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：駅までどのぐらいかかりますか。\nB：歩いて十五分（　）です。",
+   "choices": [
+    "ぐらい",
+    "しか",
+    "まで",
+    "から"
+   ],
+   "explanation": "ぐらい menyatakan perkiraan waktu.",
+   "explanationEn": "ぐらい gives an approximate duration."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：頭が痛いです。\nB：じゃ、薬を飲んで、早く（　）ください。",
+   "choices": [
+    "寝て",
+    "寝る",
+    "寝た",
+    "寝ない"
+   ],
+   "explanation": "て＋ください untuk permintaan.",
+   "explanationEn": "て-form + ください makes a request."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：日本語は難しいですか。\nB：漢字は難しい（　）、話すのは楽しいです。",
+   "choices": [
+    "けど",
+    "から",
+    "ので",
+    "ために"
+   ],
+   "explanation": "けど menghubungkan kontras.",
+   "explanationEn": "けど links contrasting ideas."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：この仕事は一人で（　）ますか。\nB：はい、できます。",
+   "choices": [
+    "でき",
+    "読み",
+    "買い",
+    "寝"
+   ],
+   "explanation": "できます bentuk potensial dari する.",
+   "explanationEn": "できます is the potential of する."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：あしたの会議、行かなければなりませんか。\nB：はい、全員（　）ことになっています。",
+   "choices": [
+    "出る",
+    "出て",
+    "出た",
+    "出ない"
+   ],
+   "explanation": "ことになっている menyatakan aturan.",
+   "explanationEn": "～ことになっている states a rule."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "電車で、座りたい席に荷物があります。何と言いますか。",
+   "choices": [
+    "すみません、ここに座ってもいいですか。",
+    "ここは私の荷物です。",
+    "席を買いました。",
+    "電車が来ました。"
+   ],
+   "explanation": "Minta izin duduk: 座ってもいいですか.",
+   "explanationEn": "Ask permission to sit: 座ってもいいですか."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "店員に、サイズが合わない服を換えたいです。何と言いますか。",
+   "choices": [
+    "すみません、これを大きいサイズに換えてください。",
+    "これは昨日洗いました。",
+    "服を着ています。",
+    "サイズが好きです。"
+   ],
+   "explanation": "Menukar ukuran: 換えてください.",
+   "explanationEn": "Ask for exchange: 換えてください."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "同僚が病気で休みます。会ったとき、何と言いますか。",
+   "choices": [
+    "お大事にしてください。",
+    "いってらっしゃい。",
+    "おめでとうございます。",
+    "いただきます。"
+   ],
+   "explanation": "お大事に untuk orang sakit.",
+   "explanationEn": "お大事に is said to someone who is ill."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "約束の時間に少し遅れそうです。電話で何と言いますか。",
+   "choices": [
+    "十分ぐらい遅れます。すみません。",
+    "もう着きました。ありがとう。",
+    "今日は休みです。",
+    "先に食べました。"
+   ],
+   "explanation": "Memberi tahu keterlambatan.",
+   "explanationEn": "Tell the other person you will be late."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "電車の中で、降りる駅に着きます。前の人に何と言いますか。",
+   "choices": [
+    "すみません、降ります。",
+    "すみません、乗ります。",
+    "どうぞ、お先に買ってください。",
+    "おかえりなさい。"
+   ],
+   "explanation": "Saat turun: すみません、降ります.",
+   "explanationEn": "When getting off: すみません、降ります."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "日本語の先生に、宿題の意味を聞きたいです。何と言いますか。",
+   "choices": [
+    "この問題の意味を教えてください。",
+    "この問題は終わりました。",
+    "先生は元気ですか。",
+    "宿題はありません。"
+   ],
+   "explanation": "Minta penjelasan: 意味を教えてください.",
+   "explanationEn": "Ask for meaning: 意味を教えてください."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "社内旅行のお知らせ\n十月十日（土）に、みんなで温泉へ行きます。朝七時に会社の前に集まってください。バスで行きます。参加する人は、今週の金曜日までに田中に言ってください。",
+   "prompt": "参加したい人はいつまでに言いますか。",
+   "choices": [
+    "今週の金曜日まで",
+    "十月十日まで",
+    "来週の土曜日まで",
+    "朝七時まで"
+   ],
+   "explanation": "Batas daftar: Jumat minggu ini.",
+   "explanationEn": "Sign up by this Friday."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "お母さんへ\n今日は友達の誕生日パーティーがあるので、夕ご飯はいりません。帰りは九時ごろです。駅から歩いて帰ります。\nけんた",
+   "prompt": "けんたさんは夕ご飯をどうしますか。",
+   "choices": [
+    "家で食べない",
+    "九時に食べる",
+    "駅で作る",
+    "友達と作って帰る"
+   ],
+   "explanation": "Kenta tidak makan malam di rumah.",
+   "explanationEn": "Kenta will not eat dinner at home."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "ミラさんは日本に来て二か月です。最初は買い物が大変でしたが、スーパーの人が優しく教えてくれました。今は一人でできます。",
+   "prompt": "ミラさんは今、どうですか。",
+   "choices": [
+    "一人で買い物ができる",
+    "まだ買い物ができない",
+    "日本に来たばかりだ",
+    "スーパーで働いている"
+   ],
+   "explanation": "Mira kini bisa berbelanja sendiri.",
+   "explanationEn": "Mira can now shop on her own."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "駐輪場のお知らせ\n自転車は、決まった場所に止めてください。道に止めると、片づけます。取りに来る人は、事務所で名前を書いて、千円払ってください。",
+   "prompt": "道に止めた自転車を取りに行くとき、どうしますか。",
+   "choices": [
+    "事務所で名前を書いて千円払う",
+    "道で名前を書く",
+    "何も払わない",
+    "次の日に新しく買う"
+   ],
+   "explanation": "Sepeda yang dipindahkan diambil dengan membayar 1.000 yen.",
+   "explanationEn": "To get a removed bicycle, sign and pay 1,000 yen."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "私の仕事は朝六時に始まります。だから、夜は十時までに寝ます。休みの日も同じ時間に起きると、体の調子がいいです。",
+   "prompt": "休みの日、「私」は何時に起きますか。",
+   "choices": [
+    "仕事の日と同じ時間",
+    "昼ごろ",
+    "夜十時",
+    "八時ごろ"
+   ],
+   "explanation": "Hari libur bangun pada jam yang sama.",
+   "explanationEn": "On days off the writer wakes at the same time."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "お客様へ\n本日、レジのシステムが故障しています。現金のみお使いいただけます。カードは使えません。ご迷惑をおかけします。",
+   "prompt": "今日、この店で使えるものは何ですか。",
+   "choices": [
+    "現金",
+    "カード",
+    "スマートフォン",
+    "商品券"
+   ],
+   "explanation": "Hari ini hanya tunai.",
+   "explanationEn": "Only cash today."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "かもめ市民プール\n開館：10:00〜20:00（水曜休み）\n大人 500円　子ども（中学生まで）200円\n水泳帽が必要です。受付で300円で買えます。",
+   "prompt": "中学生は一回いくらですか。",
+   "choices": [
+    "200円",
+    "500円",
+    "300円",
+    "無料"
+   ],
+   "explanation": "Murid SMP 200 yen.",
+   "explanationEn": "Junior-high students pay 200 yen."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "かもめ市民プール\n開館：10:00〜20:00（水曜休み）\n大人 500円　子ども（中学生まで）200円\n水泳帽が必要です。受付で300円で買えます。",
+   "prompt": "水泳帽を持っていない人はどうしますか。",
+   "choices": [
+    "受付で300円で買う",
+    "水曜日に来る",
+    "子どもに借りる",
+    "帽子なしで入る"
+   ],
+   "explanation": "Topi renang dibeli di loket 300 yen.",
+   "explanationEn": "Buy a swim cap at the desk for 300 yen."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "引っ越しセンター　料金\n一人用（荷物が少ない）：25,000円\n二人用：45,000円\n家族用：80,000円\n※日曜日・祝日は5,000円高くなります。\n※段ボールは10枚まで無料。",
+   "prompt": "二人用を日曜日にお願いするといくらですか。",
+   "choices": [
+    "50,000円",
+    "45,000円",
+    "40,000円",
+    "85,000円"
+   ],
+   "explanation": "45.000 + 5.000 = 50.000 yen.",
+   "explanationEn": "45,000 + 5,000 = 50,000 yen."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "引っ越しセンター　料金\n一人用（荷物が少ない）：25,000円\n二人用：45,000円\n家族用：80,000円\n※日曜日・祝日は5,000円高くなります。\n※段ボールは10枚まで無料。",
+   "prompt": "段ボールについて、正しいものはどれですか。",
+   "choices": [
+    "10枚まで無料である",
+    "全部無料である",
+    "一枚500円である",
+    "日曜日だけ無料である"
+   ],
+   "explanation": "Kardus gratis sampai 10 lembar.",
+   "explanationEn": "Boxes are free up to 10."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "日本語教室　春コース\n月・木 19:00〜20:30　（全16回）\n受講料：12,000円　教科書代：別に2,000円\n申し込み：三月三十一日まで　場所：市民センター三階",
+   "prompt": "教科書は、受講料と別にいくらかかりますか。",
+   "choices": [
+    "2,000円",
+    "12,000円",
+    "無料",
+    "16,000円"
+   ],
+   "explanation": "Buku teks 2.000 yen terpisah.",
+   "explanationEn": "The textbook costs 2,000 yen extra."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "日本語教室　春コース\n月・木 19:00〜20:30　（全16回）\n受講料：12,000円　教科書代：別に2,000円\n申し込み：三月三十一日まで　場所：市民センター三階",
+   "prompt": "授業は週に何回ありますか。",
+   "choices": [
+    "二回",
+    "一回",
+    "三回",
+    "十六回"
+   ],
+   "explanation": "Kelas Senin dan Kamis: dua kali seminggu.",
+   "explanationEn": "Classes on Monday and Thursday: twice a week."
+  }
+ ]
+}

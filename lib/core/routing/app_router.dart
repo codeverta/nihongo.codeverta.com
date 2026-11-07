@@ -276,7 +276,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.loginPath,
         name: AppRoutes.loginName,
-        builder: (context, state) => const LoginScreen(),
+        builder: (context, state) =>
+            LoginScreen(from: state.uri.queryParameters['from']),
       ),
       GoRoute(
         path: AppRoutes.homePath,
@@ -305,7 +306,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           attemptId: state.pathParameters['attemptId']!,
         ),
       ),
-      for (final paper in [2, 3, 4, 5]) ...[
+      for (final paper in [2, 3, 4, 5, 6, 7, 8, 9, 10]) ...[
         GoRoute(
           path: '/exams/nat-$paper/simulation',
           builder: (context, state) =>
@@ -330,7 +331,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           attemptId: state.pathParameters['attemptId']!,
         ),
       ),
-      for (final examNumber in [2, 3, 4, 5]) ...[
+      for (final examNumber in [2, 3, 4, 5, 6, 7, 8, 9, 10]) ...[
         GoRoute(
           path: '/exams/jft/exam-$examNumber',
           builder: (context, state) => JftIntroScreen(examNumber: examNumber),
@@ -343,7 +344,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           ),
         ),
       ],
-      for (final base in ['N5', 'N4']) ...[
+      for (final base in ['N5', 'N4', 'N3', 'N2', 'N1']) ...[
         for (final paper in [2, 3, 4, 5, 6, 7, 8, 9, 10]) ...[
           GoRoute(
             path: '/exams/${base.toLowerCase()}-$paper/simulation',
@@ -489,8 +490,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           !(user?.isLifetime ?? false)) {
         return '/premium?from=${Uri.encodeQueryComponent(state.uri.toString())}';
       }
-      if (requiresPremium(state.uri) && !(user?.isPremium ?? false)) {
-        return '/premium?from=${Uri.encodeQueryComponent(state.uri.toString())}';
+      // Study and exam features are open to every account, but never to guests.
+      if (authState.status == AuthenticationStatus.guest &&
+          requiresLogin(state.uri)) {
+        return '${AppRoutes.loginPath}?from=${Uri.encodeQueryComponent(state.uri.toString())}';
       }
       return null;
     },
@@ -540,6 +543,17 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   return router;
 });
 
+/// Learning, exam and SSW practice pages need a signed-in account (no guests).
+bool requiresLogin(Uri uri) {
+  final path = uri.path.toLowerCase();
+  if (path.startsWith('/learn/') || path.startsWith('/exams/')) return true;
+  if (path.startsWith('/ssw/') && path.endsWith('/practice')) return true;
+  return path.startsWith('/anki/decks/') && path.endsWith('/study');
+}
+
+/// Legacy classification of Lifetime-only study routes. Study and exam features
+/// are open to every signed-in account now, so the router no longer redirects
+/// on it; it is kept for offline-cache decisions and existing tests.
 bool requiresPremium(Uri uri) {
   final path = uri.path.toLowerCase();
   if (path.startsWith('/ssw/') && path.endsWith('/practice')) return true;

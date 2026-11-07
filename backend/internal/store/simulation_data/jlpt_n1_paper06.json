@@ -1,0 +1,966 @@
+{
+ "level": "N1",
+ "paper": 6,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "その表現は[[陳腐]]で、聞き手の心に響かなかった。",
+   "choices": [
+    "ちんぷ",
+    "ちんぶ",
+    "じんぷ",
+    "ちんぷう"
+   ],
+   "explanation": "陳腐（ちんぷ） berarti klise.",
+   "explanationEn": "陳腐（ちんぷ） means stale or clichéd."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は仕事の細部にまで[[こだわる]]性格だ。",
+   "choices": [
+    "こだわる",
+    "かかわる",
+    "こだまる",
+    "こもる"
+   ],
+   "explanation": "こだわる berarti sangat memperhatikan hal kecil.",
+   "explanationEn": "こだわる means to be particular about."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "政府は、輸入に関する規制を[[緩和]]する方針を発表した。",
+   "choices": [
+    "かんわ",
+    "かんか",
+    "ゆるわ",
+    "かんは"
+   ],
+   "explanation": "緩和（かんわ） berarti pelonggaran.",
+   "explanationEn": "緩和（かんわ） means easing or relaxation."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "父は、私の甘い考えを厳しく[[戒めた]]。",
+   "choices": [
+    "いましめた",
+    "たしなめた",
+    "さとめた",
+    "いさめた"
+   ],
+   "explanation": "戒める（いましめる） berarti menegur dan memperingatkan.",
+   "explanationEn": "戒める（いましめる） means to admonish."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生と保護者の[[懇談]]会が、体育館で開かれた。",
+   "choices": [
+    "こんだん",
+    "こうだん",
+    "こんたん",
+    "かんだん"
+   ],
+   "explanation": "懇談（こんだん） berarti perbincangan akrab.",
+   "explanationEn": "懇談（こんだん） means a friendly talk."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の勇気ある行動は、国民から[[称賛]]された。",
+   "choices": [
+    "しょうさん",
+    "しょうざん",
+    "せいさん",
+    "しょうさい"
+   ],
+   "explanation": "称賛（しょうさん） berarti pujian.",
+   "explanationEn": "称賛（しょうさん） means praise."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "講演をしてくださった先生に、[[謝礼]]をお渡しした。",
+   "choices": [
+    "しゃれい",
+    "しゃらい",
+    "しゃれ",
+    "じゃれい"
+   ],
+   "explanation": "謝礼（しゃれい） berarti honorarium.",
+   "explanationEn": "謝礼（しゃれい） means a token payment of thanks."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "食事の栄養が[[偏って]]いると、体調を崩しやすい。",
+   "choices": [
+    "かたよって",
+    "かたむいて",
+    "ひがって",
+    "へだって"
+   ],
+   "explanation": "偏る（かたよる） berarti tidak seimbang.",
+   "explanationEn": "偏る（かたよる） means to be unbalanced."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は成功しても決して（　）ことなく、努力を続けた。",
+   "choices": [
+    "おごる",
+    "かたよる",
+    "はばむ",
+    "こだわる"
+   ],
+   "explanation": "おごる berarti sombong.",
+   "explanationEn": "おごる means to become arrogant."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい政策に対して、野党は（　）反発している。",
+   "choices": [
+    "猛烈に",
+    "微妙に",
+    "穏やかに",
+    "控えめに"
+   ],
+   "explanation": "猛烈に反発する berarti menentang keras.",
+   "explanationEn": "猛烈に反発する means to protest fiercely."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "事件の真相は、いまだに（　）に包まれている。",
+   "choices": [
+    "ベール",
+    "カバー",
+    "シート",
+    "ケース"
+   ],
+   "explanation": "ベールに包まれる berarti masih tertutup rahasia.",
+   "explanationEn": "ベールに包まれる means to be shrouded in mystery."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、会社の（　）を左右する重大な決断を迫られた。",
+   "choices": [
+    "命運",
+    "運賃",
+    "運搬",
+    "運行"
+   ],
+   "explanation": "会社の命運を左右する berarti menentukan nasib perusahaan.",
+   "explanationEn": "会社の命運を左右する means to decide the fate of the company."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "長期の入院で、体力が（　）しまった。",
+   "choices": [
+    "衰えて",
+    "欠けて",
+    "滞って",
+    "偏って"
+   ],
+   "explanation": "体力が衰える berarti stamina menurun.",
+   "explanationEn": "体力が衰える means one's strength declines."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "担当者は、顧客からの苦情に（　）対応した。",
+   "choices": [
+    "迅速に",
+    "愉快に",
+    "壮大に",
+    "鮮明に"
+   ],
+   "explanation": "迅速に対応する berarti menanggapi dengan cepat.",
+   "explanationEn": "迅速に対応する means to respond promptly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、オリンピック出場を目指して[[ひたむきに]]練習を続けた。",
+   "choices": [
+    "一つのことに熱心に",
+    "仕方なく適当に",
+    "他人に勧められて",
+    "短い時間だけ"
+   ],
+   "explanation": "ひたむきに berarti dengan tekun sepenuh hati.",
+   "explanationEn": "ひたむきに means with single-minded dedication."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "その店は、[[つつましい]]店構えで、目立たない。",
+   "choices": [
+    "控えめで質素な",
+    "豪華で派手な",
+    "古くて大きな",
+    "新しくて明るい"
+   ],
+   "explanation": "つつましい berarti sederhana dan bersahaja.",
+   "explanationEn": "つつましい means modest and frugal."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼のいいかげんな態度には、[[ほとほと]]あきれた。",
+   "choices": [
+    "すっかり",
+    "少しだけ",
+    "ときどき",
+    "突然"
+   ],
+   "explanation": "ほとほと berarti benar-benar (kehabisan akal).",
+   "explanationEn": "ほとほと means thoroughly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、悲しみをこらえて[[気丈に]]振る舞っていた。",
+   "choices": [
+    "気持ちを強く持って",
+    "気楽に冗談ばかり言って",
+    "悲しそうに泣いて",
+    "怒りを爆発させて"
+   ],
+   "explanation": "気丈に berarti tegar.",
+   "explanationEn": "気丈に means bravely or with fortitude."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "今回のミスは、会社にとって[[致命的]]だった。",
+   "choices": [
+    "取り返しがつかないほど重大な",
+    "ほとんど影響のない",
+    "簡単に直せる",
+    "誰にも気づかれない"
+   ],
+   "explanation": "致命的（ちめいてき） berarti fatal.",
+   "explanationEn": "致命的（ちめいてき） means fatal."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、[[おもむろに]]立ち上がって話し始めた。",
+   "choices": [
+    "ゆっくりと落ち着いて",
+    "急に慌てて",
+    "怒って勢いよく",
+    "静かに眠って"
+   ],
+   "explanation": "おもむろに berarti perlahan dengan tenang.",
+   "explanationEn": "おもむろに means slowly and calmly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「揺るぎない」",
+   "choices": [
+    "彼は、揺るぎない信念を持って研究を続けた。",
+    "揺るぎない風が、窓をがたがたと鳴らした。",
+    "地震で、家が揺るぎなく倒れた。",
+    "揺るぎない服を着て、パーティーに行った。"
+   ],
+   "explanation": "揺るぎない berarti teguh tak tergoyahkan.",
+   "explanationEn": "揺るぎない means unshakable."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「怠る」",
+   "choices": [
+    "彼は、日々の点検を怠ったために事故を起こした。",
+    "友人との約束を怠って、早く着いた。",
+    "勉強を怠って、全問正解した。",
+    "料理を怠って、おいしいものを作った。"
+   ],
+   "explanation": "怠る berarti lalai.",
+   "explanationEn": "怠る means to neglect."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「にわかに」",
+   "choices": [
+    "空がにわかに曇り、雨が降り出した。",
+    "にわかに計画して、三年かけて準備した。",
+    "彼はにわかに毎日、同じ時間に起きる。",
+    "にわかに作った料理は、いつも変わらない味だ。"
+   ],
+   "explanation": "にわかに berarti tiba-tiba.",
+   "explanationEn": "にわかに means suddenly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「あっけない」",
+   "choices": [
+    "期待していた試合は、あっけない幕切れだった。",
+    "あっけない問題で、三時間も考えた。",
+    "彼のあっけない説明は、とても丁寧だった。",
+    "あっけない道が、何時間も続いた。"
+   ],
+   "explanation": "あっけない berarti terlalu cepat berakhir dan mengecewakan.",
+   "explanationEn": "あっけない means over too quickly and anticlimactic."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「欠如」",
+   "choices": [
+    "彼の文章には、読者への配慮が欠如している。",
+    "今日は欠如した人が多くて、教室が静かだ。",
+    "彼は欠如を飲んで、体調を整えた。",
+    "台風で電車が欠如し、遅れた。"
+   ],
+   "explanation": "欠如 berarti ketiadaan sesuatu yang diperlukan.",
+   "explanationEn": "欠如 means lack of something necessary."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "契約書には、遅延が生じた場合、責任は売り手が負う（　）と書かれている。",
+   "choices": [
+    "ものとする",
+    "ことはない",
+    "わけではない",
+    "ところだ"
+   ],
+   "explanation": "～ものとする berarti ditetapkan bahwa.",
+   "explanationEn": "～ものとする means it shall be that."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、泣き（　）、自分の思いを訴えた。",
+   "choices": [
+    "ながらに",
+    "ゆえに",
+    "ごとに",
+    "だけに"
+   ],
+   "explanation": "～ながらに berarti dalam keadaan ～.",
+   "explanationEn": "～ながらに means while in the state of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "兄は寝坊が多く、弟（　）、遅刻の常習犯だ。",
+   "choices": [
+    "に至っては",
+    "をおいては",
+    "にひきかえ",
+    "ならではの"
+   ],
+   "explanation": "～に至っては berarti bahkan ～ lebih parah.",
+   "explanationEn": "～に至っては means as for ～ (the extreme case)."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の意見は、一見正しそう（　）、実は大きな誤りを含んでいる。",
+   "choices": [
+    "に見えて",
+    "に限って",
+    "ばかりに",
+    "だけあって"
+   ],
+   "explanation": "～に見えて berarti tampak ～ tetapi.",
+   "explanationEn": "～に見えて means looks like ～ but."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この大役を任せられるのは、彼（　）ほかにいない。",
+   "choices": [
+    "をおいて",
+    "に至って",
+    "をもって",
+    "に先立って"
+   ],
+   "explanation": "～をおいてほかにいない berarti tak ada selain ～.",
+   "explanationEn": "～をおいてほかにいない means there is no one but ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "約束を守らない人の言うことなど、聞く（　）。",
+   "choices": [
+    "に値しない",
+    "ところではない",
+    "ことなしに",
+    "ものがある"
+   ],
+   "explanation": "～に値しない berarti tidak layak.",
+   "explanationEn": "～に値しない means not worth ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "専門家（　）、すべてを知っているわけではない。",
+   "choices": [
+    "といえども",
+    "ばかりか",
+    "ゆえんの",
+    "までもなく"
+   ],
+   "explanation": "～といえども berarti sekalipun ～.",
+   "explanationEn": "～といえども means even ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "散歩（　）、駅前のパン屋に寄ってきた。",
+   "choices": [
+    "がてら",
+    "ながらも",
+    "そばから",
+    "あまり"
+   ],
+   "explanation": "～がてら berarti sambil ～.",
+   "explanationEn": "～がてら means while ～ (on the occasion of)."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この問題は ＿＿ ＿＿ ★ ＿＿ 簡単には解決できない。",
+   "choices": [
+    "努力",
+    "一つの",
+    "国の",
+    "だけでは"
+   ],
+   "explanation": "Urutan: 一つの 国の 努力 だけでは (hanya dengan usaha satu negara). ★ slot ketiga, 努力.",
+   "explanationEn": "Order: 一つの 国の 努力 だけでは (with the effort of one country alone). ★ is the third slot, 努力."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は毎日 ＿＿ ＿＿ ★ ＿＿ 熱心に取り組んでいる。",
+   "choices": [
+    "でも",
+    "忙しい",
+    "中",
+    "仕事に"
+   ],
+   "explanation": "Urutan: 忙しい 中 でも 仕事に (meski sibuk tetap tekun bekerja). ★ slot ketiga, でも.",
+   "explanationEn": "Order: 忙しい 中 でも 仕事に (even while busy, devoted to work). ★ is the third slot, でも."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は誰に対しても ＿＿ ＿＿ ★ ＿＿ 人柄で知られている。",
+   "choices": [
+    "接する",
+    "分け隔てなく",
+    "温かく",
+    "ことのできる"
+   ],
+   "explanation": "Urutan: 分け隔てなく 温かく 接する ことのできる (mampu bersikap hangat tanpa membeda-bedakan). ★ slot ketiga, 接する.",
+   "explanationEn": "Order: 分け隔てなく 温かく 接する ことのできる (able to treat everyone warmly without distinction). ★ is the third slot, 接する."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本では、まだ食べられるのに捨てられる食品、いわゆる「食品ロス」が、年間数百万トンにのぼる。家庭での食べ残しや賞味期限切れによるものだけでなく、小売店が、規格に合わない野菜を出荷できずに【46】ことも大きな原因である。\n一方で、この問題に対しては、さまざまな工夫が始まっている。形が不揃いの野菜を安く販売する店や、閉店間際の総菜を割引で売るアプリなどである。こうした取り組みは、廃棄を減らす【47】、消費者にとっても家計の助けになる。\nとはいえ、個人の努力だけに頼るのは限界がある。食品を作りすぎない仕組みや、余った食品を必要とする人に回す体制を、社会全体で整えなければ、根本的な解決には【48】。食べ物を大切にする気持ちを、行動と制度の両面で【49】必要があるだろう。",
+   "prompt": "【46】",
+   "choices": [
+    "廃棄せざるを得ない",
+    "廃棄するまでもない",
+    "廃棄しようがない",
+    "廃棄するに越したことはない"
+   ],
+   "explanation": "～せざるを得ない berarti terpaksa.",
+   "explanationEn": "～せざるを得ない means have no choice but to."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本では、まだ食べられるのに捨てられる食品、いわゆる「食品ロス」が、年間数百万トンにのぼる。家庭での食べ残しや賞味期限切れによるものだけでなく、小売店が、規格に合わない野菜を出荷できずに【46】ことも大きな原因である。\n一方で、この問題に対しては、さまざまな工夫が始まっている。形が不揃いの野菜を安く販売する店や、閉店間際の総菜を割引で売るアプリなどである。こうした取り組みは、廃棄を減らす【47】、消費者にとっても家計の助けになる。\nとはいえ、個人の努力だけに頼るのは限界がある。食品を作りすぎない仕組みや、余った食品を必要とする人に回す体制を、社会全体で整えなければ、根本的な解決には【48】。食べ物を大切にする気持ちを、行動と制度の両面で【49】必要があるだろう。",
+   "prompt": "【47】",
+   "choices": [
+    "ばかりか",
+    "ところを",
+    "くせに",
+    "以上は"
+   ],
+   "explanation": "～ばかりか berarti tidak hanya ～ tetapi juga.",
+   "explanationEn": "～ばかりか means not only ～ but also."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本では、まだ食べられるのに捨てられる食品、いわゆる「食品ロス」が、年間数百万トンにのぼる。家庭での食べ残しや賞味期限切れによるものだけでなく、小売店が、規格に合わない野菜を出荷できずに【46】ことも大きな原因である。\n一方で、この問題に対しては、さまざまな工夫が始まっている。形が不揃いの野菜を安く販売する店や、閉店間際の総菜を割引で売るアプリなどである。こうした取り組みは、廃棄を減らす【47】、消費者にとっても家計の助けになる。\nとはいえ、個人の努力だけに頼るのは限界がある。食品を作りすぎない仕組みや、余った食品を必要とする人に回す体制を、社会全体で整えなければ、根本的な解決には【48】。食べ物を大切にする気持ちを、行動と制度の両面で【49】必要があるだろう。",
+   "prompt": "【48】",
+   "choices": [
+    "つながらない",
+    "つながるに違いない",
+    "つながって当然だ",
+    "つながりかねない"
+   ],
+   "explanation": "Tanpa sistem menyeluruh tidak mengarah pada solusi mendasar.",
+   "explanationEn": "Without systemic arrangements it will not lead to a fundamental solution."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "日本では、まだ食べられるのに捨てられる食品、いわゆる「食品ロス」が、年間数百万トンにのぼる。家庭での食べ残しや賞味期限切れによるものだけでなく、小売店が、規格に合わない野菜を出荷できずに【46】ことも大きな原因である。\n一方で、この問題に対しては、さまざまな工夫が始まっている。形が不揃いの野菜を安く販売する店や、閉店間際の総菜を割引で売るアプリなどである。こうした取り組みは、廃棄を減らす【47】、消費者にとっても家計の助けになる。\nとはいえ、個人の努力だけに頼るのは限界がある。食品を作りすぎない仕組みや、余った食品を必要とする人に回す体制を、社会全体で整えなければ、根本的な解決には【48】。食べ物を大切にする気持ちを、行動と制度の両面で【49】必要があるだろう。",
+   "prompt": "【49】",
+   "choices": [
+    "支えていく",
+    "押さえつける",
+    "忘れさせる",
+    "遠ざける"
+   ],
+   "explanation": "Perlu menopang kesadaran lewat tindakan dan kebijakan.",
+   "explanationEn": "The sentiment must be supported through both action and institutions."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "最近、都市部を中心に、無人の店舗が増えている。人件費を削減でき、二十四時間営業も可能になるという利点がある。しかし、高齢者にとっては操作が難しく、トラブルの際に相談できる人がいないという不安も大きい。技術の進歩が、誰にとっても便利なものになるためには、こうした声に耳を傾ける必要がある。",
+   "prompt": "筆者は、無人店舗についてどう考えていますか。",
+   "choices": [
+    "便利だが、高齢者の不安にも配慮する必要がある。",
+    "高齢者のために作られた店舗である。",
+    "増えるべきではない。",
+    "人件費がかえって増える。"
+   ],
+   "explanation": "Praktis, tetapi kecemasan lansia perlu diperhatikan.",
+   "explanationEn": "Convenient, but seniors' concerns need attention."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "田中様\n先日は、お忙しい中、打ち合わせのお時間をいただき、ありがとうございました。ご提案した見積書を添付いたします。内容をご確認のうえ、ご不明な点がございましたら、今週中にご連絡ください。なお、見積書の有効期限は、発行から二週間となっております。",
+   "prompt": "田中さんがするように求められていることは何ですか。",
+   "choices": [
+    "見積書を確認し、不明な点があれば今週中に連絡すること。",
+    "見積書を印刷して二週間以内に返送すること。",
+    "打ち合わせの日程を決めること。",
+    "見積書の内容を修正すること。"
+   ],
+   "explanation": "Diminta memeriksa dokumen dan menghubungi bila ada yang tak jelas.",
+   "explanationEn": "Asked to review the quote and contact them this week about any questions."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "「お客様は神様です」という言葉が、客による理不尽な要求を正当化する口実として使われることがある。本来この言葉は、客に感謝し、誠心誠意仕事をするという心構えを表すものだったはずだ。言葉の意味が取り違えられたまま広まることの弊害は、決して小さくない。",
+   "prompt": "筆者の考えに合うものはどれですか。",
+   "choices": [
+    "言葉の本来の意味が取り違えられて広まることは問題だ。",
+    "客はいつも正しいので、要求に従うべきだ。",
+    "この言葉は今も本来の意味で使われている。",
+    "店員は、客の要求に必ず応じるべきだ。"
+   ],
+   "explanation": "Penulis menyoroti salah kaprah makna kata.",
+   "explanationEn": "The writer sees the spread of a misunderstood meaning as a problem."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "日本の夏に欠かせない蚊取り線香は、百年以上前に、除虫菊という花を使って作られた。最初は棒状だったが、燃える時間が短く、使いにくいという問題があった。そこで、渦巻き状にすることで、長時間燃え続けるように改良された。\nこの発明は、「形を変えるだけで、機能が大きく変わる」ことを示している。新しい技術を生み出すことだけが発明ではない。既存のものを見つめ直し、小さな工夫を加えることも、立派な創造なのである。",
+   "prompt": "最初の棒状の蚊取り線香には、どのような問題がありましたか。",
+   "choices": [
+    "燃える時間が短く、使いにくかった。",
+    "煙が多すぎた。",
+    "値段が高かった。",
+    "虫に効かなかった。"
+   ],
+   "explanation": "Terlalu cepat habis terbakar.",
+   "explanationEn": "It burned for too short a time."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "日本の夏に欠かせない蚊取り線香は、百年以上前に、除虫菊という花を使って作られた。最初は棒状だったが、燃える時間が短く、使いにくいという問題があった。そこで、渦巻き状にすることで、長時間燃え続けるように改良された。\nこの発明は、「形を変えるだけで、機能が大きく変わる」ことを示している。新しい技術を生み出すことだけが発明ではない。既存のものを見つめ直し、小さな工夫を加えることも、立派な創造なのである。",
+   "prompt": "筆者は、創造についてどう考えていますか。",
+   "choices": [
+    "既存のものに小さな工夫を加えることも創造である。",
+    "新しい技術だけが発明である。",
+    "形は機能と関係がない。",
+    "昔の道具に戻るべきだ。"
+   ],
+   "explanation": "Menambah kreativitas kecil pada yang ada juga cipta.",
+   "explanationEn": "Adding small ingenuity to existing things is also creation."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "私は、先月から地域の清掃活動に参加している。最初は、朝早く起きるのがつらく、義務感だけで通っていた。しかし、毎回顔を合わせるうちに、近所の人と自然に会話するようになり、地域の情報も入ってくるようになった。\n今では、清掃そのものよりも、その後に交わす世間話が楽しみになっている。地域とのつながりは、意識して作るものだと思っていたが、実は、小さな習慣の積み重ねから生まれるのかもしれない。",
+   "prompt": "筆者が参加し始めた当初の気持ちはどのようなものでしたか。",
+   "choices": [
+    "義務感だけで通っていた。",
+    "世間話が楽しみだった。",
+    "早起きが好きだった。",
+    "地域の情報を集めたかった。"
+   ],
+   "explanation": "Awalnya hanya karena kewajiban.",
+   "explanationEn": "At first she went out of mere obligation."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "私は、先月から地域の清掃活動に参加している。最初は、朝早く起きるのがつらく、義務感だけで通っていた。しかし、毎回顔を合わせるうちに、近所の人と自然に会話するようになり、地域の情報も入ってくるようになった。\n今では、清掃そのものよりも、その後に交わす世間話が楽しみになっている。地域とのつながりは、意識して作るものだと思っていたが、実は、小さな習慣の積み重ねから生まれるのかもしれない。",
+   "prompt": "筆者は、地域とのつながりについてどう考えていますか。",
+   "choices": [
+    "小さな習慣の積み重ねから生まれるのかもしれない。",
+    "意識して作らなければ生まれない。",
+    "清掃は義務だから続けるべきだ。",
+    "近所づきあいは不要である。"
+   ],
+   "explanation": "Ikatan komunitas mungkin lahir dari kebiasaan kecil.",
+   "explanationEn": "Community ties may come from small accumulated habits."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "機械翻訳の精度は、この十年で飛躍的に向上した。数年前までは不自然だった訳文も、今では人間が書いたものとほとんど区別がつかないことがある。それに伴い、「外国語を学ぶ必要はなくなる」という意見も聞かれるようになった。\nしかし、本当にそうだろうか。確かに、旅行先で道を尋ねたり、説明書を読んだりする場面では、機械翻訳は十分に役立つ。だが、人間関係を築く場面では、事情が異なる。相手の言葉を直接理解し、自分の言葉で伝えようとする過程そのものが、相手への敬意や関心を示す行為になるからだ。\nまた、言語は単なる情報の伝達手段ではなく、その言語を話す人々の考え方や文化を映し出している。ある言葉が別の言語に訳しにくいとき、そこには、その文化に特有の価値観が隠れていることが多い。機械は意味を置き換えられても、その背景にある感覚までを伝えてくれるとは限らない。\nとすれば、機械翻訳の進歩は、外国語学習を不要にするのではなく、その目的を変えるのだと考えるべきだろう。情報を得るためではなく、相手を理解し、自分の視野を広げるために学ぶ。そのような学びこそ、これからの時代に価値を持つのである。",
+   "prompt": "筆者は、機械翻訳が十分に役立つ場面として、どのような場面を挙げていますか。",
+   "choices": [
+    "旅行先で道を尋ねたり、説明書を読んだりする場面",
+    "友人と深い関係を築く場面",
+    "文学作品の味わいを伝える場面",
+    "外国の文化を学ぶ授業の場面"
+   ],
+   "explanation": "Bertanya jalan atau membaca petunjuk.",
+   "explanationEn": "Asking directions or reading instructions while traveling."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "機械翻訳の精度は、この十年で飛躍的に向上した。数年前までは不自然だった訳文も、今では人間が書いたものとほとんど区別がつかないことがある。それに伴い、「外国語を学ぶ必要はなくなる」という意見も聞かれるようになった。\nしかし、本当にそうだろうか。確かに、旅行先で道を尋ねたり、説明書を読んだりする場面では、機械翻訳は十分に役立つ。だが、人間関係を築く場面では、事情が異なる。相手の言葉を直接理解し、自分の言葉で伝えようとする過程そのものが、相手への敬意や関心を示す行為になるからだ。\nまた、言語は単なる情報の伝達手段ではなく、その言語を話す人々の考え方や文化を映し出している。ある言葉が別の言語に訳しにくいとき、そこには、その文化に特有の価値観が隠れていることが多い。機械は意味を置き換えられても、その背景にある感覚までを伝えてくれるとは限らない。\nとすれば、機械翻訳の進歩は、外国語学習を不要にするのではなく、その目的を変えるのだと考えるべきだろう。情報を得るためではなく、相手を理解し、自分の視野を広げるために学ぶ。そのような学びこそ、これからの時代に価値を持つのである。",
+   "prompt": "人間関係を築く場面で、自分の言葉で伝えようとすることの意味は何ですか。",
+   "choices": [
+    "相手への敬意や関心を示す行為になること",
+    "機械翻訳より速く伝わること",
+    "間違いが全くなくなること",
+    "費用が安く済むこと"
+   ],
+   "explanation": "Berusaha berbicara sendiri menunjukkan rasa hormat dan minat.",
+   "explanationEn": "Trying to speak for oneself shows respect and interest."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "機械翻訳の精度は、この十年で飛躍的に向上した。数年前までは不自然だった訳文も、今では人間が書いたものとほとんど区別がつかないことがある。それに伴い、「外国語を学ぶ必要はなくなる」という意見も聞かれるようになった。\nしかし、本当にそうだろうか。確かに、旅行先で道を尋ねたり、説明書を読んだりする場面では、機械翻訳は十分に役立つ。だが、人間関係を築く場面では、事情が異なる。相手の言葉を直接理解し、自分の言葉で伝えようとする過程そのものが、相手への敬意や関心を示す行為になるからだ。\nまた、言語は単なる情報の伝達手段ではなく、その言語を話す人々の考え方や文化を映し出している。ある言葉が別の言語に訳しにくいとき、そこには、その文化に特有の価値観が隠れていることが多い。機械は意味を置き換えられても、その背景にある感覚までを伝えてくれるとは限らない。\nとすれば、機械翻訳の進歩は、外国語学習を不要にするのではなく、その目的を変えるのだと考えるべきだろう。情報を得るためではなく、相手を理解し、自分の視野を広げるために学ぶ。そのような学びこそ、これからの時代に価値を持つのである。",
+   "prompt": "ある言葉が訳しにくいとき、何が隠れていることが多いと述べていますか。",
+   "choices": [
+    "その文化に特有の価値観",
+    "言葉が新しいという事情",
+    "機械の性能の低さ",
+    "文法の複雑さ"
+   ],
+   "explanation": "Nilai yang khas budaya tersebut.",
+   "explanationEn": "Values specific to that culture."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "機械翻訳の精度は、この十年で飛躍的に向上した。数年前までは不自然だった訳文も、今では人間が書いたものとほとんど区別がつかないことがある。それに伴い、「外国語を学ぶ必要はなくなる」という意見も聞かれるようになった。\nしかし、本当にそうだろうか。確かに、旅行先で道を尋ねたり、説明書を読んだりする場面では、機械翻訳は十分に役立つ。だが、人間関係を築く場面では、事情が異なる。相手の言葉を直接理解し、自分の言葉で伝えようとする過程そのものが、相手への敬意や関心を示す行為になるからだ。\nまた、言語は単なる情報の伝達手段ではなく、その言語を話す人々の考え方や文化を映し出している。ある言葉が別の言語に訳しにくいとき、そこには、その文化に特有の価値観が隠れていることが多い。機械は意味を置き換えられても、その背景にある感覚までを伝えてくれるとは限らない。\nとすれば、機械翻訳の進歩は、外国語学習を不要にするのではなく、その目的を変えるのだと考えるべきだろう。情報を得るためではなく、相手を理解し、自分の視野を広げるために学ぶ。そのような学びこそ、これからの時代に価値を持つのである。",
+   "prompt": "筆者は、機械翻訳の進歩をどのように捉えていますか。",
+   "choices": [
+    "外国語学習を不要にするのではなく、その目的を変えるものだ。",
+    "外国語学習を不要にするものだ。",
+    "外国語学習を難しくするものだ。",
+    "翻訳の仕事を増やすものだ。"
+   ],
+   "explanation": "Kemajuan terjemahan mesin mengubah tujuan belajar bahasa.",
+   "explanationEn": "Machine translation changes the purpose of language learning rather than removing it."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "機械翻訳の精度は、この十年で飛躍的に向上した。数年前までは不自然だった訳文も、今では人間が書いたものとほとんど区別がつかないことがある。それに伴い、「外国語を学ぶ必要はなくなる」という意見も聞かれるようになった。\nしかし、本当にそうだろうか。確かに、旅行先で道を尋ねたり、説明書を読んだりする場面では、機械翻訳は十分に役立つ。だが、人間関係を築く場面では、事情が異なる。相手の言葉を直接理解し、自分の言葉で伝えようとする過程そのものが、相手への敬意や関心を示す行為になるからだ。\nまた、言語は単なる情報の伝達手段ではなく、その言語を話す人々の考え方や文化を映し出している。ある言葉が別の言語に訳しにくいとき、そこには、その文化に特有の価値観が隠れていることが多い。機械は意味を置き換えられても、その背景にある感覚までを伝えてくれるとは限らない。\nとすれば、機械翻訳の進歩は、外国語学習を不要にするのではなく、その目的を変えるのだと考えるべきだろう。情報を得るためではなく、相手を理解し、自分の視野を広げるために学ぶ。そのような学びこそ、これからの時代に価値を持つのである。",
+   "prompt": "筆者が、これからの時代に価値を持つと述べている学びはどれですか。",
+   "choices": [
+    "相手を理解し、視野を広げるための学び",
+    "情報を得るための学び",
+    "試験に合格するための学び",
+    "翻訳の精度を競うための学び"
+   ],
+   "explanation": "Belajar untuk memahami orang lain dan memperluas wawasan.",
+   "explanationEn": "Learning to understand others and broaden one's horizons."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】ふるさと納税は、地方の自治体に財源をもたらし、地域の特産品を全国に知らせる効果がある。寄付者は税の控除を受けつつ、地域を応援できる。制度を活用して地域が活性化している例も多く、今後も続けるべき仕組みである。\n\n【B】ふるさと納税は、返礼品の競争が過熱し、本来の趣旨から離れつつある。人気の返礼品を持つ自治体に寄付が集中し、住民の税収が減る都市部の自治体も出ている。応援したい地域に寄付をするという原点に立ち返り、制度のあり方を見直すべきだ。",
+   "prompt": "Aが、ふるさと納税の効果として述べているのはどれですか。",
+   "choices": [
+    "地方に財源をもたらし、特産品を全国に知らせること",
+    "都市部の税収を増やすこと",
+    "返礼品の競争を抑えること",
+    "税金を全く払わなくてよくなること"
+   ],
+   "explanation": "A: memberi sumber dana daerah dan mengenalkan produk khas.",
+   "explanationEn": "A: brings funds to regions and publicizes local specialties."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】ふるさと納税は、地方の自治体に財源をもたらし、地域の特産品を全国に知らせる効果がある。寄付者は税の控除を受けつつ、地域を応援できる。制度を活用して地域が活性化している例も多く、今後も続けるべき仕組みである。\n\n【B】ふるさと納税は、返礼品の競争が過熱し、本来の趣旨から離れつつある。人気の返礼品を持つ自治体に寄付が集中し、住民の税収が減る都市部の自治体も出ている。応援したい地域に寄付をするという原点に立ち返り、制度のあり方を見直すべきだ。",
+   "prompt": "Bが問題視しているのはどれですか。",
+   "choices": [
+    "返礼品の競争が過熱し、本来の趣旨から離れていること",
+    "寄付者が少なすぎること",
+    "特産品が全く知られないこと",
+    "地方の自治体が増えすぎたこと"
+   ],
+   "explanation": "B: persaingan hadiah terlalu panas dan menyimpang dari tujuan.",
+   "explanationEn": "B: the gift competition is overheated and strays from the purpose."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】ふるさと納税は、地方の自治体に財源をもたらし、地域の特産品を全国に知らせる効果がある。寄付者は税の控除を受けつつ、地域を応援できる。制度を活用して地域が活性化している例も多く、今後も続けるべき仕組みである。\n\n【B】ふるさと納税は、返礼品の競争が過熱し、本来の趣旨から離れつつある。人気の返礼品を持つ自治体に寄付が集中し、住民の税収が減る都市部の自治体も出ている。応援したい地域に寄付をするという原点に立ち返り、制度のあり方を見直すべきだ。",
+   "prompt": "AとBの主張の違いはどれですか。",
+   "choices": [
+    "Aは制度の継続を、Bは見直しを主張している。",
+    "Aは廃止を、Bは拡大を主張している。",
+    "AもBも、廃止するべきだと主張している。",
+    "AもBも、現状のままでよいと主張している。"
+   ],
+   "explanation": "A mendukung kelanjutan, B menginginkan peninjauan.",
+   "explanationEn": "A supports continuing, B calls for a review."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】ふるさと納税は、地方の自治体に財源をもたらし、地域の特産品を全国に知らせる効果がある。寄付者は税の控除を受けつつ、地域を応援できる。制度を活用して地域が活性化している例も多く、今後も続けるべき仕組みである。\n\n【B】ふるさと納税は、返礼品の競争が過熱し、本来の趣旨から離れつつある。人気の返礼品を持つ自治体に寄付が集中し、住民の税収が減る都市部の自治体も出ている。応援したい地域に寄付をするという原点に立ち返り、制度のあり方を見直すべきだ。",
+   "prompt": "Bが立ち返るべきだと述べている原点は何ですか。",
+   "choices": [
+    "応援したい地域に寄付をするということ",
+    "返礼品を豪華にすること",
+    "住んでいる自治体にだけ納税すること",
+    "寄付の上限をなくすこと"
+   ],
+   "explanation": "B: kembali ke tujuan awal mendukung daerah pilihan.",
+   "explanationEn": "B: return to the original aim of supporting a region you want to back."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "現代社会では、時間を無駄にしないことが美徳とされる。電車を待つ数分間でさえ、人々はスマートフォンを取り出し、何かをしようとする。しかし、「何もしない時間」は、本当に無駄なのだろうか。\n心理学の研究によれば、人は、ぼんやりしているとき、脳が活発に働いており、過去の経験を整理したり、新しい発想を生み出したりしているという。つまり、何もしていないように見える時間は、実は、脳にとって重要な作業の時間なのである。\n意図的に空白を作らなければ、私たちは絶えず外部の情報に反応するだけの存在になってしまう。情報に追われる生活の中で、自分で考える余地を失うことは、一種の貧しさだと言えよう。\n退屈や空白を恐れず、むしろ積極的に受け入れること。それは、効率を重んじる社会において、最も贅沢な時間の使い方なのかもしれない。",
+   "prompt": "筆者によると、電車を待つ数分間に、人々は何をしようとしますか。",
+   "choices": [
+    "スマートフォンを取り出して、何かをしようとする。",
+    "本を読んで過ごそうとする。",
+    "目を閉じて休もうとする。",
+    "周りの人と話そうとする。"
+   ],
+   "explanation": "Orang mengeluarkan ponsel untuk melakukan sesuatu.",
+   "explanationEn": "People take out their smartphones to do something."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "現代社会では、時間を無駄にしないことが美徳とされる。電車を待つ数分間でさえ、人々はスマートフォンを取り出し、何かをしようとする。しかし、「何もしない時間」は、本当に無駄なのだろうか。\n心理学の研究によれば、人は、ぼんやりしているとき、脳が活発に働いており、過去の経験を整理したり、新しい発想を生み出したりしているという。つまり、何もしていないように見える時間は、実は、脳にとって重要な作業の時間なのである。\n意図的に空白を作らなければ、私たちは絶えず外部の情報に反応するだけの存在になってしまう。情報に追われる生活の中で、自分で考える余地を失うことは、一種の貧しさだと言えよう。\n退屈や空白を恐れず、むしろ積極的に受け入れること。それは、効率を重んじる社会において、最も贅沢な時間の使い方なのかもしれない。",
+   "prompt": "ぼんやりしているときの脳について、どう述べていますか。",
+   "choices": [
+    "過去の経験を整理し、新しい発想を生み出している。",
+    "ほとんど働いていない。",
+    "外部の情報に反応するだけである。",
+    "眠っているときと同じ状態である。"
+   ],
+   "explanation": "Otak menata pengalaman dan menciptakan ide baru.",
+   "explanationEn": "The brain organizes experiences and generates new ideas."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "現代社会では、時間を無駄にしないことが美徳とされる。電車を待つ数分間でさえ、人々はスマートフォンを取り出し、何かをしようとする。しかし、「何もしない時間」は、本当に無駄なのだろうか。\n心理学の研究によれば、人は、ぼんやりしているとき、脳が活発に働いており、過去の経験を整理したり、新しい発想を生み出したりしているという。つまり、何もしていないように見える時間は、実は、脳にとって重要な作業の時間なのである。\n意図的に空白を作らなければ、私たちは絶えず外部の情報に反応するだけの存在になってしまう。情報に追われる生活の中で、自分で考える余地を失うことは、一種の貧しさだと言えよう。\n退屈や空白を恐れず、むしろ積極的に受け入れること。それは、効率を重んじる社会において、最も贅沢な時間の使い方なのかもしれない。",
+   "prompt": "筆者が「一種の貧しさ」と述べているのは、どのようなことですか。",
+   "choices": [
+    "情報に追われ、自分で考える余地を失うこと",
+    "時間が足りなくなること",
+    "空白を作りすぎること",
+    "お金が少なくなること"
+   ],
+   "explanation": "Kehilangan ruang untuk berpikir sendiri.",
+   "explanationEn": "Losing room to think for oneself."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "現代社会では、時間を無駄にしないことが美徳とされる。電車を待つ数分間でさえ、人々はスマートフォンを取り出し、何かをしようとする。しかし、「何もしない時間」は、本当に無駄なのだろうか。\n心理学の研究によれば、人は、ぼんやりしているとき、脳が活発に働いており、過去の経験を整理したり、新しい発想を生み出したりしているという。つまり、何もしていないように見える時間は、実は、脳にとって重要な作業の時間なのである。\n意図的に空白を作らなければ、私たちは絶えず外部の情報に反応するだけの存在になってしまう。情報に追われる生活の中で、自分で考える余地を失うことは、一種の貧しさだと言えよう。\n退屈や空白を恐れず、むしろ積極的に受け入れること。それは、効率を重んじる社会において、最も贅沢な時間の使い方なのかもしれない。",
+   "prompt": "筆者の考えに合うものはどれですか。",
+   "choices": [
+    "退屈や空白を積極的に受け入れることが、最も贅沢な時間の使い方かもしれない。",
+    "空いた時間は、必ず勉強に使うべきだ。",
+    "スマートフォンは使うべきではない。",
+    "効率こそが最も大切である。"
+   ],
+   "explanation": "Menerima kebosanan dan kekosongan mungkin cara terbaik memakai waktu.",
+   "explanationEn": "Accepting boredom and blank time may be the most luxurious use of time."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みどり観光　日帰りバスツアーのご案内\n【Aコース】湖畔の紅葉と温泉　10月25日（土）出発　8:00 新宿駅西口 → 湖畔遊覧 → 昼食（和食） → 温泉入浴 → 19:00 帰着　大人 9,800円　子ども（小学生）7,800円\n【Bコース】果樹園で梨狩り　10月26日（日）出発　8:30 東京駅丸の内口 → 梨狩り（食べ放題60分） → 昼食（バイキング） → 直売所 → 17:30 帰着　大人 8,500円　子ども（小学生）6,500円\n【Cコース】酒蔵見学と工芸体験　11月1日（土）出発　9:00 新宿駅西口 → 酒蔵見学 → 昼食（郷土料理） → 陶芸体験 → 18:00 帰着　大人 11,000円　※20歳未満は参加できません\n\n・料金には、バス代・昼食代・体験料が含まれます。\n・取消料：出発の3日前から50％、前日から80％、当日は100％\n・最少催行人数は各コース20名です。20名に満たない場合は、出発の7日前までに中止をご連絡します。",
+   "prompt": "大人2人と小学生1人でBコースに参加する場合、料金はいくらですか。",
+   "choices": [
+    "23,500円",
+    "25,500円",
+    "21,500円",
+    "17,000円"
+   ],
+   "explanation": "8.500 × 2 + 6.500 = 23.500 yen.",
+   "explanationEn": "8,500 × 2 + 6,500 = 23,500 yen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みどり観光　日帰りバスツアーのご案内\n【Aコース】湖畔の紅葉と温泉　10月25日（土）出発　8:00 新宿駅西口 → 湖畔遊覧 → 昼食（和食） → 温泉入浴 → 19:00 帰着　大人 9,800円　子ども（小学生）7,800円\n【Bコース】果樹園で梨狩り　10月26日（日）出発　8:30 東京駅丸の内口 → 梨狩り（食べ放題60分） → 昼食（バイキング） → 直売所 → 17:30 帰着　大人 8,500円　子ども（小学生）6,500円\n【Cコース】酒蔵見学と工芸体験　11月1日（土）出発　9:00 新宿駅西口 → 酒蔵見学 → 昼食（郷土料理） → 陶芸体験 → 18:00 帰着　大人 11,000円　※20歳未満は参加できません\n\n・料金には、バス代・昼食代・体験料が含まれます。\n・取消料：出発の3日前から50％、前日から80％、当日は100％\n・最少催行人数は各コース20名です。20名に満たない場合は、出発の7日前までに中止をご連絡します。",
+   "prompt": "Cコースに参加できないのは、どの人ですか。",
+   "choices": [
+    "十九歳の大学生",
+    "二十歳の会社員",
+    "三十歳の主婦",
+    "六十歳の祖父"
+   ],
+   "explanation": "Di bawah 20 tahun tidak boleh ikut Kursus C.",
+   "explanationEn": "Under-20s cannot join Course C."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みどり観光　日帰りバスツアーのご案内\n【Aコース】湖畔の紅葉と温泉　10月25日（土）出発　8:00 新宿駅西口 → 湖畔遊覧 → 昼食（和食） → 温泉入浴 → 19:00 帰着　大人 9,800円　子ども（小学生）7,800円\n【Bコース】果樹園で梨狩り　10月26日（日）出発　8:30 東京駅丸の内口 → 梨狩り（食べ放題60分） → 昼食（バイキング） → 直売所 → 17:30 帰着　大人 8,500円　子ども（小学生）6,500円\n【Cコース】酒蔵見学と工芸体験　11月1日（土）出発　9:00 新宿駅西口 → 酒蔵見学 → 昼食（郷土料理） → 陶芸体験 → 18:00 帰着　大人 11,000円　※20歳未満は参加できません\n\n・料金には、バス代・昼食代・体験料が含まれます。\n・取消料：出発の3日前から50％、前日から80％、当日は100％\n・最少催行人数は各コース20名です。20名に満たない場合は、出発の7日前までに中止をご連絡します。",
+   "prompt": "Aコースを出発の前日に取り消す場合、大人1人の取消料はいくらですか。",
+   "choices": [
+    "7,840円",
+    "4,900円",
+    "9,800円",
+    "1,960円"
+   ],
+   "explanation": "9.800 × 80% = 7.840 yen.",
+   "explanationEn": "9,800 × 80% = 7,840 yen."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みどり観光　日帰りバスツアーのご案内\n【Aコース】湖畔の紅葉と温泉　10月25日（土）出発　8:00 新宿駅西口 → 湖畔遊覧 → 昼食（和食） → 温泉入浴 → 19:00 帰着　大人 9,800円　子ども（小学生）7,800円\n【Bコース】果樹園で梨狩り　10月26日（日）出発　8:30 東京駅丸の内口 → 梨狩り（食べ放題60分） → 昼食（バイキング） → 直売所 → 17:30 帰着　大人 8,500円　子ども（小学生）6,500円\n【Cコース】酒蔵見学と工芸体験　11月1日（土）出発　9:00 新宿駅西口 → 酒蔵見学 → 昼食（郷土料理） → 陶芸体験 → 18:00 帰着　大人 11,000円　※20歳未満は参加できません\n\n・料金には、バス代・昼食代・体験料が含まれます。\n・取消料：出発の3日前から50％、前日から80％、当日は100％\n・最少催行人数は各コース20名です。20名に満たない場合は、出発の7日前までに中止をご連絡します。",
+   "prompt": "この案内の内容と合っているものはどれですか。",
+   "choices": [
+    "参加者が20名に満たないときは、出発の7日前までに中止が連絡される。",
+    "昼食代は別料金である。",
+    "Aコースは東京駅から出発する。",
+    "Bコースは、梨が時間の制限なく食べ放題である。"
+   ],
+   "explanation": "Bila kurang dari 20 orang, pembatalan diinformasikan 7 hari sebelumnya.",
+   "explanationEn": "If fewer than 20 sign up, cancellation is announced at least 7 days before."
+  }
+ ]
+}

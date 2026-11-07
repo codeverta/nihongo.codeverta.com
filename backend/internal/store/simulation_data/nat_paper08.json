@@ -1,0 +1,651 @@
+{
+ "level": "NAT",
+ "paper": 8,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[空港]]までバスで行きます。",
+   "choices": [
+    "くうこう",
+    "そらみなと",
+    "くうごう",
+    "からこう"
+   ],
+   "explanation": "空港（くうこう） berarti bandara.",
+   "explanationEn": "空港（くうこう） means airport."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[地下鉄]]に乗って会社へ行きます。",
+   "choices": [
+    "ちかてつ",
+    "ちかでつ",
+    "じかてつ",
+    "ちかくてつ"
+   ],
+   "explanation": "地下鉄（ちかてつ） berarti kereta bawah tanah.",
+   "explanationEn": "地下鉄（ちかてつ） means subway."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "駅で[[切符]]を買いました。",
+   "choices": [
+    "きっぷ",
+    "きふ",
+    "きぷ",
+    "せっぷ"
+   ],
+   "explanation": "切符（きっぷ） berarti tiket.",
+   "explanationEn": "切符（きっぷ） means ticket."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あの[[橋]]をわたると、駅です。",
+   "choices": [
+    "はし",
+    "はな",
+    "ばし",
+    "きょう"
+   ],
+   "explanation": "橋（はし） berarti jembatan.",
+   "explanationEn": "橋（はし） means bridge."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私の[[町]]には、大きい公園があります。",
+   "choices": [
+    "まち",
+    "ちょう",
+    "まつ",
+    "むら"
+   ],
+   "explanation": "町（まち） berarti kota kecil.",
+   "explanationEn": "町（まち） means town."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "駅は、この道の[[南]]にあります。",
+   "choices": [
+    "みなみ",
+    "みなぶ",
+    "きた",
+    "みなめ"
+   ],
+   "explanation": "南（みなみ） berarti selatan.",
+   "explanationEn": "南（みなみ） means south."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あの[[信号]]を右に曲がってください。",
+   "choices": [
+    "しんごう",
+    "しんこう",
+    "しんごお",
+    "じんごう"
+   ],
+   "explanation": "信号（しんごう） berarti lampu lalu lintas.",
+   "explanationEn": "信号（しんごう） means traffic light."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[池]]に魚がいます。",
+   "choices": [
+    "いけ",
+    "いげ",
+    "ち",
+    "みずうみ"
+   ],
+   "explanation": "池（いけ） berarti kolam.",
+   "explanationEn": "池（いけ） means pond."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "家の[[近く]]にコンビニがあります。",
+   "choices": [
+    "ちかく",
+    "ちがく",
+    "きんく",
+    "ちかぐ"
+   ],
+   "explanation": "近く（ちかく） berarti dekat.",
+   "explanationEn": "近く（ちかく） means nearby."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[飛行機]]で北海道へ行きました。",
+   "choices": [
+    "ひこうき",
+    "ひごうき",
+    "ひこき",
+    "ひぎょうき"
+   ],
+   "explanation": "飛行機（ひこうき） berarti pesawat terbang.",
+   "explanationEn": "飛行機（ひこうき） means airplane."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "空港まで（　）で行きます。",
+   "choices": [
+    "タクシー",
+    "ペン",
+    "たまご",
+    "ふく"
+   ],
+   "explanation": "タクシーで行く berarti pergi dengan taksi.",
+   "explanationEn": "タクシーで行く means to go by taxi."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "電車が（　）ので、遅れました。",
+   "choices": [
+    "止まった",
+    "笑った",
+    "飲んだ",
+    "教えた"
+   ],
+   "explanation": "電車が止まる berarti kereta berhenti.",
+   "explanationEn": "電車が止まる means the train stops."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この道をまっすぐ行って、二つ目の（　）を右へ曲がってください。",
+   "choices": [
+    "角",
+    "窓",
+    "声",
+    "紙"
+   ],
+   "explanation": "角（かど） berarti sudut jalan.",
+   "explanationEn": "角（かど） means street corner."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "切符を（　）、改札を通ります。",
+   "choices": [
+    "買って",
+    "洗って",
+    "着て",
+    "あげて"
+   ],
+   "explanation": "切符を買う berarti membeli tiket.",
+   "explanationEn": "切符を買う means to buy a ticket."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "道が分からないので、交番で（　）。",
+   "choices": [
+    "聞きました",
+    "売りました",
+    "泳ぎました",
+    "ひきました"
+   ],
+   "explanation": "交番で道を聞く berarti bertanya jalan di pos polisi.",
+   "explanationEn": "道を聞く at the police box means asking directions."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "飛行機は朝七時に（　）。",
+   "choices": [
+    "出ます",
+    "あけます",
+    "かります",
+    "すみます"
+   ],
+   "explanation": "飛行機が出る berarti pesawat berangkat.",
+   "explanationEn": "飛行機が出る means the plane departs."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "駅は混んでいたので、座る（　）がありませんでした。",
+   "choices": [
+    "ところ",
+    "うえ",
+    "よこ",
+    "ほう"
+   ],
+   "explanation": "座るところがない berarti tidak ada tempat duduk.",
+   "explanationEn": "座るところがない means there was no place to sit."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "旅行のとき、パスポートを（　）はいけません。",
+   "choices": [
+    "忘れて",
+    "作って",
+    "洗って",
+    "歌って"
+   ],
+   "explanation": "パスポートを忘れてはいけません berarti paspor tidak boleh terlupa.",
+   "explanationEn": "パスポートを忘れてはいけません means you must not forget your passport."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あの橋を（　）と、病院があります。",
+   "choices": [
+    "わたる",
+    "ぬぐ",
+    "かう",
+    "ひく"
+   ],
+   "explanation": "橋をわたる berarti menyeberangi jembatan.",
+   "explanationEn": "橋をわたる means to cross a bridge."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ホテルの部屋は十階だったので、景色がとても（　）でした。",
+   "choices": [
+    "きれい",
+    "あまい",
+    "かるい",
+    "さむい"
+   ],
+   "explanation": "景色がきれい berarti pemandangan indah.",
+   "explanationEn": "景色がきれい means the view is beautiful."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "南の国は一年中（　）です。",
+   "choices": [
+    "暑い",
+    "寒い",
+    "せまい",
+    "遠い"
+   ],
+   "explanation": "南の国は暑い berarti negara selatan panas.",
+   "explanationEn": "Southern countries are 暑い (hot)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新幹線は東京から大阪（　）二時間半かかります。",
+   "choices": [
+    "まで",
+    "を",
+    "が",
+    "だけ"
+   ],
+   "explanation": "から～まで menyatakan jarak antara dua tempat (東京から大阪まで).",
+   "explanationEn": "から～まで links two places (東京から大阪まで)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "バスより電車（　）速いです。",
+   "choices": [
+    "のほうが",
+    "より",
+    "までが",
+    "ぐらいが"
+   ],
+   "explanation": "AよりBのほうが～ membandingkan dua hal.",
+   "explanationEn": "AよりBのほうが～ compares two things."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "東京へ行ったこと（　）ありますか。",
+   "choices": [
+    "が",
+    "を",
+    "に",
+    "で"
+   ],
+   "explanation": "～たことがありますか menanyakan pengalaman.",
+   "explanationEn": "～たことがありますか asks about experience."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この電車は大阪（　）行きます。",
+   "choices": [
+    "へ",
+    "を",
+    "と",
+    "の"
+   ],
+   "explanation": "へ menandai arah tujuan (大阪へ行く).",
+   "explanationEn": "へ marks the destination (大阪へ行く)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "切符を買う（　）に、お金を用意します。",
+   "choices": [
+    "前",
+    "後",
+    "まま",
+    "間"
+   ],
+   "explanation": "V辞書形＋前に berarti sebelum ～ (買う前に).",
+   "explanationEn": "V dictionary form + 前に means before ～ (買う前に)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "雨が降る（　）、旅行は中止です。",
+   "choices": [
+    "なら",
+    "ても",
+    "のに",
+    "ながら"
+   ],
+   "explanation": "～なら menyatakan syarat (降るなら中止).",
+   "explanationEn": "～なら states a condition (降るなら中止)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "あそこに止まっているバスは、どこ（　）行きますか。",
+   "choices": [
+    "へ",
+    "を",
+    "と",
+    "が"
+   ],
+   "explanation": "どこへ行きますか menanyakan tujuan.",
+   "explanationEn": "どこへ行きますか asks for the destination."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "地図を見（　）、道をさがしました。",
+   "choices": [
+    "ながら",
+    "まえ",
+    "ので",
+    "より"
+   ],
+   "explanation": "V連用形＋ながら berarti sambil (見ながら).",
+   "explanationEn": "Verb stem + ながら means while (見ながら)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ここは駐車禁止です。車を止め（　）。",
+   "choices": [
+    "てはいけません",
+    "てもいいです",
+    "たがります",
+    "てくれます"
+   ],
+   "explanation": "～てはいけません menyatakan larangan (止めてはいけません).",
+   "explanationEn": "～てはいけません states prohibition (止めてはいけません)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "疲れましたから、少し休み（　）です。",
+   "choices": [
+    "たい",
+    "たく",
+    "ない",
+    "ませ"
+   ],
+   "explanation": "V連用形＋たいです berarti ingin ～ (休みたいです).",
+   "explanationEn": "Verb stem + たいです means want to (休みたいです)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "旅行は楽しかった（　）、疲れました。",
+   "choices": [
+    "けど",
+    "ために",
+    "ながら",
+    "ばかり"
+   ],
+   "explanation": "けど menyatakan pertentangan ringan.",
+   "explanationEn": "けど expresses mild contrast."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この道は人が少ない（　）、夜は危ないです。",
+   "choices": [
+    "ので",
+    "より",
+    "だけ",
+    "まで"
+   ],
+   "explanation": "ので menyatakan alasan (少ないので危ない).",
+   "explanationEn": "ので gives a reason (少ないので危ない)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "パスポートを見せ（　）ください。",
+   "choices": [
+    "て",
+    "ない",
+    "る",
+    "た"
+   ],
+   "explanation": "Permintaan dengan て＋ください (見せてください).",
+   "explanationEn": "Request with て＋ください (見せてください)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私は毎朝、バス（　）会社へ行きます。",
+   "choices": [
+    "で",
+    "が",
+    "を",
+    "と"
+   ],
+   "explanation": "で menandai alat (バスで).",
+   "explanationEn": "で marks the means (バスで)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "空港まで友達が送って（　）。",
+   "choices": [
+    "くれました",
+    "あげました",
+    "しまいました",
+    "ありました"
+   ],
+   "explanation": "友達が～てくれました berarti teman berbaik hati melakukan untuk saya.",
+   "explanationEn": "友達が～てくれました means a friend kindly did it for me."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この荷物は重くて、一人（　）持てません。",
+   "choices": [
+    "では",
+    "でも",
+    "とは",
+    "からは"
+   ],
+   "explanation": "一人では～ません berarti sendirian tidak bisa.",
+   "explanationEn": "一人では～ません means cannot do it alone."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "どの電車（　）乗れば、京都へ行けますか。",
+   "choices": [
+    "に",
+    "を",
+    "が",
+    "で"
+   ],
+   "explanation": "電車に乗る berarti naik kereta.",
+   "explanationEn": "電車に乗る means to ride a train."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "駅からのお知らせ。今日は雨のため、電車が十分ぐらい遅れています。ホームに入る前に、かさをたたんでください。次の電車は三番ホームから出ます。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "次の電車は三番ホームから出ます。",
+    "電車は三十分遅れています。",
+    "かさは持ってはいけません。",
+    "雨はやみました。"
+   ],
+   "explanation": "Pengumuman stasiun: kereta berikut dari peron tiga.",
+   "explanationEn": "Station notice: the next train leaves from platform 3."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "あやさんへ。京都旅行は土曜日の朝八時に東京駅で会いましょう。新幹線の切符は私が買っておきます。お弁当は駅で買います。まい",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "新幹線の切符はまいさんが買います。",
+    "土曜日の夜に会います。",
+    "お弁当は家で作ります。",
+    "京都駅で会います。"
+   ],
+   "explanation": "Pesan perjalanan Kyoto: Mai membeli tiket shinkansen.",
+   "explanationEn": "Kyoto trip message: Mai buys the shinkansen tickets."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "きのうは、はじめて地下鉄に乗りました。駅がたくさんあって、少し迷いました。でも、駅員さんが親切に教えてくれたので、無事に着きました。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "駅員さんが道を教えてくれました。",
+    "地下鉄は二回目でした。",
+    "駅は少なかったです。",
+    "友達と行きました。"
+   ],
+   "explanation": "Buku harian subway: petugas stasiun menunjukkan jalan.",
+   "explanationEn": "Subway diary: a station worker explained the way."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "バス時刻表。駅前発：九時十分、十時十分、十一時十分。海まで二十分。十時十分のバスに乗ると、十時三十分に海に着きます。日曜日は十一時十分のバスはありません。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "十時十分のバスは十時三十分に海に着きます。",
+    "海まで一時間かかります。",
+    "日曜日も十一時十分のバスがあります。",
+    "九時のバスがあります。"
+   ],
+   "explanation": "Jadwal bus ke laut: bus 10.10 tiba 10.30.",
+   "explanationEn": "Bus timetable to the sea: the 10:10 bus arrives at 10:30."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "ホテルのご案内。朝ご飯は一階のレストランで、七時から九時までです。チェックアウトは十一時です。荷物は、チェックアウトのあとも、夕方五時までフロントでお預かりします。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "チェックアウトのあとも、荷物を預けられます。",
+    "朝ご飯は二階で食べます。",
+    "チェックアウトは七時です。",
+    "荷物は夜九時まで預けられます。"
+   ],
+   "explanation": "Info hotel: bagasi boleh dititip setelah check-out.",
+   "explanationEn": "Hotel info: luggage can be left after check-out."
+  }
+ ]
+}

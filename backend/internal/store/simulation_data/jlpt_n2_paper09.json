@@ -1,0 +1,966 @@
+{
+ "level": "N2",
+ "paper": 9,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "熱やせきなど、風邪の[[症状]]が出てきた。",
+   "choices": [
+    "しょうじょう",
+    "しょうじょ",
+    "しょじょう",
+    "しょうしょう"
+   ],
+   "explanation": "症状（しょうじょう） berarti gejala penyakit.",
+   "explanationEn": "症状（しょうじょう） means a symptom."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "医者は、患者を丁寧に[[診察]]した。",
+   "choices": [
+    "しんさつ",
+    "しんざつ",
+    "じんさつ",
+    "しんさい"
+   ],
+   "explanation": "診察（しんさつ） berarti pemeriksaan oleh dokter.",
+   "explanationEn": "診察（しんさつ） means a medical examination."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "手洗いは、風邪の[[予防]]に効果がある。",
+   "choices": [
+    "よぼう",
+    "よほう",
+    "ようぼう",
+    "よぼ"
+   ],
+   "explanation": "予防（よぼう） berarti pencegahan.",
+   "explanationEn": "予防（よぼう） means prevention."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ワクチンを打つと、体に[[免疫]]ができる。",
+   "choices": [
+    "めんえき",
+    "めんい",
+    "めんやく",
+    "べんえき"
+   ],
+   "explanation": "免疫（めんえき） berarti kekebalan tubuh.",
+   "explanationEn": "免疫（めんえき） means immunity."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "研究者は、新しい[[仮説]]を立てて実験を始めた。",
+   "choices": [
+    "かせつ",
+    "かぜつ",
+    "がせつ",
+    "かせい"
+   ],
+   "explanation": "仮説（かせつ） berarti hipotesis.",
+   "explanationEn": "仮説（かせつ） means a hypothesis."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "星の動きを[[観測]]するために、山の上に望遠鏡を置いた。",
+   "choices": [
+    "かんそく",
+    "かんぞく",
+    "がんそく",
+    "かんそう"
+   ],
+   "explanation": "観測（かんそく） berarti pengamatan fenomena alam.",
+   "explanationEn": "観測（かんそく） means observation of natural phenomena."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "同じ実験を何度も[[繰り返す]]必要がある。",
+   "choices": [
+    "くりかえす",
+    "くりもどす",
+    "くりがえす",
+    "くるかえす"
+   ],
+   "explanation": "繰り返す（くりかえす） berarti mengulang.",
+   "explanationEn": "繰り返す（くりかえす） means to repeat."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "その[[かんじゃ]]は、毎週病院に通っている。",
+   "choices": [
+    "患者",
+    "患省",
+    "感者",
+    "患着"
+   ],
+   "explanation": "かんじゃ (pasien) ditulis 患者.",
+   "explanationEn": "かんじゃ (patient) is written 患者."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい[[ちりょう]]法が、多くの人を助けている。",
+   "choices": [
+    "治療",
+    "治僚",
+    "冶療",
+    "治瞭"
+   ],
+   "explanation": "ちりょう (pengobatan) ditulis 治療.",
+   "explanationEn": "ちりょう (medical treatment) is written 治療."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "強い光は、目に[[しげき]]を与える。",
+   "choices": [
+    "刺激",
+    "賜激",
+    "刺撃",
+    "剌激"
+   ],
+   "explanation": "しげき (rangsangan) ditulis 刺激.",
+   "explanationEn": "しげき (stimulus) is written 刺激."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "博士は、研究の成果を[[ろんぶん]]にまとめた。",
+   "choices": [
+    "論文",
+    "論分",
+    "輪文",
+    "論又"
+   ],
+   "explanation": "ろんぶん (makalah ilmiah) ditulis 論文.",
+   "explanationEn": "ろんぶん (academic paper) is written 論文."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 表記",
+   "instructions": "＿＿の言葉を漢字で書くとき、いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "医者が薬を[[しょほう]]してくれた。",
+   "choices": [
+    "処方",
+    "処法",
+    "所方",
+    "初方"
+   ],
+   "explanation": "しょほう (resep obat) ditulis 処方.",
+   "explanationEn": "しょほう (prescription) is written 処方."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「薬を使ったあとに体に起こる、望ましくない働き」を表す言葉はどれですか。",
+   "choices": [
+    "副作用",
+    "副作業",
+    "次作用",
+    "裏作用"
+   ],
+   "explanation": "副～ berarti sampingan: 副作用 = efek samping obat.",
+   "explanationEn": "副～ means secondary: 副作用 = side effect."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「いろいろな種類があること」を表す言葉はどれですか。",
+   "choices": [
+    "多様性",
+    "多様力",
+    "多様感",
+    "多様率"
+   ],
+   "explanation": "～性 berarti sifat: 多様性 = keragaman.",
+   "explanationEn": "～性 means nature or quality: 多様性 = diversity."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「まだ検査を受けていないこと」を表す言葉はどれですか。",
+   "choices": [
+    "未検査",
+    "無検査",
+    "不検査",
+    "非検査"
+   ],
+   "explanation": "未～ berarti belum: 未検査 = belum diperiksa.",
+   "explanationEn": "未～ means not yet: 未検査 = not yet inspected."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 語形成",
+   "instructions": "文の意味に合う言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "「全体の半分より多い数」を表す言葉はどれですか。",
+   "choices": [
+    "過半数",
+    "超半数",
+    "大半数",
+    "全半数"
+   ],
+   "explanation": "過～ berarti melebihi: 過半数 = mayoritas.",
+   "explanationEn": "過～ means exceeding: 過半数 = majority."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい薬が、病気の進行を（　）効果があると確認された。",
+   "choices": [
+    "遅らせる",
+    "近づける",
+    "揃える",
+    "重ねる"
+   ],
+   "explanation": "進行を遅らせる berarti memperlambat perkembangan penyakit.",
+   "explanationEn": "進行を遅らせる means to slow the progression."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "医者は、患者の話を（　）聞いて、症状を確かめた。",
+   "choices": [
+    "じっくり",
+    "ぐったり",
+    "さっぱり",
+    "うっかり"
+   ],
+   "explanation": "じっくり聞く berarti mendengarkan dengan seksama.",
+   "explanationEn": "じっくり聞く means to listen carefully and patiently."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "この研究では、正確なデータの（　）が最も重要な課題である。",
+   "choices": [
+    "収集",
+    "収入",
+    "収納",
+    "収容"
+   ],
+   "explanation": "データの収集 berarti pengumpulan data.",
+   "explanationEn": "データの収集 means data collection."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "予想どおり、実験の結果は仮説を（　）ものだった。",
+   "choices": [
+    "裏付ける",
+    "取り付ける",
+    "差し引く",
+    "引き止める"
+   ],
+   "explanation": "仮説を裏付ける berarti menguatkan hipotesis.",
+   "explanationEn": "仮説を裏付ける means to back up a hypothesis."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "薬を飲み忘れないように、毎日同じ時間に（　）する習慣をつけた。",
+   "choices": [
+    "服用",
+    "運用",
+    "愛用",
+    "起用"
+   ],
+   "explanation": "薬を服用する berarti meminum obat.",
+   "explanationEn": "薬を服用する means to take medicine."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "この薬には、痛みを（　）働きがある。",
+   "choices": [
+    "和らげる",
+    "引き寄せる",
+    "持ち上げる",
+    "呼びかける"
+   ],
+   "explanation": "痛みを和らげる berarti meredakan rasa sakit.",
+   "explanationEn": "痛みを和らげる means to ease pain."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "医者は、患者に[[安静]]を勧めた。",
+   "choices": [
+    "静かに休むこと",
+    "運動を続けること",
+    "食事を減らすこと",
+    "薬を増やすこと"
+   ],
+   "explanation": "安静 berarti beristirahat dengan tenang.",
+   "explanationEn": "安静 means resting quietly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "時間がたてば、[[おのずと]]答えは見えてくる。",
+   "choices": [
+    "自然に",
+    "無理に",
+    "誰かの手で",
+    "急いで"
+   ],
+   "explanation": "おのずと berarti dengan sendirinya.",
+   "explanationEn": "おのずと means naturally, of itself."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の研究は、医療の発展に[[貢献]]した。",
+   "choices": [
+    "役に立った",
+    "失敗した",
+    "遅れをとった",
+    "興味を持った"
+   ],
+   "explanation": "貢献 berarti memberi sumbangsih.",
+   "explanationEn": "貢献 means contribution."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい薬の効果を[[検証]]する。",
+   "choices": [
+    "調べて確かめる",
+    "宣伝する",
+    "新しく作る",
+    "値段を決める"
+   ],
+   "explanation": "検証 berarti memeriksa dan memastikan kebenaran.",
+   "explanationEn": "検証 means to verify by examination."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題5 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "患者の症状が[[急激に]]悪くなった。",
+   "choices": [
+    "急に激しく",
+    "だんだんゆっくり",
+    "一時的に",
+    "少しだけ"
+   ],
+   "explanation": "急激に berarti secara tiba-tiba dan tajam.",
+   "explanationEn": "急激に means suddenly and sharply."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「兆し」",
+   "choices": [
+    "長かった不況に、回復の兆しが見え始めた。",
+    "駅で兆しを買ってから電車に乗った。",
+    "この荷物は兆しが重くて持てない。",
+    "毎朝、公園で兆しを散歩している。"
+   ],
+   "explanation": "兆し berarti pertanda.",
+   "explanationEn": "兆し means a sign or omen."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「把握」",
+   "choices": [
+    "医者は、患者の状態を正確に把握する必要がある。",
+    "犬を把握して、毎朝散歩している。",
+    "傘を把握して、雨の中を歩いた。",
+    "友達と手を把握して別れた。"
+   ],
+   "explanation": "把握 berarti memahami secara tepat.",
+   "explanationEn": "把握 means to grasp (a situation) accurately."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「蓄える」",
+   "choices": [
+    "動物は、冬に備えて体に脂肪を蓄える。",
+    "毎日、新聞を蓄えて読んでいる。",
+    "母は洗濯物を蓄えて干した。",
+    "彼は友達の悪口を蓄えて笑った。"
+   ],
+   "explanation": "蓄える berarti menyimpan untuk kebutuhan nanti.",
+   "explanationEn": "蓄える means to store up for later."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「いたわる」",
+   "choices": [
+    "病気の友人をいたわって、ゆっくり歩いた。",
+    "朝からいたわって、宿題を終わらせた。",
+    "壊れたいすをいたわって、捨てた。",
+    "先生は答案をいたわって、生徒に配った。"
+   ],
+   "explanation": "いたわる berarti memperlakukan dengan penuh perhatian.",
+   "explanationEn": "いたわる means to treat kindly and with care."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題6 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「まぎらわしい」",
+   "choices": [
+    "この二つの薬は名前がまぎらわしいので、注意が必要だ。",
+    "彼は毎日まぎらわしく運動している。",
+    "この料理はまぎらわしくて、おいしい。",
+    "まぎらわしい天気なので、傘を持った。"
+   ],
+   "explanation": "まぎらわしい berarti mudah tertukar.",
+   "explanationEn": "まぎらわしい means easily confused."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "薬を飲んだ（　）、熱は下がらなかった。",
+   "choices": [
+    "ものの",
+    "からには",
+    "ついでに",
+    "ばかりか"
+   ],
+   "explanation": "～ものの berarti meskipun ～.",
+   "explanationEn": "～ものの means although ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この病気は、早く見つかり（　）、治る可能性が高い。",
+   "choices": [
+    "さえすれば",
+    "ながらも",
+    "ついでに",
+    "ばかりに"
+   ],
+   "explanation": "～さえすれば berarti asalkan ～.",
+   "explanationEn": "～さえすれば means as long as ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の研究は、医学の発展に大きく貢献した（　）。",
+   "choices": [
+    "といっても過言ではない",
+    "どころではない",
+    "かねない",
+    "っこない"
+   ],
+   "explanation": "～といっても過言ではない berarti tidak berlebihan bila dikatakan.",
+   "explanationEn": "～といっても過言ではない means it is no exaggeration to say."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "疲れている（　）、頭がうまく働かない。",
+   "choices": [
+    "せいか",
+    "ばかりか",
+    "ところで",
+    "くせに"
+   ],
+   "explanation": "～せいか berarti mungkin karena ～.",
+   "explanationEn": "～せいか means perhaps because of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "患者の命を救う（　）、医者は全力を尽くした。",
+   "choices": [
+    "べく",
+    "ところ",
+    "ものの",
+    "あまり"
+   ],
+   "explanation": "～べく berarti demi ～.",
+   "explanationEn": "～べく means in order to."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "データを分析してみた（　）、新しい事実が分かった。",
+   "choices": [
+    "ところ",
+    "うえは",
+    "あげく",
+    "ばかり"
+   ],
+   "explanation": "～たところ berarti ketika dicoba ternyata.",
+   "explanationEn": "～たところ means when I did ～, it turned out."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この薬は、子ども（　）作られているので、飲みやすい。",
+   "choices": [
+    "向けに",
+    "次第で",
+    "かぎりで",
+    "ついでに"
+   ],
+   "explanation": "～向けに berarti ditujukan untuk.",
+   "explanationEn": "～向けに means intended for."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "実験が成功した（　）、さらに研究を進める必要がある。",
+   "choices": [
+    "としても",
+    "ことだし",
+    "ばかりに",
+    "とあって"
+   ],
+   "explanation": "～としても berarti kalaupun ～.",
+   "explanationEn": "～としても means even if ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、自分の病気について、家族（　）話していなかった。",
+   "choices": [
+    "にさえ",
+    "ばかりか",
+    "ならでは",
+    "をはじめ"
+   ],
+   "explanation": "～にさえ berarti bahkan kepada ～.",
+   "explanationEn": "～にさえ means even to ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この結果は、これまでの考え方を根本から変える（　）ものだ。",
+   "choices": [
+    "に足る",
+    "に限る",
+    "に至る",
+    "に応じる"
+   ],
+   "explanation": "～に足る berarti cukup layak untuk ～.",
+   "explanationEn": "～に足る means sufficient to ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は ＿＿ ＿＿ ★ ＿＿ 続けた。",
+   "choices": [
+    "ことなく",
+    "失敗を",
+    "恐れる",
+    "研究を"
+   ],
+   "explanation": "Urutan: 失敗を 恐れる ことなく 研究を 続けた. ★ slot ketiga, ことなく.",
+   "explanationEn": "Order: 失敗を 恐れる ことなく 研究を 続けた (he kept researching without fearing failure). ★ is the third slot, ことなく."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この調査で、＿＿ ＿＿ ★ ＿＿ ことが分かった。",
+   "choices": [
+    "危険を",
+    "睡眠不足が",
+    "病気の",
+    "高める"
+   ],
+   "explanation": "Urutan: 睡眠不足が 病気の 危険を 高める ことが分かった. ★ slot ketiga, 危険を.",
+   "explanationEn": "Order: 睡眠不足が 病気の 危険を 高める (lack of sleep raises disease risk). ★ is the third slot, 危険を."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "薬の ＿＿ ＿＿ ★ ＿＿ ように注意してください。",
+   "choices": [
+    "増やさ",
+    "量を",
+    "勝手に",
+    "ない"
+   ],
+   "explanation": "Urutan: 量を 勝手に 増やさ ない ように. ★ slot ketiga, 増やさ.",
+   "explanationEn": "Order: 量を 勝手に 増やさ ない (do not increase the dose on your own). ★ is the third slot, 増やさ."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "＿＿ ＿＿ ★ ＿＿ 研究者が増えている。",
+   "choices": [
+    "支える",
+    "地域の",
+    "医療を",
+    "ことを目指す"
+   ],
+   "explanation": "Urutan: 地域の 医療を 支える ことを目指す 研究者. ★ slot ketiga, 支える.",
+   "explanationEn": "Order: 地域の 医療を 支える ことを目指す (researchers aiming to support regional medicine). ★ is the third slot, 支える."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "睡眠が足りないと、体の調子が悪くなることは、誰もが経験から知っている。【46】、睡眠不足が体に与える影響を、数字で示すことは簡単ではなかった。最近の研究では、毎日六時間未満しか眠らない人は、七時間以上眠る人に比べて、風邪にかかる割合が高いことが【47】。\nこれは、睡眠中に体の免疫を支える物質が作られるためだと考えられている。つまり、眠ることは、単に疲れをとるだけでなく、病気を防ぐための大切な準備でもある。忙しいからといって睡眠を削る人は多いが、それが結果的に体調を崩し、仕事の効率を【48】おそれもある。健康のためには、睡眠を「余った時間でとるもの」ではなく、「先に確保する【49】」と考えるべきだろう。",
+   "prompt": "【46】",
+   "choices": [
+    "ところが",
+    "したがって",
+    "たとえば",
+    "まして"
+   ],
+   "explanation": "Orang tahu dari pengalaman, namun sulit dibuktikan dengan angka: ところが.",
+   "explanationEn": "People know it from experience, yet proving it with numbers was hard: ところが."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "睡眠が足りないと、体の調子が悪くなることは、誰もが経験から知っている。【46】、睡眠不足が体に与える影響を、数字で示すことは簡単ではなかった。最近の研究では、毎日六時間未満しか眠らない人は、七時間以上眠る人に比べて、風邪にかかる割合が高いことが【47】。\nこれは、睡眠中に体の免疫を支える物質が作られるためだと考えられている。つまり、眠ることは、単に疲れをとるだけでなく、病気を防ぐための大切な準備でもある。忙しいからといって睡眠を削る人は多いが、それが結果的に体調を崩し、仕事の効率を【48】おそれもある。健康のためには、睡眠を「余った時間でとるもの」ではなく、「先に確保する【49】」と考えるべきだろう。",
+   "prompt": "【47】",
+   "choices": [
+    "明らかになった",
+    "明らかにさせた",
+    "明らかにしておいた",
+    "明らかにしかねた"
+   ],
+   "explanation": "Studi menunjukkan hasilnya: 明らかになった.",
+   "explanationEn": "The study made it clear: 明らかになった."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "睡眠が足りないと、体の調子が悪くなることは、誰もが経験から知っている。【46】、睡眠不足が体に与える影響を、数字で示すことは簡単ではなかった。最近の研究では、毎日六時間未満しか眠らない人は、七時間以上眠る人に比べて、風邪にかかる割合が高いことが【47】。\nこれは、睡眠中に体の免疫を支える物質が作られるためだと考えられている。つまり、眠ることは、単に疲れをとるだけでなく、病気を防ぐための大切な準備でもある。忙しいからといって睡眠を削る人は多いが、それが結果的に体調を崩し、仕事の効率を【48】おそれもある。健康のためには、睡眠を「余った時間でとるもの」ではなく、「先に確保する【49】」と考えるべきだろう。",
+   "prompt": "【48】",
+   "choices": [
+    "下げる",
+    "上げる",
+    "広げる",
+    "集める"
+   ],
+   "explanation": "Sakit akibat kurang tidur menurunkan efisiensi kerja.",
+   "explanationEn": "Illness from lack of sleep lowers work efficiency."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "睡眠が足りないと、体の調子が悪くなることは、誰もが経験から知っている。【46】、睡眠不足が体に与える影響を、数字で示すことは簡単ではなかった。最近の研究では、毎日六時間未満しか眠らない人は、七時間以上眠る人に比べて、風邪にかかる割合が高いことが【47】。\nこれは、睡眠中に体の免疫を支える物質が作られるためだと考えられている。つまり、眠ることは、単に疲れをとるだけでなく、病気を防ぐための大切な準備でもある。忙しいからといって睡眠を削る人は多いが、それが結果的に体調を崩し、仕事の効率を【48】おそれもある。健康のためには、睡眠を「余った時間でとるもの」ではなく、「先に確保する【49】」と考えるべきだろう。",
+   "prompt": "【49】",
+   "choices": [
+    "べきもの",
+    "わけもの",
+    "ばかりもの",
+    "ところもの"
+   ],
+   "explanation": "先に確保するべきもの berarti hal yang harus diamankan lebih dulu.",
+   "explanationEn": "先に確保するべきもの means something to be secured first."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "研究室のみなさんへ\n来週月曜日の実験は、機械の点検のため、午前中は使えません。午後一時から使えるようになりますので、午前に予定していた人は、午後に変更してください。なお、点検の結果によっては、さらに遅れることがあります。決まり次第、メールでお知らせします。\n実験室管理担当",
+   "prompt": "月曜日の実験について、正しいものはどれですか。",
+   "choices": [
+    "午前は機械が使えず、午後一時から使える。",
+    "終日、機械が使えない。",
+    "午前中に実験を終えなければならない。",
+    "点検の結果は電話で知らされる。"
+   ],
+   "explanation": "Pagi mesin tak bisa dipakai, mulai 13.00 bisa.",
+   "explanationEn": "The machine is unavailable in the morning and usable from 1 p.m."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "健康管理のアプリを使う人が増えている。歩いた数や睡眠時間が自動で記録され、自分の生活を振り返るのに便利だ。しかし、数字を気にしすぎて、アプリに記録されないと不安になる人もいるという。数字は健康を考えるための道具であって、目的ではない。体の声を自分で聞くことも忘れてはならない。",
+   "prompt": "筆者が最も言いたいことは何ですか。",
+   "choices": [
+    "数字を道具として使い、自分の体の声も聞くべきだ。",
+    "アプリは便利なので、毎日使うべきだ。",
+    "数字は健康と関係がないので、見る必要はない。",
+    "記録されないことは、体に悪い。"
+   ],
+   "explanation": "Gunakan angka sebagai alat dan tetap dengar tubuh sendiri.",
+   "explanationEn": "Use numbers as a tool and still listen to your own body."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "山下さん\nお世話になっております。先日の検査結果についてご連絡します。数値はおおむね正常でしたが、一部の項目で、再検査をお勧めします。次回は、前日の夜九時以降は食事をとらず、水だけにしてください。ご都合のよい日を、受付でご予約ください。\n松本クリニック",
+   "prompt": "山下さんが、次回の検査の前にしなければならないことは何ですか。",
+   "choices": [
+    "前日の夜九時以降は、水以外のものを口にしないこと",
+    "検査の前日は何も飲まないこと",
+    "朝食をたくさん食べること",
+    "検査の日に受付で予約すること"
+   ],
+   "explanation": "Setelah pukul 21.00 hari sebelumnya, hanya boleh air.",
+   "explanationEn": "After 9 p.m. the night before, only water."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "寒い地域に住むある動物は、冬の間、ほとんど動かずに眠って過ごす。この冬眠の間、体温は大きく下がり、心臓の動きも遅くなる。ふつうなら、長い間動かないと筋肉が弱ってしまうが、冬眠する動物は、春になっても筋肉がほとんど衰えない。\n研究者は、この仕組みを解明すれば、長期間寝たきりになる患者や、宇宙で長く暮らす人の筋肉の衰えを防ぐ方法が見つかるかもしれないと期待している。動物の不思議な能力が、人の医療に役立つ日が来るのかもしれない。",
+   "prompt": "冬眠する動物について、筆者が不思議だと考えていることは何ですか。",
+   "choices": [
+    "長い間動かなくても、筋肉がほとんど衰えないこと",
+    "冬の間、何も食べずに過ごすこと",
+    "寒い地域に住んでいること",
+    "春になると体温が下がること"
+   ],
+   "explanation": "Otot hampir tidak melemah meski lama tak bergerak.",
+   "explanationEn": "Muscles hardly weaken despite long inactivity."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "寒い地域に住むある動物は、冬の間、ほとんど動かずに眠って過ごす。この冬眠の間、体温は大きく下がり、心臓の動きも遅くなる。ふつうなら、長い間動かないと筋肉が弱ってしまうが、冬眠する動物は、春になっても筋肉がほとんど衰えない。\n研究者は、この仕組みを解明すれば、長期間寝たきりになる患者や、宇宙で長く暮らす人の筋肉の衰えを防ぐ方法が見つかるかもしれないと期待している。動物の不思議な能力が、人の医療に役立つ日が来るのかもしれない。",
+   "prompt": "研究者が期待していることは何ですか。",
+   "choices": [
+    "筋肉の衰えを防ぐ方法が見つかること",
+    "冬眠する動物を増やすこと",
+    "寒い地域でも暮らせる薬ができること",
+    "動物の体温を上げる方法が分かること"
+   ],
+   "explanation": "Berharap menemukan cara mencegah otot melemah.",
+   "explanationEn": "They hope to find a way to prevent muscle loss."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "祖父は、七十歳を過ぎてから、毎朝の散歩を始めた。最初は五分も続かなかったが、今では一時間ほど歩く。変わったのは、体力だけではない。道で会う人と話すようになり、友人が増えたという。\n医者は、運動そのものの効果に加えて、人との関わりが心の健康を保つのに役立っていると言う。体を動かすことと、人と話すことは、別々のことのようで、実は強く結びついているのだと、祖父を見ていて思う。",
+   "prompt": "祖父の散歩について、正しいものはどれですか。",
+   "choices": [
+    "始めたころは短い時間しか歩けなかったが、今は一時間ほど歩く。",
+    "始めたころから一時間歩いていた。",
+    "医者に勧められて、七十歳で始めた。",
+    "一人で歩くのが好きで、人とは話さない。"
+   ],
+   "explanation": "Awalnya tak sampai lima menit, kini sekitar satu jam.",
+   "explanationEn": "He could not walk five minutes at first, now about an hour."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "祖父は、七十歳を過ぎてから、毎朝の散歩を始めた。最初は五分も続かなかったが、今では一時間ほど歩く。変わったのは、体力だけではない。道で会う人と話すようになり、友人が増えたという。\n医者は、運動そのものの効果に加えて、人との関わりが心の健康を保つのに役立っていると言う。体を動かすことと、人と話すことは、別々のことのようで、実は強く結びついているのだと、祖父を見ていて思う。",
+   "prompt": "筆者が、祖父を見て思ったことは何ですか。",
+   "choices": [
+    "体を動かすことと人と話すことは、強く結びついている。",
+    "歩くより走るほうが体によい。",
+    "医者に頼らないほうがよい。",
+    "友人は少ないほうが健康だ。"
+   ],
+   "explanation": "Bergerak dan berbicara dengan orang saling terkait kuat.",
+   "explanationEn": "Moving the body and talking with people are closely linked."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 複数文章の統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】健康診断は、病気を早く見つけるために、すべての社員が毎年受けるべきだ。自覚症状がなくても、検査で初めて分かる病気は少なくない。会社にとっても、社員が長く元気に働けることは大きな利益になる。費用は会社が負担し、受けない社員には理由を確認するべきだ。\n\n【B】健康診断は大切だが、受けることを義務にするのには反対だ。体のことは、基本的に個人の問題であり、結果を会社に知られたくない人もいる。会社がすべきことは、診断を強制することではなく、受けやすい環境をつくり、結果の情報を厳しく守ることだと思う。",
+   "prompt": "健康診断について、AとBに共通している考えはどれですか。",
+   "choices": [
+    "健康診断は大切だ。",
+    "社員に義務として受けさせるべきだ。",
+    "結果は会社が管理するべきだ。",
+    "費用は社員が払うべきだ。"
+   ],
+   "explanation": "Keduanya setuju pemeriksaan kesehatan itu penting.",
+   "explanationEn": "Both agree health checks are important."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 複数文章の統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】健康診断は、病気を早く見つけるために、すべての社員が毎年受けるべきだ。自覚症状がなくても、検査で初めて分かる病気は少なくない。会社にとっても、社員が長く元気に働けることは大きな利益になる。費用は会社が負担し、受けない社員には理由を確認するべきだ。\n\n【B】健康診断は大切だが、受けることを義務にするのには反対だ。体のことは、基本的に個人の問題であり、結果を会社に知られたくない人もいる。会社がすべきことは、診断を強制することではなく、受けやすい環境をつくり、結果の情報を厳しく守ることだと思う。",
+   "prompt": "Bの筆者が、会社がすべきだと考えていることは何ですか。",
+   "choices": [
+    "受けやすい環境をつくり、結果の情報を守ること",
+    "受けない社員の理由を確認すること",
+    "費用を社員に払わせること",
+    "診断の結果を全社員に知らせること"
+   ],
+   "explanation": "B ingin lingkungan yang mudah dan perlindungan ketat data hasil.",
+   "explanationEn": "B wants an easy-to-use setup and strict protection of results."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「プラセボ効果」という言葉を聞いたことがあるだろうか。有効な成分が入っていない偽の薬でも、本物の薬だと信じて飲むと、痛みが和らいだり、症状が軽くなったりする現象のことである。偽の薬で効果が出るなど、気のせいだと思う人もいるかもしれない。\nしかし、研究によれば、この効果は決して単なる思い込みではない。「効く」と信じることで、脳が痛みを抑える物質を実際に出すことが確かめられている。つまり、心の状態が、体の反応を変えているのである。\nこの現象は、新しい薬の研究では、むしろ厄介な存在だ。薬の本当の効果を調べるためには、プラセボ効果による変化を差し引かなければならないからだ。そのため、新しい薬を試すときは、本物と偽物を、医者にも患者にも分からないようにして比べる方法がとられる。\n一方で、医療の現場では、プラセボ効果をうまく生かす工夫も考えられている。医者が患者の話を丁寧に聞き、安心させることも、効果を高める一つの方法なのかもしれない。",
+   "prompt": "プラセボ効果について、正しいものはどれですか。",
+   "choices": [
+    "偽の薬でも、効くと信じることで体に反応が起こる現象",
+    "本物の薬の効果が弱くなる現象",
+    "薬の成分が体に残ってしまう現象",
+    "医者が患者をだます方法"
+   ],
+   "explanation": "Placebo: obat palsu pun menimbulkan reaksi karena keyakinan.",
+   "explanationEn": "Placebo: even a fake drug triggers a reaction through belief."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「プラセボ効果」という言葉を聞いたことがあるだろうか。有効な成分が入っていない偽の薬でも、本物の薬だと信じて飲むと、痛みが和らいだり、症状が軽くなったりする現象のことである。偽の薬で効果が出るなど、気のせいだと思う人もいるかもしれない。\nしかし、研究によれば、この効果は決して単なる思い込みではない。「効く」と信じることで、脳が痛みを抑える物質を実際に出すことが確かめられている。つまり、心の状態が、体の反応を変えているのである。\nこの現象は、新しい薬の研究では、むしろ厄介な存在だ。薬の本当の効果を調べるためには、プラセボ効果による変化を差し引かなければならないからだ。そのため、新しい薬を試すときは、本物と偽物を、医者にも患者にも分からないようにして比べる方法がとられる。\n一方で、医療の現場では、プラセボ効果をうまく生かす工夫も考えられている。医者が患者の話を丁寧に聞き、安心させることも、効果を高める一つの方法なのかもしれない。",
+   "prompt": "新しい薬の研究で、プラセボ効果が厄介なのはなぜですか。",
+   "choices": [
+    "薬の本当の効果を調べるために、その変化を差し引く必要があるから",
+    "偽の薬が本物より高価だから",
+    "患者が薬を飲みたがらなくなるから",
+    "研究に医者が協力しなくなるから"
+   ],
+   "explanation": "Perlu dikurangi untuk mengetahui efek asli obat.",
+   "explanationEn": "It has to be subtracted to find the drug's true effect."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 主張理解（長文）",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「プラセボ効果」という言葉を聞いたことがあるだろうか。有効な成分が入っていない偽の薬でも、本物の薬だと信じて飲むと、痛みが和らいだり、症状が軽くなったりする現象のことである。偽の薬で効果が出るなど、気のせいだと思う人もいるかもしれない。\nしかし、研究によれば、この効果は決して単なる思い込みではない。「効く」と信じることで、脳が痛みを抑える物質を実際に出すことが確かめられている。つまり、心の状態が、体の反応を変えているのである。\nこの現象は、新しい薬の研究では、むしろ厄介な存在だ。薬の本当の効果を調べるためには、プラセボ効果による変化を差し引かなければならないからだ。そのため、新しい薬を試すときは、本物と偽物を、医者にも患者にも分からないようにして比べる方法がとられる。\n一方で、医療の現場では、プラセボ効果をうまく生かす工夫も考えられている。医者が患者の話を丁寧に聞き、安心させることも、効果を高める一つの方法なのかもしれない。",
+   "prompt": "筆者は、医療の現場での生かし方として、どのようなことを挙げていますか。",
+   "choices": [
+    "医者が患者の話をよく聞いて安心させること",
+    "偽の薬を患者に渡すこと",
+    "薬の量を増やすこと",
+    "診察の時間を短くすること"
+   ],
+   "explanation": "Dokter mendengarkan dan menenangkan pasien.",
+   "explanationEn": "Doctors listening carefully and reassuring patients."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "さくら科学館　十一月の体験教室\n①電気の不思議　11月3日（月）10:00〜12:00　小学3〜6年生　1,000円　定員20名\n②星を見よう　11月8日（土）18:00〜20:00　どなたでも　無料　※雨天は中止\n③顕微鏡で見る世界　11月15日（土）13:00〜15:00　中学生以上　500円　定員15名\n④ロボットを動かそう　11月22日（土）10:00〜12:00　小学1〜4年生　1,500円　定員12名\n※申し込みは、ホームページのみです。※定員を超えた場合は、抽選になります。",
+   "prompt": "小学二年生が参加できる、料金のかかる教室はどれですか。",
+   "choices": [
+    "④",
+    "①",
+    "②",
+    "③"
+   ],
+   "explanation": "Untuk siswa kelas 2 SD yang berbayar, hanya ④ (kelas 1–4) yang sesuai; ① untuk kelas 3–6, ③ untuk SMP ke atas, ② gratis.",
+   "explanationEn": "For a 2nd grader, only ④ (grades 1–4) is a paid class that fits; ① is grades 3–6, ③ junior high and up, ② is free."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "さくら科学館　十一月の体験教室\n①電気の不思議　11月3日（月）10:00〜12:00　小学3〜6年生　1,000円　定員20名\n②星を見よう　11月8日（土）18:00〜20:00　どなたでも　無料　※雨天は中止\n③顕微鏡で見る世界　11月15日（土）13:00〜15:00　中学生以上　500円　定員15名\n④ロボットを動かそう　11月22日（土）10:00〜12:00　小学1〜4年生　1,500円　定員12名\n※申し込みは、ホームページのみです。※定員を超えた場合は、抽選になります。",
+   "prompt": "案内の内容と合っているものはどれですか。",
+   "choices": [
+    "申し込みが定員を超えたら、抽選で決める。",
+    "電話でも申し込める。",
+    "②は雨が降っても行われる。",
+    "③は小学生も参加できる。"
+   ],
+   "explanation": "Jika pendaftar melebihi kuota, dilakukan undian.",
+   "explanationEn": "If applications exceed capacity, a lottery is held."
+  }
+ ]
+}

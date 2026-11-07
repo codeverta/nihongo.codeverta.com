@@ -14,7 +14,8 @@ func simulationJFTAdditionalContent(paperNo int) []simulationItem {
 	case 5:
 		return simulationJFTContent5()
 	default:
-		return nil
+		// Papers 06 and later live in simulation_data/*.json (see simulation_json.go).
+		return simulationJSONContent("JFT", paperNo)
 	}
 }
 

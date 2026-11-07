@@ -255,6 +255,10 @@ func natPaperFive() []natSimulationQuestion {
 // Four original, compact NAT 5Q written papers. Each paper combines vocabulary,
 // grammar, short reading, and practical information search; listening is omitted.
 func simulationNATAdditionalContent(paper int) []simulationItem {
+	if paper >= 6 {
+		// Papers 06 and later live in simulation_data/*.json (see simulation_json.go).
+		return simulationJSONContent("NAT", paper)
+	}
 	sets := map[int][]natSimulationQuestion{
 		2: {
 			{"[[病院]]で先生に会いました。", [4]string{"びょういん", "びょうえん", "びょうじん", "びょうにん"}, "病院（びょういん） berarti rumah sakit."},

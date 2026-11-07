@@ -3,7 +3,6 @@ package api
 import (
 	"bytes"
 	"crypto/sha256"
-	"crypto/subtle"
 	_ "embed"
 	"encoding/hex"
 	"encoding/json"
@@ -204,7 +203,7 @@ func (s *Server) homeBannerAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
 		b := s.homeBanners
-		if b.token == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(b.token)) != 1 {
+		if !adminRequestAuthorized(r, b.token) {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "kunci admin salah atau belum dikonfigurasi")
 			return
 		}

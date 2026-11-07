@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/storage/recent_access.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/features/ssw/presentation/kaigo_screens.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
@@ -29,16 +33,16 @@ class SswEntryCard extends StatelessWidget {
   );
 }
 
-class SswHubScreen extends StatefulWidget {
+class SswHubScreen extends ConsumerStatefulWidget {
   const SswHubScreen({super.key, this.exams = false});
 
   final bool exams;
 
   @override
-  State<SswHubScreen> createState() => _SswHubState();
+  ConsumerState<SswHubScreen> createState() => _SswHubState();
 }
 
-class _SswHubState extends State<SswHubScreen> {
+class _SswHubState extends ConsumerState<SswHubScreen> {
   String query = '';
   String filter = 'Semua';
 
@@ -60,6 +64,14 @@ class _SswHubState extends State<SswHubScreen> {
                       (!sswAvailable(sector.id)))),
         )
         .toList();
+    // Sectors opened before come first (latest first); the rest keep the
+    // curated order because List.sort is not stable, so index breaks ties.
+    final recent = ref.watch(recentAccessProvider('ssw'));
+    final order = {for (final (i, s) in sswSectors.indexed) s.id: i};
+    filtered.sort((a, b) {
+      final byRecent = compareRecent(recent, a.id, b.id);
+      return byRecent != 0 ? byRecent : order[a.id]!.compareTo(order[b.id]!);
+    });
     return Scaffold(
       appBar: AppBar(title: Text('SSW / Tokutei Ginou')),
       body: ListView(
@@ -122,9 +134,16 @@ class _SswHubState extends State<SswHubScreen> {
                 Icons.arrow_forward_rounded,
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
-              onTap: () => context.push(
-                '/ssw/nursing-care${widget.exams ? '?tab=test' : ''}',
-              ),
+              onTap: () {
+                ref.read(recentAccessProvider('ssw').notifier).record(
+                  'nursing-care',
+                );
+                unawaited(
+                  context.push(
+                    '/ssw/nursing-care${widget.exams ? '?tab=test' : ''}',
+                  ),
+                );
+              },
             ),
           ),
           const SizedBox(height: 20),
@@ -206,9 +225,16 @@ class _SswHubState extends State<SswHubScreen> {
                   ],
                 ),
                 trailing: const Icon(Icons.chevron_right),
-                onTap: () => context.push(
-                  '/ssw/${sector.id}${widget.exams ? '?tab=test' : ''}',
-                ),
+                onTap: () {
+                  ref.read(recentAccessProvider('ssw').notifier).record(
+                    sector.id,
+                  );
+                  unawaited(
+                    context.push(
+                      '/ssw/${sector.id}${widget.exams ? '?tab=test' : ''}',
+                    ),
+                  );
+                },
               ),
             ),
         ],

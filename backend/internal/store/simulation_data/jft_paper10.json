@@ -1,0 +1,546 @@
+{
+ "level": "JFT",
+ "paper": 10,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "銀行でドルを円に[[両替]]しました。下線の言葉はどう読みますか。",
+   "choices": [
+    "りょうがえ",
+    "りょうかえ",
+    "りょうたい",
+    "ろうがえ"
+   ],
+   "explanation": "両替 dibaca りょうがえ, menukar uang.",
+   "explanationEn": "両替 is read りょうがえ, currency exchange."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "車を[[駐車場]]に止めました。下線の言葉はどう読みますか。",
+   "choices": [
+    "ちゅうしゃじょう",
+    "ちゅうしゃちょう",
+    "ちゅしゃじょう",
+    "ちゅうしゃじょ"
+   ],
+   "explanation": "駐車場 dibaca ちゅうしゃじょう, tempat parkir.",
+   "explanationEn": "駐車場 is read ちゅうしゃじょう, parking lot."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "熱があるので、会議を[[欠席]]します。下線の言葉はどう読みますか。",
+   "choices": [
+    "けっせき",
+    "けつせき",
+    "げっせき",
+    "けっせい"
+   ],
+   "explanation": "欠席 dibaca けっせき, tidak hadir.",
+   "explanationEn": "欠席 is read けっせき, absence."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の読み",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生が使い方を[[説明]]してくれました。下線の言葉はどう読みますか。",
+   "choices": [
+    "せつめい",
+    "せつみょう",
+    "ぜつめい",
+    "せっめい"
+   ],
+   "explanation": "説明 dibaca せつめい, penjelasan.",
+   "explanationEn": "説明 is read せつめい, explanation."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "会社で「残業」をしました。残業は何ですか。",
+   "choices": [
+    "決まった時間のあとも働くこと",
+    "早く帰ること",
+    "休みを取ること",
+    "電車に乗ること"
+   ],
+   "explanation": "残業 berarti lembur.",
+   "explanationEn": "残業 means working overtime."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "部屋を借りるとき「家賃」を払います。家賃は何ですか。",
+   "choices": [
+    "部屋を借りるためのお金",
+    "部屋の大きさ",
+    "部屋の鍵",
+    "部屋の窓"
+   ],
+   "explanation": "家賃 adalah uang sewa.",
+   "explanationEn": "家賃 is the rent."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "友達に「連絡」します。連絡は何ですか。",
+   "choices": [
+    "電話やメールで知らせること",
+    "手紙を捨てること",
+    "駅で待つこと",
+    "料理を作ること"
+   ],
+   "explanation": "連絡 berarti menghubungi.",
+   "explanationEn": "連絡 means contacting someone."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の意味",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "駅の掲示に「運休」と書いてありました。運休は何ですか。",
+   "choices": [
+    "電車が走らないこと",
+    "電車が速く走ること",
+    "電車が新しいこと",
+    "電車が混んでいること"
+   ],
+   "explanation": "運休 berarti layanan dihentikan.",
+   "explanationEn": "運休 means service is suspended."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "この書類に名前を（　）、課長に出してください。",
+   "choices": [
+    "書いて",
+    "歩いて",
+    "飲んで",
+    "消して"
+   ],
+   "explanation": "名前を書く: menulis nama.",
+   "explanationEn": "名前を書く means to write one's name."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 語の用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "日曜日は家族と海へ（　）つもりです。",
+   "choices": [
+    "行く",
+    "取る",
+    "貸す",
+    "消す"
+   ],
+   "explanation": "海へ行く: pergi ke laut.",
+   "explanationEn": "海へ行く means to go to the sea."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の意味と用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "「安い」の使い方が正しい文はどれですか。",
+   "choices": [
+    "この店の野菜は安いです。",
+    "この店の野菜は安いに歩きます。",
+    "この店の野菜は安いを読みます。",
+    "この店の野菜は安いで寝ます。"
+   ],
+   "explanation": "安い berarti murah.",
+   "explanationEn": "安い means cheap."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字と語彙 · 漢字の意味と用法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "「起きる」を使う文はどれですか。",
+   "choices": [
+    "毎朝六時に起きます。",
+    "毎朝六時に起きを食べます。",
+    "毎朝六時に起きが痛いです。",
+    "毎朝六時に起きの本です。"
+   ],
+   "explanation": "起きる berarti bangun.",
+   "explanationEn": "起きる means to wake up."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：荷物は何個ありますか。\nB：全部（　）三個です。",
+   "choices": [
+    "で",
+    "を",
+    "が",
+    "の"
+   ],
+   "explanation": "全部で menyatakan jumlah total.",
+   "explanationEn": "全部で gives a total."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：その映画、もう見ましたか。\nB：いいえ、これから見（　）です。",
+   "choices": [
+    "るところ",
+    "たところ",
+    "ないところ",
+    "てところ"
+   ],
+   "explanation": "～るところです: hendak melakukan.",
+   "explanationEn": "～るところです means about to do."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：なぜ会社を休んだんですか。\nB：熱が（　）、病院へ行きました。",
+   "choices": [
+    "あって",
+    "あるが",
+    "あれば",
+    "あるのに"
+   ],
+   "explanation": "て untuk sebab dan urutan.",
+   "explanationEn": "て-form links cause and sequence."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：日本語が上手ですね。\nB：いいえ、まだ話す（　）が下手です。",
+   "choices": [
+    "の",
+    "と",
+    "に",
+    "を"
+   ],
+   "explanation": "のが下手です: nominalisasi.",
+   "explanationEn": "のが下手です nominalizes the verb."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：この仕事は誰でも（　）ますか。\nB：はい、簡単ですから。",
+   "choices": [
+    "でき",
+    "し",
+    "あり",
+    "なり"
+   ],
+   "explanation": "できます bentuk potensial.",
+   "explanationEn": "できます is the potential form."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · 文法",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "A：明日は雨が降る（　）ですよ。\nB：じゃ、傘を持って行きます。",
+   "choices": [
+    "そう",
+    "でも",
+    "ほど",
+    "たら"
+   ],
+   "explanation": "～そうですよ kabar yang didengar.",
+   "explanationEn": "～そうです conveys hearsay."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "お店で、サービスがとてもよかったです。店員に何と言いますか。",
+   "choices": [
+    "ありがとうございました。とても親切でした。",
+    "すみません、会計が違います。",
+    "もう少し安くしてください。",
+    "ここは禁煙ですか。"
+   ],
+   "explanation": "Berterima kasih atas pelayanan.",
+   "explanationEn": "Thank them for good service."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "同僚の荷物が重そうです。何と言いますか。",
+   "choices": [
+    "一つ持ちましょうか。",
+    "一つ食べましょうか。",
+    "一つ読みましょうか。",
+    "一つ寝ましょうか。"
+   ],
+   "explanation": "Menawarkan membawakan barang.",
+   "explanationEn": "Offer to carry something."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "知らない人にバス停の場所を聞きます。何と言いますか。",
+   "choices": [
+    "すみません、バス停はどこですか。",
+    "バス停は赤いです。",
+    "バス停で食べました。",
+    "バス停が好きです。"
+   ],
+   "explanation": "Bertanya lokasi halte.",
+   "explanationEn": "Ask where the bus stop is."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "友達に会議の時間を確認します。何と言いますか。",
+   "choices": [
+    "会議は何時からでしたか。",
+    "会議は何を食べますか。",
+    "会議で寝ましたか。",
+    "会議に行きたいですか。"
+   ],
+   "explanation": "Memastikan jam rapat.",
+   "explanationEn": "Confirm the meeting time."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "食事のあとで、店の人に言います。何と言いますか。",
+   "choices": [
+    "ごちそうさまでした。",
+    "いただきます。",
+    "いってきます。",
+    "ただいま。"
+   ],
+   "explanation": "ごちそうさまでした setelah makan.",
+   "explanationEn": "ごちそうさまでした is said after a meal."
+  },
+  {
+   "section": "conversation",
+   "group": "会話と表現 · Ungkapan",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "",
+   "prompt": "部屋に入るとき、ドアをノックしたあと何と言いますか。",
+   "choices": [
+    "失礼します。",
+    "失礼しました。",
+    "お世話になりました。",
+    "おかげさまで。"
+   ],
+   "explanation": "失礼します saat masuk ruangan.",
+   "explanationEn": "失礼します is said when entering a room."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "お知らせ\n十二月二十八日から一月四日まで、会社は休みです。一月五日の九時から仕事が始まります。急ぎの連絡は、課長の携帯電話にお願いします。",
+   "prompt": "会社はいつから仕事が始まりますか。",
+   "choices": [
+    "一月五日の九時",
+    "十二月二十八日",
+    "一月四日の九時",
+    "一月一日"
+   ],
+   "explanation": "Mulai kerja 5 Januari pukul 9.",
+   "explanationEn": "Work resumes January 5 at 9."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "たなかさんへ\n来週、部長が会社に来ます。会議室を予約してください。十時から十二時まで、人数は八人です。お願いします。\nきむら",
+   "prompt": "たなかさんは何をしますか。",
+   "choices": [
+    "会議室を予約する",
+    "部長に会う",
+    "会議に出ない",
+    "八人に電話する"
+   ],
+   "explanation": "Tanaka memesan ruang rapat.",
+   "explanationEn": "Tanaka books the meeting room."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "私の町には、毎週日曜日に市場があります。野菜や魚が安いです。朝早く行くと、新しい物が買えます。",
+   "prompt": "新しい物を買うためには、どうしますか。",
+   "choices": [
+    "朝早く行く",
+    "夜に行く",
+    "月曜日に行く",
+    "店に電話する"
+   ],
+   "explanation": "Pergi pagi untuk barang segar.",
+   "explanationEn": "Go early in the morning for fresh goods."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "エレベーター内のお知らせ\n大きな荷物があるときは、階段または荷物用エレベーターを使ってください。荷物用は一階の奥にあります。",
+   "prompt": "大きな荷物があるとき、どこを使いますか。",
+   "choices": [
+    "荷物用エレベーター",
+    "普通のエレベーターだけ",
+    "一階の入り口",
+    "二階の奥"
+   ],
+   "explanation": "Barang besar pakai lift barang.",
+   "explanationEn": "Use the freight elevator."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "田中さんは昨日の夜、友達と食事をしました。おいしくて、食べすぎました。今日は朝ご飯を食べないで、仕事に行きました。",
+   "prompt": "田中さんは今朝、どうしましたか。",
+   "choices": [
+    "朝ご飯を食べなかった",
+    "朝ご飯を作った",
+    "友達と食べた",
+    "仕事を休んだ"
+   ],
+   "explanation": "Pagi ini tidak sarapan.",
+   "explanationEn": "He skipped breakfast this morning."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 内容理解",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "お客様へ\nお財布などの落とし物は、受付でお預かりしています。落とした人は、受付で名前と特徴を話してください。",
+   "prompt": "財布を落とした人は、どうしますか。",
+   "choices": [
+    "受付で名前と特徴を話す",
+    "駅員に電話する",
+    "財布を新しく買う",
+    "明日、探しに来る"
+   ],
+   "explanation": "Lapor ke loket dengan nama dan ciri.",
+   "explanationEn": "Tell the desk your name and the wallet's features."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "料理教室のお知らせ\n毎月第二土曜日 10:00〜13:00　材料費：1,500円\n十二月はクリスマス料理（定員12名）\n申し込み：十一月三十日まで",
+   "prompt": "十二月の料理教室は、何の料理ですか。",
+   "choices": [
+    "クリスマス料理",
+    "お正月料理",
+    "パン",
+    "魚料理"
+   ],
+   "explanation": "Desember: masakan Natal.",
+   "explanationEn": "December: Christmas dishes."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "料理教室のお知らせ\n毎月第二土曜日 10:00〜13:00　材料費：1,500円\n十二月はクリスマス料理（定員12名）\n申し込み：十一月三十日まで",
+   "prompt": "申し込みはいつまでですか。",
+   "choices": [
+    "十一月三十日",
+    "十二月一日",
+    "十二月の第二土曜日",
+    "毎月三十日"
+   ],
+   "explanation": "Daftar sampai 30 November.",
+   "explanationEn": "Apply by November 30."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "レンタカー料金表\n小型車：6時間 5,000円　12時間 7,000円\n大型車：6時間 8,000円　12時間 11,000円\nガソリン代は別。返すとき満タンにしてください。",
+   "prompt": "小型車を12時間借りるといくらですか。",
+   "choices": [
+    "7,000円",
+    "5,000円",
+    "11,000円",
+    "12,000円"
+   ],
+   "explanation": "Mobil kecil 12 jam 7.000 yen.",
+   "explanationEn": "A small car for 12 hours costs 7,000 yen."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "レンタカー料金表\n小型車：6時間 5,000円　12時間 7,000円\n大型車：6時間 8,000円　12時間 11,000円\nガソリン代は別。返すとき満タンにしてください。",
+   "prompt": "車を返すとき、どうしますか。",
+   "choices": [
+    "ガソリンを満タンにする",
+    "ガソリンを空にする",
+    "お金は払わない",
+    "次の日に返す"
+   ],
+   "explanation": "Kembalikan dengan bensin penuh.",
+   "explanationEn": "Return with a full tank."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "お客様センター\n電話受付：月〜金 9:00〜18:00\nメール：24時間受付（返事は翌営業日）\n土日祝日は休みです。",
+   "prompt": "土曜日に問い合わせるとき、どうしますか。",
+   "choices": [
+    "メールを送る",
+    "電話をかける",
+    "会社へ行く",
+    "月曜日まで待たない"
+   ],
+   "explanation": "Hari Sabtu kirim email.",
+   "explanationEn": "On Saturday, send an email."
+  },
+  {
+   "section": "reading",
+   "group": "読解 · 情報検索",
+   "instructions": "最もよい答えを一つ選んでください。",
+   "passage": "お客様センター\n電話受付：月〜金 9:00〜18:00\nメール：24時間受付（返事は翌営業日）\n土日祝日は休みです。",
+   "prompt": "メールの返事はいつ来ますか。",
+   "choices": [
+    "次の営業日",
+    "すぐ",
+    "一週間後",
+    "土曜日の朝"
+   ],
+   "explanation": "Balasan email hari kerja berikutnya.",
+   "explanationEn": "The reply arrives the next business day."
+  }
+ ]
+}

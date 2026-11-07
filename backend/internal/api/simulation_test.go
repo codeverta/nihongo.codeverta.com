@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"nihongo-master-backend/internal/domain"
+	"nihongo-master-backend/internal/store"
 	"strings"
 	"testing"
 )
@@ -303,5 +304,28 @@ func TestSimulationNATAPI(t *testing.T) {
 	}
 	if w = request("GET", "/v1/simulation/n5", ""); strings.Contains(w.Body.String(), attempt.Data.ID) {
 		t.Fatal("NAT result leaked into N5 history")
+	}
+}
+
+func TestOpenLearningAccessStillRequiresLogin(t *testing.T) {
+	previous := store.SetOpenLearningAccess(true)
+	t.Cleanup(func() { store.SetOpenLearningAccess(previous) })
+	server := newServer()
+	for _, path := range []string{"/v1/simulation/N3", "/v1/simulation/N1-4", "/v1/grammar/course?level=N3"} {
+		w := httptest.NewRecorder()
+		server.ServeHTTP(w, httptest.NewRequest("GET", path, nil))
+		if w.Code != 401 {
+			t.Fatalf("guest must not reach %s, got %d", path, w.Code)
+		}
+	}
+	token := login(t, server)
+	for _, path := range []string{"/v1/simulation/N3", "/v1/simulation/N1-4", "/v1/simulation/NAT-10", "/v1/grammar/course?level=N3"} {
+		r := httptest.NewRequest("GET", path, nil)
+		r.Header.Set("Authorization", "Bearer "+token)
+		w := httptest.NewRecorder()
+		server.ServeHTTP(w, r)
+		if w.Code != 200 {
+			t.Fatalf("free signed-in account should open %s, got %d: %s", path, w.Code, w.Body.String())
+		}
 	}
 }

@@ -1,6 +1,6 @@
 # Lifetime Access dan pembayaran store
 
-Produk sekali bayar, bukan subscription berulang. Harga tampilan awal Rp99.000 dan dapat diubah melalui halaman Admin → Harga Lifetime Access. Perubahan ini hanya mengatur harga yang ditampilkan aplikasi; nominal transaksi tetap mengikuti Google Play atau App Store dan perlu diperbarui manual di console store. Free mendapatkan materi N5–N4 serta semua tes N5. Premium mendapatkan materi N3–N1 dan seluruh tes yang tersedia. Kuis dalam lesson mengikuti akses materi. Produk tidak menjanjikan konten N1 yang belum tersedia atau materi offline.
+Produk sekali bayar, bukan subscription berulang. Harga tampilan awal Rp99.000 dan dapat diubah melalui halaman Admin → Harga Lifetime Access. Perubahan ini hanya mengatur harga yang ditampilkan aplikasi; nominal transaksi tetap mengikuti Google Play atau App Store dan perlu diperbarui manual di console store. Semua materi belajar (N5–N1), kuis, simulasi JLPT, JFT-Basic, NAT, latihan SSW, dan deck Anki JLPT terbuka untuk setiap akun yang sudah login (tamu tidak bisa mengaksesnya); saklar backend `NIHONGO_OPEN_ACCESS=false` mengembalikan gerbang Lifetime Access lama. Lifetime Access tetap untuk manga, tautan lamar kerja, unduhan offline, dan bebas iklan. Produk tidak menjanjikan konten N1 yang belum tersedia atau materi offline.
 
 Pembelian dan Restore memerlukan akun Google pribadi. Akun demo memakai kredensial bersama sehingga backend menolak pembelian/Restore melalui akun tersebut agar akses dan transaksi tidak dimiliki bersama seluruh pengguna demo.
 

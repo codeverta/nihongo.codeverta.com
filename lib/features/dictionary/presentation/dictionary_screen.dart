@@ -2,9 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/dictionary/domain/dictionary_models.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_controller.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_details.dart';
+import 'package:nihongo_master/shared/presentation/widgets/motion.dart';
 
 class DictionaryScreen extends ConsumerStatefulWidget {
   const DictionaryScreen({
@@ -95,16 +97,22 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
         Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(10),
+              width: 50,
+              height: 50,
+              alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: colors.primaryContainer,
-                borderRadius: BorderRadius.circular(14),
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? AppTheme.darkPrimary
+                    : AppTheme.primaryColor,
+                borderRadius: BorderRadius.circular(15),
               ),
               child: Text(
                 '辞',
-                style: TextStyle(
-                  fontSize: 28,
-                  color: colors.onPrimaryContainer,
+                style: AppTypography.japanese(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  height: 1,
                 ),
               ),
             ),
@@ -116,7 +124,8 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                   Text(
                     'Kamus Jepang'.localized(context),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: -0.5,
                     ),
                   ),
                   Text('Cari kata. Pahami maknanya.'.localized(context)),
@@ -142,20 +151,41 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               context,
             ),
             filled: true,
-            fillColor: colors.surface,
+            fillColor: Theme.of(context).brightness == Brightness.dark
+                ? AppTheme.darkSurface
+                : Colors.white,
             counterText: '',
             prefixIcon: const Icon(Icons.search),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(999),
+              borderSide: BorderSide(color: colors.primary, width: 1.6),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(999),
+              borderSide: BorderSide(color: colors.outlineVariant),
+            ),
             suffixIcon: ValueListenableBuilder<TextEditingValue>(
               valueListenable: input,
-              builder: (context, value, _) => value.text.isEmpty
-                  ? const SizedBox.shrink()
-                  : IconButton(
-                      tooltip: 'Bersihkan pencarian'.localized(context),
-                      icon: const Icon(Icons.close),
-                      onPressed: () => unawaited(search('')),
-                    ),
+              builder: (context, value, _) => AnimatedSwitcher(
+                duration: AppMotion.of(context, AppMotion.normal),
+                switchInCurve: AppMotion.spring,
+                transitionBuilder: (child, animation) => RotationTransition(
+                  turns: Tween(begin: -0.25, end: 0.0).animate(animation),
+                  child: ScaleTransition(scale: animation, child: child),
+                ),
+                child: value.text.isEmpty
+                    ? const SizedBox.shrink(key: ValueKey('empty'))
+                    : IconButton(
+                        key: const ValueKey('clear'),
+                        tooltip: 'Bersihkan pencarian'.localized(context),
+                        icon: const Icon(Icons.close),
+                        onPressed: () => unawaited(search('')),
+                      ),
+              ),
             ),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(999),
+            ),
           ),
         ),
         const SizedBox(height: 10),
@@ -169,14 +199,29 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               ),
             ),
             const SizedBox(width: 10),
-            IconButton.filledTonal(
-              tooltip: savedOnly
-                  ? 'Kembali ke hasil'.localized(context)
-                  : 'Kata tersimpan'.localized(context),
-              isSelected: savedOnly,
-              onPressed: () => setState(() => savedOnly = !savedOnly),
-              icon: const Icon(Icons.bookmark_outline),
-              selectedIcon: const Icon(Icons.bookmark),
+            Badge(
+              isLabelVisible: library.saved.isNotEmpty && !savedOnly,
+              backgroundColor: colors.primary,
+              textColor: colors.onPrimary,
+              label: AnimatedSwitcher(
+                duration: AppMotion.of(context, AppMotion.slow),
+                switchInCurve: AppMotion.spring,
+                transitionBuilder: (child, animation) =>
+                    ScaleTransition(scale: animation, child: child),
+                child: Text(
+                  '${library.saved.length}',
+                  key: ValueKey(library.saved.length),
+                ),
+              ),
+              child: IconButton.filledTonal(
+                tooltip: savedOnly
+                    ? 'Kembali ke hasil'.localized(context)
+                    : 'Kata tersimpan'.localized(context),
+                isSelected: savedOnly,
+                onPressed: () => setState(() => savedOnly = !savedOnly),
+                icon: const Icon(Icons.bookmark_outline),
+                selectedIcon: const Icon(Icons.bookmark),
+              ),
             ),
           ],
         ),
@@ -260,38 +305,31 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
                   ])
                     SizedBox(
                       width: width,
-                      child: Material(
-                        color: colors.surface,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          side: BorderSide(color: colors.outlineVariant),
-                        ),
-                        clipBehavior: Clip.antiAlias,
-                        child: InkWell(
-                          onTap: () => unawaited(search(example.$1)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(14),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  example.$1,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: colors.secondary,
-                                  ),
+                      child: Pressable(
+                        onTap: () => unawaited(search(example.$1)),
+                        borderRadius: BorderRadius.circular(16),
+                        child: SakuraCard(
+                          radius: 16,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                example.$1,
+                                style: AppTypography.japanese(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: colors.secondary,
                                 ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  example.$2,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: colors.onSurfaceVariant,
-                                  ),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                example.$2,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: colors.onSurfaceVariant,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -334,11 +372,7 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
             ),
           ],
         ],
-        if (!savedOnly && state.loading)
-          const Padding(
-            padding: EdgeInsets.all(32),
-            child: Center(child: CircularProgressIndicator()),
-          ),
+        if (!savedOnly && state.loading) const _ResultSkeleton(),
         if (!savedOnly && state.error != null) ...[
           Text(
             state.error!.localized(context),
@@ -401,10 +435,14 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               ),
             ),
         ],
-        for (final entry in entries)
+        for (final (index, entry) in entries.indexed)
           Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: DictionaryWordCard(entry: entry),
+            padding: const EdgeInsets.only(bottom: 10),
+            child: StaggeredEntrance(
+              key: ValueKey('${savedOnly ? 'saved' : state.query}-${entry.id}'),
+              index: index,
+              child: DictionaryWordCard(entry: entry),
+            ),
           ),
         if (!savedOnly && state.hasMore)
           OutlinedButton.icon(
@@ -445,64 +483,166 @@ class DictionaryWordCard extends StatelessWidget {
   final DictionaryEntry entry;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(16),
-        onTap: () => showDictionaryWord(context, entry),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    final theme = Theme.of(context);
+    return Pressable(
+      onTap: () => showDictionaryWord(context, entry),
+      scale: 0.98,
+      borderRadius: BorderRadius.circular(18),
+      child: SakuraCard(
+        padding: const EdgeInsets.fromLTRB(16, 14, 8, 14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        entry.reading,
+                        style: AppTypography.japanese(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: theme.colorScheme.primary,
+                        ),
+                      ),
+                      Text(
+                        entry.word,
+                        style: AppTypography.japanese(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w700,
+                          color: theme.colorScheme.onSurface,
+                          height: 1.2,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                DictionaryBookmark(entry: entry),
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Icon(
+                    Icons.chevron_right,
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            DictionaryTags(entry: entry),
+            if (entry.senses.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Text(
+                dictionaryStrings(
+                  entry.senses.first['parts_of_speech'],
+                ).join(' • ').toUpperCase(),
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                  letterSpacing: 0.6,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+            const SizedBox(height: 2),
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Text(
+                entry.summary,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14.5,
+                ),
+              ),
+            ),
+            if (entry.senses.length > 1)
+              Text(
+                '+${entry.senses.length - 1} makna lainnya'.localized(
+                  context,
+                ),
+                style: theme.textTheme.bodySmall,
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Placeholder berkilau saat hasil kamus sedang dimuat.
+class _ResultSkeleton extends StatefulWidget {
+  const _ResultSkeleton();
+
+  @override
+  State<_ResultSkeleton> createState() => _ResultSkeletonState();
+}
+
+class _ResultSkeletonState extends State<_ResultSkeleton>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _pulse = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 900),
+  );
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (AppMotion.reduced(context)) {
+      _pulse.value = 0.5;
+    } else if (!_pulse.isAnimating) {
+      _pulse.repeat(reverse: true);
+    }
+  }
+
+  @override
+  void dispose() {
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Semantics(
+      label: 'Memuat…'.localized(context),
+      child: AnimatedBuilder(
+        animation: _pulse,
+        builder: (context, _) {
+          final color = Color.lerp(
+            scheme.surfaceContainerHigh,
+            scheme.surfaceContainerHighest,
+            _pulse.value,
+          )!;
+          Widget bar(double width, double height) => Container(
+            width: width,
+            height: height,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(8),
+            ),
+          );
+          return Column(
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
+              for (var i = 0; i < 3; i++)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: SakuraCard(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          entry.reading,
-                          style: Theme.of(context).textTheme.bodyLarge
-                              ?.copyWith(
-                                color: Theme.of(context).colorScheme.primary,
-                              ),
-                        ),
-                        Text(
-                          entry.word,
-                          style: Theme.of(context).textTheme.headlineMedium
-                              ?.copyWith(fontWeight: FontWeight.w800),
-                        ),
+                        bar(48, 10),
+                        const SizedBox(height: 8),
+                        bar(90, 24),
+                        const SizedBox(height: 10),
+                        bar(double.infinity, 12),
                       ],
                     ),
                   ),
-                  DictionaryBookmark(entry: entry),
-                  const Icon(Icons.chevron_right),
-                ],
-              ),
-              const SizedBox(height: 8),
-              DictionaryTags(entry: entry),
-              if (entry.senses.isNotEmpty) ...[
-                const SizedBox(height: 8),
-                Text(
-                  dictionaryStrings(
-                    entry.senses.first['parts_of_speech'],
-                  ).join(' • '),
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              ],
-              Text(entry.summary),
-              if (entry.senses.length > 1)
-                Text(
-                  '+${entry.senses.length - 1} makna lainnya'.localized(
-                    context,
-                  ),
-                  style: Theme.of(context).textTheme.bodySmall,
                 ),
             ],
-          ),
-        ),
+          );
+        },
       ),
     );
   }

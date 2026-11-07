@@ -1,0 +1,651 @@
+{
+ "level": "NAT",
+ "paper": 10,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "父は[[仕事]]で東京へ行きました。",
+   "choices": [
+    "しごと",
+    "しこと",
+    "じごと",
+    "ししごと"
+   ],
+   "explanation": "仕事（しごと） berarti pekerjaan.",
+   "explanationEn": "仕事（しごと） means work."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "新しい[[時計]]を買いました。",
+   "choices": [
+    "とけい",
+    "じけい",
+    "とげい",
+    "ときけい"
+   ],
+   "explanation": "時計（とけい） berarti jam.",
+   "explanationEn": "時計（とけい） means clock or watch."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私の[[趣味]]は写真です。",
+   "choices": [
+    "しゅみ",
+    "しゅうみ",
+    "しょみ",
+    "じゅみ"
+   ],
+   "explanation": "趣味（しゅみ） berarti hobi.",
+   "explanationEn": "趣味（しゅみ） means hobby."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日曜日に[[映画館]]へ行きます。",
+   "choices": [
+    "えいがかん",
+    "えいがくかん",
+    "えいかかん",
+    "えがかん"
+   ],
+   "explanation": "映画館（えいがかん） berarti bioskop.",
+   "explanationEn": "映画館（えいがかん） means movie theater."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "毎日、ピアノを[[練習]]します。",
+   "choices": [
+    "れんしゅう",
+    "れんしょう",
+    "れんしゅ",
+    "りんしゅう"
+   ],
+   "explanation": "練習（れんしゅう） berarti latihan.",
+   "explanationEn": "練習（れんしゅう） means practice."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "来週、[[試験]]があります。",
+   "choices": [
+    "しけん",
+    "しげん",
+    "しこん",
+    "じけん"
+   ],
+   "explanation": "試験（しけん） berarti ujian.",
+   "explanationEn": "試験（しけん） means exam."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "今日は[[天気]]がいいです。",
+   "choices": [
+    "てんき",
+    "でんき",
+    "てんぎ",
+    "てんけ"
+   ],
+   "explanation": "天気（てんき） berarti cuaca.",
+   "explanationEn": "天気（てんき） means weather."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[夏休み]]に海へ行きます。",
+   "choices": [
+    "なつやすみ",
+    "なつきゅうみ",
+    "かやすみ",
+    "なつやすめ"
+   ],
+   "explanation": "夏休み（なつやすみ） berarti liburan musim panas.",
+   "explanationEn": "夏休み（なつやすみ） means summer vacation."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[銀行]]でお金をおろしました。",
+   "choices": [
+    "ぎんこう",
+    "ぎんごう",
+    "きんこう",
+    "ぎんぎょう"
+   ],
+   "explanation": "銀行（ぎんこう） berarti bank.",
+   "explanationEn": "銀行（ぎんこう） means bank."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[毎週]]月曜日に日本語を習います。",
+   "choices": [
+    "まいしゅう",
+    "まいしゅ",
+    "まいじゅう",
+    "まいしょう"
+   ],
+   "explanation": "毎週（まいしゅう） berarti setiap minggu.",
+   "explanationEn": "毎週（まいしゅう） means every week."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日本語の（　）が来週あります。",
+   "choices": [
+    "テスト",
+    "ボタン",
+    "ふとん",
+    "ストーブ"
+   ],
+   "explanation": "テストがある berarti ada ujian.",
+   "explanationEn": "テストがある means there is a test."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "サッカーの（　）を見に行きます。",
+   "choices": [
+    "試合",
+    "辞書",
+    "地図",
+    "財布"
+   ],
+   "explanation": "サッカーの試合 berarti pertandingan sepak bola.",
+   "explanationEn": "サッカーの試合 means a soccer match."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "今日は仕事が（　）、帰りが遅くなりました。",
+   "choices": [
+    "忙しくて",
+    "低くて",
+    "丸くて",
+    "弱くて"
+   ],
+   "explanation": "仕事が忙しい berarti pekerjaan sibuk.",
+   "explanationEn": "仕事が忙しい means work is busy."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この仕事は、まだはじめた（　）なので、よく分かりません。",
+   "choices": [
+    "ばかり",
+    "ほど",
+    "だけ",
+    "まで"
+   ],
+   "explanation": "V＋たばかり berarti baru saja ～ (はじめたばかり).",
+   "explanationEn": "V＋たばかり means just ～ (はじめたばかり)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "銀行でお金を（　）。",
+   "choices": [
+    "おろしました",
+    "ひろいました",
+    "たべました",
+    "ならいました"
+   ],
+   "explanation": "お金をおろす berarti menarik uang.",
+   "explanationEn": "お金をおろす means to withdraw money."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "雨なので、かさを（　）ほうがいいです。",
+   "choices": [
+    "持った",
+    "脱いだ",
+    "売った",
+    "読んだ"
+   ],
+   "explanation": "かさを持ったほうがいい berarti sebaiknya bawa payung.",
+   "explanationEn": "かさを持ったほうがいい means you had better carry an umbrella."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会議は午後三時に（　）。",
+   "choices": [
+    "はじまります",
+    "つかれます",
+    "しまります",
+    "おぼえます"
+   ],
+   "explanation": "会議がはじまる berarti rapat dimulai.",
+   "explanationEn": "会議がはじまる means the meeting begins."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "夏休みに、友達と山へ（　）に行きました。",
+   "choices": [
+    "登り",
+    "洗い",
+    "歌い",
+    "貸し"
+   ],
+   "explanation": "山へ登りに行く berarti pergi mendaki gunung.",
+   "explanationEn": "山へ登りに行く means to go climbing a mountain."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "仕事のあとで、会社の人と（　）に行きます。",
+   "choices": [
+    "食事",
+    "着物",
+    "机",
+    "辞書"
+   ],
+   "explanation": "食事に行く berarti pergi makan.",
+   "explanationEn": "食事に行く means to go out to eat."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "明日は天気がよいので、（　）をします。",
+   "choices": [
+    "ピクニック",
+    "ベッド",
+    "テーブル",
+    "ストーブ"
+   ],
+   "explanation": "天気がよい hari cocok untuk ピクニック.",
+   "explanationEn": "On a nice day, ピクニック (picnic) fits."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "週末は、スポーツセンターで（　）。",
+   "choices": [
+    "泳ぎます",
+    "切ります",
+    "降ります",
+    "貸します"
+   ],
+   "explanation": "スポーツセンターで泳ぐ berarti berenang di pusat olahraga.",
+   "explanationEn": "泳ぐ at a sports center means swimming."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私は音楽を聞き（　）、勉強します。",
+   "choices": [
+    "ながら",
+    "まえ",
+    "あと",
+    "より"
+   ],
+   "explanation": "V連用形＋ながら berarti sambil (聞きながら勉強する).",
+   "explanationEn": "Verb stem + ながら means while (聞きながら勉強する)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "来月から、毎日運動する（　）しました。",
+   "choices": [
+    "ことに",
+    "ために",
+    "そうに",
+    "ところに"
+   ],
+   "explanation": "～ことにしました berarti memutuskan untuk ～.",
+   "explanationEn": "～ことにしました means decided to ～."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この漢字は何と（　）か。",
+   "choices": [
+    "読み",
+    "読んで",
+    "読めば",
+    "読もう"
+   ],
+   "explanation": "Bentuk sopan ますか: 読みますか menanyakan cara baca.",
+   "explanationEn": "Polite 読みますか asks how to read it."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "毎週日曜日（　）、友達とテニスをします。",
+   "choices": [
+    "に",
+    "を",
+    "が",
+    "で"
+   ],
+   "explanation": "に menandai hari tertentu (日曜日に).",
+   "explanationEn": "に marks a specific day (日曜日に)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "もう宿題を出し（　）か。",
+   "choices": [
+    "ました",
+    "ません",
+    "たいです",
+    "ましょう"
+   ],
+   "explanation": "もう～ましたか menanyakan apakah sudah ～.",
+   "explanationEn": "もう～ましたか asks whether it has already been done."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "テストが終わったら、いっしょに遊び（　）。",
+   "choices": [
+    "ましょう",
+    "ました",
+    "ません",
+    "ています"
+   ],
+   "explanation": "～ましょう digunakan untuk mengajak (遊びましょう).",
+   "explanationEn": "～ましょう is used to invite (遊びましょう)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この仕事は、田中さん（　）できません。",
+   "choices": [
+    "しか",
+    "だけ",
+    "まで",
+    "ばかり"
+   ],
+   "explanation": "しか＋negatif berarti hanya (田中さんしかできません).",
+   "explanationEn": "しか + negative means only (田中さんしかできません)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日本に来て（　）三か月になります。",
+   "choices": [
+    "から",
+    "まで",
+    "ので",
+    "ばかり"
+   ],
+   "explanation": "V＋てから berarti sejak ～ (来てから三か月).",
+   "explanationEn": "V＋てから means since ～ (来てから三か月)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ケンさんは日本語（　）、中国語も話せます。",
+   "choices": [
+    "だけでなく",
+    "だけに",
+    "だけで",
+    "だけど"
+   ],
+   "explanation": "AだけでなくBも berarti bukan hanya A tetapi juga B.",
+   "explanationEn": "AだけでなくBも means not only A but also B."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "かぎをかけ（　）、出かけました。",
+   "choices": [
+    "て",
+    "た",
+    "ます",
+    "ない"
+   ],
+   "explanation": "V＋て menyambung dua tindakan (かけて出かけました).",
+   "explanationEn": "V＋て links two actions (かけて出かけました)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この仕事は（　）むずかしくありません。",
+   "choices": [
+    "あまり",
+    "とても",
+    "いつも",
+    "たくさん"
+   ],
+   "explanation": "あまり＋negatif berarti tidak begitu.",
+   "explanationEn": "あまり + negative means not very."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日本語で手紙が書ける（　）になりました。",
+   "choices": [
+    "よう",
+    "こと",
+    "ため",
+    "はず"
+   ],
+   "explanation": "V＋ようになる berarti menjadi bisa ～.",
+   "explanationEn": "V＋ようになる means come to be able to ～."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この公園は、春（　）なると、桜がきれいです。",
+   "choices": [
+    "に",
+    "が",
+    "を",
+    "で"
+   ],
+   "explanation": "春になる berarti menjadi musim semi.",
+   "explanationEn": "春になる means spring arrives."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生は、毎朝六時に起きる（　）です。",
+   "choices": [
+    "そう",
+    "よう",
+    "つもり",
+    "はず"
+   ],
+   "explanation": "V＋そうです (hearsay) berarti katanya ～ (起きるそうです).",
+   "explanationEn": "V＋そうです (hearsay) means I hear that ～ (起きるそうです)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "きれいな花が（　）います。",
+   "choices": [
+    "さいて",
+    "さかせて",
+    "さく",
+    "さけ"
+   ],
+   "explanation": "花がさいている berarti bunga sedang mekar.",
+   "explanationEn": "花がさいている means flowers are in bloom."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "雨が降って（　）、試合は行います。",
+   "choices": [
+    "いても",
+    "いるまで",
+    "いるより",
+    "いるだけ"
+   ],
+   "explanation": "～ても berarti meskipun ～ (降っていても).",
+   "explanationEn": "～ても means even if ～ (降っていても)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "駅から遠い（　）、毎日歩いて通っています。",
+   "choices": [
+    "けれども",
+    "ようで",
+    "ほど",
+    "ぐらい"
+   ],
+   "explanation": "けれども menyatakan pertentangan (遠いけれども歩く).",
+   "explanationEn": "けれども expresses contrast (遠いけれども歩く)."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "会社からのお知らせ。来週の月曜日は、会社の創立記念日で休みです。火曜日から、いつもどおり九時に始まります。月曜日に出す書類は、金曜日までに出してください。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "月曜日は会社が休みです。",
+    "火曜日は十時に始まります。",
+    "書類は月曜日に出します。",
+    "金曜日は休みです。"
+   ],
+   "explanation": "Pengumuman kantor: Senin libur hari jadi perusahaan.",
+   "explanationEn": "Company notice: closed Monday for the anniversary."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "マリアさんへ。今度の土曜日、映画を見に行きませんか。駅前の映画館で、二時からです。四時に終わるので、そのあと、お茶を飲みましょう。返事を待っています。ケン",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "映画のあとで、お茶を飲む予定です。",
+    "映画は四時に始まります。",
+    "映画館は家の前にあります。",
+    "マリアさんが誘いました。"
+   ],
+   "explanation": "Ajakan Ken: minum teh setelah film.",
+   "explanationEn": "Ken's invitation: tea after the movie."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "今日は、はじめてマラソンに出ました。十キロ走るのは大変でしたが、友達が応援してくれました。一時間十分で走ることができました。うれしかったです。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "十キロを一時間十分で走りました。",
+    "友達は一緒に走りました。",
+    "十キロは簡単でした。",
+    "二回目のマラソンでした。"
+   ],
+   "explanation": "Buku harian maraton: sepuluh kilometer dalam 1 jam 10 menit.",
+   "explanationEn": "Marathon diary: ten kilometers in 1 hour 10 minutes."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "日本語クラス。月曜日と水曜日は午後六時から八時まで。金曜日は午後七時から九時まで。先生は月曜日が田中先生、水曜日と金曜日が山田先生です。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "金曜日は山田先生のクラスがあります。",
+    "水曜日は田中先生です。",
+    "月曜日は七時に始まります。",
+    "クラスは毎日あります。"
+   ],
+   "explanation": "Jadwal kelas: Jumat diajar Bu/Pak Yamada.",
+   "explanationEn": "Class schedule: Yamada sensei teaches on Friday."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "明日の天気。午前は晴れですが、午後からくもりになります。夜は雨が降るでしょう。気温は朝が十二度、昼が十八度です。出かけるときは、かさを持って行ってください。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "夜は雨が降りそうです。",
+    "午前から雨です。",
+    "昼は十二度です。",
+    "一日じゅう晴れです。"
+   ],
+   "explanation": "Ramalan cuaca: malam hari kemungkinan hujan.",
+   "explanationEn": "Forecast: rain is likely at night."
+  }
+ ]
+}

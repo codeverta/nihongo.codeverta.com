@@ -1,0 +1,651 @@
+{
+ "level": "NAT",
+ "paper": 6,
+ "items": [
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[図書館]]で本を借りました。",
+   "choices": [
+    "としょかん",
+    "とうしょかん",
+    "ずしょかん",
+    "としょうかん"
+   ],
+   "explanation": "図書館（としょかん） berarti perpustakaan.",
+   "explanationEn": "図書館（としょかん） means library."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[春]]になると、花がさきます。",
+   "choices": [
+    "はる",
+    "なつ",
+    "あき",
+    "ふゆ"
+   ],
+   "explanation": "春（はる） berarti musim semi.",
+   "explanationEn": "春（はる） means spring."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[電話]]ばんごうを教えてください。",
+   "choices": [
+    "でんわ",
+    "てんわ",
+    "でんは",
+    "でんぱ"
+   ],
+   "explanation": "電話（でんわ） berarti telepon.",
+   "explanationEn": "電話（でんわ） means telephone."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[新聞]]を毎朝読みます。",
+   "choices": [
+    "しんぶん",
+    "しんもん",
+    "しんぶ",
+    "しんぷん"
+   ],
+   "explanation": "新聞（しんぶん） berarti koran.",
+   "explanationEn": "新聞（しんぶん） means newspaper."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[会社]]まで電車で行きます。",
+   "choices": [
+    "かいしゃ",
+    "かいじゃ",
+    "がいしゃ",
+    "かいしょ"
+   ],
+   "explanation": "会社（かいしゃ） berarti perusahaan.",
+   "explanationEn": "会社（かいしゃ） means company."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この[[荷物]]は重いです。",
+   "choices": [
+    "にもつ",
+    "かもつ",
+    "にぶつ",
+    "にもち"
+   ],
+   "explanation": "荷物（にもつ） berarti barang bawaan.",
+   "explanationEn": "荷物（にもつ） means luggage."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[午後]]は雨になるそうです。",
+   "choices": [
+    "ごご",
+    "ごこ",
+    "ごうご",
+    "こご"
+   ],
+   "explanation": "午後（ごご） berarti siang sore (PM).",
+   "explanationEn": "午後（ごご） means afternoon."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[歌]]がじょうずな人です。",
+   "choices": [
+    "うた",
+    "うだ",
+    "かた",
+    "うと"
+   ],
+   "explanation": "歌（うた） berarti lagu.",
+   "explanationEn": "歌（うた） means song."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[兄]]は大学生です。",
+   "choices": [
+    "あに",
+    "あね",
+    "おじ",
+    "いもうと"
+   ],
+   "explanation": "兄（あに） berarti kakak laki-laki sendiri.",
+   "explanationEn": "兄（あに） means one's own older brother."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "[[海]]で泳ぎました。",
+   "choices": [
+    "うみ",
+    "うめ",
+    "うま",
+    "あみ"
+   ],
+   "explanation": "海（うみ） berarti laut.",
+   "explanationEn": "海（うみ） means sea."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "のどがかわいたので、冷たい（　）を飲みました。",
+   "choices": [
+    "水",
+    "紙",
+    "木",
+    "本"
+   ],
+   "explanation": "冷たい水を飲む: air dingin diminum (水).",
+   "explanationEn": "You drink cold water (水)."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日曜日は会社が（　）です。",
+   "choices": [
+    "休み",
+    "安い",
+    "近い",
+    "少ない"
+   ],
+   "explanation": "会社が休み berarti kantor libur.",
+   "explanationEn": "会社が休み means the office is closed."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "かさを（　）、出かけました。",
+   "choices": [
+    "持って",
+    "食べて",
+    "着て",
+    "読んで"
+   ],
+   "explanation": "かさを持つ berarti membawa payung.",
+   "explanationEn": "かさを持つ means to carry an umbrella."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この本はとても（　）ので、一日で読みました。",
+   "choices": [
+    "おもしろい",
+    "あかるい",
+    "せまい",
+    "あぶない"
+   ],
+   "explanation": "おもしろい berarti menarik, alasan membaca cepat.",
+   "explanationEn": "おもしろい means interesting, the reason for reading fast."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "子どもが（　）をひいて、学校を休みました。",
+   "choices": [
+    "かぜ",
+    "くすり",
+    "いす",
+    "はな"
+   ],
+   "explanation": "かぜをひく berarti masuk angin.",
+   "explanationEn": "かぜをひく means to catch a cold."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ここにお名前を（　）ください。",
+   "choices": [
+    "書いて",
+    "聞いて",
+    "立って",
+    "走って"
+   ],
+   "explanation": "名前を書く berarti menulis nama.",
+   "explanationEn": "名前を書く means to write one's name."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "部屋が（　）ので、そうじをしました。",
+   "choices": [
+    "きたない",
+    "おいしい",
+    "ひろい",
+    "つよい"
+   ],
+   "explanation": "きたない berarti kotor, maka dibersihkan.",
+   "explanationEn": "きたない means dirty, hence cleaning."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "毎晩、十一時に（　）。",
+   "choices": [
+    "ねます",
+    "はしります",
+    "おぼえます",
+    "すみます"
+   ],
+   "explanation": "十一時にねます berarti tidur jam sebelas.",
+   "explanationEn": "十一時にねます means going to bed at eleven."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "レストランで、メニューを見て料理を（　）。",
+   "choices": [
+    "注文しました",
+    "借りました",
+    "遊びました",
+    "働きました"
+   ],
+   "explanation": "料理を注文する berarti memesan makanan.",
+   "explanationEn": "料理を注文する means to order food."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "このカメラは（　）ですが、写真がきれいです。",
+   "choices": [
+    "高い",
+    "青い",
+    "長い",
+    "太い"
+   ],
+   "explanation": "カメラが高い berarti kamera mahal.",
+   "explanationEn": "カメラが高い means the camera is expensive."
+  },
+  {
+   "section": "vocabulary",
+   "group": "文字・語彙 問題 · Kosakata & Kanji",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "駅の（　）で友達を待っています。",
+   "choices": [
+    "前",
+    "昨日",
+    "去年",
+    "毎日"
+   ],
+   "explanation": "駅の前 berarti di depan stasiun.",
+   "explanationEn": "駅の前 means in front of the station."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "兄は私（　）背が高いです。",
+   "choices": [
+    "より",
+    "だけ",
+    "まで",
+    "ほど"
+   ],
+   "explanation": "AはBより～ menyatakan perbandingan: 私より背が高い.",
+   "explanationEn": "AはBより～ expresses comparison: 私より背が高い."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "机の上に本が三（　）あります。",
+   "choices": [
+    "冊",
+    "枚",
+    "台",
+    "本"
+   ],
+   "explanation": "冊 adalah penggolong buku.",
+   "explanationEn": "冊 is the counter for books."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生、質問（　）いいですか。",
+   "choices": [
+    "しても",
+    "しては",
+    "すると",
+    "したら"
+   ],
+   "explanation": "～てもいいですか berarti bolehkah ～ (質問してもいい).",
+   "explanationEn": "～てもいいですか asks for permission (質問してもいい)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "毎日、十分（　）歩きます。",
+   "choices": [
+    "ぐらい",
+    "ごろ",
+    "から",
+    "でも"
+   ],
+   "explanation": "十分ぐらい menyatakan perkiraan lama waktu.",
+   "explanationEn": "十分ぐらい states an approximate duration."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "友達に手紙（　）書きました。",
+   "choices": [
+    "を",
+    "が",
+    "の",
+    "へ"
+   ],
+   "explanation": "手紙を書く: を menandai objek.",
+   "explanationEn": "手紙を書く: を marks the object."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "いっしょに昼ご飯を（　）。",
+   "choices": [
+    "食べましょう",
+    "食べました",
+    "食べません",
+    "食べています"
+   ],
+   "explanation": "～ましょう digunakan untuk mengajak (食べましょう).",
+   "explanationEn": "～ましょう is used to invite (食べましょう)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "昨日は雨（　）、出かけませんでした。",
+   "choices": [
+    "でしたから",
+    "ですから",
+    "だから",
+    "でしょうから"
+   ],
+   "explanation": "Alasan lampau: 雨でしたから.",
+   "explanationEn": "Past reason: 雨でしたから."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "ここで写真を撮（　）はいけません。",
+   "choices": [
+    "って",
+    "ない",
+    "る",
+    "た"
+   ],
+   "explanation": "～てはいけません berarti dilarang (撮ってはいけません).",
+   "explanationEn": "～てはいけません means must not (撮ってはいけません)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "（　）は誰のかばんですか。",
+   "choices": [
+    "これ",
+    "この",
+    "あの",
+    "その"
+   ],
+   "explanation": "これ adalah kata benda penunjuk sendiri; この harus diikuti nomina.",
+   "explanationEn": "これ is a standalone demonstrative; この needs a noun."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "わたしは犬が好き（　）、ねこはあまり好きじゃありません。",
+   "choices": [
+    "ですが",
+    "ですから",
+    "ですと",
+    "ですも"
+   ],
+   "explanation": "ですが menyatakan pertentangan.",
+   "explanationEn": "ですが expresses contrast."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "テレビを見（　）、ご飯を食べます。",
+   "choices": [
+    "ながら",
+    "まえ",
+    "あと",
+    "ので"
+   ],
+   "explanation": "V＋ながら berarti sambil (見ながら).",
+   "explanationEn": "V＋ながら means while (見ながら)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "日本語を勉強し（　）、日本に来ました。",
+   "choices": [
+    "に",
+    "で",
+    "と",
+    "を"
+   ],
+   "explanation": "V連用形＋に来る menyatakan tujuan datang (勉強しに来ました).",
+   "explanationEn": "Verb stem + に来る states purpose (勉強しに来ました)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私は、この夏、北海道へ行く（　）です。",
+   "choices": [
+    "つもり",
+    "はず",
+    "ところ",
+    "よう"
+   ],
+   "explanation": "V辞書形＋つもり menyatakan rencana sendiri.",
+   "explanationEn": "Dictionary form + つもり states one's own plan."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "まだ宿題が終わって（　）。",
+   "choices": [
+    "いません",
+    "いました",
+    "います",
+    "ありません"
+   ],
+   "explanation": "まだ～ていません berarti belum ～ (終わっていません).",
+   "explanationEn": "まだ～ていません means not yet (終わっていません)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "パンを買（　）、スーパーへ行きました。",
+   "choices": [
+    "いに",
+    "いて",
+    "いた",
+    "います"
+   ],
+   "explanation": "V連用形＋に行く menyatakan tujuan pergi (買いに行く).",
+   "explanationEn": "Verb stem + に行く states purpose (買いに行く)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この部屋は静か（　）、きれいです。",
+   "choices": [
+    "で",
+    "に",
+    "く",
+    "の"
+   ],
+   "explanation": "Na-adjektiva disambung dengan で (静かで).",
+   "explanationEn": "Na-adjectives connect with で (静かで)."
+  },
+  {
+   "section": "grammar",
+   "group": "文法 問題1 · Grammar & Reading",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "今日は会社を（　）。熱がありますから。",
+   "choices": [
+    "休みたいです",
+    "休みたくです",
+    "休みたいます",
+    "休むたいです"
+   ],
+   "explanation": "V連用形＋たいです berarti ingin ～ (休みたいです).",
+   "explanationEn": "Verb stem + たいです means want to (休みたいです)."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "プールのお知らせ。月曜日から金曜日は朝九時から夜八時まで使えます。土曜日と日曜日は朝十時から夕方五時までです。水曜日は休みです。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "水曜日はプールを使えません。",
+    "日曜日は夜八時まで使えます。",
+    "土曜日は九時に開きます。",
+    "月曜日は休みです。"
+   ],
+   "explanation": "Pengumuman kolam: hari Rabu libur.",
+   "explanationEn": "Pool notice: it is closed on Wednesday."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "ゆきさんへ。明日のテニスは、雨が降ったら、中止です。朝七時にわたしから電話をします。電話がなかったら、駅の前に九時に来てください。ひろし",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "電話がなかったら、九時に駅の前へ行きます。",
+    "雨が降っても、テニスをします。",
+    "ゆきさんがひろしさんに電話します。",
+    "ひろしさんは朝九時に電話します。"
+   ],
+   "explanation": "Pesan tenis Yuki: tanpa telepon, datang ke depan stasiun jam sembilan.",
+   "explanationEn": "Tennis message: if there is no call, go to the station front at nine."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "今日は友達の誕生日でした。デパートでくつ下を買いました。赤くて、あたたかいくつ下です。友達はとてもよろこびました。夜は、みんなでケーキを食べました。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "友達にくつ下をあげました。",
+    "友達はくつ下を買いました。",
+    "くつ下は青くて小さいです。",
+    "昼にケーキを食べました。"
+   ],
+   "explanation": "Buku harian ulang tahun: kaus kaki diberikan kepada teman.",
+   "explanationEn": "Birthday diary: socks were given to the friend."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "バスは駅前から八時、八時三十分、九時に出ます。学校まで十五分かかります。八時三十分のバスに乗ると、八時四十五分に学校に着きます。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "八時三十分のバスは八時四十五分に学校に着きます。",
+    "九時のバスは九時五分に着きます。",
+    "学校まで三十分かかります。",
+    "バスは八時に学校を出ます。"
+   ],
+   "explanation": "Jadwal bus sekolah: bus 8.30 tiba 8.45.",
+   "explanationEn": "School bus timetable: the 8:30 bus arrives at 8:45."
+  },
+  {
+   "section": "grammar",
+   "group": "読解 問題 · Bacaan dan informasi",
+   "instructions": "次の文章を読んで、質問に答えてください。",
+   "passage": "私の家の近くに、小さいパン屋があります。毎朝七時に開きます。サンドイッチが人気で、昼までに売り切れます。私は日曜日の朝によく買いに行きます。",
+   "prompt": "文章の内容と合っているものはどれですか。",
+   "choices": [
+    "サンドイッチは昼の前に全部売れます。",
+    "パン屋は夜七時に開きます。",
+    "パン屋は家から遠いです。",
+    "毎日の昼にサンドイッチを買います。"
+   ],
+   "explanation": "Toko roti kecil: sandwich habis sebelum siang.",
+   "explanationEn": "Small bakery: sandwiches sell out before noon."
+  }
+ ]
+}

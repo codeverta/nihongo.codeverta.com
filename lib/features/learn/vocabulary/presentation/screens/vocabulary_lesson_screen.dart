@@ -111,7 +111,7 @@ class _QuizStage extends ConsumerWidget {
                       url: question.imageUrl,
                       panel: question.imagePanel,
                       description: question.imageDescription,
-                      aspectRatio: 1.6,
+                      aspectRatio: 1,
                     ),
                   ),
                 const SizedBox(height: 14),

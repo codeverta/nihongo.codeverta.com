@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	_ "embed"
 	"encoding/json"
 	"fmt"
@@ -108,13 +107,12 @@ func (s *Server) registerNotifications(mux *http.ServeMux) {
 			w.Write([]byte(html))
 		}
 	}
-	mux.HandleFunc("GET /admin/{$}", page(adminHomeHTML))
 	mux.HandleFunc("GET /admin/notifications", page(notificationsAdminHTML))
 	auth := func(next http.HandlerFunc) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Cache-Control", "no-store")
 			n := s.notifications
-			if n.token == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(n.token)) != 1 {
+			if !adminRequestAuthorized(r, n.token) {
 				writeError(w, 401, "unauthorized", "Kunci admin salah atau belum diatur di server.")
 				return
 			}

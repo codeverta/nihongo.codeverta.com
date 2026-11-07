@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_a.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_b.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_c.dart';
+import 'package:nihongo_master/core/localization/ui_english_redesign.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_core.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_exam.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_learn.dart';
@@ -283,7 +284,8 @@ class AppLocalizations {
         ankiEnglishCopyC[source] ??
         uiEnglishWave1Core[source] ??
         uiEnglishWave1Learn[source] ??
-        uiEnglishWave1Exam[source];
+        uiEnglishWave1Exam[source] ??
+        uiEnglishRedesign[source];
     if (exact != null) return exact;
 
     final learningCourseStats = RegExp(
@@ -957,6 +959,8 @@ const _englishCopy = <String, String>{
       'Start with a word you want to understand.',
   'Mulai Exam': 'Start Exam',
   'Nihongo Master': 'Nihongo Master',
+  'Semua materi N5–N1 gratis. Masuk untuk mulai belajar.':
+      'All N5–N1 materials are free. Sign in to start learning.',
   'N5–N4 gratis. Materi N3–N1 memerlukan Lifetime Access.':
       'N5–N4 are free. N3–N1 materials require Lifetime Access.',
   'Notifikasi': 'Notifications',

@@ -5,7 +5,6 @@ import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
-import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
 
@@ -106,15 +105,6 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                           label: Text(item),
                           selected: item == level,
                           onSelected: (_) {
-                            if (const ['N3', 'N2', 'N1'].contains(item) &&
-                                !(ref
-                                        .read(authControllerProvider)
-                                        .user
-                                        ?.isPremium ??
-                                    false)) {
-                              context.push('/premium');
-                              return;
-                            }
                             setState(() {
                               level = item;
                               query = '';

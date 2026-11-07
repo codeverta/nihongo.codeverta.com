@@ -119,8 +119,9 @@ class SswAssessmentPanel extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Practice and simulations are open to every signed-in account.
     final premium = ref.watch(
-      authControllerProvider.select((s) => s.user?.isPremium ?? false),
+      authControllerProvider.select((s) => s.isAuthenticated),
     );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

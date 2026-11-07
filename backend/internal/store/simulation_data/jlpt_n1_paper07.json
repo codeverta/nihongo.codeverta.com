@@ -1,0 +1,966 @@
+{
+ "level": "N1",
+ "paper": 7,
+ "items": [
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「公平」という[[概念]]は、国や時代によって異なる。",
+   "choices": [
+    "がいねん",
+    "かいねん",
+    "がいれん",
+    "がんねん"
+   ],
+   "explanation": "概念（がいねん） berarti konsep.",
+   "explanationEn": "概念（がいねん） means concept."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "会社の機密情報が外部に[[漏洩]]した。",
+   "choices": [
+    "ろうえい",
+    "ろうせい",
+    "ろうえき",
+    "ろえい"
+   ],
+   "explanation": "漏洩（ろうえい） berarti kebocoran.",
+   "explanationEn": "漏洩（ろうえい） means leakage."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この地方では、山を神として[[崇めて]]きた。",
+   "choices": [
+    "あがめて",
+    "あおめて",
+    "たとめて",
+    "うやまめて"
+   ],
+   "explanation": "崇める（あがめる） berarti memuja.",
+   "explanationEn": "崇める（あがめる） means to revere."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "リスは、冬に備えて木の実を[[蓄える]]。",
+   "choices": [
+    "たくわえる",
+    "ためえる",
+    "ちくえる",
+    "かこえる"
+   ],
+   "explanation": "蓄える（たくわえる） berarti menimbun.",
+   "explanationEn": "蓄える（たくわえる） means to store up."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この地域では、茶の[[栽培]]が盛んだ。",
+   "choices": [
+    "さいばい",
+    "ざいばい",
+    "さいはい",
+    "せいばい"
+   ],
+   "explanation": "栽培（さいばい） berarti budidaya.",
+   "explanationEn": "栽培（さいばい） means cultivation."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "お互いに少しずつ[[妥協]]して、合意に至った。",
+   "choices": [
+    "だきょう",
+    "たきょう",
+    "だっきょう",
+    "だこう"
+   ],
+   "explanation": "妥協（だきょう） berarti kompromi.",
+   "explanationEn": "妥協（だきょう） means compromise."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は[[滅多]]に人前で怒らない。",
+   "choices": [
+    "めった",
+    "めつた",
+    "めんた",
+    "ほろた"
+   ],
+   "explanation": "滅多に～ない berarti jarang sekali.",
+   "explanationEn": "滅多に～ない means hardly ever."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題1 · 漢字の読み",
+   "instructions": "＿＿の言葉はどう読みますか。いちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "住民は、工場の汚染に[[憤って]]いる。",
+   "choices": [
+    "いきどおって",
+    "いきどって",
+    "ふんって",
+    "おこどおって"
+   ],
+   "explanation": "憤る（いきどおる） berarti marah geram.",
+   "explanationEn": "憤る（いきどおる） means to be indignant."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は新しい職場にすぐに（　）、友達もたくさんできた。",
+   "choices": [
+    "なじんで",
+    "ひそんで",
+    "まぎれて",
+    "かたよって"
+   ],
+   "explanation": "環境になじむ berarti menyesuaikan diri.",
+   "explanationEn": "環境になじむ means to blend into an environment."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "国民の負担を（　）ために、政府は新たな補助金を設けた。",
+   "choices": [
+    "軽減する",
+    "増幅する",
+    "拡張する",
+    "抑圧する"
+   ],
+   "explanation": "負担を軽減する berarti meringankan beban.",
+   "explanationEn": "負担を軽減する means to lighten the burden."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "会議では、各部署の意見が（　）、なかなか結論が出なかった。",
+   "choices": [
+    "食い違って",
+    "行き届いて",
+    "見合わせて",
+    "差し引いて"
+   ],
+   "explanation": "意見が食い違う berarti pendapat berbeda.",
+   "explanationEn": "意見が食い違う means opinions conflict."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の功績は、（　）語り継がれるだろう。",
+   "choices": [
+    "末永く",
+    "手短に",
+    "唐突に",
+    "微かに"
+   ],
+   "explanation": "末永く語り継がれる berarti dikenang sepanjang masa.",
+   "explanationEn": "末永く語り継がれる means to be passed on for ages."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "両国の間には、長年にわたる（　）がある。",
+   "choices": [
+    "軋轢",
+    "軌跡",
+    "戦績",
+    "刺激"
+   ],
+   "explanation": "軋轢（あつれき） berarti gesekan.",
+   "explanationEn": "軋轢（あつれき） means friction or discord."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題2 · 文脈規定",
+   "instructions": "（　）に入るいちばんよい言葉を一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は借金の返済に（　）、仕事を二つかけもちしている。",
+   "choices": [
+    "追われて",
+    "備えて",
+    "乗じて",
+    "沿って"
+   ],
+   "explanation": "返済に追われる berarti dikejar cicilan.",
+   "explanationEn": "返済に追われる means to be pressed by repayment."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、預かった荷物を[[ぞんざいに]]扱った。",
+   "choices": [
+    "丁寧さがなく乱暴に",
+    "大切にそっと",
+    "時間をかけて慎重に",
+    "周りに気を配って"
+   ],
+   "explanation": "ぞんざいに berarti sembarangan.",
+   "explanationEn": "ぞんざいに means carelessly or roughly."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼は、[[かろうじて]]終電に間に合った。",
+   "choices": [
+    "やっとのことで",
+    "余裕をもって",
+    "予定より早く",
+    "計画どおりに"
+   ],
+   "explanation": "かろうじて berarti nyaris.",
+   "explanationEn": "かろうじて means barely."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼の提案には、[[いささか]]無理がある。",
+   "choices": [
+    "少し",
+    "非常に",
+    "まったく",
+    "当然"
+   ],
+   "explanation": "いささか berarti sedikit.",
+   "explanationEn": "いささか means somewhat."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "社長は、[[つとめて]]冷静に話した。",
+   "choices": [
+    "意識して努力して",
+    "偶然",
+    "怒りに任せて",
+    "仕方なく"
+   ],
+   "explanation": "つとめて berarti dengan sengaja berusaha.",
+   "explanationEn": "つとめて means making a conscious effort."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "弟は、難しい問題を[[たやすく]]解いた。",
+   "choices": [
+    "簡単に",
+    "苦労して",
+    "ゆっくりと",
+    "誰かに教わって"
+   ],
+   "explanation": "たやすく berarti dengan mudah.",
+   "explanationEn": "たやすく means easily."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題3 · 言い換え",
+   "instructions": "文の意味がいちばん近いものを一つ選んでください。",
+   "passage": "",
+   "prompt": "先生は、問題児の扱いに[[手を焼いて]]いる。",
+   "choices": [
+    "扱いに困って",
+    "熱心に指導して",
+    "優しく褒めて",
+    "完全に無視して"
+   ],
+   "explanation": "手を焼く berarti kewalahan menangani.",
+   "explanationEn": "手を焼く means to have a hard time handling."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「ほころびる」",
+   "choices": [
+    "桜のつぼみが、ほころび始めた。",
+    "川の水がほころびて、道があふれた。",
+    "彼は仕事をほころびて、帰ってしまった。",
+    "重い荷物がほころびて、持てなかった。"
+   ],
+   "explanation": "ほころびる berarti mulai mekar atau terurai.",
+   "explanationEn": "ほころびる means to begin to open or come undone."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「そそのかす」",
+   "choices": [
+    "悪い友人にそそのかされて、授業をさぼってしまった。",
+    "先生にそそのかされて、成績がぐんと上がった。",
+    "母に毎日そそのかされて、体にいい野菜を食べた。",
+    "子どもを優しくそそのかして、寝かしつけた。"
+   ],
+   "explanation": "そそのかす (N1 Paket 07) berarti menghasut orang berbuat buruk.",
+   "explanationEn": "そそのかす (N1 Paper 07) means to egg someone on to do wrong."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「きわどい」",
+   "choices": [
+    "きわどい判定で、試合の勝敗が決まった。",
+    "きわどい料理で、全員が満足した。",
+    "きわどい空が広がって、気持ちがよかった。",
+    "母ときわどい話をして、安心した。"
+   ],
+   "explanation": "きわどい berarti tipis dan berisiko.",
+   "explanationEn": "きわどい means close or borderline."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「いたずらに」",
+   "choices": [
+    "いたずらに時間を費やすだけで、何の成果もなかった。",
+    "いたずらに勉強して、見事に合格した。",
+    "いたずらに親切にして、みんなに感謝された。",
+    "毎日いたずらに運動して、健康になった。"
+   ],
+   "explanation": "いたずらに berarti sia-sia.",
+   "explanationEn": "いたずらに means in vain."
+  },
+  {
+   "section": "written",
+   "group": "文字・語彙 問題4 · 用法",
+   "instructions": "次の言葉の使い方として最もよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "「しのぐ」",
+   "choices": [
+    "暑さをしのぐために、木陰で休んだ。",
+    "友人の悪口をしのいで、仲直りした。",
+    "雨が止むのをしのいで、傘を買った。",
+    "本を三冊しのいで、図書館に返した。"
+   ],
+   "explanation": "しのぐ berarti bertahan menghadapi (panas, dingin).",
+   "explanationEn": "しのぐ means to endure or get through."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "言ってくれれば手伝った（　）、なぜ黙っていたのか。",
+   "choices": [
+    "ものを",
+    "ことに",
+    "ゆえに",
+    "だけあって"
+   ],
+   "explanation": "～ものを berarti padahal ～ (penyesalan).",
+   "explanationEn": "～ものを expresses regret: if only you had said."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "無理をして働いた（　）、体を壊してしまった。",
+   "choices": [
+    "あげく",
+    "うえに",
+    "につけ",
+    "ついでに"
+   ],
+   "explanation": "～あげく berarti setelah akhirnya (hasil buruk).",
+   "explanationEn": "～あげく means in the end, after ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "結果の（　）、参加者全員に記念品が贈られる。",
+   "choices": [
+    "いかんにかかわらず",
+    "ならではに",
+    "ごときに",
+    "たりとも"
+   ],
+   "explanation": "～いかんにかかわらず berarti apa pun ～.",
+   "explanationEn": "～いかんにかかわらず means regardless of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "子ども（　）、泣いてばかりいないで、自分で考えなさい。",
+   "choices": [
+    "じゃあるまいし",
+    "ともあって",
+    "ゆえに",
+    "だけに"
+   ],
+   "explanation": "～じゃあるまいし berarti bukan ～, jadi.",
+   "explanationEn": "～じゃあるまいし means you are not ～, so."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "私（　）が意見を述べるのは恐縮ですが、一言申し上げます。",
+   "choices": [
+    "ごとき",
+    "ばかり",
+    "なりに",
+    "ならでは"
+   ],
+   "explanation": "私ごとき berarti orang seperti saya (merendah).",
+   "explanationEn": "私ごとき is a humble \"someone like me\"."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "彼女は、何事もなかったか（　）、笑顔で現れた。",
+   "choices": [
+    "のごとく",
+    "のあまり",
+    "にして",
+    "ずくめ"
+   ],
+   "explanation": "～かのごとく berarti seolah-olah.",
+   "explanationEn": "～かのごとく means as if."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "予算が足りない（　）、計画は中止になった。",
+   "choices": [
+    "ばかりに",
+    "だけあって",
+    "からといって",
+    "ともなると"
+   ],
+   "explanation": "～ばかりに berarti hanya gara-gara.",
+   "explanationEn": "～ばかりに means just because of ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題1 · 文の文法",
+   "instructions": "（　）に入るいちばんよいものを一つ選んでください。",
+   "passage": "",
+   "prompt": "忙しくて、彼には結局会え（　）に終わった。",
+   "choices": [
+    "ずじまい",
+    "ずくめ",
+    "かたがた",
+    "ながらに"
+   ],
+   "explanation": "～ずじまい berarti berakhir tanpa.",
+   "explanationEn": "～ずじまい means ending up never ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "上司は ＿＿ ＿＿ ★ ＿＿ 笑って済ませた。",
+   "choices": [
+    "責める",
+    "部下の",
+    "失敗を",
+    "どころか"
+   ],
+   "explanation": "Urutan: 部下の 失敗を 責める どころか (alih-alih menyalahkan kegagalan bawahan). ★ slot ketiga, 責める.",
+   "explanationEn": "Order: 部下の 失敗を 責める どころか (far from blaming the subordinate's failure). ★ is the third slot, 責める."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "たとえ ＿＿ ＿＿ ★ ＿＿ 約束は守らなければならない。",
+   "choices": [
+    "なろう",
+    "都合が",
+    "悪く",
+    "とも"
+   ],
+   "explanation": "Urutan: 都合が 悪く なろう とも (sekalipun keadaan memburuk). ★ slot ketiga, なろう.",
+   "explanationEn": "Order: 都合が 悪く なろう とも (even if circumstances turn bad). ★ is the third slot, なろう."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題2 · 文の組み立て",
+   "instructions": "四つの言葉を並べて文を作ってください。★に入るものを一つ選んでください。",
+   "passage": "",
+   "prompt": "この小説は ＿＿ ＿＿ ★ ＿＿ 作品だ。",
+   "choices": [
+    "新しい",
+    "読む",
+    "たびに",
+    "発見がある"
+   ],
+   "explanation": "Urutan: 読む たびに 新しい 発見がある (setiap dibaca ada penemuan baru). ★ slot ketiga, 新しい.",
+   "explanationEn": "Order: 読む たびに 新しい 発見がある (a new discovery every time you read it). ★ is the third slot, 新しい."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "近年、天気予報の精度は大きく向上した。数日先の天気であれば、ほぼ正確に【46】ようになったと言っても過言ではない。これは、観測技術の進歩に加え、膨大なデータを高速で計算できるようになったためである。\nしかし、予報が当たることが当たり前になったことで、新たな問題も生じている。たとえば、大雨のおそれが示されていたのに、実際にはそれほど降らなかった場合、人々は「また空振りだった」と【47】ことがある。その結果、次に本当に危険な状況が予測されたときに、避難が遅れてしまうおそれがある。\n予報の精度が上がっても、それを受け取る側の判断が変わらなければ、命を守ることはできない。大切なのは、予報の数字を信じるか疑うかではなく、予報が示す「可能性」を【48】、自分の行動を決めることである。天気予報とは、未来を言い当てるものではなく、私たちが備える時間を与えてくれるものだ【49】。",
+   "prompt": "【46】",
+   "choices": [
+    "予測できる",
+    "予測しかねる",
+    "予測すべきでない",
+    "予測するに及ばない"
+   ],
+   "explanation": "～できるようになった berarti kini bisa ～.",
+   "explanationEn": "～できるようになった means has become able to ～."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "近年、天気予報の精度は大きく向上した。数日先の天気であれば、ほぼ正確に【46】ようになったと言っても過言ではない。これは、観測技術の進歩に加え、膨大なデータを高速で計算できるようになったためである。\nしかし、予報が当たることが当たり前になったことで、新たな問題も生じている。たとえば、大雨のおそれが示されていたのに、実際にはそれほど降らなかった場合、人々は「また空振りだった」と【47】ことがある。その結果、次に本当に危険な状況が予測されたときに、避難が遅れてしまうおそれがある。\n予報の精度が上がっても、それを受け取る側の判断が変わらなければ、命を守ることはできない。大切なのは、予報の数字を信じるか疑うかではなく、予報が示す「可能性」を【48】、自分の行動を決めることである。天気予報とは、未来を言い当てるものではなく、私たちが備える時間を与えてくれるものだ【49】。",
+   "prompt": "【47】",
+   "choices": [
+    "軽く受け止めてしまう",
+    "深く反省する",
+    "即座に避難する",
+    "気象台に感謝する"
+   ],
+   "explanation": "Orang cenderung menganggap enteng prakiraan yang meleset.",
+   "explanationEn": "People tend to take missed forecasts lightly."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "近年、天気予報の精度は大きく向上した。数日先の天気であれば、ほぼ正確に【46】ようになったと言っても過言ではない。これは、観測技術の進歩に加え、膨大なデータを高速で計算できるようになったためである。\nしかし、予報が当たることが当たり前になったことで、新たな問題も生じている。たとえば、大雨のおそれが示されていたのに、実際にはそれほど降らなかった場合、人々は「また空振りだった」と【47】ことがある。その結果、次に本当に危険な状況が予測されたときに、避難が遅れてしまうおそれがある。\n予報の精度が上がっても、それを受け取る側の判断が変わらなければ、命を守ることはできない。大切なのは、予報の数字を信じるか疑うかではなく、予報が示す「可能性」を【48】、自分の行動を決めることである。天気予報とは、未来を言い当てるものではなく、私たちが備える時間を与えてくれるものだ【49】。",
+   "prompt": "【48】",
+   "choices": [
+    "踏まえて",
+    "見逃して",
+    "逆らって",
+    "退けて"
+   ],
+   "explanation": "可能性を踏まえて berarti mempertimbangkan kemungkinan.",
+   "explanationEn": "可能性を踏まえて means taking the possibility into account."
+  },
+  {
+   "section": "written",
+   "group": "文法 問題3 · 文章の文法",
+   "instructions": "文章を読んで、【　】に入るいちばんよいものを一つ選んでください。",
+   "passage": "近年、天気予報の精度は大きく向上した。数日先の天気であれば、ほぼ正確に【46】ようになったと言っても過言ではない。これは、観測技術の進歩に加え、膨大なデータを高速で計算できるようになったためである。\nしかし、予報が当たることが当たり前になったことで、新たな問題も生じている。たとえば、大雨のおそれが示されていたのに、実際にはそれほど降らなかった場合、人々は「また空振りだった」と【47】ことがある。その結果、次に本当に危険な状況が予測されたときに、避難が遅れてしまうおそれがある。\n予報の精度が上がっても、それを受け取る側の判断が変わらなければ、命を守ることはできない。大切なのは、予報の数字を信じるか疑うかではなく、予報が示す「可能性」を【48】、自分の行動を決めることである。天気予報とは、未来を言い当てるものではなく、私たちが備える時間を与えてくれるものだ【49】。",
+   "prompt": "【49】",
+   "choices": [
+    "と言えるだろう",
+    "ずにはおかない",
+    "かねない",
+    "ようがない"
+   ],
+   "explanation": "Setelah ものだ, kesimpulan penulis: と言えるだろう.",
+   "explanationEn": "After ものだ, the writer's conclusion: と言えるだろう."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "電子レシートの導入が進んでいる。紙の使用量を減らせるうえ、家計簿アプリと連携して支出を自動で管理できるという利点がある。一方で、スマートフォンを持たない人は利用しにくく、個人の購買情報が企業に蓄積されることへの不安の声もある。便利さと引き換えに何を差し出しているのか、利用者自身が理解しておくべきだろう。",
+   "prompt": "筆者の主張に合うものはどれですか。",
+   "choices": [
+    "便利さと引き換えに何を差し出しているのかを、利用者が理解しておくべきだ。",
+    "電子レシートは廃止するべきだ。",
+    "紙のレシートのほうが必ず安全だ。",
+    "家計簿アプリは必要ない。"
+   ],
+   "explanation": "Pengguna perlu paham apa yang diserahkan demi kemudahan.",
+   "explanationEn": "Users should understand what they give up in exchange for convenience."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "町内会の皆様へ\n来月十日の日曜日に、町内の一斉清掃を行います。午前八時に公民館前に集合してください。ごみ袋と軍手は、こちらで用意します。雨天の場合は、翌週の同じ時間に延期します。参加できない世帯は、前日までに班長へご連絡ください。",
+   "prompt": "この案内の内容として、正しいものはどれですか。",
+   "choices": [
+    "参加できない世帯は、前日までに班長に連絡する。",
+    "雨が降ったら、今年は中止になる。",
+    "ごみ袋と軍手は、各自で用意する。",
+    "公民館の中に集合する。"
+   ],
+   "explanation": "Rumah tangga yang tak bisa ikut menghubungi ketua kelompok sehari sebelumnya.",
+   "explanationEn": "Households unable to attend contact the group leader by the day before."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題1 · 短文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "子どものころ、「なぜ勉強するのか」と聞かれて、うまく答えられなかった。今なら、こう答えるだろう。「選択肢を増やすため」だと。知識や技能は、将来の可能性を狭めないための道具である。もちろん、勉強だけが道ではない。だが、学んでおけば選べたはずの道を、知らないうちに失うことだけは避けたい。",
+   "prompt": "筆者は、勉強についてどう考えていますか。",
+   "choices": [
+    "将来の選択肢を増やし、可能性を狭めないための道具である。",
+    "勉強以外の道は考えるべきではない。",
+    "他人に勝つためにするものだ。",
+    "勉強しなくても選択肢は変わらない。"
+   ],
+   "explanation": "Belajar = alat untuk memperbanyak pilihan masa depan.",
+   "explanationEn": "Study is a tool for widening future options."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "ある町では、飼い主のいない猫に不妊手術を施し、地域で世話をする「地域猫」の活動が行われている。猫を排除するのではなく、数を増やさない形で共存を目指すものだ。活動を担う住民は、餌やりの場所や時間を決め、糞の掃除も欠かさない。\nこの取り組みの要点は、猫を好きな人だけの活動にしないことである。猫が苦手な住民にも活動の内容を説明し、理解を得る努力を続けている。共存とは、好意だけでなく、配慮の積み重ねで成り立つものなのだ。",
+   "prompt": "「地域猫」の活動の目的は何ですか。",
+   "choices": [
+    "猫を排除せず、数を増やさない形で共存を目指すこと",
+    "猫をすべて他の町に移すこと",
+    "猫を元の飼い主に返すこと",
+    "猫の数を増やすこと"
+   ],
+   "explanation": "Tujuannya hidup berdampingan tanpa menambah jumlah kucing.",
+   "explanationEn": "The aim is coexistence without increasing the number of cats."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "ある町では、飼い主のいない猫に不妊手術を施し、地域で世話をする「地域猫」の活動が行われている。猫を排除するのではなく、数を増やさない形で共存を目指すものだ。活動を担う住民は、餌やりの場所や時間を決め、糞の掃除も欠かさない。\nこの取り組みの要点は、猫を好きな人だけの活動にしないことである。猫が苦手な住民にも活動の内容を説明し、理解を得る努力を続けている。共存とは、好意だけでなく、配慮の積み重ねで成り立つものなのだ。",
+   "prompt": "筆者は、共存に何が必要だと考えていますか。",
+   "choices": [
+    "好意だけでなく、配慮の積み重ね",
+    "猫を好きな人の情熱",
+    "行政による厳しい規制",
+    "猫の数を減らす強い意志"
+   ],
+   "explanation": "Coexistence needs accumulated consideration, not just affection.",
+   "explanationEn": "Coexistence requires accumulated consideration, not just affection."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "駅に置かれたピアノを、通りがかりの人が自由に弾けるようにした取り組みが各地で広がっている。ある日、仕事帰りの会社員が、ためらいながらも弾き始めると、周りの人が足を止めて聴き入った。演奏が終わると、自然に拍手が起こった。\n見知らぬ人同士が、音楽を通じてひとときの心の交流を持つ。そんな場面は、効率を優先する駅という空間では、まれである。ピアノは、人々が忘れかけていた「立ち止まる余裕」を、そっと思い出させてくれるのかもしれない。",
+   "prompt": "会社員が弾き始めたあと、周りの人はどうしましたか。",
+   "choices": [
+    "足を止めて聴き入り、演奏後に拍手した。",
+    "急いで通り過ぎた。",
+    "一緒に弾き始めた。",
+    "駅員に注意した。"
+   ],
+   "explanation": "Orang berhenti mendengarkan dan bertepuk tangan.",
+   "explanationEn": "People stopped to listen and applauded."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題2 · 中文",
+   "instructions": "文章を読んで、質問に答えてください。いちばんよいものを一つ選んでください。",
+   "passage": "駅に置かれたピアノを、通りがかりの人が自由に弾けるようにした取り組みが各地で広がっている。ある日、仕事帰りの会社員が、ためらいながらも弾き始めると、周りの人が足を止めて聴き入った。演奏が終わると、自然に拍手が起こった。\n見知らぬ人同士が、音楽を通じてひとときの心の交流を持つ。そんな場面は、効率を優先する駅という空間では、まれである。ピアノは、人々が忘れかけていた「立ち止まる余裕」を、そっと思い出させてくれるのかもしれない。",
+   "prompt": "筆者は、駅のピアノにどのような意味があると考えていますか。",
+   "choices": [
+    "立ち止まる余裕を思い出させてくれること",
+    "駅の収入を増やすこと",
+    "電車を早く来させること",
+    "音楽家を育てること"
+   ],
+   "explanation": "Piano mengingatkan orang pada kelonggaran untuk berhenti.",
+   "explanationEn": "The piano reminds people of the leisure to stop."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「平均」という言葉は、日常生活で頻繁に使われる。しかし、平均だけを見て物事を判断すると、実態を見誤ることがある。\nたとえば、ある会社の社員十人のうち、九人の年収が三百万円で、一人だけが三千万円だったとする。平均年収は五百七十万円になるが、この数字は、九人の実感とはかけ離れている。極端な値が一つあるだけで、平均は大きく引き上げられてしまうのだ。このような場合には、中央値、すなわちデータを順に並べたときの真ん中の値のほうが、実態をよく表す。\nまた、グラフの見せ方にも注意が必要である。縦軸の一部を省略すれば、わずかな差が、大きな違いのように見える。意図的か否かにかかわらず、見せ方次第で、同じデータが全く違う印象を与えるのである。\nデータは嘘をつかないと言われる。だが、データを選び、並べ、見せる人間は、時に意図せず、読み手を誤った結論に導く。数字を前にしたとき、私たちは、「この数字は何を表し、何を隠しているのか」と問い返す習慣を持つべきだろう。",
+   "prompt": "筆者は、平均だけを見て判断することの問題を何と述べていますか。",
+   "choices": [
+    "実態を見誤ることがある。",
+    "計算が複雑になる。",
+    "平均を出すのに時間がかかる。",
+    "数字が小さく見える。"
+   ],
+   "explanation": "Bisa salah menilai keadaan sebenarnya.",
+   "explanationEn": "One may misjudge the real situation."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「平均」という言葉は、日常生活で頻繁に使われる。しかし、平均だけを見て物事を判断すると、実態を見誤ることがある。\nたとえば、ある会社の社員十人のうち、九人の年収が三百万円で、一人だけが三千万円だったとする。平均年収は五百七十万円になるが、この数字は、九人の実感とはかけ離れている。極端な値が一つあるだけで、平均は大きく引き上げられてしまうのだ。このような場合には、中央値、すなわちデータを順に並べたときの真ん中の値のほうが、実態をよく表す。\nまた、グラフの見せ方にも注意が必要である。縦軸の一部を省略すれば、わずかな差が、大きな違いのように見える。意図的か否かにかかわらず、見せ方次第で、同じデータが全く違う印象を与えるのである。\nデータは嘘をつかないと言われる。だが、データを選び、並べ、見せる人間は、時に意図せず、読み手を誤った結論に導く。数字を前にしたとき、私たちは、「この数字は何を表し、何を隠しているのか」と問い返す習慣を持つべきだろう。",
+   "prompt": "社員十人の例で、平均が九人の実感とかけ離れるのはなぜですか。",
+   "choices": [
+    "一人の極端に高い年収が、平均を大きく引き上げるから。",
+    "九人の年収が互いに違いすぎるから。",
+    "計算にミスがあるから。",
+    "年収が全体的に少ないから。"
+   ],
+   "explanation": "Satu nilai ekstrem menarik rata-rata ke atas.",
+   "explanationEn": "One extreme value pulls the average way up."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「平均」という言葉は、日常生活で頻繁に使われる。しかし、平均だけを見て物事を判断すると、実態を見誤ることがある。\nたとえば、ある会社の社員十人のうち、九人の年収が三百万円で、一人だけが三千万円だったとする。平均年収は五百七十万円になるが、この数字は、九人の実感とはかけ離れている。極端な値が一つあるだけで、平均は大きく引き上げられてしまうのだ。このような場合には、中央値、すなわちデータを順に並べたときの真ん中の値のほうが、実態をよく表す。\nまた、グラフの見せ方にも注意が必要である。縦軸の一部を省略すれば、わずかな差が、大きな違いのように見える。意図的か否かにかかわらず、見せ方次第で、同じデータが全く違う印象を与えるのである。\nデータは嘘をつかないと言われる。だが、データを選び、並べ、見せる人間は、時に意図せず、読み手を誤った結論に導く。数字を前にしたとき、私たちは、「この数字は何を表し、何を隠しているのか」と問い返す習慣を持つべきだろう。",
+   "prompt": "中央値が実態をよく表すのは、どのような場合ですか。",
+   "choices": [
+    "極端な値があるとき",
+    "データの数が少ないとき",
+    "平均と同じ値のとき",
+    "グラフを使うとき"
+   ],
+   "explanation": "Nilai tengah lebih mewakili bila ada nilai ekstrem.",
+   "explanationEn": "The median is better when there are extreme values."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「平均」という言葉は、日常生活で頻繁に使われる。しかし、平均だけを見て物事を判断すると、実態を見誤ることがある。\nたとえば、ある会社の社員十人のうち、九人の年収が三百万円で、一人だけが三千万円だったとする。平均年収は五百七十万円になるが、この数字は、九人の実感とはかけ離れている。極端な値が一つあるだけで、平均は大きく引き上げられてしまうのだ。このような場合には、中央値、すなわちデータを順に並べたときの真ん中の値のほうが、実態をよく表す。\nまた、グラフの見せ方にも注意が必要である。縦軸の一部を省略すれば、わずかな差が、大きな違いのように見える。意図的か否かにかかわらず、見せ方次第で、同じデータが全く違う印象を与えるのである。\nデータは嘘をつかないと言われる。だが、データを選び、並べ、見せる人間は、時に意図せず、読み手を誤った結論に導く。数字を前にしたとき、私たちは、「この数字は何を表し、何を隠しているのか」と問い返す習慣を持つべきだろう。",
+   "prompt": "グラフの見せ方について、筆者はどう述べていますか。",
+   "choices": [
+    "縦軸の一部を省略すると、わずかな差が大きな違いに見える。",
+    "縦軸は必ず省略しなければ見にくい。",
+    "グラフは常に正確である。",
+    "横軸を省略すると差が消える。"
+   ],
+   "explanation": "Memotong sumbu vertikal membuat selisih kecil tampak besar.",
+   "explanationEn": "Cropping the vertical axis makes small differences look big."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題3 · 長文",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "「平均」という言葉は、日常生活で頻繁に使われる。しかし、平均だけを見て物事を判断すると、実態を見誤ることがある。\nたとえば、ある会社の社員十人のうち、九人の年収が三百万円で、一人だけが三千万円だったとする。平均年収は五百七十万円になるが、この数字は、九人の実感とはかけ離れている。極端な値が一つあるだけで、平均は大きく引き上げられてしまうのだ。このような場合には、中央値、すなわちデータを順に並べたときの真ん中の値のほうが、実態をよく表す。\nまた、グラフの見せ方にも注意が必要である。縦軸の一部を省略すれば、わずかな差が、大きな違いのように見える。意図的か否かにかかわらず、見せ方次第で、同じデータが全く違う印象を与えるのである。\nデータは嘘をつかないと言われる。だが、データを選び、並べ、見せる人間は、時に意図せず、読み手を誤った結論に導く。数字を前にしたとき、私たちは、「この数字は何を表し、何を隠しているのか」と問い返す習慣を持つべきだろう。",
+   "prompt": "筆者が最も言いたいことは何ですか。",
+   "choices": [
+    "数字を前にしたら、何を表し何を隠しているのかと問い返す習慣を持つべきだ。",
+    "データは使うべきではない。",
+    "平均は常に信頼できる。",
+    "グラフはなるべく使わないほうがよい。"
+   ],
+   "explanation": "Biasakan bertanya apa yang ditunjukkan dan disembunyikan angka.",
+   "explanationEn": "Make a habit of asking what a number shows and hides."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】小学生がスマートフォンを持つことには、利点が大きい。登下校の際に連絡が取れ、防犯の面でも安心だ。また、早いうちから使い方を学ぶことで、情報を正しく扱う力が身につく。親が使い方のルールを決めて見守れば、危険は十分に管理できる。\n\n【B】小学生にスマートフォンを持たせることには、慎重であるべきだ。動画やゲームに没頭して、睡眠や勉強の時間が削られる例は多い。また、悪意のある人物と接触する危険や、友人関係のトラブルも心配される。連絡手段が必要なだけなら、機能を限った端末で十分である。",
+   "prompt": "Aが挙げている利点はどれですか。",
+   "choices": [
+    "登下校の際に連絡が取れ、情報を正しく扱う力が身につくこと",
+    "睡眠時間が増えること",
+    "勉強の時間が増えること",
+    "友人が増えること"
+   ],
+   "explanation": "A: bisa dihubungi saat pergi/pulang sekolah dan belajar menggunakan informasi.",
+   "explanationEn": "A: contact on the way to/from school and learning to handle information."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】小学生がスマートフォンを持つことには、利点が大きい。登下校の際に連絡が取れ、防犯の面でも安心だ。また、早いうちから使い方を学ぶことで、情報を正しく扱う力が身につく。親が使い方のルールを決めて見守れば、危険は十分に管理できる。\n\n【B】小学生にスマートフォンを持たせることには、慎重であるべきだ。動画やゲームに没頭して、睡眠や勉強の時間が削られる例は多い。また、悪意のある人物と接触する危険や、友人関係のトラブルも心配される。連絡手段が必要なだけなら、機能を限った端末で十分である。",
+   "prompt": "Bが心配していることはどれですか。",
+   "choices": [
+    "睡眠や勉強の時間が削られることや、危険な人物と接触すること",
+    "端末の費用が高いこと",
+    "連絡が取れないこと",
+    "使い方を学べないこと"
+   ],
+   "explanation": "B khawatir waktu tidur/belajar tersita dan kontak berbahaya.",
+   "explanationEn": "B worries about lost sleep/study time and dangerous contacts."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】小学生がスマートフォンを持つことには、利点が大きい。登下校の際に連絡が取れ、防犯の面でも安心だ。また、早いうちから使い方を学ぶことで、情報を正しく扱う力が身につく。親が使い方のルールを決めて見守れば、危険は十分に管理できる。\n\n【B】小学生にスマートフォンを持たせることには、慎重であるべきだ。動画やゲームに没頭して、睡眠や勉強の時間が削られる例は多い。また、悪意のある人物と接触する危険や、友人関係のトラブルも心配される。連絡手段が必要なだけなら、機能を限った端末で十分である。",
+   "prompt": "AとBの違いはどれですか。",
+   "choices": [
+    "Aは持たせることに前向きでルールで管理できると考え、Bは機能を限った端末で十分だと考えている。",
+    "Aは持たせるべきでないと考え、Bは持たせるべきだと考えている。",
+    "AもBも、持たせるべきだと考えている。",
+    "AもBも、持たせることを禁止するべきだと考えている。"
+   ],
+   "explanation": "A positif dengan aturan, B menilai perangkat terbatas sudah cukup.",
+   "explanationEn": "A is positive with rules; B says a limited device is enough."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題4 · 統合理解",
+   "instructions": "二つの文章を読んで、質問に答えてください。",
+   "passage": "【A】小学生がスマートフォンを持つことには、利点が大きい。登下校の際に連絡が取れ、防犯の面でも安心だ。また、早いうちから使い方を学ぶことで、情報を正しく扱う力が身につく。親が使い方のルールを決めて見守れば、危険は十分に管理できる。\n\n【B】小学生にスマートフォンを持たせることには、慎重であるべきだ。動画やゲームに没頭して、睡眠や勉強の時間が削られる例は多い。また、悪意のある人物と接触する危険や、友人関係のトラブルも心配される。連絡手段が必要なだけなら、機能を限った端末で十分である。",
+   "prompt": "Bが示している代案は何ですか。",
+   "choices": [
+    "機能を限った端末を持たせること",
+    "親が毎日画面を確認すること",
+    "学校でスマートフォンを預かること",
+    "使用時間を決めずに使わせること"
+   ],
+   "explanation": "B mengusulkan perangkat dengan fitur terbatas.",
+   "explanationEn": "B proposes a device with limited functions."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "専門家の意見は、私たちが判断を下すときの重要な手がかりである。素人が短時間で調べて得られる知識とは比べものにならない蓄積が、そこにはある。だから、専門家の意見を尊重すること自体は、決して間違っていない。\nしかし、専門家もまた人間であり、その見解は、専門分野の枠の中で形づくられている。ある医師は病気を治すことを最優先に考え、ある経済学者は費用対効果を重視する。それぞれ正しい見方でありながら、互いに食い違うことは珍しくない。\n問題は、専門家の意見を「答え」として受け取ってしまうことにある。意見はあくまで判断の材料であり、何を重んじ、どのような未来を選ぶかという価値の判断は、専門家には委ねられない。それは、結果を引き受ける私たち自身が決めるべきことだからだ。\nだとすれば、私たちに必要なのは、専門家に従う姿勢でも、疑う姿勢でもなく、複数の意見を比べ、自分の価値観に照らして考える力である。専門家を頼りながらも、最後の判断は自分で引き受ける。その覚悟が、民主的な社会を支えているのではないだろうか。",
+   "prompt": "筆者は、専門家の意見について何を認めていますか。",
+   "choices": [
+    "素人にはない蓄積があり、尊重すること自体は間違っていないこと",
+    "常に正しいこと",
+    "素人の意見より価値が低いこと",
+    "経済学者の意見だけが重要であること"
+   ],
+   "explanation": "Ada akumulasi pengetahuan; menghormatinya tidak salah.",
+   "explanationEn": "It rests on accumulated knowledge, and respecting it is not wrong."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "専門家の意見は、私たちが判断を下すときの重要な手がかりである。素人が短時間で調べて得られる知識とは比べものにならない蓄積が、そこにはある。だから、専門家の意見を尊重すること自体は、決して間違っていない。\nしかし、専門家もまた人間であり、その見解は、専門分野の枠の中で形づくられている。ある医師は病気を治すことを最優先に考え、ある経済学者は費用対効果を重視する。それぞれ正しい見方でありながら、互いに食い違うことは珍しくない。\n問題は、専門家の意見を「答え」として受け取ってしまうことにある。意見はあくまで判断の材料であり、何を重んじ、どのような未来を選ぶかという価値の判断は、専門家には委ねられない。それは、結果を引き受ける私たち自身が決めるべきことだからだ。\nだとすれば、私たちに必要なのは、専門家に従う姿勢でも、疑う姿勢でもなく、複数の意見を比べ、自分の価値観に照らして考える力である。専門家を頼りながらも、最後の判断は自分で引き受ける。その覚悟が、民主的な社会を支えているのではないだろうか。",
+   "prompt": "専門家の見解が食い違うことがあるのは、なぜですか。",
+   "choices": [
+    "それぞれが専門分野の枠の中で、重視するものが違うから。",
+    "専門家が嘘をついているから。",
+    "専門家の知識が足りないから。",
+    "素人が口を出すから。"
+   ],
+   "explanation": "Karena tiap pakar menekankan hal berbeda dalam bidangnya.",
+   "explanationEn": "Each expert emphasizes different things within their field."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "専門家の意見は、私たちが判断を下すときの重要な手がかりである。素人が短時間で調べて得られる知識とは比べものにならない蓄積が、そこにはある。だから、専門家の意見を尊重すること自体は、決して間違っていない。\nしかし、専門家もまた人間であり、その見解は、専門分野の枠の中で形づくられている。ある医師は病気を治すことを最優先に考え、ある経済学者は費用対効果を重視する。それぞれ正しい見方でありながら、互いに食い違うことは珍しくない。\n問題は、専門家の意見を「答え」として受け取ってしまうことにある。意見はあくまで判断の材料であり、何を重んじ、どのような未来を選ぶかという価値の判断は、専門家には委ねられない。それは、結果を引き受ける私たち自身が決めるべきことだからだ。\nだとすれば、私たちに必要なのは、専門家に従う姿勢でも、疑う姿勢でもなく、複数の意見を比べ、自分の価値観に照らして考える力である。専門家を頼りながらも、最後の判断は自分で引き受ける。その覚悟が、民主的な社会を支えているのではないだろうか。",
+   "prompt": "価値の判断を専門家に委ねられないのは、なぜですか。",
+   "choices": [
+    "結果を引き受けるのは私たち自身だから。",
+    "専門家は価値を持たないから。",
+    "専門家は責任を取らないと決まっているから。",
+    "判断に時間がかかるから。"
+   ],
+   "explanation": "Karena kita yang menanggung akibatnya.",
+   "explanationEn": "Because we ourselves bear the consequences."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題5 · 主張理解",
+   "instructions": "文章を読んで、質問に答えてください。",
+   "passage": "専門家の意見は、私たちが判断を下すときの重要な手がかりである。素人が短時間で調べて得られる知識とは比べものにならない蓄積が、そこにはある。だから、専門家の意見を尊重すること自体は、決して間違っていない。\nしかし、専門家もまた人間であり、その見解は、専門分野の枠の中で形づくられている。ある医師は病気を治すことを最優先に考え、ある経済学者は費用対効果を重視する。それぞれ正しい見方でありながら、互いに食い違うことは珍しくない。\n問題は、専門家の意見を「答え」として受け取ってしまうことにある。意見はあくまで判断の材料であり、何を重んじ、どのような未来を選ぶかという価値の判断は、専門家には委ねられない。それは、結果を引き受ける私たち自身が決めるべきことだからだ。\nだとすれば、私たちに必要なのは、専門家に従う姿勢でも、疑う姿勢でもなく、複数の意見を比べ、自分の価値観に照らして考える力である。専門家を頼りながらも、最後の判断は自分で引き受ける。その覚悟が、民主的な社会を支えているのではないだろうか。",
+   "prompt": "筆者の主張として、最も合うものはどれですか。",
+   "choices": [
+    "複数の意見を比べ、自分の価値観に照らして、最後の判断は自分で引き受けること",
+    "専門家の意見にそのまま従うこと",
+    "専門家の意見は一切信じないこと",
+    "判断は多数決で決めること"
+   ],
+   "explanation": "Bandingkan banyak pendapat dan ambil keputusan akhir sendiri.",
+   "explanationEn": "Compare several opinions and take the final decision oneself."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みなと市シェアサイクル「ミナチャリ」　ご利用案内\n【料金】30分ごとに 165円（1日パス：1,100円、24時間以内何度でも乗れます）\n【会員登録】スマートフォンのアプリから登録（無料）。クレジットカードが必要です。\n【返却】市内の約80か所のポートで返却できます。返却ポートが満車の場合は、近くのポートに返却し、アプリで連絡してください。\n【ご注意】\n・16歳未満の方は利用できません。\n・電動アシスト自転車は、一部のポートのみで貸し出しています（料金は通常の自転車と同じ）。\n・ヘルメットの着用は努力義務です。\n・天候不良の際は、サービスを停止することがあります。\n・延長・紛失の場合は、別途料金がかかります。",
+   "prompt": "通常の自転車を、1時間30分借りたときの料金はいくらですか。",
+   "choices": [
+    "495円",
+    "330円",
+    "660円",
+    "1,100円"
+   ],
+   "explanation": "165 × 3 = 495 yen untuk 90 menit.",
+   "explanationEn": "165 × 3 = 495 yen for 90 minutes."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みなと市シェアサイクル「ミナチャリ」　ご利用案内\n【料金】30分ごとに 165円（1日パス：1,100円、24時間以内何度でも乗れます）\n【会員登録】スマートフォンのアプリから登録（無料）。クレジットカードが必要です。\n【返却】市内の約80か所のポートで返却できます。返却ポートが満車の場合は、近くのポートに返却し、アプリで連絡してください。\n【ご注意】\n・16歳未満の方は利用できません。\n・電動アシスト自転車は、一部のポートのみで貸し出しています（料金は通常の自転車と同じ）。\n・ヘルメットの着用は努力義務です。\n・天候不良の際は、サービスを停止することがあります。\n・延長・紛失の場合は、別途料金がかかります。",
+   "prompt": "このサービスを利用できる人は、次のうちだれですか。",
+   "choices": [
+    "十七歳で、スマートフォンとクレジットカードを持っている人",
+    "十五歳で、スマートフォンとクレジットカードを持っている人",
+    "二十歳で、クレジットカードを持っていない人",
+    "三十歳で、スマートフォンを持っていない人"
+   ],
+   "explanation": "Syarat: 16 tahun ke atas, ponsel dan kartu kredit.",
+   "explanationEn": "Requirements: age 16+, a smartphone and a credit card."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みなと市シェアサイクル「ミナチャリ」　ご利用案内\n【料金】30分ごとに 165円（1日パス：1,100円、24時間以内何度でも乗れます）\n【会員登録】スマートフォンのアプリから登録（無料）。クレジットカードが必要です。\n【返却】市内の約80か所のポートで返却できます。返却ポートが満車の場合は、近くのポートに返却し、アプリで連絡してください。\n【ご注意】\n・16歳未満の方は利用できません。\n・電動アシスト自転車は、一部のポートのみで貸し出しています（料金は通常の自転車と同じ）。\n・ヘルメットの着用は努力義務です。\n・天候不良の際は、サービスを停止することがあります。\n・延長・紛失の場合は、別途料金がかかります。",
+   "prompt": "返却するポートが満車だったとき、どうすればよいですか。",
+   "choices": [
+    "近くのポートに返却し、アプリで連絡する。",
+    "満車のポートの前に止めておく。",
+    "返却を翌日まで待つ。",
+    "駅の駐輪場に返す。"
+   ],
+   "explanation": "Kembalikan di port terdekat dan lapor lewat aplikasi.",
+   "explanationEn": "Return it at a nearby port and notify via the app."
+  },
+  {
+   "section": "written",
+   "group": "読解 問題6 · 情報検索",
+   "instructions": "案内を読んで、質問に答えてください。",
+   "passage": "みなと市シェアサイクル「ミナチャリ」　ご利用案内\n【料金】30分ごとに 165円（1日パス：1,100円、24時間以内何度でも乗れます）\n【会員登録】スマートフォンのアプリから登録（無料）。クレジットカードが必要です。\n【返却】市内の約80か所のポートで返却できます。返却ポートが満車の場合は、近くのポートに返却し、アプリで連絡してください。\n【ご注意】\n・16歳未満の方は利用できません。\n・電動アシスト自転車は、一部のポートのみで貸し出しています（料金は通常の自転車と同じ）。\n・ヘルメットの着用は努力義務です。\n・天候不良の際は、サービスを停止することがあります。\n・延長・紛失の場合は、別途料金がかかります。",
+   "prompt": "この案内の内容と合っているものはどれですか。",
+   "choices": [
+    "電動アシスト自転車の料金は、通常の自転車と同じである。",
+    "ヘルメットの着用は義務である。",
+    "すべてのポートで電動アシスト自転車を借りられる。",
+    "雨の日も必ず営業している。"
+   ],
+   "explanation": "Tarif sepeda listrik sama dengan sepeda biasa.",
+   "explanationEn": "E-assist bikes cost the same as regular ones."
+  }
+ ]
+}

@@ -91,7 +91,7 @@ func sswTitle(level string) string { loadSSW(); return sswData.Papers[level].Tit
 func (s *MemoryStore) SSWPractice(user, sector, module string) ([]map[string]any, error) {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
-	if s.entitlementLocked(user).Tier != domain.TierPremium {
+	if !openLearningAccess && s.entitlementLocked(user).Tier != domain.TierPremium {
 		return nil, ErrPremium
 	}
 	loadSSW()
@@ -113,7 +113,7 @@ func (s *MemoryStore) SSWPractice(user, sector, module string) ([]map[string]any
 func (s *MemoryStore) SSWPracticeCheck(user, sector, id string, answer int) (map[string]any, error) {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
-	if s.entitlementLocked(user).Tier != domain.TierPremium {
+	if !openLearningAccess && s.entitlementLocked(user).Tier != domain.TierPremium {
 		return nil, ErrPremium
 	}
 	loadSSW()

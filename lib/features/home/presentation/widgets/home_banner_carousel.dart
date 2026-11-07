@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
@@ -23,7 +24,19 @@ class HomeBannerCarousel extends StatefulWidget {
 }
 
 class _HomeBannerCarouselState extends State<HomeBannerCarousel>
-    with WidgetsBindingObserver {
+    with WidgetsBindingObserver, SingleTickerProviderStateMixin {
+  static const _interval = Duration(seconds: 5);
+
+  /// Widget tests pump until no frame is scheduled; a looping 5 s fill would
+  /// never settle there, so tests get a static indicator instead.
+  static final bool _animateProgress = !WidgetsBinding.instance.runtimeType
+      .toString()
+      .contains('TestWidgetsFlutterBinding');
+
+  late final AnimationController _progress = AnimationController(
+    vsync: this,
+    duration: _interval,
+  );
   final _pages = PageController();
   Timer? _timer;
   int _index = 0;
@@ -70,8 +83,12 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
     _schedule();
   }
 
+  bool get _progressVisible =>
+      _animateProgress && _motionAllowed && widget.banners.length > 1;
+
   void _schedule() {
     _timer?.cancel();
+    _progress.stop();
     if (!widget.active ||
         !_resumed ||
         !_routeVisible ||
@@ -81,7 +98,8 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
         widget.banners.length < 2) {
       return;
     }
-    _timer = Timer(const Duration(seconds: 5), () {
+    if (_progressVisible) unawaited(_progress.forward(from: 0));
+    _timer = Timer(_interval, () {
       if (!mounted || !_pages.hasClients) return;
       unawaited(
         _pages.animateToPage(
@@ -95,6 +113,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
 
   void _pause() {
     _timer?.cancel();
+    _progress.stop();
   }
 
   void _select(int index) {
@@ -117,6 +136,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
   @override
   void dispose() {
     _timer?.cancel();
+    _progress.dispose();
     WidgetsBinding.instance.removeObserver(this);
     _pages.dispose();
     super.dispose();
@@ -169,7 +189,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
                   ) +
                   12 +
                   measure(banner.title, _titleStyle, 3, headingWidth);
-              return 48 +
+              return 40 +
                   math.max(
                     (banner.action == 'premium') ? 98 : 0,
                     headingHeight,
@@ -251,50 +271,17 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel>
                         child: InkWell(
                           key: Key('home-banner-dot-$i'),
                           onTap: () => _select(i),
-                          borderRadius: BorderRadius.circular(24),
-                          child: SizedBox(
-                            width: 44,
-                            height: 48,
-                            child: Center(
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 180),
-                                width: i == _index ? 38 : 7,
-                                height: i == _index ? 22 : 7,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: i == _index
-                                      ? Theme.of(context).colorScheme.primary
-                                      : Theme.of(
-                                          context,
-                                        ).colorScheme.outlineVariant,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: i == _index
-                                      ? [
-                                          BoxShadow(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .primary
-                                                .withValues(alpha: .2),
-                                            blurRadius: 8,
-                                            offset: const Offset(0, 3),
-                                          ),
-                                        ]
-                                      : null,
-                                ),
-                                child: i == _index
-                                    ? Text(
-                                        '${i + 1}'.padLeft(2, '0'),
-                                        textScaler: TextScaler.noScaling,
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w800,
-                                          color: Theme.of(
-                                            context,
-                                          ).colorScheme.onPrimary,
-                                        ),
-                                      )
-                                    : null,
-                              ),
+                          borderRadius: BorderRadius.circular(16),
+                          child: AnimatedContainer(
+                            duration: AppMotion.of(context, AppMotion.slow),
+                            curve: AppMotion.standard,
+                            width: i == _index ? 38 : 18,
+                            height: 30,
+                            alignment: Alignment.center,
+                            child: _BannerDot(
+                              active: i == _index,
+                              progress: _progress,
+                              showProgress: _progressVisible,
                             ),
                           ),
                         ),
@@ -355,7 +342,7 @@ class _BannerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (color, asset) = switch (banner.action) {
-      'premium' => (const Color(0xFF20215F), 'assets/images/exams/n5.webp'),
+      'premium' => (const Color(0xFF24285F), 'assets/images/exams/n5.webp'),
       'manga' => (
         const Color(0xFF30265D),
         'assets/images/explore/manga-reading.webp',
@@ -459,7 +446,10 @@ class _BannerCard extends StatelessWidget {
                 ),
               ],
               Padding(
-                padding: const EdgeInsets.all(24),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 20,
+                ),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: SizedBox(
@@ -518,9 +508,13 @@ class _BannerCard extends StatelessWidget {
                             backgroundColor:
                                 (banner.action == 'premium' ||
                                     banner.action == 'manga')
-                                ? const Color(0xFFFFD784)
+                                ? SakuraColors.light.gold
                                 : Colors.white,
-                            foregroundColor: color,
+                            foregroundColor:
+                                (banner.action == 'premium' ||
+                                    banner.action == 'manga')
+                                ? SakuraColors.light.onGold
+                                : color,
                             minimumSize: const Size(0, 48),
                             textStyle: Theme.of(
                               context,
@@ -550,6 +544,58 @@ class _BannerCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Titik indikator: bulat kecil saat tidak aktif, memanjang menjadi pil
+/// dengan isian merah yang berjalan selama jeda auto-slide saat aktif.
+class _BannerDot extends StatelessWidget {
+  const _BannerDot({
+    required this.active,
+    required this.progress,
+    required this.showProgress,
+  });
+
+  final bool active;
+  final Animation<double> progress;
+  final bool showProgress;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return AnimatedContainer(
+      duration: AppMotion.of(context, AppMotion.slow),
+      curve: AppMotion.standard,
+      width: active ? 26 : 6,
+      height: 6,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: active
+            ? (showProgress
+                  ? scheme.surfaceContainerHighest
+                  : scheme.primary)
+            : scheme.outlineVariant,
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: active && showProgress
+          ? AnimatedBuilder(
+              animation: progress,
+              builder: (context, _) => Align(
+                alignment: Alignment.centerLeft,
+                child: FractionallySizedBox(
+                  widthFactor: progress.value.clamp(0, 1).toDouble(),
+                  heightFactor: 1,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: scheme.primary,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          : null,
     );
   }
 }

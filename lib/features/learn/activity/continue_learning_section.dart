@@ -25,7 +25,7 @@ class ContinueLearningSection extends ConsumerWidget {
             .where((entry) => entry.key == item.key)
             .firstOrNull ??
         item;
-    final premium = ref.read(authControllerProvider).user?.isPremium ?? false;
+    final premium = ref.read(authControllerProvider).isAuthenticated;
     final path = selected.available
         ? '${selected.lessonPath}?level=${selected.level}'
         : selected.coursePath;
@@ -58,7 +58,7 @@ class ContinueLearningSection extends ConsumerWidget {
     final latest = items.first;
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
-    final locked = latest.isLocked(premium: user.isPremium);
+    final locked = latest.isLocked(premium: user.id.isNotEmpty);
     return Padding(
       padding: const EdgeInsets.only(bottom: 24),
       child: Column(
@@ -179,11 +179,11 @@ class ContinueLearningSection extends ConsumerWidget {
                   ),
                 ),
                 subtitle: Text(
-                  '${item.category.localized(context)} · ${item.level}\n${_detail(context, item, item.isLocked(premium: user.isPremium))}',
+                  '${item.category.localized(context)} · ${item.level}\n${_detail(context, item, item.isLocked(premium: user.id.isNotEmpty))}',
                   style: theme.textTheme.bodySmall,
                 ),
                 trailing: Icon(
-                  item.isLocked(premium: user.isPremium)
+                  item.isLocked(premium: user.id.isNotEmpty)
                       ? Icons.lock_outline
                       : Icons.chevron_right_rounded,
                   size: 20,

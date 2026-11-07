@@ -75,6 +75,7 @@ type userContextKey struct{}
 
 func (s *Server) Handler() http.Handler {
 	mux := http.NewServeMux()
+	s.registerAdminDashboard(mux)
 	s.registerDiagnostics(mux)
 	s.registerManga(mux)
 	s.registerNews(mux)
@@ -152,7 +153,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /v1/reading/attempts/{attemptID}/complete", s.requireAuth(s.completeReadingAttempt))
 	mux.HandleFunc("GET /v1/offline/practice/{kind}/{lessonID}", s.requireAuth(s.offlinePracticePackage))
 	mux.HandleFunc("POST /v1/offline/practice-attempts/sync", s.requireAuth(s.syncOfflinePracticeAttempt))
-	return s.middleware(localizedAccountResponses(localizedLearningResponses(localizedNewsResponses(mux))))
+	return s.middleware(adminToolRedirects(localizedAccountResponses(localizedLearningResponses(localizedNewsResponses(mux)))))
 }
 
 func (s *Server) ConfigureProfilePhotoStorage(storage *media.ProfilePhotoStorage) {
@@ -395,6 +396,7 @@ func (s *Server) requireAuth(next http.HandlerFunc) http.HandlerFunc {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "Bearer token tidak valid atau sudah dicabut")
 			return
 		}
+		s.store.TouchUser(id, time.Now())
 		if !s.authorizePremium(w, r, id) {
 			return
 		}
@@ -406,6 +408,7 @@ func (s *Server) optionalAuth(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		id, ok := s.store.ResolveSession(bearerToken(r))
 		if ok {
+			s.store.TouchUser(id, time.Now())
 			r = r.WithContext(context.WithValue(r.Context(), userContextKey{}, id))
 		}
 		next(w, r)

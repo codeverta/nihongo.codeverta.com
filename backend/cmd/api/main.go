@@ -88,6 +88,7 @@ func main() {
 		dictionaryToken = os.Getenv("BRANDING_ADMIN_TOKEN")
 	}
 	apiServer.ConfigureDictionaryAdmin(dictionaryToken)
+	apiServer.ConfigureAdminAccounts(os.Getenv("ADMIN_EMAILS"))
 	jobDB, err := memoryStore.JobsDatabase()
 	if err != nil {
 		log.Fatal(err)

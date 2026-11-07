@@ -1,7 +1,6 @@
 package api
 
 import (
-	"crypto/subtle"
 	_ "embed"
 	"errors"
 	"net/http"
@@ -25,7 +24,7 @@ func NewMangaHandler(repo *manga.Repository, token string, access MangaAccessChe
 	mux := http.NewServeMux()
 	s.registerManga(mux)
 	mux.HandleFunc("GET /healthz", s.health)
-	mux.HandleFunc("GET /admin", func(w http.ResponseWriter, r *http.Request) { http.Redirect(w, r, "/admin/manga", http.StatusSeeOther) })
+	mux.HandleFunc("GET /admin", func(w http.ResponseWriter, r *http.Request) { http.Redirect(w, r, "/admin/", http.StatusSeeOther) })
 	return s.middleware(mux)
 }
 
@@ -76,7 +75,7 @@ func mangaError(w http.ResponseWriter, err error) {
 func (s *Server) mangaAdmin(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
-		if s.mangaAdminToken == "" || subtle.ConstantTimeCompare([]byte(bearerToken(r)), []byte(s.mangaAdminToken)) != 1 {
+		if !adminRequestAuthorized(r, s.mangaAdminToken) {
 			writeError(w, 401, "unauthorized", "Kunci admin salah atau belum dikonfigurasi.")
 			return
 		}

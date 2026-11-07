@@ -24,7 +24,7 @@ class SimulationRepository extends DiagnosticRepository {
                   ? 'jft-a2-full-${level.substring(4)}'
                   : level.startsWith('NAT')
                   ? 'nat-5q-full-${level == 'NAT' ? '1' : level.substring(4)}'
-                  : RegExp(r'^N[45]-\d+$').hasMatch(level)
+                  : RegExp(r'^N[1-5]-\d+$').hasMatch(level)
                   ? 'jlpt-${level.toLowerCase().split('-').first}-simulation-${level.split('-').last}'
                   : 'jlpt-${level.toLowerCase()}-simulation-1',
             },

@@ -8,6 +8,7 @@ import (
 	"gorm.io/gorm/clause"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
+	"os"
 	"strings"
 	"time"
 )
@@ -170,7 +171,28 @@ func (s *MemoryStore) UpdateVerifiedPurchase(p domain.Purchase) error {
 	return nil
 }
 
+// openLearningAccess unlocks every study and exam feature (N3-N1 lessons, all
+// simulations, SSW practice, Anki JLPT decks) for any signed-in account. Guests
+// are still rejected because those endpoints require a session. Set the
+// environment variable NIHONGO_OPEN_ACCESS=false to restore the Lifetime Access
+// gates. Manga, jobs and offline downloads keep their own Lifetime rules.
+var openLearningAccess = !strings.EqualFold(strings.TrimSpace(os.Getenv("NIHONGO_OPEN_ACCESS")), "false")
+
+// OpenLearningAccess reports whether study and exam content is open to every signed-in account.
+func OpenLearningAccess() bool { return openLearningAccess }
+
+// SetOpenLearningAccess switches open study/exam access and returns the previous
+// value. It exists for tests; production code configures it with NIHONGO_OPEN_ACCESS.
+func SetOpenLearningAccess(open bool) bool {
+	previous := openLearningAccess
+	openLearningAccess = open
+	return previous
+}
+
 func PremiumLevel(level string) bool {
+	if openLearningAccess {
+		return false
+	}
 	switch strings.ToUpper(level) {
 	case "N3", "N2", "N1":
 		return true
@@ -179,6 +201,9 @@ func PremiumLevel(level string) bool {
 }
 
 func (s *MemoryStore) ExamRequiresPremium(id string) bool {
+	if openLearningAccess {
+		return false
+	}
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 	for _, e := range s.exams {
@@ -191,6 +216,9 @@ func (s *MemoryStore) ExamRequiresPremium(id string) bool {
 
 // Authorization covers catalogs, direct lesson URLs, and ongoing quiz IDs.
 func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bool {
+	if openLearningAccess {
+		return false
+	}
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 	if strings.Contains(path, "/simulation/") && attemptID == "" {
