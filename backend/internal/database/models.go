@@ -1,6 +1,8 @@
 package database
 
 import (
+	"time"
+
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 )
@@ -48,6 +50,16 @@ type Account struct {
 
 func (Account) TableName() string                { return "accounts" }
 func (m *Account) BeforeCreate(_ *gorm.DB) error { return setUUID(&m.ID) }
+
+// Session keeps API login sessions across server restarts. Only the SHA-256
+// hash of the bearer token is stored, never the token itself.
+type Session struct {
+	TokenHash string    `gorm:"column:token_hash;type:char(64);primaryKey"`
+	UserID    string    `gorm:"column:user_id;type:char(36);not null;index:sessions_user_id"`
+	CreatedAt time.Time `gorm:"column:created_at;not null"`
+}
+
+func (Session) TableName() string { return "sessions" }
 
 type BillingPurchase struct {
 	ID          string  `gorm:"type:char(36);primaryKey"`

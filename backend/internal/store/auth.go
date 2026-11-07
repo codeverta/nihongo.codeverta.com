@@ -2,14 +2,20 @@ package store
 
 import (
 	"crypto/rand"
+	"crypto/sha256"
 	"encoding/base64"
+	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"fmt"
+	"log"
 	"net/mail"
 	"strings"
+	"time"
 
 	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
@@ -124,23 +130,62 @@ func (s *MemoryStore) CreateSession(userID string) (string, error) {
 		return "", err
 	}
 	token := base64.RawURLEncoding.EncodeToString(random)
+	s.mu.RLock()
+	persist := s.billingEnabled
+	s.mu.RUnlock()
+	if persist {
+		// Persist first so a login that is reported as successful survives a restart.
+		record := database.Session{TokenHash: sessionTokenHash(token), UserID: userID, CreatedAt: time.Now().UTC()}
+		if err := s.ormWriter.Create(&record).Error; err != nil {
+			return "", err
+		}
+	}
 	s.mu.Lock()
 	s.sessions[token] = userID
 	s.mu.Unlock()
 	return token, nil
 }
 
+// sessionTokenHash is the stored form of a bearer token. Tokens are 256 random
+// bits, so a plain SHA-256 is sufficient.
+func sessionTokenHash(token string) string {
+	sum := sha256.Sum256([]byte(token))
+	return hex.EncodeToString(sum[:])
+}
+
 func (s *MemoryStore) ResolveSession(token string) (string, bool) {
 	s.mu.RLock()
 	userID, ok := s.sessions[token]
+	persist := s.billingEnabled
 	s.mu.RUnlock()
-	return userID, ok
+	if ok || !persist || token == "" {
+		return userID, ok
+	}
+	// Not in memory, for example right after a restart: restore it from the database.
+	var record database.Session
+	err := s.ormDB.Where("token_hash = ?", sessionTokenHash(token)).Take(&record).Error
+	if err != nil {
+		if !errors.Is(err, gorm.ErrRecordNotFound) {
+			log.Printf("resolve persisted session: %v", err)
+		}
+		return "", false
+	}
+	s.mu.Lock()
+	s.sessions[token] = record.UserID
+	s.mu.Unlock()
+	return record.UserID, true
 }
 
 func (s *MemoryStore) RevokeSession(token string) {
 	s.mu.Lock()
 	delete(s.sessions, token)
+	persist := s.billingEnabled
 	s.mu.Unlock()
+	if persist && token != "" {
+		if err := s.ormWriter.Where("token_hash = ?", sessionTokenHash(token)).Delete(&database.Session{}).Error; err != nil {
+			log.Printf("revoke persisted session: %v", err)
+		}
+	}
 }
 
 func (s *MemoryStore) seedDemoAccount() {
