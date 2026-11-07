@@ -214,6 +214,7 @@ func TestN3KanjiEveryLessonQuizHasReviewedEnglishAndPreservesJapanese(t *testing
 		Explanation string   `json:"Explanation"`
 	}
 	type lesson struct {
+		ID        string     `json:"ID"`
 		Questions []question `json:"Questions"`
 	}
 	var lessons []lesson
@@ -221,9 +222,10 @@ func TestN3KanjiEveryLessonQuizHasReviewedEnglishAndPreservesJapanese(t *testing
 		t.Fatal(err)
 	}
 	missing := map[string]map[string]struct{}{}
+	lessonID := ""
 	check := func(field, source string) {
 		t.Helper()
-		if translated, ok := jlptKanjiReadingEnglish[field][source]; !ok || translated == source {
+		if !kanjiTranslatedInContext("N3", lessonID, field, source) {
 			if missing[field] == nil {
 				missing[field] = map[string]struct{}{}
 			}
@@ -232,6 +234,7 @@ func TestN3KanjiEveryLessonQuizHasReviewedEnglishAndPreservesJapanese(t *testing
 	}
 	questionCount := 0
 	for _, l := range lessons {
+		lessonID = l.ID
 		for _, q := range l.Questions {
 			questionCount++
 			check("prompt", q.Prompt)
@@ -279,6 +282,7 @@ func TestN3KanjiEveryCharacterAndExampleHasReviewedEnglish(t *testing.T) {
 		Examples []example `json:"examples"`
 	}
 	type lesson struct {
+		ID         string      `json:"ID"`
 		Characters []character `json:"Characters"`
 	}
 	var lessons []lesson
@@ -286,9 +290,10 @@ func TestN3KanjiEveryCharacterAndExampleHasReviewedEnglish(t *testing.T) {
 		t.Fatal(err)
 	}
 	missing := map[string]map[string]struct{}{}
+	lessonID := ""
 	check := func(field, source string) {
 		t.Helper()
-		if translated, ok := jlptKanjiReadingEnglish[field][source]; !ok || translated == source {
+		if !kanjiTranslatedInContext("N3", lessonID, field, source) {
 			if missing[field] == nil {
 				missing[field] = map[string]struct{}{}
 			}
@@ -297,6 +302,7 @@ func TestN3KanjiEveryCharacterAndExampleHasReviewedEnglish(t *testing.T) {
 	}
 	characters, examples := 0, 0
 	for _, l := range lessons {
+		lessonID = l.ID
 		for _, c := range l.Characters {
 			characters++
 			check("meaning", c.Meaning)
@@ -1703,6 +1709,7 @@ func TestN1N2KanjiLearnerFacingContentHasReviewedEnglish(t *testing.T) {
 		Explanation string   `json:"Explanation"`
 	}
 	type lesson struct {
+		ID         string      `json:"ID"`
 		Title      string      `json:"Title"`
 		Chapter    string      `json:"Chapter"`
 		Characters []character `json:"Characters"`
@@ -1715,9 +1722,10 @@ func TestN1N2KanjiLearnerFacingContentHasReviewedEnglish(t *testing.T) {
 		}
 		questions := 0
 		missing := map[string]map[string]struct{}{}
+		lessonID := ""
 		check := func(field, text string) {
 			t.Helper()
-			if translated, ok := jlptKanjiReadingEnglish[field][text]; !ok || translated == text {
+			if !kanjiTranslatedInContext(level, lessonID, field, text) {
 				if missing[field] == nil {
 					missing[field] = map[string]struct{}{}
 				}
@@ -1725,6 +1733,7 @@ func TestN1N2KanjiLearnerFacingContentHasReviewedEnglish(t *testing.T) {
 			}
 		}
 		for _, l := range lessons {
+			lessonID = l.ID
 			check("title", l.Title)
 			check("chapter", l.Chapter)
 			for _, c := range l.Characters {
@@ -1880,4 +1889,11 @@ func TestTranslateJLPTKanjiReadingTextPreservesJapaneseAndUnknownText(t *testing
 	if got := translateJLPTKanjiReadingText("meaning", unreviewed); got != unreviewed {
 		t.Fatalf("unreviewed text changed: got %q, want %q", got, unreviewed)
 	}
+}
+
+// kanjiTranslatedInContext reports whether production localization returns an
+// English translation for a Kanji lesson text. It uses the same context-aware
+// lookup as the API (per-lesson catalogs first, then the shared reading map).
+func kanjiTranslatedInContext(level, lessonID, field, source string) bool {
+	return translateLearningTextInQuestionContext(field, source, nil, "kanji", "kanji:"+level+":"+lessonID) != source
 }

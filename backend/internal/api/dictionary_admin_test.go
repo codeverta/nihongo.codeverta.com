@@ -75,8 +75,9 @@ func TestDictionaryAdminRequiresTokenAndSupportsRefresh(t *testing.T) {
 	}
 	public := httptest.NewRecorder()
 	h.ServeHTTP(public, httptest.NewRequest("GET", "/admin/dictionary", nil))
-	if public.Code != 200 || !strings.Contains(public.Body.String(), "Cache Kamus") {
-		t.Fatal("admin page missing")
+	// The standalone page now redirects into the admin dashboard tools view.
+	if public.Code != http.StatusFound || public.Header().Get("Location") != "/admin/#/tools/dictionary" {
+		t.Fatalf("admin page redirect %d %q", public.Code, public.Header().Get("Location"))
 	}
 	s.ConfigureDictionaryAdmin("")
 	if w = bannerRequest(h, "GET", "/v1/admin/dictionary", "dictionary-test-key", nil); w.Code != 401 {

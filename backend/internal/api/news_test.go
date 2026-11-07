@@ -126,7 +126,8 @@ func TestNewsGuestReadsAdminAndImages(t *testing.T) {
 	if fetcher.calls.Load() != 1 {
 		t.Fatal("admin editing triggered fetch")
 	}
-	if w := request(http.MethodGet, "/admin/news", "", ""); w.Code != 200 || !strings.Contains(w.Body.String(), "Kunci admin") {
-		t.Fatal("admin UI missing")
+	// The standalone page now redirects into the admin dashboard tools view.
+	if w := request(http.MethodGet, "/admin/news", "", ""); w.Code != http.StatusFound || w.Header().Get("Location") != "/admin/#/tools/news" {
+		t.Fatal("admin UI redirect missing", w.Code, w.Header().Get("Location"))
 	}
 }
