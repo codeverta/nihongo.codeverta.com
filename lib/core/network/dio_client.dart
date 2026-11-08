@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -65,7 +67,10 @@ final dioProvider = Provider<Dio>((ref) {
         }
         String? token;
         try {
-          token = await access.readSessionToken();
+          // Secure storage can stall on some devices; never hang a request.
+          token = await access.readSessionToken().timeout(
+            const Duration(seconds: 8),
+          );
         } on Object catch (error) {
           handler.reject(DioException(requestOptions: options, error: error));
           return;
@@ -144,6 +149,35 @@ final dioProvider = Provider<Dio>((ref) {
       onMetadata: (metadata) {
         if (!disposed) {
           ref.read(cachedResponseMetadataProvider.notifier).state = metadata;
+        }
+      },
+    ),
+  );
+  // Retry an idempotent GET once on a transient failure so a brief network
+  // hiccup does not leave a lesson on an error screen.
+  dio.interceptors.add(
+    InterceptorsWrapper(
+      onError: (error, handler) async {
+        final options = error.requestOptions;
+        final transient =
+            error.type == DioExceptionType.connectionTimeout ||
+            error.type == DioExceptionType.sendTimeout ||
+            error.type == DioExceptionType.receiveTimeout ||
+            error.type == DioExceptionType.connectionError ||
+            error.error is TimeoutException;
+        if (disposed ||
+            !transient ||
+            options.method.toUpperCase() != 'GET' ||
+            options.extra['networkRetried'] == true ||
+            (options.cancelToken?.isCancelled ?? false)) {
+          handler.next(error);
+          return;
+        }
+        options.extra['networkRetried'] = true;
+        try {
+          handler.resolve(await dio.fetch<dynamic>(options));
+        } on DioException catch (retryError) {
+          handler.next(retryError);
         }
       },
     ),

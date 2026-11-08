@@ -1,6 +1,9 @@
 /// English copy for the Sakura Pagi redesign. Keys are the exact Indonesian
 /// source strings used with `.localized(context)`.
 const uiEnglishRedesign = <String, String>{
+  // Beranda quick menu labels.
+  'Lowongan': 'Jobs',
+  'Peta': 'Map',
   'Tema': 'Theme',
   'Pilih tampilan terang, gelap, atau ikuti pengaturan HP.':
       'Choose light, dark, or follow your phone setting.',

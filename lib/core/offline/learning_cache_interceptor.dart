@@ -30,6 +30,15 @@ const String _mutationPlanExtraKey = '_learningCacheMutationPlan';
 
 /// Intercepts only known learning-content GET routes. Entries are scoped to the
 /// account snapshot captured when the request starts and reauthorized on reads.
+/// Disk cache work (secure-storage key, encryption, index rewrite) must never
+/// keep a lesson on a spinner: past this budget the request continues without
+/// the cache and slow writes finish in the background.
+const _cacheBudget = Duration(seconds: 5);
+
+/// A duplicate request waits this long for an identical in-flight request
+/// before fetching on its own.
+const _inFlightBudget = Duration(seconds: 15);
+
 class LearningCacheInterceptor extends Interceptor {
   LearningCacheInterceptor({
     required this.dio,
@@ -120,19 +129,17 @@ class LearningCacheInterceptor extends Interceptor {
       }
       options.extra[_accountExtraKey] = accountId;
       options.extra[_cacheKeyExtraKey] = cacheKey;
-      final store = await _cacheFuture;
+      final store = await _cacheFuture.timeout(_cacheBudget);
       var ownerId = accountId;
-      var cached = await store.readResponse(
-        accountId: accountId,
-        key: cacheKey,
-      );
+      var cached = await store
+          .readResponse(accountId: accountId, key: cacheKey)
+          .timeout(_cacheBudget);
       if (cached == null &&
           accountId != guestCacheAccountId &&
           _isPublicLessonKey(cacheKey)) {
-        cached = await store.readResponse(
-          accountId: guestCacheAccountId,
-          key: cacheKey,
-        );
+        cached = await store
+            .readResponse(accountId: guestCacheAccountId, key: cacheKey)
+            .timeout(_cacheBudget);
         if (cached != null) ownerId = guestCacheAccountId;
       }
       options.extra[_cacheOwnerExtraKey] = ownerId;
@@ -143,7 +150,9 @@ class LearningCacheInterceptor extends Interceptor {
         final authorized =
             !requiresPremium ||
             (accountId != guestCacheAccountId &&
-                await canReadPremium(accountId));
+                await Future<bool>.value(
+                  canReadPremium(accountId),
+                ).timeout(_cacheBudget));
         final accountStillMatches = await _matchesCurrentAccount(accountId);
         if (authorized && accountStillMatches) {
           final metadata = CachedResponseMetadata(
@@ -184,7 +193,7 @@ class LearningCacheInterceptor extends Interceptor {
       final pending = _inFlight[scopedKey];
       if (pending != null) {
         try {
-          final response = await pending.future;
+          final response = await pending.future.timeout(_inFlightBudget);
           if (!await _matchesCurrentAccount(accountId)) {
             handler.reject(_accountChanged(options));
             return;
@@ -201,6 +210,9 @@ class LearningCacheInterceptor extends Interceptor {
               extra: response.extra,
             ),
           );
+        } on TimeoutException {
+          // The shared request is stuck; fetch this one independently.
+          handler.next(options);
         } on DioException catch (error) {
           handler.reject(
             await _matchesCurrentAccount(accountId)
@@ -243,7 +255,7 @@ class LearningCacheInterceptor extends Interceptor {
     final accountId = options.extra[_accountExtraKey];
     final dedupeKey = options.extra[_dedupeCompleterExtraKey];
     final mutationPlan = options.extra[_mutationPlanExtraKey];
-    try {
+    Future<void> persist() async {
       if (mutationPlan is String &&
           accountId is String &&
           response.statusCode != null &&
@@ -339,8 +351,13 @@ class LearningCacheInterceptor extends Interceptor {
           };
         }
       }
+    }
+
+    try {
+      await persist().timeout(_cacheBudget);
     } on Object {
-      // Network success wins if disk persistence fails.
+      // Network success wins if disk persistence fails or is slow; a slow
+      // write keeps running in the background.
     } finally {
       if (dedupeKey is String) {
         final completer = _inFlight.remove(dedupeKey);
@@ -360,7 +377,7 @@ class LearningCacheInterceptor extends Interceptor {
     final cacheOwner = options.extra[_cacheOwnerExtraKey];
     final dedupeKey = options.extra[_dedupeCompleterExtraKey];
     final statusCode = err.response?.statusCode;
-    try {
+    Future<void> record() async {
       if (cacheKey is String && accountId is String) {
         if (statusCode == 401 || statusCode == 403 || statusCode == 402) {
           final store = await _cacheFuture;
@@ -399,6 +416,10 @@ class LearningCacheInterceptor extends Interceptor {
           );
         }
       }
+    }
+
+    try {
+      await record().timeout(_cacheBudget);
     } on Object {
       // Preserve the original network error.
     } finally {

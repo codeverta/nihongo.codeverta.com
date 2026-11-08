@@ -6,21 +6,17 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
-import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_banner_content.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
-import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
+import 'package:nihongo_master/features/home/presentation/widgets/home_quick_menu.dart';
 import 'package:nihongo_master/features/learn/activity/continue_learning_section.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
-import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
-import 'package:nihongo_master/features/map/presentation/map_entry_card.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/profile/presentation/widgets/profile_avatar.dart';
-import 'package:nihongo_master/features/ssw/presentation/ssw_screens.dart';
 import 'package:nihongo_master/shared/presentation/widgets/auth_gate.dart';
 import 'package:nihongo_master/shared/presentation/widgets/motion.dart';
 
@@ -86,7 +82,6 @@ class DashboardScreen extends ConsumerWidget {
           active: active,
           accountHasLifetimeAccess: accountHasLifetimeAccess,
           openLearn: () => _authorize(context, openLearn),
-          openExam: () => _authorize(context, openExam),
           openExamCategory: (category) => _authorize(context, () {
             if (openExamCategory != null) {
               openExamCategory!(category);
@@ -146,7 +141,6 @@ class _DashboardContent extends StatelessWidget {
     required this.accountHasLifetimeAccess,
     required this.openExamCategory,
     required this.openLearn,
-    required this.openExam,
     required this.openProfile,
   });
 
@@ -156,7 +150,6 @@ class _DashboardContent extends StatelessWidget {
   final ValueChanged<String> openExamCategory;
   final bool accountHasLifetimeAccess;
   final VoidCallback openLearn;
-  final VoidCallback openExam;
   final VoidCallback openProfile;
 
   @override
@@ -179,24 +172,10 @@ class _DashboardContent extends StatelessWidget {
               StaggeredEntrance(
                 child: _DashboardHeader(data: data, openProfile: openProfile),
               ),
-              if (data.isAuthenticated && data.profile != null) ...[
+              if (banners.isNotEmpty) ...[
                 const SizedBox(height: 16),
                 StaggeredEntrance(
                   index: 1,
-                  child: _ProgressSummary(
-                    profile: data.profile!,
-                    onTap: openProfile,
-                  ),
-                ),
-              ],
-              if (offline) ...[
-                const SizedBox(height: 12),
-                const _OfflineDashboardNotice(),
-              ],
-              const SizedBox(height: 16),
-              if (banners.isNotEmpty) ...[
-                StaggeredEntrance(
-                  index: 2,
                   child: HomeBannerCarousel(
                     key: ValueKey(banners.map((banner) => banner.id).join(':')),
                     banners: banners,
@@ -219,81 +198,28 @@ class _DashboardContent extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 8),
               ],
-              const ContinueLearningSection(),
-              const SizedBox(height: 6),
-              _SectionHeader(
-                title: 'Mulai belajar'.localized(context),
-                action: 'Lihat semua'.localized(context),
-                onPressed: openLearn,
-              ),
-              const SizedBox(height: 8),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  ActionChip(label: const Text('JLPT'), onPressed: openLearn),
-                  ActionChip(
-                    label: const Text('JFT'),
-                    onPressed: () => openExamCategory('JFT Test'),
+              if (data.isAuthenticated && data.profile != null) ...[
+                SizedBox(height: banners.isNotEmpty ? 8 : 16),
+                StaggeredEntrance(
+                  index: 2,
+                  child: _ProgressSummary(
+                    profile: data.profile!,
+                    onTap: openProfile,
                   ),
-                  ActionChip(
-                    label: const Text('NAT'),
-                    onPressed: () => openExamCategory('NAT Test'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 14),
-              _LearningMenuGrid(
-                categories: data.categories
-                    .where((c) => c.id != 'listening' && c.id != 'speaking')
-                    .toList(growable: false),
-                onPressed: openLearn,
-              ),
-              const SizedBox(height: 12),
-              Card(
-                child: ListTile(
-                  contentPadding: const EdgeInsets.fromLTRB(14, 6, 10, 6),
-                  leading: KanjiGlyphTile(
-                    glyph: '試',
-                    color: SakuraColors.of(context).grammar,
-                  ),
-                  title: Text('Latihan ujian'.localized(context)),
-                  subtitle: Text(
-                    'Simulasi JLPT, JFT, dan NAT'.localized(context),
-                  ),
-                  trailing: const Icon(Icons.chevron_right_rounded),
-                  onTap: openExam,
                 ),
+              ],
+              if (offline) ...[
+                const SizedBox(height: 12),
+                const _OfflineDashboardNotice(),
+              ],
+              const SizedBox(height: 20),
+              HomeQuickMenu(
+                openExamCategory: openExamCategory,
+                hasLifetimeAccess: hasLifetimeAccess,
               ),
-              const SizedBox(height: 28),
-              Text(
-                'Jelajahi Jepang'.localized(context),
-                style: Theme.of(
-                  context,
-                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
-              ),
-              const SizedBox(height: 14),
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  final columns = constraints.maxWidth >= 600 ? 2 : 1;
-                  final width =
-                      (constraints.maxWidth - (columns - 1) * 16) / columns;
-                  return Wrap(
-                    spacing: 16,
-                    runSpacing: 16,
-                    children: [
-                      SizedBox(width: width, child: const MangaEntryCard()),
-                      SizedBox(width: width, child: const AnkiEntryCard()),
-                      SizedBox(width: width, child: const SswEntryCard()),
-                      SizedBox(width: width, child: const JobsEntryCard()),
-                      SizedBox(width: width, child: const MapEntryCard()),
-                    ],
-                  );
-                },
-              ),
-
+              const SizedBox(height: 22),
+              const ContinueLearningSection(),
               const SizedBox(height: 24),
               const NewsPreview(),
             ],
@@ -537,143 +463,6 @@ class _ProgressSummary extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _LearningMenuGrid extends StatelessWidget {
-  const _LearningMenuGrid({required this.categories, required this.onPressed});
-
-  final List<LearningCategory> categories;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final columns = constraints.maxWidth >= 650 ? 3 : 2;
-        return GridView.builder(
-          // Keep the nested grid's scroll state separate from the dashboard.
-          key: const PageStorageKey('dashboard-learning-grid'),
-          primary: false,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: categories.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: columns,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 1.48,
-          ),
-          itemBuilder: (context, index) => _LearningMenuCard(
-            category: categories[index],
-            onPressed: onPressed,
-            index: index,
-          ),
-        );
-      },
-    );
-  }
-}
-
-class _LearningMenuCard extends StatelessWidget {
-  const _LearningMenuCard({
-    required this.category,
-    required this.onPressed,
-    this.index = 0,
-  });
-
-  final LearningCategory category;
-  final VoidCallback onPressed;
-  final int index;
-
-  @override
-  Widget build(BuildContext context) {
-    final sakura = SakuraColors.of(context);
-    final color = sakura.category(category.id);
-    return StaggeredEntrance(
-      index: index,
-      child: Pressable(
-        key: Key('category-${category.id}'),
-        onTap: onPressed,
-        borderRadius: BorderRadius.circular(18),
-        child: SakuraCard(
-          padding: const EdgeInsets.all(13),
-          child: Row(
-            children: [
-              KanjiGlyphTile(
-                glyph: categoryGlyph(category.id),
-                color: color,
-                size: 44,
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Flexible(
-                          child: Text(
-                            category.name.localized(context),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontWeight: FontWeight.w700),
-                          ),
-                        ),
-                        if (category.isPremium) ...[
-                          const SizedBox(width: 4),
-                          Icon(
-                            Icons.workspace_premium_rounded,
-                            size: 15,
-                            color: sakura.goldText,
-                          ),
-                        ],
-                      ],
-                    ),
-                    const SizedBox(height: 3),
-                    Text(
-                      '${category.lessonCount} pelajaran'.localized(context),
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _SectionHeader extends StatelessWidget {
-  const _SectionHeader({
-    required this.title,
-    required this.action,
-    required this.onPressed,
-  });
-
-  final String title;
-  final String action;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w800,
-              letterSpacing: -0.25,
-            ),
-          ),
-        ),
-        TextButton(onPressed: onPressed, child: Text(action)),
-      ],
     );
   }
 }

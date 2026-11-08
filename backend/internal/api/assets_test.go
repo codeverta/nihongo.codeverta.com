@@ -84,7 +84,7 @@ func TestCDNAssetsWithoutLocalDirectory(t *testing.T) {
 	memory.SetAssetBaseURL("https://cdn.example.com")
 	w = httptest.NewRecorder()
 	s.Handler().ServeHTTP(w, request)
-	if w.Code != http.StatusFound || w.Header().Get("Location") != "https://cdn.example.com/assets/images/onboarding-japanese-journey.webp" {
+	if w.Code != http.StatusFound || w.Header().Get("Location") != "https://cdn.example.com/assets/images/onboarding-japanese-journey.webp?v=2" {
 		t.Fatalf("CDN redirect = %d %v", w.Code, w.Header())
 	}
 }

@@ -137,8 +137,18 @@ func (s *MemoryStore) assetURLLocked(key string) string {
 	if strings.HasPrefix(key, "assets/images/") && strings.HasSuffix(key, ".png") {
 		key = strings.TrimSuffix(key, ".png") + ".webp"
 	}
-	return s.assetBaseURL + "/" + key
+	url := s.assetBaseURL + "/" + key
+	if strings.HasPrefix(key, "assets/images/") {
+		// Bump assetImageVersion whenever images are re-encoded under the same
+		// file name, so app caches keyed by URL fetch the new file.
+		url += "?v=" + assetImageVersion
+	}
+	return url
 }
+
+// assetImageVersion 2 = full-resolution images restored after the 2026-10-22
+// compression (commit 177f67e) made them blurry.
+const assetImageVersion = "2"
 
 func (s *MemoryStore) AnswerVocabularyQuestion(userID, attemptID, questionID, optionID string) (domain.VocabularyAnswerFeedback, error) {
 	s.mu.Lock()

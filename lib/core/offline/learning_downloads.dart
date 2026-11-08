@@ -288,8 +288,11 @@ class LearningDownloads {
                 if (userId != null) offlineAccountIdExtraKey: userId,
               },
             ),
-          );
+          ).timeout(const Duration(seconds: 30));
           completed++;
+        } on TimeoutException {
+          // One stuck lesson must not freeze the whole save at n-1/n.
+          failed++;
         } on DioException catch (error) {
           failed++;
           if (error.response == null) {

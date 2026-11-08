@@ -5,11 +5,11 @@ import "testing"
 func TestAssetURLs(t *testing.T) {
 	s := NewMemoryStore()
 	key := "assets/images/reading/story-01.webp"
-	if got := s.assetURLLocked(key); got != "/"+key {
+	if got := s.assetURLLocked(key); got != "/"+key+"?v="+assetImageVersion {
 		t.Fatalf("local URL = %q", got)
 	}
 	s.SetAssetBaseURL("https://cdn.example.com/")
-	if got := s.assetURLLocked(key); got != "https://cdn.example.com/"+key {
+	if got := s.assetURLLocked(key); got != "https://cdn.example.com/"+key+"?v="+assetImageVersion {
 		t.Fatalf("CDN URL = %q", got)
 	}
 	if got := s.assetURLLocked(""); got != "" {

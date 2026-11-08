@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
@@ -7,7 +5,9 @@ import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/offline/offline_providers.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 
-/// Starts preparation after the first frame; it never delays entering a course.
+/// Shows the offline note and a manual "save for offline" button. Lessons are
+/// no longer prefetched automatically: each lesson is fetched (and cached) only
+/// when opened, so entering or refreshing a course costs one list request.
 class CourseOfflineStatus extends ConsumerStatefulWidget {
   const CourseOfflineStatus({
     required this.type,
@@ -27,9 +27,16 @@ class CourseOfflineStatus extends ConsumerStatefulWidget {
 }
 
 class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
-  String? _prepared;
   bool _saving = false;
   bool _pinned = false;
+
+  @override
+  void didUpdateWidget(covariant CourseOfflineStatus oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.type != widget.type || oldWidget.level != widget.level) {
+      _pinned = false;
+    }
+  }
 
   Future<void> _saveCourse() async {
     if (_saving) return;
@@ -102,85 +109,42 @@ class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
     }
   }
 
-  void _prepare() {
-    final user = ref.read(authControllerProvider).user?.id;
-    final signature =
-        '$user:${widget.type}:${widget.level}:${widget.activeLessonId}:${widget.lessonIds.join(',')}';
-    if (_prepared == signature || ref.read(offlineProvider)) return;
-    _pinned = false;
-    _prepared = signature;
-    final type = widget.type;
-    final level = widget.level;
-    final activeLessonId = widget.activeLessonId;
-    final ids = List<String>.of(widget.lessonIds);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      unawaited(() async {
-        try {
-          final downloads = await ref.read(learningDownloadsProvider.future);
-          if (!mounted) return;
-          await downloads.preloadCourse(
-            type: type,
-            level: level,
-            lessonIds: ids,
-            activeLessonId: activeLessonId,
-          );
-        } on Object {
-          // Opening a course must remain usable if preparation fails.
-        }
-      }());
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final offline = ref.watch(offlineProvider);
     ref.watch(authControllerProvider.select((s) => s.user?.id));
-    if (offline) _prepared = null;
-    final progress = ref.watch(learningDownloadProgressProvider).valueOrNull;
-    _prepare();
-    final thisCourse = progress?.courseKey == '${widget.type}:${widget.level}';
-    final preparing = thisCourse && progress!.isPreparing;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        children: [
-          Icon(
-            offline ? Icons.offline_bolt_outlined : Icons.download_done_rounded,
-            size: 18,
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              offline
-                  ? 'Offline · buka materi yang sudah disiapkan.'.localized(context)
-                  : preparing
-                  ? '${'Menyiapkan teks materi'.localized(context)} · ${progress.completed}/${progress.total}'
-                  : thisCourse &&
-                        (progress!.failed > 0 || progress.remaining > 0)
-                  ? 'Sebagian materi tersimpan. Materi lainnya belum selesai disiapkan.'.localized(context)
-                  : thisCourse && progress!.completed > 0
-                  ? 'Teks materi siap dipakai offline.'.localized(context)
-                  : 'Teks disiapkan otomatis untuk belajar berikutnya.'.localized(context),
-              style: Theme.of(context).textTheme.bodySmall,
+    if (offline) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: Row(
+          children: [
+            const Icon(Icons.offline_bolt_outlined, size: 18),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                'Offline · buka materi yang sudah disiapkan.'.localized(context),
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
             ),
-          ),
-          if (preparing)
-            const SizedBox.square(
-              dimension: 16,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            ),
-          TextButton(
-            onPressed: _saving || _pinned ? null : _saveCourse,
-            child: Text(
-              _saving
-                  ? 'Menyimpan…'.localized(context)
-                  : _pinned
-                  ? 'Tersimpan'.localized(context)
-                  : 'Simpan teks'.localized(context),
-            ),
-          ),
-        ],
+          ],
+        ),
+      );
+    }
+    return Align(
+      alignment: Alignment.centerRight,
+      child: TextButton.icon(
+        onPressed: _saving || _pinned ? null : _saveCourse,
+        icon: Icon(
+          _pinned ? Icons.download_done_rounded : Icons.download_outlined,
+          size: 18,
+        ),
+        label: Text(
+          _saving
+              ? 'Menyimpan…'.localized(context)
+              : _pinned
+              ? 'Tersimpan'.localized(context)
+              : 'Simpan teks'.localized(context),
+        ),
       ),
     );
   }
