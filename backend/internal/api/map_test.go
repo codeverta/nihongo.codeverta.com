@@ -120,7 +120,8 @@ func TestMapEndpointsWithoutConfiguration(t *testing.T) {
 	if w := mapRequest(h, "GET", "/v1/jobs/prefecture-counts", "", nil); w.Code != 503 {
 		t.Fatalf("unconfigured jobs: %d", w.Code)
 	}
-	if w := mapRequest(h, "GET", "/admin/map", "", nil); w.Code != 200 || !strings.Contains(w.Body.String(), "Peta Jepang") {
-		t.Fatalf("admin page: %d", w.Code)
+	// The standalone page now redirects into the admin dashboard tools view.
+	if w := mapRequest(h, "GET", "/admin/map", "", nil); w.Code != http.StatusFound || w.Header().Get("Location") != "/admin/#/tools/map" {
+		t.Fatalf("admin page redirect: %d %q", w.Code, w.Header().Get("Location"))
 	}
 }

@@ -54,6 +54,10 @@ func main() {
 	if err := memoryStore.ConfigurePlayReviewAccount(os.Getenv("PLAY_REVIEW_EMAIL"), os.Getenv("PLAY_REVIEW_PASSWORD")); err != nil {
 		log.Fatalf("configure Google Play review account: %v", err)
 	}
+	// Dedicated admin dashboard login, kept in the server environment only.
+	if err := memoryStore.ConfigureAdminLoginAccount(os.Getenv("ADMIN_LOGIN_EMAIL"), os.Getenv("ADMIN_LOGIN_PASSWORD")); err != nil {
+		log.Fatalf("configure admin login account: %v", err)
+	}
 	verifier, err := billing.NewStoreVerifier(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -88,7 +92,14 @@ func main() {
 		dictionaryToken = os.Getenv("BRANDING_ADMIN_TOKEN")
 	}
 	apiServer.ConfigureDictionaryAdmin(dictionaryToken)
-	apiServer.ConfigureAdminAccounts(os.Getenv("ADMIN_EMAILS"))
+	adminEmails := os.Getenv("ADMIN_EMAILS")
+	if loginEmail := strings.TrimSpace(os.Getenv("ADMIN_LOGIN_EMAIL")); loginEmail != "" {
+		if adminEmails != "" {
+			adminEmails += ","
+		}
+		adminEmails += loginEmail
+	}
+	apiServer.ConfigureAdminAccounts(adminEmails)
 	jobDB, err := memoryStore.JobsDatabase()
 	if err != nil {
 		log.Fatal(err)

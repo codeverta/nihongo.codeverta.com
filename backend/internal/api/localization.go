@@ -215,6 +215,9 @@ func translateLearningTextInQuestionContext(field, text string, questionContext 
 			if translated, ok := jlptKanjiN3Lessons39To77English[key]; ok {
 				return translated
 			}
+			if translated, ok := jlptKanjiN3MeaningGapsEnglish[key]; ok {
+				return translated
+			}
 			if translated, ok := jlptKanjiN2Lessons09To18English[key]; ok {
 				return translated
 			}

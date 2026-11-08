@@ -1,7 +1,7 @@
 name: nihongo_master
 description: "Nihongo Master - Aplikasi Pembelajaran Bahasa Jepang modern dengan Clean Feature-First Architecture."
 publish_to: 'none'
-version: 1.0.7+8
+version: 2.0.1+10
 
 environment:
   sdk: '>=3.10.0 <4.0.0'

@@ -2,14 +2,20 @@ package store
 
 import (
 	"crypto/rand"
+	"crypto/sha256"
 	"encoding/base64"
+	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"fmt"
+	"log"
 	"net/mail"
 	"strings"
+	"time"
 
 	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
@@ -29,7 +35,7 @@ func (s *MemoryStore) AuthenticateGoogle(identity domain.GoogleIdentity, deviceT
 	email := strings.ToLower(strings.TrimSpace(identity.Email))
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	if email == s.playReviewEmail {
+	if email == s.playReviewEmail || (s.adminLoginEmail != "" && email == s.adminLoginEmail) {
 		return domain.Profile{}, ErrReviewEmailLogin
 	}
 	existingAccount, ok := s.accounts[email]
@@ -118,29 +124,110 @@ func (s *MemoryStore) ConfigurePlayReviewAccount(email, password string) error {
 	return nil
 }
 
+// ConfigureAdminLoginAccount adds an email/password account for the /admin/
+// dashboard. Credentials come from the server environment and are never stored
+// in the database. The account cannot be used with Google Sign-In.
+func (s *MemoryStore) ConfigureAdminLoginAccount(email, password string) error {
+	email = strings.ToLower(strings.TrimSpace(email))
+	if email == "" && password == "" {
+		return nil
+	}
+	if email == "" || password == "" {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL and ADMIN_LOGIN_PASSWORD must both be set")
+	}
+	parsed, err := mail.ParseAddress(email)
+	if err != nil || parsed.Address != email {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL must be a valid email address")
+	}
+	if email == "demo@nihongomaster.app" {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL must be different from the development demo account")
+	}
+	if strings.TrimSpace(password) != password || len([]byte(password)) < 12 || len([]byte(password)) > 72 {
+		return fmt.Errorf("ADMIN_LOGIN_PASSWORD must be 12 to 72 bytes without surrounding spaces")
+	}
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	if err != nil {
+		return fmt.Errorf("hash admin password: %w", err)
+	}
+	userID := uuid.NewSHA1(uuid.NameSpaceURL, []byte("nihongo-master:admin-login:"+email)).String()
+	configured := account{ID: userID, Email: email, DisplayName: "Admin", PasswordHash: hash}
+
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if email == s.playReviewEmail {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL must be different from PLAY_REVIEW_EMAIL")
+	}
+	if existing, ok := s.accounts[email]; ok && existing.ID != userID {
+		return fmt.Errorf("ADMIN_LOGIN_EMAIL is already assigned to another account")
+	}
+	s.accounts[email] = configured
+	s.profiles[userID] = profileForAccount(configured)
+	s.adminLoginEmail = email
+	return nil
+}
+
 func (s *MemoryStore) CreateSession(userID string) (string, error) {
 	random := make([]byte, 32)
 	if _, err := rand.Read(random); err != nil {
 		return "", err
 	}
 	token := base64.RawURLEncoding.EncodeToString(random)
+	s.mu.RLock()
+	persist := s.billingEnabled
+	s.mu.RUnlock()
+	if persist {
+		// Persist first so a login that is reported as successful survives a restart.
+		record := database.Session{TokenHash: sessionTokenHash(token), UserID: userID, CreatedAt: time.Now().UTC()}
+		if err := s.ormWriter.Create(&record).Error; err != nil {
+			return "", err
+		}
+	}
 	s.mu.Lock()
 	s.sessions[token] = userID
 	s.mu.Unlock()
 	return token, nil
 }
 
+// sessionTokenHash is the stored form of a bearer token. Tokens are 256 random
+// bits, so a plain SHA-256 is sufficient.
+func sessionTokenHash(token string) string {
+	sum := sha256.Sum256([]byte(token))
+	return hex.EncodeToString(sum[:])
+}
+
 func (s *MemoryStore) ResolveSession(token string) (string, bool) {
 	s.mu.RLock()
 	userID, ok := s.sessions[token]
+	persist := s.billingEnabled
 	s.mu.RUnlock()
-	return userID, ok
+	if ok || !persist || token == "" {
+		return userID, ok
+	}
+	// Not in memory, for example right after a restart: restore it from the database.
+	var record database.Session
+	err := s.ormDB.Where("token_hash = ?", sessionTokenHash(token)).Take(&record).Error
+	if err != nil {
+		if !errors.Is(err, gorm.ErrRecordNotFound) {
+			log.Printf("resolve persisted session: %v", err)
+		}
+		return "", false
+	}
+	s.mu.Lock()
+	s.sessions[token] = record.UserID
+	s.mu.Unlock()
+	return record.UserID, true
 }
 
 func (s *MemoryStore) RevokeSession(token string) {
 	s.mu.Lock()
 	delete(s.sessions, token)
+	persist := s.billingEnabled
 	s.mu.Unlock()
+	if persist && token != "" {
+		if err := s.ormWriter.Where("token_hash = ?", sessionTokenHash(token)).Delete(&database.Session{}).Error; err != nil {
+			log.Printf("revoke persisted session: %v", err)
+		}
+	}
 }
 
 func (s *MemoryStore) seedDemoAccount() {

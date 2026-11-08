@@ -20,7 +20,7 @@ func (s *MemoryStore) EnableBillingPersistence() error {
 	if s.gamificationDB == nil {
 		return fmt.Errorf("billing requires a persistent database")
 	}
-	if err := database.Migrate(s.ormDB, &database.BillingPurchase{}, &database.BillingToken{}, &database.Account{}, &database.DeletedDemo{}); err != nil {
+	if err := database.Migrate(s.ormDB, &database.BillingPurchase{}, &database.BillingToken{}, &database.Account{}, &database.DeletedDemo{}, &database.Session{}); err != nil {
 		return err
 	}
 	var purchases []database.BillingPurchase
@@ -339,6 +339,9 @@ func (s *MemoryStore) DeleteAccountWithProfilePhoto(user string) (string, error)
 				return err
 			}
 			if err := tx.Where("user_id = ?", user).Delete(&database.BillingToken{}).Error; err != nil {
+				return err
+			}
+			if err := tx.Where("user_id = ?", user).Delete(&database.Session{}).Error; err != nil {
 				return err
 			}
 			for email, a := range s.accounts {

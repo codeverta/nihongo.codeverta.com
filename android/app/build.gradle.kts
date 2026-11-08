@@ -73,6 +73,10 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
             // The GitHub release workflow requires upload-key secrets. The debug
             // fallback is only for local preview builds, never for Play uploads.
             signingConfig = signingConfigs.getByName(
