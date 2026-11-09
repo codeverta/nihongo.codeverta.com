@@ -29,6 +29,7 @@ type Announcement struct {
 	UpdatedAt time.Time  `json:"updatedAt"`
 	SentAt    *time.Time `json:"sentAt,omitempty"`
 	FCMName   string     `json:"fcmName,omitempty"`
+	FCMNameEn string     `json:"fcmNameEn,omitempty"`
 	Error     string     `json:"error,omitempty"`
 }
 type NotificationStore struct {
@@ -66,6 +67,14 @@ var announcementRoutes = map[string]bool{"/home": true, "/dictionary": true, "/a
 func validateAnnouncement(m *notifications.Message) error {
 	m.Title = strings.TrimSpace(m.Title)
 	m.Body = strings.TrimSpace(m.Body)
+	m.TitleEn = strings.TrimSpace(m.TitleEn)
+	m.BodyEn = strings.TrimSpace(m.BodyEn)
+	if (m.TitleEn == "") != (m.BodyEn == "") {
+		return fmt.Errorf("isi judul dan pesan English sekaligus, atau kosongkan keduanya")
+	}
+	if len([]rune(m.TitleEn)) > 80 || len([]rune(m.BodyEn)) > 500 {
+		return fmt.Errorf("judul English maksimal 80 karakter dan isi English maksimal 500 karakter")
+	}
 	if len([]rune(m.Title)) < 1 || len([]rune(m.Title)) > 80 || len([]rune(m.Body)) < 1 || len([]rune(m.Body)) > 500 {
 		return fmt.Errorf("judul wajib 1–80 karakter dan isi wajib 1–500 karakter")
 	}
@@ -237,6 +246,14 @@ func (s *Server) sendAnnouncement(w http.ResponseWriter, r *http.Request) {
 			a.Status = "sent"
 			a.FCMName = name
 			a.SentAt = &now
+			// English readers are on their own topic. The Indonesian send already
+			// succeeded, so an English failure is reported but never allows a resend.
+			enName, enErr := n.sender.Send(r.Context(), a.Message.English(), a.ID, false)
+			if enErr != nil {
+				a.Error = "Versi English gagal terkirim: " + enErr.Error()
+			} else {
+				a.FCMNameEn = enName
+			}
 		}
 		items = append([]Announcement(nil), n.items...)
 		items[i] = a

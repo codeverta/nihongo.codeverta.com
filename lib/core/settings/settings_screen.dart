@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/ads/ads_controller.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
+import 'package:nihongo_master/core/localization/app_language.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 
@@ -22,6 +23,8 @@ class SettingsScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
+          const _LanguageCard(),
+          const SizedBox(height: 12),
           Card(
             child: Column(
               children: [
@@ -249,6 +252,76 @@ class _AdPrivacyTile extends ConsumerWidget {
           ),
         );
       },
+    );
+  }
+}
+
+/// Quick language switch. The same choice also moves push notifications to the
+/// matching language and is stored only on this device.
+class _LanguageCard extends ConsumerWidget {
+  const _LanguageCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final locale = ref.watch(appLanguageProvider);
+    final englishAvailable = ref.watch(englishAvailabilityProvider);
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.language_rounded,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Bahasa aplikasi'.localized(context),
+                    style: const TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Padding(
+              padding: const EdgeInsets.only(left: 36),
+              child: Text(
+                'Berlaku untuk tampilan aplikasi, materi, dan notifikasi.'
+                    .localized(context),
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: SegmentedButton<String>(
+                key: const Key('settings-language'),
+                showSelectedIcon: false,
+                segments: [
+                  ButtonSegment(
+                    value: 'id',
+                    label: Text('Bahasa Indonesia'.localized(context)),
+                  ),
+                  if (englishAvailable)
+                    const ButtonSegment(value: 'en', label: Text('English')),
+                ],
+                selected: {locale.languageCode},
+                onSelectionChanged: (value) {
+                  unawaited(
+                    ref
+                        .read(appLanguageProvider.notifier)
+                        .selectLanguage(value.first),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

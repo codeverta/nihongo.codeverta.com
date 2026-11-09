@@ -63,6 +63,7 @@ var apiErrorMessagesEnglish = map[string]string{
 	"invalid_upload":               "The uploaded file could not be used. Check the file type and size, then try again.",
 	"job_not_found":                "The job posting could not be found.",
 	"jobs_unavailable":             "Job listings are not available right now. Please try again later.",
+	"map_unavailable":              "The map is not available right now. Please try again later.",
 	"kanji_not_found":              "Kanji details are not available from the dictionary source yet.",
 	"legacy_cache":                 "This older cache entry has no refresh data yet. Search for the word again in the app first.",
 	"manga_access_unavailable":     "Lifetime Access could not be verified right now. Please try again.",

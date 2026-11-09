@@ -11,7 +11,7 @@ import (
 // learning or news localizers. Admin routes stay in Indonesian.
 var accountLocalizedPrefixes = []string{
 	"/v1/me", "/v1/billing", "/v1/plans", "/v1/pricing", "/v1/auth",
-	"/v1/jobs", "/v1/manga", "/v1/anki", "/v1/app-update-policy", "/v1/branding",
+	"/v1/jobs", "/v1/map", "/v1/manga", "/v1/anki", "/v1/app-update-policy", "/v1/branding",
 }
 
 func isAccountLocalizedPath(path string) bool {

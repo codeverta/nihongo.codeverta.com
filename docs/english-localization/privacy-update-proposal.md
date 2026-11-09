@@ -1,6 +1,6 @@
 # Usulan revisi privasi: Firebase Analytics
 
-Status: **usulan, belum diterapkan** pada halaman live. Teks hukum perlu disetujui reviewer hukum/privasi sebelum dipakai. `[TANGGAL RILIS]` diisi saat build dengan analytics dirilis.
+Status: **diterapkan 9 November 2026** pada empat halaman legal di `backend/internal/api/legal/` (privacy dan safety, Indonesia dan English), mencakup analytics, iklan AdMob, dan bahasa pengumuman. Teks hukum tetap perlu ditinjau reviewer hukum/privasi. Formulir Data safety Play Console, deklarasi iklan/Advertising ID, dan pesan UMP di AdMob belum dan harus diisi pemilik akun. Teks di bawah dipertahankan sebagai riwayat; versi yang tayang adalah yang ada di berkas legal.
 
 > **Pembaruan: aplikasi sekarang memuat SDK iklan (Google AdMob).** Semua kalimat "tanpa SDK iklan" / "does not include advertising SDKs" pada usulan di bawah **tidak boleh dipakai**. Gunakan bagian "Tambahan wajib jika iklan diaktifkan" di akhir dokumen ini. Rekomendasi teknis nomor 1 (mematikan ID iklan) juga **tidak berlaku** untuk Android, karena AdMob memakai ID iklan.
 

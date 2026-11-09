@@ -17,16 +17,21 @@ import (
 )
 
 type fakeNotificationSender struct {
+	mu       sync.Mutex
 	calls    int
 	dryCalls int
 	err      error
+	sent     []notifications.Message
 }
 
-func (f *fakeNotificationSender) Send(_ context.Context, _ notifications.Message, _ string, dry bool) (string, error) {
+func (f *fakeNotificationSender) Send(_ context.Context, m notifications.Message, _ string, dry bool) (string, error) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
 	if dry {
 		f.dryCalls++
 	} else {
 		f.calls++
+		f.sent = append(f.sent, m)
 	}
 	return "projects/test/messages/123", f.err
 }
@@ -114,7 +119,8 @@ func TestNotificationSendIsDurableAndDeduplicated(t *testing.T) {
 			conflict++
 		}
 	}
-	if f.calls != 1 || ok != 1 || conflict != 1 {
+	// One send per language topic (Indonesian + English), never more.
+	if f.calls != 2 || ok != 1 || conflict != 1 {
 		t.Fatalf("duplicate dispatch: calls %d, status %d/%d", f.calls, ok, conflict)
 	}
 	h = notificationHandler(t, path, f)
@@ -167,5 +173,48 @@ func TestNotificationCrashAndWriteFailureNeverResend(t *testing.T) {
 	}
 	if f.calls != 0 {
 		t.Fatal("send happened without durable reservation")
+	}
+}
+
+func TestNotificationSendsEnglishVersionToEnglishTopic(t *testing.T) {
+	f := &fakeNotificationSender{}
+	h := notificationHandler(t, filepath.Join(t.TempDir(), "history.json"), f)
+	w := notificationRequest(h, "POST", "/v1/admin/notifications", "admin-test", notifications.Message{
+		Title: "Materi baru", Body: "Yuk belajar kanji!", TitleEn: "New lessons", BodyEn: "Let's study kanji!", Route: "/home",
+	})
+	if w.Code != 201 {
+		t.Fatal(w.Body.String())
+	}
+	var created struct{ Data Announcement }
+	if err := json.Unmarshal(w.Body.Bytes(), &created); err != nil {
+		t.Fatal(err)
+	}
+	id := created.Data.ID
+	if w = notificationRequest(h, "POST", "/v1/admin/notifications/"+id+"/send", "admin-test", map[string]string{"confirmId": id}); w.Code != 200 {
+		t.Fatal(w.Body.String())
+	}
+	if len(f.sent) != 2 {
+		t.Fatalf("sends = %d", len(f.sent))
+	}
+	if f.sent[0].Locale != "" || f.sent[0].Title != "Materi baru" {
+		t.Fatalf("indonesian send = %+v", f.sent[0])
+	}
+	if f.sent[1].Locale != notifications.LocaleEnglish || f.sent[1].Title != "New lessons" || f.sent[1].Body != "Let's study kanji!" {
+		t.Fatalf("english send = %+v", f.sent[1])
+	}
+}
+
+func TestNotificationEnglishFallsBackToIndonesianAndMustBePaired(t *testing.T) {
+	f := &fakeNotificationSender{}
+	h := notificationHandler(t, filepath.Join(t.TempDir(), "history.json"), f)
+	if w := notificationRequest(h, "POST", "/v1/admin/notifications", "admin-test", notifications.Message{Title: "Judul", Body: "Isi", TitleEn: "Only title", Route: "/home"}); w.Code != 422 {
+		t.Fatal("half-filled English version accepted")
+	}
+	a := createTestAnnouncement(t, h)
+	if w := notificationRequest(h, "POST", "/v1/admin/notifications/"+a.ID+"/send", "admin-test", map[string]string{"confirmId": a.ID}); w.Code != 200 {
+		t.Fatal(w.Body.String())
+	}
+	if len(f.sent) != 2 || f.sent[1].Locale != notifications.LocaleEnglish || f.sent[1].Title != f.sent[0].Title {
+		t.Fatalf("fallback sends = %+v", f.sent)
 	}
 }

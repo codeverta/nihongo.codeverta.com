@@ -11,11 +11,14 @@ const _manualLanguageKey = 'app_language_manual_v1';
 const _initialLanguageKey = 'app_language_initial_v1';
 const _languageInitializedKey = 'app_language_initialized_v1';
 
-/// English stays hidden from public builds until the reviewed translation set
-/// is ready. Internal QA can opt in with `ENGLISH_QA_PREVIEW=true` in a debug
-/// build, while the public release switch remains a deliberate build setting.
+/// English is available to everyone by default. Build with
+/// `--dart-define=ENGLISH_PUBLIC_RELEASE=false` to hide it again; internal QA can
+/// still opt in with `ENGLISH_QA_PREVIEW=true` in a debug build.
 abstract final class EnglishReleaseGate {
-  static const publicRelease = bool.fromEnvironment('ENGLISH_PUBLIC_RELEASE');
+  static const publicRelease = bool.fromEnvironment(
+    'ENGLISH_PUBLIC_RELEASE',
+    defaultValue: true,
+  );
   static const internalQaPreview = bool.fromEnvironment('ENGLISH_QA_PREVIEW');
 
   static bool get enabled => isEnabled(

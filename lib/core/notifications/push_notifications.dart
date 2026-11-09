@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:ui' show Locale;
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -7,10 +8,19 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/localization/app_language.dart';
+import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const announcementTopic = 'nihongo_announcements';
+const announcementTopicEnglish = 'nihongo_announcements_en';
+
+/// Indonesian stays on the original topic so existing installs keep working;
+/// English readers get their own topic with English text.
+String announcementTopicFor(String languageCode) =>
+    languageCode == 'en' ? announcementTopicEnglish : announcementTopic;
+
 const notificationRoutes = <String>{
   '/home',
   '/dictionary',
@@ -55,12 +65,22 @@ final pushNotificationsProvider =
     StateNotifierProvider<PushNotificationController, PushNotificationState>((
       ref,
     ) {
-      return PushNotificationController(ref.watch(sharedPreferencesProvider));
+      final controller = PushNotificationController(
+        ref.watch(sharedPreferencesProvider),
+        languageCode: ref.read(appLanguageProvider).languageCode,
+      );
+      ref.listen<Locale>(appLanguageProvider, (previous, next) {
+        if (previous?.languageCode != next.languageCode) {
+          unawaited(controller.languageChanged(next.languageCode));
+        }
+      });
+      return controller;
     });
 
 class PushNotificationController extends StateNotifier<PushNotificationState> {
-  PushNotificationController(this._preferences)
-    : super(
+  PushNotificationController(this._preferences, {String languageCode = 'id'})
+    : _languageCode = languageCode,
+      super(
         PushNotificationState(
           available: supported,
           enabled: _preferences.getBool(_preferenceKey) ?? false,
@@ -80,6 +100,54 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
   }
   static const _preferenceKey = 'announcement_notifications_enabled';
   final SharedPreferences _preferences;
+  String _languageCode;
+  String get _topic => announcementTopicFor(_languageCode);
+  String get _otherTopic =>
+      _languageCode == 'en' ? announcementTopic : announcementTopicEnglish;
+
+  AppLocalizations get _strings => AppLocalizations(Locale(_languageCode));
+
+  AndroidNotificationChannel get _channel => AndroidNotificationChannel(
+    announcementTopic,
+    _strings.text('Pengumuman Nihongo Master'),
+    description: _strings.text(
+      'Berita aplikasi dan informasi belajar yang Anda aktifkan.',
+    ),
+  );
+
+  /// Moves the device to the topic for the new language and renames the
+  /// Android channel so system settings match the app language.
+  Future<void> languageChanged(String languageCode) async {
+    if (languageCode == _languageCode) return;
+    _languageCode = languageCode;
+    if (!mounted || !_initialized) return;
+    try {
+      await _local
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >()
+          ?.createNotificationChannel(_channel);
+      if (state.enabled && state.granted) {
+        await _applyTopics();
+      }
+    } on Object {
+      _set(pendingSync: true);
+    }
+  }
+
+  Future<void> _applyTopics() async {
+    await _messaging
+        .subscribeToTopic(_topic)
+        .timeout(const Duration(seconds: 15));
+    try {
+      await _messaging
+          .unsubscribeFromTopic(_otherTopic)
+          .timeout(const Duration(seconds: 15));
+    } on Object {
+      // Retried on the next refresh; the active topic is already subscribed.
+    }
+  }
+
   late final _local = FlutterLocalNotificationsPlugin();
   late final List<StreamSubscription<dynamic>> _subscriptions = [];
   final Set<String> _foregroundIDs = {};
@@ -137,14 +205,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
           .resolvePlatformSpecificImplementation<
             AndroidFlutterLocalNotificationsPlugin
           >()
-          ?.createNotificationChannel(
-            const AndroidNotificationChannel(
-              announcementTopic,
-              'Pengumuman Nihongo Master',
-              description:
-                  'Berita aplikasi dan informasi belajar yang Anda aktifkan.',
-            ),
-          );
+          ?.createNotificationChannel(_channel);
       if (!mounted) return;
       _subscriptions
         ..add(
@@ -193,9 +254,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
     if (!mounted || state.busy || !state.enabled) return;
     _set(busy: true);
     try {
-      await _messaging
-          .subscribeToTopic(announcementTopic)
-          .timeout(const Duration(seconds: 15));
+      await _applyTopics();
       _set(pendingSync: false);
     } on Object {
       _set(
@@ -226,15 +285,18 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
       if (state.enabled && granted) {
         await _messaging.setAutoInitEnabled(true);
         await _messaging.getToken().timeout(const Duration(seconds: 15));
-        await _messaging
-            .subscribeToTopic(announcementTopic)
-            .timeout(const Duration(seconds: 15));
+        await _applyTopics();
       } else if (!state.enabled &&
           (_preferences.getBool('announcement_sync_pending') ?? false)) {
         await _messaging.setAutoInitEnabled(false);
-        await _messaging
-            .unsubscribeFromTopic(announcementTopic)
-            .timeout(const Duration(seconds: 15));
+        for (final topic in const [
+          announcementTopic,
+          announcementTopicEnglish,
+        ]) {
+          await _messaging
+              .unsubscribeFromTopic(topic)
+              .timeout(const Duration(seconds: 15));
+        }
         await _messaging.deleteToken().timeout(const Duration(seconds: 15));
         await _messaging.setAutoInitEnabled(false);
         await _preferences.setBool('announcement_sync_pending', false);
@@ -314,10 +376,10 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
         id: (id ?? DateTime.now().toIso8601String()).hashCode & 0x7fffffff,
         title: m.notification!.title,
         body: m.notification!.body,
-        notificationDetails: const NotificationDetails(
+        notificationDetails: NotificationDetails(
           android: AndroidNotificationDetails(
             announcementTopic,
-            'Pengumuman Nihongo Master',
+            _strings.text('Pengumuman Nihongo Master'),
             icon: 'ic_notification',
           ),
         ),

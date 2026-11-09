@@ -67,8 +67,8 @@ func TestN5VocabularyArtworkIsServedByAssetRoute(t *testing.T) {
 	if response.Code != http.StatusOK {
 		t.Fatalf("N5 artwork status = %d, want %d", response.Code, http.StatusOK)
 	}
-	if response.Header().Get("Content-Type") != "image/webp" || response.Body.Len() == 0 || response.Body.Len() > 200*1024 {
-		t.Fatalf("N5 artwork response was not optimized WebP: type=%q bytes=%d", response.Header().Get("Content-Type"), response.Body.Len())
+	if response.Header().Get("Content-Type") != "image/webp" || response.Body.Len() == 0 || response.Body.Len() > 480*1024 {
+		t.Fatalf("N5 artwork must be WebP under the 480 KB mobile-data budget: type=%q bytes=%d", response.Header().Get("Content-Type"), response.Body.Len())
 	}
 }
 

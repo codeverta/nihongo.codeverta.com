@@ -20,10 +20,34 @@ import (
 const Topic = "nihongo_announcements"
 const Channel = "nihongo_announcements"
 
+// TopicEnglish receives the English version. Indonesian keeps the original
+// topic so installs that predate language-specific topics still work.
+const TopicEnglish = "nihongo_announcements_en"
+
+const LocaleEnglish = "en"
+
+// Message holds the Indonesian text plus an optional English version. Locale
+// selects which topic a single send goes to and is never stored or exposed.
 type Message struct {
-	Title string `json:"title"`
-	Body  string `json:"body"`
-	Route string `json:"route"`
+	Title   string `json:"title"`
+	Body    string `json:"body"`
+	TitleEn string `json:"titleEn,omitempty"`
+	BodyEn  string `json:"bodyEn,omitempty"`
+	Route   string `json:"route"`
+	Locale  string `json:"-"`
+}
+
+// HasEnglish reports whether an English translation was written.
+func (m Message) HasEnglish() bool { return m.TitleEn != "" && m.BodyEn != "" }
+
+// English returns the message to send to English readers. Without a written
+// translation it falls back to the Indonesian text so nobody is left out.
+func (m Message) English() Message {
+	out := Message{Title: m.Title, Body: m.Body, Route: m.Route, Locale: LocaleEnglish}
+	if m.HasEnglish() {
+		out.Title, out.Body = m.TitleEn, m.BodyEn
+	}
+	return out
 }
 
 type Sender interface {
@@ -74,8 +98,12 @@ func NewFCM(ctx context.Context, project, credentialPath string) (*FCM, error) {
 	return &FCM{project: project, client: client, endpoint: "https://fcm.googleapis.com/v1/projects/" + project + "/messages:send"}, nil
 }
 func marshalPayload(m Message, id string, dryRun bool) []byte {
+	topic := Topic
+	if m.Locale == LocaleEnglish {
+		topic = TopicEnglish
+	}
 	payload := map[string]any{"validate_only": dryRun, "message": map[string]any{
-		"topic": Topic, "notification": map[string]string{"title": m.Title, "body": m.Body},
+		"topic": topic, "notification": map[string]string{"title": m.Title, "body": m.Body},
 		"data":    map[string]string{"route": m.Route, "announcementId": id},
 		"android": map[string]any{"ttl": "86400s", "priority": "NORMAL", "notification": map[string]string{"channel_id": Channel, "icon": "ic_notification", "tag": id}},
 	}}
@@ -85,7 +113,8 @@ func marshalPayload(m Message, id string, dryRun bool) []byte {
 
 // Topic messages have a smaller payload budget; count JSON escapes and UTF-8 too.
 func ValidateSize(m Message) error {
-	if len(marshalPayload(m, "00000000-0000-0000-0000-000000000000", false)) > 2048 {
+	const sample = "00000000-0000-0000-0000-000000000000"
+	if len(marshalPayload(m, sample, false)) > 2048 || len(marshalPayload(m.English(), sample, false)) > 2048 {
 		return fmt.Errorf("pesan terlalu besar untuk notifikasi; kurangi isi atau emoji")
 	}
 	return nil

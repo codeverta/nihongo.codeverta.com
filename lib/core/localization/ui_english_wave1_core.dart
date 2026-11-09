@@ -32,6 +32,10 @@ const uiEnglishWave1Core = <String, String>{
   'Membuka store…': 'Opening store…',
   'Update sekarang': 'Update now',
   'Pengumuman Nihongo Master': 'Nihongo Master announcements',
+  'Berlaku untuk tampilan aplikasi, materi, dan notifikasi.':
+      'Applies to the app, lessons, and notifications.',
+  'Berita aplikasi dan informasi belajar yang Anda aktifkan.':
+      'App news and study information you turned on.',
   'Terima berita aplikasi dan informasi belajar. Anda dapat mengubah pilihan ini kapan saja. Pengumuman tidak memuat data pribadi akun Anda.':
       'Receive app news and study information. You can change this choice at any time. Announcements never include your personal account data.',
   'Terima pengumuman': 'Receive announcements',
