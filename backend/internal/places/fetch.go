@@ -137,16 +137,13 @@ func (f *Fetcher) Fetch(ctx context.Context, qid, title string) (Fetched, error)
 		query.Set("normalize", "1")
 	}
 	var entities struct {
+		// Missing is true in formatversion 2 and "" in older formats: accept any.
 		Entities map[string]struct {
-			ID      string  `json:"id"`
-			Missing *string `json:"missing"`
-			Labels  map[string]struct {
-				Value string `json:"value"`
-			} `json:"labels"`
-			Sitelinks map[string]struct {
-				Title string `json:"title"`
-			} `json:"sitelinks"`
-			Claims map[string][]wikidataClaim `json:"claims"`
+			ID        string                       `json:"id"`
+			Missing   json.RawMessage              `json:"missing"`
+			Labels    lenientMap[wikidataLabel]    `json:"labels"`
+			Sitelinks lenientMap[wikidataSitelink] `json:"sitelinks"`
+			Claims    lenientMap[[]wikidataClaim]  `json:"claims"`
 		} `json:"entities"`
 	}
 	if err := f.getJSON(ctx, f.WikidataAPI+"?"+query.Encode(), &entities); err != nil {
@@ -154,7 +151,7 @@ func (f *Fetcher) Fetch(ctx context.Context, qid, title string) (Fetched, error)
 	}
 	found := false
 	for key, entity := range entities.Entities {
-		if entity.Missing != nil || !qidPattern.MatchString(entity.ID) || strings.HasPrefix(key, "-") {
+		if len(entity.Missing) > 0 || !qidPattern.MatchString(entity.ID) || strings.HasPrefix(key, "-") {
 			continue
 		}
 		found = true
@@ -220,6 +217,50 @@ func (f *Fetcher) Fetch(ctx context.Context, qid, title string) (Fetched, error)
 		return out, ErrNotFound
 	}
 	return out, nil
+}
+
+type wikidataLabel struct {
+	Value string `json:"value"`
+}
+
+type wikidataSitelink struct {
+	Title string `json:"title"`
+}
+
+// lenientMap decodes a JSON object into a map. MediaWiki serializes an empty
+// map as [], which would otherwise fail the whole response, so any non-object
+// value is treated as empty.
+type lenientMap[T any] map[string]T
+
+func (m *lenientMap[T]) UnmarshalJSON(data []byte) error {
+	var decoded map[string]T
+	if json.Unmarshal(data, &decoded) != nil {
+		*m = nil
+		return nil
+	}
+	*m = decoded
+	return nil
+}
+
+// commonsMetadata keeps the string "value" of each extmetadata entry and
+// ignores entries whose value is not a string, or an empty [] container.
+type commonsMetadata map[string]string
+
+func (m *commonsMetadata) UnmarshalJSON(data []byte) error {
+	*m = commonsMetadata{}
+	var raw map[string]struct {
+		Value json.RawMessage `json:"value"`
+	}
+	if json.Unmarshal(data, &raw) != nil {
+		return nil
+	}
+	for key, entry := range raw {
+		var value string
+		if json.Unmarshal(entry.Value, &value) == nil {
+			(*m)[key] = value
+		}
+	}
+	return nil
 }
 
 // preferred returns claim values, preferred-rank first, deprecated excluded.
@@ -292,9 +333,7 @@ func (f *Fetcher) commonsImage(ctx context.Context, file string) (*FetchedImage,
 					URL            string `json:"url"`
 					ThumbURL       string `json:"thumburl"`
 					DescriptionURL string `json:"descriptionurl"`
-					Metadata       map[string]struct {
-						Value string `json:"value"`
-					} `json:"extmetadata"`
+					Metadata       commonsMetadata `json:"extmetadata"`
 				} `json:"imageinfo"`
 			} `json:"pages"`
 		} `json:"query"`
@@ -309,15 +348,15 @@ func (f *Fetcher) commonsImage(ctx context.Context, file string) (*FetchedImage,
 		return nil, nil
 	}
 	info := data.Query.Pages[0].ImageInfo[0]
-	license := plainText(info.Metadata["LicenseShortName"].Value)
+	license := plainText(info.Metadata["LicenseShortName"])
 	// Commons only hosts freely licensed files; still require a stated license
 	// so attribution can always be shown.
 	if license == "" {
 		return nil, nil
 	}
-	author := plainText(info.Metadata["Artist"].Value)
+	author := plainText(info.Metadata["Artist"])
 	if author == "" {
-		author = plainText(info.Metadata["Credit"].Value)
+		author = plainText(info.Metadata["Credit"])
 	}
 	source := info.ThumbURL
 	if source == "" {
@@ -342,7 +381,7 @@ func (f *Fetcher) commonsImage(ctx context.Context, file string) (*FetchedImage,
 		JPEG:       jpeg,
 		Author:     clip(author, 500),
 		License:    clip(license, 120),
-		LicenseURL: httpsOnly(info.Metadata["LicenseUrl"].Value),
+		LicenseURL: httpsOnly(info.Metadata["LicenseUrl"]),
 		SourceURL:  httpsOnly(info.DescriptionURL),
 	}, nil
 }
