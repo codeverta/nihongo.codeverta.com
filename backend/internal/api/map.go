@@ -263,7 +263,14 @@ func writeMapError(w http.ResponseWriter, err error) {
 	case errors.Is(err, places.ErrNotFound):
 		writeError(w, 404, "not_found", "spot tidak ditemukan (judul Wikipedia atau ID Wikidata tidak ada)")
 	case errors.Is(err, places.ErrSource):
-		writeError(w, 502, "source_unavailable", "Wikimedia sedang tidak bisa diakses dari server. Coba lagi nanti.")
+		// Cloudflare replaces origin 502/504 bodies with its own page, hiding
+		// the message from the admin UI, so use a non-5xx status and say why.
+		reason := err.Error()
+		if len(reason) > 200 {
+			reason = reason[:200]
+		}
+		log.Printf("map admin: source unavailable: %v", err)
+		writeError(w, http.StatusFailedDependency, "source_unavailable", "Wikimedia/Commons gagal diakses dari server ("+reason+"). Coba lagi nanti.")
 	default:
 		log.Printf("map admin: %v", err)
 		writeError(w, 500, "internal_error", "terjadi kesalahan di server")
