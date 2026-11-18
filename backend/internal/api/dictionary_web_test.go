@@ -174,6 +174,9 @@ func TestRobotsAndSitemap(t *testing.T) {
 			t.Errorf("robots.txt missing %q", want)
 		}
 	}
+	if got := webGet(h, "/app-ads.txt", "").Body.String(); got != "google.com, pub-2242816010232507, DIRECT, f08c47fec0942fa0\n" {
+		t.Errorf("app-ads.txt = %q", got)
+	}
 	w := webGet(h, "/sitemap.xml", "")
 	if w.Code != 200 || !strings.Contains(w.Body.String(), "<loc>https://nihongo.codeverta.com/kamus</loc>") {
 		t.Fatalf("sitemap: %d %s", w.Code, w.Body.String())

@@ -264,7 +264,16 @@ func (s *Server) registerDictionaryWeb(mux *http.ServeMux) {
 		register(&dictionaryEnglish)
 	}
 	mux.HandleFunc("GET /robots.txt", s.robotsTxt)
+	mux.HandleFunc("GET /app-ads.txt", s.appAdsTxt)
 	mux.HandleFunc("GET /sitemap.xml", s.sitemapXML)
+}
+
+// appAdsTxt authorises Google AdMob to sell this app's ad inventory. It must be
+// served at the root of the developer website listed on Google Play.
+func (s *Server) appAdsTxt(w http.ResponseWriter, _ *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Set("Cache-Control", "public, max-age=3600")
+	_, _ = fmt.Fprint(w, "google.com, pub-2242816010232507, DIRECT, f08c47fec0942fa0\n")
 }
 
 func newDictionaryPage(c *dictionaryCopy, query, mode, jlpt string, common bool) dictionaryPage {
