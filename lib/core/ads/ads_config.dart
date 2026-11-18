@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 /// Google's public AdMob test units. They never serve real ads or earn money.
 const testBannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
 const testNativeAdUnitId = 'ca-app-pub-3940256099942544/2247696110';
+const testRewardedAdUnitId = 'ca-app-pub-3940256099942544/5224354917';
 
 @immutable
 class AdPlacementConfig {
@@ -42,6 +43,7 @@ class AdsConfig {
     this.banner = const AdPlacementConfig(),
     this.newsNative = const AdPlacementConfig(),
     this.jobsNative = const AdPlacementConfig(),
+    this.aiChatRewarded = const AdPlacementConfig(),
   });
 
   factory AdsConfig.fromJson(Object? json) {
@@ -51,6 +53,7 @@ class AdsConfig {
       banner: AdPlacementConfig.fromJson(json['banner']),
       newsNative: AdPlacementConfig.fromJson(json['newsNative']),
       jobsNative: AdPlacementConfig.fromJson(json['jobsNative']),
+      aiChatRewarded: AdPlacementConfig.fromJson(json['aiChatRewarded']),
     );
   }
 
@@ -61,11 +64,16 @@ class AdsConfig {
   final AdPlacementConfig newsNative;
   final AdPlacementConfig jobsNative;
 
+  /// Opt-in rewarded ad that unlocks one Tanya AI message after the daily
+  /// free quota.
+  final AdPlacementConfig aiChatRewarded;
+
   /// Debug builds must never request real ads, so swap in Google test units.
   AdsConfig withTestUnits() => AdsConfig(
     enabled: enabled,
     banner: banner.withUnit(testBannerAdUnitId),
     newsNative: newsNative.withUnit(testNativeAdUnitId),
     jobsNative: jobsNative.withUnit(testNativeAdUnitId),
+    aiChatRewarded: aiChatRewarded.withUnit(testRewardedAdUnitId),
   );
 }

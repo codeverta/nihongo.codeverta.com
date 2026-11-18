@@ -12,8 +12,9 @@ import (
 
 // Google's public AdMob test units. They never serve real ads or earn revenue.
 const (
-	testBannerAdUnit = "ca-app-pub-3940256099942544/6300978111"
-	testNativeAdUnit = "ca-app-pub-3940256099942544/2247696110"
+	testBannerAdUnit   = "ca-app-pub-3940256099942544/6300978111"
+	testNativeAdUnit   = "ca-app-pub-3940256099942544/2247696110"
+	testRewardedAdUnit = "ca-app-pub-3940256099942544/5224354917"
 )
 
 var adUnitPattern = regexp.MustCompile(`^ca-app-pub-[0-9]{16}/[0-9]{10}$`)
@@ -33,6 +34,14 @@ type AdsConfig struct {
 	Banner     AdPlacement `json:"banner"`
 	NewsNative AdPlacement `json:"newsNative"`
 	JobsNative AdPlacement `json:"jobsNative"`
+	// AIChatRewarded is the opt-in rewarded ad that unlocks one AI chat
+	// message after the daily free quota.
+	AIChatRewarded AdPlacement `json:"aiChatRewarded"`
+}
+
+// aiChatRewardedAvailable reports whether free users can be offered an ad.
+func (c AdsConfig) aiChatRewardedAvailable() bool {
+	return c.Enabled && c.AIChatRewarded.Enabled && c.AIChatRewarded.UnitID != ""
 }
 
 type AdsStore struct {
@@ -43,9 +52,10 @@ type AdsStore struct {
 
 func defaultAdsConfig() AdsConfig {
 	return AdsConfig{
-		Banner:     AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
-		NewsNative: AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 6},
-		JobsNative: AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 8},
+		Banner:         AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
+		NewsNative:     AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 6},
+		JobsNative:     AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 8},
+		AIChatRewarded: AdPlacement{Enabled: true, UnitID: testRewardedAdUnit},
 	}
 }
 
@@ -67,14 +77,14 @@ func (s *Server) ConfigureAds(path, token string) error {
 }
 
 func validateAdsConfig(config AdsConfig) error {
-	for name, placement := range map[string]AdPlacement{"banner": config.Banner, "newsNative": config.NewsNative, "jobsNative": config.JobsNative} {
+	for name, placement := range map[string]AdPlacement{"banner": config.Banner, "newsNative": config.NewsNative, "jobsNative": config.JobsNative, "aiChatRewarded": config.AIChatRewarded} {
 		if placement.UnitID != "" && !adUnitPattern.MatchString(placement.UnitID) {
 			return fmt.Errorf("%s: ID unit iklan harus seperti ca-app-pub-1234567890123456/1234567890", name)
 		}
 		if placement.Enabled && placement.UnitID == "" {
 			return fmt.Errorf("%s: isi ID unit iklan sebelum mengaktifkan", name)
 		}
-		if name != "banner" && (placement.Every < 3 || placement.Every > 30) {
+		if (name == "newsNative" || name == "jobsNative") && (placement.Every < 3 || placement.Every > 30) {
 			return fmt.Errorf("%s: jarak iklan harus 3 sampai 30 item", name)
 		}
 	}
@@ -157,9 +167,10 @@ const adsAdminHTML = `<!doctype html><html lang="id"><meta charset="utf-8"><meta
 <fieldset><legend>Banner (bawah layar Beranda, Belajar, Kamus)</legend><label><input type="checkbox" id="banner-enabled"> Aktif</label><label for="banner-unit">ID unit iklan</label><input type="text" id="banner-unit"></fieldset>
 <fieldset><legend>Native di daftar Berita</legend><label><input type="checkbox" id="newsNative-enabled"> Aktif</label><label for="newsNative-unit">ID unit iklan</label><input type="text" id="newsNative-unit"><label for="newsNative-every">Tampil setiap N berita (3-30)</label><input type="number" id="newsNative-every" min="3" max="30"></fieldset>
 <fieldset><legend>Native di daftar Lowongan</legend><label><input type="checkbox" id="jobsNative-enabled"> Aktif</label><label for="jobsNative-unit">ID unit iklan</label><input type="text" id="jobsNative-unit"><label for="jobsNative-every">Tampil setiap N lowongan (3-30)</label><input type="number" id="jobsNative-every" min="3" max="30"></fieldset>
+<fieldset><legend>Rewarded di AI Chat (setelah kuota gratis harian habis)</legend><label><input type="checkbox" id="aiChatRewarded-enabled"> Aktif</label><label for="aiChatRewarded-unit">ID unit iklan rewarded</label><input type="text" id="aiChatRewarded-unit"><small>Jika nonaktif, pengguna gratis yang kuotanya habis diarahkan ke Lifetime.</small></fieldset>
 <p><small>ID uji Google (ca-app-pub-3940256099942544/...) tidak menghasilkan pendapatan. Ganti dengan ID unit iklan asli dari akun AdMob Anda. Build debug selalu memakai ID uji.</small></p>
 <button id="save" type="submit">Simpan</button> <span id="status" role="status"></span></form>
-<script>const el=id=>document.getElementById(id),P=['banner','newsNative','jobsNative'];let loaded=false;
+<script>const el=id=>document.getElementById(id),P=['banner','newsNative','jobsNative','aiChatRewarded'],E=['newsNative','jobsNative'];let loaded=false;
 const auth=()=>({Authorization:'Bearer '+el('token').value});
-el('load').onclick=async()=>{el('status').textContent='';try{const r=await fetch('/v1/admin/ads-config',{cache:'no-store',headers:auth()});if(!r.ok){alert(r.status===401?'Kunci admin salah atau belum diatur di server.':'Gagal membuka pengaturan.');return}const c=(await r.json()).data;el('enabled').checked=c.enabled;for(const p of P){el(p+'-enabled').checked=c[p].enabled;el(p+'-unit').value=c[p].unitId||'';if(p!=='banner')el(p+'-every').value=c[p].every||6}loaded=true;el('form').hidden=false}catch(e){alert('Koneksi gagal.')}};
-el('form').onsubmit=async e=>{e.preventDefault();if(!loaded)return;const d={enabled:el('enabled').checked};for(const p of P){d[p]={enabled:el(p+'-enabled').checked,unitId:el(p+'-unit').value.trim()};if(p!=='banner')d[p].every=Number(el(p+'-every').value)}el('save').disabled=true;el('status').textContent='Menyimpan…';try{const r=await fetch('/v1/admin/ads-config',{method:'PUT',headers:{'Content-Type':'application/json',...auth()},body:JSON.stringify(d)});const j=await r.json();el('status').textContent=r.ok?'Tersimpan. Perubahan berlaku saat pengguna membuka aplikasi berikutnya.':(j.error&&j.error.message||'Gagal menyimpan.')}catch(e){el('status').textContent='Koneksi gagal.'}finally{el('save').disabled=false}};</script></html>`
+el('load').onclick=async()=>{el('status').textContent='';try{const r=await fetch('/v1/admin/ads-config',{cache:'no-store',headers:auth()});if(!r.ok){alert(r.status===401?'Kunci admin salah atau belum diatur di server.':'Gagal membuka pengaturan.');return}const c=(await r.json()).data;el('enabled').checked=c.enabled;for(const p of P){const v=c[p]||{};el(p+'-enabled').checked=!!v.enabled;el(p+'-unit').value=v.unitId||'';if(E.includes(p))el(p+'-every').value=v.every||6}loaded=true;el('form').hidden=false}catch(e){alert('Koneksi gagal.')}};
+el('form').onsubmit=async e=>{e.preventDefault();if(!loaded)return;const d={enabled:el('enabled').checked};for(const p of P){d[p]={enabled:el(p+'-enabled').checked,unitId:el(p+'-unit').value.trim()};if(E.includes(p))d[p].every=Number(el(p+'-every').value)}el('save').disabled=true;el('status').textContent='Menyimpan…';try{const r=await fetch('/v1/admin/ads-config',{method:'PUT',headers:{'Content-Type':'application/json',...auth()},body:JSON.stringify(d)});const j=await r.json();el('status').textContent=r.ok?'Tersimpan. Perubahan berlaku saat pengguna membuka aplikasi berikutnya.':(j.error&&j.error.message||'Gagal menyimpan.')}catch(e){el('status').textContent='Koneksi gagal.'}finally{el('save').disabled=false}};</script></html>`

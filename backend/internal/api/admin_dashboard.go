@@ -231,7 +231,7 @@ func (s *Server) adminLogin(w http.ResponseWriter, r *http.Request) {
 var adminToolRoutes = map[string]string{
 	"/admin/news": "news", "/admin/manga": "manga", "/admin/dictionary": "dictionary",
 	"/admin/map": "map", "/admin/home-banners": "home-banners", "/admin/notifications": "notifications",
-	"/admin/pricing": "pricing", "/admin/ads": "ads", "/admin/app-updates": "app-updates",
+	"/admin/pricing": "pricing", "/admin/ads": "ads", "/admin/ai": "ai", "/admin/app-updates": "app-updates",
 	"/admin/branding": "branding", "/admin/errors": "errors",
 }
 

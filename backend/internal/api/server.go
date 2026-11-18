@@ -50,6 +50,7 @@ type Server struct {
 	homeBanners               *HomeBannerStore
 	appUpdates                *AppUpdateStore
 	ads                       *AdsStore
+	ai                        *aiChatService
 	notifications             *NotificationStore
 	pricing                   *PricingStore
 	profilePhotos             *media.ProfilePhotoStorage
@@ -99,6 +100,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerPricing(mux)
 	s.registerAppUpdates(mux)
 	s.registerAds(mux)
+	s.registerAIChat(mux)
 	s.registerNotifications(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
 	mux.HandleFunc("GET /v1/ssw/{sector}/practice", s.requireAuth(s.sswPractice))

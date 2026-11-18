@@ -455,6 +455,7 @@ var TOOLS=[
 var SYSTEM=[
   {id:'pricing',path:'/admin/pricing',icon:'price',name:'Harga Lifetime',desc:'Harga yang tampil di aplikasi.',c:'c-gold'},
   {id:'ads',path:'/admin/ads',icon:'ads',name:'Iklan',desc:'Pengaturan slot iklan aplikasi.',c:'c-green'},
+  {id:'ai',path:'/admin/ai',icon:'zap',name:'Tanya AI',desc:'Kuota, batas harian & cache jawaban.',c:'c-indigo'},
   {id:'app-updates',path:'/admin/app-updates',icon:'update',name:'Update aplikasi',desc:'Versi minimum & panduan update.',c:'c-red'},
   {id:'branding',path:'/admin/branding',icon:'brand',name:'Branding',desc:'Nama, ikon & tampilan pembuka.',c:'c-indigo'},
   {id:'errors',path:'/admin/errors',icon:'bug',name:'Crash & error',desc:'Error dari Flutter & backend.',c:'c-gold'}
@@ -1393,7 +1394,8 @@ NM.view('ads',function(root){
   var alive=true,P=[
     {k:'banner',t:'Banner',s:'Bawah layar Beranda, Belajar, Kamus',every:false},
     {k:'newsNative',t:'Native di daftar Berita',s:'Disisipkan di antara berita',every:true,noun:'berita'},
-    {k:'jobsNative',t:'Native di daftar Lowongan',s:'Disisipkan di antara lowongan',every:true,noun:'lowongan'}];
+    {k:'jobsNative',t:'Native di daftar Lowongan',s:'Disisipkan di antara lowongan',every:true,noun:'lowongan'},
+    {k:'aiChatRewarded',t:'Rewarded di Tanya AI',s:'Opsi tonton iklan setelah kuota gratis harian habis. Jika nonaktif, pengguna diarahkan ke Lifetime.',every:false}];
   var UNIT=/^ca-app-pub-[0-9]{16}\/[0-9]{10}$/;
   root.innerHTML='<div class="v-ads">'+NM.skeleton(3)+'</div>';
   NM.data('/v1/admin/ads-config').then(function(c){
@@ -1442,6 +1444,66 @@ NM.view('ads',function(root){
   }).catch(function(e){
     if(!alive)return;
     root.innerHTML='<div class="v-ads"><div class="msg err">'+NM.esc(e.message||'Gagal membuka pengaturan.')+'</div></div>';
+  });
+  return function(){alive=false};
+});
+
+})();
+/* view: ai */
+(function(){
+NM.view('ai',function(root){
+  var alive=true,F=[
+    {k:'freePerDay',t:'Kuota gratis per hari',h:'Pesan gratis untuk pengguna non-Lifetime, total di semua pelajaran (0-100).',min:0,max:100},
+    {k:'adPerDay',t:'Maks pesan dari iklan per hari',h:'Batas pengaman biaya untuk pesan yang dibuka dengan rewarded ad (0-200).',min:0,max:200},
+    {k:'premiumPerDay',t:'Batas harian Lifetime',h:'Pengguna Lifetime tidak melihat iklan (1-1000).',min:1,max:1000},
+    {k:'perMinute',t:'Batas per menit (tersembunyi)',h:'Berlaku untuk semua akun, menahan skrip/akun bersama (1-60).',min:1,max:60},
+    {k:'alertPerDay',t:'Ambang peringatan per akun',h:'Catat peringatan di Crash & error saat satu akun mencapai jumlah pesan ini dalam sehari. 0 = mati.',min:0,max:10000}];
+  root.innerHTML='<div class="v-ai">'+NM.skeleton(3)+'</div>';
+  NM.data('/v1/admin/ai-config').then(function(r){
+    if(!alive)return;
+    var c=(r&&r.config)||{};
+    var wrap=NM.el('form',{class:'v-ai stack',novalidate:true});
+    var master=NM.el('input',{type:'checkbox',id:'ai-enabled'});master.checked=!!c.enabled;
+    var keyNote=r&&r.apiKeyConfigured?'DEEPSEEK_API_KEY terpasang.':'DEEPSEEK_API_KEY belum diatur di server — fitur tetap nonaktif sampai kunci dipasang.';
+    wrap.appendChild(NM.el('div',{class:'card pad'},[
+      NM.el('p',{class:'muted',text:'Atur kuota Tanya AI tanpa rilis ulang. Kuota direset setiap pukul 00:00 WIB. '+keyNote}),
+      NM.el('label',{class:'check master',style:'margin:12px 0 0'},[master,'Tanya AI aktif (kill switch)'])]));
+    var f={},kids=[];
+    F.forEach(function(x){
+      var input=NM.el('input',{class:'input',type:'number',id:'ai-'+x.k,min:String(x.min),max:String(x.max),step:'1'});
+      input.value=c[x.k]!=null?c[x.k]:'';f[x.k]=input;
+      kids.push(NM.el('label',{class:'field'},[NM.el('span',{text:x.t}),input,NM.el('small',{class:'muted',text:x.h})]));
+    });
+    wrap.appendChild(NM.el('div',{class:'card'},[NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Kuota & batas'}),NM.el('p',{text:'Opsi iklan diatur di menu Iklan (slot Rewarded di Tanya AI).'})])]),NM.el('div',{class:'pad'},kids)]));
+    var msg=NM.el('div',{class:'msg',role:'status'});
+    var setMsg=function(t,k){msg.className='msg'+(k?' '+k:'');msg.textContent=t||''};
+    var btn=NM.el('button',{class:'btn solid',type:'submit',text:'Simpan'});
+    var clear=NM.el('button',{class:'btn ghost',type:'button',text:'Hapus cache jawaban'});
+    wrap.appendChild(msg);wrap.appendChild(NM.el('div',{class:'row'},[btn,clear]));
+    clear.addEventListener('click',function(){
+      if(!confirm('Hapus semua jawaban tersimpan (Ringkas, Jelaskan, Contoh)? Jawaban akan dibuat ulang saat diminta.'))return;
+      clear.disabled=true;
+      NM.data('/v1/admin/ai-cache/clear',{method:'POST',body:{}}).then(function(d){
+        setMsg('Cache dihapus ('+((d&&d.removed)||0)+' jawaban).','ok');
+      }).catch(function(er){setMsg(er.message||'Gagal menghapus cache.','err')}).then(function(){clear.disabled=false});
+    });
+    wrap.addEventListener('submit',function(e){
+      e.preventDefault();
+      var d={enabled:master.checked};
+      for(var i=0;i<F.length;i++){
+        var x=F[i],n=Number(f[x.k].value);
+        if(f[x.k].value===''||!(n>=x.min&&n<=x.max)||Math.floor(n)!==n){setMsg(x.t+': harus '+x.min+' sampai '+x.max,'err');f[x.k].focus();return}
+        d[x.k]=n;
+      }
+      btn.disabled=true;setMsg('Menyimpan…');
+      NM.data('/v1/admin/ai-config',{method:'PUT',body:d}).then(function(){
+        setMsg('Tersimpan. Berlaku langsung untuk pesan berikutnya.','ok');NM.toast('Pengaturan Tanya AI tersimpan');
+      }).catch(function(er){setMsg(er.message||'Gagal menyimpan.','err')}).then(function(){btn.disabled=false});
+    });
+    root.innerHTML='';root.appendChild(wrap);
+  }).catch(function(e){
+    if(!alive)return;
+    root.innerHTML='<div class="v-ai"><div class="msg err">'+NM.esc(e.message||'Gagal membuka pengaturan.')+'</div></div>';
   });
   return function(){alive=false};
 });

@@ -13,6 +13,7 @@ import (
 	"syscall"
 	"time"
 
+	"nihongo-master-backend/internal/aichat"
 	"nihongo-master-backend/internal/api"
 	"nihongo-master-backend/internal/auth"
 	"nihongo-master-backend/internal/billing"
@@ -290,6 +291,30 @@ func main() {
 	if err := apiServer.ConfigureAds(adsPath, adsToken); err != nil {
 		log.Fatalf("configure ads: %v", err)
 	}
+	aiConfigPath := os.Getenv("AI_CONFIG_PATH")
+	if aiConfigPath == "" {
+		aiConfigPath = "data/ai.json"
+	}
+	aiConfig, err := aichat.LoadConfigStore(aiConfigPath)
+	if err != nil {
+		log.Fatalf("configure AI chat: %v", err)
+	}
+	aiRepository, err := aichat.NewGormRepository(jobDB)
+	if err != nil {
+		log.Fatalf("configure AI chat storage: %v", err)
+	}
+	var aiCompleter aichat.Completer
+	if key := strings.TrimSpace(os.Getenv("DEEPSEEK_API_KEY")); key != "" {
+		aiCompleter = aichat.NewDeepSeekClient(key, os.Getenv("DEEPSEEK_BASE_URL"), os.Getenv("DEEPSEEK_MODEL"))
+	} else {
+		log.Print("AI chat disabled: DEEPSEEK_API_KEY is not configured")
+	}
+	aiToken := os.Getenv("AI_ADMIN_TOKEN")
+	if aiToken == "" {
+		aiToken = os.Getenv("BRANDING_ADMIN_TOKEN")
+	}
+	apiServer.ConfigureAIChat(aiRepository, aiConfig, aiCompleter, aiToken)
+	go apiServer.RunAIChatMaintenance(jobsContext)
 	notificationPath := os.Getenv("NOTIFICATIONS_CONFIG_PATH")
 	if notificationPath == "" {
 		notificationPath = "data/notifications.json"
