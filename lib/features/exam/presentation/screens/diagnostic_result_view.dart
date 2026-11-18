@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
@@ -143,6 +144,10 @@ class _ResultState extends State<DiagnosticResultView> {
           'Persentase dihitung dari jawaban benar. Diagnostic ini bukan penilaian kelulusan resmi JLPT.'
               .localized(context),
           style: const TextStyle(fontSize: 12, height: 1.6),
+        ),
+        const SizedBox(height: 16),
+        const Center(
+          child: AdBannerSlot(placement: BannerAdPlacement.quizResult),
         ),
         const SizedBox(height: 24),
         Row(

@@ -85,7 +85,7 @@ void main() {
     await tester.scrollUntilVisible(
       find.byKey(const Key('kanji-search')),
       250,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find.byType(Scrollable).last,
     );
     await tester.enterText(find.byKey(const Key('kanji-search')), 'Pertemuan');
     await tester.pumpAndSettle();
@@ -93,7 +93,7 @@ void main() {
     await tester.scrollUntilVisible(
       find.byKey(const Key('kanji-lesson-kanji-n4-32')),
       200,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find.byType(Scrollable).last,
     );
     expect(find.text('Pertemuan dan perjalanan'), findsOneWidget);
     await tester.ensureVisible(find.byKey(const Key('kanji-n4-sources')));

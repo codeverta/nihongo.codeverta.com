@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
+import 'package:nihongo_master/features/ai_chat/data/ai_chat_repository.dart';
+import 'package:nihongo_master/features/ai_chat/presentation/ai_chat_sheet.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_writing_pad.dart';
@@ -19,6 +22,9 @@ class KanjiLessonScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(lesson.valueOrNull?.lesson.summary.title ?? 'Lesson Kanji'),
+        actions: [
+          AskAiButton(lessonType: AiLessonType.kanji, lessonId: lessonId),
+        ],
       ),
       body: lesson.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -587,6 +593,10 @@ class _Result extends StatelessWidget {
           key: const Key('kanji-finish'),
           onPressed: busy ? null : finish,
           child: Text('Kembali ke daftar lesson'.localized(context)),
+        ),
+        const SizedBox(height: 16),
+        const Center(
+          child: AdBannerSlot(placement: BannerAdPlacement.quizResult),
         ),
       ],
     );

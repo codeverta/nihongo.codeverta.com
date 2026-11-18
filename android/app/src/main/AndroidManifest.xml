@@ -6,8 +6,8 @@
         android:label="Nihongo Master"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <!-- Google test AdMob App ID. Replace with your real App ID before release. -->
-        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713" />
+        <!-- Nihongo Master AdMob App ID. Debug builds still request Google test ad units. -->
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2242816010232507~4088088589" />
         <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="false" />
         <meta-data android:name="firebase_analytics_collection_enabled" android:value="false" />
         <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="nihongo_announcements" />

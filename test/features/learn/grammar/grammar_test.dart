@@ -110,14 +110,14 @@ void main() {
     await tester.scrollUntilVisible(
       search,
       100,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find.byType(Scrollable).last,
     );
     await tester.enterText(search, 'に先立って');
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
       find.byKey(const Key('grammar-lesson-grammar-n2-59')),
       100,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find.byType(Scrollable).last,
     );
     expect(find.text('Seolah-olah dan sebelum tahap penting'), findsOneWidget);
     expect(find.byKey(const Key('grammar-lesson-grammar-n2-01')), findsNothing);
@@ -145,7 +145,7 @@ void main() {
     await tester.scrollUntilVisible(
       find.byKey(const ValueKey('grammar-search-N5')),
       100,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find.byType(Scrollable).last,
     );
     await tester.enterText(
       find.byKey(const ValueKey('grammar-search-N5')),
@@ -156,7 +156,7 @@ void main() {
     await tester.scrollUntilVisible(
       find.byKey(const Key('grammar-lesson-grammar-n5-02')),
       100,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find.byType(Scrollable).last,
     );
     expect(find.text('Waktu lampau'), findsOneWidget);
   });

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
@@ -85,6 +86,10 @@ class _ResultState extends State<SimulationResultView> {
                 ),
             ],
           ),
+        ),
+        const SizedBox(height: 16),
+        const Center(
+          child: AdBannerSlot(placement: BannerAdPlacement.quizResult),
         ),
         const SizedBox(height: 24),
         ExamHeading('Pembahasan'.localized(context)),

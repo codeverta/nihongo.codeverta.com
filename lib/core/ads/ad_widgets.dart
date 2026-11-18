@@ -7,8 +7,12 @@ import 'package:nihongo_master/core/localization/app_localizations.dart';
 
 /// Adaptive banner. Renders nothing unless ads are on, the user is free, and
 /// consent allows ad requests, so the layout never reserves empty space.
+enum BannerAdPlacement { main, quizResult }
+
 class AdBannerSlot extends ConsumerStatefulWidget {
-  const AdBannerSlot({super.key});
+  const AdBannerSlot({this.placement = BannerAdPlacement.main, super.key});
+
+  final BannerAdPlacement placement;
 
   @override
   ConsumerState<AdBannerSlot> createState() => _AdBannerSlotState();
@@ -62,7 +66,9 @@ class _AdBannerSlotState extends ConsumerState<AdBannerSlot> {
   @override
   Widget build(BuildContext context) {
     final config = ref.watch(adsReadyProvider).valueOrNull;
-    final placement = config?.banner;
+    final placement = widget.placement == BannerAdPlacement.quizResult
+        ? config?.quizResultBanner
+        : config?.banner;
     if (placement == null || !placement.usable) {
       _ad?.dispose();
       _ad = null;
@@ -86,7 +92,14 @@ class _AdBannerSlotState extends ConsumerState<AdBannerSlot> {
   }
 }
 
-enum NativeAdPlacement { news, jobs }
+enum NativeAdPlacement { news, jobs, dictionary }
+
+AdPlacementConfig? _nativePlacement(AdsConfig? config, NativeAdPlacement p) =>
+    switch (p) {
+      NativeAdPlacement.news => config?.newsNative,
+      NativeAdPlacement.jobs => config?.jobsNative,
+      NativeAdPlacement.dictionary => config?.dictionaryNative,
+    };
 
 /// Native ad rendered with Google's template so it matches the card style.
 /// It collapses to nothing until an ad has actually loaded.
@@ -148,9 +161,7 @@ class _NativeAdSlotState extends ConsumerState<NativeAdSlot> {
   @override
   Widget build(BuildContext context) {
     final config = ref.watch(adsReadyProvider).valueOrNull;
-    final placement = widget.placement == NativeAdPlacement.news
-        ? config?.newsNative
-        : config?.jobsNative;
+    final placement = _nativePlacement(config, widget.placement);
     if (placement == null || !placement.usable) {
       return const SizedBox.shrink();
     }
@@ -175,9 +186,7 @@ class _NativeAdSlotState extends ConsumerState<NativeAdSlot> {
 /// Returns the native ad spacing for a list, or 0 when ads are not active.
 int nativeAdEvery(WidgetRef ref, NativeAdPlacement placement) {
   final config = ref.watch(adsReadyProvider).valueOrNull;
-  final p = placement == NativeAdPlacement.news
-      ? config?.newsNative
-      : config?.jobsNative;
+  final p = _nativePlacement(config, placement);
   if (p == null || !p.usable || p.every < 3) return 0;
   return p.every;
 }

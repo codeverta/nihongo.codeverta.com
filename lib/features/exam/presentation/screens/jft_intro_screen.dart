@@ -6,6 +6,8 @@ import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/online_exam_gate.dart';
+import 'package:nihongo_master/features/learn/level_list/data/level_list_repository.dart';
+import 'package:nihongo_master/features/learn/level_list/presentation/level_pdf_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class JftIntroScreen extends ConsumerStatefulWidget {
@@ -190,16 +192,28 @@ class _JftIntroState extends ConsumerState<JftIntroScreen> {
                               color: Theme.of(context).colorScheme.error,
                             ),
                           ),
-                        FilledButton.icon(
-                          onPressed: busy ? null : start,
-                          icon: const Icon(Icons.timer_outlined),
-                          label: Text(
-                            busy
-                                ? 'Menyiapkan ujian...'.localized(context)
-                                : active
-                                ? '${'Lanjutkan Exam'.localized(context)} ${widget.examNumber}'
-                                : '${'Mulai Exam'.localized(context)} ${widget.examNumber}',
-                          ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FilledButton.icon(
+                                onPressed: busy ? null : start,
+                                icon: const Icon(Icons.timer_outlined),
+                                label: Text(
+                                  busy
+                                      ? 'Menyiapkan ujian...'.localized(context)
+                                      : active
+                                      ? '${'Lanjutkan Exam'.localized(context)} ${widget.examNumber}'
+                                      : '${'Mulai Exam'.localized(context)} ${widget.examNumber}',
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            LevelPdfButton(
+                              kind: LevelListKind.simulation,
+                              level: level,
+                              compact: true,
+                            ),
+                          ],
                         ),
                       ],
                     ),

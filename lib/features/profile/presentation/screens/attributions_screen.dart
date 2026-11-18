@@ -61,6 +61,11 @@ class AttributionsScreen extends StatelessWidget {
               'Informasi publik Jepang. Ketentuan penggunaan Osaka City kompatibel dengan CC BY 4.0; furigana ditambahkan oleh Nihongo Master.',
               'https://www.city.osaka.lg.jp/main/site_policy/0000000124.html',
             ),
+            (
+              '首相官邸 · Kantor Perdana Menteri Jepang',
+              'Berita resmi pemerintah Jepang · 公共データ利用規約 (PDL1.0), kompatibel dengan CC BY 4.0. Sumber: 首相官邸ホームページ; teks diolah (furigana ditambahkan) oleh Nihongo Master.',
+              'https://www.kantei.go.jp/jp/terms.html',
+            ),
           ],
         ),
         _SourceGroup(
@@ -85,6 +90,16 @@ class AttributionsScreen extends StatelessWidget {
               'OpenJLPT',
               'Dataset kosakata · CC BY-SA 4.0. Data diadaptasi menjadi lesson, dikelompokkan menurut tema, dan diterjemahkan ke bahasa Indonesia. Tingkat JLPT merupakan perkiraan komunitas.',
               'https://github.com/evanclan/OpenJLPT',
+            ),
+          ],
+        ),
+        _SourceGroup(
+          title: 'Font Noto Sans JP',
+          sources: [
+            (
+              'Noto Sans JP',
+              'Font Noto Sans JP © 2014–2021 Adobe, lisensi SIL Open Font License 1.1. Digunakan pada PDF daftar pola dan kanji yang dapat diunduh.',
+              'https://openfontlicense.org/',
             ),
           ],
         ),

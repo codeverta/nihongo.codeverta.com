@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/ads/interstitial_ads.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
@@ -508,12 +511,19 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
   // Catat layar yang dibuka (termasuk push imperatif) untuk analytics fitur.
   final analytics = ref.read(analyticsServiceProvider);
+  // Dibuat sejak awal agar waktu pemakaian dihitung dari peluncuran aplikasi.
+  final interstitials = ref.read(interstitialControllerProvider);
   void trackScreen() {
+    String path;
     try {
-      analytics.logScreen(router.routerDelegate.currentConfiguration.fullPath);
+      path = router.routerDelegate.currentConfiguration.fullPath;
+      analytics.logScreen(path);
     } on Object {
       // Analytics tidak boleh memengaruhi navigasi.
+      return;
     }
+    // Pindah layar adalah jeda alami untuk iklan layar penuh berkala.
+    unawaited(interstitials.onNaturalBreak(path));
   }
 
   router.routerDelegate.addListener(trackScreen);

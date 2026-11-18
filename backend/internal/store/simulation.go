@@ -529,6 +529,12 @@ func (s *MemoryStore) SimulationOverviewChecked(userID string, levels ...string)
 	for _, section := range paper.sections {
 		duration += section.DurationSeconds
 	}
+	title := simulationPaperTitle(paper)
+	return map[string]any{"paperId": paper.paperID, "title": title, "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted, "sharedTimer": IsJFTLevel(paper.level)}, nil
+}
+
+// simulationPaperTitle is the display title of a simulation paper.
+func simulationPaperTitle(paper simulationPaperConfig) string {
 	title := "JLPT " + paper.level + " Simulation"
 	if base, paperNo, ok := jlptExtraPaper(paper.level); ok {
 		title = fmt.Sprintf("JLPT %s Simulation · Paket %02d", base, paperNo)
@@ -545,5 +551,60 @@ func (s *MemoryStore) SimulationOverviewChecked(userID string, levels ...string)
 	if IsSSWLevel(paper.level) {
 		title = sswTitle(paper.level)
 	}
-	return map[string]any{"paperId": paper.paperID, "title": title, "questionCount": len(paper.items), "durationMinutes": duration / 60, "sections": paper.sections, "activeAttemptId": active, "history": history, "omittedSections": paper.omitted, "sharedTimer": IsJFTLevel(paper.level)}, nil
+	return title
+}
+
+// SimulationPaperExport is a whole simulation paper with its answer key, for
+// the printable PDF. Choices are shuffled deterministically per question so
+// the correct answer is not always the first option.
+type SimulationPaperExport struct {
+	Level    string
+	Title    string
+	Sections []domain.SimulationSection
+	Omitted  []string
+	Reviews  []domain.SimulationReview
+}
+
+// SimulationPaper returns the printable paper for a simulation level such as
+// "N5", "N3-4", "JFT-2", "NAT" or an SSW level.
+func (s *MemoryStore) SimulationPaper(level string) (SimulationPaperExport, error) {
+	if !validSimulationLevel(level) {
+		return SimulationPaperExport{}, ErrInvalid
+	}
+	paper := simulationPaper(level)
+	out := SimulationPaperExport{Level: paper.level, Title: simulationPaperTitle(paper), Sections: paper.sections, Omitted: paper.omitted}
+	for i, item := range paper.items {
+		id := fmt.Sprintf("%s-print-q%02d", strings.ToLower(paper.level), i+1)
+		options := make([]domain.QuizOption, 0, 4)
+		for c, choice := range item.choices {
+			if choice != "" {
+				options = append(options, domain.QuizOption{ID: fmt.Sprintf("%s-o%d", id, c+1), Text: choice})
+			}
+		}
+		if len(options) == 0 {
+			continue
+		}
+		correct := options[0].ID
+		shiftOptions(options, (i*3+1)%len(options))
+		out.Reviews = append(out.Reviews, domain.SimulationReview{
+			Question:        domain.SimulationQuestion{ID: id, Number: i + 1, Section: item.section, Group: item.group, Instructions: item.instructions, Passage: item.passage, Prompt: item.prompt, Options: options},
+			CorrectOptionID: correct,
+			Explanation:     item.explanation,
+		})
+	}
+	return out, nil
+}
+
+func validSimulationLevel(level string) bool {
+	switch {
+	case level == "N5", level == "N4", level == "N3", level == "N2", level == "N1", level == "NAT":
+		return true
+	case IsJLPTExtraLevel(level), IsJFTLevel(level), IsSSWLevel(level):
+		return true
+	}
+	if rest, ok := strings.CutPrefix(level, "NAT-"); ok {
+		n, err := strconv.Atoi(rest)
+		return err == nil && n >= 2 && n <= natLastPaper && strconv.Itoa(n) == rest
+	}
+	return false
 }

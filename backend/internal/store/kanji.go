@@ -185,3 +185,17 @@ func (s *MemoryStore) CompleteKanjiAttempt(userID, attemptID string) (domain.Kan
 	state.Result = &result
 	return result, nil
 }
+
+// KanjiLevelLessons returns every kanji lesson of a level, with characters,
+// in course order. It powers the level-wide kanji list and PDF.
+func (s *MemoryStore) KanjiLevelLessons(userID, level string) []domain.KanjiLesson {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	lessons := make([]domain.KanjiLesson, 0)
+	for i := range s.kanji {
+		if s.kanji[i].Level == level {
+			lessons = append(lessons, domain.KanjiLesson{KanjiLessonSummary: s.kanjiSummaryLocked(userID, i), Characters: s.kanji[i].Characters})
+		}
+	}
+	return lessons
+}

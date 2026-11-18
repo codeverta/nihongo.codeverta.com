@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/ads/ad_widgets.dart';
+import 'package:nihongo_master/core/ads/interstitial_ads.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -41,6 +44,12 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
         const tabs = ['home', 'learn', 'exam', 'dictionary', 'profile'];
         if (index >= 0 && index < tabs.length) {
           ref.read(analyticsServiceProvider).logTab(tabs[index]);
+          // Pindah tab adalah jeda alami untuk iklan layar penuh berkala.
+          unawaited(
+            ref
+                .read(interstitialControllerProvider)
+                .onNaturalBreak('/tab/${tabs[index]}'),
+          );
         }
       }
     }
@@ -112,60 +121,60 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
 
   Widget _buildNavigationBar(BuildContext context, ColorScheme colorScheme) {
     return NavigationBarTheme(
-        data: NavigationBarThemeData(
-          height: 72,
-          backgroundColor: colorScheme.surface,
-          indicatorColor: colorScheme.primary.withValues(alpha: 0.12),
-          iconTheme: WidgetStateProperty.resolveWith((states) {
-            final isSelected = states.contains(WidgetState.selected);
-            return IconThemeData(
-              color: isSelected
-                  ? colorScheme.primary
-                  : colorScheme.onSurfaceVariant,
-              size: 25,
-            );
-          }),
-          labelTextStyle: WidgetStateProperty.resolveWith((states) {
-            final isSelected = states.contains(WidgetState.selected);
-            return Theme.of(context).textTheme.labelMedium?.copyWith(
-              color: isSelected
-                  ? colorScheme.primary
-                  : colorScheme.onSurfaceVariant,
-              fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-            );
-          }),
-        ),
-        child: NavigationBar(
-          selectedIndex: _selectedIndex,
-          onDestinationSelected: _selectDestination,
-          destinations: [
-            NavigationDestination(
-              icon: const Icon(Icons.home_outlined),
-              selectedIcon: const Icon(Icons.home_rounded),
-              label: 'Beranda'.localized(context),
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.local_library_outlined),
-              selectedIcon: const Icon(Icons.local_library_rounded),
-              label: 'Belajar'.localized(context),
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.quiz_outlined),
-              selectedIcon: const Icon(Icons.quiz_rounded),
-              label: 'Ujian'.localized(context),
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.search_outlined),
-              selectedIcon: const Icon(Icons.manage_search_rounded),
-              label: 'Kamus'.localized(context),
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.person_outline_rounded),
-              selectedIcon: const Icon(Icons.person_rounded),
-              label: 'Profil'.localized(context),
-            ),
-          ],
-        ),
+      data: NavigationBarThemeData(
+        height: 72,
+        backgroundColor: colorScheme.surface,
+        indicatorColor: colorScheme.primary.withValues(alpha: 0.12),
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          final isSelected = states.contains(WidgetState.selected);
+          return IconThemeData(
+            color: isSelected
+                ? colorScheme.primary
+                : colorScheme.onSurfaceVariant,
+            size: 25,
+          );
+        }),
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          final isSelected = states.contains(WidgetState.selected);
+          return Theme.of(context).textTheme.labelMedium?.copyWith(
+            color: isSelected
+                ? colorScheme.primary
+                : colorScheme.onSurfaceVariant,
+            fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+          );
+        }),
+      ),
+      child: NavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: _selectDestination,
+        destinations: [
+          NavigationDestination(
+            icon: const Icon(Icons.home_outlined),
+            selectedIcon: const Icon(Icons.home_rounded),
+            label: 'Beranda'.localized(context),
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.local_library_outlined),
+            selectedIcon: const Icon(Icons.local_library_rounded),
+            label: 'Belajar'.localized(context),
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.quiz_outlined),
+            selectedIcon: const Icon(Icons.quiz_rounded),
+            label: 'Ujian'.localized(context),
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.search_outlined),
+            selectedIcon: const Icon(Icons.manage_search_rounded),
+            label: 'Kamus'.localized(context),
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.person_outline_rounded),
+            selectedIcon: const Icon(Icons.person_rounded),
+            label: 'Profil'.localized(context),
+          ),
+        ],
+      ),
     );
   }
 }

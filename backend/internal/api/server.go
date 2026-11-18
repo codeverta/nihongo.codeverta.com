@@ -101,6 +101,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerAppUpdates(mux)
 	s.registerAds(mux)
 	s.registerAIChat(mux)
+	s.registerLearningLists(mux)
 	s.registerNotifications(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
 	mux.HandleFunc("GET /v1/ssw/{sector}/practice", s.requireAuth(s.sswPractice))

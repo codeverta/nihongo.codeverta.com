@@ -187,3 +187,17 @@ func (s *MemoryStore) CompleteGrammarAttempt(userID, attemptID string) (domain.G
 	state.Result = &result
 	return result, nil
 }
+
+// GrammarLevelLessons returns every grammar lesson of a level, with points, in
+// course order. It powers the level-wide pattern list and PDF.
+func (s *MemoryStore) GrammarLevelLessons(userID, level string) []domain.GrammarLesson {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	lessons := make([]domain.GrammarLesson, 0)
+	for i := range s.grammar {
+		if s.grammar[i].Level == level {
+			lessons = append(lessons, domain.GrammarLesson{GrammarLessonSummary: s.grammarSummaryLocked(userID, i), Points: s.grammar[i].Points})
+		}
+	}
+	return lessons
+}

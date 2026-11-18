@@ -12,14 +12,19 @@ import (
 
 // Google's public AdMob test units. They never serve real ads or earn revenue.
 const (
-	testBannerAdUnit   = "ca-app-pub-3940256099942544/6300978111"
-	testNativeAdUnit   = "ca-app-pub-3940256099942544/2247696110"
-	testRewardedAdUnit = "ca-app-pub-3940256099942544/5224354917"
+	testBannerAdUnit       = "ca-app-pub-3940256099942544/6300978111"
+	testNativeAdUnit       = "ca-app-pub-3940256099942544/2247696110"
+	testRewardedAdUnit     = "ca-app-pub-3940256099942544/5224354917"
+	testInterstitialAdUnit = "ca-app-pub-3940256099942544/1033173712"
 )
+
+// defaultInterstitialMinutes is the foreground usage between interstitials.
+const defaultInterstitialMinutes = 10
 
 var adUnitPattern = regexp.MustCompile(`^ca-app-pub-[0-9]{16}/[0-9]{10}$`)
 
-// AdPlacement controls one ad slot. Every is the item spacing for native ads.
+// AdPlacement controls one ad slot. Every is the item spacing for native ads
+// and the minutes of foreground use between interstitials.
 type AdPlacement struct {
 	Enabled bool   `json:"enabled"`
 	UnitID  string `json:"unitId"`
@@ -37,6 +42,14 @@ type AdsConfig struct {
 	// AIChatRewarded is the opt-in rewarded ad that unlocks one AI chat
 	// message after the daily free quota.
 	AIChatRewarded AdPlacement `json:"aiChatRewarded"`
+	// Interstitial is shown at the next natural break (screen or tab change)
+	// once the user has used the app for Every minutes since the last
+	// full-screen ad. Never mid-activity.
+	Interstitial AdPlacement `json:"interstitial"`
+	// DictionaryNative is inserted every N dictionary search results.
+	DictionaryNative AdPlacement `json:"dictionaryNative"`
+	// QuizResultBanner sits on lesson quiz and exam result screens.
+	QuizResultBanner AdPlacement `json:"quizResultBanner"`
 }
 
 // aiChatRewardedAvailable reports whether free users can be offered an ad.
@@ -52,10 +65,13 @@ type AdsStore struct {
 
 func defaultAdsConfig() AdsConfig {
 	return AdsConfig{
-		Banner:         AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
-		NewsNative:     AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 6},
-		JobsNative:     AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 8},
-		AIChatRewarded: AdPlacement{Enabled: true, UnitID: testRewardedAdUnit},
+		Banner:           AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
+		NewsNative:       AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 6},
+		JobsNative:       AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 8},
+		AIChatRewarded:   AdPlacement{Enabled: true, UnitID: testRewardedAdUnit},
+		Interstitial:     AdPlacement{Enabled: true, UnitID: testInterstitialAdUnit, Every: defaultInterstitialMinutes},
+		DictionaryNative: AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 8},
+		QuizResultBanner: AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
 	}
 }
 
@@ -77,7 +93,12 @@ func (s *Server) ConfigureAds(path, token string) error {
 }
 
 func validateAdsConfig(config AdsConfig) error {
-	for name, placement := range map[string]AdPlacement{"banner": config.Banner, "newsNative": config.NewsNative, "jobsNative": config.JobsNative, "aiChatRewarded": config.AIChatRewarded} {
+	placements := map[string]AdPlacement{
+		"banner": config.Banner, "newsNative": config.NewsNative, "jobsNative": config.JobsNative,
+		"aiChatRewarded": config.AIChatRewarded, "interstitial": config.Interstitial,
+		"dictionaryNative": config.DictionaryNative, "quizResultBanner": config.QuizResultBanner,
+	}
+	for name, placement := range placements {
 		if placement.UnitID != "" && !adUnitPattern.MatchString(placement.UnitID) {
 			return fmt.Errorf("%s: ID unit iklan harus seperti ca-app-pub-1234567890123456/1234567890", name)
 		}
@@ -86,6 +107,14 @@ func validateAdsConfig(config AdsConfig) error {
 		}
 		if (name == "newsNative" || name == "jobsNative") && (placement.Every < 3 || placement.Every > 30) {
 			return fmt.Errorf("%s: jarak iklan harus 3 sampai 30 item", name)
+		}
+		// Newer placements only need spacing while they are switched on, so an
+		// older admin client that omits them can still save.
+		if name == "dictionaryNative" && placement.Enabled && (placement.Every < 3 || placement.Every > 30) {
+			return fmt.Errorf("%s: jarak iklan harus 3 sampai 30 item", name)
+		}
+		if name == "interstitial" && placement.Enabled && (placement.Every < 5 || placement.Every > 60) {
+			return fmt.Errorf("%s: jeda iklan layar penuh harus 5 sampai 60 menit", name)
 		}
 	}
 	return nil

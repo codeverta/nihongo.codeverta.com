@@ -39,7 +39,9 @@ class PremiumScreen extends ConsumerWidget {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
               children: [
-                StaggeredEntrance(child: _LifetimeHero(active: billing.premium)),
+                StaggeredEntrance(
+                  child: _LifetimeHero(active: billing.premium),
+                ),
                 const SizedBox(height: 16),
                 const _BenefitGrid(),
                 const SizedBox(height: 14),
@@ -253,7 +255,9 @@ class _CheckoutBar extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: dark ? AppTheme.darkSurface : Colors.white,
-        border: Border(top: BorderSide(color: theme.colorScheme.outlineVariant)),
+        border: Border(
+          top: BorderSide(color: theme.colorScheme.outlineVariant),
+        ),
         boxShadow: [
           BoxShadow(
             color: sakura.shadow.withValues(alpha: dark ? 0.5 : 0.1),
@@ -452,8 +456,9 @@ class _LifetimeHero extends StatelessWidget {
                   child: Text(
                     active
                         ? 'Lifetime Access aktif'.localized(context)
-                        : 'Buka lebih banyak.\nMelangkah lebih jauh.'
-                              .localized(context),
+                        : 'Buka lebih banyak.\nMelangkah lebih jauh.'.localized(
+                            context,
+                          ),
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 21,
@@ -494,7 +499,16 @@ class _BenefitGrid extends StatelessWidget {
 
   static const _items = [
     (Icons.block_rounded, 'Bebas iklan', 'Tanpa iklan selamanya'),
-    (Icons.download_for_offline_rounded, 'Unduh offline', 'Belajar tanpa internet'),
+    (
+      Icons.auto_awesome_rounded,
+      'Tanya AI tanpa iklan',
+      'Lebih banyak pertanyaan setiap hari',
+    ),
+    (
+      Icons.download_for_offline_rounded,
+      'Unduh offline',
+      'Belajar tanpa internet',
+    ),
     (Icons.auto_stories_rounded, 'Baca manga', 'Koleksi manga Jepang'),
     (Icons.work_rounded, 'Lamar kerja', 'Tautan lowongan aktif'),
   ];
@@ -596,9 +610,7 @@ class _PriceNote extends StatelessWidget {
         Expanded(
           child: Text(
             text.localized(context),
-            style: Theme.of(
-              context,
-            ).textTheme.bodySmall?.copyWith(height: 1.4),
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.4),
           ),
         ),
       ],

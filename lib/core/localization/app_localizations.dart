@@ -4,6 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_a.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_b.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_c.dart';
+import 'package:nihongo_master/core/localization/ui_english_ai_chat.dart';
+import 'package:nihongo_master/core/localization/ui_english_level_list.dart';
 import 'package:nihongo_master/core/localization/ui_english_redesign.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_core.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_exam.dart';
@@ -108,6 +110,18 @@ class AppLocalizations {
     ).firstMatch(source);
     if (sswCurriculumCount != null) {
       return 'Curricula, workplace cases, topic practice, and study simulations are available for ${sswCurriculumCount.group(1)} SSW fields. Start with the lessons, then continue to practice and simulations.';
+    }
+    final levelGrammarCount = RegExp(
+      r'^(\d+) pola grammar (N[1-5])$',
+    ).firstMatch(source);
+    if (levelGrammarCount != null) {
+      return '${levelGrammarCount.group(1)} ${levelGrammarCount.group(2)} grammar patterns';
+    }
+    final levelKanjiCount = RegExp(
+      r'^(\d+) kanji (N[1-5])$',
+    ).firstMatch(source);
+    if (levelKanjiCount != null) {
+      return '${levelKanjiCount.group(1)} ${levelKanjiCount.group(2)} kanji';
     }
     final fieldCount = RegExp(r'^(\d+) bidang$').firstMatch(source);
     if (fieldCount != null) return '${fieldCount.group(1)} fields';
@@ -285,7 +299,9 @@ class AppLocalizations {
         uiEnglishWave1Core[source] ??
         uiEnglishWave1Learn[source] ??
         uiEnglishWave1Exam[source] ??
-        uiEnglishRedesign[source];
+        uiEnglishRedesign[source] ??
+        uiEnglishAiChat[source] ??
+        uiEnglishLevelList[source];
     if (exact != null) return exact;
 
     final learningCourseStats = RegExp(
@@ -806,6 +822,7 @@ const _englishCopy = <String, String>{
       'Practise reading with authentic news. Select a word to see its meaning.',
   'menunggu sinkronisasi': 'Waiting to sync',
   'Berita dunia': 'World news',
+  'Pemerintah Jepang': 'Japan government',
   'Tanggal mengikuti terbitan sumber. Berita reguler memakai teks Jepang asli; info Easy memakai bahasa yang lebih sederhana.':
       'Dates follow the source publication. Regular articles use original Japanese; Easy articles use simpler language.',
   'Sebelumnya': 'Previous',
@@ -1608,8 +1625,10 @@ const _englishCopy = <String, String>{
   'Sejarah': 'History',
   'Peta Jepang': 'Japan map',
   'Tampilkan seluruh Jepang': 'Show all of Japan',
-  'Offline: menampilkan data peta yang tersimpan.': 'Offline: showing saved map data.',
-  'Tempat belum dapat dimuat. Periksa koneksi dan coba lagi.': 'Places could not be loaded. Check your connection and try again.',
+  'Offline: menampilkan data peta yang tersimpan.':
+      'Offline: showing saved map data.',
+  'Tempat belum dapat dimuat. Periksa koneksi dan coba lagi.':
+      'Places could not be loaded. Check your connection and try again.',
   'Peta tidak dapat ditampilkan.': 'The map cannot be shown.',
   'Tempat & budaya': 'Places & culture',
   'Lowongan kerja': 'Jobs',
@@ -1632,7 +1651,8 @@ const _englishCopy = <String, String>{
   'Kenali budaya tiap daerah dan lihat lowongan kerja di peta Jepang':
       "Discover each region's culture and see jobs on a map of Japan",
   'Lihat di peta': 'View on map',
-  'Peta belum dapat dimuat. Periksa koneksi dan coba lagi.': 'The map could not be loaded. Check your connection and try again.',
+  'Peta belum dapat dimuat. Periksa koneksi dan coba lagi.':
+      'The map could not be loaded. Check your connection and try again.',
   'Dibangun bersama banyak sumber': 'Built with many sources',
   'Terima kasih kepada penerbit, pembuat dataset, dan komunitas yang menjadi sumber konten Nihongo Master. Hak cipta tetap milik masing-masing pemilik.':
       'Thank you to the publishers, dataset creators, and communities that provide content for Nihongo Master. Copyright remains with each respective owner.',
@@ -1644,6 +1664,10 @@ const _englishCopy = <String, String>{
   'Informasi publik Jepang. Ketentuan penggunaan Osaka City kompatibel dengan CC BY 4.0; furigana ditambahkan oleh Nihongo Master.':
       'Japanese public information. Osaka City’s terms of use are compatible with CC BY 4.0; furigana added by Nihongo Master.',
   '大阪市 · Pemerintah Kota Osaka': 'Osaka City · Osaka City Government',
+  '首相官邸 · Kantor Perdana Menteri Jepang':
+      '首相官邸 · Prime Minister’s Office of Japan',
+  'Berita resmi pemerintah Jepang · 公共データ利用規約 (PDL1.0), kompatibel dengan CC BY 4.0. Sumber: 首相官邸ホームページ; teks diolah (furigana ditambahkan) oleh Nihongo Master.':
+      'Official Japanese government news · Public Data License (PDL1.0), compatible with CC BY 4.0. Source: 首相官邸ホームページ; text edited (furigana added) by Nihongo Master.',
   'Hasil pencarian kata dan bacaan Jepang melalui API Jisho. Atribusi dataset yang mendasari entri mengikuti informasi dari Jisho.':
       'Japanese word and reading search results via the Jisho API. Attribution for the datasets behind entries follows Jisho’s information.',
   'Informasi kanji dan bacaannya melalui kanjiapi.dev.':

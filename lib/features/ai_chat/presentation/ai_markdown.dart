@@ -22,7 +22,10 @@ class AiMarkdown extends StatelessWidget {
         case AiBlockKind.heading:
           children.add(
             Padding(
-              padding: EdgeInsets.only(top: children.isEmpty ? 0 : 10, bottom: 4),
+              padding: EdgeInsets.only(
+                top: children.isEmpty ? 0 : 10,
+                bottom: 4,
+              ),
               child: Text.rich(
                 TextSpan(children: spans),
                 style: base.copyWith(
@@ -43,11 +46,15 @@ class AiMarkdown extends StatelessWidget {
                   SizedBox(
                     width: 22,
                     child: Text(
-                      block.kind == AiBlockKind.bullet ? '•' : '${block.number}.',
+                      block.kind == AiBlockKind.bullet
+                          ? '•'
+                          : '${block.number}.',
                       style: base,
                     ),
                   ),
-                  Expanded(child: Text.rich(TextSpan(children: spans), style: base)),
+                  Expanded(
+                    child: Text.rich(TextSpan(children: spans), style: base),
+                  ),
                 ],
               ),
             ),
@@ -65,7 +72,10 @@ class AiMarkdown extends StatelessWidget {
           );
       }
     }
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    );
   }
 }
 
@@ -91,7 +101,9 @@ List<AiBlock> parseAiMarkdown(String source) {
   final blocks = <AiBlock>[];
   for (var line in source.replaceAll('\r\n', '\n').split('\n')) {
     // Never interpret HTML; drop tags and keep image/link labels only.
-    line = line.replaceAllMapped(_link, (m) => m.group(1) ?? '').replaceAll(_tag, '');
+    line = line
+        .replaceAllMapped(_link, (m) => m.group(1) ?? '')
+        .replaceAll(_tag, '');
     if (line.trim().isEmpty) {
       if (blocks.isEmpty || blocks.last.kind != AiBlockKind.spacer) {
         blocks.add(const AiBlock(AiBlockKind.spacer, ''));
@@ -105,14 +117,22 @@ List<AiBlock> parseAiMarkdown(String source) {
     final heading = _heading.firstMatch(line);
     if (heading != null) {
       blocks.add(
-        AiBlock(AiBlockKind.heading, heading.group(2)!.trim(), level: heading.group(1)!.length),
+        AiBlock(
+          AiBlockKind.heading,
+          heading.group(2)!.trim(),
+          level: heading.group(1)!.length,
+        ),
       );
       continue;
     }
     final bullet = _bullet.firstMatch(line);
     if (bullet != null) {
       blocks.add(
-        AiBlock(AiBlockKind.bullet, bullet.group(2)!.trim(), level: bullet.group(1)!.length ~/ 2),
+        AiBlock(
+          AiBlockKind.bullet,
+          bullet.group(2)!.trim(),
+          level: bullet.group(1)!.length ~/ 2,
+        ),
       );
       continue;
     }
@@ -148,7 +168,12 @@ List<InlineSpan> inlineSpans(String text, TextStyle base, ThemeData theme) {
     }
     final bold = match.group(1) ?? match.group(2);
     if (bold != null) {
-      spans.add(TextSpan(text: bold, style: const TextStyle(fontWeight: FontWeight.w700)));
+      spans.add(
+        TextSpan(
+          text: bold,
+          style: const TextStyle(fontWeight: FontWeight.w700),
+        ),
+      );
     } else {
       spans.add(
         TextSpan(

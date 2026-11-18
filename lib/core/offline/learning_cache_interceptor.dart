@@ -699,6 +699,13 @@ String? _requestCacheKey(RequestOptions options) {
       segments[1] == 'lessons') {
     return _canonicalUrlKey(path, options.uri.queryParametersAll);
   }
+  // Level-wide grammar/kanji lists, so they open offline after one visit.
+  if (segments.length == 4 &&
+      segments[1] == 'levels' &&
+      (segments[0] == 'grammar' && segments[3] == 'points' ||
+          segments[0] == 'kanji' && segments[3] == 'characters')) {
+    return _canonicalUrlKey(path, options.uri.queryParametersAll);
+  }
   if (segments.length == 3 &&
       segments[0] == 'ssw' &&
       segments[2] == 'practice') {
@@ -938,6 +945,8 @@ bool _requiresPremium(RequestOptions options) {
     level = options.uri.queryParameters['level'];
   } else if (segments.length >= 3 && segments[1] == 'lessons') {
     level = _levelInId(segments[2]);
+  } else if (segments.length == 4 && segments[1] == 'levels') {
+    level = segments[2];
   } else if (segments.length >= 4 &&
       segments[0] == 'offline' &&
       segments[1] == 'practice') {

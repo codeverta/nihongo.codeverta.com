@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/ads/interstitial_ads.dart';
 import 'package:nihongo_master/core/ads/rewarded_ads.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/features/ai_chat/data/ai_chat_repository.dart';
@@ -96,7 +97,10 @@ class AiChatController extends StateNotifier<AiChatState> {
     final trimmed = text.trim();
     if (state.sending) return;
     if ((chip == null || chip.needsText) && trimmed.isEmpty) return;
-    _pending = (chip: chip, text: chip == null || chip.needsText ? trimmed : '');
+    _pending = (
+      chip: chip,
+      text: chip == null || chip.needsText ? trimmed : '',
+    );
     _analytics.logEvent('ai_chat_sent', {
       'chip': chip?.wire ?? 'free_text',
       'lesson_type': key.type.name,
@@ -128,7 +132,7 @@ class AiChatController extends StateNotifier<AiChatState> {
     );
     final buffer = StringBuffer();
     final done = Completer<void>();
-    await _subscription?.cancel();
+    unawaited(_subscription?.cancel());
     _subscription = _repository
         .send(
           lessonType: key.type,
@@ -208,10 +212,15 @@ class AiChatController extends StateNotifier<AiChatState> {
   void _fail(Object error, List<AiChatMessage> before) {
     final exception = error is AiChatException
         ? error
-        : const AiChatException(AiChatException.network, 'Butuh koneksi internet');
+        : const AiChatException(
+            AiChatException.network,
+            'Butuh koneksi internet',
+          );
     switch (exception.code) {
       case AiChatException.adRequired:
-        _analytics.logEvent('ai_quota_exhausted', {'lesson_type': key.type.name});
+        _analytics.logEvent('ai_quota_exhausted', {
+          'lesson_type': key.type.name,
+        });
         state = state.copyWith(
           messages: before,
           streaming: () => null,
@@ -219,7 +228,9 @@ class AiChatController extends StateNotifier<AiChatState> {
         );
         unawaited(_offerAdOrUpsell());
       case AiChatException.dailyLimit:
-        _analytics.logEvent('ai_quota_exhausted', {'lesson_type': key.type.name});
+        _analytics.logEvent('ai_quota_exhausted', {
+          'lesson_type': key.type.name,
+        });
         _showLimit(before, AiNotice.dailyLimit);
       case AiChatException.premiumLimit:
         _showLimit(before, AiNotice.premiumLimit);
@@ -279,13 +290,19 @@ class AiChatController extends StateNotifier<AiChatState> {
     final outcome = await _ref
         .read(rewardedAdShowerProvider)
         .show(placement.unitId);
+    if (outcome != RewardedAdOutcome.unavailable) {
+      // A full-screen ad just played; restart the interstitial count.
+      _ref.read(interstitialControllerProvider).markFullScreenAdShown();
+    }
     if (!mounted) return false;
     if (outcome == RewardedAdOutcome.dismissed) {
       _analytics.logEvent('ai_ad_declined', {'stage': 'closed_early'});
       return false;
     }
     _analytics.logEvent('ai_ad_watched', {
-      'result': outcome == RewardedAdOutcome.watched ? 'watched' : 'unavailable',
+      'result': outcome == RewardedAdOutcome.watched
+          ? 'watched'
+          : 'unavailable',
     });
     try {
       await _repository.grantAdCredit(
@@ -331,6 +348,4 @@ class AiChatController extends StateNotifier<AiChatState> {
 }
 
 final aiChatControllerProvider = StateNotifierProvider.autoDispose
-    .family<AiChatController, AiChatState, AiChatKey>(
-      AiChatController.new,
-    );
+    .family<AiChatController, AiChatState, AiChatKey>(AiChatController.new);

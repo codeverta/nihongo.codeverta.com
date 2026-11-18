@@ -646,7 +646,7 @@ NM.view('news',function(root){
   var artCard=el('div',{class:'card'});
   var srcBox=el('div',{class:'pad stack'});
   var srcSel=el('select',{class:'input sm','aria-label':'Filter sumber'},[
-    el('option',{value:'',text:'Semua sumber'}),el('option',{value:'global-voices',text:'Global Voices'}),el('option',{value:'osaka',text:'Osaka City'})]);
+    el('option',{value:'',text:'Semua sumber'}),el('option',{value:'global-voices',text:'Global Voices'}),el('option',{value:'osaka',text:'Osaka City'}),el('option',{value:'kantei',text:'首相官邸 (Kantei)'})]);
   var reloadBtn=el('button',{class:'btn ghost sm',type:'button',text:'Muat ulang status'});
   var list=el('div',{class:'v-news-list'});
   var prev=el('button',{class:'btn ghost sm',type:'button',text:'Sebelumnya'});
@@ -654,7 +654,7 @@ NM.view('news',function(root){
   var pages=el('span',{class:'muted'});
 
   srcCard.appendChild(el('div',{class:'panelh'},[el('div',{},[el('h3',{text:'Sumber dan jadwal'}),
-    el('p',{text:'Hari: Minggu = 0 sampai Sabtu = 6. Maksimal dua hari per minggu. Zona waktu mengikuti nama IANA, misalnya Asia/Jakarta. Pemeriksaan tidak menjamin selalu ada artikel baru.'})])]));
+    el('p',{text:'Hari: Minggu = 0 sampai Sabtu = 6. Boleh 1–7 hari per minggu (pisahkan dengan koma). Zona waktu mengikuti nama IANA, misalnya Asia/Jakarta. Pemeriksaan tidak menjamin selalu ada artikel baru.'})])]));
   srcCard.appendChild(srcBox);
   artCard.appendChild(el('div',{class:'panelh'},[el('h3',{text:'Artikel'}),el('div',{class:'row'},[srcSel,reloadBtn])]));
   artCard.appendChild(list);
@@ -1395,7 +1395,10 @@ NM.view('ads',function(root){
     {k:'banner',t:'Banner',s:'Bawah layar Beranda, Belajar, Kamus',every:false},
     {k:'newsNative',t:'Native di daftar Berita',s:'Disisipkan di antara berita',every:true,noun:'berita'},
     {k:'jobsNative',t:'Native di daftar Lowongan',s:'Disisipkan di antara lowongan',every:true,noun:'lowongan'},
-    {k:'aiChatRewarded',t:'Rewarded di Tanya AI',s:'Opsi tonton iklan setelah kuota gratis harian habis. Jika nonaktif, pengguna diarahkan ke Lifetime.',every:false}];
+    {k:'aiChatRewarded',t:'Rewarded di Tanya AI',s:'Opsi tonton iklan setelah kuota gratis harian habis. Jika nonaktif, pengguna diarahkan ke Lifetime.',every:false},
+    {k:'interstitial',t:'Layar penuh berkala',s:'Tampil di jeda alami (pindah layar/tab) setelah pemakaian N menit sejak iklan layar penuh terakhir. Tidak pernah di tengah kuis atau saat mengetik.',every:true,label:'Jeda pemakaian (menit, 5-60)',min:5,max:60,def:10},
+    {k:'dictionaryNative',t:'Native di hasil Kamus',s:'Disisipkan di antara hasil pencarian kamus',every:true,noun:'hasil'},
+    {k:'quizResultBanner',t:'Banner di layar hasil kuis',s:'Di layar nilai setelah kuis pelajaran dan ujian selesai',every:false}];
   var UNIT=/^ca-app-pub-[0-9]{16}\/[0-9]{10}$/;
   root.innerHTML='<div class="v-ads">'+NM.skeleton(3)+'</div>';
   NM.data('/v1/admin/ads-config').then(function(c){
@@ -1414,8 +1417,8 @@ NM.view('ads',function(root){
       var every=null,kids=[
         NM.el('label',{class:'check'},[en,'Aktif']),
         NM.el('label',{class:'field'},[NM.el('span',{text:'ID unit iklan'}),unit])];
-      if(p.every){every=NM.el('input',{class:'input',type:'number',id:'ads-'+p.k+'-every',min:'3',max:'30',step:'1'});every.value=v.every||6;
-        kids.push(NM.el('label',{class:'field'},[NM.el('span',{text:'Tampil setiap N '+p.noun+' (3-30)'}),every]))}
+      if(p.every){var lo=p.min||3,hi=p.max||30;every=NM.el('input',{class:'input',type:'number',id:'ads-'+p.k+'-every',min:String(lo),max:String(hi),step:'1'});every.value=v.every||p.def||6;
+        kids.push(NM.el('label',{class:'field'},[NM.el('span',{text:p.label||('Tampil setiap N '+p.noun+' (3-30)')}),every]))}
       f[p.k]={en:en,unit:unit,every:every};
       wrap.appendChild(NM.el('div',{class:'card'},[NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:p.t}),NM.el('p',{text:p.s})])]),NM.el('div',{class:'pad'},kids)]));
     });
@@ -1432,8 +1435,8 @@ NM.view('ads',function(root){
         d[p.k]={enabled:x.en.checked,unitId:u};
         if(u&&!UNIT.test(u)){setMsg(p.k+': ID unit iklan harus seperti ca-app-pub-1234567890123456/1234567890','err');x.unit.focus();return}
         if(x.en.checked&&!u){setMsg(p.k+': isi ID unit iklan sebelum mengaktifkan','err');x.unit.focus();return}
-        if(x.every){var n=Number(x.every.value);d[p.k].every=n;
-          if(!(n>=3&&n<=30)||Math.floor(n)!==n){setMsg(p.k+': jarak iklan harus 3 sampai 30 item','err');x.every.focus();return}}
+        if(x.every){var n=Number(x.every.value),lo=p.min||3,hi=p.max||30;d[p.k].every=n;
+          if(!(n>=lo&&n<=hi)||Math.floor(n)!==n){setMsg(p.k+': nilai harus '+lo+' sampai '+hi,'err');x.every.focus();return}}
       }
       btn.disabled=true;setMsg('Menyimpan…');
       NM.data('/v1/admin/ads-config',{method:'PUT',body:d}).then(function(){

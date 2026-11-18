@@ -8,6 +8,8 @@ import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/online_exam_gate.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
+import 'package:nihongo_master/features/learn/level_list/data/level_list_repository.dart';
+import 'package:nihongo_master/features/learn/level_list/presentation/level_pdf_button.dart';
 
 class SimulationIntroScreen extends ConsumerStatefulWidget {
   const SimulationIntroScreen({super.key, this.level = 'N5'});
@@ -242,24 +244,36 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
                               ),
                             ),
                           ),
-                        FilledButton.icon(
-                          onPressed: busy ? null : start,
-                          icon: busy
-                              ? const SizedBox(
-                                  width: 18,
-                                  height: 18,
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                  ),
-                                )
-                              : const Icon(Icons.timer_outlined),
-                          label: Text(
-                            active
-                                ? 'Lanjutkan simulasi'.localized(context)
-                                : history.isEmpty
-                                ? 'Mulai simulasi'.localized(context)
-                                : 'Ulangi paket 01'.localized(context),
-                          ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FilledButton.icon(
+                                onPressed: busy ? null : start,
+                                icon: busy
+                                    ? const SizedBox(
+                                        width: 18,
+                                        height: 18,
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                        ),
+                                      )
+                                    : const Icon(Icons.timer_outlined),
+                                label: Text(
+                                  active
+                                      ? 'Lanjutkan simulasi'.localized(context)
+                                      : history.isEmpty
+                                      ? 'Mulai simulasi'.localized(context)
+                                      : 'Ulangi paket 01'.localized(context),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            LevelPdfButton(
+                              kind: LevelListKind.simulation,
+                              level: widget.level,
+                              compact: true,
+                            ),
+                          ],
                         ),
                       ],
                     ),

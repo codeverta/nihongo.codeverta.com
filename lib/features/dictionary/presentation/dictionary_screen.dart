@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/dictionary/domain/dictionary_models.dart';
@@ -89,6 +90,7 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
     final library = ref.watch(dictionaryLibraryProvider);
     final colors = Theme.of(context).colorScheme;
     final entries = savedOnly ? library.saved : state.entries;
+    final adEvery = nativeAdEvery(ref, NativeAdPlacement.dictionary);
     final body = ListView(
       key: const PageStorageKey('dictionary-scroll'),
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 32),
@@ -435,7 +437,7 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               ),
             ),
         ],
-        for (final (index, entry) in entries.indexed)
+        for (final (index, entry) in entries.indexed) ...[
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: StaggeredEntrance(
@@ -444,6 +446,13 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
               child: DictionaryWordCard(entry: entry),
             ),
           ),
+          // Search results only; the saved-words list stays ad-free.
+          if (!savedOnly && adEvery > 0 && (index + 1) % adEvery == 0)
+            NativeAdSlot(
+              key: ValueKey('dictionary-ad-${state.query}-$index'),
+              placement: NativeAdPlacement.dictionary,
+            ),
+        ],
         if (!savedOnly && state.hasMore)
           OutlinedButton.icon(
             onPressed: state.loadingMore
@@ -558,9 +567,7 @@ class DictionaryWordCard extends StatelessWidget {
             ),
             if (entry.senses.length > 1)
               Text(
-                '+${entry.senses.length - 1} makna lainnya'.localized(
-                  context,
-                ),
+                '+${entry.senses.length - 1} makna lainnya'.localized(context),
                 style: theme.textTheme.bodySmall,
               ),
           ],

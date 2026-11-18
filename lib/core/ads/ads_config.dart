@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 const testBannerAdUnitId = 'ca-app-pub-3940256099942544/6300978111';
 const testNativeAdUnitId = 'ca-app-pub-3940256099942544/2247696110';
 const testRewardedAdUnitId = 'ca-app-pub-3940256099942544/5224354917';
+const testInterstitialAdUnitId = 'ca-app-pub-3940256099942544/1033173712';
 
 @immutable
 class AdPlacementConfig {
@@ -44,6 +45,9 @@ class AdsConfig {
     this.newsNative = const AdPlacementConfig(),
     this.jobsNative = const AdPlacementConfig(),
     this.aiChatRewarded = const AdPlacementConfig(),
+    this.interstitial = const AdPlacementConfig(),
+    this.dictionaryNative = const AdPlacementConfig(),
+    this.quizResultBanner = const AdPlacementConfig(),
   });
 
   factory AdsConfig.fromJson(Object? json) {
@@ -54,6 +58,9 @@ class AdsConfig {
       newsNative: AdPlacementConfig.fromJson(json['newsNative']),
       jobsNative: AdPlacementConfig.fromJson(json['jobsNative']),
       aiChatRewarded: AdPlacementConfig.fromJson(json['aiChatRewarded']),
+      interstitial: AdPlacementConfig.fromJson(json['interstitial']),
+      dictionaryNative: AdPlacementConfig.fromJson(json['dictionaryNative']),
+      quizResultBanner: AdPlacementConfig.fromJson(json['quizResultBanner']),
     );
   }
 
@@ -68,6 +75,16 @@ class AdsConfig {
   /// free quota.
   final AdPlacementConfig aiChatRewarded;
 
+  /// Full-screen ad at the next natural break after [AdPlacementConfig.every]
+  /// minutes of foreground use since the last full-screen ad.
+  final AdPlacementConfig interstitial;
+
+  /// Native ad inserted every N dictionary search results.
+  final AdPlacementConfig dictionaryNative;
+
+  /// Banner on lesson quiz and exam result screens.
+  final AdPlacementConfig quizResultBanner;
+
   /// Debug builds must never request real ads, so swap in Google test units.
   AdsConfig withTestUnits() => AdsConfig(
     enabled: enabled,
@@ -75,5 +92,8 @@ class AdsConfig {
     newsNative: newsNative.withUnit(testNativeAdUnitId),
     jobsNative: jobsNative.withUnit(testNativeAdUnitId),
     aiChatRewarded: aiChatRewarded.withUnit(testRewardedAdUnitId),
+    interstitial: interstitial.withUnit(testInterstitialAdUnitId),
+    dictionaryNative: dictionaryNative.withUnit(testNativeAdUnitId),
+    quizResultBanner: quizResultBanner.withUnit(testBannerAdUnitId),
   );
 }

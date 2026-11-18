@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
+import 'package:nihongo_master/features/ai_chat/data/ai_chat_repository.dart';
+import 'package:nihongo_master/features/ai_chat/presentation/ai_chat_sheet.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_study_view.dart';
@@ -59,7 +62,12 @@ class VocabularyLessonScreen extends ConsumerWidget {
             ? 'lesson-$lessonId-loading'
             : 'lesson-$lessonId-${state.stage.name}',
       ),
-      appBar: AppBar(title: Text(state?.lesson.title ?? 'Lesson Vocabulary')),
+      appBar: AppBar(
+        title: Text(state?.lesson.title ?? 'Lesson Vocabulary'),
+        actions: [
+          AskAiButton(lessonType: AiLessonType.vocabulary, lessonId: lessonId),
+        ],
+      ),
       body: body,
     );
   }
@@ -438,6 +446,10 @@ class _ResultStage extends StatelessWidget {
               onPressed: finish,
               child: Text('Kembali ke daftar lesson'.localized(context)),
             ),
+          ),
+          const SizedBox(height: 16),
+          const Center(
+            child: AdBannerSlot(placement: BannerAdPlacement.quizResult),
           ),
         ],
       ),

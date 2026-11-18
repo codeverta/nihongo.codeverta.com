@@ -182,7 +182,7 @@ class AiChatRepository {
   ) async {
     try {
       final response = await _dio.get<Map<String, dynamic>>(
-        '/ai/conversations/${lessonType.name}/$lessonId',
+        '/ai/conversations/${lessonType.name}/${Uri.encodeComponent(lessonId)}',
       );
       final data = response.data?['data'];
       final messages = data is Map<String, dynamic> ? data['messages'] : null;
@@ -198,7 +198,9 @@ class AiChatRepository {
 
   Future<void> clear(AiLessonType lessonType, String lessonId) async {
     try {
-      await _dio.delete<void>('/ai/conversations/${lessonType.name}/$lessonId');
+      await _dio.delete<void>(
+        '/ai/conversations/${lessonType.name}/${Uri.encodeComponent(lessonId)}',
+      );
     } on DioException catch (error) {
       throw await _toException(error);
     }
