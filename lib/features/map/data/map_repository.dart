@@ -56,7 +56,11 @@ class MapRepository {
       if (response.statusCode == 304 && cached != null) {
         return MapData(spots: _parseSpots(cached));
       }
-      final body = '${response.data}';
+      // `responseType: plain` should give a String, but an interceptor or Dio
+      // version may already have decoded it. Interpolating a decoded Map would
+      // produce `{data: ...}`, which is not JSON, so encode it back instead.
+      final raw = response.data;
+      final body = raw is String ? raw : jsonEncode(raw);
       final spots = _parseSpots(body);
       await preferences.setString(spotsKey, body);
       final newEtag = response.headers.value('etag');
