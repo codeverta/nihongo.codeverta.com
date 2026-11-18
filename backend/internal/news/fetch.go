@@ -19,9 +19,22 @@ import (
 const globalFeed = "https://jp.globalvoices.org/feed/"
 const osakaIndex = "https://www.city.osaka.lg.jp/shisei/category/3054-1-2-21-3-4-0-0-0-0.html"
 
+// Kantei (首相官邸) publishes its site under PDL1.0 (Public Data License 1.0,
+// compatible with CC BY 4.0): reuse and editing are allowed with a source
+// notice and a statement of what was changed.
+const kanteiFeed = "https://www.kantei.go.jp/index-jnews.rdf"
+const kanteiLicenseURL = "https://www.digital.go.jp/resources/open_data/public_data_license_v1.0"
+const kanteiChanges = "Teks dari 首相官邸ホームページ (PDL1.0), diolah oleh Nihongo Master: furigana ditambahkan; foto artikel disalin dan dikonversi ke JPEG bila tersedia."
+
 var gvPath = regexp.MustCompile(`^/\d{4}/\d{2}/\d{2}/\d+/$`)
 var osakaPath = regexp.MustCompile(`^/[a-z_]+/page/\d+\.html$`)
+var kanteiPath = regexp.MustCompile(`^/jp/[A-Za-z0-9_/-]+\.html$`)
 var japaneseDate = regexp.MustCompile(`(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日`)
+
+// KnownSource reports whether id names a news source this package can fetch.
+func KnownSource(id string) bool {
+	return id == "global-voices" || id == "osaka" || id == "kantei"
+}
 
 func allowedArticleURL(source, value string) bool {
 	u, err := url.Parse(value)
@@ -30,6 +43,9 @@ func allowedArticleURL(source, value string) bool {
 	}
 	if source == "global-voices" {
 		return u.Host == "jp.globalvoices.org" && gvPath.MatchString(u.Path)
+	}
+	if source == "kantei" {
+		return u.Host == "www.kantei.go.jp" && kanteiPath.MatchString(u.Path) && !strings.Contains(u.Path, "..")
 	}
 	return source == "osaka" && u.Host == "www.city.osaka.lg.jp" && osakaPath.MatchString(u.Path)
 }
@@ -95,14 +111,18 @@ func (f *HTTPFetcher) Fetch(ctx context.Context, s Source, since time.Time) (Fet
 		return FetchResult{}, err
 	}
 	endpoint := globalFeed
-	if s.ID == "osaka" {
+	switch s.ID {
+	case "global-voices":
+	case "osaka":
 		endpoint = osakaIndex
-	} else if s.ID != "global-voices" {
+	case "kantei":
+		endpoint = kanteiFeed
+	default:
 		return FetchResult{}, ErrInvalid
 	}
 	// Osaka's index validators do not necessarily change when a linked article
 	// is corrected. Revisit eligible HTML pages on each scheduled check.
-	data, headers, unchanged, err := f.get(ctx, endpoint, s, s.ID == "global-voices")
+	data, headers, unchanged, err := f.get(ctx, endpoint, s, s.ID != "osaka")
 	if err != nil {
 		return FetchResult{}, err
 	}
@@ -119,17 +139,38 @@ func (f *HTTPFetcher) Fetch(ctx context.Context, s Source, since time.Time) (Fet
 		}
 		return result, err
 	}
+	if s.ID == "kantei" {
+		links, err := parseKanteiFeed(data, since)
+		if err != nil {
+			return result, err
+		}
+		for _, link := range links {
+			if err := f.wait(ctx); err != nil {
+				return result, err
+			}
+			body, _, _, err := f.get(ctx, link.URL, s, false)
+			if err != nil {
+				return result, fmt.Errorf("Kantei article: %w", err)
+			}
+			// Kantei mixes text pages with transcripts and PDF-only notices;
+			// a page without eligible HTML text is skipped, not a failed sync.
+			a, err := parseKanteiArticle(body, link)
+			if err != nil {
+				result.Skipped++
+				continue
+			}
+			result.Articles = append(result.Articles, a)
+		}
+		f.importImages(ctx, result.Articles)
+		return result, nil
+	}
 	links, err := parseOsakaIndex(data, since)
 	if err != nil {
 		return result, err
 	}
 	for _, link := range links {
-		if f.spacing > 0 {
-			select {
-			case <-ctx.Done():
-				return result, ctx.Err()
-			case <-time.After(f.spacing):
-			}
+		if err := f.wait(ctx); err != nil {
+			return result, err
 		}
 		body, _, _, err := f.get(ctx, link.URL, s, false)
 		if err != nil {
@@ -178,10 +219,7 @@ func parseGlobalVoices(data []byte, since time.Time) ([]Article, int, error) {
 	items := []Article{}
 	skipped := 0
 	for _, item := range feed.Channel.Items {
-		published, err := time.Parse(time.RFC1123Z, item.Date)
-		if err != nil {
-			published, err = time.Parse(time.RFC1123, item.Date)
-		}
+		published, err := feedDate(item.Date)
 		if err != nil {
 			return nil, skipped, fmt.Errorf("invalid source publication date")
 		}
@@ -262,17 +300,95 @@ func parseGlobalVoices(data []byte, since time.Time) ([]Article, int, error) {
 	return items, skipped, nil
 }
 
-type osakaLink struct {
+func (f *HTTPFetcher) wait(ctx context.Context) error {
+	if f.spacing <= 0 {
+		return nil
+	}
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	case <-time.After(f.spacing):
+		return nil
+	}
+}
+
+// feedDate accepts RFC 1123 dates with or without the weekday; Kantei omits it.
+func feedDate(value string) (time.Time, error) {
+	value = strings.TrimSpace(value)
+	for _, layout := range []string{time.RFC1123Z, time.RFC1123, "2 Jan 2006 15:04:05 -0700", "2 Jan 2006 15:04 -0700", time.RFC3339} {
+		if t, err := time.Parse(layout, value); err == nil {
+			return t, nil
+		}
+	}
+	return time.Time{}, fmt.Errorf("invalid source publication date")
+}
+
+func parseKanteiFeed(data []byte, since time.Time) ([]articleLink, error) {
+	var feed rss
+	if err := xml.Unmarshal(data, &feed); err != nil {
+		return nil, err
+	}
+	if len(feed.Channel.Items) == 0 {
+		return nil, fmt.Errorf("Kantei feed structure changed")
+	}
+	links := []articleLink{}
+	seen := map[string]bool{}
+	for _, item := range feed.Channel.Items {
+		u := strings.TrimSpace(item.URL)
+		title := strings.TrimSpace(item.Title)
+		published, err := feedDate(item.Date)
+		if err != nil || published.Before(since) || title == "" || seen[u] || !allowedArticleURL("kantei", u) {
+			continue
+		}
+		seen[u] = true
+		links = append(links, articleLink{URL: u, Title: title, Date: published.UTC()})
+	}
+	sort.SliceStable(links, func(i, j int) bool { return links[i].Date.After(links[j].Date) })
+	if len(links) > 20 {
+		links = links[:20]
+	}
+	return links, nil
+}
+
+func parseKanteiArticle(data []byte, link articleLink) (Article, error) {
+	doc, err := html.Parse(strings.NewReader(string(data)))
+	if err != nil {
+		return Article{}, err
+	}
+	var body *html.Node
+	walk(doc, func(n *html.Node) {
+		if body == nil && hasClass(n, "article-wysiwyg") {
+			body = n
+		}
+	})
+	if body == nil {
+		return Article{}, fmt.Errorf("Kantei article structure changed")
+	}
+	paragraphs, refs := parseParagraphs(body, link.URL)
+	if len(paragraphs) == 0 {
+		return Article{}, fmt.Errorf("Kantei article has no eligible HTML text")
+	}
+	a := Article{URL: link.URL, Title: link.Title, TitleTokens: tokenize(link.Title), Summary: excerpt(paragraphs[0].Text, 160), Paragraphs: paragraphs, References: refs, Credits: []Credit{{Name: "首相官邸ホームページ", URL: link.URL, Role: "publisher"}}, PublishedAt: link.Date, DateType: "published", License: "PDL1.0 (公共データ利用規約)", LicenseURL: kanteiLicenseURL, Changes: kanteiChanges}
+	// Kantei photographs fall under the same PDL1.0 notice as the text.
+	if image := metaImage(doc, link.URL); image != "" {
+		if u, err := url.Parse(image); err == nil && u.Host == "www.kantei.go.jp" {
+			a.imageCandidates = []imageCandidate{{URL: image, Credit: "首相官邸ホームページ", License: "PDL1.0", LicenseURL: kanteiLicenseURL, SourceURL: link.URL}}
+		}
+	}
+	return a, nil
+}
+
+type articleLink struct {
 	URL, Title string
 	Date       time.Time
 }
 
-func parseOsakaIndex(data []byte, since time.Time) ([]osakaLink, error) {
+func parseOsakaIndex(data []byte, since time.Time) ([]articleLink, error) {
 	doc, err := html.Parse(strings.NewReader(string(data)))
 	if err != nil {
 		return nil, err
 	}
-	items := []osakaLink{}
+	items := []articleLink{}
 	seen := map[string]bool{}
 	found := false
 	walk(doc, func(n *html.Node) {
@@ -302,7 +418,7 @@ func parseOsakaIndex(data []byte, since time.Time) ([]osakaLink, error) {
 		if err != nil || date.Before(since) {
 			return
 		}
-		items = append(items, osakaLink{URL: u, Title: plain(link), Date: date.UTC()})
+		items = append(items, articleLink{URL: u, Title: plain(link), Date: date.UTC()})
 		seen[u] = true
 	})
 	if !found {
@@ -313,7 +429,7 @@ func parseOsakaIndex(data []byte, since time.Time) ([]osakaLink, error) {
 	}
 	return items, nil
 }
-func parseOsakaArticle(data []byte, link osakaLink) (Article, error) {
+func parseOsakaArticle(data []byte, link articleLink) (Article, error) {
 	doc, err := html.Parse(strings.NewReader(string(data)))
 	if err != nil {
 		return Article{}, err
@@ -442,7 +558,7 @@ func parseParagraphs(root *html.Node, base string) ([]Paragraph, []Credit) {
 		if overflow {
 			return
 		}
-		if n.Data == "script" || n.Data == "style" || n.Data == "figure" || n.Data == "iframe" || hasClass(n, "wp-caption") || hasClass(n, "gv-rss-footer") || hasClass(n, "mol_imageblock") {
+		if n.Data == "script" || n.Data == "style" || n.Data == "figure" || n.Data == "iframe" || hasClass(n, "wp-caption") || hasClass(n, "gv-rss-footer") || hasClass(n, "mol_imageblock") || hasClass(n, "article-content__title") {
 			return
 		}
 		isBlock := n.Data == "p" || n.Data == "h2" || n.Data == "h3" || n.Data == "h4" || n.Data == "li" || n.Data == "td" || n.Data == "th"

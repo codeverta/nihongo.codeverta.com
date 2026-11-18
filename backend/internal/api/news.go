@@ -115,7 +115,7 @@ func (s *Server) listNews(w http.ResponseWriter, r *http.Request, admin bool) {
 		}
 	}
 	source := r.URL.Query().Get("source")
-	if (source != "" && source != "global-voices" && source != "osaka") || page < 1 || page > 100000 || size < 1 || size > 50 {
+	if (source != "" && !news.KnownSource(source)) || page < 1 || page > 100000 || size < 1 || size > 50 {
 		newsError(w, news.ErrInvalid)
 		return
 	}
@@ -186,7 +186,7 @@ func (s *Server) editNews(w http.ResponseWriter, r *http.Request) {
 }
 func (s *Server) fetchNews(w http.ResponseWriter, r *http.Request) {
 	id := r.PathValue("id")
-	if id != "global-voices" && id != "osaka" {
+	if !news.KnownSource(id) {
 		newsError(w, news.ErrNotFound)
 		return
 	}

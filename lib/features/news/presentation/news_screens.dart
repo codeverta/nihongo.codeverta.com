@@ -604,6 +604,7 @@ class _FilterBarDelegate extends SliverPersistentHeaderDelegate {
     ('', 'Semua', Icons.auto_awesome_rounded, 'all'),
     ('global-voices', 'Berita dunia', Icons.public_rounded, 'regular'),
     ('osaka', 'Info Jepang · Easy', Icons.spa_rounded, 'easy'),
+    ('kantei', 'Pemerintah Jepang', Icons.account_balance_rounded, 'regular'),
   ];
 
   @override

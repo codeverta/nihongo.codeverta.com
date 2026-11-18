@@ -12,7 +12,10 @@ import (
 	"strings"
 	"time"
 	_ "time/tzdata"
+	"unicode"
 	"unicode/utf8"
+
+	"golang.org/x/text/unicode/norm"
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -59,6 +62,8 @@ func New(db *gorm.DB) (*Repository, error) {
 	for _, s := range []Source{
 		{ID: "global-voices", Name: "Global Voices 日本語", Kind: "regular", URL: "https://jp.globalvoices.org/feed/", Timezone: "Asia/Jakarta", Days: []int{2, 5}, Hour: 18, Enabled: true},
 		{ID: "osaka", Name: "大阪市", Kind: "easy", URL: "https://www.city.osaka.lg.jp/shisei/category/3054-1-2-21-3-4-0-0-0-0.html", Timezone: "Asia/Jakarta", Days: []int{0, 4}, Hour: 18, Enabled: true},
+		// Kantei posts several items most days, so it is checked daily.
+		{ID: "kantei", Name: "首相官邸", Kind: "regular", URL: kanteiFeed, Timezone: "Asia/Jakarta", Days: []int{0, 1, 2, 3, 4, 5, 6}, Hour: 19, Enabled: true},
 	} {
 		s.NextFetchAt = time.Unix(0, 0).UTC() // One initial import; survives subsequent restarts.
 		if err := db.Clauses(clause.OnConflict{DoNothing: true}).Create(&s).Error; err != nil {
@@ -73,7 +78,7 @@ func NextScheduled(s Source, after time.Time) (time.Time, error) {
 	if s.Timezone == "Local" || s.Timezone == "" || len(s.Timezone) > 80 {
 		return time.Time{}, ErrInvalid
 	}
-	if len(s.Days) < 1 || len(s.Days) > 2 || s.Hour < 0 || s.Hour > 23 || s.Minute < 0 || s.Minute > 59 {
+	if len(s.Days) < 1 || len(s.Days) > 7 || s.Hour < 0 || s.Hour > 23 || s.Minute < 0 || s.Minute > 59 {
 		return time.Time{}, ErrInvalid
 	}
 	loc, err := time.LoadLocation(s.Timezone)
@@ -307,8 +312,10 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 		s.LastModified = ""
 	}
 	result, fetchErr := f.Fetch(workCtx, s, now.AddDate(0, -6, 0))
+	imported, duplicates := 0, 0
 	if fetchErr == nil && !result.NotModified {
 		fetchErr = r.db.WithContext(workCtx).Transaction(func(tx *gorm.DB) error {
+			imported, duplicates = 0, 0
 			var current Source
 			if err := tx.Clauses(clause.Locking{Strength: "UPDATE"}).First(&current, "id = ?", id).Error; err != nil {
 				return err
@@ -319,6 +326,7 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 			if len(result.Articles) > 20 {
 				return fmt.Errorf("news import exceeds batch bound")
 			}
+			batchKeys := map[string]bool{}
 			for _, a := range result.Articles {
 				if err := validateArticle(a, s, now); err != nil {
 					return err
@@ -333,6 +341,7 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 				}{a.Title, a.Paragraphs})
 				sum := sha256.Sum256(raw)
 				a.ContentHash = hex.EncodeToString(sum[:])
+				a.DedupKey = dedupKey(a.Title)
 				var old Article
 				err := tx.First(&old, "url = ?", a.URL).Error
 				if err == nil {
@@ -358,6 +367,16 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 						preserveReadings(&a, old)
 					}
 				} else if errors.Is(err, gorm.ErrRecordNotFound) {
+					// The same story under another URL (another source, or a
+					// republished page) is shown once: the copy stored first wins.
+					duplicate, err := r.duplicate(tx, a)
+					if err != nil {
+						return err
+					}
+					if duplicate || batchKeys[a.DedupKey] {
+						duplicates++
+						continue
+					}
 					a.ID = uuid.NewString()
 				} else {
 					return err
@@ -365,6 +384,10 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 				if err := tx.Save(&a).Error; err != nil {
 					return err
 				}
+				if a.DedupKey != "" {
+					batchKeys[a.DedupKey] = true
+				}
+				imported++
 			}
 			return nil
 		})
@@ -382,8 +405,8 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 	} else {
 		updates["last_error"] = ""
 		updates["last_success_at"] = now
-		updates["last_imported"] = len(result.Articles)
-		updates["last_skipped"] = result.Skipped
+		updates["last_imported"] = imported
+		updates["last_skipped"] = result.Skipped + duplicates
 		if !result.NotModified {
 			updates["e_tag"] = result.ETag
 			updates["last_modified"] = result.LastModified
@@ -393,7 +416,32 @@ func (r *Repository) Sync(ctx context.Context, f Fetcher, id string, force bool)
 	if fetchErr != nil {
 		return 0, fetchErr
 	}
-	return len(result.Articles), finishErr
+	return imported, finishErr
+}
+
+// dedupKey identifies a story by its title, ignoring width, case, spacing and
+// punctuation, so the same headline from two sources compares equal.
+func dedupKey(title string) string {
+	var b strings.Builder
+	for _, r := range norm.NFKC.String(title) {
+		if unicode.IsLetter(r) || unicode.IsNumber(r) {
+			b.WriteRune(unicode.ToLower(r))
+		}
+	}
+	if utf8.RuneCountInString(b.String()) < 8 {
+		return "" // Too short ("お知らせ") to identify a story.
+	}
+	sum := sha256.Sum256([]byte(b.String()))
+	return hex.EncodeToString(sum[:])
+}
+
+func (r *Repository) duplicate(tx *gorm.DB, a Article) (bool, error) {
+	if a.DedupKey == "" {
+		return false, nil
+	}
+	var count int64
+	err := tx.Model(&Article{}).Where("dedup_key = ? AND url <> ? AND published_at BETWEEN ? AND ?", a.DedupKey, a.URL, a.PublishedAt.Add(-7*24*time.Hour), a.PublishedAt.Add(7*24*time.Hour)).Count(&count).Error
+	return count > 0, err
 }
 func preserveReadings(a *Article, old Article) {
 	if a.Title == old.Title {

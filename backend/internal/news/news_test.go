@@ -253,7 +253,7 @@ func TestLiveSources(t *testing.T) {
 		t.Skip("opt-in publisher requests")
 	}
 	f := NewFetcher()
-	for _, s := range []Source{{ID: "global-voices"}, {ID: "osaka"}} {
+	for _, s := range []Source{{ID: "global-voices"}, {ID: "osaka"}, {ID: "kantei"}} {
 		result, err := f.Fetch(context.Background(), s, time.Now().AddDate(0, -6, 0))
 		if err != nil {
 			t.Fatal(s.ID, err)

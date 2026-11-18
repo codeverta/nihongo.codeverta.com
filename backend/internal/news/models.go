@@ -41,6 +41,7 @@ type Article struct {
 	DateType        string           `json:"dateType"`
 	FetchedAt       time.Time        `json:"fetchedAt"`
 	ContentHash     string           `json:"revision" gorm:"size:64"`
+	DedupKey        string           `json:"-" gorm:"size:64;index"`
 	ImageURL        string           `json:"imageUrl"`
 	ImageCredit     string           `json:"imageCredit"`
 	ImageLicense    string           `json:"imageLicense"`
