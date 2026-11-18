@@ -147,6 +147,12 @@ class _LevelPdfButtonState extends ConsumerState<LevelPdfButton> {
     }
     return OutlinedButton.icon(
       key: const ValueKey('level-pdf-button'),
+      // The app theme makes outlined buttons full width (Size.fromHeight),
+      // which cannot lay out inside the header Row and blanked the list.
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size(0, 44),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      ),
       onPressed: offline || _busy
           ? null
           : lifetime

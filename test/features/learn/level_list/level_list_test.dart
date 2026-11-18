@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
+import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/learn/level_list/data/level_list_repository.dart';
 import 'package:nihongo_master/features/learn/level_list/presentation/grammar_level_list.dart';
@@ -144,6 +145,9 @@ Future<void> _pump(
         locale: const Locale('id'),
         supportedLocales: AppLocalizations.supportedLocales,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
+        // The real theme: its full-width button defaults once blanked the
+        // list, which the default test theme could not catch.
+        theme: AppTheme.lightTheme,
         routerConfig: router,
       ),
     ),
