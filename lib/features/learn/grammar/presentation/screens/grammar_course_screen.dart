@@ -45,6 +45,17 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Grammar JLPT $level'),
+          actions: [
+            CourseOfflineButton(
+              type: 'grammar',
+              level: level,
+              lessonIds: [...?course.valueOrNull?.lessons.map((l) => l.id)],
+              activeLessonId: course.valueOrNull?.lessons
+                  .where((l) => !l.completed)
+                  .firstOrNull
+                  ?.id,
+            ),
+          ],
           bottom: TabBar(
             tabs: [
               Tab(text: 'Lesson'.localized(context)),
@@ -107,12 +118,7 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                     physics: const AlwaysScrollableScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
                     children: [
-                      CourseOfflineStatus(
-                        type: 'grammar',
-                        level: level,
-                        lessonIds: data.lessons.map((l) => l.id).toList(),
-                        activeLessonId: resume?.id,
-                      ),
+                      const CourseOfflineStatus(),
                       Wrap(
                         runSpacing: 4,
                         children: [

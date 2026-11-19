@@ -29,4 +29,16 @@ const uiEnglishLevelList = <String, String>{
   'Font Noto Sans JP': 'Noto Sans JP font',
   'Font Noto Sans JP © 2014–2021 Adobe, lisensi SIL Open Font License 1.1. Digunakan pada PDF daftar pola dan kanji yang dapat diunduh.':
       'Noto Sans JP font © 2014–2021 Adobe, SIL Open Font License 1.1. Used in the downloadable grammar and kanji list PDFs.',
+  // Course app-bar actions: offline save and matching Anki decks.
+  'Simpan offline': 'Save offline',
+  'Tersimpan untuk offline': 'Saved for offline',
+  'Latihan kartu Anki': 'Practice with Anki cards',
+  'Pilih deck Anki': 'Choose an Anki deck',
+  'Penggunaan Kanji': 'Kanji Usage',
+  'Bacaan Kosakata': 'Vocabulary Readings',
+  'Arti Kosakata': 'Vocabulary Meanings',
+  'Latih bacaan dan arti kanji dengan kartu':
+      'Practice kanji readings and meanings with cards',
+  'Kartu: kanji → cara baca': 'Cards: kanji → reading',
+  'Kartu: kata → arti': 'Cards: word → meaning',
 };

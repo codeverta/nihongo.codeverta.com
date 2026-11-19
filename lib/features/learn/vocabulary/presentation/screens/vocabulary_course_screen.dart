@@ -8,6 +8,7 @@ import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
+import 'package:nihongo_master/features/anki/presentation/course_anki_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class VocabularyCourseScreen extends ConsumerStatefulWidget {
@@ -31,8 +32,28 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
   Widget build(BuildContext context) {
     final data = ref.watch(vocabularyLevelsProvider);
     final colors = Theme.of(context).colorScheme;
+    final levels = data.valueOrNull ?? const [];
+    final current =
+        levels.where((l) => l.level == selected).firstOrNull ??
+        levels.firstOrNull;
     return Scaffold(
-      appBar: AppBar(title: const Text('Vocabulary JLPT')),
+      appBar: AppBar(
+        title: const Text('Vocabulary JLPT'),
+        actions: [
+          if (current != null) ...[
+            CourseAnkiButton(type: 'vocabulary', level: current.level),
+            CourseOfflineButton(
+              type: 'vocabulary',
+              level: current.level,
+              lessonIds: [for (final l in current.lessons) l.id],
+              activeLessonId: current.lessons
+                  .where((l) => !l.completed)
+                  .firstOrNull
+                  ?.id,
+            ),
+          ],
+        ],
+      ),
       body: data.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(
@@ -79,12 +100,7 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.all(20),
               children: [
-                CourseOfflineStatus(
-                  type: 'vocabulary',
-                  level: level.level,
-                  lessonIds: level.lessons.map((l) => l.id).toList(),
-                  activeLessonId: resume?.id,
-                ),
+                const CourseOfflineStatus(),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(

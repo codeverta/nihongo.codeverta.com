@@ -32,7 +32,20 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
     final provider = readingCourseProvider(widget.level);
     final course = ref.watch(provider);
     return Scaffold(
-      appBar: AppBar(title: Text('Reading JLPT ${widget.level}')),
+      appBar: AppBar(
+        title: Text('Reading JLPT ${widget.level}'),
+        actions: [
+          CourseOfflineButton(
+            type: 'reading',
+            level: widget.level,
+            lessonIds: [...?course.valueOrNull?.lessons.map((l) => l.id)],
+            activeLessonId: course.valueOrNull?.lessons
+                .where((l) => !l.completed)
+                .firstOrNull
+                ?.id,
+          ),
+        ],
+      ),
       body: course.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, s) => Center(
@@ -78,12 +91,7 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
               children: [
-                CourseOfflineStatus(
-                  type: 'reading',
-                  level: widget.level,
-                  lessonIds: data.lessons.map((l) => l.id).toList(),
-                  activeLessonId: resume?.id,
-                ),
+                const CourseOfflineStatus(),
                 Container(
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(

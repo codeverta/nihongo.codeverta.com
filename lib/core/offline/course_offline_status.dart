@@ -5,11 +5,39 @@ import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/offline/offline_providers.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 
-/// Shows the offline note and a manual "save for offline" button. Lessons are
-/// no longer prefetched automatically: each lesson is fetched (and cached) only
+/// The offline note shown at the top of a course while the device is
+/// offline. The "save for offline" action lives in the app bar
+/// ([CourseOfflineButton]).
+class CourseOfflineStatus extends ConsumerWidget {
+  const CourseOfflineStatus({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (!ref.watch(offlineProvider)) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Row(
+        children: [
+          const Icon(Icons.offline_bolt_outlined, size: 18),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              'Offline · buka materi yang sudah disiapkan.'.localized(context),
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// App-bar action that saves a whole course for offline use. Lessons are no
+/// longer prefetched automatically: each lesson is fetched (and cached) only
 /// when opened, so entering or refreshing a course costs one list request.
-class CourseOfflineStatus extends ConsumerStatefulWidget {
-  const CourseOfflineStatus({
+/// Hidden while offline or before the course has loaded.
+class CourseOfflineButton extends ConsumerStatefulWidget {
+  const CourseOfflineButton({
     required this.type,
     required this.level,
     required this.lessonIds,
@@ -22,16 +50,16 @@ class CourseOfflineStatus extends ConsumerStatefulWidget {
   final String? activeLessonId;
 
   @override
-  ConsumerState<CourseOfflineStatus> createState() =>
-      _CourseOfflineStatusState();
+  ConsumerState<CourseOfflineButton> createState() =>
+      _CourseOfflineButtonState();
 }
 
-class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
+class _CourseOfflineButtonState extends ConsumerState<CourseOfflineButton> {
   bool _saving = false;
   bool _pinned = false;
 
   @override
-  void didUpdateWidget(covariant CourseOfflineStatus oldWidget) {
+  void didUpdateWidget(covariant CourseOfflineButton oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.type != widget.type || oldWidget.level != widget.level) {
       _pinned = false;
@@ -112,40 +140,30 @@ class _CourseOfflineStatusState extends ConsumerState<CourseOfflineStatus> {
   @override
   Widget build(BuildContext context) {
     final offline = ref.watch(offlineProvider);
-    ref.watch(authControllerProvider.select((s) => s.user?.id));
-    if (offline) {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 12),
-        child: Row(
-          children: [
-            const Icon(Icons.offline_bolt_outlined, size: 18),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                'Offline · buka materi yang sudah disiapkan.'.localized(context),
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-          ],
-        ),
-      );
+    final signedIn =
+        ref.watch(authControllerProvider.select((s) => s.user?.id)) != null;
+    if (offline || !signedIn || widget.lessonIds.isEmpty) {
+      return const SizedBox.shrink();
     }
-    return Align(
-      alignment: Alignment.centerRight,
-      child: TextButton.icon(
-        onPressed: _saving || _pinned ? null : _saveCourse,
-        icon: Icon(
-          _pinned ? Icons.download_done_rounded : Icons.download_outlined,
-          size: 18,
-        ),
-        label: Text(
-          _saving
-              ? 'Menyimpan…'.localized(context)
-              : _pinned
-              ? 'Tersimpan'.localized(context)
-              : 'Simpan teks'.localized(context),
-        ),
-      ),
+    final tooltip = _saving
+        ? 'Menyimpan…'
+        : _pinned
+        ? 'Tersimpan untuk offline'
+        : 'Simpan offline';
+    return IconButton(
+      key: const ValueKey('course-offline-save'),
+      tooltip: tooltip.localized(context),
+      onPressed: _saving || _pinned ? null : _saveCourse,
+      icon: _saving
+          ? const SizedBox.square(
+              dimension: 20,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : Icon(
+              _pinned
+                  ? Icons.download_done_rounded
+                  : Icons.download_for_offline_outlined,
+            ),
     );
   }
 }

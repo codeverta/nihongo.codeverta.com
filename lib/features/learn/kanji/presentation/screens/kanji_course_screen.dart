@@ -8,6 +8,7 @@ import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 import 'package:nihongo_master/features/learn/level_list/presentation/kanji_level_list.dart';
+import 'package:nihongo_master/features/anki/presentation/course_anki_button.dart';
 
 class KanjiCourseScreen extends ConsumerStatefulWidget {
   const KanjiCourseScreen({this.level = 'N5', super.key});
@@ -75,12 +76,7 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
             physics: const AlwaysScrollableScrollPhysics(),
             padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
             children: [
-              CourseOfflineStatus(
-                type: 'kanji',
-                level: widget.level,
-                lessonIds: data.lessons.map((l) => l.id).toList(),
-                activeLessonId: resume?.id,
-              ),
+              const CourseOfflineStatus(),
               Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
@@ -287,6 +283,18 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Kanji JLPT ${widget.level}'),
+          actions: [
+            CourseAnkiButton(type: 'kanji', level: widget.level),
+            CourseOfflineButton(
+              type: 'kanji',
+              level: widget.level,
+              lessonIds: [...?course.valueOrNull?.lessons.map((l) => l.id)],
+              activeLessonId: course.valueOrNull?.lessons
+                  .where((l) => !l.completed)
+                  .firstOrNull
+                  ?.id,
+            ),
+          ],
           bottom: TabBar(
             tabs: [
               Tab(text: 'Lesson'.localized(context)),
