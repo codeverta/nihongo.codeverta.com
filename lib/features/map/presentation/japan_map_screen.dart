@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -11,6 +12,8 @@ import 'package:nihongo_master/features/jobs/domain/job_models.dart';
 import 'package:nihongo_master/features/map/data/map_repository.dart';
 import 'package:nihongo_master/features/map/domain/map_models.dart';
 import 'package:nihongo_master/features/map/presentation/map_labels.dart';
+import 'package:nihongo_master/features/map/presentation/prefecture_living_card.dart';
+import 'package:nihongo_master/features/map/presentation/prefecture_profile_screen.dart';
 
 /// First jobs shown in a prefecture's bottom sheet.
 final mapPrefectureJobsProvider = FutureProvider.autoDispose
@@ -35,6 +38,7 @@ class _JapanMapScreenState extends ConsumerState<JapanMapScreen>
   Animation<Matrix4>? _zoomAnimation;
   bool _showSpots = true;
   bool _showJobs = true;
+  bool _showWages = false;
   final Set<String> _categories = {...mapCategories};
   String? _selected;
 
@@ -55,9 +59,10 @@ class _JapanMapScreenState extends ConsumerState<JapanMapScreen>
   }
 
   void _animateTo(Matrix4 target) {
-    _zoomAnimation = Matrix4Tween(begin: _transform.value, end: target).animate(
-      CurvedAnimation(parent: _zoom, curve: AppMotion.standard),
-    );
+    _zoomAnimation = Matrix4Tween(
+      begin: _transform.value,
+      end: target,
+    ).animate(CurvedAnimation(parent: _zoom, curve: AppMotion.standard));
     unawaited(_zoom.forward(from: 0));
   }
 
@@ -131,6 +136,15 @@ class _JapanMapScreenState extends ConsumerState<JapanMapScreen>
     final counts =
         ref.watch(mapJobCountsProvider).valueOrNull ??
         const JobCounts(counts: {});
+    final living = ref.watch(mapPrefectureLivingProvider).valueOrNull;
+    final dark = Theme.of(context).brightness == Brightness.dark;
+    final wageColors = _showWages && living != null
+        ? {
+            for (final code in living.prefectures.keys)
+              if (living.wageShare(code) case final share?)
+                code: wageHeatColor(share, dark: dark),
+          }
+        : null;
     final allSpots = spots.valueOrNull?.spots ?? const <MapSpot>[];
     final visibleSpots = _showSpots
         ? allSpots.where((s) => _categories.contains(s.category)).toList()
@@ -154,6 +168,9 @@ class _JapanMapScreenState extends ConsumerState<JapanMapScreen>
             categories: _categories,
             onSpots: (value) => setState(() => _showSpots = value),
             onJobs: (value) => setState(() => _showJobs = value),
+            wagesAvailable: living != null,
+            showWages: _showWages,
+            onWages: (value) => setState(() => _showWages = value),
             onCategory: (category, value) => setState(() {
               value ? _categories.add(category) : _categories.remove(category);
             }),
@@ -161,8 +178,9 @@ class _JapanMapScreenState extends ConsumerState<JapanMapScreen>
           if (spots.valueOrNull?.fromCache ?? false)
             _Notice(
               icon: Icons.cloud_off_rounded,
-              text: 'Offline: menampilkan data peta yang tersimpan.'
-                  .localized(context),
+              text: 'Offline: menampilkan data peta yang tersimpan.'.localized(
+                context,
+              ),
             ),
           if (spots.hasError)
             _Notice(
@@ -175,57 +193,85 @@ class _JapanMapScreenState extends ConsumerState<JapanMapScreen>
               ),
             ),
           Expanded(
-            child: ColoredBox(
-              color: SakuraColors.of(context).mapSea,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.lerp(
+                      SakuraColors.of(context).mapSea,
+                      Colors.white,
+                      dark ? 0.04 : 0.45,
+                    )!,
+                    SakuraColors.of(context).mapSea,
+                  ],
+                ),
+              ),
               child: Stack(
                 children: [
                   Positioned.fill(
                     child: geometry.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (_, __) => Center(
-                child: Text('Peta tidak dapat ditampilkan.'.localized(context)),
-              ),
-              data: (geometry) => LayoutBuilder(
-                builder: (context, constraints) {
-                  final viewport = constraints.biggest;
-                  final mapSize =
-                      viewport.width / viewport.height > geometry.aspectRatio
-                      ? Size(
-                          viewport.height * geometry.aspectRatio,
-                          viewport.height,
-                        )
-                      : Size(
-                          viewport.width,
-                          viewport.width / geometry.aspectRatio,
-                        );
-                  final origin = Offset(
-                    (viewport.width - mapSize.width) / 2,
-                    (viewport.height - mapSize.height) / 2,
-                  );
-                  _viewport = viewport;
-                  return _MapCanvas(
-                    key: ValueKey(mapSize),
-                    geometry: geometry,
-                    mapSize: mapSize,
-                    origin: origin,
-                    viewport: viewport,
-                    transform: _transform,
-                    selected: _selected,
-                    spots: visibleSpots,
-                    counts: _showJobs ? counts : const JobCounts(counts: {}),
-                    onPrefecture: (prefecture, bounds) => _openPrefecture(
-                      prefecture,
-                      bounds.shift(origin),
-                      viewport,
-                      allSpots,
-                      counts,
-                    ),
-                    onSpot: (spot) => context.push('/map/spot/${spot.id}'),
-                  );
-                },
-              ),
+                      loading: () =>
+                          const Center(child: CircularProgressIndicator()),
+                      error: (_, __) => Center(
+                        child: Text(
+                          'Peta tidak dapat ditampilkan.'.localized(context),
+                        ),
+                      ),
+                      data: (geometry) => LayoutBuilder(
+                        builder: (context, constraints) {
+                          final viewport = constraints.biggest;
+                          final mapSize =
+                              viewport.width / viewport.height >
+                                  geometry.aspectRatio
+                              ? Size(
+                                  viewport.height * geometry.aspectRatio,
+                                  viewport.height,
+                                )
+                              : Size(
+                                  viewport.width,
+                                  viewport.width / geometry.aspectRatio,
+                                );
+                          final origin = Offset(
+                            (viewport.width - mapSize.width) / 2,
+                            (viewport.height - mapSize.height) / 2,
+                          );
+                          _viewport = viewport;
+                          return _MapCanvas(
+                            key: ValueKey(mapSize),
+                            geometry: geometry,
+                            mapSize: mapSize,
+                            origin: origin,
+                            viewport: viewport,
+                            transform: _transform,
+                            selected: _selected,
+                            spots: visibleSpots,
+                            counts: _showJobs
+                                ? counts
+                                : const JobCounts(counts: {}),
+                            wageColors: wageColors,
+                            onPrefecture: (prefecture, bounds) =>
+                                _openPrefecture(
+                                  prefecture,
+                                  bounds.shift(origin),
+                                  viewport,
+                                  allSpots,
+                                  counts,
+                                ),
+                            onSpot: (spot) =>
+                                context.push('/map/spot/${spot.id}'),
+                          );
+                        },
+                      ),
                     ),
                   ),
+                  if (wageColors != null)
+                    const Positioned(
+                      left: 14,
+                      bottom: 20,
+                      child: WageHeatLegend(),
+                    ),
                   Positioned(
                     right: 14,
                     bottom: 20,
@@ -253,7 +299,13 @@ class _Filters extends StatelessWidget {
     required this.onSpots,
     required this.onJobs,
     required this.onCategory,
+    required this.wagesAvailable,
+    required this.showWages,
+    required this.onWages,
   });
+  final bool wagesAvailable;
+  final bool showWages;
+  final ValueChanged<bool> onWages;
   final bool showSpots;
   final bool showJobs;
   final Set<String> categories;
@@ -270,88 +322,105 @@ class _Filters extends StatelessWidget {
     Color layerIcon({required bool selected}) =>
         selected ? onSelected : scheme.onSurfaceVariant;
     return Column(
-    children: [
-      SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
-        child: Row(
-          children: [
-            FilterChip(
-              key: const Key('map-layer-spots'),
-              avatar: Icon(
-                Icons.place_rounded,
-                size: 18,
-                color: layerIcon(selected: showSpots),
+      children: [
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+          child: Row(
+            children: [
+              FilterChip(
+                key: const Key('map-layer-spots'),
+                avatar: Icon(
+                  Icons.place_rounded,
+                  size: 18,
+                  color: layerIcon(selected: showSpots),
+                ),
+                showCheckmark: false,
+                label: Text('Tempat & budaya'.localized(context)),
+                selected: showSpots,
+                onSelected: onSpots,
               ),
-              showCheckmark: false,
-              label: Text('Tempat & budaya'.localized(context)),
-              selected: showSpots,
-              onSelected: onSpots,
-            ),
-            const SizedBox(width: 8),
-            FilterChip(
-              key: const Key('map-layer-jobs'),
-              avatar: Icon(
-                Icons.work_rounded,
-                size: 18,
-                color: layerIcon(selected: showJobs),
+              const SizedBox(width: 8),
+              FilterChip(
+                key: const Key('map-layer-jobs'),
+                avatar: Icon(
+                  Icons.work_rounded,
+                  size: 18,
+                  color: layerIcon(selected: showJobs),
+                ),
+                showCheckmark: false,
+                label: Text('Lowongan kerja'.localized(context)),
+                selected: showJobs,
+                onSelected: onJobs,
               ),
-              showCheckmark: false,
-              label: Text('Lowongan kerja'.localized(context)),
-              selected: showJobs,
-              onSelected: onJobs,
-            ),
-          ],
+              if (wagesAvailable) ...[
+                const SizedBox(width: 8),
+                FilterChip(
+                  key: const Key('map-layer-wages'),
+                  avatar: Icon(
+                    Icons.payments_rounded,
+                    size: 18,
+                    color: layerIcon(selected: showWages),
+                  ),
+                  showCheckmark: false,
+                  label: Text('Upah minimum'.localized(context)),
+                  selected: showWages,
+                  onSelected: onWages,
+                ),
+              ],
+            ],
+          ),
         ),
-      ),
-      AnimatedSize(
-        duration: AppMotion.of(context, AppMotion.slow),
-        curve: AppMotion.standard,
-        alignment: Alignment.topCenter,
-        child: showSpots
-            ? SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-              child: Row(
-                children: [
-                  for (final category in mapCategories)
-                    Padding(
-                      padding: const EdgeInsets.only(right: 6),
-                      child: FilterChip(
-                        visualDensity: VisualDensity.compact,
-                        showCheckmark: false,
-                        selectedColor: categoryColor(
-                          category,
-                        ).withValues(alpha: .16),
-                        side: BorderSide(
-                          color: categories.contains(category)
-                              ? categoryColor(category).withValues(alpha: .5)
-                              : scheme.outlineVariant,
+        AnimatedSize(
+          duration: AppMotion.of(context, AppMotion.slow),
+          curve: AppMotion.standard,
+          alignment: Alignment.topCenter,
+          child: showSpots
+              ? SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: Row(
+                    children: [
+                      for (final category in mapCategories)
+                        Padding(
+                          padding: const EdgeInsets.only(right: 6),
+                          child: FilterChip(
+                            visualDensity: VisualDensity.compact,
+                            showCheckmark: false,
+                            selectedColor: categoryColor(
+                              category,
+                            ).withValues(alpha: .16),
+                            side: BorderSide(
+                              color: categories.contains(category)
+                                  ? categoryColor(
+                                      category,
+                                    ).withValues(alpha: .5)
+                                  : scheme.outlineVariant,
+                            ),
+                            labelStyle: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12.5,
+                              color: categories.contains(category)
+                                  ? scheme.onSurface
+                                  : scheme.onSurfaceVariant,
+                            ),
+                            avatar: Icon(
+                              categoryIcon(category),
+                              size: 16,
+                              color: categoryColor(category),
+                            ),
+                            label: Text(categoryLabel(context, category)),
+                            selected: categories.contains(category),
+                            onSelected: (value) => onCategory(category, value),
+                          ),
                         ),
-                        labelStyle: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 12.5,
-                          color: categories.contains(category)
-                              ? scheme.onSurface
-                              : scheme.onSurfaceVariant,
-                        ),
-                        avatar: Icon(
-                          categoryIcon(category),
-                          size: 16,
-                          color: categoryColor(category),
-                        ),
-                        label: Text(categoryLabel(context, category)),
-                        selected: categories.contains(category),
-                        onSelected: (value) => onCategory(category, value),
-                      ),
-                    ),
-                ],
-              ),
-            )
-            : const SizedBox(width: double.infinity),
-      ),
-    ],
-  );
+                    ],
+                  ),
+                )
+              : const SizedBox(width: double.infinity),
+        ),
+      ],
+    );
   }
 }
 
@@ -464,13 +533,13 @@ class _Notice extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 6, 6, 6),
         child: Row(
-        children: [
-          Icon(icon, size: 18, color: Theme.of(context).colorScheme.primary),
-          const SizedBox(width: 8),
-          Expanded(child: Text(text, style: const TextStyle(fontSize: 13))),
-          if (action != null) action!,
-        ],
-      ),
+          children: [
+            Icon(icon, size: 18, color: Theme.of(context).colorScheme.primary),
+            const SizedBox(width: 8),
+            Expanded(child: Text(text, style: const TextStyle(fontSize: 13))),
+            if (action != null) action!,
+          ],
+        ),
       ),
     ),
   );
@@ -488,8 +557,12 @@ class _MapCanvas extends StatefulWidget {
     required this.counts,
     required this.onPrefecture,
     required this.onSpot,
+    this.wageColors,
     super.key,
   });
+
+  /// Heatmap fill per prefecture code; null shows the regional palette.
+  final Map<String, Color>? wageColors;
   final JapanGeometry geometry;
   final Size mapSize;
   final Offset origin;
@@ -507,6 +580,10 @@ class _MapCanvas extends StatefulWidget {
 
 class _MapCanvasState extends State<_MapCanvas> {
   late final Map<String, Path> _paths = widget.geometry.paths(widget.mapSize);
+  late final Map<String, Offset> _labelPoints = {
+    for (final entry in _paths.entries)
+      entry.key: entry.value.getBounds().center,
+  };
 
   PrefectureShape? _hit(Offset point) {
     for (final entry in _paths.entries) {
@@ -570,10 +647,10 @@ class _MapCanvasState extends State<_MapCanvas> {
                     selected: widget.selected,
                     inset: widget.geometry.insetFrame(size),
                     fill: SakuraColors.of(context).mapLand,
+                    wageColors: widget.wageColors,
+                    shadow: SakuraColors.of(context).shadow,
                     jobFill: jobPinColor.withValues(alpha: .07),
-                    jobPrefectures: {
-                      for (final pin in jobPins) pin.$1.code,
-                    },
+                    jobPrefectures: {for (final pin in jobPins) pin.$1.code},
                     selectedFill: SakuraColors.of(context).mapLandActive,
                     selectedStroke: colors.primary,
                     stroke: SakuraColors.of(context).mapStroke,
@@ -590,6 +667,19 @@ class _MapCanvasState extends State<_MapCanvas> {
                   return Stack(
                     clipBehavior: Clip.none,
                     children: [
+                      // Prefecture names fade in once the map is zoomed.
+                      if (scale >= 1.8)
+                        for (final prefecture in widget.geometry.prefectures)
+                          if (_labelPoints[prefecture.code] case final point?)
+                            _pin(
+                              widget.origin + point,
+                              scale,
+                              _PrefectureLabel(
+                                key: Key('prefecture-label-${prefecture.code}'),
+                                text: prefecture.nameJa,
+                              ),
+                              24,
+                            ),
                       for (final spot in widget.spots)
                         _pin(
                           widget.origin +
@@ -652,6 +742,8 @@ class _MapPainter extends CustomPainter {
     required this.selected,
     required this.inset,
     required this.fill,
+    required this.wageColors,
+    required this.shadow,
     required this.jobFill,
     required this.jobPrefectures,
     required this.selectedFill,
@@ -662,6 +754,8 @@ class _MapPainter extends CustomPainter {
   final String? selected;
   final Rect inset;
   final Color fill;
+  final Map<String, Color>? wageColors;
+  final Color shadow;
   final Color jobFill;
   final Set<String> jobPrefectures;
   final Color selectedFill;
@@ -670,18 +764,42 @@ class _MapPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final base = Paint()..color = fill;
     final job = Paint()..color = jobFill;
     final highlight = Paint()..color = selectedFill;
-    final line = Paint()
+    // A soft drop shadow lifts the islands off the sea.
+    final lift = Paint()
+      ..color = shadow.withValues(alpha: .16)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
+    for (final path in paths.values) {
+      canvas.drawPath(path.shift(const Offset(0, 1.6)), lift);
+    }
+    // The coastline: a slightly heavier outline under every fill, so only the
+    // outer edge of each island stays visible.
+    final coast = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = .7
-      ..color = stroke;
+      ..strokeWidth = 1.4
+      ..strokeJoin = StrokeJoin.round
+      ..color = Color.lerp(stroke, const Color(0xFF6B7280), 0.35)!;
+    for (final path in paths.values) {
+      canvas.drawPath(path, coast);
+    }
+    // Thin light borders between neighbouring prefectures.
+    final border = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = .55
+      ..strokeJoin = StrokeJoin.round
+      ..color = Colors.white.withValues(alpha: .85);
+    final heat = wageColors;
     for (final entry in paths.entries) {
-      canvas.drawPath(entry.value, base);
-      if (jobPrefectures.contains(entry.key)) canvas.drawPath(entry.value, job);
+      final color = heat == null
+          ? regionTint(entry.key, fill)
+          : heat[entry.key] ?? fill;
+      canvas.drawPath(entry.value, Paint()..color = color);
+      if (heat == null && jobPrefectures.contains(entry.key)) {
+        canvas.drawPath(entry.value, job);
+      }
       if (entry.key == selected) canvas.drawPath(entry.value, highlight);
-      canvas.drawPath(entry.value, line);
+      canvas.drawPath(entry.value, border);
     }
     final selectedPath = selected == null ? null : paths[selected];
     if (selectedPath != null) {
@@ -708,6 +826,7 @@ class _MapPainter extends CustomPainter {
   bool shouldRepaint(_MapPainter old) =>
       old.selected != selected ||
       old.fill != fill ||
+      !mapEquals(old.wageColors, wageColors) ||
       old.stroke != stroke ||
       old.jobPrefectures.length != jobPrefectures.length ||
       old.paths != paths;
@@ -845,6 +964,8 @@ class _PrefectureSheet extends ConsumerWidget {
               ),
             ],
           ),
+          PrefectureProfileTeaser(code: prefecture.code),
+          PrefectureLivingCard(code: prefecture.code),
           const SizedBox(height: 16),
           Text(
             'Tempat & budaya'.localized(context),
@@ -981,4 +1102,53 @@ class _CountPill extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Soft regional palette: the eight traditional regions of Japan get gently
+/// different tints of the land colour so the map reads at a glance.
+Color regionTint(String code, Color land) {
+  final n = int.tryParse(code) ?? 0;
+  final hue = switch (n) {
+    1 => const Color(0xFF8EC5E8), // Hokkaido
+    <= 7 => const Color(0xFF9FD3B5), // Tohoku
+    <= 14 => const Color(0xFFF4B6C2), // Kanto
+    <= 23 => const Color(0xFFF7D08A), // Chubu
+    <= 30 => const Color(0xFFC8B6E8), // Kansai
+    <= 35 => const Color(0xFFF3B58E), // Chugoku
+    <= 39 => const Color(0xFFA8DCD9), // Shikoku
+    _ => const Color(0xFFE8A0A8), // Kyushu & Okinawa
+  };
+  return Color.lerp(land, hue, 0.55)!;
+}
+
+class _PrefectureLabel extends StatelessWidget {
+  const _PrefectureLabel({required this.text, super.key});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return IgnorePointer(
+      child: Text(
+        text,
+        maxLines: 1,
+        softWrap: false,
+        overflow: TextOverflow.visible,
+        style:
+            AppTypography.japanese(
+              fontSize: 10.5,
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.onSurface.withValues(alpha: .72),
+            ).copyWith(
+              shadows: [
+                Shadow(
+                  color: theme.colorScheme.surface.withValues(alpha: .9),
+                  blurRadius: 3,
+                ),
+              ],
+            ),
+      ),
+    );
+  }
 }

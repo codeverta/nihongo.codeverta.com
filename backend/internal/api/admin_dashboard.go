@@ -232,7 +232,7 @@ var adminToolRoutes = map[string]string{
 	"/admin/news": "news", "/admin/manga": "manga", "/admin/dictionary": "dictionary",
 	"/admin/map": "map", "/admin/home-banners": "home-banners", "/admin/notifications": "notifications",
 	"/admin/pricing": "pricing", "/admin/ads": "ads", "/admin/ai": "ai", "/admin/app-updates": "app-updates",
-	"/admin/branding": "branding", "/admin/errors": "errors",
+	"/admin/branding": "branding", "/admin/errors": "errors", "/admin/prefecture-living": "prefecture-living",
 }
 
 func adminToolRedirects(next http.Handler) http.Handler {

@@ -320,6 +320,13 @@ textarea.input{font:inherit}
 .v-ads .panelh{padding-bottom:0}
 .v-ads input[type=text]{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
 
+/* view: prefecture-living */
+.v-prefecture-living{max-width:980px}
+.v-prefecture-living .pl-scroll{overflow-x:auto}
+.v-prefecture-living table{border-collapse:collapse;width:100%;min-width:760px;font-size:13px}
+.v-prefecture-living th,.v-prefecture-living td{padding:4px 6px;text-align:left;white-space:nowrap}
+.v-prefecture-living td .input{min-width:90px;padding:6px 8px}
+
 /* view: app-updates */
 .v-app-updates .panelh{flex-wrap:wrap}
 .v-app-updates .field .help{line-height:1.5}
@@ -456,6 +463,7 @@ var SYSTEM=[
   {id:'pricing',path:'/admin/pricing',icon:'price',name:'Harga Lifetime',desc:'Harga yang tampil di aplikasi.',c:'c-gold'},
   {id:'ads',path:'/admin/ads',icon:'ads',name:'Iklan',desc:'Pengaturan slot iklan aplikasi.',c:'c-green'},
   {id:'ai',path:'/admin/ai',icon:'zap',name:'Tanya AI',desc:'Kuota, batas harian & cache jawaban.',c:'c-indigo'},
+  {id:'prefecture-living',path:'/admin/prefecture-living',icon:'price',name:'Upah & biaya hidup',desc:'Upah minimum, sewa & kurs per prefektur (peta).',c:'c-gold'},
   {id:'app-updates',path:'/admin/app-updates',icon:'update',name:'Update aplikasi',desc:'Versi minimum & panduan update.',c:'c-red'},
   {id:'branding',path:'/admin/branding',icon:'brand',name:'Branding',desc:'Nama, ikon & tampilan pembuka.',c:'c-indigo'},
   {id:'errors',path:'/admin/errors',icon:'bug',name:'Crash & error',desc:'Error dari Flutter & backend.',c:'c-gold'}
@@ -1507,6 +1515,63 @@ NM.view('ai',function(root){
   }).catch(function(e){
     if(!alive)return;
     root.innerHTML='<div class="v-ai"><div class="msg err">'+NM.esc(e.message||'Gagal membuka pengaturan.')+'</div></div>';
+  });
+  return function(){alive=false};
+});
+
+})();
+/* view: prefecture-living */
+(function(){
+NM.view('prefecture-living',function(root){
+  var alive=true,M=[
+    ['wageFiscalYear','Tahun fiskal upah','text'],['wageSource','Sumber upah','text'],
+    ['rentMeasure','Satuan sewa','text'],['rentSurveyYear','Tahun survei sewa','text'],['rentSource','Sumber sewa','text'],
+    ['priceIndexYear','Tahun indeks harga','text'],['priceIndexSource','Sumber indeks harga','text'],
+    ['idrPerJpy','Kurs IDR per JPY','number'],['exchangeRateDate','Tanggal kurs','text'],['exchangeRateSource','Sumber kurs','text'],
+    ['hoursPerDay','Jam kerja per hari','number'],['daysPerMonth','Hari kerja per bulan','number']];
+  var COLS=['Kode','Prefektur','Upah/jam','Berlaku','Sewa/3,3m\u00b2','Sewa 1K','Indeks'];
+  root.innerHTML='<div class="v-prefecture-living">'+NM.skeleton(3)+'</div>';
+  NM.data('/v1/admin/prefecture-living').then(function(r){
+    if(!alive)return;
+    var data=r||{},meta=data.meta||{},prefs=data.prefectures||[];
+    var wrap=NM.el('form',{class:'v-prefecture-living stack',novalidate:true});
+    var mf={},kids=[];
+    M.forEach(function(x){
+      var input=NM.el('input',{class:'input',type:x[2],id:'pl-'+x[0],autocomplete:'off'});
+      if(x[2]==='number')input.step=x[0]==='daysPerMonth'?'1':'any';
+      input.value=meta[x[0]]!=null?meta[x[0]]:'';mf[x[0]]=input;
+      kids.push(NM.el('label',{class:'field'},[NM.el('span',{text:x[1]}),input]));
+    });
+    kids.push(NM.el('p',{class:'muted',text:meta.updatedAt?'Terakhir diperbarui: '+meta.updatedAt:'Belum pernah diperbarui.'}));
+    wrap.appendChild(NM.el('div',{class:'card'},[NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Sumber & kurs'}),NM.el('p',{text:'Upah minimum direvisi tiap Oktober (MHLW). Sewa dari 住宅・土地統計調査, indeks harga dari 消費者物価地域差指数. Kurs dipakai untuk estimasi Rupiah di aplikasi.'})])]),NM.el('div',{class:'pad'},kids)]));
+    var rows=prefs.map(function(p){
+      var cell=function(type,v,step){var i=NM.el('input',{class:'input',type:type});if(step)i.step=step;i.value=v!=null?v:'';return i};
+      var f={wage:cell('number',p.minimumWage,'1'),date:cell('date',p.wageEffectiveDate),rent:cell('number',p.rentPer33m2,'1'),r1k:cell('number',p.rent1kEstimate,'1'),idx:cell('number',p.priceIndex,'0.1')};
+      var tr=NM.el('tr',{},[NM.el('td',{text:p.code}),NM.el('td',{text:p.nameJa})].concat([f.wage,f.date,f.rent,f.r1k,f.idx].map(function(i){return NM.el('td',{},[i])})));
+      return {p:p,f:f,tr:tr};
+    });
+    var tbody=NM.el('tbody',{},rows.map(function(x){return x.tr}));
+    var thead=NM.el('thead',{},[NM.el('tr',{},COLS.map(function(c){return NM.el('th',{text:c})}))]);
+    wrap.appendChild(NM.el('div',{class:'card'},[NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'47 prefektur'}),NM.el('p',{text:'Kosongkan sewa atau indeks jika datanya tidak tersedia.'})])]),NM.el('div',{class:'pl-scroll'},[NM.el('table',{},[thead,tbody])])]));
+    var msg=NM.el('div',{class:'msg',role:'status'});
+    var setMsg=function(t,k){msg.className='msg'+(k?' '+k:'');msg.textContent=t||''};
+    var btn=NM.el('button',{class:'btn solid',type:'submit',text:'Simpan'});
+    wrap.appendChild(msg);wrap.appendChild(NM.el('div',{class:'row'},[btn]));
+    var num=function(i){var v=i.value.trim();return v===''?null:Number(v)};
+    wrap.addEventListener('submit',function(e){
+      e.preventDefault();
+      var m={};
+      M.forEach(function(x){var v=mf[x[0]].value.trim();m[x[0]]=x[2]==='number'?Number(v):v});
+      var d={meta:m,prefectures:rows.map(function(x){return {code:x.p.code,nameJa:x.p.nameJa,minimumWage:Number(x.f.wage.value),wageEffectiveDate:x.f.date.value,rentPer33m2:num(x.f.rent),rent1kEstimate:num(x.f.r1k),priceIndex:num(x.f.idx)}})};
+      btn.disabled=true;setMsg('Menyimpan\u2026');
+      NM.data('/v1/admin/prefecture-living',{method:'PUT',body:d}).then(function(){
+        setMsg('Tersimpan. Berlaku untuk peta di aplikasi.','ok');NM.toast('Data upah tersimpan');
+      }).catch(function(er){setMsg(er.message||'Gagal menyimpan.','err')}).then(function(){btn.disabled=false});
+    });
+    root.innerHTML='';root.appendChild(wrap);
+  }).catch(function(e){
+    if(!alive)return;
+    root.innerHTML='<div class="v-prefecture-living"><div class="msg err">'+NM.esc(e.message||'Gagal membuka data.')+'</div></div>';
   });
   return function(){alive=false};
 });

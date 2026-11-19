@@ -23,6 +23,7 @@ import (
 	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/news"
 	"nihongo-master-backend/internal/places"
+	"nihongo-master-backend/internal/prefinfo"
 	"nihongo-master-backend/internal/store"
 )
 
@@ -51,6 +52,7 @@ type Server struct {
 	appUpdates                *AppUpdateStore
 	ads                       *AdsStore
 	ai                        *aiChatService
+	prefLiving                *prefinfo.Store
 	notifications             *NotificationStore
 	pricing                   *PricingStore
 	profilePhotos             *media.ProfilePhotoStorage
@@ -86,6 +88,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerLanding(mux)
 	s.registerDictionaryWeb(mux)
 	s.registerMap(mux)
+	s.registerPrefectureLiving(mux)
 	s.registerAnki(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)

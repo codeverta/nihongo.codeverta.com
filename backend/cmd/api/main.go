@@ -24,8 +24,9 @@ import (
 	"nihongo-master-backend/internal/manga"
 	"nihongo-master-backend/internal/media"
 	"nihongo-master-backend/internal/news"
-	"nihongo-master-backend/internal/places"
 	"nihongo-master-backend/internal/notifications"
+	"nihongo-master-backend/internal/places"
+	"nihongo-master-backend/internal/prefinfo"
 	"nihongo-master-backend/internal/store"
 )
 
@@ -224,6 +225,15 @@ func main() {
 		mapToken = os.Getenv("BRANDING_ADMIN_TOKEN")
 	}
 	apiServer.ConfigureMap(mapService, mapToken, mapLocalImages)
+	prefLivingPath := os.Getenv("PREFECTURE_LIVING_PATH")
+	if prefLivingPath == "" {
+		prefLivingPath = "data/prefecture_living.json"
+	}
+	prefLiving, err := prefinfo.Load(prefLivingPath)
+	if err != nil {
+		log.Fatalf("configure prefecture living data: %v", err)
+	}
+	apiServer.ConfigurePrefectureLiving(prefLiving)
 	mangaImages, err := manga.NewCOSStore(os.Getenv("COS_BUCKET_URL"), assetBaseURL, os.Getenv("COS_SECRET_ID"), os.Getenv("COS_SECRET_KEY"))
 	if err != nil {
 		log.Fatalf("configure manga COS: %v", err)

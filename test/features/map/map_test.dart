@@ -273,7 +273,14 @@ void main() {
       expect(find.byKey(const Key('japan-map')), findsOneWidget);
       await tester.tap(find.byKey(const Key('job-pin-26')));
       await tester.pumpAndSettle();
-      expect(find.text('京都府'), findsOneWidget);
+      // The zoomed map also labels the prefecture, so look inside the sheet.
+      expect(
+        find.descendant(
+          of: find.byType(BottomSheet),
+          matching: find.text('京都府'),
+        ),
+        findsOneWidget,
+      );
       expect(find.text('Fushimi Inari-taisha'), findsWidgets);
       expect(find.byKey(const Key('map-all-jobs')), findsOneWidget);
     });

@@ -41,4 +41,37 @@ const uiEnglishLevelList = <String, String>{
       'Practice kanji readings and meanings with cards',
   'Kartu: kanji → cara baca': 'Cards: kanji → reading',
   'Kartu: kata → arti': 'Cards: word → meaning',
+  // Japan map: minimum wage and living cost per prefecture.
+  'Upah & biaya hidup': 'Wages & cost of living',
+  'Upah minimum': 'Minimum wage',
+  'Berlaku sejak': 'Effective from',
+  'Estimasi gaji bulanan': 'Estimated monthly pay',
+  'hari kerja, sebelum pajak & asuransi':
+      'working days, before tax & insurance',
+  'Perkiraan sewa 1K (±25 m²)': 'Estimated 1K rent (±25 m²)',
+  'Rata-rata sewa swasta': 'Average private rent',
+  'Indeks harga': 'Price index',
+  'Lebih mahal dari rata-rata nasional (100)':
+      'More expensive than the national average (100)',
+  'Lebih murah dari rata-rata nasional (100)':
+      'Cheaper than the national average (100)',
+  'Setara rata-rata nasional (100)': 'About the national average (100)',
+  'Upah': 'Wage',
+  'Sewa & harga': 'Rent & prices',
+  'Kurs': 'Exchange rate',
+  'Angka indikatif, bukan tawaran gaji.': 'Indicative figures, not a job offer.',
+  // Japan map: Wikipedia-style prefecture profiles.
+  'Baca profil lengkap': 'Read full profile',
+  'Profil prefektur belum dapat dimuat.':
+      'The prefecture profile could not be loaded.',
+  'Ibu kota': 'Capital',
+  'Wilayah': 'Region',
+  'Populasi': 'Population',
+  'Luas': 'Area',
+  'Kepadatan': 'Density',
+  'Kode prefektur': 'Prefecture code',
+  'Situs resmi prefektur': 'Official prefecture website',
+  'Baca artikel lengkap di Wikipedia': 'Read the full article on Wikipedia',
+  'Teks dari Wikipedia (CC BY-SA 4.0), dipotong untuk aplikasi. Fakta dari Wikidata (CC0).':
+      'Text from Wikipedia (CC BY-SA 4.0), shortened for the app. Facts from Wikidata (CC0).',
 };

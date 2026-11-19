@@ -36,6 +36,7 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vo
 import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
 import 'package:nihongo_master/features/map/presentation/japan_map_screen.dart';
 import 'package:nihongo_master/features/map/presentation/spot_detail_screen.dart';
+import 'package:nihongo_master/features/map/presentation/prefecture_profile_screen.dart';
 import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
@@ -162,6 +163,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/map',
         builder: (context, state) => const JapanMapScreen(),
+      ),
+      GoRoute(
+        path: '/map/prefecture/:code',
+        builder: (context, state) =>
+            PrefectureProfileScreen(code: state.pathParameters['code']!),
       ),
       GoRoute(
         path: '/map/spot/:id',

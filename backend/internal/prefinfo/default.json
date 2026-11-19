@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "wageFiscalYear": "FY2026",
+    "wageSource": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/",
+    "rentMeasure": "住宅・土地統計調査 2023, 民営借家 average rent per m² per month; 1K estimate = × 25 m²",
+    "rentSurveyYear": "2023",
+    "rentSource": "https://www.e-stat.go.jp/stat-search/files?tstat=000001207800",
+    "priceIndexYear": "2025",
+    "priceIndexSource": "https://www.stat.go.jp/data/kouri/kouzou/gaiyou.html",
+    "idrPerJpy": 114.53,
+    "exchangeRateDate": "2026-11-19",
+    "exchangeRateSource": "https://www.bi.go.id/id/statistik/informasi-kurs/transaksi-bi/default.aspx",
+    "hoursPerDay": 8,
+    "daysPerMonth": 21,
+    "updatedAt": "2026-11-19T00:00:00Z"
+  },
+  "prefectures": [
+    {
+      "code": "01",
+      "nameJa": "北海道",
+      "minimumWage": 1131,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3514,
+      "rent1kEstimate": 27000,
+      "priceIndex": 102.4
+    },
+    {
+      "code": "02",
+      "nameJa": "青森県",
+      "minimumWage": 1090,
+      "wageEffectiveDate": "2026-10-29",
+      "rentPer33m2": 3036,
+      "rent1kEstimate": 23000,
+      "priceIndex": 97.9
+    },
+    {
+      "code": "03",
+      "nameJa": "岩手県",
+      "minimumWage": 1090,
+      "wageEffectiveDate": "2026-12-01",
+      "rentPer33m2": 3442,
+      "rent1kEstimate": 26000,
+      "priceIndex": 100.0
+    },
+    {
+      "code": "04",
+      "nameJa": "宮城県",
+      "minimumWage": 1098,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 4343,
+      "rent1kEstimate": 33000,
+      "priceIndex": 100.2
+    },
+    {
+      "code": "05",
+      "nameJa": "秋田県",
+      "minimumWage": 1090,
+      "wageEffectiveDate": "2026-10-14",
+      "rentPer33m2": 3227,
+      "rent1kEstimate": 24000,
+      "priceIndex": 98.6
+    },
+    {
+      "code": "06",
+      "nameJa": "山形県",
+      "minimumWage": 1092,
+      "wageEffectiveDate": "2026-10-30",
+      "rentPer33m2": 3445,
+      "rent1kEstimate": 26000,
+      "priceIndex": 100.1
+    },
+    {
+      "code": "07",
+      "nameJa": "福島県",
+      "minimumWage": 1094,
+      "wageEffectiveDate": "2026-10-16",
+      "rentPer33m2": 3620,
+      "rent1kEstimate": 27000,
+      "priceIndex": 99.0
+    },
+    {
+      "code": "08",
+      "nameJa": "茨城県",
+      "minimumWage": 1136,
+      "wageEffectiveDate": "2026-10-18",
+      "rentPer33m2": 3729,
+      "rent1kEstimate": 28000,
+      "priceIndex": 97.5
+    },
+    {
+      "code": "09",
+      "nameJa": "栃木県",
+      "minimumWage": 1125,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3650,
+      "rent1kEstimate": 28000,
+      "priceIndex": 97.3
+    },
+    {
+      "code": "10",
+      "nameJa": "群馬県",
+      "minimumWage": 1120,
+      "wageEffectiveDate": "2026-10-03",
+      "rentPer33m2": 3482,
+      "rent1kEstimate": 26000,
+      "priceIndex": 96.2
+    },
+    {
+      "code": "11",
+      "nameJa": "埼玉県",
+      "minimumWage": 1196,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 5042,
+      "rent1kEstimate": 38000,
+      "priceIndex": 100.2
+    },
+    {
+      "code": "12",
+      "nameJa": "千葉県",
+      "minimumWage": 1195,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 5062,
+      "rent1kEstimate": 38000,
+      "priceIndex": 100.5
+    },
+    {
+      "code": "13",
+      "nameJa": "東京都",
+      "minimumWage": 1280,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 8464,
+      "rent1kEstimate": 64000,
+      "priceIndex": 104.2
+    },
+    {
+      "code": "14",
+      "nameJa": "神奈川県",
+      "minimumWage": 1279,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 6164,
+      "rent1kEstimate": 47000,
+      "priceIndex": 103.3
+    },
+    {
+      "code": "15",
+      "nameJa": "新潟県",
+      "minimumWage": 1108,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3640,
+      "rent1kEstimate": 28000,
+      "priceIndex": 97.8
+    },
+    {
+      "code": "16",
+      "nameJa": "富山県",
+      "minimumWage": 1119,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3518,
+      "rent1kEstimate": 27000,
+      "priceIndex": 98.7
+    },
+    {
+      "code": "17",
+      "nameJa": "石川県",
+      "minimumWage": 1113,
+      "wageEffectiveDate": "2026-10-03",
+      "rentPer33m2": 3574,
+      "rent1kEstimate": 27000,
+      "priceIndex": 99.4
+    },
+    {
+      "code": "18",
+      "nameJa": "福井県",
+      "minimumWage": 1112,
+      "wageEffectiveDate": "2026-10-04",
+      "rentPer33m2": 3379,
+      "rent1kEstimate": 26000,
+      "priceIndex": 99.3
+    },
+    {
+      "code": "19",
+      "nameJa": "山梨県",
+      "minimumWage": 1113,
+      "wageEffectiveDate": "2026-11-01",
+      "rentPer33m2": 3683,
+      "rent1kEstimate": 28000,
+      "priceIndex": 97.7
+    },
+    {
+      "code": "20",
+      "nameJa": "長野県",
+      "minimumWage": 1117,
+      "wageEffectiveDate": "2026-10-02",
+      "rentPer33m2": 3567,
+      "rent1kEstimate": 27000,
+      "priceIndex": 96.9
+    },
+    {
+      "code": "21",
+      "nameJa": "岐阜県",
+      "minimumWage": 1121,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3340,
+      "rent1kEstimate": 25000,
+      "priceIndex": 97.2
+    },
+    {
+      "code": "22",
+      "nameJa": "静岡県",
+      "minimumWage": 1154,
+      "wageEffectiveDate": "2026-10-15",
+      "rentPer33m2": 3950,
+      "rent1kEstimate": 30000,
+      "priceIndex": 98.2
+    },
+    {
+      "code": "23",
+      "nameJa": "愛知県",
+      "minimumWage": 1195,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 4425,
+      "rent1kEstimate": 34000,
+      "priceIndex": 98.0
+    },
+    {
+      "code": "24",
+      "nameJa": "三重県",
+      "minimumWage": 1143,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3580,
+      "rent1kEstimate": 27000,
+      "priceIndex": 98.1
+    },
+    {
+      "code": "25",
+      "nameJa": "滋賀県",
+      "minimumWage": 1136,
+      "wageEffectiveDate": "2026-10-03",
+      "rentPer33m2": 3990,
+      "rent1kEstimate": 30000,
+      "priceIndex": 97.7
+    },
+    {
+      "code": "26",
+      "nameJa": "京都府",
+      "minimumWage": 1180,
+      "wageEffectiveDate": "2026-11-16",
+      "rentPer33m2": 5346,
+      "rent1kEstimate": 40000,
+      "priceIndex": 101.1
+    },
+    {
+      "code": "27",
+      "nameJa": "大阪府",
+      "minimumWage": 1231,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 5194,
+      "rent1kEstimate": 39000,
+      "priceIndex": 99.9
+    },
+    {
+      "code": "28",
+      "nameJa": "兵庫県",
+      "minimumWage": 1172,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 4739,
+      "rent1kEstimate": 36000,
+      "priceIndex": 99.4
+    },
+    {
+      "code": "29",
+      "nameJa": "奈良県",
+      "minimumWage": 1107,
+      "wageEffectiveDate": "2026-10-04",
+      "rentPer33m2": 3637,
+      "rent1kEstimate": 28000,
+      "priceIndex": 97.8
+    },
+    {
+      "code": "30",
+      "nameJa": "和歌山県",
+      "minimumWage": 1101,
+      "wageEffectiveDate": "2026-10-03",
+      "rentPer33m2": 3201,
+      "rent1kEstimate": 24000,
+      "priceIndex": 97.7
+    },
+    {
+      "code": "31",
+      "nameJa": "鳥取県",
+      "minimumWage": 1090,
+      "wageEffectiveDate": "2026-10-03",
+      "rentPer33m2": 3231,
+      "rent1kEstimate": 24000,
+      "priceIndex": 99.1
+    },
+    {
+      "code": "32",
+      "nameJa": "島根県",
+      "minimumWage": 1092,
+      "wageEffectiveDate": "2026-10-10",
+      "rentPer33m2": 3416,
+      "rent1kEstimate": 26000,
+      "priceIndex": 99.8
+    },
+    {
+      "code": "33",
+      "nameJa": "岡山県",
+      "minimumWage": 1104,
+      "wageEffectiveDate": "2026-10-02",
+      "rentPer33m2": 3792,
+      "rent1kEstimate": 29000,
+      "priceIndex": 97.7
+    },
+    {
+      "code": "34",
+      "nameJa": "広島県",
+      "minimumWage": 1141,
+      "wageEffectiveDate": "2026-10-11",
+      "rentPer33m2": 4118,
+      "rent1kEstimate": 31000,
+      "priceIndex": 98.8
+    },
+    {
+      "code": "35",
+      "nameJa": "山口県",
+      "minimumWage": 1101,
+      "wageEffectiveDate": "2026-10-08",
+      "rentPer33m2": 3343,
+      "rent1kEstimate": 25000,
+      "priceIndex": 99.6
+    },
+    {
+      "code": "36",
+      "nameJa": "徳島県",
+      "minimumWage": 1103,
+      "wageEffectiveDate": "2026-11-01",
+      "rentPer33m2": 3359,
+      "rent1kEstimate": 25000,
+      "priceIndex": 98.9
+    },
+    {
+      "code": "37",
+      "nameJa": "香川県",
+      "minimumWage": 1092,
+      "wageEffectiveDate": "2026-10-01",
+      "rentPer33m2": 3402,
+      "rent1kEstimate": 26000,
+      "priceIndex": 98.7
+    },
+    {
+      "code": "38",
+      "nameJa": "愛媛県",
+      "minimumWage": 1093,
+      "wageEffectiveDate": "2026-11-01",
+      "rentPer33m2": 3201,
+      "rent1kEstimate": 24000,
+      "priceIndex": 99.2
+    },
+    {
+      "code": "39",
+      "nameJa": "高知県",
+      "minimumWage": 1086,
+      "wageEffectiveDate": "2026-10-29",
+      "rentPer33m2": 3244,
+      "rent1kEstimate": 25000,
+      "priceIndex": 99.9
+    },
+    {
+      "code": "40",
+      "nameJa": "福岡県",
+      "minimumWage": 1114,
+      "wageEffectiveDate": "2026-10-04",
+      "rentPer33m2": 4184,
+      "rent1kEstimate": 32000,
+      "priceIndex": 98.5
+    },
+    {
+      "code": "41",
+      "nameJa": "佐賀県",
+      "minimumWage": 1095,
+      "wageEffectiveDate": "2026-11-15",
+      "rentPer33m2": 3307,
+      "rent1kEstimate": 25000,
+      "priceIndex": 98.5
+    },
+    {
+      "code": "42",
+      "nameJa": "長崎県",
+      "minimumWage": 1087,
+      "wageEffectiveDate": "2026-11-02",
+      "rentPer33m2": 3452,
+      "rent1kEstimate": 26000,
+      "priceIndex": 99.6
+    },
+    {
+      "code": "43",
+      "nameJa": "熊本県",
+      "minimumWage": 1092,
+      "wageEffectiveDate": "2026-12-01",
+      "rentPer33m2": 3439,
+      "rent1kEstimate": 26000,
+      "priceIndex": 99.8
+    },
+    {
+      "code": "44",
+      "nameJa": "大分県",
+      "minimumWage": 1096,
+      "wageEffectiveDate": "2026-11-01",
+      "rentPer33m2": 3409,
+      "rent1kEstimate": 26000,
+      "priceIndex": 97.4
+    },
+    {
+      "code": "45",
+      "nameJa": "宮崎県",
+      "minimumWage": 1085,
+      "wageEffectiveDate": "2026-10-24",
+      "rentPer33m2": 3168,
+      "rent1kEstimate": 24000,
+      "priceIndex": 98.0
+    },
+    {
+      "code": "46",
+      "nameJa": "鹿児島県",
+      "minimumWage": 1090,
+      "wageEffectiveDate": "2026-10-25",
+      "rentPer33m2": 3218,
+      "rent1kEstimate": 24000,
+      "priceIndex": 96.4
+    },
+    {
+      "code": "47",
+      "nameJa": "沖縄県",
+      "minimumWage": 1086,
+      "wageEffectiveDate": "2026-12-02",
+      "rentPer33m2": 3831,
+      "rent1kEstimate": 29000,
+      "priceIndex": 100.4
+    }
+  ]
+}

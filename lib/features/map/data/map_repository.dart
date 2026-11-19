@@ -7,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/map/domain/map_models.dart';
+import 'package:nihongo_master/features/map/domain/prefecture_living.dart';
+import 'package:nihongo_master/features/map/domain/prefecture_profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final mapRepositoryProvider = Provider(
@@ -29,6 +31,19 @@ final mapJobCountsProvider = FutureProvider.autoDispose<JobCounts>(
   (ref) => ref.watch(mapRepositoryProvider).jobCounts(),
 );
 
+/// Minimum wage, rent and price level per prefecture, or null when neither
+/// the server nor the device cache has it (the map then hides wage info).
+final mapPrefectureLivingProvider =
+    FutureProvider.autoDispose<PrefectureLivingData?>(
+      (ref) => ref.watch(mapRepositoryProvider).prefectureLiving(),
+    );
+
+/// Wikipedia-style profiles of the 47 prefectures, or null when neither the
+/// server nor the device cache has them.
+final mapPrefectureProfilesProvider = FutureProvider<PrefectureProfiles?>(
+  (ref) => ref.watch(mapRepositoryProvider).prefectureProfiles(),
+);
+
 class MapFailure implements Exception {
   const MapFailure(this.message);
   final String message;
@@ -47,12 +62,93 @@ class MapRepository {
   static const spotsKey = 'map_spots_cache_v1';
   static const spotsEtagKey = 'map_spots_etag_v1';
   static const countsKey = 'map_job_counts_cache_v1';
+  static const livingKey = 'map_prefecture_living_cache_v1';
+  static const profilesKey = 'map_prefecture_profiles_cache_v1';
+  static const profilesEtagKey = 'map_prefecture_profiles_etag_v1';
+
+  /// The profiles rarely change, so they are revalidated with their ETag and
+  /// kept on the device for offline reading.
+  Future<PrefectureProfiles?> prefectureProfiles() async {
+    final cached = preferences.getString(profilesKey);
+    final etag = preferences.getString(profilesEtagKey);
+    PrefectureProfiles? parse(String body, {bool fromCache = false}) {
+      final json = jsonDecode(body) as Map<String, dynamic>;
+      return PrefectureProfiles.fromJson(
+        json['data'] as Map<String, dynamic>,
+        fromCache: fromCache,
+      );
+    }
+
+    try {
+      final response = await dio.get<Object>(
+        '/map/prefecture-profiles',
+        options: Options(
+          headers: {if (cached != null && etag != null) 'If-None-Match': etag},
+          validateStatus: (status) => status == 200 || status == 304,
+          responseType: ResponseType.plain,
+          receiveTimeout: const Duration(seconds: 45),
+        ),
+      );
+      if (response.statusCode == 304 && cached != null) return parse(cached);
+      final raw = response.data;
+      final body = raw is String ? raw : jsonEncode(raw);
+      final profiles = parse(body);
+      await preferences.setString(profilesKey, body);
+      final newEtag = response.headers.value('etag');
+      if (newEtag != null) {
+        await preferences.setString(profilesEtagKey, newEtag);
+      } else {
+        await preferences.remove(profilesEtagKey);
+      }
+      return profiles;
+    } on Object catch (error) {
+      debugPrint('Prefecture profiles failed: $error');
+      if (cached != null) {
+        try {
+          return parse(cached, fromCache: true);
+        } on Object {
+          await preferences.remove(profilesKey);
+        }
+      }
+      return null;
+    }
+  }
+
+  Future<PrefectureLivingData?> prefectureLiving() async {
+    try {
+      final response = await dio.get<Object>('/map/prefecture-living');
+      final raw = response.data;
+      final json = raw is String ? jsonDecode(raw) : raw;
+      final data =
+          (json as Map<String, dynamic>)['data'] as Map<String, dynamic>;
+      final parsed = PrefectureLivingData.fromJson(data);
+      if (parsed.prefectures.isEmpty) throw const FormatException('empty');
+      await preferences.setString(livingKey, jsonEncode(data));
+      return parsed;
+    } on Object catch (error) {
+      debugPrint('Prefecture living data failed: $error');
+      final cached = preferences.getString(livingKey);
+      if (cached != null) {
+        try {
+          return PrefectureLivingData.fromJson(
+            jsonDecode(cached) as Map<String, dynamic>,
+            fromCache: true,
+          );
+        } on Object {
+          await preferences.remove(livingKey);
+        }
+      }
+      return null;
+    }
+  }
 
   Future<MapData> spots() async {
     final cached = preferences.getString(spotsKey);
     final etag = preferences.getString(spotsEtagKey);
     try {
-      final response = await _getSpots(cached != null && etag != null ? etag : null);
+      final response = await _getSpots(
+        cached != null && etag != null ? etag : null,
+      );
       if (response.statusCode == 304 && cached != null) {
         return MapData(spots: _parseSpots(cached));
       }
