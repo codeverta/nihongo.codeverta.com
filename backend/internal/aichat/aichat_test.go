@@ -138,3 +138,37 @@ func TestConfigValidation(t *testing.T) {
 		t.Fatal("premium limit 0 must be rejected")
 	}
 }
+
+func TestPromptAsksForShortAnswersAndCapsTokens(t *testing.T) {
+	lesson := Lesson{Key: "grammar:x", Type: "grammar", Title: "T", Content: "## は"}
+	system := BuildMessages(lesson, "id", nil, ChipNone, "apa?")[0].Content
+	for _, want := range []string{"BE BRIEF", "80 words", "no closing"} {
+		if !strings.Contains(system, want) {
+			t.Fatalf("system prompt lacks %q", want)
+		}
+	}
+	if MaxTokensFor(ChipNone) > 400 || MaxTokensFor(ChipQuiz) <= MaxTokensFor(ChipExamples) {
+		t.Fatalf("caps: free=%d quiz=%d examples=%d", MaxTokensFor(ChipNone), MaxTokensFor(ChipQuiz), MaxTokensFor(ChipExamples))
+	}
+	if !strings.Contains(userTurn(ChipExamples, "", "id"), "3 contoh") {
+		t.Fatal("examples chip must ask for 3 short examples")
+	}
+}
+
+func TestHistoryIsSentInCompactForm(t *testing.T) {
+	lesson := Lesson{Key: "grammar:x", Type: "grammar", Title: "T", Content: "## は"}
+	long := strings.Repeat("あ", 2000)
+	msgs := BuildMessages(lesson, "id", []Message{
+		{Role: RoleUser, Chip: string(ChipSummary)},
+		{Role: RoleAssistant, Content: long},
+	}, ChipNone, "lagi")
+	if got := msgs[1].Content; got != "[quick action: summary]" {
+		t.Fatalf("past chip turn should be a short marker, got %q", got)
+	}
+	if n := len([]rune(msgs[2].Content)); n > maxHistoryAnswerRunes+1 {
+		t.Fatalf("past answer not trimmed: %d runes", n)
+	}
+	if strings.Contains(msgs[1].Content, "Ringkas") {
+		t.Fatal("chip instructions must not be repeated for past turns")
+	}
+}

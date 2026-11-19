@@ -252,7 +252,7 @@ func (s *Server) aiChat(w http.ResponseWriter, r *http.Request) {
 	defer cancel()
 	completion, err := s.ai.completer.Stream(ctx, aichat.CompletionRequest{
 		Messages:    aichat.BuildMessages(lesson, locale, history, chip, message),
-		MaxTokens:   aichat.MaxAnswerTokens,
+		MaxTokens:   aichat.MaxTokensFor(chip),
 		Temperature: aiTemperature(chip),
 	}, func(delta string) error {
 		return stream.send("delta", map[string]string{"text": delta})
