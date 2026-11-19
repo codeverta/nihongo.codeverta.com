@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
@@ -97,6 +98,7 @@ _createContainer({AuthException? failure}) async {
     container: ProviderContainer(
       overrides: [
         sharedPreferencesProvider.overrideWithValue(preferences),
+        analyticsBootstrapProvider.overrideWith((ref) {}),
         authControllerProvider.overrideWith((ref) => authController),
         homeDashboardProvider.overrideWith((ref) async => _dashboard),
         newsPreviewProvider.overrideWith(

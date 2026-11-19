@@ -6,11 +6,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/anki/data/anki_repository.dart';
 import 'package:nihongo_master/features/anki/domain/anki_models.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_controller.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Map<String, dynamic>> _sourceDecks() =>
     ((jsonDecode(
@@ -85,11 +87,14 @@ void main() {
   testWidgets('Anki deck search and empty state use English labels', (
     tester,
   ) async {
+    SharedPreferences.setMockInitialValues({});
+    final preferences = await SharedPreferences.getInstance();
     final repository = StudyRepository();
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
           ankiRepositoryProvider.overrideWithValue(repository),
+          sharedPreferencesProvider.overrideWithValue(preferences),
           authControllerProvider.overrideWith(
             (ref) => AuthController.test(
               const AuthenticationState.authenticated(
@@ -201,6 +206,8 @@ void main() {
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.resetPhysicalSize);
       addTearDown(tester.view.resetDevicePixelRatio);
+      SharedPreferences.setMockInitialValues({});
+      final preferences = await SharedPreferences.getInstance();
       final repository = StudyRepository();
       final router = GoRouter(
         initialLocation: '/anki',
@@ -226,6 +233,7 @@ void main() {
         ProviderScope(
           overrides: [
             ankiRepositoryProvider.overrideWithValue(repository),
+            sharedPreferencesProvider.overrideWithValue(preferences),
             authControllerProvider.overrideWith(
               (ref) => AuthController.test(
                 const AuthenticationState.authenticated(

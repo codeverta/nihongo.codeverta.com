@@ -22,6 +22,9 @@ void main() {
       'Furigana',
       'Gamification',
       'Lifetime Access',
+      'OK',
+      'Premium',
+      'Lesson',
     };
     final call = RegExp(r"((?:'(?:[^'\\\n]|\\.)*'\s*)+)\.localized\(");
     final piece = RegExp(r"'((?:[^'\\\n]|\\.)*)'");

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nihongo_master/core/analytics/analytics_service.dart';
+import 'package:nihongo_master/core/localization/app_language.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/exam/presentation/screens/exam_hub_screen.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
@@ -49,7 +52,12 @@ void main() {
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [sharedPreferencesProvider.overrideWithValue(preferences)],
+        overrides: [
+          sharedPreferencesProvider.overrideWithValue(preferences),
+          // A fresh install follows the device language; use Indonesian.
+          deviceLocaleProvider.overrideWithValue(const Locale('id', 'ID')),
+          analyticsBootstrapProvider.overrideWith((ref) {}),
+        ],
         child: const NihongoMasterApp(),
       ),
     );
@@ -105,18 +113,16 @@ void main() {
           matching: find.byType(Scrollable),
         )
         .first;
+    // Beranda opens features from the quick menu (redesign replaced the
+    // category grid and the Jobs card).
     await tester.scrollUntilVisible(
-      find.text('Vocabulary API'),
+      find.byKey(const Key('home-quick-jobs')),
       150,
       scrollable: homeScroll,
     );
-    expect(find.text('Vocabulary API'), findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.text('Kerja di Jepang'),
-      150,
-      scrollable: homeScroll,
-    );
-    expect(find.text('Kerja di Jepang'), findsOneWidget);
+    expect(find.byKey(const Key('home-quick-anki')), findsOneWidget);
+    expect(find.byKey(const Key('home-quick-ssw')), findsOneWidget);
+    expect(find.byKey(const Key('home-quick-jobs')), findsOneWidget);
 
     await tester.tap(find.text('Belajar'));
     await tester.pumpAndSettle();
@@ -131,8 +137,15 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Latihan Ujian'), findsOneWidget);
-    await tester.scrollUntilVisible(find.text('Lifetime Access').first, 150);
-    expect(find.text('Lifetime Access'), findsWidgets);
+    // Every signed-in account opens all exams, so no exam is tagged as
+    // needing Lifetime Access.
+    expect(
+      find.descendant(
+        of: find.byType(ExamHubScreen),
+        matching: find.text('Lifetime Access', skipOffstage: false),
+      ),
+      findsNothing,
+    );
 
     await tester.tap(find.text('Profil'));
     await tester.pumpAndSettle();
@@ -261,6 +274,7 @@ void main() {
       ProviderScope(
         overrides: [
           sharedPreferencesProvider.overrideWithValue(preferences),
+          analyticsBootstrapProvider.overrideWith((ref) {}),
           homeDashboardProvider.overrideWith((ref) async => _dashboard),
           newsPreviewProvider.overrideWith(
             (ref) async =>

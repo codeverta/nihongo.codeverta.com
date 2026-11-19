@@ -222,7 +222,8 @@ class _AppUpdateGateState extends ConsumerState<AppUpdateGate>
             state.checking
                 ? 'Memeriksa…'.localized(context)
                 // 'Periksa lagi' is already mapped to "Review again" for exams.
-                : Localizations.localeOf(context).languageCode == 'en'
+                // Use the app language, like every other string in this dialog.
+                : AppLocalizations.of(context).locale.languageCode == 'en'
                 ? 'Check again'
                 : 'Periksa lagi',
           ),
