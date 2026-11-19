@@ -8,8 +8,9 @@ import 'package:nihongo_master/features/exam/presentation/screens/exam_hub_scree
 
 void main() {
   for (final premium in [false, true]) {
-    testWidgets('compact hub supports narrow phones and N4 access: $premium',
-        (tester) async {
+    testWidgets('compact hub supports narrow phones and N4 access: $premium', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(320, 740);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.resetPhysicalSize);
@@ -79,7 +80,8 @@ void main() {
       await tester.tap(find.text('NAT 5Q Exam 1'));
       await tester.pumpAndSettle();
       expect(
-        find.text(premium ? 'NAT destination' : 'Upgrade destination'),
+        // Every signed-in account opens every exam; Lifetime is not required.
+        find.text('NAT destination'),
         findsOneWidget,
       );
       router.pop();
@@ -92,7 +94,8 @@ void main() {
       await tester.tap(find.text('JFT Exam 1'));
       await tester.pumpAndSettle();
       expect(
-        find.text(premium ? 'JFT destination' : 'Upgrade destination'),
+        // Every signed-in account opens every exam; Lifetime is not required.
+        find.text('JFT destination'),
         findsOneWidget,
       );
       router.pop();
@@ -100,7 +103,11 @@ void main() {
       await tester.tap(find.text('JLPT'));
       await tester.pumpAndSettle();
       expect(find.text('Simulasi N5'), findsOneWidget);
-      await tester.scrollUntilVisible(find.text('Diagnostic N5'), 100);
+      await tester.scrollUntilVisible(
+        find.text('Diagnostic N5'),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
       expect(find.text('Diagnostic N5').hitTestable(), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -127,8 +134,9 @@ void main() {
           child: MaterialApp.router(
             routerConfig: router,
             builder: (context, child) => MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.5)),
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: const TextScaler.linear(1.5)),
               child: child!,
             ),
           ),
@@ -139,23 +147,26 @@ void main() {
       await tester.scrollUntilVisible(
         find.byKey(const Key('exam-level-N4')),
         -100,
+        scrollable: find.byType(Scrollable).first,
       );
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('exam-level-N4')));
       await tester.pumpAndSettle();
-      await tester.scrollUntilVisible(find.text('Simulasi N4'), -100);
+      await tester.scrollUntilVisible(
+        find.text('Simulasi N4'),
+        -100,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.text('Simulasi N4'));
       await tester.pumpAndSettle();
-      expect(
-        find.text('N4 destination'),
-        findsOneWidget,
-      );
+      expect(find.text('N4 destination'), findsOneWidget);
     });
   }
   for (final premium in [false, true]) {
-    testWidgets('compact hub supports narrow phones and N3 access: $premium',
-        (tester) async {
+    testWidgets('compact hub supports narrow phones and N3 access: $premium', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(320, 740);
       tester.view.devicePixelRatio = 1;
       addTearDown(tester.view.resetPhysicalSize);
@@ -205,11 +216,19 @@ void main() {
       expect(find.text('Simulasi N5').hitTestable(), findsOneWidget);
       await tester.tap(find.byKey(const Key('exam-level-N3')));
       await tester.pumpAndSettle();
-      await tester.scrollUntilVisible(find.text('Simulasi N3'), 100);
+      await tester.scrollUntilVisible(
+        find.text('Simulasi N3'),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
       expect(find.text('Simulasi N3').hitTestable(), findsOneWidget);
       expect(find.byType(Image), findsWidgets);
-      await tester.scrollUntilVisible(find.text('Diagnostic N5'), 100);
+      await tester.scrollUntilVisible(
+        find.text('Diagnostic N5'),
+        100,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
       expect(find.text('Diagnostic N5').hitTestable(), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -236,8 +255,9 @@ void main() {
           child: MaterialApp.router(
             routerConfig: router,
             builder: (context, child) => MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: const TextScaler.linear(1.5)),
+              data: MediaQuery.of(
+                context,
+              ).copyWith(textScaler: const TextScaler.linear(1.5)),
               child: child!,
             ),
           ),
@@ -248,16 +268,22 @@ void main() {
       await tester.scrollUntilVisible(
         find.byKey(const Key('exam-level-N3')),
         -100,
+        scrollable: find.byType(Scrollable).first,
       );
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('exam-level-N3')));
       await tester.pumpAndSettle();
-      await tester.scrollUntilVisible(find.text('Simulasi N3'), -100);
+      await tester.scrollUntilVisible(
+        find.text('Simulasi N3'),
+        -100,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.text('Simulasi N3'));
       await tester.pumpAndSettle();
       expect(
-        find.text(premium ? 'N3 destination' : 'Upgrade destination'),
+        // Every signed-in account opens every exam; Lifetime is not required.
+        find.text('N3 destination'),
         findsOneWidget,
       );
     });

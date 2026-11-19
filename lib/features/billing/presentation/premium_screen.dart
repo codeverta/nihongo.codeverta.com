@@ -362,129 +362,136 @@ class _LifetimeHero extends StatelessWidget {
     final sakura = SakuraColors.of(context);
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 188,
       decoration: BoxDecoration(
         color: sakura.heroStart,
         borderRadius: BorderRadius.circular(24),
       ),
+      // The card is 188 tall by default but grows with large accessibility
+      // text instead of overflowing.
       child: Stack(
-        fit: StackFit.expand,
+        fit: StackFit.passthrough,
         children: [
-          Image.asset(
-            'assets/images/explore/lifetime-access.webp',
-            key: const Key('lifetime-illustration'),
-            fit: BoxFit.cover,
-            alignment: Alignment.centerRight,
-            cacheWidth: 1200,
-            semanticLabel:
-                'Perjalanan belajar bahasa dan meraih peluang di Jepang'
-                    .localized(context),
-            errorBuilder: (_, __, ___) => Align(
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/explore/lifetime-access.webp',
+              key: const Key('lifetime-illustration'),
+              fit: BoxFit.cover,
               alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Icon(
-                  Icons.workspace_premium_rounded,
-                  size: 72,
-                  color: sakura.gold,
+              cacheWidth: 1200,
+              semanticLabel:
+                  'Perjalanan belajar bahasa dan meraih peluang di Jepang'
+                      .localized(context),
+              errorBuilder: (_, __, ___) => Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Icon(
+                    Icons.workspace_premium_rounded,
+                    size: 72,
+                    color: sakura.gold,
+                  ),
                 ),
               ),
             ),
           ),
-          DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  sakura.heroStart,
-                  sakura.heroStart.withValues(alpha: .9),
-                  sakura.heroEnd.withValues(alpha: .25),
-                ],
-                stops: const [0, .45, 1],
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    sakura.heroStart,
+                    sakura.heroStart.withValues(alpha: .9),
+                    sakura.heroEnd.withValues(alpha: .25),
+                  ],
+                  stops: const [0, .45, 1],
+                ),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: sakura.gold,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 5,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 148),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: sakura.gold,
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          active
-                              ? Icons.verified_rounded
-                              : Icons.workspace_premium_rounded,
-                          size: 14,
-                          color: sakura.onGold,
-                        ),
-                        const SizedBox(width: 5),
-                        Flexible(
-                          child: Text(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 5,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
                             active
-                                ? 'LIFETIME AKTIF'.localized(context)
-                                : 'SEKALI BAYAR · AKSES SELAMANYA'.localized(
-                                    context,
-                                  ),
-                            style: TextStyle(
-                              color: sakura.onGold,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 9.5,
-                              letterSpacing: 0.4,
+                                ? Icons.verified_rounded
+                                : Icons.workspace_premium_rounded,
+                            size: 14,
+                            color: sakura.onGold,
+                          ),
+                          const SizedBox(width: 5),
+                          Flexible(
+                            child: Text(
+                              active
+                                  ? 'LIFETIME AKTIF'.localized(context)
+                                  : 'SEKALI BAYAR · AKSES SELAMANYA'.localized(
+                                      context,
+                                    ),
+                              style: TextStyle(
+                                color: sakura.onGold,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 9.5,
+                                letterSpacing: 0.4,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 12),
-                FractionallySizedBox(
-                  widthFactor: 0.72,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    active
-                        ? 'Lifetime Access aktif'.localized(context)
-                        : 'Buka lebih banyak.\nMelangkah lebih jauh.'.localized(
-                            context,
-                          ),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 21,
-                      fontWeight: FontWeight.w800,
-                      height: 1.2,
-                      letterSpacing: -0.4,
+                  const SizedBox(height: 12),
+                  FractionallySizedBox(
+                    widthFactor: 0.72,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      active
+                          ? 'Lifetime Access aktif'.localized(context)
+                          : 'Buka lebih banyak.\nMelangkah lebih jauh.'
+                                .localized(context),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 21,
+                        fontWeight: FontWeight.w800,
+                        height: 1.2,
+                        letterSpacing: -0.4,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 6),
-                FractionallySizedBox(
-                  widthFactor: 0.72,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Belajar, baca, latihan, dan temukan peluang dalam satu akses.'
-                        .localized(context),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.white.withValues(alpha: .8),
-                      fontSize: 12,
-                      height: 1.4,
+                  const SizedBox(height: 6),
+                  FractionallySizedBox(
+                    widthFactor: 0.72,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Belajar, baca, latihan, dan temukan peluang dalam satu akses.'
+                          .localized(context),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: .8),
+                        fontSize: 12,
+                        height: 1.4,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
