@@ -6,6 +6,7 @@ import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
+import 'package:nihongo_master/core/widgets/skeleton.dart';
 import 'package:nihongo_master/features/dictionary/data/dictionary_repository.dart';
 import 'package:nihongo_master/features/dictionary/domain/dictionary_models.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_details.dart';
@@ -61,7 +62,7 @@ class NewsPreview extends ConsumerWidget {
       ref
           .watch(newsPreviewProvider)
           .when(
-            loading: () => const LinearProgressIndicator(),
+            loading: () => const SkeletonShimmer(child: NewsPreviewSkeleton()),
             error: (e, s) => _NewsError(
               onRetry: () => ref.invalidate(newsPreviewProvider),
               compact: true,
@@ -1402,6 +1403,46 @@ class _NewsEmpty extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Three article-shaped placeholders for the Beranda news preview. Wrap in a
+/// [SkeletonShimmer] (the Beranda skeleton shares one with its title).
+class NewsPreviewSkeleton extends StatelessWidget {
+  const NewsPreviewSkeleton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      key: const Key('news-preview-skeleton'),
+      children: [
+        for (var i = 0; i < 3; i++)
+          const Padding(
+            padding: EdgeInsets.only(bottom: 14),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SkeletonBox(width: 88, height: 72, radius: 12),
+                SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SkeletonBox(width: 70, height: 10),
+                      SizedBox(height: 8),
+                      SkeletonBox(height: 13),
+                      SizedBox(height: 6),
+                      SkeletonBox(width: 150, height: 13),
+                      SizedBox(height: 10),
+                      SkeletonBox(width: 90, height: 10),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

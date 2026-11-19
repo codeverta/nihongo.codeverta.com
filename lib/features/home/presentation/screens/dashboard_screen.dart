@@ -12,6 +12,7 @@ import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_quick_menu.dart';
+import 'package:nihongo_master/features/home/presentation/widgets/home_skeleton.dart';
 import 'package:nihongo_master/features/learn/activity/continue_learning_section.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
@@ -48,13 +49,7 @@ class DashboardScreen extends ConsumerWidget {
       ),
     );
     return dashboard.when(
-      loading: () => ListView(
-        padding: const EdgeInsets.all(20),
-        children: const [
-          ContinueLearningSection(),
-          SizedBox(height: 240, child: _LoadingView()),
-        ],
-      ),
+      loading: () => const HomeDashboardSkeleton(),
       error: (error, stackTrace) => ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -272,8 +267,7 @@ class _DashboardHeader extends StatelessWidget {
               Text(
                 data.isAuthenticated
                     ? [
-                        if ((profile?.target ?? '').isNotEmpty)
-                          profile!.target,
+                        if ((profile?.target ?? '').isNotEmpty) profile!.target,
                         'Level ${profile?.level ?? 1}',
                       ].join(' • ')
                     : 'Jelajahi materi gratis, lalu masuk untuk menyimpan progress.'
@@ -463,18 +457,6 @@ class _ProgressSummary extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _LoadingView extends StatelessWidget {
-  const _LoadingView();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      key: Key('home-loading'),
-      child: CircularProgressIndicator(),
     );
   }
 }
