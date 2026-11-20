@@ -11,6 +11,7 @@ import 'package:nihongo_master/features/home/domain/home_banner_content.dart';
 import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
+import 'package:nihongo_master/features/home/presentation/widgets/home_notification_card.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_quick_menu.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_skeleton.dart';
 import 'package:nihongo_master/features/leaderboard/data/leaderboard_repository.dart';
@@ -214,6 +215,7 @@ class _DashboardContent extends StatelessWidget {
                   child: HomeLeaderboardGuestRow(),
                 ),
               ],
+              const HomeNotificationCard(),
               if (offline) ...[
                 const SizedBox(height: 12),
                 const _OfflineDashboardNotice(),

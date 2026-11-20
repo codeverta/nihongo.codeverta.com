@@ -7,6 +7,7 @@ import 'package:nihongo_master/core/ads/interstitial_ads.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/notifications/notification_prompt.dart';
 import 'package:nihongo_master/core/notifications/notification_settings_screen.dart';
 import 'package:nihongo_master/core/offline/offline_settings_screen.dart';
 import 'package:nihongo_master/core/settings/display_settings_screen.dart';
@@ -285,6 +286,22 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               !ref.read(isFirstTimeProvider),
           onCompleted: () =>
               ref.read(isFirstTimeProvider.notifier).completeOnboarding(),
+          // Offered only on the real first run, never when replaying the
+          // guide, and only when notifications are supported and still off.
+          notificationOptIn:
+              ref.read(isFirstTimeProvider) &&
+                  ref.read(shouldAskNotificationsProvider)
+              ? OnboardingNotificationOptIn(
+                  enable: () => enableNotificationsFromPrompt(
+                    ref.read,
+                    NotificationPromptPlace.onboarding,
+                  ),
+                  skip: () => skipNotificationPrompt(
+                    ref.read,
+                    NotificationPromptPlace.onboarding,
+                  ),
+                )
+              : null,
         ),
       ),
       GoRoute(

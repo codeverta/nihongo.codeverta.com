@@ -77,6 +77,9 @@ final pushNotificationsProvider =
       return controller;
     });
 
+/// Outcome of [PushNotificationController.setEnabled].
+enum PushToggleResult { on, off, denied, failed }
+
 class PushNotificationController extends StateNotifier<PushNotificationState> {
   PushNotificationController(this._preferences, {String languageCode = 'id'})
     : _languageCode = languageCode,
@@ -321,9 +324,11 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
     }
   }
 
-  Future<void> setEnabled({required bool enabled}) async {
+  Future<PushToggleResult> setEnabled({required bool enabled}) async {
     await initialize();
-    if (!mounted || !state.available || state.busy) return;
+    if (!mounted || !state.available || state.busy) {
+      return PushToggleResult.failed;
+    }
     _set(busy: true);
     try {
       if (enabled) {
@@ -336,7 +341,7 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
             message:
                 'Izin belum diberikan. Aktifkan melalui pengaturan Android jika Anda ingin menerima pengumuman.',
           );
-          return;
+          return PushToggleResult.denied;
         }
       }
       await _preferences.setBool(_preferenceKey, enabled);
@@ -351,11 +356,13 @@ class PushNotificationController extends StateNotifier<PushNotificationState> {
       }
       _set(busy: false);
       await refresh();
+      return enabled ? PushToggleResult.on : PushToggleResult.off;
     } on Object {
       _set(
         busy: false,
         message: 'Pengaturan belum dapat diperbarui. Silakan coba lagi.',
       );
+      return PushToggleResult.failed;
     }
   }
 
