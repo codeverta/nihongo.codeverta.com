@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart'
     show AnswerFeedback, QuizOption;
 
@@ -174,6 +175,7 @@ class ReadingResult {
     required this.bestScore,
     required this.progress,
     this.verified = true,
+    this.xp,
   });
   factory ReadingResult.fromJson(Map<String, dynamic> j) => ReadingResult(
     score: j['score'] as int,
@@ -183,6 +185,7 @@ class ReadingResult {
     bestScore: j['bestScore'] as int,
     progress: j['progress'] as int,
     verified: j['verified'] != false,
+    xp: XpGain.fromJson(j['xp']),
   );
   final int score;
   final int correct;
@@ -191,6 +194,9 @@ class ReadingResult {
   final int progress;
   final bool passed;
   final bool verified;
+
+  /// XP and streak from the server; null until the result is verified.
+  final XpGain? xp;
   bool get pendingSync => !verified;
 }
 

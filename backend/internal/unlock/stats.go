@@ -16,10 +16,11 @@ const (
 	GroupSimulation Group = "simulation"
 	GroupNews       Group = "news"
 	GroupJobs       Group = "jobs"
+	GroupXP         Group = "xp" // double XP after a finished activity
 )
 
 // Groups lists every group in display order.
-var Groups = []Group{GroupLessons, GroupAnki, GroupSimulation, GroupNews, GroupJobs}
+var Groups = []Group{GroupLessons, GroupAnki, GroupSimulation, GroupNews, GroupJobs, GroupXP}
 
 // GroupOf maps a stored content key to its group. A spent simulation credit is
 // stored as a simulation attempt and still counts as a simulation.
@@ -39,6 +40,8 @@ func GroupOf(contentKey string) (Group, bool) {
 		return GroupNews, true
 	case k == KindJob:
 		return GroupJobs, true
+	case k == KindXPBoost:
+		return GroupXP, true
 	}
 	return "", false
 }
@@ -55,6 +58,7 @@ type IntentActivity struct {
 	ContentKey string
 	CreatedAt  time.Time
 	Verified   bool
+	Consumed   bool
 }
 
 // DayStats counts one WIB day of activity for one group.
@@ -116,6 +120,10 @@ func summarise(start time.Time, days int, activity Activity) Report {
 			row.Intents++
 			if intent.Verified {
 				row.Verified++
+			}
+			// Double XP never becomes an unlock: a consumed intent is the reward.
+			if group == GroupXP && intent.Consumed {
+				row.Rewarded++
 			}
 		}
 	}

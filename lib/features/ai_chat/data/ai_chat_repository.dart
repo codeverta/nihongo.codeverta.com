@@ -59,14 +59,20 @@ enum AiRole { user, assistant }
 
 /// A server-side refusal. [code] drives the UI (ads, upsell, retry).
 class AiChatException implements Exception {
-  const AiChatException(this.code, this.message);
+  const AiChatException(this.code, this.message, {this.messagesPerAd = 0});
 
   final String code;
   final String message;
 
+  /// For [premiumAdOffer]: how many messages one ad adds.
+  final int messagesPerAd;
+
   static const adRequired = 'ai_ad_required';
   static const dailyLimit = 'ai_daily_limit';
   static const premiumLimit = 'ai_premium_limit';
+
+  /// A Lifetime account used its daily messages; an optional ad adds more.
+  static const premiumAdOffer = 'ai_premium_ad_offer';
   static const rateLimited = 'ai_rate_limited';
   static const disabled = 'ai_disabled';
   static const upstream = 'ai_upstream_error';
@@ -227,9 +233,11 @@ class AiChatRepository {
       final code = payload['code'];
       final message = payload['message'];
       if (code is String) {
+        final perAd = payload['messagesPerAd'];
         return AiChatException(
           code,
           message is String && message.isNotEmpty ? message : _genericError,
+          messagesPerAd: perAd is num ? perAd.toInt() : 0,
         );
       }
     }

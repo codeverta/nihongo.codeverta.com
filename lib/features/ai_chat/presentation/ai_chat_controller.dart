@@ -20,6 +20,10 @@ enum AiNotice {
 
   /// A Lifetime user reached the daily limit.
   premiumLimit,
+
+  /// A Lifetime user used the daily messages; offer an optional rewarded ad
+  /// for [AiChatState.messagesPerAd] more.
+  lifetimeAdOffer,
 }
 
 class AiChatState {
@@ -31,6 +35,7 @@ class AiChatState {
     this.notice,
     this.error,
     this.retryable = false,
+    this.messagesPerAd = 0,
   });
 
   final List<AiChatMessage> messages;
@@ -45,6 +50,9 @@ class AiChatState {
   /// Whether the last failed request can be retried as is.
   final bool retryable;
 
+  /// Messages one ad adds, for [AiNotice.lifetimeAdOffer].
+  final int messagesPerAd;
+
   AiChatState copyWith({
     List<AiChatMessage>? messages,
     String? Function()? streaming,
@@ -53,6 +61,7 @@ class AiChatState {
     AiNotice? Function()? notice,
     String? Function()? error,
     bool? retryable,
+    int? messagesPerAd,
   }) => AiChatState(
     messages: messages ?? this.messages,
     streaming: streaming != null ? streaming() : this.streaming,
@@ -61,6 +70,7 @@ class AiChatState {
     notice: notice != null ? notice() : this.notice,
     error: error != null ? error() : this.error,
     retryable: retryable ?? this.retryable,
+    messagesPerAd: messagesPerAd ?? this.messagesPerAd,
   );
 }
 
@@ -234,6 +244,14 @@ class AiChatController extends StateNotifier<AiChatState> {
         _showLimit(before, AiNotice.dailyLimit);
       case AiChatException.premiumLimit:
         _showLimit(before, AiNotice.premiumLimit);
+      case AiChatException.premiumAdOffer:
+        state = state.copyWith(
+          messages: before,
+          streaming: () => null,
+          sending: false,
+          messagesPerAd: exception.messagesPerAd,
+        );
+        unawaited(_offerLifetimeAd());
       default:
         _analytics.logEvent('ai_error', {'code': exception.code});
         state = state.copyWith(
@@ -275,15 +293,43 @@ class AiChatController extends StateNotifier<AiChatState> {
     }
   }
 
+  /// A Lifetime account used its daily messages. Without an ad placement
+  /// (iOS, ads off, no consent) the day simply ends for it.
+  Future<void> _offerLifetimeAd() async {
+    AdPlacementConfig? placement;
+    try {
+      placement = await _ref.read(
+        aiChatLifetimeRewardedPlacementProvider.future,
+      );
+    } on Object {
+      placement = null;
+    }
+    if (!mounted) return;
+    if (placement == null) {
+      state = state.copyWith(notice: () => AiNotice.premiumLimit);
+    } else {
+      _analytics.logEvent('ai_ad_offered', {
+        'lesson_type': key.type.name,
+        'plan': 'lifetime',
+      });
+      state = state.copyWith(notice: () => AiNotice.lifetimeAdOffer);
+    }
+  }
+
   /// The user accepted the opt-in sheet: show the ad, record the credit and
   /// resend the held message. Returns false if nothing was sent.
-  Future<bool> watchAdAndSend() async {
+  Future<bool> watchAdAndSend({bool lifetime = false}) async {
     final pending = _pending;
     if (pending == null) return false;
-    final placement = await _ref.read(aiChatRewardedPlacementProvider.future);
+    final limit = lifetime ? AiNotice.premiumLimit : AiNotice.dailyLimit;
+    final placement = await _ref.read(
+      lifetime
+          ? aiChatLifetimeRewardedPlacementProvider.future
+          : aiChatRewardedPlacementProvider.future,
+    );
     if (!mounted) return false;
     if (placement == null) {
-      state = state.copyWith(notice: () => AiNotice.dailyLimit);
+      state = state.copyWith(notice: () => limit);
       return false;
     }
     state = state.copyWith(notice: () => null);
@@ -299,6 +345,14 @@ class AiChatController extends StateNotifier<AiChatState> {
       _analytics.logEvent('ai_ad_declined', {'stage': 'closed_early'});
       return false;
     }
+    if (lifetime && outcome == RewardedAdOutcome.unavailable) {
+      // Several messages per ad are only paid for a watched ad.
+      state = state.copyWith(
+        error: () => 'Iklan belum tersedia. Coba lagi sebentar lagi.',
+        retryable: true,
+      );
+      return false;
+    }
     _analytics.logEvent('ai_ad_watched', {
       'result': outcome == RewardedAdOutcome.watched
           ? 'watched'
@@ -311,7 +365,7 @@ class AiChatController extends StateNotifier<AiChatState> {
     } on AiChatException catch (error) {
       if (!mounted) return false;
       if (error.code == AiChatException.dailyLimit) {
-        state = state.copyWith(notice: () => AiNotice.dailyLimit);
+        state = state.copyWith(notice: () => limit);
       } else {
         state = state.copyWith(error: () => error.message, retryable: false);
       }

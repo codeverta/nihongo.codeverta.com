@@ -85,7 +85,44 @@ type AdsConfig struct {
 	// AnkiSessionMinCards is how many cards an Anki session needs before it
 	// counts as finished. Zero means the default.
 	AnkiSessionMinCards int `json:"ankiSessionMinCards"`
+	// XPRepeatDailyCap is the XP a user can earn per study day from repeat
+	// completions and SSW practice. Zero means the default.
+	XPRepeatDailyCap int `json:"xpRepeatDailyCap"`
+	// XPBoostRewarded is the opt-in rewarded ad on result screens that
+	// doubles the XP of that activity. Like UnlockRewarded it must use
+	// server-side verification pointed at /v1/ads/ssv.
+	XPBoostRewarded AdPlacement `json:"xpBoostRewarded"`
+	// XPBoostKinds says which activities offer double XP.
+	XPBoostKinds CompletionKinds `json:"xpBoostKinds"`
+	// XPBoostDailyCap is how many activities a user can double per day, with
+	// an ad or (Lifetime) without. Zero means the default.
+	XPBoostDailyCap int `json:"xpBoostDailyCap"`
 }
+
+const defaultXPBoostDailyCap = 10
+
+func (c AdsConfig) xpBoostDailyCap() int {
+	if c.XPBoostDailyCap > 0 {
+		return c.XPBoostDailyCap
+	}
+	return defaultXPBoostDailyCap
+}
+
+// boostAllows reports whether double XP is switched on for a completion
+// group (lessons, exams, practice) as the store reports it.
+func (c AdsConfig) boostAllows(group string) bool {
+	switch group {
+	case "lessons":
+		return c.XPBoostKinds.Lessons
+	case "exams":
+		return c.XPBoostKinds.Exams
+	case "practice":
+		return c.XPBoostKinds.Practice
+	}
+	return false
+}
+
+const defaultXPRepeatDailyCap = 100
 
 // CompletionKinds are the "finished studying" moments.
 type CompletionKinds struct {
@@ -115,6 +152,9 @@ type ContentGates struct {
 
 // unlockOffered reports whether an ad may open an item of kind.
 func (c AdsConfig) unlockOffered(kind unlock.Kind) bool {
+	if kind == unlock.KindXPBoost {
+		return c.Enabled && c.XPBoostRewarded.Enabled && c.XPBoostRewarded.UnitID != ""
+	}
 	if !c.unlockAvailable() {
 		return false
 	}
@@ -183,6 +223,10 @@ func defaultAdsConfig() AdsConfig {
 		PracticeResultBanner: AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
 		NewsArticleNative:    AdPlacement{Enabled: true, UnitID: testNativeAdUnit},
 		AnkiSessionMinCards:  defaultAnkiSessionMinCards,
+		XPRepeatDailyCap:     defaultXPRepeatDailyCap,
+		XPBoostRewarded:      AdPlacement{Enabled: true, UnitID: testRewardedAdUnit},
+		XPBoostKinds:         CompletionKinds{Lessons: true, Exams: true, Practice: true},
+		XPBoostDailyCap:      defaultXPBoostDailyCap,
 	}
 }
 
@@ -200,6 +244,7 @@ func (s *Server) ConfigureAds(path, token string) error {
 		return err
 	}
 	s.ads = store
+	s.applyXPRules(store.value)
 	return nil
 }
 
@@ -210,6 +255,13 @@ func validateAdsConfig(config AdsConfig) error {
 		"dictionaryNative": config.DictionaryNative, "quizResultBanner": config.QuizResultBanner,
 		"unlockRewarded": config.UnlockRewarded, "examTabBanner": config.ExamTabBanner,
 		"practiceResultBanner": config.PracticeResultBanner, "newsArticleNative": config.NewsArticleNative,
+		"xpBoostRewarded": config.XPBoostRewarded,
+	}
+	if config.XPBoostDailyCap != 0 && (config.XPBoostDailyCap < 1 || config.XPBoostDailyCap > 50) {
+		return fmt.Errorf("xpBoostDailyCap: batas 2× XP harus 1 sampai 50 per hari")
+	}
+	if config.XPRepeatDailyCap != 0 && (config.XPRepeatDailyCap < 10 || config.XPRepeatDailyCap > 1000) {
+		return fmt.Errorf("xpRepeatDailyCap: batas XP pengulangan harus 10 sampai 1000 per hari")
 	}
 	if config.AnkiSessionMinCards != 0 && (config.AnkiSessionMinCards < 1 || config.AnkiSessionMinCards > 100) {
 		return fmt.Errorf("ankiSessionMinCards: ambang sesi Anki harus 1 sampai 100 kartu")
@@ -330,6 +382,18 @@ func (s *Server) updateAdsConfig(w http.ResponseWriter, r *http.Request) {
 	if _, ok := sent["ankiSessionMinCards"]; !ok {
 		input.AnkiSessionMinCards = current.AnkiSessionMinCards
 	}
+	if _, ok := sent["xpRepeatDailyCap"]; !ok {
+		input.XPRepeatDailyCap = current.XPRepeatDailyCap
+	}
+	if _, ok := sent["xpBoostRewarded"]; !ok {
+		input.XPBoostRewarded = current.XPBoostRewarded
+	}
+	if _, ok := sent["xpBoostKinds"]; !ok {
+		input.XPBoostKinds = current.XPBoostKinds
+	}
+	if _, ok := sent["xpBoostDailyCap"]; !ok {
+		input.XPBoostDailyCap = current.XPBoostDailyCap
+	}
 	if err := validateAdsConfig(input); err != nil {
 		writeError(w, http.StatusUnprocessableEntity, "invalid_ads_config", err.Error())
 		return
@@ -352,6 +416,7 @@ func (s *Server) updateAdsConfig(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	s.ads.value = input
+	s.applyXPRules(input)
 	writeData(w, http.StatusOK, input)
 }
 
@@ -371,3 +436,10 @@ const adsAdminHTML = `<!doctype html><html lang="id"><meta charset="utf-8"><meta
 const auth=()=>({Authorization:'Bearer '+el('token').value});
 el('load').onclick=async()=>{el('status').textContent='';try{const r=await fetch('/v1/admin/ads-config',{cache:'no-store',headers:auth()});if(!r.ok){alert(r.status===401?'Kunci admin salah atau belum diatur di server.':'Gagal membuka pengaturan.');return}const c=(await r.json()).data;el('enabled').checked=c.enabled;for(const p of P){const v=c[p]||{};el(p+'-enabled').checked=!!v.enabled;el(p+'-unit').value=v.unitId||'';if(E.includes(p))el(p+'-every').value=v.every||6}loaded=true;el('form').hidden=false}catch(e){alert('Koneksi gagal.')}};
 el('form').onsubmit=async e=>{e.preventDefault();if(!loaded)return;const d={enabled:el('enabled').checked};for(const p of P){d[p]={enabled:el(p+'-enabled').checked,unitId:el(p+'-unit').value.trim()};if(E.includes(p))d[p].every=Number(el(p+'-every').value)}el('save').disabled=true;el('status').textContent='Menyimpan…';try{const r=await fetch('/v1/admin/ads-config',{method:'PUT',headers:{'Content-Type':'application/json',...auth()},body:JSON.stringify(d)});const j=await r.json();el('status').textContent=r.ok?'Tersimpan. Perubahan berlaku saat pengguna membuka aplikasi berikutnya.':(j.error&&j.error.message||'Gagal menyimpan.')}catch(e){el('status').textContent='Koneksi gagal.'}finally{el('save').disabled=false}};</script></html>`
+
+// applyXPRules hands the admin-tunable XP limits to the store: the daily
+// repeat cap, and the Anki review count that makes a day count for the
+// streak (the same threshold that ends an Anki session for ads).
+func (s *Server) applyXPRules(config AdsConfig) {
+	s.store.SetXPRules(config.XPRepeatDailyCap, config.AnkiSessionMinCards)
+}

@@ -36,4 +36,8 @@ const uiEnglishRedesign = <String, String>{
       'Apply for jobs',
   'Tautan lowongan aktif':
       'Links to active job posts',
+  'Belajar tanpa iklan':
+      'Ad-free learning',
+  'Tanpa iklan di materi belajar':
+      'No ads in lessons',
 };

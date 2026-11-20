@@ -26,10 +26,10 @@ type Service struct {
 	Repo   Repository
 	Limits func() Limits
 	Verify *Verifier
-	// Unit returns the numeric ad unit ID expected in callbacks, or "" to
-	// accept any unit.
-	Unit func() string
-	Now  func() time.Time
+	// Units returns the ad units whose callbacks are accepted (the unlock
+	// unit and the double XP unit). Empty accepts any unit.
+	Units func() []string
+	Now   func() time.Time
 }
 
 func (s *Service) now() time.Time {
@@ -62,12 +62,15 @@ func (s *Service) CreateIntent(ctx context.Context, userID, contentKey string) (
 		return Intent{}, ErrAlreadyUnlocked
 	}
 	now := s.now()
-	usage, err := s.Repo.Usage(ctx, userID, Day(now))
-	if err != nil {
-		return Intent{}, err
-	}
-	if usage.Used >= s.limits().DailyCap {
-		return Intent{}, ErrCapReached
+	// Double XP has its own daily limit, checked by the caller.
+	if !strings.HasPrefix(contentKey, string(KindXPBoost)+":") {
+		usage, err := s.Repo.Usage(ctx, userID, Day(now))
+		if err != nil {
+			return Intent{}, err
+		}
+		if usage.Used >= s.limits().DailyCap {
+			return Intent{}, ErrCapReached
+		}
 	}
 	raw := make([]byte, 16)
 	if _, err := rand.Read(raw); err != nil {
@@ -91,7 +94,7 @@ func (s *Service) HandleCallback(ctx context.Context, rawQuery string) error {
 	if err != nil {
 		return err
 	}
-	if want := s.expectedUnit(); want != "" && callback.AdUnit != want {
+	if !s.acceptsUnit(callback.AdUnit) {
 		return ErrInvalid
 	}
 	if callback.CustomData == "" || callback.TransactionID == "" {
@@ -117,15 +120,27 @@ func (s *Service) HandleCallback(ctx context.Context, rawQuery string) error {
 	return nil
 }
 
-func (s *Service) expectedUnit() string {
-	if s.Unit == nil {
-		return ""
+// acceptsUnit reports whether a callback for adUnit (the numeric part after
+// "/") belongs to one of the configured units.
+func (s *Service) acceptsUnit(adUnit string) bool {
+	if s.Units == nil {
+		return true
 	}
-	unit := strings.TrimSpace(s.Unit())
-	if slash := strings.LastIndex(unit, "/"); slash >= 0 {
-		unit = unit[slash+1:]
+	configured := false
+	for _, unit := range s.Units() {
+		unit = strings.TrimSpace(unit)
+		if slash := strings.LastIndex(unit, "/"); slash >= 0 {
+			unit = unit[slash+1:]
+		}
+		if unit == "" {
+			continue
+		}
+		configured = true
+		if unit == adUnit {
+			return true
+		}
 	}
-	return unit
+	return !configured
 }
 
 // Claim opens the item once its intent has been verified by Google. It
@@ -146,6 +161,11 @@ func (s *Service) Fallback(ctx context.Context, userID, contentKey string) (Unlo
 // Convert consumes the one-time credit fromKey and grants toKey instead.
 func (s *Service) Convert(ctx context.Context, userID, fromKey, toKey string) (bool, error) {
 	return s.Repo.Convert(ctx, userID, fromKey, toKey)
+}
+
+// ConsumeVerified uses up a verified intent without recording an unlock.
+func (s *Service) ConsumeVerified(ctx context.Context, userID, nonce string) (Intent, error) {
+	return s.Repo.ConsumeVerified(ctx, userID, nonce, s.now())
 }
 
 // Allowed reports whether userID has unlocked contentKey.

@@ -97,7 +97,10 @@ func (s *Server) ConfigureUnlocks(repo unlock.Repository, keys unlock.KeyProvide
 			Repo:   repo,
 			Limits: func() unlock.Limits { return s.adsSnapshot().unlockLimits() },
 			Verify: &unlock.Verifier{Keys: keys},
-			Unit:   func() string { return s.adsSnapshot().UnlockRewarded.UnitID },
+			Units: func() []string {
+				cfg := s.adsSnapshot()
+				return []string{cfg.UnlockRewarded.UnitID, cfg.XPBoostRewarded.UnitID}
+			},
 		},
 		limiter:   aichat.NewRateLimiter(),
 		claimWait: unlockClaimWait,
@@ -148,6 +151,20 @@ func (s *Server) registerUnlocks(mux *http.ServeMux) {
 	mux.HandleFunc("GET /v1/ads/ssv", s.unlockSSV)
 	mux.HandleFunc("POST /v1/jobs/{jobID}/apply-link", s.requireAuth(s.jobApplyLink))
 	mux.HandleFunc("GET /v1/admin/unlock-stats", s.unlockStats)
+	mux.HandleFunc("POST /v1/me/practice-lessons/{sectorID}/{lessonID}/complete", s.requireAuth(s.completePracticeLesson))
+	mux.HandleFunc("POST /v1/xp-boosts/{completionID}/free", s.requireAuth(s.freeXPBoost))
+}
+
+// completePracticeLesson records a finished Kaigo or SSW curriculum lesson
+// for XP and the streak (docs/ads-xp-spec.md).
+func (s *Server) completePracticeLesson(w http.ResponseWriter, r *http.Request) {
+	gain, err := s.store.CompletePracticeLesson(userID(r), r.PathValue("sectorID"), r.PathValue("lessonID"))
+	if err != nil {
+		writeStoreError(w, err)
+		return
+	}
+	w.Header().Set("Cache-Control", "no-store")
+	writeData(w, http.StatusOK, map[string]any{"xp": gain})
 }
 
 // unlockStats is the admin view of ad unlocks. "accountsNowLifetime" counts
@@ -430,6 +447,9 @@ func (s *Server) unlockItem(w http.ResponseWriter, r *http.Request, id string) (
 		writeError(w, http.StatusUnprocessableEntity, "invalid_item", "Jenis atau ID item tidak valid.")
 		return "", true
 	}
+	if kind == unlock.KindXPBoost {
+		return key, !s.boostOffered(w, r, id, input.ItemID)
+	}
 	// An item that is free, or does not exist, has nothing to unlock.
 	if !s.unlockLocked(r, kind, input.ItemID) {
 		writeError(w, http.StatusUnprocessableEntity, "not_locked", "Item ini tidak terkunci atau tidak ditemukan.")
@@ -456,6 +476,123 @@ func (s *Server) unlockLimitError(w http.ResponseWriter, err error) bool {
 		return false
 	}
 	return true
+}
+
+// boostOffered checks that the completion can be doubled with an ad right now
+// and writes the refusal when it cannot.
+func (s *Server) boostOffered(w http.ResponseWriter, r *http.Request, id, completionID string) bool {
+	cfg := s.adsSnapshot()
+	group, err := s.store.XPBoostable(id, completionID, cfg.xpBoostDailyCap())
+	if s.writeBoostError(w, err) {
+		return false
+	}
+	if err != nil {
+		log.Printf("xp boost check: %v", err)
+		writeError(w, http.StatusInternalServerError, "internal_error", "unexpected server error")
+		return false
+	}
+	if !cfg.unlockOffered(unlock.KindXPBoost) || !cfg.boostAllows(group) {
+		writeError(w, http.StatusForbidden, "unlock_unavailable", "2× XP dengan iklan sedang tidak tersedia.")
+		return false
+	}
+	return true
+}
+
+// writeBoostError maps the double XP refusals to responses.
+func (s *Server) writeBoostError(w http.ResponseWriter, err error) bool {
+	switch {
+	case errors.Is(err, store.ErrNotFound):
+		writeError(w, http.StatusUnprocessableEntity, "not_locked", "Aktivitas ini tidak memberi XP yang bisa digandakan.")
+	case errors.Is(err, store.ErrBoostUsed):
+		writeError(w, http.StatusConflict, "boost_used", "2× XP untuk aktivitas ini sudah diklaim.")
+	case errors.Is(err, store.ErrBoostExpired):
+		writeError(w, http.StatusGone, "boost_expired", "2× XP hanya bisa diklaim dalam 30 menit setelah selesai.")
+	case errors.Is(err, store.ErrBoostLimit):
+		writeError(w, http.StatusTooManyRequests, "boost_limit", "Batas 2× XP hari ini sudah tercapai. Coba lagi besok.")
+	default:
+		return false
+	}
+	return true
+}
+
+// claimBoost finishes a double XP ad: the verified intent is consumed (never
+// an unlock), then the XP of that completion is doubled.
+func (s *Server) claimBoost(w http.ResponseWriter, r *http.Request, id, nonce, contentKey string) {
+	deadline := time.Now().Add(s.unlocks.claimWait)
+	for {
+		_, err := s.unlocks.svc.ConsumeVerified(r.Context(), id, nonce)
+		switch {
+		case err == nil, errors.Is(err, unlock.ErrConsumed):
+			completionID := strings.TrimPrefix(contentKey, string(unlock.KindXPBoost)+":")
+			gain, boostErr := s.store.BoostXP(id, completionID, s.adsSnapshot().xpBoostDailyCap())
+			if errors.Is(boostErr, store.ErrBoostUsed) && errors.Is(err, unlock.ErrConsumed) {
+				// A repeated claim: the first one already doubled the XP.
+				writeData(w, http.StatusOK, map[string]any{"unlocked": true, "contentKey": contentKey, "alreadyBoosted": true})
+				return
+			}
+			if s.writeBoostError(w, boostErr) {
+				return
+			}
+			if boostErr != nil {
+				log.Printf("xp boost: %v", boostErr)
+				writeError(w, http.StatusInternalServerError, "internal_error", "unexpected server error")
+				return
+			}
+			writeData(w, http.StatusOK, map[string]any{"unlocked": true, "contentKey": contentKey, "xp": gain})
+			return
+		case errors.Is(err, unlock.ErrNotVerified):
+			if time.Now().After(deadline) {
+				writeData(w, http.StatusAccepted, map[string]any{"pending": true})
+				return
+			}
+			select {
+			case <-r.Context().Done():
+				return
+			case <-time.After(s.unlocks.claimPoll):
+			}
+		case errors.Is(err, unlock.ErrNotFound):
+			writeError(w, http.StatusNotFound, "intent_not_found", "Permintaan pembukaan tidak ditemukan.")
+			return
+		case errors.Is(err, unlock.ErrExpired):
+			writeError(w, http.StatusGone, "intent_expired", "Permintaan pembukaan sudah kedaluwarsa. Mulai lagi.")
+			return
+		default:
+			log.Printf("xp boost consume: %v", err)
+			writeError(w, http.StatusInternalServerError, "internal_error", "unexpected server error")
+			return
+		}
+	}
+}
+
+// freeXPBoost doubles the XP of an activity without an ad, for Lifetime
+// accounts, within the same daily limit.
+func (s *Server) freeXPBoost(w http.ResponseWriter, r *http.Request) {
+	id := userID(r)
+	w.Header().Set("Cache-Control", "no-store")
+	if !s.aiIsPremium(r, id) {
+		writeError(w, http.StatusPaymentRequired, "premium_required", "Klaim 2× XP tanpa iklan khusus pengguna Lifetime.")
+		return
+	}
+	cfg := s.adsSnapshot()
+	completionID := r.PathValue("completionID")
+	group, err := s.store.XPBoostable(id, completionID, cfg.xpBoostDailyCap())
+	if s.writeBoostError(w, err) {
+		return
+	}
+	if err == nil && !cfg.boostAllows(group) {
+		writeError(w, http.StatusForbidden, "unlock_unavailable", "2× XP sedang tidak tersedia untuk aktivitas ini.")
+		return
+	}
+	gain, err := s.store.BoostXP(id, completionID, cfg.xpBoostDailyCap())
+	if s.writeBoostError(w, err) {
+		return
+	}
+	if err != nil {
+		log.Printf("free xp boost: %v", err)
+		writeError(w, http.StatusInternalServerError, "internal_error", "unexpected server error")
+		return
+	}
+	writeData(w, http.StatusOK, map[string]any{"xp": gain})
 }
 
 func (s *Server) unlockIntent(w http.ResponseWriter, r *http.Request) {
@@ -496,6 +633,11 @@ func (s *Server) unlockClaim(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnprocessableEntity, "invalid_nonce", "Kode pembukaan tidak valid.")
 		return
 	}
+	if intent, ok, err := s.unlocks.svc.Repo.Intent(r.Context(), input.Nonce); err == nil && ok && intent.UserID == id &&
+		strings.HasPrefix(intent.ContentKey, string(unlock.KindXPBoost)+":") {
+		s.claimBoost(w, r, id, input.Nonce, intent.ContentKey)
+		return
+	}
 	// Google's callback usually lands a moment after the ad closes, so wait
 	// briefly before asking the app to try again.
 	deadline := time.Now().Add(s.unlocks.claimWait)
@@ -534,6 +676,11 @@ func (s *Server) unlockFallback(w http.ResponseWriter, r *http.Request) {
 	id := userID(r)
 	key, done := s.unlockItem(w, r, id)
 	if done {
+		return
+	}
+	// Double XP is a bonus, not access: no ad, no bonus.
+	if strings.HasPrefix(key, string(unlock.KindXPBoost)+":") {
+		writeError(w, http.StatusForbidden, "boost_no_fallback", "2× XP hanya bisa didapat dengan menonton iklan.")
 		return
 	}
 	granted, err := s.unlocks.svc.Fallback(r.Context(), id, key)

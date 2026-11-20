@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 class DiagnosticResultView extends StatefulWidget {
   const DiagnosticResultView({required this.result, super.key});
@@ -145,6 +146,8 @@ class _ResultState extends State<DiagnosticResultView> {
               .localized(context),
           style: const TextStyle(fontSize: 12, height: 1.6),
         ),
+        const SizedBox(height: 16),
+        XpResultBadge.json(widget.result['xp']),
         const SizedBox(height: 16),
         const Center(
           child: AdBannerSlot(placement: BannerAdPlacement.quizResult),

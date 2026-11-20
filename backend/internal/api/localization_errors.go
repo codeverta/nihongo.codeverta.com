@@ -9,6 +9,9 @@ const apiErrorFallbackEnglish = "The request could not be completed. Please try 
 // apiErrorMessagesEnglish maps every error code returned through writeError to
 // an English message that stays accurate for all source variants of that code.
 var apiErrorMessagesEnglish = map[string]string{
+	"ad_not_watched":               "The ad was not watched. Please try again shortly.",
+	"ai_premium_ad_offer":          "You have used today's Ask AI messages. Watch a short ad for more messages.",
+	"purchase_owned":               "Lifetime for this Google Play account is already used by another app account.",
 	"already_processed":            "This message has already been processed. Automatic resending was prevented.",
 	"anki_quota":                   "You have reached your personal deck limit. Delete decks you no longer need and try again.",
 	"billing_unavailable":          "Store verification is not available right now. Try again or restore your purchase.",
@@ -97,6 +100,10 @@ var apiErrorMessagesEnglish = map[string]string{
 	"transfer_busy":                "Deck processing is busy right now. Please try again in a few seconds.",
 	"unauthorized":                 "You are not authorized. Please sign in again or check your access key.",
 	"login_required":               "Sign in to read this article.",
+	"boost_used":                   "Double XP was already claimed for this activity.",
+	"boost_expired":                "Double XP can only be claimed within 30 minutes of finishing.",
+	"boost_limit":                  "You have reached today's double XP limit. Try again tomorrow.",
+	"boost_no_fallback":            "Double XP is only available by watching an ad.",
 	"invalid_days":                 "The number of days must be between 1 and 30.",
 	"intent_expired":               "The unlock request has expired. Please start again.",
 	"intent_not_found":             "The unlock request was not found.",

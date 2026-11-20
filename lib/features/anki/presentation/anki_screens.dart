@@ -21,6 +21,7 @@ import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/ads/ads_config.dart';
 import 'package:nihongo_master/core/ads/ads_controller.dart';
 import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 String ankiDeckPath(String id) => '/anki/decks/${Uri.encodeComponent(id)}';
 String ankiStudyPath(String id) => '${ankiDeckPath(id)}/study';
@@ -667,6 +668,12 @@ class AnkiStudyScreen extends ConsumerWidget {
                   onPressed: () => context.go(ankiDeckPath(deckId)),
                   child: Text('Kembali ke detail deck'.localized(context)),
                 ),
+                if (state.xpEarned > 0) ...[
+                  const SizedBox(height: 16),
+                  XpResultBadge(
+                    gain: XpGain(awarded: state.xpEarned, total: 0, streak: 0),
+                  ),
+                ],
                 if (state.position > 0) ...[
                   const SizedBox(height: 16),
                   const AdBannerSlot(

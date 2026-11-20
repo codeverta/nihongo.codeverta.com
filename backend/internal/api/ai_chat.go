@@ -205,6 +205,13 @@ func (s *Server) aiChat(w http.ResponseWriter, r *http.Request) {
 	case errors.Is(err, aichat.ErrDailyLimit):
 		writeError(w, http.StatusTooManyRequests, "ai_daily_limit", "Kuota Tanya AI hari ini sudah habis. Coba lagi besok atau buka Lifetime Access.")
 		return
+	case errors.Is(err, aichat.ErrPremiumAdOffer):
+		writeJSON(w, http.StatusTooManyRequests, map[string]any{"error": map[string]any{
+			"code":          "ai_premium_ad_offer",
+			"message":       fmt.Sprintf("Kamu sudah memakai %d pesan Tanya AI hari ini. Tonton iklan singkat untuk %d pesan lagi.", cfg.PremiumPerDay, cfg.LifetimeAdBonus),
+			"messagesPerAd": cfg.LifetimeAdBonus,
+		}})
+		return
 	case errors.Is(err, aichat.ErrPremiumLimit):
 		writeError(w, http.StatusTooManyRequests, "ai_premium_limit", "Batas harian tercapai, coba lagi besok.")
 		return
@@ -331,7 +338,14 @@ func (s *Server) aiAdCredit(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusBadRequest, "invalid_json", "format permintaan tidak valid")
 		return
 	}
-	err := s.ai.quota().GrantAdCredit(r.Context(), userID(r), s.ai.now())
+	premium := s.aiIsPremium(r, userID(r))
+	if premium && input.Status != "watched" {
+		// Lifetime accounts get several messages per ad, so only a watched
+		// ad pays; with no fill they simply try again later.
+		writeError(w, http.StatusUnprocessableEntity, "ad_not_watched", "Iklan belum ditonton. Coba lagi sebentar lagi.")
+		return
+	}
+	err := s.ai.quota().GrantAdCredit(r.Context(), userID(r), premium, s.ai.now())
 	if errors.Is(err, aichat.ErrAdCapReached) {
 		writeError(w, http.StatusTooManyRequests, "ai_daily_limit", "Kuota Tanya AI hari ini sudah habis. Coba lagi besok atau buka Lifetime Access.")
 		return
@@ -436,7 +450,9 @@ func (s *Server) aiAdminPutConfig(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnauthorized, "unauthorized", "Kunci admin salah atau belum diatur di server.")
 		return
 	}
-	var input aichat.Config
+	// Start from the saved settings so an older dashboard that does not send
+	// the newer fields keeps their stored values.
+	input := s.ai.config.Get()
 	if err := decodeJSON(r, &input); err != nil {
 		writeError(w, http.StatusBadRequest, "invalid_json", "format pengaturan tidak valid")
 		return

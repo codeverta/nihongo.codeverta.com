@@ -74,6 +74,40 @@ void main() {
       expect(tester.takeException(), isNull);
     },
   );
+  testWidgets('owned by another account names it and disables buying', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          authControllerProvider.overrideWith(
+            (_) => AuthController.test(_signedIn),
+          ),
+          billingControllerProvider.overrideWith(
+            (_) => _StaticBilling(
+              const BillingState(ready: true, ownedBy: 'ab***@gmail.com'),
+            ),
+          ),
+          lifetimeDisplayPriceProvider.overrideWith((_) async => 99000),
+        ],
+        child: MaterialApp(
+          theme: AppTheme.lightTheme,
+          home: const PremiumScreen(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.textContaining('ab***@gmail.com'), findsOneWidget);
+    expect(find.byKey(const Key('billing-switch-account')), findsOneWidget);
+    expect(
+      tester
+          .widget<FilledButton>(find.byKey(const Key('buy-lifetime')))
+          .onPressed,
+      isNull,
+    );
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('verified premium returns to the originating job detail', (
     tester,
   ) async {

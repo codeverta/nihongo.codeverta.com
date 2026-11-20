@@ -270,13 +270,47 @@ func TestAIChatAdCreditsAreCappedPerDay(t *testing.T) {
 	}
 }
 
-func TestAIChatLifetimeHasNoAdsAndADailyLimit(t *testing.T) {
+func TestAIChatLifetimeGetsMoreMessagesPerOptionalAd(t *testing.T) {
 	env := newAITestEnv(t, true)
 	env.makeLifetime(t)
-	env.setConfig(t, func(c *aichat.Config) { c.FreePerDay = 0; c.PremiumPerDay = 2; c.PerMinute = 60 })
+	env.setConfig(t, func(c *aichat.Config) {
+		c.FreePerDay = 0
+		c.PremiumPerDay = 2
+		c.LifetimeAdBonus = 3
+		c.LifetimeAdPerDay = 1
+		c.PerMinute = 60
+	})
 	answerOf(t, env.chat("", "a"))
 	answerOf(t, env.chat("", "b"))
-	if response := env.chat("", "c"); errorCode(t, response) != "ai_premium_limit" {
+	response := env.chat("", "c")
+	if errorCode(t, response) != "ai_premium_ad_offer" || !strings.Contains(response.Body.String(), `"messagesPerAd":3`) {
+		t.Fatalf("got %d %s", response.Code, response.Body.String())
+	}
+	// A no-fill fallback pays nothing for Lifetime: only a watched ad does.
+	if w := env.do(http.MethodPost, "/v1/ai/ad-credits", `{"status":"unavailable"}`); w.Code != http.StatusUnprocessableEntity {
+		t.Fatalf("unwatched ad granted Lifetime messages: %d", w.Code)
+	}
+	if w := env.do(http.MethodPost, "/v1/ai/ad-credits", `{"status":"watched"}`); w.Code != http.StatusNoContent {
+		t.Fatalf("watched ad refused: %d %s", w.Code, w.Body.String())
+	}
+	for _, m := range []string{"c", "d", "e"} {
+		answerOf(t, env.chat("", m))
+	}
+	// The daily ad cap is used up: the day is over.
+	if response := env.chat("", "f"); errorCode(t, response) != "ai_premium_limit" {
+		t.Fatalf("got %d %s", response.Code, response.Body.String())
+	}
+	if w := env.do(http.MethodPost, "/v1/ai/ad-credits", `{"status":"watched"}`); w.Code != http.StatusTooManyRequests {
+		t.Fatalf("ad over the Lifetime cap accepted: %d", w.Code)
+	}
+}
+
+func TestAIChatLifetimeStopsWithoutTheAdPlacement(t *testing.T) {
+	env := newAITestEnv(t, false)
+	env.makeLifetime(t)
+	env.setConfig(t, func(c *aichat.Config) { c.PremiumPerDay = 1; c.PerMinute = 60 })
+	answerOf(t, env.chat("", "a"))
+	if response := env.chat("", "b"); errorCode(t, response) != "ai_premium_limit" {
 		t.Fatalf("got %d %s", response.Code, response.Body.String())
 	}
 }

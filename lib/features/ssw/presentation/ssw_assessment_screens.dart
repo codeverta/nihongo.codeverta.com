@@ -15,6 +15,7 @@ import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/core/ads/completion_ads.dart';
 import 'package:nihongo_master/core/ads/ads_config.dart';
 import 'package:nihongo_master/core/ads/ad_widgets.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 bool sswAvailable(String sector) => sswActiveSectorIds.contains(sector);
 
@@ -425,6 +426,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
   bool finished = false;
   bool pendingSync = false;
   bool verified = false;
+  Object? xp;
   int answeredCount = 0;
   String? attemptId;
   Json? feedback;
@@ -442,6 +444,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
           setState(() {
             pendingSync = false;
             verified = event.result['verified'] == true;
+            xp = event.result['xp'];
             final serverCorrect = event.result['correctAnswers'];
             if (serverCorrect is int) correct = serverCorrect;
             final serverTotal = event.result['totalQuestions'];
@@ -465,6 +468,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
     attemptId = null;
     pendingSync = false;
     verified = false;
+    xp = null;
     busy = false;
     finished = false;
     feedback = null;
@@ -546,6 +550,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
         final serverTotal = result['totalQuestions'];
         if (serverTotal is int) answeredCount = serverTotal;
         verified = result['verified'] == true;
+        xp = result['xp'];
         pendingSync = result['pendingSync'] == true;
         finished = true;
       });
@@ -711,7 +716,7 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                       Padding(
                         padding: EdgeInsets.only(top: 12),
                         child: Text(
-                          'Jawaban tersimpan di perangkat dan menunggu sinkronisasi. Latihan ini tidak memberi XP.'
+                          'Jawaban tersimpan di perangkat dan menunggu sinkronisasi. XP diberikan setelah terverifikasi.'
                               .localized(context),
                         ),
                       ),
@@ -719,10 +724,13 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                       Padding(
                         padding: EdgeInsets.only(top: 12),
                         child: Text(
-                          'Jawaban sudah diverifikasi server. Latihan ini tidak memberi XP.'
-                              .localized(context),
+                          'Jawaban sudah diverifikasi server.'.localized(
+                            context,
+                          ),
                         ),
                       ),
+                    const SizedBox(height: 16),
+                    XpResultBadge.json(xp),
                     const CompletionAdBoundary(kind: CompletionKind.practice),
                     const SizedBox(height: 16),
                     const AdBannerSlot(

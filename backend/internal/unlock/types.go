@@ -31,12 +31,17 @@ const (
 	KindNews Kind = "news"
 	// KindJob opens one job's application link, permanently.
 	KindJob Kind = "job"
+	// KindXPBoost doubles the XP of one finished activity. Its ID is the
+	// activity's completion ID (for example "grammar:<attempt>"). It is only
+	// ever verified by SSV and then consumed; it never becomes an unlock.
+	KindXPBoost Kind = "xp-boost"
 )
 
 // clientKinds are the kinds an app may ask to unlock.
 var clientKinds = map[Kind]bool{
 	KindGrammar: true, KindKanji: true, KindReading: true, KindVocab: true,
 	KindAnki: true, KindSimulation: true, KindNews: true, KindJob: true,
+	KindXPBoost: true,
 }
 
 var kinds = func() map[Kind]bool {
@@ -48,6 +53,10 @@ var kinds = func() map[Kind]bool {
 }()
 
 var idPattern = regexp.MustCompile(`^[A-Za-z0-9_-]{1,64}$`)
+
+// completionIDPattern allows the colons of completion IDs; content keys are
+// at most 96 characters, so "xp-boost:" leaves room for 86.
+var completionIDPattern = regexp.MustCompile(`^[A-Za-z0-9_:-]{1,86}$`)
 
 // ParseKind validates a client-supplied kind.
 func ParseKind(value string) (Kind, bool) {
@@ -64,7 +73,11 @@ func (k Kind) IsLesson() bool {
 // Key builds the stable key stored for an unlocked item, for example
 // "grammar:n3-lesson-01". It reports false for unknown kinds or malformed IDs.
 func Key(kind Kind, id string) (string, bool) {
-	if !kinds[kind] || !idPattern.MatchString(id) {
+	pattern := idPattern
+	if kind == KindXPBoost {
+		pattern = completionIDPattern
+	}
+	if !kinds[kind] || !pattern.MatchString(id) {
 		return "", false
 	}
 	return string(kind) + ":" + id, true
@@ -89,6 +102,7 @@ var (
 	ErrReplay            = errors.New("unlock: ad transaction already used")
 	ErrBadSignature      = errors.New("unlock: invalid ssv signature")
 	ErrUnavailable       = errors.New("unlock: ssv verification is not configured")
+	ErrConsumed          = errors.New("unlock: intent already used")
 )
 
 // Intent is a one-time request to unlock ContentKey for UserID. It becomes
@@ -136,6 +150,11 @@ type Repository interface {
 	// Convert turns the unlock fromKey into toKey, consuming a one-time
 	// credit. It reports false when fromKey is not held or toKey already is.
 	Convert(ctx context.Context, userID, fromKey, toKey string) (bool, error)
+	// ConsumeVerified marks a verified, unexpired intent owned by userID as
+	// used and returns it, without recording an unlock or counting toward the
+	// unlock limits (double XP has its own). A second call returns
+	// ErrConsumed with the intent.
+	ConsumeVerified(ctx context.Context, userID, nonce string, at time.Time) (Intent, error)
 	Has(ctx context.Context, userID, contentKey string) (bool, error)
 	List(ctx context.Context, userID string) ([]Unlock, error)
 	Usage(ctx context.Context, userID, day string) (Usage, error)

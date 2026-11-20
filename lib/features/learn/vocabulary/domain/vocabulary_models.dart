@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 @immutable
 class VocabularyLevel {
@@ -284,6 +285,7 @@ class VocabularyResult {
     required this.progress,
     required this.canRetry,
     this.verified = true,
+    this.xp,
   });
 
   factory VocabularyResult.fromJson(Map<String, dynamic> json) =>
@@ -298,6 +300,7 @@ class VocabularyResult {
         progress: json['progress'] as int? ?? 0,
         canRetry: json['canRetry'] as bool? ?? true,
         verified: json['verified'] != false,
+        xp: XpGain.fromJson(json['xp']),
       );
 
   final String attemptId;
@@ -308,6 +311,9 @@ class VocabularyResult {
   final bool passed;
   final int bestScore;
   final int progress;
+
+  /// XP and streak from the server; null until the result is verified.
+  final XpGain? xp;
   final bool canRetry;
   final bool verified;
   bool get pendingSync => !verified;

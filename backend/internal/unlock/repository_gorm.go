@@ -338,6 +338,44 @@ func (r *GormRepository) Fallback(ctx context.Context, userID, contentKey, day s
 
 // Convert is one conditional UPDATE: of two concurrent conversions of the
 // same credit, exactly one changes a row. A taken toKey hits the primary key.
+func (r *GormRepository) ConsumeVerified(ctx context.Context, userID, nonce string, at time.Time) (Intent, error) {
+	at = at.UTC()
+	var consumed Intent
+	err := r.transact(ctx, func(tx *gorm.DB) error {
+		var row intentRow
+		err := tx.Clauses(clause.Locking{Strength: "UPDATE"}).
+			Where("nonce = ? AND user_id = ?", nonce, userID).Take(&row).Error
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return ErrNotFound
+		}
+		if err != nil {
+			return err
+		}
+		consumed = row.intent()
+		if row.ConsumedAt != nil {
+			return ErrConsumed
+		}
+		if row.VerifiedAt == nil {
+			return ErrNotVerified
+		}
+		if !at.Before(row.ExpiresAt) {
+			return ErrExpired
+		}
+		if err := consumeIntent(tx, row, at); err != nil {
+			return err
+		}
+		consumed.ConsumedAt = &at
+		return nil
+	})
+	if errors.Is(err, ErrConsumed) {
+		return consumed, ErrConsumed
+	}
+	if err != nil {
+		return Intent{}, err
+	}
+	return consumed, nil
+}
+
 func (r *GormRepository) Convert(ctx context.Context, userID, fromKey, toKey string) (bool, error) {
 	result := r.db.WithContext(ctx).Model(&unlockRow{}).
 		Where("user_id = ? AND content_key = ?", userID, fromKey).
@@ -388,8 +426,9 @@ func (r *GormRepository) Activity(ctx context.Context, since time.Time) (Activit
 		ContentKey string
 		CreatedAt  time.Time
 		VerifiedAt *time.Time
+		ConsumedAt *time.Time
 	}
-	if err := r.db.WithContext(ctx).Model(&intentRow{}).Select("content_key, created_at, verified_at").
+	if err := r.db.WithContext(ctx).Model(&intentRow{}).Select("content_key, created_at, verified_at, consumed_at").
 		Where("created_at >= ?", since).Limit(statsRowLimit).Find(&intents).Error; err != nil {
 		return Activity{}, err
 	}
@@ -399,7 +438,7 @@ func (r *GormRepository) Activity(ctx context.Context, since time.Time) (Activit
 	}
 	activity := Activity{Intents: make([]IntentActivity, 0, len(intents)), Unlocks: make([]Unlock, 0, len(unlocks))}
 	for _, intent := range intents {
-		activity.Intents = append(activity.Intents, IntentActivity{ContentKey: intent.ContentKey, CreatedAt: intent.CreatedAt, Verified: intent.VerifiedAt != nil})
+		activity.Intents = append(activity.Intents, IntentActivity{ContentKey: intent.ContentKey, CreatedAt: intent.CreatedAt, Verified: intent.VerifiedAt != nil, Consumed: intent.ConsumedAt != nil})
 	}
 	for _, row := range unlocks {
 		activity.Unlocks = append(activity.Unlocks, row.unlock())

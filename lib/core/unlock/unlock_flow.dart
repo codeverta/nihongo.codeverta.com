@@ -63,7 +63,9 @@ class UnlockFlow {
       case RewardedAdOutcome.unavailable:
         return const UnlockAttempt(UnlockOutcome.adUnavailable);
       case RewardedAdOutcome.watched:
-        if (useFallbackAfterTestAds) {
+        // Double XP has no fallback (it is a bonus, not access), so a test ad
+        // in a debug build cannot earn it; the claim then stays pending.
+        if (useFallbackAfterTestAds && target.kind != 'xp-boost') {
           await repository.fallback(target);
           return const UnlockAttempt(UnlockOutcome.unlocked);
         }

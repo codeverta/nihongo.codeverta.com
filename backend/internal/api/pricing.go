@@ -15,6 +15,17 @@ const defaultLifetimePriceIDR = 99000
 
 type PricingConfig struct {
 	LifetimePriceIDR int `json:"lifetimePriceIdr"`
+	// OfferAfterLogin shows the Lifetime screen (skippable) after every login
+	// to accounts without Lifetime. It is also the master switch: when false
+	// the periodic showing stops too.
+	OfferAfterLogin bool `json:"offerAfterLogin"`
+	// OfferIntervalDays shows it again on a normal app open once this many
+	// days passed since it was last shown. Zero: only after login.
+	OfferIntervalDays int `json:"offerIntervalDays"`
+}
+
+func defaultPricing() PricingConfig {
+	return PricingConfig{LifetimePriceIDR: defaultLifetimePriceIDR, OfferAfterLogin: true, OfferIntervalDays: 10}
 }
 
 type PricingStore struct {
@@ -32,7 +43,7 @@ func (s *Server) ConfigurePricing(path, token string) error {
 		return err
 	}
 	pricing := &PricingStore{
-		value: PricingConfig{LifetimePriceIDR: defaultLifetimePriceIDR},
+		value: defaultPricing(),
 		path:  absolute,
 		token: token,
 	}
@@ -55,6 +66,9 @@ func validatePricing(pricing PricingConfig) error {
 	if pricing.LifetimePriceIDR < 1000 || pricing.LifetimePriceIDR > 100_000_000 {
 		return fmt.Errorf("harga Lifetime harus antara Rp1.000 dan Rp100.000.000")
 	}
+	if pricing.OfferIntervalDays < 0 || pricing.OfferIntervalDays > 90 {
+		return fmt.Errorf("jarak tampil ulang harus 0 sampai 90 hari")
+	}
 	return nil
 }
 
@@ -68,13 +82,23 @@ func (s *Server) lifetimePriceIDR() int {
 	return pricing.value.LifetimePriceIDR
 }
 
+func (s *Server) pricingConfig() PricingConfig {
+	pricing := s.pricing
+	if pricing == nil {
+		return defaultPricing()
+	}
+	pricing.mu.RLock()
+	defer pricing.mu.RUnlock()
+	return pricing.value
+}
+
 func (s *Server) registerPricing(mux *http.ServeMux) {
 	if s.pricing == nil {
-		s.pricing = &PricingStore{value: PricingConfig{LifetimePriceIDR: defaultLifetimePriceIDR}}
+		s.pricing = &PricingStore{value: defaultPricing()}
 	}
 	mux.HandleFunc("GET /v1/pricing", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-store")
-		writeData(w, http.StatusOK, PricingConfig{LifetimePriceIDR: s.lifetimePriceIDR()})
+		writeData(w, http.StatusOK, s.pricingConfig())
 	})
 	mux.HandleFunc("GET /v1/admin/pricing", s.pricingAdmin(s.getPricing))
 	mux.HandleFunc("PUT /v1/admin/pricing", s.pricingAdmin(s.updatePricing))
@@ -98,11 +122,13 @@ func (s *Server) pricingAdmin(next http.HandlerFunc) http.HandlerFunc {
 }
 
 func (s *Server) getPricing(w http.ResponseWriter, _ *http.Request) {
-	writeData(w, http.StatusOK, PricingConfig{LifetimePriceIDR: s.lifetimePriceIDR()})
+	writeData(w, http.StatusOK, s.pricingConfig())
 }
 
 func (s *Server) updatePricing(w http.ResponseWriter, r *http.Request) {
-	var input PricingConfig
+	// Start from the saved settings so a client that sends only the price
+	// (the standalone pricing page) keeps the Lifetime offer settings.
+	input := s.pricingConfig()
 	if err := decodeJSON(r, &input); err != nil {
 		writeError(w, http.StatusBadRequest, "invalid_json", err.Error())
 		return

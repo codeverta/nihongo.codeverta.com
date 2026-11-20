@@ -10,7 +10,7 @@ The feature must stay affordable at scale, must not let the AI be abused as a fr
 
 Add an AI chat, powered by DeepSeek, to every grammar, vocabulary, kanji, and reading lesson. The AI is scoped to Japanese learning and receives the current lesson as context. Quick-action chips cover the most common requests (summary, grammar explanation, example sentences, a 5-question quiz, and sentence correction), and answers stream in as they are generated.
 
-All model calls go through the Go backend, which owns the API key, the system prompt, the lesson context, the conversation history, and quota enforcement. Free users get 3 messages per day; after that, on Android, each extra message requires watching an opt-in rewarded ad, up to a daily cap. Lifetime users get 100 messages per day without ads. Token usage is minimized through DeepSeek prefix caching, compact lesson context, a short history window, and a shared cache for deterministic chip answers.
+All model calls go through the Go backend, which owns the API key, the system prompt, the lesson context, the conversation history, and quota enforcement. Free users get 3 messages per day; after that, on Android, each extra message requires watching an opt-in rewarded ad, up to a daily cap. Lifetime users get 15 messages per day; after that, on Android, they may choose to watch a rewarded ad that adds 5 more messages, up to 4 ads per day (all three numbers are admin settings). Lifetime users never see banner or full-screen ads. Token usage is minimized through DeepSeek prefix caching, compact lesson context, a short history window, and a shared cache for deterministic chip answers.
 
 ## User Stories
 
@@ -33,10 +33,10 @@ All model calls go through the Go backend, which owns the API key, the system pr
 17. As a free user who watched an ad but whose answer failed, I do not want to watch another ad to retry.
 18. As a free user, I do not want a message to count against my quota if the answer failed.
 19. As a free iOS user, or when ads are unavailable, I want to be told the daily limit is reached and be offered Lifetime access.
-20. As a Lifetime user, I want to use the AI without ads, up to 100 messages per day.
+20. As a Lifetime user, I want 15 AI messages per day without ads, and the option to watch an ad for 5 more.
 21. As a Lifetime user who reached 100 messages, I want a clear message that the limit resets tomorrow.
 22. As a user without internet, I want the AI button disabled with an explanation, rather than a failing request.
-23. As a user considering Lifetime, I want the premium page to mention ad-free AI chat.
+23. As a user considering Lifetime, I want the premium page to state the daily AI messages and the optional ad.
 24. As a user, I want the privacy policy to state that my questions are processed by DeepSeek.
 25. As an admin, I want to change the free quota, ad cap, Lifetime limit, rate limit, and turn the feature off without a deploy, so that I can control cost.
 26. As an admin, I want to configure the rewarded ad unit remotely like the existing placements.
@@ -54,7 +54,7 @@ All model calls go through the Go backend, which owns the API key, the system pr
 - Answers follow the app locale (`id` or `en`). Japanese examples are always written as kanji/kana + romaji + meaning.
 - Answers render as restricted markdown: no raw HTML, no images, links are not tappable.
 - Offline: the entry point is disabled with "Butuh koneksi internet". History is not viewable offline in v1.
-- The premium page lists "Tanya AI tanpa iklan" as a Lifetime benefit.
+- The premium page lists "Tanya AI 15 pesan/hari — Bisa ditambah dengan iklan opsional" as a Lifetime benefit.
 
 ### Quota and ads
 - Quota is counted server-side per account ID per day and resets at 00:00 Asia/Jakarta (WIB). It is global across all lessons.
@@ -62,7 +62,7 @@ All model calls go through the Go backend, which owns the API key, the system pr
 - Free Android users beyond the free quota: before sending, show an opt-in bottom sheet ("Tonton iklan singkat untuk mengirim pertanyaan ini" with [Tonton] / [Batal]). One completed rewarded ad grants one message credit. At most 20 ad-granted messages per day.
 - If the rewarded ad fails to load, the message is still sent (fail-open), but it counts toward the 20/day ad cap.
 - Free users on iOS, or when the `aiChatRewarded` placement is disabled: once the free quota is used, chat is locked until the next reset and a Lifetime upsell is shown.
-- Lifetime users (`isPremium` / `isLifetime` / offline premium, matching `adsAllowedFor()`): no ads, 100 messages/day, then "Batas harian tercapai, coba lagi besok". No ad option.
+- Lifetime users (`isPremium` / `isLifetime` / offline premium): `premiumPerDay` messages/day (default 15). Then the server answers 429 `ai_premium_ad_offer` with `messagesPerAd`; on Android the app offers an opt-in sheet ("Tonton iklan singkat untuk menambah 5 pesan"). A watched ad (`POST /v1/ai/ad-credits` with `watched`; `unavailable` is refused with 422 `ad_not_watched`) adds `lifetimeAdBonus` messages (default 5), up to `lifetimeAdPerDay` ads (default 4). Without the placement (iOS, ads off, no consent) or past the cap, the answer is `ai_premium_limit`: "Batas harian tercapai, coba lagi besok". The app uses `optInAdsReadyProvider` for this ad, so Lifetime accounts still never get banners or interstitials. On the first start of this version, a saved `premiumPerDay` of 100 (the old default) becomes 15 once; any other saved value is kept.
 - All users: a hidden rate limit of 6 messages/minute. Admin alert when an account's daily usage is abnormal.
 - Quota and ad credits are consumed only when an answer completes successfully. If DeepSeek errors or times out mid-stream, nothing is consumed. Unused ad credits remain valid until the end of the day.
 - v1 trusts the client's "ad watched" claim, bounded by the server-side daily cap. AdMob Server-Side Verification is a later hardening step.

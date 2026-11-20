@@ -3,6 +3,8 @@ package aichat
 import (
 	"context"
 	"errors"
+	"os"
+	"path/filepath"
 	"strings"
 	"sync"
 	"testing"
@@ -170,5 +172,35 @@ func TestHistoryIsSentInCompactForm(t *testing.T) {
 	}
 	if strings.Contains(msgs[1].Content, "Ringkas") {
 		t.Fatal("chip instructions must not be repeated for past turns")
+	}
+}
+
+func TestConfigMigratesTheOldLifetimeLimitOnce(t *testing.T) {
+	dir := t.TempDir()
+	for _, tc := range []struct {
+		saved string
+		want  int
+	}{
+		{`{"enabled":true,"freePerDay":3,"adPerDay":20,"premiumPerDay":100,"perMinute":6,"alertPerDay":80}`, 15},
+		{`{"enabled":true,"freePerDay":3,"adPerDay":20,"premiumPerDay":40,"perMinute":6,"alertPerDay":80}`, 40},
+		{`{"enabled":true,"freePerDay":3,"adPerDay":20,"premiumPerDay":100,"lifetimeAdBonus":5,"lifetimeAdPerDay":4,"perMinute":6,"alertPerDay":80}`, 100},
+	} {
+		path := filepath.Join(dir, "ai.json")
+		if err := os.WriteFile(path, []byte(tc.saved), 0o600); err != nil {
+			t.Fatal(err)
+		}
+		store, err := LoadConfigStore(path)
+		if err != nil {
+			t.Fatal(err)
+		}
+		cfg := store.Get()
+		if cfg.PremiumPerDay != tc.want || cfg.LifetimeAdBonus != 5 || cfg.LifetimeAdPerDay != 4 {
+			t.Fatalf("%s loaded as %+v", tc.saved, cfg)
+		}
+		// Once saved with the new fields, a deliberate 100 is kept.
+		again, err := LoadConfigStore(path)
+		if err != nil || again.Get().PremiumPerDay != tc.want {
+			t.Fatalf("migration repeated: %+v %v", again.Get(), err)
+		}
 	}
 }

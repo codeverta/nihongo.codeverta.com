@@ -89,6 +89,18 @@ class AdsRuntime {
 
 final adsRuntimeProvider = Provider<AdsRuntime>((ref) => AdsRuntime());
 
+/// Ads for an opt-in rewarded ad the user asks for. Unlike [adsReadyProvider]
+/// this also allows Lifetime accounts, which may choose to watch one for
+/// extra Tanya AI messages; they never see banners or interstitials.
+final optInAdsReadyProvider = FutureProvider<AdsConfig?>((ref) async {
+  final auth = ref.watch(authControllerProvider);
+  if (auth.isLoading) return null;
+  final config = await ref.watch(adsConfigProvider.future);
+  if (!config.enabled) return null;
+  final ok = await ref.read(adsRuntimeProvider).start();
+  return ok ? config : null;
+});
+
 /// True when an ad may be requested right now. Watch this from ad widgets.
 final adsReadyProvider = FutureProvider<AdsConfig?>((ref) async {
   final auth = ref.watch(authControllerProvider);

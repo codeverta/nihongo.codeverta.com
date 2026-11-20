@@ -110,6 +110,7 @@ type VocabularyAnswerFeedback struct {
 }
 
 type VocabularyAttemptResult struct {
+	XP *XPGain `json:"xp,omitempty"`
 	AttemptID string `json:"attemptId"`
 	LessonID  string `json:"lessonId"`
 	Score     int    `json:"score"`

@@ -25,14 +25,18 @@ const uiEnglishAiChat = <String, String>{
       'Watch a short ad to send this question.',
   'Tonton': 'Watch',
   'Kuota Tanya AI hari ini habis': "Today's Ask AI limit is reached",
-  'Coba lagi besok, atau buka Lifetime Access untuk bertanya tanpa iklan.':
-      'Try again tomorrow, or get Lifetime Access to ask without ads.',
+  'Coba lagi besok, atau buka Lifetime Access untuk lebih banyak pertanyaan setiap hari.':
+      'Try again tomorrow, or get Lifetime Access for more questions every day.',
+  'Pesan Tanya AI hari ini sudah terpakai': "Today's Ask AI messages are used",
+  'Tonton iklan singkat untuk menambah': 'Watch a short ad to add',
+  'pesan. Pertanyaan ini langsung dikirim.':
+      'messages. This question is sent right away.',
   'Lihat Lifetime': 'See Lifetime',
   'Batas harian tercapai': 'Daily limit reached',
   'Batas harian tercapai, coba lagi besok.':
       'Daily limit reached, please try again tomorrow.',
-  'Tanya AI tanpa iklan': 'Ask AI without ads',
-  'Lebih banyak pertanyaan setiap hari': 'More questions every day',
+  'Tanya AI 15 pesan/hari': 'Ask AI 15 messages/day',
+  'Bisa ditambah dengan iklan opsional': 'Add more with an optional ad',
   // Server messages (backend/internal/api/ai_chat.go).
   'Fitur Tanya AI sedang tidak tersedia.': 'Ask AI is unavailable right now.',
   'Terlalu cepat. Tunggu sebentar lalu coba lagi.':

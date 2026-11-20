@@ -22,14 +22,21 @@ import (
 
 // XP rules. First passes are in recordStudyLocked; these are the extra sources.
 const (
-	xpLessonPass          = 50
-	xpExamPass            = 100
-	xpRepass              = 10
-	xpRepassMaxPerDay     = 3
+	xpLessonPass          = 50  // first time a lesson scores >= 80%
+	xpExamPass            = 100 // first time an exam scores >= 80%
+	xpLessonComplete      = 10  // any later lesson scoring >= xpRepeatMinScore
+	xpExamComplete        = 20  // any later exam scoring >= xpRepeatMinScore
+	xpSSWPractice         = 10  // a fully answered SSW practice session
+	xpPracticeLesson      = 5   // first completion of a Kaigo/SSW curriculum lesson
+	xpRepeatMinScore      = 50  // below this a completion counts for the streak only
 	xpDailyGoal           = 20
 	xpAnkiCard            = 1
 	xpAnkiMaxPerDay       = 30
 	dailyGoalMinutes      = 20
+
+	// Admin-tunable defaults (see SetXPRules).
+	defaultXPRepeatDailyCap = 100 // XP per study day from repeats and SSW practice
+	defaultAnkiStreakCards  = 10  // Anki reviews that make a day count for the streak
 	leaderboardTopSize    = 50
 	leaderboardSnapshotTT = time.Minute
 	xpEventRetention      = 12 * 7 * 24 * time.Hour
@@ -48,8 +55,15 @@ type xpAward struct {
 // xpDay is the per-day ledger for capped XP sources.
 type xpDay struct {
 	Anki   int  `json:",omitempty"`
-	Repass int  `json:",omitempty"`
+	Repass int  `json:",omitempty"` // superseded by Repeat; kept to read old states
 	Goal   bool `json:",omitempty"`
+	// Repeat is XP earned today from capped sources: repeat completions and
+	// SSW practice.
+	Repeat int `json:",omitempty"`
+	// Reviews counts today's Anki reviews, for the streak threshold.
+	Reviews int `json:",omitempty"`
+	// Boosts counts today's double XP claims.
+	Boosts int `json:",omitempty"`
 }
 
 func (state *gamificationState) xpDayLocked(day string) *xpDay {

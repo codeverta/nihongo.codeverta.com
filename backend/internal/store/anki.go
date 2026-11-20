@@ -69,6 +69,9 @@ type AnkiReviewResult struct {
 	Saved   bool      `json:"saved"`
 	Due     time.Time `json:"due"`
 	Version int       `json:"version"`
+	// XPAwarded is what this review earned (1 until the daily Anki cap), so
+	// the session end can show "+N XP".
+	XPAwarded int `json:"xpAwarded"`
 }
 
 func ankiState(state *gamificationState, id string) *AnkiDeckState {
@@ -337,7 +340,7 @@ func (s *MemoryStore) AnkiReviewFor(user, id string, input AnkiReviewInput, unlo
 		if current.Rating != input.Rating {
 			return AnkiReviewResult{}, ErrInvalid
 		}
-		return AnkiReviewResult{true, current.Due, current.Version}, nil
+		return AnkiReviewResult{Saved: true, Due: current.Due, Version: current.Version}, nil
 	}
 	if current.Version != input.Version || (!current.Due.IsZero() && current.Due.After(now)) || (current.Version == 0 && input.Index >= state.NextNew+20) {
 		return AnkiReviewResult{}, ErrAnkiConflict
@@ -368,9 +371,17 @@ func (s *MemoryStore) AnkiReviewFor(user, id string, input AnkiReviewInput, unlo
 		}
 		progress.NextNew++
 	}
-	// +1 XP per reviewed card, at most 30 XP per study day.
+	// +1 XP per reviewed card, at most 30 XP per study day. Enough reviews in
+	// a day also make it count for the streak.
 	var awards []xpAward
-	ledger := next.xpDayLocked(now.In(studyTimezone(next)).Format("2006-01-02"))
+	studyDay := now.In(studyTimezone(next)).Format("2006-01-02")
+	ledger := next.xpDayLocked(studyDay)
+	ledger.Reviews++
+	if ledger.Reviews >= s.ankiStreakCardsLocked() {
+		if _, counted := next.Days[studyDay]; !counted {
+			next.Days[studyDay] = 0
+		}
+	}
 	if ledger.Anki < xpAnkiMaxPerDay {
 		ledger.Anki += xpAnkiCard
 		awards = append(awards, xpAward{xpAnkiCard, "anki"})
@@ -390,5 +401,5 @@ func (s *MemoryStore) AnkiReviewFor(user, id string, input AnkiReviewInput, unlo
 		profile.Level = 1 + next.XP/500
 		s.profiles[user] = profile
 	}
-	return AnkiReviewResult{true, scheduled.Due, scheduled.Version}, nil
+	return AnkiReviewResult{Saved: true, Due: scheduled.Due, Version: scheduled.Version, XPAwarded: totalXP(awards)}, nil
 }

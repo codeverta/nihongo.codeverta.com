@@ -109,13 +109,16 @@ func (r *GormRepository) Release(ctx context.Context, userID, day string, slot S
 		UpdateColumn(column, gorm.Expr(column+" - 1")).Error
 }
 
-func (r *GormRepository) GrantAdCredit(ctx context.Context, userID, day string, maxPerDay int) (bool, error) {
+func (r *GormRepository) GrantAdCredits(ctx context.Context, userID, day string, credits, maxPerDay int) (bool, error) {
+	if credits < 1 {
+		return false, nil
+	}
 	if err := r.ensureUsage(ctx, userID, day); err != nil {
 		return false, err
 	}
 	result := r.db.WithContext(ctx).Model(&usageRow{}).
-		Where("user_id = ? AND day = ? AND ad_granted < ?", userID, day, maxPerDay).
-		UpdateColumn("ad_granted", gorm.Expr("ad_granted + 1"))
+		Where("user_id = ? AND day = ? AND ad_granted + ? <= ?", userID, day, credits, maxPerDay).
+		UpdateColumn("ad_granted", gorm.Expr("ad_granted + ?", credits))
 	return result.RowsAffected == 1, result.Error
 }
 

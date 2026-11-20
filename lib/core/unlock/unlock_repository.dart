@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 /// One locked item that an ad or Lifetime Access can open. [kind] uses the
 /// server's names: grammar, kanji, reading, vocabulary, anki, simulation,
@@ -208,6 +209,15 @@ class UnlockRepository {
     } on DioException catch (error) {
       throw UnlockException.from(error);
     }
+  }
+
+  /// Doubles the XP of [completionId] without an ad (Lifetime only).
+  Future<XpGain?> claimFreeBoost(String completionId) async {
+    final data = await _post(
+      '/xp-boosts/${Uri.encodeComponent(completionId)}/free',
+      const <String, Object>{},
+    );
+    return XpGain.fromJson(data['xp']);
   }
 
   /// Opens the item without an ad, when no ad could be loaded. The server

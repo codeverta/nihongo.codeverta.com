@@ -82,6 +82,7 @@ Future<void> _pump(
   required _FakeRepository repository,
   RewardedAdShower? shower,
   AdPlacementConfig? placement,
+  AdPlacementConfig? lifetimePlacement,
   bool offline = false,
 }) async {
   // Wide enough that every quick-action chip is laid out.
@@ -99,6 +100,9 @@ Future<void> _pump(
           shower ?? _FakeShower(RewardedAdOutcome.watched),
         ),
         aiChatRewardedPlacementProvider.overrideWith((ref) async => placement),
+        aiChatLifetimeRewardedPlacementProvider.overrideWith(
+          (ref) async => lifetimePlacement,
+        ),
         offlineProvider.overrideWithValue(offline),
         analyticsServiceProvider.overrideWithValue(
           AnalyticsService(preferences),
@@ -266,6 +270,92 @@ void main() {
       expect(find.byKey(const ValueKey('ai-ad-watch')), findsNothing);
     },
   );
+
+  testWidgets(
+    'a Lifetime user past the daily messages can watch an ad for 5 more',
+    (tester) async {
+      final repository = _FakeRepository()
+        ..responses.addAll([
+          const AiChatException(
+            AiChatException.premiumAdOffer,
+            'habis',
+            messagesPerAd: 5,
+          ),
+          'Jawaban Lifetime',
+        ]);
+      final shower = _FakeShower(RewardedAdOutcome.watched);
+      await _pump(
+        tester,
+        repository: repository,
+        shower: shower,
+        lifetimePlacement: _placement,
+      );
+      await tester.enterText(find.byKey(const ValueKey('ai-input')), 'Lagi');
+      await tester.tap(find.byKey(const ValueKey('ai-send')));
+      await tester.pumpAndSettle();
+      // Optional: nothing plays until the user chooses to watch.
+      expect(shower.shown, isEmpty);
+      expect(
+        find.text(
+          'Tonton iklan singkat untuk menambah 5 pesan. Pertanyaan ini langsung dikirim.',
+        ),
+        findsOneWidget,
+      );
+      await tester.tap(find.byKey(const ValueKey('ai-ad-watch')));
+      await tester.pumpAndSettle();
+      expect(repository.adCredits, [true]);
+      expect(repository.sent, hasLength(2));
+      expect(find.textContaining('Jawaban Lifetime'), findsOneWidget);
+    },
+  );
+
+  testWidgets('a Lifetime user gets nothing for an ad that did not load', (
+    tester,
+  ) async {
+    final repository = _FakeRepository()
+      ..responses.add(
+        const AiChatException(
+          AiChatException.premiumAdOffer,
+          'habis',
+          messagesPerAd: 5,
+        ),
+      );
+    await _pump(
+      tester,
+      repository: repository,
+      shower: _FakeShower(RewardedAdOutcome.unavailable),
+      lifetimePlacement: _placement,
+    );
+    await tester.enterText(find.byKey(const ValueKey('ai-input')), 'Lagi');
+    await tester.tap(find.byKey(const ValueKey('ai-send')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey('ai-ad-watch')));
+    await tester.pumpAndSettle();
+    expect(repository.adCredits, isEmpty);
+    expect(repository.sent, hasLength(1));
+  });
+
+  testWidgets('Lifetime on iOS (no ad placement) stops at the daily limit', (
+    tester,
+  ) async {
+    final repository = _FakeRepository()
+      ..responses.add(
+        const AiChatException(
+          AiChatException.premiumAdOffer,
+          'habis',
+          messagesPerAd: 5,
+        ),
+      );
+    await _pump(tester, repository: repository, placement: _placement);
+    await tester.enterText(find.byKey(const ValueKey('ai-input')), 'x');
+    await tester.tap(find.byKey(const ValueKey('ai-send')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('ai-ad-watch')), findsNothing);
+    expect(
+      find.text('Batas harian tercapai, coba lagi besok.'),
+      findsOneWidget,
+    );
+  });
 
   testWidgets('an upstream failure offers a retry of the same message', (
     tester,

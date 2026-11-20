@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"reflect"
 	"testing"
 	"time"
 
@@ -68,7 +69,7 @@ func TestOfflinePracticePackageIsSignedAndSyncIsServerScoredIdempotently(t *test
 	if err := json.Unmarshal(secondResponse.Body.Bytes(), &secondPayload); err != nil || secondResponse.Code != http.StatusOK {
 		t.Fatalf("duplicate sync failed: %s %v", secondResponse.Body.String(), err)
 	}
-	if firstPayload.Data != secondPayload.Data || memory.Gamification(database.DemoUserID).XP != 50 {
+	if !reflect.DeepEqual(firstPayload.Data, secondPayload.Data) || memory.Gamification(database.DemoUserID).XP != 50 {
 		t.Fatalf("duplicate attempt changed its result or reward: first=%#v second=%#v xp=%d", firstPayload.Data, secondPayload.Data, memory.Gamification(database.DemoUserID).XP)
 	}
 }
@@ -190,7 +191,7 @@ func TestOfflineSSWPracticePackageSyncIsVerifiedWithoutXP(t *testing.T) {
 	var duplicatePayload struct {
 		Data domain.OfflinePracticeResult `json:"data"`
 	}
-	if secondResponse.Code != http.StatusOK || json.Unmarshal(secondResponse.Body.Bytes(), &duplicatePayload) != nil || duplicatePayload.Data != result {
+	if secondResponse.Code != http.StatusOK || json.Unmarshal(secondResponse.Body.Bytes(), &duplicatePayload) != nil || !reflect.DeepEqual(duplicatePayload.Data, result) {
 		t.Fatalf("duplicate SSW sync changed result: %d %s", secondResponse.Code, secondResponse.Body.String())
 	}
 	if memory.Gamification(database.DemoUserID).XP != 0 || memory.Gamification(database.DemoUserID).LessonsCompleted != 0 {

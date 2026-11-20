@@ -6,6 +6,7 @@ import 'package:nihongo_master/features/exam/data/diagnostic_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 class SimulationResultView extends StatefulWidget {
   const SimulationResultView({
@@ -87,6 +88,8 @@ class _ResultState extends State<SimulationResultView> {
             ],
           ),
         ),
+        const SizedBox(height: 16),
+        XpResultBadge.json(widget.result['xp']),
         const SizedBox(height: 16),
         const Center(
           child: AdBannerSlot(placement: BannerAdPlacement.quizResult),

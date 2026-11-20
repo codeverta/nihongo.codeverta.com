@@ -192,6 +192,10 @@ class InterstitialController {
   /// item (for example `grammar:grammar-n3-01`) so a completion paid for
   /// with a rewarded ad is skipped.
   Future<void> showAfterCompletion(CompletionKind kind, {String? key}) async {
+    if (_skipNext) {
+      _skipNext = false;
+      return;
+    }
     if (key != null && _paidWithAd.remove(key)) return;
     final placement = _placementFor(kind);
     if (placement == null || _showing) return;
@@ -211,6 +215,12 @@ class InterstitialController {
       _showing = false;
     }
   }
+
+  bool _skipNext = false;
+
+  /// The result screen on display was paid for with a rewarded ad (double
+  /// XP): leaving it shows no full-screen ad.
+  void skipNextCompletion() => _skipNext = true;
 
   /// Records that the user watched a rewarded ad for [key], so the result
   /// screen of that item shows no full-screen ad. Also restarts the count.

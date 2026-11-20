@@ -125,7 +125,7 @@ class _AiChatSheetState extends ConsumerState<AiChatSheet> {
           builder: (context) => AlertDialog(
             title: Text('Kuota Tanya AI hari ini habis'.localized(context)),
             content: Text(
-              'Coba lagi besok, atau buka Lifetime Access untuk bertanya tanpa iklan.'
+              'Coba lagi besok, atau buka Lifetime Access untuk lebih banyak pertanyaan setiap hari.'
                   .localized(context),
             ),
             actions: [
@@ -144,6 +144,21 @@ class _AiChatSheetState extends ConsumerState<AiChatSheet> {
         if (upgrade ?? false) {
           if (!mounted) return;
           unawaited(context.push('/premium'));
+        }
+      case AiNotice.lifetimeAdOffer:
+        final messages = ref
+            .read(aiChatControllerProvider(widget.chatKey))
+            .messagesPerAd;
+        final accepted = await showModalBottomSheet<bool>(
+          context: context,
+          showDragHandle: true,
+          builder: (context) => _AdOfferSheet(lifetimeMessages: messages),
+        );
+        if (!mounted) return;
+        if (accepted ?? false) {
+          await _controller.watchAdAndSend(lifetime: true);
+        } else {
+          _controller.declineAd();
         }
       case AiNotice.premiumLimit:
         _controller.dismissNotice();
@@ -504,7 +519,10 @@ class _Composer extends StatelessWidget {
 }
 
 class _AdOfferSheet extends StatelessWidget {
-  const _AdOfferSheet();
+  const _AdOfferSheet({this.lifetimeMessages = 0});
+
+  /// For a Lifetime account: the messages one ad adds. Zero for free plans.
+  final int lifetimeMessages;
 
   @override
   Widget build(BuildContext context) {
@@ -523,15 +541,19 @@ class _AdOfferSheet extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'Kuota gratis hari ini sudah habis'.localized(context),
+              lifetimeMessages > 0
+                  ? 'Pesan Tanya AI hari ini sudah terpakai'.localized(context)
+                  : 'Kuota gratis hari ini sudah habis'.localized(context),
               style: theme.textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
             Text(
-              'Tonton iklan singkat untuk mengirim pertanyaan ini.'.localized(
-                context,
-              ),
+              lifetimeMessages > 0
+                  ? '${'Tonton iklan singkat untuk menambah'.localized(context)} $lifetimeMessages ${'pesan. Pertanyaan ini langsung dikirim.'.localized(context)}'
+                  : 'Tonton iklan singkat untuk mengirim pertanyaan ini.'
+                        .localized(context),
+              key: const ValueKey('ai-ad-offer-text'),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),

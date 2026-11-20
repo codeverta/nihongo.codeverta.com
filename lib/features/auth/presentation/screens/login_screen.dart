@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/auth/session_expiration.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/billing/presentation/lifetime_offer.dart';
 import 'package:nihongo_master/shared/presentation/widgets/brand_artwork.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -34,27 +37,30 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final success = await ref
         .read(authControllerProvider.notifier)
         .loginWithEmail(_emailController.text, _passwordController.text);
-    if (success && mounted) _finish(true);
+    if (success && mounted) await _signedIn();
   }
 
   Future<void> _loginWithGoogle() async {
     final success = await ref
         .read(authControllerProvider.notifier)
         .loginWithGoogle();
-    if (success && mounted) _finish(true);
+    if (success && mounted) await _signedIn();
+  }
+
+  /// A successful login lands on the page that asked for it (or Beranda),
+  /// with the skippable Lifetime screen first for accounts without Lifetime.
+  /// Popping here can return to a premium gate or another stale route and
+  /// leave the user feeling like login did not finish.
+  Future<void> _signedIn() async {
+    final route = await ref
+        .read(lifetimeOfferProvider)
+        .routeAfterLogin(widget.from);
+    if (mounted) context.go(route);
   }
 
   void _finish(bool authenticated) {
-    // A successful login should always land on Beranda. Popping here can
-    // return to a premium gate or another stale route and leave the user
-    // feeling like login did not finish.
     if (authenticated) {
-      final target = widget.from;
-      context.go(
-        target != null && target.startsWith('/') && !target.startsWith('//')
-            ? target
-            : '/home',
-      );
+      unawaited(_signedIn());
       return;
     }
 

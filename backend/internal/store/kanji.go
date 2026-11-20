@@ -161,7 +161,8 @@ func (s *MemoryStore) CompleteKanjiAttempt(userID, attemptID string) (domain.Kan
 	progress := domain.LessonProgress{LessonID: state.Attempt.LessonID, Completion: best, Completed: previous.Completed || passed, LastPosition: len(state.Answers) * 60, UpdatedAt: time.Now().UTC()}
 	now := s.gamificationNow().UTC()
 	progress.UpdatedAt = now
-	if err := s.recordStudyLocked(userID, studyEvent{ID: "kanji:" + attemptID, Kind: "lesson", Subject: "kanji", LessonID: state.Attempt.LessonID, Score: score, Answered: len(state.Answers), Seconds: int(now.Sub(state.Attempt.StartedAt).Seconds()), At: now, Progress: &progress}); err != nil {
+	gain, err := s.recordStudyLocked(userID, studyEvent{ID: "kanji:" + attemptID, Kind: "lesson", Subject: "kanji", LessonID: state.Attempt.LessonID, Score: score, Answered: len(state.Answers), Seconds: int(now.Sub(state.Attempt.StartedAt).Seconds()), At: now, Progress: &progress})
+	if err != nil {
 		return domain.KanjiAttemptResult{}, err
 	}
 	level := ""
@@ -182,6 +183,7 @@ func (s *MemoryStore) CompleteKanjiAttempt(userID, attemptID string) (domain.Kan
 		}
 	}
 	result := domain.KanjiAttemptResult{AttemptID: attemptID, LessonID: state.Attempt.LessonID, Score: score, Correct: correct, Total: len(state.Answers), Passed: passed, BestScore: best, Progress: completed * 100 / total, CanRetry: true}
+	result.XP = &gain
 	state.Result = &result
 	return result, nil
 }
