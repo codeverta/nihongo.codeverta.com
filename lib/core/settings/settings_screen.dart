@@ -8,6 +8,7 @@ import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/localization/app_language.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/leaderboard/data/leaderboard_repository.dart';
 
 /// Pusat pengaturan. Aksi akun yang berisiko (logout dan hapus akun) sengaja
 /// ditaruh di sini, terpisah dari menu profil, agar tidak tertekan tanpa sengaja.
@@ -48,6 +49,10 @@ class SettingsScreen extends ConsumerWidget {
               ],
             ),
           ),
+          if (user != null) ...[
+            const SizedBox(height: 12),
+            const Card(child: _LeaderboardVisibilitySwitch()),
+          ],
           const SizedBox(height: 12),
           const Card(child: _AnalyticsSwitch()),
           const _AdPrivacyTile(),
@@ -218,10 +223,72 @@ class _AnalyticsSwitchState extends ConsumerState<_AnalyticsSwitch> {
       value: _enabled,
       onChanged: (value) {
         setState(() => _enabled = value);
-        unawaited(
-          ref.read(analyticsServiceProvider).setEnabled(value: value),
-        );
+        unawaited(ref.read(analyticsServiceProvider).setEnabled(value: value));
       },
+    );
+  }
+}
+
+/// "Sembunyikan saya dari leaderboard". Default is shown; the value comes
+/// from `/me/leaderboard` and is saved on the server.
+class _LeaderboardVisibilitySwitch extends ConsumerStatefulWidget {
+  const _LeaderboardVisibilitySwitch();
+
+  @override
+  ConsumerState<_LeaderboardVisibilitySwitch> createState() =>
+      _LeaderboardVisibilitySwitchState();
+}
+
+class _LeaderboardVisibilitySwitchState
+    extends ConsumerState<_LeaderboardVisibilitySwitch> {
+  bool? _pending;
+  bool _saving = false;
+
+  Future<void> _save(bool hidden) async {
+    setState(() {
+      _pending = hidden;
+      _saving = true;
+    });
+    try {
+      await ref.read(leaderboardRepositoryProvider).setHidden(hidden: hidden);
+      ref.invalidate(myLeaderboardProvider);
+    } on Object {
+      if (!mounted) return;
+      setState(() => _pending = null);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Pengaturan leaderboard belum tersimpan. Periksa koneksi lalu coba lagi.'
+                .localized(context),
+          ),
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _saving = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final mine = ref.watch(myLeaderboardProvider);
+    final hidden = _pending ?? mine.valueOrNull?.data.hidden ?? false;
+    final ready = mine.hasValue && mine.valueOrNull != null && !_saving;
+    return SwitchListTile.adaptive(
+      key: const Key('settings-leaderboard-hidden'),
+      secondary: Icon(
+        Icons.emoji_events_outlined,
+        color: Theme.of(context).colorScheme.primary,
+      ),
+      title: Text(
+        'Sembunyikan saya dari leaderboard'.localized(context),
+        style: const TextStyle(fontWeight: FontWeight.w600),
+      ),
+      subtitle: Text(
+        'Nama dan XP-mu tidak tampil di leaderboard. XP dan level tetap dihitung.'
+            .localized(context),
+      ),
+      value: hidden,
+      onChanged: ready ? _save : null,
     );
   }
 }

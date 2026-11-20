@@ -25,6 +25,7 @@ import 'package:nihongo_master/features/exam/presentation/screens/jft_intro_scre
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_attempt_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/simulation_intro_screen.dart';
 import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
+import 'package:nihongo_master/features/leaderboard/presentation/leaderboard_screen.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_course_screen.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_course_screen.dart';
@@ -265,6 +266,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/achievements',
         builder: (context, state) => const AchievementsScreen(),
+      ),
+      GoRoute(
+        path: '/leaderboard',
+        builder: (context, state) => const LeaderboardScreen(),
       ),
       GoRoute(
         path: AppRoutes.splashPath,
