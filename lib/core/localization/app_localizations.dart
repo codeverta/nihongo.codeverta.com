@@ -5,6 +5,7 @@ import 'package:nihongo_master/core/localization/anki_english_part_a.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_b.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_c.dart';
 import 'package:nihongo_master/core/localization/ui_english_ai_chat.dart';
+import 'package:nihongo_master/core/localization/ui_english_kana.dart';
 import 'package:nihongo_master/core/localization/ui_english_leaderboard.dart';
 import 'package:nihongo_master/core/localization/ui_english_level_list.dart';
 import 'package:nihongo_master/core/localization/ui_english_notification_prompt.dart';
@@ -307,7 +308,8 @@ class AppLocalizations {
         uiEnglishLeaderboard[source] ??
         uiEnglishNotificationPrompt[source] ??
         uiEnglishLevelList[source] ??
-        uiEnglishUnlock[source];
+        uiEnglishUnlock[source] ??
+        uiEnglishKana[source];
     if (exact != null) return exact;
 
     final learningCourseStats = RegExp(

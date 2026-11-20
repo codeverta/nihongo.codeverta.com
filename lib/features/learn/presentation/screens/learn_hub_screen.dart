@@ -90,6 +90,13 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                       .localized(context),
                 ),
               ),
+              const SizedBox(height: 18),
+              StaggeredEntrance(
+                index: 1,
+                child: _KanaCard(
+                  onPressed: () => context.push(AppRoutes.kanaPath),
+                ),
+              ),
               const SizedBox(height: 22),
               StaggeredEntrance(
                 index: 1,
@@ -107,8 +114,7 @@ class _LearnHubScreenState extends ConsumerState<LearnHubScreen> {
                   levels: _levels,
                   selected: _selectedLevel,
                   lockedFrom: premium ? null : 2,
-                  onSelected: (index) =>
-                      setState(() => _selectedLevel = index),
+                  onSelected: (index) => setState(() => _selectedLevel = index),
                 ),
               ),
               const SizedBox(height: 18),
@@ -275,6 +281,68 @@ class _LevelSelector extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+/// Pintu masuk huruf dasar untuk pemula mutlak; gratis dan bisa offline.
+class _KanaCard extends StatelessWidget {
+  const _KanaCard({required this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Semantics(
+      button: true,
+      child: Material(
+        color: scheme.surfaceContainerHigh,
+        borderRadius: BorderRadius.circular(22),
+        child: InkWell(
+          key: const Key('learn-kana-card'),
+          borderRadius: BorderRadius.circular(22),
+          onTap: onPressed,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Text(
+                  'あア',
+                  style: AppTypography.japanese(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700,
+                    color: scheme.primary,
+                    height: 1.1,
+                  ),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Hiragana & Katakana',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Mulai dari sini: tabel huruf, urutan goresan & latihan menulis'
+                            .localized(context),
+                        style: TextStyle(color: scheme.onSurfaceVariant),
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.chevron_right_rounded),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -525,10 +593,7 @@ class _SubjectTile extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             if (locked)
-              Icon(
-                Icons.lock_outline,
-                color: SakuraColors.of(context).goldText,
-              )
+              Icon(Icons.lock_outline, color: SakuraColors.of(context).goldText)
             else if (onTap == null)
               Chip(label: Text('Segera'.localized(context)))
             else

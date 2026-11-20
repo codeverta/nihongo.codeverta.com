@@ -103,6 +103,16 @@ class AttributionsScreen extends StatelessWidget {
             ),
           ],
         ),
+        const _SourceGroup(
+          title: 'Hiragana & katakana',
+          sources: [
+            (
+              'KanjiVG',
+              'Data urutan goresan hiragana dan katakana © Ulrich Apel, lisensi CC BY-SA 3.0. Diubah menjadi titik-titik goresan oleh Nihongo Master; data turunannya dibagikan dengan lisensi yang sama.',
+              'https://kanjivg.tagaini.net/',
+            ),
+          ],
+        ),
         _SourceGroup(
           title: 'Anki & flashcards',
           sources: [

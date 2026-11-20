@@ -28,6 +28,10 @@ import 'package:nihongo_master/features/jobs/presentation/jobs_screens.dart';
 import 'package:nihongo_master/features/leaderboard/presentation/leaderboard_screen.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_course_screen.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_lesson_screen.dart';
+import 'package:nihongo_master/features/learn/kana/domain/kana_models.dart';
+import 'package:nihongo_master/features/learn/kana/presentation/kana_chart_screen.dart';
+import 'package:nihongo_master/features/learn/kana/presentation/kana_detail_screen.dart';
+import 'package:nihongo_master/features/learn/kana/presentation/kana_practice_screen.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_course_screen.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/screens/reading_course_screen.dart';
@@ -70,6 +74,11 @@ abstract final class AppRoutes {
   static const readingLessonRoute = '/learn/reading/lessons/:lessonId';
   static String readingLessonPath(String id) =>
       '/learn/reading/lessons/${Uri.encodeComponent(id)}';
+  static const kanaPath = '/learn/kana';
+  static String kanaCharPath(String char) =>
+      '/learn/kana/char/${Uri.encodeComponent(char)}';
+  static String kanaPracticePath(String char) =>
+      '${kanaCharPath(char)}/practice';
   static const kanjiPath = '/learn/kanji';
   static const kanjiLessonRoute = '/learn/kanji/lessons/:lessonId';
   static String kanjiLessonPath(String id) =>
@@ -458,6 +467,28 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             ReadingLessonScreen(lessonId: state.pathParameters['lessonId']!),
       ),
       GoRoute(
+        path: AppRoutes.kanaPath,
+        builder: (context, state) => KanaChartScreen(
+          script: state.uri.queryParameters['script'] == 'katakana'
+              ? KanaScript.katakana
+              : KanaScript.hiragana,
+        ),
+      ),
+      GoRoute(
+        path: '/learn/kana/char/:char',
+        builder: (context, state) => KanaDetailScreen(
+          key: ValueKey(state.pathParameters['char']),
+          char: state.pathParameters['char']!,
+        ),
+      ),
+      GoRoute(
+        path: '/learn/kana/char/:char/practice',
+        builder: (context, state) => KanaPracticeScreen(
+          key: ValueKey(state.pathParameters['char']),
+          char: state.pathParameters['char']!,
+        ),
+      ),
+      GoRoute(
         path: AppRoutes.kanjiPath,
         builder: (context, state) => KanjiCourseScreen(
           level: state.uri.queryParameters['level'] ?? 'N5',
@@ -576,6 +607,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 /// Learning, exam and SSW practice pages need a signed-in account (no guests).
 bool requiresLogin(Uri uri) {
   final path = uri.path.toLowerCase();
+  // The kana chart works offline and on-device only, so guests can use it.
+  if (path == '/learn/kana' || path.startsWith('/learn/kana/')) return false;
   if (path.startsWith('/learn/') || path.startsWith('/exams/')) return true;
   if (path.startsWith('/ssw/') && path.endsWith('/practice')) return true;
   return path.startsWith('/anki/decks/') && path.endsWith('/study');
