@@ -257,7 +257,7 @@ func (s *MemoryStore) persistXPLocked(userID string, next *gamificationState, aw
 // of date (written by an older server) are backfilled once.
 func (s *MemoryStore) loadLeaderboard(orm, writer *gorm.DB, records []database.GamificationUser, states map[string]*gamificationState) (*leaderboardState, error) {
 	lb := newLeaderboardState()
-	if err := database.Migrate(s.ormDB, &database.XPEvent{}, &database.WeeklyScore{}, &database.WeeklyResult{}, &database.LeaderboardFlag{}, &database.LeaderboardJob{}); err != nil {
+	if err := database.Migrate(orm, &database.XPEvent{}, &database.WeeklyScore{}, &database.WeeklyResult{}, &database.LeaderboardFlag{}, &database.LeaderboardJob{}); err != nil {
 		return nil, fmt.Errorf("initialize leaderboard schema: %w", err)
 	}
 	now := s.gamificationNow().UTC()
@@ -636,6 +636,7 @@ func (s *MemoryStore) CloseLeaderboardWeeks(ctx context.Context) error {
 	}
 	owner := uuid.NewString()
 	var job database.LeaderboardJob
+	notDue := false
 	err := s.ormDB.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
 		err := tx.Clauses(clause.Locking{Strength: "UPDATE"}).First(&job, "id = ?", leaderboardJobID).Error
 		if errors.Is(err, gorm.ErrRecordNotFound) {
@@ -644,7 +645,9 @@ func (s *MemoryStore) CloseLeaderboardWeeks(ctx context.Context) error {
 			if err := tx.Clauses(clause.OnConflict{DoNothing: true}).Create(&job).Error; err != nil {
 				return err
 			}
-			return errLeaderboardBusy
+			// Commit the new schedule row; returning an error here would roll it back.
+			notDue = true
+			return nil
 		}
 		if err != nil {
 			return err
@@ -655,7 +658,7 @@ func (s *MemoryStore) CloseLeaderboardWeeks(ctx context.Context) error {
 		until := now.Add(10 * time.Minute)
 		return tx.Model(&job).Updates(map[string]any{"lease_owner": owner, "lease_until": until}).Error
 	})
-	if errors.Is(err, errLeaderboardBusy) {
+	if errors.Is(err, errLeaderboardBusy) || (err == nil && notDue) {
 		return nil
 	}
 	if err != nil {
