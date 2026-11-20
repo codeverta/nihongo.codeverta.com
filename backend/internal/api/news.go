@@ -141,6 +141,9 @@ func (s *Server) newsDetail(w http.ResponseWriter, r *http.Request, admin bool) 
 		newsError(w, err)
 		return
 	}
+	if !admin && s.gateNews(w, r, a.ID) {
+		return
+	}
 	w.Header().Set("Cache-Control", "no-store")
 	writeData(w, 200, a)
 }

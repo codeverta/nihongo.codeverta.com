@@ -7,6 +7,8 @@ import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
 import 'package:nihongo_master/features/learn/level_list/presentation/grammar_level_list.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_repository.dart';
 
 class GrammarCourseScreen extends ConsumerStatefulWidget {
   const GrammarCourseScreen({this.initialLevel = 'N5', super.key});
@@ -307,7 +309,10 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                                   .localized(context),
                             ),
                             isThreeLine: true,
-                            trailing: const Icon(Icons.chevron_right_rounded),
+                            trailing: UnlockLockIcon(
+                              target: UnlockTarget('grammar', lesson.id),
+                              lockable: isLockableLevel(lesson.level),
+                            ),
                           ),
                         ),
                         const SizedBox(height: 10),

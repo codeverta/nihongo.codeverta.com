@@ -13,6 +13,7 @@ import (
 	"unicode/utf8"
 
 	"nihongo-master-backend/internal/aichat"
+	"nihongo-master-backend/internal/unlock"
 	"nihongo-master-backend/internal/diagnostics"
 	"nihongo-master-backend/internal/domain"
 	"nihongo-master-backend/internal/store"
@@ -124,11 +125,18 @@ func (s *Server) aiLessonAccess(w http.ResponseWriter, r *http.Request, lessonTy
 		writeError(w, http.StatusUnprocessableEntity, "invalid_lesson", "jenis atau ID pelajaran tidak valid")
 		return false
 	}
-	if s.store.PremiumRequest(aiLessonPath(lessonType, lessonID), "", lessonID, "") && !s.aiIsPremium(r, userID(r)) {
+	if s.store.PremiumRequest(aiLessonPath(lessonType, lessonID), "", lessonID, "") && !s.aiIsPremium(r, userID(r)) && !s.aiLessonUnlocked(r, lessonType, lessonID) {
 		writeError(w, http.StatusPaymentRequired, "premium_required", "Materi ini memerlukan Lifetime Access.")
 		return false
 	}
 	return true
+}
+
+// aiLessonUnlocked reports whether the account opened this lesson with an ad,
+// so its AI tutor opens with it.
+func (s *Server) aiLessonUnlocked(r *http.Request, lessonType, lessonID string) bool {
+	key, ok := unlock.Key(unlock.Kind(lessonType), lessonID)
+	return ok && s.unlocks != nil && s.unlocks.svc.Allowed(r.Context(), userID(r), key)
 }
 
 func (s *Server) aiChat(w http.ResponseWriter, r *http.Request) {

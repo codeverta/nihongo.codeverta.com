@@ -11,6 +11,9 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/controller
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_study_view.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_ruby_text.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
 
 class VocabularyLessonScreen extends ConsumerWidget {
   const VocabularyLessonScreen({required this.lessonId, super.key});
@@ -39,14 +42,20 @@ class VocabularyLessonScreen extends ConsumerWidget {
           submit: controller.submitAnswer,
           next: controller.continueQuiz,
         ),
-        VocabularyStage.result => _ResultStage(
-          result: state.result!,
-          error: state.error,
-          busy: state.submitting,
-          retry: controller.retry,
-          finish: context.pop,
+        VocabularyStage.result => CompletionAdBoundary(
+          kind: CompletionKind.lessons,
+          completionKey: 'vocabulary:$lessonId',
+          child: _ResultStage(
+            result: state.result!,
+            error: state.error,
+            busy: state.submitting,
+            retry: controller.retry,
+            finish: context.pop,
+          ),
         ),
       };
+    } else if (LockedContentException.from(lesson.error) case final locked?) {
+      body = LockedContentView(locked: locked, onUnlocked: controller.load);
     } else if (lesson.hasError) {
       body = _LessonError(
         message: lesson.error.toString(),

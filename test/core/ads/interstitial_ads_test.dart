@@ -66,16 +66,6 @@ void main() {
     });
   });
 
-  test('never covers startup, sign-in or the purchase flow', () {
-    expect(interstitialAllowedOn('/'), isFalse);
-    expect(interstitialAllowedOn('/onboarding'), isFalse);
-    expect(interstitialAllowedOn('/login'), isFalse);
-    expect(interstitialAllowedOn('/premium'), isFalse);
-    expect(interstitialAllowedOn('/premium?from=/jobs/1'), isFalse);
-    expect(interstitialAllowedOn('/learn/grammar/lessons/:lessonId'), isTrue);
-    expect(interstitialAllowedOn('/tab/dictionary'), isTrue);
-  });
-
   group('InterstitialController', () {
     late DateTime now;
     late _FakeGateway gateway;
@@ -102,54 +92,98 @@ void main() {
     }
 
     test(
-      'shows at the first natural break after 10 minutes, then waits again',
+      'loads on the result screen and shows when the user leaves it',
       () async {
         final (_, controller) = await setUp(_config);
         now = now.add(const Duration(minutes: 5));
-        await controller.onNaturalBreak('/learn');
+        controller.prepareAfterCompletion(CompletionKind.lessons);
         expect(gateway.loads, 0, reason: 'too early to even load');
 
         now = now.add(const Duration(minutes: 4, seconds: 30));
-        await controller.onNaturalBreak('/learn');
+        controller.prepareAfterCompletion(CompletionKind.lessons);
         expect(gateway.loads, 1, reason: 'preloads a minute early');
-        expect(gateway.shows, 0);
 
         now = now.add(const Duration(minutes: 1));
-        await controller.onNaturalBreak('/tab/dictionary');
+        await controller.showAfterCompletion(CompletionKind.lessons);
         expect(gateway.shows, 1);
 
         // The count restarts after the ad.
         now = now.add(const Duration(minutes: 3));
-        await controller.onNaturalBreak('/learn');
+        gateway.loaded = true;
+        await controller.showAfterCompletion(CompletionKind.exams);
         expect(gateway.shows, 1);
       },
     );
 
-    test('waits for an allowed screen even when due', () async {
-      final (_, controller) = await setUp(_config);
-      gateway.loaded = true;
-      now = now.add(const Duration(minutes: 11));
-      await controller.onNaturalBreak('/premium');
-      await controller.onNaturalBreak('/login');
-      expect(gateway.shows, 0);
-      await controller.onNaturalBreak('/home');
-      expect(gateway.shows, 1);
-    });
+    test(
+      'an ad that did not load in time is loaded for the next completion',
+      () async {
+        final (_, controller) = await setUp(_config);
+        now = now.add(const Duration(minutes: 11));
+        await controller.showAfterCompletion(CompletionKind.anki);
+        expect(gateway.shows, 0, reason: 'never makes the user wait');
+        expect(gateway.loads, 1);
+        await controller.showAfterCompletion(CompletionKind.anki);
+        expect(gateway.shows, 1);
+      },
+    );
+
+    test(
+      'a completion paid for with a rewarded ad gets no full-screen ad',
+      () async {
+        final (_, controller) = await setUp(_config);
+        controller.markPaidWithAd('grammar:grammar-n3-01');
+        gateway.loaded = true;
+        now = now.add(const Duration(minutes: 30));
+        await controller.showAfterCompletion(
+          CompletionKind.lessons,
+          key: 'grammar:grammar-n3-01',
+        );
+        expect(gateway.shows, 0);
+        // Only that one completion is skipped.
+        await controller.showAfterCompletion(
+          CompletionKind.lessons,
+          key: 'grammar:grammar-n3-01',
+        );
+        expect(gateway.shows, 1);
+      },
+    );
 
     test('a rewarded ad restarts the count', () async {
       final (_, controller) = await setUp(_config);
       gateway.loaded = true;
       now = now.add(const Duration(minutes: 11));
       controller.markFullScreenAdShown();
-      await controller.onNaturalBreak('/home');
+      await controller.showAfterCompletion(CompletionKind.lessons);
       expect(gateway.shows, 0);
+    });
+
+    test('each completion kind has its own switch', () async {
+      final (_, controller) = await setUp(
+        const AdsConfig(
+          enabled: true,
+          interstitial: AdPlacementConfig(
+            enabled: true,
+            unitId: testInterstitialAdUnitId,
+            every: 10,
+          ),
+          interstitialKinds: CompletionKindsConfig(anki: false),
+        ),
+      );
+      gateway.loaded = true;
+      now = now.add(const Duration(minutes: 30));
+      await controller.showAfterCompletion(CompletionKind.anki);
+      expect(gateway.shows, 0);
+      await controller.showAfterCompletion(CompletionKind.practice);
+      expect(gateway.shows, 1);
     });
 
     test('Premium and Lifetime users (no ads config) never see one', () async {
       final (_, controller) = await setUp(null);
       gateway.loaded = true;
       now = now.add(const Duration(hours: 2));
-      await controller.onNaturalBreak('/home');
+      controller.prepareAfterCompletion(CompletionKind.lessons);
+      await controller.showAfterCompletion(CompletionKind.lessons);
       expect(gateway.shows, 0);
       expect(gateway.loads, 0);
     });
@@ -166,7 +200,7 @@ void main() {
       );
       gateway.loaded = true;
       now = now.add(const Duration(minutes: 30));
-      await controller.onNaturalBreak('/home');
+      await controller.showAfterCompletion(CompletionKind.lessons);
       expect(gateway.shows, 0);
     });
 
@@ -183,10 +217,10 @@ void main() {
       );
       gateway.loaded = true;
       now = now.add(const Duration(minutes: 15));
-      await controller.onNaturalBreak('/home');
+      await controller.showAfterCompletion(CompletionKind.exams);
       expect(gateway.shows, 0);
       now = now.add(const Duration(minutes: 5));
-      await controller.onNaturalBreak('/home');
+      await controller.showAfterCompletion(CompletionKind.exams);
       expect(gateway.shows, 1);
     });
 
@@ -197,11 +231,72 @@ void main() {
       controller.pacer.pause(now);
       now = now.add(const Duration(hours: 1));
       controller.pacer.resume(now);
-      await controller.onNaturalBreak('/home');
+      await controller.showAfterCompletion(CompletionKind.lessons);
       expect(gateway.shows, 0);
       expect(WidgetsBinding.instance, isNotNull);
     });
   });
+
+  test(
+    'a result screen torn down with the app never shows an ad afterwards',
+    () async {
+      final gateway = _FakeGateway()..loaded = true;
+      final container = ProviderContainer(
+        overrides: [
+          adsReadyProvider.overrideWith((ref) async => _config),
+          interstitialAdGatewayProvider.overrideWithValue(gateway),
+        ],
+      );
+      await container.read(adsReadyProvider.future);
+      final controller = container.read(interstitialControllerProvider);
+      container.dispose();
+      await controller.showAfterCompletion(CompletionKind.lessons);
+      controller.prepareAfterCompletion(CompletionKind.lessons);
+      expect(gateway.shows, 0);
+    },
+  );
+
+  test(
+    'completion switches, new placements and the Anki threshold are parsed',
+    () {
+      final config = AdsConfig.fromJson(const {
+        'enabled': true,
+        'interstitialKinds': {'lessons': true, 'exams': false},
+        'examTabBanner': {
+          'enabled': true,
+          'unitId': 'ca-app-pub-1234567890123456/1234567893',
+        },
+        'practiceResultBanner': {
+          'enabled': true,
+          'unitId': 'ca-app-pub-1234567890123456/1234567894',
+        },
+        'newsArticleNative': {
+          'enabled': true,
+          'unitId': 'ca-app-pub-1234567890123456/1234567895',
+        },
+        'ankiSessionMinCards': 15,
+      });
+      expect(config.interstitialKinds.allows(CompletionKind.lessons), isTrue);
+      expect(config.interstitialKinds.allows(CompletionKind.exams), isFalse);
+      expect(
+        config.interstitialKinds.allows(CompletionKind.anki),
+        isTrue,
+        reason: 'missing means on',
+      );
+      expect(config.examTabBanner.usable, isTrue);
+      expect(config.ankiSessionMinCards, 15);
+      final debug = config.withTestUnits();
+      expect(debug.examTabBanner.unitId, testBannerAdUnitId);
+      expect(debug.practiceResultBanner.unitId, testBannerAdUnitId);
+      expect(debug.newsArticleNative.unitId, testNativeAdUnitId);
+      expect(
+        AdsConfig.fromJson(const {
+          'ankiSessionMinCards': 0,
+        }).ankiSessionMinCards,
+        defaultAnkiSessionMinCards,
+      );
+    },
+  );
 
   test('new placements are parsed and swapped for test units', () {
     final config = AdsConfig.fromJson(const {

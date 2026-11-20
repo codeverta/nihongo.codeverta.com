@@ -200,6 +200,52 @@ func PremiumLevel(level string) bool {
 	return false
 }
 
+// LessonRef identifies the study lesson a request targets, either from its
+// lesson ID or from the attempt that belongs to one. ok is false for anything
+// that is not a grammar, kanji, reading or vocabulary lesson.
+func (s *MemoryStore) LessonRef(lessonID, attemptID string) (kind, id string, ok bool) {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	if lessonID == "" && attemptID != "" {
+		switch {
+		case s.grammarAttempts[attemptID] != nil:
+			lessonID = s.grammarAttempts[attemptID].Attempt.LessonID
+		case s.kanjiAttempts[attemptID] != nil:
+			lessonID = s.kanjiAttempts[attemptID].Attempt.LessonID
+		case s.readingAttempts[attemptID] != nil:
+			lessonID = s.readingAttempts[attemptID].Attempt.LessonID
+		case s.vocabAttempts[attemptID] != nil:
+			lessonID = s.vocabAttempts[attemptID].attempt.LessonID
+		}
+	}
+	if lessonID == "" {
+		return "", "", false
+	}
+	for _, l := range s.grammar {
+		if l.ID == lessonID {
+			return "grammar", lessonID, true
+		}
+	}
+	for _, l := range s.kanji {
+		if l.ID == lessonID {
+			return "kanji", lessonID, true
+		}
+	}
+	for _, l := range s.reading {
+		if l.ID == lessonID {
+			return "reading", lessonID, true
+		}
+	}
+	for _, level := range s.vocabulary {
+		for _, lesson := range level.Lessons {
+			if lesson.ID == lessonID {
+				return "vocabulary", lessonID, true
+			}
+		}
+	}
+	return "", "", false
+}
+
 func (s *MemoryStore) ExamRequiresPremium(id string) bool {
 	if openLearningAccess {
 		return false
@@ -230,28 +276,9 @@ func (s *MemoryStore) PremiumRequest(path, level, lessonID, attemptID string) bo
 	if strings.Contains(path, "/ssw/") {
 		return true
 	}
+	// Level catalogs only list lesson titles and progress, never lesson
+	// content, so they stay open: a free account has to see what it can unlock.
 	if strings.Contains(path, "/course") {
-		if strings.Contains(path, "/grammar/") {
-			for _, l := range s.grammar {
-				if l.Level == level {
-					return PremiumLevel(level)
-				}
-			}
-		}
-		if strings.Contains(path, "/kanji/") {
-			for _, l := range s.kanji {
-				if l.Level == level {
-					return PremiumLevel(level)
-				}
-			}
-		}
-		if strings.Contains(path, "/reading/") {
-			for _, l := range s.reading {
-				if l.Level == level {
-					return PremiumLevel(level)
-				}
-			}
-		}
 		return false
 	}
 	for _, l := range s.grammar {

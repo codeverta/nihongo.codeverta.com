@@ -52,6 +52,7 @@ type Server struct {
 	appUpdates                *AppUpdateStore
 	ads                       *AdsStore
 	ai                        *aiChatService
+	unlocks                   *unlockAPI
 	prefLiving                *prefinfo.Store
 	notifications             *NotificationStore
 	pricing                   *PricingStore
@@ -105,6 +106,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerAppUpdates(mux)
 	s.registerAds(mux)
 	s.registerAIChat(mux)
+	s.registerUnlocks(mux)
 	s.registerLearningLists(mux)
 	s.registerNotifications(mux)
 	mux.HandleFunc("GET /v1/simulation/{level}", s.requireAuth(s.simulationOverview))
@@ -379,6 +381,9 @@ func (s *Server) startExam(w http.ResponseWriter, r *http.Request) {
 	}
 	if err := decodeJSON(r, &input); err != nil {
 		writeError(w, http.StatusBadRequest, "invalid_json", err.Error())
+		return
+	}
+	if s.startSimulationWithCredit(w, r, input.ExamID) {
 		return
 	}
 	if s.billing != nil && s.store.ExamRequiresPremium(input.ExamID) {

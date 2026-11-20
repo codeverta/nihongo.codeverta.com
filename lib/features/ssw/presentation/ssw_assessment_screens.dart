@@ -12,6 +12,9 @@ import 'package:nihongo_master/features/exam/data/simulation_repository.dart';
 import 'package:nihongo_master/features/exam/presentation/widgets/online_exam_gate.dart';
 import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 
 bool sswAvailable(String sector) => sswActiveSectorIds.contains(sector);
 
@@ -720,6 +723,11 @@ class _PracticeState extends ConsumerState<SswPracticeScreen> {
                               .localized(context),
                         ),
                       ),
+                    const CompletionAdBoundary(kind: CompletionKind.practice),
+                    const SizedBox(height: 16),
+                    const AdBannerSlot(
+                      placement: BannerAdPlacement.practiceResult,
+                    ),
                     const SizedBox(height: 20),
                     FilledButton(
                       onPressed: () => reset(module),

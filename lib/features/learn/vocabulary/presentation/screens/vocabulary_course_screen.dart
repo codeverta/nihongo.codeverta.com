@@ -9,6 +9,8 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/controller
 import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vocabulary_art.dart';
 import 'package:nihongo_master/features/anki/presentation/course_anki_button.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_repository.dart';
 
 class VocabularyCourseScreen extends ConsumerStatefulWidget {
   const VocabularyCourseScreen({this.initialLevel = 'N5', super.key});
@@ -379,13 +381,17 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
                                 ),
                               ),
                               const SizedBox(width: 6),
-                              Icon(
-                                lesson.completed
-                                    ? Icons.check_circle_rounded
-                                    : Icons.chevron_right_rounded,
-                                color: lesson.completed
-                                    ? const Color(0xFF167C67)
-                                    : colors.secondary,
+                              UnlockLockIcon(
+                                target: UnlockTarget('vocabulary', lesson.id),
+                                lockable: isLockableLevel(level.level),
+                                unlocked: Icon(
+                                  lesson.completed
+                                      ? Icons.check_circle_rounded
+                                      : Icons.chevron_right_rounded,
+                                  color: lesson.completed
+                                      ? const Color(0xFF167C67)
+                                      : colors.secondary,
+                                ),
                               ),
                             ],
                           ),

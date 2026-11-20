@@ -12,6 +12,8 @@ import 'package:nihongo_master/features/dictionary/domain/dictionary_models.dart
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_details.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
 import 'package:nihongo_master/features/news/presentation/furigana_text.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_repository.dart';
 
 const newsFuriganaPreferenceKey = legacyNewsFuriganaPreferenceKey;
 
@@ -1049,8 +1051,15 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
           .watch(provider)
           .when(
             loading: () => const Center(child: CircularProgressIndicator()),
+            // A locked article offers the unlock sheet; a guest is asked
+            // to sign in first, because unlocks belong to an account.
             error: (e, s) =>
-                _NewsError(onRetry: () => ref.invalidate(provider)),
+                lockedContentView(e, () => ref.invalidate(provider)) ??
+                (isLoginRequired(e)
+                    ? _NewsLoginPrompt(
+                        onSignedIn: () => ref.invalidate(provider),
+                      )
+                    : _NewsError(onRetry: () => ref.invalidate(provider))),
             data: (article) => ListView(
               padding: const EdgeInsets.fromLTRB(22, 8, 22, 40),
               children: [
@@ -1123,6 +1132,14 @@ class _NewsReaderScreenState extends ConsumerState<NewsReaderScreen> {
                       onLookup: (tokens) => _lookup(context, tokens),
                     ),
                   ),
+                // One native ad once the article is read, never inside it.
+                // An article opened with a rewarded ad gets none.
+                if (!(ref
+                        .watch(unlockStatusProvider)
+                        .valueOrNull
+                        ?.isOpen(UnlockTarget('news', widget.id)) ??
+                    false))
+                  const NativeAdSlot(placement: NativeAdPlacement.newsArticle),
                 const Divider(height: 30),
                 Text(
                   'Sumber & kredit'.localized(context),
@@ -1327,6 +1344,42 @@ class _NewsDictionaryState extends ConsumerState<_NewsDictionary> {
         ),
       ],
     ],
+  );
+}
+
+class _NewsLoginPrompt extends StatelessWidget {
+  const _NewsLoginPrompt({required this.onSignedIn});
+  final VoidCallback onSignedIn;
+
+  @override
+  Widget build(BuildContext context) => Center(
+    child: Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.lock_outline_rounded,
+            size: 44,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          const SizedBox(height: 12),
+          Text(
+            'Masuk untuk membaca berita ini.'.localized(context),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            key: const Key('news-login'),
+            onPressed: () async {
+              await context.push<bool>('/login');
+              onSignedIn();
+            },
+            child: Text('Masuk'.localized(context)),
+          ),
+        ],
+      ),
+    ),
   );
 }
 

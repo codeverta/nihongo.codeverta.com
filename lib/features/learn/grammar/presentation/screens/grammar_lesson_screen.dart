@@ -9,6 +9,9 @@ import 'package:nihongo_master/features/ai_chat/presentation/ai_chat_sheet.dart'
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
 
 class GrammarLessonScreen extends ConsumerWidget {
   const GrammarLessonScreen({required this.lessonId, super.key});
@@ -29,35 +32,41 @@ class GrammarLessonScreen extends ConsumerWidget {
       ),
       body: lesson.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, s) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  e.toString().localized(context),
-                  textAlign: TextAlign.center,
+        error: (e, s) =>
+            lockedContentView(e, controller.load) ??
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      e.toString().localized(context),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 16),
+                    FilledButton(
+                      onPressed: controller.load,
+                      child: Text('Muat ulang'.localized(context)),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 16),
-                FilledButton(
-                  onPressed: controller.load,
-                  child: Text('Muat ulang'.localized(context)),
-                ),
-              ],
+              ),
             ),
-          ),
-        ),
         data: (s) => switch (s.stage) {
           GrammarStage.study => _Study(state: s, controller: controller),
           GrammarStage.quiz => _Quiz(state: s, controller: controller),
-          GrammarStage.result => _Result(
-            result: s.result!,
-            retry: controller.startQuiz,
-            study: controller.studyAgain,
-            finish: () => context.pop(),
-            busy: s.busy,
-            error: s.error,
+          GrammarStage.result => CompletionAdBoundary(
+            kind: CompletionKind.lessons,
+            completionKey: 'grammar:$lessonId',
+            child: _Result(
+              result: s.result!,
+              retry: controller.startQuiz,
+              study: controller.studyAgain,
+              finish: () => context.pop(),
+              busy: s.busy,
+              error: s.error,
+            ),
           ),
         },
       ),

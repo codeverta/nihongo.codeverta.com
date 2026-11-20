@@ -132,6 +132,8 @@ class PremiumScreen extends ConsumerWidget {
                                 (RegExp(r'^/jobs/[^/]+$').hasMatch(from) ||
                                     from.startsWith('/learn/') ||
                                     from.startsWith('/exams/') ||
+                                    RegExp(r'^/news/[^/]+$').hasMatch(from) ||
+                                    RegExp(r'^/anki/[^?#]+$').hasMatch(from) ||
                                     from == '/manga' ||
                                     from.startsWith('/manga/'))
                             ? from

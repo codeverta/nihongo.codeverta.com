@@ -7,12 +7,20 @@ import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/storage/recent_access.dart';
 import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/anki/data/anki_repository.dart';
+import 'package:nihongo_master/features/anki/domain/anki_models.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_controller.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_deck_media.dart';
+import 'package:nihongo_master/features/anki/presentation/anki_swipe_card.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_transfer_actions.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/explore_feature_card.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:nihongo_master/core/unlock/unlock_repository.dart';
+import 'package:nihongo_master/core/unlock/unlock_sheet.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/ads/ads_controller.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
 
 String ankiDeckPath(String id) => '/anki/decks/${Uri.encodeComponent(id)}';
 String ankiStudyPath(String id) => '${ankiDeckPath(id)}/study';
@@ -434,8 +442,19 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
                         return;
                       }
                       if (deck.locked) {
-                        await context.push('/premium');
-                        return;
+                        // A built-in N3–N1 deck opens with one ad or
+                        // Lifetime Access; imported decks need Lifetime.
+                        if (deck.personal) {
+                          await context.push('/premium');
+                          return;
+                        }
+                        final opened = await showUnlockSheet(
+                          context,
+                          UnlockTarget('anki', deck.id),
+                        );
+                        if (!opened) return;
+                        ref.invalidate(ankiDeckProvider(deckId));
+                        if (!context.mounted) return;
                       }
                       ref
                           .read(recentAccessProvider('anki').notifier)
@@ -584,6 +603,12 @@ class AnkiStudyScreen extends ConsumerWidget {
     final pendingSync = ref.watch(ankiRepositoryProvider).hasPendingReviews;
     final card = state.current;
     final colors = Theme.of(context).colorScheme;
+    final minCards =
+        ref.watch(adsReadyProvider).valueOrNull?.ankiSessionMinCards ??
+        defaultAnkiSessionMinCards;
+    final sessionCounts =
+        state.session != null &&
+        (state.position >= minCards || (card == null && state.position > 0));
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -591,6 +616,13 @@ class AnkiStudyScreen extends ConsumerWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
+        actions: [
+          if (sessionCounts)
+            CompletionAdBoundary(
+              kind: CompletionKind.anki,
+              completionKey: 'anki:$deckId',
+            ),
+        ],
       ),
       body: state.loading
           ? const Center(child: CircularProgressIndicator())
@@ -635,6 +667,12 @@ class AnkiStudyScreen extends ConsumerWidget {
                   onPressed: () => context.go(ankiDeckPath(deckId)),
                   child: Text('Kembali ke detail deck'.localized(context)),
                 ),
+                if (state.position > 0) ...[
+                  const SizedBox(height: 16),
+                  const AdBannerSlot(
+                    placement: BannerAdPlacement.practiceResult,
+                  ),
+                ],
               ],
             )
           : ListView(
@@ -672,66 +710,48 @@ class AnkiStudyScreen extends ConsumerWidget {
                   ),
                 ],
                 const SizedBox(height: 24),
-                Card(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 22,
-                      vertical: 32,
+                _AnimatedHeight(
+                  child: AnkiSwipeCardStack(
+                    // A fresh stack per card resets the drag offset to centre.
+                    key: ValueKey('anki-stack-${state.position}'),
+                    // Swipe rates the card, so it only works once the answer
+                    // is visible, the same rule as the rating buttons. During
+                    // an error the retry button keeps the original rating.
+                    swipeEnabled:
+                        state.revealed && !state.saving && state.error == null,
+                    onTap: state.saving || state.pendingRating != null
+                        ? null
+                        : state.revealed
+                        ? controller.conceal
+                        : controller.reveal,
+                    rightLabel: 'Ingat'.localized(context),
+                    leftLabel: 'Belum hafal'.localized(context),
+                    onSwiped: (direction) => controller.rate(
+                      direction == AnkiSwipeDirection.right ? 'good' : 'again',
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          state.revealed
-                              ? 'PERTANYAAN & JAWABAN'.localized(context)
-                              : 'INGAT DULU JAWABANNYA'.localized(context),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: colors.onSurfaceVariant,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 12,
-                            letterSpacing: .8,
-                          ),
-                        ),
-                        const SizedBox(height: 24),
-                        if (card.imageUrl.isNotEmpty)
-                          AnkiDeckImage(card.imageUrl),
-                        if (card.audioUrl.isNotEmpty)
-                          AnkiDeckAudio(card.audioUrl),
-                        SelectableText(
-                          card.front,
-                          key: const Key('anki-card-front'),
-                          textAlign: TextAlign.center,
-                          scrollPhysics: const NeverScrollableScrollPhysics(),
-                          style: TextStyle(
-                            fontSize: card.front.runes.length > 40 ? 22 : 36,
-                            fontWeight: FontWeight.w800,
-                            height: 1.6,
-                          ),
-                        ),
-                        if (state.revealed) ...[
-                          const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 24),
-                            child: Divider(),
-                          ),
-                          _Answers(
-                            answers: card.answers,
-                            key: const Key('anki-card-back'),
-                          ),
-                          if (card.meaning.isNotEmpty) ...[
-                            const SizedBox(height: 20),
-                            Text(
-                              card.meaning,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(height: 1.7, fontSize: 16),
-                            ),
-                          ],
-                        ],
-                      ],
-                    ),
+                    next: state.position + 1 < state.session!.cards.length
+                        ? _NextCardPreview(
+                            card: state.session!.cards[state.position + 1],
+                            key: ValueKey('anki-next-${state.position + 1}'),
+                          )
+                        : null,
+                    child: _StudyCardFace(card: card, revealed: state.revealed),
                   ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 12),
+                Text(
+                  state.revealed
+                      ? 'Geser kanan jika ingat, kiri jika belum hafal.'
+                            .localized(context)
+                      : 'Ketuk kartu untuk membalik.'.localized(context),
+                  key: const Key('anki-swipe-hint'),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: colors.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 16),
                 if (!state.revealed)
                   FilledButton.icon(
                     key: const Key('anki-reveal'),
@@ -975,41 +995,182 @@ class _DeckIcon extends StatelessWidget {
   );
 }
 
-class _Answers extends StatelessWidget {
-  const _Answers({required this.answers, super.key});
-  final List<String> answers;
+/// Smoothly resizes when the card flips or the next card moves up. Skipped
+/// entirely with reduced motion (AnimatedSize asserts on a zero duration).
+class _AnimatedHeight extends StatelessWidget {
+  const _AnimatedHeight({required this.child});
+  final Widget child;
   @override
-  Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
-      SelectableText(
-        answers.take(8).join(' · '),
-        textAlign: TextAlign.center,
-        scrollPhysics: const NeverScrollableScrollPhysics(),
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-          height: 1.7,
-          color: Theme.of(context).colorScheme.secondary,
+  Widget build(BuildContext context) => MediaQuery.disableAnimationsOf(context)
+      ? child
+      : AnimatedSize(
+          duration: const Duration(milliseconds: 220),
+          curve: Curves.easeOutCubic,
+          alignment: Alignment.topCenter,
+          // The dragged card may lean past the stack's bounds.
+          clipBehavior: Clip.none,
+          child: child,
+        );
+}
+
+/// The face of the study card. Text is plain (not selectable) here because
+/// selection gestures would swallow the taps that flip the card and the
+/// drags that swipe it.
+class _StudyCardFace extends StatelessWidget {
+  const _StudyCardFace({required this.card, required this.revealed});
+  final AnkiCard card;
+  final bool revealed;
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 32),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              revealed
+                  ? 'PERTANYAAN & JAWABAN'.localized(context)
+                  : 'INGAT DULU JAWABANNYA'.localized(context),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: colors.onSurfaceVariant,
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                letterSpacing: .8,
+              ),
+            ),
+            const SizedBox(height: 24),
+            if (card.imageUrl.isNotEmpty) AnkiDeckImage(card.imageUrl),
+            if (card.audioUrl.isNotEmpty) AnkiDeckAudio(card.audioUrl),
+            Text(
+              card.front,
+              key: const Key('anki-card-front'),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: card.front.runes.length > 40 ? 22 : 36,
+                fontWeight: FontWeight.w800,
+                height: 1.6,
+              ),
+            ),
+            if (revealed) ...[
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 24),
+                child: Divider(),
+              ),
+              _Answers(
+                answers: card.answers,
+                selectable: false,
+                key: const Key('anki-card-back'),
+              ),
+              if (card.meaning.isNotEmpty) ...[
+                const SizedBox(height: 20),
+                Text(
+                  card.meaning,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(height: 1.7, fontSize: 16),
+                ),
+              ],
+            ],
+          ],
         ),
       ),
-      if (answers.length > 8)
-        ExpansionTile(
-          title: Text(
-            'Lihat ${ankiCount(answers.length - 8)} jawaban lainnya'.localized(
-              context,
-            ),
-          ),
+    );
+  }
+}
+
+/// The following card peeking out behind the top card (front only).
+class _NextCardPreview extends StatelessWidget {
+  const _NextCardPreview({required this.card, super.key});
+  final AnkiCard card;
+  @override
+  Widget build(BuildContext context) => ExcludeSemantics(
+    child: Card(
+      margin: EdgeInsets.zero,
+      clipBehavior: Clip.antiAlias,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 32),
+        child: Column(
           children: [
-            SelectableText(
-              answers.skip(8).join(' · '),
-              scrollPhysics: const NeverScrollableScrollPhysics(),
-              style: const TextStyle(fontSize: 18, height: 1.7),
+            Text(
+              'INGAT DULU JAWABANNYA'.localized(context),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                letterSpacing: .8,
+              ),
+            ),
+            const SizedBox(height: 24),
+            Flexible(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.topCenter,
+                child: Text(
+                  card.front,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: card.front.runes.length > 40 ? 22 : 36,
+                    fontWeight: FontWeight.w800,
+                    height: 1.6,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
-    ],
+      ),
+    ),
   );
+}
+
+class _Answers extends StatelessWidget {
+  const _Answers({required this.answers, this.selectable = true, super.key});
+  final List<String> answers;
+  final bool selectable;
+  @override
+  Widget build(BuildContext context) {
+    Widget text(String value, TextStyle style, TextAlign align) => selectable
+        ? SelectableText(
+            value,
+            textAlign: align,
+            scrollPhysics: const NeverScrollableScrollPhysics(),
+            style: style,
+          )
+        : Text(value, textAlign: align, style: style);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        text(
+          answers.take(8).join(' · '),
+          TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+            height: 1.7,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+          TextAlign.center,
+        ),
+        if (answers.length > 8)
+          ExpansionTile(
+            title: Text(
+              'Lihat ${ankiCount(answers.length - 8)} jawaban lainnya'
+                  .localized(context),
+            ),
+            children: [
+              text(
+                answers.skip(8).join(' · '),
+                const TextStyle(fontSize: 18, height: 1.7),
+                TextAlign.start,
+              ),
+            ],
+          ),
+      ],
+    );
+  }
 }
 
 String _date(BuildContext context, DateTime value) =>

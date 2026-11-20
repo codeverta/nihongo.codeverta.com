@@ -7,7 +7,11 @@ import 'package:nihongo_master/core/localization/app_localizations.dart';
 
 /// Adaptive banner. Renders nothing unless ads are on, the user is free, and
 /// consent allows ad requests, so the layout never reserves empty space.
-enum BannerAdPlacement { main, quizResult }
+/// Where a banner sits: [main] above the bottom navigation (Home, Learn,
+/// Dictionary), [examTab] above it on the Exam tab, [quizResult] on lesson
+/// and exam results, [practiceResult] at the end of Anki, SSW practice and
+/// Kaigo.
+enum BannerAdPlacement { main, examTab, quizResult, practiceResult }
 
 class AdBannerSlot extends ConsumerStatefulWidget {
   const AdBannerSlot({this.placement = BannerAdPlacement.main, super.key});
@@ -66,9 +70,12 @@ class _AdBannerSlotState extends ConsumerState<AdBannerSlot> {
   @override
   Widget build(BuildContext context) {
     final config = ref.watch(adsReadyProvider).valueOrNull;
-    final placement = widget.placement == BannerAdPlacement.quizResult
-        ? config?.quizResultBanner
-        : config?.banner;
+    final placement = switch (widget.placement) {
+      BannerAdPlacement.main => config?.banner,
+      BannerAdPlacement.examTab => config?.examTabBanner,
+      BannerAdPlacement.quizResult => config?.quizResultBanner,
+      BannerAdPlacement.practiceResult => config?.practiceResultBanner,
+    };
     if (placement == null || !placement.usable) {
       _ad?.dispose();
       _ad = null;
@@ -92,13 +99,14 @@ class _AdBannerSlotState extends ConsumerState<AdBannerSlot> {
   }
 }
 
-enum NativeAdPlacement { news, jobs, dictionary }
+enum NativeAdPlacement { news, jobs, dictionary, newsArticle }
 
 AdPlacementConfig? _nativePlacement(AdsConfig? config, NativeAdPlacement p) =>
     switch (p) {
       NativeAdPlacement.news => config?.newsNative,
       NativeAdPlacement.jobs => config?.jobsNative,
       NativeAdPlacement.dictionary => config?.dictionaryNative,
+      NativeAdPlacement.newsArticle => config?.newsArticleNative,
     };
 
 /// Native ad rendered with Google's template so it matches the card style.

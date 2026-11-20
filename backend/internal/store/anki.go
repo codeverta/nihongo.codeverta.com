@@ -104,6 +104,12 @@ func ankiPremium(deck anki.Deck) bool {
 	return deck.Level == "N1" || deck.Level == "N2" || deck.Level == "N3"
 }
 func (s *MemoryStore) AnkiDeck(user, id string) (AnkiDeckView, error) {
+	return s.AnkiDeckFor(user, id, false)
+}
+
+// AnkiDeckFor is AnkiDeck for an account that may have opened this built-in
+// deck by watching an ad (unlocked). It never affects imported decks.
+func (s *MemoryStore) AnkiDeckFor(user, id string, unlocked bool) (AnkiDeckView, error) {
 	if isUserAnkiDeckID(id) {
 		return s.userAnkiDeck(user, id)
 	}
@@ -116,7 +122,7 @@ func (s *MemoryStore) AnkiDeck(user, id string) (AnkiDeckView, error) {
 	}
 	s.mu.RLock()
 	defer s.mu.RUnlock()
-	locked := ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium
+	locked := ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium && !unlocked
 	requiredTier := "free"
 	if ankiPremium(deck) {
 		requiredTier = "lifetime"
@@ -127,7 +133,13 @@ func (s *MemoryStore) AnkiDeck(user, id string) (AnkiDeckView, error) {
 	return AnkiDeckView{Deck: deck, Stats: ankiStats(ankiState(s.gamification[user], id), deck.CardCount, s.gamificationNow()), Locked: locked, RequiredTier: requiredTier}, nil
 }
 func (s *MemoryStore) AnkiStudy(user, id string, limit int) (AnkiSession, error) {
-	view, err := s.AnkiDeck(user, id)
+	return s.AnkiStudyFor(user, id, limit, false)
+}
+
+// AnkiStudyFor is AnkiStudy for an account that may have opened this built-in
+// deck by watching an ad.
+func (s *MemoryStore) AnkiStudyFor(user, id string, limit int, unlocked bool) (AnkiSession, error) {
+	view, err := s.AnkiDeckFor(user, id, unlocked)
 	if err != nil {
 		return AnkiSession{}, err
 	}
@@ -272,6 +284,12 @@ func ankiSchedule(current AnkiCardState, rating string, now time.Time) AnkiCardS
 	return next
 }
 func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiReviewResult, error) {
+	return s.AnkiReviewFor(user, id, input, false)
+}
+
+// AnkiReviewFor is AnkiReview for an account that may have opened this
+// built-in deck by watching an ad.
+func (s *MemoryStore) AnkiReviewFor(user, id string, input AnkiReviewInput, unlocked bool) (AnkiReviewResult, error) {
 	var deck anki.Deck
 	deckRevision := anki.Revision()
 	if isUserAnkiDeckID(id) {
@@ -309,7 +327,7 @@ func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiRe
 		if userAnkiDeckPremium(record) && s.profiles[user].Entitlement.Tier != domain.TierPremium {
 			return AnkiReviewResult{}, ErrPremium
 		}
-	} else if ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium {
+	} else if ankiPremium(deck) && s.profiles[user].Entitlement.Tier != domain.TierPremium && !unlocked {
 		return AnkiReviewResult{}, ErrPremium
 	}
 	state := ankiStateForRevision(s.gamification[user], id, deckRevision)

@@ -7,6 +7,8 @@ import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/controllers/reading_controller.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/widgets/reading_illustration.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_repository.dart';
 
 class ReadingCourseScreen extends ConsumerStatefulWidget {
   const ReadingCourseScreen({super.key, this.level = 'N5'});
@@ -265,7 +267,10 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
                                 .localized(context),
                           ),
                           isThreeLine: true,
-                          trailing: const Icon(Icons.chevron_right_rounded),
+                          trailing: UnlockLockIcon(
+                            target: UnlockTarget('reading', lesson.id),
+                            lockable: isLockableLevel(widget.level),
+                          ),
                         ),
                       ],
                     ),

@@ -219,7 +219,11 @@ func (s *Server) authorizePremium(w http.ResponseWriter, r *http.Request, id str
 		}
 	}
 	if s.store.Profile(id).Entitlement.Tier != domain.TierPremium {
-		writeError(w, 402, "premium_required", "Materi N3–N1 dan tes selain N5 memerlukan Lifetime Access.")
+		// A free account may have opened this lesson by watching an ad.
+		if s.unlockedByAd(r, id) {
+			return true
+		}
+		s.writePremiumRequired(w, r)
 		return false
 	}
 	return true

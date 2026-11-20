@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/ads/ad_widgets.dart';
-import 'package:nihongo_master/core/ads/interstitial_ads.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
@@ -44,12 +43,6 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
         const tabs = ['home', 'learn', 'exam', 'dictionary', 'profile'];
         if (index >= 0 && index < tabs.length) {
           ref.read(analyticsServiceProvider).logTab(tabs[index]);
-          // Pindah tab adalah jeda alami untuk iklan layar penuh berkala.
-          unawaited(
-            ref
-                .read(interstitialControllerProvider)
-                .onNaturalBreak('/tab/${tabs[index]}'),
-          );
         }
       }
     }
@@ -113,6 +106,10 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
             maintainState: true,
             child: const AdBannerSlot(),
           ),
+          // The Exam tab has its own switch in the admin dashboard; the
+          // Profile tab never shows an ad.
+          if (_selectedIndex == 2)
+            const AdBannerSlot(placement: BannerAdPlacement.examTab),
           _buildNavigationBar(context, colorScheme),
         ],
       ),

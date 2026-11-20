@@ -217,6 +217,12 @@ func simulationPaper(levels ...string) simulationPaperConfig {
 }
 
 func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.ExamAttempt, error) {
+	return s.startSimulation(userID, false, levels...)
+}
+
+// startSimulation starts (or resumes) a simulation. unlocked lets a free
+// account start a premium paper it has paid for with a rewarded ad.
+func (s *MemoryStore) startSimulation(userID string, unlocked bool, levels ...string) (domain.ExamAttempt, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	now := s.simulationNow().UTC()
@@ -224,7 +230,7 @@ func (s *MemoryStore) StartSimulation(userID string, levels ...string) (domain.E
 	if paper.level != "N5" && paper.level != "N4" && !IsJLPTExtraLevel(paper.level) && paper.level != "N3" && paper.level != "N2" && paper.level != "N1" && !IsJFTLevel(paper.level) && paper.level != "NAT" && !strings.HasPrefix(paper.level, "NAT-") && !IsSSWLevel(paper.level) {
 		return domain.ExamAttempt{}, ErrInvalid
 	}
-	if !openLearningAccess && !jlptSimulationFree(paper.level) && s.entitlementLocked(userID).Tier != domain.TierPremium {
+	if !openLearningAccess && !jlptSimulationFree(paper.level) && !unlocked && s.entitlementLocked(userID).Tier != domain.TierPremium {
 		return domain.ExamAttempt{}, ErrPremium
 	}
 	for i := len(s.simulationOrder) - 1; i >= 0; i-- {
@@ -496,6 +502,20 @@ func (s *MemoryStore) SubmitSimulationSection(userID, id, section string) (domai
 		}
 	}
 	return simulationSnapshot(state, now), nil
+}
+
+// ActiveSimulationAttempt returns the account's unfinished attempt of examID,
+// if there is one. It does not advance timers; StartExam does that.
+func (s *MemoryStore) ActiveSimulationAttempt(userID, examID string) (string, bool) {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	for i := len(s.simulationOrder) - 1; i >= 0; i-- {
+		state := s.simulationAttempts[s.simulationOrder[i]]
+		if state.session.Attempt.UserID == userID && state.session.Attempt.ExamID == examID && state.session.Result == nil {
+			return state.session.Attempt.ID, true
+		}
+	}
+	return "", false
 }
 
 func (s *MemoryStore) SimulationOverview(userID string, levels ...string) map[string]any {

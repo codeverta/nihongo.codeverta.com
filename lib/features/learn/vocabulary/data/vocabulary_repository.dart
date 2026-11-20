@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
 
 class VocabularyRepository {
   const VocabularyRepository(
@@ -81,7 +82,8 @@ class VocabularyRepository {
       final response = await _dio.get<Map<String, dynamic>>(path);
       return _data(response.data);
     } on DioException catch (error) {
-      throw VocabularyException(_message(error));
+      throw LockedContentException.from(error) ??
+          VocabularyException(_message(error));
     }
   }
 
@@ -92,7 +94,8 @@ class VocabularyRepository {
       if (data is! List<dynamic>) throw const VocabularyException();
       return data.whereType<Map<String, dynamic>>().toList(growable: false);
     } on DioException catch (error) {
-      throw VocabularyException(_message(error));
+      throw LockedContentException.from(error) ??
+          VocabularyException(_message(error));
     }
   }
 
@@ -104,7 +107,8 @@ class VocabularyRepository {
       final response = await _dio.post<Map<String, dynamic>>(path, data: body);
       return _data(response.data);
     } on DioException catch (error) {
-      throw VocabularyException(_message(error));
+      throw LockedContentException.from(error) ??
+          VocabularyException(_message(error));
     }
   }
 

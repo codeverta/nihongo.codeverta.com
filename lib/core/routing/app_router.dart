@@ -535,18 +535,15 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   // Catat layar yang dibuka (termasuk push imperatif) untuk analytics fitur.
   final analytics = ref.read(analyticsServiceProvider);
   // Dibuat sejak awal agar waktu pemakaian dihitung dari peluncuran aplikasi.
-  final interstitials = ref.read(interstitialControllerProvider);
+  // Iklan layar penuh hanya muncul saat keluar dari layar hasil belajar,
+  // tidak pernah saat pindah layar (lihat docs/ads-xp-spec.md).
+  ref.read(interstitialControllerProvider);
   void trackScreen() {
-    String path;
     try {
-      path = router.routerDelegate.currentConfiguration.fullPath;
-      analytics.logScreen(path);
+      analytics.logScreen(router.routerDelegate.currentConfiguration.fullPath);
     } on Object {
       // Analytics tidak boleh memengaruhi navigasi.
-      return;
     }
-    // Pindah layar adalah jeda alami untuk iklan layar penuh berkala.
-    unawaited(interstitials.onNaturalBreak(path));
   }
 
   router.routerDelegate.addListener(trackScreen);
