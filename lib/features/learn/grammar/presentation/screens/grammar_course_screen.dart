@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
-import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/grammar/presentation/controllers/grammar_controller.dart';
@@ -45,17 +44,6 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Grammar JLPT $level'),
-          actions: [
-            CourseOfflineButton(
-              type: 'grammar',
-              level: level,
-              lessonIds: [...?course.valueOrNull?.lessons.map((l) => l.id)],
-              activeLessonId: course.valueOrNull?.lessons
-                  .where((l) => !l.completed)
-                  .firstOrNull
-                  ?.id,
-            ),
-          ],
           bottom: TabBar(
             tabs: [
               Tab(text: 'Lesson'.localized(context)),
@@ -118,7 +106,6 @@ class _GrammarCourseScreenState extends ConsumerState<GrammarCourseScreen> {
                     physics: const AlwaysScrollableScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
                     children: [
-                      const CourseOfflineStatus(),
                       Wrap(
                         runSpacing: 4,
                         children: [

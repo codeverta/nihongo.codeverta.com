@@ -761,7 +761,7 @@ func (s *MemoryStore) closeWeek(ctx context.Context, week string, now time.Time)
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	for i, r := range results {
-		if i >= 3 {
+		if i >= 10 {
 			break
 		}
 		if err := s.grantWeeklyAchievementsLocked(r.UserID, r.Rank, now); err != nil {
@@ -789,7 +789,10 @@ func (s *MemoryStore) grantWeeklyAchievementsLocked(userID string, rank int, now
 	if current == nil {
 		current = newGamificationState()
 	}
-	ids := []string{achievementWeeklyPodium}
+	ids := []string{achievementWeeklyTop10}
+	if rank <= 3 {
+		ids = append(ids, achievementWeeklyPodium)
+	}
 	if rank == 1 {
 		ids = append(ids, achievementWeeklyChampion)
 	}

@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
-import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
@@ -76,7 +75,6 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
             physics: const AlwaysScrollableScrollPhysics(),
             padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
             children: [
-              const CourseOfflineStatus(),
               Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
@@ -285,15 +283,6 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
           title: Text('Kanji JLPT ${widget.level}'),
           actions: [
             CourseAnkiButton(type: 'kanji', level: widget.level),
-            CourseOfflineButton(
-              type: 'kanji',
-              level: widget.level,
-              lessonIds: [...?course.valueOrNull?.lessons.map((l) => l.id)],
-              activeLessonId: course.valueOrNull?.lessons
-                  .where((l) => !l.completed)
-                  .firstOrNull
-                  ?.id,
-            ),
           ],
           bottom: TabBar(
             tabs: [

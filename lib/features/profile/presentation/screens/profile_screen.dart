@@ -434,12 +434,6 @@ class _ProfileMenu extends StatelessWidget {
           ),
           const Divider(height: 1, indent: 68),
           _ProfileMenuTile(
-            icon: Icons.offline_bolt_outlined,
-            title: 'Belajar offline & penyimpanan'.localized(context),
-            onTap: () => context.push('/settings/offline'),
-          ),
-          const Divider(height: 1, indent: 68),
-          _ProfileMenuTile(
             icon: Icons.bar_chart_rounded,
             title: 'Statistik pembelajaran'.localized(context),
             onTap: () => context.push('/achievements'),

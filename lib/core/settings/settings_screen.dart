@@ -40,12 +40,6 @@ class SettingsScreen extends ConsumerWidget {
                   title: 'Pengaturan notifikasi'.localized(context),
                   onTap: () => context.push('/notifications'),
                 ),
-                const Divider(height: 1, indent: 68),
-                _SettingsTile(
-                  icon: Icons.offline_bolt_outlined,
-                  title: 'Belajar offline & penyimpanan'.localized(context),
-                  onTap: () => context.push('/settings/offline'),
-                ),
               ],
             ),
           ),

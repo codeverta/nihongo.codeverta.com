@@ -66,7 +66,6 @@ class _OfflineLifecycleState extends ConsumerState<OfflineLifecycle>
   }
 
   Future<void> _clearAccount(String id) async {
-    ref.read(learningDownloadsProvider).valueOrNull?.cancel();
     final practice = ref.read(offlinePracticeServiceProvider);
     final anki = ref.read(offlineAnkiReviewsProvider);
     final cacheFuture = ref.read(learningCacheProvider.future);
@@ -141,9 +140,6 @@ class _OfflineLifecycleState extends ConsumerState<OfflineLifecycle>
       })
       ..listen(connectivityProvider, (_, next) {
         final links = next.valueOrNull;
-        if (links?.contains(ConnectivityResult.none) ?? false) {
-          ref.read(learningDownloadsProvider).valueOrNull?.cancel();
-        }
         if (links != null &&
             links.isNotEmpty &&
             !links.contains(ConnectivityResult.none)) {

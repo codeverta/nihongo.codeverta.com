@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
-import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart';
 import 'package:nihongo_master/features/learn/vocabulary/presentation/controllers/vocabulary_controller.dart';
@@ -42,15 +41,6 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
         actions: [
           if (current != null) ...[
             CourseAnkiButton(type: 'vocabulary', level: current.level),
-            CourseOfflineButton(
-              type: 'vocabulary',
-              level: current.level,
-              lessonIds: [for (final l in current.lessons) l.id],
-              activeLessonId: current.lessons
-                  .where((l) => !l.completed)
-                  .firstOrNull
-                  ?.id,
-            ),
           ],
         ],
       ),
@@ -100,7 +90,6 @@ class _CourseState extends ConsumerState<VocabularyCourseScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.all(20),
               children: [
-                const CourseOfflineStatus(),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
