@@ -9,7 +9,6 @@ import 'package:nihongo_master/core/localization/region_formatters.dart';
 import 'package:nihongo_master/features/anki/data/anki_repository.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_controller.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_deck_media.dart';
-import 'package:nihongo_master/features/anki/presentation/anki_offline_preparation.dart';
 import 'package:nihongo_master/features/anki/presentation/anki_transfer_actions.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/shared/presentation/widgets/explore_feature_card.dart';
@@ -302,8 +301,6 @@ class AnkiDeckDetailScreen extends ConsumerWidget {
             return ListView(
               padding: const EdgeInsets.all(20),
               children: [
-                if (signedIn && !deck.locked)
-                  AnkiOfflinePreparation(deckId: deckId, level: deck.level),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: _DeckIcon(category: deck.category, size: 72),

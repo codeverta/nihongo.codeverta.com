@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/app_review/app_review_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
-import 'package:nihongo_master/core/offline/course_offline_status.dart';
 import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
 import 'package:nihongo_master/features/learn/reading/presentation/controllers/reading_controller.dart';
@@ -34,17 +33,6 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Reading JLPT ${widget.level}'),
-        actions: [
-          CourseOfflineButton(
-            type: 'reading',
-            level: widget.level,
-            lessonIds: [...?course.valueOrNull?.lessons.map((l) => l.id)],
-            activeLessonId: course.valueOrNull?.lessons
-                .where((l) => !l.completed)
-                .firstOrNull
-                ?.id,
-          ),
-        ],
       ),
       body: course.when(
         loading: () => const Center(child: CircularProgressIndicator()),
@@ -91,7 +79,6 @@ class _ReadingCourseScreenState extends ConsumerState<ReadingCourseScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
               children: [
-                const CourseOfflineStatus(),
                 Container(
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(

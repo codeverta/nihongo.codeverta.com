@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
-import 'package:nihongo_master/core/offline/ssw_offline_preparation.dart';
 import 'package:nihongo_master/core/settings/display_preferences.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/ssw/data/kaigo_repository.dart';
@@ -66,7 +65,6 @@ class KaigoCurriculumPanel extends ConsumerWidget {
                 '${course.modules.length} modul · ${course.lessons.length} lesson · ±${course.minutes ~/ 60} jam belajar'
                     .localized(context),
               ),
-              SswOfflinePreparation(sectorId: sectorId),
               if (sectorId == 'agriculture' || sectorId == 'fishery') ...[
                 const SizedBox(height: 12),
                 Text(

@@ -2,24 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nihongo_master/core/offline/course_offline_status.dart';
-import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/anki/presentation/course_anki_button.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 
-Future<void> _pump(
-  WidgetTester tester,
-  List<Widget> actions, {
-  bool offline = false,
-}) async {
+Future<void> _pump(WidgetTester tester, List<Widget> actions) async {
   final router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
         builder: (context, state) => Scaffold(
           appBar: AppBar(title: const Text('Course'), actions: actions),
-          body: const CourseOfflineStatus(),
+          body: const SizedBox.shrink(),
         ),
       ),
       GoRoute(
@@ -32,7 +26,6 @@ Future<void> _pump(
   await tester.pumpWidget(
     ProviderScope(
       overrides: [
-        offlineProvider.overrideWithValue(offline),
         authControllerProvider.overrideWith(
           (ref) => AuthController.test(
             const AuthenticationState.authenticated(
@@ -89,36 +82,5 @@ void main() {
   testWidgets('grammar has no Anki action', (tester) async {
     await _pump(tester, const [CourseAnkiButton(type: 'grammar', level: 'N5')]);
     expect(find.byKey(const ValueKey('course-anki-button')), findsNothing);
-  });
-
-  testWidgets('offline save sits in the app bar while online', (tester) async {
-    await _pump(tester, const [
-      CourseOfflineButton(type: 'kanji', level: 'N5', lessonIds: ['k1', 'k2']),
-    ]);
-    final button = find.byKey(const ValueKey('course-offline-save'));
-    expect(button, findsOneWidget);
-    expect(
-      find.descendant(of: find.byType(AppBar), matching: button),
-      findsOneWidget,
-    );
-    expect(tester.widget<IconButton>(button).tooltip, 'Simpan offline');
-    expect(find.textContaining('Offline ·'), findsNothing);
-  });
-
-  testWidgets('offline hides the save action and shows the note', (
-    tester,
-  ) async {
-    await _pump(tester, const [
-      CourseOfflineButton(type: 'kanji', level: 'N5', lessonIds: ['k1']),
-    ], offline: true);
-    expect(find.byKey(const ValueKey('course-offline-save')), findsNothing);
-    expect(find.textContaining('Offline ·'), findsOneWidget);
-  });
-
-  testWidgets('the save action waits for the course to load', (tester) async {
-    await _pump(tester, const [
-      CourseOfflineButton(type: 'kanji', level: 'N5', lessonIds: []),
-    ]);
-    expect(find.byKey(const ValueKey('course-offline-save')), findsNothing);
   });
 }
