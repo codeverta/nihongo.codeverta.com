@@ -32,6 +32,10 @@ type GamificationUser struct {
 	ID     string `gorm:"type:char(36);primaryKey"`
 	UserID string `gorm:"column:user_id;type:char(36);not null;uniqueIndex:gamification_user_id"`
 	State  []byte `gorm:"type:longblob;not null"`
+	// XPTotal and ReachedAt mirror the blob's XP so all-time ranking reads an
+	// index instead of the JSON state.
+	XPTotal   int        `gorm:"column:xp_total;not null;default:0;index:gamification_xp_rank,priority:1,sort:desc"`
+	ReachedAt *time.Time `gorm:"column:reached_at;type:datetime(3);index:gamification_xp_rank,priority:2"`
 }
 
 func (GamificationUser) TableName() string { return "gamification_users" }
@@ -133,3 +137,58 @@ type DictionaryEntry struct {
 
 func (DictionaryEntry) TableName() string                { return "dictionary_entries" }
 func (m *DictionaryEntry) BeforeCreate(_ *gorm.DB) error { return setUUID(&m.ID) }
+
+// XPEvent is one XP award. Raw events are kept for 12 weeks; the leaderboard
+// never sums them to rank (it reads weekly_scores and the xp_total column).
+type XPEvent struct {
+	ID        uint64    `gorm:"primaryKey;autoIncrement"`
+	UserID    string    `gorm:"column:user_id;type:char(36);not null;index:xp_events_user,priority:1"`
+	Amount    int       `gorm:"not null"`
+	Source    string    `gorm:"type:varchar(32);not null"`
+	AwardedAt time.Time `gorm:"column:awarded_at;type:datetime(3);not null;index:xp_events_user,priority:2;index:xp_events_awarded_at"`
+}
+
+func (XPEvent) TableName() string { return "xp_events" }
+
+// WeeklyScore is a user's XP for one leaderboard week (Monday 00:00 WIB).
+type WeeklyScore struct {
+	WeekStart string    `gorm:"column:week_start;type:char(10);primaryKey;index:weekly_scores_rank,priority:1"`
+	UserID    string    `gorm:"column:user_id;type:char(36);primaryKey"`
+	XP        int       `gorm:"column:xp;not null;index:weekly_scores_rank,priority:2,sort:desc"`
+	ReachedAt time.Time `gorm:"column:reached_at;type:datetime(3);not null;index:weekly_scores_rank,priority:3"`
+}
+
+func (WeeklyScore) TableName() string { return "weekly_scores" }
+
+// WeeklyResult is the final, permanent rank of a user in a closed week.
+type WeeklyResult struct {
+	WeekStart string `gorm:"column:week_start;type:char(10);primaryKey"`
+	UserID    string `gorm:"column:user_id;type:char(36);primaryKey;index:weekly_results_user"`
+	Rank      int    `gorm:"column:rank_position;not null"`
+	XP        int    `gorm:"column:xp;not null"`
+}
+
+func (WeeklyResult) TableName() string { return "weekly_results" }
+
+// LeaderboardFlag stores the user's own "hide me" setting and the admin's
+// silent exclusion. Missing rows mean shown.
+type LeaderboardFlag struct {
+	UserID   string `gorm:"column:user_id;type:char(36);primaryKey"`
+	Hidden   bool   `gorm:"not null;default:false"`
+	Excluded bool   `gorm:"not null;default:false"`
+}
+
+func (LeaderboardFlag) TableName() string { return "leaderboard_flags" }
+
+// LeaderboardJob is the weekly close schedule. The lease makes one instance
+// run a close even if several API processes share the database.
+type LeaderboardJob struct {
+	ID             string     `gorm:"type:varchar(32);primaryKey"`
+	NextRunAt      time.Time  `gorm:"column:next_run_at;not null"`
+	LastClosedWeek string     `gorm:"column:last_closed_week;type:char(10);not null;default:''"`
+	LeaseOwner     string     `gorm:"column:lease_owner;type:varchar(36);not null;default:''"`
+	LeaseUntil     *time.Time `gorm:"column:lease_until"`
+	LastError      string     `gorm:"column:last_error;type:text"`
+}
+
+func (LeaderboardJob) TableName() string { return "leaderboard_jobs" }

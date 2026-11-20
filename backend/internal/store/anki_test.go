@@ -51,8 +51,9 @@ func TestAnkiSchedulingOwnershipConflictsAndConcurrentRetries(t *testing.T) {
 	if err != nil || view.Stats.Seen != 4 || view.Stats.Due != 0 {
 		t.Fatal(view.Stats, err)
 	}
-	if s.Gamification(user).XP != 0 {
-		t.Fatal("self-ratings must not award graded-quiz XP")
+	// Each reviewed card pays 1 XP (capped at 30/day); retries never pay twice.
+	if s.Gamification(user).XP != 4 {
+		t.Fatal("anki reviews must pay exactly 1 XP per card", s.Gamification(user).XP)
 	}
 	other, err := s.AuthenticateGoogle(domain.GoogleIdentity{Subject: "anki-other", Email: "anki-other@example.test", DisplayName: "Other"})
 	if err != nil {

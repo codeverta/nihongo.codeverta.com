@@ -181,6 +181,26 @@ func (s *Server) registerAdminDashboard(mux *http.ServeMux) {
 			"generatedAt": time.Now().UTC(),
 		})
 	})
+	mux.HandleFunc("PUT /v1/admin/users/{id}/leaderboard", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-store")
+		if _, ok := adminSessionFromRequest(r); !ok {
+			writeError(w, http.StatusUnauthorized, "unauthorized", "Silakan masuk ke dashboard admin.")
+			return
+		}
+		var input struct {
+			Excluded bool `json:"excluded"`
+		}
+		if err := decodeJSON(r, &input); err != nil {
+			writeError(w, http.StatusBadRequest, "invalid_json", "Format permintaan tidak valid.")
+			return
+		}
+		id := r.PathValue("id")
+		if err := s.store.SetLeaderboardExcluded(id, input.Excluded); err != nil {
+			writeStoreError(w, err)
+			return
+		}
+		writeData(w, http.StatusOK, map[string]any{"id": id, "leaderboardExcluded": input.Excluded})
+	})
 }
 
 func (s *Server) adminLogin(w http.ResponseWriter, r *http.Request) {

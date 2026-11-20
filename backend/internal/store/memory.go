@@ -35,9 +35,12 @@ type account struct {
 	DisplayName    string
 	PhotoURL       string
 	CustomPhotoURL string
-	Timezone       string
-	PasswordHash   []byte
-	GoogleSub      string
+	// CustomDisplayName is the name the user typed in the app. It wins over
+	// the Google name, which is refreshed on every Google sign-in.
+	CustomDisplayName string `json:",omitempty"`
+	Timezone          string
+	PasswordHash      []byte
+	GoogleSub         string
 }
 
 type MemoryStore struct {
@@ -82,6 +85,7 @@ type MemoryStore struct {
 	simulationAttempts   map[string]*simulationAttemptState
 	simulationOrder      []string
 	simulationNow        func() time.Time
+	lb                   *leaderboardState
 }
 
 func (s *MemoryStore) SetAssetBaseURL(value string) {
@@ -117,6 +121,7 @@ func NewMemoryStore() *MemoryStore {
 		diagnosticAttempts:   map[string]*diagnosticAttemptState{},
 		simulationAttempts:   map[string]*simulationAttemptState{},
 		simulationNow:        time.Now,
+		lb:                   newLeaderboardState(),
 	}
 	var nonce [8]byte
 	if _, err := rand.Read(nonce[:]); err != nil {
@@ -296,8 +301,27 @@ func (s *MemoryStore) UpdateProfile(userID, displayName, target string) (domain.
 	}
 	s.mu.Lock()
 	defer s.mu.Unlock()
+	name := strings.TrimSpace(displayName)
+	// Persist the edited name on the account so a later Google sign-in does
+	// not replace it with the Google name.
+	for email, existing := range s.accounts {
+		if existing.ID != userID {
+			continue
+		}
+		existing.CustomDisplayName = name
+		if s.billingEnabled {
+			raw, err := json.Marshal(existing)
+			if err != nil {
+				return domain.Profile{}, err
+			}
+			if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.Account{ID: existing.ID, Email: email, State: raw}).Error; err != nil {
+				return domain.Profile{}, fmt.Errorf("persist display name: %w", err)
+			}
+		}
+		s.accounts[email] = existing
+	}
 	profile := s.ensureProfileLocked(userID)
-	profile.DisplayName = strings.TrimSpace(displayName)
+	profile.DisplayName = name
 	profile.Target = strings.ToUpper(strings.TrimSpace(target))
 	profile.Entitlement = s.entitlementLocked(userID)
 	s.profiles[userID] = profile

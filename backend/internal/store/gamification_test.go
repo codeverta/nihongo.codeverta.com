@@ -241,7 +241,8 @@ func TestGamificationExamRewardsAndEmptyAttempts(t *testing.T) {
 			}
 		}
 	}
-	if summary := s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec"); summary.XP != 100 || summary.ExamsCompleted != 1 || achievementByID(t, summary, "exam-ready").UnlockedAt == nil {
+	// First pass pays 100 XP, the same-day re-pass pays 10.
+	if summary := s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec"); summary.XP != 110 || summary.ExamsCompleted != 1 || achievementByID(t, summary, "exam-ready").UnlockedAt == nil {
 		t.Fatal("exam reward duplicated or missing")
 	}
 	grantTestLifetime(t, s, "926ea9c7-89bb-496e-bb5c-c9d4c7d2df6f")

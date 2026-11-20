@@ -204,6 +204,8 @@ func main() {
 	if os.Getenv("NEWS_SYNC_ENABLED") != "false" {
 		go newsRepository.Run(jobsContext, newsFetcher)
 	}
+	// Leaderboard snapshot every minute and the Monday 00:00 WIB weekly close.
+	go memoryStore.RunLeaderboard(jobsContext)
 	mapRepository, err := places.New(jobDB)
 	if err != nil {
 		log.Fatalf("configure map spots: %v", err)

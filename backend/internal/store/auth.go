@@ -247,7 +247,7 @@ func (s *MemoryStore) seedDemoAccount() {
 
 func (s *MemoryStore) ensureProfileForAccountLocked(account account) domain.Profile {
 	if profile, ok := s.profiles[account.ID]; ok {
-		profile.DisplayName = account.DisplayName
+		profile.DisplayName = account.profileDisplayName()
 		profile.Email = account.Email
 		profile.PhotoURL = account.profilePhotoURL()
 		profile.Timezone = account.Timezone
@@ -269,7 +269,7 @@ func profileForAccount(account account) domain.Profile {
 	}
 	return domain.Profile{
 		ID:          account.ID,
-		DisplayName: account.DisplayName,
+		DisplayName: account.profileDisplayName(),
 		Email:       account.Email,
 		PhotoURL:    account.profilePhotoURL(),
 		Timezone:    timezone,
@@ -277,6 +277,13 @@ func profileForAccount(account account) domain.Profile {
 		Level:       1,
 		Entitlement: domain.Entitlement{Tier: domain.TierFree},
 	}
+}
+
+func (a account) profileDisplayName() string {
+	if a.CustomDisplayName != "" {
+		return a.CustomDisplayName
+	}
+	return a.DisplayName
 }
 
 func (a account) profilePhotoURL() string {

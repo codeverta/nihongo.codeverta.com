@@ -90,6 +90,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerMap(mux)
 	s.registerPrefectureLiving(mux)
 	s.registerAnki(mux)
+	s.registerLeaderboard(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
 	mux.HandleFunc("GET /v1/billing", s.requireAuth(s.billingStatus))

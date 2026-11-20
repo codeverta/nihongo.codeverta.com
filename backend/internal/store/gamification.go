@@ -9,7 +9,6 @@ import (
 	"fmt"
 	"github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
-	"gorm.io/gorm/clause"
 	"log"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
@@ -47,6 +46,8 @@ type gamificationState struct {
 	Exams                   map[string]bool
 	PassedExam              bool
 	Timezone                string
+	// XPDays caps the daily XP sources (Anki, re-pass, daily goal).
+	XPDays map[string]*xpDay `json:",omitempty"`
 }
 type GamificationSummary struct {
 	XP               int                  `json:"xp"`
@@ -204,11 +205,17 @@ func (s *MemoryStore) EnableGamificationPersistence(dsn string) error {
 		loadedUserDeckRequests[requestKey] = record.ID
 	}
 
+	lb, err := s.loadLeaderboard(orm, writerORM, records, loaded)
+	if err != nil {
+		return err
+	}
+
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	if s.gamificationDB != nil {
 		return fmt.Errorf("gamification persistence already enabled")
 	}
+	s.lb = lb
 	s.gamificationDB = db
 	s.ormDB = orm
 	s.ormWriter = writerORM
@@ -323,6 +330,7 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		next.OfflinePracticeAttempts[event.OfflinePracticeAttemptID] = *event.OfflinePracticeRecord
 	}
 	next.Events[event.ID] = true
+	var awards []xpAward
 	if event.Progress != nil {
 		next.Lessons[event.LessonID] = *event.Progress
 		next.Subjects[event.LessonID] = event.Subject
@@ -345,39 +353,39 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		xp := 0
 		if event.Kind == "lesson" && event.Score >= 80 {
 			reward = "lesson:" + event.LessonID
-			xp = 50
+			xp = xpLessonPass
 		}
 		if event.Kind == "exam" {
 			next.Exams[event.ExamID] = true
 			if event.Score >= 80 {
 				next.PassedExam = true
 				reward = "exam:" + event.ExamID
-				xp = 100
+				xp = xpExamPass
 			}
 		}
+		ledger := next.xpDayLocked(day)
 		if reward != "" && !next.Rewards[reward] {
-			next.XP += xp
+			awards = append(awards, xpAward{xp, event.Kind})
 			next.Rewards[reward] = true
+		} else if reward != "" && ledger.Repass < xpRepassMaxPerDay {
+			// Re-passing something that already paid XP earns a little, capped daily.
+			ledger.Repass++
+			awards = append(awards, xpAward{xpRepass, "repass"})
 		}
+		if !ledger.Goal && next.Days[day] >= dailyGoalMinutes*60 {
+			ledger.Goal = true
+			awards = append(awards, xpAward{xpDailyGoal, "daily_goal"})
+		}
+		next.pruneXPDays(event.At)
+		next.XP += totalXP(awards)
 	}
 	if event.Kind != "ssw-practice" {
-		for _, a := range gamificationAchievements(next, event.At) {
-			if a.Progress >= a.Target {
-				if _, ok := next.Unlocked[a.ID]; !ok {
-					next.Unlocked[a.ID] = event.At.UTC()
-				}
-			}
-		}
+		unlockAchievements(next, event.At)
 	}
-	if s.gamificationDB != nil {
-		raw, err = json.Marshal(next)
-		if err != nil {
-			return err
-		}
-		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.GamificationUser{UserID: userID, State: raw}).Error; err != nil {
-			return fmt.Errorf("persist study reward: %w", err)
-		}
+	if err = s.persistXPLocked(userID, next, awards, event.At); err != nil {
+		return fmt.Errorf("persist study reward: %w", err)
 	}
+	s.recordXPLocked(userID, next.XP, totalXP(awards), event.At)
 	s.gamification[userID] = next
 	if event.Progress != nil {
 		if s.progress[userID] == nil {
@@ -391,6 +399,16 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 	profile.StreakDays, _ = studyStreaks(next, event.At)
 	s.profiles[userID] = profile
 	return nil
+}
+
+func unlockAchievements(state *gamificationState, at time.Time) {
+	for _, a := range gamificationAchievements(state, at) {
+		if a.Progress >= a.Target {
+			if _, ok := state.Unlocked[a.ID]; !ok {
+				state.Unlocked[a.ID] = at.UTC()
+			}
+		}
+	}
 }
 
 func studyStreaks(state *gamificationState, now time.Time) (int, int) {
@@ -465,6 +483,8 @@ func gamificationAchievements(state *gamificationState, now time.Time) []domain.
 		{ID: "streak-30", Name: "30-Day Streak", Description: "Selesaikan kuis atau ujian selama 30 hari berturut-turut", Icon: "flame", Progress: best, Target: 30},
 		{ID: "xp-500", Name: "Level Up", Description: "Kumpulkan 500 XP", Icon: "bolt", Progress: state.XP, Target: 500},
 		{ID: "exam-ready", Name: "Exam Ready", Description: "Dapatkan minimal 80% pada diagnostic atau simulasi", Icon: "trophy", Progress: passed, Target: 1},
+		{ID: achievementWeeklyPodium, Name: "Podium Mingguan", Description: "Finis di peringkat 1–3 leaderboard mingguan", Icon: "trophy", Progress: unlockedCount(state, achievementWeeklyPodium), Target: 1},
+		{ID: achievementWeeklyChampion, Name: "Juara Mingguan", Description: "Finis di peringkat 1 leaderboard mingguan", Icon: "trophy", Progress: unlockedCount(state, achievementWeeklyChampion), Target: 1},
 	}
 	for i := range items {
 		if items[i].Progress > items[i].Target {
@@ -477,6 +497,13 @@ func gamificationAchievements(state *gamificationState, now time.Time) []domain.
 	}
 	return items
 }
+func unlockedCount(state *gamificationState, id string) int {
+	if _, ok := state.Unlocked[id]; ok {
+		return 1
+	}
+	return 0
+}
+
 func (s *MemoryStore) Gamification(userID string) GamificationSummary {
 	s.mu.RLock()
 	defer s.mu.RUnlock()

@@ -54,6 +54,8 @@ type AdminUser struct {
 	Timezone         string     `json:"timezone"`
 	LastActiveAt     *time.Time `json:"lastActiveAt"`
 	LastActivity     string     `json:"lastActivity"`
+	// LeaderboardExcluded is the admin's silent exclusion; XP is untouched.
+	LeaderboardExcluded bool `json:"leaderboardExcluded"`
 }
 
 // AdminUsers lists every known account with progress and last activity,
@@ -69,7 +71,7 @@ func (s *MemoryStore) AdminUsers() []AdminUser {
 		if a.GoogleSub != "" {
 			provider = "google"
 		}
-		accounts = append(accounts, base{a.ID, a.Email, a.DisplayName, a.profilePhotoURL(), provider})
+		accounts = append(accounts, base{a.ID, a.Email, a.profileDisplayName(), a.profilePhotoURL(), provider})
 	}
 	s.mu.RUnlock()
 
@@ -85,6 +87,7 @@ func (s *MemoryStore) AdminUsers() []AdminUser {
 		}
 		var latest time.Time
 		s.mu.RLock()
+		row.LeaderboardExcluded = s.lb.flags[a.id].Excluded
 		if a.id == s.playReviewUserID && a.id != "" {
 			row.Plan = "review"
 		}
