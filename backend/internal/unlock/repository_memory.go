@@ -133,6 +133,26 @@ func (m *MemoryRepository) Fallback(_ context.Context, userID, contentKey, day s
 	return granted, nil
 }
 
+func (m *MemoryRepository) ConsumeVerified(_ context.Context, userID, nonce string, at time.Time) (Intent, error) {
+	m.mu.Lock()
+	defer m.mu.Unlock()
+	intent, ok := m.intents[nonce]
+	if !ok || intent.UserID != userID {
+		return Intent{}, ErrNotFound
+	}
+	if intent.ConsumedAt != nil {
+		return *intent, ErrConsumed
+	}
+	if intent.VerifiedAt == nil {
+		return Intent{}, ErrNotVerified
+	}
+	if !at.Before(intent.ExpiresAt) {
+		return Intent{}, ErrExpired
+	}
+	consume(intent, at)
+	return *intent, nil
+}
+
 func (m *MemoryRepository) Convert(_ context.Context, userID, fromKey, toKey string) (bool, error) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
@@ -178,7 +198,7 @@ func (m *MemoryRepository) Activity(_ context.Context, since time.Time) (Activit
 	var activity Activity
 	for _, intent := range m.intents {
 		if !intent.CreatedAt.Before(since) {
-			activity.Intents = append(activity.Intents, IntentActivity{ContentKey: intent.ContentKey, CreatedAt: intent.CreatedAt, Verified: intent.VerifiedAt != nil})
+			activity.Intents = append(activity.Intents, IntentActivity{ContentKey: intent.ContentKey, CreatedAt: intent.CreatedAt, Verified: intent.VerifiedAt != nil, Consumed: intent.ConsumedAt != nil})
 		}
 	}
 	for _, u := range m.unlocks {

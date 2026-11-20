@@ -451,8 +451,8 @@ func TestAdminSeesUnlockStatistics(t *testing.T) {
 	if lessons["intents"] != float64(1) || lessons["verified"] != float64(1) || lessons["rewarded"] != float64(1) || lessons["fallback"] != float64(1) {
 		t.Fatalf("lesson totals = %v", lessons)
 	}
-	if days := data["days"].([]any); len(days) != 7*5 {
-		t.Fatalf("days rows = %d, want 7 days x 5 groups", len(days))
+	if days := data["days"].([]any); len(days) != 7*6 {
+		t.Fatalf("days rows = %d, want 7 days x 6 groups (incl. double XP)", len(days))
 	}
 	callbacks := data["callbacks"].(map[string]any)
 	if callbacks["ok"] != float64(1) || callbacks["badSignature"] != float64(1) {

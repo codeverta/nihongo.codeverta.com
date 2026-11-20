@@ -150,6 +150,8 @@ class AdsConfig {
     this.practiceResultBanner = const AdPlacementConfig(),
     this.newsArticleNative = const AdPlacementConfig(),
     this.ankiSessionMinCards = defaultAnkiSessionMinCards,
+    this.xpBoostRewarded = const AdPlacementConfig(),
+    this.xpBoostKinds = const CompletionKindsConfig(),
   });
 
   factory AdsConfig.fromJson(Object? json) {
@@ -173,6 +175,8 @@ class AdsConfig {
         json['practiceResultBanner'],
       ),
       newsArticleNative: AdPlacementConfig.fromJson(json['newsArticleNative']),
+      xpBoostRewarded: AdPlacementConfig.fromJson(json['xpBoostRewarded']),
+      xpBoostKinds: CompletionKindsConfig.fromJson(json['xpBoostKinds']),
       ankiSessionMinCards: switch (json['ankiSessionMinCards']) {
         final int n when n >= 1 && n <= 100 => n,
         _ => defaultAnkiSessionMinCards,
@@ -224,6 +228,13 @@ class AdsConfig {
   /// full-screen ad; the server uses the same number for XP).
   final int ankiSessionMinCards;
 
+  /// Opt-in rewarded ad on result screens that doubles that activity's XP,
+  /// verified by the server through AdMob server-side verification.
+  final AdPlacementConfig xpBoostRewarded;
+
+  /// Which activities offer [xpBoostRewarded].
+  final CompletionKindsConfig xpBoostKinds;
+
   /// Debug builds must never request real ads, so swap in Google test units.
   AdsConfig withTestUnits() => AdsConfig(
     enabled: enabled,
@@ -241,5 +252,7 @@ class AdsConfig {
     practiceResultBanner: practiceResultBanner.withUnit(testBannerAdUnitId),
     newsArticleNative: newsArticleNative.withUnit(testNativeAdUnitId),
     ankiSessionMinCards: ankiSessionMinCards,
+    xpBoostRewarded: xpBoostRewarded.withUnit(testRewardedAdUnitId),
+    xpBoostKinds: xpBoostKinds,
   );
 }

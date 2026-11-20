@@ -1,7 +1,6 @@
 package store
 
 import (
-	"regexp"
 	"context"
 	"crypto/sha256"
 	"database/sql"
@@ -13,6 +12,7 @@ import (
 	"log"
 	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
+	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -27,14 +27,25 @@ type studyEvent struct {
 	ID, Kind, Subject, LessonID, ExamID string
 	Score, Answered, Seconds            int
 	// Complete marks an SSW practice where every question was answered.
-	Complete bool
-	At                                  time.Time
-	Progress                            *domain.LessonProgress
-	SSWAttempt                          *SSWAttemptRecord
-	OfflinePracticeAttemptID            string
-	OfflinePracticeRecord               *offlinePracticeAttemptRecord
+	Complete                 bool
+	At                       time.Time
+	Progress                 *domain.LessonProgress
+	SSWAttempt               *SSWAttemptRecord
+	OfflinePracticeAttemptID string
+	OfflinePracticeRecord    *offlinePracticeAttemptRecord
 }
+
+// completionRecord is a finished activity that earned XP, kept briefly so
+// its XP can be doubled (docs/ads-xp-spec.md, phase C).
+type completionRecord struct {
+	Kind       string
+	Awarded    int
+	RecordedAt time.Time // server time, which the claim window is measured from
+	Boosted    bool
+}
+
 type gamificationState struct {
+	Completions             map[string]completionRecord             `json:",omitempty"`
 	LearningActivity        map[string]LearningActivity             `json:",omitempty"`
 	OfflinePracticeAttempts map[string]offlinePracticeAttemptRecord `json:",omitempty"`
 	SSWAttempts             map[string]SSWAttemptRecord
@@ -411,8 +422,16 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) (domain
 	if event.Kind != "ssw-practice" {
 		unlockAchievements(next, event.At)
 	}
-	gain := domain.XPGain{Awarded: totalXP(awards), Total: next.XP, CompletionID: event.ID}
+	gain := domain.XPGain{Awarded: totalXP(awards), Total: next.XP, CompletionID: event.ID, Kind: completionKind(event.Kind)}
 	gain.Streak, _ = studyStreaks(next, event.At)
+	if gain.Awarded > 0 && gain.Kind != "" {
+		recorded := s.gamificationNow().UTC()
+		if next.Completions == nil {
+			next.Completions = map[string]completionRecord{}
+		}
+		next.Completions[event.ID] = completionRecord{Kind: gain.Kind, Awarded: gain.Awarded, RecordedAt: recorded}
+		pruneCompletions(next, recorded)
+	}
 	if event.OfflinePracticeRecord != nil {
 		// The stored result carries the XP too, so a repeated sync, even
 		// after a restart, returns exactly the first answer.
@@ -609,4 +628,111 @@ func (s *MemoryStore) Gamification(userID string) GamificationSummary {
 		}
 	}
 	return result
+}
+
+// Double XP (docs/ads-xp-spec.md, phase C).
+const (
+	xpBoostWindow          = 30 * time.Minute
+	defaultXPBoostDailyCap = 10
+	completionRetention    = 48 * time.Hour
+)
+
+var (
+	ErrBoostExpired = errors.New("double XP can only be claimed within 30 minutes")
+	ErrBoostUsed    = errors.New("double XP was already claimed for this activity")
+	ErrBoostLimit   = errors.New("daily double XP limit reached")
+)
+
+// completionKind maps an event kind to its double XP group.
+func completionKind(eventKind string) string {
+	switch eventKind {
+	case "lesson":
+		return "lessons"
+	case "exam":
+		return "exams"
+	case "ssw-practice", "practice-lesson":
+		return "practice"
+	}
+	return ""
+}
+
+func pruneCompletions(state *gamificationState, now time.Time) {
+	for id, record := range state.Completions {
+		if now.Sub(record.RecordedAt) > completionRetention {
+			delete(state.Completions, id)
+		}
+	}
+}
+
+func boostCheck(state *gamificationState, completionID string, dailyCap int, now time.Time) (completionRecord, error) {
+	if state == nil {
+		return completionRecord{}, ErrNotFound
+	}
+	record, ok := state.Completions[completionID]
+	if !ok || record.Awarded <= 0 {
+		return completionRecord{}, ErrNotFound
+	}
+	if record.Boosted {
+		return record, ErrBoostUsed
+	}
+	if now.Sub(record.RecordedAt) > xpBoostWindow {
+		return record, ErrBoostExpired
+	}
+	if dailyCap <= 0 {
+		dailyCap = defaultXPBoostDailyCap
+	}
+	day := now.In(studyTimezone(state)).Format("2006-01-02")
+	if ledger := state.XPDays[day]; ledger != nil && ledger.Boosts >= dailyCap {
+		return record, ErrBoostLimit
+	}
+	return record, nil
+}
+
+// XPBoostable reports whether the XP of completionID can still be doubled,
+// and its group (lessons, exams, practice).
+func (s *MemoryStore) XPBoostable(userID, completionID string, dailyCap int) (string, error) {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	record, err := boostCheck(s.gamification[userID], completionID, dailyCap, s.gamificationNow().UTC())
+	return record.Kind, err
+}
+
+// BoostXP doubles the XP one finished activity earned: once, within the claim
+// window, and within the daily limit. The bonus goes through the XP ledger, so
+// it counts toward the weekly leaderboard like any other XP.
+func (s *MemoryStore) BoostXP(userID, completionID string, dailyCap int) (domain.XPGain, error) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	now := s.gamificationNow().UTC()
+	current := s.gamification[userID]
+	record, err := boostCheck(current, completionID, dailyCap, now)
+	if err != nil {
+		return domain.XPGain{}, err
+	}
+	raw, err := json.Marshal(current)
+	if err != nil {
+		return domain.XPGain{}, err
+	}
+	next := newGamificationState()
+	if err = json.Unmarshal(raw, next); err != nil {
+		return domain.XPGain{}, err
+	}
+	record.Boosted = true
+	next.Completions[completionID] = record
+	next.xpDayLocked(now.In(studyTimezone(next)).Format("2006-01-02")).Boosts++
+	awards := []xpAward{{record.Awarded, "double_xp"}}
+	next.XP += record.Awarded
+	next.pruneXPDays(now)
+	if err = s.persistXPLocked(userID, next, awards, now); err != nil {
+		return domain.XPGain{}, fmt.Errorf("persist double XP: %w", err)
+	}
+	s.recordXPLocked(userID, next.XP, record.Awarded, now)
+	s.gamification[userID] = next
+	profile := s.ensureProfileLocked(userID)
+	profile.XP = next.XP
+	profile.Level = 1 + next.XP/500
+	streak, _ := studyStreaks(next, now)
+	profile.StreakDays = streak
+	s.profiles[userID] = profile
+	return domain.XPGain{Awarded: record.Awarded, Total: next.XP, Streak: streak, CompletionID: completionID, Kind: record.Kind}, nil
 }

@@ -58,8 +58,10 @@ func newHarness(t *testing.T, repo unlock.Repository) *harness {
 		Repo:   h.repo,
 		Limits: func() unlock.Limits { return h.limits },
 		Verify: &unlock.Verifier{Keys: staticKeys{&private.PublicKey}},
-		Unit:   func() string { return "ca-app-pub-2242816010232507/" + adUnit },
-		Now:    func() time.Time { return h.now },
+		Units: func() []string {
+			return []string{"ca-app-pub-2242816010232507/" + adUnit, "ca-app-pub-2242816010232507/7777777777"}
+		},
+		Now: func() time.Time { return h.now },
 	}
 	return h
 }
@@ -116,6 +118,7 @@ var scenarios = []struct {
 	{"ManyAccountsAtOnce", scenarioManyAccountsAtOnce},
 	{"CreditConvertsExactlyOnce", scenarioCreditConvertsExactlyOnce},
 	{"StatsCountActivityByDayAndGroup", scenarioStatsCountActivityByDayAndGroup},
+	{"XPBoostIntentIsConsumedOnce", scenarioXPBoostIntentIsConsumedOnce},
 }
 
 func TestClientCannotAskForAnAttemptUnlock(t *testing.T) {

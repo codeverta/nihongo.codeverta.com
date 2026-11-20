@@ -32,6 +32,13 @@ const uiEnglishUnlock = <String, String>{
   'Jawaban tersimpan di perangkat dan menunggu sinkronisasi. XP diberikan setelah terverifikasi.':
       'Answers are saved on this device and waiting to sync. XP is awarded once they are verified.',
   'Jawaban sudah diverifikasi server.': 'Answers were verified by the server.',
+  'Tonton iklan untuk 2× XP': 'Watch an ad for 2× XP',
+  'Klaim 2× XP': 'Claim 2× XP',
+  '2× XP diterima': '2× XP received',
+  'Iklan ditutup sebelum selesai. Tonton sampai habis untuk mendapat 2× XP.':
+      'The ad was closed early. Watch it to the end to get 2× XP.',
+  'Belum dapat mengklaim 2× XP. Periksa koneksi lalu coba lagi.':
+      'Could not claim 2× XP. Check your connection and try again.',
   // Server messages that can reach a screen through .localized().
   'Materi N3–N1 dan tes selain N5 memerlukan Lifetime Access.':
       'N3–N1 lessons and tests other than N5 require Lifetime Access.',

@@ -1,6 +1,32 @@
 # Penempatan iklan, XP, dan double XP
 
-Status: **disetujui pemilik produk (sesi grilling 20 November 2026). Tahap A dan B selesai di kode (belum di-commit dan belum dicoba di perangkat); tahap C (double XP) belum dikerjakan.** Melengkapi [rewarded-unlock-spec.md](rewarded-unlock-spec.md).
+Status: **disetujui pemilik produk (sesi grilling 20 November 2026). Tahap A, B, dan C selesai di kode (belum dicoba di perangkat).** Melengkapi [rewarded-unlock-spec.md](rewarded-unlock-spec.md).
+
+## Hasil tahap C (double XP)
+
+- **Alur dengan iklan**: tombol "Tonton iklan untuk 2× XP (+N XP)" di bawah badge XP layar hasil. Aplikasi membuat intent jenis baru `xp-boost` (ID = `completionId` dari respons penyelesaian). Iklan memakai SSV seperti buka konten, dan server menerima callback dari unit buka konten maupun unit double XP. Setelah terverifikasi, intent dipakai (`ConsumeVerified`), bukan dicatat sebagai unlock, sehingga tidak memakai batas buka konten. Lalu `BoostXP` menambahkan XP sebesar XP penyelesaian itu.
+- **Aturan di server** (`store.BoostXP`):
+  - hanya penyelesaian yang memberi XP;
+  - sekali per penyelesaian;
+  - dalam 30 menit sejak dicatat (waktu server);
+  - batas harian sendiri (default 10, admin 1–50).
+  Bonus masuk buku besar XP, jadi ikut peringkat mingguan. Penyelesaian disimpan 48 jam untuk keperluan ini.
+- **Lifetime**: tombol "Klaim 2× XP" tanpa iklan lewat `POST /v1/xp-boosts/{completionId}/free`, dengan batas harian yang sama. Akun non-Lifetime ditolak dengan 402.
+- **Tanpa jalur cadangan**: `POST /v1/unlocks/fallback` menolak `xp-boost` (`boost_no_fallback`). Build debug pun tidak memalsukannya lewat cadangan, jadi double XP lewat iklan hanya bisa diuji dengan build rilis dan unit asli.
+- **Kode error**: `boost_used` (409), `boost_expired` (410), `boost_limit` (429), `not_locked` (422, untuk penyelesaian yang tidak memberi XP atau tidak dikenal), `unlock_unavailable` (403, saat sakelar mati).
+- Setelah klaim, iklan layar penuh saat keluar dari layar hasil itu dilewati, dan jam jeda di-reset.
+- **Admin**:
+  - kartu "Rewarded 2× XP" dengan panduan pembuatan `nm_rewarded_xp` (termasuk SSV);
+  - di kartu "Aturan XP": batas 2× XP per hari dan sakelar per jenis (lesson, ujian, latihan SSW/Kaigo);
+  - statistik mendapat kelompok "Double XP", di mana jumlah "dibuka iklan" = intent yang terpakai.
+- **Respons penyelesaian** kini membawa `kind` (lessons, exams, practice), supaya aplikasi tahu sakelar mana yang berlaku.
+- **Belum didukung**: double XP untuk Anki. XP Anki dihitung per kartu, tanpa satu "penyelesaian" yang bisa digandakan.
+- **Tes**:
+  - unlock: intent double XP dipakai tepat sekali (10 permintaan bersamaan), tidak menjadi unlock, tidak memakai batas buka konten, dan menerima kedua unit;
+  - store: sekali, 30 menit, batas harian, penyelesaian tanpa XP, akun lain;
+  - API: alur iklan lengkap, klaim kedua, tanpa cadangan, sakelar mati, klaim gratis Lifetime, batas harian;
+  - Flutter: alur iklan, Lifetime, tidak ada cadangan di debug, dan kapan tombol tidak muncul.
+  Backend lulus semua; Flutter 408 tes lulus semua.
 
 ## Hasil tahap B (XP dan streak)
 

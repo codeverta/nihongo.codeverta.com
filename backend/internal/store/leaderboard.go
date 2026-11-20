@@ -62,6 +62,8 @@ type xpDay struct {
 	Repeat int `json:",omitempty"`
 	// Reviews counts today's Anki reviews, for the streak threshold.
 	Reviews int `json:",omitempty"`
+	// Boosts counts today's double XP claims.
+	Boosts int `json:",omitempty"`
 }
 
 func (state *gamificationState) xpDayLocked(day string) *xpDay {

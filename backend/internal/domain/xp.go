@@ -8,4 +8,7 @@ type XPGain struct {
 	Total        int    `json:"total"`
 	Streak       int    `json:"streak"`
 	CompletionID string `json:"completionId"`
+	// Kind is the completion's group for the double XP switches: lessons,
+	// exams or practice. Empty for activities that cannot be doubled.
+	Kind string `json:"kind,omitempty"`
 }

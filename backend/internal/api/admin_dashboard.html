@@ -1414,7 +1414,8 @@ NM.view('ads',function(root){
     {k:'jobsNative',t:'Native di daftar Lowongan',s:'Disisipkan di antara lowongan.',every:true,noun:'lowongan',fmt:'Native advanced',unit:'nm_native'},
     {k:'dictionaryNative',t:'Native di hasil Kamus',s:'Disisipkan di antara hasil pencarian kamus.',every:true,noun:'hasil',fmt:'Native advanced',unit:'nm_native'},
     {k:'aiChatRewarded',t:'Rewarded di Tanya AI',s:'Opsi tonton iklan setelah kuota gratis harian habis. Jika nonaktif, pengguna diarahkan ke Lifetime.',every:false,fmt:'Rewarded',unit:'nm_rewarded_ai'},
-    {k:'unlockRewarded',t:'Rewarded buka konten',s:'Opsi tonton iklan untuk membuka satu item terkunci (materi N3–N1, deck Anki, simulasi N3, berita, tautan lamar). Unit ini wajib memakai verifikasi sisi server (SSV).',every:false,fmt:'Rewarded',unit:'nm_rewarded_unlock',ssv:true}];
+    {k:'unlockRewarded',t:'Rewarded buka konten',s:'Opsi tonton iklan untuk membuka satu item terkunci (materi N3–N1, deck Anki, simulasi N3, berita, tautan lamar). Unit ini wajib memakai verifikasi sisi server (SSV).',every:false,fmt:'Rewarded',unit:'nm_rewarded_unlock',ssv:true},
+    {k:'xpBoostRewarded',t:'Rewarded 2× XP',s:'Tombol opsional di layar hasil: tonton satu iklan untuk menggandakan XP aktivitas itu (sekali, dalam 30 menit setelah selesai). Pengguna Lifetime mengklaim tanpa iklan. Unit ini wajib memakai verifikasi sisi server (SSV).',every:false,fmt:'Rewarded',unit:'nm_rewarded_xp',ssv:true}];
   var IK=[{k:'lessons',t:'Lesson JLPT (grammar, kanji, membaca, kosakata)'},{k:'exams',t:'Ujian (simulasi, diagnostik, JFT, NAT, SSW)'},{k:'practice',t:'Latihan SSW dan lesson Kaigo'},{k:'anki',t:'Sesi Anki'}];
   // "How to create this ad unit": the same AdMob steps for every format, plus
   // the extras a format needs (reward settings, server-side verification).
@@ -1430,7 +1431,7 @@ NM.view('ads',function(root){
       share.length?NM.el('p',{class:'muted',text:'Boleh memakai ID yang sama dengan: '+share.join(', ')+'. Buat unit terpisah bila ingin melihat pendapatan per posisi di laporan AdMob.'}):null]);
   };
   var UK=[{k:'lessons',t:'Materi N3–N1 (grammar, kanji, membaca, kosakata)'},{k:'anki',t:'Deck Anki N3–N1'},{k:'simulation',t:'Simulasi JLPT N3 paket 01 (satu iklan per percobaan)'},{k:'news',t:'Artikel berita'},{k:'jobs',t:'Tautan lamar lowongan'}];
-  var GL={lessons:'Materi N3–N1',anki:'Deck Anki',simulation:'Simulasi N3',news:'Berita',jobs:'Lowongan'};
+  var GL={lessons:'Materi N3–N1',anki:'Deck Anki',simulation:'Simulasi N3',news:'Berita',jobs:'Lowongan',xp:'Double XP'};
   var UNIT=/^ca-app-pub-[0-9]{16}\/[0-9]{10}$/;
   // Statistics for ads that open locked content (GET /v1/admin/unlock-stats).
   var unlockStatsCard=function(isAlive){
@@ -1498,10 +1499,17 @@ NM.view('ads',function(root){
     var ikChecks=IK.map(function(x){var i=NM.el('input',{type:'checkbox',id:'ads-interstitial-kind-'+x.k});i.checked=ik[x.k]!==false;ikinds[x.k]=i;return NM.el('label',{class:'check'},[i,x.t])});
     var ankiMin=num('ads-anki-min',c.ankiSessionMinCards||10,1,100);
     var xpCap=num('ads-xp-repeat-cap',c.xpRepeatDailyCap||100,10,1000);
+    var boostCap=num('ads-xp-boost-cap',c.xpBoostDailyCap||10,1,50);
+    var bk=c.xpBoostKinds||{},bkinds={};
+    var BK=[{k:'lessons',t:'Lesson JLPT'},{k:'exams',t:'Ujian'},{k:'practice',t:'Latihan SSW dan lesson Kaigo'}];
+    var bkChecks=BK.map(function(x){var i=NM.el('input',{type:'checkbox',id:'ads-xp-boost-kind-'+x.k});i.checked=bk[x.k]!==false;bkinds[x.k]=i;return NM.el('label',{class:'check'},[i,x.t])});
     wrap.appendChild(NM.el('div',{class:'card'},[
       NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Aturan XP'}),NM.el('p',{text:'Lulus pertama lesson (50 XP) dan ujian (100 XP), target harian, lesson Kaigo/SSW, dan Anki punya aturannya sendiri. Batas di bawah ini berlaku untuk XP dari mengulang lesson atau ujian (nilai minimal 50%) dan latihan SSW, supaya latihan tetap dihargai tanpa bisa dipanen untuk peringkat mingguan.'})])]),
       NM.el('div',{class:'pad'},[NM.el('label',{class:'field'},[NM.el('span',{text:'Batas XP pengulangan per hari (10-1000)'}),xpCap]),
-        NM.el('p',{class:'muted',text:'Ambang sesi Anki di kartu atas juga menentukan kapan hari belajar Anki dihitung untuk streak.'})])]));
+        NM.el('p',{class:'muted',text:'Ambang sesi Anki di kartu atas juga menentukan kapan hari belajar Anki dihitung untuk streak.'}),
+        NM.el('label',{class:'field'},[NM.el('span',{text:'Batas 2× XP per hari (1-50, dengan iklan atau Lifetime)'}),boostCap]),
+        NM.el('p',{class:'muted',text:'Aktivitas yang menawarkan 2× XP (memakai unit "Rewarded 2× XP"):'}),
+        NM.el('div',{},bkChecks)])]));
     wrap.appendChild(NM.el('div',{class:'card'},[
       NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Kapan layar penuh boleh muncul'}),NM.el('p',{text:'Pilih aktivitas yang boleh diikuti iklan layar penuh saat pengguna keluar dari layar hasilnya. Semua memakai ID unit dan jeda menit di kartu "Layar penuh setelah selesai belajar".'})])]),
       NM.el('div',{class:'pad'},[NM.el('div',{},ikChecks),
@@ -1554,6 +1562,10 @@ NM.view('ads',function(root){
       var xpN=Number(xpCap.value);
       if(!(xpN>=10&&xpN<=1000)||Math.floor(xpN)!==xpN){setMsg('Batas XP pengulangan harus 10 sampai 1000','err');xpCap.focus();return}
       d.xpRepeatDailyCap=xpN;
+      var boostN=Number(boostCap.value);
+      if(!(boostN>=1&&boostN<=50)||Math.floor(boostN)!==boostN){setMsg('Batas 2× XP harus 1 sampai 50','err');boostCap.focus();return}
+      d.xpBoostDailyCap=boostN;d.xpBoostKinds={};
+      BK.forEach(function(x){d.xpBoostKinds[x.k]=bkinds[x.k].checked});
       d.ankiSessionMinCards=ankiN;d.interstitialKinds={};
       IK.forEach(function(x){d.interstitialKinds[x.k]=ikinds[x.k].checked});
       var save=function(){

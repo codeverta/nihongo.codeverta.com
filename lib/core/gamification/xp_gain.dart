@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
+import 'package:nihongo_master/core/gamification/double_xp_button.dart';
 
 /// What one finished activity earned, as the server reports it with the
 /// result (docs/ads-xp-spec.md). [completionId] names the activity for a
@@ -13,6 +14,7 @@ class XpGain {
     required this.total,
     required this.streak,
     this.completionId = '',
+    this.kind = '',
   });
 
   /// Null when the response carries no XP (an older server, or an offline
@@ -25,6 +27,7 @@ class XpGain {
       total: number(json['total']),
       streak: number(json['streak']),
       completionId: '${json['completionId'] ?? ''}',
+      kind: '${json['kind'] ?? ''}',
     );
   }
 
@@ -32,6 +35,9 @@ class XpGain {
   final int total;
   final int streak;
   final String completionId;
+
+  /// The activity group for double XP: lessons, exams or practice.
+  final String kind;
 }
 
 /// Records a finished Kaigo or SSW curriculum lesson for XP and the streak.
@@ -93,7 +99,7 @@ class XpResultBadge extends StatelessWidget {
         ],
       ),
     );
-    return Wrap(
+    final pills = Wrap(
       alignment: WrapAlignment.center,
       spacing: 8,
       runSpacing: 8,
@@ -110,6 +116,15 @@ class XpResultBadge extends StatelessWidget {
             '${gain.streak} ${'hari beruntun'.localized(context)}',
             const Key('xp-streak'),
           ),
+      ],
+    );
+    if (gain.awarded <= 0) return pills;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        pills,
+        const SizedBox(height: 10),
+        DoubleXpButton(gain: gain),
       ],
     );
   }
