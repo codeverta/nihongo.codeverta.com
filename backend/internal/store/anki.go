@@ -358,8 +358,9 @@ func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiRe
 		awards = append(awards, xpAward{xpAnkiCard, "anki"})
 		next.XP += xpAnkiCard
 		next.pruneXPDays(now)
-		unlockAchievements(next, now)
 	}
+	// Review-count achievements do not depend on the daily XP cap.
+	unlockAchievements(next, now)
 	if err = s.persistXPLocked(user, next, awards, now); err != nil {
 		return AnkiReviewResult{}, err
 	}

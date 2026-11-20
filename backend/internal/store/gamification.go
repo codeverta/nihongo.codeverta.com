@@ -486,6 +486,7 @@ func gamificationAchievements(state *gamificationState, now time.Time) []domain.
 		{ID: achievementWeeklyPodium, Name: "Podium Mingguan", Description: "Finis di peringkat 1–3 leaderboard mingguan", Icon: "trophy", Progress: unlockedCount(state, achievementWeeklyPodium), Target: 1},
 		{ID: achievementWeeklyChampion, Name: "Juara Mingguan", Description: "Finis di peringkat 1 leaderboard mingguan", Icon: "trophy", Progress: unlockedCount(state, achievementWeeklyChampion), Target: 1},
 	}
+	items = append(items, extraAchievements(state, total, counts, best)...)
 	for i := range items {
 		if items[i].Progress > items[i].Target {
 			items[i].Progress = items[i].Target
