@@ -163,7 +163,8 @@ func (s *MemoryStore) CompleteGrammarAttempt(userID, attemptID string) (domain.G
 	progress := domain.LessonProgress{LessonID: state.Attempt.LessonID, Completion: best, Completed: previous.Completed || passed, LastPosition: len(state.Answers) * 60, UpdatedAt: time.Now().UTC()}
 	now := s.gamificationNow().UTC()
 	progress.UpdatedAt = now
-	if err := s.recordStudyLocked(userID, studyEvent{ID: "grammar:" + attemptID, Kind: "lesson", Subject: "grammar", LessonID: state.Attempt.LessonID, Score: score, Answered: len(state.Answers), Seconds: int(now.Sub(state.Attempt.StartedAt).Seconds()), At: now, Progress: &progress}); err != nil {
+	gain, err := s.recordStudyLocked(userID, studyEvent{ID: "grammar:" + attemptID, Kind: "lesson", Subject: "grammar", LessonID: state.Attempt.LessonID, Score: score, Answered: len(state.Answers), Seconds: int(now.Sub(state.Attempt.StartedAt).Seconds()), At: now, Progress: &progress})
+	if err != nil {
 		return domain.GrammarAttemptResult{}, err
 	}
 	completed, total := 0, 0
@@ -184,6 +185,7 @@ func (s *MemoryStore) CompleteGrammarAttempt(userID, attemptID string) (domain.G
 		}
 	}
 	result := domain.GrammarAttemptResult{AttemptID: attemptID, LessonID: state.Attempt.LessonID, Score: score, Correct: correct, Total: len(state.Answers), Passed: passed, BestScore: best, Progress: completed * 100 / total, CanRetry: true}
+	result.XP = &gain
 	state.Result = &result
 	return result, nil
 }

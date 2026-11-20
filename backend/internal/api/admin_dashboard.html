@@ -1497,6 +1497,11 @@ NM.view('ads',function(root){
     var ik=c.interstitialKinds||{},ikinds={};
     var ikChecks=IK.map(function(x){var i=NM.el('input',{type:'checkbox',id:'ads-interstitial-kind-'+x.k});i.checked=ik[x.k]!==false;ikinds[x.k]=i;return NM.el('label',{class:'check'},[i,x.t])});
     var ankiMin=num('ads-anki-min',c.ankiSessionMinCards||10,1,100);
+    var xpCap=num('ads-xp-repeat-cap',c.xpRepeatDailyCap||100,10,1000);
+    wrap.appendChild(NM.el('div',{class:'card'},[
+      NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Aturan XP'}),NM.el('p',{text:'Lulus pertama lesson (50 XP) dan ujian (100 XP), target harian, lesson Kaigo/SSW, dan Anki punya aturannya sendiri. Batas di bawah ini berlaku untuk XP dari mengulang lesson atau ujian (nilai minimal 50%) dan latihan SSW, supaya latihan tetap dihargai tanpa bisa dipanen untuk peringkat mingguan.'})])]),
+      NM.el('div',{class:'pad'},[NM.el('label',{class:'field'},[NM.el('span',{text:'Batas XP pengulangan per hari (10-1000)'}),xpCap]),
+        NM.el('p',{class:'muted',text:'Ambang sesi Anki di kartu atas juga menentukan kapan hari belajar Anki dihitung untuk streak.'})])]));
     wrap.appendChild(NM.el('div',{class:'card'},[
       NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Kapan layar penuh boleh muncul'}),NM.el('p',{text:'Pilih aktivitas yang boleh diikuti iklan layar penuh saat pengguna keluar dari layar hasilnya. Semua memakai ID unit dan jeda menit di kartu "Layar penuh setelah selesai belajar".'})])]),
       NM.el('div',{class:'pad'},[NM.el('div',{},ikChecks),
@@ -1546,6 +1551,9 @@ NM.view('ads',function(root){
       d.contentGates={news:gateNews.checked,jobs:gateJobs.checked};
       var ankiN=Number(ankiMin.value);
       if(!(ankiN>=1&&ankiN<=100)||Math.floor(ankiN)!==ankiN){setMsg('Ambang sesi Anki harus 1 sampai 100 kartu','err');ankiMin.focus();return}
+      var xpN=Number(xpCap.value);
+      if(!(xpN>=10&&xpN<=1000)||Math.floor(xpN)!==xpN){setMsg('Batas XP pengulangan harus 10 sampai 1000','err');xpCap.focus();return}
+      d.xpRepeatDailyCap=xpN;
       d.ankiSessionMinCards=ankiN;d.interstitialKinds={};
       IK.forEach(function(x){d.interstitialKinds[x.k]=ikinds[x.k].checked});
       var save=function(){

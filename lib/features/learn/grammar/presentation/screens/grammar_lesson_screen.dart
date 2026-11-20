@@ -12,6 +12,7 @@ import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.da
 import 'package:nihongo_master/core/unlock/locked_content.dart';
 import 'package:nihongo_master/core/ads/completion_ads.dart';
 import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 class GrammarLessonScreen extends ConsumerWidget {
   const GrammarLessonScreen({required this.lessonId, super.key});
@@ -523,6 +524,10 @@ class _Result extends StatelessWidget {
                     .localized(context),
           textAlign: TextAlign.center,
         ),
+        if (result.xp != null) ...[
+          const SizedBox(height: 16),
+          XpResultBadge(gain: result.xp),
+        ],
         const SizedBox(height: 24),
         Card(
           child: Padding(

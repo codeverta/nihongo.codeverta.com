@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -12,6 +14,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:nihongo_master/core/ads/completion_ads.dart';
 import 'package:nihongo_master/core/ads/ads_config.dart';
 import 'package:nihongo_master/core/ads/ad_widgets.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
+import 'package:nihongo_master/core/network/dio_client.dart';
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
+import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 
 String kaigoLessonPath(String id) =>
     '/ssw/nursing-care/lessons/${Uri.encodeComponent(id)}';
@@ -314,6 +320,26 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
         );
         return;
       }
+      // XP and the streak come from the server; the lesson's local progress
+      // is kept even when this fails (offline).
+      final messenger = ScaffoldMessenger.of(context);
+      unawaited(
+        recordPracticeLesson(
+          ref.read(dioProvider),
+          widget.sectorId,
+          widget.lesson.id,
+        ).then((gain) {
+          if (gain == null) return;
+          ref
+            ..invalidate(gamificationProvider)
+            ..invalidate(homeDashboardProvider);
+          if (gain.awarded > 0) {
+            messenger.showSnackBar(
+              SnackBar(content: Text('+${gain.awarded} XP')),
+            );
+          }
+        }),
+      );
       final lessons = widget.course.lessons;
       final index = lessons.indexWhere((l) => l.id == widget.lesson.id);
       if (index + 1 < lessons.length) {

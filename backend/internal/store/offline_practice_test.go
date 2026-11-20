@@ -1,6 +1,7 @@
 package store
 
 import (
+	"reflect"
 	"errors"
 	"testing"
 
@@ -55,7 +56,7 @@ func TestOfflinePracticeSyncIsIdempotentAndPreservesBestScore(t *testing.T) {
 		t.Fatalf("server did not award lesson XP: %d", xp)
 	}
 	duplicate, err := s.SyncOfflinePracticeAttempt(user, first, firstFingerprint)
-	if err != nil || duplicate != result || s.Gamification(user).XP != 50 {
+	if err != nil || !reflect.DeepEqual(duplicate, result) || s.Gamification(user).XP != 50 {
 		t.Fatalf("duplicate sync was not idempotent: %#v %v xp=%d", duplicate, err, s.Gamification(user).XP)
 	}
 	if _, err = s.SyncOfflinePracticeAttempt(user, first, "different-answer-fingerprint"); !errors.Is(err, ErrInvalid) {
@@ -94,7 +95,7 @@ func TestOfflinePracticeDuplicateSurvivesEntitlementOrContentChanges(t *testing.
 	// its lesson is later removed or the account's entitlement changes.
 	s.grammar = nil
 	got, err := s.SyncOfflinePracticeAttempt(user, input, fingerprint)
-	if err != nil || got != want || s.Gamification(user).XP != 50 {
+	if err != nil || !reflect.DeepEqual(got, want) || s.Gamification(user).XP != 50 {
 		t.Fatalf("verified replay depended on current lesson content: %#v %v", got, err)
 	}
 }
@@ -139,7 +140,7 @@ func TestOfflinePracticeSSWSyncIsVerifiedIdempotentAndDoesNotReward(t *testing.T
 		}
 	}
 	duplicate, err := s.SyncOfflinePracticeAttempt(user, input, fingerprint)
-	if err != nil || duplicate != first {
+	if err != nil || !reflect.DeepEqual(duplicate, first) {
 		t.Fatalf("duplicate SSW sync changed its result: %#v %v", duplicate, err)
 	}
 	if xp := s.Gamification(user).XP; xp != 0 {
@@ -173,7 +174,7 @@ func TestOfflinePracticeResultSurvivesPersistenceRestart(t *testing.T) {
 	}
 	defer restored.Close()
 	replayed, err := restored.SyncOfflinePracticeAttempt(user, input, fingerprint)
-	if err != nil || replayed != first {
+	if err != nil || !reflect.DeepEqual(replayed, first) {
 		t.Fatalf("persisted duplicate lost its authoritative result: %#v %v, first %#v", replayed, err, first)
 	}
 	if xp := restored.Gamification(user).XP; xp != 50 {

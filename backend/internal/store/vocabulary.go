@@ -223,13 +223,15 @@ func (s *MemoryStore) CompleteVocabularyAttempt(userID, attemptID string) (domai
 	}
 	now := s.gamificationNow().UTC()
 	progress.UpdatedAt = now
-	if err := s.recordStudyLocked(userID, studyEvent{ID: "vocabulary:" + attemptID, Kind: "lesson", Subject: "vocabulary", LessonID: state.attempt.LessonID, Score: score, Answered: len(state.answers), Seconds: int(now.Sub(state.attempt.StartedAt).Seconds()), At: now, Progress: &progress}); err != nil {
+	gain, err := s.recordStudyLocked(userID, studyEvent{ID: "vocabulary:" + attemptID, Kind: "lesson", Subject: "vocabulary", LessonID: state.attempt.LessonID, Score: score, Answered: len(state.answers), Seconds: int(now.Sub(state.attempt.StartedAt).Seconds()), At: now, Progress: &progress})
+	if err != nil {
 		return domain.VocabularyAttemptResult{}, err
 	}
 	result := domain.VocabularyAttemptResult{
 		AttemptID: attemptID, LessonID: state.attempt.LessonID, Score: score,
 		Correct: correct, Total: len(state.attempt.Questions), Passed: passed,
 		BestScore: best, Progress: s.vocabularyProgressLocked(userID), CanRetry: true,
+		XP: &gain,
 	}
 	state.result = &result
 	return result, nil

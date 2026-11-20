@@ -28,6 +28,10 @@ const uiEnglishUnlock = <String, String>{
   'Buka tautan lamaran': 'Unlock the application link',
   'Tautan lamaran belum dapat dimuat. Periksa koneksi lalu coba lagi.':
       'The application link could not be loaded. Check your connection and try again.',
+  'hari beruntun': 'day streak',
+  'Jawaban tersimpan di perangkat dan menunggu sinkronisasi. XP diberikan setelah terverifikasi.':
+      'Answers are saved on this device and waiting to sync. XP is awarded once they are verified.',
+  'Jawaban sudah diverifikasi server.': 'Answers were verified by the server.',
   // Server messages that can reach a screen through .localized().
   'Materi N3–N1 dan tes selain N5 memerlukan Lifetime Access.':
       'N3–N1 lessons and tests other than N5 require Lifetime Access.',

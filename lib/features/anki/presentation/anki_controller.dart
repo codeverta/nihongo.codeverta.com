@@ -29,8 +29,12 @@ class AnkiStudyState {
     this.error,
     this.pendingRating,
     this.requestId,
+    this.xpEarned = 0,
   });
   final AnkiSession? session;
+
+  /// XP this session earned so far (1 per review until the daily cap).
+  final int xpEarned;
   final int position;
   final bool revealed;
   final bool loading;
@@ -70,6 +74,7 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
     if (state.current == null || state.saving || state.revealed) return;
     state = AnkiStudyState(
       session: state.session,
+      xpEarned: state.xpEarned,
       position: state.position,
       revealed: true,
     );
@@ -94,6 +99,7 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
     final id = state.requestId ?? _requestId();
     state = AnkiStudyState(
       session: state.session,
+      xpEarned: state.xpEarned,
       position: state.position,
       revealed: true,
       saving: true,
@@ -101,11 +107,18 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
       requestId: id,
     );
     try {
-      await repository.review(deckId, state.current!, selected, id);
+      final saved = await repository.review(
+        deckId,
+        state.current!,
+        selected,
+        id,
+      );
       if (mounted) onSaved?.call();
       if (mounted) {
+        final earned = saved['xpAwarded'];
         state = AnkiStudyState(
           session: state.session,
+          xpEarned: state.xpEarned + (earned is int ? earned : 0),
           position: state.position + 1,
         );
       }
@@ -114,6 +127,7 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
       if (mounted) {
         state = AnkiStudyState(
           session: state.session,
+          xpEarned: state.xpEarned,
           position: state.position,
           revealed: true,
           error: error,
@@ -125,6 +139,7 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
       if (mounted) {
         state = AnkiStudyState(
           session: state.session,
+          xpEarned: state.xpEarned,
           position: state.position,
           revealed: true,
           error: const AnkiFailure(

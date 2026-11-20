@@ -349,6 +349,9 @@ class OfflinePracticeService {
       localResult = _provisionalResult(attemptId, package, answers);
       row['status'] = 'pending';
       row['localResult'] = localResult;
+      // The server dates the attempt by this, so a quiz done offline counts
+      // for the day it was done, and toward that day's study minutes.
+      row['completedAt'] = DateTime.now().toUtc().toIso8601String();
     });
     _checkAccount(user, generation);
     if (!isOffline()) {
@@ -428,6 +431,7 @@ class OfflinePracticeService {
               'attemptId': attemptId,
               'package': row['package'],
               'answers': row['answers'],
+              ..._completionTiming(row),
             },
             cancelToken: token,
             options: Options(extra: {'offlineAccountId': user}),
@@ -633,4 +637,19 @@ class OfflinePracticeService {
     return '${hex.substring(0, 8)}-${hex.substring(8, 12)}-'
         '${hex.substring(12, 16)}-${hex.substring(16, 20)}-${hex.substring(20)}';
   }
+}
+
+/// When the attempt was finished on the device and how long it took. Rows
+/// saved by an older app version have no completion time and send nothing.
+Map<String, Object> _completionTiming(Map<String, dynamic> row) {
+  final completed = DateTime.tryParse('${row['completedAt'] ?? ''}');
+  if (completed == null) return const {};
+  final created = DateTime.tryParse('${row['createdAt'] ?? ''}');
+  final seconds = created == null
+      ? 0
+      : completed.difference(created).inSeconds.clamp(0, 7200);
+  return {
+    'completedAt': completed.toUtc().toIso8601String(),
+    'durationSeconds': seconds,
+  };
 }

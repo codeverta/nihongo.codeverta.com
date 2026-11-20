@@ -51,9 +51,15 @@ type OfflinePracticeSyncInput struct {
 	AttemptID string                  `json:"attemptId"`
 	Package   OfflinePracticePackage  `json:"package"`
 	Answers   []OfflinePracticeAnswer `json:"answers"`
+	// CompletedAt and DurationSeconds are when and how long the attempt took
+	// on the device, so a quiz done offline counts for the day it was done
+	// and toward that day's study minutes. Both are optional and bounded.
+	CompletedAt     *time.Time `json:"completedAt,omitempty"`
+	DurationSeconds int        `json:"durationSeconds,omitempty"`
 }
 
 type OfflinePracticeResult struct {
+	XP *XPGain `json:"xp,omitempty"`
 	AttemptID string `json:"attemptId"`
 	LessonID  string `json:"lessonId"`
 	Score     int    `json:"score"`

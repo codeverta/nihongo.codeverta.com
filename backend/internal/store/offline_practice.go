@@ -3,6 +3,7 @@ package store
 import (
 	"errors"
 	"fmt"
+	"time"
 
 	"github.com/google/uuid"
 	"nihongo-master-backend/internal/domain"
@@ -333,20 +334,26 @@ func (s *MemoryStore) SyncOfflinePracticeAttempt(user string, input domain.Offli
 		result.Progress = s.offlinePracticeProgressLocked(user, manifest.Kind, level, manifest.LessonID, previous.Completed || passed)
 	}
 	record := offlinePracticeAttemptRecord{Fingerprint: fingerprint, ContentHash: manifest.ContentHash, Result: result}
+	at, seconds := offlineCompletion(input, now)
 	event := studyEvent{
 		ID: "offline-practice:" + input.AttemptID, Kind: "lesson", Subject: manifest.Kind,
 		LessonID: manifest.LessonID, Score: score, Answered: total,
-		Seconds: 0, At: now, Progress: progress,
+		Seconds: seconds, At: at, Progress: progress,
 		OfflinePracticeAttemptID: input.AttemptID,
 		OfflinePracticeRecord:    &record,
 	}
 	if partialPractice {
+		// SSW practice counts for the streak and, when every question was
+		// answered, earns capped practice XP.
 		event.Kind = "ssw-practice"
-		event.Answered = 0
+		event.Answered = len(input.Answers)
+		event.Complete = len(input.Answers) == len(input.Package.Questions)
 	}
-	if err := s.recordStudyLocked(user, event); err != nil {
+	gain, err := s.recordStudyLocked(user, event)
+	if err != nil {
 		return domain.OfflinePracticeResult{}, err
 	}
+	result.XP = &gain
 	return result, nil
 }
 
@@ -400,4 +407,31 @@ func (s *MemoryStore) offlinePracticeProgressLocked(user, kind, level, lessonID 
 		return 0
 	}
 	return completed * 100 / total
+}
+
+// offlineCompletionMaxAge is how far back a synced attempt may be dated.
+const offlineCompletionMaxAge = 7 * 24 * time.Hour
+
+// offlineCompletion returns when the attempt was done and how long it took,
+// from the device, bounded: never in the future, never more than a week back,
+// and at most two hours long. Without device data it is "now, 0 seconds".
+func offlineCompletion(input domain.OfflinePracticeSyncInput, now time.Time) (time.Time, int) {
+	at := now
+	if input.CompletedAt != nil {
+		completed := input.CompletedAt.UTC()
+		if !completed.After(now.Add(5*time.Minute)) && !completed.Before(now.Add(-offlineCompletionMaxAge)) {
+			if completed.After(now) {
+				completed = now
+			}
+			at = completed
+		}
+	}
+	seconds := input.DurationSeconds
+	if seconds < 0 {
+		seconds = 0
+	}
+	if seconds > 7200 {
+		seconds = 7200
+	}
+	return at, seconds
 }

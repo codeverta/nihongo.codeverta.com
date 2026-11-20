@@ -1,6 +1,29 @@
 # Penempatan iklan, XP, dan double XP
 
-Status: **disetujui pemilik produk (sesi grilling 20 November 2026). Tahap A selesai di kode (belum di-commit dan belum dicoba di perangkat); tahap B dan C belum dikerjakan.** Melengkapi [rewarded-unlock-spec.md](rewarded-unlock-spec.md).
+Status: **disetujui pemilik produk (sesi grilling 20 November 2026). Tahap A dan B selesai di kode (belum di-commit dan belum dicoba di perangkat); tahap C (double XP) belum dikerjakan.** Melengkapi [rewarded-unlock-spec.md](rewarded-unlock-spec.md).
+
+## Hasil tahap B (XP dan streak)
+
+Diselaraskan dengan sistem XP dari PR #2 (peringkat mingguan), sesuai keputusan Q35–Q39. Semua sumber XP baru tercatat di buku besar XP, jadi otomatis ikut peringkat.
+
+| Aktivitas | XP | Streak |
+|---|---|---|
+| Lesson JLPT, lulus pertama ≥80% | 50 | Ya |
+| Lesson JLPT, selesai lagi dengan nilai ≥50% | 10 (masuk batas pengulangan) | Ya |
+| Ujian, lulus pertama ≥80% | 100 | Ya |
+| Ujian, selesai lagi dengan nilai ≥50% | 20 (masuk batas pengulangan) | Ya |
+| Nilai di bawah 50% | 0 | Ya |
+| Latihan SSW, semua soal dijawab | 10 (masuk batas pengulangan) | Ya, juga bila belum lengkap |
+| Lesson Kaigo/SSW selesai | 5, sekali per lesson | Ya |
+| Anki | 1 per kartu, maksimal 30 per hari (aturan PR #2) | Ya, setelah N kartu sehari (ambang dari admin, default 10) |
+| Target harian 20 menit | 20 (aturan PR #2) | — |
+
+- **Batas XP pengulangan 100 per hari**, bisa diatur di kartu "Aturan XP" pada halaman Iklan (10–1000). Aturan lama "lulus ulang +10, maksimal 3 kali" diganti.
+- **Sinkron offline** kini memakai waktu dan durasi pengerjaan dari HP, dibatasi: tidak di masa depan, maksimal 7 hari ke belakang, dan maksimal 2 jam per attempt. Lesson offline jadi terhitung pada hari dikerjakan dan ikut target harian. Rekaman sinkron menyimpan XP-nya, sehingga sinkron ulang (juga setelah restart server) mengembalikan hasil yang identik.
+- **Endpoint baru** `POST /v1/me/practice-lessons/{sectorId}/{lessonId}/complete` untuk lesson Kaigo/SSW. Aplikasi memanggilnya saat lesson selesai, lalu menampilkan "+5 XP".
+- **Semua respons penyelesaian membawa `xp`**: `{awarded, total, streak, completionId}`. Ini berlaku untuk lesson (online dan sinkron), simulasi, diagnostik, latihan SSW, dan lesson Kaigo/SSW. Review Anki membawa `xpAwarded`.
+- **Aplikasi** menampilkan "+N XP" dan "N hari beruntun" di layar hasil lesson, ujian, dan latihan SSW, serta "+N XP" di akhir sesi Anki (jumlah sesi itu). Tulisan "Latihan ini tidak memberi XP" di SSW dihapus.
+- **Tes**: aturan XP baru (termasuk batas yang bisa diatur, streak Anki, lesson Kaigo/SSW, dan batas waktu offline) diuji di MariaDB nyata. Tes lama dari PR #2 dan gamifikasi disesuaikan dengan aturan yang sengaja diganti. Tes idempotensi sinkron kini membandingkan isi, bukan alamat pointer. Backend lulus semua, dan Flutter 417 tes lulus semua.
 
 ## Hasil tahap A
 

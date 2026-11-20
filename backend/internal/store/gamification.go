@@ -1,6 +1,7 @@
 package store
 
 import (
+	"regexp"
 	"context"
 	"crypto/sha256"
 	"database/sql"
@@ -25,6 +26,8 @@ var studyLocation = time.FixedZone(defaultStudyTimezone, 7*60*60)
 type studyEvent struct {
 	ID, Kind, Subject, LessonID, ExamID string
 	Score, Answered, Seconds            int
+	// Complete marks an SSW practice where every question was answered.
+	Complete bool
 	At                                  time.Time
 	Progress                            *domain.LessonProgress
 	SSWAttempt                          *SSWAttemptRecord
@@ -287,7 +290,9 @@ func (s *MemoryStore) Close() error {
 
 // Commit the full next state before changing the live cache or attempt result.
 // A failed disk write returns an error; the completion can be retried safely.
-func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
+// recordStudyLocked records one finished activity and returns what it
+// earned. Repeating an event ID earns nothing and changes nothing.
+func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) (domain.XPGain, error) {
 	current := s.gamification[userID]
 	if current == nil {
 		current = newGamificationState()
@@ -296,15 +301,16 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		}
 	}
 	if current.Events[event.ID] {
-		return nil
+		streak, _ := studyStreaks(current, event.At)
+		return domain.XPGain{Total: current.XP, Streak: streak, CompletionID: event.ID}, nil
 	}
 	raw, err := json.Marshal(current)
 	if err != nil {
-		return err
+		return domain.XPGain{}, err
 	}
 	next := newGamificationState()
 	if err = json.Unmarshal(raw, next); err != nil {
-		return err
+		return domain.XPGain{}, err
 	}
 	if event.SSWAttempt != nil {
 		if next.SSWAttempts == nil {
@@ -312,22 +318,22 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		}
 		raw, err := json.Marshal(event.SSWAttempt)
 		if err != nil {
-			return err
+			return domain.XPGain{}, err
 		}
 		var record SSWAttemptRecord
 		if err := json.Unmarshal(raw, &record); err != nil {
-			return err
+			return domain.XPGain{}, err
 		}
 		next.SSWAttempts[record.Session.Attempt.ID] = record
 	}
 	if event.OfflinePracticeRecord != nil {
 		if event.OfflinePracticeAttemptID == "" {
-			return fmt.Errorf("offline practice attempt ID is required")
+			return domain.XPGain{}, fmt.Errorf("offline practice attempt ID is required")
 		}
 		if next.OfflinePracticeAttempts == nil {
 			next.OfflinePracticeAttempts = map[string]offlinePracticeAttemptRecord{}
 		}
-		next.OfflinePracticeAttempts[event.OfflinePracticeAttemptID] = *event.OfflinePracticeRecord
+		// Stored below, once the XP it earned is known.
 	}
 	next.Events[event.ID] = true
 	var awards []xpAward
@@ -349,28 +355,51 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 		if next.Days[day] > 86400 {
 			next.Days[day] = 86400
 		}
-		reward := ""
-		xp := 0
-		if event.Kind == "lesson" && event.Score >= 80 {
-			reward = "lesson:" + event.LessonID
-			xp = xpLessonPass
+		ledger := next.xpDayLocked(day)
+		// Capped sources share one daily budget so practice is rewarded but
+		// cannot be farmed for the weekly leaderboard.
+		repeat := func(amount int, source string) {
+			room := s.xpRepeatDailyCap() - ledger.Repeat
+			if room <= 0 {
+				return
+			}
+			if amount > room {
+				amount = room
+			}
+			ledger.Repeat += amount
+			awards = append(awards, xpAward{amount, source})
 		}
-		if event.Kind == "exam" {
+		switch event.Kind {
+		case "lesson":
+			key := "lesson:" + event.LessonID
+			if event.Score >= 80 && !next.Rewards[key] {
+				next.Rewards[key] = true
+				awards = append(awards, xpAward{xpLessonPass, "lesson"})
+			} else if event.Score >= xpRepeatMinScore {
+				repeat(xpLessonComplete, "lesson_repeat")
+			}
+		case "exam":
 			next.Exams[event.ExamID] = true
+			key := "exam:" + event.ExamID
 			if event.Score >= 80 {
 				next.PassedExam = true
-				reward = "exam:" + event.ExamID
-				xp = xpExamPass
 			}
-		}
-		ledger := next.xpDayLocked(day)
-		if reward != "" && !next.Rewards[reward] {
-			awards = append(awards, xpAward{xp, event.Kind})
-			next.Rewards[reward] = true
-		} else if reward != "" && ledger.Repass < xpRepassMaxPerDay {
-			// Re-passing something that already paid XP earns a little, capped daily.
-			ledger.Repass++
-			awards = append(awards, xpAward{xpRepass, "repass"})
+			if event.Score >= 80 && !next.Rewards[key] {
+				next.Rewards[key] = true
+				awards = append(awards, xpAward{xpExamPass, "exam"})
+			} else if event.Score >= xpRepeatMinScore {
+				repeat(xpExamComplete, "exam_repeat")
+			}
+		case "ssw-practice":
+			if event.Complete {
+				repeat(xpSSWPractice, "ssw_practice")
+			}
+		case "practice-lesson":
+			key := "practice-lesson:" + event.LessonID
+			if !next.Rewards[key] {
+				next.Rewards[key] = true
+				awards = append(awards, xpAward{xpPracticeLesson, "practice_lesson"})
+			}
 		}
 		if !ledger.Goal && next.Days[day] >= dailyGoalMinutes*60 {
 			ledger.Goal = true
@@ -382,8 +411,18 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 	if event.Kind != "ssw-practice" {
 		unlockAchievements(next, event.At)
 	}
+	gain := domain.XPGain{Awarded: totalXP(awards), Total: next.XP, CompletionID: event.ID}
+	gain.Streak, _ = studyStreaks(next, event.At)
+	if event.OfflinePracticeRecord != nil {
+		// The stored result carries the XP too, so a repeated sync, even
+		// after a restart, returns exactly the first answer.
+		record := *event.OfflinePracticeRecord
+		stored := gain
+		record.Result.XP = &stored
+		next.OfflinePracticeAttempts[event.OfflinePracticeAttemptID] = record
+	}
 	if err = s.persistXPLocked(userID, next, awards, event.At); err != nil {
-		return fmt.Errorf("persist study reward: %w", err)
+		return domain.XPGain{}, fmt.Errorf("persist study reward: %w", err)
 	}
 	s.recordXPLocked(userID, next.XP, totalXP(awards), event.At)
 	s.gamification[userID] = next
@@ -398,7 +437,52 @@ func (s *MemoryStore) recordStudyLocked(userID string, event studyEvent) error {
 	profile.Level = 1 + next.XP/500
 	profile.StreakDays, _ = studyStreaks(next, event.At)
 	s.profiles[userID] = profile
-	return nil
+	return gain, nil
+}
+
+// SetXPRules sets the admin-tunable XP limits. Zero keeps the default.
+func (s *MemoryStore) SetXPRules(repeatDailyCap, ankiStreakCards int) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.xpRepeatCap = repeatDailyCap
+	s.ankiStreakCards = ankiStreakCards
+}
+
+func (s *MemoryStore) xpRepeatDailyCap() int {
+	if s.xpRepeatCap > 0 {
+		return s.xpRepeatCap
+	}
+	return defaultXPRepeatDailyCap
+}
+
+func (s *MemoryStore) ankiStreakCardsLocked() int {
+	if s.ankiStreakCards > 0 {
+		return s.ankiStreakCards
+	}
+	return defaultAnkiStreakCards
+}
+
+// practiceLessonPattern bounds the IDs a client may report for curriculum
+// lessons, which are app content the server does not hold.
+var practiceLessonPattern = regexp.MustCompile(`^[a-z0-9][a-z0-9-]{0,63}$`)
+
+// CompletePracticeLesson records a finished Kaigo or SSW curriculum lesson:
+// it counts for the streak and earns XP the first time. The server cannot
+// verify reading, so the reward is small and given once per lesson.
+func (s *MemoryStore) CompletePracticeLesson(userID, sectorID, lessonID string) (domain.XPGain, error) {
+	if !practiceLessonPattern.MatchString(sectorID) || !practiceLessonPattern.MatchString(lessonID) {
+		return domain.XPGain{}, ErrInvalid
+	}
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if _, exists := s.profiles[userID]; !exists {
+		return domain.XPGain{}, ErrNotFound
+	}
+	key := sectorID + ":" + lessonID
+	return s.recordStudyLocked(userID, studyEvent{
+		ID: "practice-lesson:" + key, Kind: "practice-lesson", LessonID: key,
+		Answered: 1, At: s.gamificationNow().UTC(),
+	})
 }
 
 func unlockAchievements(state *gamificationState, at time.Time) {

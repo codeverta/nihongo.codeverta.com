@@ -31,6 +31,7 @@ type DiagnosticReview struct {
 	Explanation      string             `json:"explanation"`
 }
 type DiagnosticResult struct {
+	XP *XPGain `json:"xp,omitempty"`
 	AttemptID       string              `json:"attemptId"`
 	Score           int                 `json:"score"`
 	Correct         int                 `json:"correct"`

@@ -43,6 +43,7 @@ type SimulationReview struct {
 }
 
 type SimulationResult struct {
+	XP *XPGain `json:"xp,omitempty"`
 	AttemptID       string              `json:"attemptId"`
 	PaperID         string              `json:"paperId"`
 	Score           int                 `json:"score"`

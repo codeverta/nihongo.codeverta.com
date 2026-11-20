@@ -44,6 +44,8 @@ type account struct {
 }
 
 type MemoryStore struct {
+	// Admin-tunable XP limits; zero means the default (see SetXPRules).
+	xpRepeatCap, ankiStreakCards int
 	purchases            map[string]domain.Purchase
 	billingTokens        map[string]string
 	billingEnabled       bool

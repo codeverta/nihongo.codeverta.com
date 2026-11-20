@@ -14,6 +14,7 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/widgets/vo
 import 'package:nihongo_master/core/unlock/locked_content.dart';
 import 'package:nihongo_master/core/ads/completion_ads.dart';
 import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/gamification/xp_gain.dart';
 
 class VocabularyLessonScreen extends ConsumerWidget {
   const VocabularyLessonScreen({required this.lessonId, super.key});
@@ -456,6 +457,10 @@ class _ResultStage extends StatelessWidget {
               child: Text('Kembali ke daftar lesson'.localized(context)),
             ),
           ),
+          if (result.xp != null) ...[
+            const SizedBox(height: 16),
+            XpResultBadge(gain: result.xp),
+          ],
           const SizedBox(height: 16),
           const Center(
             child: AdBannerSlot(placement: BannerAdPlacement.quizResult),

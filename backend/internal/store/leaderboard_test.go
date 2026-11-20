@@ -40,7 +40,7 @@ func passLesson(t *testing.T, s *MemoryStore, user, lesson string, at time.Time)
 	t.Helper()
 	s.mu.Lock()
 	defer s.mu.Unlock()
-	if err := s.recordStudyLocked(user, studyEvent{ID: fmt.Sprintf("test:%s:%s:%d", user, lesson, at.UnixNano()), Kind: "lesson", Subject: "grammar", LessonID: lesson, Score: 100, Answered: 5, Seconds: 30, At: at}); err != nil {
+	if _, err := s.recordStudyLocked(user, studyEvent{ID: fmt.Sprintf("test:%s:%s:%d", user, lesson, at.UnixNano()), Kind: "lesson", Subject: "grammar", LessonID: lesson, Score: 100, Answered: 5, Seconds: 30, At: at}); err != nil {
 		t.Fatal(err)
 	}
 }
@@ -233,7 +233,7 @@ func TestXPSourcesAndDailyCaps(t *testing.T) {
 		t.Helper()
 		s.mu.Lock()
 		defer s.mu.Unlock()
-		if err := s.recordStudyLocked(user, studyEvent{ID: id, Kind: kind, Subject: "grammar", LessonID: lesson, ExamID: exam, Score: score, Answered: 5, Seconds: seconds, At: at}); err != nil {
+		if _, err := s.recordStudyLocked(user, studyEvent{ID: id, Kind: kind, Subject: "grammar", LessonID: lesson, ExamID: exam, Score: score, Answered: 5, Seconds: seconds, At: at}); err != nil {
 			t.Fatal(err)
 		}
 	}
@@ -241,38 +241,45 @@ func TestXPSourcesAndDailyCaps(t *testing.T) {
 	if xp := s.Gamification(user).XP; xp != 50 {
 		t.Fatalf("first pass xp %d", xp)
 	}
-	// Re-passing pays 10 XP, at most three times per day.
+	// Later completions scoring >= 50% pay 10 XP each.
 	for i := 0; i < 5; i++ {
 		record(fmt.Sprintf("re%d", i), "lesson", "l1", "", 85, 10, *now)
 	}
-	if xp := s.Gamification(user).XP; xp != 80 {
-		t.Fatalf("re-pass cap: xp %d", xp)
+	if xp := s.Gamification(user).XP; xp != 100 {
+		t.Fatalf("repeat xp %d", xp)
 	}
-	// A failed retry pays nothing.
-	record("fail", "lesson", "l2", "", 50, 10, *now)
-	if xp := s.Gamification(user).XP; xp != 80 {
+	// Below 50% pays nothing (it still counts for the streak).
+	record("fail", "lesson", "l2", "", 40, 10, *now)
+	if xp := s.Gamification(user).XP; xp != 100 {
 		t.Fatalf("failed attempt paid xp %d", xp)
+	}
+	// Repeats stop at the 100 XP daily cap (50 already used).
+	for i := 0; i < 8; i++ {
+		record(fmt.Sprintf("more%d", i), "lesson", "l1", "", 60, 10, *now)
+	}
+	if xp := s.Gamification(user).XP; xp != 150 {
+		t.Fatalf("repeat cap: xp %d", xp)
 	}
 	// Reaching the 20-minute daily goal pays 20 XP once.
 	record("long", "lesson", "l3", "", 40, 1200, *now)
 	record("long2", "lesson", "l4", "", 40, 600, *now)
-	if xp := s.Gamification(user).XP; xp != 100 {
+	if xp := s.Gamification(user).XP; xp != 170 {
 		t.Fatalf("daily goal: xp %d", xp)
 	}
-	// Exams: first pass 100, re-pass 10 (cap shared and reset next day).
+	// Exams: first pass 100, a later completion 20 (the cap resets next day).
 	tomorrow := now.Add(24 * time.Hour)
 	record("e1", "exam", "", "jlpt-n5-simulation-1", 90, 10, tomorrow)
 	record("e2", "exam", "", "jlpt-n5-simulation-1", 90, 10, tomorrow)
-	if xp := s.Gamification(user).XP; xp != 210 {
+	if xp := s.Gamification(user).XP; xp != 290 {
 		t.Fatalf("exam xp %d", xp)
 	}
 	// Duplicate event IDs never pay twice.
 	record("e2", "exam", "", "jlpt-n5-simulation-1", 90, 10, tomorrow)
-	if xp := s.Gamification(user).XP; xp != 210 {
+	if xp := s.Gamification(user).XP; xp != 290 {
 		t.Fatalf("duplicate event paid: %d", xp)
 	}
 	me := s.MyLeaderboard(user)
-	if me.Week.XP != 210 || me.All.XP != 210 {
+	if me.Week.XP != 290 || me.All.XP != 290 {
 		t.Fatalf("leaderboard xp %+v", me)
 	}
 }

@@ -148,6 +148,19 @@ func (s *Server) registerUnlocks(mux *http.ServeMux) {
 	mux.HandleFunc("GET /v1/ads/ssv", s.unlockSSV)
 	mux.HandleFunc("POST /v1/jobs/{jobID}/apply-link", s.requireAuth(s.jobApplyLink))
 	mux.HandleFunc("GET /v1/admin/unlock-stats", s.unlockStats)
+	mux.HandleFunc("POST /v1/me/practice-lessons/{sectorID}/{lessonID}/complete", s.requireAuth(s.completePracticeLesson))
+}
+
+// completePracticeLesson records a finished Kaigo or SSW curriculum lesson
+// for XP and the streak (docs/ads-xp-spec.md).
+func (s *Server) completePracticeLesson(w http.ResponseWriter, r *http.Request) {
+	gain, err := s.store.CompletePracticeLesson(userID(r), r.PathValue("sectorID"), r.PathValue("lessonID"))
+	if err != nil {
+		writeStoreError(w, err)
+		return
+	}
+	w.Header().Set("Cache-Control", "no-store")
+	writeData(w, http.StatusOK, map[string]any{"xp": gain})
 }
 
 // unlockStats is the admin view of ad unlocks. "accountsNowLifetime" counts

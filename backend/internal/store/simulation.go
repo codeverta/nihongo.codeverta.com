@@ -370,12 +370,14 @@ func (s *MemoryStore) advanceSimulationLocked(state *simulationAttemptState, at 
 	if strings.HasPrefix(state.session.PaperID, "ssw-") {
 		event.SSWAttempt = &SSWAttemptRecord{state.session, state.questions, state.correct, state.explanations, state.marked}
 	}
-	if err := s.recordStudyLocked(state.session.Attempt.UserID, event); err != nil {
+	gain, err := s.recordStudyLocked(state.session.Attempt.UserID, event)
+	if err != nil {
 		state.session.Result = nil
 		state.session.Attempt.Status = "in_progress"
 		state.session.ActiveSection = state.session.Sections[len(state.session.Sections)-1].ID
 		return err
 	}
+	state.session.Result.XP = &gain
 	return nil
 }
 
