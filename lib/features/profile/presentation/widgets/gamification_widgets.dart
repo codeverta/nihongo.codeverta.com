@@ -48,7 +48,7 @@ class GamificationStats extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            '50 XP saat pertama lulus lesson. 100 XP saat pertama mendapat ≥80% pada tiap jenis ujian. Ulangan tidak menggandakan XP. Streak dihitung dari kuis atau ujian yang selesai, zona waktu belajar yang dipilih.'
+            '50 XP saat pertama lulus lesson. 100 XP saat pertama mendapat ≥80% pada tiap jenis ujian. Lulus ulang lesson atau ujian: +10 XP (maks. 3 kali sehari). Target belajar harian tercapai: +20 XP. Review kartu Anki: +1 XP per kartu (maks. 30 XP sehari). Streak dihitung dari kuis atau ujian yang selesai, zona waktu belajar yang dipilih.'
                 .localized(context),
             style: const TextStyle(fontSize: 12, height: 1.6),
           ),

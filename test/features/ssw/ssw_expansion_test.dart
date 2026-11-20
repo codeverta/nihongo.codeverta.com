@@ -403,7 +403,10 @@ void main() {
       await show(find.text('Periksa jawaban'));
       await tester.tap(find.text('Periksa jawaban'));
       await tester.pumpAndSettle();
-      expect(find.textContaining('Tidak dapat terhubung'), findsOneWidget);
+      expect(
+        find.textContaining('Ujian memerlukan koneksi internet'),
+        findsOneWidget,
+      );
       expect(find.text('Tepat'), findsNothing);
       await show(find.text('Periksa jawaban'));
       await tester.tap(find.text('Periksa jawaban'));

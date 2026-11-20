@@ -115,10 +115,11 @@ func TestGamificationRealLessonRewardsPersistAndDoNotRepeat(t *testing.T) {
 		passStudyLesson(t, reopened, "c5056e4a-dc47-4f74-bdb9-44b8c794c9ec", kind, id)
 	}
 	after := reopened.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec")
-	if after.XP != 200 || after.LessonsCompleted != 4 || !achievementByID(t, after, "first-lesson").UnlockedAt.Equal(*first.UnlockedAt) {
+	// Passing the same four lessons again pays +10 each (3 a day), never the 50 again.
+	if after.XP != 230 || after.LessonsCompleted != 4 || !achievementByID(t, after, "first-lesson").UnlockedAt.Equal(*first.UnlockedAt) {
 		t.Fatal("restart duplicated rewards or lost progress")
 	}
-	if reopened.Profile("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec").XP != 200 || !reopened.GrammarCourse("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec", "N4").Lessons[0].Completed {
+	if reopened.Profile("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec").XP != 230 || !reopened.GrammarCourse("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec", "N4").Lessons[0].Completed {
 		t.Fatal("profile/course not restored")
 	}
 	if _, err := reopened.SaveProgress("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec", domain.LessonProgress{LessonID: "n5-daily", Completion: 100}); !errors.Is(err, ErrInvalid) {
@@ -196,7 +197,8 @@ func TestGamificationConcurrentRewardsAndDatabaseFailure(t *testing.T) {
 		}(i)
 	}
 	wg.Wait()
-	if s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec").XP != 50 {
+	// One 50 XP first pass, then at most three +10 re-passes the same day.
+	if s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec").XP != 80 {
 		t.Fatal("concurrent duplicate reward")
 	}
 	if err := s.Close(); err != nil {
@@ -214,7 +216,7 @@ func TestGamificationConcurrentRewardsAndDatabaseFailure(t *testing.T) {
 	if _, err = s.CompleteGrammarAttempt("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec", a.ID); err == nil {
 		t.Fatal("closed database reported completion success")
 	}
-	if s.grammarAttempts[a.ID].Result != nil || s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec").XP != 50 || s.progress["c5056e4a-dc47-4f74-bdb9-44b8c794c9ec"]["grammar-n5-02"].Completed {
+	if s.grammarAttempts[a.ID].Result != nil || s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec").XP != 80 || s.progress["c5056e4a-dc47-4f74-bdb9-44b8c794c9ec"]["grammar-n5-02"].Completed {
 		t.Fatal("disk failure partially awarded progress")
 	}
 }
@@ -241,7 +243,8 @@ func TestGamificationExamRewardsAndEmptyAttempts(t *testing.T) {
 			}
 		}
 	}
-	if summary := s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec"); summary.XP != 100 || summary.ExamsCompleted != 1 || achievementByID(t, summary, "exam-ready").UnlockedAt == nil {
+	// First pass pays 100 XP, the same-day re-pass pays 10.
+	if summary := s.Gamification("c5056e4a-dc47-4f74-bdb9-44b8c794c9ec"); summary.XP != 110 || summary.ExamsCompleted != 1 || achievementByID(t, summary, "exam-ready").UnlockedAt == nil {
 		t.Fatal("exam reward duplicated or missing")
 	}
 	grantTestLifetime(t, s, "926ea9c7-89bb-496e-bb5c-c9d4c7d2df6f")

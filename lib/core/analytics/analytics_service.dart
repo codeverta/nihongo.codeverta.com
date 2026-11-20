@@ -26,6 +26,7 @@ String analyticsFeatureForPath(String path) {
     '/exams': 'exam',
     '/premium': 'premium',
     '/achievements': 'statistics',
+    '/leaderboard': 'leaderboard',
     '/settings': 'settings',
     '/notifications': 'settings',
     '/attributions': 'settings',

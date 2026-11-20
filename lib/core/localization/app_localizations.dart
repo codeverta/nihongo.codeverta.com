@@ -5,6 +5,7 @@ import 'package:nihongo_master/core/localization/anki_english_part_a.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_b.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_c.dart';
 import 'package:nihongo_master/core/localization/ui_english_ai_chat.dart';
+import 'package:nihongo_master/core/localization/ui_english_leaderboard.dart';
 import 'package:nihongo_master/core/localization/ui_english_level_list.dart';
 import 'package:nihongo_master/core/localization/ui_english_redesign.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_core.dart';
@@ -301,6 +302,7 @@ class AppLocalizations {
         uiEnglishWave1Exam[source] ??
         uiEnglishRedesign[source] ??
         uiEnglishAiChat[source] ??
+        uiEnglishLeaderboard[source] ??
         uiEnglishLevelList[source];
     if (exact != null) return exact;
 
@@ -861,8 +863,6 @@ const _englishCopy = <String, String>{
   'Progress dasar': 'Basic progress',
   'Streak hari': 'Day streak',
   'Badge': 'Badges',
-  '50 XP saat pertama lulus lesson. 100 XP saat pertama mendapat ≥80% pada tiap jenis ujian. Ulangan tidak menggandakan XP. Streak dihitung dari kuis atau ujian yang selesai, zona waktu belajar yang dipilih.':
-      'Earn 50 XP the first time you pass a lesson. Earn 100 XP the first time you score at least 80% on each exam type. Retakes do not award XP again. Streaks count completed quizzes and exams using your selected study timezone.',
   'Progres belum bisa dimuat. Periksa koneksi atau masuk kembali jika sesi berakhir.':
       'Progress could not be loaded. Check your connection or sign in again if your session has expired.',
   'First Step': 'First Step',

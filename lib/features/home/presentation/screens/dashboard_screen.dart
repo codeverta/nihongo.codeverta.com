@@ -13,6 +13,8 @@ import 'package:nihongo_master/features/home/presentation/controllers/home_contr
 import 'package:nihongo_master/features/home/presentation/widgets/home_banner_carousel.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_quick_menu.dart';
 import 'package:nihongo_master/features/home/presentation/widgets/home_skeleton.dart';
+import 'package:nihongo_master/features/leaderboard/data/leaderboard_repository.dart';
+import 'package:nihongo_master/features/leaderboard/presentation/home_leaderboard_widgets.dart';
 import 'package:nihongo_master/features/learn/activity/continue_learning_section.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/news/data/news_repository.dart';
@@ -68,6 +70,7 @@ class DashboardScreen extends ConsumerWidget {
           await ref.read(learningHistoryProvider.notifier).refresh();
           await (ref
                 ..invalidate(newsPreviewProvider)
+                ..invalidate(myLeaderboardProvider)
                 ..invalidate(homeDashboardProvider))
               .read(homeDashboardProvider.future);
         },
@@ -202,6 +205,13 @@ class _DashboardContent extends StatelessWidget {
                     profile: data.profile!,
                     onTap: openProfile,
                   ),
+                ),
+                const HomeLastWeekCard(),
+              ] else if (!data.isAuthenticated) ...[
+                SizedBox(height: banners.isNotEmpty ? 8 : 16),
+                const StaggeredEntrance(
+                  index: 2,
+                  child: HomeLeaderboardGuestRow(),
                 ),
               ],
               if (offline) ...[
@@ -454,6 +464,8 @@ class _ProgressSummary extends StatelessWidget {
                         .localized(context),
               style: theme.textTheme.bodySmall,
             ),
+            const Divider(height: 18),
+            const HomeLeaderboardRankRow(),
           ],
         ),
       ),

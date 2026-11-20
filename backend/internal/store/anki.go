@@ -4,11 +4,9 @@ import (
 	"encoding/json"
 	"errors"
 	"github.com/google/uuid"
-	"gorm.io/gorm/clause"
 	"math"
 	"nihongo-master-backend/internal/anki"
 	"nihongo-master-backend/internal/ankitransfer"
-	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 	"sort"
 	"strconv"
@@ -352,15 +350,26 @@ func (s *MemoryStore) AnkiReview(user, id string, input AnkiReviewInput) (AnkiRe
 		}
 		progress.NextNew++
 	}
-	if s.gamificationDB != nil {
-		raw, err = json.Marshal(next)
-		if err != nil {
-			return AnkiReviewResult{}, err
-		}
-		if err = s.ormWriter.Clauses(clause.OnConflict{DoUpdates: clause.AssignmentColumns([]string{"state"})}).Create(&database.GamificationUser{UserID: user, State: raw}).Error; err != nil {
-			return AnkiReviewResult{}, err
-		}
+	// +1 XP per reviewed card, at most 30 XP per study day.
+	var awards []xpAward
+	ledger := next.xpDayLocked(now.In(studyTimezone(next)).Format("2006-01-02"))
+	if ledger.Anki < xpAnkiMaxPerDay {
+		ledger.Anki += xpAnkiCard
+		awards = append(awards, xpAward{xpAnkiCard, "anki"})
+		next.XP += xpAnkiCard
+		next.pruneXPDays(now)
+		unlockAchievements(next, now)
 	}
+	if err = s.persistXPLocked(user, next, awards, now); err != nil {
+		return AnkiReviewResult{}, err
+	}
+	s.recordXPLocked(user, next.XP, totalXP(awards), now)
 	s.gamification[user] = next
+	if len(awards) > 0 {
+		profile := s.profiles[user]
+		profile.XP = next.XP
+		profile.Level = 1 + next.XP/500
+		s.profiles[user] = profile
+	}
 	return AnkiReviewResult{true, scheduled.Due, scheduled.Version}, nil
 }

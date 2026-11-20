@@ -104,7 +104,9 @@ void main() {
       }
     }
   });
-  testWidgets('Learn puts Anki and SSW below every JLPT subject',
+  // Anki and SSW moved from Learn to the Beranda quick menu in the redesign
+  // (covered by home_quick_menu_test.dart); Learn keeps only JLPT subjects.
+  testWidgets('Learn lists every JLPT subject without Anki or SSW cards',
       (tester) async {
     tester.view.physicalSize = const Size(420, 1800);
     tester.view.devicePixelRatio = 1;
@@ -121,11 +123,11 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    final ankiY = tester.getTopLeft(find.byType(AnkiEntryCard)).dy;
     for (final subject in ['Vocabulary', 'Grammar', 'Kanji', 'Reading']) {
-      expect(tester.getTopLeft(find.text(subject)).dy, lessThan(ankiY));
+      expect(find.text(subject), findsOneWidget);
     }
-    expect(tester.getTopLeft(find.byType(SswEntryCard)).dy, greaterThan(ankiY));
+    expect(find.byType(AnkiEntryCard), findsNothing);
+    expect(find.byType(SswEntryCard), findsNothing);
     expect(tester.takeException(), isNull);
   });
   for (final sector in ['agriculture', 'fishery']) {

@@ -6,9 +6,13 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/ads/ads_controller.dart';
 import 'package:nihongo_master/core/offline/network_status.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/home/domain/home_dashboard.dart';
+import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/learn/activity/learning_history.dart';
 import 'package:nihongo_master/features/learn/grammar/data/grammar_repository.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
@@ -17,6 +21,7 @@ import 'package:nihongo_master/features/learn/grammar/presentation/screens/gramm
 import 'package:nihongo_master/features/learn/grammar/presentation/screens/grammar_lesson_screen.dart';
 import 'package:nihongo_master/features/learn/vocabulary/domain/vocabulary_models.dart'
     show QuizOption;
+import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 late SharedPreferences _preferences;
@@ -275,6 +280,13 @@ void main() {
 Widget _app(_Repository repository) => ProviderScope(
   overrides: [
     sharedPreferencesProvider.overrideWithValue(_preferences),
+    // Finishing a quiz refreshes ads, Beranda and XP; keep them off the
+    // network (debug-mode invalidate mounts the providers).
+    adsConfigProvider.overrideWith((ref) async => AdsConfig.off),
+    homeDashboardProvider.overrideWith(
+      (ref) => Completer<HomeDashboard>().future,
+    ),
+    gamificationRepositoryProvider.overrideWithValue(_Gamification()),
     learningHistoryRepositoryProvider.overrideWith(
       (ref) => _HistoryRepository(),
     ),
@@ -300,6 +312,24 @@ Widget _app(_Repository repository) => ProviderScope(
     home: const GrammarLessonScreen(lessonId: 'grammar-n5-01'),
   ),
 );
+
+class _Gamification extends GamificationRepository {
+  _Gamification() : super(Dio());
+  @override
+  Future<GamificationSummary> fetch() async => const GamificationSummary(
+    xp: 0,
+    level: 1,
+    levelXp: 0,
+    nextLevelXp: 500,
+    streakDays: 0,
+    bestStreak: 0,
+    lessonsCompleted: 0,
+    examsCompleted: 0,
+    activeDays: 0,
+    minutesToday: 0,
+    achievements: [],
+  );
+}
 
 class _Repository extends GrammarRepository {
   _Repository() : super(Dio());

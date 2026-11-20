@@ -57,27 +57,30 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     preferences = await SharedPreferences.getInstance();
   });
-  test('first completion of a lesson notifies the rating prompt once', () async {
-    final completed = <String>[];
-    final history = LearningHistoryController(
-      preferences,
-      FakeHistory()..offline = true,
-      'a',
-      onFirstCompletion: completed.add,
-    );
-    addTearDown(history.dispose);
-    await history.open(
-      kind: 'kanji',
-      lessonId: 'kanji-n5-1',
-      title: 'Kanji 1',
-      total: 3,
-      completed: false,
-    );
-    history
-      ..complete('kanji', 'kanji-n5-1')
-      ..complete('kanji', 'kanji-n5-1');
-    expect(completed, ['kanji:kanji-n5-1']);
-  });
+  test(
+    'first completion of a lesson notifies the rating prompt once',
+    () async {
+      final completed = <String>[];
+      final history = LearningHistoryController(
+        preferences,
+        FakeHistory()..offline = true,
+        'a',
+        onFirstCompletion: completed.add,
+      );
+      addTearDown(history.dispose);
+      await history.open(
+        kind: 'kanji',
+        lessonId: 'kanji-n5-1',
+        title: 'Kanji 1',
+        total: 3,
+        completed: false,
+      );
+      history
+        ..complete('kanji', 'kanji-n5-1')
+        ..complete('kanji', 'kanji-n5-1');
+      expect(completed, ['kanji:kanji-n5-1']);
+    },
+  );
   test(
     'offline positions persist per account and synchronize after reconnect',
     () async {
@@ -298,7 +301,7 @@ void main() {
     },
   );
   testWidgets(
-    'empty history is hidden; completed and locked states remain accessible with large text',
+    'empty history is hidden; completed and N3 lessons stay accessible with large text',
     (tester) async {
       tester.view.physicalSize = const Size(320, 740);
       tester.view.devicePixelRatio = 1;
@@ -321,6 +324,11 @@ void main() {
             path: '/premium',
             builder: (_, __) =>
                 const Scaffold(body: Text('Lifetime destination')),
+          ),
+          GoRoute(
+            path: '/learn/grammar/lessons/:id',
+            builder: (_, state) =>
+                Scaffold(body: Text('Lesson ${state.pathParameters['id']}')),
           ),
         ],
       );
@@ -361,12 +369,15 @@ void main() {
       repository.items = [activity(2, level: 'N3')];
       await history.refresh();
       await tester.pumpAndSettle();
-      expect(find.textContaining('Akses Lifetime diperlukan'), findsOneWidget);
-      await tester.ensureVisible(find.text('Buka akses belajar'));
+      // Every signed-in account studies N3–N1 without Lifetime Access.
+      expect(find.textContaining('Akses Lifetime diperlukan'), findsNothing);
+      expect(find.text('Buka akses belajar'), findsNothing);
+      await tester.ensureVisible(find.text('Lanjutkan belajar').last);
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Buka akses belajar'));
+      await tester.tap(find.text('Lanjutkan belajar').last);
       await tester.pumpAndSettle();
-      expect(find.text('Lifetime destination'), findsOneWidget);
+      expect(find.text('Lesson grammar-n3-2'), findsOneWidget);
+      expect(find.text('Lifetime destination'), findsNothing);
       expect(tester.takeException(), isNull);
     },
   );

@@ -129,6 +129,21 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                   error: (_, __) => const SizedBox.shrink(),
                   data: (data) => Column(
                     children: [
+                      ListTile(
+                        key: const Key('profile-leaderboard-link'),
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Text(
+                          '🏆',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                        title: const Text('Leaderboard'),
+                        subtitle: Text(
+                          'Lihat peringkat XP minggu ini dan sepanjang masa'
+                              .localized(context),
+                        ),
+                        trailing: const Icon(Icons.chevron_right_rounded),
+                        onTap: () => context.push('/leaderboard'),
+                      ),
                       for (final a in data.achievements.take(3))
                         AchievementTile(achievement: a),
                       TextButton.icon(

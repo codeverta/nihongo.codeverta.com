@@ -18,6 +18,7 @@ import 'package:nihongo_master/core/routing/app_router.dart';
 import 'package:nihongo_master/core/settings/theme_mode_preference.dart';
 import 'package:nihongo_master/core/storage/shared_preferences_provider.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
+import 'package:nihongo_master/core/widgets/system_navigation_inset.dart';
 import 'package:nihongo_master/features/billing/presentation/billing_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -77,9 +78,11 @@ class NihongoMasterApp extends ConsumerWidget {
       title:
           ref.watch(appBrandingProvider).valueOrNull?.appName ??
           'Nihongo Master',
-      builder: (context, child) => OfflineLifecycle(
-        child: NotificationLifecycle(
-          child: AppUpdateGate(child: BrandStartup(child: child!)),
+      builder: (context, child) => SystemNavigationInset(
+        child: OfflineLifecycle(
+          child: NotificationLifecycle(
+            child: AppUpdateGate(child: BrandStartup(child: child!)),
+          ),
         ),
       ),
       debugShowCheckedModeBanner: false,

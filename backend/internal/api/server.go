@@ -90,6 +90,7 @@ func (s *Server) Handler() http.Handler {
 	s.registerMap(mux)
 	s.registerPrefectureLiving(mux)
 	s.registerAnki(mux)
+	s.registerLeaderboard(mux)
 	mux.HandleFunc("GET /v1/dictionary/search", s.dictionarySearch)
 	mux.HandleFunc("GET /v1/dictionary/kanji/{character}", s.dictionaryKanji)
 	mux.HandleFunc("GET /v1/billing", s.requireAuth(s.billingStatus))
@@ -397,7 +398,14 @@ func (s *Server) startExam(w http.ResponseWriter, r *http.Request) {
 func (s *Server) requireAuth(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		token := bearerToken(r)
-		id, ok := s.store.ResolveSession(token)
+		id, ok, lookupErr := s.store.ResolveSessionChecked(token)
+		if lookupErr != nil {
+			// A database hiccup must not look like a revoked login: the app
+			// keeps its token on 503 and retries.
+			w.Header().Set("Retry-After", "5")
+			writeError(w, http.StatusServiceUnavailable, "session_unavailable", "Server sedang sibuk. Coba lagi sebentar lagi.")
+			return
+		}
 		if !ok {
 			writeError(w, http.StatusUnauthorized, "unauthorized", "Bearer token tidak valid atau sudah dicabut")
 			return

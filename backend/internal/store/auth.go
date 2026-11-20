@@ -195,13 +195,24 @@ func sessionTokenHash(token string) string {
 	return hex.EncodeToString(sum[:])
 }
 
+// ErrSessionLookup means the session could not be checked (for example the
+// database was briefly unavailable). It is not proof that the token is invalid.
+var ErrSessionLookup = errors.New("session lookup failed")
+
 func (s *MemoryStore) ResolveSession(token string) (string, bool) {
+	id, ok, _ := s.ResolveSessionChecked(token)
+	return id, ok
+}
+
+// ResolveSessionChecked is ResolveSession that also reports a failed lookup,
+// so callers do not treat a database hiccup as a revoked login.
+func (s *MemoryStore) ResolveSessionChecked(token string) (string, bool, error) {
 	s.mu.RLock()
 	userID, ok := s.sessions[token]
 	persist := s.billingEnabled
 	s.mu.RUnlock()
 	if ok || !persist || token == "" {
-		return userID, ok
+		return userID, ok, nil
 	}
 	// Not in memory, for example right after a restart: restore it from the database.
 	var record database.Session
@@ -209,13 +220,14 @@ func (s *MemoryStore) ResolveSession(token string) (string, bool) {
 	if err != nil {
 		if !errors.Is(err, gorm.ErrRecordNotFound) {
 			log.Printf("resolve persisted session: %v", err)
+			return "", false, ErrSessionLookup
 		}
-		return "", false
+		return "", false, nil
 	}
 	s.mu.Lock()
 	s.sessions[token] = record.UserID
 	s.mu.Unlock()
-	return record.UserID, true
+	return record.UserID, true, nil
 }
 
 func (s *MemoryStore) RevokeSession(token string) {
@@ -247,7 +259,7 @@ func (s *MemoryStore) seedDemoAccount() {
 
 func (s *MemoryStore) ensureProfileForAccountLocked(account account) domain.Profile {
 	if profile, ok := s.profiles[account.ID]; ok {
-		profile.DisplayName = account.DisplayName
+		profile.DisplayName = account.profileDisplayName()
 		profile.Email = account.Email
 		profile.PhotoURL = account.profilePhotoURL()
 		profile.Timezone = account.Timezone
@@ -269,7 +281,7 @@ func profileForAccount(account account) domain.Profile {
 	}
 	return domain.Profile{
 		ID:          account.ID,
-		DisplayName: account.DisplayName,
+		DisplayName: account.profileDisplayName(),
 		Email:       account.Email,
 		PhotoURL:    account.profilePhotoURL(),
 		Timezone:    timezone,
@@ -277,6 +289,13 @@ func profileForAccount(account account) domain.Profile {
 		Level:       1,
 		Entitlement: domain.Entitlement{Tier: domain.TierFree},
 	}
+}
+
+func (a account) profileDisplayName() string {
+	if a.CustomDisplayName != "" {
+		return a.CustomDisplayName
+	}
+	return a.DisplayName
 }
 
 func (a account) profilePhotoURL() string {

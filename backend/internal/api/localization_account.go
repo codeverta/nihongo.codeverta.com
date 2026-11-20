@@ -137,18 +137,20 @@ type accountAchievementText struct {
 // `progress`, `target` and `unlockedAt` for logic and only displays `name` and
 // `description`, so those two are the only fields translated.
 var accountAchievementEnglish = map[string]accountAchievementText{
-	"first-lesson":  {"First Step", "Pass one lesson quiz with a score of at least 80%."},
-	"lessons-10":    {"Dedicated Learner", "Pass 10 different lessons."},
-	"lessons-50":    {"50 Lessons", "Pass 50 different lessons."},
-	"vocabulary-10": {"Word Collector", "Pass 10 vocabulary lessons."},
-	"grammar-10":    {"Grammar Builder", "Pass 10 grammar lessons."},
-	"kanji-10":      {"Kanji Explorer", "Pass 10 kanji lessons."},
-	"reading-5":     {"Bookworm", "Pass 5 reading lessons."},
-	"all-subjects":  {"All-Rounder", "Pass lessons in all four subjects."},
-	"streak-7":      {"7-Day Streak", "Complete a quiz or exam for 7 consecutive days."},
-	"streak-30":     {"30-Day Streak", "Complete a quiz or exam for 30 consecutive days."},
-	"xp-500":        {"Level Up", "Earn 500 XP."},
-	"exam-ready":    {"Exam Ready", "Score at least 80% on a diagnostic or simulation."},
+	"first-lesson":    {"First Step", "Pass one lesson quiz with a score of at least 80%."},
+	"lessons-10":      {"Dedicated Learner", "Pass 10 different lessons."},
+	"lessons-50":      {"50 Lessons", "Pass 50 different lessons."},
+	"vocabulary-10":   {"Word Collector", "Pass 10 vocabulary lessons."},
+	"grammar-10":      {"Grammar Builder", "Pass 10 grammar lessons."},
+	"kanji-10":        {"Kanji Explorer", "Pass 10 kanji lessons."},
+	"reading-5":       {"Bookworm", "Pass 5 reading lessons."},
+	"all-subjects":    {"All-Rounder", "Pass lessons in all four subjects."},
+	"streak-7":        {"7-Day Streak", "Complete a quiz or exam for 7 consecutive days."},
+	"streak-30":       {"30-Day Streak", "Complete a quiz or exam for 30 consecutive days."},
+	"xp-500":          {"Level Up", "Earn 500 XP."},
+	"exam-ready":      {"Exam Ready", "Score at least 80% on a diagnostic or simulation."},
+	"weekly-podium":   {"Weekly Podium", "Finish in the top 3 of the weekly leaderboard."},
+	"weekly-champion": {"Weekly Champion", "Finish first on the weekly leaderboard."},
 }
 
 // translateAchievements localizes every achievement object (identified by its
