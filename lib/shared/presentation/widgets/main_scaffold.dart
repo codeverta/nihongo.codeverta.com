@@ -7,6 +7,7 @@ import 'package:nihongo_master/core/ads/ad_widgets.dart';
 import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/features/billing/presentation/lifetime_offer.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/exam_hub_screen.dart';
 import 'package:nihongo_master/features/home/presentation/screens/dashboard_screen.dart';
@@ -52,24 +53,27 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final screens = [
-      DashboardScreen(
-        active: _selectedIndex == 0,
-        openLearn: () => _selectDestination(1),
-        openExam: () {
-          setState(() {
-            _examCategory = 'JLPT';
-            _examNavigation++;
-          });
-          _selectDestination(2);
-        },
-        openExamCategory: (category) {
-          setState(() {
-            _examCategory = category;
-            _examNavigation++;
-          });
-          _selectDestination(2);
-        },
-        openProfile: () => _selectDestination(4),
+      // On the app's launch, may open the skippable Lifetime screen.
+      LifetimeOfferLaunchCheck(
+        child: DashboardScreen(
+          active: _selectedIndex == 0,
+          openLearn: () => _selectDestination(1),
+          openExam: () {
+            setState(() {
+              _examCategory = 'JLPT';
+              _examNavigation++;
+            });
+            _selectDestination(2);
+          },
+          openExamCategory: (category) {
+            setState(() {
+              _examCategory = category;
+              _examNavigation++;
+            });
+            _selectDestination(2);
+          },
+          openProfile: () => _selectDestination(4),
+        ),
       ),
       const LearnHubScreen(),
       ExamHubScreen(

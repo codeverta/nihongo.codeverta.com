@@ -17,6 +17,7 @@ import 'package:nihongo_master/features/anki/presentation/anki_import_screen.dar
 import 'package:nihongo_master/features/anki/presentation/anki_screens.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/auth/presentation/screens/login_screen.dart';
+import 'package:nihongo_master/features/billing/presentation/lifetime_offer.dart';
 import 'package:nihongo_master/features/billing/presentation/premium_screen.dart';
 import 'package:nihongo_master/features/dictionary/presentation/dictionary_screen.dart';
 import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_attempt_screen.dart';
@@ -36,8 +37,8 @@ import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vo
 import 'package:nihongo_master/features/learn/vocabulary/presentation/screens/vocabulary_lesson_screen.dart';
 import 'package:nihongo_master/features/manga/presentation/manga_screens.dart';
 import 'package:nihongo_master/features/map/presentation/japan_map_screen.dart';
-import 'package:nihongo_master/features/map/presentation/spot_detail_screen.dart';
 import 'package:nihongo_master/features/map/presentation/prefecture_profile_screen.dart';
+import 'package:nihongo_master/features/map/presentation/spot_detail_screen.dart';
 import 'package:nihongo_master/features/news/presentation/news_screens.dart';
 import 'package:nihongo_master/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:nihongo_master/features/profile/presentation/screens/achievements_screen.dart';
@@ -257,7 +258,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: '/premium',
-        builder: (context, state) => const PremiumScreen(),
+        builder: (context, state) => PremiumScreen(
+          offer: LifetimeOfferSource.parse(state.uri.queryParameters['offer']),
+          offerFrom: state.uri.queryParameters['from'],
+        ),
       ),
       GoRoute(
         path: '/achievements',

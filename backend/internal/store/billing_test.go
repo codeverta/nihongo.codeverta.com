@@ -23,7 +23,7 @@ func TestBillingOwnershipFreshnessAndMultipleStores(t *testing.T) {
 	grantTestLifetime(t, s, "buyer")
 	p, _ := s.Purchase("android", "test-buyer")
 	s.BillingAccountToken("other")
-	if err := s.SaveVerifiedPurchase("other", p); !errors.Is(err, ErrPremium) {
+	if err := s.SaveVerifiedPurchase("other", p); !errors.Is(err, ErrPurchaseOwned) {
 		t.Fatal("purchase replay across accounts allowed")
 	}
 	if s.Profile("buyer").Entitlement.Tier != domain.TierPremium || s.Profile("other").Entitlement.Tier != domain.TierFree {
@@ -45,6 +45,50 @@ func TestBillingOwnershipFreshnessAndMultipleStores(t *testing.T) {
 		t.Fatal("refund on one store revoked another active purchase")
 	}
 }
+func TestPromoPurchaseBindsToFirstVerifier(t *testing.T) {
+	s := NewMemoryStore()
+	if _, err := s.AuthenticateGoogle(domain.GoogleIdentity{Subject: "a", Email: "abcdef@gmail.com", DisplayName: "A"}); err != nil {
+		t.Fatal(err)
+	}
+	first, _ := s.AuthenticateGoogle(domain.GoogleIdentity{Subject: "a", Email: "abcdef@gmail.com", DisplayName: "A"})
+	second, _ := s.AuthenticateGoogle(domain.GoogleIdentity{Subject: "b", Email: "zz@example.com", DisplayName: "B"})
+	s.BillingAccountToken(first.ID)
+	s.BillingAccountToken(second.ID)
+	promo := domain.Purchase{Platform: "android", ID: "promo", ProductID: "nihongo_master_lifetime", Proof: "promo", State: "purchased", CheckedAt: time.Now()}
+	if err := s.SaveVerifiedPurchase(first.ID, promo); err != nil {
+		t.Fatal("promo purchase without an account token rejected:", err)
+	}
+	if s.Profile(first.ID).Entitlement.Tier != domain.TierPremium {
+		t.Fatal("promo claim did not grant Lifetime")
+	}
+	err := s.SaveVerifiedPurchase(second.ID, promo)
+	var owned *PurchaseOwnedError
+	if !errors.As(err, &owned) || owned.Owner != "ab***@gmail.com" {
+		t.Fatalf("claimed promo moved or owner hidden: %v", err)
+	}
+	if s.Profile(second.ID).Entitlement.Tier != domain.TierFree {
+		t.Fatal("second account got the claimed promo")
+	}
+	// A purchase bought for the first account names it to the second.
+	token, _ := s.BillingAccountToken(first.ID)
+	bought := domain.Purchase{Platform: "android", ID: "bought", ProductID: "nihongo_master_lifetime", AccountToken: token, State: "purchased", CheckedAt: time.Now()}
+	if err := s.SaveVerifiedPurchase(second.ID, bought); !errors.As(err, &owned) || owned.Owner != "ab***@gmail.com" {
+		t.Fatalf("purchase for another live account accepted: %v", err)
+	}
+	// iOS purchases always need the account token.
+	if err := s.SaveVerifiedPurchase(first.ID, domain.Purchase{Platform: "ios", ID: "ios", State: "purchased", CheckedAt: time.Now()}); !errors.Is(err, ErrPremium) {
+		t.Fatal("iOS purchase without an account token accepted")
+	}
+}
+
+func TestMaskEmail(t *testing.T) {
+	for in, want := range map[string]string{"abcdef@gmail.com": "ab***@gmail.com", "a@x.io": "a***@x.io", "": "", "bad": ""} {
+		if got := MaskEmail(in); got != want {
+			t.Fatalf("MaskEmail(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
+
 func TestBillingDeletionRestoreAndRestart(t *testing.T) {
 	path := testdb.DSN(t)
 	s := NewMemoryStore()

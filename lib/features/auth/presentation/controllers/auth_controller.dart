@@ -23,6 +23,7 @@ class AuthenticatedUser {
     this.isPremium = false,
     this.isLifetime = false,
     this.isOfflinePremium = false,
+    this.canPurchase = true,
   });
 
   factory AuthenticatedUser.fromJson(Map<String, dynamic> json) {
@@ -35,6 +36,7 @@ class AuthenticatedUser {
           (json['entitlement'] as Map<String, dynamic>?)?['tier'] == 'premium',
       isLifetime:
           (json['entitlement'] as Map<String, dynamic>?)?['isLifetime'] == true,
+      canPurchase: json['canPurchase'] != false,
     );
   }
 
@@ -47,6 +49,7 @@ class AuthenticatedUser {
       'tier': isPremium ? 'premium' : 'free',
       'isLifetime': isLifetime,
     },
+    if (!canPurchase) 'canPurchase': false,
   };
 
   AuthenticatedUser withOfflineAccess({required bool allowed}) =>
@@ -58,6 +61,7 @@ class AuthenticatedUser {
         isPremium: allowed,
         isLifetime: allowed,
         isOfflinePremium: allowed,
+        canPurchase: canPurchase,
       );
 
   final String id;
@@ -67,6 +71,10 @@ class AuthenticatedUser {
   final bool isPremium;
   final bool isLifetime;
   final bool isOfflinePremium;
+
+  /// False for shared accounts that cannot buy Lifetime (the demo account
+  /// and the Play reviewer), so purchase prompts are not shown to them.
+  final bool canPurchase;
 }
 
 @immutable

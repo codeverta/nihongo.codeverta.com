@@ -86,7 +86,7 @@ func TestVerificationRetryReconciliationAndOwnership(t *testing.T) {
 		t.Fatal("retry duplicated ownership")
 	}
 	memory.BillingAccountToken("other")
-	if _, err := service.Verify(context.Background(), "other", proof); !errors.Is(err, store.ErrPremium) {
+	if _, err := service.Verify(context.Background(), "other", proof); !errors.Is(err, store.ErrPurchaseOwned) {
 		t.Fatal("replay to other account accepted")
 	}
 	verifier.p.State = "revoked"
@@ -103,5 +103,17 @@ func TestVerificationRetryReconciliationAndOwnership(t *testing.T) {
 	}
 	if memory.Profile("buyer").Entitlement.Tier != domain.TierFree {
 		t.Fatal("outage resurrected refunded access")
+	}
+}
+
+func TestGooglePromoPurchaseWithoutAccountIsAccepted(t *testing.T) {
+	client := &http.Client{Transport: transportFunc(func(r *http.Request) (*http.Response, error) {
+		raw, _ := json.Marshal(map[string]any{"productLineItem": []any{map[string]any{"productId": "lifetime", "productOfferDetails": map[string]any{"refundableQuantity": 1, "consumptionState": "CONSUMPTION_STATE_YET_TO_BE_CONSUMED"}}}, "purchaseStateContext": map[string]string{"purchaseState": "PURCHASED"}, "acknowledgementState": "ACKNOWLEDGEMENT_STATE_PENDING"})
+		return &http.Response{StatusCode: 200, Body: io.NopCloser(strings.NewReader(string(raw)))}, nil
+	})}
+	v := &StoreVerifier{ProductID: "lifetime", PackageID: "com.codeverta.nihongomaster", googleClient: client}
+	p, err := v.Verify(context.Background(), domain.PurchaseProof{Platform: "android", ProductID: "lifetime", VerificationData: "promo-token"})
+	if err != nil || p.State != "purchased" || p.AccountToken != "" || p.Acknowledged {
+		t.Fatalf("redeemed promo purchase rejected: %+v %v", p, err)
 	}
 }

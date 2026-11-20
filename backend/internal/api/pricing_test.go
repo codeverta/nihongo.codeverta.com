@@ -9,6 +9,7 @@ import (
 	"testing"
 
 	"nihongo-master-backend/internal/api"
+	"nihongo-master-backend/internal/database"
 	"nihongo-master-backend/internal/domain"
 	"nihongo-master-backend/internal/store"
 )
@@ -106,6 +107,71 @@ func TestPricingAdminRejectsUnauthorizedAndInvalidPrices(t *testing.T) {
 	}
 	if got := getLifetimePrice(t, handler, "/v1/pricing"); got != 99000 {
 		t.Fatalf("invalid update changed public price to %d", got)
+	}
+}
+
+func TestLifetimeOfferSettingsPersistAndKeepOnPriceOnlySave(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "pricing.json")
+	server := api.NewServer(store.NewMemoryStore(), fakeGoogleVerifier{})
+	if err := server.ConfigurePricing(path, "pricing-secret"); err != nil {
+		t.Fatal(err)
+	}
+	handler := server.Handler()
+	offer := func(h http.Handler) (bool, int) {
+		request := httptest.NewRequest(http.MethodGet, "/v1/pricing", nil)
+		response := httptest.NewRecorder()
+		h.ServeHTTP(response, request)
+		var payload struct {
+			Data struct {
+				OfferAfterLogin   bool `json:"offerAfterLogin"`
+				OfferIntervalDays int  `json:"offerIntervalDays"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(response.Body.Bytes(), &payload); err != nil {
+			t.Fatal(err)
+		}
+		return payload.Data.OfferAfterLogin, payload.Data.OfferIntervalDays
+	}
+	if on, days := offer(handler); !on || days != 10 {
+		t.Fatalf("default offer = %v/%d, want on/10", on, days)
+	}
+	put := func(body string) int {
+		request := httptest.NewRequest(http.MethodPut, "/v1/admin/pricing", strings.NewReader(body))
+		request.Header.Set("Authorization", "Bearer pricing-secret")
+		response := httptest.NewRecorder()
+		handler.ServeHTTP(response, request)
+		return response.Code
+	}
+	if code := put(`{"lifetimePriceIdr":99000,"offerAfterLogin":false,"offerIntervalDays":3}`); code != http.StatusOK {
+		t.Fatalf("save offer = %d", code)
+	}
+	// The standalone pricing page sends only the price.
+	if code := put(`{"lifetimePriceIdr":129000}`); code != http.StatusOK {
+		t.Fatalf("price-only save = %d", code)
+	}
+	if code := put(`{"lifetimePriceIdr":99000,"offerIntervalDays":91}`); code != http.StatusUnprocessableEntity {
+		t.Fatalf("interval 91 accepted: %d", code)
+	}
+	restarted := api.NewServer(store.NewMemoryStore(), fakeGoogleVerifier{})
+	if err := restarted.ConfigurePricing(path, "pricing-secret"); err != nil {
+		t.Fatal(err)
+	}
+	if on, days := offer(restarted.Handler()); on || days != 3 {
+		t.Fatalf("offer after price-only save and restart = %v/%d, want off/3", on, days)
+	}
+}
+
+func TestProfileSaysWhetherTheAccountCanPurchase(t *testing.T) {
+	memory := store.NewMemoryStore()
+	buyer, err := memory.AuthenticateGoogle(domain.GoogleIdentity{Subject: "p", Email: "p@example.com", DisplayName: "P"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := memory.Profile(buyer.ID).CanPurchase; got == nil || !*got {
+		t.Fatal("personal account cannot purchase")
+	}
+	if got := memory.Profile(database.DemoUserID).CanPurchase; got == nil || *got {
+		t.Fatal("demo account can purchase")
 	}
 }
 

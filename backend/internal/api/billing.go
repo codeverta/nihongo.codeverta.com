@@ -85,7 +85,16 @@ func (s *Server) personalBillingAccount(w http.ResponseWriter, r *http.Request) 
 	return true
 }
 func writeBillingError(w http.ResponseWriter, err error) {
+	var owned *store.PurchaseOwnedError
 	switch {
+	case errors.As(err, &owned):
+		// The store purchase belongs to another live app account. The owner is
+		// a masked email so the user knows which account to sign in with.
+		writeJSON(w, http.StatusConflict, map[string]any{"error": map[string]string{
+			"code":    "purchase_owned",
+			"message": "Lifetime untuk akun Google Play ini sudah dipakai oleh akun aplikasi lain.",
+			"owner":   owned.Owner,
+		}})
 	case errors.Is(err, billing.ErrUnavailable):
 		writeError(w, 503, "billing_unavailable", "Verifikasi store belum tersedia. Coba lagi atau restore pembelian.")
 	case errors.Is(err, billing.ErrInvalid):

@@ -1220,6 +1220,7 @@ const _englishCopy = <String, String>{
       'Could not start the payment. Use Restore if you have already purchased.',
   'Memulihkan pembelian…': 'Restoring purchases…',
   'Lifetime Access aktif.': 'Lifetime Access is active.',
+  'Lanjut gratis': 'Continue for free',
   'Belum ada pembelian yang berhasil dipulihkan. Pastikan akun store benar.':
       'No purchase could be restored. Check that you are using the correct store account.',
   'Restore gagal. Periksa akun store dan koneksi, lalu coba lagi.':
@@ -1244,6 +1245,17 @@ const _englishCopy = <String, String>{
       'This purchase is linked to another app account. Sign in to the purchasing account and restore it.',
   'Verifikasi belum selesai. Jangan membeli lagi; coba verifikasi atau Restore.':
       'Verification is not complete. Do not buy again; try verifying or restoring.',
+  'Memeriksa pembelian Lifetime yang sudah ada…':
+      'Checking for an existing Lifetime purchase…',
+  'Google Play mencatat Lifetime sudah dimiliki akun Play ini, tetapi pembeliannya belum ditemukan. Gunakan Restore.':
+      'Google Play says this Play account already owns Lifetime, but the purchase was not found yet. Use Restore.',
+  'Lifetime untuk akun Google Play ini sudah dipakai oleh akun aplikasi lain.':
+      'Lifetime on this Google Play account is already used by another app account.',
+  'Lifetime untuk akun Google Play ini sudah dipakai oleh akun':
+      'Lifetime on this Google Play account is already used by',
+  'Masuk dengan akun itu, atau ganti akun di Play Store untuk membeli lagi.':
+      'Sign in with that account, or switch accounts in the Play Store to buy again.',
+  'Masuk dengan akun lain': 'Sign in with another account',
 
   // Jobs: app-owned navigation, filters, and availability messages.
   'LANGKAH BERIKUTNYA UNTUK KARIERMU': 'YOUR NEXT CAREER STEP',

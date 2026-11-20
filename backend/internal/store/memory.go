@@ -237,6 +237,8 @@ func (s *MemoryStore) Profile(userID string) domain.Profile {
 	defer s.mu.Unlock()
 	profile := s.ensureProfileLocked(userID)
 	profile.Entitlement = s.entitlementLocked(userID)
+	canPurchase := userID != database.DemoUserID && (s.playReviewUserID == "" || userID != s.playReviewUserID)
+	profile.CanPurchase = &canPurchase
 	if profile.Timezone == "" {
 		profile.Timezone = defaultStudyTimezone
 	}

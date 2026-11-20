@@ -83,14 +83,14 @@ func (m *MemoryRepository) Release(_ context.Context, userID, day string, slot S
 	return nil
 }
 
-func (m *MemoryRepository) GrantAdCredit(_ context.Context, userID, day string, maxPerDay int) (bool, error) {
+func (m *MemoryRepository) GrantAdCredits(_ context.Context, userID, day string, credits, maxPerDay int) (bool, error) {
 	m.mu.Lock()
 	defer m.mu.Unlock()
 	u := m.counters(userID, day)
-	if u.AdGranted >= maxPerDay {
+	if credits < 1 || u.AdGranted+credits > maxPerDay {
 		return false, nil
 	}
-	u.AdGranted++
+	u.AdGranted += credits
 	return true, nil
 }
 

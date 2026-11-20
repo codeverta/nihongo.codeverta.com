@@ -48,6 +48,7 @@ class BillingState {
     this.pending = false,
     this.message,
     this.ready = false,
+    this.ownedBy,
   });
   final ProductDetails? product;
   final int? priceIdr;
@@ -56,6 +57,11 @@ class BillingState {
   final bool pending;
   final bool ready;
   final String? message;
+
+  /// Set when the Play account on this device already owns Lifetime for
+  /// another app account: that account's masked email, or '' when the server
+  /// did not name it. Buying is impossible until the user switches accounts.
+  final String? ownedBy;
 }
 
 final billingControllerProvider =
@@ -121,12 +127,17 @@ class BillingController extends StateNotifier<BillingState>
   final Set<String> completed = {};
   final Map<String, PurchaseDetails> waitingForLogin = {};
   bool restoring = false;
+  bool recovering = false;
   Timer? checkoutTimeout;
 
-  void showMessage(String message, {bool busy = false, bool pending = false}) {
+  /// See [BillingState.ownedBy].
+  String? ownedBy;
+
+  void showMessage(String? message, {bool busy = false, bool pending = false}) {
     if (!mounted) return;
     if (!busy) checkoutTimeout?.cancel();
     state = BillingState(
+      ownedBy: ownedBy,
       product: state.product,
       priceIdr: state.priceIdr,
       premium: state.premium,
@@ -141,6 +152,7 @@ class BillingController extends StateNotifier<BillingState>
     if (id == user) return;
     user = id;
     account = null;
+    ownedBy = null;
     retryPurchases.clear();
     completed.clear();
     state = const BillingState();
@@ -177,7 +189,9 @@ class BillingController extends StateNotifier<BillingState>
       final info = await repository.status(userId: id);
       if (!mounted || user != id) return;
       account = info;
+      if (info.premium) ownedBy = null;
       state = BillingState(
+        ownedBy: ownedBy,
         premium: info.premium,
         priceIdr: info.priceIdr,
         busy: true,
@@ -187,6 +201,7 @@ class BillingController extends StateNotifier<BillingState>
           !await gateway!.available()) {
         if (mounted && user == id) {
           state = BillingState(
+            ownedBy: ownedBy,
             premium: info.premium,
             priceIdr: info.priceIdr,
             message: 'Pembelian store belum tersedia di perangkat ini.',
@@ -201,6 +216,7 @@ class BillingController extends StateNotifier<BillingState>
           .where((p) => p.id == info.productId)
           .firstOrNull;
       state = BillingState(
+        ownedBy: ownedBy,
         premium: info.premium,
         product: found,
         priceIdr: info.priceIdr,
@@ -217,6 +233,7 @@ class BillingController extends StateNotifier<BillingState>
             await offlineAccess?.canReadPremium(id) ?? state.premium;
         if (!mounted || user != id) return;
         state = BillingState(
+          ownedBy: ownedBy,
           product: state.product,
           priceIdr: state.priceIdr,
           premium: offlinePremium,
@@ -232,6 +249,7 @@ class BillingController extends StateNotifier<BillingState>
             await offlineAccess?.canReadPremium(id) ?? state.premium;
         if (!mounted || user != id) return;
         state = BillingState(
+          ownedBy: ownedBy,
           product: state.product,
           priceIdr: state.priceIdr,
           premium: offlinePremium,
@@ -247,6 +265,7 @@ class BillingController extends StateNotifier<BillingState>
     if (state.busy ||
         state.pending ||
         state.premium ||
+        ownedBy != null ||
         !state.ready ||
         account == null ||
         user == null) {
@@ -267,7 +286,11 @@ class BillingController extends StateNotifier<BillingState>
         ),
       );
       if (!started) {
-        showMessage(
+        // Google Play refuses to start checkout when this Play account already
+        // owns Lifetime ("You already own this item"). Restore it instead:
+        // either it belongs to this app account (or to none yet, like a
+        // redeemed promo code) and unlocks now, or the owner is named.
+        await recoverOwned(
           'Google Play tidak melanjutkan pembayaran. Jika dialog tadi ditutup, tidak ada biaya yang dikenakan dan akses tetap sama.',
         );
       }
@@ -306,6 +329,34 @@ class BillingController extends StateNotifier<BillingState>
     }
   }
 
+  /// Restores this Play account's purchases after Google Play reported the
+  /// item as already owned. Shows [fallback] when nothing was found.
+  Future<void> recoverOwned(String fallback) async {
+    if (recovering) return;
+    final id = user;
+    if (gateway == null || account == null || id == null) {
+      showMessage(fallback);
+      return;
+    }
+    recovering = true;
+    showMessage('Memeriksa pembelian Lifetime yang sudah ada…', busy: true);
+    try {
+      await gateway!
+          .restore(account!.accountToken)
+          .timeout(const Duration(seconds: 25));
+      // Restored purchases reach the stream listener asynchronously.
+      await Future<void>.delayed(Duration.zero);
+      await queue;
+    } on Object catch (error) {
+      debugPrint('Restore after already-owned failed: $error');
+    } finally {
+      recovering = false;
+    }
+    if (!mounted || user != id) return;
+    // Verification replaces the busy message with its own outcome.
+    if (state.busy && !state.premium && ownedBy == null) showMessage(fallback);
+  }
+
   Future<void> retry() async {
     await refresh();
     await handle(retryPurchases.values.toList());
@@ -333,6 +384,22 @@ class BillingController extends StateNotifier<BillingState>
         if (purchase.pendingCompletePurchase) {
           await gateway!.complete(purchase);
         }
+        continue;
+      }
+      if (purchase.productID.isEmpty &&
+          purchase.status == PurchaseStatus.error &&
+          '${purchase.error?.message}'.contains('itemAlreadyOwned')) {
+        if (purchase.pendingCompletePurchase) {
+          await gateway!.complete(purchase);
+        }
+        // Runs after this queue entry so it can wait for the restore.
+        unawaited(
+          Future<void>(
+            () => recoverOwned(
+              'Google Play mencatat Lifetime sudah dimiliki akun Play ini, tetapi pembeliannya belum ditemukan. Gunakan Restore.',
+            ),
+          ),
+        );
         continue;
       }
       if (purchase.productID.isEmpty &&
@@ -414,6 +481,19 @@ class BillingController extends StateNotifier<BillingState>
       } on DioException catch (error) {
         if (error.response?.statusCode == 401) await onChanged();
         if (!mounted || user != id) continue;
+        final body = error.response?.data;
+        final failure = body is Map ? body['error'] : null;
+        if (error.response?.statusCode == 409 &&
+            failure is Map &&
+            failure['code'] == 'purchase_owned') {
+          // Owned by another app account: nothing to retry. It is verified
+          // again on the next restore, after the user switches accounts.
+          retryPurchases.remove(key);
+          restoring = false;
+          ownedBy = '${failure['owner'] ?? ''}';
+          showMessage(null);
+          continue;
+        }
         showMessage(
           error.response?.statusCode == 402
               ? 'Pembelian ini terkait akun aplikasi lain. Masuk ke akun pembeli lalu Restore.'
@@ -435,6 +515,23 @@ class BillingController extends StateNotifier<BillingState>
         user != null &&
         !this.state.busy) {
       unawaited(retry());
+      // The user may have switched the Play Store account to buy again.
+      if (ownedBy != null) unawaited(recheckOwnership());
+    }
+  }
+
+  /// Clears the "owned by another account" lock and restores again, so a
+  /// switched Play account can buy. A purchase still owned elsewhere sets it
+  /// again.
+  Future<void> recheckOwnership() async {
+    final token = account?.accountToken;
+    if (gateway == null || token == null) return;
+    ownedBy = null;
+    showMessage(state.message, busy: state.busy, pending: state.pending);
+    try {
+      await gateway!.restore(token);
+    } on Object catch (error) {
+      debugPrint('Ownership recheck failed: $error');
     }
   }
 

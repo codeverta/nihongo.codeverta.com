@@ -13,6 +13,9 @@ var (
 	ErrDailyLimit = errors.New("ai: daily limit reached")
 	// ErrPremiumLimit: a Lifetime account reached its daily limit.
 	ErrPremiumLimit = errors.New("ai: premium daily limit reached")
+	// ErrPremiumAdOffer: a Lifetime account used its daily messages; an
+	// optional rewarded ad adds Config.LifetimeAdBonus more.
+	ErrPremiumAdOffer = errors.New("ai: premium rewarded ad offered")
 	// ErrAdCapReached: no further ad credits can be granted today.
 	ErrAdCapReached = errors.New("ai: ad credit cap reached")
 )
@@ -47,14 +50,23 @@ func (q Quota) Reserve(ctx context.Context, userID string, premium, adsAvailable
 	cfg := q.Config()
 	day := QuotaDay(now)
 	if premium {
-		ok, err := q.Repo.Reserve(ctx, userID, day, SlotPremium, cfg.PremiumPerDay)
+		for _, slot := range []Slot{SlotPremium, SlotAd} {
+			ok, err := q.Repo.Reserve(ctx, userID, day, slot, cfg.PremiumPerDay)
+			if err != nil {
+				return Reservation{}, err
+			}
+			if ok {
+				return Reservation{UserID: userID, Day: day, Slot: slot}, nil
+			}
+		}
+		usage, err := q.Repo.Usage(ctx, userID, day)
 		if err != nil {
 			return Reservation{}, err
 		}
-		if !ok {
-			return Reservation{}, ErrPremiumLimit
+		if adsAvailable && usage.AdGranted+cfg.LifetimeAdBonus <= cfg.LifetimeAdPerDay*cfg.LifetimeAdBonus {
+			return Reservation{}, ErrPremiumAdOffer
 		}
-		return Reservation{UserID: userID, Day: day, Slot: SlotPremium}, nil
+		return Reservation{}, ErrPremiumLimit
 	}
 	for _, slot := range []Slot{SlotFree, SlotAd} {
 		ok, err := q.Repo.Reserve(ctx, userID, day, slot, cfg.FreePerDay)
@@ -81,9 +93,15 @@ func (q Quota) Release(ctx context.Context, r Reservation) error {
 	return q.Repo.Release(ctx, r.UserID, r.Day, r.Slot)
 }
 
-// GrantAdCredit records one watched (or unavailable) rewarded ad.
-func (q Quota) GrantAdCredit(ctx context.Context, userID string, now time.Time) error {
-	ok, err := q.Repo.GrantAdCredit(ctx, userID, QuotaDay(now), q.Config().AdPerDay)
+// GrantAdCredit records one watched (or unavailable) rewarded ad: one
+// message for a free account, LifetimeAdBonus messages for a Lifetime one.
+func (q Quota) GrantAdCredit(ctx context.Context, userID string, premium bool, now time.Time) error {
+	cfg := q.Config()
+	credits, limit := 1, cfg.AdPerDay
+	if premium {
+		credits, limit = cfg.LifetimeAdBonus, cfg.LifetimeAdPerDay*cfg.LifetimeAdBonus
+	}
+	ok, err := q.Repo.GrantAdCredits(ctx, userID, QuotaDay(now), credits, limit)
 	if err != nil {
 		return err
 	}

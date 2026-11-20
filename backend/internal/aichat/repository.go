@@ -46,7 +46,7 @@ const (
 	RoleAssistant = "assistant"
 )
 
-// Repository is the persistence boundary. Reserve/Release/GrantAdCredit must
+// Repository is the persistence boundary. Reserve/Release/GrantAdCredits must
 // be atomic so concurrent requests cannot exceed a limit.
 type Repository interface {
 	Usage(ctx context.Context, userID, day string) (Usage, error)
@@ -55,8 +55,9 @@ type Repository interface {
 	Reserve(ctx context.Context, userID, day string, slot Slot, limit int) (bool, error)
 	// Release gives back a reservation whose answer failed.
 	Release(ctx context.Context, userID, day string, slot Slot) error
-	// GrantAdCredit adds one ad credit unless maxPerDay is reached.
-	GrantAdCredit(ctx context.Context, userID, day string, maxPerDay int) (bool, error)
+	// GrantAdCredits adds credits ad credits unless the day's total would
+	// pass maxPerDay.
+	GrantAdCredits(ctx context.Context, userID, day string, credits, maxPerDay int) (bool, error)
 
 	AppendMessages(ctx context.Context, messages ...Message) error
 	// RecentMessages returns the newest visible messages in chronological order.

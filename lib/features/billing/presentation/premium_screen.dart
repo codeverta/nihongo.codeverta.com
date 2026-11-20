@@ -1,17 +1,91 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nihongo_master/core/analytics/analytics_service.dart';
 import 'package:nihongo_master/core/localization/app_localizations.dart';
 import 'package:nihongo_master/core/theme/app_theme.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
 import 'package:nihongo_master/features/billing/presentation/billing_controller.dart';
+import 'package:nihongo_master/features/billing/presentation/lifetime_offer.dart';
 import 'package:nihongo_master/shared/presentation/widgets/motion.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PremiumScreen extends ConsumerWidget {
-  const PremiumScreen({super.key});
+class PremiumScreen extends ConsumerStatefulWidget {
+  const PremiumScreen({this.offer, this.offerFrom, super.key});
+
+  /// Set when opened as the skippable offer after login or periodically
+  /// (lib/features/billing/presentation/lifetime_offer.dart): adds a close
+  /// button and "Lanjut gratis".
+  final LifetimeOfferSource? offer;
+
+  /// Where the offer continues to when skipped after login.
+  final String? offerFrom;
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<PremiumScreen> createState() => _PremiumScreenState();
+}
+
+class _PremiumScreenState extends ConsumerState<PremiumScreen> {
+  bool _left = false;
+
+  bool get _hasAccess {
+    final user = ref.read(authControllerProvider).user;
+    return ref.read(billingControllerProvider).premium ||
+        (user?.isLifetime ?? false) ||
+        (user?.isPremium ?? false);
+  }
+
+  /// Leaves the offer: back to Beranda for the periodic one, otherwise on
+  /// to the page the login was for.
+  void _leaveOffer({required bool skipped}) {
+    final offer = widget.offer;
+    if (offer == null || _left || !mounted) return;
+    _left = true;
+    ref.read(analyticsServiceProvider).logEvent(
+      skipped ? 'lifetime_offer_skip' : 'lifetime_offer_purchase',
+      {'source': offer.wire},
+    );
+    if (offer == LifetimeOfferSource.periodic && context.canPop()) {
+      context.pop();
+    } else {
+      context.go(lifetimeOfferTarget(widget.offerFrom));
+    }
+  }
+
+  void _gainedAccess() {
+    if (widget.offer == null || _left || !_hasAccess) return;
+    ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+      SnackBar(content: Text('Lifetime Access aktif.'.localized(context))),
+    );
+    _leaveOffer(skipped: false);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Lifetime may already be known by the time the offer opens.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _gainedAccess();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final offer = widget.offer;
+    // A purchase, restore or promo claim that completes while the offer is
+    // open continues straight on.
+    ref
+      ..listen(billingControllerProvider.select((s) => s.premium), (_, next) {
+        if (next) _gainedAccess();
+      })
+      ..listen(
+        authControllerProvider.select(
+          (s) => (s.user?.isLifetime ?? false) || (s.user?.isPremium ?? false),
+        ),
+        (_, next) {
+          if (next) _gainedAccess();
+        },
+      );
     final auth = ref.watch(authControllerProvider);
     final billing = ref.watch(billingControllerProvider);
     final english = AppLocalizations.of(context).locale.languageCode == 'en';
@@ -31,174 +105,216 @@ class PremiumScreen extends ConsumerWidget {
             ? 'Harga belum tersedia'.localized(context)
             : _rupiah(displayPriceIdr));
 
-    return Scaffold(
-      appBar: AppBar(title: Text('Lifetime Access'.localized(context))),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
-              children: [
-                StaggeredEntrance(
-                  child: _LifetimeHero(active: billing.premium),
+    return PopScope(
+      canPop: offer == null,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _leaveOffer(skipped: true);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Lifetime Access'.localized(context)),
+          automaticallyImplyLeading: offer == null,
+          leading: offer == null
+              ? null
+              : IconButton(
+                  key: const Key('lifetime-offer-close'),
+                  tooltip: 'Lanjut gratis'.localized(context),
+                  icon: const Icon(Icons.close_rounded),
+                  onPressed: () => _leaveOffer(skipped: true),
                 ),
-                const SizedBox(height: 16),
-                const _BenefitGrid(),
-                const SizedBox(height: 14),
-                const _PriceNote(
-                  'Akses dengan akun aplikasi yang sama di Android dan iOS',
-                ),
-                const _PriceNote('Tidak ada perpanjangan otomatis'),
-                const _PriceNote(
-                  'Harga akhir mengikuti store dan wilayah akun Anda',
-                ),
-                const _PriceNote(
-                  'Materi N5–N4 dan tes N5 tetap gratis. Kuis di dalam lesson mengikuti akses materi.',
-                ),
-                const SizedBox(height: 6),
-                Theme(
-                  data: theme.copyWith(dividerColor: Colors.transparent),
-                  child: ExpansionTile(
-                    tilePadding: EdgeInsets.zero,
-                    childrenPadding: EdgeInsets.zero,
-                    expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                    title: Text(
-                      'Tentang pembelianmu'.localized(context),
-                      style: theme.textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w800,
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
+                children: [
+                  StaggeredEntrance(
+                    child: _LifetimeHero(active: billing.premium),
+                  ),
+                  const SizedBox(height: 16),
+                  const _BenefitGrid(),
+                  const SizedBox(height: 14),
+                  const _PriceNote(
+                    'Akses dengan akun aplikasi yang sama di Android dan iOS',
+                  ),
+                  const _PriceNote('Tidak ada perpanjangan otomatis'),
+                  const _PriceNote(
+                    'Harga akhir mengikuti store dan wilayah akun Anda',
+                  ),
+                  const _PriceNote(
+                    'Materi N5–N4 dan tes N5 tetap gratis. Kuis di dalam lesson mengikuti akses materi.',
+                  ),
+                  const SizedBox(height: 6),
+                  Theme(
+                    data: theme.copyWith(dividerColor: Colors.transparent),
+                    child: ExpansionTile(
+                      tilePadding: EdgeInsets.zero,
+                      childrenPadding: EdgeInsets.zero,
+                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                      title: Text(
+                        'Tentang pembelianmu'.localized(context),
+                        style: theme.textTheme.titleSmall?.copyWith(
+                          fontWeight: FontWeight.w800,
+                        ),
                       ),
+                      children: [
+                        Text(
+                          'Pembayaran yang dibatalkan atau tertunda tidak mengaktifkan akses. Refund atau pencabutan oleh store mengunci premium kembali. Menghapus akun tidak mengembalikan uang; pembelian dapat dipulihkan dengan akun store pembeli setelah masuk ke akun aplikasi baru.'
+                              .localized(context),
+                          style: theme.textTheme.bodySmall,
+                        ),
+                        const SizedBox(height: 4),
+                        Wrap(
+                          children: [
+                            TextButton(
+                              onPressed: () => _help(
+                                context,
+                                'https://support.google.com/googleplay/answer/2479637',
+                              ),
+                              child: Text(
+                                'Bantuan refund Google Play'.localized(context),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => _help(
+                                context,
+                                'https://support.apple.com/118223',
+                              ),
+                              child: Text(
+                                'Bantuan refund App Store'.localized(context),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    children: [
-                      Text(
-                        'Pembayaran yang dibatalkan atau tertunda tidak mengaktifkan akses. Refund atau pencabutan oleh store mengunci premium kembali. Menghapus akun tidak mengembalikan uang; pembelian dapat dipulihkan dengan akun store pembeli setelah masuk ke akun aplikasi baru.'
-                            .localized(context),
-                        style: theme.textTheme.bodySmall,
-                      ),
-                      const SizedBox(height: 4),
-                      Wrap(
-                        children: [
-                          TextButton(
-                            onPressed: () => _help(
-                              context,
-                              'https://support.google.com/googleplay/answer/2479637',
-                            ),
-                            child: Text(
-                              'Bantuan refund Google Play'.localized(context),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () => _help(
-                              context,
-                              'https://support.apple.com/118223',
-                            ),
-                            child: Text(
-                              'Bantuan refund App Store'.localized(context),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          // Harga dan tombol beli selalu terlihat, tanpa perlu menggulir.
-          _CheckoutBar(
-            price: price,
-            message: billing.message,
-            authenticated: auth.isAuthenticated,
-            children: [
-              if (!auth.isAuthenticated)
-                FilledButton(
-                  onPressed: () => context.push('/login'),
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(52),
-                  ),
-                  child: Text('Masuk untuk melanjutkan'.localized(context)),
-                )
-              else ...[
-                if (billing.premium) ...[
+            // Harga dan tombol beli selalu terlihat, tanpa perlu menggulir.
+            _CheckoutBar(
+              price: price,
+              message: billing.message,
+              authenticated: auth.isAuthenticated,
+              children: [
+                if (!auth.isAuthenticated)
                   FilledButton(
+                    onPressed: () => context.push('/login'),
                     style: FilledButton.styleFrom(
                       minimumSize: const Size.fromHeight(52),
                     ),
-                    onPressed: () {
-                      final from = GoRouterState.of(
-                        context,
-                      ).uri.queryParameters['from'];
-                      context.go(
-                        from != null &&
-                                (RegExp(r'^/jobs/[^/]+$').hasMatch(from) ||
-                                    from.startsWith('/learn/') ||
-                                    from.startsWith('/exams/') ||
-                                    RegExp(r'^/news/[^/]+$').hasMatch(from) ||
-                                    RegExp(r'^/anki/[^?#]+$').hasMatch(from) ||
-                                    from == '/manga' ||
-                                    from.startsWith('/manga/'))
-                            ? from
-                            : '/home',
-                      );
-                    },
-                    child: Text('Jelajahi akses saya'.localized(context)),
-                  ),
-                  const SizedBox(height: 8),
-                ],
-                FilledButton.icon(
-                  key: const Key('buy-lifetime'),
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(52),
-                  ),
-                  onPressed:
-                      billing.ready &&
-                          !billing.busy &&
-                          !billing.pending &&
-                          !billing.premium
-                      ? controller.buy
-                      : null,
-                  icon: billing.busy
-                      ? const SizedBox.square(
-                          dimension: 18,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Icon(Icons.lock_open),
-                  label: Text(
-                    billing.premium
-                        ? 'Akses aktif'.localized(context)
-                        : billing.pending
-                        ? 'Menunggu pembayaran'.localized(context)
-                        : 'Buka Lifetime Access'.localized(context),
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: TextButton(
-                        onPressed: billing.busy ? null : controller.restore,
-                        child: Text(
-                          'Restore pembelian'.localized(context),
-                          textAlign: TextAlign.center,
-                        ),
+                    child: Text('Masuk untuk melanjutkan'.localized(context)),
+                  )
+                else ...[
+                  if (billing.premium) ...[
+                    FilledButton(
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size.fromHeight(52),
                       ),
+                      onPressed: () {
+                        final from = GoRouterState.of(
+                          context,
+                        ).uri.queryParameters['from'];
+                        context.go(
+                          from != null &&
+                                  (RegExp(r'^/jobs/[^/]+$').hasMatch(from) ||
+                                      from.startsWith('/learn/') ||
+                                      from.startsWith('/exams/') ||
+                                      RegExp(r'^/news/[^/]+$').hasMatch(from) ||
+                                      RegExp(
+                                        r'^/anki/[^?#]+$',
+                                      ).hasMatch(from) ||
+                                      from == '/manga' ||
+                                      from.startsWith('/manga/'))
+                              ? from
+                              : '/home',
+                        );
+                      },
+                      child: Text('Jelajahi akses saya'.localized(context)),
                     ),
-                    Text('·', style: theme.textTheme.bodySmall),
-                    Flexible(
-                      child: TextButton(
-                        onPressed: billing.busy ? null : controller.retry,
-                        child: Text(
-                          'Coba verifikasi lagi'.localized(context),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
+                    const SizedBox(height: 8),
                   ],
-                ),
+                  if (!billing.premium && billing.ownedBy != null) ...[
+                    _OwnedElsewhere(
+                      owner: billing.ownedBy!,
+                      onSwitch: () =>
+                          ref.read(authControllerProvider.notifier).logout(),
+                    ),
+                    const SizedBox(height: 8),
+                  ],
+                  FilledButton.icon(
+                    key: const Key('buy-lifetime'),
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size.fromHeight(52),
+                    ),
+                    onPressed:
+                        billing.ready &&
+                            !billing.busy &&
+                            !billing.pending &&
+                            !billing.premium &&
+                            billing.ownedBy == null
+                        ? () {
+                            if (offer != null) {
+                              ref.read(analyticsServiceProvider).logEvent(
+                                'lifetime_offer_buy_tap',
+                                {'source': offer.wire},
+                              );
+                            }
+                            controller.buy();
+                          }
+                        : null,
+                    icon: billing.busy
+                        ? const SizedBox.square(
+                            dimension: 18,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.lock_open),
+                    label: Text(
+                      billing.premium
+                          ? 'Akses aktif'.localized(context)
+                          : billing.pending
+                          ? 'Menunggu pembayaran'.localized(context)
+                          : 'Buka Lifetime Access'.localized(context),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: TextButton(
+                          onPressed: billing.busy ? null : controller.restore,
+                          child: Text(
+                            'Restore pembelian'.localized(context),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                      Text('·', style: theme.textTheme.bodySmall),
+                      Flexible(
+                        child: TextButton(
+                          onPressed: billing.busy ? null : controller.retry,
+                          child: Text(
+                            'Coba verifikasi lagi'.localized(context),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  if (offer != null && !billing.premium)
+                    TextButton(
+                      key: const Key('lifetime-offer-skip'),
+                      onPressed: () => _leaveOffer(skipped: true),
+                      child: Text('Lanjut gratis'.localized(context)),
+                    ),
+                ],
               ],
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -356,6 +472,52 @@ class _CheckoutBar extends StatelessWidget {
   }
 }
 
+/// Shown instead of a checkout that Google Play would refuse: this Play
+/// account already owns Lifetime for another app account.
+class _OwnedElsewhere extends StatelessWidget {
+  const _OwnedElsewhere({required this.owner, required this.onSwitch});
+  final String owner;
+  final VoidCallback onSwitch;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final who = owner.isEmpty
+        ? 'Lifetime untuk akun Google Play ini sudah dipakai oleh akun aplikasi lain.'
+              .localized(context)
+        : '${'Lifetime untuk akun Google Play ini sudah dipakai oleh akun'.localized(context)} $owner.';
+    return Container(
+      key: const Key('billing-owned-elsewhere'),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            '$who ${'Masuk dengan akun itu, atau ganti akun di Play Store untuk membeli lagi.'.localized(context)}',
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSecondaryContainer,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: OutlinedButton.icon(
+              key: const Key('billing-switch-account'),
+              onPressed: onSwitch,
+              icon: const Icon(Icons.switch_account_rounded),
+              label: Text('Masuk dengan akun lain'.localized(context)),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _LifetimeHero extends StatelessWidget {
   const _LifetimeHero({required this.active});
   final bool active;
@@ -507,11 +669,15 @@ class _BenefitGrid extends StatelessWidget {
   const _BenefitGrid();
 
   static const _items = [
-    (Icons.block_rounded, 'Bebas iklan', 'Tanpa iklan selamanya'),
+    (
+      Icons.block_rounded,
+      'Belajar tanpa iklan',
+      'Tanpa iklan di materi belajar',
+    ),
     (
       Icons.auto_awesome_rounded,
-      'Tanya AI tanpa iklan',
-      'Lebih banyak pertanyaan setiap hari',
+      'Tanya AI 15 pesan/hari',
+      'Bisa ditambah dengan iklan opsional',
     ),
     (
       Icons.download_for_offline_rounded,

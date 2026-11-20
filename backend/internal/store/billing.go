@@ -2,6 +2,7 @@ package store
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -113,8 +114,44 @@ func (s *MemoryStore) Purchase(platform, id string) (domain.Purchase, bool) {
 	return p, ok
 }
 
+// ErrPurchaseOwned means the store purchase belongs to another live
+// application account. The returned error is a *PurchaseOwnedError.
+var ErrPurchaseOwned = errors.New("purchase belongs to another account")
+
+// PurchaseOwnedError names the owning account as a masked email
+// ("ab***@gmail.com") so the user knows which account to sign in with.
+type PurchaseOwnedError struct{ Owner string }
+
+func (e *PurchaseOwnedError) Error() string { return ErrPurchaseOwned.Error() }
+
+func (e *PurchaseOwnedError) Is(target error) bool { return target == ErrPurchaseOwned }
+
+// MaskEmail keeps the first two characters of the local part and the domain.
+func MaskEmail(email string) string {
+	at := strings.LastIndex(email, "@")
+	if at <= 0 {
+		return ""
+	}
+	local := []rune(email[:at])
+	if len(local) > 2 {
+		local = local[:2]
+	}
+	return string(local) + "***" + email[at:]
+}
+
+func (s *MemoryStore) ownedErrorLocked(owner string) error {
+	for _, a := range s.accounts {
+		if a.ID == owner {
+			return &PurchaseOwnedError{Owner: MaskEmail(a.Email)}
+		}
+	}
+	return &PurchaseOwnedError{}
+}
+
 // A purchase is bound to one application account. After deletion its store proof
 // can restore to a new account; it cannot silently transfer between live accounts.
+// A Google purchase made outside the app's checkout (a redeemed promo code)
+// carries no account token: the first account that verifies it claims it.
 func (s *MemoryStore) SaveVerifiedPurchase(user string, p domain.Purchase) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -124,9 +161,18 @@ func (s *MemoryStore) SaveVerifiedPurchase(user string, p domain.Purchase) error
 	key := p.Platform + ":" + p.ID
 	old, exists := s.purchases[key]
 	if exists && old.UserID != "" && old.UserID != user {
-		return ErrPremium
+		return s.ownedErrorLocked(old.UserID)
 	}
-	if !exists && (p.AccountToken == "" || p.AccountToken != s.billingTokens[user]) {
+	if !exists && p.AccountToken != "" && p.AccountToken != s.billingTokens[user] {
+		for owner, token := range s.billingTokens {
+			if token == p.AccountToken {
+				return s.ownedErrorLocked(owner)
+			}
+		}
+		// The buying account was deleted before this purchase was ever
+		// verified: restoring it to the signed-in account is allowed.
+	}
+	if !exists && p.AccountToken == "" && p.Platform != "android" {
 		return ErrPremium
 	}
 	if exists && old.AccountToken != p.AccountToken {

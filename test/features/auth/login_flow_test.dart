@@ -46,6 +46,10 @@ void main() {
     expect(repository.email, 'user@example.com');
     expect(repository.password, 'password123');
     expect(container.read(authControllerProvider).isAuthenticated, isTrue);
+    // A free account sees the skippable Lifetime offer first.
+    expect(find.byKey(const Key('lifetime-offer-close')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('lifetime-offer-close')));
+    await tester.pumpAndSettle();
     expect(find.text('Masuk untuk mulai belajar'), findsNothing);
     expect(find.byKey(const Key('home-greeting')), findsOneWidget);
   });

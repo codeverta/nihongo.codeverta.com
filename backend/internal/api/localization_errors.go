@@ -9,6 +9,9 @@ const apiErrorFallbackEnglish = "The request could not be completed. Please try 
 // apiErrorMessagesEnglish maps every error code returned through writeError to
 // an English message that stays accurate for all source variants of that code.
 var apiErrorMessagesEnglish = map[string]string{
+	"ad_not_watched":               "The ad was not watched. Please try again shortly.",
+	"ai_premium_ad_offer":          "You have used today's Ask AI messages. Watch a short ad for more messages.",
+	"purchase_owned":               "Lifetime for this Google Play account is already used by another app account.",
 	"already_processed":            "This message has already been processed. Automatic resending was prevented.",
 	"anki_quota":                   "You have reached your personal deck limit. Delete decks you no longer need and try again.",
 	"billing_unavailable":          "Store verification is not available right now. Try again or restore your purchase.",

@@ -63,6 +63,10 @@ type Profile struct {
 	XP          int         `json:"xp"`
 	StreakDays  int         `json:"streakDays"`
 	Entitlement Entitlement `json:"entitlement"`
+	// CanPurchase is false for shared accounts that cannot buy Lifetime (the
+	// demo account and the Play reviewer). Set only by MemoryStore.Profile;
+	// clients treat a missing value as true.
+	CanPurchase *bool `json:"canPurchase,omitempty"`
 }
 
 type LessonProgress struct {

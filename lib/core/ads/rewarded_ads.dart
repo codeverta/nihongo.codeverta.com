@@ -111,6 +111,15 @@ final unlockRewardedPlacementProvider = FutureProvider<AdsConfig?>((ref) async {
   return config != null && config.unlockRewarded.usable ? config : null;
 });
 
+/// The Tanya AI rewarded placement for a Lifetime account that used its
+/// daily messages (Android only; null on iOS or with ads off).
+final aiChatLifetimeRewardedPlacementProvider =
+    FutureProvider<AdPlacementConfig?>((ref) async {
+      final config = await ref.watch(optInAdsReadyProvider.future);
+      final placement = config?.aiChatRewarded;
+      return placement != null && placement.usable ? placement : null;
+    });
+
 final aiChatRewardedPlacementProvider = FutureProvider<AdPlacementConfig?>((
   ref,
 ) async {

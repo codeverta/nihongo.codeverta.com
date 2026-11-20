@@ -1367,6 +1367,9 @@ NM.view('pricing',function(root){
     var wrap=NM.el('div',{class:'v-pricing stack'});
     var inp=NM.el('input',{class:'input',id:'pr-price',type:'number',min:'1000',max:'100000000',step:'1',required:true,inputmode:'numeric'});
     inp.value=d&&d.lifetimePriceIdr!=null?d.lifetimePriceIdr:'';
+    var offer=NM.el('input',{type:'checkbox',id:'pr-offer'});offer.checked=!d||d.offerAfterLogin!==false;
+    var days=NM.el('input',{class:'input',id:'pr-offer-days',type:'number',min:'0',max:'90',step:'1',inputmode:'numeric'});
+    days.value=d&&d.offerIntervalDays!=null?d.offerIntervalDays:10;
     var prev=NM.el('div',{class:'pr-preview','aria-live':'polite'});
     var msg=NM.el('div',{class:'msg',role:'status'});
     var btn=NM.el('button',{class:'btn solid',type:'submit',text:'Simpan harga'});
@@ -1377,15 +1380,23 @@ NM.view('pricing',function(root){
       e.preventDefault();
       var n=Number(inp.value);
       if(inp.value===''||!isFinite(n)||n<1000||n>100000000||Math.floor(n)!==n){setMsg('Harga harus bilangan bulat antara Rp1.000 dan Rp100.000.000.','err');return}
+      var dd=Number(days.value);
+      if(days.value===''||!(dd>=0&&dd<=90)||Math.floor(dd)!==dd){setMsg('Jarak tampil ulang harus 0 sampai 90 hari.','err');days.focus();return}
       btn.disabled=true;setMsg('Menyimpan…');
-      NM.data('/v1/admin/pricing',{method:'PUT',body:{lifetimePriceIdr:n}}).then(function(r){
+      NM.data('/v1/admin/pricing',{method:'PUT',body:{lifetimePriceIdr:n,offerAfterLogin:offer.checked,offerIntervalDays:dd}}).then(function(r){
         if(r&&r.lifetimePriceIdr!=null)inp.value=r.lifetimePriceIdr;upd();
+        if(r&&r.offerIntervalDays!=null)days.value=r.offerIntervalDays;
+        if(r&&r.offerAfterLogin!=null)offer.checked=r.offerAfterLogin;
         setMsg('Harga tersimpan. Tarik untuk memperbarui atau buka ulang aplikasi.','ok');NM.toast('Harga tersimpan');
       }).catch(function(er){setMsg(er.message||'Harga tidak dapat disimpan','err')}).then(function(){btn.disabled=false});
     }}},[
       NM.el('p',{class:'muted',text:'Atur nominal rupiah yang ditampilkan di aplikasi Nihongo Master. Harga Google Play dan App Store tetap diatur manual di masing-masing store.'}),
       NM.el('label',{class:'field'},[NM.el('span',{text:'Harga Lifetime (IDR)'}),inp,NM.el('small',{class:'help',text:'Minimal Rp1.000, maksimal Rp100.000.000.'})]),
       NM.el('div',{},[NM.el('small',{class:'muted',text:'Tampil di aplikasi'}),prev]),
+      NM.el('h3',{text:'Tawaran Lifetime'}),
+      NM.el('label',{class:'check'},[offer,'Tampilkan Lifetime setelah login']),
+      NM.el('small',{class:'help',text:'Setelah setiap login, akun yang belum Lifetime melihat halaman Lifetime Access yang bisa dilewati ("Lanjut gratis"). Akun Lifetime, tamu, akun demo, dan akun reviewer tidak melihatnya. Matikan untuk menghentikan semua tampilan, termasuk yang berkala.'}),
+      NM.el('label',{class:'field'},[NM.el('span',{text:'Tampilkan lagi tiap … hari'}),days,NM.el('small',{class:'help',text:'Muncul lagi saat aplikasi dibuka biasa ke Beranda, dihitung dari terakhir kali tampil (0-90). 0 = hanya setelah login. Tidak muncul saat aplikasi dibuka dari notifikasi.'})]),
       msg,
       NM.el('div',{class:'row'},[btn])
     ]);
@@ -1597,7 +1608,9 @@ NM.view('ai',function(root){
   var alive=true,F=[
     {k:'freePerDay',t:'Kuota gratis per hari',h:'Pesan gratis untuk pengguna non-Lifetime, total di semua pelajaran (0-100).',min:0,max:100},
     {k:'adPerDay',t:'Maks pesan dari iklan per hari',h:'Batas pengaman biaya untuk pesan yang dibuka dengan rewarded ad (0-200).',min:0,max:200},
-    {k:'premiumPerDay',t:'Batas harian Lifetime',h:'Pengguna Lifetime tidak melihat iklan (1-1000).',min:1,max:1000},
+    {k:'premiumPerDay',t:'Pesan Lifetime per hari',h:'Pesan Tanya AI untuk pengguna Lifetime sebelum ditawari iklan opsional (1-1000). Bawaan 15.',min:1,max:1000},
+    {k:'lifetimeAdBonus',t:'Pesan per iklan (Lifetime)',h:'Satu rewarded ad menambah sekian pesan untuk pengguna Lifetime (1-50). Pengguna gratis tetap 1 pesan per iklan.',min:1,max:50},
+    {k:'lifetimeAdPerDay',t:'Maks iklan Lifetime per hari',h:'Berapa kali pengguna Lifetime boleh menonton iklan untuk pesan tambahan (0-20). 0 = berhenti di batas harian. iOS tidak punya iklan, jadi berhenti di batas harian.',min:0,max:20},
     {k:'perMinute',t:'Batas per menit (tersembunyi)',h:'Berlaku untuk semua akun, menahan skrip/akun bersama (1-60).',min:1,max:60},
     {k:'alertPerDay',t:'Ambang peringatan per akun',h:'Catat peringatan di Crash & error saat satu akun mencapai jumlah pesan ini dalam sehari. 0 = mati.',min:0,max:10000}];
   root.innerHTML='<div class="v-ai">'+NM.skeleton(3)+'</div>';

@@ -65,10 +65,10 @@ func TestGormAdCreditReleaseAndCap(t *testing.T) {
 	if _, err := q.Reserve(ctx, testUser, false, true, now); err != aichat.ErrAdRequired {
 		t.Fatalf("err = %v", err)
 	}
-	if err := q.GrantAdCredit(ctx, testUser, now); err != nil {
+	if err := q.GrantAdCredit(ctx, testUser, false, now); err != nil {
 		t.Fatal(err)
 	}
-	if err := q.GrantAdCredit(ctx, testUser, now); err != aichat.ErrAdCapReached {
+	if err := q.GrantAdCredit(ctx, testUser, false, now); err != aichat.ErrAdCapReached {
 		t.Fatalf("cap: %v", err)
 	}
 	r, err := q.Reserve(ctx, testUser, false, true, now)

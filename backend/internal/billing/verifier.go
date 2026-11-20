@@ -136,12 +136,14 @@ func (v *StoreVerifier) verifyGoogle(ctx context.Context, proof domain.PurchaseP
 		State struct {
 			PurchaseState string `json:"purchaseState"`
 		} `json:"purchaseStateContext"`
+		// Empty for a purchase made outside the app's checkout, such as a
+		// redeemed promo code; the store binds it to the first verifier.
 		Account string `json:"obfuscatedExternalAccountId"`
 	}
 	if err := requestJSON(ctx, v.googleClient, http.MethodGet, endpoint, "", nil, &data); err != nil {
 		return domain.Purchase{}, err
 	}
-	if len(data.ProductLineItem) != 1 || data.ProductLineItem[0].ProductID != v.ProductID || data.Account == "" {
+	if len(data.ProductLineItem) != 1 || data.ProductLineItem[0].ProductID != v.ProductID {
 		return domain.Purchase{}, ErrInvalid
 	}
 	item := data.ProductLineItem[0]

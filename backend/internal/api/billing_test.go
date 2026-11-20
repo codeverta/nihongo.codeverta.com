@@ -112,6 +112,22 @@ func TestBillingAPIUnlockRevokeAndDelete(t *testing.T) {
 	if w = call("GET", "/v1/grammar/lessons/grammar-n2-01", ""); w.Code != 200 {
 		t.Fatal("paid user cannot read N2")
 	}
+	// A second app account on the same Play account learns which account owns it.
+	other, _ := memory.AuthenticateGoogle(domain.GoogleIdentity{Subject: "other", Email: "other@example.com", DisplayName: "Other"})
+	buyerToken := token
+	token, _ = memory.CreateSession(other.ID)
+	call("GET", "/v1/billing", "")
+	w = call("POST", "/v1/billing/verify", body)
+	var owned struct {
+		Error struct{ Code, Owner string } `json:"error"`
+	}
+	if w.Code != 409 || json.Unmarshal(w.Body.Bytes(), &owned) != nil || owned.Error.Code != "purchase_owned" || owned.Error.Owner != "bu***@example.com" {
+		t.Fatalf("owned purchase answer = %d %s", w.Code, w.Body.String())
+	}
+	if memory.Profile(other.ID).Entitlement.Tier != domain.TierFree {
+		t.Fatal("purchase moved to the second account")
+	}
+	token = buyerToken
 	w = call("GET", "/v1/billing", "")
 	var activeBilling struct {
 		Data struct {

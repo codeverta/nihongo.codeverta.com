@@ -31,7 +31,7 @@ Syarat operasional sebelum SSV bisa bekerja:
 
 Beberapa jenis konten menjadi **eksklusif**. Pengguna gratis punya dua jalan:
 
-1. **Lifetime Access**: beli sekali, tanpa iklan, semua terbuka.
+1. **Lifetime Access**: beli sekali, materi tanpa iklan, semua terbuka. Tanya AI 15 pesan per hari, lalu iklan rewarded opsional untuk 5 pesan lagi.
 2. **Tonton satu iklan rewarded** untuk membuka satu item (Android saja).
 
 | Konten | Satuan unlock |

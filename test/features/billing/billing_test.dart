@@ -114,6 +114,84 @@ void main() {
     expect(controller.state.premium, isFalse);
     expect(gateway.finishes, 0);
   });
+  test(
+    'a purchase owned by another app account names it and blocks buying',
+    () async {
+      repository.ownedBy = 'ab***@gmail.com';
+      final paid = purchase(PurchaseStatus.restored)
+        ..pendingCompletePurchase = true;
+      await controller.handle([paid]);
+      expect(controller.state.ownedBy, 'ab***@gmail.com');
+      expect(controller.state.message, isNull);
+      expect(controller.state.premium, isFalse);
+      expect(gateway.finishes, 0);
+      expect(controller.retryPurchases, isEmpty);
+      // A later refresh keeps the lock, and checkout never starts.
+      await controller.refresh();
+      expect(controller.state.ownedBy, 'ab***@gmail.com');
+      await controller.buy();
+      expect(gateway.buys, 0);
+      // After switching the Play account the purchase is checked again.
+      repository.ownedBy = null;
+      gateway.owned = [paid];
+      await controller.recheckOwnership();
+      await Future<void>.delayed(Duration.zero);
+      await controller.queue;
+      expect(controller.state.ownedBy, isNull);
+      expect(controller.state.premium, isTrue);
+    },
+  );
+  test(
+    '"already owned" at checkout restores the purchase instead of failing',
+    () async {
+      // A redeemed promo code: Play owns it, the app never saw it.
+      gateway
+        ..startResult = false
+        ..owned = [
+          purchase(PurchaseStatus.restored)..pendingCompletePurchase = true,
+        ];
+      await controller.buy();
+      expect(gateway.buys, 1);
+      expect(controller.state.premium, isTrue);
+      expect(controller.state.message, 'Lifetime Access berhasil diaktifkan.');
+      expect(gateway.finishes, 1);
+    },
+  );
+  test('a refused checkout with nothing to restore explains it', () async {
+    gateway.startResult = false;
+    await controller.buy();
+    expect(controller.state.busy, isFalse);
+    expect(controller.state.premium, isFalse);
+    expect(controller.state.message, contains('tidak melanjutkan pembayaran'));
+  });
+  test('the itemAlreadyOwned stream error also restores', () async {
+    gateway.owned = [
+      purchase(PurchaseStatus.restored)..pendingCompletePurchase = true,
+    ];
+    await controller.handle([
+      PurchaseDetails(
+          productID: '',
+          purchaseID: '',
+          verificationData: PurchaseVerificationData(
+            localVerificationData: '',
+            serverVerificationData: '',
+            source: 'google_play',
+          ),
+          transactionDate: null,
+          status: PurchaseStatus.error,
+        )
+        ..error = IAPError(
+          source: 'google_play',
+          code: 'purchase_error',
+          message: 'BillingResponse.itemAlreadyOwned',
+        ),
+    ]);
+    for (var i = 0; i < 5 && !controller.state.premium; i++) {
+      await Future<void>.delayed(Duration.zero);
+      await controller.queue;
+    }
+    expect(controller.state.premium, isTrue);
+  });
   test('logout during verification does not unlock the next account', () async {
     final delayed = Completer<String>();
     repository.delayed = delayed;
@@ -163,6 +241,7 @@ class FakeBilling extends BillingRepository {
   bool premium = false;
   bool fail = false;
   bool conflict = false;
+  String? ownedBy;
   int verifications = 0;
   Completer<String>? delayed;
   @override
@@ -182,6 +261,18 @@ class FakeBilling extends BillingRepository {
     String? userId,
   }) async {
     verifications++;
+    if (ownedBy != null) {
+      throw DioException(
+        requestOptions: RequestOptions(),
+        response: Response<dynamic>(
+          requestOptions: RequestOptions(),
+          statusCode: 409,
+          data: {
+            'error': {'code': 'purchase_owned', 'owner': ownedBy},
+          },
+        ),
+      );
+    }
     if (fail || conflict) {
       throw DioException(
         requestOptions: RequestOptions(),
@@ -202,6 +293,8 @@ class FakeBilling extends BillingRepository {
 class FakeGateway implements PurchaseGateway {
   final stream = StreamController<List<PurchaseDetails>>();
   bool failFinish = false;
+  bool startResult = true;
+  List<PurchaseDetails> owned = [];
   int finishes = 0;
   int buys = 0;
   PurchaseParam? param;
@@ -228,11 +321,14 @@ class FakeGateway implements PurchaseGateway {
   Future<bool> buy(PurchaseParam purchaseParam) async {
     buys++;
     param = purchaseParam;
-    return true;
+    return startResult;
   }
 
   @override
-  Future<void> restore(String token) async {}
+  Future<void> restore(String token) async {
+    if (owned.isNotEmpty) stream.add(owned);
+  }
+
   @override
   Future<void> complete(PurchaseDetails purchase) async {
     if (failFinish) throw StateError('store unavailable');
