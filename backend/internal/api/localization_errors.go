@@ -95,6 +95,16 @@ var apiErrorMessagesEnglish = map[string]string{
 	"session_error":                "Your session could not be created. Please try again.",
 	"transfer_busy":                "Deck processing is busy right now. Please try again in a few seconds.",
 	"unauthorized":                 "You are not authorized. Please sign in again or check your access key.",
+	"login_required":               "Sign in to read this article.",
+	"invalid_days":                 "The number of days must be between 1 and 30.",
+	"intent_expired":               "The unlock request has expired. Please start again.",
+	"intent_not_found":             "The unlock request was not found.",
+	"invalid_item":                 "The item type or ID is invalid.",
+	"invalid_nonce":                "The unlock code is invalid.",
+	"not_locked":                   "This item is not locked or could not be found.",
+	"unlock_daily_limit":           "You have reached today's limit for free unlocks. Try again tomorrow or get Lifetime Access.",
+	"unlock_fallback_exhausted":    "Ads are not available right now. Try again later or get Lifetime Access.",
+	"unlock_unavailable":           "Unlocking with an ad is not available right now.",
 	"upload_failed":                "The image could not be saved. Please try again.",
 }
 

@@ -74,12 +74,14 @@ func TestBillingAPIUnlockRevokeAndDelete(t *testing.T) {
 		handler.ServeHTTP(w, r)
 		return w
 	}
-	for _, path := range []string{"/v1/grammar/course?level=N3", "/v1/grammar/lessons/grammar-n2-01", "/v1/kanji/lessons/kanji-n3-01", "/v1/reading/lessons/reading-n2-01", "/v1/vocabulary/lessons/n3-daily-life", "/v1/simulation/n4", "/v1/simulation/n3", "/v1/simulation/jft", "/v1/simulation/nat"} {
+	for _, path := range []string{"/v1/grammar/lessons/grammar-n2-01", "/v1/kanji/lessons/kanji-n3-01", "/v1/reading/lessons/reading-n2-01", "/v1/vocabulary/lessons/n3-daily-life", "/v1/simulation/n4", "/v1/simulation/n3", "/v1/simulation/jft", "/v1/simulation/nat"} {
 		if w := call("GET", path, ""); w.Code != 402 {
 			t.Fatalf("free user accessed %s: %d %s", path, w.Code, w.Body.String())
 		}
 	}
-	for _, path := range []string{"/v1/grammar/course?level=N4", "/v1/simulation/n5"} {
+	// Level catalogs only list lesson titles, so they stay open to free accounts:
+	// they need to see what an ad or Lifetime Access unlocks.
+	for _, path := range []string{"/v1/grammar/course?level=N4", "/v1/grammar/course?level=N3", "/v1/simulation/n5"} {
 		if w := call("GET", path, ""); w.Code != 200 {
 			t.Fatal(w.Body.String())
 		}

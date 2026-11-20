@@ -10,6 +10,8 @@ import 'package:nihongo_master/features/exam/presentation/widgets/online_exam_ga
 import 'package:nihongo_master/features/exam/presentation/widgets/simulation_text.dart';
 import 'package:nihongo_master/features/learn/level_list/data/level_list_repository.dart';
 import 'package:nihongo_master/features/learn/level_list/presentation/level_pdf_button.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_sheet.dart';
 
 class SimulationIntroScreen extends ConsumerStatefulWidget {
   const SimulationIntroScreen({super.key, this.level = 'N5'});
@@ -49,7 +51,20 @@ class _IntroState extends ConsumerState<SimulationIntroScreen> {
         );
       }
     } on Object catch (e) {
-      if (mounted) setState(() => error = diagnosticError(e));
+      if (!mounted) return;
+      // A premium paper an ad can open: one ad buys one attempt.
+      final target = LockedContentException.from(e)?.target;
+      if (target != null) {
+        setState(() => busy = false);
+        final opened = await showUnlockSheet(
+          context,
+          target,
+          title: 'Buka satu percobaan simulasi'.localized(context),
+        );
+        if (opened && mounted) await start();
+        return;
+      }
+      setState(() => error = diagnosticError(e));
     } finally {
       if (mounted) setState(() => busy = false);
     }

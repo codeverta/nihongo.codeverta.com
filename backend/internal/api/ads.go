@@ -1,13 +1,17 @@
 package api
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
 	"sync"
+
+	"nihongo-master-backend/internal/unlock"
 )
 
 // Google's public AdMob test units. They never serve real ads or earn revenue.
@@ -50,6 +54,105 @@ type AdsConfig struct {
 	DictionaryNative AdPlacement `json:"dictionaryNative"`
 	// QuizResultBanner sits on lesson quiz and exam result screens.
 	QuizResultBanner AdPlacement `json:"quizResultBanner"`
+	// UnlockRewarded is the opt-in rewarded ad that opens one locked item
+	// (see docs/rewarded-unlock-spec.md). The unit must have server-side
+	// verification pointed at /v1/ads/ssv.
+	UnlockRewarded AdPlacement `json:"unlockRewarded"`
+	// UnlockDailyCap is the most items an account can open per day, across
+	// every kind of item. Zero means the default.
+	UnlockDailyCap int `json:"unlockDailyCap"`
+	// UnlockFallbackPerDay is how many of those may be opened without a
+	// verified ad when no ad could be loaded. Zero turns the fallback off.
+	UnlockFallbackPerDay int `json:"unlockFallbackPerDay"`
+	// UnlockKinds switches the ad offer per kind of item. An item opened
+	// earlier stays open when its kind is switched off later.
+	UnlockKinds UnlockKinds `json:"unlockKinds"`
+	// ContentGates locks content that used to be free. Both start off so a
+	// deploy changes nothing; switch them on only after the app that can
+	// unlock them is out (older apps cannot read a locked article or apply).
+	ContentGates ContentGates `json:"contentGates"`
+	// InterstitialKinds switches the full-screen ad per completion moment.
+	// The ad only ever follows a finished lesson, exam, practice or Anki
+	// session, when the user leaves its result screen.
+	InterstitialKinds CompletionKinds `json:"interstitialKinds"`
+	// ExamTabBanner sits above the bottom navigation on the Exam tab.
+	ExamTabBanner AdPlacement `json:"examTabBanner"`
+	// PracticeResultBanner sits on the end screen of an Anki session, an SSW
+	// practice and a Kaigo lesson.
+	PracticeResultBanner AdPlacement `json:"practiceResultBanner"`
+	// NewsArticleNative is one native ad at the end of a news article.
+	NewsArticleNative AdPlacement `json:"newsArticleNative"`
+	// AnkiSessionMinCards is how many cards an Anki session needs before it
+	// counts as finished. Zero means the default.
+	AnkiSessionMinCards int `json:"ankiSessionMinCards"`
+}
+
+// CompletionKinds are the "finished studying" moments.
+type CompletionKinds struct {
+	Lessons  bool `json:"lessons"`  // JLPT lesson quizzes
+	Exams    bool `json:"exams"`    // simulation, diagnostic, JFT, NAT, SSW exams
+	Practice bool `json:"practice"` // SSW practice and Kaigo lessons
+	Anki     bool `json:"anki"`     // Anki sessions past the minimum card count
+}
+
+const defaultAnkiSessionMinCards = 10
+
+// UnlockKinds says which kinds of item may be opened with a rewarded ad.
+type UnlockKinds struct {
+	Lessons    bool `json:"lessons"`    // N3–N1 grammar, kanji, reading, vocabulary
+	Anki       bool `json:"anki"`       // built-in N3–N1 Anki decks
+	Simulation bool `json:"simulation"` // JLPT N3 simulation paper 01, per attempt
+	News       bool `json:"news"`       // one news article
+	Jobs       bool `json:"jobs"`       // one job's application link
+}
+
+// ContentGates locks news articles and job application links for free
+// accounts. Lessons, decks and simulations are locked by NIHONGO_OPEN_ACCESS.
+type ContentGates struct {
+	News bool `json:"news"`
+	Jobs bool `json:"jobs"`
+}
+
+// unlockOffered reports whether an ad may open an item of kind.
+func (c AdsConfig) unlockOffered(kind unlock.Kind) bool {
+	if !c.unlockAvailable() {
+		return false
+	}
+	switch {
+	case kind.IsLesson():
+		return c.UnlockKinds.Lessons
+	case kind == unlock.KindAnki:
+		return c.UnlockKinds.Anki
+	case kind == unlock.KindSimulation:
+		return c.UnlockKinds.Simulation
+	case kind == unlock.KindNews:
+		return c.UnlockKinds.News
+	case kind == unlock.KindJob:
+		return c.UnlockKinds.Jobs
+	}
+	return false
+}
+
+const (
+	defaultUnlockDailyCap       = 20
+	defaultUnlockFallbackPerDay = 2
+)
+
+// unlockAvailable reports whether free users can be offered an ad to open a
+// locked item.
+func (c AdsConfig) unlockAvailable() bool {
+	return c.Enabled && c.UnlockRewarded.Enabled && c.UnlockRewarded.UnitID != ""
+}
+
+func (c AdsConfig) unlockLimits() unlock.Limits {
+	limits := unlock.Limits{DailyCap: c.UnlockDailyCap, FallbackPerDay: c.UnlockFallbackPerDay}
+	if limits.DailyCap <= 0 {
+		limits.DailyCap = defaultUnlockDailyCap
+	}
+	if limits.FallbackPerDay < 0 {
+		limits.FallbackPerDay = 0
+	}
+	return limits
 }
 
 // aiChatRewardedAvailable reports whether free users can be offered an ad.
@@ -72,6 +175,14 @@ func defaultAdsConfig() AdsConfig {
 		Interstitial:     AdPlacement{Enabled: true, UnitID: testInterstitialAdUnit, Every: defaultInterstitialMinutes},
 		DictionaryNative: AdPlacement{Enabled: true, UnitID: testNativeAdUnit, Every: 8},
 		QuizResultBanner: AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
+		UnlockRewarded:   AdPlacement{Enabled: true, UnitID: testRewardedAdUnit},
+		UnlockDailyCap:   defaultUnlockDailyCap, UnlockFallbackPerDay: defaultUnlockFallbackPerDay,
+		UnlockKinds:          UnlockKinds{Lessons: true, Anki: true, Simulation: true, News: true, Jobs: true},
+		InterstitialKinds:    CompletionKinds{Lessons: true, Exams: true, Practice: true, Anki: true},
+		ExamTabBanner:        AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
+		PracticeResultBanner: AdPlacement{Enabled: true, UnitID: testBannerAdUnit},
+		NewsArticleNative:    AdPlacement{Enabled: true, UnitID: testNativeAdUnit},
+		AnkiSessionMinCards:  defaultAnkiSessionMinCards,
 	}
 }
 
@@ -97,6 +208,18 @@ func validateAdsConfig(config AdsConfig) error {
 		"banner": config.Banner, "newsNative": config.NewsNative, "jobsNative": config.JobsNative,
 		"aiChatRewarded": config.AIChatRewarded, "interstitial": config.Interstitial,
 		"dictionaryNative": config.DictionaryNative, "quizResultBanner": config.QuizResultBanner,
+		"unlockRewarded": config.UnlockRewarded, "examTabBanner": config.ExamTabBanner,
+		"practiceResultBanner": config.PracticeResultBanner, "newsArticleNative": config.NewsArticleNative,
+	}
+	if config.AnkiSessionMinCards != 0 && (config.AnkiSessionMinCards < 1 || config.AnkiSessionMinCards > 100) {
+		return fmt.Errorf("ankiSessionMinCards: ambang sesi Anki harus 1 sampai 100 kartu")
+	}
+	// Zero means "default" so an older admin client that omits these can save.
+	if config.UnlockDailyCap != 0 && (config.UnlockDailyCap < 1 || config.UnlockDailyCap > 200) {
+		return fmt.Errorf("unlockDailyCap: batas harian harus 1 sampai 200")
+	}
+	if config.UnlockFallbackPerDay < 0 || config.UnlockFallbackPerDay > 10 {
+		return fmt.Errorf("unlockFallbackPerDay: jatah cadangan harus 0 sampai 10")
 	}
 	for name, placement := range placements {
 		if placement.UnitID != "" && !adUnitPattern.MatchString(placement.UnitID) {
@@ -157,10 +280,55 @@ func (s *Server) updateAdsConfig(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnauthorized, "unauthorized", "Kunci admin salah atau belum diatur di server.")
 		return
 	}
-	var input AdsConfig
-	if err := decodeJSON(r, &input); err != nil {
+	body, err := io.ReadAll(io.LimitReader(r.Body, 1<<20))
+	if err != nil {
 		writeError(w, http.StatusBadRequest, "invalid_json", "format pengaturan iklan tidak valid")
 		return
+	}
+	var input AdsConfig
+	decoder := json.NewDecoder(bytes.NewReader(body))
+	decoder.DisallowUnknownFields()
+	if err := decoder.Decode(&input); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid_json", "format pengaturan iklan tidak valid")
+		return
+	}
+	// A dashboard built before the unlock settings existed sends a config
+	// without them. Saving it must not switch the unlock ad off or reset its
+	// limits, so keep the stored values for any key the client left out.
+	var sent map[string]json.RawMessage
+	_ = json.Unmarshal(body, &sent)
+	s.ads.mu.RLock()
+	current := s.ads.value
+	s.ads.mu.RUnlock()
+	if _, ok := sent["unlockRewarded"]; !ok {
+		input.UnlockRewarded = current.UnlockRewarded
+	}
+	if _, ok := sent["unlockDailyCap"]; !ok {
+		input.UnlockDailyCap = current.UnlockDailyCap
+	}
+	if _, ok := sent["unlockFallbackPerDay"]; !ok {
+		input.UnlockFallbackPerDay = current.UnlockFallbackPerDay
+	}
+	if _, ok := sent["unlockKinds"]; !ok {
+		input.UnlockKinds = current.UnlockKinds
+	}
+	if _, ok := sent["contentGates"]; !ok {
+		input.ContentGates = current.ContentGates
+	}
+	if _, ok := sent["interstitialKinds"]; !ok {
+		input.InterstitialKinds = current.InterstitialKinds
+	}
+	if _, ok := sent["examTabBanner"]; !ok {
+		input.ExamTabBanner = current.ExamTabBanner
+	}
+	if _, ok := sent["practiceResultBanner"]; !ok {
+		input.PracticeResultBanner = current.PracticeResultBanner
+	}
+	if _, ok := sent["newsArticleNative"]; !ok {
+		input.NewsArticleNative = current.NewsArticleNative
+	}
+	if _, ok := sent["ankiSessionMinCards"]; !ok {
+		input.AnkiSessionMinCards = current.AnkiSessionMinCards
 	}
 	if err := validateAdsConfig(input); err != nil {
 		writeError(w, http.StatusUnprocessableEntity, "invalid_ads_config", err.Error())

@@ -32,6 +32,10 @@ func (s *Server) jobList(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Cache-Control", "public, max-age=60")
+	if s.jobLinksLocked() {
+		writeData(w, 200, lockedJobPage(page))
+		return
+	}
 	writeData(w, 200, page)
 }
 func (s *Server) jobDetail(w http.ResponseWriter, r *http.Request) {
@@ -45,6 +49,10 @@ func (s *Server) jobDetail(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Cache-Control", "public, max-age=60")
+	if s.jobLinksLocked() {
+		writeData(w, 200, lockedJob(job))
+		return
+	}
 	writeData(w, 200, job)
 }
 func (s *Server) jobSources(w http.ResponseWriter, r *http.Request) {

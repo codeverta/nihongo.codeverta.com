@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:nihongo_master/features/learn/grammar/domain/grammar_models.dart';
 import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
 
 class GrammarException implements Exception {
   const GrammarException(this.message);
@@ -93,6 +94,8 @@ class GrammarRepository {
       }
       return data;
     } on DioException catch (error) {
+      final locked = LockedContentException.from(error);
+      if (locked != null) throw locked;
       if (error.response?.statusCode == 401) {
         throw const GrammarException('Sesi berakhir. Silakan masuk kembali.');
       }

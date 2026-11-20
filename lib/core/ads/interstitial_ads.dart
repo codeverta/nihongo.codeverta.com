@@ -48,20 +48,6 @@ class InterstitialPacer {
   }
 }
 
-/// Screens a full-screen ad must never cover: startup, sign-in and the
-/// Lifetime purchase flow.
-bool interstitialAllowedOn(String path) {
-  if (path.isEmpty || path == '/') return false;
-  for (final blocked in const ['/onboarding', '/login', '/premium']) {
-    if (path == blocked ||
-        path.startsWith('$blocked/') ||
-        path.startsWith('$blocked?')) {
-      return false;
-    }
-  }
-  return true;
-}
-
 /// Loads and shows one interstitial. An interface so tests can fake it.
 abstract class InterstitialAdGateway {
   bool get ready;
@@ -143,10 +129,11 @@ final interstitialAdGatewayProvider = Provider<InterstitialAdGateway>((ref) {
   return gateway;
 });
 
-/// Shows an interstitial at natural breaks (screen or tab changes) once the
-/// user has used the app for the configured minutes. Free users only;
-/// Premium and Lifetime users never get one because [adsReadyProvider]
-/// yields null for them.
+/// Shows an interstitial only when the user leaves a result screen, after
+/// they have seen their score, and only once the configured minutes of use
+/// have passed since the last full-screen ad. Never while studying, never
+/// when opening content. Free users only: [adsReadyProvider] yields null for
+/// Premium and Lifetime users.
 class InterstitialController {
   InterstitialController(this._ref, {DateTime Function()? clock})
     : _clock = clock ?? DateTime.now {
@@ -171,29 +158,52 @@ class InterstitialController {
   late final AppLifecycleListener _lifecycle;
   bool _showing = false;
 
-  AdPlacementConfig? get _placement {
-    final placement = _ref.read(adsReadyProvider).valueOrNull?.interstitial;
-    return placement != null && placement.usable ? placement : null;
-  }
+  /// Set when the provider is disposed (sign-out, app restart, tests). A
+  /// result screen torn down with it must not try to show an ad afterwards.
+  bool _disposed = false;
 
-  /// Call when the user moves to another screen or tab.
-  Future<void> onNaturalBreak(String path) async {
-    final placement = _placement;
-    if (placement == null || _showing) return;
+  /// Completions the user already paid for with a rewarded ad (opening the
+  /// content, or doubling its XP). Their result screen gets no full-screen ad.
+  final Set<String> _paidWithAd = {};
+
+  AdPlacementConfig? _placementFor(CompletionKind kind) {
+    if (_disposed) return null;
+    final config = _ref.read(adsReadyProvider).valueOrNull;
+    final placement = config?.interstitial;
+    if (config == null || placement == null || !placement.usable) return null;
+    if (!config.interstitialKinds.allows(kind)) return null;
     final minutes = placement.every >= 5 && placement.every <= 60
         ? placement.every
         : defaultInterstitialMinutes;
     pacer.interval = Duration(minutes: minutes);
-    final now = _clock();
+    return placement;
+  }
+
+  /// Call when a result screen appears. Starts loading an ad if one may be
+  /// shown when the user leaves, so they never wait on a spinner.
+  void prepareAfterCompletion(CompletionKind kind) {
+    final placement = _placementFor(kind);
+    if (placement == null || !pacer.nearlyDue(_clock())) return;
     final gateway = _ref.read(interstitialAdGatewayProvider);
-    if (!pacer.nearlyDue(now)) return;
+    if (!gateway.ready) unawaited(gateway.load(placement.unitId));
+  }
+
+  /// Call when the user leaves a result screen. [key] names the completed
+  /// item (for example `grammar:grammar-n3-01`) so a completion paid for
+  /// with a rewarded ad is skipped.
+  Future<void> showAfterCompletion(CompletionKind kind, {String? key}) async {
+    if (key != null && _paidWithAd.remove(key)) return;
+    final placement = _placementFor(kind);
+    if (placement == null || _showing) return;
+    final gateway = _ref.read(interstitialAdGatewayProvider);
+    final now = _clock();
     if (!gateway.ready) {
-      // Load now and show at the following break rather than making the user
-      // wait on a spinner.
-      unawaited(gateway.load(placement.unitId));
+      // Not loaded in time: load for the next completion instead of making
+      // the user wait.
+      if (pacer.nearlyDue(now)) unawaited(gateway.load(placement.unitId));
       return;
     }
-    if (!pacer.due(now) || !interstitialAllowedOn(path)) return;
+    if (!pacer.due(now)) return;
     _showing = true;
     try {
       if (await gateway.show()) markFullScreenAdShown();
@@ -202,11 +212,21 @@ class InterstitialController {
     }
   }
 
+  /// Records that the user watched a rewarded ad for [key], so the result
+  /// screen of that item shows no full-screen ad. Also restarts the count.
+  void markPaidWithAd(String key) {
+    _paidWithAd.add(key);
+    markFullScreenAdShown();
+  }
+
   /// Restarts the count after any full-screen ad, including rewarded ones,
   /// so users never see two in quick succession.
   void markFullScreenAdShown() => pacer.reset(_clock());
 
-  void dispose() => _lifecycle.dispose();
+  void dispose() {
+    _disposed = true;
+    _lifecycle.dispose();
+  }
 }
 
 final interstitialControllerProvider = Provider<InterstitialController>((ref) {

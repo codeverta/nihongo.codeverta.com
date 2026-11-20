@@ -75,9 +75,20 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
     );
   }
 
-  Future<void> rate(String rating) async {
-    if (state.saving || !state.revealed || state.current == null) return;
-    if (!const ['again', 'hard', 'good', 'easy'].contains(rating)) return;
+  /// Flips the card back to its front. Not allowed while a review is being
+  /// saved or awaiting a retry, because that review must stay attached.
+  void conceal() {
+    if (!state.revealed || state.saving || state.pendingRating != null) return;
+    state = AnkiStudyState(session: state.session, position: state.position);
+  }
+
+  /// Saves [rating] for the current card. Returns true when the review was
+  /// stored (online or in the offline queue) and the session moved on.
+  Future<bool> rate(String rating) async {
+    if (state.saving || !state.revealed || state.current == null) return false;
+    if (!const ['again', 'hard', 'good', 'easy'].contains(rating)) {
+      return false;
+    }
     // Preserve the exact operation after a timeout; its server outcome may be unknown.
     final selected = state.pendingRating ?? rating;
     final id = state.requestId ?? _requestId();
@@ -98,6 +109,7 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
           position: state.position + 1,
         );
       }
+      return true;
     } on AnkiFailure catch (error) {
       if (mounted) {
         state = AnkiStudyState(
@@ -124,6 +136,7 @@ class AnkiStudyController extends StateNotifier<AnkiStudyState> {
         );
       }
     }
+    return false;
   }
 }
 

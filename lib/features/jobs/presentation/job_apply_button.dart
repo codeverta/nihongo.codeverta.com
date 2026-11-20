@@ -7,6 +7,9 @@ import 'package:nihongo_master/features/auth/presentation/controllers/auth_contr
 import 'package:nihongo_master/features/billing/data/billing_repository.dart';
 import 'package:nihongo_master/features/jobs/domain/job_models.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_sheet.dart';
+import 'package:nihongo_master/features/jobs/data/jobs_repository.dart';
 
 typedef JobApplicationAccess = Future<bool> Function();
 final jobApplicationAccessProvider = Provider<JobApplicationAccess>((ref) {
@@ -34,6 +37,10 @@ class _JobApplyButtonState extends ConsumerState<JobApplyButton> {
   Future<void> _apply() async {
     if (_busy) return;
     final user = ref.read(authControllerProvider).user;
+    if (widget.job.applyLocked) {
+      await _applyThroughServer(user);
+      return;
+    }
     if (!(user?.isPremium ?? false) && !(user?.isLifetime ?? false)) {
       _subscribe();
       return;
@@ -67,6 +74,60 @@ class _JobApplyButtonState extends ConsumerState<JobApplyButton> {
     }
   }
 
+  /// While the jobs gate is on the link is not in the public listing: the
+  /// server gives it to Lifetime accounts and to accounts that opened this
+  /// job with a rewarded ad.
+  Future<void> _applyThroughServer(AuthenticatedUser? user) async {
+    if (user == null) {
+      await context.push<bool>('/login');
+      return;
+    }
+    final repository = ref.read(jobsRepositoryProvider);
+    setState(() => _busy = true);
+    try {
+      Uri? uri;
+      try {
+        uri = await repository.applyLink(widget.job.id);
+      } on LockedContentException catch (locked) {
+        final target = locked.target;
+        if (target == null) {
+          _subscribe();
+          return;
+        }
+        if (!mounted) return;
+        setState(() => _busy = false);
+        final opened = await showUnlockSheet(
+          context,
+          target,
+          title: 'Buka tautan lamaran'.localized(context),
+          returnTo: _destination,
+        );
+        if (!opened || !mounted) return;
+        setState(() => _busy = true);
+        uri = await repository.applyLink(widget.job.id);
+      }
+      if (!mounted || ref.read(authControllerProvider).user?.id != user.id) {
+        return;
+      }
+      final launched =
+          uri != null && await ref.read(jobApplicationLauncherProvider)(uri);
+      if (!launched && mounted) {
+        _message(
+          'Tautan lamaran belum dapat dibuka. Coba lagi.'.localized(context),
+        );
+      }
+    } on Object {
+      if (mounted) {
+        _message(
+          'Tautan lamaran belum dapat dimuat. Periksa koneksi lalu coba lagi.'
+              .localized(context),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
   void _message(String text) =>
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   @override
@@ -75,7 +136,8 @@ class _JobApplyButtonState extends ConsumerState<JobApplyButton> {
     style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(52)),
     onPressed:
         widget.job.active &&
-            jobExternalUri(widget.job.applyUrl) != null &&
+            (widget.job.applyLocked ||
+                jobExternalUri(widget.job.applyUrl) != null) &&
             !_busy
         ? _apply
         : null,

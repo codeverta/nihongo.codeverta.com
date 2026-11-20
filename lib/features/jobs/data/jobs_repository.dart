@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/jobs/domain/job_models.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
 
 final jobsRepositoryProvider = Provider(
   (ref) => JobsRepository(ref.watch(dioProvider)),
@@ -36,6 +37,24 @@ class JobsRepository {
             ? 'Lowongan tidak ditemukan atau sudah dihapus.'
             : 'Lowongan belum dapat dimuat. Periksa koneksi dan coba kembali.',
       );
+    }
+  }
+
+  /// The job's application link, from the server. Throws
+  /// [LockedContentException] when the account must watch an ad or buy
+  /// Lifetime Access first.
+  Future<Uri?> applyLink(String id) async {
+    try {
+      final response = await dio.post<Map<String, dynamic>>(
+        '/jobs/${Uri.encodeComponent(id)}/apply-link',
+      );
+      final data = response.data?['data'];
+      return jobExternalUri(data is Map ? '${data['applyUrl'] ?? ''}' : '');
+    } on DioException catch (error) {
+      throw LockedContentException.from(error) ??
+          JobsFailure(
+            'Tautan lamaran belum dapat dimuat. Periksa koneksi dan coba kembali.',
+          );
     }
   }
 

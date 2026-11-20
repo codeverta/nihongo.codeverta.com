@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nihongo_master/core/network/dio_client.dart';
 import 'package:nihongo_master/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
 
 typedef Json = Map<String, dynamic>;
 
@@ -25,9 +26,10 @@ class DiagnosticRepository {
         throw Exception('Sesi berakhir. Silakan masuk kembali.');
       }
       if (e.response?.statusCode == 402) {
-        throw Exception(
-          'Lifetime Access diperlukan. Periksa status akses di halaman Premium.',
-        );
+        throw LockedContentException.from(e) ??
+            Exception(
+              'Lifetime Access diperlukan. Periksa status akses di halaman Premium.',
+            );
       }
       if (e.response?.statusCode == 404) {
         throw Exception(

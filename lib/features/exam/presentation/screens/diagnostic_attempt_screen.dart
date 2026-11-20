@@ -9,6 +9,8 @@ import 'package:nihongo_master/features/exam/presentation/screens/diagnostic_res
 import 'package:nihongo_master/features/exam/presentation/widgets/diagnostic_widgets.dart';
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
 
 class DiagnosticAttemptScreen extends ConsumerStatefulWidget {
   const DiagnosticAttemptScreen({required this.attemptId, super.key});
@@ -325,7 +327,10 @@ class _AttemptState extends ConsumerState<DiagnosticAttemptScreen> {
         body: loading
             ? const Center(child: CircularProgressIndicator())
             : result != null
-            ? DiagnosticResultView(result: result!)
+            ? CompletionAdBoundary(
+                kind: CompletionKind.exams,
+                child: DiagnosticResultView(result: result!),
+              )
             : session == null
             ? Padding(
                 padding: const EdgeInsets.all(20),

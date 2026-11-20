@@ -61,7 +61,11 @@ class _FakeShower implements RewardedAdShower {
   final shown = <String>[];
 
   @override
-  Future<RewardedAdOutcome> show(String unitId) async {
+  Future<RewardedAdOutcome> show(
+    String unitId, {
+    String? userId,
+    String? customData,
+  }) async {
     shown.add(unitId);
     return outcome;
   }

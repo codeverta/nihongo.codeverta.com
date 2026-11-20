@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"nihongo-master-backend/internal/anki"
 	"nihongo-master-backend/internal/store"
+	"nihongo-master-backend/internal/unlock"
 	"strconv"
 	"strings"
 )
@@ -51,7 +52,7 @@ func (s *Server) ankiCredits(w http.ResponseWriter, r *http.Request) {
 	writeData(w, 200, map[string]any{"repository": "https://github.com/mistval/kotoba", "revision": anki.Revision(), "license": anki.License(), "notice": "Data dan arti mengikuti sumber Kotoba. Sebagian deck memuat atribusi sumber pihak ketiga pada detailnya. Tautan media eksternal tetap mengikuti ketersediaan penyedianya."})
 }
 func (s *Server) ankiDeck(w http.ResponseWriter, r *http.Request) {
-	view, err := s.store.AnkiDeck(userID(r), r.PathValue("deckID"))
+	view, err := s.store.AnkiDeckFor(userID(r), r.PathValue("deckID"), s.itemUnlocked(r, userID(r), unlock.KindAnki, r.PathValue("deckID")))
 	if err != nil {
 		writeStoreError(w, err)
 		return
@@ -69,7 +70,7 @@ func (s *Server) ankiStudy(w http.ResponseWriter, r *http.Request) {
 		}
 		limit = n
 	}
-	result, err := s.store.AnkiStudy(userID(r), r.PathValue("deckID"), limit)
+	result, err := s.store.AnkiStudyFor(userID(r), r.PathValue("deckID"), limit, s.itemUnlocked(r, userID(r), unlock.KindAnki, r.PathValue("deckID")))
 	if err != nil {
 		writeStoreError(w, err)
 		return
@@ -83,7 +84,7 @@ func (s *Server) ankiReview(w http.ResponseWriter, r *http.Request) {
 		writeStoreError(w, store.ErrInvalid)
 		return
 	}
-	result, err := s.store.AnkiReview(userID(r), r.PathValue("deckID"), input)
+	result, err := s.store.AnkiReviewFor(userID(r), r.PathValue("deckID"), input, s.itemUnlocked(r, userID(r), unlock.KindAnki, r.PathValue("deckID")))
 	if errors.Is(err, store.ErrAnkiConflict) {
 		writeError(w, 409, "review_conflict", err.Error())
 		return

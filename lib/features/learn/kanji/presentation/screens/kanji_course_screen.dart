@@ -9,6 +9,8 @@ import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 import 'package:nihongo_master/features/learn/level_list/presentation/kanji_level_list.dart';
 import 'package:nihongo_master/features/anki/presentation/course_anki_button.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/unlock/unlock_repository.dart';
 
 class KanjiCourseScreen extends ConsumerStatefulWidget {
   const KanjiCourseScreen({this.level = 'N5', super.key});
@@ -236,7 +238,10 @@ class _KanjiCourseScreenState extends ConsumerState<KanjiCourseScreen> {
                       '${lesson.chapter}\n${lesson.characterCount} kanji • ${lesson.questionCount} ${'soal'.localized(context)} • ${'Terbaik'.localized(context)} ${lesson.bestScore}%',
                     ),
                     isThreeLine: true,
-                    trailing: const Icon(Icons.chevron_right_rounded),
+                    trailing: UnlockLockIcon(
+                      target: UnlockTarget('kanji', lesson.id),
+                      lockable: isLockableLevel(widget.level),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10),

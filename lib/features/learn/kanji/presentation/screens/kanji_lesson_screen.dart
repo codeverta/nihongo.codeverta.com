@@ -10,6 +10,9 @@ import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/controllers/kanji_controller.dart';
 import 'package:nihongo_master/features/learn/kanji/presentation/screens/kanji_writing_pad.dart';
 import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
 
 class KanjiLessonScreen extends ConsumerWidget {
   const KanjiLessonScreen({required this.lessonId, super.key});
@@ -28,35 +31,41 @@ class KanjiLessonScreen extends ConsumerWidget {
       ),
       body: lesson.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, s) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  e.toString().localized(context),
-                  textAlign: TextAlign.center,
+        error: (e, s) =>
+            lockedContentView(e, controller.load) ??
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      e.toString().localized(context),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 16),
+                    FilledButton(
+                      onPressed: controller.load,
+                      child: Text('Muat ulang'.localized(context)),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 16),
-                FilledButton(
-                  onPressed: controller.load,
-                  child: Text('Muat ulang'.localized(context)),
-                ),
-              ],
+              ),
             ),
-          ),
-        ),
         data: (s) => switch (s.stage) {
           KanjiStage.study => _Study(state: s, controller: controller),
           KanjiStage.quiz => _Quiz(state: s, controller: controller),
-          KanjiStage.result => _Result(
-            result: s.result!,
-            retry: controller.startQuiz,
-            study: controller.studyAgain,
-            finish: () => context.pop(),
-            busy: s.busy,
-            error: s.error,
+          KanjiStage.result => CompletionAdBoundary(
+            kind: CompletionKind.lessons,
+            completionKey: 'kanji:$lessonId',
+            child: _Result(
+              result: s.result!,
+              retry: controller.startQuiz,
+              study: controller.studyAgain,
+              finish: () => context.pop(),
+              busy: s.busy,
+              error: s.error,
+            ),
           ),
         },
       ),

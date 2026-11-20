@@ -377,9 +377,16 @@ func (s *MemoryStore) Achievements(userID string) []domain.Achievement {
 }
 
 func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, error) {
+	return s.StartExamFor(userID, examID, false)
+}
+
+// StartExamFor is StartExam for an account that may have paid for this
+// simulation paper with a rewarded ad (unlocked). It only affects simulation
+// papers; other exams keep their own entitlement check.
+func (s *MemoryStore) StartExamFor(userID, examID string, unlocked bool) (domain.ExamAttempt, error) {
 	for _, level := range SSWLevels() {
 		if examID == strings.ToLower(level)+"-simulation-1" {
-			return s.StartSimulation(userID, level)
+			return s.startSimulation(userID, unlocked, level)
 		}
 	}
 	if rest, ok := strings.CutPrefix(examID, "nat-5q-full-"); ok {
@@ -388,39 +395,39 @@ func (s *MemoryStore) StartExam(userID, examID string) (domain.ExamAttempt, erro
 			return domain.ExamAttempt{}, ErrNotFound
 		}
 		if paperNo == 1 {
-			return s.StartSimulation(userID, "NAT")
+			return s.startSimulation(userID, unlocked, "NAT")
 		}
-		return s.StartSimulation(userID, fmt.Sprintf("NAT-%d", paperNo))
+		return s.startSimulation(userID, unlocked, fmt.Sprintf("NAT-%d", paperNo))
 	}
 	if examID == "jft-a2-full-1" {
-		return s.StartSimulation(userID, "JFT")
+		return s.startSimulation(userID, unlocked, "JFT")
 	}
 	for paperNo := 2; paperNo <= jftLastPaper; paperNo++ {
 		if examID == fmt.Sprintf("jft-a2-full-%d", paperNo) {
-			return s.StartSimulation(userID, fmt.Sprintf("JFT-%d", paperNo))
+			return s.startSimulation(userID, unlocked, fmt.Sprintf("JFT-%d", paperNo))
 		}
 	}
 	// Older clients used this ID for the premium N5 catalog placeholder.
 	if examID == "jlpt-n5-full-1" {
-		return s.StartSimulation(userID)
+		return s.startSimulation(userID, unlocked)
 	}
 	if examID == "jlpt-n3-simulation-1" {
-		return s.StartSimulation(userID, "N3")
+		return s.startSimulation(userID, unlocked, "N3")
 	}
 	if examID == "jlpt-n2-simulation-1" {
-		return s.StartSimulation(userID, "N2")
+		return s.startSimulation(userID, unlocked, "N2")
 	}
 	if examID == "jlpt-n1-simulation-1" {
-		return s.StartSimulation(userID, "N1")
+		return s.startSimulation(userID, unlocked, "N1")
 	}
 	if examID == "jlpt-n4-simulation-1" {
-		return s.StartSimulation(userID, "N4")
+		return s.startSimulation(userID, unlocked, "N4")
 	}
 	if base, paperNo, ok := jlptExtraExam(examID); ok {
-		return s.StartSimulation(userID, fmt.Sprintf("%s-%d", base, paperNo))
+		return s.startSimulation(userID, unlocked, fmt.Sprintf("%s-%d", base, paperNo))
 	}
 	if examID == "jlpt-n5-simulation-1" {
-		return s.StartSimulation(userID)
+		return s.startSimulation(userID, unlocked)
 	}
 	if examID == "jlpt-n5-diagnostic" {
 		return s.startDiagnostic(userID), nil

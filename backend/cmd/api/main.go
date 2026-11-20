@@ -28,6 +28,7 @@ import (
 	"nihongo-master-backend/internal/places"
 	"nihongo-master-backend/internal/prefinfo"
 	"nihongo-master-backend/internal/store"
+	"nihongo-master-backend/internal/unlock"
 )
 
 func main() {
@@ -325,6 +326,12 @@ func main() {
 	}
 	apiServer.ConfigureAIChat(aiRepository, aiConfig, aiCompleter, aiToken)
 	go apiServer.RunAIChatMaintenance(jobsContext)
+	unlockRepository, err := unlock.NewGormRepository(jobDB)
+	if err != nil {
+		log.Fatalf("configure unlock storage: %v", err)
+	}
+	apiServer.ConfigureUnlocks(unlockRepository, unlock.NewGoogleKeys())
+	go apiServer.RunUnlockMaintenance(jobsContext)
 	notificationPath := os.Getenv("NOTIFICATIONS_CONFIG_PATH")
 	if notificationPath == "" {
 		notificationPath = "data/notifications.json"

@@ -23,17 +23,33 @@ enum RewardedAdOutcome {
 /// widget previews can substitute a fake.
 // ignore: one_member_abstracts
 abstract class RewardedAdShower {
-  Future<RewardedAdOutcome> show(String unitId);
+  /// Shows one ad. [userId] and [customData] are passed to AdMob server-side
+  /// verification, so Google's callback to the backend names the account and
+  /// the unlock request; leave them out for ads the server does not verify.
+  Future<RewardedAdOutcome> show(
+    String unitId, {
+    String? userId,
+    String? customData,
+  });
 }
 
 class AdMobRewardedAdShower implements RewardedAdShower {
   static const _loadTimeout = Duration(seconds: 15);
 
   @override
-  Future<RewardedAdOutcome> show(String unitId) async {
+  Future<RewardedAdOutcome> show(
+    String unitId, {
+    String? userId,
+    String? customData,
+  }) async {
     final RewardedAd ad;
     try {
       ad = await _load(unitId).timeout(_loadTimeout);
+      if (userId != null || customData != null) {
+        await ad.setServerSideOptions(
+          ServerSideVerificationOptions(userId: userId, customData: customData),
+        );
+      }
     } on Object catch (error) {
       debugPrint('Rewarded ad unavailable: $error');
       return RewardedAdOutcome.unavailable;
@@ -87,6 +103,14 @@ final rewardedAdShowerProvider = Provider<RewardedAdShower>(
 /// The Tanya AI rewarded placement when it can be offered right now: the
 /// platform supports ads, the server switch is on, consent allows requests
 /// and the user is on the free plan. Null means "send the user to Lifetime".
+/// The rewarded placement that opens locked content, when an ad can be offered
+/// right now (Android, server switch on, consent given, free plan). Null means
+/// only Lifetime Access can open the content.
+final unlockRewardedPlacementProvider = FutureProvider<AdsConfig?>((ref) async {
+  final config = await ref.watch(adsReadyProvider.future);
+  return config != null && config.unlockRewarded.usable ? config : null;
+});
+
 final aiChatRewardedPlacementProvider = FutureProvider<AdPlacementConfig?>((
   ref,
 ) async {

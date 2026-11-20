@@ -24,6 +24,7 @@ class JapanJob {
       sourceName = '${json['sourceName'] ?? ''}',
       sourceUrl = '${json['sourceUrl'] ?? ''}',
       applyUrl = '${json['applyUrl'] ?? ''}',
+      applyLocked = json['applyLocked'] == true,
       postedAt = DateTime.tryParse('${json['postedAt'] ?? ''}'),
       expiresAt = DateTime.tryParse('${json['expiresAt'] ?? ''}'),
       lastSeenAt = DateTime.tryParse('${json['lastSeenAt'] ?? ''}'),
@@ -51,6 +52,10 @@ class JapanJob {
   final String sourceName;
   final String sourceUrl;
   final String applyUrl;
+
+  /// True while the server keeps application links out of the public
+  /// catalog; the link then comes from [JobsRepository.applyLink].
+  final bool applyLocked;
   final DateTime? postedAt;
   final DateTime? expiresAt;
   final DateTime? lastSeenAt;

@@ -6,6 +6,7 @@ import 'package:nihongo_master/core/localization/anki_english_part_b.dart';
 import 'package:nihongo_master/core/localization/anki_english_part_c.dart';
 import 'package:nihongo_master/core/localization/ui_english_ai_chat.dart';
 import 'package:nihongo_master/core/localization/ui_english_level_list.dart';
+import 'package:nihongo_master/core/localization/ui_english_unlock.dart';
 import 'package:nihongo_master/core/localization/ui_english_redesign.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_core.dart';
 import 'package:nihongo_master/core/localization/ui_english_wave1_exam.dart';
@@ -301,7 +302,8 @@ class AppLocalizations {
         uiEnglishWave1Exam[source] ??
         uiEnglishRedesign[source] ??
         uiEnglishAiChat[source] ??
-        uiEnglishLevelList[source];
+        uiEnglishLevelList[source] ??
+        uiEnglishUnlock[source];
     if (exact != null) return exact;
 
     final learningCourseStats = RegExp(
@@ -1452,6 +1454,9 @@ const _englishCopy = <String, String>{
   'Sulit': 'Hard',
   'Ingat': 'Good',
   'Mudah': 'Easy',
+  'Ketuk kartu untuk membalik.': 'Tap the card to flip it.',
+  'Geser kanan jika ingat, kiri jika belum hafal.':
+      'Swipe right if you remembered it, left to study it again.',
   'Nilai berdasarkan ingatanmu sebelum membuka jawaban. Kamu bisa keluar kapan saja; setiap penilaian yang berhasil sudah tersimpan.':
       'Rate each card based on what you remembered before revealing the answer. You can leave at any time; each successful rating is saved.',
   'Deck belum dapat dimuat. Coba kembali.':

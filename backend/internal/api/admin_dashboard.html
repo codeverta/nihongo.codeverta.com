@@ -319,6 +319,7 @@ textarea.input{font:inherit}
 .v-ads .master{font-size:15px;font-weight:800}
 .v-ads .panelh{padding-bottom:0}
 .v-ads input[type=text]{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+.v-ads details.guide{margin-top:4px}.v-ads details.guide summary{cursor:pointer;font-weight:700;color:var(--primaryText);font-size:13px}.v-ads details.guide ol{margin:8px 0 0 18px;line-height:1.6;font-size:13px}.v-ads details.guide p{margin-top:8px;font-size:13px}
 
 /* view: prefecture-living */
 .v-prefecture-living{max-width:980px}
@@ -1400,14 +1401,66 @@ NM.view('pricing',function(root){
 (function(){
 NM.view('ads',function(root){
   var alive=true,P=[
-    {k:'banner',t:'Banner',s:'Bawah layar Beranda, Belajar, Kamus',every:false},
-    {k:'newsNative',t:'Native di daftar Berita',s:'Disisipkan di antara berita',every:true,noun:'berita'},
-    {k:'jobsNative',t:'Native di daftar Lowongan',s:'Disisipkan di antara lowongan',every:true,noun:'lowongan'},
-    {k:'aiChatRewarded',t:'Rewarded di Tanya AI',s:'Opsi tonton iklan setelah kuota gratis harian habis. Jika nonaktif, pengguna diarahkan ke Lifetime.',every:false},
-    {k:'interstitial',t:'Layar penuh berkala',s:'Tampil di jeda alami (pindah layar/tab) setelah pemakaian N menit sejak iklan layar penuh terakhir. Tidak pernah di tengah kuis atau saat mengetik.',every:true,label:'Jeda pemakaian (menit, 5-60)',min:5,max:60,def:10},
-    {k:'dictionaryNative',t:'Native di hasil Kamus',s:'Disisipkan di antara hasil pencarian kamus',every:true,noun:'hasil'},
-    {k:'quizResultBanner',t:'Banner di layar hasil kuis',s:'Di layar nilai setelah kuis pelajaran dan ujian selesai',every:false}];
+    {k:'banner',t:'Banner',s:'Bawah layar Beranda, Belajar, Kamus.',every:false,fmt:'Banner',unit:'nm_banner'},
+    {k:'examTabBanner',t:'Banner di tab Ujian',s:'Bawah layar tab Ujian. Tab Profil tidak pernah menampilkan iklan.',every:false,fmt:'Banner',unit:'nm_banner'},
+    {k:'quizResultBanner',t:'Banner di layar hasil kuis',s:'Di layar nilai setelah kuis pelajaran dan ujian selesai.',every:false,fmt:'Banner',unit:'nm_banner'},
+    {k:'practiceResultBanner',t:'Banner di akhir Anki, SSW, dan Kaigo',s:'Di layar akhir sesi Anki, latihan SSW, dan lesson Kaigo.',every:false,fmt:'Banner',unit:'nm_banner'},
+    {k:'interstitial',t:'Layar penuh setelah selesai belajar',s:'Hanya muncul saat pengguna keluar dari layar hasil (lesson, ujian, latihan SSW/Kaigo, sesi Anki), setelah nilainya terlihat, dan hanya bila sudah lewat N menit pemakaian sejak iklan layar penuh terakhir. Tidak pernah saat membuka materi, saat belajar, atau setelah pengguna baru menonton iklan rewarded.',every:true,label:'Jeda pemakaian (menit, 5-60)',min:5,max:60,def:10,fmt:'Interstitial',unit:'nm_interstitial'},
+    {k:'newsNative',t:'Native di daftar Berita',s:'Disisipkan di antara berita.',every:true,noun:'berita',fmt:'Native advanced',unit:'nm_native'},
+    {k:'newsArticleNative',t:'Native di akhir artikel berita',s:'Satu iklan setelah isi artikel, sebelum sumber & kredit. Artikel yang dibuka dengan iklan tidak menampilkannya.',every:false,fmt:'Native advanced',unit:'nm_native'},
+    {k:'jobsNative',t:'Native di daftar Lowongan',s:'Disisipkan di antara lowongan.',every:true,noun:'lowongan',fmt:'Native advanced',unit:'nm_native'},
+    {k:'dictionaryNative',t:'Native di hasil Kamus',s:'Disisipkan di antara hasil pencarian kamus.',every:true,noun:'hasil',fmt:'Native advanced',unit:'nm_native'},
+    {k:'aiChatRewarded',t:'Rewarded di Tanya AI',s:'Opsi tonton iklan setelah kuota gratis harian habis. Jika nonaktif, pengguna diarahkan ke Lifetime.',every:false,fmt:'Rewarded',unit:'nm_rewarded_ai'},
+    {k:'unlockRewarded',t:'Rewarded buka konten',s:'Opsi tonton iklan untuk membuka satu item terkunci (materi N3–N1, deck Anki, simulasi N3, berita, tautan lamar). Unit ini wajib memakai verifikasi sisi server (SSV).',every:false,fmt:'Rewarded',unit:'nm_rewarded_unlock',ssv:true}];
+  var IK=[{k:'lessons',t:'Lesson JLPT (grammar, kanji, membaca, kosakata)'},{k:'exams',t:'Ujian (simulasi, diagnostik, JFT, NAT, SSW)'},{k:'practice',t:'Latihan SSW dan lesson Kaigo'},{k:'anki',t:'Sesi Anki'}];
+  // "How to create this ad unit": the same AdMob steps for every format, plus
+  // the extras a format needs (reward settings, server-side verification).
+  var guide=function(p){
+    var steps=['Buka AdMob, pilih Apps → Nihongo Master → Ad units → Add ad unit.','Pilih format '+p.fmt+'.','Isi nama unit: '+p.unit+'.','Jangan centang "Partner bidding". Pengaturan itu tidak bisa diubah setelah unit dibuat.'];
+    if(p.fmt==='Rewarded')steps.push('Di Reward settings isi jumlah 1 dan item coin. Nilainya tidak dipakai aplikasi.');
+    if(p.ssv)steps.push('Buka Advanced settings → Server-side verification, isi callback URL https://nihongo.codeverta.com/v1/ads/ssv, lalu simpan. Tanpa ini iklan ditonton tetapi konten tidak pernah terbuka.');
+    steps.push('Klik Create ad unit. Salin Ad unit ID yang berbentuk ca-app-pub-…/… (bukan App ID yang memakai tanda ~), tempel di kolom ID unit iklan di atas, lalu Simpan.');
+    var share=P.filter(function(o){return o.fmt===p.fmt&&o.k!==p.k&&!!o.ssv===!!p.ssv&&o.fmt!=='Rewarded'}).map(function(o){return o.t});
+    return NM.el('details',{class:'guide'},[NM.el('summary',{text:'Cara membuat unit iklan ini'}),
+      NM.el('p',{class:'muted',text:'Format AdMob: '+p.fmt+' · nama unit yang disarankan: '+p.unit}),
+      NM.el('ol',{},steps.map(function(t){return NM.el('li',{text:t})})),
+      share.length?NM.el('p',{class:'muted',text:'Boleh memakai ID yang sama dengan: '+share.join(', ')+'. Buat unit terpisah bila ingin melihat pendapatan per posisi di laporan AdMob.'}):null]);
+  };
+  var UK=[{k:'lessons',t:'Materi N3–N1 (grammar, kanji, membaca, kosakata)'},{k:'anki',t:'Deck Anki N3–N1'},{k:'simulation',t:'Simulasi JLPT N3 paket 01 (satu iklan per percobaan)'},{k:'news',t:'Artikel berita'},{k:'jobs',t:'Tautan lamar lowongan'}];
+  var GL={lessons:'Materi N3–N1',anki:'Deck Anki',simulation:'Simulasi N3',news:'Berita',jobs:'Lowongan'};
   var UNIT=/^ca-app-pub-[0-9]{16}\/[0-9]{10}$/;
+  // Statistics for ads that open locked content (GET /v1/admin/unlock-stats).
+  var unlockStatsCard=function(isAlive){
+    var box=NM.el('div',{class:'stack'},[NM.el('div',{html:NM.skeleton(2)})]);
+    var seg=NM.el('div',{class:'seg',role:'group','aria-label':'Rentang hari'});
+    var load=function(days){
+      Array.prototype.forEach.call(seg.children,function(b){b.classList.toggle('on',b.getAttribute('data-days')===String(days))});
+      NM.data('/v1/admin/unlock-stats?days='+days).then(function(s){if(isAlive())render(s)}).catch(function(e){if(isAlive()){box.innerHTML='';box.appendChild(NM.el('div',{class:'msg err',text:e.message||'Statistik belum dapat dimuat.'}))}});
+    };
+    [7,14,30].forEach(function(n){seg.appendChild(NM.el('button',{type:'button','data-days':String(n),text:n+' hari',on:{click:function(){load(n)}}}))});
+    var sum=function(rows){var t={intents:0,verified:0,rewarded:0,fallback:0};rows.forEach(function(r){t.intents+=r.intents;t.verified+=r.verified;t.rewarded+=r.rewarded;t.fallback+=r.fallback});return t};
+    var kpi=function(value,label,cls){return NM.el('div',{class:'card kpi'},[NM.el('b',{text:String(value)}),NM.el('span',{text:label})])};
+    var table=function(head,rows){return NM.el('div',{class:'tablewrap'},[NM.el('table',{class:'tbl'},[
+      NM.el('thead',{},[NM.el('tr',{},head.map(function(h){return NM.el('th',{text:h})}))]),
+      NM.el('tbody',{},rows.map(function(r){return NM.el('tr',{class:'plain'},r.map(function(v){return NM.el('td',{text:String(v)})}))}))])])};
+    var render=function(s){
+      var t=sum(s.totals||[]),pct=t.intents?Math.round(100*t.verified/t.intents)+'%':'–';
+      var byDay={};(s.days||[]).forEach(function(r){var d=byDay[r.day]||(byDay[r.day]=[]);d.push(r)});
+      var cb=s.callbacks||{};
+      box.innerHTML='';
+      box.appendChild(NM.el('div',{class:'kpis'},[
+        kpi(t.intents,'Iklan diminta aplikasi'),kpi(t.verified+' ('+pct+')','Dikonfirmasi Google (SSV)'),
+        kpi(t.rewarded,'Dibuka dengan iklan'),kpi(t.fallback,'Dibuka cadangan (iklan gagal dimuat)')]));
+      box.appendChild(NM.el('p',{class:'muted',text:'Akun yang membuka sesuatu: '+(s.accounts||0)+' · di antaranya kini Lifetime: '+(s.accountsNowLifetime||0)+'. Angka ini menunjukkan irisan, bukan bukti bahwa iklan mendorong pembelian.'}));
+      box.appendChild(table(['Jenis','Diminta','Dikonfirmasi','Dibuka iklan','Dibuka cadangan'],(s.totals||[]).map(function(r){return [GL[r.group]||r.group,r.intents,r.verified,r.rewarded,r.fallback]})));
+      box.appendChild(table(['Hari (WIB)','Diminta','Dikonfirmasi','Dibuka iklan','Dibuka cadangan'],Object.keys(byDay).sort().reverse().map(function(day){var x=sum(byDay[day]);return [day,x.intents,x.verified,x.rewarded,x.fallback]})));
+      box.appendChild(NM.el('p',{class:'muted',text:'Callback Google sejak server terakhir dinyalakan ('+new Date(s.callbacksSince).toLocaleString('id-ID')+'): diterima '+(cb.ok||0)+', diabaikan '+(cb.ignored||0)+', tanda tangan salah '+(cb.badSignature||0)+'. Permintaan iklan disimpan '+(s.intentRetentionDays||7)+' hari, jadi kolom Diminta dan Dikonfirmasi kosong untuk hari yang lebih lama.'}));
+    };
+    load(14);
+    return NM.el('div',{class:'card'},[
+      NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Statistik buka konten'}),NM.el('p',{text:'Iklan rewarded untuk membuka konten terkunci, per hari WIB.'})]),seg]),
+      NM.el('div',{class:'pad'},[box])]);
+  };
   root.innerHTML='<div class="v-ads">'+NM.skeleton(3)+'</div>';
   NM.data('/v1/admin/ads-config').then(function(c){
     if(!alive)return;
@@ -1427,9 +1480,45 @@ NM.view('ads',function(root){
         NM.el('label',{class:'field'},[NM.el('span',{text:'ID unit iklan'}),unit])];
       if(p.every){var lo=p.min||3,hi=p.max||30;every=NM.el('input',{class:'input',type:'number',id:'ads-'+p.k+'-every',min:String(lo),max:String(hi),step:'1'});every.value=v.every||p.def||6;
         kids.push(NM.el('label',{class:'field'},[NM.el('span',{text:p.label||('Tampil setiap N '+p.noun+' (3-30)')}),every]))}
+      var peers=P.filter(function(o){return o.fmt===p.fmt&&o.k!==p.k&&!!o.ssv===!!p.ssv&&o.fmt!=='Rewarded'});
+      if(peers.length){
+        var sel=NM.el('select',{class:'input',id:'ads-'+p.k+'-copy'},[NM.el('option',{value:'',text:'Pilih penempatan…'})].concat(peers.map(function(o){return NM.el('option',{value:o.k,text:o.t})})));
+        sel.addEventListener('change',function(){var o=f[sel.value];if(o&&o.unit.value.trim())unit.value=o.unit.value.trim();sel.value=''});
+        kids.push(NM.el('label',{class:'field'},[NM.el('span',{text:'Pakai ID yang sama dengan'}),sel]));
+      }
+      kids.push(guide(p));
       f[p.k]={en:en,unit:unit,every:every};
       wrap.appendChild(NM.el('div',{class:'card'},[NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:p.t}),NM.el('p',{text:p.s})])]),NM.el('div',{class:'pad'},kids)]));
     });
+    var num=function(id,v,lo,hi){var i=NM.el('input',{class:'input',type:'number',id:id,min:String(lo),max:String(hi),step:'1'});i.value=v;return i};
+    var ik=c.interstitialKinds||{},ikinds={};
+    var ikChecks=IK.map(function(x){var i=NM.el('input',{type:'checkbox',id:'ads-interstitial-kind-'+x.k});i.checked=ik[x.k]!==false;ikinds[x.k]=i;return NM.el('label',{class:'check'},[i,x.t])});
+    var ankiMin=num('ads-anki-min',c.ankiSessionMinCards||10,1,100);
+    wrap.appendChild(NM.el('div',{class:'card'},[
+      NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Kapan layar penuh boleh muncul'}),NM.el('p',{text:'Pilih aktivitas yang boleh diikuti iklan layar penuh saat pengguna keluar dari layar hasilnya. Semua memakai ID unit dan jeda menit di kartu "Layar penuh setelah selesai belajar".'})])]),
+      NM.el('div',{class:'pad'},[NM.el('div',{},ikChecks),
+        NM.el('label',{class:'field'},[NM.el('span',{text:'Sesi Anki dihitung selesai setelah (kartu, 1-100)'}),ankiMin]),
+        NM.el('p',{class:'muted',text:'Sesi Anki juga dihitung selesai bila semua kartu jatuh tempo habis. Sesi yang ditutup sebelum ambang ini tidak memicu iklan.'})])]));
+    var cap=num('ads-unlock-cap',c.unlockDailyCap||20,1,200);
+    var fb=num('ads-unlock-fallback',c.unlockFallbackPerDay==null?2:c.unlockFallbackPerDay,0,10);
+    var uk=c.unlockKinds||{},kinds={};
+    var kindChecks=UK.map(function(x){var i=NM.el('input',{type:'checkbox',id:'ads-unlock-kind-'+x.k});i.checked=uk[x.k]!==false;kinds[x.k]=i;return NM.el('label',{class:'check'},[i,x.t])});
+    wrap.appendChild(NM.el('div',{class:'card'},[
+      NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Aturan buka konten'}),NM.el('p',{text:'Batas berlaku per akun per hari (reset 00:00 WIB), dipakai bersama oleh semua jenis. Item yang sudah dibuka tetap terbuka walau jenisnya dimatikan.'})])]),
+      NM.el('div',{class:'pad'},[
+        NM.el('label',{class:'field'},[NM.el('span',{text:'Batas buka per hari (1-200)'}),cap]),
+        NM.el('label',{class:'field'},[NM.el('span',{text:'Jatah cadangan bila iklan gagal dimuat (0-10, 0 = mati)'}),fb]),
+        NM.el('p',{class:'muted',text:'Jenis yang boleh dibuka dengan iklan:'}),
+        NM.el('div',{},kindChecks)])]));
+    var cg=c.contentGates||{},wasGate={news:!!cg.news,jobs:!!cg.jobs};
+    var gateNews=NM.el('input',{type:'checkbox',id:'ads-gate-news'});gateNews.checked=wasGate.news;
+    var gateJobs=NM.el('input',{type:'checkbox',id:'ads-gate-jobs'});gateJobs.checked=wasGate.jobs;
+    wrap.appendChild(NM.el('div',{class:'card'},[
+      NM.el('div',{class:'panelh'},[NM.el('div',{},[NM.el('h3',{text:'Kunci konten gratis'}),NM.el('p',{text:'Mengunci konten yang sebelumnya gratis bagi akun non-Lifetime. Materi N3–N1, Anki, dan simulasi dikunci lewat NIHONGO_OPEN_ACCESS di server, bukan di sini.'})])]),
+      NM.el('div',{class:'pad'},[
+        NM.el('label',{class:'check'},[gateNews,'Kunci isi artikel berita (wajib login, lalu Lifetime atau iklan)']),
+        NM.el('label',{class:'check'},[gateJobs,'Kunci tautan lamar lowongan (Lifetime atau iklan)']),
+        NM.el('div',{class:'msg err',text:'Nyalakan hanya setelah versi aplikasi yang bisa membuka berita dan lowongan dengan iklan sudah beredar dan versi minimum sudah dinaikkan. Aplikasi lama akan gagal membuka berita, dan tombol lamarnya nonaktif.'})])]));
     wrap.appendChild(NM.el('div',{class:'msg',text:'ID uji Google (ca-app-pub-3940256099942544/...) tidak menghasilkan pendapatan. Ganti dengan ID unit iklan asli dari akun AdMob Anda. Build debug selalu memakai ID uji.'}));
     var msg=NM.el('div',{class:'msg',role:'status'});
     var setMsg=function(t,k){msg.className='msg'+(k?' '+k:'');msg.textContent=t||''};
@@ -1446,12 +1535,31 @@ NM.view('ads',function(root){
         if(x.every){var n=Number(x.every.value),lo=p.min||3,hi=p.max||30;d[p.k].every=n;
           if(!(n>=lo&&n<=hi)||Math.floor(n)!==n){setMsg(p.k+': nilai harus '+lo+' sampai '+hi,'err');x.every.focus();return}}
       }
-      btn.disabled=true;setMsg('Menyimpan…');
-      NM.data('/v1/admin/ads-config',{method:'PUT',body:d}).then(function(){
-        setMsg('Tersimpan. Perubahan berlaku saat pengguna membuka aplikasi berikutnya.','ok');NM.toast('Pengaturan iklan tersimpan');
-      }).catch(function(er){setMsg(er.message||'Gagal menyimpan.','err')}).then(function(){btn.disabled=false});
+      var capN=Number(cap.value),fbN=Number(fb.value);
+      if(!(capN>=1&&capN<=200)||Math.floor(capN)!==capN){setMsg('Batas buka per hari harus 1 sampai 200','err');cap.focus();return}
+      if(!(fbN>=0&&fbN<=10)||Math.floor(fbN)!==fbN){setMsg('Jatah cadangan harus 0 sampai 10','err');fb.focus();return}
+      d.unlockDailyCap=capN;d.unlockFallbackPerDay=fbN;d.unlockKinds={};
+      UK.forEach(function(x){d.unlockKinds[x.k]=kinds[x.k].checked});
+      d.contentGates={news:gateNews.checked,jobs:gateJobs.checked};
+      var ankiN=Number(ankiMin.value);
+      if(!(ankiN>=1&&ankiN<=100)||Math.floor(ankiN)!==ankiN){setMsg('Ambang sesi Anki harus 1 sampai 100 kartu','err');ankiMin.focus();return}
+      d.ankiSessionMinCards=ankiN;d.interstitialKinds={};
+      IK.forEach(function(x){d.interstitialKinds[x.k]=ikinds[x.k].checked});
+      var save=function(){
+        btn.disabled=true;setMsg('Menyimpan…');
+        NM.data('/v1/admin/ads-config',{method:'PUT',body:d}).then(function(){
+          wasGate={news:d.contentGates.news,jobs:d.contentGates.jobs};
+          setMsg('Tersimpan. Perubahan berlaku saat pengguna membuka aplikasi berikutnya.','ok');NM.toast('Pengaturan iklan tersimpan');
+        }).catch(function(er){setMsg(er.message||'Gagal menyimpan.','err')}).then(function(){btn.disabled=false});
+      };
+      var newGates=[];
+      if(d.contentGates.news&&!wasGate.news)newGates.push('berita');
+      if(d.contentGates.jobs&&!wasGate.jobs)newGates.push('tautan lamar lowongan');
+      if(!newGates.length){save();return}
+      NM.confirm('Kunci '+newGates.join(' dan ')+'?','Akun non-Lifetime harus menonton iklan atau membeli Lifetime. Pengguna aplikasi versi lama tidak bisa membuka konten ini sama sekali. Lanjutkan hanya bila aplikasi baru sudah beredar dan versi minimum sudah dinaikkan.',{ok:'Kunci sekarang',danger:true}).then(function(ok){if(ok)save()});
     });
     root.innerHTML='';root.appendChild(wrap);
+    root.appendChild(NM.el('div',{class:'v-ads',style:'margin-top:16px'},[unlockStatsCard(function(){return alive})]));
   }).catch(function(e){
     if(!alive)return;
     root.innerHTML='<div class="v-ads"><div class="msg err">'+NM.esc(e.message||'Gagal membuka pengaturan.')+'</div></div>';

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
 import 'package:nihongo_master/features/learn/reading/domain/reading_models.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
 
 class ReadingException implements Exception {
   const ReadingException(this.message);
@@ -95,6 +96,8 @@ class ReadingRepository {
       }
       return data;
     } on DioException catch (error) {
+      final locked = LockedContentException.from(error);
+      if (locked != null) throw locked;
       if (error.response?.statusCode == 401) {
         throw const ReadingException('Sesi berakhir. Silakan masuk kembali.');
       }

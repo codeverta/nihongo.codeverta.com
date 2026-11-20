@@ -10,6 +10,9 @@ import 'package:nihongo_master/features/ssw/domain/kaigo_curriculum.dart';
 import 'package:nihongo_master/features/ssw/domain/ssw_sector.dart';
 import 'package:nihongo_master/shared/presentation/widgets/japanese_ruby_text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
+import 'package:nihongo_master/core/ads/ad_widgets.dart';
 
 String kaigoLessonPath(String id) =>
     '/ssw/nursing-care/lessons/${Uri.encodeComponent(id)}';
@@ -213,6 +216,36 @@ class KaigoLessonScreen extends ConsumerWidget {
             ? 'Lesson Kaigo'
             : 'Lesson ${(sswSectorById(sectorId)?.name ?? 'SSW').localized(context)}',
       ),
+      actions: [
+        Builder(
+          builder: (context) {
+            final furigana = ref.watch(displayPreferencesProvider).furigana;
+            final colors = Theme.of(context).colorScheme;
+            return Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: FilterChip(
+                key: const Key('ssw-furigana-toggle'),
+                label: Text('Furigana'.localized(context)),
+                selected: furigana,
+                showCheckmark: false,
+                visualDensity: VisualDensity.compact,
+                selectedColor: colors.secondary,
+                labelStyle: TextStyle(
+                  color: furigana ? colors.onSecondary : colors.onSurface,
+                ),
+                avatar: Icon(
+                  Icons.translate_rounded,
+                  size: 18,
+                  color: furigana ? colors.onSecondary : colors.primary,
+                ),
+                onSelected: (enabled) => ref
+                    .read(displayPreferencesProvider.notifier)
+                    .setFurigana(enabled: enabled),
+              ),
+            );
+          },
+        ),
+      ],
     ),
     body: ref
         .watch(sswCurriculumProvider(sectorId))
@@ -352,24 +385,6 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
               style: TextStyle(fontWeight: FontWeight.w700),
             ),
           ),
-        FilterChip(
-          key: const Key('ssw-furigana-toggle'),
-          label: Text('Furigana'.localized(context)),
-          selected: furigana,
-          showCheckmark: false,
-          selectedColor: colors.secondary,
-          labelStyle: TextStyle(
-            color: furigana ? colors.onSecondary : colors.onSurface,
-          ),
-          avatar: Icon(
-            Icons.translate_rounded,
-            size: 18,
-            color: furigana ? colors.onSecondary : colors.primary,
-          ),
-          onSelected: (enabled) => ref
-              .read(displayPreferencesProvider.notifier)
-              .setFurigana(enabled: enabled),
-        ),
         const SizedBox(height: 20),
         _ContentCard(
           title: 'Tujuan belajar'.localized(context),
@@ -544,6 +559,12 @@ class _LessonReaderState extends ConsumerState<_LessonReader> {
                 .localized(context),
             style: TextStyle(height: 1.6),
           ),
+          CompletionAdBoundary(
+            kind: CompletionKind.practice,
+            completionKey: 'kaigo:${widget.lesson.id}',
+          ),
+          const SizedBox(height: 12),
+          const AdBannerSlot(placement: BannerAdPlacement.practiceResult),
           const SizedBox(height: 12),
           FilledButton.icon(
             key: const Key('kaigo-complete'),

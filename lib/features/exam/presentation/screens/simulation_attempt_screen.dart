@@ -12,6 +12,8 @@ import 'package:nihongo_master/features/exam/presentation/widgets/simulation_tex
 import 'package:nihongo_master/features/home/presentation/controllers/home_controller.dart';
 import 'package:nihongo_master/features/profile/data/gamification_repository.dart';
 import 'package:nihongo_master/features/ssw/presentation/ssw_assessment_screens.dart';
+import 'package:nihongo_master/core/ads/completion_ads.dart';
+import 'package:nihongo_master/core/ads/ads_config.dart';
 
 class SimulationAttemptScreen extends ConsumerStatefulWidget {
   const SimulationAttemptScreen({
@@ -415,7 +417,9 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                       ? 'Hasil NAT 5Q Exam $natPaper'.localized(context)
                       : 'NAT 5Q Exam $natPaper'
                 : result != null
-                ? 'Hasil simulasi ${jlptBaseLevel(widget.level)}'.localized(context)
+                ? 'Hasil simulasi ${jlptBaseLevel(widget.level)}'.localized(
+                    context,
+                  )
                 : 'JLPT ${jlptBaseLevel(widget.level)}${jlptPaperNumber(widget.level) > 1 ? ' ${'Paket'.localized(context)} ${jlptPaperLabel(widget.level)}' : ''} Simulation',
           ),
           actions: [
@@ -448,7 +452,17 @@ class _AttemptState extends ConsumerState<SimulationAttemptScreen>
                     )
                   : const Center(child: CircularProgressIndicator())
             : result != null
-            ? SimulationResultView(result: result!, level: widget.level)
+            ? CompletionAdBoundary(
+                kind: CompletionKind.exams,
+                // N3 paper 01 is the paper a rewarded ad can open.
+                completionKey: widget.level == 'N3'
+                    ? 'simulation:jlpt-n3-simulation-1'
+                    : null,
+                child: SimulationResultView(
+                  result: result!,
+                  level: widget.level,
+                ),
+              )
             : Column(
                 children: [
                   if (busy || fetching)

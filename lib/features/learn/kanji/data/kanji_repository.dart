@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:nihongo_master/features/learn/kanji/domain/kanji_models.dart';
 import 'package:nihongo_master/features/learn/offline/offline_practice.dart';
+import 'package:nihongo_master/core/unlock/locked_content.dart';
 
 class KanjiException implements Exception {
   const KanjiException(this.message);
@@ -93,6 +94,8 @@ class KanjiRepository {
       }
       return data;
     } on DioException catch (error) {
+      final locked = LockedContentException.from(error);
+      if (locked != null) throw locked;
       if (error.response?.statusCode == 401) {
         throw const KanjiException('Sesi berakhir. Silakan masuk kembali.');
       }
