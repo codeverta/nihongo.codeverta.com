@@ -195,13 +195,24 @@ func sessionTokenHash(token string) string {
 	return hex.EncodeToString(sum[:])
 }
 
+// ErrSessionLookup means the session could not be checked (for example the
+// database was briefly unavailable). It is not proof that the token is invalid.
+var ErrSessionLookup = errors.New("session lookup failed")
+
 func (s *MemoryStore) ResolveSession(token string) (string, bool) {
+	id, ok, _ := s.ResolveSessionChecked(token)
+	return id, ok
+}
+
+// ResolveSessionChecked is ResolveSession that also reports a failed lookup,
+// so callers do not treat a database hiccup as a revoked login.
+func (s *MemoryStore) ResolveSessionChecked(token string) (string, bool, error) {
 	s.mu.RLock()
 	userID, ok := s.sessions[token]
 	persist := s.billingEnabled
 	s.mu.RUnlock()
 	if ok || !persist || token == "" {
-		return userID, ok
+		return userID, ok, nil
 	}
 	// Not in memory, for example right after a restart: restore it from the database.
 	var record database.Session
@@ -209,13 +220,14 @@ func (s *MemoryStore) ResolveSession(token string) (string, bool) {
 	if err != nil {
 		if !errors.Is(err, gorm.ErrRecordNotFound) {
 			log.Printf("resolve persisted session: %v", err)
+			return "", false, ErrSessionLookup
 		}
-		return "", false
+		return "", false, nil
 	}
 	s.mu.Lock()
 	s.sessions[token] = record.UserID
 	s.mu.Unlock()
-	return record.UserID, true
+	return record.UserID, true, nil
 }
 
 func (s *MemoryStore) RevokeSession(token string) {

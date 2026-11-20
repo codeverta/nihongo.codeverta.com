@@ -87,6 +87,7 @@ var apiErrorMessagesEnglish = map[string]string{
 	"practice_unavailable":         "The lesson quiz is not available yet.",
 	"premium_required":             "Lifetime Access is required for this content.",
 	"preview_required":             "Please preview the file before importing.",
+	"session_unavailable":          "The server is busy right now. Please try again in a moment.",
 	"rate_limited":                 "Too many requests. Please try again later.",
 	"refresh_failed":               "Refresh failed. The previous result has been kept.",
 	"report_too_large":             "The diagnostics report is too large.",
